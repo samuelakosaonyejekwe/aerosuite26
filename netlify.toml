@@ -1,0 +1,4 @@
+# Netlify mirror: static publish of the repository root, no build needed (built files are committed).
+[build]
+  publish = "."
+  command = ""

@@ -1,0 +1,10 @@
+# GitLab Pages mirror: publishes the committed build as-is.
+pages:
+  stage: deploy
+  script:
+    - mkdir public
+    - cp -r index.html standalone.html manifest.webmanifest sw.js version.json mirrors.json css js assets public/
+  artifacts:
+    paths: [public]
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH

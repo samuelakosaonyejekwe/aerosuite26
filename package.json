@@ -1,0 +1,20 @@
+{
+  "name": "aerosuite26",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Integrated 26-suite aircraft engineering simulation and decision-support platform (offline-first web app).",
+  "scripts": {
+    "test": "node tests/run.mjs --quick && node tests/geometry.mjs",
+    "serve": "node tools/serve.mjs",
+    "build": "node tools/build.mjs",
+    "test:full": "node tests/run.mjs",
+    "test:ui": "node tests/ui.mjs",
+    "test:offline": "node tests/offline.mjs"
+  },
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "esbuild": "^0.28.0",
+    "playwright-core": "1.49.1"
+  }
+}
