@@ -1,3 +1,5 @@
 {
-  "mirrors": []
+  "mirrors": [
+    { "name": "GitHub Pages", "url": "https://samuelakosaonyejekwe.github.io/aerosuite26/" }
+  ]
 }

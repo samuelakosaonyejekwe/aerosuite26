@@ -11,6 +11,35 @@ import { live, SUITE_QUERIES } from '../../core/live.js';
 import { replaceHash } from '../../app.js';
 
 const TABS = [['run', 'Set up & run', 'play'], ['mesh', 'Mesh & convergence', 'layers'], ['studies', 'Studies', 'sliders'], ['vv', 'Verification & validation', 'check'], ['spec', 'Specification', 'doc'], ['live', 'Live resources', 'globe']];
+// Tab names in each discipline's own vocabulary: [set up & run, discretisation, studies, V&V, specification, live resources]
+const TAB_NAMES = {
+  cfd: ['Flow set-up & solve', 'Grid & mesh convergence', 'Polar sweeps & uncertainty', 'Verification & wind-tunnel validation', 'Governing equations & models', 'CFD literature & solvers'],
+  fea: ['Model, loads & solve', 'Mesh refinement & convergence', 'Load sweeps & scatter', 'Verification & structural-test validation', 'Structural theory & elements', 'FEA literature & solvers'],
+  aeroelastic: ['Aeroelastic model & solve', 'Modes, panels & time-step convergence', 'Speed sweeps & uncertainty', 'Verification & flutter-test validation', 'Aeroelastic equations & models', 'Aeroelasticity literature & tools'],
+  flightdyn: ['Flight condition & simulate', 'Time-step & frequency resolution', 'Derivative sweeps & dispersion', 'Verification & flight-test validation', 'Equations of motion & models', 'Flight-dynamics literature & tools'],
+  performance: ['Mission point & compute', 'Step-size convergence', 'Trade sweeps & uncertainty', 'Verification & flight-manual validation', 'Performance equations & models', 'Performance literature & tools'],
+  rotorcraft: ['Rotor set-up & trim', 'Blade, azimuth & wake resolution', 'Speed sweeps & uncertainty', 'Verification & rotor-test validation', 'Rotor theory & models', 'Rotorcraft literature & tools'],
+  propulsion: ['Engine cycle & run', 'Station & step resolution', 'Throttle, altitude sweeps & scatter', 'Verification & test-cell validation', 'Cycle equations & models', 'Propulsion literature & tools'],
+  propeller: ['Blade set-up & solve', 'Blade-station resolution', 'Advance-ratio sweeps & scatter', 'Verification & dynamometer validation', 'Propeller theory & models', 'Propeller literature & tools'],
+  fatigue: ['Spectrum, material & assess', 'Cycle-step & sample convergence', 'Stress sweeps & life scatter', 'Verification & coupon-test validation', 'Fatigue & fracture laws', 'Durability literature & tools'],
+  vibration: ['Model & solve modes', 'Element & mode-count convergence', 'Speed sweeps & damping scatter', 'Verification & ground-vibration validation', 'Vibration equations & models', 'Vibration literature & tools'],
+  acoustics: ['Sources, observers & predict', 'Harmonic & grid resolution', 'Operating sweeps & uncertainty', 'Verification & microphone validation', 'Acoustic theory & models', 'Aeroacoustics literature & tools'],
+  thermal: ['Thermal model & solve', 'Node & time-step convergence', 'Heat-load sweeps & scatter', 'Verification & thermal-test validation', 'Heat-transfer equations & models', 'Thermal literature & tools'],
+  icing: ['Icing condition & accrete', 'Droplet & surface resolution', 'Cloud-condition sweeps & scatter', 'Verification & icing-tunnel validation', 'Icing physics & models', 'Icing literature & tools'],
+  gear: ['Landing case & simulate', 'Time-step convergence', 'Sink-rate, runway sweeps & scatter', 'Verification & drop-test validation', 'Ground-dynamics equations & models', 'Landing-gear literature & tools'],
+  crash: ['Impact scenario & simulate', 'Mesh & time-step convergence', 'Impact-condition sweeps & scatter', 'Verification & impact-test validation', 'Impact mechanics & models', 'Crashworthiness literature & tools'],
+  control: ['Plant, controller & simulate', 'Sample-rate & frequency resolution', 'Gain sweeps & robustness', 'Verification & loop-test validation', 'Control theory & laws', 'Flight-control literature & tools'],
+  avionics: ['Sensors, scenario & simulate', 'Sample-rate & Monte Carlo convergence', 'Sensor-grade sweeps & dispersion', 'Verification & navigation-trial validation', 'Estimation theory & models', 'Avionics literature & tools'],
+  hydmech: ['System model & solve', 'Reach, grid & step convergence', 'Demand sweeps & tolerance scatter', 'Verification & rig-test validation', 'Fluid-power & machine-element laws', 'Systems literature & tools'],
+  electrical: ['Power system & simulate', 'Time-step & grid resolution', 'Load sweeps & cell scatter', 'Verification & bench-test validation', 'Circuit & machine models', 'Electrical literature & tools'],
+  fuelecs: ['System state & simulate', 'Cell & time-step convergence', 'Schedule sweeps & scatter', 'Verification & rig / chamber validation', 'Fuel & ECS equations & models', 'Fuel & ECS literature & tools'],
+  composites: ['Laminate, loads & analyse', 'Ply-step & grid resolution', 'Lay-up sweeps & allowable scatter', 'Verification & coupon-test validation', 'Laminate theory & failure criteria', 'Composites literature & tools'],
+  safety: ['Architecture, rates & assess', 'Simulation-sample convergence', 'Rate sweeps & probability uncertainty', 'Verification & service-data validation', 'Reliability mathematics & methods', 'Safety literature & tools'],
+  mdao: ['Problem set-up & optimise', 'Iteration, sample & step convergence', 'Design-space sweeps & robustness', 'Verification & independent-model validation', 'Optimisation formulations & algorithms', 'MDAO literature & tools'],
+  mission: ['Route, payload & fly', 'Time-step & sample convergence', 'Range, wind sweeps & dispersion', 'Verification & flight-record validation', 'Trajectory equations & models', 'Mission-analysis literature & tools'],
+  vvuq: ['Experiment set-up & run', 'Grid & sample refinement', 'Parameter sweeps & propagation', 'Benchmarks & validation metrics', 'V&V and UQ theory', 'V&V literature & tools'],
+  economics: ['Assumptions & calculate', 'Scenario-sample convergence', 'What-if sweeps & financial risk', 'Cross-checks & back-testing', 'Cost & finance formulas', 'Market data, literature & tools'],
+};
 const FID = { analytical: 'Closed-form', 'reduced-order': 'Reduced-order model', numerical: 'Numerical solver' };
 const parseList = (s) => String(s).split(/[\s,;]+/).map(Number).filter(Number.isFinite);
 const parsePairs = (s) => String(s).trim().split(/\n+/).map((l) => l.split(/[\s,;]+/).map(Number)).filter((r) => r.length >= 2 && r.slice(0, 2).every(Number.isFinite)).map((r) => [r[0], r[1]]);
@@ -41,7 +70,7 @@ export async function render(root, [suiteId, analysisId, tabId], { setCrumb }) {
     clear(chips);
     add(chips, desc.analyses.map((a) => { const r = state.runs[`${suiteId}.${a.id}`]; return h('button', { class: `chip ${a.id === an.id ? 'on' : ''} ${a.applicable === true ? '' : 'na'}`, role: 'tab', 'aria-selected': a.id === an.id, title: a.applicable === true ? a.summary : a.applicable, onclick: () => select(a) }, r ? h('i', { class: `dot ${r.status}`, style: { display: 'inline-block', marginRight: '7px' } }) : null, a.title); }));
     clear(tabs);
-    add(tabs, TABS.map(([id, label, ic]) => h('button', { class: `tab ${id === tab ? 'on' : ''}`, role: 'tab', 'aria-selected': id === tab, onclick: () => { tab = id; replaceHash(`#/suite/${suiteId}/${an.id}/${tab}`); paintChips(); paintBody(); } }, icon(ic, 16), label)));
+    add(tabs, TABS.map(([id, generic, ic], ti) => [id, TAB_NAMES[suiteId]?.[ti] || generic, ic]).map(([id, label, ic]) => h('button', { class: `tab ${id === tab ? 'on' : ''}`, role: 'tab', 'aria-selected': id === tab, onclick: () => { tab = id; replaceHash(`#/suite/${suiteId}/${an.id}/${tab}`); paintChips(); paintBody(); } }, icon(ic, 16), label)));
   }
   const dispose = () => { while (disposers.length) { try { disposers.pop()(); } catch { /* ignore */ } } };
   function paintBody() { dispose(); clear(body); ({ run: tabRun, mesh: tabMesh, studies: tabStudies, vv: tabVV, spec: tabSpec, live: tabLive })[tab](); }
