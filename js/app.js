@@ -131,11 +131,8 @@ async function registerSW() {
   if (!('serviceWorker' in navigator) || location.protocol === 'file:') return;
   try {
     const reg = await navigator.serviceWorker.register('sw.js');
-    const offer = (w) => { if (!w) return; const t = h('button', { class: 'btn sm', onclick: () => w.postMessage({ type: 'skip-waiting' }) }, 'Reload'); toast('A new version is ready.', 'info', 12000); document.querySelector('.toasts .toast:last-child')?.append(t); };
-    if (reg.waiting && navigator.serviceWorker.controller) offer(reg.waiting);
-    reg.addEventListener('updatefound', () => { const w = reg.installing; w?.addEventListener('statechange', () => { if (w.state === 'installed' && navigator.serviceWorker.controller) offer(w); }); });
     const hadController = !!navigator.serviceWorker.controller; let reloaded = false; // reload only for an update, never on the first install
-    navigator.serviceWorker.addEventListener('controllerchange', () => { if (hadController && !reloaded) { reloaded = true; location.reload(); } });
+    navigator.serviceWorker.addEventListener('controllerchange', () => { if (hadController && !reloaded) { reloaded = true; toast('Updated to the latest version.', 'ok', 2500); setTimeout(() => location.reload(), 600); } });
     setInterval(() => reg.update().catch(() => {}), 30 * 60e3);                     // look for app updates while open
     document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible') reg.update().catch(() => {}); });
     // background refresh of live data when the installed app is closed (supported browsers only)
