@@ -31,6 +31,9 @@ export const SUITES = [
   { n: 26, id: 'economics', file: 's26-economics', title: 'Aircraft Economics and Techno-Economic Analysis', short: 'Economics', group: 'Economics', icon: 'coin' },
 ];
 
+// Display numbers run 1…26 in the order the suites are listed (by group); `n` stays the specification number.
+{ let k = 0; for (const g of GROUPS) for (const s of SUITES) if (s.group === g) s.d = ++k; SUITES.sort((a, b) => a.d - b.d); }
+
 export const suiteMeta = (id) => SUITES.find((s) => s.id === id);
 
 // Static import map (rather than a computed path) so bundlers can follow it for the standalone build.

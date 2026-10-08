@@ -17,8 +17,9 @@ try {
   const ctx = await browser.newContext(), page = await ctx.newPage(); watch(page, 'offline');
   await page.goto(`http://localhost:${port}/`); await page.waitForSelector('.suite-card');
   let files = 0;
-  for (let k = 0; k < 120 && files < 60; k++) { await page.waitForTimeout(500); files = await page.evaluate(async () => { let n = 0; for (const c of await caches.keys()) if (c.startsWith('aerosuite-app-')) n += (await (await caches.open(c)).keys()).length; return n; }); }
-  if (files < 60) errors.push(`[offline] only ${files} files were stored by the service worker`);
+  let want = 60; try { want = JSON.parse(await (await fetch(`http://localhost:${port}/version.json`)).text()).files || 60; } catch { /* dev build */ }
+  for (let k = 0; k < 240 && files < want; k++) { await page.waitForTimeout(500); files = await page.evaluate(async () => { let n = 0; for (const c of await caches.keys()) if (c.startsWith('aerosuite-app-')) n += (await (await caches.open(c)).keys()).length; return n; }); }
+  if (files < want) errors.push(`[offline] only ${files} files were stored by the service worker`);
   await ctx.setOffline(true); server.kill();
   await page.reload(); await page.waitForSelector('.suite-card', { timeout: 20000 });
   await page.goto(`http://localhost:${port}/#/suite/economics`); await runSuite(page, 'offline');

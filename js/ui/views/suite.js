@@ -47,7 +47,7 @@ const parsePairs = (s) => String(s).trim().split(/\n+/).map((l) => l.split(/[\s,
 export async function render(root, [suiteId, analysisId, tabId], { setCrumb }) {
   const meta = suiteMeta(suiteId);
   if (!meta) { root.append(empty('warn', 'Unknown suite', 'Pick a suite from the menu.')); return; }
-  setCrumb(`${meta.n}. ${meta.short}`);
+  setCrumb(`${meta.d}. ${meta.short}`);
   const disposers = [], body = h('div');
   let desc, an, tab = TABS.some((t) => t[0] === tabId) ? tabId : 'run', busy = false;
   const describe = async () => { desc = await runJob({ kind: 'describe', suite: suiteId, case: state.case, up: state.up, overridesBy: Object.fromEntries(Object.entries(state.overrides).filter(([k]) => k.startsWith(suiteId + '.')).map(([k, v]) => [k.slice(suiteId.length + 1), v])) }); };
@@ -58,7 +58,7 @@ export async function render(root, [suiteId, analysisId, tabId], { setCrumb }) {
 
   root.append(
     h('div', { class: 'page-h' },
-      h('div', { class: 'grow' }, h('div', { class: 'eyebrow' }, `Suite ${meta.n} of 26 · ${meta.group}`), h('h1', null, meta.title), h('p', null, desc.tagline)),
+      h('div', { class: 'grow' }, h('div', { class: 'eyebrow' }, `Suite ${meta.d} of 26 · ${meta.group}`), h('h1', null, meta.title), h('p', null, desc.tagline)),
       h('div', { class: 'row' },
         h('button', { class: 'arrow', disabled: !prev, title: prev ? `Previous suite: ${prev.short}` : '', 'aria-label': 'Previous suite', onclick: () => (location.hash = `#/suite/${prev.id}`) }, icon('back', 20)),
         h('button', { class: 'arrow', disabled: !next, title: next ? `Next suite: ${next.short}` : '', 'aria-label': 'Next suite', onclick: () => (location.hash = `#/suite/${next.id}`) }, icon('fwd', 20)),

@@ -18,22 +18,22 @@ export async function render(root, _p, { setCrumb }) {
     try {
       const res = await runJob({ kind: 'verifyAll' }, (f) => (vProg.value = f)), flat = res.flatMap((s) => s.checks.map((c) => ({ ...c, suite: s.suite }))), pass = flat.filter((c) => c.pass).length;
       vOut.append(h('div', { class: `note ${pass === flat.length ? 'ok' : 'bad'}` }, icon(pass === flat.length ? 'check' : 'warn'), h('div', null, h('b', null, `${pass} of ${flat.length} verification benchmarks pass across ${res.length} suites. `), 'Run on this device, just now, against exact and analytical solutions.')),
-        dataTable({ title: 'Platform verification evidence', columns: ['Suite', 'Benchmark', 'Computed', 'Exact', 'Relative error', 'Tolerance', 'Result', 'Reference'], rows: flat.map((c) => [`${suiteMeta(c.suite).n}. ${suiteMeta(c.suite).short}`, c.name, c.actual, c.expected, c.error, c.tol, c.pass ? 'Pass' : 'FAIL', c.ref || '']) }, { max: 600 }));
+        dataTable({ title: 'Platform verification evidence', columns: ['Suite', 'Benchmark', 'Computed', 'Exact', 'Relative error', 'Tolerance', 'Result', 'Reference'], rows: flat.map((c) => [`${suiteMeta(c.suite).d}. ${suiteMeta(c.suite).short}`, c.name, c.actual, c.expected, c.error, c.tol, c.pass ? 'Pass' : 'FAIL', c.ref || '']) }, { max: 600 }));
     } catch (e) { vOut.append(h('div', { class: 'note bad' }, e.message)); } finally { vProg.hidden = true; }
   };
 
-  const allKpis = async () => { const rows = []; for (const k of Object.keys(state.runs)) { const [s, a] = k.split('.'), p = await loadRun(s, a); if (!p) continue; for (const x of p.res.kpis) rows.push([suiteMeta(s).n, suiteMeta(s).short, a, x.key, x.label, x.value, x.unit || '', x.status || '', new Date(state.runs[k].ts).toISOString()]); } return rows.sort((x, y) => x[0] - y[0]); };
+  const allKpis = async () => { const rows = []; for (const k of Object.keys(state.runs)) { const [s, a] = k.split('.'), p = await loadRun(s, a); if (!p) continue; for (const x of p.res.kpis) rows.push([suiteMeta(s).d, suiteMeta(s).short, a, x.key, x.label, x.value, x.unit || '', x.status || '', new Date(state.runs[k].ts).toISOString()]); } return rows.sort((x, y) => x[0] - y[0]); };
 
   const buildReport = async () => {
     clear(reportHost); reportHost.append(h('div', { class: 'row muted' }, h('i', { class: 'spin' }), 'Assembling report…'));
-    const c = state.case, keys = Object.keys(state.runs).sort((a, b) => suiteMeta(a.split('.')[0]).n - suiteMeta(b.split('.')[0]).n);
+    const c = state.case, keys = Object.keys(state.runs).sort((a, b) => suiteMeta(a.split('.')[0]).d - suiteMeta(b.split('.')[0]).d);
     let spec = null; try { spec = await loadSpec(); } catch { /* optional */ }
     const parts = [h('div', null, h('div', { class: 'eyebrow' }, 'AeroSuite 26 engineering report'), h('h1', null, c.meta.name || 'Unnamed case'), h('p', { class: 'muted' }, `${c.meta.type} · generated ${new Date().toLocaleString()} · site: ${c.site.name} (${c.site.source})`))];
     parts.push(card('Case definition', h('div', { class: 'grid g3' }, Object.entries(CASE_SECTIONS).map(([sec, title]) => h('div', null, h('h4', null, title), h('dl', { class: 'kv small' }, CASE_FIELDS.filter((f) => f[0] === sec).filter((f) => c[sec][f[1]] !== 0 && c[sec][f[1]] !== '').map((f) => [h('dt', null, f[2]), h('dd', null, typeof c[sec][f[1]] === 'number' ? `${num(c[sec][f[1]])} ${f[3] || ''}` : String(c[sec][f[1]]))])))))));
     let lastSuite = null;
     for (const k of keys) {
       const [s, a] = k.split('.'), p = await loadRun(s, a); if (!p) continue; const m = suiteMeta(s);
-      if (s !== lastSuite) { parts.push(h('h2', { style: { marginTop: '18px' } }, `${m.n}. ${m.title}`)); if (spec) parts.push(h('p', { class: 'muted small' }, spec.suites[m.n].scope)); lastSuite = s; }
+      if (s !== lastSuite) { parts.push(h('h2', { style: { marginTop: '18px' } }, `${m.d}. ${m.title}`)); if (spec) parts.push(h('p', { class: 'muted small' }, spec.suites[m.n].scope)); lastSuite = s; }
       parts.push(card(a, h('div', { class: 'stack' }, kpiGrid(p.res.kpis),
         p.res.warnings.length ? h('div', { class: 'note warn' }, icon('warn'), h('div', null, p.res.warnings.join(' '))) : null,
         p.recs.length ? recList(p.recs) : null,

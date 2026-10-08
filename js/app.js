@@ -18,7 +18,7 @@ const MAIN = [
 /** Linear page order used by the previous/next arrows at the foot of every page. */
 export const SEQUENCE = [
   { hash: '#/home', label: 'Overview' }, { hash: '#/case', label: 'Case & input portal' }, { hash: '#/geometry', label: 'Geometry & mesh' },
-  ...SUITES.map((s) => ({ hash: `#/suite/${s.id}`, label: `${s.n}. ${s.short}` })),
+  ...SUITES.map((s) => ({ hash: `#/suite/${s.id}`, label: `${s.d}. ${s.short}` })),
   { hash: '#/integrated', label: 'Integrated run' }, { hash: '#/decisions', label: 'Decision support' }, { hash: '#/live', label: 'Live data' }, { hash: '#/reports', label: 'Reports & assurance' }, { hash: '#/about', label: 'Install, offline & about' },
 ];
 
@@ -55,7 +55,7 @@ function renderNav() {
     for (const s of SUITES.filter((x) => x.group === g)) {
       const runs = Object.entries(state.runs).filter(([k]) => k.startsWith(s.id + '.')).map(([, v]) => v.status);
       const st = runs.includes('bad') ? 'bad' : runs.includes('warn') ? 'warn' : runs.length ? 'ok' : '';
-      links.push(h('a', { href: `#/suite/${s.id}`, class: cur.startsWith(`#/suite/${s.id}`) ? 'on' : '', title: s.title }, h('span', { class: 'n' }, s.n), h('span', { class: 't' }, s.short), h('i', { class: `dot ${st}`, title: st ? `Last run: ${st}` : 'Not run yet' })));
+      links.push(h('a', { href: `#/suite/${s.id}`, class: cur.startsWith(`#/suite/${s.id}`) ? 'on' : '', title: s.title }, h('span', { class: 'n' }, s.d), h('span', { class: 't' }, s.short), h('i', { class: `dot ${st}`, title: st ? `Last run: ${st}` : 'Not run yet' })));
     }
   }
   clear(sideNav); add(sideNav, links);
@@ -145,9 +145,9 @@ let paletteItems = null;
 async function openPalette() {
   if (document.querySelector('.palette')) return;
   if (!paletteItems) {
-    paletteItems = [...MAIN.map((m) => ({ label: m.label, hint: 'Page', hash: `#/${m.path}`, ic: m.ic })), ...SUITES.map((s) => ({ label: `${s.n}. ${s.title}`, hint: s.group, hash: `#/suite/${s.id}`, ic: s.icon }))];
+    paletteItems = [...MAIN.map((m) => ({ label: m.label, hint: 'Page', hash: `#/${m.path}`, ic: m.ic })), ...SUITES.map((s) => ({ label: `${s.d}. ${s.title}`, hint: s.group, hash: `#/suite/${s.id}`, ic: s.icon }))];
     import('./core/jobs.js').then(async ({ execute }) => { // enrich with every analysis, lazily
-      for (const s of SUITES) { try { const d = await execute({ kind: 'describe', suite: s.id, case: state.case, up: state.up }); for (const a of d.analyses) paletteItems.push({ label: a.title, hint: `${s.n}. ${s.short}`, hash: `#/suite/${s.id}/${a.id}`, ic: s.icon, extra: a.summary }); } catch { /* suite not available */ } }
+      for (const s of SUITES) { try { const d = await execute({ kind: 'describe', suite: s.id, case: state.case, up: state.up }); for (const a of d.analyses) paletteItems.push({ label: a.title, hint: `${s.d}. ${s.short}`, hash: `#/suite/${s.id}/${a.id}`, ic: s.icon, extra: a.summary }); } catch { /* suite not available */ } }
     });
   }
   const input = h('input', { type: 'search', placeholder: 'Search suites, analyses and pages…', 'aria-label': 'Search', autocomplete: 'off' }), list = h('ul', { role: 'listbox' });

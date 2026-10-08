@@ -47,7 +47,7 @@ export async function execute(job, progress = () => {}) {
       for (const id of order) {
         const d = defs.find((x) => x.id === id); up[id] = up[id] || {};
         for (const a of d.analyses) {
-          progress(done++ / total, `${d.n}. ${a.title}`);
+          progress(done++ / total, a.title);
           const c = S.makeCtx(job.case, up), ok = S.applicable(a, c);
           if (ok !== true) { log.push({ suite: id, analysis: a.id, title: a.title, skipped: ok }); continue; }
           try {

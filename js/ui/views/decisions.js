@@ -29,7 +29,7 @@ export async function render(root, _p, { setCrumb }) {
     plots.splice(0).forEach((p) => p.destroy());
     const all = [];
     for (const [k, list] of Object.entries(state.recs)) { const [s, a] = k.split('.'); for (const r of list || []) all.push({ ...r, suite: s, analysis: a }); }
-    all.sort((x, y) => (ORDER[x.severity] ?? 9) - (ORDER[y.severity] ?? 9) || suiteMeta(x.suite).n - suiteMeta(y.suite).n);
+    all.sort((x, y) => (ORDER[x.severity] ?? 9) - (ORDER[y.severity] ?? 9) || suiteMeta(x.suite).d - suiteMeta(y.suite).d);
     const shown = all.filter((r) => (sev === 'all' || r.severity === sev) && (suite === 'all' || r.suite === suite)), count = (s) => all.filter((r) => r.severity === s).length;
     const notRun = SUITES.filter((s) => !Object.keys(state.runs).some((k) => k.startsWith(s.id + '.')));
     const up = state.up, c = state.case, fuel = FLUIDS[c.prop.fuel] || FLUIDS['Jet A-1'];
@@ -38,7 +38,7 @@ export async function render(root, _p, { setCrumb }) {
     const perPkm = co2 != null && pax && dist ? (1000 * co2) / (pax * (c.econ.load_factor || 1) * dist) : null;
     const grid = (await idb.get('live.grid.gb'))?.data?.gCO2_kWh;
     const saf = FLUIDS['SAF (HEFA-SPK)'], scen = blockFuel ? [['Current fuel', co2 ?? blockFuel * fuel.co2_per_kg], ['30% sustainable aviation fuel blend', blockFuel * (0.7 * fuel.co2_per_kg + 0.3 * saf.co2_per_kg * saf.lifecycle_factor)], ['100% sustainable aviation fuel', blockFuel * saf.co2_per_kg * saf.lifecycle_factor], ['1% drag reduction', (co2 ?? blockFuel * fuel.co2_per_kg) * 0.99], ['3% lighter empty mass', (co2 ?? blockFuel * fuel.co2_per_kg) * (1 - 0.03 * 0.6 * (c.mass.oew_kg / c.mass.mtow_kg))]] : null;
-    const scoreRows = SCORE.filter(([s, k]) => typeof up[s]?.[k] === 'number').map(([s, k, label, unit]) => [`${suiteMeta(s).n}. ${suiteMeta(s).short}`, label, up[s][k], unit]);
+    const scoreRows = SCORE.filter(([s, k]) => typeof up[s]?.[k] === 'number').map(([s, k, label, unit]) => [`${suiteMeta(s).d}. ${suiteMeta(s).short}`, label, up[s][k], unit]);
 
     setKids(host, 
       h('div', { class: 'page-h' }, h('div', { class: 'grow' }, h('div', { class: 'eyebrow' }, 'From numbers to action'), h('h1', null, 'Decision support'), h('p', null, 'Each analysis interprets its own results against engineering criteria and says what to do about them. This page gathers those findings across all suites, most urgent first, alongside the sustainability and cost picture.')),
@@ -57,9 +57,9 @@ export async function render(root, _p, { setCrumb }) {
       h('div', { class: 'gap' }),
       all.length ? card('Findings and recommendations', h('div', { class: 'stack' },
         h('div', { class: 'row' }, h('div', { class: 'chips', style: { paddingBottom: 0 } }, [['all', `All (${all.length})`], ['critical', `Act now (${count('critical')})`], ['warn', `Attention (${count('warn')})`], ['advise', `Opportunities (${count('advise')})`], ['info', `Notes (${count('info')})`]].map(([k, l]) => h('button', { class: `chip ${sev === k ? 'on' : ''}`, onclick: () => { sev = k; paint(); } }, l))),
-          h('select', { class: 'inp', style: { width: 'auto' }, 'aria-label': 'Filter by suite', onchange: (e) => { suite = e.target.value; paint(); } }, h('option', { value: 'all' }, 'All suites'), [...new Set(all.map((r) => r.suite))].map((s) => h('option', { value: s, selected: suite === s }, `${suiteMeta(s).n}. ${suiteMeta(s).short}`)))),
-        shown.length ? shown.map((r) => recCard(r, { hash: `#/suite/${r.suite}/${r.analysis}`, label: `${suiteMeta(r.suite).n}. ${suiteMeta(r.suite).short} →` })) : h('p', { class: 'muted' }, 'Nothing matches this filter.'))) : null,
-      notRun.length && notRun.length < 26 ? card('Suggested next steps', h('div', { class: 'stack' }, h('p', { class: 'muted small' }, 'These suites have no results yet for this case, so their findings are missing from the picture above.'), h('div', { class: 'row' }, notRun.map((s) => h('a', { class: 'chip', href: `#/suite/${s.id}` }, `${s.n}. ${s.short}`)))), { collapsible: true }) : null,
+          h('select', { class: 'inp', style: { width: 'auto' }, 'aria-label': 'Filter by suite', onchange: (e) => { suite = e.target.value; paint(); } }, h('option', { value: 'all' }, 'All suites'), [...new Set(all.map((r) => r.suite))].map((s) => h('option', { value: s, selected: suite === s }, `${suiteMeta(s).d}. ${suiteMeta(s).short}`)))),
+        shown.length ? shown.map((r) => recCard(r, { hash: `#/suite/${r.suite}/${r.analysis}`, label: `${suiteMeta(r.suite).d}. ${suiteMeta(r.suite).short} →` })) : h('p', { class: 'muted' }, 'Nothing matches this filter.'))) : null,
+      notRun.length && notRun.length < 26 ? card('Suggested next steps', h('div', { class: 'stack' }, h('p', { class: 'muted small' }, 'These suites have no results yet for this case, so their findings are missing from the picture above.'), h('div', { class: 'row' }, notRun.map((s) => h('a', { class: 'chip', href: `#/suite/${s.id}` }, `${s.d}. ${s.short}`)))), { collapsible: true }) : null,
       h('div', { class: 'gap' }),
       h('div', { class: 'note' }, icon('info'), h('div', null, 'Recommendations follow from the models and inputs stated in each analysis and name the criterion they rest on. Prices, rates and reference conditions come from the live feeds where available', Object.values(liveStatus).some((v) => v.ok) ? '' : ' (none reachable yet on this device)', '. They support engineering judgement; they do not replace it.')));
     if (scen) { const el = host.querySelector('#sus-plot'); if (el) plots.push(renderPlot(el, { type: 'bar', title: 'Mission CO₂ under improvement scenarios', ylabel: 'CO₂ per mission [kg]', categories: scen.map((s) => s[0]), series: [{ name: 'CO₂', y: scen.map((s) => s[1]) }] })); }

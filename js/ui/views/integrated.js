@@ -44,13 +44,13 @@ export async function render(root, _p, { setCrumb }) {
       svg.querySelectorAll('.nd').forEach((g) => g.classList.toggle('hot', g.dataset.id === id));
       if (!id) return;
       const ins = links.filter((l) => l.to === id), outs = links.filter((l) => l.from === id), m = suiteMeta(id);
-      setKids(detail, h('b', { style: { color: 'var(--ink)' } }, `${m.n}. ${m.short} `), h('a', { href: `#/suite/${id}` }, 'open'), h('br'),
+      setKids(detail, h('b', { style: { color: 'var(--ink)' } }, `${m.d}. ${m.short} `), h('a', { href: `#/suite/${id}` }, 'open'), h('br'),
         'Receives: ', ins.length ? ins.map((l) => `${suiteMeta(l.from).short} (${l.c.keys.slice(0, 3).join(', ')}${l.c.keys.length > 3 ? '…' : ''})`).join('; ') : 'the shared case only', h('br'), 'Feeds: ', outs.length ? outs.map((l) => suiteMeta(l.to).short).join(', ') : 'reports and decision support');
     };
     for (const s of SUITES) {
       const [x, y, a] = pos[s.id], runs = Object.entries(state.runs).filter(([k]) => k.startsWith(s.id + '.')).map(([, v]) => v.status), st = runs.includes('bad') ? 'bad' : runs.includes('warn') ? 'warn' : runs.length ? 'ok' : '';
       const g = h('g', { class: `nd ${st}`, dataset: { id: s.id }, tabindex: 0, onmouseenter: () => focus(s.id), onfocus: () => focus(s.id), onclick: () => focus(s.id), ondblclick: () => (location.hash = `#/suite/${s.id}`) }, h('circle', { cx: x, cy: y, r: 13 }));
-      const t = h('text', { x, y: y + 4, 'text-anchor': 'middle', style: { fontWeight: 650, pointerEvents: 'none' } }); t.textContent = s.n; g.append(t);
+      const t = h('text', { x, y: y + 4, 'text-anchor': 'middle', style: { fontWeight: 650, pointerEvents: 'none' } }); t.textContent = s.d; g.append(t);
       const lx = cx + (R + 22) * Math.cos(a), ly = cy + (R + 22) * Math.sin(a), right = Math.cos(a) > 0.15, left = Math.cos(a) < -0.15;
       const lab = h('text', { x: lx, y: ly + 4, 'text-anchor': right ? 'start' : left ? 'end' : 'middle', style: { fontSize: '9.5px', fill: 'var(--ink-2)' } }); lab.textContent = s.short.length > 14 ? s.short.slice(0, 13) + '…' : s.short; g.append(lab);
       svg.append(g);
@@ -73,7 +73,7 @@ export async function render(root, _p, { setCrumb }) {
       out.append(
         h('div', { class: 'kpis' }, kp('Analyses solved', ok.length), kp('Skipped (not applicable)', skipped.length), kp('Failed', failed.length, failed.length ? 'bad' : 'ok'), kp('Critical findings', crit, crit ? 'bad' : 'ok'), kp('Findings needing attention', recs.filter((r) => r.severity === 'warn').length), kp('Wall time', (Date.now() - t0) / 1000, '', 's')),
         h('div', { class: 'row' }, btn('See the recommendations', () => (location.hash = '#/decisions'), { ic: 'bulb', kind: 'primary' }), btn('Build the report', () => (location.hash = '#/reports'), { ic: 'doc' })),
-        card(null, dataTable({ title: 'Execution order and outcome', columns: ['#', 'Suite', 'Analysis', 'Outcome', 'Time [ms]', 'Warnings', 'Findings'], rows: last.log.map((e) => [suiteMeta(e.suite).n, suiteMeta(e.suite).short, e.title, e.error ? `Failed: ${e.error}` : e.skipped ? 'Skipped — not applicable' : e.payload.res.kpis.some((k) => k.status === 'bad') ? 'Limit exceeded' : e.payload.res.kpis.some((k) => k.status === 'warn') ? 'Check' : 'OK', e.payload?.res.elapsed_ms ?? null, e.payload?.res.warnings.length ?? null, e.payload?.recs.length ?? null]) }, { max: 400 })),
+        card(null, dataTable({ title: 'Execution order and outcome', columns: ['#', 'Suite', 'Analysis', 'Outcome', 'Time [ms]', 'Warnings', 'Findings'], rows: last.log.map((e) => [suiteMeta(e.suite).d, suiteMeta(e.suite).short, e.title, e.error ? `Failed: ${e.error}` : e.skipped ? 'Skipped — not applicable' : e.payload.res.kpis.some((k) => k.status === 'bad') ? 'Limit exceeded' : e.payload.res.kpis.some((k) => k.status === 'warn') ? 'Check' : 'OK', e.payload?.res.elapsed_ms ?? null, e.payload?.res.warnings.length ?? null, e.payload?.recs.length ?? null]) }, { max: 400 })),
         card('Headline outputs on the data bus', busTable(), { collapsible: true }));
       drawMap();
     } catch (e) { msg.textContent = ''; if (e.message !== 'Cancelled') out.append(h('div', { class: 'note bad' }, icon('warn'), h('div', null, e.message))); else toast('Run stopped.', 'info'); }
@@ -82,7 +82,7 @@ export async function render(root, _p, { setCrumb }) {
   const kp = (label, value, st = '', unit = '') => h('div', { class: `kpi ${st}` }, h('span', { class: 'l' }, label), h('div', { class: 'v' }, num(value), unit ? h('small', null, unit) : null));
   function busTable() {
     const rows = [];
-    for (const n of nodes) for (const p of n.provides) { const v = state.up[n.id]?.[p.key]; rows.push([`${suiteMeta(n.id).n}. ${suiteMeta(n.id).short}`, p.label, typeof v === 'number' ? v : null, p.unit || '', typeof v === 'number' ? 'published' : 'not available for this aircraft']); }
+    for (const n of nodes) for (const p of n.provides) { const v = state.up[n.id]?.[p.key]; rows.push([`${suiteMeta(n.id).d}. ${suiteMeta(n.id).short}`, p.label, typeof v === 'number' ? v : null, p.unit || '', typeof v === 'number' ? 'published' : 'not available for this aircraft']); }
     return dataTable({ title: '', columns: ['Suite', 'Quantity', 'Value', 'Unit', 'Status'], rows }, { max: 400 });
   }
   if (Object.keys(state.runs).length) out.append(card('Headline outputs on the data bus', busTable(), { collapsible: true, open: false }));
