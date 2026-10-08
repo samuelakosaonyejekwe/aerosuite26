@@ -131,13 +131,27 @@ async function registerSW() {
   if (!('serviceWorker' in navigator) || location.protocol === 'file:') return;
   try {
     const reg = await navigator.serviceWorker.register('sw.js');
-    const hadController = !!navigator.serviceWorker.controller; let reloaded = false; // reload only for an update, never on the first install
-    navigator.serviceWorker.addEventListener('controllerchange', () => { if (hadController && !reloaded) { reloaded = true; toast('Updated to the latest version.', 'ok', 2500); setTimeout(() => location.reload(), 600); } });
+    // Update prompt: when a newer version has been downloaded and is waiting, ask before switching to it.
+    const hadController = !!navigator.serviceWorker.controller; let reloading = false;
+    const offer = (w) => { if (w && navigator.serviceWorker.controller) showUpdatePrompt(() => w.postMessage({ type: 'skip-waiting' })); };
+    offer(reg.waiting);
+    reg.addEventListener('updatefound', () => { const w = reg.installing; w?.addEventListener('statechange', () => { if (w.state === 'installed') offer(w); }); });
+    navigator.serviceWorker.addEventListener('controllerchange', () => { if (hadController && !reloading) { reloading = true; location.reload(); } });
     setInterval(() => reg.update().catch(() => {}), 30 * 60e3);                     // look for app updates while open
     document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible') reg.update().catch(() => {}); });
     // background refresh of live data when the installed app is closed (supported browsers only)
     try { const perm = await navigator.permissions.query({ name: 'periodic-background-sync' }); if (perm.state === 'granted' && reg.periodicSync) await reg.periodicSync.register('refresh-live', { minInterval: 6 * 3600e3 }); } catch { /* not supported */ }
   } catch (e) { console.warn('Service worker registration failed', e); }
+}
+
+/** Persistent banner inviting the person to switch to the newly downloaded version. */
+function showUpdatePrompt(apply) {
+  if (document.querySelector('.update-bar')) return;
+  const bar = h('div', { class: 'update-bar', role: 'alert' }, icon('refresh', 20),
+    h('span', null, h('b', null, 'A new version of AeroSuite 26 is ready. '), 'Update to get the latest fixes and features. Your case and results are kept.'),
+    h('button', { class: 'btn primary', onclick: (e) => { e.target.disabled = true; e.target.textContent = 'Updating…'; apply(); setTimeout(() => location.reload(), 4000); } }, 'Update now'),
+    h('button', { class: 'btn ghost', onclick: () => bar.remove(), title: 'Keep working; the prompt returns next time you open the app' }, 'Later'));
+  document.body.append(bar);
 }
 
 // ---- command palette ----------------------------------------------------------------------

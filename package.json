@@ -10,7 +10,8 @@
     "build": "node tools/build.mjs",
     "test:full": "node tests/run.mjs",
     "test:ui": "node tests/ui.mjs",
-    "test:offline": "node tests/offline.mjs"
+    "test:offline": "node tests/offline.mjs",
+    "test:update": "node tests/update.mjs"
   },
   "license": "UNLICENSED",
   "devDependencies": {
