@@ -151,8 +151,11 @@ jobs:
           cd "$WORK"
           export NP="$THREADS" OMP_NUM_THREADS="$THREADS"
           if [ "$SOLVER" = "openfoam" ]; then
-            set +u
+            # the OpenFOAM environment script returns non-zero from harmless probes, so it cannot be sourced under "set -e"
+            set +eu
             source "/usr/lib/openfoam/openfoam${OPENFOAM_VERSION}/etc/bashrc"
+            set -e
+            command -v blockMesh snappyHexMesh simpleFoam >/dev/null || { echo "::error::The OpenFOAM environment did not load."; exit 1; }
           fi
           bash run.sh
 
