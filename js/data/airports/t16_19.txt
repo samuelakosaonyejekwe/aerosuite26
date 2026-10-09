@@ -1,0 +1,6 @@
+#NO|H
+ENBA|1||Barentsburg Heliport, Heerodden|81011|42058|28
+#NO|M
+ENSB|1|LYR|Svalbard Airport, Longyear|82461|54656|27|09,2319,45,1,1,105,,270,-4760,19,61,-280,5070,22,120
+#NO|S
+ENAS|||Ny-Ålesund Airport, Hamnerabben|89275|18743|15|12,927,40,1,0,118,,200,-1900,,,-190,1900

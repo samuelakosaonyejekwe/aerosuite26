@@ -1,0 +1,4 @@
+#GL|H
+BGSC||OBY|Ittoqqortoormiit~2|4882|80283|73
+#GL|M
+BGCO|1|CNP|Neerlerit Inaat~1|7431|73495|14|18,1000,30,5,1,157,,238,-300,14,,-593,747,3

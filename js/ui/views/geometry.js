@@ -2,7 +2,7 @@
 // measure, section, mesh sections, and pass quantities to the shared case. Not a CAD system.
 
 import { h, setKids, icon, clear, add, num, btn, badge, card, empty, toast, pickFiles, downloadText } from '../dom.js';
-import { state, patchCase, idb, emit } from '../../core/store.js';
+import { state, patchCase, setCase, idb, emit } from '../../core/store.js';
 import { createViewer } from '../viewer.js';
 import { renderPlot } from '../plots.js';
 import { dataTable } from '../results.js';
@@ -117,6 +117,7 @@ export async function render(root, _p, { setCrumb }) {
     panel.append(card('Measure and send to the case', h('div', { class: 'stack' },
       h('p', { class: 'muted small' }, metric ? 'Dimensions taken from the model can be written straight into the shared case, where every suite picks them up.' : 'Confirm the length unit above to enable these.'),
       h('div', { class: 'row' }, apply('Wing span', 'wing', 'b_m', d[1]), apply('Fuselage length', 'fuselage', 'len_m', d[0]), apply('Fuselage diameter', 'fuselage', 'dia_m', Math.max(d[2], 0)), apply('Rotor radius', 'rotor', 'R_m', Math.max(d[0], d[1]) / 2), apply('Propeller diameter', 'prop', 'prop_dia_m', Math.max(d[1], d[2]))),
+      a?.nTris && lib.simplifyForSolver ? h('div', { class: 'row' }, btn('Fly this shape in the 3-D flow solver', () => { try { const sh = lib.simplifyForSolver(m, 3000); state.case.shape = { ...sh, name: m.name, units: 'm' }; setCase(state.case, state.preset); toast('Shape sent. Open Suite 1 → 3-D RANS to run it.', 'ok'); location.hash = '#/suite/cfd/rans3d'; } catch (err) { toast(`Could not prepare the shape: ${err.message}`, 'bad'); } }, { ic: 'flow', kind: 'primary sm', disabled: !metric, title: metric ? 'Simplify the surface and hand it to the immersed-boundary Navier–Stokes solver' : 'Confirm units first' }), state.case.shape ? btn('Remove the shape from the case', () => { delete state.case.shape; setCase(state.case, state.preset); toast('Shape removed; the solver returns to the parametric wing.', 'info'); paintPanel(); }, { kind: 'sm ghost' }) : null) : null,
       h('div', { class: 'row small' }, 'Material for mass properties', matSel, btn('Compute mass properties', mass, { kind: 'sm' })), massHost), { collapsible: true }));
 
     // --- sectioning, meshing and section properties

@@ -1,0 +1,4 @@
+#KI|S
+PLWN|1|TNQ|Washington Island~6|46984|96056|9
+#UM|S
+PLPA|1||Palmyra (Cooper)~1|58887|79221|2|6,1524,46,9,0

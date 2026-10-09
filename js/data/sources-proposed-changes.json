@@ -1,0 +1,279 @@
+{
+ "retrieved": "2026-10-09",
+ "about": "Defaults that a reviewer should change or re-label because a verified source (js/data/sources.json, sourceId) gives a different value. kind: \"default\" = change the input default; \"code\" = hard-coded constant or logic; \"data\" = js/data/materials.js entry; \"label\" = keep the value, fix help text / label; \"review\" = evidence conflicts or is incomplete, decide before changing. \"to\": null means no replacement value is proposed. confidence reflects how directly the source applies to the default, not the quality of the source.",
+ "changes": [
+  {
+   "suite": "s26-economics",
+   "analysis": "",
+   "inputKey": "crew_usd_fh",
+   "kind": "default",
+   "from": 950,
+   "to": 1378,
+   "reason": "FAA Economic Values Table 4-7: crew cost USD 1,378 per block hour for Part 121 passenger narrow-bodies ≥ 165k lb MTOW (Form 41, year ending June 2023). Per block hour, 2023 dollars.",
+   "sourceId": "faa-econ-crew-cost-narrowbody",
+   "confidence": "high"
+  },
+  {
+   "suite": "s26-economics",
+   "analysis": "",
+   "inputKey": "maint_usd_fh",
+   "kind": "default",
+   "from": 1150,
+   "to": 954,
+   "reason": "FAA Economic Values Table 4-7: maintenance USD 954 per block hour, same category and period.",
+   "sourceId": "faa-econ-maint-cost-narrowbody",
+   "confidence": "high"
+  },
+  {
+   "suite": "s26-economics",
+   "analysis": "",
+   "inputKey": "fuel_usd_kg",
+   "kind": "default",
+   "from": 0.85,
+   "to": 1.12,
+   "reason": "EIA U.S. Gulf Coast jet-fuel spot price averaged 3.38 USD/gal over Jan–Sep 2026 (range 2.03–4.39) = about 1.12 USD/kg at 0.80 kg/L; the default equals about 2.57 USD/gal. 2025 annual average was 2.11 USD/gal (0.70 USD/kg). Volatile: prefer the live feed and show the date.",
+   "sourceId": "eia-jet-fuel-gulf-coast-monthly-2026",
+   "confidence": "medium"
+  },
+  {
+   "suite": "s26-economics",
+   "analysis": "",
+   "inputKey": "saf_price_ratio",
+   "kind": "default",
+   "from": 2.5,
+   "to": 2.84,
+   "reason": "EASA 2024 ReFuelEU reference prices: aviation biofuels 2,085 EUR/t versus conventional 734 EUR/t (ratio 2.84); synthetic fuels 7,695 EUR/t (ratio 10.5).",
+   "sourceId": "easa-saf-reference-prices-2024",
+   "confidence": "high"
+  },
+  {
+   "suite": "s26-economics",
+   "analysis": "sustain",
+   "inputKey": "grid_g_kWh",
+   "kind": "default",
+   "from": 300,
+   "to": 367,
+   "reason": "EIA: U.S. utility-scale generation emitted about 0.81 lb CO2 per kWh in 2023 = 367 g/kWh. Regional value — keep editable and label the region.",
+   "sourceId": "eia-us-grid-co2-intensity-2023",
+   "confidence": "medium"
+  },
+  {
+   "suite": "s26-economics",
+   "analysis": "",
+   "inputKey": "landing_usd_t",
+   "kind": "label",
+   "from": 10,
+   "to": null,
+   "reason": "Only one published tariff was verified: JFK 2026 public landing area charge USD 8.47 per 1,000 lb MTOW = 18.7 USD/t (high-cost airport). No verified average exists for the default of 10; keep the value but label it illustrative or offer airport presets.",
+   "sourceId": "panynj-jfk-landing-charge-2026",
+   "confidence": "low"
+  },
+  {
+   "suite": "s26-economics",
+   "analysis": "",
+   "inputKey": "batt_usd_kWh",
+   "kind": "label",
+   "from": 350,
+   "to": null,
+   "reason": "Verified automotive pack costs are 139 USD/kWh (DOE, 2023) and 108 USD/kWh (BNEF 2025). No aviation-grade pack cost source was found; the default 350 is unverified — label it as an aviation-certification assumption rather than a market price.",
+   "sourceId": "doe-fotw-battery-pack-cost-2023",
+   "confidence": "low"
+  },
+  {
+   "suite": "s22-safety",
+   "analysis": "fta",
+   "inputKey": "beta",
+   "kind": "default",
+   "from": 0.01,
+   "to": 0.05,
+   "reason": "NUREG/CR-5485 Table 3-1 generic common-cause screening values for a 1-of-2 redundant group are 0.05 (staggered testing) to 0.10 (non-staggered); 0.01 is five to ten times more optimistic than any verified generic value.",
+   "sourceId": "nureg-cr-5485-ccf-screening",
+   "confidence": "medium"
+  },
+  {
+   "suite": "s22-safety",
+   "analysis": "fta",
+   "inputKey": "t_latent",
+   "kind": "default",
+   "from": 500,
+   "to": 50,
+   "reason": "14 CFR 25.1309(b)(5)(iii) limits the summed probability of latent failures combined with each active failure to 1/1000. With the default standby-source rate 2e-5 /FH a 500 h check interval gives 1e-2; 50 h gives 1e-3. (Alternatively lower lam_batt.)",
+   "sourceId": "cfr-25-1309-latent",
+   "confidence": "medium"
+  },
+  {
+   "suite": "s09-fatigue",
+   "analysis": "sn",
+   "inputKey": "scatter",
+   "kind": "default",
+   "from": 4,
+   "to": 8,
+   "reason": "AC 23-13A para 2-26: an analysis-based safe life with S-N data uses a scatter factor of 8.0; 4.0 is the factor for a full-scale fatigue test with two specimens. The suite applies the factor to analytical S-N / ε-N / Miner lives. Applies equally to analyses \"en\" and \"spectrum\".",
+   "sourceId": "ac23-13a-analysis-scatter",
+   "confidence": "medium",
+   "alsoApplies": [
+    "en",
+    "spectrum"
+   ]
+  },
+  {
+   "suite": "s03-aeroelastic",
+   "analysis": "gust",
+   "inputKey": "U_ds",
+   "kind": "default",
+   "from": 15.24,
+   "to": 17.07,
+   "reason": "Current 14 CFR 25.341(a)(5): reference gust velocity 56.0 ft/s EAS at sea level (44.0 at 15,000 ft, 20.86 at 60,000 ft), used with the tuned 1−cos gust. 15.24 m/s (50 ft/s) is the superseded derived-gust value, still right only for the Pratt quasi-static formula (former 14 CFR 23.333/23.341). Apply only where the analysis represents a Part 25 tuned discrete gust; the default altitude of 10,000 m (32,800 ft) would give about 34.8 ft/s = 10.6 m/s by the same linear rule (my interpolation), before the flight-profile factor.",
+   "sourceId": "cfr-25-341-uref",
+   "confidence": "medium"
+  },
+  {
+   "suite": "s05-performance",
+   "analysis": "field",
+   "inputKey": "",
+   "kind": "code",
+   "from": 2.4,
+   "to": {
+    "2 engines": 2.4,
+    "3 engines": 2.7,
+    "4 engines": 3.0
+   },
+   "reason": "The OEI second-segment criterion is hard-coded at 2.4 %; 14 CFR 25.121(b)(1) requires 2.7 % for three-engine and 3.0 % for four-engine aeroplanes. Select by n_eng.",
+   "sourceId": "cfr-25-121-oei-gradient",
+   "confidence": "high",
+   "locator": "js/suites/s05-performance.js line ~210 (gradOEI >= 0.024)"
+  },
+  {
+   "suite": "s15-crash",
+   "analysis": "pulse",
+   "inputKey": "v0",
+   "kind": "default",
+   "from": 9.1,
+   "to": 10.67,
+   "reason": "The default seat pulse (14 g, 0.08 s) is the 14 CFR 25.562(b)(1) transport test, whose velocity change is 35 ft/s = 10.67 m/s. 9.1 m/s (30 ft/s) belongs to 14 CFR 27.562/29.562, whose pulse is 30 g within 0.031 s. Make v0, G_pulse and t_rise a consistent set per category (Part 25: 10.67 m/s, 14 g, 0.08 s; Part 27/29: 9.14 m/s, 30 g, 0.031 s; former Part 23: 9.45 m/s, 19/15 g, 0.05/0.06 s) and correct the help text (\"civil seat-test vertical velocity change\" is the rotorcraft value).",
+   "sourceId": "cfr-27-562-vertical-test",
+   "confidence": "medium"
+  },
+  {
+   "suite": "s15-crash",
+   "analysis": "emergency",
+   "inputKey": "g_side",
+   "kind": "label",
+   "from": 3,
+   "to": null,
+   "reason": "14 CFR 25.561(b)(3)(iii): 3.0 g on the airframe but 4.0 g on seats and their attachments. Keep 3.0 as the default for an item of mass; add the 4.0 g seat case to the help text.",
+   "sourceId": "cfr-25-561-g-side",
+   "confidence": "high"
+  },
+  {
+   "suite": "s13-icing",
+   "analysis": "impingement",
+   "inputKey": "mvd",
+   "kind": "label",
+   "from": null,
+   "to": null,
+   "reason": "Help text says supercooled-large-drop icing starts \"above about 50 µm\"; 14 CFR Part 25 Appendix O anchors SLD on MVD below/above 40 µm (the Appendix C continuous-maximum upper limit). Change the help text to 40 µm.",
+   "sourceId": "cfr-25-appO-sld-threshold",
+   "confidence": "high"
+  },
+  {
+   "suite": "s13-icing",
+   "analysis": "accretion",
+   "inputKey": "rho_ice",
+   "kind": "default",
+   "from": 900,
+   "to": 917,
+   "reason": "Density of ice Ih at 0 °C is 916.7 kg/m³ (glaze ice is close to this; rime ice is lower and the input remains a calibration parameter). Applies to every analysis that carries rho_ice.",
+   "sourceId": "ice-density",
+   "confidence": "low",
+   "alsoApplies": [
+    "protection",
+    "envelope",
+    "rotorice"
+   ]
+  },
+  {
+   "suite": "s11-acoustics",
+   "analysis": "spectrum",
+   "inputKey": "K_af",
+   "kind": "review",
+   "from": 0,
+   "to": null,
+   "reason": "The hard-coded clean-airframe constant 101.3 dB (with V/100 kt) could not be verified. The only source opened (NASA RP-1258 vol. 1, ch. 7, eq. 20, \"for jet aircraft\") prints OASPL = 50 log U + 10 log(δb/h²) + 7.5 dB with U in knots, i.e. 107.5 dB in the V/100 kt form — 6.2 dB higher. Review against Fink FAA-RD-77-29 (DTIC was unavailable) before changing; until then mark the constant unverified in the UI.",
+   "sourceId": "airframe-noise-fink-clean-oaspl",
+   "confidence": "low",
+   "locator": "js/suites/s11-acoustics.js line ~174 (+ 101.3)"
+  },
+  {
+   "suite": "s07-propulsion",
+   "analysis": "combustor",
+   "inputKey": "nox_a",
+   "kind": "code",
+   "from": 0.0986,
+   "to": null,
+   "reason": "The constants 0.0986 / 0.4 / 194.4 are confirmed (Stanford thesis eq. 5.4, a fit to one NASA ECCP / GE90-type dual-annular combustor) but the suite omits the humidity term exp(−H0/53.2) (factor 0.89 at ISA sea level, 60 % RH) and applies the fit to all engines. Add the humidity term and, for certified turbofans, take EI NOx from js/data/ref/engine-emissions.json instead (the correlation over-predicts the databank median above OPR ≈ 35).",
+   "sourceId": "edb-einox-takeoff-vs-opr",
+   "confidence": "medium"
+  },
+  {
+   "suite": "materials",
+   "analysis": "",
+   "inputKey": "",
+   "kind": "data",
+   "from": 205000000000.0,
+   "to": 200000000000.0,
+   "reason": "MIL-HDBK-5J: E = 29.0e3 ksi = 200 GPa for low-alloy steels (4340, 300M). Applies to METALS[\"Steel 4340 (QT)\"].E and METALS[\"Steel 300M\"].E.",
+   "sourceId": "mmpds-4340-260ksi",
+   "confidence": "high",
+   "dataKey": "METALS[\"Steel 4340 (QT)\"].E, METALS[\"Steel 300M\"].E"
+  },
+  {
+   "suite": "materials",
+   "analysis": "",
+   "inputKey": "",
+   "kind": "data",
+   "from": 113800000000.0,
+   "to": 110300000000.0,
+   "reason": "MIL-HDBK-5J Table 5.4.1.0(b): Ti-6Al-4V annealed E = 16.0e3 ksi = 110.3 GPa (and Poisson ratio 0.31 against the suite 0.342, G = 6.2e3 ksi = 42.7 GPa against 44 GPa).",
+   "sourceId": "mmpds-ti-6al-4v-annealed",
+   "confidence": "high",
+   "dataKey": "METALS[\"Ti-6Al-4V\"].E (also nu → 0.31, G → 42.7e9)"
+  },
+  {
+   "suite": "materials",
+   "analysis": "",
+   "inputKey": "",
+   "kind": "data",
+   "from": null,
+   "to": null,
+   "reason": "Suite yield/ultimate strengths are typical values about 5–11 % above MIL-HDBK-5J A-basis design allowables (2024-T3 sheet 441/324 MPa vs 483/345; 7075-T6 sheet 538/483 vs 572/503; Ti-6Al-4V plate 896/827 vs 950/880; Inconel 718 sheet 1241/1000 vs 1375/1100). Either add A-basis fields (Ftu_A, Fty_A) from the registry for margin-of-safety calculations, or label Sy/Su as \"typical, not allowable\" next to every result that uses them.",
+   "sourceId": "mmpds-2024-t3-sheet",
+   "confidence": "high",
+   "dataKey": "METALS[*].Sy, METALS[*].Su"
+  },
+  {
+   "suite": "materials",
+   "analysis": "",
+   "inputKey": "",
+   "kind": "review",
+   "from": null,
+   "to": null,
+   "reason": "IM7/8552: the Hexcel HexPly 8552 datasheet gives 0° tensile strength 2723 MPa, 0° compression 1689 MPa, E1 164 GPa, E2 11.7 GPa; the suite carries 2326 / 1200 / 171 / 9.08 from an unidentified characterisation set. Decide which data set the entry represents and cite it.",
+   "sourceId": "hexcel-im7-8552-ud",
+   "confidence": "medium",
+   "dataKey": "PLIES[\"IM7/8552 carbon-epoxy\"]"
+  },
+  {
+   "suite": "materials",
+   "analysis": "",
+   "inputKey": "",
+   "kind": "review",
+   "from": null,
+   "to": null,
+   "reason": "Battery cell entries are optimistic against the datasheets opened: Molicel INR-21700-P45B ≈ 231 Wh/kg with a 2.5 V cut-off and ≥ 80 % capacity guaranteed after 500 cycles (suite NMC: 250 Wh/kg, 2.8 V, 1200 cycles); Panasonic NCR18650B 243 Wh/kg, 2.5 V (suite NCA: 265 Wh/kg, 2.7 V). Cycle-life defaults (1200 / 1000 / 3000) are unverified.",
+   "sourceId": "molicel-p45b-cell-spec",
+   "confidence": "medium",
+   "dataKey": "BATTERIES[*]"
+  }
+ ]
+}

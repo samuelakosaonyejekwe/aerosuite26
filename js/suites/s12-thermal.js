@@ -131,7 +131,7 @@ const wall = {
         { type: 'line', title: 'Surface heat flux into the wall', xlabel: 'Time [s]', ylabel: 'Heat flux [W/m²]', series: [{ name: 'Outer face', x: thin(r.time), y: thin(r.qO) }, { name: 'Inner face', x: thin(r.time), y: thin(r.qI) }] },
       ],
       warnings, models: [`Finite-volume conduction, ${i.scheme} in time`, 'Harmonic-mean interface conductance with contact resistance', 'Radiation linearised by Picard iteration within each step'],
-      assumptions: ['One-dimensional heat flow normal to the wall', 'Constant material properties', 'Grey diffuse surfaces exchanging with a single environment temperature per face', 'Boundary conditions constant over the simulated time'],
+      assumptions: ['One-dimensional heat flow normal to the wall', 'Constant material properties', 'Grey diffuse surfaces exchanging with a single environment temperature per face', 'Boundary conditions constant over the simulated time', 'Insulation properties, film coefficients, emissivities and the allowable temperature default to typical values'],
     };
   },
   convergence: { param: 'nNodes', label: 'Cells through the wall', levels: [8, 16, 32, 64], metric: 'T_inner_K' },
@@ -158,7 +158,7 @@ const wall = {
     const o = res.outputs, out = [];
     if (o.thermal_margin_K < 0) out.push({ severity: 'critical', title: 'Wall exceeds its allowable temperature', detail: `Peak ${o.T_max_K.toFixed(0)} K against a limit of ${i.T_limit.toFixed(0)} K.`, action: 'Add insulation or a thermal barrier, raise surface emissivity, lower absorbed flux (lighter paint) or select a higher-temperature material (titanium, CMC).', basis: 'Material temperature limit' });
     if (o.q_through_Wm2 && Math.abs(o.q_through_Wm2) > 60 && i.t2_mm > 0) out.push({ severity: 'advise', title: 'Significant heat leak through the wall', detail: `${Math.abs(o.q_through_Wm2).toFixed(0)} W/m² ${o.q_through_Wm2 < 0 ? 'leaves' : 'enters'} the inner space; every kW the environmental control system must make up costs bleed or electrical power and therefore fuel.`, action: 'Increase insulation thickness or reduce thermal bridges; carry the heat leak to Suite 20 (cabin load budget).', basis: 'Steady heat balance' });
-    if (i.T_i > 285 && o.T_inner_K < 283) out.push({ severity: 'advise', title: 'Cold inner surface: condensation risk', detail: `Inner surface settles at ${o.T_inner_K.toFixed(0)} K, likely below the cabin dew point.`, action: 'Check the dew point in Suite 20 and provide drainage or a vapour barrier; trapped moisture adds mass and promotes corrosion.', basis: 'Surface temperature versus dew point' });
+    if (i.T_i > 285 && o.T_inner_K < 283) out.push({ severity: 'advise', title: 'Cold inner surface: condensation risk', detail: `Inner surface settles at ${o.T_inner_K.toFixed(0)} K, likely below the dew point of the air inside.`, action: 'Check the dew point in Suite 20 and provide drainage or a vapour barrier; trapped moisture adds mass and promotes corrosion.', basis: 'Surface temperature versus dew point' });
     return out;
   },
 };
@@ -252,7 +252,7 @@ const plate2d = {
         { type: 'bar', title: 'Heat paths', ylabel: 'Heat flow [W]', categories: ['Edges', 'Surface convection'], series: [{ name: 'Heat removed', y: [r.Qe, r.Qc] }] },
       ],
       warnings, models: ['Five-point finite-difference conduction with surface-loss term', 'Successive over-relaxation with near-optimal relaxation factor', 'Area-weighted (conservative) source deposition'],
-      assumptions: ['Thin plate: temperature uniform through the thickness', 'Uniform effective in-plane conductivity', 'Uniform convection coefficient and air temperature; radiation folded into h', 'Component heat spread uniformly over its footprint'],
+      assumptions: ['Thin plate: temperature uniform through the thickness', 'Uniform effective in-plane conductivity', 'Uniform convection coefficient and air temperature; radiation folded into h', 'Component heat spread uniformly over its footprint', 'Board size, conductivity, component powers, convection coefficient and the 85 °C limit are typical illustrative values'],
     };
   },
   convergence: { param: 'nx', label: 'Grid intervals along the length', levels: [12, 24, 48, 96], metric: 'T_mean_K' },
@@ -339,7 +339,7 @@ const aeroheat = {
         { type: 'line', title: 'Heat flux along the surface', xlabel: 'Distance from leading edge [m]', ylabel: 'Heat flux [W/m²]', xlog: true, series: [{ name: 'Turbulent', x: xs, y: xs.map((x) => tb.q(i.T_wall, x).q) }, { name: 'Laminar', x: xs, y: xs.map((x) => lam.q(i.T_wall, x).q) }] },
       ],
       warnings, models: ['Recovery factor Pr^⅓ (turbulent) or Pr^½ (laminar)', 'Eckert reference-temperature flat-plate heat transfer', hyper ? 'Sutton–Graves stagnation-point heating (empirical, cold-wall with enthalpy-ratio correction)' : 'Cylinder stagnation-line correlation Nu = 1.14·Re^½·Pr^0.4'],
-      assumptions: ['Calorically perfect air, γ = 1.4, Pr = 0.71', 'Zero pressure gradient flat plate; local edge conditions equal to free stream', 'Skin in radiative equilibrium with no conduction into the structure', 'No shock or interference heating'],
+      assumptions: ['Calorically perfect air, γ = 1.4, Pr = 0.71', 'Zero pressure gradient flat plate; local edge conditions equal to free stream', 'Skin in radiative equilibrium with no conduction into the structure', 'No shock or interference heating', 'Emissivity and the allowable skin temperature default to typical long-term figures'],
     };
   },
   verify() {
@@ -400,7 +400,9 @@ const hx = {
   defaults: (c, up, d) => {
     const n = Math.max(1, c.prop.n_eng), turbine = ['turbofan', 'turbojet', 'turboprop', 'turboshaft'].includes(c.prop.type), elec = c.prop.type === 'electric', { a, V, M } = cruise(c);
     const Pref = d.P_total || d.T_total * Math.max(V, 60), Q = Math.max(20, (up.propulsion?.heat_rejection_W ?? (elec ? up.electrical?.elec_losses_W ?? 0.08 * Pref : (turbine ? 0.0025 : 0.08) * Pref)) / n);
-    const fuel = turbine && c.mass.fuel_kg > 0, ff = (up.propulsion?.fuel_flow_kgs ?? up.performance?.fuel_flow_cruise_kgs ?? (d.T_total ? c.prop.tsfc_kg_Ns * d.T_total * 0.22 : c.prop.bsfc_kg_Ws * d.P_total * 0.7)) / n;
+    const ff = (up.propulsion?.fuel_flow_kgs ?? up.performance?.fuel_flow_cruise_kgs ?? (d.T_total ? c.prop.tsfc_kg_Ns * d.T_total * 0.22 : c.prop.bsfc_kg_Ws * d.P_total * 0.7)) / n;
+    // fuel is the sink only while the cruise fuel flow can take the load at 80% effectiveness below its 393 K outlet limit; otherwise a ram-air cooler
+    const fuel = turbine && c.mass.fuel_kg > 0 && Q <= 0.8 * Math.max(ff, 1e-4) * FLUIDS['Jet A-1'].cp * (393 - 290);
     const hot = elec ? HXN[4] : HXN[1], cold = fuel ? HXN[2] : HXN[0], Th = elec ? 328 : 400, Tc = fuel ? 290 : Math.min(recovery(a.T, M), 320), m_hot = Q / (HXF[hot].cp * (elec ? 8 : 30));
     const m_cold = fuel ? Math.max(ff, 1e-4) : Q / (CP_AIR * 0.45 * (Th - Tc)), Cmin = Math.min(m_hot * HXF[hot].cp, m_cold * HXF[cold].cp), U = fuel ? 600 : 90, D = fuel || !elec ? 0.004 : 0.006;
     // passages sized for about 1 m/s of liquid so that the default pressure drop is realistic
@@ -436,7 +438,7 @@ const hx = {
       plots, warnings,
       tables: [{ title: 'Stream summary', columns: ['Stream', 'Fluid', 'Capacity rate [W/K]', 'Inlet [K]', 'Outlet [K]'], rows: [['Hot', i.hot, r.Ch, i.Th_in, r.Tho], ['Cold', i.cold, r.Cc, i.Tc_in, r.Tco]] }],
       models: ['ε–NTU relations (counterflow, parallel flow; crossflow unmixed–unmixed approximation)', 'Log-mean temperature difference cross-check', 'Darcy–Weisbach passage pressure drop'],
-      assumptions: ['Constant specific heats and overall coefficient', 'No heat loss to the surroundings, no phase change', 'Smooth passages; entrance, exit and header losses not included'],
+      assumptions: ['Constant specific heats and overall coefficient', 'No heat loss to the surroundings, no phase change', 'Smooth passages; entrance, exit and header losses not included', 'Overall coefficient, passage geometry, inlet temperatures and the fuel outlet limit are typical values; without upstream data the heat load is a class-level estimate (0.25% of propulsive power for turbine oil systems, 8% of shaft power for piston and electric drives)'],
     };
   },
   verify() {
@@ -537,7 +539,7 @@ const network = {
       ],
       plots, warnings,
       models: ['Three-node resistance–capacitance network, BDF2 implicit integration', i.mode === MODES[0] ? 'Churchill–Chu vertical-plate natural convection (empirical)' : i.mode === MODES[1] ? 'Flat-plate forced convection, laminar/mixed (empirical)' : 'Prescribed cold-plate resistance', 'Linearised grey-body radiation from the sink'],
-      assumptions: ['Each node is isothermal (lumped)', 'Air properties at film temperature and bay pressure', 'Constant ambient or coolant temperature', 'Single dissipating node; no temperature dependence of the heat load'],
+      assumptions: ['Each node is isothermal (lumped)', 'Air properties at film temperature and bay pressure', 'Constant ambient or coolant temperature', 'Single dissipating node; no temperature dependence of the heat load', 'Resistances, heat capacities and sink size default to generic values scaled from the heat load; the temperature limits are typical figures'],
     };
   },
   convergence: { param: 'nSteps', label: 'Time steps', levels: [25, 50, 100, 200, 400], metric: 'T_end_K' },
@@ -569,7 +571,7 @@ function strainLife(m, ea) {
 }
 function stressCalc(i) {
   const m = metal(i.mat), m2 = metal(i.mat2), fr = i.constraint === CONSTR[2] ? i.restraint : 1, bi = i.constraint === CONSTR[1] ? 1 / (1 - m.nu) : 1;
-  const sig = m.E * m.alpha * i.dT * fr * bi, sigGrad = (m.E * m.alpha * i.dT_grad) / (2 * (1 - m.nu));
+  const sig = -m.E * m.alpha * i.dT * fr * bi, sigGrad = (m.E * m.alpha * i.dT_grad) / (2 * (1 - m.nu));
   // bimaterial strip (Timoshenko 1925): curvature when free, interface force when held flat
   const t1 = i.t1_mm / 1e3, t2 = i.t2_mm / 1e3, hh = t1 + t2, mm = t1 / t2, nn = m.E / m2.E, da = m2.alpha - m.alpha;
   const kappa = (6 * da * i.dT * (1 + mm) ** 2) / (hh * (3 * (1 + mm) ** 2 + (1 + mm * nn) * (mm * mm + 1 / (mm * nn))));
@@ -602,7 +604,7 @@ const stress = {
     return {
       kpis: [
         kp('sigma_thermal_Pa', 'Stress from restrained expansion', r.sig, 'Pa', undefined, r.sig < 0 ? 'Compressive' : 'Tensile'),
-        kp('sigma_gradient_Pa', 'Surface stress from the temperature gradient', r.sigGrad, 'Pa'),
+        kp('sigma_gradient_Pa', 'Surface stress from the temperature gradient', r.sigGrad, 'Pa', undefined, 'Magnitude: compressive on the hot face, tensile on the cold face'),
         kp('sigma_total_Pa', 'Combined thermal stress magnitude', r.sTot, 'Pa', ms > 0.5 ? 'ok' : ms > 0 ? 'warn' : 'bad'),
         kp('ms_yield', 'Margin of safety on yield', ms, '-', ms > 0.5 ? 'ok' : ms > 0 ? 'warn' : 'bad'),
         kp('free_expansion_m', 'Free thermal growth over the part length', r.free, 'm'),
@@ -617,8 +619,8 @@ const stress = {
         { type: 'line', title: 'Thermal stress versus temperature change', xlabel: '|ΔT| [K]', ylabel: 'Stress [MPa]', series: [{ name: 'Uniaxial restrained', x: dTs, y: dTs.map((d) => (m.E * m.alpha * d) / 1e6) }, { name: 'Biaxial restrained', x: dTs, y: dTs.map((d) => (m.E * m.alpha * d) / (1 - m.nu) / 1e6) }, { name: 'As specified', x: dTs, y: dTs.map((d) => (Math.abs(r.sig) / Math.max(Math.abs(i.dT), 1e-9)) * d / 1e6) }], annotations: [{ y: m.Sy / 1e6, label: 'Yield' }, { x: Math.abs(i.dT), label: 'Design ΔT' }] },
         { type: 'line', title: 'Strain-life curve and operating point', xlabel: 'Cycles to initiation [-]', ylabel: 'Strain amplitude [-]', xlog: true, ylog: true, series: [{ name: i.mat, x: Nf, y: Nf.map((n) => (m.sf / m.E) * (2 * n) ** m.b + m.ef * (2 * n) ** m.c) }, { name: 'Operating point', x: [Math.min(r.life, 1e8)], y: [Math.max(r.ea, 1e-6)], style: 'points' }] },
       ],
-      warnings, models: ['Restrained thermal expansion σ = EαΔT (÷(1−ν) biaxial)', 'Linear-gradient plate bending stress EαΔT/(2(1−ν))', 'Timoshenko bimaterial strip', 'Coffin–Manson–Basquin strain-life with elastic local strain Kt·σ/E'],
-      assumptions: ['Linear elastic, temperature-independent properties (handbook room-temperature values, not design allowables)', 'Uniform temperature change plus a linear through-thickness gradient', 'No mean-stress or creep–fatigue interaction', 'Perfect bond in the bimaterial joint; edge peel stresses not evaluated'],
+      warnings, models: ['Restrained thermal expansion σ = −EαΔT (÷(1−ν) biaxial): compressive when heated, tensile when cooled', 'Linear-gradient plate bending stress EαΔT/(2(1−ν))', 'Timoshenko bimaterial strip', 'Coffin–Manson–Basquin strain-life with elastic local strain Kt·σ/E'],
+      assumptions: ['Linear elastic, temperature-independent properties (handbook room-temperature values, not design allowables)', 'Uniform temperature change plus a linear through-thickness gradient', 'No mean-stress or creep–fatigue interaction', 'Perfect bond in the bimaterial joint; edge peel stresses not evaluated', 'Restraint fraction, through-thickness gradient and stress-concentration defaults are typical values'],
     };
   },
   verify() {
@@ -628,7 +630,8 @@ const stress = {
     const bi = stressCalc({ ...b, mat: 'Al 2024-T3', mat2: 'Al 7075-T6', t1_mm: 2, t2_mm: 2 }), F = ((METALS['Al 7075-T6'].alpha - a2.alpha) * 100) / (1 / (a2.E * 0.002) + 1 / (METALS['Al 7075-T6'].E * 0.002));
     const Nl = strainLife(m, 0.004);
     return [
-      N.check('Fully restrained bar σ = EαΔT', r.sig, 205e9 * 12.3e-6 * 100, 1e-12, 'Timoshenko & Goodier'),
+      N.check('Fully restrained bar heated by 100 K: σ = −EαΔT (compression)', r.sig, -m.E * m.alpha * 100, 1e-12, 'Timoshenko & Goodier'),
+      N.check('Fully restrained bar cooled by 100 K is in tension', stressCalc({ ...b, dT: -100 }).sig, m.E * m.alpha * 100, 1e-12, 'Timoshenko & Goodier'),
       N.check('Timoshenko strip, m = n = 1: κ = 1.5·Δα·ΔT/h', tm(1e-6), (1.5 * 1e-6 * 100) / 0.002, 1e-12, 'Timoshenko (1925)'),
       N.check('Bimaterial joint force balance', bi.s1 * 0.002, F, 1e-12, 'Compatibility of two bonded bars'),
       N.check('Strain-life inversion round trip', (m.sf / m.E) * (2 * Nl) ** m.b + m.ef * (2 * Nl) ** m.c, 0.004, 1e-8, 'Coffin–Manson–Basquin'),
@@ -702,7 +705,7 @@ const radiation = {
         { type: 'line', title: 'Heat radiated to surface 2 versus its emissivity', xlabel: 'Emissivity of surface 2 [-]', ylabel: 'Heat absorbed [W]', series: [{ name: 'Absorbed by surface 2', x: e2, y: e2.map((e) => -radSolve({ ...i, eps2: e }).q2) }] },
       ],
       warnings, models: ['Radiosity network for a three-surface grey diffuse enclosure', 'Exact view factor for coaxial parallel disks', 'Jürges/McAdams wind convection h = 5.7 + 3.8·V (empirical)', 'Steady solar/convective/radiative skin balance'],
-      assumptions: ['Grey, diffuse, opaque isothermal surfaces; non-participating gas', 'Facing surfaces idealised as coaxial disks of equivalent area', 'Hot soak is steady with a single effective sky temperature', 'No ground-reflected solar radiation'],
+      assumptions: ['Grey, diffuse, opaque isothermal surfaces; non-participating gas', 'Facing surfaces idealised as coaxial disks of equivalent area', 'Hot soak is steady with a single effective sky temperature', 'No ground-reflected solar radiation', 'Emissivities, solar absorptivity, sky temperature and the skin temperature limit default to typical values'],
     };
   },
   verify() {

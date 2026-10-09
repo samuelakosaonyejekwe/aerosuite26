@@ -4,22 +4,25 @@ import { h, icon, clear, toast, add } from './ui/dom.js';
 import { SUITES, GROUPS } from './core/registry.js';
 import { state, on, setSetting } from './core/store.js';
 import { startLive, status as liveStatus } from './core/live.js';
+import { t, LANGS, lang, applyLang } from './ui/i18n.js';
+import { unitSystem } from './ui/units.js';
+import { pageGuide, toggleGuide } from './ui/guide.js';
 
 const VIEWS = {
   home: () => import('./ui/views/home.js'), case: () => import('./ui/views/case.js'), geometry: () => import('./ui/views/geometry.js'),
   suite: () => import('./ui/views/suite.js'), integrated: () => import('./ui/views/integrated.js'), decisions: () => import('./ui/views/decisions.js'),
-  live: () => import('./ui/views/livehub.js'), reports: () => import('./ui/views/reports.js'), about: () => import('./ui/views/about.js'),
+  live: () => import('./ui/views/livehub.js'), bridge: () => import('./ui/views/bridge.js'), share: () => import('./ui/views/share.js'), reports: () => import('./ui/views/reports.js'), about: () => import('./ui/views/about.js'),
 };
 const MAIN = [
   { path: 'home', label: 'Overview', ic: 'home' }, { path: 'case', label: 'Case & input portal', ic: 'sliders' }, { path: 'geometry', label: 'Geometry & mesh', ic: 'cube' },
-  { path: 'integrated', label: 'Integrated run', ic: 'graph' }, { path: 'decisions', label: 'Decision support', ic: 'bulb' }, { path: 'live', label: 'Live data', ic: 'globe' },
+  { path: 'integrated', label: 'Integrated run', ic: 'graph' }, { path: 'bridge', label: 'High-fidelity bridge', ic: 'external' }, { path: 'decisions', label: 'Decision support', ic: 'bulb' }, { path: 'live', label: 'Live data', ic: 'globe' },
   { path: 'reports', label: 'Reports & assurance', ic: 'doc' }, { path: 'about', label: 'Install, offline & about', ic: 'install' },
 ];
 /** Linear page order used by the previous/next arrows at the foot of every page. */
 export const SEQUENCE = [
   { hash: '#/home', label: 'Overview' }, { hash: '#/case', label: 'Case & input portal' }, { hash: '#/geometry', label: 'Geometry & mesh' },
   ...SUITES.map((s) => ({ hash: `#/suite/${s.id}`, label: `${s.d}. ${s.short}` })),
-  { hash: '#/integrated', label: 'Integrated run' }, { hash: '#/decisions', label: 'Decision support' }, { hash: '#/live', label: 'Live data' }, { hash: '#/reports', label: 'Reports & assurance' }, { hash: '#/about', label: 'Install, offline & about' },
+  { hash: '#/integrated', label: 'Integrated run' }, { hash: '#/bridge', label: 'High-fidelity bridge' }, { hash: '#/decisions', label: 'Decision support' }, { hash: '#/live', label: 'Live data' }, { hash: '#/reports', label: 'Reports & assurance' }, { hash: '#/about', label: 'Install, offline & about' },
 ];
 
 const app = document.getElementById('app');
@@ -28,7 +31,7 @@ const crumb = h('div', { class: 'crumb' });
 const backBtn = h('button', { class: 'arrow', title: 'Back (Alt+←)', 'aria-label': 'Go back', onclick: () => history.back() }, icon('back', 20));
 const fwdBtn = h('button', { class: 'arrow', title: 'Forward (Alt+→)', 'aria-label': 'Go forward', onclick: () => history.forward() }, icon('fwd', 20));
 const livePill = h('a', { class: 'pill', href: '#/live', title: 'Live data status' }, h('i', { class: 'dot' }), h('span', { class: 'txt' }, 'Live data'));
-const installBtn = h('button', { class: 'btn primary sm', hidden: true, onclick: () => installApp() }, icon('install', 16), h('span', { class: 'hide-sm' }, 'Install'));
+const installBtn = h('button', { class: 'btn primary sm', hidden: true, onclick: () => installApp() }, icon('install', 16), h('span', { class: 'hide-sm' }, t('Install')));
 const themeBtn = h('button', { class: 'icon-btn', title: 'Switch light / dark theme', 'aria-label': 'Switch theme', onclick: toggleTheme });
 const sideNav = h('nav', { class: 'nav', 'aria-label': 'Main' });
 const bottom = h('nav', { class: 'bottom', 'aria-label': 'Quick' });
@@ -40,8 +43,12 @@ function buildShell() {
   const top = h('header', { class: 'top' },
     h('button', { class: 'icon-btn menu-btn', 'aria-label': 'Open menu', onclick: () => app.classList.toggle('open') }, icon('menu')),
     backBtn, fwdBtn, crumb,
+    h('button', { class: 'icon-btn', title: 'How this page works', 'aria-label': 'Help for this page', onclick: toggleGuide }, h('b', { style: { fontSize: '1.05rem' } }, '?')),
     h('button', { class: 'icon-btn', title: 'Search suites, analyses and pages (Ctrl+K or /)', 'aria-label': 'Search', onclick: openPalette }, icon('search')),
-    livePill, installBtn, themeBtn);
+    livePill, installBtn,
+    h('button', { class: 'pill hide-sm', title: 'Switch between SI units and aviation units (ft, kt, lb, nmi)', onclick: () => { setSetting('units', unitSystem() === 'si' ? 'aviation' : 'si'); buildShell(); route(); } }, unitSystem() === 'si' ? 'SI' : 'ft · kt · lb'),
+    h('select', { class: 'pill', 'aria-label': 'Interface language', title: 'Interface language', onchange: (e) => { setSetting('lang', e.target.value); applyLang(); buildShell(); route(); } }, Object.entries(LANGS).map(([k, v]) => h('option', { value: k, selected: k === lang() }, v))),
+    themeBtn);
   clear(app);
   add(app, [side, h('div', { class: 'scrim', onclick: () => app.classList.remove('open') }), h('div', { class: 'main' }, top, page), bottom]);
   renderNav(); paintTheme(); paintLive();
@@ -49,7 +56,7 @@ function buildShell() {
 
 function renderNav() {
   const cur = location.hash || '#/home', links = [];
-  links.push(...MAIN.map((m) => h('a', { href: `#/${m.path}`, class: cur.startsWith(`#/${m.path}`) ? 'on' : '' }, icon(m.ic, 18), h('span', { class: 't' }, m.label))));
+  links.push(...MAIN.map((m) => h('a', { href: `#/${m.path}`, class: cur.startsWith(`#/${m.path}`) ? 'on' : '' }, icon(m.ic, 18), h('span', { class: 't' }, t(m.label)))));
   for (const g of GROUPS) {
     links.push(h('div', { class: 'nav-h' }, g));
     for (const s of SUITES.filter((x) => x.group === g)) {
@@ -60,7 +67,7 @@ function renderNav() {
   }
   clear(sideNav); add(sideNav, links);
   clear(bottom);
-  add(bottom, [['home', 'Overview', 'home'], ['case', 'Case', 'sliders'], ['suite/' + lastSuite(), 'Suites', 'layers'], ['integrated', 'Run all', 'graph'], ['decisions', 'Advice', 'bulb']].map(([p, l, ic]) => h('a', { href: `#/${p}`, class: cur.startsWith(`#/${p.split('/')[0]}`) ? 'on' : '' }, icon(ic, 21), l)));
+  add(bottom, [['home', 'Overview', 'home'], ['case', 'Case', 'sliders'], ['suite/' + lastSuite(), 'Suites', 'layers'], ['integrated', 'Run all', 'graph'], ['decisions', 'Advice', 'bulb']].map(([p, l, ic]) => h('a', { href: `#/${p}`, class: cur.startsWith(`#/${p.split('/')[0]}`) ? 'on' : '' }, icon(ic, 21), t(l))));
 }
 const lastSuite = () => { try { return sessionStorage.getItem('lastSuite') || 'cfd'; } catch { return 'cfd'; } };
 
@@ -79,14 +86,14 @@ export function pager() {
   const i = SEQUENCE.findIndex((s) => s.hash === base); if (i < 0) return null;
   const prev = SEQUENCE[i - 1], next = SEQUENCE[i + 1];
   return h('nav', { class: 'pager', 'aria-label': 'Previous and next page' },
-    prev ? h('a', { href: prev.hash, rel: 'prev' }, h('span', { class: 'arrow' }, icon('back', 18)), h('span', null, h('small', null, 'Previous'), prev.label)) : h('span'),
-    next ? h('a', { class: 'next', href: next.hash, rel: 'next' }, h('span', null, h('small', null, 'Next'), next.label), h('span', { class: 'arrow' }, icon('fwd', 18))) : null);
+    prev ? h('a', { href: prev.hash, rel: 'prev' }, h('span', { class: 'arrow' }, icon('back', 18)), h('span', null, h('small', null, t('Previous')), t(prev.label))) : h('span'),
+    next ? h('a', { class: 'next', href: next.hash, rel: 'next' }, h('span', null, h('small', null, t('Next')), t(next.label)), h('span', { class: 'arrow' }, icon('fwd', 18))) : null);
 }
 async function route() {
   const hash = location.hash || '#/home', parts = hash.replace(/^#\/?/, '').split('/').map(decodeURIComponent), name = VIEWS[parts[0]] ? parts[0] : 'home', token = ++navToken;
   trackHistory(hash); app.classList.remove('open');
   if (name === 'suite' && parts[1]) { try { sessionStorage.setItem('lastSuite', parts[1]); } catch { /* ignore */ } }
-  try { cleanup?.(); } catch (e) { console.error(e); } cleanup = null;
+  try { cleanup?.(); } catch (e) { console.error(e); } cleanup = null; delete page.dataset.route;
   renderNav();
   try {
     const mod = await VIEWS[name]();
@@ -95,6 +102,8 @@ async function route() {
     const res = await mod.render(page, parts.slice(1), { setCrumb: (t) => { crumb.textContent = t; document.title = `${t} · AeroSuite 26`; } });
     if (token !== navToken) return;
     cleanup = typeof res === 'function' ? res : null;
+    paintGuide(parts);
+    page.dataset.route = hash; // marks the page as fully rendered for this address (used by automated tests)
     const pg = pager(); if (pg) page.append(pg);
     if (!history.state?.keepScroll) window.scrollTo(0, 0);
   } catch (e) {
@@ -102,8 +111,9 @@ async function route() {
     add(page, [h('div', { class: 'note bad' }, icon('warn'), h('div', null, h('b', null, 'This page could not be shown. '), e.message || String(e), navigator.onLine === false ? ' You are offline and this part of the app has not been stored on the device yet. Open it once while online.' : ''))]);
   }
 }
+function paintGuide(parts) { page.querySelector('details.guide')?.remove(); const g = pageGuide(parts); if (g) page.prepend(g); }
 /** Change the hash without adding to history (used for tabs inside a page). */
-export function replaceHash(hash) { history.replaceState({ keepScroll: true }, '', hash); trackHistory(hash); renderNav(); }
+export function replaceHash(hash) { history.replaceState({ keepScroll: true }, '', hash); trackHistory(hash); renderNav(); paintGuide(hash.replace(/^#\/?/, '').split('/')); }
 
 // ---- theme --------------------------------------------------------------------------------
 function paintTheme() { const dark = document.documentElement.dataset.theme === 'dark'; clear(themeBtn).append(icon(dark ? 'sun' : 'moon')); document.querySelector('meta[name=theme-color]')?.setAttribute('content', dark ? '#0e1116' : '#1f6fd1'); }
@@ -164,7 +174,7 @@ async function openPalette() {
       for (const s of SUITES) { try { const d = await execute({ kind: 'describe', suite: s.id, case: state.case, up: state.up }); for (const a of d.analyses) paletteItems.push({ label: a.title, hint: `${s.d}. ${s.short}`, hash: `#/suite/${s.id}/${a.id}`, ic: s.icon, extra: a.summary }); } catch { /* suite not available */ } }
     });
   }
-  const input = h('input', { type: 'search', placeholder: 'Search suites, analyses and pages…', 'aria-label': 'Search', autocomplete: 'off' }), list = h('ul', { role: 'listbox' });
+  const input = h('input', { type: 'search', placeholder: t('Search suites, analyses and pages…'), 'aria-label': 'Search', autocomplete: 'off' }), list = h('ul', { role: 'listbox' });
   const el = h('div', { class: 'palette', onclick: (e) => { if (e.target === el) close(); } }, h('div', { class: 'box' }, input, list));
   let sel = 0, shown = [];
   const close = () => el.remove();
@@ -187,6 +197,7 @@ window.addEventListener('keydown', (e) => {
   if (e.altKey && e.key === 'ArrowLeft') history.back();
   if (e.altKey && e.key === 'ArrowRight') history.forward();
 });
+applyLang();
 buildShell();
 window.addEventListener('hashchange', route);
 window.addEventListener('online', () => { paintLive(); toast('Back online. Refreshing live data.', 'ok'); });

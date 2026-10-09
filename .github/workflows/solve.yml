@@ -1,0 +1,172 @@
+name: Solve
+run-name: Solve ${{ inputs.solver }} · ${{ inputs.case }} ${{ inputs.tag }}
+
+# Runs one case prepared by the app's high-fidelity bridge on an open-source solver and returns the
+# results as a workflow artifact. Started by hand (Actions tab → Solve → Run workflow) or by the app
+# through the GitHub API. It only reads the repository: nothing is committed or pushed.
+#
+# Where the case comes from:
+#   - a folder committed as cases/<case>/ (either the unpacked files or a single case.zip), on the branch
+#     given in "branch" (empty = the branch this workflow is started from), or
+#   - for small cases, the base64 text of the case zip pasted into "case_b64".
+
+on:
+  workflow_dispatch:
+    inputs:
+      solver:
+        description: Solver to run
+        required: true
+        type: choice
+        options: [su2, calculix, openfoam]
+      case:
+        description: Case name (the folder cases/<name>/, or a label when the case is sent inline)
+        required: true
+        type: string
+      branch:
+        description: Branch that holds cases/<name>/ (leave empty for the branch selected above)
+        required: false
+        type: string
+        default: ''
+      case_b64:
+        description: Small cases only — base64 of the case zip (leave empty to read cases/<name>/)
+        required: false
+        type: string
+        default: ''
+      tag:
+        description: Optional label that lets the app find this run
+        required: false
+        type: string
+        default: ''
+      threads:
+        description: Processor cores to use
+        required: false
+        type: string
+        default: '4'
+      su2_version:
+        description: SU2 release tag
+        required: false
+        type: string
+        default: v8.5.0
+      openfoam_version:
+        description: OpenFOAM release from openfoam.com (package openfoam<version>-default)
+        required: false
+        type: string
+        default: '2412'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: solve-${{ inputs.solver }}-${{ inputs.case }}-${{ inputs.tag }}
+  cancel-in-progress: false
+
+jobs:
+  solve:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 350
+    env:
+      SOLVER: ${{ inputs.solver }}
+      CASE_NAME: ${{ inputs.case }}
+      CASE_B64: ${{ inputs.case_b64 }}
+      THREADS: ${{ inputs.threads }}
+      SU2_VERSION: ${{ inputs.su2_version }}
+      OPENFOAM_VERSION: ${{ inputs.openfoam_version }}
+    steps:
+      - name: Check inputs
+        run: |
+          set -euo pipefail
+          [[ "$CASE_NAME" =~ ^[A-Za-z0-9._-]{1,80}$ ]] || { echo "::error::Case name may only contain letters, digits, dot, dash and underscore."; exit 1; }
+          [[ "$THREADS" =~ ^[0-9]{1,3}$ ]] || { echo "::error::threads must be a whole number."; exit 1; }
+          [[ "$SU2_VERSION" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]] || { echo "::error::su2_version must look like v8.5.0."; exit 1; }
+          [[ "$OPENFOAM_VERSION" =~ ^[0-9]{4}$ ]] || { echo "::error::openfoam_version must look like 2412."; exit 1; }
+
+      - name: Fetch the repository
+        if: ${{ inputs.case_b64 == '' }}
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.branch }}
+          persist-credentials: false
+          sparse-checkout: |
+            cases/${{ inputs.case }}
+          sparse-checkout-cone-mode: false
+
+      - name: Unpack the case
+        run: |
+          set -euo pipefail
+          WORK="$RUNNER_TEMP/work"
+          mkdir -p "$WORK"
+          if [ -n "$CASE_B64" ]; then
+            printf '%s' "$CASE_B64" | base64 -d > "$RUNNER_TEMP/case.zip"
+            unzip -q "$RUNNER_TEMP/case.zip" -d "$WORK"
+          elif [ -f "cases/$CASE_NAME/case.zip" ]; then
+            unzip -q "cases/$CASE_NAME/case.zip" -d "$WORK"
+          elif [ -d "cases/$CASE_NAME" ]; then
+            cp -a "cases/$CASE_NAME/." "$WORK/"
+          else
+            echo "::error::No case found: expected cases/$CASE_NAME/ in the repository or a case_b64 input."
+            exit 1
+          fi
+          [ -f "$WORK/run.sh" ] || { echo "::error::The case has no run.sh. Build it with the app's high-fidelity bridge."; exit 1; }
+          echo "WORK=$WORK" >> "$GITHUB_ENV"
+          echo "Case files:"; (cd "$WORK" && find . -type f | sort | head -200)
+
+      - name: Install SU2
+        if: ${{ inputs.solver == 'su2' }}
+        run: |
+          set -euo pipefail
+          DEST="$RUNNER_TEMP/su2"
+          mkdir -p "$DEST"
+          curl -fsSL --retry 3 -o "$RUNNER_TEMP/su2.zip" "https://github.com/su2code/SU2/releases/download/${SU2_VERSION}/SU2-${SU2_VERSION}-linux64-omp.zip"
+          unzip -q "$RUNNER_TEMP/su2.zip" -d "$DEST"
+          # the release archive wraps a second archive that holds bin/
+          if [ ! -x "$DEST/bin/SU2_CFD" ]; then
+            for inner in "$DEST"/*.zip; do [ -f "$inner" ] && unzip -q -o "$inner" -d "$DEST"; done
+          fi
+          chmod +x "$DEST"/bin/SU2_* || true
+          test -x "$DEST/bin/SU2_CFD"
+          echo "$DEST/bin" >> "$GITHUB_PATH"
+          echo "SU2_RUN=$DEST/bin" >> "$GITHUB_ENV"
+          "$DEST/bin/SU2_CFD" --help | head -n 1
+
+      - name: Install CalculiX
+        if: ${{ inputs.solver == 'calculix' }}
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq calculix-ccx
+          command -v ccx
+
+      - name: Install OpenFOAM
+        if: ${{ inputs.solver == 'openfoam' }}
+        run: |
+          set -euo pipefail
+          curl -fsSL https://dl.openfoam.com/add-debian-repo.sh | sudo bash
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq "openfoam${OPENFOAM_VERSION}-default"
+          test -f "/usr/lib/openfoam/openfoam${OPENFOAM_VERSION}/etc/bashrc"
+
+      - name: Run the solver
+        run: |
+          set -eo pipefail
+          cd "$WORK"
+          export NP="$THREADS" OMP_NUM_THREADS="$THREADS"
+          if [ "$SOLVER" = "openfoam" ]; then
+            set +u
+            source "/usr/lib/openfoam/openfoam${OPENFOAM_VERSION}/etc/bashrc"
+          fi
+          bash run.sh
+
+      - name: Upload the results
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: results-${{ inputs.solver }}-${{ inputs.case }}
+          path: |
+            ${{ runner.temp }}/work/**
+            !${{ runner.temp }}/work/**/polyMesh/**
+            !${{ runner.temp }}/work/processor*/**
+            !${{ runner.temp }}/work/**/*.12d
+            !${{ runner.temp }}/work/**/restart_flow.dat
+          if-no-files-found: warn
+          retention-days: 14
+          compression-level: 6

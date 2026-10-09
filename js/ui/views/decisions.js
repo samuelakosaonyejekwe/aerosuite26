@@ -17,7 +17,7 @@ const SCORE = [ // [suite, key, label, unit, good direction]
   ['fea', 'margin_of_safety', 'Structural margin of safety', '-'], ['fea', 'wing_struct_mass_kg', 'Wing structural mass', 'kg'], ['aeroelastic', 'flutter_margin', 'Flutter margin', '-'], ['fatigue', 'life_fh', 'Fatigue life', 'FH'],
   ['flightdyn', 'static_margin', 'Static margin', '-'], ['control', 'pm_deg', 'Phase margin', 'deg'], ['gear', 'gear_load_factor', 'Landing load factor', 'g'], ['crash', 'peak_g', 'Crash peak deceleration', 'g'],
   ['acoustics', 'OASPL_dB', 'Overall sound pressure level', 'dB'], ['thermal', 'thermal_margin_K', 'Thermal margin', 'K'], ['icing', 'antiice_power_W', 'Anti-icing power', 'W'], ['electrical', 'batt_soc_end', 'Battery state of charge at end', '-'],
-  ['safety', 'p_catastrophic_per_fh', 'Catastrophic failure probability', '/FH'], ['safety', 'dispatch_reliability', 'Dispatch reliability', '-'], ['mission', 'block_fuel_kg', 'Mission block fuel', 'kg'], ['mission', 'co2_kg', 'Mission CO₂', 'kg'],
+  ['safety', 'p_independent_per_fh', 'Catastrophic failure probability (independent failures)', '/FH'], ['safety', 'p_catastrophic_per_fh', 'Catastrophic failure probability incl. common-cause screening', '/FH'], ['safety', 'dispatch_reliability', 'Dispatch reliability', '-'], ['mission', 'block_fuel_kg', 'Mission block fuel', 'kg'], ['mission', 'co2_kg', 'Mission CO₂', 'kg'],
   ['economics', 'doc_usd_fh', 'Direct operating cost', 'USD/FH'], ['economics', 'npv_usd', 'Net present value', 'USD'], ['economics', 'irr', 'Internal rate of return', '-'], ['mdao', 'opt_improvement_pct', 'Improvement found by optimisation', '%'],
 ];
 

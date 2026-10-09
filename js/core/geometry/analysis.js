@@ -430,6 +430,41 @@ function cutPlane(P, T, rep, ax, iu, iv, value, onPlaneIsAbove) {
   return loops;
 }
 
+// ---------- decimation for the flow solver ----------
+const TO_METRES = { m: 1, mm: 1e-3, cm: 1e-2, in: 0.0254, ft: 0.3048 };
+/**
+ * Vertex-clustering decimation of the display surface down to at most maxTris triangles, as plain arrays.
+ * Vertices are binned on a uniform grid (the finest one that meets the budget) and each bin collapses to the mean
+ * of its vertices; triangles that collapse or coincide are dropped. Coordinates are converted to metres when the
+ * model's units are known (`inMetres` says whether that happened). Small features below the cell size are lost
+ * and thin walls may merge - this is a coarse shape for a coarse solver, not a healed or watertight surface.
+ */
+export function simplifyForSolver(model, maxTris = 3000) {
+  const P = model.positions, T = model.triangles, nV = P.length / 3, k = TO_METRES[model.units?.length] ?? 1, inMetres = !!TO_METRES[model.units?.length];
+  const budget = Math.max(4, Math.floor(+maxTris) || 3000), bb = bboxOf(P), L = Math.max(...bb.size);
+  const out = (positions, triangles, cell) => ({ positions, triangles, inMetres, scaleApplied: k, cell: cell * k, sourceTriangles: T.length / 3 });
+  if (!T.length || !(L > 0)) return out([], [], 0);
+  const build = (n) => {
+    const cell = L / n, ids = new Map(), cid = new Int32Array(nV), sum = [];
+    for (let i = 0; i < nV; i++) {
+      const key = n > 0 ? (Math.min(n - 1, Math.floor((P[3 * i] - bb.min[0]) / cell)) * 1048576 + Math.min(n - 1, Math.floor((P[3 * i + 1] - bb.min[1]) / cell))) * 1048576 + Math.min(n - 1, Math.floor((P[3 * i + 2] - bb.min[2]) / cell)) : i;
+      let c = ids.get(key); if (c === undefined) { c = sum.length / 4; ids.set(key, c); sum.push(0, 0, 0, 0); }
+      cid[i] = c; sum[4 * c] += P[3 * i]; sum[4 * c + 1] += P[3 * i + 1]; sum[4 * c + 2] += P[3 * i + 2]; sum[4 * c + 3]++;
+    }
+    const nc = sum.length / 4, tri = [], seen = new Set();
+    for (let t = 0; t < T.length; t += 3) { const a = cid[T[t]], b = cid[T[t + 1]], c = cid[T[t + 2]]; if (a === b || b === c || a === c) continue; const s3 = [a, b, c].sort((x, y) => x - y), key = (s3[0] * nc + s3[1]) * nc + s3[2]; if (seen.has(key)) continue; seen.add(key); tri.push(a, b, c); }
+    return { sum, tri, cell, nc };
+  };
+  const finish = ({ sum, tri, cell, nc }) => {
+    const used = new Int32Array(nc).fill(-1), pos = []; for (let i = 0; i < tri.length; i++) { const c = tri[i]; if (used[c] < 0) { used[c] = pos.length / 3; pos.push((sum[4 * c] / sum[4 * c + 3]) * k, (sum[4 * c + 1] / sum[4 * c + 3]) * k, (sum[4 * c + 2] / sum[4 * c + 3]) * k); } tri[i] = used[c]; }
+    return out(pos, tri, cell);
+  };
+  if (T.length / 3 <= budget) { const { rep } = weldMap(P, 0), used = new Int32Array(nV).fill(-1), pos = [], tri = []; for (let i = 0; i < T.length; i++) { const v = rep[T[i]]; if (used[v] < 0) { used[v] = pos.length / 3; pos.push(P[3 * v] * k, P[3 * v + 1] * k, P[3 * v + 2] * k); } tri.push(used[v]); } return out(pos, tri, 0); }
+  let lo = 2, hi = 1024, best = build(2);
+  while (hi - lo > 1) { const mid = (lo + hi) >> 1, r = build(mid); if (r.tri.length / 3 <= budget) { lo = mid; best = r; } else hi = mid; }
+  return finish(best);
+}
+
 // ---------- ASCII writers ----------
 const GMSH_ID = { line2: 1, tri3: 2, quad4: 3, tet4: 4, hex8: 5, wedge6: 6, pyr5: 7, line3: 8, tri6: 9, quad9: 10, tet10: 11, hex27: 12, wedge18: 13, pyr14: 14, quad8: 16, hex20: 17, wedge15: 18, pyr13: 19 };
 const VTK_ID = { line2: 3, tri3: 5, quad4: 9, tet4: 10, hex8: 12, wedge6: 13, pyr5: 14, line3: 21, tri6: 22, quad8: 23, tet10: 24, hex20: 25, wedge15: 26, pyr13: 27, quad9: 28, hex27: 29 };

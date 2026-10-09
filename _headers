@@ -14,3 +14,6 @@
 /mirrors.json
   Cache-Control: no-cache
   Access-Control-Allow-Origin: *
+/data/snapshot.json
+  Cache-Control: no-cache
+  Access-Control-Allow-Origin: *

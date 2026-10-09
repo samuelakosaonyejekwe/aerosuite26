@@ -14,6 +14,11 @@ const thin = (a, n = 300) => { if (a.length <= n) return a; const s = (a.length 
 const HYD = ['Skydrol LD-4', 'MIL-PRF-5606 hydraulic'], METAL_NAMES = Object.keys(METALS);
 const hasHyd = (c) => (c.systems.hyd_p_Pa > 0 ? true : 'This aircraft has no central hydraulic system (system pressure is 0). Use the actuator analysis in electromechanical mode, and the gearbox, bearing and lubrication analyses.');
 const OIL = FLUIDS['MIL-PRF-23699 oil'];
+/**
+ * Shaft power [W] through one transmission. Suite 7 publishes P_shaft_W for all engines together: a helicopter combines
+ * them in one main gearbox, every other layout has one gearbox and shaft line per engine.
+ */
+const shaftPower = (c, up) => { const n = Math.max(1, c.prop.n_eng), total = up?.propulsion?.P_shaft_W > 0 ? up.propulsion.P_shaft_W : c.prop.P0_W * n; return c.meta.type === 'helicopter' ? total : total / n; };
 
 /** Darcy friction factor: laminar 64/Re, Swamee–Jain turbulent, linear blend through transition (2000–4000). */
 export function fDarcy(Re, rr = 0) {
@@ -93,7 +98,7 @@ const network = {
       ],
       tables: [{ title: 'Consumer flows', columns: ['Consumer', 'Flow [L/min]', 'Valve drop [MPa]', 'Load pressure [MPa]', 'Load power [kW]'], rows: CONS.map((nm, j) => [nm, lpm(r.qs[j]), (r.br[j].Kv * r.qs[j] ** 2) / 1e6, r.br[j].pl / 1e6, (r.br[j].pl * r.qs[j]) / 1e3]) }],
       warnings, models: ['Pressure-compensated pump characteristic', 'Darcy–Weisbach lines (laminar 64/Re, Swamee–Jain turbulent)', 'Square-law valve orifices', 'Nodal continuity solved by bracketed root finding'],
-      assumptions: ['Steady, incompressible, isothermal flow', 'One pump and one lumped consumer per group; identical supply and return branch runs', 'Leakage proportional to pressure', 'All throttling and leakage losses become heat in the fluid'],
+      assumptions: ['Steady, incompressible, isothermal flow', 'One pump and one lumped consumer per group; identical supply and return branch runs', 'Leakage proportional to pressure', 'All throttling and leakage losses become heat in the fluid', 'Default pump flow, line bores, valve sizes, leakage and loss coefficients are scaled typical values, not data for a specific aircraft'],
     };
   },
   verify() {
@@ -215,7 +220,7 @@ const actuator = {
     return {
       kpis, plots, warnings, outputs: noHyd ? { pump_power_W: 0, line_dp_Pa: 0 } : {},
       models: z.hyd ? ['Four-way critical-centre servo-valve orifice flow', 'Compressible chamber volumes (bulk modulus)', 'Mass–spring–damper load, adaptive RK45'] : ['Linear motor torque–speed characteristic with torque saturation', 'Ball-screw kinematics with reflected rotor inertia', 'Mass–spring–damper load, adaptive RK45'],
-      assumptions: z.hyd ? ['Balanced double-acting cylinder, constant supply and return pressure', 'Ideal valve (no lag, no overlap), proportional position loop', 'Constant bulk modulus (no entrained air)', 'No seal friction or end-stop contact'] : ['Rigid screw and nut (no backlash or compliance)', 'Proportional–integral position loop commanding motor voltage', 'Constant efficiency, no thermal limit on motor torque'],
+      assumptions: z.hyd ? ['Balanced double-acting cylinder, constant supply and return pressure', 'Ideal valve (no lag, no overlap), proportional position loop', 'Constant bulk modulus (no entrained air)', 'No seal friction or end-stop contact', 'Default hinge moment, load mass, damping and loop gain are class-level estimates (typical values)'] : ['Rigid screw and nut (no backlash or compliance)', 'Proportional–integral position loop commanding motor voltage', 'Constant efficiency, no thermal limit on motor torque', 'Default hinge moment, load mass, motor and screw data are class-level estimates (typical values)'],
     };
   },
   verify() {
@@ -290,7 +295,8 @@ const surge = {
     num('n_gas', 'Polytropic exponent on discharge', '-', 1.4, 1, 1.67, 'Accumulator', '1.0 slow (isothermal), 1.4 rapid (adiabatic nitrogen)'),
     num('n_periods', 'Wave periods (4L/a) simulated', '', 4, 1, 50, 'Numerics'), num('nReach', 'Line reaches', '', 40, 4, 800, 'Numerics', '', { step: 1, discrete: true }),
   ],
-  defaults: (c) => { const p = c.systems.hyd_p_Pa, Q = Math.max(2e-6, 3e-8 * c.mass.mtow_kg), D = Math.max(0.003, Math.sqrt((4 * 0.5 * Q) / (Math.PI * 6))); return { p_sys: p, p_max: p, p_min: 0.67 * p, D, wall_mm: Math.max(0.4, (1e3 * 4 * p * D) / (2 * 880e6)), L: Math.max(1, 0.5 * (c.fuselage.len_m || 5)), V_demand: Math.max(1e-6, 0.12 * Q), fluid: c.mass.mtow_kg > 5700 && c.meta.type !== 'helicopter' ? HYD[0] : HYD[1] }; },
+  // branch line carrying half the pump flow at 6 m/s; where the 3 mm minimum bore governs, the initial velocity is the lower value that this flow really gives
+  defaults: (c) => { const p = c.systems.hyd_p_Pa, Q = Math.max(2e-6, 3e-8 * c.mass.mtow_kg), D = Math.max(0.003, Math.sqrt((4 * 0.5 * Q) / (Math.PI * 6))); return { p_sys: p, p_max: p, p_min: 0.67 * p, D, v0: (0.5 * Q) / ((Math.PI * D * D) / 4), wall_mm: Math.max(0.4, (1e3 * 4 * p * D) / (2 * METALS['Ti-6Al-4V'].Sy)), L: Math.max(1, 0.5 * (c.fuselage.len_m || 5)), V_demand: Math.max(1e-6, 0.12 * Q), fluid: c.mass.mtow_kg > 5700 && c.meta.type !== 'helicopter' ? HYD[0] : HYD[1] }; },
   run(i) {
     const r = moc(i), ac = accu(i), jk = r.rho * r.a * i.v0, slow = i.t_close > r.tc, est = slow ? (jk * r.tc) / i.t_close : jk, hoop = (r.peak * i.D) / (2 * r.e), Sy = (METALS[i.tube] || METALS['Ti-6Al-4V']).Sy, warnings = [];
     if (r.dpv0 <= 0) warnings.push('Line friction alone consumes the whole supply pressure at this velocity: reduce velocity or enlarge the bore. The surge result is not meaningful.');
@@ -312,7 +318,7 @@ const surge = {
         { type: 'line', title: 'Pressure envelope along the line', xlabel: 'Distance from the source [m]', ylabel: 'Pressure [MPa]', series: [{ name: 'Maximum', x: thin(r.x), y: thin(r.pmax).map((v) => v / 1e6) }, { name: 'Minimum', x: thin(r.x), y: thin(r.pmin).map((v) => v / 1e6) }] },
       ],
       warnings, models: ['Method of characteristics (fixed grid, Courant number 1)', 'Korteweg wave speed with thin-wall pipe elasticity', 'Joukowsky surge relation', 'Polytropic gas accumulator'],
-      assumptions: ['Single-phase liquid, constant bulk modulus (no entrained air)', 'Quasi-steady Darcy friction', 'Constant-pressure source upstream; valve area closes linearly with time', 'Accumulator charged isothermally, discharged polytropically, ideal gas'],
+      assumptions: ['Single-phase liquid, constant bulk modulus (no entrained air)', 'Quasi-steady Darcy friction', 'Constant-pressure source upstream; valve area closes linearly with time', 'Accumulator charged isothermally, discharged polytropically, ideal gas', 'Default line velocity, closure time and the 135% / 150% transient limits are typical hydraulic-system practice, not sourced values'],
     };
   },
   convergence: { param: 'nReach', label: 'Line reaches', levels: [10, 20, 40, 80, 160], metric: 'surge_dp_Pa' },
@@ -320,8 +326,10 @@ const surge = {
     const b = { fluid: HYD[0], p_sys: 20e6, p_back: 0, D: 0.01, wall_mm: 1, tube: 'Steel 4340 (QT)', L: 10, v0: 5, t_close: 0, fric: 0, V_demand: 1e-3, p_max: 20e6, p_min: 10e6, pre_frac: 1, n_gas: 1, n_periods: 3, nReach: 20 }, r = moc(b), fl = FLUIDS[HYD[0]], ac = accu(b);
     return [
       N.check('Instant closure, no friction: surge = ρ·a·v0', N.amax(r.pv) - 20e6, fl.rho * r.a * 5, 1e-9, 'Joukowsky (1898)'),
-      N.check('Wave speed with elastic wall', r.a, Math.sqrt(fl.bulk / fl.rho / (1 + (fl.bulk * 0.01) / (205e9 * 0.001))), 1e-12, 'Korteweg formula'),
+      N.check('Wave speed with elastic wall', r.a, Math.sqrt(fl.bulk / fl.rho / (1 + (fl.bulk * 0.01) / (METALS['Steel 4340 (QT)'].E * 0.001))), 1e-12, 'Korteweg formula'),
       N.check('Wave returns as an equal rarefaction', 20e6 - N.amin(r.pv), fl.rho * r.a * 5, 1e-9, 'Reflection at a constant-pressure source'),
+      N.check('Default initial velocity is consistent with the default bore and flow (small system, minimum bore governs)', ((d) => (d.v0 * Math.PI * d.D ** 2) / 4)(surge.defaults({ systems: { hyd_p_Pa: 6.9e6 }, mass: { mtow_kg: 1000 }, fuselage: { len_m: 8 }, meta: { type: 'aeroplane' } })), 0.5 * 3e-5, 1e-12, 'Continuity: v0·A = half the pump flow'),
+      N.check('Default initial velocity is 6 m/s when the bore is not clamped', surge.defaults({ systems: { hyd_p_Pa: 20.7e6 }, mass: { mtow_kg: 78000 }, fuselage: { len_m: 37 }, meta: { type: 'aeroplane' } }).v0, 6, 1e-12, 'Line sizing rule'),
       N.check('Isothermal accumulator: ΔV = p0·V0·(1/p_min − 1/p_max)', b.V_demand, 10e6 * ac.V0 * (1 / 10e6 - 1 / 20e6), 1e-12, 'Boyle’s law'),
     ];
   },
@@ -401,7 +409,7 @@ const pneumatic = {
         { type: 'line', title: 'Reservoir gas temperature during discharge', xlabel: 'Time [s]', ylabel: 'Temperature [K]', series: [{ name: 'Gas temperature', x: thin(b.t), y: thin(b.T) }] },
       ],
       warnings, models: ['Fanno flow (adiabatic constant-area duct with friction) with subsonic inlet and choking', 'Isentropic nozzle from the supply plenum to the duct inlet', 'Compressible orifice equation with critical-ratio choking', 'Lumped reservoir mass balance, RK4'],
-      assumptions: ['Perfect gas, γ = 1.4, constant friction factor', 'Adiabatic duct walls; fittings represented as equivalent fL/D', 'Reservoir gas spatially uniform; isothermal or isentropic limit', 'No condensation or icing at low discharge temperatures'],
+      assumptions: ['Perfect gas, γ = 1.4, constant friction factor', 'Adiabatic duct walls; fittings represented as equivalent fL/D', 'Reservoir gas spatially uniform; isothermal or isentropic limit', 'No condensation or icing at low discharge temperatures', 'Default supply conditions, duct and reservoir sizes are illustrative class-level values'],
     };
   },
   convergence: { param: 'nSteps', label: 'Time steps', levels: [25, 50, 100, 200, 400], metric: 'tank_p_end_Pa' },
@@ -421,7 +429,8 @@ const pneumatic = {
   recommend(res, i) {
     const o = res.outputs, out = [];
     if (o.duct_dp_Pa > 0.1 * i.p0) out.push({ severity: 'advise', title: 'High pressure loss in the duct', detail: `${(o.duct_dp_Pa / 1e3).toFixed(0)} kPa (${((100 * o.duct_dp_Pa) / i.p0).toFixed(0)}% of supply) is lost to friction.`, action: 'Increase the duct bore or shorten the run: lost bleed pressure has to be made up by extracting from a higher compressor stage, which costs fuel.', basis: 'Fanno-line total-pressure loss' });
-    if (o.tank_T_end_K < 233) out.push({ severity: 'warn', title: 'Very cold gas during discharge', detail: `Reservoir gas falls to ${(o.tank_T_end_K - 273.15).toFixed(0)} °C in the adiabatic limit.`, action: 'Dry the gas to a low dew point and check seal and valve materials for low-temperature operation.', basis: 'Isentropic expansion' });
+    // the isentropic limit is reached by any full blow-down beyond a pressure ratio of about 2: it bounds the cooling, it is not a prediction
+    if (o.tank_T_end_K < 233) out.push({ severity: 'advise', title: 'Cold gas during discharge (adiabatic bound)', detail: `Reservoir gas could fall to ${(o.tank_T_end_K - 273.15).toFixed(0)} °C if no heat reached it from the walls; real discharges lie between this and the isothermal case.`, action: 'Dry the gas to a low dew point and check seal and valve materials for low-temperature operation; re-run with the isothermal process to bracket the result.', basis: 'Isentropic expansion T/T0 = (p/p0)^((γ−1)/γ)' });
     return out;
   },
 };
@@ -451,8 +460,9 @@ function gearChain(i) {
     eta *= 1 - loss; P *= 1 - loss; rpm /= ratio;
   });
   const ratio = stages.reduce((a, s) => a * s.ratio, 1);
-  return { stages, eta, ratio, Rt, reducer, m, rpmLow: rpm, Pout: reducer ? i.P_W * eta : i.P_W * eta, Tout: (i.P_W * eta) / (((reducer ? rpm : stages[0].rpm) * 2 * Math.PI) / 60) };
+  return { stages, eta, ratio, Rt, reducer, m, rpmLow: rpm, Pout: i.P_W * eta, Tout: (i.P_W * eta) / (((reducer ? rpm : stages[0].rpm) * 2 * Math.PI) / 60) };
 }
+const GB_CASE = (type, vehicle) => ({ meta: { type: vehicle }, prop: { type, n_eng: 2, P0_W: 1e6, rpm: 1200 }, rotor: { rpm: vehicle === 'helicopter' ? 300 : 0 }, systems: { gen_kVA: 30 } });
 const gearbox = {
   id: 'gearbox', title: 'Gear transmission: ratios, tooth stresses and efficiency', fidelity: 'analytical',
   summary: 'Lays out a reduction (or accessory) gear train between engine and rotor, propeller or accessory speeds, sizes the teeth for bending and surface contact, and estimates efficiency, mesh frequencies and the heat carried away by the oil.',
@@ -470,7 +480,7 @@ const gearbox = {
     num('dT_oil', 'Oil temperature rise across the gearbox', 'K', 30, 5, 80, 'Losses'),
   ],
   defaults: (c, up, d) => {
-    const t = c.prop.type, n = Math.max(1, c.prop.n_eng), heli = c.meta.type === 'helicopter'; let P = (up.propulsion?.P_shaft_W ?? c.prop.P0_W) * (heli ? n : 1), rin, rout = c.rotor.rpm || c.prop.rpm || 0;
+    const t = c.prop.type, heli = c.meta.type === 'helicopter'; let P = shaftPower(c, up), rin, rout = c.rotor.rpm || c.prop.rpm || 0;
     if (t === 'turboshaft') rin = 21000; else if (t === 'turboprop') rin = 20000; else if (t === 'turbofan' || t === 'turbojet') { rin = 15000; rout = 8000; P = Math.max(2e4, 1.5 * (c.systems.gen_kVA || 30) * 1000); } else rin = Math.max(c.prop.rpm || 2700, 1) * (t === 'electric' ? 3 : 2.2);
     if (!rout) rout = rin / 3;
     return { P_W: Math.max(P, 10), rpm_in: rin, rpm_out: rout, final: heli || t === 'turboprop' ? FINAL[0] : FINAL[1], n_planets: heli ? 5 : 4 };
@@ -485,7 +495,7 @@ const gearbox = {
     return {
       kpis: [
         kp('gearbox_eff', 'Transmission efficiency', r.eta, '-'), kp('gear_ratio', 'Overall ratio achieved', r.ratio, '-'), kp('n_stages', 'Stages', r.stages.length, ''),
-        kp('output_torque_Nm', r.reducer ? 'Output (low-speed) torque' : 'Low-speed shaft torque', r.Tout, 'N·m'), kp('heat_to_oil_W', 'Heat to the oil', heat, 'W'), kp('oil_flow_m3s', 'Oil flow for the temperature rise', oil, 'm³/s', undefined, `${(oil * 6e4).toFixed(2)} L/min`),
+        kp('output_torque_Nm', r.reducer ? 'Output (low-speed) torque' : 'Output (high-speed) torque', r.Tout, 'N·m'), kp('heat_to_oil_W', 'Heat to the oil', heat, 'W'), kp('oil_flow_m3s', 'Oil flow for the temperature rise', oil, 'm³/s', undefined, `${(oil * 6e4).toFixed(2)} L/min`),
         kp('bending_stress_max_Pa', 'Highest tooth-root bending stress', N.amax(r.stages.map((s) => s.sb)), 'Pa', N.amax(ub) <= 1 ? 'ok' : 'bad'), kp('contact_stress_max_Pa', 'Highest contact (Hertz) stress', N.amax(r.stages.map((s) => s.sh)), 'Pa', N.amax(uh) <= 1 ? 'ok' : 'bad'),
         kp('pitch_velocity_ms', 'Highest pitch-line velocity', vmax, 'm/s', vmax < 120 ? 'ok' : 'warn'), kp('mesh_freq_Hz', 'First-stage mesh frequency', r.stages[0].fm, 'Hz'), kp('mesh_freq_last_Hz', 'Final-stage mesh frequency', r.stages[r.stages.length - 1].fm, 'Hz'),
         kp('module_max_mm', 'Largest module', 1e3 * N.amax(r.stages.map((s) => s.mod)), 'mm'),
@@ -498,7 +508,7 @@ const gearbox = {
         rows: r.stages.map((s, j) => [j + 1, s.type, s.ratio, s.z1, s.z2, s.zr, s.mod * 1e3, s.b * 1e3, s.rpm, s.T, s.Ft / 1e3, s.sb / 1e6, s.sh / 1e6, s.v, s.fm]) }],
       outputs: { mesh_freqs_Hz: r.stages.map((s) => s.fm) },
       warnings, models: ['Kinematic ratio split with integer tooth counts', 'Lewis tooth-root bending with user rating factors', 'Hertz line contact at the pitch point', 'Constant fractional loss per mesh and per stage'],
-      assumptions: ['Spur geometry, 20°-type full-depth teeth; helical overlap not credited', 'AGMA-style factors Ko, Kv, Km are user inputs, not computed from an AGMA/ISO rating', 'Allowable stresses are typical figures, not certified allowables', 'Equal load sharing between planets beyond the load-distribution factor; no scuffing or micropitting check'],
+      assumptions: ['Spur geometry, 20°-type full-depth teeth; helical overlap not credited', 'AGMA-style factors Ko, Kv, Km are user inputs, not computed from an AGMA/ISO rating', 'Allowable stresses, mesh and bearing loss fractions and default speeds are typical figures, not certified or sourced data', 'Equal load sharing between planets beyond the load-distribution factor; no scuffing or micropitting check'],
     };
   },
   verify() {
@@ -508,6 +518,10 @@ const gearbox = {
       N.check('Planetary ratio 1 + Zr/Zs', s.ratio, 1 + 72 / 24, 1e-12, 'Willis equation, ring fixed'),
       N.check('Lewis bending stress Ft/(b·m·Y)', s.sb, Ft / (0.03 * 0.003 * (0.484 - 2.87 / 24)), 1e-10, 'Lewis (1892)'),
       N.check('Hertz line contact: p = 0.418·sqrt(F′E/R′) for ν = 0.3', hertzLine(1e5, 0.02, 0.03, 200e9, 0.3), 0.418 * Math.sqrt((1e5 * 200e9) / 0.012), 1e-3, 'Roark, cylinders in contact'),
+      N.check('Twin turboprop: each gearbox carries half of the published all-engine shaft power', gearbox.defaults(GB_CASE('turboprop', 'aeroplane'), { propulsion: { P_shaft_W: 3e6 } }, {}).P_W, 1.5e6, 1e-12, 'Suite 7 publishes P_shaft_W for all engines together'),
+      N.check('Helicopter: the main gearbox combines all engines (no double counting)', gearbox.defaults(GB_CASE('turboshaft', 'helicopter'), { propulsion: { P_shaft_W: 3e6 } }, {}).P_W, 3e6, 1e-12, 'Combining gearbox'),
+      N.check('Without upstream data the helicopter gearbox takes rated power × engines', gearbox.defaults(GB_CASE('turboshaft', 'helicopter'), {}, {}).P_W, 2e6, 1e-12, 'Case fallback'),
+      N.check('Speed increaser: output torque is on the high-speed shaft, T = η·P/ω_out', (gearChain({ ...b, final: FINAL[1], rpm_in: 1500, rpm_out: 6000 }).Tout * 6000 * 2 * Math.PI) / 60, 100e3 * 0.99, 1e-10, 'Energy conservation'),
       N.check('Spur pair power balance T_out·ω_out = η·P', (gearChain({ ...b, final: FINAL[1] }).Tout * (6000 / sp.ratio) * 2 * Math.PI) / 60, 100e3 * 0.99, 1e-10, 'Energy conservation'),
     ];
   },
@@ -545,7 +559,7 @@ const bearing = {
   ],
   defaults: (c, up, d) => {
     const heli = c.meta.type === 'helicopter', jet = c.prop.type === 'turbofan' || c.prop.type === 'turbojet', rpm = heli ? c.rotor.tr_rpm * 3.5 || 4000 : jet ? 8000 : c.prop.rpm || c.rotor.rpm || 3000;
-    const P = Math.max(5, heli ? 0.1 * d.P_total : jet ? 1.5 * (c.systems.gen_kVA || 30) * 1000 : up.propulsion?.P_shaft_W ?? c.prop.P0_W), T = P / ((rpm * 2 * Math.PI) / 60);
+    const P = Math.max(5, heli ? 0.1 * d.P_total : jet ? 1.5 * (c.systems.gen_kVA || 30) * 1000 : shaftPower(c, up)), T = P / ((rpm * 2 * Math.PI) / 60);
     // shaft sized for a torsional shear of about 25% of shear yield; bearing loads from a tooth load at an assumed gear radius (estimates)
     const mat = heli ? 'Al 7075-T6' : 'Steel 4340 (QT)', ms = METALS[mat], k = heli ? 0.94 : 0.8, Ds = Math.max(0.004, Math.cbrt((16 * T) / (Math.PI * (1 - k ** 4) * 0.25 * 0.577 * ms.Sy))), L = heli ? N.clamp((c.rotor.tr_arm_m || 6) / 6.5, 0.4, 1.6) : Math.max(0.05, 12 * Ds);
     // diameter is the larger of the torsion size and the size that keeps the first critical speed 35% above running speed
@@ -573,7 +587,7 @@ const bearing = {
         { type: 'bar', title: 'Life factor against required reliability', ylabel: 'a1 [-]', categories: REL.map((v) => v + '%'), series: [{ name: 'a1 (ISO 281)', y: REL.map((v) => A1[v]) }] },
       ],
       warnings, models: ['ISO 281 basic rating life L10 = (C/P)^p', 'Reliability factor a1 (ISO 281:2007 table)', 'Elementary torsion of a hollow circular shaft', 'Euler–Bernoulli first bending critical speed, simply supported'],
-      assumptions: ['Constant load and speed (use a cubic-mean load for a duty spectrum)', 'X, Y and e are catalogue inputs', 'Rigid bearings and uniform shaft; gyroscopic effects, coupling masses and support flexibility ignored (Suite 10 covers rotor dynamics)', 'Handbook material properties'],
+      assumptions: ['Constant load and speed (use a cubic-mean load for a duty spectrum)', 'X, Y and e are catalogue inputs', 'Rigid bearings and uniform shaft; gyroscopic effects, coupling masses and support flexibility ignored (Suite 10 covers rotor dynamics)', 'Typical handbook material properties; default loads, rating, dn limit and shaft size are sizing-rule estimates'],
     };
   },
   verify() {
@@ -583,7 +597,7 @@ const bearing = {
       N.check('Ball bearing C/P = 2: L10 = 8 million revolutions', r.L10, 8e6 / 60000, 1e-12, 'ISO 281'),
       N.check('Roller bearing exponent 10/3', rr.L10, (2 ** (10 / 3) * 1e6) / 60000, 1e-12, 'ISO 281'),
       N.check('Solid shaft shear 16T/(πd³)', r.tau, (16 * T) / (Math.PI * 0.05 ** 3), 1e-12, 'Elementary torsion'),
-      N.check('Critical speed (π/L)²·(d/4)·sqrt(E/ρ) for a solid shaft', r.wc, Math.PI ** 2 * (0.05 / 4) * Math.sqrt(205e9 / 7850), 1e-12, 'Pinned–pinned Euler–Bernoulli beam'),
+      N.check('Critical speed (π/L)²·(d/4)·sqrt(E/ρ) for a solid shaft', r.wc, Math.PI ** 2 * (0.05 / 4) * Math.sqrt(METALS['Steel 4340 (QT)'].E / METALS['Steel 4340 (QT)'].rho), 1e-12, 'Pinned–pinned Euler–Bernoulli beam'),
       N.check('Required rating reproduces the target life', brgShaft({ ...b, C: r.Creq }).Lna, 1000, 1e-10, 'Inverse of the life equation'),
     ];
   },
@@ -631,7 +645,7 @@ const lubrication = {
       kpis: [
         kp('load_capacity_N', 'Load capacity at the stated film thickness', Wcap, 'N', Wcap >= i.load ? 'ok' : 'warn'), kp('p_max_Pa', 'Peak film pressure', r.pmax * (i.load > 0 ? i.load / Wcap : 1), 'Pa', undefined, 'At the applied load'),
         kp('h_min_m', 'Minimum film thickness at the applied load', Number.isFinite(hReq) ? hReq : i.h2, 'm', lam >= 3 ? 'ok' : lam >= 1 ? 'warn' : 'bad'), kp('lambda_ratio', 'Film parameter λ = h_min/Rq', Number.isFinite(lam) ? lam : 1e6, '-', lam >= 3 ? 'ok' : lam >= 1 ? 'warn' : 'bad', 'λ > 3 full film; 1–3 mixed; < 1 boundary'),
-        kp('friction_coeff', 'Friction coefficient at the stated film', F / Math.max(Wcap, 1e-12), '-'), kp('power_loss_W', 'Viscous power loss', Ploss, 'W'), kp('oil_flow_m3s', 'Oil flow through the film', Q, 'm³/s'),
+        kp('friction_coeff', 'Friction coefficient at the stated film', F / Math.max(Wcap, 1e-12), '-'), kp('power_loss_W', 'Viscous power loss at the stated film', Ploss, 'W'), kp('oil_flow_m3s', 'Oil flow through the film', Q, 'm³/s'),
         kp('oil_dT_K', 'Adiabatic oil temperature rise', dT, 'K', dT < 40 ? 'ok' : 'warn'), kp('x_cp', 'Centre of pressure from the inlet / pad length', r.xcp / i.B, '-', undefined, 'Pivot location for a tilting pad'),
         kp('load_per_width_Nm', 'Load capacity per unit width', r.Wl, 'N/m'), kp('flow_uniformity', 'Flow non-uniformity along the film', r.qdev, '-', r.qdev < 1e-3 ? 'ok' : 'warn'),
       ],
@@ -640,7 +654,7 @@ const lubrication = {
         { type: 'line', title: 'Film thickness', xlabel: 'Distance from the inlet [mm]', ylabel: 'Film thickness [µm]', series: [{ name: 'Film', x: thin(r.x).map((v) => v * 1e3), y: thin(r.h).map((v) => v * 1e6) }] },
       ],
       warnings, models: ['1-D Reynolds equation, conservative finite differences with a tridiagonal solve', 'Couette + Poiseuille shear on the runner', 'Film-thickness scaling W ∝ 1/h² at fixed inclination ratio'],
-      assumptions: ['Infinitely wide pad (no side leakage), rigid surfaces', 'Isoviscous, incompressible Newtonian oil', 'Fixed inlet/outlet film ratio (a tilting pad adjusts it automatically)', 'No cavitation (converging film only)'],
+      assumptions: ['Infinitely wide pad (no side leakage), rigid surfaces', 'Isoviscous, incompressible Newtonian oil', 'Fixed inlet/outlet film ratio (a tilting pad adjusts it automatically)', 'No cavitation (converging film only)', 'Default pad size, load, viscosity and roughness are illustrative typical values'],
     };
   },
   convergence: { param: 'nNodes', label: 'Grid intervals', levels: [10, 20, 40, 80, 160], metric: 'load_per_width_Nm' },
@@ -665,7 +679,7 @@ export default {
   id: 'hydmech', n: 18,
   tagline: 'Whether pumps, lines, actuators, ducts, gears, bearings and shafts deliver the force, speed and life required — and what power and heat that costs.',
   analyses: [network, actuator, surge, pneumatic, gearbox, bearing, lubrication],
-  consumes: [{ from: 'propulsion', keys: ['P_shaft_W'], why: 'Shaft power transmitted by gearboxes and drive shafts' }],
+  consumes: [{ from: 'propulsion', keys: ['P_shaft_W'], why: 'Shaft power of all engines, shared between the gearboxes and drive shafts' }],
   provides: [
     { key: 'pump_power_W', label: 'Hydraulic pump power', unit: 'W' }, { key: 'actuator_force_N', label: 'Actuator stall force', unit: 'N' }, { key: 'actuator_rate_ms', label: 'Actuator no-load rate', unit: 'm/s' },
     { key: 'line_dp_Pa', label: 'Hydraulic line pressure loss', unit: 'Pa' }, { key: 'gearbox_eff', label: 'Gearbox efficiency', unit: '-' }, { key: 'bearing_L10_h', label: 'Bearing L10 life', unit: 'h' },

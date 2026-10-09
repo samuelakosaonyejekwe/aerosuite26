@@ -8,13 +8,17 @@ import { ET, displayTriangles, displayLines } from './parsers-util.js';
 import * as S from './parsers-surface.js';
 import * as Me from './parsers-mesh.js';
 import * as C from './parsers-cad.js';
+import * as K from './parsers-kernel.js';
+import * as H from './parsers-hdf.js';
+import * as R from './parsers-raster.js';
 
 const READERS = {
   stl: S.readSTL, obj: S.readOBJ, ply: S.readPLY, off: S.readOFF, gltf: S.readGLTF, '3mf': S.read3MF, amf: S.readAMF, json: S.readJSON,
   dae: S.readDAE, vrml: S.readVRML, x3d: S.readX3D, xyz: S.readXYZ, pcd: S.readPCD, las: S.readLAS,
   vtk: Me.readVTK, vtkxml: Me.readVTKXML, gmsh: Me.readGmsh, su2: Me.readSU2, nastran: Me.readNastran, abaqus: Me.readAbaqus, unv: Me.readUNV,
   cdb: Me.readCDB, fluent: Me.readFluent, tecplot: Me.readTecplot, plot3d: Me.readPlot3D, openfoam: Me.readOpenFOAM,
-  step: C.readSTEP, iges: C.readIGES, xt: C.readXT,
+  step: K.readSTEPKernel, iges: K.readIGESKernel, brep: K.readBREP, xt: C.readXT, laz: K.readLAZ,
+  cgns: H.readHDF5Any, med: H.readHDF5Any, 'fluent-h5': H.readHDF5Any, exodus: H.readHDF5Any, hdf5: H.readHDF5Any, geotiff: R.readGeoTIFF, e57: R.readE57,
 };
 const STRUCTURAL = new Set(['nastran', 'abaqus', 'cdb', 'unv']);
 
@@ -47,7 +51,12 @@ function validIndices(arr, per, nVerts) {
  * Import one file. opts:
  *   format      force a format id from FORMATS instead of detecting it
  *   companions  [{ name, bytes }] extra files (OpenFOAM points/faces/boundary/owner, external glTF .bin buffers)
- *   maxPoints   cap for subsampled point clouds (LAS), default 200 000
+ *   maxPoints   cap for subsampled point clouds (LAS / LAZ), default 200 000
+ *   maxGrid     largest number of height-field samples per side for GeoTIFF rasters, default 300
+ *   linearDeflection, angularDeflection, linearDeflectionType   tessellation accuracy for STEP / IGES / BREP
+ *                (default 0.001 of the bounding box and 0.5 rad; 'absolute_value' makes linearDeflection a length)
+ *   kernelTimeout  milliseconds after which a STEP / IGES / BREP translation is stopped (default 180 000)
+ *   wasm        false to skip the WebAssembly kernels (text-level results only)
  * Throws only for empty input or content that matches no known format.
  */
 export async function importFile(fileName, bytes, opts = {}) {
@@ -78,6 +87,8 @@ export async function importFile(fileName, bytes, opts = {}) {
     log('parse', `reader failed: ${why}`);
   }
   if (part) {
+    if (part.formatId && part.formatId !== fmt.id && formatById(part.formatId)) { const f2 = formatById(part.formatId); model.format = f2.id; model.formatName = f2.name; model.support = f2.support; log('schema', `content identified as ${f2.name}`); }
+    if (part.support) model.support = part.support;
     if (part.positions instanceof Float64Array && part.positions.length % 3 === 0) model.positions = part.positions;
     const nv = model.positions.length / 3;
     model.meta = part.meta || {};
@@ -95,7 +106,7 @@ export async function importFile(fileName, bytes, opts = {}) {
     const dimMax = model.elements.reduce((d, e) => Math.max(d, ET[e.type].dim), 0);
     model.kind = part.kind && part.kind !== 'metadata-only' ? part.kind
       : part.kind === 'metadata-only' ? 'metadata-only'
-        : dimMax === 3 ? (STRUCTURAL.has(fmt.id) ? 'structural-mesh' : 'volume-mesh')
+        : dimMax === 3 ? (STRUCTURAL.has(model.format) ? 'structural-mesh' : 'volume-mesh')
           : dimMax >= 1 ? (STRUCTURAL.has(fmt.id) ? 'structural-mesh' : fmt.category === 'mesh' ? 'surface-mesh' : 'surface')
             : model.triangles.length ? 'surface' : nv ? 'pointcloud' : 'metadata-only';
     if (model.kind !== 'metadata-only' && !nv) model.kind = 'metadata-only';
@@ -104,8 +115,9 @@ export async function importFile(fileName, bytes, opts = {}) {
   }
   log('units', model.units.length ? `length unit stated by the file: ${model.units.length}` : 'the file does not state a length unit — to be confirmed by the user');
   if (model.kind === 'metadata-only') {
-    model.warnings.push(`${fmt.name} is ${fmt.support === 'metadata' ? 'recognised but not decoded here' : 'only partly readable here and this file yielded no geometry'}: ${fmt.limits}${fmt.pathway ? ` Conversion pathway: ${fmt.pathway}` : ''}`);
-    log('pathway', fmt.pathway || 'see the format capability profile');
+    const f3 = formatById(model.format) || fmt;
+    model.warnings.push(`${f3.name} is ${f3.support === 'metadata' ? 'recognised but not decoded here' : 'readable here in general, but this file yielded no geometry'}: ${f3.limits}${f3.pathway ? ` Conversion pathway: ${f3.pathway}` : ''}`);
+    log('pathway', f3.pathway || 'see the format capability profile');
   }
   return model;
 }

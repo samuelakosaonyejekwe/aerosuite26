@@ -62,7 +62,12 @@ function makeModel(i) {
   if (P.fRest < 0.25 * i.CD0_ref * i.S0) { P.fRest = 0.25 * i.CD0_ref * i.S0; P.warn.push('The reference CD0 is lower than the wing friction estimate allows; the non-wing drag area was floored at 25% of the total and the model CD0 is higher than the reference.'); }
   const fuelRef = Math.max(0, i.mtow_ref - i.oew_ref - i.payload), relief = (mw) => mw + (P.electric ? 0 : 0.5 * Math.min(fuelRef, P.fuel_rho * tankVol(P, x0)));
   let w0 = 0.1 * i.mtow_ref;
-  if (i.wing_mass_ref > 0) { const box = wingMass({ ...P, kNo: 1, k_sec: 0 }, x0, i.mtow_ref, relief(i.wing_mass_ref)).m, k = (i.wing_mass_ref - i.k_sec * i.S0) / box; P.kNo = N.clamp(k, 0.8, 5); if (k !== P.kNo) P.warn.push(`The reference wing mass implies a non-optimum factor of ${k.toFixed(2)}, outside 0.8–5; it was limited, so the model wing mass differs from the reference.`); }
+  // A known wing mass calibrates the non-optimum factor on the bending material. When that factor leaves 0.8–5 (light wings are
+  // sized by minimum gauge, not stress) it is held at the limit and the area-proportional mass is refitted instead.
+  if (i.wing_mass_ref > 0) {
+    const box = wingMass({ ...P, kNo: 1, k_sec: 0 }, x0, i.mtow_ref, relief(i.wing_mass_ref)).m, k = (i.wing_mass_ref - i.k_sec * i.S0) / box; P.kNo = N.clamp(k, 0.8, 5);
+    if (k !== P.kNo) { const ks = (i.wing_mass_ref - P.kNo * box) / i.S0; if (ks >= 0) P.k_sec = ks; else { P.k_sec = 0; P.warn.push(`The reference wing mass is below the bending material this model needs even with a non-optimum factor of ${P.kNo}; the model wing mass is higher than the reference.`); } }
+  }
   for (let k = 0; k < 12; k++) w0 = wingMass(P, x0, i.mtow_ref, relief(w0)).m;
   P.wing0 = w0; P.eng0 = engMass(P, i.mtow_ref); P.batt0 = P.electric ? (i.batt_ref_kWh * 3.6e6) / P.espec : 0; P.fuelRef = P.electric ? P.batt0 : fuelRef;
   P.mFixed = i.oew_ref - w0 - P.eng0 - P.batt0;
@@ -159,7 +164,9 @@ function kkt(fn, u, gTol = 3e-3) {
     const neg = lam.findIndex((l) => l < -1e-6); if (neg < 0) break; act = act.filter((_, k) => k !== neg); lam = [];
   }
   if (!act.length || !free.length) lam = act.map(() => 0);
-  const res = free.map((j) => gradF[j] - N.sum(act.map((c, k) => lam[k] * gradG[c][j]))), nf = N.norm(free.map((j) => gradF[j]));
+  // scale: the whole objective gradient, with a floor of 1% of the objective per unit of a variable's range, so that an
+  // interior optimum (where the gradient itself vanishes) gives a small residual instead of 0/0
+  const res = free.map((j) => gradF[j] - N.sum(act.map((c, k) => lam[k] * gradG[c][j]))), nf = Math.max(N.norm(gradF), 0.01 * Math.abs(base.f));
   return { gradF, gradG, lambda: base.g.map((_, c) => { const k = act.indexOf(c); return k >= 0 ? Math.max(0, lam[k]) : 0; }), residual: free.length ? N.norm(res) / Math.max(nf, 1e-9) : 0, active: act, free };
 }
 /** NSGA-II on the unit box for two objectives. fn(u) -> { f: [f1, f2], viol ≥ 0 }. Returns the final non-dominated set. */
@@ -264,7 +271,7 @@ const MODEL = [
   { key: 'eta_elec', label: 'Battery-to-shaft efficiency', unit: '-', default: 0.9, min: 0.5, max: 0.99, group: 'Electric' },
   { key: 'hover_min', label: 'Hover time per mission', unit: 'min', default: 0, min: 0, max: 30, group: 'Electric' },
   { key: 'disk_area', label: 'Total lifting disk area', unit: 'm²', default: 0, min: 0, group: 'Electric' },
-  { key: 'fuel_usd_kg', label: 'Fuel price', unit: 'USD/kg', default: 0.85, min: 0, group: 'Cost hook' },
+  { key: 'fuel_usd_kg', label: 'Fuel price', unit: 'USD/kg', default: 1.12, min: 0, group: 'Cost hook', help: 'Default: US Gulf Coast jet-fuel spot average for January–September 2026 (EIA); taken from the case, which is refreshed from live data' },
   { key: 'elec_usd_kWh', label: 'Electricity price', unit: 'USD/kWh', default: 0.14, min: 0, group: 'Cost hook' },
   { key: 'c_oew', label: 'Ownership and maintenance cost per kg of empty mass per flight', unit: 'USD/kg', default: 0.15, min: 0, group: 'Cost hook', help: 'Illustrative: about 10% of price per year divided by flights per year and empty mass' },
 ];
@@ -286,7 +293,7 @@ const modelDefaults = (c, up, d) => {
   const mat = METALS[c.struct.material] || METALS['Al 2024-T3'], pack = 0.75 * (BATTERIES[c.systems.batt_chem]?.wh_kg || 250), b = c.wing.b_m;
   const vapp = S ? 1.3 * Math.sqrt((2 * (m.mtow_kg - 0.8 * m.fuel_kg) * G0) / (RHO0 * S * c.aero.CLmax_land)) : undefined, range = c.mission.range_km * 1e3;
   const ptype = ['turbofan', 'turbojet', 'turboprop', 'piston', 'electric'].includes(c.prop.type) ? c.prop.type : 'turboprop', CLc = S ? W / (0.5 * at.rho * V * V * S) : 0.5;
-  return {
+  const q = {
     AR0: d.AR || undefined, S0: S, sweep0: c.wing.sweep_deg, tc0: c.wing.tc, taper: N.clamp(c.wing.taper, 0.1, 1), h0: c.mission.cruise_alt_m || c.atm.alt_m, mach: N.clamp(c.mission.cruise_mach || V / at.a, 0.03, 0.9),
     range_km: c.mission.range_km || undefined, payload: m.payload_kg, allow_frac: elec ? 0.95 : 0.97, reserve_frac: range > 0 ? N.clamp(0.05 + (c.mission.reserve_min * 60 * V + (elec ? 0 : c.mission.alternate_km * 1e3)) / range, 0.05, 0.6) : undefined,
     mtow_ref: m.mtow_kg, oew_ref: m.oew_kg, wing_mass_ref: up.fea?.wing_struct_mass_kg > 0 && up.fea.wing_struct_mass_kg < 0.3 * m.mtow_kg ? up.fea.wing_struct_mass_kg : undefined,
@@ -300,7 +307,13 @@ const modelDefaults = (c, up, d) => {
     AR_min: d.AR ? Math.max(3, Math.floor(0.6 * d.AR)) : undefined, AR_max: d.AR ? Math.ceil(1.5 * d.AR) : undefined, sweep_max: Math.max(5, c.wing.sweep_deg + 12), tc_min: Math.max(0.06, c.wing.tc - 0.035), tc_max: c.wing.tc + 0.04,
     dh_m: Math.min(1500, 0.5 * (c.mission.cruise_alt_m || 1000)), free_vars: ptype === 'turbofan' || ptype === 'turbojet' ? 'AR, S, sweep, t/c, altitude' : 'AR, S, altitude',
   };
+  // The approach-speed limit is the baseline's own approach speed plus 3%. The model lands at its own converged mass, which
+  // differs from the case figure, so the limit is taken from the model baseline: a baseline must not violate a limit derived from itself.
+  if (S) { try { const P = makeModel({ ...Object.fromEntries([...MODEL, ...NUM].map((f) => [f.key, f.default])), ...Object.fromEntries(Object.entries(q).filter(([, v]) => v !== undefined && !(typeof v === 'number' && !Number.isFinite(v)))) }), o = evalDesign(P, P.x0); if (o.ok && o.vapp > 0) q.vapp_max = Math.ceil(1.03 * Math.max(o.vapp, vapp || 0)); } catch { /* keep the case-based limit */ } }
+  return q;
 };
+/** Model defaults restricted to the inputs an analysis declares. */
+const defaultsFor = (an) => (c, up, d) => { const v = modelDefaults(c, up, d), keys = new Set(an.inputs.map((f) => f.key)); return Object.fromEntries(Object.entries(v).filter(([k]) => keys.has(k))); };
 const fixedWing = (c) => (c.wing.S_m2 > 0 ? true : 'This analysis sizes a wing; the current case is a pure rotorcraft. Use the rotor sizing optimisation instead.');
 /** Design-variable table for a chosen set, with bounds. */
 function varsOf(i, set) {
@@ -321,7 +334,7 @@ const mda = {
   equations: ['Multidisciplinary coupling equations', 'Newton optimisation equations'],
   applicable: fixedWing,
   inputs: [...MODEL, ...NUM],
-  defaults: modelDefaults,
+  defaults: (c, up, d) => defaultsFor(mda)(c, up, d),
   run(i) {
     const P = makeModel(i), c = couple(P, P.x0), gs = solveMDA(c.seidel, c.y0, { tol: 1e-10 }), jc = solveMDA(c.jacobi, c.y0, { tol: 1e-10, method: 'jacobi' }), nw = solveMDA(c.jacobi, c.y0, { method: 'newton', tol: 1e-10 });
     const warnings = [...P.warn];
@@ -330,6 +343,8 @@ const mda = {
     for (let j = 0; j < 3; j++) { const h = 1e-5 * yb[j], a = yb.slice(), b = yb.slice(); a[j] += h; b[j] -= h; const ga = c.jacobi(a), gb = c.jacobi(b); for (let k = 0; k < 3; k++) J[k][j] = (ga[k] - gb[k]) / (2 * h); }
     const rate = gs.hist.length > 4 ? gs.hist[gs.hist.length - 2] / gs.hist[gs.hist.length - 3] : NaN, rho = Math.max(...N.eig(J).map((v) => Math.hypot(v[0], v[1]))), gmin = Math.min(...o.g), fuelGap = P.electric ? (o.kWh / Math.max(i.batt_ref_kWh, 1e-9) - 1) * 100 : (o.energy_kg / Math.max(P.fuelRef, 1e-9) - 1) * 100;
     const it = (h) => h.map((_, k) => k + 1), fl = (h) => h.map((v) => Math.max(v, 1e-16));
+    // a kilogram of fixed mass enters the take-off-mass equation only: dy = (I − J)⁻¹·[1, 0, 0]
+    let growth = NaN; try { growth = N.solve(J.map((r, a) => r.map((v, b) => (a === b ? 1 : 0) - v)), [1, 0, 0])[0]; } catch { /* singular: the loop is at the edge of divergence */ }
     if (Math.abs(o.mtow / i.mtow_ref - 1) > 0.15) warnings.push(`The converged take-off mass differs from the reference by ${(100 * (o.mtow / i.mtow_ref - 1)).toFixed(0)}%: the design range and payload are not consistent with the reference masses under this model, or the drag and fuel-consumption inputs need calibration.`);
     o.g.forEach((g, k) => { if (g < 0) warnings.push(`Baseline violates the constraint "${CON_NAMES[k]}" by ${(-100 * g).toFixed(1)}%.`); });
     return {
@@ -345,7 +360,7 @@ const mda = {
         { key: 'gs_iterations', label: 'Gauss–Seidel iterations', value: gs.iters, unit: '' },
         { key: 'newton_iterations', label: 'Newton iterations', value: nw.iters, unit: '', status: nw.converged ? 'ok' : 'warn' },
         { key: 'coupling_spectral_radius', label: 'Spectral radius of the coupling Jacobian', value: rho, unit: '-', status: rho < 0.7 ? 'ok' : rho < 1 ? 'warn' : 'bad', note: 'Jacobi iteration converges only below 1; the closer to 1, the larger the mass snowball' },
-        { key: 'growth_factor', label: 'Mass growth factor', value: 1 / Math.max(1e-9, 1 - J[0][0] - J[0][1] * J[1][0] - J[0][2] * J[2][0]), unit: 'kg/kg', note: 'Take-off mass added per kg of extra fixed mass (first-order)' },
+        { key: 'growth_factor', label: 'Mass growth factor', value: growth, unit: 'kg/kg', note: 'Take-off mass added per kg of extra fixed mass: first entry of (I − J)⁻¹' },
         { key: 'min_constraint_margin_pct', label: 'Smallest constraint margin', value: 100 * gmin, unit: '%', status: gmin >= 0 ? 'ok' : 'bad', note: CON_NAMES[N.argmin(o.g)] },
       ],
       plots: [
@@ -373,6 +388,7 @@ const mda = {
       N.check('Newton reaches the same point in one step', nw.y[1], ex[1], 1e-9, 'Linear system'),
       N.check('Root bending moment of an elliptic load = (L/2)·(4/3π)·(b/2)', w.Mroot, ((1000 * G0) / 2) * (4 / (3 * Math.PI)) * 10, 2e-4, 'Centroid of a quarter ellipse'),
       N.check('Mass roll-up closes at the converged point', r.plots[1].series.reduce((s, q) => s + q.y[1], 0), o.mtow_kg, 1e-7, 'Sum of components equals take-off mass'),
+      N.check('Growth factor equals the converged take-off-mass change per kilogram of fixed mass', o.growth_factor, (() => { const P = makeModel(i), m = (d) => evalDesign({ ...P, mFixed: P.mFixed + d }, P.x0, 1e-12).mtow; return (m(20) - m(-20)) / 40; })(), 2e-6, 'Implicit function theorem: dy/dp = (I − J)⁻¹ ∂G/∂p; central difference of the re-converged loop'),
       N.check('Korn drag-divergence Mach for κ=0.95, t/c=0.115, sweep 25°, CL=0.6', aeroAt({ mach: 0.78, kappa: 0.95, e_ref: 0.8 }, { AR: 9.5, S: 100, sweep: 25, tc: 0.115 }, isa(10668), 0.6 * 0.5 * isa(10668).rho * (0.78 * isa(10668).a) ** 2 * 100).Mdd, 0.95 / Math.cos(N.rad(25)) - 0.115 / Math.cos(N.rad(25)) ** 2 - 0.06 / Math.cos(N.rad(25)) ** 3, 1e-12, 'Korn equation with simple sweep theory (Mason)'),
     ];
   },
@@ -399,7 +415,7 @@ const opt = {
   equations: ['Constrained nonlinear optimisation equations', 'Lagrange multiplier equations', 'Karush–Kuhn–Tucker optimality conditions', 'Gradient-based optimisation equations', 'Multidisciplinary coupling equations'],
   applicable: fixedWing,
   inputs: [...BOUNDS, ...MODEL, ...NUM],
-  defaults: modelDefaults,
+  defaults: (c, up, d) => defaultsFor(opt)(c, up, d),
   run(i, ctx) {
     const P = makeModel(i), vars = varsOf(i), warnings = [...P.warn], pr = designProblem(i, P, vars, i.objective), base = pr.base;
     if (!base.ok) return { kpis: [{ key: 'opt_converged', label: 'Optimisation ran', value: 0, unit: '', status: 'bad' }], tables: [{ title: 'Status', columns: ['Message'], rows: [['The baseline mass loop diverges; fix the baseline in the MDA analysis first.']] }], warnings: [...warnings, 'The baseline design does not close, so no optimisation was attempted.'], models: MODELS, assumptions: ASSUME };
@@ -426,7 +442,7 @@ const opt = {
         { key: 'opt_span_m', label: 'Optimised span', value: o.b, unit: 'm' },
         { key: 'opt_LD', label: 'Optimised cruise L/D', value: o.LD, unit: '-' },
         { key: 'opt_battery_kg', label: 'Optimised battery mass', value: P.electric ? o.energy_kg : 0, unit: 'kg' },
-        { key: 'kkt_residual', label: 'KKT stationarity residual', value: k.residual, unit: '-', status: k.residual < 0.05 ? 'ok' : 'warn', note: 'Norm of ∇f − Σλ∇g on free variables, relative to ∇f' },
+        { key: 'kkt_residual', label: 'KKT stationarity residual', value: k.residual, unit: '-', status: k.residual < 0.05 ? 'ok' : 'warn', note: 'Norm of ∇f − Σλ∇g on the variables not held by a bound, relative to ∇f' },
         { key: 'n_active', label: 'Active constraints', value: best.g.filter((g) => g < 3e-3).length, unit: '' },
         { key: 'opt_feasible', label: 'Optimum is feasible', value: feas ? 1 : 0, unit: '', status: feas ? 'ok' : 'bad' },
         { key: 'model_evaluations', label: 'Design evaluations', value: r.evals, unit: '' },
@@ -453,6 +469,9 @@ const opt = {
       N.check('Optimiser location u₁ = 0.25', r.u[0], 0.25, 2e-3, 'KKT solution by hand'),
       N.check('Lagrange multiplier λ = 1', k.lambda[0], 1, 5e-3, '∇f = λ∇g'),
       N.check('Bound-constrained optimum lands on the box face u₂ = 1', r2.u[1], 1, 1e-9, 'Projection onto the box'),
+      N.check('KKT residual vanishes at an optimum held only by a bound', kkt(f2, r2.u).residual + 1, 1, 1e-3, 'Free variable at its stationary point u₁ = 0.3; the other on its bound'),
+      N.check('KKT residual vanishes at an unconstrained interior optimum', kkt((u) => ({ f: 1 + (u[0] - 0.3) ** 2 + (u[1] - 0.6) ** 2, g: [1] }), [0.3, 0.6]).residual + 1, 1, 1e-6, 'Zero gradient'),
+      N.check('KKT residual is of order one away from an optimum', kkt((u) => ({ f: 1 + (u[0] - 0.3) ** 2 + (u[1] - 0.6) ** 2, g: [1] }), [0.8, 0.1]).residual, 1, 1e-6, 'No active constraint: residual = |∇f| / |∇f|'),
     ];
   },
   recommend(res, i) {
@@ -479,7 +498,7 @@ const pareto = {
     { key: 'gens', label: 'Generations', unit: '', default: 20, min: 2, max: 300, step: 1, discrete: true, group: 'Numerics' },
     { key: 'seed', label: 'Random seed', unit: '', default: 23, min: 1, max: 1e9, step: 1, discrete: true, group: 'Numerics' },
   ],
-  defaults: modelDefaults,
+  defaults: (c, up, d) => defaultsFor(pareto)(c, up, d),
   run(i) {
     const P = makeModel(i), vars = varsOf(i), warnings = [...P.warn], base = evalDesign(P, P.x0); let pair = i.pair;
     if (!base.ok) return { kpis: [{ key: 'n_pareto', label: 'Pareto designs', value: 0, unit: '', status: 'bad' }], tables: [{ title: 'Status', columns: ['Message'], rows: [['The baseline mass loop diverges.']] }], warnings: [...warnings, 'The baseline design does not close.'], models: MODELS, assumptions: ASSUME };
@@ -544,7 +563,7 @@ const surrogate = {
     { key: 'nGrid', label: 'Map resolution per axis', unit: '', default: 13, min: 5, max: 61, step: 1, discrete: true, group: 'Numerics' },
     { key: 'seed', label: 'Random seed', unit: '', default: 7, min: 1, max: 1e9, step: 1, discrete: true, group: 'Numerics' },
   ],
-  defaults: modelDefaults,
+  defaults: (c, up, d) => defaultsFor(surrogate)(c, up, d),
   run(i) {
     const P = makeModel(i), warnings = [...P.warn], yv = i.yvar === i.xvar ? VAR_OPTS.find((v) => v !== i.xvar) : i.yvar, vars = varsOf(i, `${i.xvar}, ${yv}`);
     if (yv !== i.yvar) warnings.push('The two map variables were identical; the vertical one was changed.');
@@ -623,7 +642,7 @@ const sens = {
   applicable: fixedWing,
   inputs: [...BOUNDS.filter((f) => f.key === 'objective'), ...MODEL, ...NUM,
     { key: 'fd_step', label: 'Relative finite-difference step', unit: '-', default: 1e-3, min: 1e-8, max: 0.2, group: 'Numerics' }],
-  defaults: modelDefaults,
+  defaults: (c, up, d) => defaultsFor(sens)(c, up, d),
   run(i) {
     const P = makeModel(i), warnings = [...P.warn], obj = OBJ[i.objective], keys = ['AR', 'S', 'sweep', 'tc', 'h'], labels = ['Aspect ratio', 'Wing area', 'Sweep', 'Thickness ratio', 'Cruise altitude'];
     const F = (Pm, x, tol = 1e-13) => { const c = couple(Pm, x), s = solveMDA(c.jacobi, c.y0, { method: 'newton', tol }); return s.converged ? obj.f(c.report(s.y), Pm) : NaN; }, f0 = F(P, P.x0);
@@ -695,7 +714,7 @@ const robust = {
     { key: 'nSamples', label: 'Samples per design', unit: '', default: 8, min: 4, max: 200, step: 1, discrete: true, group: 'Numerics' },
     { key: 'seed', label: 'Random seed', unit: '', default: 11, min: 1, max: 1e9, step: 1, discrete: true, group: 'Numerics' },
   ],
-  defaults: modelDefaults,
+  defaults: (c, up, d) => defaultsFor(robust)(c, up, d),
   run(i, ctx) {
     const P = makeModel(i), warnings = [...P.warn], vars = varsOf(i, 'AR, S'), obj = OBJ[i.objective], base = evalDesign(P, P.x0);
     if (!base.ok || vars.length < 2) return { kpis: [{ key: 'robust_objective', label: 'Robust objective', value: 0, unit: '', status: 'bad' }], tables: [{ title: 'Status', columns: ['Message'], rows: [['The baseline mass loop diverges or the variable bounds are empty.']] }], warnings: [...warnings, 'The robust study could not run.'], models: MODELS, assumptions: ASSUME };
@@ -758,9 +777,9 @@ function rotorDesign(i, x, mFixed) {
   const [R, sig, vt] = x, A = Math.PI * R * R, nR = Math.max(1, Math.round(i.n_rotors)), a = isa(i.alt_m, i.dISA), rho = a.rho, elec = i.ptype === 'electric';
   const pw = (m) => {
     const T = (m * G0) / nR, Ph = (nR * ((i.kappa * T ** 1.5) / Math.sqrt(2 * rho * A) + (rho * A * vt ** 3 * sig * i.cd0) / 8)) / i.eta_mech, mu = i.V / vt;
-    const vh = Math.sqrt(T / (2 * rho * A)); let vi = vh; for (let k = 0; k < 12; k++) vi = (vh * vh) / Math.sqrt(i.V * i.V + vi * vi); // Glauert forward-flight inflow (level disk)
+    const vh = Math.sqrt(T / (2 * rho * A)); let vi = vh; for (let k = 0; k < 60; k++) { const vn = (vh * vh) / Math.sqrt(i.V * i.V + vi * vi); if (Math.abs(vn - vi) < 1e-12 * vh) break; vi = 0.5 * (vi + vn); } // Glauert forward-flight inflow (level disk); the averaged iteration converges at any speed
     const Pc = (nR * (i.kappa * T * vi + ((rho * A * vt ** 3 * sig * i.cd0) / 8) * (1 + 4.65 * mu * mu)) + 0.5 * rho * i.V ** 3 * i.f_m2) / i.eta_mech;
-    return { T, Ph, Pc, mu };
+    return { T, Ph, Pc, mu, vi };
   };
   const parts = (m) => {
     const p = pw(m), blade = i.blade_kg_m2 * sig * A * nR, hub = i.hub_frac * blade * ((vt * vt) / R) / ((i.vt_ref * i.vt_ref) / i.R_ref), Q = (p.Ph * i.eta_mech) / nR / (vt / R), drive = nR * i.drive_k * Q ** i.drive_n, pp = (i.pp_kg_kW * i.power_margin * Math.max(p.Ph, p.Pc)) / 1e3;
@@ -842,6 +861,7 @@ const rotor = {
     const r = rotor.run(i), o = N.kv(r), sum = r.plots[1].series.reduce((s, p) => s + p.y[1], 0), fx = i.mtow_ref - i.payload - r.plots[1].series.reduce((s, p) => s + p.y[0], 0);
     return [
       N.check('Ideal hover power T^1.5/√(2ρA)', q.Ph, T ** 1.5 / Math.sqrt(2 * isa(0).rho * Math.PI * 64), 1e-9, 'Rankine–Froude momentum theory'),
+      N.check('Glauert inflow satisfies vi·√(V² + vi²) = vh² at low speed', (() => { const s = rotorDesign({ ...i, alt_m: 0, V: 3 }, [8, 0.08, 200]); return s.vi * Math.hypot(3, s.vi); })(), T / (2 * isa(0).rho * Math.PI * 64), 1e-9, 'Glauert forward-flight momentum equation (slowly converging range V ≪ vh)'),
       N.check('Gross-mass loop closes at the optimum', fx + i.payload + sum, o.opt_mtow_kg, 1e-7, 'Sum of components'),
       N.check('Optimised rotor respects the blade-loading limit', Math.min(o.opt_ct_sigma, i.ct_sigma_max) / o.opt_ct_sigma, 1, 3e-3, 'Constraint enforcement'),
     ];

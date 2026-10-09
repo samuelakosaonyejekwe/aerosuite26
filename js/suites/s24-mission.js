@@ -62,6 +62,12 @@ function vincenty(p, q) {
 }
 /** Wind triangle: ground speed and wind-correction angle for a course [deg], TAS and wind FROM direction [deg] at speed ws. */
 function windTriangle(course, V, wdir, ws) { const rel = N.rad(wdir - course), xw = ws * Math.sin(rel), hw = ws * Math.cos(rel), s = N.clamp(xw / Math.max(V, 1e-9), -1, 1); return { gs: Math.max(0, V * Math.sqrt(1 - s * s) - hw), wca: N.deg(Math.asin(s)), headwind: hw, crosswind: xw }; }
+/** Wind at an altitude from the live winds-aloft levels of the site ([{ alt_m, speed_ms, dir_deg }]), interpolated as a vector; null when there are none. */
+function windAloft(levels, alt) {
+  const L = (levels || []).filter((a) => [a?.alt_m, a?.speed_ms, a?.dir_deg].every(Number.isFinite)).sort((a, b) => a.alt_m - b.alt_m); if (!L.length) return null;
+  const hs = L.map((a) => a.alt_m), u = N.interp1(hs, L.map((a) => a.speed_ms * Math.sin(N.rad(a.dir_deg))), alt), v = N.interp1(hs, L.map((a) => a.speed_ms * Math.cos(N.rad(a.dir_deg))), alt);
+  return { speed: Math.hypot(u, v), dir: (N.deg(Math.atan2(u, v)) + 360) % 360 };
+}
 const parsePts = (text) => { const out = []; let bad = 0; for (const t of String(text || '').split(/[;\n]+/)) { if (!t.trim()) continue; const v = t.split(/[,\s]+/).filter(Boolean).map(Number); if (v.length >= 2 && Math.abs(v[0]) <= 90 && Math.abs(v[1]) <= 180) out.push([v[0], v[1]]); else bad++; } return { pts: out, bad }; };
 const parseNums = (text) => { const v = String(text || '').split(/[\s,;]+/).filter(Boolean).map(Number); return { vals: v.filter(Number.isFinite), bad: v.filter((x) => !Number.isFinite(x)).length }; };
 
@@ -97,6 +103,8 @@ const acDefaults = (c, up, d) => ({
   ptype: ['turbofan', 'turbojet', 'turboprop', 'piston'].includes(c.prop.type) ? c.prop.type : 'turboprop', n_eng: c.prop.n_eng, T0_N: up.propulsion?.thrust_static_N ?? c.prop.T0_N, P0_W: c.prop.P0_W, bpr: c.prop.bpr, eta_prop: up.propeller?.eta_prop ?? c.prop.eta_prop, tsfc: up.propulsion?.tsfc_kg_Ns ?? c.prop.tsfc_kg_Ns, bsfc: c.prop.bsfc_kg_Ws, fuel: FLUIDS[c.prop.fuel]?.LHV ? c.prop.fuel : 'Jet A-1',
   range_km: c.mission.range_km || undefined, cruise_alt: c.mission.cruise_alt_m, cruise_V: c.mission.cruise_V_ms || c.flight.V_ms, dISA: c.atm.dISA_K,
 });
+/** Aircraft and flight defaults for the analyses that take neither a stage length nor a fuel type. */
+const acDefaultsNoStage = (c, up, d) => { const { fuel, range_km, ...a } = acDefaults(c, up, d); return a; };
 const fuelWing = (c) => (c.wing.S_m2 > 0 && c.prop.type !== 'electric' && c.mass.fuel_kg > 0 ? true : 'This analysis is for fuel-burning fixed-wing aircraft. Use the electric mission or helicopter mission analysis for this vehicle.');
 const ROTOR_IN = [
   { key: 'R', label: 'Rotor radius', unit: 'm', default: 8.18, min: 0.02, group: 'Rotor' }, { key: 'nR', label: 'Lifting rotors', unit: '', default: 1, min: 1, max: 16, step: 1, discrete: true, group: 'Rotor' },
@@ -132,15 +140,18 @@ function flyMission(i) {
     const k2 = rate(h + 0.5 * k1.roc * dtc, m - 0.5 * k1.ff * dtc), dt = Math.min(dtc, (hc - h) / Math.max(k2.roc, 1e-6));
     h += k2.roc * dt; m -= k2.ff * dt; t += dt; x += Math.max(0, k2.V - i.wind_climb) * dt; rec(h, k2.V, k2.ff);
   }
+  if (h < hc - 1) { warn.push(`The climb is too slow to reach ${hc.toFixed(0)} m in the time allowed; the cruise was flown at the ${h.toFixed(0)} m reached.`); hc = h; }
   log('Climb', c0.m - m, t - c0.t, x - c0.x);
   // descent geometry first (fixed flight-path angle, idle thrust), so the cruise distance is known
   const hEnd = i.elev_dest + 450, nd = 16, gam = N.rad(i.desc_angle); let dDesc = 0, tDesc = 0; const dseg = [];
   for (let j = 0; j < nd; j++) { const hm = hc - ((j + 0.5) * (hc - hEnd)) / nd, V = sched(hm), dt = Math.max(0, hc - hEnd) / nd / (V * Math.sin(gam)); dseg.push({ hm, V, dt }); tDesc += dt; dDesc += Math.max(0, V * Math.cos(gam) - i.wind_desc) * dt; }
   let dCr = i.range_km * 1e3 - x - dDesc; if (dCr < 0) { warn.push('The stage is shorter than the climb and descent distances: the aircraft never reaches the planned cruise altitude on a real flight. Lower the cruise altitude for this stage.'); dCr = 0; }
   // cruise, with optional step climbs of 600 m when the heavier-altitude specific range is beaten and climb margin exists
-  const c1 = { m, t, x }, nc = n, dx = dCr / nc, gs = Math.max(1, i.cruise_V - i.wind_cruise); let steps = 0, hcr = hc;
+  // (each 600 m step lengthens the descent, so the cruise distance still to fly is shortened to keep the stage length)
+  const c1 = { m, t, x }, nc = n, gs = Math.max(1, i.cruise_V - i.wind_cruise), dStep = hc > hEnd ? (dDesc * 600) / (hc - hEnd) : 0; let steps = 0, hcr = hc, left = dCr;
   for (let j = 0; j < nc && dCr > 0; j++) {
-    if (i.step_climb && hcr + 600 <= i.alt_max && ffLevel(p, m, hcr + 600, i.cruise_V, i.dISA) < 0.995 * ffLevel(p, m, hcr, i.cruise_V, i.dISA)) { const a = isa(hcr + 600, i.dISA), V = i.cruise_V; if (((i.climb_rating * thrustAvail(p, V, hcr + 600, i.dISA) - dragOf(p, m, V, a.rho)) * V) / (m * G0) > 1.5 && (m * G0) / (0.5 * a.rho * V * V * p.S) < 0.9 * i.CLmax * 0.6) { m -= isProp(p.ptype) ? (p.bsfc * m * G0 * 600) / p.eta_prop : (p.tsfc * m * G0 * 600) / V; hcr += 600; steps++; } }
+    if (i.step_climb && hcr + 600 <= i.alt_max && ffLevel(p, m, hcr + 600, i.cruise_V, i.dISA) < 0.995 * ffLevel(p, m, hcr, i.cruise_V, i.dISA)) { const a = isa(hcr + 600, i.dISA), V = i.cruise_V; if (((i.climb_rating * thrustAvail(p, V, hcr + 600, i.dISA) - dragOf(p, m, V, a.rho)) * V) / (m * G0) > 1.5 && (m * G0) / (0.5 * a.rho * V * V * p.S) < 0.9 * i.CLmax * 0.6) { m -= isProp(p.ptype) ? (p.bsfc * m * G0 * 600) / p.eta_prop : (p.tsfc * m * G0 * 600) / V; hcr += 600; steps++; left = Math.max(0, left - dStep); } }
+    const dx = left / (nc - j); left -= dx;
     const k1 = ffLevel(p, m, hcr, i.cruise_V, i.dISA) / gs, k2 = ffLevel(p, m - 0.5 * k1 * dx, hcr, i.cruise_V, i.dISA) / gs; m -= k2 * dx; t += dx / gs; x += dx; rec(hcr, i.cruise_V, k2 * gs);
   }
   log('Cruise', c1.m - m, t - c1.t, x - c1.x);
@@ -169,9 +180,9 @@ const profile = {
     { key: 'taxi_min', label: 'Taxi-out time (taxi-in is half)', unit: 'min', default: 12, min: 0, max: 60, group: 'Ground and terminal' }, { key: 'to_min', label: 'Take-off and initial climb time at full power', unit: 'min', default: 1.5, min: 0.2, max: 5, group: 'Ground and terminal' },
     { key: 'appr_min', label: 'Approach and landing time', unit: 'min', default: 5, min: 0, max: 20, group: 'Ground and terminal' }, { key: 'idle_frac', label: 'Idle fuel flow / maximum fuel flow', unit: '-', default: 0.07, min: 0.01, max: 0.3, group: 'Ground and terminal' },
     { key: 'elev_dep', label: 'Departure elevation', unit: 'm', default: 0, min: -400, max: 4500, group: 'Atmosphere' }, { key: 'elev_dest', label: 'Destination elevation', unit: 'm', default: 0, min: -400, max: 4500, group: 'Atmosphere' },
-    { key: 'wind_climb', label: 'Headwind in climb', unit: 'm/s', default: 0, min: -80, max: 80, group: 'Winds', help: 'Negative for tailwind; filled from live winds aloft when available' }, { key: 'wind_cruise', label: 'Headwind in cruise', unit: 'm/s', default: 0, min: -100, max: 100, group: 'Winds' }, { key: 'wind_desc', label: 'Headwind in descent', unit: 'm/s', default: 0, min: -80, max: 80, group: 'Winds' },
+    { key: 'wind_climb', label: 'Headwind in climb', unit: 'm/s', default: 0, min: -80, max: 80, group: 'Winds', help: 'Component along the track, negative for tailwind. The route analysis gives it per leg from the winds aloft.' }, { key: 'wind_cruise', label: 'Headwind in cruise', unit: 'm/s', default: 0, min: -100, max: 100, group: 'Winds' }, { key: 'wind_desc', label: 'Headwind in descent', unit: 'm/s', default: 0, min: -80, max: 80, group: 'Winds' },
     { key: 'contingency_pct', label: 'Contingency fuel', unit: '% of trip', default: 5, min: 0, max: 20, group: 'Reserves' }, { key: 'alternate_km', label: 'Distance to alternate', unit: 'km', default: 185, min: 0, group: 'Reserves' },
-    { key: 'alt_alt', label: 'Alternate cruise altitude', unit: 'm', default: 6000, min: 100, max: 12000, group: 'Reserves' }, { key: 'hold_min', label: 'Final reserve holding time', unit: 'min', default: 30, min: 0, max: 120, group: 'Reserves', help: '30 min for turbine aeroplanes and 45 min for piston aeroplanes are widely used rules' },
+    { key: 'alt_alt', label: 'Alternate cruise altitude', unit: 'm', default: 6000, min: 100, max: 12000, group: 'Reserves' }, { key: 'hold_min', label: 'Final reserve holding time', unit: 'min', default: 30, min: 0, max: 120, group: 'Reserves', help: '14 CFR 91.167 requires 45 min at normal cruise for aeroplanes under IFR (91.151: 30 min by day and 45 min by night under VFR); airline fuel policies commonly hold 30 min for turbine aeroplanes' },
     { key: 'pax', label: 'Passengers', unit: '', default: 165, min: 0, step: 1, discrete: true, group: 'Mass' },
     { key: 'nSteps', label: 'Integration steps per phase', unit: '', default: 60, min: 8, max: 4000, step: 1, discrete: true, group: 'Numerics' },
   ],
@@ -180,7 +191,7 @@ const profile = {
     return { ...acDefaults(c, up, d), climb_cas: Math.max(1.25 * vs, isProp(c.prop.type) ? 1.1 * vmd : Math.min(c.aero.Vmo_ms ? 0.85 * c.aero.Vmo_ms : eas, 1.05 * eas)), alt_max: Math.max(c.mission.cruise_alt_m * 1.17, c.mission.cruise_alt_m + 600), taxi_min: small ? 5 : 12, to_min: small ? 1 : 1.5, appr_min: small ? 3 : 5, idle_frac: c.prop.type === 'piston' ? 0.12 : 0.07,
       elev_dep: c.site.elev_m ?? 0, elev_dest: 0, alternate_km: c.mission.alternate_km, alt_alt: Math.min(6000, 0.6 * c.mission.cruise_alt_m + 300), hold_min: c.mission.reserve_min, pax: c.mission.pax, contingency_pct: 5 }; },
   run(i) {
-    const r = flyMission(i), warnings = [...r.warn], co2 = r.block * (r.fl.co2_per_kg ?? 3.16), kWh = (r.block * r.fl.LHV) / 3.6e6, over = r.tom - i.mtow, feas = r.margin >= 0 && over <= 1e-6 && r.hc >= i.cruise_alt - 1 && r.ph[3].dist > 0;
+    const r = flyMission(i), warnings = [...r.warn], co2 = r.block * (r.fl.co2_per_kg ?? 3.16), kWh = (r.block * r.fl.LHV) / 3.6e6, over = r.tom - i.mtow, feas = r.margin >= 0 && over <= 1e-6 && r.hc >= i.cruise_alt - 1;
     if (over > 1e-6) warnings.push(`Take-off mass exceeds the maximum by ${over.toFixed(0)} kg: offload payload or fuel.`);
     if (r.margin < 0) warnings.push(`Fuel on board is ${(-r.margin).toFixed(0)} kg short of trip fuel plus reserves.`);
     if (r.CLc > 0.6 * i.CLmax && jetLike(i.ptype)) warnings.push('Start-of-cruise lift coefficient is high for the cruise Mach number: buffet margin may be thin at this altitude and mass.');
@@ -209,7 +220,7 @@ const profile = {
         { type: 'bar', title: 'Fuel by phase and reserves', ylabel: 'Fuel [kg]', categories: [...r.ph.map((q) => q.name), 'Contingency', 'Alternate', 'Final hold'], series: [{ name: 'Fuel', y: [...r.ph.map((q) => q.fuel), r.reserves.cont, r.reserves.alt, r.reserves.hold] }] },
       ],
       tables: [{ title: 'Mission phases', columns: ['Phase', 'Fuel [kg]', 'Time [min]', 'Distance [km]'], rows: [...r.ph.map((q) => [q.name, q.fuel, q.time / 60, q.dist / 1e3]), ['Block total', r.block, r.tBlock / 60, r.dist / 1e3]] }],
-      outputs: { cruise_fuel_flow_kgs: r.ph[3].time > 0 ? r.ph[3].fuel / r.ph[3].time : 0, mission_dist_km: r.dist / 1e3 },
+      outputs: { cruise_fuel_flow_kgs: r.ph[3].time > 0 ? r.ph[3].fuel / r.ph[3].time : 0, mission_dist_km: r.dist / 1e3, fuel_loaded_kg: i.fuel_load, final_reserve_kg: r.reserves.alt + r.reserves.hold, stage_too_short: r.ph[3].dist > 0 ? 0 : 1 },
       warnings, models: ['Quasi-steady point-mass flight in the vertical plane', 'Parabolic drag polar', 'Thrust and power lapse with altitude and Mach number', 'Constant-CAS / constant-TAS speed schedule with acceleration correction', 'ISA with temperature offset'],
       assumptions: ['Constant specific fuel consumption in every phase', 'Idle-thrust descent on a fixed path angle; fuel flow 1.3× ground idle', 'Step climbs are instantaneous with the potential-energy fuel added', 'Reserves computed at landing mass; alternate includes 10% for the missed approach and climb', 'Winds are constant head- or tailwind components per phase'],
     };
@@ -223,6 +234,7 @@ const profile = {
       N.check('Constant-altitude, constant-speed cruise range (arctangent Breguet form)', exact, dist, 1e-6, 'Closed-form integral of dR = −V·dW/(c·g·D) for a parabolic polar'),
       N.check('Fuel mass conservation: phase fuels sum to the mass change', N.sum(r.ph.map((x) => x.fuel)), r.tom - r.H.m[r.H.m.length - 1], 1e-10, 'Conservation of mass'),
       N.check('Phase distances sum to the stage length', N.sum(r.ph.map((x) => x.dist)), i.range_km * 1e3, 1e-9, 'Kinematic closure'),
+      N.check('Phase distances still sum to the stage length with step climbs', N.sum(flyMission({ ...i, step_climb: true }).ph.map((x) => x.dist)), i.range_km * 1e3, 1e-9, 'Kinematic closure: the longer descent is taken out of the cruise'),
       N.check('Headwind lengthens cruise time by V/(V − w)', cruiseSeg(p, m0, 1e6, h, V, 20, 0, 50).time, 1e6 / 200, 1e-12, 'Ground speed = TAS − headwind'),
     ];
   },
@@ -231,6 +243,7 @@ const profile = {
     const o = res.outputs, out = [];
     if (!o.mission_feasible) out.push({ severity: 'critical', title: 'The mission is not feasible as planned', detail: res.warnings.slice(0, 2).join(' '), action: o.reserve_margin_kg < 0 ? `Load ${(-o.reserve_margin_kg).toFixed(0)} kg more fuel if mass allows, otherwise offload payload, plan a technical stop or choose a closer alternate.` : 'Reduce take-off mass or lower the cruise altitude.', basis: 'Fuel policy: trip + contingency + alternate + final reserve; maximum take-off mass' });
     else if (o.reserve_margin_kg > 0.08 * i.fuel_load) out.push({ severity: 'advise', title: 'More fuel is loaded than this stage needs', detail: `${o.reserve_margin_kg.toFixed(0)} kg above the required reserves.`, action: `Carrying surplus fuel burns fuel: unloading it would save roughly ${(0.03 * o.reserve_margin_kg * o.flight_time_h).toFixed(0)} kg per flight (about 3% of the extra mass per flight hour) and the matching CO₂, unless tankering is cheaper.`, basis: 'Cost of weight' });
+    if (o.stage_too_short) out.push({ severity: 'warn', title: 'The stage is too short for the planned cruise altitude', detail: 'Climb and descent alone cover more than the stage length, so the fuel and time shown are for a longer flight than planned.', action: 'Lower the cruise altitude for this stage until a cruise segment appears.', basis: 'Kinematic closure of climb, cruise and descent distances' });
     if (!i.step_climb && o.flight_time_h > 3 && jetLike(i.ptype)) out.push({ severity: 'advise', title: 'Try step climbs', detail: 'On a long stage the optimum altitude rises as fuel burns off.', action: 'Enable step climbs and compare block fuel; 1–2% is typical on long sectors, a direct CO₂ saving.', basis: 'Specific range versus altitude and mass' });
     if (i.wind_cruise > 15) out.push({ severity: 'info', title: 'Strong headwind in cruise', detail: `${i.wind_cruise} m/s headwind.`, action: 'Check other flight levels and lateral tracks in the route analysis; flying slightly faster than still-air best-range speed pays in a headwind.', basis: 'Wind effect on ground specific range' });
     return out;
@@ -245,15 +258,15 @@ const route = {
     { key: 'waypoints', label: 'Waypoints (lat, lon; lat, lon; …)', type: 'text', default: '48.0, 2.0; 52.2, 21.0; 55.6, 37.3', group: 'Route', help: 'Decimal degrees, north and east positive. The default is an illustrative route; it is replaced by the case site and design range when a site is set.' },
     { key: 'alternates', label: 'En-route alternates (lat, lon; …)', type: 'text', default: '', group: 'Route', help: 'Departure and destination are always counted as suitable airports' },
     { key: 'tas', label: 'Cruise true airspeed', unit: 'm/s', default: 231, min: 1, group: 'Flight' }, { key: 'cruise_alt', label: 'Cruise altitude', unit: 'm', default: 10668, min: 0, group: 'Flight' },
-    { key: 'wind_dir', label: 'Wind direction (from)', unit: 'deg', default: 270, min: 0, max: 360, group: 'Wind', help: 'Filled from live winds aloft when available' }, { key: 'wind_ms', label: 'Wind speed', unit: 'm/s', default: 0, min: 0, max: 120, group: 'Wind' },
+    { key: 'wind_dir', label: 'Wind direction (from)', unit: 'deg', default: 270, min: 0, max: 360, group: 'Wind', help: 'Filled, with the speed, from the live winds aloft of the site at cruise altitude when available' }, { key: 'wind_ms', label: 'Wind speed', unit: 'm/s', default: 0, min: 0, max: 120, group: 'Wind' },
     { key: 'ff_kgs', label: 'Cruise fuel flow', unit: 'kg/s', default: 0.72, min: 0, group: 'Consumption', help: 'From Suite 5 or the mission simulation' }, { key: 'power_kW', label: 'Cruise electrical power (electric aircraft)', unit: 'kW', default: 0, min: 0, group: 'Consumption' },
     { key: 'terrain', label: 'Terrain elevations along the route', type: 'text', default: '', group: 'Terrain', help: 'Metres, evenly spaced from departure to destination; from live elevation data or typed in. Leave empty to skip the check.' },
     { key: 'clearance_min', label: 'Required terrain clearance', unit: 'm', default: 600, min: 0, max: 3000, group: 'Terrain', help: '300 m is common over flat terrain, 600 m in mountainous areas' },
     { key: 'oei_alt', label: 'Engine-out drift-down altitude (0 = skip)', unit: 'm', default: 0, min: 0, group: 'Terrain' },
     { key: 'v_div', label: 'Diversion speed (one engine inoperative)', unit: 'm/s', default: 200, min: 1, group: 'Diversion' }, { key: 'div_min', label: 'Diversion time limit', unit: 'min', default: 60, min: 5, max: 420, group: 'Diversion', help: '60 min for twins without extended-diversion approval' },
   ],
-  defaults: (c, up, d) => { const e = estCruise(c, d), V = c.mission.cruise_V_ms || c.flight.V_ms, s = c.site, has = typeof s.lat === 'number' && typeof s.lon === 'number', R = Math.min(c.mission.range_km || 100, 15000) * 1e3, o = has ? [s.lat, s.lon] : [48, 2], mid = direct(o, 70, R / 2), dst = direct(o, 75, R), f = (p) => `${p[0].toFixed(4)}, ${p[1].toFixed(4)}`;
-    return { waypoints: [o, mid, dst].map(f).join('; '), tas: V, cruise_alt: c.mission.cruise_alt_m, wind_dir: s.wind_dir_deg || 270, wind_ms: 0, ff_kgs: up.performance?.fuel_flow_cruise_kgs ?? e.ff, power_kW: e.P / 1e3, v_div: 0.85 * V, clearance_min: c.mission.cruise_alt_m < 1500 ? 150 : 600 }; },
+  defaults: (c, up, d) => { const e = estCruise(c, d), V = c.mission.cruise_V_ms || c.flight.V_ms, s = c.site, wa = windAloft(s.winds_aloft, c.mission.cruise_alt_m || 0), has = typeof s.lat === 'number' && typeof s.lon === 'number', R = Math.min(c.mission.range_km || 100, 15000) * 1e3, o = has ? [s.lat, s.lon] : [48, 2], mid = direct(o, 70, R / 2), dst = direct(o, 75, R), f = (p) => `${p[0].toFixed(4)}, ${p[1].toFixed(4)}`;
+    return { waypoints: [o, mid, dst].map(f).join('; '), tas: V, cruise_alt: c.mission.cruise_alt_m, wind_dir: wa ? wa.dir : s.wind_dir_deg || 270, wind_ms: wa ? Math.min(wa.speed, 120) : 0, ff_kgs: up.performance?.fuel_flow_cruise_kgs ?? e.ff, power_kW: e.P / 1e3, v_div: 0.85 * V, clearance_min: c.mission.cruise_alt_m < 1500 ? 150 : 600 }; },
   run(i) {
     const warnings = [], wp = parsePts(i.waypoints), al = parsePts(i.alternates); let pts = wp.pts;
     if (wp.bad) warnings.push(`${wp.bad} waypoint entr${wp.bad > 1 ? 'ies' : 'y'} could not be read and were skipped.`); if (al.bad) warnings.push(`${al.bad} alternate entr${al.bad > 1 ? 'ies' : 'y'} could not be read.`);
@@ -267,8 +280,9 @@ const route = {
     const ter = parseNums(i.terrain), hasT = ter.vals.length >= 2, tMax = hasT ? N.amax(ter.vals) : NaN, clr = hasT ? i.cruise_alt - tMax : NaN, clrO = hasT && i.oei_alt > 0 ? i.oei_alt - tMax : NaN;
     if (ter.bad) warnings.push(`${ter.bad} terrain value(s) could not be read.`);
     if (!hasT) warnings.push('No terrain profile supplied: terrain clearance was not checked.');
+    if (!al.pts.length && dMax > dLim) warnings.push('No en-route alternates are listed, so the farthest-point figure counts only the departure and destination as usable airports. List the alternates before judging the diversion time.');
     if (dist > 0.6 * Math.PI * R_E) warnings.push('Very long legs: a single wind vector for the whole route is a crude assumption.');
-    const fuel = i.ff_kgs * time, kWh = (i.power_kW * time) / 3600, gcd = vincenty(pts[0], pts[pts.length - 1]), cum = N.cumtrapz(N.range(legs.length + 1), [0, ...legs.map((l) => l.d)]).map((_, j) => N.sum(legs.slice(0, j).map((l) => l.d)) / 1e3);
+    const fuel = i.ff_kgs * time, kWh = (i.power_kW * time) / 3600, gcd = vincenty(pts[0], pts[pts.length - 1]), cum = N.range(legs.length + 1, (j) => N.sum(legs.slice(0, j).map((l) => l.d)) / 1e3), divSt = !al.pts.length ? undefined : dMax <= dLim ? 'ok' : 'warn';
     return {
       kpis: [
         { key: 'route_dist_km', label: 'Route distance (WGS-84 geodesic)', value: dist / 1e3, unit: 'km' }, { key: 'direct_dist_km', label: 'Direct departure–destination distance', value: gcd / 1e3, unit: 'km' },
@@ -279,14 +293,15 @@ const route = {
         { key: 'max_wca_deg', label: 'Largest wind-correction angle', value: Math.max(...legs.map((l) => Math.abs(l.wca))), unit: 'deg' },
         ...(hasT ? [{ key: 'terrain_clearance_m', label: 'Smallest terrain clearance in cruise', value: clr, unit: 'm', status: clr >= i.clearance_min ? 'ok' : 'bad', note: `Highest terrain ${tMax.toFixed(0)} m` }] : []),
         ...(Number.isFinite(clrO) ? [{ key: 'oei_clearance_m', label: 'Terrain clearance at drift-down altitude', value: clrO, unit: 'm', status: clrO >= i.clearance_min ? 'ok' : 'bad' }] : []),
-        { key: 'max_diversion_km', label: 'Farthest point from a suitable airport', value: dMax / 1e3, unit: 'km', status: dMax <= dLim ? 'ok' : 'warn' },
-        { key: 'diversion_time_min', label: 'Diversion time from that point', value: dMax / i.v_div / 60, unit: 'min', status: dMax <= dLim ? 'ok' : 'warn', note: `Limit ${i.div_min} min` },
+        { key: 'max_diversion_km', label: 'Farthest point from a suitable airport', value: dMax / 1e3, unit: 'km', status: divSt },
+        { key: 'diversion_time_min', label: 'Diversion time from that point', value: dMax / i.v_div / 60, unit: 'min', status: divSt, note: al.pts.length ? `Limit ${i.div_min} min` : `Limit ${i.div_min} min; not judged because no en-route alternates are listed` },
       ],
       plots: [
         { type: 'line', title: 'Route map (equirectangular)', xlabel: 'Longitude [deg]', ylabel: 'Latitude [deg]', series: [{ name: 'Great-circle track', x: track.map((q) => q.p[1]), y: track.map((q) => q.p[0]) }, { name: 'Waypoints', x: pts.map((q) => q[1]), y: pts.map((q) => q[0]), style: 'points' }, ...(al.pts.length ? [{ name: 'Alternates', x: al.pts.map((q) => q[1]), y: al.pts.map((q) => q[0]), style: 'points' }] : []), { name: 'Farthest from an airport', x: [track[jf].p[1]], y: [track[jf].p[0]], style: 'points' }] },
         { type: 'bar', title: 'Ground speed by leg', ylabel: 'Speed [m/s]', categories: legs.map((_, j) => `Leg ${j + 1}`), series: [{ name: 'Ground speed', y: legs.map((l) => l.gs) }, { name: 'True airspeed', y: legs.map(() => i.tas) }] },
         ...(hasT ? [{ type: 'line', title: 'Terrain and cruise altitude', xlabel: 'Distance [km]', ylabel: 'Altitude [m]', series: [{ name: 'Terrain', x: N.linspace(0, dist / 1e3, ter.vals.length), y: ter.vals }, { name: 'Cruise altitude', x: [0, dist / 1e3], y: [i.cruise_alt, i.cruise_alt] }, { name: 'Terrain + required clearance', x: N.linspace(0, dist / 1e3, ter.vals.length), y: ter.vals.map((v) => v + i.clearance_min), style: 'dash' }] }] : []),
       ],
+      outputs: { alternates_listed: al.pts.length },
       tables: [{ title: 'Legs', columns: ['Leg', 'Distance [km]', 'Sphere distance [km]', 'Initial bearing [deg]', 'Headwind [m/s]', 'Crosswind [m/s]', 'Wind correction [deg]', 'Ground speed [m/s]', 'Time [min]', 'Cumulative [km]'], rows: legs.map((l, j) => [j + 1, l.d / 1e3, l.dh / 1e3, l.brg, l.headwind, l.crosswind, l.wca, l.gs, l.t / 60, cum[j + 1]]) }],
       warnings, models: ['Vincenty inverse geodesic on the WGS-84 ellipsoid', 'Haversine great-circle distance and initial bearing', 'Wind triangle', 'Great-circle interpolation for the track', 'Nearest-airport diversion scan'],
       assumptions: ['One wind vector applies to the whole route at cruise level', 'Cruise fuel only: add climb, descent and reserves with the mission simulation', 'Terrain values are evenly spaced along the route', 'Diversion distance is still-air great-circle distance to the nearest listed airport'],
@@ -302,13 +317,16 @@ const route = {
       N.check('Pure headwind: GS = TAS − wind', w.gs, 80, 1e-12, 'Wind triangle'),
       N.check('Pure crosswind: GS = √(TAS² − wind²)', x.gs, Math.sqrt(100 * 100 - 900), 1e-12, 'Wind triangle'),
       N.check('Direct and inverse problems agree', haversine([10, 20], direct([10, 20], 37, 5e5)), 5e5, 1e-9, 'Spherical consistency'),
+      N.check('Winds aloft interpolate as vectors: 20 m/s from 350° and from 010° average to 19.70 m/s from north', windAloft([{ alt_m: 0, speed_ms: 20, dir_deg: 350 }, { alt_m: 1000, speed_ms: 20, dir_deg: 10 }], 500).speed, 20 * Math.cos(N.rad(10)), 1e-12, 'Vector mean across the 360° wrap'),
+      N.check('Winds aloft: direction across the wrap is north, not south', Math.cos(N.rad(windAloft([{ alt_m: 0, speed_ms: 20, dir_deg: 350 }, { alt_m: 1000, speed_ms: 20, dir_deg: 10 }], 500).dir)), 1, 1e-12, 'Vector mean'),
     ];
   },
   recommend(res, i) {
     const o = res.outputs, out = [];
     if (o.terrain_clearance_m !== undefined && o.terrain_clearance_m < i.clearance_min) out.push({ severity: 'critical', title: 'Cruise altitude does not clear terrain by the required margin', detail: `${o.terrain_clearance_m.toFixed(0)} m against ${i.clearance_min} m.`, action: 'Raise the cruise level or re-route around the high ground.', basis: 'Minimum obstacle clearance' });
     if (o.oei_clearance_m !== undefined && o.oei_clearance_m < i.clearance_min) out.push({ severity: 'warn', title: 'Engine-out drift-down does not clear terrain', detail: `${o.oei_clearance_m.toFixed(0)} m at the drift-down altitude.`, action: 'Define escape routes and decision points, or limit take-off mass to raise the engine-out ceiling.', basis: 'En-route one-engine-inoperative obstacle clearance' });
-    if (o.diversion_time_min > i.div_min) out.push({ severity: 'warn', title: 'Part of the route is beyond the diversion time limit', detail: `${o.diversion_time_min.toFixed(0)} min from the nearest listed airport at ${i.v_div} m/s.`, action: 'Add suitable en-route alternates, re-route closer to airports, or operate under an extended-diversion-time approval.', basis: 'Diversion time rule' });
+    if (o.diversion_time_min > i.div_min && !o.alternates_listed) out.push({ severity: 'info', title: 'List en-route alternates to check the diversion time', detail: `With only the departure and destination counted, the farthest point is ${o.diversion_time_min.toFixed(0)} min from an airport at ${Number(i.v_div).toFixed(0)} m/s against a ${i.div_min} min limit.`, action: 'Enter the suitable airports along the route. The limit matters for multi-engine aeroplanes in commercial service; other operations set their own.', basis: 'Diversion time rule' });
+    else if (o.diversion_time_min > i.div_min) out.push({ severity: 'warn', title: 'Part of the route is beyond the diversion time limit', detail: `${o.diversion_time_min.toFixed(0)} min from the nearest listed airport at ${Number(i.v_div).toFixed(0)} m/s.`, action: 'Add suitable en-route alternates, re-route closer to airports, or operate under an extended-diversion-time approval.', basis: 'Diversion time rule' });
     if (o.route_extension_pct > 5) out.push({ severity: 'advise', title: 'The route is noticeably longer than the direct track', detail: `${o.route_extension_pct.toFixed(1)}% extension.`, action: `A more direct routing would save about ${(o.route_fuel_kg * o.route_extension_pct / (100 + o.route_extension_pct)).toFixed(0)} kg of fuel and its CO₂ on each flight.`, basis: 'Great-circle distance' });
     if (o.wind_time_penalty_pct > 5) out.push({ severity: 'info', title: 'Wind adds significant time', detail: `${o.wind_time_penalty_pct.toFixed(1)}% longer than still air.`, action: 'Compare other levels and tracks with live winds; carry the extra trip fuel.', basis: 'Wind triangle' });
     return out;
@@ -322,13 +340,13 @@ const trade = {
   summary: 'Maps specific range over altitude and speed to find the maximum-range and long-range cruise points, shows how the economic speed moves with the cost index, and builds the payload–range diagram with reserves.',
   equations: ['Breguet range equation', 'Fuel consumption equations', 'Mission constraint equations', 'Optimal control equations'],
   applicable: fuelWing,
-  inputs: [...AC, ...FLT,
+  inputs: [...AC.filter((f) => f.key !== 'fuel'), ...FLT.filter((f) => f.key !== 'range_km'),
     { key: 'mach_max', label: 'Maximum operating Mach', unit: '-', default: 0.82, min: 0.05, max: 0.95, group: 'Limits' }, { key: 'alt_max', label: 'Maximum operating altitude', unit: 'm', default: 12500, min: 500, max: 18000, group: 'Limits' },
     { key: 'cost_index', label: 'Cost index (time cost ÷ fuel cost)', unit: 'kg/min', default: 30, min: 0, max: 500, group: 'Economics', help: '0 = minimum fuel; high values favour speed' },
     { key: 'reserve_kg', label: 'Reserve and allowance fuel', unit: 'kg', default: 3200, min: 0, group: 'Mission', help: 'Contingency, alternate, hold, taxi' }, { key: 'climb_allow', label: 'Climb and descent fuel allowance', unit: '-', default: 0.03, min: 0, max: 0.2, group: 'Mission', help: 'Fraction of take-off mass' },
     { key: 'payload_max', label: 'Maximum payload', unit: 'kg', default: 16600, min: 0, group: 'Mass' }, { key: 'fuel_cap', label: 'Fuel capacity', unit: 'kg', default: 18800, min: 0, group: 'Mass' },
     { key: 'nGrid', label: 'Grid points per axis', unit: '', default: 31, min: 9, max: 121, step: 1, discrete: true, group: 'Numerics' }],
-  defaults: (c, up, d) => { const e = estCruise(c, d), small = c.mass.mtow_kg < 5700; return { ...acDefaults(c, up, d), mach_max: c.aero.Mmo || 0.6, alt_max: Math.max(c.mission.cruise_alt_m * 1.17, c.mission.cruise_alt_m + 600, 1500), cost_index: small ? 2e-4 * c.mass.mtow_kg : 3.5e-4 * c.mass.mtow_kg, reserve_kg: e.ff * (c.mission.reserve_min * 60 + (c.mission.alternate_km * 1e3) / e.V) + 0.03 * c.mass.fuel_kg, payload_max: c.mass.payload_kg, fuel_cap: c.mass.fuel_kg }; },
+  defaults: (c, up, d) => { const e = estCruise(c, d), small = c.mass.mtow_kg < 5700; return { ...acDefaultsNoStage(c, up, d), mach_max: c.aero.Mmo || 0.6, alt_max: Math.max(c.mission.cruise_alt_m * 1.17, c.mission.cruise_alt_m + 600, 1500), cost_index: small ? 2e-4 * c.mass.mtow_kg : 3.5e-4 * c.mass.mtow_kg, reserve_kg: e.ff * (c.mission.reserve_min * 60 + (c.mission.alternate_km * 1e3) / e.V) + 0.03 * c.mass.fuel_kg, payload_max: c.mass.payload_kg, fuel_cap: c.mass.fuel_kg }; },
   run(i) {
     const p = i, ng = Math.round(i.nGrid), mMid = Math.min(i.mtow, i.oew + i.payload + i.fuel_load) - 0.4 * i.fuel_load, hs = N.linspace(0, i.alt_max, ng), warnings = [];
     const lim = (h) => { const a = isa(h, i.dISA), Vs = 1.2 * Math.sqrt((2 * mMid * G0) / (a.rho * p.S * i.CLmax)), Vt = N.findRoot((V) => thrustAvail(p, V, h, i.dISA) - dragOf(p, mMid, V, a.rho), vMinDrag(p, mMid, a.rho), 1.2 * a.a, 60); return { a, Vs, Vhi: Math.min(i.mach_max * a.a, Number.isFinite(Vt) ? Vt : thrustAvail(p, vMinDrag(p, mMid, a.rho), h, i.dISA) > dragOf(p, mMid, vMinDrag(p, mMid, a.rho), a.rho) ? i.mach_max * a.a : 0) }; };
@@ -394,12 +412,12 @@ const climbopt = {
   summary: 'Plots specific excess power over speed and altitude and finds the climb paths that reach the cruise energy in the least time or with the least fuel, compared with the constant-airspeed schedule.',
   equations: ['Aircraft energy equations', 'Optimal control equations', 'Dynamic programming equations', 'Three-degree-of-freedom trajectory equations'],
   applicable: fuelWing,
-  inputs: [...AC, ...FLT.filter((f) => f.key !== 'range_km'),
+  inputs: [...AC.filter((f) => f.key !== 'fuel'), ...FLT.filter((f) => f.key !== 'range_km'),
     { key: 'climb_cas', label: 'Reference climb calibrated airspeed', unit: 'm/s', default: 150, min: 5, group: 'Mission' }, { key: 'climb_rating', label: 'Climb thrust / thrust available at altitude', unit: '-', default: 1, min: 0.5, max: 1, group: 'Mission' },
     { key: 'ps_floor', label: 'Specific excess power required at top of climb', unit: 'm/s', default: 0.5, min: 0.2, max: 5, group: 'Limits' },
     { key: 'mach_max', label: 'Maximum operating Mach', unit: '-', default: 0.82, min: 0.05, max: 0.95, group: 'Limits' }, { key: 'vmo_eas', label: 'Maximum operating speed (EAS)', unit: 'm/s', default: 180, min: 5, group: 'Limits' },
     { key: 'nGrid', label: 'Grid points per axis', unit: '', default: 40, min: 10, max: 160, step: 1, discrete: true, group: 'Numerics' }],
-  defaults: (c, up, d) => ({ ...acDefaults(c, up, d), climb_cas: profile.defaults(c, up, d).climb_cas, alt_max: undefined, mach_max: c.aero.Mmo || 0.6, vmo_eas: c.aero.Vmo_ms || 1.3 * (c.mission.cruise_V_ms || c.flight.V_ms) }),
+  defaults: (c, up, d) => ({ ...acDefaultsNoStage(c, up, d), climb_cas: profile.defaults(c, up, d).climb_cas, mach_max: c.aero.Mmo || 0.6, vmo_eas: c.aero.Vmo_ms || 1.3 * (c.mission.cruise_V_ms || c.flight.V_ms) }),
   run(i) {
     const p = i, m = Math.min(i.mtow, i.oew + i.payload + i.fuel_load), W = m * G0, ng = Math.round(i.nGrid), warnings = []; let hTop = i.cruise_alt;
     const Ps = (h, V) => { const a = isa(h, i.dISA); return ((i.climb_rating * thrustAvail(p, V, h, i.dISA) - dragOf(p, m, V, a.rho)) * V) / W; }, ff = (h, V) => fuelFlow(p, i.climb_rating * thrustAvail(p, V, h, i.dISA), V);
@@ -468,7 +486,7 @@ const heli = {
     { key: 'radius_km', label: 'Mission radius', unit: 'km', default: 250, min: 0, group: 'Mission' }, { key: 'V', label: 'Cruise speed', unit: 'm/s', default: 72, min: 5, max: 110, group: 'Mission' }, { key: 'alt', label: 'Cruise altitude', unit: 'm', default: 500, min: 0, max: 6000, group: 'Mission' }, { key: 'dISA', label: 'ISA deviation', unit: 'K', default: 0, min: -40, max: 40, group: 'Mission' },
     { key: 'wind_out', label: 'Headwind outbound (tailwind home)', unit: 'm/s', default: 0, min: -30, max: 30, group: 'Mission' }, { key: 'hover_min', label: 'Total hover time', unit: 'min', default: 10, min: 0, max: 240, group: 'Mission', help: 'Split evenly between departure, destination and return' },
     { key: 'ground_min', label: 'Rotors-running ground time', unit: 'min', default: 8, min: 0, max: 60, group: 'Mission' }, { key: 'payload_drop', label: 'Payload left at the destination', unit: 'kg', default: 0, min: 0, group: 'Mission', help: 'External load or passengers not carried back' },
-    { key: 'reserve_min', label: 'Final reserve at best-endurance speed', unit: 'min', default: 30, min: 0, max: 90, group: 'Reserves' }, { key: 'contingency_pct', label: 'Contingency fuel', unit: '% of trip', default: 10, min: 0, max: 30, group: 'Reserves' },
+    { key: 'reserve_min', label: 'Final reserve at best-endurance speed', unit: 'min', default: 30, min: 0, max: 90, group: 'Reserves', help: '30 min is the helicopter reserve of 14 CFR 91.167 under IFR; 20 min applies to rotorcraft under VFR (14 CFR 91.151)' }, { key: 'contingency_pct', label: 'Contingency fuel', unit: '% of trip', default: 10, min: 0, max: 30, group: 'Reserves' },
     { key: 'fuel', label: 'Fuel', type: 'select', options: ['Jet A-1', 'Avgas 100LL', 'SAF (HEFA-SPK)'], default: 'Jet A-1', group: 'Propulsion' },
   ],
   defaults: (c, up, d) => ({ ...rotorDefaults(c, d), mission: /sar|search/i.test(c.mission.profile) ? 'Search and rescue' : /external|load/i.test(c.mission.profile) ? 'External load' : 'Offshore transport', mtow: c.mass.mtow_kg, oew: c.mass.oew_kg, payload: c.mass.payload_kg, fuel_cap: c.mass.fuel_kg, P_inst: d.P_total, bsfc: c.prop.bsfc_kg_Ws,
@@ -517,7 +535,7 @@ const heli = {
         { type: 'bar', title: 'Fuel by phase', ylabel: 'Fuel [kg]', categories: [...b.ph.map((q) => q.name), 'Reserves'], series: [{ name: 'Fuel', y: [...b.ph.map((q) => q.fuel), b.res] }] },
       ],
       tables: [{ title: 'Mission phases', columns: ['Phase', 'Fuel [kg]', 'Time [min]', 'Distance [km]'], rows: [...b.ph.map((q) => [q.name, q.fuel, q.time / 60, q.dist / 1e3]), ['Total', b.trip, b.time / 60, (2 * i.radius_km)]] }],
-      outputs: { tom_kg: tom, fuel_loaded_kg: fuelMax },
+      outputs: { tom_kg: tom, fuel_loaded_kg: fuelMax, final_reserve_kg: b.res - (i.contingency_pct / 100) * b.trip, mission_dist_km: 2 * i.radius_km },
       warnings, models: ['Momentum theory with Glauert forward-flight inflow', 'Profile power with advance-ratio growth (1 + 4.65μ²)', 'Parasite power from equivalent flat-plate area', 'Constant brake specific fuel consumption', 'Radius of action and point of no return with wind'],
       assumptions: ['Transmission efficiency covers tail rotor and accessories', 'Hover out of ground effect at sea-level density of the day', 'Fuel loaded to capacity or to the maximum take-off mass limit', 'Specific fuel consumption does not rise at part power (optimistic at low power)', 'No blade stall or compressibility limits'],
     };
@@ -605,7 +623,7 @@ const electric = {
         { type: 'line', title: 'Energy margin versus temperature', xlabel: 'Battery and air temperature [°C]', ylabel: 'Energy margin [kWh]', series: [{ name: 'Margin above reserve', x: temps, y: mt.map((q) => q.margin) }], annotations: [{ y: 0, label: 'No margin' }] },
       ],
       tables: [{ title: 'Mission phases', columns: ['Phase', 'Power [kW]', 'Time [min]', 'Energy [kWh]', 'Distance [km]'], rows: b.ph.map((q) => [q.name, q.P / 1e3, q.time / 60, q.E, q.dist / 1e3]) }],
-      outputs: { usable_energy_kWh: b.Euse },
+      outputs: { usable_energy_kWh: b.Euse, mission_dist_km: N.sum(b.ph.map((q) => q.dist)) / 1e3 },
       warnings, models: ['Momentum theory hover and Glauert forward-flight rotor power', 'Parabolic-polar wing-borne cruise', 'Constant battery-to-shaft efficiency', 'Linear cold-temperature capacity derating (illustrative)'],
       assumptions: ['Mass is constant', 'Transition power is 10% above the mean of hover and cruise power', 'Descent recovers no energy; it uses cruise power reduced by 70% of the potential-energy rate', 'Reserve at cruise power for winged aircraft and at minimum-power speed for rotor-borne aircraft', 'No voltage sag, Peukert or ageing model beyond the usable-energy fraction'],
     };
@@ -636,14 +654,14 @@ const stochastic = {
   equations: ['Fuel consumption equations', 'Mission constraint equations', 'Breguet range equation'],
   inputs: [
     { key: 'electric', label: 'Battery-electric aircraft', type: 'bool', default: false, group: 'Nominal mission' },
-    { key: 'dist_km', label: 'Stage length', unit: 'km', default: 4500, min: 0.1, group: 'Nominal mission' }, { key: 'V', label: 'Cruise true airspeed', unit: 'm/s', default: 231, min: 1, group: 'Nominal mission' },
+    { key: 'dist_km', label: 'Stage length', unit: 'km', default: 4500, min: 0.1, group: 'Nominal mission', help: 'Total distance flown; for an out-and-back mission, twice the radius' }, { key: 'out_and_back', label: 'Out-and-back mission', type: 'bool', default: false, group: 'Nominal mission', help: 'The sampled wind is then a headwind on one half of the distance and a tailwind on the other' }, { key: 'V', label: 'Cruise true airspeed', unit: 'm/s', default: 231, min: 1, group: 'Nominal mission' },
     { key: 'rate', label: 'Nominal cruise consumption', unit: 'kg/s or kW', default: 0.72, min: 0, group: 'Nominal mission', help: 'Fuel flow in kg/s, or battery power in kW for electric aircraft' },
     { key: 'fixed', label: 'Fixed fuel or energy (taxi, take-off, climb increment, approach)', unit: 'kg or kWh', default: 1500, min: 0, group: 'Nominal mission' },
     { key: 'hold_rate_frac', label: 'Holding consumption / cruise consumption', unit: '-', default: 0.8, min: 0.2, max: 3, group: 'Nominal mission' },
     { key: 'loaded', label: 'Fuel or usable energy loaded', unit: 'kg or kWh', default: 18800, min: 0, group: 'Nominal mission' }, { key: 'reserve', label: 'Required final reserve', unit: 'kg or kWh', default: 2400, min: 0, group: 'Nominal mission' },
     { key: 'mass', label: 'Nominal flight mass', unit: 'kg', default: 72000, min: 0.05, group: 'Nominal mission' }, { key: 'mass_elast', label: 'Consumption elasticity to mass', unit: '%/%', default: 0.7, min: 0, max: 2, group: 'Sensitivities', help: '≈ 2 × induced share of drag for wings (0.6–1.0); about 1.5 in hover' },
     { key: 'temp_sens', label: 'Consumption change per K', unit: '1/K', default: 0.001, min: -0.01, max: 0.02, group: 'Sensitivities' },
-    { key: 'wind_sd', label: 'Headwind standard deviation', unit: 'm/s', default: 12, min: 0, max: 50, group: 'Uncertainty' }, { key: 'wind_mean', label: 'Mean headwind', unit: 'm/s', default: 0, min: -60, max: 60, group: 'Uncertainty', help: 'From live winds aloft when available' },
+    { key: 'wind_sd', label: 'Headwind standard deviation', unit: 'm/s', default: 12, min: 0, max: 50, group: 'Uncertainty' }, { key: 'wind_mean', label: 'Mean headwind', unit: 'm/s', default: 0, min: -60, max: 60, group: 'Uncertainty', help: 'Long-run mean along the track; the route analysis gives the component for a given day' },
     { key: 'temp_sd', label: 'Temperature deviation standard deviation', unit: 'K', default: 5, min: 0, max: 25, group: 'Uncertainty' }, { key: 'payload_sd', label: 'Payload standard deviation', unit: 'kg', default: 800, min: 0, group: 'Uncertainty' },
     { key: 'delay_mean_min', label: 'Mean airborne delay (holding, vectors)', unit: 'min', default: 6, min: 0, max: 90, group: 'Uncertainty', help: 'Exponentially distributed' },
     { key: 'coverage', label: 'Share of flights to cover without touching reserves', unit: '-', default: 0.99, min: 0.5, max: 0.9999, group: 'Uncertainty' },
@@ -652,20 +670,25 @@ const stochastic = {
     { key: 'nSamples', label: 'Monte Carlo samples', unit: '', default: 4000, min: 200, max: 200000, step: 1, discrete: true, group: 'Numerics' }, { key: 'seed', label: 'Random seed', unit: '', default: 24, min: 1, max: 1e9, step: 1, discrete: true, group: 'Numerics' },
   ],
   defaults: (c, up, d) => {
-    const e = estCruise(c, d), dist = (c.wing.S_m2 === 0 && c.prop.type !== 'electric' ? 0.6 : 1) * (c.mission.range_km || 100), t = (dist * 1e3) / e.V, rate = e.elec ? e.P / 1e3 : (up.mission?.cruise_fuel_flow_kgs > 0 ? up.mission.cruise_fuel_flow_kgs : e.ff), per = e.elec ? 1 / 3600 : 1, cruise = rate * t * per, rot = c.wing.S_m2 === 0;
-    const block = e.elec ? up.mission?.mission_energy_kWh : up.mission?.block_fuel_kg, fixed = block > cruise ? block - cruise : (rot ? 0.12 : 0.06) * cruise + (e.elec ? c.mission.hover_min / 60 * 3 * rate : 0), loaded = e.elec ? 0.9 * c.systems.batt_kWh : c.mass.fuel_kg, small = c.mass.mtow_kg < 5700;
-    return { electric: e.elec, dist_km: dist, V: e.V, rate, fixed, loaded, reserve: Math.min(0.5 * loaded, rate * per * Math.min(c.mission.reserve_min, e.elec ? 10 : 45) * 60 * 0.8 + (e.elec || rot ? 0 : rate * (c.mission.alternate_km * 1e3) / e.V)), mass: c.mass.mtow_kg - 0.4 * c.mass.fuel_kg, mass_elast: rot ? 1.2 : 0.7,
-      wind_sd: Math.min(12, 0.12 * e.V), payload_sd: 0.05 * c.mass.payload_kg, delay_mean_min: small ? 2 : 6, hold_rate_frac: rot ? 0.75 : 0.8, turn_min: small ? 20 : c.mass.mtow_kg > 40000 ? 45 : 30, day_h: c.meta.type === 'uav' ? 12 : small ? 10 : 16, days_yr: small ? 250 : 340, ground_min: small ? 6 : 18 };
+    const e = estCruise(c, d), mi = up.mission || {}, rot = c.wing.S_m2 === 0, oab = rot && !e.elec, uav = c.meta.type === 'uav', small = c.mass.mtow_kg < 5700;
+    const dist = (oab ? 0.6 : 1) * (c.mission.range_km || 100), t = (dist * 1e3) / e.V, rate = e.elec ? e.P / 1e3 : (mi.cruise_fuel_flow_kgs > 0 ? mi.cruise_fuel_flow_kgs : e.ff), per = e.elec ? 1 / 3600 : 1, cruise = rate * t * per;
+    const block = e.elec ? mi.mission_energy_kWh : mi.block_fuel_kg, fixed = block > cruise ? block - cruise : (rot ? 0.12 : 0.06) * cruise + (e.elec ? c.mission.hover_min / 60 * 3 * rate : 0);
+    // load and final reserve as the mission analysis of this suite states them, so that both judge the same margin
+    const loaded = e.elec ? (mi.usable_energy_kWh > 0 ? mi.usable_energy_kWh : 0.9 * c.systems.batt_kWh) : (mi.fuel_loaded_kg > 0 ? mi.fuel_loaded_kg : c.mass.fuel_kg), resMin = e.elec ? Math.min(c.mission.reserve_min, rot ? 5 : 30) : Math.min(c.mission.reserve_min, rot ? 30 : 45);
+    const resOwn = rate * per * resMin * 60 * (e.elec && !rot ? 1 : 0.8) + (e.elec || rot ? 0 : rate * (c.mission.alternate_km * 1e3) / e.V), reserve = e.elec ? (mi.reserve_energy_kWh > 0 ? mi.reserve_energy_kWh : resOwn) : (mi.final_reserve_kg > 0 ? mi.final_reserve_kg : resOwn);
+    return { electric: e.elec, dist_km: dist, out_and_back: oab, V: e.V, rate, fixed, loaded, reserve: Math.min(0.5 * loaded, reserve), mass: c.mass.mtow_kg - 0.4 * c.mass.fuel_kg, mass_elast: rot ? 1.2 : 0.7,
+      wind_sd: Math.min(12, 0.12 * e.V), payload_sd: 0.05 * c.mass.payload_kg, delay_mean_min: uav ? 0.5 : small ? 2 : rot ? 3 : 6, hold_rate_frac: rot ? 0.75 : 0.8, turn_min: small ? 20 : c.mass.mtow_kg > 40000 ? 45 : 30, day_h: uav ? 12 : small ? 10 : 16, days_yr: small ? 250 : 340, ground_min: small ? 6 : 18 };
   },
   run(i) {
     const u = N.rng(i.seed), n = Math.round(i.nSamples), per = i.electric ? 1 / 3600 : 1, unit = i.electric ? 'kWh' : 'kg', warnings = [];
-    const burn = (w, dT, dP, delay) => { const rate = i.rate * (1 + (i.mass_elast * dP) / i.mass) * (1 + i.temp_sens * dT), gs = Math.max(0.1 * i.V, i.V - w); return i.fixed + rate * per * ((i.dist_km * 1e3) / gs) + i.hold_rate_frac * rate * per * delay; };
+    const lo = 0.1 * i.V, airTime = (w) => { const dm = i.dist_km * 1e3; return i.out_and_back ? (0.5 * dm) / Math.max(lo, i.V - w) + (0.5 * dm) / Math.max(lo, i.V + w) : dm / Math.max(lo, i.V - w); };
+    const burn = (w, dT, dP, delay) => { const rate = i.rate * (1 + (i.mass_elast * dP) / i.mass) * (1 + i.temp_sens * dT); return i.fixed + rate * per * airTime(w) + i.hold_rate_frac * rate * per * delay; };
     const nominal = burn(i.wind_mean, 0, 0, 0), F = new Array(n), W = new Array(n);
     for (let s = 0; s < n; s++) { const w = i.wind_mean + i.wind_sd * N.randn(u), dT = i.temp_sd * N.randn(u), dP = i.payload_sd * N.randn(u), dl = -i.delay_mean_min * 60 * Math.log(1 - u() * (1 - 1e-12)); W[s] = w; F[s] = burn(w, dT, dP, dl); }
     const mean = N.mean(F), sd = N.std(F), q = N.quantile(F, i.coverage), avail = i.loaded - i.reserve, pInf = F.filter((f) => f > avail).length / n, extra = q - nominal, hist = N.histogram(F, 30), se = sd / Math.sqrt(n);
     const ns = [200, 400, 800, 1600, 3200, 6400].filter((v) => v <= n), run = ns.map((k) => N.quantile(F.slice(0, k), i.coverage));
     // daily operations: cycles that fit in the operating day
-    const tBlock = (i.dist_km * 1e3) / Math.max(1, i.V - i.wind_mean) / 60 + i.ground_min, cyc = Math.max(0, Math.floor((i.day_h * 60 + i.turn_min) / (tBlock + i.turn_min))), fhDay = (cyc * (tBlock - i.ground_min)) / 60;
+    const tBlock = airTime(i.wind_mean) / 60 + i.ground_min, cyc = Math.max(0, Math.floor((i.day_h * 60 + i.turn_min) / (tBlock + i.turn_min))), fhDay = (cyc * (tBlock - i.ground_min)) / 60;
     if (avail <= 0) warnings.push('The required reserve is at least as large as the load: every flight infringes it.');
     if (pInf > 1 - i.coverage) warnings.push(`${(100 * pInf).toFixed(1)}% of sampled flights land with less than the required reserve; the target is ${(100 * (1 - i.coverage)).toFixed(2)}%.`);
     warnings.push('Uncertainty magnitudes are planning assumptions; replace them with route statistics from your own operation.');
@@ -674,8 +697,8 @@ const stochastic = {
         { key: 'nominal_burn', label: `Nominal mission ${i.electric ? 'energy' : 'fuel'}`, value: nominal, unit }, { key: 'mean_burn', label: 'Mean over sampled days', value: mean, unit, note: `± ${(1.96 * se).toPrecision(2)} (95% sampling error)` },
         { key: 'sd_burn', label: 'Standard deviation', value: sd, unit }, { key: 'p95_burn', label: '95th percentile', value: N.quantile(F, 0.95), unit }, { key: 'cover_burn', label: `${(100 * i.coverage).toFixed(1)}th percentile`, value: q, unit },
         { key: 'discretionary', label: `Recommended extra ${i.electric ? 'energy' : 'fuel'} above nominal`, value: Math.max(0, extra), unit, note: 'Covers the chosen share of flights without using the final reserve' },
-        { key: 'p_reserve_infringed', label: 'Probability of infringing the reserve with the current load', value: pInf, unit: '-', status: pInf <= 1 - i.coverage ? 'ok' : pInf < 0.05 ? 'warn' : 'bad' },
-        { key: 'surplus_at_coverage', label: 'Load above the coverage requirement', value: avail - q, unit, status: avail >= q ? 'ok' : 'bad' },
+        { key: 'p_reserve_infringed', label: 'Probability of infringing the reserve with the current load', value: pInf, unit: '-', status: pInf <= 1 - i.coverage ? 'ok' : pInf <= 0.1 ? 'warn' : 'bad' },
+        { key: 'surplus_at_coverage', label: 'Load above the coverage requirement', value: avail - q, unit, status: avail >= q ? 'ok' : pInf <= 0.1 ? 'warn' : 'bad' },
         { key: 'wind_correlation', label: 'Correlation of burn with headwind', value: N.corr(W, F), unit: '-' },
         { key: 'cycles_per_day', label: 'Flights per operating day', value: cyc, unit: '' }, { key: 'fh_per_day', label: 'Flight hours per day', value: fhDay, unit: 'h' }, { key: 'util_fh_yr', label: 'Annual utilisation', value: fhDay * i.days_yr, unit: 'FH/yr' },
         { key: 'ground_share_pct', label: 'Share of the operating day on the ground', value: 100 * (1 - fhDay / i.day_h), unit: '%' },
@@ -686,7 +709,7 @@ const stochastic = {
         { type: 'line', title: 'Convergence of the coverage percentile', xlabel: 'Samples [-]', ylabel: `Percentile [${unit}]`, xlog: true, series: [{ name: 'Running estimate', x: ns, y: run, style: 'line+points' }] },
       ],
       warnings, models: ['Monte Carlo sampling (seeded) of wind, temperature, payload and delay', 'Mission burn = fixed part + consumption × air time + holding', 'Daily cycle count from block and turnaround time'],
-      assumptions: ['Wind, temperature and payload are independent normal variables; airborne delay is exponential', 'Consumption scales linearly with mass and temperature deviations', 'Ground speed is floored at 10% of airspeed', 'Daily operations repeat one stage with a fixed turnaround'],
+      assumptions: ['Wind, temperature and payload are independent normal variables; airborne delay is exponential', 'Consumption scales linearly with mass and temperature deviations', 'Ground speed is floored at 10% of airspeed', 'On an out-and-back mission one sampled wind acts as headwind out and tailwind home', 'Daily operations repeat one stage with a fixed turnaround'],
     };
   },
   convergence: { param: 'nSamples', label: 'Monte Carlo samples', levels: [500, 1000, 2000, 4000, 8000], metric: 'mean_burn', hOf: (n) => 1 / Math.sqrt(n) },
@@ -698,11 +721,13 @@ const stochastic = {
       N.check('Zero uncertainty has zero spread', d.sd_burn / d.mean_burn + 1, 1, 1e-9, 'Degenerate distribution'),
       N.check('Mean with exponential delay = nominal + holding rate × mean delay', e.mean_burn, nom + 0.8 * b.rate * 600, 2e-3, 'Expectation of an exponential variable; sampling error ≈ 0.01%'),
       N.check('Standard deviation with exponential delay = holding rate × mean delay', e.sd_burn, 0.8 * b.rate * 600, 0.02, 'Exponential distribution: σ = mean'),
+      N.check('Out-and-back in a steady wind: air time = d·V/(V² − w²)', N.kv(stochastic.run({ ...b, delay_mean_min: 0, out_and_back: true, wind_mean: 30 })).mean_burn, b.fixed + (b.rate * b.dist_km * 1e3 * b.V) / (b.V * b.V - 900), 1e-12, 'Half the distance at V − w, half at V + w'),
     ];
   },
   recommend(res, i) {
     const o = res.outputs, out = [], unit = i.electric ? 'kWh' : 'kg';
-    if (o.surplus_at_coverage < 0) out.push({ severity: 'warn', title: 'Current load does not cover the chosen share of days', detail: `Short by ${(-o.surplus_at_coverage).toFixed(0)} ${unit} at ${(100 * i.coverage).toFixed(1)}% coverage; ${(100 * o.p_reserve_infringed).toFixed(1)}% of flights would use final reserve.`, action: i.electric ? 'Shorten the stage, raise the minimum departure state of charge, or accept a lower coverage with a firm diversion plan.' : 'Uplift the recommended discretionary fuel on this route, or plan an en-route alternate that allows a reduced contingency.', basis: 'Monte Carlo percentile of mission burn against load less reserve' });
+    // a design mission flown at its limit always shows some shortfall at 99% coverage: it becomes a warning when more than one flight in ten is affected
+    if (o.surplus_at_coverage < 0) out.push({ severity: o.p_reserve_infringed > 0.1 ? 'warn' : 'advise', title: 'Current load does not cover the chosen share of days', detail: `Short by ${(-o.surplus_at_coverage).toFixed(0)} ${unit} at ${(100 * i.coverage).toFixed(1)}% coverage; ${(100 * o.p_reserve_infringed).toFixed(1)}% of flights would use final reserve.`, action: i.electric ? 'Shorten the stage, raise the minimum departure state of charge, or accept a lower coverage with a firm diversion plan.' : 'Uplift the recommended discretionary fuel on this route, or plan an en-route alternate that allows a reduced contingency.', basis: 'Monte Carlo percentile of mission burn against load less reserve' });
     else if (!i.electric && o.surplus_at_coverage > 0.05 * i.loaded) out.push({ severity: 'advise', title: 'Statistical fuel planning allows a lower uplift', detail: `${o.surplus_at_coverage.toFixed(0)} kg more than the ${(100 * i.coverage).toFixed(1)}% requirement is carried.`, action: `Carrying it costs roughly 2.5–4% of its mass in fuel per flight hour. Trimming the uplift to nominal + ${o.discretionary.toFixed(0)} kg keeps the same protection and saves fuel and CO₂ every flight.`, basis: 'Cost of weight; statistical contingency fuel' });
     if (Math.abs(o.wind_correlation) > 0.7) out.push({ severity: 'info', title: 'Wind drives the spread', detail: `Correlation with headwind ${o.wind_correlation.toFixed(2)}.`, action: 'Use day-of-operation winds from the live-data connector: it removes most of the uncertainty and the extra fuel that goes with it.', basis: 'Sample correlation' });
     if (o.ground_share_pct > 60) out.push({ severity: 'advise', title: 'The aircraft spends most of the day on the ground', detail: `${o.cycles_per_day} flights and ${o.fh_per_day.toFixed(1)} flight hours in a ${i.day_h} h day.`, action: 'Shorter turnarounds or a longer operating day raise utilisation and spread fixed ownership cost over more hours (see Suite 26).', basis: 'Daily cycle model' });

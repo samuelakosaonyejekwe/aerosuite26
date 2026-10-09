@@ -10,6 +10,8 @@ Allowed imports only:
 import * as N from '../core/numerics.js';      // linear algebra, eig, ODE, roots, optimisation, stats, FFT, gci, check, kv
 import { isa, G0, ... } from '../core/atmosphere.js';
 import { METALS, PLIES, FLUIDS, BATTERIES } from '../data/materials.js';
+import { createSolver } from '../core/solvers/cfd3d.js';   // shared heavy kernels: cfd3d, explicitfe, nsib2d
+import { ENGINES } from '../data/ref/engine-emissions.js'; // sourced reference datasets (compact JS wrappers)
 ```
 
 `js/suites/s05-performance.js` is the reference implementation. Read it first.

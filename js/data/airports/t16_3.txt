@@ -1,0 +1,11 @@
+#US|M
+PABA|1|BTI|Barter Island Long Range Radar Station~1|1340|64180|1|07,1372,30,5,0,93,,30,-1900,1,,-30,1900
+PASC|1|SCC|Deadhorse~1|1947|15350|20|05,1981,46,1,0,75,,-220,-2501,20,,240,2500,18
+#US|S
+AA50|||Point Thomson Sea Ice~6|1811|36497|0|04,1524,46,11,1
+AK11|||Point Mcintyre~1|4014|13174|5|04,469,21,5,0
+OLI|POLI||Oliktok Point Long Range Radar Station~1|4952|1129|5
+PAAD|||Point Thomson~6|1360|37100|17|05,1524,46,5,1,71,,-226,-1899,17,,226,1893,15
+PABP|||Badami~1|1375|29700|8|04,1554,23,5,1
+PABU|||Bullen Point Short Range Radar Station~1|1710|31551|5|15,1073,30,5,0
+PAKU|1|UUK|Ugnu-Kuparuk~1|3308|4020|20|05,1829,40,5,0,,,,,18,,,,20

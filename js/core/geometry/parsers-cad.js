@@ -4,7 +4,6 @@
 // explicit points / polylines / facets the file itself carries.
 
 import { Scanner, str, nums, toNum, view, LIMITS } from './parsers-util.js';
-import { lasHeader } from './parsers-surface.js';
 
 // ---------- STEP (ISO 10303-21) ----------
 /** Parse a STEP argument list (the text between the outer parentheses) into nested arrays. Iterative, no recursion. */
@@ -216,43 +215,13 @@ function sat(b, ctx) {
   if (b.length <= 64e6) { const c = {}; for (const m of str(b, 0, b.length).matchAll(/^(?:-\d+ )?([a-z][\w-]*) \$/gm)) c[m[1]] = (c[m[1]] || 0) + 1; meta.census = c; }
   return { kind: 'metadata-only', meta, units };
 }
-function tiff(b) {
-  const le = b[0] === 0x49, dv = view(b), big = dv.getUint16(2, le) === 43, meta = { byteOrder: le ? 'little-endian' : 'big-endian', bigTiff: big, geoTiff: false };
-  if (big) return { kind: 'metadata-only', meta };
-  const ifd = dv.getUint32(4, le); if (ifd + 2 > b.length) return { kind: 'metadata-only', meta };
-  const n = Math.min(dv.getUint16(ifd, le), 4096), SZ = { 1: 1, 2: 1, 3: 2, 4: 4, 5: 8, 12: 8 };
-  const vals = (type, cnt, at, max = 64) => {
-    const s = SZ[type]; if (!s) return []; let o = cnt * s <= 4 ? at : dv.getUint32(at, le); const out = [];
-    for (let i = 0; i < Math.min(cnt, max) && o + s <= b.length; i++, o += s) out.push(type === 3 ? dv.getUint16(o, le) : type === 4 ? dv.getUint32(o, le) : type === 12 ? dv.getFloat64(o, le) : dv.getUint8(o));
-    return out;
-  };
-  for (let i = 0; i < n && ifd + 2 + 12 * i + 12 <= b.length; i++) {
-    const e = ifd + 2 + 12 * i, tag = dv.getUint16(e, le), type = dv.getUint16(e + 2, le), cnt = dv.getUint32(e + 4, le), v = vals(type, cnt, e + 8);
-    if (tag === 256) meta.width = v[0]; else if (tag === 257) meta.height = v[0]; else if (tag === 258) meta.bitsPerSample = v; else if (tag === 259) meta.compression = v[0]; else if (tag === 277) meta.samplesPerPixel = v[0]; else if (tag === 339) meta.sampleFormat = v[0];
-    else if (tag === 33550) { meta.pixelScale = v.slice(0, 3); meta.geoTiff = true; } else if (tag === 33922) { meta.tiePoints = v.slice(0, 6); meta.geoTiff = true; }
-    else if (tag === 34735) {
-      meta.geoTiff = true; const keys = {}; const NAMES = { 1024: 'modelType', 1025: 'rasterType', 2048: 'geographicCRS', 3072: 'projectedCRS', 3076: 'linearUnits', 4096: 'verticalCRS', 4099: 'verticalUnits' };
-      for (let k = 4; k + 3 < v.length; k += 4) if (v[k + 1] === 0 && NAMES[v[k]]) keys[NAMES[v[k]]] = v[k + 3];
-      meta.geoKeys = keys;
-    }
-  }
-  return { kind: 'metadata-only', meta };
-}
 /** Inspect a recognised-but-undecoded file: report what its header states and nothing more. */
 export function readMetadataOnly(id) {
   return (b, ctx) => {
     const dv = view(b), head = str(b, 0, Math.min(b.length, 512));
     if (id === 'acis') return head.startsWith('ACIS BinaryFile') ? { kind: 'metadata-only', meta: { encoding: 'SAB (binary)' } } : sat(b, ctx);
-    if (id === 'geotiff') return tiff(b);
-    if (id === 'laz') { const h = lasHeader(b); return { kind: 'metadata-only', meta: { ...h, compressed: true } }; }
     const meta = {};
-    if (['cgns', 'exodus', 'med', 'fluent-h5', 'hdf5'].includes(id)) {
-      if (b[0] === 0x89) { meta.container = 'HDF5'; meta.superblockVersion = b[8]; }
-      else if (head.startsWith('CDF')) { meta.container = 'NetCDF classic'; meta.netcdfVersion = b[3]; if (b.length >= 8) meta.records = dv.getUint32(4, false); }
-      else if (head.startsWith('@(#)ADF')) { meta.container = 'ADF'; meta.adfVersion = /ADF Database Version\s+(\S+)/.exec(head)?.[1] ?? null; }
-      else meta.container = 'unconfirmed (extension only)';
-    } else if (id === 'jt') meta.version = /^Version\s+([\d.]+)\s+JT/.exec(head)?.[1] ?? null;
-    else if (id === 'e57' && b.length >= 48) { meta.version = `${dv.getUint32(8, true)}.${dv.getUint32(12, true)}`; meta.fileLength = Number(dv.getBigUint64(16, true)); meta.xmlOffset = Number(dv.getBigUint64(24, true)); meta.xmlLength = Number(dv.getBigUint64(32, true)); meta.pageSize = Number(dv.getBigUint64(40, true)); }
+    if (id === 'jt') meta.version = /^Version\s+([\d.]+)\s+JT/.exec(head)?.[1] ?? null;
     else if (id === 'tecplot-bin') { meta.magic = head.slice(0, 8).replace(/[^\x20-\x7e]/g, ''); meta.flavour = head.startsWith('#!SZPLT') ? 'SZL (.szplt)' : 'classic binary (.plt)'; }
     else if (id === 'xb') meta.signature = 'Parasolid binary transmit';
     else if (id === 'nativecad') meta.container = b[0] === 0xd0 && b[1] === 0xcf ? 'OLE compound document' : b[0] === 0x50 && b[1] === 0x4b ? 'ZIP package' : head.startsWith('V5_CFV2') ? 'CATIA V5' : 'proprietary';

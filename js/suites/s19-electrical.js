@@ -12,7 +12,7 @@ import { FLUIDS, BATTERIES } from '../data/materials.js';
 const CHEMS = Object.keys(BATTERIES), FUELS = ['Jet A-1', 'Avgas 100LL', 'SAF (HEFA-SPK)', 'Liquid hydrogen'];
 const chemOf = (name) => BATTERIES[name] || BATTERIES[CHEMS[0]];
 const isElec = (c) => c.prop.type === 'electric';
-const RHO_CU = 1.724e-8, ALPHA_CU = 0.00393; // copper resistivity at 20 °C [Ω m] and temperature coefficient [1/K]
+const RHO_CU = 1.724e-8, ALPHA_CU = 0.00393; // copper resistivity at 20 °C [Ω m] (International Annealed Copper Standard, 58 MS/m) and its usual temperature coefficient [1/K]
 /** Down-sample a history to at most m points, keeping the last one. */
 const ds = (a, m = 300) => { if (a.length <= m) return a; const k = Math.ceil(a.length / m), o = []; for (let j = 0; j < a.length; j += k) o.push(a[j]); if ((a.length - 1) % k) o.push(a[a.length - 1]); return o; };
 
@@ -149,7 +149,7 @@ const battery = {
       ],
       tables: [{ title: 'Pack build', columns: ['Quantity', 'Value', 'Unit'], rows: [['Series cells', pk.Ns, '-'], ['Capacity', pk.Q_Ah, 'Ah'], ['R0', pk.R0, 'Ω'], ['R1 (τ = 15 s)', pk.R1, 'Ω'], ['R2 (τ = 300 s)', pk.R2, 'Ω'], ['Thermal mass', pk.Cth, 'J/K'], ['Open-circuit voltage, full', pk.ocv(1), 'V'], ['Cut-off voltage', pk.Vcut, 'V']] }],
       warnings, models: ['Two-RC equivalent-circuit battery model with constant-power terminal load', 'Generic OCV(SOC) curve scaled to the chemistry voltage window', 'Lumped pack thermal model with Joule and polarisation heat', 'RK4 time integration'],
-      assumptions: ['Rated energy equals ∫OCV dq, so capacity loss with rate appears only through resistive heat (no Peukert exponent)', 'Resistance split 60/25/15 % between R0 and two RC pairs with 15 s and 300 s time constants (generic)', 'Reversible (entropic) heat and cell-to-cell imbalance neglected', 'Uniform pack temperature'],
+      assumptions: ['Rated energy equals ∫OCV dq, so capacity loss with rate appears only through resistive heat (no Peukert exponent)', 'Resistance split 60/25/15 % between R0 and two RC pairs with 15 s and 300 s time constants (generic)', 'Reversible (entropic) heat and cell-to-cell imbalance neglected', 'Uniform pack temperature', 'Cell data (specific energy, voltage window, resistance, heat capacity) are typical class values from the material database, optimistic against the datasheets checked: a high-power 21700 cell gives about 231 Wh/kg with a 2.5 V cut-off, an 18650 NCA cell 243 Wh/kg', 'Pack mass fraction, cooling conductance and the resistance temperature coefficient are illustrative defaults'],
     };
   },
   convergence: { param: 'nSteps', label: 'Time steps over the mission', levels: [50, 100, 200, 400], metric: 'batt_temp_K' },
@@ -218,7 +218,7 @@ const ageing = {
     { key: 'n_cells', label: 'Cells in the row', unit: '', default: 8, min: 1, max: 40, step: 1, discrete: true, group: 'Thermal runaway' },
     { key: 'cell_Ah', label: 'Cell capacity', unit: 'Ah', default: 5, min: 0.1, max: 500, group: 'Thermal runaway' },
     { key: 'soc', label: 'State of charge at the event', unit: '-', default: 1, min: 0, max: 1, group: 'Thermal runaway' },
-    { key: 'heat_ratio', label: 'Heat released / stored electrical energy', unit: '-', default: 1.5, min: 0, max: 5, group: 'Thermal runaway', help: 'Uncertain; depends on chemistry and venting. Calibrate from calorimetry' },
+    { key: 'heat_ratio', label: 'Heat released / stored electrical energy', unit: '-', default: 1.5, min: 0, max: 5, group: 'Thermal runaway', help: 'Total heat release: fractional thermal-runaway calorimetry of 18650 cells at full charge gave 1.3–1.6 (NASA, Walker et al. 2018). Depends on chemistry and state of charge; all of it is kept in the cell body here' },
     { key: 'T_onset_K', label: 'Runaway onset temperature', unit: 'K', default: 423, min: 350, max: 600, group: 'Thermal runaway', help: 'Generic 150 °C; lower for high-nickel cells, higher for LiFePO4' },
     { key: 'tau_s', label: 'Reaction time constant at onset', unit: 's', default: 5, min: 0.5, max: 600, group: 'Thermal runaway' },
     { key: 'G_W_K', label: 'Cell-to-cell thermal conductance', unit: 'W/K', default: 0.3, min: 0, max: 50, group: 'Thermal runaway', help: 'Direct contact ≈ 0.2–1 W/K for small cells; insulating barriers ≈ 0.01–0.05 W/K' },
@@ -251,7 +251,7 @@ const ageing = {
         { key: 'fade_cycle', label: 'Cycle fade at the horizon', value: Math.min(1, fEnd.cyc), unit: '-' },
         { key: 'fade_calendar', label: 'Calendar fade at the horizon', value: Math.min(1, fEnd.cal), unit: '-' },
         { key: 'cycle_life_eff', label: 'Effective cycle life at this duty', value: fEnd.N80, unit: 'cycles', note: `Database rating ${ch.cycles_80} cycles at reference conditions` },
-        { key: 'tr_cells_triggered', label: 'Cells driven into runaway', value: nTrig, unit: '', status: nTrig <= 1 ? 'ok' : 'bad', note: 'Target: no propagation beyond the initiating cell' },
+        { key: 'tr_cells_triggered', label: 'Cells driven into runaway', value: nTrig, unit: '', status: nTrig <= 1 ? 'ok' : 'warn', note: 'Target: no propagation beyond the initiating cell (conservative screening model)' },
         { key: 'tr_propagation_s', label: 'Time from first to last triggered cell', value: tLast, unit: 's' },
         { key: 'tr_front_cells_min', label: 'Propagation rate', value: tLast > 0 ? ((nTrig - 1) * 60) / tLast : 0, unit: 'cells/min' },
         { key: 'tr_T_peak_K', label: 'Peak cell temperature', value: Tpk, unit: 'K' },
@@ -263,7 +263,7 @@ const ageing = {
       ],
       tables: [{ title: 'Runaway trigger times', columns: ['Cell', 'Trigger time [s]'], rows: trig.map((t, j) => [j + 1, Number.isFinite(t) ? t : 'not triggered']) }],
       warnings, models: ['Semi-empirical capacity fade: linear cycle term with depth-of-discharge, rate and Arrhenius factors plus √t calendar term (generic coefficients)', 'Lumped cell chain with one-step Arrhenius heat release for thermal-runaway propagation'],
-      assumptions: ['Cycle life from the database is taken at 80 % depth of discharge, 1C and 25 °C', 'Cycle and calendar fade add linearly; resistance growth and knee-point behaviour are not modelled', 'Runaway: uniform cell temperature, no vent-gas combustion, ejecta or electrical short paths; apparent activation temperature 15 600 K (generic)', 'The first cell is assumed already 30 K above onset'],
+      assumptions: ['Cycle life from the database is taken at 80 % depth of discharge, 1C and 25 °C; the database values are unverified and optimistic for power cells (a high-power 21700 cell datasheet guarantees ≥ 80 % after only 500 cycles at 1C)', 'Ageing coefficients (activation energy, calendar fade, rate and depth-of-discharge stress) and the 150 °C runaway onset are generic, unsourced values: calibrate them before relying on the result', 'Cycle and calendar fade add linearly; resistance growth and knee-point behaviour are not modelled', 'Runaway: uniform cell temperature, no vent-gas combustion, ejecta or electrical short paths; apparent activation temperature 15 600 K (generic)', 'The first cell is assumed already 30 K above onset', 'All of the runaway heat stays in the cell bodies, whereas in tests much of it leaves with the vented gas and ejecta: cell temperatures and propagation are over-predicted, so the model can show that a design is robust but not that it will fail', 'The default cell-to-cell conductance represents cells in direct contact with no barrier (illustrative)'],
     };
   },
   convergence: { param: 'nSteps', label: 'Time steps in the runaway simulation', levels: [600, 1200, 2400, 4800], metric: 'tr_T_peak_K' },
@@ -282,7 +282,7 @@ const ageing = {
   },
   recommend(res, i) {
     const o = res.outputs, out = [];
-    if (o.tr_cells_triggered > 1) out.push({ severity: 'critical', title: 'Single-cell thermal runaway propagates', detail: `${o.tr_cells_triggered} of ${Math.round(i.n_cells)} cells are triggered within ${o.tr_propagation_s.toFixed(0)} s.`, action: 'Add inter-cell thermal barriers (lower the cell-to-cell conductance), increase spacing or heat sinking, and provide vent paths; then demonstrate non-propagation by test.', basis: 'Design objective: containment of a single-cell failure, to be shown by test' });
+    if (o.tr_cells_triggered > 1) out.push({ severity: 'advise', title: 'Containment of a single-cell thermal runaway is not shown', detail: `${o.tr_cells_triggered} of ${Math.round(i.n_cells)} cells are triggered within ${o.tr_propagation_s.toFixed(0)} s with ${i.G_W_K} W/K between cells and ${i.hA_W_K} W/K of cooling per cell. The lumped model keeps all the released heat in the cells, so it errs on the side of propagation: it can show that a design is robust, not that it will fail.`, action: 'Enter the real thermal paths of the pack; add inter-cell thermal barriers (lower the cell-to-cell conductance), spacing or heat sinking and vent paths until the screen passes, then demonstrate non-propagation by test.', basis: 'Design objective: containment of a single-cell failure, to be shown by test; conservative lumped energy balance' });
     else out.push({ severity: 'info', title: 'No propagation predicted with these thermal paths', detail: 'Only the initiating cell goes into runaway in this lumped model.', action: 'Confirm by abuse testing: the model omits vent-gas combustion and electrical short paths.', basis: 'Lumped energy balance' });
     if (o.batt_life_yr < 5) out.push({ severity: 'advise', title: 'Short pack life', detail: `${o.batt_life_yr.toFixed(1)} years (${o.cycles_to_eol.toFixed(0)} cycles) to 80 % capacity; cycling contributes ${(100 * o.fade_cycle).toFixed(0)} points and storage ${(100 * o.fade_calendar).toFixed(0)} points at the horizon.`, action: 'Reduce depth of discharge, charge rate and cell temperature, and store at moderate state of charge; each replacement pack carries embodied emissions and cost (Suite 26).', basis: 'Semi-empirical ageing law (generic coefficients — calibrate)' });
     return out;
@@ -304,8 +304,8 @@ function pmsmOp(m, T, w) {
   const dv = (id) => { const v = vdq(id); return v[0] * v[0] + v[1] * v[1] - m.Vmax * m.Vmax; };
   let id = m.Lq > m.Ld * (1 + 1e-9) ? N.goldenSection((x) => x * x + iqOf(x) ** 2, -m.Imax, 0, 1e-9) : 0, ok = true;
   if (dv(id) > 0) { // move along the constant-torque locus to more negative id until the voltage limit is met
-    let x0 = id, f0 = dv(id), found = false;
-    for (let k = 1; k <= 48; k++) { const x1 = id + ((-m.Imax - id) * k) / 48, f1 = dv(x1); if (f1 <= 0) { id = N.brent(dv, x1, x0, 1e-12 * m.Imax); found = true; break; } x0 = x1; f0 = f1; }
+    let x0 = id, found = false;
+    for (let k = 1; k <= 48; k++) { const x1 = id + ((-m.Imax - id) * k) / 48; if (dv(x1) <= 0) { id = N.brent(dv, x1, x0, 1e-12 * m.Imax); found = true; break; } x0 = x1; }
     if (!found) ok = false;
   }
   const iq = iqOf(id), I = Math.hypot(id, iq), v = vdq(id), V = Math.hypot(v[0], v[1]);
@@ -387,7 +387,7 @@ const motor = {
       tables: [{ title: 'Equivalent machine parameters (derived from ratings)', columns: ['Parameter', 'Value', 'Unit'], rows: [['Magnet flux linkage ψ', m.psi, 'V·s'], ['Ld', m.Ld, 'H'], ['Lq', m.Lq, 'H'], ['Phase resistance', m.Rs, 'Ω'], ['Peak phase current limit', m.Imax, 'A'], ['Peak phase voltage limit', m.Vmax, 'V']] }],
       outputs: { drive_heat_W: o.Pin - o.Pout + inv.total },
       warnings, models: ['dq-axis PMSM steady-state model with MTPA and voltage-limited field weakening', 'Loss separation: copper I²R, iron (hysteresis ∝ f, eddy ∝ f², flux² scaling), friction and windage', 'Averaged two-level inverter conduction and switching losses'],
-      assumptions: ['Machine parameters are back-calculated from ratings, not from an electromagnetic design', 'Constant inductances (no magnetic saturation or cross-coupling) and constant magnet flux (no temperature effect)', 'Iron loss treated as an added input power, not as a braking torque', 'Sinusoidal currents: PWM harmonic and AC winding losses neglected', 'Generator operation of conventional aircraft machines is represented by the equivalent motoring point'],
+      assumptions: ['Machine parameters are back-calculated from ratings, not from an electromagnetic design', 'Constant inductances (no magnetic saturation or cross-coupling) and constant magnet flux (no temperature effect)', 'Iron loss treated as an added input power, not as a braking torque', 'Sinusoidal currents: PWM harmonic and AC winding losses neglected', 'Generator operation of conventional aircraft machines is represented by the equivalent motoring point', 'Loss fractions, per-unit inductance and inverter device parameters are typical values: take them from machine and device data'],
     };
   },
   convergence: { param: 'nMap', label: 'Map speed points', levels: [8, 16, 32, 64], metric: 'eff_peak' },
@@ -441,8 +441,7 @@ function netLoads(i, k) {
 }
 /** Branch resistances from a design current density (so every feeder has the same design voltage drop per metre). */
 function netBranches(i) {
-  const rho = RHO_CU * (1 + ALPHA_CU * 60) * i.loop_factor * i.J_Amm2 * 1e6, conn = new Array(6).fill(0);
-  for (let k = 0; k < 6; k++) netLoads(i, k).forEach((l) => { conn[l.node] = Math.max(conn[l.node], 0); });
+  const rho = RHO_CU * (1 + ALPHA_CU * 60) * i.loop_factor * i.J_Amm2 * 1e6;
   const pk = N.range(6, (nd) => N.amax(N.range(6, (k) => N.sum(netLoads(i, k).filter((l) => l.node === nd).map((l) => l.P)))));
   const R = (L, P) => (rho * L * i.V_bus) / Math.max(P, 1e-6 * i.P_src_W + 1e-9), Lf = i.L_feeder_m;
   return [[0, 1, R(0.3 * Lf, i.P_src_W), 'Bus tie'], [0, 2, R(0.3 * Lf, pk[2] + pk[5] || i.P_batt_W), 'Essential feeder'], [0, 3, R(Lf, pk[3]), 'Power feeder 1'], [1, 4, R(Lf, pk[4]), 'Power feeder 2'], [2, 5, R(0.4 * Lf, pk[5]), 'Avionics feeder']];
@@ -468,6 +467,8 @@ function shed(loads, cap) {
   const scale = tot > cap ? cap / tot : 1; if (scale < 1) kept.forEach((l) => { l.P *= scale; });
   return { kept, dropped, shedW: N.sum(loads.map((l) => l.P)) - N.sum(kept.map((l) => l.P)), scale };
 }
+/** Largest drop between a source bus and the loads it feeds [V]; with the tie closed everything hangs on the higher bus. */
+const feederDrop = (V, tie) => (tie ? Math.max(V[0], V[1]) - N.amin(V) : Math.max(V[0] - Math.min(V[2], V[3], V[5]), V[1] - V[4]));
 const BREAKERS = [1, 2, 3, 5, 7.5, 10, 15, 20, 25, 35, 50, 75, 100, 150, 200, 300, 400, 600, 800, 1000, 1500, 2000];
 
 const network = {
@@ -488,7 +489,7 @@ const network = {
     { key: 'vtol', label: 'Peak propulsion power again at landing', type: 'bool', default: false, group: 'Loads' },
     { key: 'eta_drive', label: 'Propulsion drive efficiency', unit: '-', default: 0.93, min: 0.5, max: 1, group: 'Loads', help: 'Inverter × motor, for the drive heat included in total losses' },
     { key: 'L_feeder_m', label: 'Power feeder length', unit: 'm', default: 15, min: 0.1, max: 200, group: 'Cables' },
-    { key: 'J_Amm2', label: 'Design current density', unit: 'A/mm²', default: 4, min: 0.5, max: 15, group: 'Cables', help: 'Conductors are sized at this density for their peak connected load' },
+    { key: 'J_Amm2', label: 'Design current density', unit: 'A/mm²', default: 4, min: 0.5, max: 15, group: 'Cables', help: 'Conductors are sized at this density for their peak connected load. Bundled copper aircraft wire carries about 4–8 A/mm² at mid gauge but only 2.4–4.6 A/mm² in large feeders (AC 43.13-1B Table 11-9)' },
     { key: 'loop_factor', label: 'Conductor length factor', unit: '-', default: 2, min: 1, max: 2, group: 'Cables', help: '2 for DC two-wire (composite airframe); 1 for metallic structure return or the per-phase equivalent of a three-phase AC feeder' },
   ],
   defaults: (c, up, d) => {
@@ -501,7 +502,7 @@ const network = {
   run(i) {
     const two = Math.round(i.n_src) >= 2, cap = (two ? 2 : 1) * i.P_src_W, normal = { s1: true, s2: two, batt: false, tie: !two, fault: -1 }, warnings = [];
     const ph = PHASES.map((_, k) => { const loads = netLoads(i, k), r = netSolve(i, { ...normal, loads }), tot = N.sum(loads.map((l) => l.P)); return { loads, r, tot, prop: N.sum(loads.filter((l) => l.prop).map((l) => l.P)) }; });
-    const kPk = N.argmax(ph.map((p) => p.tot)), Vmin = N.amin(ph.map((p) => N.amin(p.r.V))), cr = ph[3], margin = 100 * (1 - ph[kPk].tot / cap);
+    const kPk = N.argmax(ph.map((p) => p.tot)), Vmin = N.amin(ph.map((p) => N.amin(p.r.V))), cr = ph[3], margin = 100 * (1 - ph[kPk].tot / cap), dFeed = (100 * N.amax(ph.map((p) => feederDrop(p.r.V, normal.tie)))) / i.V_bus;
     const losses = cr.r.cable + cr.r.srcLoss + cr.r.Pdel * (1 / i.eta_src - 1) + cr.prop * (1 - i.eta_drive);
     // degraded: one main source lost at the peak-demand phase (or all generation lost when there is only one), then battery only
     const capB = two ? i.P_src_W : i.P_batt_W, sB = shed(ph[kPk].loads, capB), rB = netSolve(i, { s1: false, s2: two, batt: !two, tie: true, fault: -1, loads: sB.kept });
@@ -517,8 +518,9 @@ const network = {
     const pct = (r) => r.V.map((v) => (100 * v) / i.V_bus);
     return {
       kpis: [
-        { key: 'bus_V_min', label: 'Minimum bus voltage, normal operation', value: Vmin, unit: 'V', status: Vmin > 0.95 * i.V_bus ? 'ok' : Vmin > 0.9 * i.V_bus ? 'warn' : 'bad', note: 'Lowest node in any flight phase; criterion ≥ 95 % of nominal' },
-        { key: 'v_drop_max_pct', label: 'Largest voltage drop, normal operation', value: 100 * (1 - Vmin / i.V_bus), unit: '%' },
+        { key: 'bus_V_min', label: 'Minimum bus voltage, normal operation', value: Vmin, unit: 'V', status: dFeed <= 5 ? 'ok' : dFeed <= 10 ? 'warn' : 'bad', note: 'Lowest node in any flight phase, including source droop; criterion: feeder drop ≤ 5 % of nominal' },
+        { key: 'v_drop_max_pct', label: 'Largest voltage drop below nominal, normal operation', value: 100 * (1 - Vmin / i.V_bus), unit: '%', note: 'Source droop plus feeder drop' },
+        { key: 'v_drop_feeder_pct', label: 'Largest feeder drop from source bus to load', value: dFeed, unit: '%', status: dFeed <= 5 ? 'ok' : dFeed <= 10 ? 'warn' : 'bad' },
         { key: 'elec_losses_W', label: 'Electrical losses in cruise', value: losses, unit: 'W', note: 'Cables + source droop + source conversion + propulsion drives' },
         { key: 'cable_loss_cruise_W', label: 'Cable loss in cruise', value: cr.r.cable, unit: 'W' },
         { key: 'dist_eff', label: 'Distribution efficiency in cruise', value: cr.r.Pdel > 0 ? cr.r.Pload / (cr.r.Pdel + cr.r.srcLoss) : 1, unit: '-' },
@@ -543,7 +545,7 @@ const network = {
         { title: 'Loads shed after loss of one source', columns: ['Order', 'Load'], rows: sB.dropped.length ? sB.dropped.map((nm, k) => [k + 1, nm]) : [[0, 'none required']] },
       ],
       warnings, models: ['Nodal analysis (Kirchhoff current law) with Newton iteration for constant-power loads', 'Thevenin sources with droop for load flow and a fault-current multiple for short circuits', 'Priority-based load shedding', 'Electrical load analysis with generic demand factors per flight phase'],
-      assumptions: ['AC systems are treated as a DC-equivalent real-power network: reactive power, harmonics and unbalance are not modelled', 'Split-bus operation with two sources; the bus tie closes when a source is lost', 'Conductors sized at one design current density; contact and protective-device resistances neglected', 'The emergency battery is shown at bus voltage (any DC/DC conversion is ideal)', 'Protection ratings are the next standard size above 125 % of load current; time–current coordination is not analysed'],
+      assumptions: ['AC systems are treated as a DC-equivalent real-power network: reactive power, harmonics and unbalance are not modelled', 'Split-bus operation with two sources; the bus tie closes when a source is lost', 'Conductors sized at one design current density; contact and protective-device resistances neglected', 'The emergency battery is shown at bus voltage (any DC/DC conversion is ideal)', 'Protection ratings are the next standard size above 125 % of load current; time–current coordination is not analysed', 'Load groups, demand factors, source droop and the default source, system-load and emergency-battery ratings are generic class-level estimates, not an aircraft load analysis'],
     };
   },
   verify() {
@@ -558,7 +560,8 @@ const network = {
   recommend(res, i) {
     const o = res.outputs, out = [];
     if (o.gen_margin_pct < 10) out.push({ severity: o.gen_margin_pct < 0 ? 'critical' : 'warn', title: 'Thin source capacity margin', detail: `${o.gen_margin_pct.toFixed(1)}% at peak demand of ${(o.P_demand_peak_W / 1e3).toPrecision(3)} kW.`, action: 'Increase source rating, stagger intermittent loads, or lower demand factors with load management.', basis: 'Electrical load analysis: capacity ≥ demand with growth margin' });
-    if (o.v_drop_max_pct > 5) out.push({ severity: 'warn', title: 'Voltage drop exceeds 5 %', detail: `Lowest node ${o.bus_V_min.toFixed(1)} V on a ${i.V_bus} V system.`, action: 'Use larger conductors (lower current density), shorter feeders or a higher distribution voltage; see the cable-sizing analysis.', basis: 'Utilisation-voltage limit assumed at 95 % of nominal' });
+    if (o.v_drop_feeder_pct > 5) out.push({ severity: 'warn', title: 'Feeder voltage drop exceeds 5 %', detail: `${o.v_drop_feeder_pct.toFixed(1)}% is lost between the source bus and the furthest load (lowest node ${o.bus_V_min.toFixed(1)} V on a ${i.V_bus} V system).`, action: 'Use larger conductors (lower current density), shorter feeders or a higher distribution voltage; see the cable-sizing analysis.', basis: 'Feeder drop limit assumed at 5 % of nominal (typical design practice)' });
+    else if (o.v_drop_max_pct > 5) out.push({ severity: 'advise', title: 'Bus voltage sags with the source', detail: `Lowest node ${o.bus_V_min.toFixed(1)} V on a ${i.V_bus} V system: ${(o.v_drop_max_pct - o.v_drop_feeder_pct).toFixed(1)}% is source droop (battery internal resistance or generator regulation) and ${o.v_drop_feeder_pct.toFixed(1)}% feeder drop.`, action: 'Equipment on an unregulated battery bus must accept the whole voltage window of the pack (see the battery analysis); lower-resistance cells or more parallel capacity reduce the sag at peak power.', basis: 'Source droop at rated power (input)' });
     if (o.shed_W > 0) out.push({ severity: 'advise', title: 'Load shedding is required after loss of one source', detail: `${(o.shed_W / 1e3).toPrecision(3)} kW is shed; see the shedding table for the order.`, action: 'Confirm that every shed load is non-essential for continued safe flight and landing, and feed the logic to Suite 22.', basis: 'Priority-based load management' });
     out.push({ severity: 'info', title: 'Electrical losses become heat and fuel or battery energy', detail: `${(o.elec_losses_W / 1e3).toPrecision(3)} kW in cruise.`, action: 'Pass the loss to the thermal suite; higher voltage and efficient conversion cut both the heat load and the energy drawn.', basis: 'Loss summation of this run' });
     return out;
@@ -567,7 +570,8 @@ const network = {
 
 // ---- cable sizing and Paschen limit ---------------------------------------------------------
 const WIRE = { Copper: { rho: RHO_CU, alpha: ALPHA_CU, dens: 8960 }, Aluminium: { rho: 2.82e-8, alpha: 0.0039, dens: 2700 } };
-// Paschen law in Townsend form for air, commonly tabulated constants: A = 15 /(Torr·cm), B = 365 V/(Torr·cm), γ = 0.01
+// Paschen law in Townsend form for air. A = 15 /(Torr·cm) and B = 365 V/(Torr·cm) are the tabulated values (112.5 /(kPa·cm), 2737.5 V/(kPa·cm));
+// the secondary-emission coefficient γ = 0.01 is an illustrative value, which puts the minimum at 305 V against the commonly quoted 327 V
 const PA = 15, PB = 365, PG = Math.log(1 + 1 / 0.01), PD_MIN = (Math.E * PG) / PA;
 const paschen = (pd) => (pd > PD_MIN ? (PB * pd) / Math.log((PA * pd) / PG) : PB * PD_MIN); // conservative: the minimum is used left of it
 function cableSize(i, V) {
@@ -589,7 +593,7 @@ const cable = {
     { key: 'L_m', label: 'Route length', unit: 'm', default: 6, min: 0.05, max: 300, group: 'Feeder' },
     { key: 'loop_factor', label: 'Conductor length factor', unit: '-', default: 2, min: 1, max: 2, group: 'Feeder', help: '2 for two-wire, 1 for structure return' },
     { key: 'material', label: 'Conductor material', type: 'select', options: Object.keys(WIRE), default: 'Copper', group: 'Feeder' },
-    { key: 'J_max_Amm2', label: 'Allowable current density at sea level', unit: 'A/mm²', default: 6, min: 0.5, max: 20, group: 'Limits', help: 'Free-air single wire; lower for bundles. Take from the applicable wiring standard' },
+    { key: 'J_max_Amm2', label: 'Allowable current density at sea level', unit: 'A/mm²', default: 6, min: 0.5, max: 20, group: 'Limits', help: 'A bundled-wire rating: about 4–8 A/mm² for mid-gauge copper wire and 2.4–4.6 A/mm² for large feeders (AC 43.13-1B Table 11-9); a single wire in free air carries several times more. Take it from the applicable wiring standard' },
     { key: 'dv_pct', label: 'Allowable voltage drop', unit: '%', default: 2, min: 0.1, max: 15, group: 'Limits' },
     { key: 'T_cond_C', label: 'Conductor temperature', unit: '°C', default: 90, min: -55, max: 260, group: 'Limits' },
     { key: 'alt_m', label: 'Altitude', unit: 'm', default: 3000, min: 0, max: 25000, group: 'Environment' },
@@ -628,8 +632,8 @@ const cable = {
         { type: 'line', title: 'Paschen curve for air', xlabel: 'Pressure × gap [Torr·cm]', ylabel: 'Breakdown voltage [V]', xlog: true, ylog: true, series: [{ name: 'Townsend-form Paschen law', x: pds, y: pds.map((x) => (x > PD_MIN * 0.42 ? (PB * x) / Math.log((PA * x) / PG) : NaN)).map((v) => (v > 0 && v < 1e5 ? v : NaN)) }, { name: 'This gap at altitude', x: [pd], y: [Vbd], style: 'points' }], annotations: [{ y: Vpk, label: 'Peak voltage' }] },
         { type: 'line', title: 'Breakdown voltage of the stated gap versus altitude', xlabel: 'Altitude [m]', ylabel: 'Breakdown voltage [V]', series: [{ name: `${i.gap_mm} mm gap`, x: hs, y: hs.map((h) => paschen(torr(h) * i.gap_mm * 0.1)) }], annotations: [{ y: Vpk, label: 'Peak voltage' }] },
       ],
-      warnings, models: ['Conductor sizing for ampacity and voltage drop', 'Paschen law in Townsend form with A = 15 /(Torr·cm), B = 365 V/(Torr·cm), γ = 0.01'],
-      assumptions: ['DC, or balanced three-phase AC at 0.9 power factor with resistive drop only; skin effect and inductive drop neglected', 'Ampacity as a current-density limit scaled by (density ratio)^0.2 — a generic stand-in for the altitude and bundle derating curves of the applicable wiring standard', 'Insulation thickness grows linearly with peak voltage (generic allowance); connectors, shielding and supports are not included', 'Paschen: uniform field between clean electrodes; left of the minimum the minimum is used because longer discharge paths usually exist', `Ambient pressure ${(a.p / 1e3).toFixed(1)} kPa from the standard atmosphere`],
+      warnings, models: ['Conductor sizing for ampacity and voltage drop', 'Paschen law in Townsend form with the tabulated air constants A = 15 /(Torr·cm), B = 365 V/(Torr·cm) and an illustrative γ = 0.01'],
+      assumptions: ['DC, or balanced three-phase AC at 0.9 power factor with resistive drop only; skin effect and inductive drop neglected', 'Ampacity as a current-density limit scaled by (density ratio)^0.2 — a generic stand-in for the altitude and bundle derating curves of the applicable wiring standard (0.88 at 6100 m where the AC 43.13-1B worked example uses 0.91)', 'Current-density, voltage-drop and insulation-thickness defaults are typical values', 'Insulation thickness grows linearly with peak voltage (generic allowance); connectors, shielding and supports are not included', 'Paschen: uniform field between clean electrodes; left of the minimum the minimum is used because longer discharge paths usually exist', `Ambient pressure ${(a.p / 1e3).toFixed(1)} kPa from the standard atmosphere`],
     };
   },
   verify() {
@@ -711,7 +715,7 @@ function hybSolve(i) {
     s = i.soc0;
     for (let k = 0; k < nT; k++) { const bq = best(k, s, Js[k + 1]); if (!bq.st || bq.cost >= BIG) { dp.ok = false; break; } s = bq.st.s2; dp.fuel += bq.st.fuel; dp.soc.push(s); dp.u.push(bq.u); dp.Pe.push(bq.st.Pe); }
   }
-  const t = N.cumtrapz(N.range(nT + 1), [0, ...ms.dt]).map((_, k) => N.sum(ms.dt.slice(0, k)) / 60);
+  const t = [0]; for (const dtk of ms.dt) t.push(t[t.length - 1] + dtk / 60);
   return { ms, D, t, fConv: fConv / fl.LHV, rule, dp, fl, Pr, Pbase, E, Eshaft: N.sum(ms.P.map((p, k) => p * ms.dt[k])) };
 }
 
@@ -784,7 +788,7 @@ const hybrid = {
         { type: 'bar', title: 'Mission fuel by strategy', ylabel: 'Fuel [kg]', categories: ['All-engine baseline', 'Hybrid, rule-based', 'Hybrid, optimal'], series: [{ name: 'Fuel', y: [r.fConv, fR, r.dp.ok ? fD : 0] }] },
       ],
       warnings, models: ['Quasi-static power-split model (series or parallel) with constant conversion efficiencies', 'Willans-line engine part-load fuel model', 'Rule-based blend with boost reserve', 'Deterministic dynamic programming over state of charge with interpolated cost-to-go'],
-      assumptions: ['Power demand is prescribed: the battery and electrical-machine mass is not fed back into drag or power (do that in Suite 23/24)', 'Rated thermal efficiency is the same for the baseline and the downsized engine (no scale effect), with no altitude lapse of engine power', 'Battery efficiency is constant; voltage sag and thermal limits are in the battery analysis', 'The battery is charged on the ground: fuel saving is tailpipe only and excludes electricity generation'],
+      assumptions: ['Power demand is prescribed: the battery and electrical-machine mass is not fed back into drag or power (do that in Suite 23/24)', 'Rated thermal efficiency is the same for the baseline and the downsized engine (no scale effect), with no altitude lapse of engine power', 'Battery efficiency is constant; voltage sag and thermal limits are in the battery analysis', 'The battery is charged on the ground: fuel saving is tailpipe only and excludes electricity generation', 'Conversion efficiencies, the idle fuel fraction, C-rate limit and pack specific energy are typical values, not data for specific equipment'],
     };
   },
   convergence: { param: 'nSoc', label: 'State-of-charge grid points', levels: [21, 41, 81, 161], metric: 'fuel_dp_kg' },
@@ -802,7 +806,8 @@ const hybrid = {
     const o = res.outputs, out = [], mtow = ctx?.case?.mass?.mtow_kg;
     if (!Number.isFinite(o.fuel_dp_kg)) return [{ severity: 'critical', title: 'The hybrid system cannot fly this mission', detail: 'No feasible power split was found.', action: 'Increase battery energy or its C-rate limit, or raise the engine rating fraction.', basis: 'Power and energy feasibility' }];
     out.push({ severity: o.fuel_saved_pct > 3 ? 'advise' : 'info', title: `Hybridisation changes mission fuel by ${(-o.fuel_saved_pct).toFixed(1)}%`, detail: `${o.fuel_conv_kg.toPrecision(4)} kg baseline, ${o.fuel_dp_kg.toPrecision(4)} kg with the optimal split (${o.co2_saved_kg.toPrecision(3)} kg tailpipe CO₂ avoided). The battery supplies ${(100 * o.hyb_energy_frac).toFixed(1)}% of shaft energy.`, action: 'The gain comes from running a smaller engine nearer its best efficiency and from stored grid energy; it shrinks on long missions. Combine with SAF or hydrogen (fuel selector) for larger CO₂ cuts and check life-cycle electricity emissions.', basis: 'Mission fuel integration of this run' });
-    if (mtow && o.hyb_batt_mass_kg > 0.05 * mtow) out.push({ severity: 'warn', title: 'Battery mass is a large share of take-off mass', detail: `${o.hyb_batt_mass_kg.toFixed(0)} kg is ${(100 * o.hyb_batt_mass_kg / mtow).toFixed(1)}% of MTOM and is not yet reflected in the power demand.`, action: 'Re-size the aircraft with the battery mass in Suite 23 and re-fly the mission in Suite 24 before trusting the fuel saving.', basis: 'Mass–energy coupling (Breguet)' });
+    const mAdd = o.hyb_batt_mass_kg - ((ctx?.case?.systems?.batt_kWh || 0) * 1e3) / i.wh_kg_pack; // battery beyond what the aircraft already carries
+    if (mtow && mAdd > 0.05 * mtow) out.push({ severity: 'warn', title: 'Added battery mass is a large share of take-off mass', detail: `${mAdd.toFixed(0)} kg more battery than the aircraft carries now is ${(100 * mAdd / mtow).toFixed(1)}% of MTOM and is not yet reflected in the power demand.`, action: 'Re-size the aircraft with the battery mass in Suite 23 and re-fly the mission in Suite 24 before trusting the fuel saving.', basis: 'Mass–energy coupling (Breguet)' });
     if (o.dp_gain_pct > 1) out.push({ severity: 'advise', title: 'The energy-management strategy matters', detail: `The optimal split uses ${o.dp_gain_pct.toFixed(1)}% less fuel than the simple rule.`, action: 'Implement a predictive or equivalent-consumption strategy that follows the optimal state-of-charge trajectory shown.', basis: 'Dynamic-programming benchmark' });
     return out;
   },
@@ -816,7 +821,7 @@ function dcdc(i) {
   if (buck) D = (i.Vout + IL * (RL + Ron) + i.V_d) / (i.Vin + i.V_d);
   else { D = 1 - i.Vin / i.Vout; for (let k = 0; k < 80; k++) { IL = Io / Math.max(1 - D, 1e-3); D = N.clamp((i.Vout + i.V_d + IL * (Ron + RL) - i.Vin) / (i.Vout + i.V_d), 0, 0.999); } IL = Io / Math.max(1 - D, 1e-3); }
   const dI = buck ? (i.Vout * (1 - D)) / (L * f) : (i.Vin * D) / (L * f), dV = buck ? dI / (8 * f * Cc) : (Io * D) / (f * Cc);
-  const Pcond = (IL * IL + (dI * dI) / 12) * (RL + Ron) + (1 - D) * i.V_d * IL, Psw = (buck ? i.Vin : i.Vout) * IL * i.t_sw_ns * 1e-9 * f;
+  const Pcond = (IL * IL + (dI * dI) / 12) * (RL + Ron) + (1 - D) * i.V_d * IL, Psw = 0.5 * (buck ? i.Vin : i.Vout) * IL * i.t_sw_ns * 1e-9 * f; // ½·V·I per linear transition, turn-on plus turn-off each cycle
   return { buck, D, IL, dI, dV, Pcond, Psw, eff: i.P_out_W / (i.P_out_W + Pcond + Psw), ccm: dI / 2 < IL, valid: D > 0 && D < 0.98 };
 }
 /** Source–line–capacitor bus: L di/dt = Vs − R·i − v, C dv/dt = i − i_load(v). Load step P1 → P2 at t = 0 (resistive or constant power). */
@@ -889,8 +894,8 @@ const converter = {
         { type: 'line', title: 'Line current after the load step', xlabel: 'Time [ms]', ylabel: 'Current [A]', series: [{ name: 'Line current', x: idx.map((k) => b.t[k] * 1e3), y: idx.map((k) => b.i[k]) }] },
         { type: 'bar', title: 'Converter loss breakdown', ylabel: 'Loss [W]', categories: ['Conduction', 'Switching'], series: [{ name: 'Loss', y: [s.Pcond, s.Psw] }] },
       ],
-      warnings, models: ['State-space-averaged buck/boost converter in continuous conduction', 'Conduction (I²R, forward drop) and linear-transition switching loss', 'Second-order RLC bus model with resistive or constant-power load (RK4)'],
-      assumptions: ['Ideal regulation: the converter holds its output voltage, so only steady-state duty and ripple are computed', 'Capacitor ESR, magnetic core loss and gate-drive loss are neglected', 'Line modelled as a lumped series R–L; the source is an ideal voltage behind it', 'Switching-level waveforms and control-loop dynamics are not simulated'],
+      warnings, models: ['State-space-averaged buck/boost converter in continuous conduction', 'Conduction (I²R, forward drop) and linear-transition switching loss ½·V·I·(t_rise + t_fall)·f', 'Second-order RLC bus model with resistive or constant-power load (RK4)'],
+      assumptions: ['Ideal regulation: the converter holds its output voltage, so only steady-state duty and ripple are computed', 'Capacitor ESR, magnetic core loss and gate-drive loss are neglected', 'Line modelled as a lumped series R–L; the source is an ideal voltage behind it', 'Switching-level waveforms and control-loop dynamics are not simulated', 'Default component and line values are illustrative, sized for about 30% inductor ripple, 1% output ripple and 1% line drop'],
     };
   },
   convergence: { param: 'nSteps', label: 'Time steps in the bus transient', levels: [250, 500, 1000, 2000], metric: 'step_V_min_V' },
@@ -898,17 +903,18 @@ const converter = {
     const i = { ...Object.fromEntries(converter.inputs.map((f) => [f.key, f.default])), R_line_mohm: 200, t_end_ms: 0.2 }, b = busStep(i, 4000), id = dcdc({ ...i, R_L_mohm: 0, R_on_mohm: 0, V_d: 0, t_sw_ns: 0 });
     // analytic underdamped response of v'' + 2ζωn v' + ωn² v = ωn² vss
     const al = b.zeta * b.wn, wd = b.wn * Math.sqrt(1 - b.zeta ** 2), A = b.v0 - b.vss, dv0 = (b.i0 - b.G2 * b.v0) / b.Cb, B = (dv0 + al * A) / wd, t = 0.2e-3;
-    const bo = dcdc({ ...i, Vin: 28, Vout: 56, R_L_mohm: 0, R_on_mohm: 0, V_d: 0, t_sw_ns: 0 });
+    const bo = dcdc({ ...i, Vin: 28, Vout: 56, R_L_mohm: 0, R_on_mohm: 0, V_d: 0, t_sw_ns: 0 }), sw = dcdc({ ...i, R_L_mohm: 0, R_on_mohm: 0, V_d: 0, t_sw_ns: 40 });
     return [
       N.check('RLC bus step response at t = 0.2 ms', b.v[4000], b.vss + Math.exp(-al * t) * (A * Math.cos(wd * t) + B * Math.sin(wd * t)), 1e-9, 'Closed-form second-order response'),
       N.check('Ideal buck duty cycle D = Vout/Vin', id.D, 28 / 270, 1e-12, 'Volt-second balance'),
       N.check('Ideal boost duty cycle D = 1 − Vin/Vout', bo.D, 0.5, 1e-12, 'Volt-second balance'),
       N.check('Ideal converter is lossless', id.eff, 1, 1e-12, 'Power balance'),
+      N.check('Switching loss ½·Vin·I·(t_rise + t_fall)·f', sw.Psw, 0.5 * 270 * (1000 / 28) * 40e-9 * 1e5, 1e-12, 'Triangular voltage–current overlap of a hard-switched transition'),
     ];
   },
   recommend(res, i) {
     const o = res.outputs, out = [];
-    if (o.cpl_margin < 2) out.push({ severity: o.cpl_margin < 1 ? 'critical' : 'warn', title: 'Low stability margin with constant-power loads', detail: `V²RC/(L·P) = ${o.cpl_margin.toFixed(2)}; regulated converters and motor drives present negative incremental resistance.`, action: 'Increase bus capacitance, add an RC damper, shorten the line, or limit converter input bandwidth; confirm with an impedance-ratio (Middlebrook) assessment.', basis: 'Linearised constant-power-load criterion P < V²·R·C/L' });
+    if (o.cpl_margin < 2) out.push({ severity: i.load_type !== 'constant power' ? 'advise' : o.cpl_margin < 1 ? 'critical' : 'warn', title: 'Low stability margin with constant-power loads', detail: `V²RC/(L·P) = ${o.cpl_margin.toFixed(2)}; ${i.load_type !== 'constant power' ? 'the load in this run is resistive, but ' : ''}regulated converters and motor drives present negative incremental resistance.`, action: 'Increase bus capacitance, add an RC damper, shorten the line, or limit converter input bandwidth; confirm with an impedance-ratio (Middlebrook) assessment.', basis: 'Linearised constant-power-load criterion P < V²·R·C/L' });
     if (o.step_undershoot_pct > 10) out.push({ severity: 'advise', title: 'Large bus undershoot on load application', detail: `${o.step_undershoot_pct.toFixed(1)}% below the new steady state (damping ratio ${o.bus_zeta.toFixed(2)}).`, action: 'Add bus capacitance or soft-start the load, and compare the excursion with the power-quality transient limits of the applicable standard.', basis: 'Second-order RLC response' });
     if (o.conv_eff < 0.95) out.push({ severity: 'advise', title: 'Converter efficiency below 95 %', detail: `${(100 * o.conv_eff).toFixed(1)}% with ${o.conv_loss_W.toPrecision(3)} W of heat.`, action: 'Lower on-resistance or switching frequency, use wide-band-gap devices, or split a large conversion ratio into two stages.', basis: 'Loss breakdown of this run' });
     if (!out.length) out.push({ severity: 'info', title: 'Converter and bus behave well at this point', detail: `Efficiency ${(100 * o.conv_eff).toFixed(1)}%, ripple ${o.ripple_V_pct.toFixed(2)}%, undershoot ${o.step_undershoot_pct.toFixed(1)}%.`, action: 'Re-check at minimum input voltage and maximum load, where current stress and ripple peak.', basis: 'Averaged model' });

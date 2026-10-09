@@ -2,11 +2,14 @@
 // Native solvers: 2-D linear-vortex panel method with integral boundary layer, 3-D vortex-lattice and lifting-line
 // wing, component drag build-up with Korn wave drag, 1-D finite-volume Euler (shock tube) with an exact Riemann
 // solver, shock/expansion relations, a 2-D incompressible Navier–Stokes projection solver (lid-driven cavity) and a
-// 1-D Spalart–Allmaras wall-turbulence solve with a first-cell-height calculator.
-// Volume-mesh RANS/LES/DNS of the complete aircraft are not solved here: see `handoff` at the end of the file.
+// 1-D Spalart–Allmaras wall-turbulence solve with a first-cell-height calculator, and — through the native 3-D
+// Navier–Stokes kernel in core/solvers/cfd3d.js — DNS (Taylor–Green vortex), LES (turbulent channel), RANS with the
+// Spalart–Allmaras model around an immersed wing, fuselage or imported surface, and unsteady bluff-body flow.
+// What still needs an external solver (body-fitted, wall-resolved, compressible, moving meshes) is in `handoff`.
 
 import * as N from '../core/numerics.js';
 import { isa, G0, GAMMA } from '../core/atmosphere.js';
+import { createSolver, wallFriction } from '../core/solvers/cfd3d.js';
 
 const PI = Math.PI;
 const fixedWing = (c) => (c.wing.S_m2 > 0 && c.wing.b_m > 0 ? true : 'This analysis needs a lifting wing; the current case is a pure rotorcraft. Use the airfoil analysis for the blade section and Suite 6 for the rotor.');
@@ -1086,10 +1089,643 @@ const wallTurb = {
   },
 };
 
+// ---- native 3-D Navier–Stokes: DNS, LES and RANS on Cartesian immersed-boundary grids ----------
+const TWO_PI = 2 * PI;
+const cellsOf = (n, lo = 8, hi = 128) => Math.round(N.clamp(n, lo, hi));
+const tailOf = (a, f = 0.25) => a.slice(Math.max(0, Math.min(a.length - 1, Math.floor(a.length * (1 - f)))));
+const heatOf = (title, sl, zlabel, o = {}) => ({ type: 'heat', title, xlabel: o.xlabel || 'x [-]', ylabel: o.ylabel || 'y [-]', zlabel, x: sl.x, y: sl.y, z: o.map ? sl.z.map((r) => r.map(o.map)) : sl.z, contours: o.contours || 14, equalAspect: o.equalAspect !== false, ...(o.diverging ? { diverging: true } : {}), ...(o.overlay && o.overlay.x.length ? { overlay: [{ name: o.overlayName || 'Body outline', x: o.overlay.x, y: o.overlay.y }] } : {}) });
+/** Keep the last result of an expensive, input-determined run so that re-opening it (or running it for another aircraft with identical inputs) is free. */
+function memoLast(fn) {
+  let key = null, val = null;
+  return (i, ctx, extra = '') => { const k = JSON.stringify(i) + extra; if (k !== key || !val) { val = fn(i, ctx); key = k; } return typeof structuredClone === 'function' ? structuredClone(val) : JSON.parse(JSON.stringify(val)); };
+}
+const COARSE_NOTE = (what, n) => `The default grid (${what}) is deliberately small so that the run returns in about a second on any device. Treat it as a first look: raise "${n}" (up to 128) and use the mesh-convergence tab before quoting numbers.`;
+const TGV_FLOWS = ['3-D Taylor–Green vortex', '2-D Taylor–Green vortex (exact solution)'];
+const tgv3 = (x, y, z) => [Math.sin(x) * Math.cos(y) * Math.cos(z), -Math.cos(x) * Math.sin(y) * Math.cos(z), 0];
+const tgv2 = (x, y) => [Math.sin(x) * Math.cos(y), -Math.cos(x) * Math.sin(y), 0];
+/** Taylor–Green vortex in a (2π)³ periodic box with unit velocity and length scales; fixed time step that lands exactly on tEnd. */
+function runTgv(o) {
+  const n = o.n, h = TWO_PI / n, nu = 1 / o.Re, rk = o.time !== 'ab2', cfl = N.clamp(o.cfl ?? (rk ? 1 : 0.3), 0.05, rk ? 1.5 : 0.5);
+  const steps = Math.max(2, Math.ceil(o.tEnd / Math.min((cfl * h) / 1.6, ((rk ? 0.5 : 0.2) * h * h) / (3 * nu))));
+  const s = createSolver({ n: [n, n, n], L: [TWO_PI, TWO_PI, TWO_PI], nu, init: o.two ? tgv2 : tgv3, time: rk ? 'rk3' : 'ab2', dt: o.tEnd / steps, model: o.model || 'dns', sgs: o.sgs, Cs: o.Cs, Cw: o.Cw, vanDriest: false, historyEvery: 1 });
+  s.run(steps, o.progress ? (f) => o.progress(f, `t = ${(f * o.tEnd).toFixed(2)} L/U`) : null, Math.max(1, Math.round(steps / 20)));
+  return s;
+}
+/** Root-mean-square velocity error against the exact decaying 2-D Taylor–Green solution. */
+function tgv2Error(s, nu) {
+  const g = s.grid, f = s.fields, dec = Math.exp(-2 * nu * s.time); let e = 0;
+  for (let k = 0; k < g.nz; k++) for (let j = 0; j < g.ny; j++) for (let i = 0; i < g.nx; i++) { const I = s.index(i, j, k); e += (f.u[I] - tgv2(g.xf[i + 1], g.y[j])[0] * dec) ** 2 + (f.v[I] - tgv2(g.x[i], g.yf[j + 1])[1] * dec) ** 2 + f.w[I] ** 2; }
+  return Math.sqrt(e / (g.nx * g.ny * g.nz));
+}
+/** Kinetic-energy budget from a solver history: −dE/dt between samples against the mean resolved + modelled dissipation. */
+function energyBudget(H) {
+  const t = [], dE = [], eps = []; let num = 0, den = 0;
+  for (let k = 0; k + 1 < H.t.length; k++) { const dt = H.t[k + 1] - H.t[k]; if (!(dt > 0)) continue; t.push(0.5 * (H.t[k] + H.t[k + 1])); dE.push((H.ke[k] - H.ke[k + 1]) / dt); eps.push(0.5 * (H.dissipation[k] + H.dissipation[k + 1] + H.sgs[k] + H.sgs[k + 1])); num += H.ke[k] - H.ke[k + 1]; den += eps[eps.length - 1] * dt; }
+  return { t, dE, eps, ratio: den > 0 ? num / den : NaN };
+}
+
+const dns3d = {
+  id: 'dns3d', title: '3-D DNS: Taylor–Green vortex in a periodic box', fidelity: 'numerical',
+  summary: 'Direct numerical simulation of the three-dimensional incompressible Navier–Stokes equations with no turbulence model: a Taylor–Green vortex stretches, breaks down and decays in a periodic box. Energy decay, dissipation rate, vorticity and Q-criterion fields are computed and the solver is verified against the exact viscous solution and the energy budget.',
+  equations: ['Navier–Stokes equations', 'Continuity equation', 'Conservation of momentum equation', 'Vorticity transport equation', 'DNS'],
+  inputs: [
+    { key: 'flow', label: 'Flow', type: 'select', options: TGV_FLOWS, default: TGV_FLOWS[0], group: 'Flow', help: 'The 2-D vortex has an exact solution (pure viscous decay) and measures the solver error directly; the 3-D vortex transitions to turbulence at high Reynolds number' },
+    { key: 'Re', label: 'Reynolds number U·L/ν', unit: '-', default: 100, min: 0.01, max: 5000, group: 'Flow', help: 'Box side is 2πL. 100 is laminar and resolvable on 24³–32³; 1600 is the standard turbulence benchmark and needs 256³ or more for a true DNS' },
+    { key: 't_end', label: 'Simulated time', unit: 'L/U', default: 5, min: 0.05, max: 40, group: 'Flow', help: 'The 3-D dissipation peak is near t ≈ 5 at Re 100 and t ≈ 9 at Re 1600' },
+    { key: 'L_m', label: 'Length scale L', unit: 'm', default: 0.05, min: 1e-4, group: 'Flow', help: 'Only used to give the equivalent speed in air at the case altitude' },
+    { key: 'n', label: 'Cells per side', unit: '', default: 16, min: 8, max: 128, step: 1, discrete: true, group: 'Numerics', help: 'Powers of two (16, 32, 64, 128) use the FFT pressure solver and are fastest' },
+    { key: 'scheme', label: 'Time integration', type: 'select', options: ['Runge–Kutta 3', 'Adams–Bashforth 2'], default: 'Runge–Kutta 3', group: 'Numerics' },
+    { key: 'cfl', label: 'CFL number', unit: '-', default: 1, min: 0.05, max: 1.5, group: 'Numerics', help: 'Runge–Kutta is stable to about 1.5; Adams–Bashforth is limited to 0.5 internally' },
+  ],
+  defaults: () => ({}),
+  run(i, ctx) { return dnsMemo(i, ctx, String(ctx?.case?.atm?.alt_m ?? 0) + '/' + String(ctx?.case?.atm?.dISA_K ?? 0)); },
+  runNow(i, ctx) {
+    const n = cellsOf(i.n), two = i.flow === TGV_FLOWS[1], Re = Math.max(i.Re, 1e-6), nu = 1 / Re, E0 = two ? 0.25 : 0.125;
+    const s = runTgv({ n, Re, tEnd: i.t_end, two, time: i.scheme === 'Adams–Bashforth 2' ? 'ab2' : 'rk3', cfl: i.cfl, progress: ctx?.progress });
+    const H = s.history, d = s.diagnostics(), B = energyBudget(H), kMax = N.argmax(H.dissipation), epsMax = H.dissipation[kMax], eta = (nu ** 3 / Math.max(epsMax, 1e-300)) ** 0.25, h = TWO_PI / n, hEta = h / eta;
+    const budgetErr = N.amax(B.dE.map((v, k) => Math.abs(v - B.eps[k]))) / Math.max(epsMax, 1e-300), Eex = E0 * Math.exp(-4 * nu * s.time), err2 = two ? tgv2Error(s, nu) : NaN;
+    const nuAir = isa(ctx?.case?.atm?.alt_m ?? 0, ctx?.case?.atm?.dISA_K ?? 0).nu, warnings = [];
+    if (s.diverged || !Number.isFinite(d.ke)) warnings.push('The time march diverged: lower the CFL number.');
+    if (n <= 20) warnings.push(COARSE_NOTE(`${n}³ cells`, 'Cells per side'));
+    if (hEta > 2.1) warnings.push(`Not a resolved DNS at this Reynolds number: the cell size is ${hEta.toFixed(1)} Kolmogorov lengths (a DNS needs about 2 or less, i.e. roughly ${Math.ceil((n * hEta) / 2.1)}³ cells here). The energy-conserving central scheme has no numerical dissipation, so unresolved energy piles up at the grid scale and the dissipation peak is under-predicted. Use the LES analysis or refine.`);
+    if (!two && Re >= 1000 && n < 128) warnings.push('For orientation only: published pseudo-spectral DNS of the Re = 1600 Taylor–Green vortex (512³) gives a peak dissipation of about 0.0127 U³/L near t ≈ 9 L/U. A second-order scheme on a grid this coarse cannot reproduce it.');
+    if (!two && i.t_end < 3) warnings.push('The run stops before vortex stretching has built up the small scales: the dissipation maximum has not been reached.');
+    const [tt, ke] = thin(H.t, H.ke, 300), [, ep] = thin(H.t, H.dissipation, 300), [tb, db] = thin(B.t, B.dE, 300), k0 = 0, sv = s.slice('z', k0, 'vorticity', { max: 80 }), sq = s.slice('z', k0, 'q', { max: 80 }), so = s.slice('y', Math.floor(n / 4), 'wy', { max: 80 });
+    const kpis = [
+      { key: 'E_final', label: 'Kinetic energy at the end', value: d.ke, unit: 'U²', note: `${(100 * d.ke / E0).toFixed(1)}% of the initial energy` },
+      ...(two ? [
+        { key: 'E_exact', label: 'Exact kinetic energy', value: Eex, unit: 'U²', note: '¼·exp(−4νt)' },
+        { key: 'ke_error', label: 'Relative energy error', value: Math.abs(d.ke - Eex) / Eex, unit: '-', status: Math.abs(d.ke - Eex) / Eex < 0.01 ? 'ok' : 'warn' },
+        { key: 'u_error_rms', label: 'RMS velocity error against the exact solution', value: err2, unit: 'U' },
+      ] : [
+        { key: 'eps0_ratio', label: 'Initial dissipation / exact value ¾ν', value: H.dissipation[0] / (0.75 * nu), unit: '-', note: 'Differs from 1 by the second-order truncation error of the grid' },
+      ]),
+      { key: 'eps_max', label: 'Peak dissipation rate', value: epsMax, unit: 'U³/L', note: `at t = ${H.t[kMax].toFixed(2)} L/U${kMax === H.t.length - 1 ? ' (still rising at the end of the run)' : ''}` },
+      { key: 't_eps_max', label: 'Time of peak dissipation', value: H.t[kMax], unit: 'L/U' },
+      { key: 'enstrophy_max', label: 'Peak enstrophy', value: N.amax(H.enstrophy), unit: 'U²/L²' },
+      { key: 'budget_ratio', label: 'Energy lost / time-integrated dissipation', value: B.ratio, unit: '-', status: Math.abs(B.ratio - 1) < 0.01 ? 'ok' : 'warn', note: 'Exactly 1 for the continuous equations: dE/dt = −ε' },
+      { key: 'budget_error', label: 'Largest energy-budget imbalance', value: budgetErr, unit: 'of peak ε', status: budgetErr < 0.02 ? 'ok' : 'warn' },
+      { key: 'dx_over_eta', label: 'Cell size / Kolmogorov length', value: hEta, unit: '-', status: hEta <= 2.1 ? 'ok' : hEta < 4 ? 'warn' : 'bad', note: 'A resolved DNS needs about 2 or less' },
+      { key: 'div_max', label: 'Largest cell divergence', value: d.divMax, unit: 'U/L', status: d.divMax < 1e-9 ? 'ok' : 'warn', note: 'Mass conservation after the exact projection' },
+      { key: 'steps', label: 'Time steps', value: d.step, unit: '' },
+      { key: 'dt', label: 'Time step', value: d.dt, unit: 'L/U' },
+      { key: 'cells', label: 'Grid cells', value: n ** 3, unit: '' },
+      { key: 'U_equiv_ms', label: 'Equivalent velocity scale in air', value: (Re * nuAir) / i.L_m, unit: 'm/s', note: `for L = ${i.L_m} m at the case altitude` },
+    ];
+    return {
+      kpis,
+      plots: [
+        { type: 'line', title: 'Kinetic-energy decay', xlabel: 'Time [L/U]', ylabel: 'Kinetic energy [U²]', series: [{ name: `DNS ${n}³`, x: tt, y: ke }, two ? { name: 'Exact ¼·exp(−4νt)', x: tt, y: tt.map((t) => 0.25 * Math.exp(-4 * nu * t)), style: 'dash' } : { name: 'Viscous decay of the initial mode alone, ⅛·exp(−6νt)', x: tt, y: tt.map((t) => 0.125 * Math.exp(-6 * nu * t)), style: 'dash' }] },
+        { type: 'line', title: 'Dissipation rate and energy budget', xlabel: 'Time [L/U]', ylabel: 'Rate [U³/L]', series: [{ name: 'ε = ν⟨|∇u|²⟩', x: tt, y: ep }, { name: '−dE/dt', x: tb, y: db, style: 'dash' }] },
+        heatOf(`Vorticity magnitude, plane z = ${sv.position.toFixed(2)} L at t = ${s.time.toFixed(2)}`, sv, '|ω| [U/L]', { xlabel: 'x [L]', ylabel: 'y [L]' }),
+        heatOf(`Q-criterion, plane z = ${sq.position.toFixed(2)} L`, sq, 'Q [U²/L²]', { xlabel: 'x [L]', ylabel: 'y [L]', diverging: true }),
+        heatOf(`Vorticity component ω_y, plane y = ${so.position.toFixed(2)} L`, so, 'ω_y [U/L]', { xlabel: 'x [L]', ylabel: 'z [L]', diverging: true }),
+      ],
+      tables: [{ title: 'Run summary', columns: ['Quantity', 'Value'], rows: [['Grid', `${n} × ${n} × ${n}`], ['Box', '2πL × 2πL × 2πL, periodic'], ['Time integration', i.scheme], ['Cell size h / L', +h.toFixed(4)], ['Kolmogorov length η / L (at peak ε)', +eta.toFixed(4)], ['Pressure solver', (n & (n - 1)) === 0 ? 'FFT (three directions)' : 'dense Fourier transform (use a power of two for speed)']] }],
+      warnings,
+      models: ['Incompressible Navier–Stokes equations, no turbulence model (DNS)', 'Staggered (MAC) grid, second-order energy-conserving central differences', i.scheme === 'Adams–Bashforth 2' ? 'Adams–Bashforth 2 fractional-step projection' : 'Three-stage low-storage Runge–Kutta (Wray) fractional-step projection', 'Exact discrete pressure projection by Fourier transforms'],
+      assumptions: ['Constant-property incompressible flow in a triply periodic box', 'Dissipation is the discrete ν⟨|∇u|²⟩, which equals ν⟨ω²⟩ for periodic flow', 'Second-order accuracy in space: about 2 to 3 times more points per direction are needed than with a spectral method for the same resolved scales'],
+    };
+  },
+  convergence: { param: 'n', label: 'Cells per side', levels: [12, 16, 24, 32], metric: 'E_final', hOf: (n) => TWO_PI / n },
+  verify() {
+    const nu = 0.05, a = runTgv({ n: 8, Re: 1 / nu, tEnd: 1, two: true }), b = runTgv({ n: 16, Re: 1 / nu, tEnd: 1, two: true }), ea = tgv2Error(a, nu), eb = tgv2Error(b, nu), db = b.diagnostics();
+    const st = runTgv({ n: 16, Re: 0.02, tEnd: 0.002 }), ds = st.diagnostics(), mod = (Math.sin(PI / 16) / (PI / 16)) ** 2; // Stokes limit: every initial mode has |k|² = 3
+    const t3 = runTgv({ n: 16, Re: 100, tEnd: 1.5 }), B = energyBudget(t3.history), ab = runTgv({ n: 16, Re: 1 / nu, tEnd: 1, two: true, time: 'ab2' });
+    return [
+      N.check('2-D Taylor–Green: observed spatial order of accuracy', Math.log2(ea / eb), 2, 0.08, 'Exact Navier–Stokes solution u = sin x cos y·exp(−2νt); errors on 8³ and 16³'),
+      N.check('2-D Taylor–Green: kinetic energy at t = 1 (16³)', db.ke, 0.25 * Math.exp(-4 * nu), 5e-3, 'Exact decay ¼·exp(−4νt); remaining error is the second-order modified wavenumber'),
+      N.check('2-D Taylor–Green with Adams–Bashforth 2', ab.diagnostics().ke, db.ke, 2e-4, 'Two independent time integrators agree'),
+      N.check('3-D Taylor–Green, Stokes limit: energy decay exp(−6νt)', ds.ke, 0.125 * Math.exp(-6 * 50 * 0.002 * mod), 2e-3, 'Linear viscous decay with the discrete (modified) wavenumber of the 16³ grid'),
+      N.check('3-D Taylor–Green: initial dissipation ε₀ = ¾ν', t3.history.dissipation[0] / (0.75 * 0.01), mod, 1e-6, 'Analytical enstrophy ⟨ω²⟩ = ¾ of the initial field, times the modified-wavenumber factor'),
+      N.check('Energy budget dE/dt = −ε (3-D, Re 100)', B.ratio, 1, 2e-3, 'Kinetic-energy equation; the central scheme adds no numerical dissipation'),
+      N.check('Discrete mass conservation in 3-D', 1 + t3.diagnostics().divMax, 1, 1e-11, 'Exact projection'),
+    ];
+  },
+  validation: [{ name: '2-D Taylor–Green vortex, kinetic energy at t = 2', source: 'Exact solution of the Navier–Stokes equations (Taylor 1923): E = ¼·exp(−4νt)', inputs: { flow: TGV_FLOWS[1], t_end: 2, n: 32 }, sweep: { key: 'Re', values: [10, 20, 100] }, target: 'E_final', observed: [0.25 * Math.exp(-0.8), 0.25 * Math.exp(-0.4), 0.25 * Math.exp(-0.08)], tol_pct: 1 }],
+  recommend(res, i) {
+    const o = res.outputs, out = [];
+    if (o.dx_over_eta > 2.1) out.push({ severity: o.dx_over_eta > 4 ? 'warn' : 'advise', title: 'The smallest eddies are not resolved', detail: `Cell size is ${o.dx_over_eta.toFixed(1)} Kolmogorov lengths on ${Math.round(i.n)}³ cells.`, action: `Refine to about ${Math.ceil((i.n * o.dx_over_eta) / 2.1)} cells per side for a DNS, lower the Reynolds number, or switch to the LES analysis, which models the unresolved dissipation.`, basis: 'Kolmogorov scale η = (ν³/ε)^¼ from the computed peak dissipation' });
+    if (Math.abs(o.budget_ratio - 1) > 0.01) out.push({ severity: 'advise', title: 'Energy budget does not close', detail: `Energy lost is ${(100 * o.budget_ratio).toFixed(1)}% of the integrated dissipation.`, action: 'Reduce the CFL number: the imbalance is the time-integration error.', basis: 'Kinetic-energy equation' });
+    out.push({ severity: 'info', title: 'Use this case to qualify any flow solver', detail: 'The Taylor–Green vortex is the standard test of whether a scheme conserves energy and how much numerical dissipation it adds.', action: 'Run the mesh-convergence study on the 2-D case to confirm second-order accuracy, then repeat the 3-D case on two grids; apply the same discipline to external solvers through the High-fidelity bridge.', basis: 'Code verification practice (AIAA G-077, ASME V&V 20)' });
+    return out;
+  },
+};
+const dnsMemo = memoLast((i, ctx) => dns3d.runNow(i, ctx));
+
+// ---- LES: turbulent channel flow and Taylor–Green vortex ----------------------------------------
+const LES_FLOWS = ['Turbulent channel flow', 'Taylor–Green vortex'], SGS_MODELS = ['WALE', 'Smagorinsky with van Driest damping', 'None (implicit, under-resolved DNS)'];
+const reichardt = (yp) => Math.log(1 + 0.41 * yp) / 0.41 + 7.8 * (1 - Math.exp(-yp / 11) - (yp / 11) * Math.exp(-yp / 3));
+const tanhFaces = (n, beta) => N.range(n + 1, (j) => (beta > 0 ? 1 + Math.tanh(beta * ((2 * j) / n - 1)) / Math.tanh(beta) : (2 * j) / n));
+const cfDean = (Reb) => 0.073 * Reb ** -0.25;
+const sgsCfg = (name) => (name === SGS_MODELS[0] ? { model: 'les', sgs: 'wale' } : name === SGS_MODELS[1] ? { model: 'les', sgs: 'smagorinsky' } : { model: 'dns' });
+/**
+ * Fully developed channel flow between two walls at y = 0 and 2δ, periodic in x and z, driven at constant mass flux.
+ * Units: bulk velocity U_b = 1, half height δ = 1, so ν = 2/Re_b. Returns the solver, wall-shear history and averages.
+ */
+function runChannel(o) {
+  const n = o.n, nu = 2 / o.Reb, ut0 = Math.sqrt(cfDean(o.Reb) / 2), ReT0 = ut0 / nu, Lx = o.Lx, Lz = o.Lz;
+  let beta = 0;
+  if (!o.wallModel) { const f = (b) => 0.5 * (1 - Math.tanh(b * (1 - 2 / n)) / Math.tanh(b)) * ReT0 - o.y1; beta = f(0.3) < 0 ? 0 : f(3.2) > 0 ? 3.2 : N.brent(f, 0.3, 3.2, 1e-6); }
+  const U0 = (y) => ut0 * reichardt((Math.min(y, 2 - y) * ut0) / nu), amp = o.amp ?? 0.15;
+  const s = createSolver({
+    n: [o.nx || n, n, o.nz || n], L: [Lx, 2, Lz], yFaces: beta > 0 ? tanhFaces(n, beta) : undefined, nu, bc: { y: 'wall' }, forcing: { bulk: 1 }, time: 'rk3', cfl: o.cfl ?? 1, wallModel: !!o.wallModel, ...sgsCfg(o.sgs), Cs: o.Cs, Cw: o.Cw,
+    // mean turbulent profile plus streaks, streamwise vortices and a sinuous wave: transition completes within about 20 δ/U_b
+    init: (x, y, z) => { const e = 1 - (y - 1) ** 2, a = (TWO_PI * z) / Lz, b = (TWO_PI * x) / Lx; return [U0(y) + amp * e * Math.cos(a) * (1 + 0.5 * Math.sin(b)), 0.6 * amp * e * e * Math.sin(a) * (1 + 0.6 * Math.cos(b)), 0.6 * amp * e * Math.sin(b) * Math.sin(PI * y)]; },
+    perturb: { amplitude: 0.1, seed: 7 }, stats: { start: o.tEnd * (1 - o.avg) },
+  });
+  const hist = { t: [], cf: [] }; let tauSum = 0, nAvg = 0, steps = 0, sgsSum = 0;
+  while (s.time < o.tEnd && steps < 200000 && !s.diverged) {
+    s.run(1); steps++;
+    const m = s.monitor(), tau = 0.5 * (m.wallShear[2] + m.wallShear[3]);
+    if (s.time >= o.tEnd * (1 - o.avg)) { tauSum += tau; sgsSum += m.sgsDissipation; nAvg++; }
+    if (steps % 2 === 0) { hist.t.push(s.time); hist.cf.push(2 * tau); }
+    if (o.progress && steps % 20 === 0) o.progress(Math.min(s.time / o.tEnd, 1), `t = ${s.time.toFixed(1)} δ/U_b`);
+  }
+  return { s, nu, beta, hist, steps, tauW: nAvg ? tauSum / nAvg : NaN, sgs: nAvg ? sgsSum / nAvg : 0, ReT0, Lx, Lz };
+}
+
+const les3d = {
+  id: 'les3d', title: '3-D LES: turbulent channel flow and Taylor–Green vortex', fidelity: 'numerical',
+  summary: 'Large-eddy simulation: the large turbulent eddies are computed in three dimensions and time, and only the eddies smaller than the grid are modelled (Smagorinsky or WALE). The default case is fully developed turbulent flow between two walls, giving the mean velocity profile against the law of the wall, the Reynolds stresses and the friction coefficient.',
+  equations: ['Navier–Stokes equations', 'Continuity equation', 'Conservation of momentum equation', 'Turbulent kinetic energy transport equation', 'LES subgrid-scale models', 'WALE', 'Wall-modelled LES formulations', 'Wall-resolved or wall-modelled turbulence simulations'],
+  inputs: [
+    { key: 'flow', label: 'Flow', type: 'select', options: LES_FLOWS, default: LES_FLOWS[0], group: 'Flow' },
+    { key: 'Re', label: 'Reynolds number', unit: '-', default: 5600, min: 1000, max: 2e5, group: 'Flow', help: 'Channel: bulk velocity × full height / ν (5600 gives Re_τ ≈ 180, the classic DNS case). Taylor–Green: U·L/ν (1600 is the standard benchmark)' },
+    { key: 'sgs', label: 'Subgrid-scale model', type: 'select', options: SGS_MODELS, default: SGS_MODELS[0], group: 'Model' },
+    { key: 'Cs', label: 'Smagorinsky constant', unit: '-', default: 0.1, min: 0.05, max: 0.25, group: 'Model', help: '0.1 for wall-bounded shear flow, 0.17 for decaying isotropic turbulence' },
+    { key: 'Cw', label: 'WALE constant', unit: '-', default: 0.325, min: 0.2, max: 0.6, group: 'Model', help: '0.325 corresponds to Cs = 0.1; 0.5 to Cs = 0.17' },
+    { key: 'wall_model', label: 'Equilibrium (log-law) wall model', type: 'bool', default: false, group: 'Model', help: 'Channel only. Needed above Re ≈ 10⁴, where the near-wall eddies cannot be resolved; the grid is then uniform in y' },
+    { key: 't_end', label: 'Simulated time', unit: 'δ/U_b or L/U', default: 20, min: 2, max: 2000, group: 'Flow', help: 'Channel: transition from the perturbed initial field takes about 20; statistics need several hundred for 2% accuracy' },
+    { key: 'avg_frac', label: 'Fraction of the run used for statistics', unit: '-', default: 0.5, min: 0.1, max: 0.9, group: 'Flow' },
+    { key: 'Lx', label: 'Channel length', unit: 'δ', default: 3.1416, min: 1.5, max: 12.6, group: 'Domain', help: 'π (small box) to 2π or 4π. A longer box needs proportionally more cells' },
+    { key: 'Lz', label: 'Channel width', unit: 'δ', default: 1.5708, min: 0.8, max: 6.3, group: 'Domain' },
+    { key: 'y1_plus', label: 'Target y⁺ of the first cell centre', unit: '-', default: 2, min: 0.5, max: 10, group: 'Numerics', help: 'Sets the wall-normal grid stretching when no wall model is used' },
+    { key: 'n', label: 'Cells per direction', unit: '', default: 12, min: 8, max: 128, step: 1, discrete: true, group: 'Numerics' },
+  ],
+  defaults: () => ({}),
+  run(i, ctx) { return lesMemo(i, ctx); },
+  convergence: { param: 'n', label: 'Cells per direction', levels: [12, 16, 20, 24], metric: 'grid_metric' },
+  verify() {
+    // laminar Poiseuille flow through the LES code path: WALE must return zero eddy viscosity in pure shear
+    const G = 1, nu = 0.1, lam = createSolver({ n: [4, 12, 4], L: [2, 2, 2], yFaces: tanhFaces(12, 1.2), nu, bc: { y: 'wall' }, forcing: { gradient: [G, 0, 0] }, model: 'les', sgs: 'wale', time: 'ab2', diffusion: 'implicit', dt: 0.05, init: (x, y) => [(G / (2 * nu)) * y * (2 - y), 0, 0] });
+    lam.run(1500); const dl = lam.diagnostics(), m = lam.monitor();
+    // uniform shear du/dy = 1 between a fixed and a moving wall: Smagorinsky νt = (Cs·Δ)²·|S| with |S| = 1
+    const sh = createSolver({ n: [4, 8, 4], L: [1, 2, 1], nu: 1, bc: { y: ['wall', { type: 'wall', velocity: [2, 0, 0] }] }, model: 'les', sgs: 'smagorinsky', Cs: 0.17, vanDriest: false, time: 'ab2', dt: 1e-4, init: (x, y) => [y, 0, 0] });
+    sh.step(); const dlt = Math.cbrt(0.25 * 0.25 * 0.25);
+    const mf = createSolver({ n: [4, 16, 4], L: [2, 2, 2], nu: 0.1, bc: { y: 'wall' }, forcing: { bulk: 1 }, init: [1, 0, 0] }); mf.run(400); const dm = mf.diagnostics();
+    const ut = wallFriction(17.5, 0.01, 1.5e-5), yp = (0.01 * ut) / 1.5e-5;
+    return [
+      N.check('Laminar channel: wall shear balances the pressure gradient', 0.5 * (m.wallShear[2] + m.wallShear[3]), G, 1e-6, 'Integral momentum balance τ_w = −δ·dp/dx (stretched grid, implicit diffusion)'),
+      N.check('Laminar channel: bulk velocity', dl.bulk, G / (3 * nu), 0.03, 'Poiseuille solution U_b = δ²(−dp/dx)/(3ν); second-order grid error'),
+      N.check('WALE eddy viscosity vanishes in pure shear', 1 + m.nutMax / nu, 1, 1e-9, 'Nicoud & Ducros (1999): the WALE operator is zero for laminar shear'),
+      N.check('Smagorinsky eddy viscosity in uniform shear', sh.monitor().nutMax, (0.17 * dlt) ** 2, 1e-9, 'νt = (Cs·Δ)²·√(2 S:S) with du/dy = 1'),
+      N.check('Constant-mass-flux forcing: pressure gradient 3νU_b/δ²', dm.gradient, 3 * 0.1, 0.03, 'Poiseuille flow at fixed bulk velocity (16 cells across)'),
+      N.check('Wall model inverts the log law', ut * (Math.log(yp) / 0.41 + 5.2), 17.5, 1e-8, 'u⁺ = ln(y⁺)/0.41 + 5.2'),
+      N.check('Discrete mass conservation with walls', 1 + dl.divMax, 1, 1e-10, 'Exact projection (cosine/Fourier transforms and tridiagonal solve)'),
+    ];
+  },
+  validation: [{ name: 'Channel friction coefficient at Re_b = 5600 (Re_τ ≈ 180)', source: 'Kim, Moin & Moser, J. Fluid Mech. 177 (1987) DNS: Cf = 8.18×10⁻³; Dean (1978) correlation 0.073·Re_b^−0.25 = 8.44×10⁻³', inputs: { flow: LES_FLOWS[0], n: 32, t_end: 300, sgs: SGS_MODELS[0], wall_model: false }, sweep: { key: 'Re', values: [5600] }, target: 'Cf', observed: [8.18e-3], tol_pct: 15 }],
+  recommend(res, i) {
+    const o = res.outputs, out = [];
+    if (i.flow === LES_FLOWS[1]) { out.push({ severity: 'info', title: 'Share of dissipation carried by the model', detail: `The subgrid model supplies ${(100 * o.sgs_fraction).toFixed(0)}% of the dissipation at its peak.`, action: 'A well-resolved LES keeps this below about 20–30%; above that the result depends on the model constant. Refine, or compare WALE and Smagorinsky.', basis: 'Resolved versus modelled dissipation' }); return out; }
+    if (o.eddy_turnovers < 5) out.push({ severity: 'warn', title: 'Statistics are not converged in time', detail: `Averaged over ${o.eddy_turnovers.toFixed(1)} eddy turnover times δ/u_τ; friction and stresses still wander by 5–10% at this length.`, action: 'Increase the simulated time until at least 10 turnovers are averaged (about 150 δ/U_b at Re_τ 180), then check that Cf no longer drifts.', basis: 'Sampling error of turbulence statistics' });
+    if (!i.wall_model && (o.dx_plus > 60 || o.dz_plus > 25)) out.push({ severity: 'warn', title: 'Near-wall streaks are under-resolved', detail: `Δx⁺ = ${o.dx_plus.toFixed(0)}, Δz⁺ = ${o.dz_plus.toFixed(0)} (wall-resolved LES needs about 50 and 15–20).`, action: 'Add cells, shrink the box, or switch the wall model on and accept modelled wall shear.', basis: 'Wall-resolved LES resolution guidelines' });
+    if (Math.abs(o.Cf_err_pct) > 10) out.push({ severity: 'advise', title: 'Friction differs from the reference', detail: `Cf = ${o.Cf.toExponential(3)} against ${o.Cf_ref.toExponential(3)} (${o.Cf_err_pct.toFixed(0)}%).`, action: 'On coarse grids second-order LES typically under-predicts friction by 10–20% (log-layer mismatch). Refine in the wall-parallel directions first and run the mesh-convergence study.', basis: 'Dean correlation / Kim, Moin & Moser DNS' });
+    out.push({ severity: 'info', title: 'What this run can and cannot replace', detail: 'A periodic channel is the calibration case for LES. It shows that the solver sustains and resolves wall turbulence; it is not an aircraft.', action: 'For separated flow, buffet or airframe noise on the real geometry export a body-fitted wall-modelled LES case from the High-fidelity bridge; use the y⁺ and Δ⁺ figures here to size that mesh.', basis: 'Resolution requirements of scale-resolving simulation' });
+    return out;
+  },
+};
+const lesMemo = memoLast((i, ctx) => (i.flow === LES_FLOWS[1] ? lesTgv(i, ctx) : lesChannel(i, ctx)));
+function lesChannel(i, ctx) {
+  const n = cellsOf(i.n), Reb = i.Re, wm = !!i.wall_model, avg = N.clamp(i.avg_frac, 0.1, 0.9);
+  const r = runChannel({ n, Reb, tEnd: i.t_end, avg, Lx: i.Lx, Lz: i.Lz, y1: i.y1_plus, wallModel: wm, sgs: i.sgs, Cs: i.Cs, Cw: i.Cw, progress: ctx?.progress });
+  const s = r.s, nu = r.nu, S = s.statistics(), d = s.diagnostics(), ut = Math.sqrt(Math.max(r.tauW, 1e-300)), ReT = ut / nu, Cf = 2 * r.tauW, CfRef = cfDean(Reb), warnings = [];
+  const half = n >> 1, g = s.grid, fold = (A, sgn = 1) => N.range(half, (j) => 0.5 * (A[j] + sgn * A[n - 1 - j]));
+  const yP = N.range(half, (j) => g.y[j] * ReT), U = S ? fold(S.U) : N.range(half, () => NaN), uP = U.map((v) => v / ut), rms = (A) => (S ? fold(A).map((v) => Math.sqrt(Math.max(v, 0)) / ut) : U), uu = rms(S?.uu), vv = rms(S?.vv), ww = rms(S?.ww), uv = S ? fold(S.uv, -1).map((v) => -v / (ut * ut)) : U;
+  const nut = S ? fold(S.nut).map((v) => v / nu) : U, visc = uP.map((v, j) => (j === 0 ? v / yP[0] : (v - uP[j - 1]) / (yP[j] - yP[j - 1]))), Ucl = S ? 0.5 * (S.U[half - 1] + S.U[n - half]) : NaN;
+  const lg = N.range(half).filter((j) => yP[j] > 30 && g.y[j] < 0.5), logDev = lg.length ? N.mean(lg.map((j) => Math.abs(uP[j] - (Math.log(yP[j]) / 0.41 + 5.2)))) : NaN, kU = N.argmax(uu);
+  const dxP = (r.Lx / g.nx) * ReT, dzP = (r.Lz / g.nz) * ReT, y1 = g.y[0] * ReT, turnovers = (i.t_end * avg * ut), sgsFrac = d.dissipation + r.sgs > 0 ? r.sgs / (d.dissipation + r.sgs) : 0, cfT = tailOf(r.hist.cf, avg), cfWander = N.std(cfT) / (N.mean(cfT) || 1);
+  if (s.diverged) warnings.push('The time march diverged.');
+  if (n <= 20) warnings.push(COARSE_NOTE(`${g.nx} × ${g.ny} × ${g.nz} cells in a ${r.Lx.toFixed(2)}δ × 2δ × ${r.Lz.toFixed(2)}δ box`, 'Cells per direction'));
+  warnings.push(`Statistics are averaged over ${(i.t_end * avg).toFixed(0)} δ/U_b = ${turnovers.toFixed(1)} eddy turnover times δ/u_τ (${S ? S.samples : 0} samples); the wall shear fluctuates by ±${(100 * cfWander).toFixed(0)}% within that window. Published channel statistics use 10 or more turnovers: expect several percent of sampling error in every profile here.`);
+  if (!wm) warnings.push(`Resolution in wall units: Δx⁺ = ${dxP.toFixed(0)}, Δz⁺ = ${dzP.toFixed(0)}, first cell centre at y⁺ = ${y1.toFixed(1)}, ${n} cells across the channel. Wall-resolved LES needs about Δx⁺ ≤ 50, Δz⁺ ≤ 20 and y⁺ ≈ 1${dxP > 60 || dzP > 25 || y1 > 3 ? ': this grid is coarser, so the near-wall streaks are only partly captured and the friction is typically 10–20% low' : ''}.`);
+  else warnings.push(`Wall-modelled LES: the wall shear comes from the log law applied at the first cell centre (y⁺ = ${y1.toFixed(0)}), not from resolved near-wall eddies. ${y1 < 30 ? 'The first cell lies below y⁺ = 30, inside the buffer layer, where the log law does not hold: coarsen the wall-normal grid or switch the wall model off. ' : ''}Coarse wall-modelled grids show the known log-layer mismatch (velocity too high above the first cells).`);
+  if (r.Lx * ReT < 300 || r.Lz * ReT < 100) warnings.push('The box is smaller than the minimal flow unit (about 300 × 100 wall units): turbulence may not sustain itself.');
+  else if (r.Lx < 6 || r.Lz < 3) warnings.push(`The periodic box (${r.Lx.toFixed(2)}δ × ${r.Lz.toFixed(2)}δ) is smaller than the 2πδ × πδ used for reference data: the largest outer-layer structures are constrained, which mainly affects the profiles near the centreline.`);
+  if (ReT > 1000 && !wm) warnings.push(`Re_τ ≈ ${ReT.toFixed(0)}: wall-resolved LES at this Reynolds number needs far more cells than this grid has. Switch the wall model on.`);
+  if (i.sgs === SGS_MODELS[2]) warnings.push('No subgrid model: the dispersion error of the second-order scheme acts as an uncontrolled implicit model. This often gives good friction on coarse grids by cancellation of errors and is not a converged result.');
+  if (Cf < 0.5 * CfRef) warnings.push('The friction is less than half the turbulent value: the flow has laminarised or has not yet transitioned. Run longer, enlarge the box or refine the grid.');
+  const yl = N.logspace(Math.max(0.5, 0.5 * y1), Math.max(ReT, 20), 50), sx = s.slice('z', Math.floor(g.nz / 2), 'u', { max: 80 }), jS = N.argmin(yP.map((v) => Math.abs(v - 15))), sw = s.slice('y', jS, 'u', { max: 80 }), [th, ch] = thin(r.hist.t, r.hist.cf, 300);
+  return {
+    kpis: [
+      { key: 'Re_tau', label: 'Friction Reynolds number u_τδ/ν', value: ReT, unit: '-', note: `Dean correlation gives ${r.ReT0.toFixed(0)}` },
+      { key: 'Cf', label: 'Friction coefficient 2τ_w/U_b²', value: Cf, unit: '-', status: Math.abs(Cf / CfRef - 1) < 0.1 ? 'ok' : Math.abs(Cf / CfRef - 1) < 0.25 ? 'warn' : 'bad' },
+      { key: 'Cf_ref', label: 'Friction coefficient, Dean correlation', value: CfRef, unit: '-', note: '0.073·Re_b^−0.25 (empirical; DNS at Re_b 5600 gives 8.18×10⁻³)' },
+      { key: 'Cf_err_pct', label: 'Friction error against the correlation', value: 100 * (Cf / CfRef - 1), unit: '%' },
+      { key: 'Ucl_over_Ub', label: 'Centreline / bulk velocity', value: Ucl, unit: '-', note: 'DNS at Re_τ 180: 1.16' },
+      { key: 'Ucl_plus', label: 'Centreline velocity U⁺', value: Ucl / ut, unit: '-', note: 'DNS at Re_τ 180: 18.2' },
+      { key: 'loglaw_dev', label: 'Mean deviation from the log law (y⁺ > 30, y < 0.5δ)', value: logDev, unit: 'u_τ', status: logDev < 1 ? 'ok' : 'warn' },
+      { key: 'urms_peak_plus', label: 'Peak streamwise fluctuation u′⁺', value: uu[kU], unit: '-', note: `at y⁺ = ${yP[kU].toFixed(0)}; DNS at Re_τ 180: 2.66 at y⁺ ≈ 15` },
+      { key: 'uv_peak_plus', label: 'Peak Reynolds shear stress −u′v′⁺', value: N.amax(uv), unit: '-', note: 'DNS at Re_τ 180: 0.72' },
+      { key: 'y1_plus', label: 'First cell centre y⁺', value: y1, unit: '-', status: wm ? (y1 >= 30 ? 'ok' : 'warn') : y1 <= 3 ? 'ok' : 'warn' },
+      { key: 'dx_plus', label: 'Streamwise cell size Δx⁺', value: dxP, unit: '-', status: wm || dxP <= 60 ? 'ok' : 'warn' },
+      { key: 'dz_plus', label: 'Spanwise cell size Δz⁺', value: dzP, unit: '-', status: wm || dzP <= 25 ? 'ok' : 'warn' },
+      { key: 'eddy_turnovers', label: 'Averaging time', value: turnovers, unit: 'δ/u_τ', status: turnovers >= 10 ? 'ok' : 'warn' },
+      { key: 'sgs_fraction', label: 'Modelled share of dissipation', value: sgsFrac, unit: '-', note: 'Subgrid dissipation / (subgrid + resolved)' },
+      { key: 'nut_max_ratio', label: 'Peak eddy viscosity ν_t/ν', value: d.nutMax / nu, unit: '-' },
+      { key: 'div_max', label: 'Largest cell divergence', value: d.divMax, unit: 'U_b/δ', status: d.divMax < 1e-9 ? 'ok' : 'warn' },
+      { key: 'steps', label: 'Time steps', value: r.steps, unit: '' },
+      { key: 'cells', label: 'Grid cells', value: g.nx * g.ny * g.nz, unit: '' },
+    ],
+    plots: [
+      { type: 'line', title: 'Mean velocity in wall units', xlabel: 'y⁺ [-]', ylabel: 'U⁺ [-]', xlog: true, series: [{ name: `LES ${g.nx}×${g.ny}×${g.nz}`, x: yP, y: uP }, { name: 'Sublayer U⁺ = y⁺', x: yl.filter((v) => v < 12), y: yl.filter((v) => v < 12), style: 'dash' }, { name: 'Log law ln(y⁺)/0.41 + 5.2', x: yl.filter((v) => v > 8), y: yl.filter((v) => v > 8).map((v) => Math.log(v) / 0.41 + 5.2), style: 'dash' }] },
+      { type: 'line', title: 'Turbulence intensities and shear stress', xlabel: 'y⁺ [-]', ylabel: 'Fluctuation / u_τ, stress / u_τ² [-]', series: [{ name: 'u′⁺ streamwise', x: yP, y: uu }, { name: 'v′⁺ wall-normal', x: yP, y: vv }, { name: 'w′⁺ spanwise', x: yP, y: ww }, { name: '−u′v′⁺ resolved', x: yP, y: uv }, { name: 'Total stress 1 − y/δ', x: yP, y: yP.map((v) => 1 - v / ReT), style: 'dash' }] },
+      { type: 'line', title: 'Friction coefficient history', xlabel: 'Time [δ/U_b]', ylabel: 'Cf [-]', series: [{ name: 'Instantaneous, both walls', x: th, y: ch }], annotations: [{ y: CfRef, label: 'Dean correlation' }, { x: i.t_end * (1 - avg), label: 'Averaging starts' }] },
+      heatOf(`Instantaneous streamwise velocity, x–y plane at t = ${s.time.toFixed(0)}`, sx, 'u/U_b [-]', { xlabel: 'x/δ [-]', ylabel: 'y/δ [-]' }),
+      heatOf(`Near-wall streaks: u in the plane y⁺ ≈ ${yP[jS].toFixed(0)}`, sw, 'u/U_b [-]', { xlabel: 'x/δ [-]', ylabel: 'z/δ [-]' }),
+      { type: 'line', title: 'Stress balance: viscous, resolved and modelled', xlabel: 'y⁺ [-]', ylabel: 'Stress / u_τ² [-]', series: [{ name: 'Viscous dU⁺/dy⁺', x: yP, y: visc }, { name: 'Resolved −u′v′⁺', x: yP, y: uv }, { name: 'Subgrid ν_t/ν · dU⁺/dy⁺', x: yP, y: nut.map((v, j) => v * visc[j]) }, { name: 'Sum', x: yP, y: uv.map((v, j) => v + (1 + nut[j]) * visc[j]) }, { name: 'Exact total 1 − y/δ', x: yP, y: yP.map((v) => 1 - v / ReT), style: 'dash' }] },
+    ],
+    tables: [{ title: 'Mean profile (lower and upper halves averaged)', columns: ['y/δ', 'y⁺', 'U⁺', 'Log law', 'u′⁺', 'v′⁺', 'w′⁺', '−u′v′⁺', 'ν_t/ν'], rows: N.range(half, (j) => [+g.y[j].toFixed(4), +yP[j].toFixed(1), +uP[j].toFixed(2), +(Math.log(yP[j]) / 0.41 + 5.2).toFixed(2), +uu[j].toFixed(2), +vv[j].toFixed(2), +ww[j].toFixed(2), +uv[j].toFixed(3), +nut[j].toFixed(2)]) }],
+    outputs: { beta_stretch: r.beta, grid_metric: Cf },
+    warnings,
+    models: ['Filtered incompressible Navier–Stokes equations (LES), constant mass flux', i.sgs === SGS_MODELS[0] ? `WALE subgrid model, Cw = ${i.Cw}` : i.sgs === SGS_MODELS[1] ? `Smagorinsky subgrid model, Cs = ${i.Cs}, van Driest wall damping (A⁺ = 25)` : 'No subgrid model', wm ? 'Equilibrium log-law wall model (κ = 0.41, B = 5.2) imposing the wall shear stress' : 'Wall-resolved: no-slip walls with tanh-stretched wall-normal grid', 'Staggered grid, second-order energy-conserving central differences, three-stage Runge–Kutta projection', 'Pressure by Fourier transforms in x and z and a tridiagonal solve in y'],
+    assumptions: ['Fully developed, statistically steady flow; periodic in the streamwise and spanwise directions', 'Initial field is a turbulent mean profile with large streak and vortex perturbations; the first part of the run is discarded', 'Statistics are plane and time averages of cell-centred velocities, which slightly damps the fluctuation levels', 'Smooth walls, constant properties, incompressible'],
+  };
+}
+function lesTgv(i, ctx) {
+  const n = cellsOf(i.n), Re = i.Re, nu = 1 / Re, cfgS = sgsCfg(i.sgs), tEnd = Math.min(i.t_end, 40);
+  const s = runTgv({ n, Re, tEnd, model: cfgS.model, sgs: cfgS.sgs, Cs: i.Cs > 0.12 ? i.Cs : 0.17, Cw: i.Cw > 0.4 ? i.Cw : 0.5, progress: ctx?.progress });
+  const H = s.history, d = s.diagnostics(), B = energyBudget(H), tot = H.dissipation.map((v, k) => v + H.sgs[k]), kM = N.argmax(tot), kD = N.argmax(B.dE), sgsFrac = tot[kM] > 0 ? H.sgs[kM] / tot[kM] : 0, warnings = [];
+  if (s.diverged || !Number.isFinite(d.ke)) warnings.push('The time march diverged.');
+  if (n <= 20) warnings.push(COARSE_NOTE(`${n}³ cells`, 'Cells per direction'));
+  if (tEnd < i.t_end) warnings.push('The Taylor–Green run is limited to 40 L/U.');
+  if (tEnd < 10) warnings.push(`The run ends at t = ${tEnd} L/U; at Re 1600 the dissipation peak is near t ≈ 9 and the decay phase follows.`);
+  if (Math.abs(Re - 1600) < 1) warnings.push(`Reference: pseudo-spectral DNS at Re = 1600 gives a peak dissipation of about 0.0127 U³/L near t ≈ 9. This LES gives ${N.amax(B.dE).toExponential(2)} at t = ${B.t[kD]?.toFixed(1)}. Coarse second-order LES typically peaks early and low because the small scales that do the dissipating are not on the grid.`);
+  if (sgsFrac > 0.5) warnings.push(`The subgrid model carries ${(100 * sgsFrac).toFixed(0)}% of the dissipation at the peak: this is a very coarse LES and the result depends strongly on the model constant.`);
+  const [tt, ke] = thin(H.t, H.ke, 300), [, er] = thin(H.t, H.dissipation, 300), [, es] = thin(H.t, H.sgs, 300), [tb, db] = thin(B.t, B.dE, 300), sv = s.slice('z', 0, 'vorticity', { max: 80 }), sn = s.slice('z', 0, 'nut', { max: 80 }), sq = s.slice('z', 0, 'q', { max: 80 });
+  return {
+    kpis: [
+      { key: 'eps_total_peak', label: 'Peak total dissipation rate', value: tot[kM], unit: 'U³/L', note: `resolved + subgrid, at t = ${H.t[kM].toFixed(1)} L/U` },
+      { key: 'eps_peak', label: 'Peak energy decay rate −dE/dt', value: N.amax(B.dE), unit: 'U³/L', note: Math.abs(Re - 1600) < 1 ? 'DNS reference ≈ 0.0127 near t ≈ 9' : '' },
+      { key: 't_eps_peak', label: 'Time of peak decay rate', value: B.t[kD] ?? NaN, unit: 'L/U' },
+      { key: 'sgs_fraction', label: 'Modelled share of dissipation at the peak', value: sgsFrac, unit: '-', status: sgsFrac < 0.3 ? 'ok' : 'warn' },
+      { key: 'E_final', label: 'Kinetic energy at the end', value: d.ke, unit: 'U²', note: `${(100 * d.ke / 0.125).toFixed(0)}% of the initial energy` },
+      { key: 'budget_ratio', label: 'Energy lost / integrated (resolved + subgrid) dissipation', value: B.ratio, unit: '-', status: Math.abs(B.ratio - 1) < 0.03 ? 'ok' : 'warn' },
+      { key: 'nut_max_ratio', label: 'Peak eddy viscosity ν_t/ν', value: d.nutMax / nu, unit: '-' },
+      { key: 'div_max', label: 'Largest cell divergence', value: d.divMax, unit: 'U/L', status: d.divMax < 1e-9 ? 'ok' : 'warn' },
+      { key: 'steps', label: 'Time steps', value: d.step, unit: '' },
+      { key: 'cells', label: 'Grid cells', value: n ** 3, unit: '' },
+    ],
+    plots: [
+      { type: 'line', title: 'Dissipation: resolved, subgrid and total', xlabel: 'Time [L/U]', ylabel: 'Rate [U³/L]', series: [{ name: 'Resolved ν⟨|∇u|²⟩', x: tt, y: er }, { name: 'Subgrid ⟨2ν_t S:S⟩', x: tt, y: es }, { name: '−dE/dt', x: tb, y: db, style: 'dash' }] },
+      { type: 'line', title: 'Kinetic-energy decay', xlabel: 'Time [L/U]', ylabel: 'Kinetic energy [U²]', series: [{ name: `LES ${n}³`, x: tt, y: ke }] },
+      heatOf(`Vorticity magnitude, plane z = ${sv.position.toFixed(2)} L at t = ${s.time.toFixed(1)}`, sv, '|ω| [U/L]', { xlabel: 'x [L]', ylabel: 'y [L]' }),
+      heatOf('Q-criterion in the same plane', sq, 'Q [U²/L²]', { xlabel: 'x [L]', ylabel: 'y [L]', diverging: true }),
+      heatOf('Eddy-viscosity ratio in the same plane', sn, 'ν_t/ν [-]', { xlabel: 'x [L]', ylabel: 'y [L]' }),
+    ],
+    outputs: { grid_metric: tot[kM] },
+    warnings,
+    models: ['Filtered incompressible Navier–Stokes equations (LES) in a periodic box', cfgS.model === 'dns' ? 'No subgrid model' : cfgS.sgs === 'wale' ? 'WALE subgrid model' : 'Smagorinsky subgrid model without wall damping', 'Second-order energy-conserving central differences, three-stage Runge–Kutta projection, FFT pressure solver'],
+    assumptions: ['Triply periodic box of side 2πL, unit velocity scale', 'The central scheme adds no numerical dissipation, so the energy budget closes with resolved plus subgrid dissipation', 'Model constants below the free-turbulence values (Cs 0.17, Cw 0.5) are raised to them for this wall-free flow'],
+  };
+}
+
+// ---- RANS of a 3-D body by immersed boundary ----------------------------------------------------
+const RANS_BODIES = ['Wing from the case', 'Fuselage (ellipsoid)', 'Sphere', 'Imported surface'], RANS_MODELS = ['Spalart–Allmaras', 'Mixing length', 'None (laminar / implicit)'];
+const UNIT_M = { m: 1, mm: 1e-3, cm: 1e-2, in: 0.0254, ft: 0.3048 };
+/** Signed distance to a closed polygon (negative inside); X, Y are the nodes with the first repeated at the end. */
+export function polySdf(X, Y) {
+  const n = X.length - 1;
+  return (x, y) => {
+    let d2 = 1e30, ins = false;
+    for (let i = 0, j = n - 1; i < n; j = i++) {
+      const ex = X[j] - X[i], ey = Y[j] - Y[i], wx = x - X[i], wy = y - Y[i], t = N.clamp((wx * ex + wy * ey) / (ex * ex + ey * ey || 1e-30), 0, 1), bx = wx - ex * t, by = wy - ey * t, q = bx * bx + by * by;
+      if (q < d2) d2 = q;
+      if (Y[i] > y !== Y[j] > y && x < (ex * (y - Y[i])) / ey + X[i]) ins = !ins;
+    }
+    return (ins ? -1 : 1) * Math.sqrt(d2);
+  };
+}
+const sinhFaces = (n, H, beta) => N.range(n + 1, (j) => (H * Math.sinh(beta * ((2 * j) / n - 1))) / Math.sinh(beta));
+/** UV-sphere triangle surface (used by the verification of the voxeliser). */
+function sphereMesh(c, r, nu = 32, nv = 16) {
+  const P = [], T = [];
+  for (let j = 0; j <= nv; j++) for (let k = 0; k < nu; k++) { const th = (PI * j) / nv, ph = (TWO_PI * k) / nu; P.push(c[0] + r * Math.sin(th) * Math.cos(ph), c[1] + r * Math.cos(th), c[2] + r * Math.sin(th) * Math.sin(ph)); }
+  for (let j = 0; j < nv; j++) for (let k = 0; k < nu; k++) { const a = j * nu + k, b = j * nu + ((k + 1) % nu), c2 = a + nu, d = b + nu; T.push(a, b, c2, b, d, c2); }
+  return { positions: P, triangles: T };
+}
+/** Geometry, reference quantities and domain of the body to be flown. Lengths in metres; the solver runs with unit speed. */
+function ransBody(i, ctx, n) {
+  const al = N.rad(i.alpha_deg), ca = Math.cos(al), sa = Math.sin(al), notes = [];
+  let kind = i.body, shape = ctx?.case?.shape;
+  if (kind === RANS_BODIES[3]) {
+    const P = shape?.positions, ok = P && P.length >= 9;
+    if (!ok) { notes.push('No imported surface is attached to the case (send one from the geometry workbench); the parametric body was used instead.'); kind = i.S > 0 && i.b > 0 ? RANS_BODIES[0] : i.fus_L > 0 && i.fus_D > 0 ? RANS_BODIES[1] : RANS_BODIES[2]; }
+  }
+  if (kind === RANS_BODIES[0] && !(i.S > 0 && i.b > 0)) { notes.push('The case has no wing; the fuselage ellipsoid was used instead.'); kind = RANS_BODIES[1]; }
+  if (kind === RANS_BODIES[1] && !(i.fus_L > 0 && i.fus_D > 0)) { notes.push('No fuselage dimensions; a sphere was used instead.'); kind = RANS_BODIES[2]; }
+  if (kind === RANS_BODIES[0]) {
+    const g = wingGeom(i), s = i.b / 2, af = parseNaca(i.airfoil, i.tc), nd = nacaNodes(af, 64), sec = polySdf(nd.X, nd.Y), ct = g.cr * g.taper, cbar = i.S / i.b;
+    const chord = (z) => g.cr * (1 - ((1 - g.taper) * z) / s), xle = (z) => g.cr / 4 + z * g.tanL - chord(z) / 4;
+    const sdf = (x, y, z) => {
+      const zz = Math.abs(z), zc = Math.min(zz, s), c = chord(zc), xb = x * ca - y * sa, yb = x * sa + y * ca; let xi = (xb - xle(zc)) / c, et = yb / c;
+      if (g.twist) { const tw = (g.twist * zc) / s, cw = Math.cos(tw), sw = Math.sin(tw), dq = xi - 0.25; xi = 0.25 + dq * cw - et * sw; et = dq * sw + et * cw; }
+      const d2 = c * (xi < -0.4 || xi > 1.4 || Math.abs(et) > 0.5 ? Math.hypot(Math.max(-xi, xi - 1, 0), Math.max(Math.abs(et) - 0.2, 0)) + 0.05 : sec(xi, et)), dz = zz - s;
+      return dz <= 0 ? Math.max(d2, dz) : d2 > 0 ? Math.hypot(d2, dz) : dz;
+    };
+    const xmin = Math.min(0, xle(s)), xmax = Math.max(g.cr, xle(s) + ct), H = 2.2 * g.cr, Lz = s + Math.max(cbar, 0.2 * s), x0 = xmin - g.cr, Lx = xmax + 2 * g.cr - x0;
+    const zs = 0.3 * s, cs = chord(zs);
+    return { kind, name: `${af.name} wing, half model with a symmetry plane`, body: { sdf }, half: true, Sref: i.S / 2, Lref: cbar, Lflow: g.cr, notes, n: [2 * n, n, n], L: [Lx, 2 * H, Lz], origin: [x0, -H, 0], yFaces: sinhFaces(n, H, 3.5), zSlice: zs, xTE: (xle(zs) + cs) * ca, xLE: xle(zs) * ca, cSlice: cs * ca, thick: af.t * cbar, len: cbar, g, af, s, cr: g.cr, ct, blockage: (af.t * i.S / 2 + i.S / 2 * Math.abs(sa)) / (2 * H * Lz), bc: { x: [{ type: 'inflow', velocity: [1, 0, 0] }, 'outflow'], y: 'slip', z: 'slip' } };
+  }
+  let body, bb, Sref, Lref, name, thick;
+  if (kind === RANS_BODIES[3]) {
+    const P = shape.positions, flat = typeof P[0] === 'number', nV = flat ? P.length / 3 : P.length, sc = UNIT_M[shape.units] || 1, Q = new Float64Array(3 * nV); bb = [1e30, -1e30, 1e30, -1e30, 1e30, -1e30];
+    let cx = 0, cy = 0; for (let k = 0; k < nV; k++) { cx += (flat ? P[3 * k] : P[k][0]) * sc; cy += (flat ? P[3 * k + 1] : P[k][1]) * sc; } cx /= nV; cy /= nV;
+    for (let k = 0; k < nV; k++) {
+      const x = (flat ? P[3 * k] : P[k][0]) * sc - cx, y = (flat ? P[3 * k + 1] : P[k][1]) * sc - cy, z = (flat ? P[3 * k + 2] : P[k][2]) * sc;
+      Q[3 * k] = cx + x * ca + y * sa; Q[3 * k + 1] = cy - x * sa + y * ca; Q[3 * k + 2] = z; // nose-up rotation about the spanwise axis through the centroid
+      for (let a = 0; a < 3; a++) { bb[2 * a] = Math.min(bb[2 * a], Q[3 * k + a]); bb[2 * a + 1] = Math.max(bb[2 * a + 1], Q[3 * k + a]); }
+    }
+    const T = shape.triangles; body = { positions: Q, triangles: T && T.length ? (typeof T[0] === 'number' ? T : T.flat()) : null };
+    Lref = bb[1] - bb[0]; Sref = i.S_ref > 0 ? i.S_ref : (bb[1] - bb[0]) * (bb[5] - bb[4]); thick = Math.min(bb[3] - bb[2], bb[5] - bb[4]);
+    name = `Imported surface (${nV} vertices, ${body.triangles ? Math.floor(body.triangles.length / 3) : Math.floor(nV / 3)} triangles)`;
+    if (!(i.S_ref > 0)) notes.push('No reference area was given for the imported surface: coefficients use the planform bounding box (length × span). Enter the true reference area to compare with other data.');
+    notes.push('Imported surface axes are taken as x downstream, y up, z spanwise; the surface is rotated nose-up by the angle of attack about its centroid. A surface that is not watertight is voxelised by majority vote of three ray directions and may leak.');
+  } else {
+    const sph = kind === RANS_BODIES[2], D = sph ? (i.fus_D > 0 ? i.fus_D : 1) : i.fus_D, Lb = sph ? D : i.fus_L, a = Lb / 2, r = D / 2;
+    body = { sdf: (x, y, z) => { const xb = x * ca - y * sa, yb = x * sa + y * ca; if (sph) return Math.hypot(xb, yb, z) - r; const k0 = Math.hypot(xb / a, yb / r, z / r), k1 = Math.hypot(xb / (a * a), yb / (r * r), z / (r * r)); return k1 > 0 ? (k0 * (k0 - 1)) / k1 : -r; } };
+    const ex = Math.hypot(a * ca, r * sa), ey = Math.hypot(a * sa, r * ca); bb = [-ex, ex, -ey, ey, -r, r];
+    Lref = Lb; Sref = (PI * D * D) / 4; thick = D; name = sph ? `Sphere, diameter ${D} m` : `Ellipsoid of revolution ${Lb} m × ${D} m`;
+  }
+  const lx = bb[1] - bb[0], ly = bb[3] - bb[2], lz = bb[5] - bb[4], lc = Math.max(ly, lz), cl = N.clamp(i.clearance, 0.5, 4) * lc, up = Math.max(0.6 * lx, 1.5 * lc), dn = Math.max(1.2 * lx, 3 * lc);
+  const Ly = ly + 2 * cl, Lz = lz + 2 * cl, yc = 0.5 * (bb[2] + bb[3]), flatBody = ly < 0.4 * lz;
+  return { kind, name, body, half: false, Sref, Lref, Lflow: lx, notes, n: [2 * n, n, n], L: [lx + up + dn, Ly, Lz], origin: [bb[0] - up, yc - Ly / 2, 0.5 * (bb[4] + bb[5]) - Lz / 2], yFaces: flatBody ? sinhFaces(n, Ly / 2, 2.5).map((v) => v + yc) : undefined, zSlice: 0.5 * (bb[4] + bb[5]), xTE: bb[1], xLE: bb[0], cSlice: lx, thick, len: lx, blockage: (ly * lz * (kind === RANS_BODIES[3] ? 0.5 : PI / 4)) / (Ly * Lz), bc: { x: [{ type: 'inflow', velocity: [1, 0, 0] }, 'outflow'], y: 'slip', z: 'slip' } };
+}
+
+const rans3d = {
+  id: 'rans3d', title: '3-D RANS: flow over a wing, fuselage or imported shape', fidelity: 'numerical',
+  summary: 'Reynolds-averaged Navier–Stokes solution of the flow around a three-dimensional body on a Cartesian grid: the body (the wing of the case, a fuselage ellipsoid, or a surface imported from the geometry workbench) is immersed in the grid, turbulence is modelled with the Spalart–Allmaras equation, and the flow is marched to a steady state. Lift, drag, pressure and velocity fields, the wake and the wall-layer resolution are reported.',
+  equations: ['Reynolds-averaged Navier–Stokes equations', 'Navier–Stokes equations', 'Continuity equation', 'Conservation of momentum equation', 'Spalart–Allmaras', 'Immersed-boundary formulations', 'Wall-resolved or wall-modelled turbulence simulations'],
+  inputs: [
+    { key: 'body', label: 'Body', type: 'select', options: RANS_BODIES, default: RANS_BODIES[0], group: 'Geometry', help: 'An imported surface is used automatically when one has been sent from the geometry workbench' },
+    { key: 'S', label: 'Wing area', unit: 'm²', default: 16.2, min: 0, group: 'Geometry' },
+    { key: 'b', label: 'Span', unit: 'm', default: 11, min: 0, group: 'Geometry' },
+    { key: 'taper', label: 'Taper ratio', unit: '-', default: 0.6, min: 0.05, max: 1, group: 'Geometry' },
+    { key: 'sweep_deg', label: 'Quarter-chord sweep', unit: 'deg', default: 0, min: -30, max: 60, group: 'Geometry' },
+    { key: 'twist_deg', label: 'Tip twist (washout negative)', unit: 'deg', default: -2, min: -10, max: 5, group: 'Geometry' },
+    { key: 'airfoil', label: 'NACA section', type: 'text', default: '2412', group: 'Geometry' },
+    { key: 'tc', label: 'Thickness ratio override', unit: '-', default: 0, min: 0, max: 0.4, group: 'Geometry', help: '0 uses the thickness in the designation' },
+    { key: 'fus_L', label: 'Fuselage length', unit: 'm', default: 8.3, min: 0, group: 'Geometry' },
+    { key: 'fus_D', label: 'Fuselage or sphere diameter', unit: 'm', default: 1.2, min: 0, group: 'Geometry' },
+    { key: 'S_ref', label: 'Reference area for an imported surface', unit: 'm²', default: 0, min: 0, group: 'Geometry', help: '0 uses the planform bounding box' },
+    { key: 'alpha_deg', label: 'Angle of attack', unit: 'deg', default: 4, min: -10, max: 25, group: 'Flow' },
+    { key: 'V', label: 'True airspeed', unit: 'm/s', default: 60, min: 0.5, group: 'Flow' },
+    ...ATM,
+    { key: 'turb', label: 'Turbulence model', type: 'select', options: RANS_MODELS, default: RANS_MODELS[0], group: 'Model' },
+    { key: 'wall_model', label: 'Slip wall with log-law wall stress (experimental)', type: 'bool', default: false, group: 'Model', help: 'Off: no-slip immersed wall, robust but with a numerical boundary layer one cell thick. On: only the wall-normal velocity is removed and the log-law shear stress is applied; this needs near-cubic cells at the surface and can give wrong forces on strongly stretched or very coarse grids' },
+    { key: 'quick', label: 'Upwind-biased (QUICK) fraction of the convection scheme', unit: '-', default: 1, min: 0, max: 1, group: 'Numerics', help: '1 = QUICK, 0 = central. Central differencing is unstable on coarse grids at high Reynolds number' },
+    { key: 'clearance', label: 'Domain clearance around a body', unit: 'body widths', default: 1.25, min: 0.5, max: 4, group: 'Numerics', help: 'Fuselage, sphere and imported shapes; the wing domain is set from the chord and span' },
+    { key: 't_flow', label: 'Simulated time', unit: 'body lengths', default: 4, min: 1, max: 100, group: 'Numerics', help: 'Distance flown, in root chords (wing) or body lengths. The starting vortex must leave the domain: 6–10 for a wing' },
+    { key: 'max_steps', label: 'Maximum time steps', unit: '', default: 120, min: 20, max: 50000, step: 1, discrete: true, group: 'Numerics' },
+    { key: 'n', label: 'Cells across the domain (y and z); twice as many along x', unit: '', default: 12, min: 8, max: 64, step: 1, discrete: true, group: 'Numerics', help: '16 gives 32 × 16 × 16; 64 gives 128 × 64 × 64' },
+  ],
+  defaults: (c, up) => {
+    const hasShape = !!(c.shape && c.shape.positions && c.shape.positions.length >= 9), wingOk = c.wing.S_m2 > 0 && c.wing.b_m > 0, fusOk = c.fuselage.len_m > 0 && c.fuselage.dia_m > 0;
+    return { body: hasShape ? RANS_BODIES[3] : wingOk ? RANS_BODIES[0] : fusOk ? RANS_BODIES[1] : RANS_BODIES[2], S: c.wing.S_m2, b: c.wing.b_m, taper: c.wing.taper, sweep_deg: c.wing.sweep_deg, twist_deg: c.wing.twist_deg, airfoil: c.wing.airfoil, tc: c.wing.tc, fus_L: c.fuselage.len_m || undefined, fus_D: c.fuselage.dia_m || undefined, alpha_deg: wingOk ? c.flight.alpha_deg + c.wing.incidence_deg : 0, V: c.flight.V_ms, alt_m: c.atm.alt_m, dISA: c.atm.dISA_K };
+  },
+  run(i, ctx) {
+    const a = isa(i.alt_m, i.dISA), n = cellsOf(i.n, 8, 64), B = ransBody(i, ctx, n), nuS = a.nu / i.V, Re = B.Lref / nuS, M = i.V / a.a, lam = i.turb === RANS_MODELS[2];
+    const s = createSolver({ n: B.n, L: B.L, origin: B.origin, yFaces: B.yFaces, nu: nuS, bc: B.bc, body: B.body, init: [1, 0, 0], model: lam ? 'dns' : 'rans', rans: i.turb === RANS_MODELS[1] ? 'mixing-length' : 'sa', mixingLengthMax: 0.09 * B.thick, wallModel: !!i.wall_model && !lam, scheme: 'quick', blend: N.clamp(i.quick, 0, 1), time: 'rk3', cfl: 1, historyEvery: 2, residual: true });
+    const tEnd = i.t_flow * B.Lflow, maxSteps = Math.round(N.clamp(i.max_steps, 20, 50000));
+    while (s.time < tEnd && s.stepCount < maxSteps && !s.diverged) { s.run(1); if (s.stepCount % 10 === 0) ctx?.progress?.(Math.min(s.time / tEnd, s.stepCount / maxSteps), `${(s.time / B.Lflow).toFixed(1)} lengths flown`); }
+    const H = s.history, d = s.diagnostics(), g = s.grid, q = 0.5 * B.Sref, tc = H.t.map((t) => t / B.Lflow), clH = H.fy.map((v) => v / q), cdH = H.fx.map((v) => v / q), tl = (A) => N.mean(tailOf(A, 0.25));
+    const CL = tl(clH), CD = tl(cdH), drift = (A) => { const k = A.length, m1 = N.mean(A.slice(Math.floor(0.75 * k))), m0 = N.mean(A.slice(Math.floor(0.5 * k), Math.floor(0.75 * k))); return Math.abs(m1 - m0) / Math.max(Math.abs(m1), 1e-12); }, drCL = Math.abs(CL) > 0.02 ? drift(clH) : 0, drCD = drift(cdH);
+    const kz = N.argmin(g.z.map((z) => Math.abs(z - B.zSlice))), full = { max: 4096 }, sp = s.slice('z', kz, 'p', full), sdS = s.slice('z', kz, 'sd', full), su = s.slice('z', kz, 'u', full), pInf = N.mean(sp.z.map((r) => r[0])), cpOf = (v) => 2 * (v - pInf);
+    const ol = s.outline('z', kz), lim = { max: 80 }, dxc = g.dx, dyc = N.amin(g.dy), cellsLen = B.len / dxc, cellsThk = B.thick / Math.max(dyc, B.half ? 0 : g.dz), warnings = [...B.notes];
+    // surface pressure along the body in the plotted plane: first fluid cell above and below
+    const xs = [], cpU = [], cpL = [];
+    for (let c = 0; c < g.nx; c++) { let jt = -1, jb = -1; for (let j = g.ny - 2; j >= 1; j--) if (sdS.z[j][c] <= 0) { jt = j + 1; break; } for (let j = 1; j < g.ny - 1; j++) if (sdS.z[j][c] <= 0) { jb = j - 1; break; } if (jt > 0 && jb >= 0) { xs.push((g.x[c] - B.xLE) / B.cSlice); cpU.push(cpOf(sp.z[jt][c])); cpL.push(cpOf(sp.z[jb][c])); } }
+    // wake survey one reference length behind the trailing edge (or as far as the domain allows)
+    const xW = Math.min(B.xTE + B.Lref, g.x[g.nx - 3]), iW = N.argmin(g.x.map((x) => Math.abs(x - xW))), wake = su.z.map((r) => r[iW]), deficit = 1 - N.amin(wake), sw = s.slice('x', iW, 'wx', lim);
+    // reference values for orientation
+    let CLref = NaN, CDref = NaN;
+    if (B.kind === RANS_BODIES[0]) { const L = vlm(B.g, 12, 3, 1, (xf) => B.af.camber(xf)[1], true), al = N.rad(i.alpha_deg), strip = L.a.strip.map((v, j) => v * al + L.z.strip[j]); CLref = L.a.CL * al + L.z.CL; CDref = L.trefftz(strip) + 2 * cfTurb(Math.max(Re, 1e4), M) * (1 + 2 * B.af.t + 60 * B.af.t ** 4); }
+    else if (B.kind === RANS_BODIES[2]) CDref = Re > 3.5e5 ? 0.2 : 0.47;
+    if (s.diverged || !Number.isFinite(CL)) warnings.push('The time march diverged: raise the upwind fraction, switch the wall model on or refine the grid.');
+    if (n <= 20) warnings.push(COARSE_NOTE(`${g.nx} × ${g.ny} × ${g.nz} cells`, 'Cells across the domain'));
+    warnings.push(`Resolution: ${cellsLen.toFixed(1)} cells along the ${B.half ? 'mean chord' : 'body length'}${B.half ? ` (${(B.cr / dxc).toFixed(1)} at the root, ${(B.ct / dxc).toFixed(1)} at the tip)` : ''} and ${cellsThk.toFixed(1)} across the ${B.half ? 'maximum thickness' : 'smallest body dimension'}. ${cellsLen < 32 || cellsThk < 6 ? 'The immersed boundary places the wall to within about one cell, so at this resolution the leading-edge suction, the trailing edge and the boundary layer are smeared: the numerical boundary layer is about one cell thick, the flow separates early, the lift can be less than half the true value and the drag several times too high. Read this run as a flow visualisation and a trend, not as a drag prediction.' : 'This is enough for pressure lift within roughly 10%; friction drag still relies entirely on the wall model.'}`);
+    warnings.push(`Wall layer: the first fluid cells sit at y⁺ ≈ ${d.yPlus.mean.toFixed(0)} on average (maximum ${d.yPlus.max.toFixed(0)}). ${lam ? 'No turbulence model is active.' : d.yPlus.mean < 5 ? 'The viscous sublayer is resolved.' : d.yPlus.mean <= 300 ? 'The viscous and buffer layers are not resolved; the wall shear comes from the log-law wall model, which is valid for attached flow at this y⁺ and not for separation or transition.' : 'This is far outside the log layer (y⁺ ≲ 300): the wall model is extrapolated and the friction drag, separation location and maximum lift are not predictive. A body-fitted mesh with y⁺ ≈ 1 or a wall-function mesh is needed for those: see the wall-layer analysis and the High-fidelity bridge.'}`);
+    if (Math.max(drCL, drCD) > 0.02 || s.time < 0.98 * tEnd) warnings.push(`Not converged to a steady state: the mean ${drCL > drCD ? 'lift' : 'drag'} still changes by ${(100 * Math.max(drCL, drCD)).toFixed(1)}% between the last two quarters of the run${s.time < 0.98 * tEnd ? ` and the step limit stopped the run at ${(s.time / B.Lflow).toFixed(1)} of ${i.t_flow} lengths` : ''}. Increase the simulated time and the maximum number of steps.`);
+    if (B.blockage > 0.05) warnings.push(`The body blocks ${(100 * B.blockage).toFixed(1)}% of the domain cross-section between slip walls; forces are raised by roughly twice that fraction. Increase the clearance.`);
+    else if (B.half) warnings.push('The slip walls above and below the wing are 2.2 root chords away; like wind-tunnel walls they raise the lift slightly (a few percent).');
+    if (M > 0.3) warnings.push(`Flight Mach number ${M.toFixed(2)}: this solver is incompressible. Compressibility raises the lift slope by about 1/√(1 − M²) = ${(1 / Math.sqrt(Math.max(1 - M * M, 0.05))).toFixed(2)}${M > 0.7 ? ' and shocks are absent altogether; transonic flow needs a compressible RANS solver (High-fidelity bridge)' : ''}.`);
+    if (B.half) warnings.push('Wing only: no fuselage, nacelles, tail or dihedral; the section is the NACA shape at every station.');
+    if (lam) warnings.push('No turbulence model: at this Reynolds number the result is an under-resolved, numerically damped solution, not a laminar flow.');
+    const cpClip = (v) => N.clamp(cpOf(v), -2.5, 1.2), ovl = { overlay: ol, xlabel: 'x [m]', ylabel: 'y [m]' }, [tcT, clT] = thin(tc, clH, 300), [, cdT] = thin(tc, cdH, 300), [, rsT] = thin(tc, H.residual.map((v) => Math.max(v, 1e-16)), 300);
+    const plots = [
+      { type: 'line', title: 'Force convergence', xlabel: `Distance flown [${B.half ? 'root chords' : 'body lengths'}]`, ylabel: 'Coefficient [-]', series: [{ name: 'CL', x: tcT.slice(1), y: clT.slice(1) }, { name: 'CD', x: tcT.slice(1), y: cdT.slice(1) }], annotations: Number.isFinite(CLref) ? [{ y: CLref, label: 'CL, vortex lattice' }] : [] },
+      { type: 'line', title: 'Residual history', xlabel: `Distance flown [${B.half ? 'root chords' : 'body lengths'}]`, ylabel: 'RMS |∂u/∂t| · L/V² [-]', ylog: true, series: [{ name: 'Momentum residual', x: tcT.slice(1), y: rsT.slice(1).map((v) => v * B.Lflow) }] },
+      heatOf(`Pressure coefficient, plane z = ${g.z[kz].toFixed(2)} m`, s.slice('z', kz, 'p', lim), 'Cp [-]', { ...ovl, map: cpClip, diverging: true }),
+      heatOf(`Velocity magnitude, plane z = ${g.z[kz].toFixed(2)} m`, s.slice('z', kz, 'speed', lim), '|V|/V∞ [-]', ovl),
+      ...(lam ? [] : [heatOf('Eddy-viscosity ratio in the same plane', s.slice('z', kz, 'nut', lim), 'ν_t/ν [-]', ovl)]),
+      { type: 'line', title: `Surface pressure in the plane z = ${g.z[kz].toFixed(2)} m (first fluid cells)`, xlabel: B.half ? 'x/c [-]' : 'x/L [-]', ylabel: '−Cp [-]', series: [{ name: 'Upper side', x: xs, y: cpU.map((v) => -v) }, { name: 'Lower side', x: xs, y: cpL.map((v) => -v) }] },
+      { type: 'line', title: `Wake velocity profile at x = ${g.x[iW].toFixed(2)} m`, xlabel: 'u/V∞ [-]', ylabel: 'y [m]', series: [{ name: 'Streamwise velocity', x: wake, y: su.y }] },
+      heatOf(`Streamwise vorticity in the cross-plane x = ${g.x[iW].toFixed(2)} m${B.half ? ' (tip vortex)' : ''}`, sw, 'ω_x · m·s⁻¹/V∞ [1/m]', { xlabel: 'z [m]', ylabel: 'y [m]', diverging: true, overlay: s.outline('x', iW) }),
+    ];
+    return {
+      kpis: [
+        { key: 'CL_rans3d', label: 'Lift coefficient', value: CL, unit: '-', note: `mean of the last quarter of the run; reference area ${B.Sref.toFixed(3)} m²` },
+        { key: 'CD_rans3d', label: 'Drag coefficient', value: CD, unit: '-', status: cellsLen >= 32 && cellsThk >= 6 ? 'ok' : 'warn', note: cellsLen < 32 ? 'dominated by numerical diffusion at this resolution' : 'pressure plus modelled friction' },
+        { key: 'LD_rans3d', label: 'Lift-to-drag ratio', value: CD > 0 ? CL / CD : NaN, unit: '-' },
+        ...(Number.isFinite(CLref) ? [{ key: 'CL_vlm_ref', label: 'Lift coefficient, vortex lattice (reference)', value: CLref, unit: '-', note: 'Inviscid, incompressible, same planform, twist and camber' }, { key: 'CL_ratio', label: 'RANS lift / vortex-lattice lift', value: CL / CLref, unit: '-', status: Math.abs(CL / CLref - 1) < 0.15 ? 'ok' : 'warn' }] : []),
+        ...(Number.isFinite(CDref) ? [{ key: 'CD_ref_est', label: B.half ? 'Drag coefficient, handbook estimate (reference)' : 'Sphere drag coefficient, textbook (reference)', value: CDref, unit: '-', note: B.half ? 'Induced (Trefftz) plus flat-plate friction × form factor (empirical)' : Re > 3.5e5 ? 'supercritical, ≈ 0.2 (empirical)' : 'subcritical, ≈ 0.47 (empirical)' }] : []),
+        { key: 'lift_N', label: 'Lift', value: CL * 0.5 * a.rho * i.V ** 2 * B.Sref * (B.half ? 2 : 1), unit: 'N', note: B.half ? 'both wing halves' : '' },
+        { key: 'drag_N', label: 'Drag', value: CD * 0.5 * a.rho * i.V ** 2 * B.Sref * (B.half ? 2 : 1), unit: 'N' },
+        { key: 'force_drift_pct', label: 'Change of mean force over the last quarter', value: 100 * Math.max(drCL, drCD), unit: '%', status: Math.max(drCL, drCD) < 0.02 ? 'ok' : 'warn' },
+        { key: 'residual', label: 'Final momentum residual', value: d.residual * B.Lflow, unit: 'V²/L' },
+        { key: 'y_plus_mean', label: 'Mean y⁺ of the first fluid cells', value: d.yPlus.mean, unit: '-', status: d.yPlus.mean < 5 || (d.yPlus.mean >= 30 && d.yPlus.mean <= 300) ? 'ok' : 'warn', note: d.yPlus.mean < 5 ? 'wall-resolved' : d.yPlus.mean <= 300 ? 'log layer: wall-modelled' : 'beyond the log layer: wall model extrapolated' },
+        { key: 'y_plus_max', label: 'Maximum y⁺ of the first fluid cells', value: d.yPlus.max, unit: '-' },
+        { key: 'cells_streamwise', label: B.half ? 'Cells along the mean chord' : 'Cells along the body', value: cellsLen, unit: '', status: cellsLen >= 32 ? 'ok' : cellsLen >= 12 ? 'warn' : 'bad' },
+        { key: 'cells_thickness', label: 'Cells across the thickness', value: cellsThk, unit: '', status: cellsThk >= 6 ? 'ok' : cellsThk >= 3 ? 'warn' : 'bad' },
+        { key: 'wake_deficit', label: 'Peak wake velocity deficit', value: deficit, unit: 'V∞', note: `one reference length behind the body` },
+        { key: 'nut_max_ratio', label: 'Peak eddy viscosity ν_t/ν', value: d.nutMax / nuS, unit: '-' },
+        { key: 'Re_ref', label: 'Reynolds number on the reference length', value: Re, unit: '-' },
+        { key: 'blockage_pct', label: 'Domain blockage', value: 100 * B.blockage, unit: '%', status: B.blockage < 0.05 ? 'ok' : 'warn' },
+        { key: 'div_max', label: 'Largest cell divergence', value: d.divMax * B.Lflow, unit: 'V/L', status: d.divMax * B.Lflow < 1e-8 ? 'ok' : 'warn' },
+        { key: 'steps', label: 'Time steps', value: d.step, unit: '' },
+        { key: 'cells', label: 'Grid cells', value: g.nx * g.ny * g.nz, unit: '', note: `${s.solidCells} inside the body` },
+      ],
+      plots,
+      tables: [{ title: 'Grid and body', columns: ['Quantity', 'Value'], rows: [['Body', B.name], ['Grid', `${g.nx} × ${g.ny} × ${g.nz}`], ['Domain [m]', `${B.L[0].toFixed(2)} × ${B.L[1].toFixed(2)} × ${B.L[2].toFixed(2)}`], ['Cell size Δx, Δy (min), Δz [m]', `${dxc.toPrecision(3)}, ${dyc.toPrecision(3)}, ${g.dz.toPrecision(3)}`], ['Reference area [m²]', +B.Sref.toPrecision(5)], ['Reference length [m]', +B.Lref.toPrecision(5)], ['Boundaries', B.half ? 'inflow, convective outflow, slip top and bottom, symmetry plane at the root, slip beyond the tip' : 'inflow, convective outflow, slip side walls'], ['Distance flown', `${(s.time / B.Lflow).toFixed(2)} lengths in ${d.step} steps`]] }],
+      outputs: { CL_history_last: clH[clH.length - 1], CD_history_last: cdH[cdH.length - 1] },
+      warnings,
+      models: [lam ? 'Incompressible Navier–Stokes without a turbulence model' : i.turb === RANS_MODELS[1] ? 'Reynolds-averaged Navier–Stokes with a van Driest mixing-length eddy viscosity' : 'Reynolds-averaged Navier–Stokes with the Spalart–Allmaras one-equation model (standard constants, no trip term, fully turbulent)', 'Direct-forcing immersed boundary on a Cartesian staggered grid; forces from the momentum removed by the forcing', i.wall_model && !lam ? 'Equilibrium log-law wall model in the first fluid cells (κ = 0.41, B = 5.2)' : 'No wall model', `Convection: ${(100 * N.clamp(i.quick, 0, 1)).toFixed(0)}% QUICK, remainder central; three-stage Runge–Kutta projection marched to steady state`, 'Pressure by cosine transforms in x and z and a tridiagonal solve in y', B.kind === RANS_BODIES[3] ? 'Triangle surface voxelised by ray casting along three axes, signed distance by fast sweeping' : 'Analytical signed-distance description of the body'],
+      assumptions: ['Incompressible, constant-property air; steady freestream along x', 'The wall is represented to within about one cell (first-order immersed boundary); there is no body-fitted boundary-layer mesh', 'Uniform inflow, convective outflow, slip (symmetry) side boundaries', 'Wall distance for the turbulence model is the distance to the immersed surface', B.half ? 'Half model with a symmetry plane at the wing root; coefficients use half the wing area' : 'Whole body in the domain'],
+    };
+  },
+  convergence: { param: 'n', label: 'Cells across the domain', levels: [12, 16, 20, 24], metric: 'CL_rans3d' },
+  verify() {
+    // voxeliser: triangle sphere against the analytical signed distance
+    const c = [0.5, 0.5, 0.5], r = 0.3, nv = 20, vs = createSolver({ n: [nv, nv, nv], L: [1, 1, 1], nu: 1, body: sphereMesh(c, r, 48, 24), dt: 1e-4 }), gv = vs.grid, sdv = vs.fields.sd; let eS = 0, cS = 0;
+    for (let k = 0; k < nv; k++) for (let j = 0; j < nv; j++) for (let q = 0; q < nv; q++) { const ex = Math.hypot(gv.x[q] - c[0], gv.y[j] - c[1], gv.z[k] - c[2]) - r; if (Math.abs(ex) < 2 / nv) { eS += Math.abs(sdv[vs.index(q, j, k)] - ex); cS++; } }
+    // free-stream preservation through inflow, outflow and slip boundaries
+    const fs = createSolver({ n: [8, 8, 8], L: [2, 1, 1], nu: 1e-3, bc: { x: [{ type: 'inflow', velocity: [1, 0, 0] }, 'outflow'], y: 'slip', z: 'slip' }, init: [1, 0, 0], model: 'rans', scheme: 'quick' }); fs.run(5); let eF = 0; for (let k = 0; k < 8; k++) for (let j = 0; j < 8; j++) for (let q = 0; q < 8; q++) eF = Math.max(eF, Math.abs(fs.fields.u[fs.index(q, j, k)] - 1));
+    // Spalart–Allmaras in a channel against the independent 1-D solver of the wall-layer analysis (wall units: u_τ = δ = 1)
+    const ReT = 400, ny = 32, w1 = wallProfile(ReT, 'Spalart–Allmaras', 160), yF = tanhFaces(ny, 2.3), U1 = (y) => N.interp1(w1.y, w1.u, Math.min(y, 2 - y) * ReT);
+    const ch = createSolver({ n: [4, ny, 4], L: [16, 2, 4], yFaces: yF, nu: 1 / ReT, bc: { y: 'wall' }, forcing: { gradient: [1, 0, 0] }, model: 'rans', rans: 'sa', time: 'ab2', diffusion: 'implicit', dt: 0.02, init: (x, y) => [0.9 * reichardt(Math.min(y, 2 - y) * ReT), 0, 0], nuTildeInit: (x, y) => { const dd = Math.min(y, 2 - y); return 0.41 * dd * (1 - 0.5 * dd) * 0.8; } });
+    ch.run(1500); const dc = ch.diagnostics(), mc = ch.monitor();
+    const sec = polySdf(...Object.values(nacaNodes(parseNaca('0012'), 64))); let area = 0; for (let a = 0; a < 400; a++) for (let b = 0; b < 80; b++) if (sec((a + 0.5) / 400, -0.1 + (b + 0.5) * 0.0025) < 0) area += 0.0025 / 400;
+    return [
+      N.check('Voxelised triangle sphere: solid volume', vs.solidCells / nv ** 3, (4 / 3) * PI * r ** 3, 0.04, 'Ray-cast inside test on a 20³ grid against the sphere volume (cell-count sampling error)'),
+      N.check('Voxelised triangle sphere: signed-distance error near the surface', 1 + (eS / cS) * nv, 1, 0.15, 'Mean |d − d_exact| within two cells of the surface, in cell sizes'),
+      N.check('Free stream is preserved', 1 + eF, 1, 1e-11, 'Uniform flow is an exact solution with inflow, convective outflow and slip walls'),
+      N.check('Spalart–Allmaras channel: bulk velocity U_b⁺ against the 1-D solver', dc.bulk, w1.Ub, 0.03, 'Same model solved independently in one dimension (wall-layer analysis), Re_τ = 400'),
+      N.check('Spalart–Allmaras channel: wall shear balances the pressure gradient', 0.5 * (mc.wallShear[2] + mc.wallShear[3]), 1, 0.03, 'Integral momentum balance; the residual is the remaining unsteadiness after 30 δ/u_τ'),
+      N.check('NACA 0012 section area from the signed-distance polygon', area, 0.68085 * 0.12, 0.01, 'Integral of the closed-trailing-edge NACA thickness form: 0.6809·t·c²'),
+    ];
+  },
+  recommend(res, i) {
+    const o = res.outputs, out = [];
+    if (o.cells_streamwise < 32 || o.cells_thickness < 6) out.push({ severity: 'warn', title: 'Grid is too coarse for quantitative forces', detail: `${o.cells_streamwise.toFixed(0)} cells along the body and ${o.cells_thickness.toFixed(1)} across its thickness.`, action: `Raise the cell count (the drag needs at least 32 cells per chord and 6 across the thickness; ${Math.ceil((i.n * 32) / Math.max(o.cells_streamwise, 1))} or more across the domain here) and run the mesh-convergence study. Until then use the panel, lattice and drag build-up analyses for numbers and this run for the flow picture.`, basis: 'Immersed-boundary resolution requirement' });
+    if (o.y_plus_mean > 300) out.push({ severity: 'warn', title: 'Wall layer is not resolved or validly modelled', detail: `First fluid cells at y⁺ ≈ ${o.y_plus_mean.toFixed(0)}.`, action: 'Friction drag, separation and stall need a body-fitted mesh: take the first-cell height from the wall-layer analysis and export an SU2 or OpenFOAM case from the High-fidelity bridge.', basis: 'Law of the wall: the log layer ends near y⁺ ≈ 300 (0.15δ)' });
+    if (o.force_drift_pct > 2) out.push({ severity: 'advise', title: 'Run longer', detail: `Mean force still drifting by ${o.force_drift_pct.toFixed(1)}%.`, action: 'Increase the simulated time and the step limit until the force history is flat.', basis: 'Iterative convergence' });
+    if (o.CL_ratio !== undefined && Math.abs(o.CL_ratio - 1) > 0.2) out.push({ severity: 'advise', title: 'Lift differs from the vortex-lattice value', detail: `CL = ${o.CL_rans3d.toFixed(3)} against ${o.CL_vlm_ref.toFixed(3)} (ratio ${o.CL_ratio.toFixed(2)}).`, action: 'On a coarse immersed-boundary grid the difference is discretisation error, not physics. Refine before interpreting it as viscous or separation loss.', basis: 'Cross-check of two independent methods' });
+    out.push({ severity: 'info', title: 'Where this solver stops', detail: 'Cartesian immersed-boundary RANS gives the three-dimensional pressure field, wake and vortex system of any closed shape with no meshing step.', action: 'For certification-grade drag, maximum lift, transonic flow or high-lift devices, use a body-fitted RANS mesh: the High-fidelity bridge writes ready-to-run SU2 and OpenFOAM cases for the same geometry and flight condition.', basis: 'Fidelity ladder' });
+    return out;
+  },
+};
+
+// ---- unsteady bluff-body flow: sphere and circular cylinder ------------------------------------
+const BLUFF_BODIES = ['Sphere', 'Circular cylinder (spanwise periodic)'], BLUFF_MODELS = ['DNS (no model)', 'LES (WALE)'];
+/** Schiller–Naumann sphere drag, valid for Re < 800; reduces to Stokes' 24/Re. */
+export const cdSchillerNaumann = (Re) => (24 / Re) * (1 + 0.15 * Re ** 0.687);
+/** Roshko's Strouhal number of a circular cylinder (laminar shedding 50 < Re < 150, irregular range 300 < Re < 2000). */
+export const stRoshko = (Re) => (Re < 47 ? 0 : Re <= 200 ? 0.212 * (1 - 21.2 / Re) : 0.212 * (1 - 12.7 / Re));
+/** Dominant frequency of a signal from its mean-crossings; returns NaN with fewer than three full cycles. */
+export function crossingFrequency(t, y) {
+  const m = N.mean(y), tc = [];
+  for (let k = 1; k < y.length; k++) if (y[k - 1] - m < 0 && y[k] - m >= 0) tc.push(t[k - 1] + ((m - y[k - 1]) / (y[k] - y[k - 1])) * (t[k] - t[k - 1]));
+  return tc.length >= 4 ? (tc.length - 1) / (tc[tc.length - 1] - tc[0]) : NaN;
+}
+/** Flow past a sphere or a spanwise-periodic cylinder of unit diameter in a uniform stream of unit speed. */
+function runBluff(o) {
+  const n = o.n, cyl = o.cyl, Hd = o.height, nu = 1 / o.Re, les = o.les;
+  const dims = cyl ? [4 * n, n, 4] : [2 * n, n, n], L = cyl ? [2 * Hd, Hd, (4 * 2 * Hd) / dims[0]] : [2 * Hd, Hd, Hd], xc = cyl ? 0.25 * L[0] : 0.3 * L[0];
+  const s = createSolver({
+    n: dims, L, origin: [-xc, -Hd / 2, -L[2] / 2], yFaces: cyl ? sinhFaces(n, Hd / 2, 3) : undefined, nu, bc: { x: [{ type: 'inflow', velocity: [1, 0, 0] }, 'outflow'], y: 'slip', z: cyl ? 'periodic' : 'slip' },
+    body: { sdf: cyl ? (x, y) => Math.hypot(x, y) - 0.5 : (x, y, z) => Math.hypot(x, y, z) - 0.5 }, init: [1, 0, 0], perturb: cyl ? { amplitude: 0.05, seed: 11, shape: (x, y) => Math.exp(-((x - 1) ** 2 + y * y)) } : undefined,
+    model: les ? 'les' : 'dns', sgs: 'wale', Cw: 0.5, time: 'rk3', cfl: o.cfl ?? 1, historyEvery: 1, residual: true,
+  });
+  let steps = 0;
+  while (s.time < o.tEnd && steps < 400000 && !s.diverged) { s.run(1); steps++; if (o.progress && steps % 10 === 0) o.progress(Math.min(s.time / o.tEnd, 1), `t = ${s.time.toFixed(1)} D/U`); }
+  return { s, L, dims, area: cyl ? L[2] : PI / 4, blockage: cyl ? 1 / Hd : PI / 4 / (Hd * Hd), steps };
+}
+
+const bluff3d = {
+  id: 'bluff3d', title: '3-D unsteady flow past a sphere or cylinder (DNS / LES validation)', fidelity: 'numerical',
+  summary: 'Time-accurate Navier–Stokes solution of the flow around a sphere or a circular cylinder with the immersed-boundary method. The drag coefficient is compared with the Schiller–Naumann sphere law and the vortex-shedding frequency of the cylinder with the measured Strouhal number: this is the validation case for the immersed-boundary force prediction.',
+  equations: ['Navier–Stokes equations', 'Continuity equation', 'Conservation of momentum equation', 'Vorticity transport equation', 'Immersed-boundary formulations', 'DNS', 'LES subgrid-scale models', 'WALE'],
+  inputs: [
+    { key: 'body', label: 'Body', type: 'select', options: BLUFF_BODIES, default: BLUFF_BODIES[0], group: 'Flow' },
+    { key: 'Re', label: 'Reynolds number U·D/ν', unit: '-', default: 40, min: 2, max: 5000, group: 'Flow', help: 'Sphere: steady axisymmetric wake below about 210, unsteady above 270. Cylinder: vortex shedding above 47; 100–200 is the laminar shedding range' },
+    { key: 'D_m', label: 'Diameter', unit: 'm', default: 0.05, min: 1e-5, group: 'Flow', help: 'Gives the equivalent speed and drag force in air at the case altitude' },
+    ...ATM,
+    { key: 'model', label: 'Turbulence treatment', type: 'select', options: BLUFF_MODELS, default: BLUFF_MODELS[0], group: 'Model', help: 'Use LES above Re ≈ 500, where the wake is turbulent and the grid cannot resolve it' },
+    { key: 't_end', label: 'Simulated time', unit: 'D/U', default: 8, min: 1, max: 2000, group: 'Numerics', help: 'A steady sphere wake settles in 8–15; cylinder shedding needs 100–200 to develop and be measured' },
+    { key: 'height', label: 'Domain height', unit: 'D', default: 3.2, min: 2.5, max: 24, group: 'Numerics', help: 'Sphere: the domain is 2H × H × H. Cylinder: 2H × H, stretched towards the wake axis; use 8 or more' },
+    { key: 'n', label: 'Cells across the domain height', unit: '', default: 12, min: 8, max: 64, step: 1, discrete: true, group: 'Numerics', help: 'Sphere: 2n × n × n cells. Cylinder: 4n × n × 4' },
+  ],
+  defaults: (c) => ({ alt_m: c.atm.alt_m, dISA: c.atm.dISA_K }),
+  run(i, ctx) { return bluffMemo(i, ctx); },
+  runNow(i, ctx) {
+    const a = isa(i.alt_m, i.dISA), n = cellsOf(i.n, 8, 64), cyl = i.body === BLUFF_BODIES[1], Re = i.Re, Hd = N.clamp(i.height, 2.5, 24), les = i.model === BLUFF_MODELS[1];
+    const r = runBluff({ n, cyl, Re, height: Hd, tEnd: i.t_end, les, progress: ctx?.progress }), s = r.s, H = s.history, d = s.diagnostics(), g = s.grid, q = 0.5 * r.area, warnings = [];
+    const cdH = H.fx.map((v) => v / q), clH = H.fy.map((v) => v / q), k0 = Math.floor((cyl ? 0.5 : 0.75) * H.t.length), tT = H.t.slice(k0), CD = N.mean(cdH.slice(k0)), CLm = N.mean(clH.slice(k0)), CLrms = N.std(clH.slice(k0)), St = crossingFrequency(tT, clH.slice(k0));
+    const shed = Number.isFinite(St) && CLrms > 0.01, CDc = CD * (1 - r.blockage) ** 2, CDref = cyl ? NaN : cdSchillerNaumann(Re), StRef = cyl ? stRoshko(Re) : NaN, dPerCell = 1 / Math.max(g.dx, N.amin(g.dy)), V = (Re * a.nu) / i.D_m;
+    const kz = Math.floor(g.nz / 2), su = s.slice('z', kz, 'u', { max: 4096 }), uc = N.range(g.nx, (c) => 0.5 * (su.z[(g.ny - 1) >> 1][c] + su.z[g.ny >> 1][c])), ol = s.outline('z', kz);
+    let xr = NaN; for (let c = 0; c + 1 < g.nx; c++) if (g.x[c] > 0.5 && uc[c] < 0 && uc[c + 1] >= 0) xr = g.x[c] + ((0 - uc[c]) / (uc[c + 1] - uc[c])) * g.dx - 0.5;
+    if (s.diverged || !Number.isFinite(CD)) warnings.push('The time march diverged.');
+    if (n <= 20) warnings.push(COARSE_NOTE(`${g.nx} × ${g.ny} × ${g.nz} cells`, 'Cells across the domain height'));
+    warnings.push(`Resolution: ${dPerCell.toFixed(1)} cells per diameter; the boundary layer is about D/√Re = ${(1 / Math.sqrt(Re)).toFixed(2)} D thick, i.e. ${(dPerCell / Math.sqrt(Re)).toFixed(1)} cells. ${dPerCell / Math.sqrt(Re) < 1.5 ? 'With fewer than about two cells in the boundary layer the immersed-boundary drag is typically 10–25% high.' : ''} Blockage is ${(100 * r.blockage).toFixed(1)}% between slip walls; the corrected coefficient uses the continuity estimate CD·(1 − blockage)², which is approximate.`);
+    if (cyl && Re > 47 && !shed) warnings.push(`No periodic vortex shedding was detected in ${i.t_end} D/U. Shedding behind a cylinder takes 50–150 D/U to grow from the initial disturbance: run for 150–200 D/U to measure the Strouhal number${Hd < 8 ? ', and use a domain height of 8 D or more' : ''}.`);
+    if (cyl && Re > 190) warnings.push('Above Re ≈ 190 the real cylinder wake becomes three-dimensional (mode A and B instabilities). With four spanwise cells this is a quasi-two-dimensional solution, which over-predicts the fluctuating lift and the drag.');
+    if (!cyl && Re > 800) warnings.push('The Schiller–Naumann drag law is only valid below Re ≈ 800; above that the sphere drag coefficient levels off near 0.4–0.5.');
+    if (!cyl && Re > 270) warnings.push('Above Re ≈ 270 the sphere wake sheds hairpin vortices: the forces are unsteady and the averages need a long run (50 D/U or more).');
+    if (!les && Re > 500) warnings.push('At this Reynolds number the wake is turbulent and far from resolved on this grid: switch to LES and refine.');
+    if (i.t_end < 8 && !cyl) warnings.push('The run is shorter than the 8–10 D/U the wake needs to become steady: the drag is still falling from its impulsive-start value.');
+    const lim = { max: 80 }, ovl = { overlay: ol, xlabel: 'x/D [-]', ylabel: 'y/D [-]' }, [tt, cdT] = thin(H.t, cdH, 400), [, clT] = thin(H.t, clH, 400), pInf = N.mean(s.slice('z', kz, 'p', { max: 4096 }).z.map((row) => row[0]));
+    return {
+      kpis: [
+        { key: 'CD', label: 'Drag coefficient', value: CD, unit: '-', note: `mean over the last ${cyl ? 'half' : 'quarter'} of the run; frontal area ${cyl ? 'D × span' : 'πD²/4'}` },
+        { key: 'CD_corrected', label: 'Drag coefficient corrected for blockage', value: CDc, unit: '-', status: cyl || Math.abs(CDc / CDref - 1) < 0.15 ? 'ok' : 'warn' },
+        ...(cyl ? [
+          { key: 'St', label: 'Strouhal number f·D/U', value: shed ? St : NaN, unit: '-', status: shed && Math.abs(St / StRef - 1) < 0.1 ? 'ok' : 'warn', note: shed ? 'from mean-crossings of the lift' : 'no shedding detected' },
+          { key: 'St_ref', label: 'Strouhal number, Roshko correlation', value: StRef, unit: '-', note: '0.212·(1 − 21.2/Re) for 50 < Re < 200 (empirical); about 0.165 at Re 100 and 0.19–0.20 at Re 200' },
+          { key: 'CL_rms', label: 'Fluctuating lift coefficient (rms)', value: CLrms, unit: '-' },
+        ] : [
+          { key: 'CD_ref', label: 'Drag coefficient, Schiller–Naumann', value: CDref, unit: '-', note: '24/Re·(1 + 0.15·Re^0.687), Re < 800 (empirical fit to the standard drag curve)' },
+          { key: 'CD_err_pct', label: 'Error of the corrected drag', value: 100 * (CDc / CDref - 1), unit: '%', status: Math.abs(CDc / CDref - 1) < 0.15 ? 'ok' : 'warn' },
+          { key: 'CD_stokes', label: 'Stokes drag coefficient 24/Re', value: 24 / Re, unit: '-', note: 'Creeping-flow limit, exact for Re ≪ 1' },
+          { key: 'CL_mean', label: 'Mean side-force coefficient', value: CLm, unit: '-', note: 'Zero by symmetry while the wake is axisymmetric' },
+        ]),
+        { key: 'x_recirc', label: 'Recirculation length behind the body', value: Number.isFinite(xr) ? xr : 0, unit: 'D', note: Number.isFinite(xr) ? 'from the rear of the body to the wake stagnation point' : 'no reversed flow on the wake axis' },
+        { key: 'cells_per_D', label: 'Cells per diameter', value: dPerCell, unit: '', status: dPerCell >= 16 ? 'ok' : dPerCell >= 6 ? 'warn' : 'bad' },
+        { key: 'blockage_pct', label: 'Blockage', value: 100 * r.blockage, unit: '%', status: r.blockage < 0.05 ? 'ok' : 'warn' },
+        { key: 'drag_N', label: cyl ? 'Drag per metre of span in air' : 'Drag force in air', value: CD * 0.5 * a.rho * V * V * (cyl ? i.D_m : (PI * i.D_m ** 2) / 4), unit: cyl ? 'N/m' : 'N', note: `at ${V.toPrecision(3)} m/s for D = ${i.D_m} m` },
+        { key: 'shedding_Hz', label: 'Shedding frequency in air', value: shed ? (St * V) / i.D_m : 0, unit: 'Hz', note: shed ? '' : 'steady wake' },
+        { key: 'residual', label: 'Final unsteadiness RMS |∂u/∂t|', value: d.residual, unit: 'U²/D' },
+        { key: 'div_max', label: 'Largest cell divergence', value: d.divMax, unit: 'U/D', status: d.divMax < 1e-8 ? 'ok' : 'warn' },
+        { key: 'steps', label: 'Time steps', value: r.steps, unit: '' },
+        { key: 'cells', label: 'Grid cells', value: g.nx * g.ny * g.nz, unit: '', note: `${s.solidCells} inside the body` },
+      ],
+      plots: [
+        { type: 'line', title: 'Force history', xlabel: 'Time [D/U]', ylabel: 'Coefficient [-]', series: [{ name: 'CD', x: tt.slice(1), y: cdT.slice(1) }, { name: cyl ? 'CL' : 'Side force', x: tt.slice(1), y: clT.slice(1) }], annotations: cyl ? [] : [{ y: CDref, label: 'Schiller–Naumann' }] },
+        heatOf(`Velocity magnitude, centre plane at t = ${s.time.toFixed(1)} D/U`, s.slice('z', kz, 'speed', lim), '|V|/U [-]', ovl),
+        heatOf('Spanwise vorticity, centre plane', s.slice('z', kz, 'wz', lim), 'ω_z·D/U [-]', { ...ovl, diverging: true, map: (v) => N.clamp(v, -6, 6) }),
+        heatOf('Pressure coefficient, centre plane', s.slice('z', kz, 'p', lim), 'Cp [-]', { ...ovl, diverging: true, map: (v) => N.clamp(2 * (v - pInf), -1.5, 1.2) }),
+        { type: 'line', title: 'Streamwise velocity on the wake axis', xlabel: 'x/D [-]', ylabel: 'u/U [-]', series: [{ name: 'Centreline velocity', x: g.x, y: uc }], annotations: Number.isFinite(xr) ? [{ x: xr + 0.5, label: 'Wake stagnation point' }] : [] },
+      ],
+      tables: [{ title: 'Reference data for this case', columns: ['Quantity', 'Computed', 'Reference', 'Source'], rows: cyl ? [['Strouhal number', shed ? +St.toFixed(4) : 'not detected', +StRef.toFixed(4), 'Roshko (1954) correlation'], ['Drag coefficient', +CDc.toFixed(3), Re >= 80 && Re <= 250 ? '1.3–1.4' : '—', 'Measurements and 2-D simulations, Re 100–200']] : [['Drag coefficient (blockage-corrected)', +CDc.toFixed(3), +CDref.toFixed(3), 'Schiller & Naumann (1933)'], ['Drag coefficient (raw)', +CD.toFixed(3), +CDref.toFixed(3), 'unbounded stream']] }],
+      warnings,
+      models: [les ? 'Filtered incompressible Navier–Stokes with the WALE subgrid model' : 'Incompressible Navier–Stokes without a turbulence model', 'Direct-forcing immersed boundary on a Cartesian staggered grid; force from the momentum removed by the forcing', 'Second-order central differences, three-stage Runge–Kutta projection', cyl ? 'Pressure by cosine transform in x, Fourier transform in z and a tridiagonal solve in y' : 'Pressure by cosine transforms in x and z and a tridiagonal solve in y'],
+      assumptions: ['Uniform inflow, convective outflow, slip walls at the sides' + (cyl ? ', periodic along the span (four cells: quasi-two-dimensional)' : ''), 'Impulsive start from uniform flow' + (cyl ? ' with a small seeded disturbance behind the cylinder to trigger shedding' : ''), 'The surface is located to within about one cell', 'Blockage correction by continuity only'],
+    };
+  },
+  convergence: { param: 'n', label: 'Cells across the domain height', levels: [12, 16, 20, 24], metric: 'CD_corrected' },
+  verify() {
+    // steady momentum balance in a periodic array of spheres: the body force on the whole box equals the force on the sphere
+    const G = 1, pa = createSolver({ n: [12, 12, 12], L: [1, 1, 1], nu: 1, forcing: { gradient: [G, 0, 0] }, body: { sdf: (x, y, z) => Math.hypot(x - 0.5, y - 0.5, z - 0.5) - 0.3 }, time: 'ab2', dt: 4e-4 }); pa.run(2000);
+    const f = pa.monitor().force, ts = N.linspace(0, 40, 801), r = runBluff({ n: 16, cyl: false, Re: 40, height: 4, tEnd: 8 }), Hh = r.s.history, cd = N.mean(tailOf(Hh.fx, 0.2)) / (0.5 * r.area) * (1 - r.blockage) ** 2;
+    return [
+      N.check('Force on a sphere in a periodic array equals the driving body force', f[0], G, 2e-3, 'Global momentum balance at steady state: F = (−dp/dx)·V_box'),
+      N.check('Periodic array: no side force', 1 + Math.hypot(f[1], f[2]), 1, 1e-9, 'Symmetry'),
+      N.check('Sphere drag at Re = 40 on a coarse grid (4 cells per diameter)', cd, cdSchillerNaumann(40), 0.15, 'Schiller–Naumann 1.74; blockage-corrected immersed-boundary force'),
+      N.check('Schiller–Naumann tends to Stokes drag', cdSchillerNaumann(1e-3) * 1e-3 / 24, 1, 2e-3, 'Stokes (1851): CD = 24/Re'),
+      N.check('Frequency estimator on a known signal', crossingFrequency(ts, ts.map((t) => Math.sin(TWO_PI * 0.2 * t + 0.3) + 0.5)), 0.2, 1e-3, 'Mean-crossing period of sin(2π·0.2·t)'),
+      N.check('Roshko Strouhal number at Re = 100', stRoshko(100), 0.167, 0.01, 'Roshko (1954); measurements give 0.164–0.167'),
+    ];
+  },
+  validation: [
+    { name: 'Sphere drag, steady axisymmetric regime', source: 'Schiller & Naumann (1933) fit to the standard drag curve: CD = 24/Re·(1 + 0.15·Re^0.687)', inputs: { body: BLUFF_BODIES[0], n: 32, t_end: 12, height: 5 }, sweep: { key: 'Re', values: [20, 40, 100] }, target: 'CD_corrected', observed: [cdSchillerNaumann(20), cdSchillerNaumann(40), cdSchillerNaumann(100)], tol_pct: 12 },
+    { name: 'Cylinder vortex-shedding frequency', source: 'Roshko (1954), Williamson (1989): St ≈ 0.165 at Re = 100, 0.18 at Re = 150', inputs: { body: BLUFF_BODIES[1], n: 32, t_end: 200, height: 10 }, sweep: { key: 'Re', values: [100, 150] }, target: 'St', observed: [0.165, 0.184], tol_pct: 10 },
+  ],
+  recommend(res, i) {
+    const o = res.outputs, out = [], cyl = i.body === BLUFF_BODIES[1];
+    if (o.cells_per_D < 8) out.push({ severity: 'advise', title: 'Coarse body resolution', detail: `${o.cells_per_D.toFixed(1)} cells per diameter.`, action: 'Use 16 or more cells per diameter for a drag error below about 5% and run the mesh-convergence study; the immersed boundary converges at first order.', basis: 'Immersed-boundary accuracy' });
+    if (!cyl && Math.abs(o.CD_err_pct) > 15) out.push({ severity: 'warn', title: 'Drag differs from the reference', detail: `Corrected CD = ${o.CD_corrected.toFixed(3)} against ${o.CD_ref.toFixed(3)}.`, action: 'Refine the grid, enlarge the domain and run longer; the difference at this resolution is numerical.', basis: 'Schiller–Naumann drag law' });
+    if (cyl && o.shedding_Hz > 0) out.push({ severity: 'info', title: 'Vortex shedding excites structures and makes tones', detail: `Shedding at ${o.shedding_Hz.toFixed(1)} Hz for this diameter and speed (St = ${o.St.toFixed(3)}).`, action: 'Keep the frequency away from the natural frequencies of struts, antennas, probes and landing-gear legs (Suite 10); the same frequency is the Aeolian tone in Suite 11. Helical strakes or a fairing suppress it.', basis: 'Strouhal relation f = St·U/D' });
+    if (o.blockage_pct > 5) out.push({ severity: 'advise', title: 'Domain is tight', detail: `Blockage ${o.blockage_pct.toFixed(1)}%.`, action: 'Increase the domain height (and the cell count with it) until the corrected and raw coefficients agree within a few percent.', basis: 'Wall interference' });
+    return out;
+  },
+};
+
+const bluffMemo = memoLast((i, ctx) => bluff3d.runNow(i, ctx));
+
 export default {
   id: 'cfd', n: 1,
   tagline: 'How much lift and drag the aircraft makes, where the flow separates or shocks, and how fine a mesh the answer needs.',
-  analyses: [airfoil, wing, dragBuildup, shockTube, shocks, cavityFlow, wallTurb],
+  analyses: [airfoil, wing, dragBuildup, shockTube, shocks, cavityFlow, wallTurb, dns3d, les3d, rans3d, bluff3d],
   consumes: [],
   provides: [
     { key: 'CL', label: 'Lift coefficient', unit: '-' }, { key: 'CD', label: 'Drag coefficient', unit: '-' }, { key: 'CD0', label: 'Zero-lift drag coefficient', unit: '-' },
@@ -1098,14 +1734,14 @@ export default {
     { key: 'cp_min', label: 'Minimum pressure coefficient', unit: '-' }, { key: 'x_cp_frac', label: 'Centre of pressure', unit: 'x/c' },
   ],
   handoff: [
-    { model: '3-D RANS on the full aircraft (k–ε, realizable k–ε, k–ω, k–ω SST, Reynolds-stress, transition SST, γ–Reθ)', why: 'Needs a body-fitted volume mesh of 10⁷–10⁸ cells and hours of parallel computing; only the 1-D Spalart–Allmaras wall layer and 2-D laminar Navier–Stokes are solved here', tool: 'Finite-volume RANS solver (SU2, OpenFOAM, CFL3D, Fluent, STAR-CCM+) using the mesh guidance from the wall-layer analysis' },
-    { model: 'LES, wall-modelled LES, DES / DDES / IDDES, dynamic Smagorinsky, WALE, DNS', why: 'Scale-resolving simulation needs 10⁸–10¹¹ cells and 10⁵–10⁷ time steps', tool: 'HPC scale-resolving solver (OpenFOAM, PyFR, CharLES, Nek5000)' },
-    { model: 'Transonic full-potential / Euler / RANS with shock–boundary-layer interaction and buffet', why: 'The panel and lattice methods are linear subsonic; shocks on the wing are represented only by the Korn equation and the 1-D shock relations', tool: 'Transonic RANS solver, validated on NASA Common Research Model data' },
-    { model: 'High-lift (slats, flaps, spoilers) aerodynamics', why: 'Multi-element confluent boundary layers and separation are beyond single-element integral methods', tool: 'RANS validated against the High-Lift Prediction Workshop cases' },
-    { model: 'Moving, overset and ALE meshes; actuator-line and actuator-disc sources; free-vortex rotor wakes; immersed boundaries', why: 'No general volume-mesh infrastructure in the browser; rotor wakes are treated by Suites 6 and 8', tool: 'Overset RANS (OVERFLOW, HELIOS) or free-wake codes (CAMRAD II, CHARM)' },
+    { model: 'Body-fitted, wall-resolved 3-D RANS of the complete aircraft at flight Reynolds number (realizable k–ε, k–ω SST, Reynolds-stress, transition SST, γ–Reθ) on 10⁷–10⁸ cells', why: '3-D RANS (Spalart–Allmaras, mixing length), LES and DNS are solved natively here on Cartesian immersed-boundary grids up to the resolution the device allows (about 128³ cells). Such a grid places the wall to within one cell and cannot carry a y⁺ ≈ 1 boundary-layer mesh on the real surface, so drag to a few counts, maximum lift, separation onset and transition still need a body-fitted mesh and hours of parallel computing. Only the Spalart–Allmaras and mixing-length closures are implemented', tool: 'Finite-volume RANS solver (SU2, OpenFOAM, CFL3D, Fluent, STAR-CCM+). The High-fidelity bridge page of this app exports ready-to-run SU2 and OpenFOAM cases for the same geometry and flight condition; the wall-layer analysis gives the first-cell height' },
+    { model: 'Industrial wall-resolved and wall-modelled LES, DES / DDES / IDDES and dynamic Smagorinsky on the real geometry; DNS at flight Reynolds number', why: 'LES (Smagorinsky, WALE, equilibrium wall model) and DNS run natively for canonical flows and immersed bodies at modest Reynolds number. Scale-resolving simulation of an aircraft needs 10⁸–10¹¹ body-fitted cells and 10⁵–10⁷ time steps; hybrid RANS–LES and the dynamic procedure are not implemented', tool: 'HPC scale-resolving solver (OpenFOAM, PyFR, CharLES, Nek5000), prepared through the High-fidelity bridge' },
+    { model: 'Compressible transonic 3-D Euler / RANS with shock–boundary-layer interaction and buffet; Favre-averaged equations', why: 'The native 3-D solver is incompressible. Shocks on the wing are represented only by the Korn equation and the 1-D shock relations; the panel and lattice methods are linear subsonic', tool: 'Compressible RANS solver (SU2, OpenFOAM rhoSimpleFoam / HiSA) from the High-fidelity bridge, validated on NASA Common Research Model data' },
+    { model: 'High-lift (slats, flaps, spoilers) aerodynamics', why: 'Multi-element gaps and confluent boundary layers are far below the cell size of a Cartesian immersed-boundary grid and beyond single-element integral methods', tool: 'Body-fitted RANS validated against the High-Lift Prediction Workshop cases' },
+    { model: 'Moving, overset and ALE meshes; actuator-line and actuator-disc sources; free-vortex rotor wakes', why: 'The immersed boundary is implemented for stationary rigid bodies only; rotor wakes are treated by Suites 6 and 8', tool: 'Overset RANS (OVERFLOW, HELIOS, OpenFOAM overset) or free-wake codes (CAMRAD II, CHARM)' },
     { model: 'Coupled CFD–structure displacement and Eulerian–Lagrangian particle transport', why: 'Static and dynamic aeroelasticity are solved with reduced-order aerodynamics in Suite 3; droplet transport in Suite 13 uses potential flow', tool: 'Coupled CFD–CSD frameworks; icing CFD (LEWICE3D, FENSAP-ICE)' },
     { model: 'Real-gas equations of state and high-enthalpy flow', why: 'All compressible models here assume a calorically perfect gas', tool: 'Equilibrium or finite-rate chemistry solvers (DPLR, US3D)' },
-    { model: 'CAD and mesh import (STEP, IGES, STL, CGNS, SU2, OpenFOAM) with watertight repair and volume meshing', why: 'Geometry is parametric (planform and NACA sections); a geometry kernel and mesher cannot be shipped dependency-free', tool: 'CAD kernel with Gmsh, Pointwise or snappyHexMesh' },
+    { model: 'Body-fitted volume meshing with prism layers (CGNS, SU2, OpenFOAM meshes) and watertight CAD repair', why: 'An imported triangle surface is flown directly by voxelising it into the Cartesian grid, which needs no mesher; boundary-layer volume meshes are not generated in the browser', tool: 'Gmsh, Pointwise or snappyHexMesh, driven by the case files from the High-fidelity bridge' },
     { model: 'Data-assisted / physics-informed turbulence closures', why: 'Requires training data and model governance outside the scope of an offline tool', tool: 'Research frameworks coupled to a RANS solver' },
   ],
 };

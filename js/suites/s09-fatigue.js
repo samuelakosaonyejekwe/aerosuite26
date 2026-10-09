@@ -5,7 +5,7 @@
 // fracture measures with a failure assessment diagram.
 
 import * as N from '../core/numerics.js';
-import { METALS } from '../data/materials.js';
+import { METALS, designAllowables } from '../data/materials.js';
 
 // ---- shared helpers -------------------------------------------------------------------------
 const MATS = Object.keys(METALS);
@@ -13,10 +13,16 @@ const mat = (name) => METALS[name] || METALS['Al 2024-T3'];
 const MAT = { key: 'material', label: 'Material', type: 'select', options: MATS, default: 'Al 2024-T3', group: 'Material', help: 'Typical handbook fatigue and fracture constants, not design allowables' };
 const kpi = (key, label, value, unit, status, note) => ({ key, label, value, unit, ...(status ? { status } : {}), ...(note ? { note } : {}) });
 const DATA_NOTE = 'Fatigue and fracture constants are typical mean handbook values, not design allowables; scatter is covered only by the stated factors';
+/** Safe-life scatter factor input. AC 23-13A para 2-26: 8 for a life from analysis with S-N data; 4 is the full-scale fatigue-test factor with two specimens (Table 2). */
+const SCATTER = { key: 'scatter', label: 'Life scatter factor', unit: '-', default: 8, min: 1, max: 10, group: 'Method', help: 'Safe life = mean life / scatter factor. 8 for a life obtained by analysis from S–N data (AC 23-13A para 2-26); 4 only when the mean life is demonstrated by full-scale fatigue tests of two specimens (AC 23-13A Table 2: 4.96, 4.0, 3.7, 3.54 for one to four specimens). Transport-category practice (AC 25.571-1D) starts from a base factor of 3 on test results' };
 const MEAN = ['Morrow', 'Smith–Watson–Topper', 'Goodman', 'Gerber', 'Soderberg', 'Walker', 'None'];
-/** 1 g gross stress [Pa] at the critical location, limit load factor and flight hours per flight from the case and upstream suites. */
+/**
+ * 1 g gross stress [Pa] at the critical location, limit load factor and flight hours per flight from the case and upstream suites.
+ * Without Suite 2 the limit-load stress is taken as 0.4 × the ultimate design strength, which is what its default cover sizing
+ * produces (design stress 0.6·Ftu at ultimate load, ultimate factor 1.5).
+ */
 function usage(c, up) {
-  const n = up.performance?.n_limit ?? c.aero.n_pos ?? 2.5, m = mat(c.struct.material), sLim = up.fea?.sigma_bend_root_Pa ?? up.fea?.sigma_max_Pa ?? 0.55 * m.Sy;
+  const n = up.performance?.n_limit ?? c.aero.n_pos ?? 2.5, m = mat(c.struct.material), sLim = up.fea?.sigma_bend_root_Pa ?? up.fea?.sigma_max_Pa ?? 0.4 * designAllowables(m).Su;
   return { n, s1g: sLim / Math.max(n, 1), fh: c.econ.cycles_yr > 0 ? c.econ.util_fh_yr / c.econ.cycles_yr : 1, life_fl: c.econ.cycles_yr * c.econ.life_yr };
 }
 /** Equivalent fully reversed stress amplitude for amplitude sa and mean sm. */
@@ -57,7 +63,7 @@ const sn = {
     { key: 'k_env', label: 'Environment (corrosion-fatigue) factor', unit: '-', default: 1, min: 0.2, max: 1, group: 'Modifying factors', help: 'Empirical knock-down on fatigue strength in a corrosive environment; 1 = laboratory air. Needs test data' },
     { key: 'mean', label: 'Mean-stress correction', type: 'select', options: MEAN, default: 'Morrow', group: 'Method' },
     { key: 'gamma', label: 'Walker exponent γ', unit: '-', default: 0.5, min: 0.1, max: 1, group: 'Method', help: '0.5 reproduces Smith–Watson–Topper; fit to S–N data at several R' },
-    { key: 'scatter', label: 'Life scatter factor', unit: '-', default: 4, min: 1, max: 10, group: 'Method', help: 'Safe life = mean life / scatter factor; 3–5 is typical for metallic safe-life parts' },
+    SCATTER,
     { key: 'cyc_per_flight', label: 'Cycles of this kind per flight', unit: '', default: 1, min: 0.01, group: 'Usage' },
     { key: 'fh_per_flight', label: 'Flight hours per flight', unit: 'h', default: 1.5, min: 0.01, group: 'Usage' },
     { key: 'target_flights', label: 'Design service goal', unit: 'flights', default: 60000, min: 1, group: 'Usage' },
@@ -71,7 +77,7 @@ const sn = {
     if (Nf < 1e4) warnings.push('Predicted life is in the low-cycle regime (< 10⁴ cycles), where strain-life is the appropriate method.');
     if (sm + sa >= m.Su) warnings.push('Maximum local stress reaches the ultimate strength: static failure governs.');
     if (i.k_env < 1) warnings.push('The environment factor is an empirical knock-down; corrosion-fatigue interaction is frequency- and time-dependent and must be confirmed by test.');
-    const Ns = N.logspace(1e2, 1e9, 60), sms = N.linspace(0, 0.95 * m.Su, 40), sRef = m.sf * (2 * i.target_flights * i.cyc_per_flight * i.scatter) ** m.b;
+    const Ns = N.logspace(1e2, 1e9, 60), sms = N.linspace(0, 0.95 * m.Su, 40), sRef = sTarget;
     const haigh = (meth) => sms.map((x) => { let lo = 0, hi = m.Su; for (let k = 0; k < 50; k++) { const mid = 0.5 * (lo + hi); if (eqAmplitude(m, mid, x, meth, i.gamma) < sRef) lo = mid; else hi = mid; } return lo / 1e6; });
     return {
       kpis: [
@@ -91,7 +97,7 @@ const sn = {
       ],
       warnings,
       models: ['Basquin stress-life curve', `${i.mean} mean-stress correction`, 'Peterson notch sensitivity (empirical)', 'Surface, size and environment factors (empirical)'],
-      assumptions: ['Constant-amplitude loading; life to initiation of an engineering-size crack', 'Notch factor and modifying factors applied to the amplitude only; mean stress taken as nominal', 'No endurance limit is assumed (appropriate for aluminium; conservative for steel and titanium below their limit)', DATA_NOTE],
+      assumptions: ['Constant-amplitude loading; life to initiation of an engineering-size crack', 'Notch factor and modifying factors applied to the amplitude only; mean stress taken as nominal', 'No endurance limit is assumed (appropriate for aluminium; conservative for steel and titanium below their limit)', 'Peterson characteristic length and the surface, size and environment factors are typical empirical values, not sourced data', DATA_NOTE],
     };
   },
   verify() {
@@ -141,7 +147,7 @@ const en = {
     { key: 'R', label: 'Stress ratio', unit: '-', default: 0, min: -3, max: 0.95, group: 'Loading' },
     { key: 'Kt', label: 'Stress-concentration factor', unit: '-', default: 3, min: 1, max: 10, group: 'Notch' },
     { key: 'mean', label: 'Mean-stress correction', type: 'select', options: ['Morrow', 'Smith–Watson–Topper'], default: 'Smith–Watson–Topper', group: 'Method' },
-    { key: 'scatter', label: 'Life scatter factor', unit: '-', default: 4, min: 1, max: 10, group: 'Method' },
+    SCATTER,
     { key: 'cyc_per_flight', label: 'Cycles of this kind per flight', unit: '', default: 1, min: 0.01, group: 'Usage' },
     { key: 'target_flights', label: 'Design service goal', unit: 'flights', default: 60000, min: 1, group: 'Usage' },
   ],
@@ -237,20 +243,20 @@ const spectrum = {
     { key: 'fh_per_flight', label: 'Flight hours per flight', unit: 'h', default: 1.5, min: 0.01, group: 'Usage' },
     { key: 'target_flights', label: 'Design service goal', unit: 'flights', default: 60000, min: 1, group: 'Usage' },
     { key: 'mean', label: 'Mean-stress correction', type: 'select', options: MEAN, default: 'Smith–Watson–Topper', group: 'Method' },
-    { key: 'scatter', label: 'Life scatter factor', unit: '-', default: 4, min: 1, max: 10, group: 'Method' },
+    SCATTER,
     { key: 'seed', label: 'Random seed', unit: '', default: 2024, min: 1, step: 1, discrete: true, group: 'Numerics' },
     { key: 'nFlights', label: 'Flights in the simulated block', unit: '', default: 400, min: 10, max: 20000, step: 1, discrete: true, group: 'Numerics' },
   ],
   defaults(c, up) { const u = usage(c, up); return { material: c.struct.material, s_1g: u.s1g, dn_max: Math.max(0.2, u.n - 1), fh_per_flight: u.fh, target_flights: u.life_fl || undefined, N0_per_fh: c.meta.type === 'helicopter' ? 60 : undefined }; },
   run(i) {
     const m = mat(i.material), nFl = Math.max(10, Math.round(i.nFlights)), seq = flightSequence(i, nFl), cyc = rainflow(seq), k = i.Kt * i.s_1g, warnings = [];
-    let D = 0, Dgag = 0, nCyc = 0; const edges = N.linspace(0, Math.max(...cyc.map((c) => c[0])) * 1.0001, 13), dBin = new Array(12).fill(0), cBin = new Array(12).fill(0);
-    const mb = N.linspace(Math.min(...cyc.map((c) => c[1])) - 1e-9, Math.max(...cyc.map((c) => c[1])) + 1e-9, 9), z = N.range(12, () => new Array(8).fill(0));
+    let D = 0, Dgag = 0, nCyc = 0; const edges = N.linspace(0, N.amax(cyc.map((c) => c[0])) * 1.0001, 13), dBin = new Array(12).fill(0), cBin = new Array(12).fill(0);
+    const mb = N.linspace(N.amin(cyc.map((c) => c[1])) - 1e-9, N.amax(cyc.map((c) => c[1])) + 1e-9, 9), z = N.range(12, () => new Array(8).fill(0));
     for (const [rg, mn, cnt] of cyc) {
       const Nf = basquin(m, eqAmplitude(m, 0.5 * rg * k, mn * k, i.mean)), d = cnt / Nf, b = Math.min(11, Math.floor((rg / edges[12]) * 12)), bm = Math.min(7, Math.max(0, Math.floor(((mn - mb[0]) / (mb[8] - mb[0])) * 8)));
       D += d; nCyc += cnt; dBin[b] += d; cBin[b] += cnt; z[b][bm] += cnt; if (rg > 1 - i.n_ground - 1e-9) Dgag += d;
     }
-    const dpf = D / nFl, life = dpf > 0 ? 1 / dpf : Infinity, safe = life / i.scatter, smaxLoc = k * Math.max(...seq);
+    const dpf = D / nFl, life = dpf > 0 ? 1 / dpf : Infinity, safe = life / i.scatter, smaxLoc = k * N.amax(seq);
     if (smaxLoc > m.Sy) warnings.push('The largest local elastic stress in the spectrum exceeds yield: linear damage summation ignores the beneficial or harmful residual stresses left by such overloads.');
     warnings.push('The default spectrum is illustrative (exponential exceedance law with a random sequence). Use a measured, regulatory or mission-analysis spectrum for any substantiation.');
     const ex = N.linspace(i.dn_min, i.dn_max, 40), nShow = Math.min(seq.length, 300), ctr = (e) => N.range(e.length - 1, (j) => 0.5 * (e[j] + e[j + 1]));
@@ -274,10 +280,10 @@ const spectrum = {
       ],
       warnings,
       models: ['Seeded random flight-by-flight sequence from an exponential exceedance law (illustrative)', 'ASTM E1049 rainflow counting', `Basquin S–N curve with ${i.mean} mean-stress correction`, 'Palmgren–Miner linear damage'],
-      assumptions: ['Stress proportional to load factor; Kt applied to amplitude and mean (local elastic stress)', 'Linear damage accumulation with no load-sequence or overload-retardation effect', 'Failure at Miner sum 1 on the mean curve; scatter handled by the life factor', DATA_NOTE],
+      assumptions: ['Stress proportional to load factor; Kt applied to amplitude and mean (local elastic stress)', 'Linear damage accumulation with no load-sequence or overload-retardation effect', 'Failure at Miner sum 1 on the mean curve; scatter handled by the life factor', 'Spectrum parameters (cycles per hour, decay scale, ground load) are illustrative, not sourced: AC 23-13A Appendix 1 or measured exceedance data should replace them', DATA_NOTE],
     };
   },
-  convergence: { param: 'nFlights', label: 'Flights in the block', levels: [50, 100, 200, 400, 800], metric: 'damage_per_flight' },
+  convergence: { param: 'nFlights', label: 'Flights in the block', levels: [50, 100, 200, 400, 800], metric: 'damage_per_flight', hOf: (n) => 1 / Math.sqrt(n) }, // sampling study: error falls with 1/√flights
   verify() {
     const rf = rainflow([-2, 1, -3, 5, -1, 3, -4, 4, -2]), cnt = (r) => N.sum(rf.filter((c) => c[0] === r).map((c) => c[2])), m = mat('Al 2024-T3');
     const ca = N.kv(spectrum.run({ material: 'Al 2024-T3', s_1g: 100e6, Kt: 1, n_ground: 0, N0_per_fh: 0, dn_min: 0, dn_scale: 0.1, dn_max: 1, fh_per_flight: 1, target_flights: 1, mean: 'Smith–Watson–Topper', scatter: 1, seed: 1, nFlights: 50 }));
@@ -293,7 +299,9 @@ const spectrum = {
   calibration: { params: [{ key: 'dn_scale', min: 0.005, max: 2 }, { key: 'N0_per_fh', min: 0, max: 2000 }], sweep: 'dn_max', target: 'cycles_per_flight', note: 'Recorded exceedance counts from flight-loads monitoring calibrate the spectrum parameters.' },
   recommend(res, i) {
     const o = res.outputs, out = [];
-    if (o.damage_at_goal > 1) out.push({ severity: 'critical', title: 'Fatigue life does not reach the design service goal', detail: `Miner sum ${o.damage_at_goal.toFixed(2)} at the goal with scatter factor ${i.scatter}; safe life ${o.safe_life_flights.toFixed(0)} flights.`, action: o.gag_damage_frac > 0.5 ? 'Ground–air–ground cycles dominate: reduce the 1 g stress level or Kt at this detail.' : 'Gust and manoeuvre cycles dominate: gust-load alleviation (Suite 16) or a lower wing loading sensitivity reduces damage every flight hour.', basis: 'Palmgren–Miner sum ≤ 1 with scatter factor' });
+    // below the goal on the mean curve the detail cracks in service; above it, only the scatter-factored safe life is unsubstantiated
+    const meanShort = o.life_cycles < i.target_flights;
+    if (o.damage_at_goal > 1) out.push({ severity: meanShort ? 'critical' : 'warn', title: meanShort ? 'Mean fatigue life is below the design service goal' : 'Safe life with the scatter factor is below the design service goal', detail: `Miner sum ${o.damage_at_goal.toFixed(2)} at the goal with scatter factor ${i.scatter}; mean life ${o.life_cycles.toFixed(0)} flights, safe life ${o.safe_life_flights.toFixed(0)} flights.`, action: o.gag_damage_frac > 0.5 ? 'Ground–air–ground cycles dominate: reduce the 1 g stress level or Kt at this detail.' : 'Gust and manoeuvre cycles dominate: gust-load alleviation (Suite 16) or a lower wing loading sensitivity reduces damage every flight hour.' + (meanShort ? '' : ' Alternatively substantiate the life by full-scale fatigue test (lower scatter factor) or by damage tolerance with inspections (crack-growth analysis).'), basis: 'Palmgren–Miner sum ≤ 1 with the scatter factor (AC 23-13A: 8 for analysis by S–N data)' });
     else out.push({ severity: 'info', title: 'Life margin and extension', detail: `Safe life ${o.safe_life_flights.toFixed(0)} flights (${o.safe_life_fh.toFixed(0)} h) against a goal of ${i.target_flights.toFixed(0)}.`, action: 'Usage monitoring of actual exceedances lets the fleet consume real rather than assumed damage, typically extending service life and deferring replacement.', basis: 'Individual aircraft tracking' });
     out.push({ severity: 'advise', title: 'Replace the illustrative spectrum', detail: `${o.cycles_per_flight.toFixed(1)} counted cycles per flight from an assumed exponential exceedance law.`, action: 'Upload measured or regulatory exceedance data and calibrate; fatigue life is very sensitive to the tail of the spectrum.', basis: 'Spectrum sensitivity' });
     return out;
@@ -310,8 +318,8 @@ export function beta(geom, a, W, r) {
   if (geom === 'cracks from hole (both sides)') return (0.9439 + 0.6865 / (0.2772 + a / r)) * Math.sqrt(sec((Math.PI * (r + a)) / W));
   return Math.sqrt(sec((Math.PI * a) / W));
 }
-/** Largest admissible crack size for the geometry (95% of the ligament). */
-const aLimit = (geom, W, r) => 0.95 * (geom === 'edge crack' ? 0.7 * W : geom === 'crack from hole (one side)' ? W - 2 * r : geom === 'cracks from hole (both sides)' ? W / 2 - r : W / 2) * (geom.includes('hole') ? 0.9 : 1);
+/** Largest admissible crack size for the geometry (95% of the ligament, with a further 10% taken off at a hole where the curve fit degrades). */
+const aLimit = (geom, W, r) => 0.95 * (geom === 'edge crack' ? 0.7 * W : geom.includes('hole') ? 0.9 * (W / 2 - r) : W / 2); // the hole is central: either crack runs out of plate at W/2 − r
 /** Crack growth rate [m/cycle]; ΔK, Kc, ΔKth in MPa√m. */
 export function growthRate(law, dK, R, p) {
   if (!(dK > 0) || dK <= p.dKth * (law === 'Paris' ? 0 : 1)) return 0;
@@ -338,7 +346,7 @@ const crack = {
     { key: 'geom', label: 'Crack configuration', type: 'select', options: GEOMS, default: 'crack from hole (one side)', group: 'Geometry' },
     { key: 'W', label: 'Panel width', unit: 'm', default: 0.15, min: 0.005, group: 'Geometry', help: 'Stringer or crack-stopper pitch for a skin panel' },
     { key: 'r_hole', label: 'Hole radius', unit: 'm', default: 0.003, min: 0.0005, group: 'Geometry' },
-    { key: 'a0', label: 'Initial flaw size', unit: 'm', default: 0.00127, min: 1e-5, group: 'Flaws', help: 'Crack length from the hole edge / half-length / depth. 1.27 mm (0.05 in) is a customary rogue-flaw assumption' },
+    { key: 'a0', label: 'Initial flaw size', unit: 'm', default: 0.00127, min: 1e-5, group: 'Flaws', help: 'Crack length from the hole edge / half-length / depth. 1.27 mm (0.05 in) is the initial primary flaw assumed at holes for slow-crack-growth structure (JSSG-2006, USAF damage-tolerant design handbook §1.3.4.1)' },
     { key: 'a_det', label: 'Detectable crack size', unit: 'm', default: 0.005, min: 1e-5, group: 'Flaws', help: 'Depends on the inspection method and access: a few mm for eddy current, 25 mm or more for general visual' },
     { key: 's_max', label: 'Maximum gross stress in the cycle', unit: 'Pa', default: 100e6, min: 1e5, group: 'Loading', help: 'Equivalent once-per-flight stress' },
     { key: 'R', label: 'Stress ratio', unit: '-', default: 0, min: -1, max: 0.9, group: 'Loading', help: 'Negative R is treated as 0 (compressive part assumed not to open the crack)' },
@@ -350,7 +358,7 @@ const crack = {
     { key: 'gamma', label: 'Walker exponent γ', unit: '-', default: 0.5, min: 0.1, max: 1, group: 'Growth law' },
     { key: 'pn', label: 'NASGRO threshold exponent p', unit: '-', default: 0.25, min: 0, max: 2, group: 'Growth law' },
     { key: 'qn', label: 'NASGRO instability exponent q', unit: '-', default: 0.25, min: 0, max: 2, group: 'Growth law' },
-    { key: 'scatter', label: 'Scatter factor on the growth period', unit: '-', default: 2, min: 1, max: 5, group: 'Inspection', help: 'Inspection interval = detectable-to-critical period / factor; 2–3 is customary' },
+    { key: 'scatter', label: 'Scatter factor on the growth period', unit: '-', default: 2, min: 1, max: 5, group: 'Inspection', help: 'Inspection interval = detectable-to-critical period / factor. 2 corresponds to the two-lifetime slow-crack-growth requirement (JSSG-2006) and to the factor of 2 of AC 25.571-1D where inspections are effective; 3 where they are not' },
     { key: 'nSteps', label: 'Integration intervals', unit: '', default: 400, min: 10, max: 20000, step: 1, discrete: true, group: 'Numerics' },
   ],
   defaults(c, up) { const u = usage(c, up); return { material: c.struct.material, s_max: 1.3 * u.s1g, s_limit: u.n * u.s1g, fh_per_flight: u.fh }; },
@@ -388,7 +396,7 @@ const crack = {
       ],
       plots, warnings,
       models: [`${i.law} growth law` + (i.law === 'Forman' ? ' (coefficient normalised to the Paris constant at R = 0)' : i.law === 'NASGRO (simplified)' ? ' without the crack-closure function' : ''), `${i.geom}: ` + (i.geom === 'edge crack' ? 'Tada polynomial' : i.geom.includes('hole') ? 'Bowie solution curve-fit with secant finite-width correction' : 'secant (Feddersen) finite-width correction'), 'Simpson integration on a geometric crack-length grid'],
-      assumptions: ['Through-thickness crack under constant-amplitude equivalent loading; no retardation, no load interaction', 'Linear elastic fracture mechanics; failure at Kmax = Kc under the residual-strength stress', 'Paris constants are quoted at R ≈ 0 in laboratory air; environment and thickness effects need test data', DATA_NOTE],
+      assumptions: ['Through-thickness crack under constant-amplitude equivalent loading; no retardation, no load interaction', 'Linear elastic fracture mechanics; failure at Kmax = Kc under the residual-strength stress', 'Paris constants are quoted at R ≈ 0 in laboratory air; environment and thickness effects need test data', 'Walker and NASGRO exponents are generic placeholders, not sourced values (NASGRO/AFGROW material files should replace them); the default toughness is the plane-strain KIc', DATA_NOTE],
     };
   },
   convergence: { param: 'nSteps', label: 'Integration intervals', levels: [25, 50, 100, 200, 400], metric: 'growth_cycles' },
@@ -399,6 +407,8 @@ const crack = {
       N.check('Critical half-crack a = (Kc/σ)²/π in a wide panel', r.crit_crack_m, ac, 1e-4, 'Irwin: K = σ√(πa)'),
       N.check('Paris life against the closed-form integral', r.growth_cycles, exact, 1e-3, 'Closed-form integration of da/dN = C(Δσ√(πa))^m (finite-width effect < 0.1% at W = 100 m)'),
       N.check('Edge crack β → 1.122 for a short crack', beta('edge crack', 1e-9, 1, 1), 1.122, 1e-6, 'Tada, Paris & Irwin, Stress Analysis of Cracks Handbook'),
+      N.check('One-sided hole crack cannot outgrow the ligament W/2 − r', N.kv(crack.run({ ...CG_BASE, geom: 'crack from hole (one side)', W: 0.1, s_max: 10e6 })).crit_crack_m, 0.95 * 0.9 * (0.05 - 0.003), 1e-12, 'Geometry: central hole of radius r in a panel of width W'),
+      N.check('Both hole-crack configurations share the same ligament limit', aLimit('crack from hole (one side)', 0.1, 0.003), aLimit('cracks from hole (both sides)', 0.1, 0.003), 1e-12, 'Geometry'),
       N.check('Short crack at a hole: β → 1.12·Kt = 3.36', beta('crack from hole (one side)', 1e-9, 1e3, 0.003), 3.36, 3e-3, 'Bowie (1956); free-edge factor 1.12 × Kirsch Kt = 3'),
       N.check('Forman reduces to Paris when ΔK ≪ Kc at R = 0', growthRate('Forman', 0.01, 0, { C: 1e-11, m: 3, Kc: 1e6, dKth: 0 }), 1e-11 * 0.01 ** 3, 1e-6, 'Forman, Kearney & Engle (1967), normalised form'),
       N.check('Walker with γ = 1 is independent of R', growthRate('Walker', 10, 0.5, { C: 1e-11, m: 3, gamma: 1, dKth: 0 }), 1e-8, 1e-12, 'Walker (1970)'),
@@ -407,7 +417,9 @@ const crack = {
   calibration: { params: [{ key: 'gamma', min: 0.1, max: 1 }, { key: 'Kc_MPam', min: 10, max: 250 }], sweep: 's_max', target: 'growth_cycles', note: 'Measured crack-growth lives of panels at several stress levels or ratios calibrate the Walker exponent and the apparent toughness; for C and m, fit da/dN–ΔK coupon data externally and edit the material constants.' },
   recommend(res, i) {
     const o = res.outputs, out = [];
-    if (i.a_det >= o.crit_crack_m) out.push({ severity: 'critical', title: 'Detail is not inspectable', detail: `Critical crack ${(o.crit_crack_m * 1e3).toFixed(1)} mm is not larger than the detectable ${(i.a_det * 1e3).toFixed(1)} mm.`, action: 'Lower the stress, use a tougher alloy or thinner (plane-stress) gauge, add a crack stopper, or apply a more sensitive inspection method.', basis: 'Damage tolerance: detectable before critical' });
+    // the database toughness is the plane-strain KIc, a lower bound for sheet and thin plate: a verdict that rests on it is provisional
+    const lowerBound = !(i.Kc_MPam > 0);
+    if (i.a_det >= o.crit_crack_m) out.push({ severity: lowerBound ? 'warn' : 'critical', title: lowerBound ? 'Detail is not inspectable with the plane-strain toughness' : 'Detail is not inspectable', detail: `Critical crack ${(o.crit_crack_m * 1e3).toFixed(1)} mm is not larger than the detectable ${(i.a_det * 1e3).toFixed(1)} mm${lowerBound ? ' when the database KIc is used; thin gauges have a higher apparent toughness Kc' : ''}.`, action: (lowerBound ? 'Enter the measured Kc for the actual thickness first. If the result stands: l' : 'L') + 'ower the stress, use a tougher alloy or thinner (plane-stress) gauge, add a crack stopper, or apply a more sensitive inspection method.', basis: 'Damage tolerance: detectable before critical' });
     else if (o.inspection_interval_flights < 500) out.push({ severity: 'warn', title: 'Very short inspection interval', detail: `${o.inspection_interval_flights.toFixed(0)} flights (${o.inspection_interval_fh.toFixed(0)} h).`, action: 'Frequent inspections cost downtime and access damage: reduce the stress level, improve the detectable size (eddy current instead of visual) or redesign the detail.', basis: 'Detectable-to-critical period / scatter factor' });
     else out.push({ severity: 'info', title: 'Inspection programme', detail: `First inspection by ${o.threshold_insp_flights.toFixed(0)} flights, then every ${o.inspection_interval_flights.toFixed(0)} flights (${o.inspection_interval_fh.toFixed(0)} h).`, action: 'Align the interval with a scheduled check; a damage-tolerant detail can stay in service on condition instead of being retired at a fixed life, saving material and cost.', basis: 'Slow-crack-growth damage tolerance' });
     return out;
@@ -441,6 +453,7 @@ const probdt = {
     { key: 'C_sd', label: 'Log-standard deviation of growth coefficient C', unit: '-', default: 0.25, min: 0, max: 1.5, group: 'Distributions', help: 'Material scatter in da/dN; about 0.2–0.3 for aluminium plate' },
     { key: 'Kc_cov', label: 'Coefficient of variation of toughness', unit: '-', default: 0.08, min: 0, max: 0.4, group: 'Distributions' },
     { key: 'gamma', label: 'Walker exponent γ', unit: '-', default: 0.5, min: 0.1, max: 1, group: 'Loading' },
+    { key: 'Kc_MPam', label: 'Mean fracture toughness (0 = plane-strain KIc from database)', unit: 'MPa√m', default: 0, min: 0, group: 'Distributions', help: 'Use the same value as in the crack-growth analysis; KIc is conservative for thin gauges' },
     { key: 'life_flights', label: 'Service life', unit: 'flights', default: 60000, min: 1, group: 'Service' },
     { key: 'interval', label: 'Repeat inspection interval', unit: 'flights', default: 6000, min: 1, group: 'Service', help: 'Defaults to the deterministic interval from the crack-growth analysis' },
     { key: 'a50', label: 'Crack size with 50% probability of detection', unit: 'm', default: 0.003, min: 1e-5, group: 'Service' },
@@ -454,7 +467,7 @@ const probdt = {
     // G(a) = ∫ da / ΔK_eff^m is independent of C, so each sample costs two table look-ups
     const dKe = as.map((a) => beta(i.geom, a, i.W, i.r_hole) * (i.s_max / 1e6) * (1 - i.R) * Math.sqrt(Math.PI * a) * (1 - i.R) ** (i.gamma - 1)), inv = dKe.map((d) => d ** -m.parisM), G = N.cumtrapz(as, inv);
     const Kres = as.map((a) => beta(i.geom, a, i.W, i.r_hole) * (sRes / 1e6) * Math.sqrt(Math.PI * a)); for (let k = 1; k < ng; k++) Kres[k] = Math.max(Kres[k], Kres[k - 1] * (1 + 1e-12));
-    const u = N.rng(Math.round(i.seed)), n = Math.max(100, Math.round(i.nSamples)), lives = new Array(n), nI = Math.floor(i.life_flights / i.interval), Kc0 = m.KIc / 1e6;
+    const u = N.rng(Math.round(i.seed)), n = Math.max(100, Math.round(i.nSamples)), lives = new Array(n), nI = Math.floor(i.life_flights / i.interval), Kc0 = i.Kc_MPam > 0 ? i.Kc_MPam : m.KIc / 1e6;
     const ints = [0.25, 0.5, 1, 2, 4].map((f) => f * i.interval), pfI = ints.map(() => 0); let pf0 = 0, pfIn = 0;
     const missTo = (g0, C, Nf, itvIn) => { const itv = Math.max(itvIn, i.life_flights / 400); let miss = 1; for (let k = 1; k * itv < Math.min(Nf, i.life_flights) && miss > 1e-12; k++) miss *= 1 - pod(N.interp1(G, as, g0 + C * k * itv), i.a50, i.pod_sd); return miss; };
     for (let s = 0; s < n; s++) {
@@ -486,12 +499,12 @@ const probdt = {
       ],
       warnings,
       models: ['Monte Carlo with seeded generator', 'Walker-corrected Paris growth integrated once as G(a) and scaled per sample', 'Log-normal initial flaw and growth coefficient, normal toughness', 'Log-normal probability-of-detection curve; detected cracks are assumed repaired'],
-      assumptions: ['One crack per detail, independent inspections, perfect repair on detection', 'Constant-amplitude equivalent loading; load scatter is not sampled', 'Distribution parameters are user inputs: defaults are illustrative, not fleet data', DATA_NOTE],
+      assumptions: ['One crack per detail, independent inspections, perfect repair on detection', 'Constant-amplitude equivalent loading; load scatter is not sampled', 'Distribution parameters and the probability-of-detection curve (a50, log-sd) are user inputs: defaults are illustrative, not fleet or inspection-trial data (MIL-HDBK-1823A gives the model form only)', DATA_NOTE],
     };
   },
   convergence: { param: 'nSamples', label: 'Monte Carlo samples', levels: [500, 1000, 2000, 4000, 8000], metric: 'life_median_flights', hOf: (n) => 1 / Math.sqrt(n) },
   verify() {
-    const b = { material: 'Al 2024-T3', geom: 'centre crack', W: 100, r_hole: 0.003, s_max: 100e6, R: 0, s_limit: 0, a0_med: 0.001, a0_sd: 0, C_sd: 0, Kc_cov: 0, gamma: 0.5, life_flights: 1e9, interval: 1e9, a50: 0.003, pod_sd: 0.5, seed: 1, nSamples: 100 };
+    const b = { material: 'Al 2024-T3', geom: 'centre crack', W: 100, r_hole: 0.003, s_max: 100e6, R: 0, s_limit: 0, a0_med: 0.001, a0_sd: 0, C_sd: 0, Kc_cov: 0, gamma: 0.5, Kc_MPam: 0, life_flights: 1e9, interval: 1e9, a50: 0.003, pod_sd: 0.5, seed: 1, nSamples: 100 };
     const r = N.kv(probdt.run(b)), det = N.kv(crack.run({ ...CG_BASE, nSteps: 800 }));
     return [
       N.check('Zero scatter reproduces the deterministic crack-growth life', r.life_median_flights, det.growth_cycles, 2e-3, 'Consistency with the crack-growth analysis'),
@@ -519,13 +532,17 @@ const epfm = {
   inputs: [
     MAT,
     { key: 'geom', label: 'Crack configuration', type: 'select', options: ['centre crack', 'edge crack'], default: 'centre crack', group: 'Geometry' },
-    { key: 'a', label: 'Crack size (half-length or depth)', unit: 'm', default: 0.01, min: 1e-5, group: 'Geometry' },
+    { key: 'a', label: 'Crack size (half-length or depth)', unit: 'm', default: 0.01, min: 1e-5, group: 'Geometry', help: 'Defaults to half the critical half-length of a centre crack at the limit stress with the database KIc' },
     { key: 'W', label: 'Panel width', unit: 'm', default: 0.15, min: 0.005, group: 'Geometry' },
     { key: 'B', label: 'Thickness', unit: 'm', default: 0.003, min: 1e-4, group: 'Geometry' },
     { key: 'sigma', label: 'Gross stress', unit: 'Pa', default: 150e6, min: 0, group: 'Loading', help: 'Limit-load stress from Suite 2' },
     { key: 'Kmat_MPam', label: 'Material toughness (0 = KIc from database)', unit: 'MPa√m', default: 0, min: 0, group: 'Material' },
   ],
-  defaults(c, up) { const u = usage(c, up); return { material: c.struct.material, sigma: u.n * u.s1g, B: up.fea?.t_skin_root_m ?? Math.min(c.struct.t_skin_mm, 3) / 1e3, a: up.fatigue?.crit_crack_m ? 0.5 * up.fatigue.crit_crack_m : undefined }; },
+  defaults(c, up) {
+    // crack assessed by default: half the critical half-length of a centre crack at the limit stress, kept inside the default panel
+    const u = usage(c, up), m = mat(c.struct.material), sig = u.n * u.s1g, ac = sig > 0 ? (m.KIc / sig) ** 2 / Math.PI : NaN;
+    return { material: c.struct.material, sigma: sig, B: up.fea?.t_skin_root_m ?? Math.min(c.struct.t_skin_mm, 3) / 1e3, a: Number.isFinite(ac) ? N.clamp(0.5 * ac, 2e-4, 0.03) : undefined };
+  },
   run(i) {
     const m = mat(i.material), Kmat = i.Kmat_MPam > 0 ? i.Kmat_MPam * 1e6 : m.KIc, warnings = [], a = Math.min(i.a, (i.geom === 'edge crack' ? 0.65 : 0.47) * i.W);
     const Bmin = 2.5 * (Kmat / m.Sy) ** 2, pe = i.B >= Bmin, Ep = pe ? m.E / (1 - m.nu ** 2) : m.E, K = beta(i.geom, a, i.W, 1) * i.sigma * Math.sqrt(Math.PI * a);
@@ -545,13 +562,14 @@ const epfm = {
         kpi('K_eff_MPam', 'K with Irwin plastic-zone correction', Keff / 1e6, 'MPa√m'),
         kpi('J_Jm2', 'Energy release rate G = J (small-scale yielding)', J, 'J/m²'), kpi('J_dugdale_Jm2', 'J from the Dugdale strip-yield model', Jd, 'J/m²', undefined, 'Plane stress, infinite plate'),
         kpi('Jc_Jm2', 'Critical energy release rate Kc²/E′', (Kmat * Kmat) / Ep, 'J/m²'),
-        kpi('ctod_m', 'Crack-tip opening displacement (Irwin)', ctodI, 'm'), kpi('ctod_dugdale_m', 'Crack-tip opening displacement (Dugdale)', ctodD, 'm'),
+        kpi('ctod_m', 'Crack-tip opening displacement K²/(m·σy·E′)', ctodI, 'm', undefined, 'Small-scale-yielding estimate with m = 1 in plane stress and 2 in plane strain'), kpi('ctod_dugdale_m', 'Crack-tip opening displacement (Dugdale)', ctodD, 'm'),
         kpi('plastic_zone_m', 'Plastic-zone radius', rp, 'm', rp < 0.1 * a ? 'ok' : 'warn', pe ? 'Plane strain' : 'Plane stress'),
         kpi('B_plane_strain_m', 'Thickness needed for plane strain', Bmin, 'm'),
         kpi('Kr', 'Fracture ratio Kr', Kr, '-'), kpi('Lr', 'Load ratio Lr', Lr, '-'),
-        kpi('fad_reserve', 'Reserve factor on load (failure assessment diagram)', rf, '-', rf >= 1.5 ? 'ok' : rf >= 1 ? 'warn' : 'bad', 'Load multiplier to reach the assessment curve'),
+        kpi('fad_reserve', 'Reserve factor on load (failure assessment diagram)', rf, '-', rf >= 1.1 ? 'ok' : rf >= 1 ? 'warn' : 'bad', 'Load multiplier to reach the assessment curve; a cracked structure must still carry limit load, i.e. at least 1 when the stress entered is the limit-load stress'),
         kpi('sigma_fracture_Pa', 'LEFM fracture stress for this crack', sGriff, 'Pa'),
       ],
+      outputs: { plane_strain: pe ? 1 : 0 },
       plots: [{ type: 'line', title: 'Failure assessment diagram', xlabel: 'Load ratio Lr = σ_net/σ_y [-]', ylabel: 'Fracture ratio Kr = K/K_mat [-]', series: [{ name: 'Assessment curve (R6 Option 1)', x: [...Ls, LrMax], y: [...Ls.map(fadCurve), 0] }, { name: 'Loading line', x: [0, Lr * Math.min(rf, 50)], y: [0, Kr * Math.min(rf, 50)], style: 'dash' }, { name: 'Assessment point', x: [Lr], y: [Kr], style: 'points' }] }],
       warnings,
       models: ['Linear elastic fracture mechanics with secant / Tada geometry factors', 'Irwin plastic-zone correction', 'Dugdale strip-yield model', 'R6 Option 1 failure assessment curve with collapse cut-off at the flow stress'],
@@ -568,10 +586,12 @@ const epfm = {
       N.check('G = K²/E in plane stress', r.J_Jm2, (r.K_MPam * 1e6) ** 2 / m.E, 1e-10, 'Irwin relation'),
     ];
   },
-  recommend(res) {
+  recommend(res, i) {
     const o = res.outputs, out = [];
-    if (o.fad_reserve < 1) out.push({ severity: 'critical', title: 'The cracked section cannot carry the applied stress', detail: `Reserve factor ${o.fad_reserve.toFixed(2)} (Kr = ${o.Kr.toFixed(2)}, Lr = ${o.Lr.toFixed(2)}).`, action: o.Kr > o.Lr ? 'Fracture-dominated: use a tougher material or reduce the crack size limit through inspection.' : 'Collapse-dominated: add section or a redundant load path.', basis: 'Failure assessment diagram' });
-    else if (o.fad_reserve < 1.5) out.push({ severity: 'warn', title: 'Limited residual-strength margin', detail: `Reserve factor ${o.fad_reserve.toFixed(2)}.`, action: 'Tighten the inspection interval so that cracks are found well before this size.', basis: 'Failure assessment diagram' });
+    // with the database KIc in a gauge below the plane-strain thickness the fracture ratio is a lower bound, so a fracture-dominated failure is provisional
+    const lowerBound = !(i.Kmat_MPam > 0) && !o.plane_strain && o.Kr > o.Lr;
+    if (o.fad_reserve < 1) out.push({ severity: lowerBound ? 'warn' : 'critical', title: lowerBound ? 'Residual strength is short with the plane-strain toughness' : 'The cracked section cannot carry the applied stress', detail: `Reserve factor ${o.fad_reserve.toFixed(2)} (Kr = ${o.Kr.toFixed(2)}, Lr = ${o.Lr.toFixed(2)})${lowerBound ? '; the gauge is below the plane-strain thickness, where the apparent toughness exceeds KIc' : ''}.`, action: lowerBound ? 'Enter the measured Kc (or R-curve result) for this thickness; if the reserve stays below 1, use a tougher material or reduce the crack size limit through inspection.' : o.Kr > o.Lr ? 'Fracture-dominated: use a tougher material or reduce the crack size limit through inspection.' : 'Collapse-dominated: add section or a redundant load path.', basis: 'Failure assessment diagram; residual strength ≥ limit load' });
+    else if (o.fad_reserve < 1.1) out.push({ severity: 'advise', title: 'Thin residual-strength margin', detail: `Reserve factor ${o.fad_reserve.toFixed(2)} on the stress entered.`, action: 'Tighten the inspection interval so that cracks are found well before this size.', basis: 'Failure assessment diagram; residual strength ≥ limit load' });
     return out;
   },
 };

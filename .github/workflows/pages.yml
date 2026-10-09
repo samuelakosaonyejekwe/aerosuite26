@@ -1,0 +1,59 @@
+# Shared build-and-publish steps. Called by deploy.yml (on every push, with tests) and by snapshot.yml (on a
+# schedule, to refresh data/snapshot.json). Publishing is artifact-based: nothing is committed to the repository.
+name: Build and publish site
+on:
+  workflow_call:
+    inputs:
+      ref:
+        description: Commit to build (empty = the commit that triggered the caller)
+        type: string
+        default: ''
+      run-tests:
+        description: Run the test suite before building
+        type: boolean
+        default: true
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.ref }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - if: ${{ inputs.run-tests }}
+        run: npm test
+        env:
+          AERO_SLOW_MS: '30000' # shared runners are slower than a desktop; correctness checks are unaffected
+      - id: pages
+        uses: actions/configure-pages@v5
+      - name: Fetch the live-data snapshot (server-side, no keys)
+        env:
+          SNAPSHOT_PREV_URL: ${{ steps.pages.outputs.base_url }}/data/snapshot.json
+        run: node tools/snapshot.mjs
+      - run: node tools/build.mjs
+      - name: Assemble site
+        run: |
+          mkdir _site
+          cp -r index.html standalone.html manifest.webmanifest sw.js version.json mirrors.json _headers .nojekyll css js assets data _site/
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

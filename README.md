@@ -72,13 +72,39 @@ The suites are connected through a shared case (entered once) and a data bus of 
 
 ## Live data
 
-Requests go straight from each user's browser to public, CORS-enabled providers; no server of this
-project is involved, so freshness never depends on a particular machine being on. Feeds are cached on the
-device with a time-to-live and reused offline. Providers: Open-Meteo (weather, winds aloft, reanalysis,
-air quality, sea state, geocoding, terrain), OpenStreetMap/Overpass (aerodromes and runways), NOAA SWPC
-(space weather), Frankfurter/ECB (exchange rates), World Bank (inflation, lending rates), the open
-oil-prices dataset of EIA spot series (Brent, from which an indicative jet-fuel price is derived), the GB
-Carbon Intensity API, OpenAlex (literature) and GitHub (open-source tools).
+Data reaches the app by three independent routes, so freshness never depends on a particular machine:
+
+1. **Bundled with the app (no network).** Airports and runways worldwide come from the public-domain
+   [OurAirports](https://ourairports.com/data/) datasets, packed by `node tools/fetch-data.mjs` into
+   10° × 10° tiles under `js/data/airports/` (dataset date in `js/data/airports/index.json`) and read
+   through `js/core/airports.js` (`nearest`, `findByCode`, `search`). Re-run the tool to update. The
+   location page uses this database first; OpenStreetMap (© OpenStreetMap contributors, ODbL, through
+   the public Overpass servers) is an optional enrichment on request.
+2. **Straight from each user's browser** to public, CORS-enabled providers: Open-Meteo (weather, winds
+   aloft, reanalysis, air quality, sea state, geocoding, terrain), NOAA SWPC (space weather),
+   Frankfurter/ECB (exchange rates), World Bank (inflation, lending rates), the open oil-prices dataset
+   of EIA spot series (Brent), the GB Carbon Intensity API, OpenAlex (literature) and GitHub
+   (open-source tools).
+3. **Cloud snapshot.** `.github/workflows/snapshot.yml` runs `node tools/snapshot.mjs` every three
+   hours on GitHub's runners and republishes the site with a fresh `data/snapshot.json` (artifact
+   deploy; nothing is committed). It holds every location-independent feed, so the first screen after
+   opening is current even on browsers without background sync, and it is the only route to providers
+   that send no CORS headers:
+   - jet fuel — U.S. Gulf Coast kerosene-type jet fuel spot price, US EIA (public domain), read from the
+     FRED CSV export of series `DJFUELUSGULF` with the EIA history page as fall-back; USD/gal converted
+     to USD/kg at 0.804 kg/L;
+   - carbon — clearing price of the latest EU ETS allowance (EUA) primary auction, from the public
+     auction report of EEX, the EU common auction platform, in EUR/t CO₂, converted to USD with the
+     ECB reference rate;
+   - policy rates — effective federal funds rate (Federal Reserve, FRED `DFF`) and ECB deposit
+     facility rate (ECB Data Portal).
+   Each feed records its source, address, fetch time and success; a failed feed keeps its last good
+   value. Other hosts read the newest snapshot from the addresses in `mirrors.json`. No free, keyless
+   price series for sustainable aviation fuel was found, so SAF stays a stated multiple of jet fuel.
+
+Feeds are cached on the device with a time-to-live and reused offline. `tests/data.mjs` checks the
+airport database, the snapshot schema and the unit conversions (`--browser` adds the offline runway
+look-up in a real browser).
 
 ## Geometry and meshes
 

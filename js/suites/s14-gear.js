@@ -13,10 +13,16 @@ const kp = (key, label, value, unit, status, note) => ({ key, label, value, unit
 const thin = (a, n = 300) => { if (a.length <= n) return a; const s = (a.length - 1) / (n - 1); return N.range(n, (j) => a[Math.round(j * s)]); };
 const wheeled = (c) => (c.gear.type !== 'skid' ? true : 'This aircraft has skid gear: use the skid-landing and ground-stability analyses.');
 const landMass = (c) => Math.max(0.5 * c.mass.mtow_kg, c.mass.mtow_kg - 0.8 * c.mass.fuel_kg);
-/** Touchdown ground speed estimate [m/s]: 1.15·VS in landing configuration, or a run-on landing for rotorcraft. */
-const vTouch = (c, up) => (c.wing.S_m2 > 0 ? 1.15 * (up?.performance?.V_stall_ms && c.aero.CLmax_clean > 0 ? up.performance.V_stall_ms * Math.sqrt((c.aero.CLmax_clean / c.aero.CLmax_land) * (landMass(c) / c.mass.mtow_kg)) : Math.sqrt((2 * landMass(c) * G0) / (RHO0 * c.wing.S_m2 * c.aero.CLmax_land))) : 18);
+/**
+ * Touchdown speed estimate [m/s]: 1.15·VS in the landing configuration at landing mass, or a run-on landing for rotorcraft.
+ * Suite 5 publishes the approach speed 1.3·VS for the same condition at the runway; its V_stall_ms is the clean stall TAS at
+ * the analysis altitude and must not be used here.
+ */
+const vTouch = (c, up) => (c.wing.S_m2 > 0 ? (up?.performance?.V_app_ms > 0 ? (1.15 / 1.3) * up.performance.V_app_ms : 1.15 * Math.sqrt((2 * landMass(c) * G0) / (RHO0 * c.wing.S_m2 * c.aero.CLmax_land))) : 18);
 const headwind = (c) => { const s = c.site || {}; return (s.wind_ms || 0) * Math.cos(N.rad((s.wind_dir_deg || 0) - (s.runway_heading_deg ?? s.wind_dir_deg ?? 0))); };
 const OIL_RHO = FLUIDS['MIL-PRF-5606 hydraulic'].rho;
+/** Design descent velocity [m/s] of the former 14 CFR 23.473(d): 4.4·(W/S)^¼ ft/s (W/S in lb/ft²), between 7 and 10 ft/s. Null outside small aeroplanes. */
+const sinkPart23 = (c) => (c && c.wing.S_m2 > 0 && c.mass.mtow_kg > 150 && c.mass.mtow_kg <= 5700 ? 0.3048 * N.clamp(4.4 * ((landMass(c) * G0) / c.wing.S_m2 / 47.880259) ** 0.25, 7, 10) : null);
 
 // ---- oleo-pneumatic strut model shared by the drop and taxi analyses ---------------------------
 const STRUT_INPUTS = [
@@ -70,15 +76,16 @@ const drop = {
   applicable: wheeled,
   inputs: [
     ...STRUT_INPUTS,
-    num('sink', 'Sink speed at touchdown', 'm/s', 3.05, 0.05, 15, 'Touchdown', '3.05 m/s (10 ft/s) is the usual transport limit case; 1.8 m/s (6 ft/s) at maximum take-off mass'),
-    num('lift_frac', 'Wing or rotor lift / weight during the impact', '-', 1, 0, 1.2, 'Touchdown', '1.0 for transport aeroplanes; 2/3 is customary for rotorcraft and light aircraft drop tests'),
+    num('sink', 'Sink speed at touchdown', 'm/s', 3.05, 0.05, 15, 'Touchdown', 'Transport aeroplanes: 3.05 m/s (10 ft/s) limit descent velocity at design landing weight and 1.83 m/s (6 ft/s) at design take-off weight (14 CFR 25.473(a)). Small aeroplanes (former 14 CFR 23.473(d)): 4.4·(W/S)^¼ ft/s with W/S in lb/ft², not below 7 ft/s (2.13 m/s) nor above 10 ft/s (3.05 m/s)'),
+    num('lift_frac', 'Wing or rotor lift / weight during the impact', '-', 1, 0, 1.2, 'Touchdown', 'Lift not exceeding weight for transport aeroplanes (14 CFR 25.473(b)); not more than two-thirds of weight for small aeroplanes (former 14 CFR 23.473(e)) and rotorcraft (14 CFR 27.473(a))'),
     num('N_design', 'Design ground reaction factor', '-', 1.5, 0.5, 8, 'Limits', 'Typically 1.2–1.5 for large transports, about 2 for commuter aircraft and helicopters, 2–3 for light aircraft and more for small unmanned aircraft (ground load / static load)'),
     num('strut_eff_ref', 'Strut efficiency assumed by the energy method', '-', 0.8, 0.3, 0.95, 'Limits'),
     num('t_end', 'Simulated time', 's', 0.9, 0.02, 10, 'Numerics'), num('nSteps', 'Time steps', '', 4000, 400, 400000, 'Numerics', '', { step: 1, discrete: true }),
   ],
   defaults: (c) => ({ ...strutDefaults(c), sink: c.gear.sink_ms, lift_frac: c.meta.type === 'helicopter' || c.mass.mtow_kg <= 5700 ? 0.667 : 1, N_design: c.mass.mtow_kg > 30000 ? 1.5 : c.mass.mtow_kg > 5700 ? 2 : c.mass.mtow_kg > 150 ? 3 : 5, strut_eff_ref: c.gear.strut_eff, t_end: N.clamp((7 * c.gear.stroke_m) / Math.max(0.2, c.gear.sink_ms), 0.15, 3) }),
-  run(i) {
+  run(i, ctx) {
     const gm = strutGeom(i), n = Math.round(i.nSteps), Ao = sizeOrifice(i, gm, i.sink, Math.max(400, Math.round(n / 2))), r = dropSim(i, gm, Ao, i.sink, n), warnings = [];
+    const vRef = sinkPart23(ctx?.case), ruleNote = vRef ? [`For this wing loading the former 14 CFR 23.473(d) design descent velocity is ${vRef.toFixed(2)} m/s; ${i.sink.toFixed(2)} m/s is analysed`] : [];
     // energy method (Currey): V²/2g + (1 − L)(S + St) = ηs·N·S + ηt·N·St with a tyre efficiency of 0.47
     const St = (r.Nr * gm.W) / gm.kt, kl = 1 - i.lift_frac, Sreq = (i.sink ** 2 / (2 * G0) - (0.47 * r.Nr - kl) * St) / Math.max(1e-9, i.strut_eff_ref * r.Nr - kl), nz = i.lift_frac + N.amax(r.Fst) / gm.W;
     const sinks = [0.5, 0.75, 1, 1.25, 1.5].map((f) => f * i.sink), sw = sinks.map((v) => dropSim(i, gm, Ao, v, n));
@@ -104,7 +111,7 @@ const drop = {
         { type: 'line', title: 'Ground reaction factor versus sink speed', xlabel: 'Sink speed [m/s]', ylabel: 'Reaction factor [-]', series: [{ name: 'Simulated', x: sinks, y: sw.map((v) => v.Nr), style: 'line+points' }], annotations: [{ y: i.N_design, label: 'Design' }, { x: i.sink, label: 'Design sink speed' }] },
       ],
       warnings, models: ['Polytropic air spring sized from static pressure and compression ratios', 'Velocity-squared orifice damping with stronger recoil damping', 'Linear tyre spring with light damping', 'Two-degree-of-freedom drop, fixed-step RK4', 'Orifice area by golden-section search for minimum peak ground load'],
-      assumptions: ['Vertical motion of one strut with a fixed share of aircraft mass; no pitch, spin-up or spring-back drag loads', 'Constant orifice (no metering pin), no seal or bearing friction', 'Lift constant during the stroke', 'Strut and airframe rigid apart from the shock absorber and tyre'],
+      assumptions: ['Vertical motion of one strut with a fixed share of aircraft mass; no pitch, spin-up or spring-back drag loads', 'Constant orifice (no metering pin), no seal or bearing friction', 'Lift constant during the stroke', 'Strut and airframe rigid apart from the shock absorber and tyre', 'Strut pressures, compression ratios, the design reaction factor and the 0.47 tyre efficiency of the energy method are typical values, not sourced data', ...ruleNote],
     };
   },
   convergence: { param: 'nSteps', label: 'Time steps', levels: [1000, 2000, 4000, 8000], metric: 'gear_load_N' },
@@ -117,13 +124,15 @@ const drop = {
       N.check('Maximum stroke from the energy integral (undamped)', r.sMax, sRef, 2e-3, 'Energy conservation with a polytropic air spring in series with the tyre'),
       N.check('Static position from the compression ratios', gm.Fa(gm.sStatic) / gm.W, 4 ** 0.3, 1e-9, 'Isothermal static pressure ratio 4, polytropic exponent 1.3'),
       N.check('Energy audit of a damped drop', d.eErr, 0, 5e-3, 'Kinetic + potential = stored + dissipated'),
+      N.check('Small-aeroplane design descent velocity 4.4·(W/S)^¼ ft/s at 16 lb/ft²', sinkPart23({ wing: { S_m2: 10 }, mass: { mtow_kg: (16 * 47.880259 * 10) / G0, fuel_kg: 0 } }), 0.3048 * 8.8, 1e-12, 'Former 14 CFR 23.473(d)'),
+      N.check('Small-aeroplane design descent velocity is capped at 10 ft/s', sinkPart23({ wing: { S_m2: 10 }, mass: { mtow_kg: (60 * 47.880259 * 10) / G0, fuel_kg: 0 } }), 3.048, 1e-12, 'Former 14 CFR 23.473(d)'),
     ];
   },
   calibration: { params: [{ key: 'Cd', min: 0.4, max: 1 }, { key: 'n_poly', min: 1, max: 1.4 }, { key: 'k_tyre', min: 100, max: 1e8 }], sweep: 'sink', target: 'gear_load_factor', note: 'Supply measured reaction factor against sink speed from landing-gear drop tests.' },
   recommend(res, i) {
     const o = res.outputs, out = [];
     if (o.gear_load_factor > i.N_design) out.push({ severity: 'critical', title: 'Landing load exceeds the design reaction factor', detail: `${o.gear_load_factor.toFixed(2)} against ${i.N_design.toFixed(2)} at ${i.sink.toFixed(2)} m/s sink.`, action: 'Lengthen the stroke, re-tune the orifice (or add a metering pin), or lower the sink-speed requirement; pass the peak load to Suite 2 and the exceedance to Suite 9.', basis: 'Limit landing condition' });
-    if (o.stroke_used_m > 0.95 * i.stroke) out.push({ severity: 'warn', title: 'Little stroke reserve', detail: `${((100 * o.stroke_used_m) / i.stroke).toFixed(0)}% of the stroke is used.`, action: 'Reserve-energy landings (about 1.2 times the limit sink speed) need remaining stroke: raise the air-spring compression ratio or the stroke.', basis: 'Reserve energy absorption' });
+    if (o.stroke_used_m > 0.95 * i.stroke) out.push({ severity: 'warn', title: 'Little stroke reserve', detail: `${((100 * o.stroke_used_m) / i.stroke).toFixed(0)}% of the stroke is used.`, action: 'Reserve-energy landings (1.2 times the limit sink speed, i.e. 1.44 times the energy) need remaining stroke: raise the air-spring compression ratio or the stroke.', basis: 'Reserve energy absorption: 12 ft/s against the 10 ft/s limit descent velocity (14 CFR 25.723(b))' });
     if (o.strut_efficiency < 0.7) out.push({ severity: 'advise', title: 'Strut efficiency is low', detail: `η = ${o.strut_efficiency.toFixed(2)}; good oleos reach 0.8–0.9.`, action: 'A metering pin or better orifice sizing flattens the load–stroke curve, lowering peak load and therefore gear and attachment mass.', basis: 'Load–stroke efficiency' });
     else out.push({ severity: 'info', title: 'Peak load sets structural mass', detail: `Peak ground load ${(o.gear_load_N / 1e3).toFixed(1)} kN per main gear at η = ${o.strut_efficiency.toFixed(2)}.`, action: 'Every reduction in reaction factor lowers gear, wing-attachment and fuselage loads; use this load in Suite 2 and Suite 23 mass trades.', basis: 'Landing load factor' });
     return out;
@@ -143,7 +152,7 @@ function brakeSim(i, mode = i.mode) {
   const f = (y) => {
     const [V, w, , Tb] = y, Va = V + i.headwind, q = 0.5 * rho * Va * Math.abs(Va), Nn = Math.max(0, W - q * i.CLS), Fz = (i.W_frac * Nn) / nb, slip = N.clamp((V - w * r) / Math.max(V, 0.05), 0, 1);
     let Fx, wd, Tc;
-    if (mode === BMODE[2]) { Fx = Math.min(i.T_max / r, mc.mu(mc.sp) * Fz); wd = (V - 0) * 0; Tc = Fx * r; return [(-nb * Fx - q * i.CDS - i.mu_roll * Nn * (1 - i.W_frac)) / i.mass, 0, V, 0, nb * Fx * V / nb]; }
+    if (mode === BMODE[2]) { Fx = Math.min(i.T_max / r, mc.mu(mc.sp) * Fz); return [(-nb * Fx - q * i.CDS - i.mu_roll * Nn * (1 - i.W_frac)) / i.mass, 0, V, 0, Fx * V]; }
     Fx = mc.mu(slip) * Fz; Tc = mode === BMODE[0] ? i.T_max * N.clamp(1 - (slip - st) / band, 0, 1) : i.T_max;
     wd = (Fx * r - Tb) / i.I_wheel; if (w <= 0 && wd < 0) wd = 0;
     return [(-nb * Fx - q * i.CDS - i.mu_roll * Nn * (1 - i.W_frac)) / i.mass, wd, V, (Tc - Tb) / tauB, Tb * Math.max(w, 0)];
@@ -162,6 +171,7 @@ function brakeSim(i, mode = i.mode) {
   T.push(t + tRem); Vh.push(0); Sh.push(Sh[Sh.length - 1]); Xh.push(x); Th.push(y[3]);
   return { T, Vh, Sh, Xh, Th, dist: x, time: t + tRem, Eb, muMean: muSum / Math.max(t, 1e-9), mc, V0, steps, decMean: V0 / (t + tRem) };
 }
+const VT_CASE = { wing: { S_m2: 16 }, aero: { CLmax_clean: 1.5, CLmax_land: 2 }, mass: { mtow_kg: 1000, fuel_kg: 125 } };
 const brake = {
   id: 'brake', title: 'Braking, anti-skid and stopping distance', fidelity: 'numerical',
   summary: 'Ground roll from touchdown to stop with wheel-slip dynamics on dry, wet, snow or icy runways, with and without anti-skid, plus brake energy, heat-sink temperature and the hydroplaning speed.',
@@ -172,12 +182,12 @@ const brake = {
     num('rho', 'Air density', 'kg/m³', 1.225, 0.3, 1.5, 'Runway'), num('CDS', 'Drag area on the ground (CD·S, spoilers out)', 'm²', 12, 0, 500, 'Aircraft'), num('CLS', 'Residual lift area on the ground (CL·S)', 'm²', 12, -100, 2000, 'Aircraft'),
     num('W_frac', 'Share of weight on braked wheels', '-', 0.9, 0.1, 1, 'Aircraft'), num('mu_roll', 'Rolling friction of unbraked wheels', '-', 0.02, 0, 0.3, 'Runway'),
     sel('surface', 'Runway surface condition', SURFS, 'Dry', 'Runway', 'Sets the shape of the friction–slip curve (generic Burckhardt coefficients)'),
-    num('mu_peak', 'Peak tyre friction coefficient', '-', 0.7, 0.02, 1.2, 'Runway', 'Aircraft tyres: dry ≈ 0.6–0.8, wet ≈ 0.3–0.5, compacted snow ≈ 0.2, ice ≈ 0.05 (typical)'),
+    num('mu_peak', 'Peak tyre friction coefficient', '-', 0.7, 0.02, 1.2, 'Runway', 'Aircraft tyres: dry ≈ 0.6–0.8, wet ≈ 0.3–0.5, compacted snow ≈ 0.2, ice ≈ 0.05 (typical values). 14 CFR 25.109(d)(1) credits a wet grooved or porous-friction-course runway with 70% of the dry braking coefficient'),
     sel('mode', 'Brake control', BMODE, BMODE[0], 'Brakes'), num('n_brakes', 'Braked wheels', '', 4, 1, 40, 'Brakes', '', { step: 1, discrete: true }),
     num('T_max', 'Brake torque applied per wheel', 'N·m', 28000, 0.001, 5e6, 'Brakes', 'Default corresponds to a medium autobrake setting (about 0.3 g); maximum-effort torque is roughly twice this'), num('r_tyre', 'Tyre rolling radius', 'm', 0.56, 0.01, 2, 'Brakes'), num('I_wheel', 'Wheel, tyre and brake rotor inertia', 'kg·m²', 20, 1e-7, 5000, 'Brakes'),
     sel('heat_sink', 'Brake heat-sink material', Object.keys(HS), 'Carbon', 'Brakes', 'Carbon stores about 2.5 times more heat per kg than steel and wears more slowly'),
     num('m_hs', 'Heat-sink mass per brake', 'kg', 60, 1e-4, 2000, 'Brakes'), num('T0', 'Initial brake temperature', 'K', 320, 230, 800, 'Brakes'), num('T_limit', 'Heat-sink temperature limit', 'K', 1150, 400, 2500, 'Brakes', 'Fuse plugs release near 450–470 K at the wheel rim; heat-sink limits depend on the material (typical values)'),
-    num('p_tyre', 'Tyre inflation pressure', 'Pa', 1.4e6, 3e4, 2.5e6, 'Brakes', 'For the hydroplaning speed'), num('runway_m', 'Runway length available for the ground roll', 'm', 2000, 20, 6000, 'Runway'),
+    num('p_tyre', 'Tyre inflation pressure', 'Pa', 1.4e6, 3e4, 2.5e6, 'Brakes', 'For the dynamic hydroplaning speed: 9·√p knots (p in psi) for a rotating tyre (NASA TN D-2056), 7.7·√p for a non-rotating tyre at touchdown (NASA TN D-8202)'), num('runway_m', 'Runway length available for the ground roll', 'm', 2000, 20, 6000, 'Runway'),
     num('nRes', 'Time steps per wheel-slip time constant', '', 2, 1, 32, 'Numerics', '', { step: 1, discrete: true }),
   ],
   defaults: (c, up, d) => {
@@ -197,7 +207,7 @@ const brake = {
     return {
       kpis: [
         kp('stop_dist_m', 'Braked ground roll', r.dist, 'm', r.dist <= 0.85 * i.runway_m ? 'ok' : r.dist <= i.runway_m ? 'warn' : 'bad', `Available ${i.runway_m.toFixed(0)} m`), kp('stop_time_s', 'Time to stop', r.time, 's'),
-        kp('decel_mean_g', 'Mean deceleration', r.decMean / G0, 'g'), kp('antiskid_eff', 'Mean friction used / peak friction', eff, '-', !lockI ? undefined : eff > 0.85 ? 'ok' : 'warn', lockI ? 'Friction-limited stop' : 'Torque-limited stop: the tyres are not at their friction limit'),
+        kp('decel_mean_g', 'Mean deceleration', r.decMean / G0, 'g'), kp('antiskid_eff', 'Mean friction used / peak friction', eff, '-', !lockI ? undefined : eff >= 0.8 ? 'ok' : 'warn', lockI ? 'Friction-limited stop; 0.80 is the efficiency credited to a fully modulating anti-skid system on a wet runway (14 CFR 25.109(c)(2); 0.50 quasi-modulating, 0.30 on-off)' : 'Torque-limited stop: the tyres are not at their friction limit'),
         kp('stop_dist_alt_m', `Ground roll ${alts.toLowerCase()}`, alt.dist, 'm'), kp('stop_dist_ideal_m', 'Ground roll at peak friction (ideal)', ideal.dist, 'm'),
         kp('brake_energy_J', 'Energy absorbed per brake', r.Eb, 'J'), kp('brake_energy_frac', 'Share of kinetic energy taken by the brakes', (nb * r.Eb) / KE, '-'),
         kp('brake_temp_K', 'Heat-sink temperature after the stop', Tb, 'K', Tb < 0.85 * i.T_limit ? 'ok' : Tb < i.T_limit ? 'warn' : 'bad', `Limit ${i.T_limit.toFixed(0)} K`), kp('brake_dT_K', 'Heat-sink temperature rise', dT, 'K'),
@@ -209,8 +219,8 @@ const brake = {
         { type: 'line', title: 'Wheel slip during the stop', xlabel: 'Time [s]', ylabel: 'Slip ratio [-]', series: [{ name: i.mode, x: r.T, y: r.Sh }], annotations: [{ y: r.mc.sp, label: 'Peak friction' }] },
         { type: 'line', title: 'Tyre friction versus slip', xlabel: 'Slip ratio [-]', ylabel: 'Friction coefficient [-]', series: SURFS.map((s) => { const m = muCurve({ surface: s, mu_peak: s === i.surface ? i.mu_peak : SURF[s][3] }), x = N.linspace(0, 1, 60); return { name: s + (s === i.surface ? ' (selected)' : ''), x, y: x.map(m.mu) }; }) },
       ],
-      warnings, models: ['Point-mass ground roll with aerodynamic drag and residual lift', 'Wheel spin dynamics with Burckhardt friction–slip curve scaled to the stated peak (generic curve shape)', 'Proportional slip-limiting anti-skid with first-order brake lag', 'Lumped heat-sink temperature rise', 'Horne hydroplaning speed 9·√p (kt, psi)'],
-      assumptions: ['Brakes applied at touchdown speed on all braked wheels equally; no reverse thrust', 'Constant vertical load split between braked and unbraked wheels', 'Friction curve independent of speed; no hydroplaning dynamics in the roll itself', 'All brake energy stays in the heat sink during the stop (no cooling)'],
+      warnings, models: ['Point-mass ground roll with aerodynamic drag and residual lift', 'Wheel spin dynamics with Burckhardt friction–slip curve scaled to the stated peak (generic curve shape)', 'Proportional slip-limiting anti-skid with first-order brake lag', 'Lumped heat-sink temperature rise', 'Horne hydroplaning speed 9·√p (kt, psi; NASA TN D-2056) and 7.7·√p for a non-rotating tyre (NASA TN D-8202)'],
+      assumptions: ['Brakes applied at touchdown speed on all braked wheels equally; no reverse thrust', 'Constant vertical load split between braked and unbraked wheels', 'Friction curve independent of speed; no hydroplaning dynamics in the roll itself', 'All brake energy stays in the heat sink during the stop (no cooling)', 'Peak friction levels, the ice friction curve, brake torque, heat-sink mass, specific heat and temperature limit are typical values, not sourced data for a specific tyre or brake'],
     };
   },
   convergence: { param: 'nRes', label: 'Steps per wheel-slip time constant', levels: [1, 2, 4, 8], metric: 'stop_dist_m' },
@@ -222,6 +232,8 @@ const brake = {
       N.check('Locked-wheel distance V²/(2·μ_lock·g)', lk.dist, 2500 / (2 * lk.mc.lock * G0), 0.01, 'Sliding friction after rapid lock-up'),
       N.check('Torque-limited stop: brakes absorb the kinetic energy less tyre slip work', (2 * as.Eb) / (0.5 * 10000 * 2500), 1 - N.mean(as.Sh.slice(2, -2)), 0.02, 'Energy split between brake and tyre contact patch'),
       N.check('Horne hydroplaning speed at 200 psi', o.hydroplane_ms / 0.514444, 9 * Math.sqrt(200), 1e-9, 'Horne & Dreher, NASA TN D-2056'),
+      N.check('Touchdown speed is 1.15/1.3 of the published approach speed, not the clean stall TAS at altitude', vTouch(VT_CASE, { performance: { V_app_ms: 65, V_stall_ms: 148 } }), (1.15 / 1.3) * 65, 1e-12, 'V_app = 1.3·VS and V_td = 1.15·VS in the landing configuration'),
+      N.check('Touchdown speed without upstream data: 1.15·VS at landing mass, sea level, landing CLmax', vTouch(VT_CASE, {}), 1.15 * Math.sqrt((2 * 900 * G0) / (RHO0 * 16 * 2)), 1e-12, 'Stall speed equation'),
     ];
   },
   calibration: { params: [{ key: 'mu_peak', min: 0.02, max: 1.2 }, { key: 'CDS', min: 0, max: 200 }], sweep: 'V_td', target: 'stop_dist_m', note: 'Supply measured braked ground roll against brake-application speed from landing or rejected take-off tests.' },
@@ -297,7 +309,7 @@ const ground = {
         { type: 'line', title: 'Gear footprint and centre of gravity', xlabel: 'Lateral position [m]', ylabel: 'Longitudinal position (forward +) [m]', equalAspect: true, series: [{ name: 'Contact points', x: skid ? [-r.hT, -r.hT, r.hT, r.hT, -r.hT] : r.tri ? [-r.hT, 0, r.hT, -r.hT] : [-r.hT, 0, r.hT, -r.hT], y: skid ? [r.aAux, -r.aMain, -r.aMain, r.aAux, r.aAux] : r.tri ? [-r.aMain, r.aAux, -r.aMain, -r.aMain] : [r.aMain, -r.aAux, r.aMain, r.aMain], style: 'line+points' }, { name: 'Centre of gravity', x: [0], y: [0], style: 'points' }] },
       ],
       warnings, models: ['Rigid-body statics for wheel loads with braking load transfer', 'Turnover and tip-back geometry', 'Linear two-degree-of-freedom (bicycle) directional model with tyre cornering stiffness', 'Friction-limited side load'],
-      assumptions: ['Level, rigid ground and rigid gear', 'Cornering stiffness proportional to vertical load; aerodynamic yaw stiffness and damping neglected (conservative at low speed)', 'Pavement loading reported as contact pressure and single-wheel load only', 'Skid gear treated as four contact points'],
+      assumptions: ['Level, rigid ground and rigid gear', 'Cornering stiffness proportional to vertical load; aerodynamic yaw stiffness and damping neglected (conservative at low speed)', 'Pavement loading reported as contact pressure and single-wheel load only', 'Skid gear treated as four contact points', 'Default CG height, nose-wheel load share, tyre rating, cornering stiffness and side friction are typical values; the 63° turnover limit is customary practice'],
     };
   },
   verify() {
@@ -376,7 +388,7 @@ const taxi = {
         { type: 'line', title: 'Acceleration spectrum', xlabel: 'Frequency [Hz]', ylabel: 'Amplitude [g]', series: [{ name: 'Sprung-mass acceleration', x: sp.f.slice(0, nf), y: sp.amp.slice(0, nf) }], annotations: [{ x: r.fB, label: 'Bounce' }] },
       ],
       warnings, models: ['Two-degree-of-freedom leg model with the nonlinear oleo and linear tyre', 'Point-contact tyre following the profile', 'Sum-of-sines random profile from a −2 slope displacement spectrum (ISO 8608 form), seeded', 'Fixed-step RK4'],
-      assumptions: ['One leg with a fixed share of aircraft mass: no pitch or roll coupling, no fuselage flexibility (cockpit acceleration is usually higher)', 'No strut seal friction: real oleos can stay locked over small roughness, leaving only the tyre as a spring', 'Constant speed, no lift', 'Road-class roughness scale used as a generic stand-in for measured runway profiles'],
+      assumptions: ['One leg with a fixed share of aircraft mass: no pitch or roll coupling, no fuselage flexibility (cockpit acceleration is usually higher)', 'No strut seal friction: real oleos can stay locked over small roughness, leaving only the tyre as a spring', 'Constant speed, no lift', 'Road-class roughness scale used as a generic stand-in for measured runway profiles; comfort and load thresholds are typical values'],
     };
   },
   convergence: { param: 'nSteps', label: 'Time steps', levels: [2000, 4000, 8000, 16000], metric: 'acc_rms_g' },
@@ -502,6 +514,8 @@ function skidSim(i, gm, V, nSteps = i.nSteps) {
   }
   return { T, Z, F, zMax, Fmax, set: dp, Eabs: Epk, Eplastic: Eabs, plastic: dp > 0 };
 }
+/** Sink speed [m/s] at which the peak elastic load just reaches the plastic collapse load: ½mV² + (W − L)·δy = ½k·δy². */
+const skidYieldSink = (gm, mass, liftFrac) => Math.sqrt(Math.max(0, (gm.k * gm.dy ** 2 - 2 * mass * G0 * (1 - liftFrac) * gm.dy) / mass));
 const skidPeak = (i, gm, V) => { const W = i.mass * G0, net = W * (1 - i.lift_frac), KE = 0.5 * i.mass * V * V, de = (net + Math.sqrt(net * net + 2 * gm.k * KE)) / gm.k; return de <= gm.dy ? de : gm.Pp > net ? (KE + gm.Pp ** 2 / (2 * gm.k)) / (gm.Pp - net) : Infinity; };
 const skid = {
   id: 'skid', title: 'Skid-gear landing: energy absorption by cross-tube bending', fidelity: 'reduced-order',
@@ -509,16 +523,19 @@ const skid = {
   equations: ['Landing impact energy equations', 'Newton–Euler equations', 'Structural impact equations'],
   applicable: (c) => (c.gear.type === 'skid' ? true : 'This aircraft has wheeled gear: use the oleo-pneumatic drop analysis.'),
   inputs: [
-    num('mass', 'Landing mass', 'kg', 6.3, 0.01, 2e4, 'Aircraft'), num('sink', 'Sink speed at touchdown', 'm/s', 1.5, 0.05, 10, 'Touchdown', 'About 2 m/s (6.5 ft/s) limit drop for small rotorcraft'),
-    num('lift_frac', 'Rotor lift / weight during the impact', '-', 0.667, 0, 1, 'Touchdown', 'Two-thirds is customary for rotorcraft limit drop tests'),
+    num('mass', 'Landing mass', 'kg', 6.3, 0.01, 2e4, 'Aircraft'), num('sink', 'Sink speed at touchdown', 'm/s', 1.5, 0.05, 10, 'Touchdown', 'Certified rotorcraft: the 13 in limit drop of 14 CFR 27.725(a) gives 2.54 m/s at contact, and the 8 in minimum 2.0 m/s. The 1.5 m/s default is an illustrative value for a small unmanned multirotor outside that basis'),
+    num('lift_frac', 'Rotor lift / weight during the impact', '-', 0.667, 0, 1, 'Touchdown', 'Rotor lift may not exceed two-thirds of the design maximum weight (14 CFR 27.473(a))'),
     num('n_legs', 'Cross-tube ends carrying load', '', 4, 2, 8, 'Gear', 'Two cross tubes, each bending at both ends', { step: 1, discrete: true }), num('ell', 'Bending arm from fuselage attachment to skid', 'm', 0.16, 0.01, 3, 'Gear'),
     num('D_tube', 'Cross-tube outer diameter', 'm', 0.012, 0.001, 0.3, 'Gear'), num('t_ratio', 'Wall thickness / diameter', '-', 0.1, 0.02, 0.5, 'Gear'), sel('mat', 'Tube material', Object.keys(METALS), 'Al 7075-T6', 'Gear'),
-    num('clearance', 'Deflection available before the fuselage touches', 'm', 0.08, 0.005, 2, 'Limits'), num('reserve', 'Reserve-energy factor on drop energy', '-', 1.5, 1, 3, 'Limits', '1.5 × limit energy is the customary reserve-energy drop'),
+    num('clearance', 'Deflection available before the fuselage touches', 'm', 0.08, 0.005, 2, 'Limits'), num('reserve', 'Reserve-energy factor on drop energy', '-', 1.5, 1, 3, 'Limits', 'The reserve-energy drop height is 1.5 times the limit drop height (14 CFR 27.727(a))'),
     num('t_end', 'Simulated time', 's', 0.5, 0.01, 5, 'Numerics'), num('nSteps', 'Time steps', '', 4000, 200, 400000, 'Numerics', '', { step: 1, discrete: true }),
   ],
   defaults: (c) => {
-    const W = c.mass.mtow_kg * G0, ell = Math.max(0.03, 0.8 * (c.gear.track_m || 0.3)), m = METALS['Al 7075-T6'], tr = 0.1, D = Math.cbrt((6 * ((3 * W) / 4) * ell) / (m.Sy * (1 - (1 - 2 * tr) ** 3)));
-    return { mass: c.mass.mtow_kg, sink: c.gear.sink_ms, ell, D_tube: D, t_ratio: tr, clearance: Math.max(0.03, 0.4 * ell), t_end: N.clamp((40 * (c.gear.stroke_m || 0.03)) / Math.max(0.2, c.gear.sink_ms), 0.1, 3) };
+    const W = c.mass.mtow_kg * G0, ell = Math.max(0.03, 0.8 * (c.gear.track_m || 0.3)), m = METALS['Al 7075-T6'], tr = 0.1, sink = c.gear.sink_ms;
+    // start from a collapse load of three times the weight, then grow the tube until the limit landing stays elastic with 10% margin on sink speed
+    let D = Math.cbrt((6 * ((3 * W) / 4) * ell) / (m.Sy * (1 - (1 - 2 * tr) ** 3)));
+    for (let k = 0; k < 60; k++) { const g = skidGeom({ mat: 'Al 7075-T6', D_tube: D, t_ratio: tr, n_legs: 4, ell }); if (skidYieldSink(g, c.mass.mtow_kg, 0.667) >= 1.1 * sink) break; D *= 1.02; }
+    return { mass: c.mass.mtow_kg, sink, ell, D_tube: D, t_ratio: tr, clearance: Math.max(0.03, 0.4 * ell), t_end: N.clamp((40 * (c.gear.stroke_m || 0.03)) / Math.max(0.2, c.gear.sink_ms), 0.1, 3) };
   },
   run(i) {
     const gm = skidGeom(i), W = i.mass * G0, r = skidSim(i, gm, i.sink), Vr = i.sink * Math.sqrt(i.reserve), rr = skidSim(i, gm, Vr), nz = r.Fmax / W, warnings = [], an = skidPeak(i, gm, i.sink);
@@ -532,7 +549,7 @@ const skid = {
         kp('stroke_used_m', 'Peak gear deflection', r.zMax, 'm', r.zMax <= i.clearance ? 'ok' : 'bad', `Clearance ${i.clearance.toFixed(3)} m`), kp('permanent_set_m', 'Permanent set after the landing', r.set, 'm', r.plastic ? 'warn' : 'ok'),
         kp('absorbed_J', 'Energy absorbed by the gear at peak deflection', r.Eabs, 'J'), kp('plastic_work_J', 'Energy dissipated plastically', r.Eplastic, 'J'), kp('yield_load_factor', 'Reaction factor at first yield', gm.Py / W, '-'), kp('collapse_load_factor', 'Reaction factor at full plastic hinge', gm.Pp / W, '-'),
         kp('stiffness_Npm', 'Vertical gear stiffness', gm.k, 'N/m'), kp('deflection_reserve_m', 'Deflection in the reserve-energy landing', rr.zMax, 'm', rr.zMax <= i.clearance ? 'ok' : 'bad'),
-        kp('sink_first_yield_ms', 'Sink speed at which the tubes start to yield plastically', Math.sqrt(Math.max(0, (gm.k * gm.dy ** 2 - 2 * W * (1 - i.lift_frac) * gm.dy) / i.mass)), 'm/s'), kp('tube_mass_kg', 'Mass of the bending lengths', gm.mass, 'kg'), kp('deflection_energy_m', 'Peak deflection from the energy balance', an, 'm'),
+        kp('sink_first_yield_ms', 'Sink speed at which the tubes start to yield plastically', skidYieldSink(gm, i.mass, i.lift_frac), 'm/s'), kp('tube_mass_kg', 'Mass of the bending lengths', gm.mass, 'kg'), kp('deflection_energy_m', 'Peak deflection from the energy balance', an, 'm'),
       ],
       plots: [
         { type: 'line', title: 'Gear load and deflection', xlabel: 'Time [s]', ylabel: 'Ground load / weight [-]', series: [{ name: 'Limit landing', x: thin(r.T), y: thin(r.F).map((v) => v / W) }, { name: 'Reserve-energy landing', x: thin(rr.T), y: thin(rr.F).map((v) => v / W) }] },
@@ -540,7 +557,7 @@ const skid = {
         { type: 'line', title: 'Peak deflection versus sink speed', xlabel: 'Sink speed [m/s]', ylabel: 'Deflection [mm]', series: [{ name: 'Energy balance', x: sinks, y: sinks.map((v) => Math.min(skidPeak(i, gm, v), 10 * i.clearance) * 1e3) }], annotations: [{ y: i.clearance * 1e3, label: 'Clearance' }, { x: i.sink, label: 'Limit' }, { x: Vr, label: 'Reserve' }] },
       ],
       warnings, models: ['Cantilever cross-tube bending, elastic to the full plastic moment then perfectly plastic', 'Single-degree-of-freedom drop with constant rotor lift, velocity-Verlet integration with plastic return mapping', 'Closed-form energy balance for the peak deflection'],
-      assumptions: ['Vertical, level landing shared equally by all cross-tube ends', 'No skid spreading friction, strain hardening or rate effects', 'Rigid ground and fuselage', 'Handbook yield strength, not a design allowable'],
+      assumptions: ['Vertical, level landing shared equally by all cross-tube ends', 'No skid spreading friction, strain hardening or rate effects', 'Rigid ground and fuselage', 'Typical handbook yield strength (appropriate for energy absorption, not a design allowable)', 'Default tube size is a sizing-rule estimate that keeps the limit landing elastic; the default sink speed is illustrative for small unmanned aircraft'],
     };
   },
   convergence: { param: 'nSteps', label: 'Time steps', levels: [500, 1000, 2000, 4000], metric: 'stroke_used_m' },
@@ -552,6 +569,7 @@ const skid = {
       N.check('Elastic landing: peak deflection', e.zMax, de, 1e-3, '½mV² + (W − L)δ = ½kδ²'),
       N.check('Plastic moment of a thin tube σy(D³ − d³)/6', gm.Mp, (METALS['Al 7075-T6'].Sy * (0.05 ** 3 - 0.04 ** 3)) / 6, 1e-12, 'Plastic section modulus'),
       N.check('Energy absorbed equals drop energy at maximum deflection', r.Eabs, 0.5 * 1000 * 4 + net * r.zMax, 1e-3, 'Work–energy theorem'),
+      N.check('At the first-yield sink speed the elastic peak deflection equals the collapse deflection', skidPeak(b, gm, skidYieldSink(gm, 1000, 0.667)), gm.dy, 1e-10, '½mV² + (W − L)δy = ½kδy²'),
     ];
   },
   calibration: { params: [{ key: 'ell', min: 0.01, max: 3 }, { key: 't_ratio', min: 0.02, max: 0.5 }], sweep: 'sink', target: 'stroke_used_m', note: 'Supply measured peak gear deflection against drop speed from skid-gear drop tests.' },
@@ -568,7 +586,7 @@ export default {
   id: 'gear', n: 14,
   tagline: 'How hard the aircraft lands, how far it takes to stop, and whether it stays stable and within limits on the ground.',
   analyses: [drop, brake, ground, taxi, shimmy, skid],
-  consumes: [{ from: 'performance', keys: ['V_stall_ms'], why: 'Touchdown speed for braking, crosswind and shimmy conditions' }],
+  consumes: [{ from: 'performance', keys: ['V_app_ms'], why: 'Approach speed (1.3·VS, landing configuration) from which the touchdown speed for braking, crosswind and shimmy conditions is taken' }],
   provides: [
     { key: 'gear_load_N', label: 'Peak gear load', unit: 'N' }, { key: 'gear_load_factor', label: 'Ground reaction factor', unit: '-' }, { key: 'stroke_used_m', label: 'Stroke used', unit: 'm' },
     { key: 'stop_dist_m', label: 'Braked ground roll', unit: 'm' }, { key: 'brake_temp_K', label: 'Brake temperature', unit: 'K' },

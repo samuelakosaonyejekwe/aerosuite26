@@ -119,7 +119,9 @@ function pointDefaults(c, up, d) {
   const g = geomDefaults(c, d), rot = d.isRotary, alt = rot ? c.atm.alt_m : c.mission.cruise_alt_m || c.atm.alt_m, V = rot ? 0 : c.mission.cruise_V_ms || c.flight.V_ms, at = isa(alt, c.atm.dISA_K), n = nProps(c);
   let T = d.W / n;
   if (!rot) { const qS = 0.5 * at.rho * V * V * c.wing.S_m2, CL = d.W / qS; T = (qS * (c.aero.CD0 + d.k_induced * CL * CL)) / n; }
-  const Pav = (up.propulsion?.P_shaft_W > 0 ? up.propulsion.P_shaft_W : d.P_total) / n;
+  // shaft power at the flight point: from the propulsion suite, otherwise the sea-level rating with a simple altitude lapse
+  const sg = at.sigma, lapse = c.prop.type === 'electric' ? 1 : c.prop.type === 'piston' ? Math.max(0, (sg - 0.1325) / 0.8675) : sg ** 0.7;
+  const Pav = (up.propulsion?.P_shaft_W > 0 ? up.propulsion.P_shaft_W : d.P_total * lapse) / n;
   return { ...g, V, alt_m: alt, dISA: c.atm.dISA_K, T_req: T, P_avail: Pav || undefined, J_twist: g.rpm && g.D && V > 0 ? N.clamp(V / ((g.rpm / 60) * g.D), 0.2, 4) : undefined, n_props: n };
 }
 
@@ -148,7 +150,6 @@ const point = {
     if (!stat) { const os = { ...op, V: 0, J: 0 }, bs = i.P_avail > 0 && i.mode !== 'fixed pitch' ? solvePitch(g, q, os, 'P', i.P_avail) : b; if (Number.isFinite(bs)) rs = bemt(g, q, os, bs); else { rs = bemt(g, q, os, N.goldenSection((t) => -bemt(g, q, os, t).T, N.rad(4), N.rad(32), 1e-4)); staticNote = 'Pitch for maximum static thrust (the available power cannot be absorbed at rest at this rpm)'; } }
     const FM = stat ? FMop : rs.P > 0 ? rs.T ** 1.5 / Math.sqrt(2 * op.rho * op.A) / rs.P : 0, etaI = op.V > 0 && r.T > 0 ? (r.T * op.V) / Pi : NaN;
     const AF = (1e5 / 16) * N.sum(g.x.map((x, j) => (g.c[j] / i.D) * x ** 3 * g.dx)), sol = N.sum(g.c.map((c) => (g.Nb * c * g.dx * g.R) / (Math.PI * g.R * g.R)));
-    const aS = N.amax(r.al.filter(Number.isFinite));
     if (r.clMax > 0.92 * q.clmax) warnings.push(`Peak section lift coefficient ${r.clMax.toFixed(2)} is close to the stall value ${q.clmax.toFixed(2)}: part of the blade is stalled or about to stall.`);
     if (r.Mmax > q.Mcrit + 0.1) warnings.push(`Peak section Mach number ${r.Mmax.toFixed(2)} is well above the critical value: the generic drag-rise term dominates and efficiency and noise predictions are uncertain.`);
     if (r.failed) warnings.push(`${r.failed} annuli had no blade-element momentum solution (negative pitch or windmilling) and were left unloaded.`);
@@ -162,8 +163,8 @@ const point = {
       { key: 'CP_prop', label: 'Power coefficient P/(ρn³D⁵)', value: k.CP, unit: '-' },
       { key: 'J_adv', label: 'Advance ratio V/(nD)', value: op.J, unit: '-' },
       { key: 'beta75_op_deg', label: 'Blade pitch at 75% radius', value: N.deg(b), unit: 'deg' },
-      { key: 'tip_mach', label: 'Helical tip Mach number', value: op.Mtip, unit: '-', status: op.Mtip < 0.85 ? 'ok' : op.Mtip < 0.95 ? 'warn' : 'bad' },
-      { key: 'FM_prop', label: stat ? 'Figure of merit' : 'Static figure of merit at this rpm', value: FM, unit: '-', status: FM > 0.6 ? 'ok' : 'warn' },
+      { key: 'tip_mach', label: 'Helical tip Mach number', value: op.Mtip, unit: '-', status: op.Mtip < 0.85 ? 'ok' : op.Mtip < 0.95 ? 'warn' : 'bad', note: 'Propellers cruise at about 0.75–0.85; efficiency falls and noise rises quickly above' },
+      { key: 'FM_prop', label: stat ? 'Figure of merit' : 'Static figure of merit at this rpm', value: FM, unit: '-', status: !stat ? undefined : FM > 0.6 ? 'ok' : 'warn', note: stat ? 'Lifting rotors reach 0.65–0.80; small low-Reynolds rotors 0.5–0.65' : 'For information: a propeller laid out for cruise is not judged on its static figure of merit' },
       { key: 'static_thrust_N', label: 'Static thrust per propeller at this rpm', value: rs.T, unit: 'N', note: staticNote },
       { key: 'eta_ideal', label: 'Ideal (actuator-disk) efficiency at this thrust', value: etaI, unit: '-', opt: true },
       { key: 'power_margin_pct', label: 'Shaft power margin', value: i.P_avail > 0 ? 100 * (1 - r.P / i.P_avail) : NaN, unit: '%', opt: true },
@@ -188,7 +189,7 @@ const point = {
       ],
       outputs: { thrust_total_N: r.T * i.n_props, power_total_W: r.P * i.n_props, momentum_residual_T: Math.abs(r.Tm - r.T) / (Math.abs(r.T) || 1), momentum_residual_Q: Math.abs(r.Qm - r.Q) / (Math.abs(r.Q) || 1), energy_residual: Math.abs(r.P - r.T * op.V - r.Pax - r.Psw - r.Ppr) / (r.P || 1) },
       warnings, models: ['Blade-element momentum theory with swirl, solved on the inflow angle', 'Prandtl tip- and hub-loss factors', 'Generic parametric section polar with stall, Reynolds and Mach corrections', i.blade_type === ROTOR_T ? 'Constant-chord, linearly twisted blade' : 'Generic propeller planform c ∝ sqrt(x(1.1 − x)) with constant-pitch helical twist'],
-      assumptions: ['Axial, uniform inflow; isolated propeller; rigid blades', 'Blade chord and twist are generic distributions scaled from diameter, blade count and the 75% chord, not the actual blade', 'Section data are a generic polar, not tables for a specific aerofoil', 'Wake contraction and radial flow neglected; annuli are independent'],
+      assumptions: ['Axial, uniform inflow; isolated propeller; rigid blades', 'Blade chord and twist are generic distributions scaled from diameter, blade count and the 75% chord, not the actual blade', 'Section data are a generic polar, not tables for a specific aerofoil', 'Wake contraction and radial flow neglected; annuli are independent', 'Without the propulsion suite the shaft power available is the sea-level rating with a simple density lapse (σ^0.7 turbine, Gagg–Ferrar piston, none electric)'],
     };
   },
   convergence: { param: 'nR', label: 'Radial stations', levels: [8, 16, 32, 64, 128], metric: 'prop_power_W' },
@@ -233,8 +234,7 @@ const map = {
     ...SECTION, NR],
   defaults: (c, up, d) => {
     const p = pointDefaults(c, up, d), J = p.J_twist || 0, bc = N.deg(Math.atan(J / (0.75 * Math.PI))) + 4, lo = Math.max(8, Math.round(bc - 16));
-    const lapse = c.prop.type === 'electric' ? 1 : isa(p.alt_m, p.dISA).sigma ** 0.7; // simple altitude lapse of the shaft rating when the propulsion suite has not run
-    return { ...p, V: d.isRotary ? 0 : p.V, P_rated: (up.propulsion?.P_shaft_W > 0 ? up.propulsion.P_shaft_W / p.n_props : (d.P_total / p.n_props) * lapse) * (c.meta.type === 'helicopter' ? 0.85 : 1) || undefined, beta_min_deg: lo, beta_max_deg: Math.max(lo + 12, Math.round(bc + 6)) };
+    return { ...p, V: d.isRotary ? 0 : p.V, P_rated: p.P_avail * (c.meta.type === 'helicopter' ? 0.85 : 1) || undefined, beta_min_deg: lo, beta_max_deg: Math.max(lo + 12, Math.round(bc + 6)) }; // helicopter: 15% of shaft power to tail rotor, transmission and accessories
   },
   run(i, ctx) {
     const g = bladeGeom(i), q = polarOf(i), op0 = opOf(i), nJ = Math.round(i.nJ), betas = N.linspace(i.beta_min_deg, i.beta_max_deg, Math.round(i.n_pitch)), warnings = [];
@@ -257,14 +257,15 @@ const map = {
     // rpm study at the required thrust and flight speed
     const fr = N.linspace(0.5, 1.1, 9), rp = fr.map((f) => { const op = opOf(i, i.V, f * i.rpm), b = solvePitch(g, q, op, 'T', i.T_req), r = Number.isFinite(b) ? bemt(g, q, op, b) : null; return r ? (i.V > 0.5 ? r.eta : idealP(r.T, op) / r.P) : NaN; });
     const fin = rp.map((v) => (Number.isFinite(v) ? v : -1)), kb = N.argmax(fin), stat = !(i.V > 0.5), mid = bemt(g, q, { ...op0, V: 0, J: 0 }, N.rad(betas[0])), km = coeffs(mid, op0);
-    const Tst = cs.T[0], Tcr = N.interp1(Vs, cs.T.map((v) => (Number.isFinite(v) ? v : 0)), i.V);
+    // thrust at rated power at the flight speed itself (not interpolated across points where the governor has no solution)
+    const Tst = cs.T[0], bV = hasP ? solvePitch(g, q, op0, 'P', i.P_rated) : NaN, Tcr = Number.isFinite(bV) ? bemt(g, q, op0, bV).T : NaN;
     return {
       kpis: keep([
         { key: 'eta_map_max', label: 'Peak efficiency on the map', value: best.eta, unit: '-' },
         { key: 'J_eta_max', label: 'Advance ratio at peak efficiency', value: best.J, unit: '-' },
         { key: 'beta_eta_max_deg', label: 'Pitch setting at peak efficiency', value: best.beta, unit: 'deg' },
         { key: 'static_thrust_rated_N', label: 'Static thrust at rated power (constant speed)', value: Tst, unit: 'N', opt: true },
-        { key: 'thrust_rated_at_V_N', label: 'Thrust at rated power at the flight speed', value: hasP ? Tcr : NaN, unit: 'N', status: !hasP || Tcr >= i.T_req ? 'ok' : 'bad', note: `Required: ${i.T_req.toFixed(0)} N`, opt: true },
+        { key: 'thrust_rated_at_V_N', label: 'Thrust at rated power at the flight speed', value: Tcr, unit: 'N', status: Tcr >= i.T_req ? 'ok' : 'bad', note: `Required: ${i.T_req.toFixed(0)} N`, opt: true },
         { key: 'beta_static_deg', label: 'Constant-speed pitch, static', value: cs.beta[0], unit: 'deg', opt: true },
         { key: 'beta_top_deg', label: 'Constant-speed pitch at top of range', value: cs.beta[cs.beta.length - 1], unit: 'deg', opt: true },
         { key: 'rpm_best', label: stat ? 'Best rpm for hover figure of merit' : 'Best rpm for efficiency at the required thrust', value: fin[kb] > 0 ? fr[kb] * i.rpm : NaN, unit: 'rpm', opt: true },
@@ -282,7 +283,7 @@ const map = {
         { type: 'line', title: stat ? 'Figure of merit versus rpm at the required thrust' : 'Efficiency versus rpm at the required thrust', xlabel: 'Rotational speed [rpm]', ylabel: stat ? 'Figure of merit [-]' : 'Propulsive efficiency [-]', series: [{ name: 'Pitch re-trimmed at each rpm', x: fr.map((f) => f * i.rpm), y: rp, style: 'line+points' }] },
       ],
       warnings, models: ['Blade-element momentum theory at fixed rpm (Mach and Reynolds effects vary along each curve)', 'Constant-speed governor: pitch solved to absorb rated power', 'Generic section polar and blade geometry'],
-      assumptions: ['Map computed at the entered rpm and altitude; it is not a universal J-only map because compressibility is included', 'Rated power is taken as constant with speed', 'Negative-thrust (windmilling) points are omitted'],
+      assumptions: ['Map computed at the entered rpm and altitude; it is not a universal J-only map because compressibility is included', 'Rated power is taken as constant with speed; without the propulsion suite it is the sea-level rating with a simple density lapse (σ^0.7 turbine, Gagg–Ferrar piston, none electric)', 'Negative-thrust (windmilling) points are omitted'],
     };
   },
   convergence: { param: 'nR', label: 'Radial stations', levels: [8, 16, 32, 64], metric: 'eta_map_max' },
@@ -291,7 +292,18 @@ const map = {
     const i = { D: 1.8, Nb: 2, hub_ratio: 0.15, blade_type: PROP_T, c75_R: 0.13, J_twist: 0.7, twist_deg: 0, alt_m: 0, dISA: 0, nR: 20, tip_loss: true }, g = bladeGeom(i), q = polarOf(i, { ideal: true });
     const a = opOf({ ...i, V: 30, rpm: 2000 }), b = opOf({ ...i, V: 45, rpm: 3000 }), ra = bemt(g, q, a, N.rad(22)), rb = bemt(g, q, b, N.rad(22));
     const big = bemt(bladeGeom({ ...i, D: 3.6 }), q, opOf({ ...i, D: 3.6, V: 30, rpm: 1000 }), N.rad(22));
+    // constant-speed thrust at the flight speed against the operating-point analysis absorbing the same power
+    const j = { ...Object.fromEntries(map.inputs.map((f) => [f.key, f.default])), D: 2, Nb: 3, c75_R: 0.14, J_twist: 0.8, rpm: 2400, V: 60, alt_m: 0, T_req: 1500, P_rated: 1.5e5, beta_min_deg: 15, beta_max_deg: 35, n_pitch: 2, nJ: 8, nR: 12 };
+    const mj = N.kv(map.run(j)), pj = N.kv(point.run({ ...Object.fromEntries(point.inputs.map((f) => [f.key, f.default])), ...j, mode: 'absorb available power', P_avail: 1.5e5 }));
+    // default shaft power when the propulsion suite has not run: sea-level rating with the density lapse of the engine type
+    const cs = { meta: { type: 'aeroplane' }, atm: { alt_m: 6000, dISA_K: 0 }, flight: { V_ms: 120 }, mission: { cruise_alt_m: 6000, cruise_V_ms: 120 }, wing: { S_m2: 60 }, aero: { CD0: 0.025 }, prop: { type: 'turboprop', n_eng: 2, P0_W: 1.5e6, prop_dia_m: 3.9, n_blades: 6, rpm: 1000 }, rotor: { R_m: 0, chord_m: 0, rpm: 0, n_blades: 0 } };
+    const dd = { W: 2e5, k_induced: 0.04, P_total: 3e6, isRotary: false }, sg = isa(6000).sigma, pd = pointDefaults(cs, {}, dd), pp = pointDefaults({ ...cs, prop: { ...cs.prop, type: 'piston' } }, {}, dd), pe = pointDefaults({ ...cs, prop: { ...cs.prop, type: 'electric' } }, {}, dd), pu = pointDefaults(cs, { propulsion: { P_shaft_W: 2.2e6 } }, dd);
     return [
+      N.check('Constant-speed thrust at the flight speed equals the operating-point solution at the same power', mj.thrust_rated_at_V_N, pj.prop_thrust_N, 1e-6, 'Same blade-element momentum solution'),
+      N.check('Default shaft power at altitude, turbine: P0·σ^0.7', pd.P_avail, 1.5e6 * sg ** 0.7, 1e-12, 'Density lapse of the shaft rating'),
+      N.check('Default shaft power at altitude, piston: Gagg–Ferrar', pp.P_avail, (1.5e6 * (sg - 0.1325)) / 0.8675, 1e-12, 'Gagg–Ferrar altitude lapse'),
+      N.check('Default shaft power at altitude, electric: no lapse', pe.P_avail, 1.5e6, 1e-12, 'Motor rating independent of air density'),
+      N.check('Shaft power from the propulsion suite is used as published', pu.P_avail, 1.1e6, 1e-12, 'All engines at the flight point ÷ number of propellers'),
       N.check('Similarity: CT unchanged at the same J and pitch (rpm ×1.5)', coeffs(rb, b).CT, coeffs(ra, a).CT, 1e-9, 'Dimensional analysis of the propeller'),
       N.check('Similarity: CP unchanged at the same J and pitch (rpm ×1.5)', coeffs(rb, b).CP, coeffs(ra, a).CP, 1e-9, 'Dimensional analysis of the propeller'),
       N.check('Similarity: thrust scales with n²D⁴ (diameter ×2, rpm ÷2)', big.T, ra.T * 4, 1e-9, 'Dimensional analysis of the propeller'),
@@ -469,7 +481,7 @@ const disk = {
         { type: 'line', title: 'Axial velocity along the slipstream axis', xlabel: 'Axial distance z/R (downstream +) [-]', ylabel: 'Velocity [m/s]', series: [{ name: 'V + v(z)', x: zs, y: vz }] },
         { type: 'line', title: 'Ducted fan: ideal power relative to the open propeller', xlabel: 'Exit area ratio σd [-]', ylabel: 'Power ratio at equal thrust and disk area [-]', series: [{ name: 'P ducted / P open', x: sds, y: Pd }], annotations: [{ x: i.sigma_d, label: 'Selected' }] },
       ],
-      outputs: { q_ratio: stat ? NaN : (s.Vw / op.V) ** 2 },
+      outputs: stat ? {} : { q_ratio: (s.Vw / op.V) ** 2 },
       warnings, models: ['Rankine–Froude actuator disk', 'Axial induced-velocity development v(z) = vi·(1 + z/sqrt(R² + z²))', 'Ducted-fan momentum model with prescribed exit area', 'Constant-circulation swirl estimate with an empirical contra-rotation recovery factor'],
       assumptions: ['Uniform, inviscid, incompressible flow through the disk', 'Duct friction, lip separation and duct drag and weight are not included', 'Contra-rotation benefit is an estimate: real gains depend on row spacing, loading split and acoustics'],
     };

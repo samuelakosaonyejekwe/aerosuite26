@@ -9,6 +9,12 @@ import { runJob, cancelAll } from '../../core/runner.js';
 import { loadSpec, terms } from '../../core/spec.js';
 import { live, SUITE_QUERIES } from '../../core/live.js';
 import { replaceHash } from '../../app.js';
+import { t } from '../i18n.js';
+import { toDisplay, fromDisplay, displayUnit } from '../units.js';
+
+// Sourced-data registry: citations for defaults, shown beside the inputs they support.
+let sourcesP = null;
+const loadSources = () => (sourcesP ||= (async () => { try { if (globalThis.__AEROSUITE_SOURCES__) return globalThis.__AEROSUITE_SOURCES__; const r = await fetch(new URL('../../data/sources.json', import.meta.url)); return r.ok ? await r.json() : { items: [] }; } catch { return { items: [] }; } })());
 
 const TABS = [['run', 'Set up & run', 'play'], ['mesh', 'Mesh & convergence', 'layers'], ['studies', 'Studies', 'sliders'], ['vv', 'Verification & validation', 'check'], ['spec', 'Specification', 'doc'], ['live', 'Live resources', 'globe']];
 // Tab names in each discipline's own vocabulary: [set up & run, discretisation, studies, V&V, specification, live resources]
@@ -62,7 +68,7 @@ export async function render(root, [suiteId, analysisId, tabId], { setCrumb }) {
       h('div', { class: 'row' },
         h('button', { class: 'arrow', disabled: !prev, title: prev ? `Previous suite: ${prev.short}` : '', 'aria-label': 'Previous suite', onclick: () => (location.hash = `#/suite/${prev.id}`) }, icon('back', 20)),
         h('button', { class: 'arrow', disabled: !next, title: next ? `Next suite: ${next.short}` : '', 'aria-label': 'Next suite', onclick: () => (location.hash = `#/suite/${next.id}`) }, icon('fwd', 20)),
-        btn('Run whole suite', () => runAll(), { ic: 'play', title: 'Run every applicable analysis in this suite in order' }))),
+        btn(t('Run whole suite'), () => runAll(), { ic: 'play', title: 'Run every applicable analysis in this suite in order' }))),
     chips, tabs, body);
 
   const select = (a) => { an = a; replaceHash(`#/suite/${suiteId}/${an.id}/${tab}`); paintChips(); paintBody(); };
@@ -70,7 +76,7 @@ export async function render(root, [suiteId, analysisId, tabId], { setCrumb }) {
     clear(chips);
     add(chips, desc.analyses.map((a) => { const r = state.runs[`${suiteId}.${a.id}`]; return h('button', { class: `chip ${a.id === an.id ? 'on' : ''} ${a.applicable === true ? '' : 'na'}`, role: 'tab', 'aria-selected': a.id === an.id, title: a.applicable === true ? a.summary : a.applicable, onclick: () => select(a) }, r ? h('i', { class: `dot ${r.status}`, style: { display: 'inline-block', marginRight: '7px' } }) : null, a.title); }));
     clear(tabs);
-    add(tabs, TABS.map(([id, generic, ic], ti) => [id, TAB_NAMES[suiteId]?.[ti] || generic, ic]).map(([id, label, ic]) => h('button', { class: `tab ${id === tab ? 'on' : ''}`, role: 'tab', 'aria-selected': id === tab, onclick: () => { tab = id; replaceHash(`#/suite/${suiteId}/${an.id}/${tab}`); paintChips(); paintBody(); } }, icon(ic, 16), label)));
+    add(tabs, TABS.map(([id, generic, ic], ti) => [id, TAB_NAMES[suiteId]?.[ti] || generic, ic]).map(([id, label, ic]) => h('button', { class: `tab ${id === tab ? 'on' : ''}`, role: 'tab', 'aria-selected': id === tab, onclick: () => { tab = id; replaceHash(`#/suite/${suiteId}/${an.id}/${tab}`); paintChips(); paintBody(); } }, icon(ic, 16), t(label))));
   }
   const dispose = () => { while (disposers.length) { try { disposers.pop()(); } catch { /* ignore */ } } };
   function paintBody() { dispose(); clear(body); ({ run: tabRun, mesh: tabMesh, studies: tabStudies, vv: tabVV, spec: tabSpec, live: tabLive })[tab](); }
@@ -92,7 +98,7 @@ export async function render(root, [suiteId, analysisId, tabId], { setCrumb }) {
   // ---------------- Set up & run ----------------
   function tabRun() {
     const na = notApplicable(), resHost = h('div', { class: 'stack' }), prog = h('progress', { max: 1, value: 0, hidden: true }), msg = h('span', { class: 'muted small' });
-    const runBtn = btn('Run analysis', () => go(), { ic: 'play', kind: 'primary big', disabled: !!na });
+    const runBtn = btn(t('Run analysis'), () => go(), { ic: 'play', kind: 'primary big', disabled: !!na });
     const cancelBtn = btn('Stop', () => { cancelAll(); }, { ic: 'stop', kind: 'ghost' }); cancelBtn.hidden = true;
     let panel = null;
     const show = (payload) => { panel?.destroy(); clear(resHost); if (!payload) { resHost.append(empty('play', 'No results yet', na ? 'This analysis does not apply to the current aircraft.' : 'Check the inputs on the left, then press Run. Values tinted blue come from your case or from upstream suites.')); return; } panel = resultPanel(payload, { suiteLabel: meta.short }); const r = state.runs[`${suiteId}.${an.id}`]; resHost.append(h('div', { class: 'row small muted' }, icon('clock', 15), `Last run ${ago(r?.ts)} · ${payload.res.elapsed_ms} ms`), panel.el); };
@@ -274,11 +280,13 @@ function inputForm(an, suiteId, { onChange, onReset }) {
       if (type === 'select') ctl = h('select', { class: 'inp', id: `f-${f.key}`, onchange: (e) => commit(e.target.value) }, (f.options || []).map((o) => h('option', { value: o, selected: String(o) === String(v) }, String(o))));
       else if (type === 'bool') ctl = h('input', { type: 'checkbox', id: `f-${f.key}`, checked: !!v, onchange: (e) => commit(e.target.checked) });
       else if (type === 'text') ctl = h('textarea', { class: 'inp', id: `f-${f.key}`, value: v ?? '', spellcheck: false, onchange: (e) => commit(e.target.value) });
-      else ctl = h('input', { class: 'inp', id: `f-${f.key}`, type: 'number', inputMode: 'decimal', step: f.step ?? 'any', value: typeof v === 'number' ? Number(v.toPrecision(7)) : v, onchange: (e) => { const val = Number(e.target.value); if (check(val)) commit(f.discrete ? Math.round(val) : val); } , oninput: (e) => check(Number(e.target.value)) });
+      else ctl = h('input', { class: 'inp', id: `f-${f.key}`, type: 'number', inputMode: 'decimal', step: 'any', value: typeof v === 'number' ? Number(toDisplay(v, f.unit)[0].toPrecision(7)) : v, onchange: (e) => { const val = e.target.value === '' ? NaN : fromDisplay(Number(e.target.value), f.unit); if (check(val)) commit(f.discrete ? Math.round(val) : val); }, oninput: (e) => check(e.target.value === '' ? NaN : fromDisplay(Number(e.target.value), f.unit)) });
       if (linked) ctl.classList.add('linked'); if (edited) ctl.classList.add('edited');
       const resetTag = () => h('button', { class: 'tag ed', type: 'button', title: 'You changed this value. Click to return to the value from the case.', onclick: () => { setOverride(suiteId, an.id, f.key, undefined); onReset?.(); } }, 'edited ×');
       const tagHost = h('span', null, edited ? resetTag() : linked ? h('span', { class: 'tag', title: 'Filled automatically from your case, live data or an upstream suite' }, 'linked') : null);
-      det.append(h('div', { class: `field ${type === 'text' ? 'wide' : ''}` }, h('label', { for: `f-${f.key}` }, f.label, f.unit && f.unit !== '-' ? h('span', { class: 'u' }, `[${f.unit}]`) : null, tagHost), ctl, f.help ? h('div', { class: 'help' }, f.help) : null, err));
+      const srcHost = h('span');
+      det.append(h('div', { class: `field ${type === 'text' ? 'wide' : ''}` }, h('label', { for: `f-${f.key}` }, f.label, f.unit && f.unit !== '-' ? h('span', { class: 'u' }, `[${displayUnit(f.unit)}]`) : null, tagHost, srcHost), ctl, f.help ? h('div', { class: 'help' }, f.help) : null, err));
+      loadSources().then((reg) => { const it = (reg.items || []).find((x) => x.suite === suiteId && x.inputKey === f.key && (!x.analysis || x.analysis === an.id) && x.grade !== 'unverified'); if (it?.source?.url) srcHost.append(h('a', { class: 'tag', href: it.source.url, target: '_blank', rel: 'noopener noreferrer', title: `Source: ${it.source.title}${it.source.org ? ', ' + it.source.org : ''}${it.source.year ? ' (' + it.source.year + ')' : ''}${it.source.locator ? ' — ' + it.source.locator : ''}. ${it.note || ''}` }, 'sourced')); });
     }
     form.append(det);
   }

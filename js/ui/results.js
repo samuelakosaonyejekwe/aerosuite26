@@ -2,14 +2,15 @@
 
 import { h, icon, num, badge, card, toCsv, downloadText, btn } from './dom.js';
 import { renderPlot } from './plots.js';
+import { toDisplay } from './units.js';
 
 const STATUS_WORD = { ok: 'Within limits', warn: 'Check', bad: 'Not acceptable' };
 
 export function kpiGrid(kpis) {
-  return h('div', { class: 'kpis' }, kpis.map((k) => h('div', { class: `kpi ${k.status || ''}`, title: k.note || '' },
+  return h('div', { class: 'kpis' }, kpis.map((k) => { const [dv, du] = toDisplay(k.value, k.unit); return h('div', { class: `kpi ${k.status || ''}`, title: k.note || '' },
     h('span', { class: 'l' }, k.label),
-    h('div', { class: 'v' }, num(k.value), k.unit && k.unit !== '-' ? h('small', null, k.unit) : null),
-    k.status || k.note ? h('div', { class: 's' }, k.status ? h('b', null, STATUS_WORD[k.status]) : null, k.note ? h('span', null, (k.status ? '· ' : '') + k.note) : null) : null)));
+    h('div', { class: 'v' }, num(dv), du && du !== '-' ? h('small', null, du) : null),
+    k.status || k.note ? h('div', { class: 's' }, k.status ? h('b', null, STATUS_WORD[k.status]) : null, k.note ? h('span', null, (k.status ? '· ' : '') + k.note) : null) : null); }));
 }
 
 const SEV = { critical: ['warn', 'Act now'], warn: ['warn', 'Attention'], advise: ['bulb', 'Opportunity'], info: ['info', 'Note'] };

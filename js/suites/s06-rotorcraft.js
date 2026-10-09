@@ -198,7 +198,7 @@ const hover = {
       ],
       outputs: { solidity: p.sigma, v_tip_ms: p.Vt, bemt_momentum_residual: Math.abs(b.CTm - b.CT) / (Math.abs(b.CT) || 1) },
       warnings, models: ['Blade-element momentum theory (annular)', 'Prandtl tip-loss function', 'Parabolic section polar with hard stall limit (generic)', 'Overlap-area momentum interference factor', 'Momentum tail rotor'],
-      assumptions: ['Hover out of ground effect, rigid blades, no swirl or wake contraction', 'Section data are a generic parametric polar, not tables for a specific aerofoil', 'Download applied as a simple thrust increment', 'Figure of merit is for the lifting-rotor system including interference'],
+      assumptions: ['Hover out of ground effect, rigid blades, no swirl or wake contraction', 'Section data are a generic parametric polar, not tables for a specific aerofoil', 'Download applied as a simple thrust increment', 'Figure of merit is for the lifting-rotor system including interference', 'Download fraction, residual induced-power correction and section polar constants are typical values to be calibrated on hover-stand data'],
     };
   },
   convergence: { param: 'nR', label: 'Radial stations', levels: [10, 20, 40, 80, 160], metric: 'hover_power_W' },
@@ -262,12 +262,13 @@ const forward = {
     let stalled = 0, area = 0; for (let j = 0; j < nR; j++) for (let k = 0; k < nPsi; k++) { area += rs[j]; if (Math.abs(grid[j][k]) > aS && rs[j] + t.mu * Math.sin(N.rad(ps[k])) > 0) stalled += rs[j]; }
     // power curve
     const Vmax = Math.max(8, Math.min(Math.max(1.35 * i.V, 0.22 * p.Vt), 0.45 * p.Vt, 0.95 * p.a - p.Vt)), Vs = N.linspace(0, Vmax, 16), cur = { Pi: [], P0: [], Pp: [], Pt: [], Pe: [], Pb: [] };
+    const energy = (V, q, tq) => { const mu = V / p.Vt; return { Pi: i.n_rotors * q.T * q.li * p.Vt, P0: ((i.n_rotors * p.qA * p.Vt * p.sigma * i.cd0) / 8) * (1 + 4.65 * mu * mu), Pp: 0.5 * p.rho * V ** 3 * i.f_plate + W * (1 - i.wing_lift_frac) * V * Math.sin(N.rad(i.gamma_deg)), Pt: tq.P }; };
     Vs.forEach((V, k) => {
       ctx?.progress?.(k / 24, 'Power curve');
-      const q = trimFF(p, ffOpts(i, p, V, Math.min(nR, 12), Math.min(nPsi, 24), 2)), mu = V / p.Vt, tq = tailRotor(i, p.rho, q.Q, V);
-      const Pi = i.n_rotors * q.T * q.li * p.Vt, P0 = ((i.n_rotors * p.qA * p.Vt * p.sigma * i.cd0) / 8) * (1 + 4.65 * mu * mu), Pp = 0.5 * p.rho * V ** 3 * i.f_plate + W * (1 - i.wing_lift_frac) * V * Math.sin(N.rad(i.gamma_deg));
-      cur.Pi.push(Pi); cur.P0.push(P0); cur.Pp.push(Pp); cur.Pt.push(tq.P); cur.Pe.push(Pi + P0 + Pp + tq.P); cur.Pb.push(q.converged ? i.n_rotors * q.P + tq.P : NaN);
+      const q = trimFF(p, ffOpts(i, p, V, Math.min(nR, 12), Math.min(nPsi, 24), 2)), tq = tailRotor(i, p.rho, q.Q, V), e = energy(V, q, tq);
+      cur.Pi.push(e.Pi); cur.P0.push(e.P0); cur.Pp.push(e.Pp); cur.Pt.push(e.Pt); cur.Pe.push(e.Pi + e.P0 + e.Pp + e.Pt); cur.Pb.push(q.converged ? i.n_rotors * q.P + tq.P : NaN);
     });
+    const eOp = energy(i.V, t, tr), PeOp = eOp.Pi + eOp.P0 + eOp.Pp + eOp.Pt;
     const Pc = cur.Pb.map((v, k) => (Number.isFinite(v) ? v : cur.Pe[k])), kbe = N.argmin(Pc), kbr = N.argmin(Pc.map((v, k) => (k ? v / Vs[k] : Infinity)));
     // retreating-blade stall boundary: CT/σ at which α(1.0, 270°) reaches the static stall angle
     const mus = N.linspace(0.08, 0.44, 6), lim = mus.map((mu) => {
@@ -283,7 +284,7 @@ const forward = {
     return {
       kpis: [
         { key: 'P_cruise_W', label: 'Rotor shaft power at this speed (all rotors + tail rotor)', value: Ptot, unit: 'W', status: t.converged ? 'ok' : 'warn' },
-        { key: 'P_energy_W', label: 'Power by the energy method', value: N.interp1(Vs, cur.Pe, i.V), unit: 'W', note: 'Induced + profile + parasite + tail rotor; cross-check of the blade-element torque' },
+        { key: 'P_energy_W', label: 'Power by the energy method', value: PeOp, unit: 'W', note: 'Induced + profile + parasite + tail rotor; cross-check of the blade-element torque' },
         { key: 'mu_adv', label: 'Advance ratio μ', value: t.mu, unit: '-' },
         { key: 'lambda_i', label: 'Induced inflow ratio', value: t.li, unit: '-' },
         { key: 'v_induced_ff_ms', label: 'Mean induced velocity', value: t.li * p.Vt, unit: 'm/s' },
@@ -298,7 +299,7 @@ const forward = {
         { key: 'CT_sigma_limit', label: 'Retreating-stall limit on CT/σ at this μ', value: ctLim, unit: '-', note: 'Gessow–Myers criterion with the static stall angle' },
         { key: 'alpha_ret_deg', label: 'Retreating-tip incidence α(1.0, 270°)', value: N.deg(t.aRet), unit: 'deg', status: t.aRet < aS ? 'ok' : 'bad' },
         { key: 'stalled_disk_pct', label: 'Disk area beyond static stall', value: (100 * stalled) / area, unit: '%' },
-        { key: 'M_adv_tip', label: 'Advancing-tip Mach number', value: Madv, unit: '-', status: Madv < 0.85 ? 'ok' : Madv < 0.92 ? 'warn' : 'bad' },
+        { key: 'M_adv_tip', label: 'Advancing-tip Mach number', value: Madv, unit: '-', status: Madv < 0.88 ? 'ok' : Madv < 0.94 ? 'warn' : 'bad', note: 'Cruise values of 0.80–0.88 are usual; drag divergence and impulsive noise grow above about 0.9' },
         { key: 'V_be_ms', label: 'Best-endurance speed (minimum power)', value: Vs[kbe], unit: 'm/s' },
         { key: 'V_br_ms', label: 'Best-range speed (minimum power/speed)', value: Vs[kbr], unit: 'm/s' },
         { key: 'P_min_W', label: 'Minimum power required', value: Pc[kbe], unit: 'W' },
@@ -314,7 +315,7 @@ const forward = {
       tables: [{ title: 'Trim solution', columns: ['Quantity', 'Value', 'Unit'], rows: [['Thrust per rotor', t.T, 'N'], ['CT', t.CT, '-'], ['Total inflow ratio λ (TPP)', t.lam, '-'], ['Drees kx', t.s.kx, '-'], ['Shaft torque per rotor', t.Q, 'N m'], ['Tail-rotor thrust', tr.T, 'N']] }],
       outputs: { trim_converged: t.converged ? 1 : 0 },
       warnings, models: ['Blade-element integration over radius and azimuth', 'Glauert momentum inflow with Drees linear gradient', 'Rigid, centrally hinged blade: first-harmonic flap equilibrium', 'Generic section polar with stall limit, Prandtl–Glauert slope and Lock-type drag rise', 'Energy-method power build-up (profile factor 1 + 4.65μ²)'],
-      assumptions: ['Steady flight, isolated rotor, no fuselage or rotor–rotor interference in forward flight', 'Hinge offset neglected in trim (see the blade-dynamics analysis)', 'Flapping and cyclic are referred to the tip-path and no-feathering planes; fuselage attitude is not solved', 'Static stall angle used for the stall boundary; dynamic stall delays it (see the dynamic-stall analysis)'],
+      assumptions: ['Steady flight, isolated rotor, no fuselage or rotor–rotor interference in forward flight', 'Hinge offset neglected in trim (see the blade-dynamics analysis)', 'Flapping and cyclic are referred to the tip-path and no-feathering planes; fuselage attitude is not solved', 'Static stall angle used for the stall boundary; dynamic stall delays it (see the dynamic-stall analysis)', 'Induced-power factor κ, section clmax and drag-divergence Mach number are typical values, not data for a specific blade'],
     };
   },
   convergence: { param: 'nR', label: 'Radial stations', levels: [8, 16, 32, 64], metric: 'P_cruise_W' },
@@ -337,7 +338,7 @@ const forward = {
     const o = res.outputs, out = [];
     if (o.alpha_ret_deg > N.deg(i.clmax / i.cla) || o.CT_sigma_ff > o.CT_sigma_limit) out.push({ severity: 'critical', title: 'Retreating-blade stall at this flight condition', detail: `CT/σ = ${o.CT_sigma_ff.toFixed(3)} against a limit of ${o.CT_sigma_limit.toFixed(3)} at μ = ${o.mu_adv.toFixed(2)}.`, action: 'Reduce speed, mass or altitude, or add blade area / tip speed. Offloading the rotor with a wing raises the speed limit.', basis: 'Gessow–Myers retreating-tip incidence criterion' });
     else if (o.CT_sigma_ff > 0.85 * o.CT_sigma_limit) out.push({ severity: 'warn', title: 'Thin retreating-stall margin', detail: `Blade loading is ${(100 * o.CT_sigma_ff / o.CT_sigma_limit).toFixed(0)}% of the stall limit.`, action: 'Check manoeuvre load factors and hot-and-high conditions; the limit falls with altitude at constant weight.', basis: 'Retreating-blade stall boundary' });
-    if (o.M_adv_tip > 0.85) out.push({ severity: 'warn', title: 'Advancing-tip compressibility', detail: `Advancing-tip Mach number ${o.M_adv_tip.toFixed(2)}.`, action: 'Reduce rotor speed in cruise, use thinner or swept tips; this also lowers high-speed impulsive noise (Suite 11).', basis: 'Section drag divergence' });
+    if (o.M_adv_tip > 0.85) out.push({ severity: o.M_adv_tip > 0.9 ? 'warn' : 'advise', title: 'Advancing-tip compressibility', detail: `Advancing-tip Mach number ${o.M_adv_tip.toFixed(2)}${o.M_adv_tip > 0.9 ? '' : ': normal for a helicopter at cruise speed, but power and noise rise quickly from here'}.`, action: 'Reduce rotor speed in cruise, use thinner or swept tips; this also lowers high-speed impulsive noise (Suite 11).', basis: 'Section drag divergence: thin tip sections tolerate about Mach 0.85–0.9 before the power rise becomes steep' });
     if (i.V > 1.08 * o.V_br_ms || i.V < 0.85 * o.V_br_ms) out.push({ severity: 'advise', title: 'Cruise speed is away from best range', detail: `Best-range speed is about ${o.V_br_ms.toFixed(0)} m/s and best endurance ${o.V_be_ms.toFixed(0)} m/s; the analysis speed is ${i.V.toFixed(0)} m/s.`, action: 'Fly near the best-range speed to minimise fuel or battery energy and CO₂ per kilometre; loiter and search at the best-endurance speed.', basis: 'Minimum of P/V and of P on the power curve' });
     out.push({ severity: 'info', title: 'Parasite drag drives high-speed power', detail: `Flat-plate area ${i.f_plate.toFixed(2)} m²; parasite power grows with V³.`, action: 'Hub and landing-gear fairings typically remove 10–20% of flat-plate area and the same share of high-speed parasite power.', basis: 'P = ½ρV³f' });
     return out;
@@ -372,7 +373,7 @@ const bladedyn = {
   summary: 'Integrates the rigid-blade flapping and lead–lag equations over many revolutions until the response repeats, then extracts flapping harmonics, natural frequencies and the vibratory hub force that the blades pass to the airframe.',
   equations: ['Blade flapping equations', 'Blade lead–lag equations', 'Centrifugal stiffening equations', 'Coriolis acceleration relations', 'Euler–Lagrange rotor dynamics equations (rigid blade)', 'Blade element theory'],
   applicable: rotorOnly,
-  inputs: [...FF_INPUTS,
+  inputs: [...FF_INPUTS.filter((f) => f.group !== 'Tail rotor'), // the tail rotor plays no part in the blade response
     { key: 'control', label: 'Control setting', type: 'select', options: ['collective only (rotor free to flap)', 'trimmed cyclic (tip-path plane held)'], default: 'collective only (rotor free to flap)', group: 'Flight' },
     { key: 'hinge', label: 'Flap hinge offset e/R', unit: '-', default: 0.047, min: 0, max: 0.3, group: 'Blade dynamics', help: '0 teetering/central hinge, 0.03–0.06 articulated, 0.10–0.15 equivalent for hingeless' },
     { key: 'k_beta', label: 'Flap spring Kβ/(Ib·Ω²)', unit: '-', default: 0, min: 0, max: 2, group: 'Blade dynamics' },
@@ -383,7 +384,7 @@ const bladedyn = {
     { key: 'nRev', label: 'Rotor revolutions', unit: '', default: 16, min: 3, max: 200, step: 1, discrete: true, group: 'Numerics' },
     { key: 'nStep', label: 'Time steps per revolution', unit: '', default: 72, min: 16, max: 1440, step: 1, discrete: true, group: 'Numerics' },
     { key: 'nR', label: 'Radial stations', unit: '', default: 16, min: 6, max: 200, step: 1, discrete: true, group: 'Numerics' }],
-  defaults: (c, up, d) => ({ ...ffDefaults(c, up, d), hinge: c.rotor.hinge_offset, hinge_lag: Math.max(0.01, c.rotor.hinge_offset), blade_mass: c.rotor.blade_mass_kg || undefined }),
+  defaults: (c, up, d) => { const { tr_R, tr_chord, tr_Nb, tr_rpm, tr_arm, ...f } = ffDefaults(c, up, d); return { ...f, hinge: c.rotor.hinge_offset, hinge_lag: Math.max(0.01, c.rotor.hinge_offset), blade_mass: c.rotor.blade_mass_kg || undefined }; },
   run(i) {
     const p = rotorOf(i), nR = Math.round(i.nR), nS = Math.round(i.nStep), warnings = [], free = i.control.startsWith('collective');
     const t = trimFF(p, ffOpts(i, p, i.V, nR, 36, 2));
@@ -391,7 +392,8 @@ const bladedyn = {
     const r = flapSim(p, s, { th75: t.th75, th1c: free ? 0 : t.th1c, th1s: free ? 0 : t.th1s, e: i.hinge, kbeta: i.k_beta, e_lag: i.hinge_lag, kzeta: i.k_zeta, zeta_lag: i.zeta_lag, lock: i.lock, nR, nStep: nS, nRev: Math.round(i.nRev) });
     // dimensional blade root vertical shear: airload minus flap inertia
     const qb = 0.5 * p.rho * i.chord * p.R * p.Vt ** 2, Sb = (i.blade_mass * p.R * (1 - i.hinge)) / 2, shear = r.sz.map((v, k) => qb * v - Sb * p.Om ** 2 * r.bdd[k]);
-    const nH = Math.min(2 * p.Nb, Math.floor(nS / 2) - 1), amp = N.range(nH, (n) => Math.hypot(...r.harm(shear, n + 1))), hub = p.Nb * amp[p.Nb - 1], Tmean = p.Nb * r.harm(shear, 0)[0];
+    const nH = Math.min(2 * p.Nb, Math.floor(nS / 2) - 1), amp = N.range(nH, (n) => Math.hypot(...r.harm(shear, n + 1))), hub = p.Nb * Math.hypot(...r.harm(shear, p.Nb)), Tmean = p.Nb * r.harm(shear, 0)[0];
+    if (nH < p.Nb) warnings.push(`Only ${nS} steps per revolution: the ${p.Nb}/rev blade-passage harmonic is close to the sampling limit; use more time steps.`);
     const Ib = (i.blade_mass * p.R ** 2 * (1 - i.hinge) ** 3) / 3, hubM = (p.Nb / 2) * (r.nu ** 2 - 1) * Ib * p.Om ** 2 * Math.hypot(r.a1, r.b1);
     const damp = (i.lock / 8) * (1 - i.hinge) ** 3 * (1 + i.hinge / 3), phase = N.deg(Math.atan2(damp, r.nu ** 2 - 1));
     if (!(r.perr < 2e-4)) warnings.push(`The response has not become periodic (revolution-to-revolution flap change ${fmt(N.deg(r.perr), 3)}°): add revolutions or lag damping.`);
@@ -781,19 +783,19 @@ const autorot = {
     const flare = usable / (0.5 * i.mass_kg * sk[kmin] ** 2), tt = N.linspace(0, Math.max(2, 2.5 * tDecay), 60);
     if (i.Nb * i.blade_mass < 0.002 * i.mass_kg || n > 2) warnings.push('Small fixed-pitch multirotors and distributed lift rotors cannot usually enter or sustain autorotation; the figures show stored energy and descent physics only. Safe recovery relies on redundancy or a ballistic parachute.');
     if (!Number.isFinite(xv)) warnings.push('No vertical autorotation solution was found in the range of the empirical induced-velocity fit.');
-    const AIft = AI / 0.006366, ell = N.linspace(0, Math.PI, 40);
+    const AIft = AI / 0.006366, ell = N.linspace(0, Math.PI, 40), heli = n <= 2; // autorotation guide values are helicopter practice; distributed-lift vehicles recover by redundancy
     return {
       kpis: [
-        { key: 'autorotation_index', label: 'Autorotation index I·Ω²/(2·W·DL)', value: AI, unit: 'm³/N', status: AIft > 20 ? 'ok' : AIft > 10 ? 'warn' : 'bad', note: `${AIft.toFixed(1)} ft³/lb; guide values often quoted are about 20 (single engine) and 10 (multi-engine)` },
+        { key: 'autorotation_index', label: 'Autorotation index I·Ω²/(2·W·DL)', value: AI, unit: 'm³/N', status: !heli ? undefined : AIft > 20 ? 'ok' : AIft > 10 ? 'warn' : 'bad', note: `${AIft.toFixed(1)} ft³/lb; helicopter guide values often quoted are about 20 (single engine) and 10 (multi-engine)${heli ? '' : '. Not a criterion for multirotor or distributed-lift vehicles'}` },
         { key: 'rotor_KE_J', label: 'Rotor kinetic energy', value: KE, unit: 'J' },
-        { key: 'hover_time_equiv_s', label: 'Equivalent hover time from usable rotor energy', value: tEq, unit: 's', status: tEq > 1.5 ? 'ok' : tEq > 0.8 ? 'warn' : 'bad' },
-        { key: 'rotor_decay_time_s', label: 'Time for rotor speed to fall to the minimum (no pilot action, hover)', value: tDecay, unit: 's', status: tDecay > 1 ? 'ok' : 'warn', note: 'Available intervention time after power loss' },
+        { key: 'hover_time_equiv_s', label: 'Equivalent hover time from usable rotor energy', value: tEq, unit: 's', status: !heli ? undefined : tEq > 1.5 ? 'ok' : tEq > 0.8 ? 'warn' : 'bad' },
+        { key: 'rotor_decay_time_s', label: 'Time for rotor speed to fall to the minimum (no pilot action, hover)', value: tDecay, unit: 's', status: !heli ? undefined : tDecay > 1 ? 'ok' : 'warn', note: 'Available intervention time after power loss' },
         { key: 'sink_min_ms', label: 'Minimum autorotative descent rate', value: sk[kmin], unit: 'm/s' },
         { key: 'V_sink_min_ms', label: 'Speed for minimum descent rate', value: Vs[kmin], unit: 'm/s' },
         { key: 'glide_ratio', label: 'Best autorotative glide ratio', value: Vs[kgl] / sk[kgl], unit: '-' },
         { key: 'V_glide_ms', label: 'Speed for best glide', value: Vs[kgl], unit: 'm/s' },
         { key: 'sink_vertical_ms', label: 'Vertical autorotation descent rate', value: VdVert, unit: 'm/s', note: `${fmt(-xv, 2)} × hover induced velocity` },
-        { key: 'flare_energy_ratio', label: 'Usable rotor energy / descent kinetic energy at minimum sink', value: flare, unit: '-', status: flare > 1 ? 'ok' : 'warn' },
+        { key: 'flare_energy_ratio', label: 'Usable rotor energy / descent kinetic energy at minimum sink', value: flare, unit: '-', status: !heli ? undefined : flare > 1 ? 'ok' : 'warn' },
         { key: 'v_hover_induced_ms', label: 'Hover induced velocity vh', value: vh, unit: 'm/s' },
         { key: 'vrs_sink_lo_ms', label: 'Vortex-ring band begins near', value: i.vrs_lo * vh, unit: 'm/s' },
         { key: 'vrs_sink_hi_ms', label: 'Vortex-ring band ends near', value: i.vrs_hi * vh, unit: 'm/s' },
@@ -805,9 +807,9 @@ const autorot = {
         { type: 'line', title: 'Induced velocity in axial flight and the vortex-ring band', xlabel: 'Climb velocity Vc/vh [-]', ylabel: 'Induced velocity vi/vh [-]', series: [{ name: 'Momentum theory / empirical fit', x: N.linspace(-3, 2, 101), y: N.linspace(-3, 2, 101).map(viAxial) }, { name: 'Indicative vortex-ring region (guideline)', x: [-i.vrs_lo, -i.vrs_lo, -i.vrs_hi, -i.vrs_hi], y: [0, 2.2, 2.2, 0], style: 'dash' }], annotations: [{ x: xv, label: 'Autorotation' }] },
         { type: 'line', title: 'Indicative vortex-ring-state region', xlabel: 'Forward speed Vx/vh [-]', ylabel: 'Descent rate Vd/vh [-]', series: [{ name: 'Avoid: textbook guideline, not a prediction', x: [...ell.map((a) => Math.sin(a)), 0], y: [...ell.map((a) => 0.5 * (i.vrs_lo + i.vrs_hi) - 0.5 * (i.vrs_hi - i.vrs_lo) * Math.cos(a)), i.vrs_lo] }] },
       ],
-      outputs: { energy_residual: Math.abs(W * sk[kmin] - (i.kappa * W * sink(Vs[kmin]).vi + P0(Vs[kmin] / p.Vt) + 0.5 * p.rho * Vs[kmin] ** 3 * i.f_plate)) / (W * sk[kmin]) },
+      outputs: { helicopter_criteria: heli ? 1 : 0, energy_residual: Math.abs(W * sk[kmin] - (i.kappa * W * sink(Vs[kmin]).vi + P0(Vs[kmin] / p.Vt) + 0.5 * p.rho * Vs[kmin] ** 3 * i.f_plate)) / (W * sk[kmin]) },
       warnings, models: ['Energy-balance autorotation with Glauert induced velocity', 'Empirical quartic induced-velocity fit for −2 ≤ Vc/vh ≤ 0 (descent states)', 'Constant-collective rotor speed decay (torque ∝ Ω²)', 'Autorotation index (stored energy per unit weight and disk loading)'],
-      assumptions: ['Uniform blade mass: flap inertia m·R²/3 per blade', 'Steady autorotation at normal rotor speed; entry and flare manoeuvres are not simulated', 'The vortex-ring band is a guideline region (momentum theory is invalid there), not a computed stability boundary', 'Profile power from the mean cd0 with the 1 + 4.65μ² factor'],
+      assumptions: ['Uniform blade mass: flap inertia m·R²/3 per blade', 'Steady autorotation at normal rotor speed; entry and flare manoeuvres are not simulated', 'The vortex-ring band is a guideline region (momentum theory is invalid there), not a computed stability boundary', 'Profile power from the mean cd0 with the 1 + 4.65μ² factor', 'Minimum usable rotor speed and the vortex-ring band limits are typical textbook values'],
     };
   },
   verify() {
@@ -823,7 +825,9 @@ const autorot = {
   },
   recommend(res, i) {
     const o = res.outputs, out = [];
-    if (o.autorotation_index / 0.006366 < 10) out.push({ severity: 'warn', title: 'Low stored rotor energy', detail: `Autorotation index ${(o.autorotation_index / 0.006366).toFixed(1)} ft³/lb; the rotor decays to the minimum usable speed in ${o.rotor_decay_time_s.toFixed(1)} s if collective is not lowered.`, action: 'Add blade tip mass or rotor speed, or lower disk loading. For multirotor and eVTOL designs rely on motor/rotor redundancy and demonstrate one-rotor-out controllability (Suites 16 and 22).', basis: 'Autorotation index and rotor-speed decay' });
+    if (o.autorotation_index / 0.006366 < 10) out.push(o.helicopter_criteria
+      ? { severity: 'warn', title: 'Low stored rotor energy', detail: `Autorotation index ${(o.autorotation_index / 0.006366).toFixed(1)} ft³/lb; the rotor decays to the minimum usable speed in ${o.rotor_decay_time_s.toFixed(1)} s if collective is not lowered.`, action: 'Add blade tip mass or rotor speed, or lower disk loading.', basis: 'Autorotation index (helicopter guide values of about 20 ft³/lb single-engine, 10 ft³/lb multi-engine) and rotor-speed decay' }
+      : { severity: 'advise', title: 'This configuration cannot rely on autorotation', detail: `Stored rotor energy is small (index ${(o.autorotation_index / 0.006366).toFixed(1)} ft³/lb, ${o.rotor_decay_time_s.toFixed(1)} s to the minimum rotor speed): normal for small or distributed lift rotors, which are not designed to autorotate.`, action: 'Show safe recovery by motor and rotor redundancy with one-rotor-out controllability (Suites 16 and 22), or a ballistic parachute.', basis: 'Stored rotor energy against hover power; helicopter autorotation guide values do not apply to this class' });
     out.push({ severity: 'info', title: 'Power-off glide performance', detail: `Minimum sink ${o.sink_min_ms.toFixed(1)} m/s at ${o.V_sink_min_ms.toFixed(0)} m/s; best glide ${o.glide_ratio.toFixed(1)}:1 at ${o.V_glide_ms.toFixed(0)} m/s; vertical autorotation about ${fmt(o.sink_vertical_ms)} m/s.`, action: 'Use these speeds for the height–velocity diagram and emergency procedures; confirm in flight test.', basis: 'Energy balance in steady autorotation' });
     out.push({ severity: 'advise', title: 'Stay clear of the vortex-ring band in powered descent', detail: `With vh = ${o.v_hover_induced_ms.toFixed(1)} m/s, avoid descent rates between about ${o.vrs_sink_lo_ms.toFixed(1)} and ${o.vrs_sink_hi_ms.toFixed(1)} m/s at forward speeds below about ${o.v_hover_induced_ms.toFixed(0)} m/s.`, action: 'Fly approaches with forward speed above vh or descent rate below the band; high disk loading (eVTOL, multirotor) moves the band to higher, more easily reached descent rates in absolute terms only if vh is large — check the approach profile in Suite 24.', basis: 'Textbook vortex-ring guideline 0.5–1.5 vh' });
     return out;

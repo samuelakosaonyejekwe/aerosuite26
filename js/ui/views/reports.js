@@ -7,6 +7,7 @@ import { runJob } from '../../core/runner.js';
 import { dataTable, kpiGrid, recList } from '../results.js';
 import { CASE_FIELDS, CASE_SECTIONS } from '../../core/case.js';
 import { loadSpec } from '../../core/spec.js';
+import { copyShareLink } from './share.js';
 
 export async function render(root, _p, { setCrumb }) {
   setCrumb('Reports & assurance');
@@ -51,6 +52,7 @@ export async function render(root, _p, { setCrumb }) {
       card('Project and results', h('div', { class: 'stack' },
         h('div', { class: 'row' }, btn('Save project', () => downloadText(`${(state.case.meta.name || 'case').toLowerCase().replace(/[^a-z0-9]+/g, '-')}.aerosuite.json`, JSON.stringify(exportProject(), null, 1), 'application/json'), { ic: 'download', kind: 'primary' }),
           btn('Open project', async () => { const [f] = await pickFiles({ accept: '.json' }); if (!f) return; try { importProject(JSON.parse(await f.text())); toast('Project opened.', 'ok'); } catch (e) { toast(`Could not open: ${e.message}`, 'bad'); } }, { ic: 'upload' }),
+          btn('Share case as a link', copyShareLink, { ic: 'link' }),
           btn('All results (CSV)', async () => { const rows = await allKpis(); if (!rows.length) { toast('There are no results to export yet.', 'info'); return; } downloadText('aerosuite-results.csv', toCsv(['Suite no.', 'Suite', 'Analysis', 'Key', 'Quantity', 'Value', 'Unit', 'Status', 'Run at'], rows), 'text/csv'); }, { ic: 'table' })),
         h('p', { class: 'muted small' }, `${Object.keys(state.runs).length} analyses stored for this case. The project file holds the case, every input override, published outputs and findings, so a colleague can reproduce the study exactly.`),
         h('div', { class: 'row' }, btn('Build printable report', buildReport, { ic: 'doc' }), btn('Clear stored results', async () => { if (confirm('Remove all stored results and findings for this case? Your case data and inputs are kept.')) { await clearRuns(); toast('Stored results cleared.', 'ok'); } }, { ic: 'close', kind: 'ghost' })))),

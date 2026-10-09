@@ -63,19 +63,22 @@ export function derivs(i, V = i.V) {
   const aw = i.CLa_w > 0 ? i.CLa_w : slope(AR, sw), at_ = slope((i.bt * i.bt) / Math.max(i.St, 1e-9), sw), av = slope((1.55 * i.bv * i.bv) / Math.max(i.Sv, 1e-9), sw), eta = 0.9;
   const eps = Math.min(0.7, (2 * aw) / (Math.PI * AR)), VH = (i.St * i.lt) / (i.S * c), k21 = munk(i.fus_len / i.fus_dia), vol = 0.7 * (Math.PI / 4) * i.fus_dia ** 2 * i.fus_len;
   const CLa = aw + eta * at_ * (i.St / i.S) * (1 - eps), Cma_f = (2 * k21 * vol) / (i.S * c), Cma = i.k_Cma * (aw * (i.cg - 0.25) + Cma_f - eta * at_ * VH * (1 - eps)), hn = i.cg - Cma / CLa;
-  const CLq = 2 * eta * at_ * VH, Cmq = -2.2 * i.k_Cmq * eta * at_ * VH * (i.lt / c), CLad = CLq * eps, Cmad = -2 * eta * at_ * VH * (i.lt / c) * eps, te = tauFlap(i.Se_Sh), tr = tauFlap(i.Sr_Sv), ta = tauFlap(0.25);
+  const CLq = 2 * eta * at_ * VH, Cmq = -2.2 * i.k_Cmq * eta * at_ * VH * (i.lt / c), CLad = CLq * eps, Cmad = -2 * eta * at_ * VH * (i.lt / c) * eps, te = tauFlap(i.Se_Sh), tr = tauFlap(i.Sr_Sv);
   const CL = (i.mass_kg * G0) / (q * i.S), kI = 1 / (Math.PI * AR * i.e), CD = i.CD0 + kI * CL * CL, zv = 0.5 * i.bv + 0.25 * i.fus_dia, gam = rad(i.dihedral_deg), ybar = (1 + 2 * lam) / (3 * (1 + lam));
   const CYb_v = -av * (i.Sv / i.S), CYb = CYb_v - (2 * (Math.PI / 4) * i.fus_dia ** 2) / i.S, Cnb = i.k_Cnb * (av * (i.Sv * i.lv) / (i.S * i.b) - (2 * k21 * vol) / (i.S * i.b));
   const Clb = 0.75 * (-(aw * gam * ybar) / 2 - CL * Math.tan(sw) * ybar) + CYb_v * (zv / i.b), // strip theory with a 0.75 finite-span relief factor
      Clp = (-i.k_Clp * aw * (1 + 3 * lam)) / (12 * (1 + lam)), Cnp = -CL / 8;
   const Clr = CL / 4 - 2 * (i.lv / i.b) * (zv / i.b) * CYb_v, Cnr = 2 * CYb_v * (i.lv / i.b) ** 2 - i.CD0 / 4, CYr = -2 * CYb_v * (i.lv / i.b);
-  // aileron over 60–95% semi-span: Clδa = 2·aw·τ/(S·b)·∫c·y·dy
-  const cr = (2 * i.S) / (i.b * (1 + lam)), y1 = 0.3 * i.b, y2 = 0.475 * i.b, icy = (y) => cr * (y * y / 2 - ((1 - lam) * 2 * y ** 3) / (3 * i.b)), Clda = ((2 * aw * ta) / (i.S * i.b)) * (icy(y2) - icy(y1));
+  // aileron over 60–95% semi-span: Clδa = 2·aw·τ/(S·b)·∫c·y·dy; the aileron chord ratio is its area over the wing area of that strip
+  const cr = (2 * i.S) / (i.b * (1 + lam)), y1 = 0.3 * i.b, y2 = 0.475 * i.b, icy = (y) => cr * (y * y / 2 - ((1 - lam) * 2 * y ** 3) / (3 * i.b)), ic = (y) => cr * (y - ((1 - lam) * y * y) / i.b);
+  const ta = tauFlap(N.clamp((i.Sa_S * i.S) / (2 * (ic(y2) - ic(y1))), 0.05, 0.6)), Clda = ((2 * aw * ta) / (i.S * i.b)) * (icy(y2) - icy(y1));
   return {
-    at, M, q, AR, kI, CL, CD, CLa, Cma, CLq, Cmq, CLad, Cmad, CLde: eta * at_ * (i.St / i.S) * te, Cmde: -eta * at_ * VH * te, CDa: 2 * kI * CL * CLa, CLu: i.compress ? (M * M / (1 - Math.min(M * M, 0.81))) * CL : 0,
+    M, q, AR, kI, CL, CD, CLa, Cma, CLq, Cmq, CLad, Cmad, CLde: eta * at_ * (i.St / i.S) * te, Cmde: -eta * at_ * VH * te, CDa: 2 * kI * CL * CLa, CLu: i.compress ? (M * M / (1 - Math.min(M * M, 0.81))) * CL : 0,
     hn, sm: hn - i.cg, hm: hn - (Cmq * at.rho * i.S * c) / (4 * i.mass_kg), aw, at: at_, av, eps, VH, Cma_f, CYb, Cnb, Clb, Clp, Cnp, Clr, Cnr, CYr, Clda, Cnda: -0.2 * CL * Clda, CYdr: av * tr * (i.Sv / i.S), Cndr: -av * tr * (i.Sv * i.lv) / (i.S * i.b), Cldr: av * tr * (i.Sv / i.S) * (zv / i.b), atm: at,
   };
 }
+/** The same aircraft with the CG at h [MAC]: the tail arms are measured from the CG, so they change with it and the neutral point stays put. */
+const withCg = (i, h) => ({ ...i, cg: h, lt: Math.max(i.lt - (h - i.cg) * i.mac, 0), lv: Math.max(i.lv - (h - i.cg) * i.mac, 0) });
 /** Level-flight trim from the linear lift and moment equations: α (body), δe, thrust, throttle. */
 function trimAt(i, V) {
   const D = derivs(i, V), det = D.CLa * D.Cmde - D.CLde * D.Cma, a0 = rad(i.alpha0_deg);
@@ -103,6 +106,13 @@ function latSS(i) {
 const modeOf = (l) => ({ re: l[0], im: l[1], wn: Math.hypot(l[0], l[1]), zeta: -l[0] / (Math.hypot(l[0], l[1]) || 1) });
 /** Linear response ẋ = A·x + B·u(t) by RK4; returns {t, x}. */
 function linSim(A, B, u, tEnd, n, x0) { const r = N.rk4((t, x) => N.vadd(N.matvec(A, x), N.matvec(B, u(t))), 0, x0 || A.map(() => 0), tEnd, n); return { t: r.t, x: r.y }; }
+/** RK4 step count that keeps |λ|·h ≤ 0.5 for the fastest root (stability limit 2.78), and at least n. */
+const simSteps = (modes, tEnd, n) => Math.ceil(N.clamp(2 * tEnd * N.amax(modes.map((m) => m.wn)), n, 30000));
+/** Mode shape [p, r, φ] per unit sideslip for the eigenvalue l = {re, im}: rows 2–4 of (A − λI)·v = 0 with β = 1. */
+function modeShape(A, l) {
+  const lam = [l.re, l.im], M = [1, 2, 3].map((r) => [1, 2, 3].map((c) => (r === c ? N.C.sub([A[r][c], 0], lam) : [A[r][c], 0])));
+  try { return N.csolve(M, [1, 2, 3].map((r) => [-A[r][0], 0])); } catch { return [1, 2, 3].map(() => [NaN, 0]); }
+}
 const doublet = (amp, t0, w) => (t) => (t >= t0 && t < t0 + w ? amp : t >= t0 + w && t < t0 + 2 * w ? -amp : 0);
 
 // ---- 1. derivatives -------------------------------------------------------------------------
@@ -130,27 +140,29 @@ const derivAn = {
         { key: 'tail_volume', label: 'Horizontal tail volume coefficient', value: D.VH, unit: '-' }, { key: 'downwash_grad', label: 'Downwash gradient dε/dα', value: D.eps, unit: '-' },
       ],
       plots: [
-        { type: 'line', title: 'Pitch stiffness against CG position', xlabel: 'CG position [MAC]', ylabel: 'Cmα [1/rad]', series: [{ name: 'Cmα', x: cgs, y: cgs.map((h) => derivs({ ...i, cg: h }).Cma) }], annotations: [{ y: 0, label: 'Neutral' }, { x: i.cg, label: 'CG' }, { x: D.hn, label: 'Neutral point' }] },
+        { type: 'line', title: 'Pitch stiffness against CG position', xlabel: 'CG position [MAC]', ylabel: 'Cmα [1/rad]', series: [{ name: 'Cmα', x: cgs, y: cgs.map((h) => derivs(withCg(i, h)).Cma) }], annotations: [{ y: 0, label: 'Neutral' }, { x: i.cg, label: 'CG' }, { x: D.hn, label: 'Neutral point' }] },
         { type: 'bar', title: 'Neutral-point build-up', ylabel: 'Contribution [MAC]', categories: ['Wing a.c.', 'Fuselage', 'Horizontal tail', 'Neutral point'], series: [{ name: 'Position / shift', y: [0.25, -D.Cma_f / D.CLa, D.hn - 0.25 + D.Cma_f / D.CLa, D.hn] }] },
       ],
       tables: [{ title: 'Derivatives (per radian)', columns: ['Derivative', 'Value', 'Meaning'], rows }],
       outputs: { CLa_total: D.CLa, Cm_alpha: D.Cma, Cl_delta_a: D.Clda, Cn_beta: D.Cnb },
       warnings, models: ['Empirical component build-up (DATCOM-style, preliminary)', 'Helmbold–Prandtl–Glauert lift-curve slope', 'Munk slender-body fuselage moment', 'Thin-aerofoil control effectiveness with a viscous factor', 'Strip-theory roll damping and dihedral effect'],
-      assumptions: ['Rigid aircraft, attached flow, linear aerodynamics', 'Downwash gradient 2·CLα/(π·AR) limited to 0.7; tail efficiency 0.9', 'Power, nacelle, flap and ground effects are not included', 'Expect ±10–20% on primary and ±50% on cross derivatives until calibrated'],
+      assumptions: ['Rigid aircraft, attached flow, linear aerodynamics', 'Downwash gradient 2·CLα/(π·AR) limited to 0.7; tail efficiency 0.9', 'Power, nacelle, flap and ground effects are not included', 'Ailerons span 60–95% of the semi-span; their chord ratio follows from the aileron area', 'Empirical factors (tail efficiency 0.9, 15% viscous loss of control effectiveness, 0.75 dihedral relief, Cnp = −CL/8, adverse yaw −0.2·CL·Clδa, fuselage volume 0.7 × its enclosing cylinder) are typical textbook values, not data for a specific aircraft', 'Expect ±10–20% on primary and ±50% on cross derivatives until calibrated'],
     };
   },
   calibration: { params: [{ key: 'k_Cma', min: 0.3, max: 2 }, { key: 'k_Cmq', min: 0.3, max: 2 }], sweep: 'cg', target: 'Cma', note: 'Wind-tunnel or flight-identified Cmα at several CG positions' },
   verify() {
-    const b = Object.fromEntries(FW.map((f) => [f.key, f.default])), D = derivs({ ...b, V: 60, alt_m: 0, compress: false, sweep_deg: 0, b: 1e4, S: 1e4, mac: 1, St: 1e-9, Sv: 1e-9, fus_dia: 1e-6, bt: 1, bv: 1 }), D2 = derivs({ ...b, cg: 0.4 }), D3 = derivs(b);
+    const b = Object.fromEntries(FW.map((f) => [f.key, f.default])), D = derivs({ ...b, V: 60, alt_m: 0, compress: false, sweep_deg: 0, b: 1e4, S: 1e4, mac: 1, St: 1e-9, Sv: 1e-9, fus_dia: 1e-6, bt: 1, bv: 1 }), D2 = derivs(withCg(b, 0.4)), D3 = derivs(b), rect = { ...b, taper: 1, CLa_w: 5 };
     return [N.check('Lift-curve slope tends to 2π at very high aspect ratio', D.CLa, TAU, 2e-3, 'Thin-aerofoil theory'),
-      N.check('Cmα shifts by CLα·Δh with CG movement', D2.Cma - D3.Cma, D3.CLa * 0.15 * 1 + 0, 0.12, 'dCm/dCL = h − hn (tail arm change neglected in the estimate)'),
-      N.check('Rectangular-wing strip roll damping −a/6', derivs({ ...b, taper: 1, CLa_w: 5 }).Clp, -5 / 6, 1e-9, 'Strip theory: −(a/12)(1+3λ)/(1+λ)')];
+      N.check('Cmα shifts by CLα·Δh with CG movement', D2.Cma - D3.Cma, D3.CLa * 0.15, 1e-9, 'dCm/dCL = h − hn, tail arm measured from the CG'),
+      N.check('Neutral point does not move with the CG', D2.hn, D3.hn, 1e-12, 'The neutral point is a property of the airframe'),
+      N.check('Rectangular-wing strip roll damping −a/6', derivs(rect).Clp, -5 / 6, 1e-9, 'Strip theory: −(a/12)(1+3λ)/(1+λ)'),
+      N.check('Aileron power of a rectangular wing follows the aileron area', derivs({ ...rect, Sa_S: 0.35 * 0.4 }).Clda, 5 * tauFlap(0.4) * (0.475 ** 2 - 0.3 ** 2), 1e-12, 'Strip theory, ailerons over 60–95% semi-span with a 40% chord ratio: a·τ·(η2² − η1²)/4')];
   },
   recommend(res, i) {
     const o = res.outputs, out = [];
     if (o.static_margin < 0.05) out.push({ severity: o.static_margin < 0 ? 'critical' : 'warn', title: 'Insufficient static margin', detail: `Static margin ${(100 * o.static_margin).toFixed(1)}% MAC with the CG at ${(100 * i.cg).toFixed(0)}%.`, action: 'Move the CG forward, enlarge the tail or lengthen the tail arm; a relaxed-stability design needs the augmentation of Suite 16.', basis: 'Stick-fixed static stability' });
     if (o.static_margin > 0.35) out.push({ severity: 'advise', title: 'Large static margin', detail: `${(100 * o.static_margin).toFixed(0)}% MAC costs trim drag and elevator authority.`, action: 'An aft CG shift (fuel or payload) reduces tail download, trim drag and fuel burn.', basis: 'Trim drag' });
-    if (o.Cnb <= 0.03) out.push({ severity: 'warn', title: 'Weak directional stability', detail: `Cnβ = ${o.Cnb.toFixed(3)} per rad.`, action: 'Increase fin area or arm, or add a dorsal/ventral fin.', basis: 'Typical minimum Cnβ of about 0.03–0.06 per rad' });
+    if (o.Cnb <= 0.03) out.push({ severity: 'warn', title: 'Weak directional stability', detail: `Cnβ = ${o.Cnb.toFixed(3)} per rad.`, action: 'Increase fin area or arm, or add a dorsal/ventral fin.', basis: 'Rule of thumb: a minimum Cnβ of about 0.03–0.06 per rad is typical (not a sourced requirement)' });
     return out;
   },
 };
@@ -164,21 +176,22 @@ const trimAn = {
   inputs: [...FW, { key: 'de_max_deg', label: 'Elevator travel', unit: 'deg', default: 25, min: 5, max: 40, group: 'Controls' }, { key: 'n_limit', label: 'Limit load factor', unit: 'g', default: 2.5, min: 1.5, max: 9, group: 'Controls' }],
   defaults: (c, up, d) => ({ ...fwDefaults(c, up, d), de_max_deg: c.controls.de_max_deg, n_limit: c.aero.n_pos }),
   run(i) {
-    const at = isa(i.alt_m), Vs = Math.sqrt((2 * i.mass_kg * G0) / (at.rho * i.S * i.CLmax)), Vtop = Math.max(1.6 * i.V, 2.5 * Vs), Vs_ = N.linspace(1.05 * Vs, Vtop, 40), T = Vs_.map((V) => trimAt(i, V)), t0 = trimAt(i, i.V), D = t0.D;
+    const at = isa(i.alt_m), Vs = Math.sqrt((2 * i.mass_kg * G0) / (at.rho * i.S * i.CLmax)), Vtop = Math.max(1.2 * Vs, Math.min(Math.max(1.6 * i.V, 2.5 * Vs), i.compress ? 0.9 * at.a : Infinity)), Vs_ = N.linspace(1.05 * Vs, Vtop, 40), T = Vs_.map((V) => trimAt(i, V)), t0 = trimAt(i, i.V), D = t0.D;
     // steady pull-up: elevator per g
     const dn = 1, qh = (dn * G0 * i.mac) / (2 * i.V * i.V), sol = N.solve([[D.CLa, D.CLde], [D.Cma, D.Cmde]], [dn * D.CL - D.CLq * qh, -D.Cmq * qh]), dePerG = sol[1];
     const deLim = rad(i.de_max_deg), warnings = [];
     // forward CG limit: elevator needed to trim at CLmax, aft limit: 5% static margin
-    const fwd = N.findRoot((h) => { const j = { ...i, cg: h }, Dj = derivs(j, 1.05 * Vs), det = Dj.CLa * Dj.Cmde - Dj.CLde * Dj.Cma; return (-Dj.CLa * i.Cm0 - Dj.Cma * Dj.CL) / det + 0.9 * deLim; }, D.hn - 1.5, D.hn, 60);
+    const fwd = N.findRoot((h) => { const j = withCg(i, h), Dj = derivs(j, 1.05 * Vs), det = Dj.CLa * Dj.Cmde - Dj.CLde * Dj.Cma; return (-Dj.CLa * i.Cm0 - Dj.Cma * Dj.CL) / det + 0.9 * deLim; }, D.hn - 1.5, D.hn, 60);
     if (Math.abs(t0.de) > 0.6 * deLim) warnings.push('Trim at this condition uses more than 60% of elevator travel; a trimmable stabiliser would normally carry this.');
-    if (t0.throttle > 1) warnings.push('Thrust required exceeds thrust available: level flight cannot be sustained at this speed and altitude.');
+    if (t0.throttle > 1) warnings.push(`Thrust required is ${(100 * t0.throttle).toFixed(0)}% of the estimated thrust available: level flight ${t0.throttle > 1.1 ? 'cannot be' : 'is at best marginally'} sustained at this speed, altitude and mass.`);
     if (i.V < 1.1 * Vs) warnings.push('The flight speed is within 10% of the stall speed; linear aerodynamics underestimates the angle of attack.');
-    if (Math.abs(dePerG * (i.n_limit - 1)) + Math.abs(t0.de) > deLim) warnings.push('Elevator travel is insufficient to reach the limit load factor at this speed.');
+    const nReach = Math.min(i.n_limit, i.CLmax / D.CL); // below the manoeuvre speed the wing stalls before the limit load factor
+    if (nReach > 1 && Math.abs(t0.de + dePerG * (nReach - 1)) > deLim) warnings.push(`Elevator travel is insufficient to reach ${nReach < i.n_limit ? 'maximum lift' : 'the limit load factor'} (${nReach.toFixed(2)} g) at this speed.`);
     return {
       kpis: [
         { key: 'trim_alpha_deg', label: 'Trim angle of attack (body)', value: deg(t0.alpha), unit: 'deg' }, { key: 'trim_de_deg', label: 'Trim elevator angle', value: deg(t0.de), unit: 'deg', status: Math.abs(t0.de) < 0.6 * deLim ? 'ok' : 'warn', note: 'Trailing edge down positive' },
         { key: 'trim_CL', label: 'Trim lift coefficient', value: D.CL, unit: '-' }, { key: 'trim_thrust_N', label: 'Thrust required', value: t0.T, unit: 'N' },
-        { key: 'trim_throttle', label: 'Throttle setting', value: t0.throttle, unit: '-', status: t0.throttle <= 1 ? 'ok' : 'bad' },
+        { key: 'trim_throttle', label: 'Throttle setting', value: t0.throttle, unit: '-', status: t0.throttle <= 1 ? 'ok' : t0.throttle <= 1.1 ? 'warn' : 'bad', note: 'Thrust available from a generic σ^0.7 altitude lapse, good to about ±10%' },
         { key: 'de_per_g_deg', label: 'Elevator angle per g', value: deg(dePerG), unit: 'deg/g', status: dePerG < 0 ? 'ok' : 'bad', note: 'Negative (stick back to pull g) for manoeuvre stability' },
         { key: 'manoeuvre_margin', label: 'Manoeuvre margin', value: D.hm - i.cg, unit: 'MAC' },
         { key: 'cg_fwd_limit', label: 'Forward CG limit (trim at CLmax)', value: fwd, unit: 'MAC' }, { key: 'cg_aft_limit', label: 'Aft CG limit (5% static margin)', value: D.hn - 0.05, unit: 'MAC' },
@@ -187,9 +200,9 @@ const trimAn = {
       plots: [
         { type: 'line', title: 'Trim angles', xlabel: 'True airspeed [m/s]', ylabel: 'Angle [deg]', series: [{ name: 'Angle of attack', x: Vs_, y: T.map((t) => deg(t.alpha)) }, { name: 'Elevator', x: Vs_, y: T.map((t) => deg(t.de)) }], annotations: [{ x: i.V, label: 'Flight point' }] },
         { type: 'line', title: 'Thrust required and available', xlabel: 'True airspeed [m/s]', ylabel: 'Thrust [kN]', series: [{ name: 'Required', x: Vs_, y: T.map((t) => t.T / 1e3) }, { name: 'Available', x: Vs_, y: T.map((t) => t.Tmax / 1e3) }] },
-        { type: 'line', title: 'Elevator to trim against lift coefficient', xlabel: 'CL [-]', ylabel: 'Elevator angle [deg]', series: [0, -0.1, 0.1].map((dh) => ({ name: `CG ${(100 * (i.cg + dh)).toFixed(0)}% MAC`, x: T.map((t) => t.D.CL), y: Vs_.map((V) => deg(trimAt({ ...i, cg: i.cg + dh }, V).de)) })) },
+        { type: 'line', title: 'Elevator to trim against lift coefficient', xlabel: 'CL [-]', ylabel: 'Elevator angle [deg]', series: [0, -0.1, 0.1].map((dh) => ({ name: `CG ${(100 * (i.cg + dh)).toFixed(0)}% MAC`, x: T.map((t) => t.D.CL), y: Vs_.map((V) => deg(trimAt(withCg(i, i.cg + dh), V).de)) })) },
       ],
-      warnings, models: ['Linear lift and pitching-moment trim', 'Parabolic drag polar', 'Steady pull-up manoeuvre equations'], assumptions: ['Level flight, thrust line through the CG', 'Fixed stabiliser: all trim is carried by the elevator', 'Derivatives from the preliminary build-up'],
+      warnings, models: ['Linear lift and pitching-moment trim', 'Parabolic drag polar', 'Steady pull-up manoeuvre equations'], assumptions: ['Level flight, thrust line through the CG', 'Fixed stabiliser: all trim is carried by the elevator', 'Derivatives from the preliminary build-up', 'Thrust available: static thrust (jets) or shaft power × propeller efficiency (propellers) with a generic σ^0.7 altitude lapse and none for electric motors — a typical value, not engine data; it under-predicts flat-rated turboprops'],
     };
   },
   verify() {
@@ -198,7 +211,7 @@ const trimAn = {
   },
   recommend(res, i) {
     const o = res.outputs, out = [];
-    if (o.trim_throttle > 1) out.push({ severity: 'critical', title: 'Not enough thrust to hold this flight condition', detail: `Throttle required is ${(100 * o.trim_throttle).toFixed(0)}%.`, action: 'Reduce speed, altitude or mass, or check the installed thrust in Suite 7.', basis: 'Thrust–drag balance' });
+    if (o.trim_throttle > 1) out.push({ severity: o.trim_throttle > 1.1 ? 'critical' : 'warn', title: o.trim_throttle > 1.1 ? 'Not enough thrust to hold this flight condition' : 'Thrust is marginal at this flight condition', detail: `Throttle required is ${(100 * o.trim_throttle).toFixed(0)}% of the estimated thrust available.${o.trim_throttle > 1.1 ? '' : ' That is inside the ±10% accuracy of the generic altitude-lapse model, so the condition is marginal rather than shown to be infeasible.'}`, action: 'Reduce speed, altitude or mass, or replace the lapse estimate with the installed thrust or power from Suite 7.', basis: 'Thrust–drag balance with a generic σ^0.7 thrust/power lapse' });
     if (Math.abs(o.trim_de_deg) > 0.6 * i.de_max_deg) out.push({ severity: 'advise', title: 'High trim elevator', detail: `${o.trim_de_deg.toFixed(1)}° of ${i.de_max_deg}° travel.`, action: 'Set stabiliser incidence or move the CG aft to cut trim drag and keep control authority.', basis: 'Trim equations' });
     if (o.de_per_g_deg >= 0) out.push({ severity: 'critical', title: 'No manoeuvre stability', detail: 'The CG is aft of the manoeuvre point.', action: 'Move the CG forward or add pitch damping (Suite 16).', basis: 'Stick-fixed manoeuvre point' });
     return out;
@@ -212,11 +225,11 @@ const longAn = {
   equations: ['Longitudinal linearised state equations', 'Characteristic eigenvalue equations', 'Short-period approximation equations', 'Phugoid approximation equations', 'Stability derivative equations'],
   applicable: hasWing,
   inputs: [...FW,
-    { key: 'sp_zeta_min', label: 'Short-period damping, lower limit', unit: '-', default: 0.3, min: 0, max: 1, group: 'Handling criteria', help: 'Typical MIL-F-8785C Level 1 value: 0.30 (Category B), 0.35 (Categories A and C)' },
-    { key: 'sp_zeta_max', label: 'Short-period damping, upper limit', unit: '-', default: 2, min: 0.5, max: 5, group: 'Handling criteria', help: 'Typical Level 1 value: 2.0 (Category B), 1.3 (A and C)' },
-    { key: 'ph_zeta_min', label: 'Phugoid damping, lower limit', unit: '-', default: 0.04, min: -0.5, max: 1, group: 'Handling criteria', help: 'Typical Level 1 value: 0.04' },
-    { key: 'cap_min', label: 'Control anticipation parameter, lower limit', unit: '1/(g·s²)', default: 0.085, min: 0, max: 5, group: 'Handling criteria', help: 'Typical Level 1 Category B range 0.085–3.6' },
-    { key: 'cap_max', label: 'Control anticipation parameter, upper limit', unit: '1/(g·s²)', default: 3.6, min: 0.1, max: 20, group: 'Handling criteria' },
+    { key: 'sp_zeta_min', label: 'Short-period damping, lower limit', unit: '-', default: 0.3, min: 0, max: 1, group: 'Handling criteria', help: 'MIL-F-8785C Table IV, Level 1: 0.30 (Category B), 0.35 (Categories A and C); Level 2: 0.20 and 0.25' },
+    { key: 'sp_zeta_max', label: 'Short-period damping, upper limit', unit: '-', default: 2, min: 0.5, max: 5, group: 'Handling criteria', help: 'MIL-F-8785C Table IV, Level 1: 2.0 (Category B), 1.3 (Categories A and C)' },
+    { key: 'ph_zeta_min', label: 'Phugoid damping, lower limit', unit: '-', default: 0.04, min: -0.5, max: 1, group: 'Handling criteria', help: 'MIL-F-8785C para 3.2.1.2, Level 1: 0.04 (Level 2: 0)' },
+    { key: 'cap_min', label: 'Control anticipation parameter, lower limit', unit: '1/(g·s²)', default: 0.085, min: 0, max: 5, group: 'Handling criteria', help: 'MIL-F-8785C para 3.2.2.1.1, Level 1: 0.085 (Category B), 0.28 (Category A)' },
+    { key: 'cap_max', label: 'Control anticipation parameter, upper limit', unit: '1/(g·s²)', default: 3.6, min: 0.1, max: 20, group: 'Handling criteria', help: 'MIL-F-8785C Level 1: 3.6, read from the Category A figure and taken to apply to Category B as well' },
     { key: 'de_doublet_deg', label: 'Elevator doublet amplitude', unit: 'deg', default: 2, min: 0.1, max: 15, group: 'Manoeuvre' }],
   defaults: fwDefaults,
   run(i) {
@@ -226,9 +239,9 @@ const longAn = {
     if (!sp) warnings.push('No oscillatory short-period mode: the pitch dynamics are overdamped or statically unstable (real roots).');
     if (!ph) warnings.push('The phugoid has degenerated into real roots.');
     if (ev.some((m) => m.re > 1e-9)) warnings.push(`An unstable longitudinal root exists (time to double ${(Math.LN2 / N.amax(ev.map((m) => m.re))).toFixed(1)} s).`);
-    const tEnd = ph ? Math.min(3 * (TAU / ph.im), 600) : 60, r = linSim(s.A, s.B, (t) => [doublet(rad(i.de_doublet_deg), 1, 1.5)(t), 0], tEnd, 3000), tS = sp ? Math.min(tEnd, 8 * (TAU / sp.im)) : 20;
-    const cgs = N.linspace(i.cg - 0.15, i.cg + 0.4, 23), loc = { x: [], y: [] }; for (const h of cgs) for (const l of N.eig(longSS({ ...i, cg: h }).A)) { loc.x.push(l[0]); loc.y.push(l[1]); }
-    const ok = (v, lo, hi) => (fin(v) && v >= lo && v <= hi ? 'ok' : 'warn'), kS = r.t.map((t, k) => k).filter((k) => r.t[k] <= tS && k % 3 === 0);
+    const tEnd = ph ? Math.min(3 * (TAU / ph.im), 600) : 60, r = linSim(s.A, s.B, (t) => [doublet(rad(i.de_doublet_deg), 1, 1.5)(t), 0], tEnd, simSteps(ev, tEnd, 3000)), tS = sp ? Math.min(tEnd, 8 * (TAU / sp.im)) : 20;
+    const cgs = N.linspace(i.cg - 0.15, i.cg + 0.4, 23), loc = { x: [], y: [] }; for (const h of cgs) for (const l of N.eig(longSS(withCg(i, h)).A)) { loc.x.push(l[0]); loc.y.push(l[1]); }
+    const ok = (v, lo, hi) => (fin(v) && v >= lo && v <= hi ? 'ok' : 'warn'), kS = thin(r.t.map((t, k) => k).filter((k) => r.t[k] <= tS), 400);
     return {
       kpis: [
         { key: 'sp_omega_rads', label: 'Short-period natural frequency', value: sp ? sp.wn : NaN, unit: 'rad/s' }, { key: 'sp_zeta', label: 'Short-period damping ratio', value: sp ? sp.zeta : NaN, unit: '-', status: ok(sp?.zeta, i.sp_zeta_min, i.sp_zeta_max), note: `Criterion ${i.sp_zeta_min}–${i.sp_zeta_max}` },
@@ -247,7 +260,7 @@ const longAn = {
       tables: [{ title: 'Eigenvalues', columns: ['Real [1/s]', 'Imaginary [rad/s]', 'ωn [rad/s]', 'ζ [-]'], rows: ev.map((m) => [m.re, m.im, m.wn, m.zeta]) }, { title: 'Dimensional derivatives', columns: ['Derivative', 'Value'], rows: Object.entries(d).map(([k, v]) => [k, v]) }],
       outputs: { A_long: s.A, B_long: s.B, u0_ms: u0 },
       warnings, models: ['Linear state-space model, states u, w, q, θ in stability axes', 'Eigenvalue analysis (QR)', 'Short-period and Lanchester phugoid approximations for comparison'],
-      assumptions: ['Small perturbations about steady level flight', 'Constant-thrust jets, constant-power propellers for the speed derivative', 'Handling criteria are user inputs with typical Level 1 defaults; select those for the aircraft class and flight phase'],
+      assumptions: ['Small perturbations about steady level flight', 'Constant-thrust jets, constant-power propellers for the speed derivative', 'Handling criteria are inputs; the defaults are the MIL-F-8785C Level 1 limits for Category B (cruise) flight phases — a military flying-qualities specification used here as a general yardstick, so select the class and flight-phase category that apply'],
     };
   },
   calibration: { params: [{ key: 'k_Cma', min: 0.3, max: 2 }, { key: 'k_Cmq', min: 0.3, max: 2.5 }], sweep: 'V', target: 'sp_omega_rads', note: 'Flight-test short-period frequency and damping from elevator doublets at several speeds' },
@@ -259,7 +272,7 @@ const longAn = {
   },
   recommend(res, i) {
     const o = res.outputs, out = [];
-    if (!fin(o.sp_zeta) || o.sp_zeta < i.sp_zeta_min) out.push({ severity: 'warn', title: 'Short-period damping below the criterion', detail: fin(o.sp_zeta) ? `ζ = ${o.sp_zeta.toFixed(2)} against ${i.sp_zeta_min}.` : 'No oscillatory short period was found.', action: 'Increase tail volume or add a pitch damper (Suite 16, stability augmentation).', basis: 'Short-period damping criterion (input)' });
+    if (!fin(o.sp_zeta) || o.sp_zeta < i.sp_zeta_min) out.push({ severity: fin(o.sp_zeta) && o.sp_zeta >= 0.2 ? 'advise' : 'warn', title: 'Short-period damping below the criterion', detail: fin(o.sp_zeta) ? `ζ = ${o.sp_zeta.toFixed(2)} against ${i.sp_zeta_min}.` : 'No oscillatory short period was found.', action: 'Increase tail volume or add a pitch damper (Suite 16, stability augmentation).', basis: 'Short-period damping criterion (input; MIL-F-8785C Table IV: Level 1 default, Level 2 minimum 0.20 in Category B)' });
     if (fin(o.ph_zeta) && o.ph_zeta < i.ph_zeta_min) out.push({ severity: 'advise', title: 'Lightly damped phugoid', detail: `ζ = ${o.ph_zeta.toFixed(3)}; period ${o.ph_period_s.toFixed(0)} s.`, action: 'Normal for clean, efficient aircraft; an altitude- or speed-hold autopilot removes the workload.', basis: 'Phugoid damping criterion (input)' });
     if (fin(o.cap) && (o.cap < i.cap_min || o.cap > i.cap_max)) out.push({ severity: 'advise', title: 'Control anticipation parameter outside the band', detail: `CAP = ${o.cap.toFixed(2)}.`, action: 'Adjust static margin or pitch inertia, or shape the response with the flight control law.', basis: 'CAP criterion (input)' });
     return out;
@@ -273,22 +286,22 @@ const latAn = {
   equations: ['Lateral-directional linearised state equations', 'Dutch-roll equations', 'Roll subsidence equations', 'Spiral stability equations', 'Characteristic eigenvalue equations'],
   applicable: hasWing,
   inputs: [...FW,
-    { key: 'dr_zeta_min', label: 'Dutch-roll damping, lower limit', unit: '-', default: 0.08, min: 0, max: 1, group: 'Handling criteria', help: 'Typical MIL-F-8785C Level 1 Category B value: 0.08 (0.19 for Category A)' },
-    { key: 'dr_zw_min', label: 'Dutch-roll ζ·ωn, lower limit', unit: 'rad/s', default: 0.15, min: 0, max: 2, group: 'Handling criteria' },
-    { key: 'dr_w_min', label: 'Dutch-roll frequency, lower limit', unit: 'rad/s', default: 0.4, min: 0, max: 5, group: 'Handling criteria' },
-    { key: 'roll_tau_max', label: 'Roll time constant, upper limit', unit: 's', default: 1.4, min: 0.1, max: 10, group: 'Handling criteria', help: 'Typical Level 1 value: 1.4 s (1.0 s for small and highly manoeuvrable aircraft)' },
-    { key: 'spiral_T2_min', label: 'Spiral time to double, lower limit', unit: 's', default: 20, min: 1, max: 200, group: 'Handling criteria', help: 'Typical Level 1 value: 20 s (12 s in Categories A and C)' },
+    { key: 'dr_zeta_min', label: 'Dutch-roll damping, lower limit', unit: '-', default: 0.08, min: 0, max: 1, group: 'Handling criteria', help: 'MIL-F-8785C Table VI, Level 1: 0.08 (Category B), 0.19 (Category A); Level 2: 0.02' },
+    { key: 'dr_zw_min', label: 'Dutch-roll ζ·ωn, lower limit', unit: 'rad/s', default: 0.15, min: 0, max: 2, group: 'Handling criteria', help: 'MIL-F-8785C Table VI, Level 1: 0.15 (Category B), 0.35 (Category A); Level 2: 0.05' },
+    { key: 'dr_w_min', label: 'Dutch-roll frequency, lower limit', unit: 'rad/s', default: 0.4, min: 0, max: 5, group: 'Handling criteria', help: 'MIL-F-8785C Table VI: 0.4 (1.0 for Class I and IV aircraft in Category A)' },
+    { key: 'roll_tau_max', label: 'Roll time constant, upper limit', unit: 's', default: 1.4, min: 0.1, max: 10, group: 'Handling criteria', help: 'MIL-F-8785C Table VII, Level 1: 1.4 s (1.0 s for Class I and IV aircraft in Category A and Class I, II-C and IV in Category C)' },
+    { key: 'spiral_T2_min', label: 'Spiral time to double, lower limit', unit: 's', default: 20, min: 1, max: 200, group: 'Handling criteria', help: 'MIL-F-8785C Table VIII, Level 1: 20 s (Category B), 12 s (Categories A and C)' },
     { key: 'da_deg', label: 'Aileron step', unit: 'deg', default: 5, min: 0.1, max: 30, group: 'Manoeuvre' }, { key: 'dr_deg', label: 'Rudder doublet', unit: 'deg', default: 5, min: 0.1, max: 30, group: 'Manoeuvre' }],
   defaults: fwDefaults,
   run(i) {
-    const s = latSS(i), ev = N.eig(s.A).map(modeOf), d = s.d, u0 = i.V, dr = ev.find((m) => m.im > 1e-9), real = ev.filter((m) => Math.abs(m.im) <= 1e-9).sort((p, q) => p.re - q.re), warnings = [];
+    const s = latSS(i), ev = N.eig(s.A).map(modeOf), d = s.d, u0 = i.V, dr = ev.filter((m) => m.im > 1e-9).sort((p, q) => q.wn - p.wn)[0], real = ev.filter((m) => Math.abs(m.im) <= 1e-9).sort((p, q) => p.re - q.re), warnings = [];
     const roll = real[0], spiral = real[real.length - 1] !== roll ? real[real.length - 1] : null, tauR = roll ? -1 / roll.re : NaN, T2 = spiral ? Math.LN2 / spiral.re : NaN;
     const drA = Math.sqrt(Math.max((d.Yb * d.Nr - d.Nb * d.Yr + u0 * d.Nb) / u0, 0)), spA = (d.Lb * d.Nr - d.Lr * d.Nb) / (d.Lb || 1e-12);
     if (!dr) warnings.push('No oscillatory Dutch-roll mode was found (real roots): check directional stability Cnβ.');
-    if (dr && dr.zeta < 0) warnings.push('The Dutch roll is unstable.');
+    if (dr && dr.zeta < 0) warnings.push(`The bare-airframe Dutch roll is ${Math.LN2 / dr.re < 120 ? `unstable (time to double ${(Math.LN2 / dr.re).toFixed(0)} s)` : 'practically undamped'}: it needs a yaw damper (Suite 16).`);
     if (real.length < 2) warnings.push('Roll and spiral have coupled into a lateral phugoid (roll–spiral oscillation).');
-    const ra = linSim(s.A, s.B, (t) => [t > 0.5 ? rad(i.da_deg) : 0, 0], 12, 1200), rr = linSim(s.A, s.B, (t) => [0, doublet(rad(i.dr_deg), 0.5, 1)(t)], dr ? Math.min(60, 6 * (TAU / dr.im)) : 20, 1500);
-    const pss = (-d.Lda / (d.Lp || -1e-12)) * rad(i.da_deg), phiBeta = dr ? (() => { try { const v = N.csolve([[[s.A[1][1] - dr.re, -dr.im], [s.A[1][3], 0]], [[s.A[3][1], 0], [-dr.re, -dr.im]]], [[-s.A[1][0], 0], [0, 0]]); return N.C.abs(v[1]); } catch { return NaN; } })() : NaN;
+    const ra = linSim(s.A, s.B, (t) => [t > 0.5 ? rad(i.da_deg) : 0, 0], 12, simSteps(ev, 12, 1200)), tR = dr ? Math.min(60, 6 * (TAU / dr.im)) : 20, rr = linSim(s.A, s.B, (t) => [0, doublet(rad(i.dr_deg), 0.5, 1)(t)], tR, simSteps(ev, tR, 1500));
+    const pss = (-d.Lda / (d.Lp || -1e-12)) * rad(i.da_deg), phiBeta = dr ? N.C.abs(modeShape(s.A, dr)[2]) : NaN;
     const st = (c) => (c ? 'ok' : 'warn');
     return {
       kpis: [
@@ -309,23 +322,31 @@ const latAn = {
       tables: [{ title: 'Eigenvalues', columns: ['Real [1/s]', 'Imaginary [rad/s]', 'ωn [rad/s]', 'ζ [-]'], rows: ev.map((m) => [m.re, m.im, m.wn, m.zeta]) }, { title: 'Dimensional derivatives', columns: ['Derivative', 'Value'], rows: Object.entries(d).map(([k, v]) => [k, v]) }],
       outputs: { A_lat: s.A, B_lat: s.B },
       warnings, models: ['Linear state-space model, states β, p, r, φ', 'Eigenvalue analysis (QR)', 'Dutch-roll and spiral approximations for comparison'],
-      assumptions: ['Small perturbations about wings-level flight; product of inertia included', 'Derivatives from the preliminary build-up: cross derivatives carry the largest uncertainty', 'Handling criteria are user inputs with typical Level 1 defaults'],
+      assumptions: ['Small perturbations about wings-level flight; product of inertia included', 'Derivatives from the preliminary build-up: cross derivatives carry the largest uncertainty', 'Handling criteria are inputs; the defaults are the MIL-F-8785C Level 1 limits for Category B (cruise) flight phases (Tables VI–VIII), used here as a general yardstick', 'A bare-airframe result: a yaw damper or other augmentation is not included'],
     };
   },
   calibration: { params: [{ key: 'k_Cnb', min: 0.3, max: 2.5 }, { key: 'k_Clp', min: 0.3, max: 2 }], sweep: 'V', target: 'dr_omega_rads', note: 'Flight-identified Dutch-roll frequency and roll time constant from rudder doublets and aileron steps' },
   verify() {
-    const b = Object.fromEntries(latAn.inputs.map((f) => [f.key, f.default])), s = latSS(b), l = N.eig(s.A), o = N.kv(latAn.run(b));
+    const b = Object.fromEntries(latAn.inputs.map((f) => [f.key, f.default])), s = latSS(b), l = N.eig(s.A), o = N.kv(latAn.run(b)), C = N.C;
+    // Dutch-roll eigenvector: the sideslip row, which is not used to build the mode shape, must be satisfied too
+    const dr = l.map(modeOf).filter((m) => m.im > 1e-9).sort((p, q) => q.wn - p.wn)[0], v = modeShape(s.A, dr), row0 = v.reduce((a, x, k) => C.add(a, C.scale(x, s.A[0][k + 1])), [s.A[0][0] - dr.re, -dr.im]);
     // pure rolling motion: with all coupling removed the roll root is Lp exactly
     const A1 = s.A.map((r) => r.slice()); A1[1][0] = A1[1][2] = 0; const lr = N.eig(A1).map((x) => x[0]);
     return [N.check('Sum of eigenvalues equals the trace of A', N.sum(l.map((x) => x[0])), s.A[0][0] + s.A[1][1] + s.A[2][2], 1e-8, 'Linear algebra identity'),
       N.check('Uncoupled roll root equals Lp', lr.reduce((p, q) => (Math.abs(q - A1[1][1]) < Math.abs(p - A1[1][1]) ? q : p)), A1[1][1], 1e-8, 'Single-degree-of-freedom roll subsidence τ = −1/Lp'),
+      N.check('Dutch-roll mode shape satisfies the sideslip equation', C.abs(row0) / dr.wn, 0, 1e-9, '(A − λI)·v = 0'),
       N.check('Dutch-roll approximation within its expected accuracy', o.dr_omega_approx, o.dr_omega_rads, 0.25, 'Nelson, Flight Stability and Automatic Control (approximation of modest accuracy)')];
   },
   recommend(res, i) {
     const o = res.outputs, out = [];
-    if (!fin(o.dr_zeta) || o.dr_zeta < i.dr_zeta_min || o.dr_zeta * o.dr_omega_rads < i.dr_zw_min) out.push({ severity: fin(o.dr_zeta) && o.dr_zeta < 0 ? 'critical' : 'warn', title: 'Dutch-roll damping below the criterion', detail: fin(o.dr_zeta) ? `ζ = ${o.dr_zeta.toFixed(3)}, ωn = ${o.dr_omega_rads.toFixed(2)} rad/s.` : 'No Dutch-roll oscillation found.', action: 'Fit a yaw damper (Suite 16), enlarge the fin or reduce the dihedral effect.', basis: 'Dutch-roll criteria (inputs)' });
-    if (o.roll_tau_s > i.roll_tau_max) out.push({ severity: 'warn', title: 'Sluggish roll response', detail: `Roll time constant ${o.roll_tau_s.toFixed(2)} s.`, action: 'Reduce roll inertia (fuel and stores inboard) or add roll-rate feedback.', basis: 'Roll-mode criterion (input)' });
-    if (o.spiral_T2_s > 0 && o.spiral_T2_s < i.spiral_T2_min) out.push({ severity: 'warn', title: 'Rapid spiral divergence', detail: `Time to double ${o.spiral_T2_s.toFixed(1)} s.`, action: 'Increase dihedral effect or reduce fin area; a wing-leveller autopilot mode suppresses it.', basis: 'Spiral criterion (input)' });
+    if (!fin(o.dr_zeta)) out.push({ severity: 'warn', title: 'No Dutch-roll oscillation found', detail: 'The lateral-directional roots are all real.', action: 'Check the directional stability Cnβ and the inertia data.', basis: 'Eigenvalues of the lateral-directional model' });
+    else if (o.dr_zeta < i.dr_zeta_min || o.dr_zeta * o.dr_omega_rads < i.dr_zw_min || o.dr_omega_rads < i.dr_w_min) {
+      // bare-airframe result: Level 2 minima and the divergence rate decide how much the aircraft depends on its yaw damper
+      const w = o.dr_omega_rads, zw = o.dr_zeta * w, lvl2 = o.dr_zeta >= 0.02 && zw >= 0.05 && w >= 0.4, t2 = zw < 0 ? Math.LN2 / -zw : Infinity;
+      out.push({ severity: t2 < 4 ? 'critical' : lvl2 ? 'advise' : 'warn', title: 'Bare-airframe Dutch roll needs a yaw damper', detail: `ζ = ${o.dr_zeta.toFixed(3)}, ωn = ${w.toFixed(2)} rad/s against ζ ≥ ${i.dr_zeta_min}, ζωn ≥ ${i.dr_zw_min} rad/s and ωn ≥ ${i.dr_w_min} rad/s${!fin(t2) ? '' : t2 < 120 ? `; the oscillation doubles in ${t2.toFixed(0)} s` : '; the oscillation is practically undamped'}. Low Dutch-roll damping is usual for swept-wing aircraft at altitude and is corrected by yaw-rate feedback rather than by redesign.`, action: 'Design the yaw damper in Suite 16 (stability augmentation) and treat it as required equipment in Suite 22; if it cannot be relied on, a larger fin or less dihedral effect raises the bare-airframe damping. The cross derivatives behind this estimate carry about ±50% uncertainty: calibrate them before drawing conclusions.', basis: 'Dutch-roll criteria (inputs; the defaults are the MIL-F-8785C Table VI Level 1 Category B minima, Level 2 being ζ ≥ 0.02 and ζωn ≥ 0.05 rad/s)' });
+    }
+    if (o.roll_tau_s > i.roll_tau_max) out.push({ severity: o.roll_tau_s > 3 ? 'warn' : 'advise', title: 'Sluggish roll response', detail: `Roll time constant ${o.roll_tau_s.toFixed(2)} s against ${i.roll_tau_max} s.`, action: 'Reduce roll inertia (fuel and stores inboard) or add roll-rate feedback.', basis: 'Roll-mode criterion (input; MIL-F-8785C Table VII: Level 1 default, Level 2 limit 3.0 s)' });
+    if (o.spiral_T2_s > 0 && o.spiral_T2_s < i.spiral_T2_min) out.push({ severity: o.spiral_T2_s < 8 ? 'warn' : 'advise', title: o.spiral_T2_s < 8 ? 'Rapid spiral divergence' : 'Spiral divergence faster than the Level 1 criterion', detail: `Time to double ${o.spiral_T2_s.toFixed(1)} s against ${i.spiral_T2_min} s.`, action: 'Increase dihedral effect or reduce fin area; a wing-leveller autopilot mode suppresses it, and an aircraft that is always flown through an autopilot is not affected.', basis: 'Spiral criterion (input; MIL-F-8785C Table VIII: Level 1 default, Level 2 limit 8 s)' });
     return out;
   },
 };
@@ -363,8 +384,8 @@ const HOV = [
 ];
 const hovDefaults = (c, up, d) => {
   const heli = c.meta.type === 'helicopter', m = c.mass.mtow_kg, n = heli ? 1 : Math.max(1, c.prop.n_eng), L = Math.max(c.fuselage.len_m, 4 * c.rotor.R_m, 0.3), k = (v, e) => (v > 0 ? v : e);
-  return { kind: heli ? 'helicopter' : 'multirotor', mass_kg: m, Ixx: k(c.mass.Ixx, 0.02 * m * L * L), Iyy: k(c.mass.Iyy, 0.02 * m * L * L), Izz: k(c.mass.Izz, 0.035 * m * L * L), R: c.rotor.R_m, n_rotors: n, n_blades: c.rotor.n_blades || 2, chord: c.rotor.chord_m || undefined, rpm: c.rotor.rpm || undefined,
-    cla: c.rotor.cla, lock: c.rotor.lock, e_hinge: heli ? c.rotor.hinge_offset : 0, m_blade: c.rotor.blade_mass_kg || undefined, h_rotor: heli ? 0.75 * c.fuselage.dia_m : 0.15 * c.rotor.R_m, arm: heli ? c.rotor.tr_arm_m || 1.2 * c.rotor.R_m : c.wing.b_m > 0 ? 0.35 * c.wing.b_m : 1.6 * c.rotor.R_m, tr_R: c.rotor.tr_R_m || 0.2 * c.rotor.R_m, alt_m: c.atm.alt_m };
+  return { kind: heli ? 'helicopter' : 'multirotor', mass_kg: m, Ixx: k(c.mass.Ixx, 0.02 * m * L * L), Iyy: k(c.mass.Iyy, 0.02 * m * L * L), Izz: k(c.mass.Izz, 0.035 * m * L * L), R: c.rotor.R_m || undefined, n_rotors: n, n_blades: c.rotor.n_blades || 2, chord: c.rotor.chord_m || undefined, rpm: c.rotor.rpm || undefined,
+    cla: c.rotor.cla, lock: c.rotor.lock, e_hinge: heli ? c.rotor.hinge_offset : 0, m_blade: c.rotor.blade_mass_kg || undefined, h_rotor: heli ? 0.75 * c.fuselage.dia_m : 0.15 * c.rotor.R_m, arm: (heli ? c.rotor.tr_arm_m || 1.2 * c.rotor.R_m : c.wing.b_m > 0 ? 0.35 * c.wing.b_m : 1.6 * c.rotor.R_m) || undefined, tr_R: c.rotor.tr_R_m || 0.2 * c.rotor.R_m || undefined, alt_m: c.atm.alt_m };
 };
 const hasRotor = (c) => (c.rotor.R_m > 0 ? true : 'This analysis needs lifting rotors; the case has none.');
 /** Hover stability and control derivatives (body axes, per unit mass or inertia). Controls: [longitudinal, lateral, collective, yaw]. */
@@ -457,7 +478,7 @@ const sixdof = {
       ],
       outputs: { V0_ms: V0 },
       warnings, models: ['Non-linear six-degree-of-freedom rigid-body model', 'Quaternion attitude with norm-drift correction', 'Dormand–Prince RK45 adaptive integration', i.rotary ? 'Hover-derivative force and moment model' : 'Derivative-based aerodynamic model with lift saturation, parabolic polar and ISA density'],
-      assumptions: ['Flat, non-rotating Earth; no wind', 'Constant mass and inertia', 'Thrust along the body x-axis through the CG; no engine dynamics or gyroscopic moments', 'Controls move instantly (actuators are in Suite 16)'],
+      assumptions: ['Flat, non-rotating Earth; no wind', 'Constant mass and inertia', 'Thrust along the body x-axis through the CG; no engine dynamics or gyroscopic moments', 'Controls move instantly (actuators are in Suite 16)', 'Aerodynamic and hover derivatives come from the preliminary build-ups, whose empirical factors are typical values rather than data for a specific aircraft'],
     };
   },
   verify() {
@@ -486,8 +507,8 @@ const turb = {
   equations: ['Longitudinal linearised state equations', 'Stochastic gust-response equations', 'Aerodynamic force and moment equations'],
   applicable: hasWing,
   inputs: [...FW,
-    { key: 'sigma_w', label: 'RMS vertical gust velocity', unit: 'm/s', default: 1.5, min: 0, max: 20, group: 'Turbulence', help: 'About 0.5–1.5 light, 1.5–3 moderate, 3–6 severe' },
-    { key: 'L_w', label: 'Turbulence scale length', unit: 'm', default: 533, min: 5, max: 5000, group: 'Turbulence', help: 'Typical military-specification values above about 600 m: 533 m (1750 ft) Dryden, 762 m (2500 ft) von Kármán' },
+    { key: 'sigma_w', label: 'RMS vertical gust velocity', unit: 'm/s', default: 1.5, min: 0, max: 20, group: 'Turbulence', help: 'An operating (ride-quality) level, not a design gust intensity: about 0.5–1.5 light, 1.5–3 moderate, 3–6 severe (typical)' },
+    { key: 'L_w', label: 'Turbulence scale length', unit: 'm', default: 533, min: 5, max: 5000, group: 'Turbulence', help: 'Typical values above about 600 m: 533 m (1750 ft) for the Dryden form; 762 m (2500 ft) for the von Kármán form, the scale also set by 14 CFR 25.341(b)' },
     { key: 't_sim', label: 'Time-history length', unit: 's', default: 120, min: 10, max: 1200, group: 'Turbulence' }, { key: 'seed', label: 'Random seed', unit: '', default: 2024, min: 1, max: 1e9, step: 1, discrete: true, group: 'Turbulence' },
     { key: 'nFreq', label: 'Frequency points', unit: '', default: 300, min: 50, max: 4000, step: 1, discrete: true, group: 'Numerics' }],
   defaults: (c, up, d) => ({ ...fwDefaults(c, up, d), sigma_w: Math.max(0.5, c.atm.turb_intensity * c.flight.V_ms) }),
@@ -502,13 +523,14 @@ const turb = {
     if (stable) { const P = N.lyap(Aa, Q), v = (c) => Math.sqrt(Math.max(N.dot(c, N.matvec(P, c)), 0)); sn = v(Cn); sq = v([0, 0, 1, 0, 0, 0]); sth = v([0, 0, 0, 1, 0, 0]); } else warnings.push('The open-loop aircraft has an unstable root, so the stationary response variance is unbounded; only the time history is meaningful.');
     // von Kármán: frequency-domain integration of |H(iω)|²·Φ(ω)
     const om = N.logspace(1e-3 / tau, 3e2 / tau, Math.round(i.nFreq)), bg = A.map((r) => -r[1]);
-    const H = om.map((w) => { let x; try { x = N.csolve(A.map((r, p) => r.map((v, q) => [p === q ? -v : -v, p === q ? w : 0])), bg); } catch { return 0; } const az = N.C.sub(N.C.add(N.C.add(N.C.scale(x[0], A[1][0]), N.C.scale(x[1], A[1][1])), N.C.add(N.C.scale(x[2], A[1][2] - u0), N.C.scale(x[3], A[1][3]))), [A[1][1], 0]); return N.C.abs(az) / G0; });
+    const H = om.map((w) => { let x; try { x = N.csolve(A.map((r, p) => r.map((v, q) => [-v, p === q ? w : 0])), bg); } catch { return 0; } const az = N.C.sub(N.C.add(N.C.add(N.C.scale(x[0], A[1][0]), N.C.scale(x[1], A[1][1])), N.C.add(N.C.scale(x[2], A[1][2] - u0), N.C.scale(x[3], A[1][3]))), [A[1][1], 0]); return N.C.abs(az) / G0; });
     const vk = (w) => { const y = 1.339 * tau * w; return ((i.sigma_w ** 2 * tau) / Math.PI) * (1 + (8 / 3) * y * y) / (1 + y * y) ** (11 / 6); }, dry = (w) => { const y = tau * w; return ((i.sigma_w ** 2 * tau) / Math.PI) * (1 + 3 * y * y) / (1 + y * y) ** 2; };
     const Pv = om.map((w, k) => H[k] ** 2 * vk(w)), Pd = om.map((w, k) => H[k] ** 2 * dry(w)), snV = Math.sqrt(N.trapz(om, Pv)), snD = Math.sqrt(N.trapz(om, Pd)), N0 = Math.sqrt(N.trapz(om, om.map((w, k) => w * w * Pv[k])) / (snV * snV || 1)) / TAU;
     // seeded time history (RK4 with zero-order-hold white noise)
     const dt = Math.min(0.02, tau / 20), ns = Math.min(20000, Math.round(i.t_sim / dt)), u = N.rng(i.seed); let x = new Array(6).fill(0), nk = 0; const f = (xx) => { const d = N.matvec(Aa, xx); d[5] += nk; return d; }, th = [], nzs = [], wg = [];
     for (let k = 0; k < ns; k++) { nk = N.randn(u) / Math.sqrt(dt); const k1 = f(x), k2 = f(N.vadd(x, k1, dt / 2)), k3 = f(N.vadd(x, k2, dt / 2)), k4 = f(N.vadd(x, k3, dt)); x = x.map((v, j) => v + (dt / 6) * (k1[j] + 2 * k2[j] + 2 * k3[j] + k4[j])); if (!fin(x[0]) || Math.abs(x[0]) > 1e6) break; th.push(k * dt); nzs.push(N.dot(Cn, x)); wg.push(cw[0] * x[4] + cw[1] * x[5]); }
     const snT = N.std(nzs), ref = fin(sn) ? sn : snT;
+    if (ns * dt < i.t_sim - 1e-9) warnings.push(`The time history is limited to ${ns} steps: ${(ns * dt).toFixed(0)} s of the requested ${i.t_sim} s were simulated.`);
     return {
       kpis: [
         { key: 'sigma_nz', label: 'RMS normal acceleration (Dryden, exact covariance)', value: sn, unit: 'g', status: !fin(sn) || sn < 0.2 ? 'ok' : 'warn' },
@@ -525,7 +547,7 @@ const turb = {
         { type: 'line', title: 'Generated vertical gust', xlabel: 'Time [s]', ylabel: 'Gust velocity [m/s]', series: [{ name: 'w gust', x: thin(th, 400), y: thin(wg, 400) }] },
       ],
       warnings, models: ['Dryden turbulence model: second-order shaping filter driven by seeded white noise', 'von Kármán turbulence model: spectrum integration through the aircraft transfer function', 'Lyapunov covariance equation for the exact stationary response', 'Rice characteristic frequency'],
-      assumptions: ['Vertical gust only, uniform over the span and without pitch-gust (penetration) effect', 'Quasi-steady aerodynamics, rigid aircraft: wing bending and unsteady lift build-up (Suite 3) are not included', 'Frozen, isotropic, Gaussian turbulence'],
+      assumptions: ['Vertical gust only, uniform over the span and without pitch-gust (penetration) effect', 'Quasi-steady aerodynamics, rigid aircraft: wing bending and unsteady lift build-up (Suite 3) are not included', 'Frozen, isotropic, Gaussian turbulence', 'The default gust RMS and scale are typical operating values for ride quality, not certification design intensities'],
     };
   },
   convergence: { param: 'nFreq', label: 'Frequency points', levels: [75, 150, 300, 600], metric: 'sigma_nz_vk' },
@@ -551,14 +573,14 @@ const hover = {
   defaults: hovDefaults,
   run(i) {
     const h = hoverDerivs(i), el = N.eig(h.Alon).map(modeOf), ea = N.eig(h.Alat).map(modeOf), osc = (e) => e.find((m) => m.im > 1e-9), lo = osc(el), la = osc(ea), warnings = [];
-    const t2 = (m) => (m && m.re > 0 ? Math.LN2 / m.re : NaN), tEnd = lo ? Math.min(2.5 * (TAU / lo.im), 40) : 10, r = linSim(h.Alon, h.Blon, (t) => [t > 0.5 && t < 1.5 ? i.pulse_pct / 100 : 0, 0], tEnd, 1500);
+    const t2 = (m) => (m && m.re > 0 ? Math.LN2 / m.re : NaN), tEnd = lo ? Math.min(2.5 * (TAU / lo.im), 40) : 10, r = linSim(h.Alon, h.Blon, (t) => [t > 0.5 && t < 1.5 ? i.pulse_pct / 100 : 0, 0], tEnd, simSteps(el, tEnd, 1500));
     if (lo && lo.re > 0) warnings.push(`The hover pitch oscillation is unstable (period ${(TAU / lo.im).toFixed(1)} s, doubles in ${t2(lo).toFixed(1)} s): normal for unaugmented rotorcraft, it must be stabilised by the pilot or by attitude feedback.`);
     if (h.CT / h.sig > 0.16) warnings.push('Blade loading CT/σ is above 0.16: the rotor is close to stall and the linear derivatives are optimistic.');
     if (i.kind === 'multirotor') warnings.push('Multirotor derivatives use a linear rotor-drag model and fixed-pitch thrust sensitivity; motor and ESC dynamics are in Suite 16.');
     const gMu = G0 * h.Mu, cub = Math.cbrt(Math.max(gMu, 0));
     return {
       kpis: [
-        { key: 'hover_pitch_period_s', label: 'Pitch oscillation period', value: lo ? TAU / lo.im : NaN, unit: 's' }, { key: 'hover_pitch_T2_s', label: 'Pitch oscillation time to double', value: t2(lo), unit: 's', status: !(t2(lo) < 3) ? 'ok' : 'warn', note: 'Faster than about 3 s is hard to fly without augmentation' },
+        { key: 'hover_pitch_period_s', label: 'Pitch oscillation period', value: lo ? TAU / lo.im : NaN, unit: 's' }, { key: 'hover_pitch_T2_s', label: 'Pitch oscillation time to double', value: t2(lo), unit: 's', status: !(t2(lo) < 3) || i.kind === 'multirotor' ? 'ok' : 'warn', note: i.kind === 'multirotor' ? 'An unstable open loop is normal for multirotors: the rate and attitude loops close it' : 'Faster than about 3 s is hard to fly without augmentation (typical piloting experience, not a sourced limit)' },
         { key: 'hover_roll_period_s', label: 'Roll oscillation period', value: la ? TAU / la.im : NaN, unit: 's' }, { key: 'hover_roll_T2_s', label: 'Roll oscillation time to double', value: t2(la), unit: 's' },
         { key: 'Xu', label: 'Speed damping Xu', value: h.Xu, unit: '1/s' }, { key: 'Mu', label: 'Speed stability Mu', value: h.Mu, unit: 'rad/(s·m)' }, { key: 'Mq', label: 'Pitch damping Mq', value: h.Mq, unit: '1/s' }, { key: 'Lp', label: 'Roll damping Lp', value: h.Lp, unit: '1/s' },
         { key: 'Zw', label: 'Heave damping Zw', value: h.Zw, unit: '1/s' }, { key: 'heave_tau_s', label: 'Heave time constant', value: -1 / h.Zw, unit: 's' }, { key: 'Nr', label: 'Yaw damping Nr', value: h.Nr, unit: '1/s' },
@@ -574,7 +596,7 @@ const hover = {
       tables: [{ title: 'Hover eigenvalues', columns: ['Axis', 'Real [1/s]', 'Imaginary [rad/s]'], rows: [...el.map((m) => ['Longitudinal', m.re, m.im]), ...ea.map((m) => ['Lateral-directional', m.re, m.im])] }],
       outputs: { A_hover_long: h.Alon, B_hover_long: h.Blon, A_hover_lat: h.Alat, B_hover_lat: h.Blat },
       warnings, models: ['Helicopter rotorcraft flight dynamics model: quasi-steady flapping (tip-path-plane) derivatives in hover', 'Momentum and blade-element thrust sensitivity for heave damping', 'Multirotor rigid-body model with differential-thrust moments and rotor-drag speed damping'],
-      assumptions: ['Hover, small perturbations; rotor flapping and inflow respond instantly', 'Longitudinal and lateral motions uncoupled; no fuselage or tailplane aerodynamics', 'Helicopter tail rotor represented by a thrust sensitivity at a nominal 210 m/s tip speed'],
+      assumptions: ['Hover, small perturbations; rotor flapping and inflow respond instantly', 'Longitudinal and lateral motions uncoupled; no fuselage or tailplane aerodynamics', 'Helicopter tail rotor represented by a thrust sensitivity at a nominal 210 m/s tip speed and 0.15 solidity', 'Induced-power factor 1.15, blade profile drag coefficient 0.01 and the multirotor in-plane drag damping are typical values, not data for a specific rotor'],
     };
   },
   calibration: { params: [{ key: 'k_drag', min: 0, max: 2 }, { key: 'lock', min: 1, max: 16 }, { key: 'h_rotor', min: 0, max: 5 }], sweep: 'mass_kg', target: 'hover_pitch_period_s', note: 'Flight-identified hover derivatives (frequency sweeps) or the measured period of the hover oscillation' },
@@ -584,9 +606,9 @@ const hover = {
     return [N.check('Undamped hover oscillation frequency (√3/2)·(g·Mu)^⅓', o[1], (Math.sqrt(3) / 2) * c, 1e-9, 'Roots of s³ + g·Mu = 0'), N.check('…and its growth rate ½·(g·Mu)^⅓', o[0], 0.5 * c, 1e-9, 'Roots of s³ + g·Mu = 0'),
       N.check('Hover inflow ratio λ = sqrt(CT/2)', h.lam, Math.sqrt(h.CT / 2), 1e-12, 'Momentum theory')];
   },
-  recommend(res) {
-    const o = res.outputs, out = [];
-    if (o.hover_pitch_T2_s < 3 || o.hover_roll_T2_s < 3) out.push({ severity: 'warn', title: 'Fast hover instability', detail: `Time to double: pitch ${fin(o.hover_pitch_T2_s) ? o.hover_pitch_T2_s.toFixed(1) : '—'} s, roll ${fin(o.hover_roll_T2_s) ? o.hover_roll_T2_s.toFixed(1) : '—'} s.`, action: 'Provide attitude or rate stabilisation (Suite 16); on helicopters a stabiliser bar, larger hinge offset or lower rotor height above the CG also help.', basis: 'Hover speed–attitude oscillation' });
+  recommend(res, i) {
+    const o = res.outputs, out = [], multi = i.kind === 'multirotor';
+    if (o.hover_pitch_T2_s < 3 || o.hover_roll_T2_s < 3) out.push({ severity: multi ? 'info' : 'warn', title: multi ? 'Hover is unstable without attitude feedback' : 'Fast hover instability', detail: `Time to double: pitch ${fin(o.hover_pitch_T2_s) ? o.hover_pitch_T2_s.toFixed(1) : '—'} s, roll ${fin(o.hover_roll_T2_s) ? o.hover_roll_T2_s.toFixed(1) : '—'} s.`, action: multi ? 'Normal for a multirotor, which is always flown through rate and attitude loops: design them in Suite 16 (hover cascade) with a bandwidth well above the unstable root.' : 'Provide attitude or rate stabilisation (Suite 16); a stabiliser bar, larger hinge offset or lower rotor height above the CG also help.', basis: 'Hover speed–attitude oscillation' });
     if (o.heave_tau_s > 5) out.push({ severity: 'advise', title: 'Slow heave response', detail: `Heave time constant ${o.heave_tau_s.toFixed(1)} s.`, action: 'Expect altitude drift in gusts; add altitude hold.', basis: 'Heave damping Zw' });
     return out;
   },

@@ -12,6 +12,7 @@
 import * as N from '../core/numerics.js';
 import { isa, T0 as T_SL, P0 as P_SL, R_AIR } from '../core/atmosphere.js';
 import { FLUIDS } from '../data/materials.js';
+import { EDB, EDB_ISSUE, EDB_MODES } from '../data/ref/engine-emissions.js';
 
 // ---- gas properties ---------------------------------------------------------------------------
 // cp(T) [kJ/kg/K] as polynomials in z = T/1000. Dry air: Walsh & Fletcher, Gas Turbine Performance, ch. 3 (200–2000 K).
@@ -112,7 +113,7 @@ function cycle(o) {
   const eta_p = shaft ? o.eta_prop : dKE > 0 ? (Fs * V0) / dKE : 0, eta_o = shaft ? (wshaft * o.eta_prop + Math.max(0, Fs) * V0) / Q : (Fs * V0) / Q;
   const lossMech = (wHPT + wLPT) * (1 - o.eta_m) + wPT * (1 - o.eta_m * o.eta_gb);
   return { st, warn, fu, a0, V0, Tt2, pt2, T3: s3.Tt, p3: s3.pt, T4, f, ff, far4: f, T45, T5, pt5, pt45, pt4, n9, n19, Fs, Fj, wshaft, eta_th, eta_p, eta_o, lossMech,
-    w: { fan: s13.w, hpc: s3.w, hpt: wHPT, lpt: wLPT, pt: wPT }, m45, bpr, fpr, opr: o.opr, valid: !warn.length && (shaft ? wshaft > 0 : Fs > 0) };
+    w: { fan: s13.w, hpc: s3.w, hpt: wHPT, lpt: wLPT, pt: wPT }, m4, m45, bpr, fpr, opr: o.opr, valid: !warn.length && (shaft ? wshaft > 0 : Fs > 0) };
 }
 /** Design point = sea-level static ISA at rated turbine temperature; core mass flow sized to the rated thrust or shaft power. */
 function design(i) {
@@ -137,8 +138,25 @@ function offDesign(i, des, alt, M, dISA, thr = 1) {
 }
 /** Static thrust per engine: the rating when given, otherwise actuator-disk momentum theory with a 0.75 figure of merit. */
 const staticThrust = (T0, P, D, rho) => (T0 > 0 ? T0 : (0.75 * P * Math.sqrt(2 * rho * 0.25 * Math.PI * Math.max(D, 0.05) ** 2)) ** (2 / 3));
-/** Simple T3–P3 NOx correlation EINOx = a·(P3/1 atm)^n·exp(T3/Ts) [g NO2 per kg fuel]; coefficients are calibratable inputs. */
-const einox = (i, T3, p3) => i.nox_a * (p3 / P_SL) ** i.nox_n * Math.exp(T3 / i.nox_Ts);
+/**
+ * T3–P3 NOx correlation EINOx = a·(P3/1 atm)^n·exp(T3/Ts − H/53.2) [g NO2 per kg fuel], H = ambient specific humidity [g/kg].
+ * The default constants (0.0986, 0.4, 194.4 K) are a fit to one dual-annular combustor of the NASA Experimental Clean Combustor
+ * Program as reproduced by Schwartz Dallara (Aircraft Design for Reduced Climate Impact, eq. 5.4); they are calibratable inputs.
+ */
+const einox = (i, T3, p3, H = i.hum_g_kg ?? 0) => i.nox_a * (p3 / P_SL) ** i.nox_n * Math.exp(T3 / i.nox_Ts - H / 53.2);
+const H_ICAO = 6.34; // reference humidity of the ICAO emissions certification atmosphere [g water per kg dry air]
+/** Certified engines of the ICAO databank closest to a rated thrust [kN], bypass ratio and pressure ratio (log-distance on thrust and OPR). */
+export function nearestEngines(T_kN, bpr, opr, n = 3) {
+  const dist = (e) => (Math.log(e[2] / T_kN) / 0.15) ** 2 + ((e[3] - bpr) / 1.5) ** 2 + (Math.log(e[4] / opr) / 0.2) ** 2;
+  return EDB.map((e) => ({ uid: e[0], name: e[1], T_kN: e[2], bpr: e[3], opr: e[4], ff: e.slice(5, 9), ei: e.slice(9, 13), d: Math.sqrt(dist(e)) })).sort((a, b) => a.d - b.d).slice(0, n);
+}
+/** The cycle model at the four ICAO landing/take-off points (sea-level static, ISA, reference humidity): throttle solved for each thrust share. */
+function ltoPoints(i, des) {
+  return EDB_MODES.map(([name, frac]) => {
+    const thr = frac >= 1 ? 1 : N.findRoot((t) => offDesign(i, des, 0, 0, 0, t).T / i.T0_N - frac, 0.35, 1, 26, 1e-7), od = Number.isFinite(thr) ? offDesign(i, des, 0, 0, 0, thr) : null;
+    return { name, frac, wf: od ? od.wf : NaN, T3: od ? od.cy.T3 : NaN, ei: od ? einox(i, od.cy.T3, od.cy.p3, H_ICAO) : NaN };
+  });
+}
 
 // ---- shared inputs ----------------------------------------------------------------------------
 const FLIGHT = [
@@ -171,9 +189,10 @@ const ENGINE = [
   { key: 'fuel', label: 'Fuel', type: 'select', options: FUELS, default: 'Jet A-1', group: 'Fuel' },
   { key: 'eta_prop', label: 'Propeller / rotor propulsive efficiency', unit: '-', default: 0.82, min: 0.1, max: 0.95, group: 'Engine', help: 'Converts shaft power to thrust for shaft engines' },
   { key: 'D_prop', label: 'Propeller / rotor diameter per engine', unit: 'm', default: 3.9, min: 0.05, group: 'Engine', help: 'Only used to estimate static thrust when no rating is given' },
-  { key: 'nox_a', label: 'NOx correlation coefficient a', unit: 'g/kg', default: 0.0986, min: 0, max: 1, group: 'Emissions', help: 'EINOx = a·(P3/1 atm)^n·exp(T3/Ts). Calibrate a against engine certification data.' },
+  { key: 'nox_a', label: 'NOx correlation coefficient a', unit: 'g/kg', default: 0.0986, min: 0, max: 1, group: 'Emissions', help: 'EINOx = a·(P3/1 atm)^n·exp(T3/Ts − H/53.2). The defaults fit one dual-annular combustor; calibrate a against the certified values shown in the results.' },
   { key: 'nox_n', label: 'NOx pressure exponent n', unit: '-', default: 0.4, min: 0, max: 1, group: 'Emissions' },
   { key: 'nox_Ts', label: 'NOx temperature scale Ts', unit: 'K', default: 194.4, min: 100, max: 400, group: 'Emissions' },
+  { key: 'hum_g_kg', label: 'Ambient specific humidity', unit: 'g/kg', default: 0, min: 0, max: 30, group: 'Emissions', help: 'Humidity term exp(−H/53.2) of the NOx correlation at the flight point: 0 for dry air at cruise altitude; 6.34 g/kg is the ICAO certification reference at sea level (factor 0.89)' },
 ];
 const GT = ['turbofan', 'turbojet', 'turboprop', 'turboshaft'];
 const isGT = (c) => (GT.includes(c.prop.type) ? true : `Gas-turbine analysis; this case has a ${c.prop.type} powerplant. Use the ${c.prop.type === 'piston' ? 'piston-engine' : 'electric / hybrid chain'} analysis.`);
@@ -203,6 +222,16 @@ const cyc = {
     const tsfc = sh ? (Number.isFinite(od.bsfc) ? (od.bsfc * Math.max(od.I.V0, 1)) / i.eta_prop : 0) : od.tsfc;
     if (cy.T4 > 1900) warnings.push('Turbine inlet temperature above 1900 K is beyond current cooled-turbine practice and the no-dissociation gas model.');
     if (fu.co2 === 0) warnings.push('Hydrogen fuel: the NOx correlation was derived for kerosene combustors and is indicative only.');
+    // reality check against certified engines: the model at the four ICAO landing/take-off points beside the nearest databank engine
+    const lto = i.arch === 'turbofan' && i.T0_N > 0 ? ltoPoints(i, des) : null, near = lto ? nearestEngines(i.T0_N / 1e3, i.bpr, i.opr, 3) : [], ref = near[0], tables = [], extra = [];
+    if (ref) {
+      const fx = (v, n) => (Number.isFinite(v) ? +v.toFixed(n) : 'not reached');
+      tables.push({ title: `Landing/take-off points: this cycle model against the certified ${ref.name} (databank UID ${ref.uid})`, columns: ['Mode', 'Thrust [% of rating]', 'Model fuel flow [kg/s]', 'Certified fuel flow [kg/s]', 'Correlation EI NOx [g/kg]', 'Certified EI NOx [g/kg]'], rows: lto.map((m, k) => [m.name, Math.round(100 * m.frac), fx(m.wf, 3), ref.ff[k], fx(m.ei, 1), ref.ei[k]]) });
+      tables.push({ title: 'Closest certified engines in the ICAO databank', columns: ['Engine', 'UID', 'Rated thrust [kN]', 'Bypass ratio [-]', 'Pressure ratio [-]', 'EI NOx take-off [g/kg]', 'EI NOx climb-out [g/kg]', 'EI NOx approach [g/kg]', 'EI NOx idle [g/kg]'], rows: near.map((e) => [e.name, e.uid, e.T_kN, e.bpr, e.opr, ...e.ei]) });
+      extra.push(kp('EINOx_TO_model_g_kg', 'NOx emission index at take-off, correlation', lto[0].ei, 'g/kg', { note: 'Sea-level static ISA with the ICAO reference humidity' }), kp('EINOx_TO_cert_g_kg', 'NOx emission index at take-off, nearest certified engine', ref.ei[0], 'g/kg', { note: `${ref.name} (${ref.T_kN} kN, BPR ${ref.bpr}, OPR ${ref.opr}), measured` }),
+        kp('ff_TO_model_kgs', 'Take-off fuel flow per engine, model', lto[0].wf, 'kg/s'), kp('ff_TO_cert_kgs', 'Take-off fuel flow per engine, nearest certified engine', ref.ff[0], 'kg/s', { status: Math.abs(lto[0].wf / ref.ff[0] - 1) < 0.15 ? 'ok' : 'warn', note: 'Within 15% of the model indicates a consistent cycle' }));
+      if (ref.d > 2) warnings.push(`No certified engine is close to this rating (${(i.T0_N / 1e3).toFixed(0)} kN, BPR ${i.bpr}, OPR ${i.opr}): the nearest, ${ref.name}, is shown for orientation only.`);
+    }
     if (i.mach > 1) warnings.push(`Supersonic inlet: MIL-E-5008B shock pressure recovery ${od.I.ram.toFixed(3)} applied; convergent nozzles under-expand and lose thrust.`);
     if (!(T > 0)) warnings.push('No positive net thrust at this flight condition and throttle.');
     const core = cy.st.filter((s) => s.id !== '19'), byp = cy.st.filter((s) => ['2', '13', '19'].includes(s.id));
@@ -217,7 +246,7 @@ const cyc = {
       kp('opr_flight', 'Overall pressure ratio at the flight point', od.opr, '-'), kp('EGT_K', 'Exhaust gas total temperature', cy.T5, 'K'),
       kp('EINOx_g_kg', 'NOx emission index', ei, 'g/kg'), kp('co2_kg_s', 'CO₂ emission (all engines)', wf * fu.co2, 'kg/s'), kp('h2o_kg_s', 'Water vapour emission (all engines)', wf * fu.h2o, 'kg/s'),
       kp('heat_rejection_W', 'Heat to oil system (bearing and gearbox losses)', n * od.mdot * cy.lossMech, 'W'), kp('exhaust_heat_W', 'Exhaust and jet residual power', Math.max(0, Qf - useful), 'W'),
-      kp('mdot_core_kgs', 'Design core mass flow per engine', des.mdot, 'kg/s'), kp('far', 'Combustor fuel–air ratio', cy.f, '-'),
+      kp('mdot_core_kgs', 'Design core mass flow per engine', des.mdot, 'kg/s'), kp('far', 'Combustor fuel–air ratio', cy.f, '-'), ...extra,
     ];
     if (sh) kpis.push(kp('bsfc_kg_Ws', 'BSFC at the flight point', od.bsfc, 'kg/W/s'), kp('bsfc_static_kg_Ws', 'BSFC at the sea-level static rating', des.cy.ff / des.cy.wshaft, 'kg/W/s', { note: `${(des.cy.ff / des.cy.wshaft * 3.6e9).toFixed(0)} g/kWh` }), kp('jet_thrust_N', 'Residual jet thrust (all engines)', n * od.mdot * Math.max(0, cy.Fj), 'N'));
     else kpis.push(kp('tsfc_static_kg_Ns', 'TSFC at the sea-level static rating', tsS, 'kg/N/s'), kp('specific_thrust_ms', 'Specific thrust (per total airflow)', cy.Fs / (1 + cy.bpr), 'N·s/kg'), kp('V9_ms', 'Core jet velocity', cy.n9.V, 'm/s'), kp('mdot_total_kgs', 'Design total airflow per engine', des.mdot * (1 + cy.bpr), 'kg/s'));
@@ -226,18 +255,21 @@ const cyc = {
       plots: [
         { type: 'line', title: 'Temperature–entropy diagram at the flight point', xlabel: 'Specific entropy above ambient [J/kg/K]', ylabel: 'Temperature [K]', series: [{ name: 'Core stream', x: core.map((s) => s.s), y: core.map((s) => s.T), style: 'line+points' }, ...(byp.length === 3 ? [{ name: 'Bypass stream', x: byp.map((s) => s.s), y: byp.map((s) => s.T), style: 'line+points' }] : [])] },
         { type: 'bar', title: 'Where the fuel energy goes', ylabel: 'Power [MW]', categories: ['All engines'], stacked: true, series: [{ name: sh ? 'Shaft power' : 'Thrust power', y: [(sh ? P : T * od.I.V0) / 1e6] }, { name: sh ? 'Residual jet power' : 'Jet kinetic energy left in the wake', y: [Math.max(0, useful - (sh ? P : T * od.I.V0)) / 1e6] }, { name: 'Exhaust heat and losses', y: [Math.max(0, Qf - useful) / 1e6] }] },
+        ...(ref ? [{ type: 'bar', title: `NOx emission index at the landing/take-off points: correlation against the certified ${ref.name}`, ylabel: 'EI NOx [g/kg fuel]', categories: lto.map((m) => m.name), series: [{ name: 'T3–P3 correlation on this cycle', y: lto.map((m) => (Number.isFinite(m.ei) ? m.ei : 0)) }, { name: 'Certified (ICAO databank)', y: ref.ei }] }] : []),
       ],
-      tables: [{ title: 'Station table at the flight point (totals unless marked static)', columns: ['Station', 'Location', 'Temperature [K]', 'Pressure [kPa]', 'Flow / core flow [-]', 'Entropy [J/kg/K]'], rows: cy.st.map((s) => [s.id, s.name, +s.T.toFixed(1), +(s.p / 1e3).toFixed(2), +s.m.toFixed(4), +s.s.toFixed(1)]) }],
+      tables: [...tables, { title: 'Station table at the flight point (totals unless marked static)', columns: ['Station', 'Location', 'Temperature [K]', 'Pressure [kPa]', 'Flow / core flow [-]', 'Entropy [J/kg/K]'], rows: cy.st.map((s) => [s.id, s.name, +s.T.toFixed(1), +(s.p / 1e3).toFixed(2), +s.m.toFixed(4), +s.s.toFixed(1)]) }],
       outputs: { bsfc_kg_Ws: sh ? od.bsfc : 0, EICO2_g_kg: fu.co2 * 1e3, EIH2O_g_kg: fu.h2o * 1e3 },
-      warnings, models: [`${i.arch} parametric cycle with variable cp(T) for air and ${fu.name} products`, 'Simplified matched-engine scaling from the sea-level static design point', 'T3–P3 NOx correlation (empirical, calibratable)', 'CO₂ and H₂O from fuel stoichiometry (exact)'],
-      assumptions: [...gtAssume, odAssume, 'Published totals are for all engines at the flight point; static thrust is per engine'],
+      warnings, models: [`${i.arch} parametric cycle with variable cp(T) for air and ${fu.name} products`, 'Simplified matched-engine scaling from the sea-level static design point', 'T3–P3 NOx correlation with humidity term (single-combustor fit, calibratable)', 'CO₂ and H₂O from fuel stoichiometry (exact)', ...(ref ? [`Measured landing/take-off emission indices and fuel flows: ${EDB_ISSUE}`] : [])],
+      assumptions: [...gtAssume, odAssume, 'Published totals are for all engines at the flight point; static thrust is per engine', 'Component efficiencies, pressure losses and the cooling-air fraction are typical technology-level values, not data for a specific engine', 'The NOx correlation constants fit one dual-annular combustor; modern lean-burn and rich–quench–lean combustors differ, so prefer the certified values where an engine of the class exists',
+        ...(ref ? ['The certified engine is the nearest databank entry by rated thrust, bypass ratio and pressure ratio; it is a comparison, not the modelled engine. Idle and approach lie outside the validity of the simplified off-design model'] : [])],
     };
   },
   verify() {
     const base = { arch: 'turbojet', alt: 0, M: 0, dISA: 0, opr: 12, fpr: 1, bpr: 0, T4: 1400, ep_c: 1, ep_f: 1, ep_t: 1, eta_b: 1, pi_b: 1, pi_d: 1, eta_m: 1, eta_gb: 1, bleed: 0, npr: 1, cv: 1, fuel: 'Jet A-1', eta_prop: 1, full: true, ideal: true };
     const c = cycle(base), g = 1004.7 / (1004.7 - R_AIR), e = (g - 1) / g, T3 = 288.15 * 12 ** e, T5 = 1400 - (T3 - 288.15), V9 = Math.sqrt(2 * 1004.7 * T5 * (1 - (1 / (12 * (T5 / 1400) ** (1 / e))) ** e));
     const nz = nozzle(gas(0, null, true), 800, 3e5, 1e5, false), air = gas();
-    const fu = fuelOf('Jet A-1'), f = burnerF(fu, 800, 1600, 1), cpD = (T) => cp(fu.gD, T);
+    const fu = fuelOf('Jet A-1'), f = burnerF(fu, 800, 1600, 1), cpD = (T) => cp(fu.gD, T), nx = { nox_a: 0.0986, nox_n: 0.4, nox_Ts: 194.4 };
+    const eng = Object.fromEntries(ENGINE.map((k) => [k.key, k.default])), des0 = design(eng), lt = ltoPoints(eng, des0);
     return [
       N.check('Ideal Brayton thermal efficiency 1 − PR^(−(γ−1)/γ)', c.eta_th, 1 - 12 ** -e, 1e-8, 'Ideal air-standard Brayton cycle'),
       N.check('Ideal turbojet static specific thrust', c.Fs, V9, 1e-8, 'Closed-form ideal cycle analysis'),
@@ -245,13 +277,20 @@ const cyc = {
       N.check('Analytic enthalpy integral of cp(T), 288–1600 K', h(air, 1600) - h(air, 288.15), N.simpson((T) => cp(air, T), 288.15, 1600, 400), 1e-8, 'Simpson quadrature of the same polynomial'),
       N.check('Analytic entropy function ∫cp dT/T, 288–1600 K', phi(air, 1600) - phi(air, 288.15), N.simpson((T) => cp(air, T) / T, 288.15, 1600, 400), 1e-8, 'Simpson quadrature'),
       N.check('Burner energy balance closes', f * fu.LHV, N.simpson((T) => cp(air, T), 800, 1600, 400) + f * N.simpson(cpD, TREF, 1600, 400), 1e-8, 'First law, LHV at 298 K'),
+      N.check('NOx correlation at T3 = 800 K, P3 = 30 atm, dry air', einox(nx, 800, 30 * P_SL, 0), 0.0986 * 30 ** 0.4 * Math.exp(800 / 194.4), 1e-12, 'Schwartz Dallara eq. (5.4), NASA ECCP dual-annular combustor fit'),
+      N.check('NOx humidity term at the ICAO reference humidity', einox(nx, 800, 30 * P_SL, 6.34) / einox(nx, 800, 30 * P_SL, 0), Math.exp(-6.34 / 53.2), 1e-12, 'exp(−H/53.2), H in g/kg'),
+      N.check('Databank lookup: CFM56-7B26 take-off EI NOx', nearestEngines(116.99, 5.1, 27.61, 1)[0].ei[0], 28.8, 1e-12, 'ICAO Aircraft Engine Emissions Databank, UID 8CM051'),
+      N.check('Databank lookup: PW1127G-JM take-off fuel flow', nearestEngines(120.44, 12.28, 31.66, 1)[0].ff[0], 0.8, 1e-12, 'ICAO Aircraft Engine Emissions Databank, UID 01P22PW163'),
+      N.check('Model at the take-off point reproduces the design-point fuel flow', lt[0].wf, des0.mdot * des0.cy.ff, 1e-9, 'Design point of the cycle'),
+      N.check('Model at the climb-out point delivers 85% of rated thrust', offDesign(eng, des0, 0, 0, 0, N.findRoot((t) => offDesign(eng, des0, 0, 0, 0, t).T / eng.T0_N - 0.85, 0.35, 1, 26, 1e-7)).T / eng.T0_N, 0.85, 1e-6, 'ICAO landing/take-off cycle thrust setting'),
     ];
   },
   calibration: { params: [{ key: 'ep_c', min: 0.8, max: 0.94 }, { key: 'ep_t', min: 0.8, max: 0.93 }, { key: 'bleed', min: 0, max: 0.25 }], sweep: 'throttle', target: 'tsfc_kg_Ns', note: 'Supply test-cell or flight TSFC (or BSFC) against throttle setting at a known altitude and Mach number.' },
   recommend(res, i) {
     const o = res.outputs, out = [], fu = fuelOf(i.fuel);
     if (fu.co2 > 0) out.push({ severity: 'advise', title: 'Fuel choice is the largest CO₂ lever', detail: `This point emits ${(o.co2_kg_s * 3600).toFixed(0)} kg CO₂ per hour. ${fu.lc < 1 ? `With ${fu.name} the life-cycle figure is about ${(100 * fu.lc).toFixed(0)}% of that.` : 'A HEFA-type sustainable aviation fuel burns the same in this cycle but cuts life-cycle CO₂ by roughly 75%; hydrogen removes CO₂ at the exhaust but emits about 2.6 times more water vapour per unit of energy.'}`, action: 'Re-run with "SAF (HEFA-SPK)" or "Liquid hydrogen" as the fuel and compare fuel flow, water vapour and NOx in the combustor analysis.', basis: 'Fuel stoichiometry and life-cycle factor in the fuel database' });
-    if (o.EINOx_g_kg > 30) out.push({ severity: 'warn', title: 'High NOx emission index', detail: `EINOx ≈ ${o.EINOx_g_kg.toFixed(1)} g/kg at T3 = ${o.T3_K.toFixed(0)} K.`, action: 'A lower pressure ratio or a lean-burn / staged combustor reduces NOx; weigh this against the fuel-burn penalty of the lower pressure ratio.', basis: 'T3–P3 NOx correlation (uncalibrated default)' });
+    if (o.EINOx_g_kg > 30) out.push({ severity: 'advise', title: 'High NOx emission index at this point', detail: `EINOx ≈ ${o.EINOx_g_kg.toFixed(1)} g/kg at T3 = ${o.T3_K.toFixed(0)} K (correlation). Certified turbofans measure roughly 15–70 g/kg at take-off, rising with pressure ratio.`, action: 'A lower pressure ratio or a lean-burn / staged combustor reduces NOx; weigh this against the fuel-burn penalty of the lower pressure ratio.', basis: 'T3–P3 NOx correlation (single-combustor fit) against the spread of the ICAO Engine Emissions Databank' });
+    if (Number.isFinite(o.EINOx_TO_model_g_kg) && o.EINOx_TO_cert_g_kg > 0 && (o.EINOx_TO_model_g_kg > 1.4 * o.EINOx_TO_cert_g_kg || o.EINOx_TO_model_g_kg < 0.7 * o.EINOx_TO_cert_g_kg)) out.push({ severity: 'advise', title: 'NOx correlation disagrees with the certified engine of this class', detail: `Take-off EI NOx: ${o.EINOx_TO_model_g_kg.toFixed(1)} g/kg from the correlation against ${o.EINOx_TO_cert_g_kg.toFixed(1)} g/kg measured on the nearest certified engine.`, action: `Use the certified landing/take-off values in the results table, or scale the coefficient a to ${(i.nox_a * o.EINOx_TO_cert_g_kg / o.EINOx_TO_model_g_kg).toPrecision(3)} so the correlation reproduces the take-off point before using it at altitude.`, basis: 'ICAO Aircraft Engine Emissions Databank (measured, sea-level static)' });
     if (o.T3_K > 950) out.push({ severity: 'warn', title: 'Compressor delivery temperature is at the disc material limit', detail: `T3 = ${o.T3_K.toFixed(0)} K.`, action: 'Reduce the overall pressure ratio or check the last-stage disc and cooling-air temperature in Suite 12.', basis: 'Typical nickel-alloy HP compressor disc limit of 950–1000 K' });
     if (!isShaft(i.arch) && o.eta_propulsive < 0.7 && i.mach > 0.3) out.push({ severity: 'advise', title: 'Propulsive efficiency is the weak link', detail: `η_propulsive = ${o.eta_propulsive.toFixed(2)} against η_thermal = ${o.eta_thermal.toFixed(2)}.`, action: 'A higher bypass ratio with a lower fan pressure ratio lowers jet velocity and fuel burn; check nacelle drag and weight in Suite 23.', basis: 'Froude efficiency 2/(1 + Vj/V0)' });
     return out;
@@ -328,7 +367,7 @@ const turbo = {
   summary: 'Stage-count estimates from stage loading, a generic compressor map with the engine operating line and surge margin, and the compressor–turbine power balance on each spool.',
   equations: ['Compressor energy equation', 'Turbine energy equation', 'Compressor and turbine efficiency relations', 'Shaft power balance', 'Euler turbomachinery work (stage loading)'],
   applicable: isGT,
-  inputs: [...ENGINE.filter((f) => !f.key.startsWith('nox')),
+  inputs: [...ENGINE.filter((f) => f.group !== 'Emissions'),
     { key: 'sm_design', label: 'Design surge margin of the generic map', unit: '-', default: 0.2, min: 0.05, max: 0.4, group: 'Map', help: 'Surge pressure ratio / operating pressure ratio − 1 at constant corrected flow. 0.15–0.25 is typical.' },
     { key: 'psi_c', label: 'Compressor stage loading Δh/U²', unit: '-', default: 0.33, min: 0.15, max: 0.6, group: 'Stages', help: 'Mean-radius work coefficient; 0.3–0.4 for axial stages' },
     { key: 'U_c', label: 'Compressor mean blade speed', unit: 'm/s', default: 380, min: 150, max: 550, group: 'Stages' },
@@ -340,7 +379,7 @@ const turbo = {
     const des = design(i), c = des.cy, m = des.mdot, mp = cmap(i.opr, i.sm_design, i.ep_c, etaIs(i.opr, i.ep_c));
     const line = N.linspace(0.6, 1, 17).map((t) => offDesign(i, des, 0, 0, 0, t)).filter((p) => p.opr > 1.2), sm = line.map((p) => mp.sm(p.Wc, p.opr)), jm = N.argmin(sm);
     const sx = [], sy = []; for (const n of [0.6, 0.7, 0.8, 0.9, 1.0, 1.05]) { for (const b of N.linspace(0, 1, 14)) { const q = mp.at(n, b); sx.push(q.W); sy.push(q.PR); } sx.push(NaN); sy.push(NaN); }
-    const st = (dh, psi, U) => Math.max(1, Math.ceil(dh / (psi * U * U) - 1e-9)), nC = st(c.w.hpc, i.psi_c, i.U_c), nH = st(c.w.hpt / c.m45, i.psi_t, i.U_t), wl = c.w.lpt || c.w.pt, nL = wl > 0 ? st(wl / c.m45, i.psi_t, i.U_lp) : 0;
+    const st = (dh, psi, U) => Math.max(1, Math.ceil(dh / (psi * U * U) - 1e-9)), nC = st(c.w.hpc, i.psi_c, i.U_c), nH = st(c.w.hpt / c.m4, i.psi_t, i.U_t), wl = c.w.lpt || c.w.pt, nL = wl > 0 ? st(wl / c.m45, i.psi_t, i.U_lp) : 0;
     const Pc = m * c.w.hpc, Ph = m * c.w.hpt, Pf = m * (1 + c.bpr) * c.w.fan, Pl = m * wl, sI = line.filter((p, j) => sm[j] < Infinity).map((p) => p.Wc), warnings = ['The compressor map is a generic parametric map scaled to the design point; it is not the map of any real compressor. Surge margins are indicative.'];
     if (sm[jm] < 0.1) warnings.push('The steady operating line comes within 10% of the generic surge line at part power: handling bleed or variable stators would be needed.');
     return {
@@ -356,9 +395,9 @@ const turbo = {
         { type: 'line', title: 'Surge margin along the operating line', xlabel: 'Corrected flow / design [-]', ylabel: 'Surge margin [%]', series: [{ name: 'Steady state', x: sI, y: sm.map((v) => 100 * v) }], annotations: [{ y: 15, label: 'Typical minimum' }] },
         { type: 'bar', title: 'Spool power balance at the design point', ylabel: 'Power [MW]', categories: ['HP spool', i.arch === 'turbofan' ? 'LP spool' : 'Output'], series: [{ name: 'Absorbed (compressor, fan or shaft)', y: [Pc / 1e6, (i.arch === 'turbofan' ? Pf : Pl * i.eta_m * i.eta_gb) / 1e6] }, { name: 'Delivered by turbine', y: [Ph / 1e6, Pl / 1e6] }] },
       ],
-      tables: [{ title: 'Turbomachinery work matching (design point)', columns: ['Component', 'Specific work [kJ/kg]', 'Power [kW]', 'Stages [-]'], rows: [['Fan (all flow)', +(c.w.fan / 1e3).toFixed(1), +(Pf / 1e3).toFixed(0), i.arch === 'turbofan' ? 1 : 0], ['Core compressor', +(c.w.hpc / 1e3).toFixed(1), +(Pc / 1e3).toFixed(0), nC], ['HP turbine', +(c.w.hpt / c.m45 / 1e3).toFixed(1), +(Ph / 1e3).toFixed(0), nH], ['LP / power turbine', +(wl / c.m45 / 1e3).toFixed(1), +(Pl / 1e3).toFixed(0), nL]] }],
+      tables: [{ title: 'Turbomachinery work matching (design point)', columns: ['Component', 'Specific work [kJ/kg]', 'Power [kW]', 'Stages [-]'], rows: [['Fan (all flow)', +(c.w.fan / 1e3).toFixed(1), +(Pf / 1e3).toFixed(0), i.arch === 'turbofan' ? 1 : 0], ['Core compressor', +(c.w.hpc / 1e3).toFixed(1), +(Pc / 1e3).toFixed(0), nC], ['HP turbine (per kg of rotor flow)', +(c.w.hpt / c.m4 / 1e3).toFixed(1), +(Ph / 1e3).toFixed(0), nH], ['LP / power turbine', +(wl / c.m45 / 1e3).toFixed(1), +(Pl / 1e3).toFixed(0), nL]] }],
       warnings, models: ['Generic parametric β-line compressor map (labelled generic)', 'Stage count from mean-radius stage loading', 'Matched operating line from the simplified off-design model'],
-      assumptions: [odAssume, 'One map represents the whole core compression system', 'Stage loading and blade speed are the same for all stages of a component'],
+      assumptions: [odAssume, 'One map represents the whole core compression system', 'Stage loading and blade speed are the same for all stages of a component; the default loadings and blade speeds are typical values', 'HP turbine stage work is per unit of rotor gas flow (cooling air bypasses the rotor); LP and power turbine work per unit of mixed flow'],
     };
   },
   verify() {
@@ -392,6 +431,7 @@ const combustor = {
     { key: 'nox_a', label: 'NOx correlation coefficient a', unit: 'g/kg', default: 0.0986, min: 0, max: 1, group: 'Emissions' },
     { key: 'nox_n', label: 'NOx pressure exponent n', unit: '-', default: 0.4, min: 0, max: 1, group: 'Emissions' },
     { key: 'nox_Ts', label: 'NOx temperature scale Ts', unit: 'K', default: 194.4, min: 100, max: 400, group: 'Emissions' },
+    { key: 'hum_g_kg', label: 'Ambient specific humidity', unit: 'g/kg', default: 0, min: 0, max: 30, group: 'Emissions', help: 'Humidity term exp(−H/53.2): 0 for dry air at cruise altitude, 6.34 g/kg at the ICAO sea-level reference' },
     { key: 'alt_m', label: 'Altitude (for the contrail criterion)', unit: 'm', default: 10668, min: 0, max: 20000, group: 'Contrail' },
     { key: 'dISA', label: 'ISA deviation', unit: 'K', default: 0, min: -60, max: 50, group: 'Contrail' },
     { key: 'eta_o', label: 'Overall propulsion efficiency', unit: '-', default: 0.33, min: 0.05, max: 0.6, group: 'Contrail', help: 'Thrust power / fuel power at the flight point' },
@@ -428,8 +468,8 @@ const combustor = {
         { type: 'line', title: 'NOx emission index versus combustor inlet temperature', xlabel: 'T3 [K]', ylabel: 'EINOx [g/kg]', series: [1, 0.5].map((s) => ({ name: `P3 = ${(s * i.P3 / 1e5).toFixed(1)} bar`, x: T3s, y: T3s.map((t) => einox(i, t, s * i.P3)) })) },
       ],
       tables: [{ title: 'Complete-combustion stoichiometry per kg of fuel', columns: ['Fuel', 'O₂ consumed [kg]', 'CO₂ [kg]', 'H₂O [kg]', 'Stoichiometric air/fuel [-]', 'LHV [MJ/kg]'], rows: fs.map((F) => [F.name, +F.o2.toFixed(3), +F.co2.toFixed(3), +F.h2o.toFixed(3), +(1 / F.fst).toFixed(2), +(F.LHV / 1e6).toFixed(2)]) }],
-      warnings, models: ['First-law combustor balance with variable-cp products', 'Complete-combustion stoichiometry (exact CO₂ and H₂O)', 'T3–P3 NOx correlation (empirical, calibratable coefficient)', 'Schmidt–Appleman contrail criterion with Schumann threshold fit'],
-      assumptions: ['No dissociation or finite-rate chemistry: flame temperatures are upper bounds above about 2000 K', 'Fuel enters at 298 K; LHV referenced to 298 K', 'Contrail threshold given for water-saturated ambient air; drier air needs colder temperatures'],
+      warnings, models: ['First-law combustor balance with variable-cp products', 'Complete-combustion stoichiometry (exact CO₂ and H₂O)', 'T3–P3 NOx correlation with humidity term (fit to one dual-annular combustor; calibratable coefficient)', 'Schmidt–Appleman contrail criterion with Schumann threshold fit'],
+      assumptions: ['No dissociation or finite-rate chemistry: flame temperatures are upper bounds above about 2000 K', 'Fuel enters at 298 K; LHV referenced to 298 K', 'Contrail threshold given for water-saturated ambient air; drier air needs colder temperatures', 'The NOx constants are a single-combustor fit, not a general law: for a certified turbofan use the measured landing/take-off values listed in the cycle analysis (ICAO Engine Emissions Databank)', 'Primary-zone equivalence ratio and combustion efficiency are typical values'],
     };
   },
   verify() {
@@ -513,7 +553,8 @@ const piston = {
     const fl = at(i.alt_m, i.nPts), b = pb(fl), b0 = pb(sl), c = fl.c, n = i.n_eng, P = n * b.P, wf = n * b.wf, eta_b = b.P / (b.wf * fu.LHV), bsfc = b.P > 0 ? b.wf / b.P : NaN;
     const etaAir = diesel ? 1 - (i.r ** (1 - g) * (c.rc ** g - 1)) / (g * (c.rc - 1)) : 1 - i.r ** (1 - g);
     const hs = N.linspace(0, 9000, 31), lapse = hs.map((hh) => pb(at(hh)).P / b0.P), gf = hs.map((hh) => Math.max(0, (isa(hh, i.dISA).sigma - 0.1325) / 0.8675) / ((isa(0, i.dISA).sigma - 0.1325) / 0.8675));
-    const Ts = staticThrust(i.T0_N, b0.P, i.D_prop, 1.225), T = n * Math.min(Ts * fl.a.sigma ** 0.7, (i.eta_prop * b.P) / Math.max(i.V, 1)), Qf = wf * fu.LHV;
+    const Ts = staticThrust(i.T0_N, b0.P, i.D_prop, 1.225), TsAlt = i.T0_N > 0 ? Ts * fl.a.sigma ** 0.7 : staticThrust(0, b.P, i.D_prop, fl.a.rho); // rating lapsed with density, or momentum theory at the altitude power and density
+    const T = n * Math.min(TsAlt, (i.eta_prop * b.P) / Math.max(i.V, 1)), Qf = wf * fu.LHV;
     const Qcool = n * (b.ma * c.f * Math.min(1, 1 / i.phi) * i.eta_c * fu.LHV * i.hl + (b.Pi - b.P)), warnings = ['NOx is a user-supplied emission index: this suite has no predictive NOx model for piston engines.'];
     if (c.T3 > 2400) warnings.push('Peak cycle temperature is over-predicted (no dissociation, instantaneous combustion); treat it as an upper bound.');
     if (!diesel && i.r > 10.5 && i.map_ratio > 0.9) warnings.push('Compression ratio above about 10.5 at high manifold pressure risks detonation with aviation gasoline.');
@@ -540,7 +581,7 @@ const piston = {
       tables: [{ title: 'Cycle states (per kg of trapped air)', columns: ['State', 'Temperature [K]', 'Pressure [bar]'], rows: [['1 Start of compression', c.T1, c.p1], ['2 End of compression', c.T2, c.p2], ['3 End of combustion', c.T3, c.p3], ['4 End of expansion', c.T4, c.p4]].map((r) => [r[0], +r[1].toFixed(1), +(r[2] / 1e5).toFixed(3)]) }],
       outputs: { EICO2_g_kg: fu.co2 * 1e3 },
       warnings, models: [`${diesel ? 'Diesel' : 'Otto'} fuel–air cycle with variable cp(T) and ${fu.name} products`, 'Volumetric efficiency and constant friction mean effective pressure', 'Gagg–Ferrar altitude lapse (shown for comparison)', 'CO₂ from fuel stoichiometry (exact)'],
-      assumptions: ['Four-stroke engine; instantaneous combustion; no dissociation; residual gas neglected', 'Heat loss removed from the heat release; the indicator-diagram factor covers finite burn time and pumping', 'Friction power is constant with altitude at fixed speed', 'Manifold-to-ambient pressure ratio is constant with altitude (no critical altitude modelled for turbocharged engines)'],
+      assumptions: ['Four-stroke engine; instantaneous combustion; no dissociation; residual gas neglected', 'Heat loss removed from the heat release; the indicator-diagram factor covers finite burn time and pumping', 'Friction power is constant with altitude at fixed speed', 'Manifold-to-ambient pressure ratio is constant with altitude (no critical altitude modelled for turbocharged engines)', 'Volumetric, mechanical and combustion efficiencies, heat-loss fraction and diagram factor are typical values to be calibrated on dynamometer data', 'The default NOx index of 4 g/kg is representative of rich full-power or climb operation (about 1–10 g/kg measured on a Lycoming O-360, FOCA); lean cruise can be several times higher'],
     };
   },
   convergence: { param: 'nPts', label: 'Points per stroke in the p–V quadrature', levels: [10, 20, 40, 80, 160], metric: 'work_pv_J_kg' },
@@ -630,7 +671,7 @@ const transient = {
         { type: 'line', title: 'Turbine inlet temperature', xlabel: 'Time [s]', ylabel: 'T4 [K]', series: [{ name: 'T4', x: pick(sol.t), y: pick(T4) }], annotations: [{ y: i.tit_K, label: 'Design T4' }] },
       ],
       warnings, models: ['Rotor inertia ODE integrated with RK4', 'Generic parametric compressor map (labelled generic)', 'Choked-turbine flow function with constant turbine temperature ratio', 'Linear fuel ramp schedule'],
-      assumptions: ['Single gas-generator spool at sea-level static inlet conditions', 'Constant cp of 1005 J/kg/K (compressor) and 1150 J/kg/K (turbine)', 'No power off-take, bleed or variable geometry', 'Default inertia and speed come from a generic size scaling'],
+      assumptions: ['Single gas-generator spool at sea-level static inlet conditions', 'Constant cp of 1005 J/kg/K (compressor) and 1150 J/kg/K (turbine)', 'No power off-take, bleed or variable geometry', 'Default inertia and speed come from a generic size scaling; idle fuel fraction and ramp time are typical values', 'The linear fuel ramp has no acceleration limiter, unlike a real engine control'],
     };
   },
   convergence: { param: 'nSteps', label: 'Time steps', levels: [50, 100, 200, 400], metric: 't_accel_s' },
@@ -648,7 +689,7 @@ const transient = {
   calibration: { params: [{ key: 'J', min: 1e-4, max: 500 }, { key: 'idle_frac', min: 0.05, max: 0.4 }], sweep: 't_ramp', target: 't_accel_s', note: 'Supply measured acceleration times against fuel-ramp time from engine test-cell slam accelerations.' },
   recommend(res, i) {
     const o = res.outputs, out = [];
-    if (o.sm_min_trans_pct < 5) out.push({ severity: o.sm_min_trans_pct <= 0 ? 'critical' : 'warn', title: 'Acceleration fuel schedule erodes the surge margin', detail: `Minimum transient margin ${o.sm_min_trans_pct.toFixed(1)}% with a ${i.t_ramp.toFixed(1)} s ramp.`, action: 'Lengthen the fuel ramp or add an acceleration limiter (fuel flow / compressor delivery pressure), transient bleed or variable stators.', basis: 'Surge margin on the generic map' });
+    if (o.sm_min_trans_pct < 5) out.push({ severity: o.sm_min_trans_pct <= 0 ? 'warn' : 'advise', title: o.sm_min_trans_pct <= 0 ? 'The unlimited fuel ramp reaches the generic surge line' : 'An unlimited fuel ramp uses most of the surge margin', detail: `Minimum transient margin ${o.sm_min_trans_pct.toFixed(1)}% with a ${i.t_ramp.toFixed(1)} s linear ramp and no acceleration limiter.`, action: 'Lengthen the fuel ramp or add an acceleration limiter (fuel flow / compressor delivery pressure), transient bleed or variable stators; repeat with the real compressor map and rotor inertia before drawing conclusions.', basis: 'Surge margin on a generic compressor map with a generic rotor inertia: indicative, not a prediction for a specific engine' });
     if (o.t_accel_s > 5) out.push({ severity: 'advise', title: 'Slow thrust response', detail: `95% of the speed change takes ${o.t_accel_s.toFixed(1)} s.`, action: 'Raise the idle speed (higher idle fuel flow) or shorten the ramp if surge margin allows; go-around handling normally needs most of the thrust within about 5–8 s.', basis: 'Spool energy balance' });
     if (o.T4_overshoot_K > 50) out.push({ severity: 'advise', title: 'Turbine temperature overshoot shortens hot-section life', detail: `T4 peaks ${o.T4_overshoot_K.toFixed(0)} K above the design value.`, action: 'Rate-limit the fuel ramp near maximum; pass the peak to Suite 9 for creep and thermal-fatigue life.', basis: 'Over-fuelling during acceleration' });
     return out;
@@ -716,11 +757,12 @@ const electric = {
   },
   run(i) {
     const r = chain(i, i.arch), all = ARCH_E.map((a) => chain(i, a)), a = isa(i.alt_m), fc = i.arch === 'fuel-cell electric', E = i.batt_kWh * 3.6e6 * i.usable;
-    const Ts = staticThrust(i.T0_N, i.P_mot_W, i.D_prop, 1.225), T = i.n_mot * Math.min(Ts * (i.T0_N > 0 ? a.sigma ** 0.7 : 1), (i.eta_prop * i.P_mot_W * i.power_frac) / Math.max(i.V, 1));
+    const Ts = staticThrust(i.T0_N, i.P_mot_W, i.D_prop, 1.225), TsAlt = i.T0_N > 0 ? Ts * a.sigma ** 0.7 : staticThrust(0, i.P_mot_W * i.power_frac, i.D_prop, a.rho); // rating lapsed with density, or momentum theory at this power and density
+    const T = i.n_mot * Math.min(TsAlt, (i.eta_prop * i.P_mot_W * i.power_frac) / Math.max(i.V, 1));
     const end = r.Pchem > 0 ? E / r.Pchem : Infinity, crate = E > 0 ? r.Pchem / (i.batt_kWh * 1e3) : 0, Tw = a.T + i.dT_wind * i.power_frac ** 2;
     const js = N.linspace(20, 1400, 70), vs = js.map((j) => cellV(i, j)), Vfc = cellV(i, i.fc_j), warnings = [];
     if (r.Pchem > 0 && i.batt_kWh <= 0) warnings.push('The battery supplies power but no battery energy is defined: endurance is zero.');
-    if (crate > 5) warnings.push(`Battery discharge rate ${crate.toFixed(1)} C exceeds about 5 C: expect strong voltage sag, heating and accelerated ageing (see Suite 19).`);
+    if (crate > 5) warnings.push(`Battery discharge rate ${crate.toFixed(1)} C at ${(100 * i.power_frac).toFixed(0)}% of rated power exceeds about 5 C: expect strong voltage sag, heating and accelerated ageing if this power is sustained (see Suite 19).`);
     if (fc && Vfc < 0.5) warnings.push('Fuel-cell operating point is in the mass-transport region (cell voltage below 0.5 V): reduce current density.');
     if (i.arch !== 'battery-electric') warnings.push('Hybrid and fuel-cell figures use a constant engine BSFC or a representative polarisation curve; they are architecture comparisons, not certified performance.');
     const out = i.publish ? { thrust_N: T, thrust_static_N: Ts, tsfc_kg_Ns: T > 0 ? r.wf / T : 0, P_shaft_W: r.Ps, eta_thermal: r.eta, eta_overall: r.eta * i.eta_prop, fuel_flow_kgs: r.wf, T4_K: Tw, EINOx_g_kg: 0, co2_kg_s: r.co2, heat_rejection_W: r.heat } : {};
@@ -731,7 +773,7 @@ const electric = {
         kp('el_thrust_N', 'Thrust at the flight point (all motors)', T, 'N'), kp('el_thrust_static_N', 'Static thrust per motor', Ts, 'N', { note: i.T0_N > 0 ? 'Rating' : 'Momentum-theory estimate' }),
         kp('el_fuel_flow_kgs', fc ? 'Hydrogen flow' : 'Fuel flow', r.wf, 'kg/s'), kp('el_co2_kg_s', 'CO₂ emission at the exhaust', r.co2, 'kg/s'), kp('el_h2o_kg_s', 'Water emission', r.h2o, 'kg/s'),
         kp('el_heat_W', 'Heat to be rejected by the cooling system', r.heat, 'W', { note: 'Battery, inverter, motor, generator and fuel-cell losses' }),
-        kp('el_endurance_min', 'Battery endurance at this power', end / 60, 'min', { status: end > 600 ? 'ok' : 'warn' }), kp('el_c_rate', 'Battery discharge rate', crate, '1/h', { status: crate <= 5 ? 'ok' : 'warn' }),
+        kp('el_endurance_min', 'Battery endurance at this power setting', end / 60, 'min', { status: end > 600 || i.power_frac > 0.75 ? 'ok' : 'warn', note: i.power_frac > 0.75 ? 'At or near rated power: a take-off / hover figure, not the mission endurance (Suites 19 and 24)' : 'At a sustained power setting' }), kp('el_c_rate', 'Battery discharge rate', crate, '1/h', { status: crate <= 5 ? 'ok' : 'warn' }),
         kp('el_T_winding_K', 'Motor winding temperature estimate', Tw, 'K', { status: Tw < 453 ? 'ok' : 'warn', note: 'Class H insulation limit is 180 °C (453 K)' }),
         kp('fc_V_cell', 'Fuel-cell voltage at the operating current density', Vfc, 'V'), kp('fc_eta_lhv', 'Fuel-cell stack efficiency (LHV)', (Vfc / 1.254) * i.fc_util, '-', { note: 'Cell voltage / 1.254 V × utilisation' }), kp('fc_power_density_W_cm2', 'Fuel-cell power density', (Vfc * i.fc_j) / 1e3, 'W/cm²'),
       ],
@@ -744,7 +786,7 @@ const electric = {
       tables: [{ title: 'Architecture comparison at the same shaft power', columns: ['Architecture', 'Source power [kW]', 'Efficiency [-]', 'Fuel [kg/h]', 'CO₂ [kg/h]', 'Heat to reject [kW]'], rows: all.map((x) => [x.arch, +(x.Psrc / 1e3).toFixed(1), +x.eta.toFixed(3), +(x.wf * 3600).toFixed(2), +(x.co2 * 3600).toFixed(1), +(x.heat / 1e3).toFixed(1)]) }],
       outputs: out,
       warnings, models: ['Steady efficiency-chain power balance', 'Series / parallel power split by degree of hybridisation', 'PEM polarisation curve (Larminie–Dicks form, representative constants)', 'Faraday-law hydrogen consumption (exact)'],
-      assumptions: ['Constant component efficiencies at the operating point; no voltage sag or thermal derating (resolved in Suite 19)', 'Hybrid engine at constant BSFC', 'Grid or hydrogen production emissions are outside the aircraft boundary and not counted', 'Winding temperature scales with the square of the power setting from the rated rise'],
+      assumptions: ['Constant component efficiencies at the operating point; no voltage sag or thermal derating (resolved in Suite 19)', 'Hybrid engine at constant BSFC', 'Grid or hydrogen production emissions are outside the aircraft boundary and not counted', 'Winding temperature scales with the square of the power setting from the rated rise', 'Component efficiencies, usable battery fraction and the fuel-cell polarisation constants are representative values, not data for specific hardware'],
     };
   },
   verify() {
@@ -759,7 +801,9 @@ const electric = {
   calibration: { params: [{ key: 'fc_r', min: 5e-5, max: 1e-3 }, { key: 'fc_A', min: 0.01, max: 0.08 }, { key: 'fc_Eoc', min: 0.9, max: 1.2 }], sweep: 'fc_j', target: 'fc_V_cell', note: 'Supply a measured stack polarisation curve (cell voltage against current density).' },
   recommend(res, i) {
     const o = res.outputs, out = [];
-    if (i.arch === 'battery-electric' && o.el_endurance_min < 30) out.push({ severity: 'warn', title: 'Short battery endurance at this power', detail: `${o.el_endurance_min.toFixed(1)} min of usable energy at ${(o.el_P_batt_W / 1e3).toFixed(0)} kW.`, action: 'Lower the power demand (disk loading, drag), raise battery energy, or compare a series hybrid or fuel-cell range extender in the architecture table.', basis: 'Usable battery energy / chemical power' });
+    if (i.arch === 'battery-electric' && o.el_endurance_min < 30) out.push(i.power_frac > 0.75
+      ? { severity: 'info', title: 'Battery endurance at rated power', detail: `${o.el_endurance_min.toFixed(1)} min of usable energy at ${(100 * i.power_frac).toFixed(0)}% of rated power (${(o.el_P_batt_W / 1e3).toFixed(1)} kW from the battery). Rated power is used for take-off, hover and climb only, so this is not the mission endurance.`, action: 'Set the power setting to the cruise or hover requirement to see the sustained endurance; the mission energy budget is in Suites 19 and 24.', basis: 'Usable battery energy / chemical power' }
+      : { severity: 'warn', title: 'Short battery endurance at this power', detail: `${o.el_endurance_min.toFixed(1)} min of usable energy at ${(o.el_P_batt_W / 1e3).toFixed(1)} kW (${(100 * i.power_frac).toFixed(0)}% of rated power).`, action: 'Lower the power demand (disk loading, drag), raise battery energy, or compare a series hybrid or fuel-cell range extender in the architecture table.', basis: 'Usable battery energy / chemical power' });
     if (o.el_c_rate > 3) out.push({ severity: 'advise', title: 'High discharge rate shortens battery life', detail: `${o.el_c_rate.toFixed(1)} C continuous.`, action: 'Size the pack for no more than about 3 C in sustained flight phases; check ageing and temperature in Suite 19.', basis: 'Cell cycle-life sensitivity to C-rate' });
     out.push({ severity: 'info', title: 'Zero exhaust CO₂ is not zero life-cycle CO₂', detail: `Battery and fuel-cell chains emit ${i.arch === 'battery-electric' ? 'nothing' : (o.el_co2_kg_s * 3600).toFixed(1) + ' kg/h CO₂'} at the aircraft, but electricity and hydrogen production carry their own footprint.`, action: 'Use the energy figures here with the grid or hydrogen carbon intensity in Suite 26 to compare options on a life-cycle basis.', basis: 'System boundary of this analysis' });
     if (o.el_heat_W > 0.15 * o.el_P_shaft_W) out.push({ severity: 'advise', title: 'Large low-grade heat load', detail: `${(o.el_heat_W / 1e3).toFixed(0)} kW must be rejected at low temperature.`, action: 'Size the thermal-management system in Suite 12; fuel-cell heat at 60–80 °C needs large radiators and adds cooling drag.', basis: 'Chain losses' });

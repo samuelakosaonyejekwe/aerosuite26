@@ -57,12 +57,12 @@ function estimate(c, d) {
   const at = isa(c.atm.alt_m, c.atm.dISA_K), V = c.flight.V_ms, M = V / at.a, be2 = Math.max(1 - M * M, 0.19), sw = rad(c.wing.sweep_deg), S = c.wing.S_m2, b = c.wing.b_m, mac = d.mac, lam = c.wing.taper;
   const aw = slope(d.AR, sw, be2), ah = slope(c.htail.b_m ** 2 / Math.max(c.htail.S_m2, 1e-9), sw, be2), av = slope((1.55 * c.vtail.b_m ** 2) / Math.max(c.vtail.S_m2, 1e-9), sw, be2), eps = Math.min(0.7, (2 * aw) / (Math.PI * d.AR)), VH = (c.htail.S_m2 * c.htail.arm_m) / (S * mac);
   const vol = 0.7 * (Math.PI / 4) * c.fuselage.dia_m ** 2 * c.fuselage.len_m, CLa = aw + 0.9 * ah * (c.htail.S_m2 / S) * (1 - eps), Cma = aw * (c.mass.cg_pct_mac / 100 - 0.25) + (1.8 * vol) / (S * mac) - 0.9 * ah * VH * (1 - eps), te = tauFlap(c.controls.Se_Sh), tr = tauFlap(c.controls.Sr_Sv);
-  const q = 0.5 * at.rho * V * V, CL = d.W / (q * S), zv = 0.5 * c.vtail.b_m + 0.25 * c.fuselage.dia_m, CYv = -av * (c.vtail.S_m2 / S), lv = c.vtail.arm_m, yb = (1 + 2 * lam) / (3 * (1 + lam)), cr = d.c_root, icy = (y) => cr * (y * y / 2 - ((1 - lam) * 2 * y ** 3) / (3 * b));
+  const q = 0.5 * at.rho * V * V, CL = d.W / (q * S), zv = 0.5 * c.vtail.b_m + 0.25 * c.fuselage.dia_m, CYv = -av * (c.vtail.S_m2 / S), lv = c.vtail.arm_m, yb = (1 + 2 * lam) / (3 * (1 + lam));
   const isP = c.prop.type !== 'turbofan' && c.prop.type !== 'turbojet', Tm = isP && d.P_total > 0 ? Math.min(d.T_total > 0 ? d.T_total * at.sigma ** 0.7 : Infinity, (c.prop.eta_prop * d.P_total * (c.prop.type === 'electric' ? 1 : at.sigma ** 0.7)) / V) : d.T_total * at.sigma ** 0.7;
   return { at, V, q, CL, CLa, Cma, Cmq: -2.2 * 0.9 * ah * VH * (c.htail.arm_m / mac), CLde: 0.9 * ah * (c.htail.S_m2 / S) * te, Cmde: -0.9 * ah * VH * te, T_max: Tm,
     CYb: CYv - (2 * (Math.PI / 4) * c.fuselage.dia_m ** 2) / S, Cnb: av * (c.vtail.S_m2 * lv) / (S * b) - (1.8 * vol) / (S * b), Clb: 0.75 * (-(aw * rad(c.wing.dihedral_deg) * yb) / 2 - CL * Math.tan(sw) * yb) + CYv * (zv / b),
     Clp: (-aw * (1 + 3 * lam)) / (12 * (1 + lam)), Cnp: -CL / 8, Clr: CL / 4 - 2 * (lv / b) * (zv / b) * CYv, Cnr: 2 * CYv * (lv / b) ** 2 - c.aero.CD0 / 4, CYr: -2 * CYv * (lv / b),
-    Clda: ((2 * aw * tauFlap(0.25)) / (S * b)) * (icy(0.475 * b) - icy(0.3 * b)), CYdr: av * tr * (c.vtail.S_m2 / S), Cndr: (-av * tr * c.vtail.S_m2 * lv) / (S * b), Cldr: av * tr * (c.vtail.S_m2 / S) * (zv / b) };
+    CYdr: av * tr * (c.vtail.S_m2 / S), Cndr: (-av * tr * c.vtail.S_m2 * lv) / (S * b), Cldr: av * tr * (c.vtail.S_m2 / S) * (zv / b) };
 }
 /** Compact hover derivative estimate (see Suite 4 for the model). */
 function hoverEst(c) {
@@ -184,7 +184,7 @@ const pitchLoop = {
       tables: sched.length ? [{ title: 'Gain schedule against airspeed (built-in model)', columns: ['TAS [m/s]', 'Kp', 'Ki [1/s]', 'Kd [s]', 'Gain margin [dB]', 'Phase margin [deg]'], rows: sched }] : [],
       outputs: { Kp_theta: g.Kp, Ki_theta: g.Ki, Kd_theta: g.Kd },
       warnings, models: [`Plant: ${P.src}`, 'PID controller with pitch-rate (derivative-on-measurement) feedback', 'Second-order actuator with rate and travel limits', 'Sample-and-hold and delay as a pure time delay in the frequency domain, exact discrete update in the time simulation', 'Gain-scheduled controller table'],
-      assumptions: ['Linear plant about the trim condition', 'Ideal attitude and rate sensors (sensor dynamics and noise are in Suite 17)', 'Root locus uses a first-order Padé approximation of the delay'],
+      assumptions: ['Linear plant about the trim condition', 'Ideal attitude and rate sensors (sensor dynamics and noise are in Suite 17)', 'Root locus uses a first-order Padé approximation of the delay', 'Actuator bandwidth and damping, sample time, delay and the 6 dB / 45° margin requirement are customary values, not data for a specific system'],
     };
   },
   calibration: { params: [{ key: 'w_act', min: 2, max: 300 }, { key: 'delay', min: 0, max: 0.3 }, { key: 'Cmde', min: -8, max: -0.05 }], sweep: 'wc', target: 'pm_deg', note: 'Measured loop frequency response (frequency sweeps on the iron bird or in flight) to identify actuator bandwidth, latency and control power' },
@@ -231,7 +231,7 @@ const lqrAn = {
     // residual of the Riccati equation as a self-check
     const At = N.transpose(P.A), Ric = N.madd(N.madd(N.madd(N.matmul(At, Pr), N.matmul(Pr, P.A)), N.matmul(N.matmul(N.matmul(Pr, P.B), N.inv(R)), N.matmul(N.transpose(P.B), Pr)), -1), Q), ricErr = N.amax(Ric.flat().map(Math.abs)) / N.amax(Q.flat().map(Math.abs));
     // simulations from an initial pitch disturbance: open loop, LQR, LQG (estimator starts at zero)
-    const x0 = [0, 0, 0, rad(i.th0_deg)], tEnd = Math.max(10, 8 / Math.max(0.05, -eigMax(Acl))), ns = 1500, ol = N.rk4((t, x) => N.matvec(P.A, x), 0, x0, tEnd, ns), cl = N.rk4((t, x) => N.matvec(Acl, x), 0, x0, tEnd, ns);
+    const x0 = [0, 0, 0, rad(i.th0_deg)], tEnd = Math.max(10, 8 / Math.max(0.05, -eigMax(Acl))), ns = Math.ceil(N.clamp(2 * tEnd * N.amax([...modes(Acl), ...modes(Aest), ...modes(P.A)].map((m) => m.wn)), 1500, 40000)), ol = N.rk4((t, x) => N.matvec(P.A, x), 0, x0, tEnd, ns), cl = N.rk4((t, x) => N.matvec(Acl, x), 0, x0, tEnd, ns);
     const A8 = N.zeros(8), BK = N.matmul(P.B, K), LC = N.matmul(Lk, Cm); for (let p = 0; p < 4; p++) for (let q = 0; q < 4; q++) { A8[p][q] = P.A[p][q]; A8[p][4 + q] = -BK[p][q]; A8[4 + p][q] = LC[p][q]; A8[4 + p][4 + q] = P.A[p][q] - BK[p][q] - LC[p][q]; }
     const lg = N.rk4((t, x) => N.matvec(A8, x), 0, [...x0, 0, 0, 0, 0], tEnd, ns), ecl = modes(Acl), eol = modes(P.A), ee = modes(Aest), cost = N.dot(x0, N.matvec(Pr, x0));
     const uPk = N.amax(cl.y.map((x) => Math.abs(N.dot(K[0], x)))) / cs, lim = (v) => N.clamp(v, -1e4, 1e4);
@@ -254,7 +254,7 @@ const lqrAn = {
       ],
       tables: [{ title: 'State-feedback gain K (u = −K·x, x = [u, w, q, θ])', columns: ['Control', 'u', 'w', 'q', 'θ'], rows: K.map((r, k) => [k ? 'Thrust / collective' : 'Pitch control', ...r]) }, { title: 'Kalman gain L (columns: q, θ measurements)', columns: ['State', 'from q', 'from θ'], rows: Lk.map((r, k) => [['u', 'w', 'q', 'θ'][k], ...r]) }],
       warnings, models: [`Plant: ${P.src}`, 'LQR controller (algebraic Riccati equation by the matrix sign function)', 'LQG controller: steady-state Kalman filter by the dual Riccati equation', 'Separation principle: regulator and estimator poles designed independently'],
-      assumptions: ['Linear time-invariant plant, all states weighted by the Bryson rule (1 / acceptable value²)', 'No actuator dynamics or limits in this design model: check the result in the classical loop analysis', 'LQR has guaranteed margins with full-state feedback; LQG has none, so its loop margins must be verified'],
+      assumptions: ['Linear time-invariant plant, all states weighted by the Bryson rule (1 / acceptable value²)', 'No actuator dynamics or limits in this design model: check the result in the classical loop analysis', 'LQR has guaranteed margins with full-state feedback; LQG has none, so its loop margins must be verified', 'The Bryson tolerances and sensor-noise levels are illustrative defaults: set them from the actual requirements and sensors'],
     };
   },
   verify() {
@@ -298,9 +298,10 @@ const autopilot = {
   },
   run(i, ctx) {
     const pi = { ...i, vehicle: 'aeroplane' }, P = plant(pi, ctx), u0 = P.u0, b1 = P.B.map((r) => r[0]), b2 = P.B.map((r) => r[1] ?? 0), warnings = [];
-    const act = { w_act: 30, z_act: 0.7, Ts: i.dt, delay: 0 }, g = tunePID(openLoop(P, act), i.w_pitch, 60), wh = i.w_alt_frac * i.w_pitch, wvs = 0.3 * i.w_pitch, Kh = wvs / u0, Khi = (Kh * wvs) / 5, XdT = b2[0] || 1e-9, Kv = i.w_speed / XdT, Kvi = (Kv * i.w_speed) / 4, Kpsi = (i.w_hdg * u0) / G0;
+    const act = { w_act: 30, z_act: 0.7, Ts: i.dt, delay: 0 }, g = tunePID(openLoop(P, act), i.w_pitch, 60), wh = i.w_alt_frac * i.w_pitch, wvs = 0.3 * i.w_pitch, Tg = 1 / Math.max(-P.A[1][1], 1e-3), Kh = (wvs * Tg) / u0, Khi = wvs / u0, XdT = b2[0] || 1e-9, Kv = i.w_speed / XdT, Kvi = (Kv * i.w_speed) / 4, Kpsi = (i.w_hdg * u0) / G0;
     const n = Math.round(i.t_end / i.dt), dt = i.dt, rng = N.rng(i.seed), tau = i.L_w / u0, thLim = rad(i.theta_lim_deg), deLim = rad(i.de_lim_deg), deRate = rad(i.de_rate_dps), bkLim = rad(i.bank_lim_deg), psiRef = rad(i.dpsi_deg);
-    let hf = 0, x = [0, 0, 0, 0], h = 0, de = 0, thr = 0, ih = 0, ith = 0, iv = 0, wg = 0, phi = 0, psi = 0, satE = 0, satT = 0, wasE = false, wasT = false, tE = 0; const T = [], H = [], U = [], TH = [], DE = [], TR = [], PS = [], PH = [], t0 = 5;
+    // vertical speed follows pitch attitude through the flight-path lag Tγ = −1/Zw: ḣ/θ = u0/(Tγ·s + 1). The PI zero cancels that lag, leaving the loop u0·Kh/(Tγ·s) with crossover ωvs
+    let hf = 0, x = [0, 0, 0, 0], h = 0, de = 0, thr = 0, ih = 0, ith = 0, iv = 0, wg = 0, phi = 0, psi = 0, satE = 0, satT = 0, wasE = false, wasT = false; const T = [], H = [], U = [], TH = [], DE = [], TR = [], PS = [], PH = [], t0 = 5;
     for (let k = 0; k <= n; k++) {
       const t = k * dt, hRef = t >= t0 ? i.dh : 0, vRef = t >= t0 ? i.dV : 0, pRef = t >= t0 ? psiRef : 0; hf += (h + i.sigma_h * N.randn(rng) - hf) * Math.min(1, 4 * wh * dt); const hm = hf; // first-order altitude filter at four times the loop bandwidth
       // outer loops
@@ -310,7 +311,7 @@ const autopilot = {
       const phC = N.clamp(Kpsi * (pRef - psi), -bkLim, bkLim);
       // actuators: rate-limited elevator servo, first-order engine
       const dd = N.clamp((deC - de) * 30, -deRate, deRate), sE = Math.abs(deU) > deLim || Math.abs((deC - de) * 30) > 1.0001 * deRate, sT = trU !== trC; de += dd * dt; thr += ((trC - thr) / i.tau_eng) * dt;
-      if (sE) { tE += dt; if (!wasE) satE++; } wasE = sE; if (sT && !wasT) satT++; wasT = sT;
+      if (sE && !wasE) satE++; wasE = sE; if (sT && !wasT) satT++; wasT = sT;
       T.push(t); H.push(h); U.push(x[0]); TH.push(x[3]); DE.push(de); TR.push(thr + i.throttle_trim); PS.push(psi); PH.push(phi);
       // plant with gust (first-order Dryden-like filter, exact discrete update), RK4
       wg = wg * Math.exp(-dt / tau) + i.sigma_w * Math.sqrt(1 - Math.exp((-2 * dt) / tau)) * N.randn(rng);
@@ -338,15 +339,16 @@ const autopilot = {
         { type: 'line', title: 'Pitch attitude and elevator', xlabel: 'Time [s]', ylabel: 'Angle [deg]', series: [{ name: 'Pitch attitude', x: thin(T), y: thin(TH.map(deg)) }, { name: 'Elevator', x: thin(T), y: thin(DE.map(deg)) }] },
         { type: 'line', title: 'Throttle', xlabel: 'Time [s]', ylabel: 'Throttle [-]', series: [{ name: 'Throttle', x: thin(T), y: thin(TR) }] },
       ],
-      warnings, models: [`Plant: ${P.src}`, 'Autopilot model: cascaded altitude → vertical speed → pitch attitude → elevator, PI autothrottle, heading → bank', 'Gains derived from the chosen loop bandwidths', 'Seeded first-order gust and Gaussian altitude-sensor noise with a first-order measurement filter', 'Kinematic coordinated-turn heading model with a first-order bank response'],
-      assumptions: ['Linear longitudinal dynamics; lateral axis reduced to turn kinematics (the lateral modes are in Suite 4 and the stability-augmentation analysis)', 'Elevator servo as a 30 rad/s rate-limited lag; first-order engine response', 'No mode logic, flight-director or envelope protection'],
+      warnings, models: [`Plant: ${P.src}`, 'Autopilot model: cascaded altitude → vertical speed → pitch attitude → elevator, PI autothrottle, heading → bank', 'Gains derived from the chosen loop bandwidths; vertical-speed PI with its zero on the flight-path lag −1/Zw', 'Seeded first-order gust and Gaussian altitude-sensor noise with a first-order measurement filter', 'Kinematic coordinated-turn heading model with a first-order bank response'],
+      assumptions: ['Linear longitudinal dynamics; lateral axis reduced to turn kinematics (the lateral modes are in Suite 4 and the stability-augmentation analysis)', 'Elevator servo as a 30 rad/s rate-limited lag; first-order engine response', 'No mode logic, flight-director or envelope protection', 'Loop-bandwidth ratios, command limits, servo bandwidth and engine time constants are typical design values, not data for a specific autopilot'],
     };
   },
   verify() {
     const b = Object.fromEntries(autopilot.inputs.map((f) => [f.key, f.default])), o = N.kv(autopilot.run({ ...b, sigma_w: 0, sigma_h: 0, t_end: 200 })), tau = 1, wh = 0.1, u0 = 231, Kp = (wh * u0) / G0;
     // heading loop: ψ̇ = g·φ/V, φ̇ = (Kψ(ψref − ψ) − φ)/τ → second order with ωn² = ωh/τ, ζ = 1/(2·sqrt(ωh·τ))
     const z = 1 / (2 * Math.sqrt(wh * tau)), r = N.rk4((t, y) => [(G0 * y[1]) / u0, (Kp * (0.01 - y[0]) - y[1]) / tau], 0, [0, 0], 120, 6000), sm = stepMetrics(r.t, r.y.map((y) => y[0]), 0.01);
-    return [N.check('Altitude command is captured with zero steady-state error', o.alt_rms_m / 100 + 1, 1, 2e-3, 'Type-1 altitude loop'), N.check('Heading-loop overshoot of the equivalent second-order system', sm.overshoot + 1, 1 + (z < 1 ? 100 * Math.exp((-Math.PI * z) / Math.sqrt(1 - z * z)) : 0), 1e-3, 'ζ = 1/(2·sqrt(ωh·τ)) for small bank angles')];
+    return [N.check('Altitude command is captured with zero steady-state error', o.alt_rms_m / 100 + 1, 1, 2e-3, 'Type-1 altitude loop'),
+      N.check('Altitude capture is overdamped: ζ = ½·sqrt(ωvs/ωh) = 1.12', o.alt_overshoot_pct / 100 + 1, 1, 0.03, 'Altitude loop around a first-order vertical-speed loop: s² + ωvs·s + ωvs·ωh, no overshoot for ζ ≥ 1 (tolerance for the pitch-loop dynamics)'), N.check('Heading-loop overshoot of the equivalent second-order system', sm.overshoot + 1, 1 + (z < 1 ? 100 * Math.exp((-Math.PI * z) / Math.sqrt(1 - z * z)) : 0), 1e-3, 'ζ = 1/(2·sqrt(ωh·τ)) for small bank angles')];
   },
   recommend(res) {
     const o = res.outputs, out = [];
@@ -407,7 +409,7 @@ const sas = {
         { type: 'line', title: 'Sideslip after a 2° disturbance', xlabel: 'Time [s]', ylabel: 'Sideslip [deg]', series: [{ name: 'Bare airframe', x: thin(o.t), y: thin(o.y.map((x) => lim(deg(x[0])))) }, { name: 'Yaw damper on', x: thin(c.t), y: thin(c.y.map((x) => lim(deg(x[0])))) }] },
       ],
       warnings, models: [`Lateral plant: ${src}`, `Longitudinal plant: ${Pl.src}`, 'Stability augmentation model: yaw-rate feedback through a first-order washout; pitch-rate feedback', 'Gain selection by root-locus sweep to a damping target'],
-      assumptions: ['Ideal rate gyros and actuators (include them with the classical loop analysis)', 'Single-loop designs; no aileron–rudder interconnect or turn coordination'],
+      assumptions: ['Ideal rate gyros and actuators (include them with the classical loop analysis)', 'Single-loop designs; no aileron–rudder interconnect or turn coordination', 'Damping targets, washout time constant and gain ranges are typical design values'],
     };
   },
   verify() {
@@ -418,7 +420,7 @@ const sas = {
   },
   recommend(res, i) {
     const o = res.outputs, out = [];
-    if (o.dr_zeta_open < 0.08) out.push({ severity: o.dr_zeta_sas >= i.zeta_dr_target - 1e-3 ? 'advise' : 'warn', title: 'Bare-airframe Dutch roll needs a yaw damper', detail: `Damping rises from ${o.dr_zeta_open.toFixed(3)} to ${o.dr_zeta_sas.toFixed(2)} with a gain of ${o.K_yaw_damper.toFixed(2)}.`, action: 'Treat the yaw damper as flight-critical if the bare airframe is below the minimum acceptable damping: assess its failure probability in Suite 22.', basis: 'Dutch-roll damping criterion' });
+    if (o.dr_zeta_open < 0.08) out.push({ severity: o.dr_zeta_sas >= i.zeta_dr_target - 1e-3 ? 'advise' : 'warn', title: 'Bare-airframe Dutch roll needs a yaw damper', detail: `Damping rises from ${o.dr_zeta_open.toFixed(3)} to ${o.dr_zeta_sas.toFixed(2)} with a gain of ${o.K_yaw_damper.toFixed(2)}.`, action: 'Treat the yaw damper as flight-critical if the bare airframe is below the minimum acceptable damping: assess its failure probability in Suite 22.', basis: 'Dutch-roll damping below the MIL-F-8785C Table VI Level 1 Category B minimum of 0.08' });
     if (o.sp_zeta_sas < i.zeta_sp_target - 1e-3) out.push({ severity: 'warn', title: 'Pitch damper cannot reach the target', detail: `Best short-period damping ${o.sp_zeta_sas.toFixed(2)}.`, action: 'Add angle-of-attack or normal-acceleration feedback, or increase tail volume.', basis: 'Short-period damping target' });
     return out;
   },
@@ -464,7 +466,8 @@ const allocation = {
       // rotor k at azimuth ψ (from the nose, clockwise seen from above), alternating spin; effector = thrust / hover thrust per rotor
       const az = N.range(n, (k) => ((k + 0.5) * TAU) / n); B = [N.range(n, () => 1 / n), az.map((a) => -Math.sin(a) / n), az.map((a) => Math.cos(a) / n), N.range(n, (k) => ((k % 2 ? -1 : 1) * i.kq_arm) / n)];
       lo = names.map(() => 0); hi = names.map(() => i.thrust_ratio); w = names.map(() => 1); trim = names.map(() => 1);
-      const s = 0.5; v = [i.thrust_cmd / 100, (s * i.roll_cmd) / 100 * 0.5, (s * i.pitch_cmd) / 100 * 0.5, (i.yaw_cmd / 100) * i.kq_arm * 0.5];
+      const nomM = 0.25, nomN = 0.5 * i.kq_arm; // nominal authority: a quarter of hover thrust × arm in roll and pitch, half the hover reaction torque in yaw
+      v = [i.thrust_cmd / 100, (nomM * i.roll_cmd) / 100, (nomM * i.pitch_cmd) / 100, (nomN * i.yaw_cmd) / 100];
     } else if (i.layout === 'helicopter') {
       names = ['Collective', 'Longitudinal cyclic', 'Lateral cyclic', 'Tail-rotor pedal']; axes = ['Thrust', 'Roll', 'Pitch', 'Yaw']; B = [[1, 0, 0, 0], [0, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 1]]; lo = [-1, -1, -1, -1]; hi = [1, 1, 1, 1]; w = [1, 1, 1, 1]; trim = [0, 0, 0, 0];
       v = [(i.thrust_cmd - 100) / 100, i.roll_cmd / 100, i.pitch_cmd / 100, i.yaw_cmd / 100];
@@ -475,9 +478,9 @@ const allocation = {
       v = [i.roll_cmd / 100, i.pitch_cmd / 100, i.yaw_cmd / 100];
     }
     const m = names.length, nom = allocate(B, v, w, lo, hi), fk = Math.round(i.failed) - 1, has = fk >= 0 && fk < m, lo2 = lo.slice(), hi2 = hi.slice();
-    if (has) { const p = i.fail_mode.startsWith('jam') ? N.clamp(i.jam_pos, lo[fk], hi[fk]) : i.layout === 'multirotor' ? 0 : 0; lo2[fk] = hi2[fk] = p; }
+    if (has) { const p = i.fail_mode.startsWith('jam') ? N.clamp(i.jam_pos, lo[fk], hi[fk]) : 0; lo2[fk] = hi2[fk] = p; }
     const fl = has ? allocate(B, v, w, lo2, hi2) : nom, vn = N.norm(v) || 1;
-    // attainable roll–pitch moment envelope at the demanded thrust and yaw: largest scale factor per direction
+    // attainable roll–pitch moment envelope at the demanded thrust and zero yaw moment: largest scale factor per direction
     const iR = axes.indexOf('Roll'), iP = axes.indexOf('Pitch'), ths = N.linspace(0, TAU, 49), reach = (l, h) => ths.map((th) => { const dir = v.map((x, p) => (p === iR ? Math.cos(th) : p === iP ? Math.sin(th) : axes[p] === 'Thrust' ? x : 0)); let a = 0, b = 4; for (let k = 0; k < 22; k++) { const mid = 0.5 * (a + b), d = dir.map((x, p) => (p === iR || p === iP ? x * mid : x)); if (allocate(B, d, w, l, h).err < 1e-6) a = mid; else b = mid; } return a; });
     const rN = reach(lo, hi), rF = has ? reach(lo2, hi2) : rN, area = (r) => 0.5 * N.sum(r.slice(1).map((x, k) => x * r[k] * Math.sin(ths[k + 1] - ths[k]))), loss = 1 - area(rF) / (area(rN) || 1);
     const rk = (() => { let r = 0; const G = N.range(B.length, (p) => N.range(B.length, (q) => N.dot(B[p].map((x, k) => (has && k === fk ? 0 : x)), B[q].map((x, k) => (has && k === fk ? 0 : x))))), e = N.eigSym(G).values; for (const x of e) if (x > 1e-9 * N.amax(e)) r++; return r; })();
@@ -500,7 +503,7 @@ const allocation = {
       ],
       tables: [{ title: 'Control effectiveness matrix B (axes × effectors)', columns: ['Axis', ...names], rows: B.map((r, p) => [axes[p], ...r]) }],
       warnings, models: ['Weighted pseudo-inverse allocation u = W⁻¹Bᵀ(BW⁻¹Bᵀ)⁻¹v', 'Redistributed pseudo-inverse for saturation handling', 'Fault-tolerant re-allocation with the failed effector removed or frozen', 'Attainable moment set by directional search'],
-      assumptions: ['Linear, decoupled effectiveness with normalised units; the aeroplane matrix is a representative transport layout, replace it with identified effectiveness', 'Static allocation: effector dynamics and rate limits are not considered', 'Redistribution is not guaranteed to find the true optimum on the boundary of the attainable set (a constrained QP would)'],
+      assumptions: ['Linear, decoupled effectiveness with normalised units; the aeroplane matrix is an illustrative transport layout, not data for a specific aircraft: replace it with identified effectiveness', 'The failure is postulated by the input, not predicted: its probability belongs to Suite 22', 'Static allocation: effector dynamics and rate limits are not considered', 'Redistribution is not guaranteed to find the true optimum on the boundary of the attainable set (a constrained QP would)'],
     };
   },
   verify() {
@@ -511,7 +514,9 @@ const allocation = {
   },
   recommend(res, i) {
     const o = res.outputs, out = [];
-    if (o.control_rank < (i.layout === 'aeroplane surfaces' ? 3 : 4)) out.push({ severity: 'critical', title: 'Loss of control in one axis after the failure', detail: `Only ${o.control_rank} axes remain controllable.`, action: i.layout === 'multirotor' ? 'Use six or more rotors for single-rotor-out capability, or accept a yaw-spinning emergency landing mode for a quadrotor.' : 'Add a redundant effector for that axis or split the surface with independent actuators.', basis: 'Rank of the control effectiveness matrix' });
+    if (o.control_rank < (i.layout === 'aeroplane surfaces' ? 3 : 4)) out.push(i.layout === 'helicopter'
+      ? { severity: 'warn', title: 'Each helicopter control channel is a single path', detail: `With the postulated loss of one channel only ${o.control_rank} of 4 axes remain controllable: a conventional helicopter has no redundant effectors.`, action: 'Make the loss of a whole channel extremely improbable by design — duplicated hydraulic supplies and actuators, dual load paths in the control runs and swashplate — and show it in Suite 22.', basis: 'Rank of the control effectiveness matrix for the postulated failure' }
+      : { severity: 'critical', title: 'Loss of control in one axis after the failure', detail: `With the postulated failure only ${o.control_rank} axes remain controllable.`, action: i.layout === 'multirotor' ? 'Use six or more rotors for single-rotor-out capability, or accept a yaw-spinning emergency landing mode for a quadrotor.' : 'Add a redundant effector for that axis or split the surface with independent actuators.', basis: 'Rank of the control effectiveness matrix for the postulated failure' });
     else if (o.alloc_error_fail_pct > 1) out.push({ severity: 'warn', title: 'Demand not achievable after the failure', detail: `Shortfall ${o.alloc_error_fail_pct.toFixed(0)}%; ${o.envelope_loss_pct.toFixed(0)}% of the roll–pitch envelope is lost.`, action: 'Restrict the manoeuvre envelope in the degraded mode and prioritise axes (pitch and roll before yaw).', basis: 'Attainable moment set' });
     else if (o.envelope_loss_pct > 30) out.push({ severity: 'advise', title: 'Reduced control envelope after the failure', detail: `${o.envelope_loss_pct.toFixed(0)}% of the roll–pitch envelope is lost.`, action: 'Feed the degraded authority into the failure-case handling assessment (Suite 22).', basis: 'Attainable moment set' });
     return out;
@@ -539,16 +544,18 @@ const hoverCascade = {
     const wA = i.w_rate / i.sep, wV = wA / i.sep, wX = wV / i.sep, Kq = i.w_rate / i.Mc, Kw = 3 * i.w_alt, Kwi = (Kw * i.w_alt) / 2, tiltL = rad(i.tilt_lim_deg), cmax = i.thrust_ratio - 1, vLim = (tiltL * G0) / wV, warnings = [];
     const Ts = i.Ts, nSub = Math.max(1, Math.ceil(Ts / Math.min(i.tau_m / 5, 0.002))), h = Ts / nSub, n = Math.round(i.t_end / Ts), rng = N.rng(i.seed), tg = 2;
     // states: u, q, θ, x, w (down +), z (up +), pitch actuator, collective actuator
+    // thrust can change by −80% to +(ratio − 1) of the hover thrust, i.e. the collective by that share of g/|Zc| in its own unit (fraction of hover thrust for a multirotor, rad for a helicopter)
+    const cUnit = G0 / Math.abs(i.Zc); let aUp = 0;
     let u = 0, q = 0, th = 0, x = 0, w = 0, z = 0, da = 0, dc = 0, iz = 0, gst = 0, sat = 0, was = false; const T = [], X = [], Z = [], TH = [], DA = [], DC = [], t0 = 1;
     for (let k = 0; k <= n; k++) {
       const t = k * Ts, xr = t >= t0 ? i.dx : 0, zr = t >= t0 ? i.dz : 0, qm = q + rad(i.sigma_gyro_dps) * N.randn(rng);
       const vC = N.clamp(wX * (xr - x), -vLim, vLim), aC = wV * (vC - u), thC = N.clamp(-aC / G0, -tiltL, tiltL), qC = wA * (thC - th), uU = Kq * (qC - qm), uC = N.clamp(uU, -i.u_lim, i.u_lim);
       // altitude: climb-rate command from the height error, PI on the climb-rate error; Zc < 0 so positive collective accelerates upward
-      const wC = N.clamp(i.w_alt * (zr - z), -5, 5), ew = wC + w, cU = (Kw * ew + Kwi * iz) / Math.abs(i.Zc), cC = N.clamp(cU, -0.8, cmax); if (cU === cC) iz += ew * Ts;
+      const wC = N.clamp(i.w_alt * (zr - z), -5, 5), ew = wC + w, cU = (Kw * ew + Kwi * iz) / Math.abs(i.Zc), cC = N.clamp(cU, -0.8 * cUnit, cmax * cUnit); if (cU === cC) iz += ew * Ts;
       const s = uU !== uC || cU !== cC; if (s && !was) sat++; was = s;
       T.push(t); X.push(x); Z.push(z); TH.push(th); DA.push(da); DC.push(dc);
       gst = gst * Math.exp(-Ts / tg) + i.gust * Math.sqrt(1 - Math.exp((-2 * Ts) / tg)) * N.randn(rng);
-      for (let j = 0; j < nSub; j++) { da += ((uC - da) / i.tau_m) * h; dc += ((cC - dc) / i.tau_m) * h; const ur = u - gst, ud = i.Xu * ur - G0 * th, qd = i.Mu * ur + i.Mq * q + i.Mc * da, wd = i.Zw * w + i.Zc * dc; u += ud * h; q += qd * h; th += q * h; x += u * h; w += wd * h; z += -w * h; }
+      for (let j = 0; j < nSub; j++) { da += ((uC - da) / i.tau_m) * h; dc += ((cC - dc) / i.tau_m) * h; const ur = u - gst, ud = i.Xu * ur - G0 * th, qd = i.Mu * ur + i.Mq * q + i.Mc * da, wd = i.Zw * w + i.Zc * dc; aUp = Math.max(aUp, -wd); u += ud * h; q += qd * h; th += q * h; x += u * h; w += wd * h; z += -w * h; }
       if (!fin(x) || Math.abs(th) > 10) { warnings.push('The simulation diverged: reduce the rate-loop bandwidth relative to the actuator lag or the sample time.'); break; }
     }
     const k0 = Math.round(t0 / Ts), sx = stepMetrics(T.slice(k0), X.slice(k0), i.dx || 1e-9), sz = stepMetrics(T.slice(k0), Z.slice(k0), i.dz || 1e-9), tail = Math.round(0.75 * T.length), rms = (a, r) => Math.sqrt(N.mean(a.slice(tail).map((v) => (v - r) ** 2)));
@@ -562,7 +569,7 @@ const hoverCascade = {
         { key: 'pos_rise_s', label: 'Position step rise time', value: sx.rise, unit: 's' }, { key: 'pos_overshoot_pct', label: 'Position overshoot', value: sx.overshoot, unit: '%', status: sx.overshoot < 20 ? 'ok' : 'warn' }, { key: 'pos_settle_s', label: 'Position settling time', value: sx.settle - t0, unit: 's' },
         { key: 'alt_rise_s', label: 'Altitude step rise time', value: sz.rise, unit: 's' }, { key: 'alt_overshoot_pct', label: 'Altitude overshoot', value: sz.overshoot, unit: '%', status: sz.overshoot < 20 ? 'ok' : 'warn' },
         { key: 'pos_hold_rms_m', label: 'Position-hold RMS error in gusts', value: rms(X, i.dx), unit: 'm' }, { key: 'alt_hold_rms_m', label: 'Altitude-hold RMS error', value: rms(Z, i.dz), unit: 'm' },
-        { key: 'tilt_max_deg', label: 'Largest tilt angle', value: deg(N.amax(TH.map(Math.abs))), unit: 'deg' }, { key: 'saturation_events', label: 'Control saturation events', value: sat, unit: '-', status: sat ? 'warn' : 'ok' },
+        { key: 'tilt_max_deg', label: 'Largest tilt angle', value: deg(N.amax(TH.map(Math.abs))), unit: 'deg' }, { key: 'climb_accel_max_g', label: 'Largest upward acceleration', value: aUp / G0, unit: 'g', note: `Thrust limit allows ${(cmax).toFixed(2)} g` }, { key: 'saturation_events', label: 'Control saturation events', value: sat, unit: '-', status: sat ? 'warn' : 'ok' },
         { key: 'rate_gain', label: 'Rate-loop gain', value: Kq, unit: 'control per rad/s' }, { key: 'w_att_rads', label: 'Attitude-loop bandwidth', value: wA, unit: 'rad/s' }, { key: 'w_pos_rads', label: 'Position-loop bandwidth', value: wX, unit: 'rad/s' },
         { key: 'rate_loop_pm_deg', label: 'Rate-loop phase margin estimate', value: phm, unit: 'deg', status: phm > 45 ? 'ok' : 'warn', note: 'atan(1/(ω·τ)) minus sample-and-compute delay of 1.5·Ts' },
         { key: 'rate_tau_s', label: 'Ideal rate-loop time constant', value: tauQ, unit: 's' },
@@ -573,15 +580,16 @@ const hoverCascade = {
         { type: 'line', title: 'Control activity', xlabel: 'Time [s]', ylabel: 'Control [fraction]', series: [{ name: 'Pitch control', x: thin(T), y: thin(DA) }, { name: 'Collective / thrust change', x: thin(T), y: thin(DC) }] },
       ],
       warnings, models: ['Cascaded P–P–P–P position/velocity/attitude/rate loops with bandwidth separation', 'PI climb-rate loop for altitude', 'First-order motor or swashplate actuator lag', 'Hover speed–attitude plant (Xu, Mu, Mq) with seeded gusts and gyro noise, discrete controller update'],
-      assumptions: ['One horizontal axis plus heave; small-angle thrust tilt', 'Thrust responds through a single first-order lag; no battery sag or rotor inflow dynamics', 'Ideal position and attitude estimates apart from gyro noise (estimation is in Suite 17)'],
+      assumptions: ['One horizontal axis plus heave; small-angle thrust tilt', 'Thrust responds through a single first-order lag; no battery sag or rotor inflow dynamics', 'Ideal position and attitude estimates apart from gyro noise (estimation is in Suite 17)', 'Bandwidth separation, tilt, authority and thrust limits and the motor time constant are typical values, not data for a specific vehicle'],
     };
   },
-  convergence: null,
   verify() {
     // rate loop alone with an ideal actuator: q → qc with time constant 1/(Mc·Kq − Mq)
     const Mc = 100, Mq = -2, wr = 10, Kq = wr / Mc, r = N.rk4((t, y) => [Mq * y[0] + Mc * Kq * (1 - y[0])], 0, [0], 1, 2000), tau = 1 / (Mc * Kq - Mq), yss = (Mc * Kq) / (Mc * Kq - Mq), k63 = r.y.findIndex((y) => y[0] >= 0.632121 * yss);
     const b = Object.fromEntries(hoverCascade.inputs.map((f) => [f.key, f.default])), o = N.kv(hoverCascade.run({ ...b, gust: 0, sigma_gyro_dps: 0, t_end: 25 }));
-    return [N.check('Rate-loop time constant 1/(Mc·Kq − Mq)', r.t[k63], tau, 0.01, 'First-order closed loop'), N.check('Position step is captured without steady-state error', o.pos_hold_rms_m / 5 + 1, 1, 0.01, 'Type-1 position loop'), N.check('Altitude step is captured', o.alt_hold_rms_m / 2 + 1, 1, 0.01, 'Integral action in the climb-rate loop')];
+    const lim = N.kv(hoverCascade.run({ ...b, gust: 0, sigma_gyro_dps: 0, dx: 0, dz: 30, Zc: -60, Zw: 0, thrust_ratio: 1.2, t_end: 6 }));
+    return [N.check('Rate-loop time constant 1/(Mc·Kq − Mq)', r.t[k63], tau, 0.01, 'First-order closed loop'),
+      N.check('Climb acceleration is limited to (T/W − 1)·g whatever the collective unit', lim.climb_accel_max_g, 0.2, 1e-6, 'Thrust limit: a = (T_max − W)/m'), N.check('Position step is captured without steady-state error', o.pos_hold_rms_m / 5 + 1, 1, 0.01, 'Type-1 position loop'), N.check('Altitude step is captured', o.alt_hold_rms_m / 2 + 1, 1, 0.01, 'Integral action in the climb-rate loop')];
   },
   recommend(res) {
     const o = res.outputs, out = [];

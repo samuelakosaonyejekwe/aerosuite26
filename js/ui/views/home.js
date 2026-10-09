@@ -5,6 +5,8 @@ import { SUITES, GROUPS } from '../../core/registry.js';
 import { state, on } from '../../core/store.js';
 import { derived } from '../../core/case.js';
 import { loadSpec } from '../../core/spec.js';
+import { t } from '../i18n.js';
+import { copyShareLink } from './share.js';
 
 export async function render(root, _p, { setCrumb }) {
   setCrumb('Overview');
@@ -16,9 +18,9 @@ export async function render(root, _p, { setCrumb }) {
     setKids(host, 
       h('section', { class: 'hero' },
         h('svg', { class: 'deco', viewBox: '0 0 24 24', fill: 'none', stroke: '#fff', 'stroke-width': 0.6 }, h('path', { d: 'M3 13l7-1 5-7h2l-2 7 5-.5 1.5-2H23l-1 3 1 3h-1.5L20 13.5l-5-.5 2 7h-2l-5-7-7-1z' })),
-        h('h1', null, 'One connected workspace for every aircraft engineering analysis.'),
+        h('h1', null, t('One connected workspace for every aircraft engineering analysis.')),
         h('p', null, 'Describe an aeroplane, helicopter, rotorcraft or UAV once. Twenty-six linked suites — from aerodynamics and structures to mission, safety and economics — share that single case, pass results to each other, and turn the numbers into recommendations. It runs entirely on this device, online or offline.'),
-        h('div', { class: 'row' }, btn('Set up your aircraft', () => (location.hash = '#/case'), { ic: 'sliders', kind: 'primary big' }), btn('Run all 26 suites', () => (location.hash = '#/integrated'), { ic: 'graph', kind: 'ghost big' }))),
+        h('div', { class: 'row' }, btn(t('Set up your aircraft'), () => (location.hash = '#/case'), { ic: 'sliders', kind: 'primary big' }), btn(t('Run all 26 suites'), () => (location.hash = '#/integrated'), { ic: 'graph', kind: 'ghost big' }))),
       h('div', { class: 'gap' }),
       h('div', { class: 'steps' },
         h('a', { class: `step ${state.preset ? 'done' : ''}`, href: '#/case' }, h('b', null, 'Define the case'), h('p', null, 'Pick a starting aircraft, edit any value, import a data file, and choose where on Earth it operates.')),
@@ -32,7 +34,7 @@ export async function render(root, _p, { setCrumb }) {
             c.wing.S_m2 > 0 ? [h('dt', null, 'Wing'), h('dd', null, `${num(c.wing.S_m2)} m², span ${num(c.wing.b_m)} m, aspect ratio ${num(d.AR, 3)}`)] : null,
             c.rotor.R_m > 0 ? [h('dt', null, 'Rotor'), h('dd', null, `${c.rotor.n_blades} blades, radius ${num(c.rotor.R_m)} m, ${num(c.rotor.rpm)} rpm`)] : null,
             h('dt', null, 'Powerplant'), h('dd', null, `${c.prop.n_eng} × ${c.prop.type}`), h('dt', null, 'Mission'), h('dd', null, `${num(c.mission.range_km)} km at ${num(c.mission.cruise_alt_m)} m`)),
-          h('div', null, btn('Edit case', () => (location.hash = '#/case'), { ic: 'sliders', kind: 'sm' })))),
+          h('div', { class: 'row' }, btn('Edit case', () => (location.hash = '#/case'), { ic: 'sliders', kind: 'sm' }), btn('Share', copyShareLink, { ic: 'link', kind: 'sm ghost', title: 'Copy a link that opens this exact case on any device' })))),
         card('Operating site and live conditions', h('div', { class: 'stack' }, h('div', null, icon('pin', 16), ' ', h('b', null, c.site.name)),
           h('dl', { class: 'kv' }, h('dt', null, 'Elevation'), h('dd', null, `${num(c.site.elev_m)} m`), h('dt', null, 'Temperature'), h('dd', null, `${num(c.site.T_C, 3)} °C`), h('dt', null, 'Pressure'), h('dd', null, `${num(c.site.p_hPa, 5)} hPa`), h('dt', null, 'Wind'), h('dd', null, `${num(c.site.wind_ms, 3)} m/s from ${num(c.site.wind_dir_deg, 3)}°`), h('dt', null, 'Runway'), h('dd', null, `${num(c.site.runway_len_m)} m`), h('dt', null, 'Source'), h('dd', null, c.site.source, c.site.updated ? ` · ${ago(c.site.updated)}` : '')),
           h('div', null, btn(c.site.lat == null ? 'Choose a location' : 'Change location', () => (location.hash = '#/case/site'), { ic: 'globe', kind: 'sm' })))),

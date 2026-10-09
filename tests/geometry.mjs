@@ -3,6 +3,7 @@
 
 import zlib from 'node:zlib';
 import * as G from '../js/core/geometry/index.js';
+import { loadH5 } from '../js/core/geometry/parsers-wasm.js';
 
 let pass = 0, fail = 0, section = '';
 const failures = [];
@@ -385,9 +386,341 @@ sec('IGES');
 sec('Parasolid text');
 {
   const src = '**ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz**************************\n**PARASOLID !"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~0123456789**************************\n**PART1;\nMC=x64;\nMC_MODEL=unknown;\nAPPL=TestCAD 2024;\nFORMAT=text;\nGUISE=transmit;\nDATE=1-may-2024;\n**PART2;\nSCH=SCH_3400201_34000;\nUSFLD_SIZE=0;\n**PART3;\n**END_OF_HEADER*****************************************************************\nT51 : TRANSMIT FILE created by modeller version 3400201 17 SCH_3400201_34000_13006 0\n12 1 12 0 2 0 0 0 0 1e3 1e-8 0 0 0 1 0 3 1 3 4 5 0 6 7 0\n';
-  const m = await imp('part.x_t', keep('part.x_t', src)); fmtId('x_t', m, 'xt', 'partial');
+  const m = await imp('part.x_t', keep('part.x_t', src)); fmtId('x_t', m, 'xt', 'metadata');
   ok('header fields + schema + version', m.meta.header.APPL === 'TestCAD 2024' && m.meta.header.FORMAT === 'text' && m.meta.schema.startsWith('SCH_3400201') && m.meta.modellerVersion === '3400201', JSON.stringify(m.meta));
   ok('honest: metadata only, no invented census', m.kind === 'metadata-only' && m.meta.entityCensus === null && m.positions.length === 0 && m.warnings.some((w) => /NOT decoded/.test(w)) && m.warnings.some((w) => /pathway/i.test(w)));
+}
+
+// ---------- kernel-backed readers (vendored WebAssembly) ----------
+// STEP AP214 of a box with real B-rep topology (vertices, line edges, planar faces, closed shell, product, colour)
+function stepBox(sx, sy, sz, { name = 'Box', unit = '.MILLI.', rgb = [1, 0, 0] } = {}) {
+  const L = []; let id = 100; const add = (s) => { L.push(`#${++id}=${s};`); return `#${id}`; }, f = (v) => (Number.isInteger(v) ? v + '.' : String(v));
+  const P = CV.map((v) => [v[0] * sx, v[1] * sy, v[2] * sz]), pt = (p) => add(`CARTESIAN_POINT('',(${p.map(f).join(',')}))`), dir = (d) => add(`DIRECTION('',(${d.map(f).join(',')}))`);
+  const vx = P.map((p) => add(`VERTEX_POINT('',${pt(p)})`)), edges = new Map();
+  const edge = (a, b) => { const k = Math.min(a, b) + '_' + Math.max(a, b); if (!edges.has(k)) { const i = Math.min(a, b), j = Math.max(a, b), d = P[j].map((c, q) => c - P[i][q]), l = Math.hypot(...d); edges.set(k, add(`EDGE_CURVE('',${vx[i]},${vx[j]},${add(`LINE('',${pt(P[i])},${add(`VECTOR('',${dir(d.map((c) => c / l))},${f(l)})`)})`)},.T.)`)); } return add(`ORIENTED_EDGE('',*,*,${edges.get(k)},${a < b ? '.T.' : '.F.'})`); };
+  const faces = CQ.map((q) => {
+    const u = P[q[1]].map((c, i) => c - P[q[0]][i]), w = P[q[3]].map((c, i) => c - P[q[0]][i]), n = [u[1] * w[2] - u[2] * w[1], u[2] * w[0] - u[0] * w[2], u[0] * w[1] - u[1] * w[0]], nl = Math.hypot(...n), ul = Math.hypot(...u);
+    const plane = add(`PLANE('',${add(`AXIS2_PLACEMENT_3D('',${pt(P[q[0]])},${dir(n.map((c) => c / nl))},${dir(u.map((c) => c / ul))})`)})`);
+    return add(`ADVANCED_FACE('',(${add(`FACE_OUTER_BOUND('',${add(`EDGE_LOOP('',(${q.map((a, i) => edge(a, q[(i + 1) % 4])).join(',')}))`)},.T.)`)}),${plane},.T.)`);
+  });
+  const solid = add(`MANIFOLD_SOLID_BREP('${name}',${add(`CLOSED_SHELL('',(${faces.join(',')}))`)})`);
+  const lu = add(`( LENGTH_UNIT() NAMED_UNIT(*) SI_UNIT(${unit},.METRE.) )`), au = add('( NAMED_UNIT(*) PLANE_ANGLE_UNIT() SI_UNIT($,.RADIAN.) )'), su = add('( NAMED_UNIT(*) SI_UNIT($,.STERADIAN.) SOLID_ANGLE_UNIT() )');
+  const unc = add(`UNCERTAINTY_MEASURE_WITH_UNIT(LENGTH_MEASURE(1.E-06),${lu},'distance_accuracy_value','')`);
+  const ctx = add(`( GEOMETRIC_REPRESENTATION_CONTEXT(3) GLOBAL_UNCERTAINTY_ASSIGNED_CONTEXT((${unc})) GLOBAL_UNIT_ASSIGNED_CONTEXT((${lu},${au},${su})) REPRESENTATION_CONTEXT('','') )`);
+  const absr = add(`ADVANCED_BREP_SHAPE_REPRESENTATION('${name}',(${solid}),${ctx})`);
+  const app = add("APPLICATION_CONTEXT('core data for automotive mechanical design processes')"); add(`APPLICATION_PROTOCOL_DEFINITION('international standard','automotive_design',2010,${app})`);
+  const prod = add(`PRODUCT('${name}','${name}','',(${add(`PRODUCT_CONTEXT('',${app},'mechanical')`)}))`); add(`PRODUCT_RELATED_PRODUCT_CATEGORY('part','',(${prod}))`);
+  const pd = add(`PRODUCT_DEFINITION('design','',${add(`PRODUCT_DEFINITION_FORMATION('','',${prod})`)},${add(`PRODUCT_DEFINITION_CONTEXT('part definition',${app},'design')`)})`);
+  add(`SHAPE_DEFINITION_REPRESENTATION(${add(`PRODUCT_DEFINITION_SHAPE('','',${pd})`)},${absr})`);
+  if (rgb) add(`STYLED_ITEM('',(${add(`PRESENTATION_STYLE_ASSIGNMENT((${add(`SURFACE_STYLE_USAGE(.BOTH.,${add(`SURFACE_SIDE_STYLE('',(${add(`SURFACE_STYLE_FILL_AREA(${add(`FILL_AREA_STYLE('',(${add(`FILL_AREA_STYLE_COLOUR('',${add(`COLOUR_RGB('',${rgb.map(f).join(',')})`)})`)}))`)})`)}))`)})`)}))`)}),${solid})`);
+  return `ISO-10303-21;\nHEADER;\nFILE_DESCRIPTION(('box'),'2;1');\nFILE_NAME('box.stp','2024-05-01T10:00:00',('A. Engineer'),('Test Org'),'TestPre 1.0','TestCAD 2024','');\nFILE_SCHEMA(('AUTOMOTIVE_DESIGN { 1 0 10303 214 1 1 1 1 }'));\nENDSEC;\nDATA;\n${L.join('\n')}\nENDSEC;\nEND-ISO-10303-21;\n`;
+}
+// IGES file of rational B-spline surfaces (entity 128), one parameter record per surface
+function igesSurfaces(records, units = '2,2HMM') {
+  const L8 = (data, s, n) => data.padEnd(72).slice(0, 72) + s + String(n).padStart(7), f8 = (...v) => v.map((x) => String(x).padStart(8)).join('');
+  const glob = `1H,,1H;,4Htest,8Htest.igs,7HTestCAD,4Hprep,32,38,6,308,15,4Htest,1.0,${units},1,0.01,15H20240101.000000,1E-6,10.0,6Hauthor,3Horg,11,0,15H20240101.000000;`;
+  const out = [L8('IGES test file', 'S', 1)], D = [], Pl = [];
+  for (let i = 0; i * 72 < glob.length; i++) out.push(L8(glob.slice(72 * i, 72 * i + 72), 'G', i + 1));
+  for (const par of records) {
+    const de = D.length + 1, first = Pl.length + 1, toks = par.split(','); let line = '', n = 0;
+    const flush = () => { Pl.push(line.padEnd(64) + String(de).padStart(8) + 'P' + String(Pl.length + 1).padStart(7)); line = ''; n++; };
+    toks.forEach((t, i) => { const piece = t + (i < toks.length - 1 ? ',' : ''); if (line.length + piece.length > 64) flush(); line += piece; }); flush();
+    D.push(f8(128, first, 0, 0, 0, 0, 0, 0) + '00000000D' + String(D.length + 1).padStart(7)); D.push(f8(128, 0, 0, n, 0, '', '', '', 0) + 'D' + String(D.length + 1).padStart(7));
+  }
+  out.push(...D, ...Pl, L8(`S${'1'.padStart(7)}G${String(out.length - 1).padStart(7)}D${String(D.length).padStart(7)}P${String(Pl.length).padStart(7)}`, 'T', 1));
+  return out.join('\n') + '\n';
+}
+const bilinear = (q, P) => `128,1,1,1,1,0,0,1,0,0,0.,0.,1.,1.,0.,0.,1.,1.,1.,1.,1.,1.,${[q[0], q[1], q[3], q[2]].map((v) => P[v].map((x) => x.toFixed(1)).join(',')).join(',')},0.,1.,0.,1.;`;
+// one planar rectangular face a × b in OpenCASCADE's text BREP format (shapes are numbered from the end)
+function brepRect(a, b) {
+  const V = [[0, 0, 0], [a, 0, 0], [a, b, 0], [0, b, 0]], E = [[0, 1, a, [1, 0, 0]], [1, 2, b, [0, 1, 0]], [2, 3, a, [-1, 0, 0]], [3, 0, b, [0, -1, 0]]], N = 10, ref = (k) => N - k;
+  const ve = V.map((p) => `Ve\n1e-07\n${p.join(' ')}\n0 0\n\n0101101\n*`), ed = E.map(([s, e, l], i) => `Ed\n 1e-07 1 1 0\n1  ${i + 1} 0 0 ${l}\n0\n\n0101000\n+${ref(s)} 0 -${ref(e)} 0 *`);
+  return `DBRep_DrawableShape\n\nCASCADE Topology V1, (c) Matra-Datavision\nLocations 0\nCurve2ds 0\nCurves 4\n${E.map(([s, , , d]) => `1 ${V[s].join(' ')} ${d.join(' ')} `).join('\n')}\nPolygon3D 0\nPolygonOnTriangulations 0\nSurfaces 1\n1 0 0 0 0 0 1 1 0 0 0 1 0 \nTriangulations 0\n\nTShapes ${N}\n${ve.join('\n')}\n${ed.join('\n')}\nWi\n\n0101100\n+${ref(4)} 0 +${ref(5)} 0 +${ref(6)} 0 +${ref(7)} 0 *\nFa\n0  1e-07 1 0\n\n0111000\n+${ref(8)} 0 *\n\n+1 0 \n`;
+}
+
+sec('STEP / IGES / BREP exact geometry (OpenCASCADE)');
+{
+  const src = stepBox(20, 30, 40, { name: 'Wing rib', rgb: [1, 0, 0] });
+  let m = await imp('box.stp', keep('box.stp', src)), a = G.analyse(m); fmtId('box', m, 'step', 'native');
+  ok('B-rep faces tessellated: 6 planar faces → 12 triangles', m.kind === 'surface' && a.nTris === 12 && m.meta.tessellation.faces === 6 && m.meta.tessellation.bodies === 1, `${m.kind}, ${a.nTris} triangles, ${JSON.stringify(m.warnings)}`);
+  ok('bbox 20 × 30 × 40', a.bbox.size.every((s, i) => Math.abs(s - [20, 30, 40][i]) < 1e-9), JSON.stringify(a.bbox.size)); near('area', a.area, 2 * (20 * 30 + 30 * 40 + 20 * 40), 1e-9); near('volume', a.volume, 24000, 1e-9);
+  ok('closed, outward', a.watertight && !a.inwardNormals && a.components === 1); ok('units from the text parser kept', m.units.length === 'mm' && m.units.source === 'file');
+  ok('body group named after the product, with colour', m.groups.length === 1 && m.groups[0].name === 'Wing rib' && m.groups[0].kind === 'solid' && m.groups[0].count === 12 && m.groups[0].faces === 6 && m.groups[0].color?.[0] === 1 && m.groups[0].color[2] === 0, JSON.stringify(m.groups));
+  ok('per-face triangle ranges', m.meta.brepFaces.length === 6 && m.meta.brepFaces[1].first === 2 && m.meta.brepFaces[1].last === 3 && m.elements[0].face.length === 12 && m.elements[0].face[11] === 5);
+  ok('header + census merged from the text parser', m.meta.ap === 'AP214' && m.meta.originatingSystem === 'TestCAD 2024' && m.meta.census.ADVANCED_FACE === 6 && m.meta.census.MANIFOLD_SOLID_BREP === 1 && m.meta.products[0] === 'Wing rib' && /OpenCASCADE/.test(m.meta.kernel));
+  ok('no "not tessellated" warning when the kernel succeeded', !m.warnings.some((w) => /NOT tessellated/.test(w)), m.warnings.join(' | '));
+  const mp = G.massProperties(m, 1); ok('mass properties of the STEP solid', Math.abs(mp.volume - 24000) < 1e-6 && mp.closed && Math.abs(mp.cg[0] - 10) < 1e-9 && Math.abs(mp.cg[2] - 20) < 1e-9);
+  const sl = G.slice(m, { axis: 'z', value: 12 }); ok('slice of the STEP solid', sl.length === 1 && Math.abs(G.sectionMetrics(sl[0]).area - 600) < 1e-9);
+  m = await imp('box_m.stp', stepBox(0.5, 0.5, 2, { unit: '$' })); a = G.analyse(m); ok('metre-unit STEP keeps file coordinates', m.units.length === 'm' && Math.abs(a.volume - 0.5) < 1e-12 && Math.abs(a.bbox.size[2] - 2) < 1e-12, `${m.units.length} ${a.volume}`);
+  m = await imp('box.stp', src, { wasm: false }); ok('opts.wasm = false → text-level fallback, support downgraded, clear warning', m.kind === 'cad-brep' && m.support === 'partial' && m.triangles.length === 0 && m.positions.length > 0 && m.warnings.some((w) => /switched off/.test(w)) && m.warnings.some((w) => /NOT tessellated/.test(w)), `${m.kind}/${m.support}`);
+  m = await imp('broken.stp', src.replace(/#\d+=CLOSED_SHELL[^\n]*\n/, '')); ok('kernel finds nothing usable → graceful fallback with reason', m.kind === 'cad-brep' && m.support === 'partial' && m.warnings.some((w) => /could not be tessellated/.test(w)), `${m.kind} ${m.warnings.join(' | ')}`);
+
+  const P10 = CV.map((v) => v.map((c) => c * 10)), ig = igesSurfaces(CQ.map((q) => bilinear(q, P10)));
+  m = await imp('faces.igs', keep('faces.igs', ig)); a = G.analyse(m); fmtId('iges surfaces', m, 'iges', 'native');
+  ok('six B-spline faces tessellated', m.kind === 'surface' && a.nTris === 12 && m.groups.length === 6 && m.groups[0].kind === 'surface', `${m.kind} ${a.nTris} ${m.groups.length} ${m.warnings.join('|')}`); near('IGES area', a.area, 600, 1e-9); ok('IGES bbox + units', a.bbox.size.every((s) => Math.abs(s - 10) < 1e-9) && m.units.length === 'mm');
+  ok('IGES census kept from the text parser', m.meta.census['128 rational B-spline surface'] === 6 && m.meta.originatingSystem === 'TestCAD');
+  const hi = G.heal(m); ok('unsewn IGES faces weld into a closed box', G.analyse(hi.model).watertight && Math.abs(G.analyse(hi.model).volume - 1000) < 1e-6);
+  // a curved (parabolic) degree 2 × 1 patch: tessellation density follows the deflection options
+  const curved = igesSurfaces(['128,2,1,2,1,0,0,1,0,0,0.,0.,0.,1.,1.,1.,0.,0.,1.,1.,1.,1.,1.,1.,1.,1.,0.,0.,0.,10.,0.,10.,20.,0.,0.,0.,10.,0.,10.,10.,10.,20.,10.,0.,0.,1.,0.,1.;']);
+  const coarse = await imp('curved.igs', curved, { linearDeflection: 0.05, angularDeflection: 1 }), fine = await imp('curved.igs', curved, { linearDeflection: 0.0005, angularDeflection: 0.05 });
+  let arc = 0; for (let i = 0; i < 20000; i++) { const t = (i + 0.5) / 20000; arc += Math.hypot(20, 20 - 40 * t) / 20000; }
+  ok('finer deflection → more triangles', fine.triangles.length > 2 * coarse.triangles.length && coarse.triangles.length >= 6, `${coarse.triangles.length / 3} → ${fine.triangles.length / 3}`);
+  ok('fine tessellation converges on the exact area', Math.abs(G.analyse(fine).area - 10 * arc) < 1e-3 * 10 * arc && Math.abs(G.analyse(fine).area - 10 * arc) < Math.abs(G.analyse(coarse).area - 10 * arc), `${G.analyse(coarse).area} / ${G.analyse(fine).area} vs ${10 * arc}`);
+  ok('deflection recorded in the metadata', fine.meta.tessellation.linearDeflection === 0.0005 && fine.meta.tessellation.angularDeflection === 0.05);
+
+  m = await imp('face.brep', keep('face.brep', brepRect(2, 3))); a = G.analyse(m); fmtId('brep', m, 'brep', 'native');
+  ok('BREP face tessellated', m.kind === 'surface' && m.groups[0].kind === 'surface' && a.nTris === 2 && Math.abs(a.area - 6) < 1e-12 && a.bbox.size[0] === 2 && a.bbox.size[1] === 3, `${m.kind} ${a.nTris} ${a.area}`); ok('BREP has no units → null + note', m.units.length === null && m.warnings.some((w) => /does not state a length unit/.test(w)));
+  ok('BREP detected by content', G.detectFormat('x.txt', enc(brepRect(1, 1))).id === 'brep');
+  m = await imp('face.brep', brepRect(2, 3), { wasm: false }); ok('BREP without the kernel → metadata-only + pathway', m.kind === 'metadata-only' && m.support === 'partial' && m.meta.topologyVersion === 1);
+}
+
+sec('LAZ (LASzip)');
+{
+  // 500 points on a 10 × 10 × 5 lattice (x = 100 + 0.1 i, y = 200 + 0.1 j, z = 0.25 k), LAS 1.2 format 1, written with laspy/lazrs
+  const b64 = 'TEFTRgAAAAAAAAAAAAAAAAAAAAAAAAAAAQJPVEhFUgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGxhc3B5IDIuNy4wAAAAAAAAAAAAAAAAAAAAAAAAAAAAGgHqB+MARwEAAAEAAACBHAD0AQAAAAAAAAAAAAAAAAAAAAAAAAAAAAD8qfHSTWJQP/yp8dJNYlA//Knx0k1iUD8AAAAAAABZQAAAAAAAAGlAAAAAAAAAAACamZmZmTlZQAAAAAAAAFlAzczMzMwcaUAAAAAAAABpQAAAAAAAAPA/AAAAAAAAAAAAAGxhc3ppcCBlbmNvZGVkAAC8Vi4AaHR0cDovL2xhc3ppcC5vcmcAAAAAAAAAAAAAAAAAAAACAAAAAgIAAAAAAABQwwAA/////////////////////wIABgAUAAIABwAIAAIA/QIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQCUOwGUkaZQ06TbGD+YXysigGw5c7LuWV2LA4VX4IOYMl6ceDAZ48TYhCn4OAYCkpkNbRqM+9G4F80ZAnjHFwHXAGn2R31q07SrvLw6tzpFIW+L03dLGhav7s+0D9kvPke629a5YkpUzOD/57PHW2/5Gpld23NhUdO4kiXDpDNmyC/2F2vPSdmZ7bgmNL6GQ8oL1QYG+ARZpcTVB4nFmO2dnLtjVvOghdHnmRgBCuSxCsUAOTLFjdQ0jv6okDdB40laainEI5JEGxjG3qkrn6tic1ufM3/DvBi0aAwVf+nRzYFCN/AkiKSu9rN782f0O25gwCiVztuF9XrP4chmPpozRhblig9oBowZnVI6vknp4zSoaPq46j4bjnsgGreSmXD7A71Ir7plFWgeSAIbg/iMW35svAYXCY8E7AlS7eJhOEk9HOdUTkwxfUW9iAnGD7UiByEcM7LxNMqjbaWM6NC9RVOJJpQmJ0FstnghXYY+ydagUkmF4UlDoqvh/zmHHkQosGzJGtBpanM3bxEA7AAAAAAAAAAEAAABMUAAAAA==';
+  let laz = null; try { laz = Uint8Array.from(Buffer.from(b64, 'base64')); } catch { laz = null; }
+  ok('fixture decodes', laz && laz.length > 300 && laz[0] === 0x4c, laz ? String(laz.length) : 'null');
+  ok('LAZ detected by content', G.detectFormat('scan.las', laz).id === 'laz', G.detectFormat('scan.las', laz).note);
+  let m = await imp('grid.laz', keep('grid.laz', laz)), a = G.analyse(m); fmtId('laz', m, 'laz', 'native');
+  ok('all 500 points decompressed', m.kind === 'pointcloud' && a.nVerts === 500 && m.meta.pointCount === 500 && /LASzip/.test(m.meta.decoder), `${m.kind} ${a.nVerts} ${m.warnings.join('|')}`);
+  ok('coordinates exact (scale/offset applied)', Math.abs(a.bbox.min[0] - 100) < 1e-9 && Math.abs(a.bbox.max[0] - 100.9) < 1e-9 && Math.abs(a.bbox.min[1] - 200) < 1e-9 && Math.abs(a.bbox.max[1] - 200.9) < 1e-9 && Math.abs(a.bbox.max[2] - 1) < 1e-9, JSON.stringify(a.bbox));
+  ok('point 137 = (100.7, 200.3, 0.25)', Math.abs(m.positions[3 * 137] - 100.7) < 1e-9 && Math.abs(m.positions[3 * 137 + 1] - 200.3) < 1e-9 && Math.abs(m.positions[3 * 137 + 2] - 0.25) < 1e-9);
+  m = await imp('grid.laz', laz, { maxPoints: 50 }); ok('subsampled to opts.maxPoints by stride', m.positions.length === 150 && m.meta.stride === 10 && m.warnings.some((w) => /subsampled/.test(w)));
+  m = await imp('grid.laz', laz, { wasm: false }); ok('decoder switched off → header-only metadata', m.kind === 'metadata-only' && m.meta.pointCount === 500);
+  const bad = laz.slice(); for (let i = 400; i < bad.length; i++) bad[i] ^= 0x5a; m = await imp('bad.laz', bad); ok('corrupt compressed data → no throw', Array.isArray(m.warnings) && m.positions.length % 3 === 0);
+  m = await imp('grid.laz', laz); ok('decoder still works after a corrupt file', m.positions.length === 1500);
+}
+
+// ---------- HDF5 / NetCDF containers ----------
+const h5 = await loadH5();
+let h5n = 0;
+/** Build an HDF5 file in the kernel's in-memory file system and return its bytes. */
+const h5file = (fill) => { const p = `/fixture_${++h5n}.h5`, f = new h5.File(p, 'w'); try { fill(f); } finally { f.close(); } const b = h5.FS.readFile(p).slice(); h5.FS.unlink(p); return b; };
+const chars = (s, n = s.length) => Int8Array.from({ length: n }, (_, i) => (i < s.length ? s.charCodeAt(i) : 32));
+/** One CGNS node: an HDF5 group with name/label/type attributes and a " data" dataset. */
+const cg = (parent, name, label, type, data) => { const g = parent.create_group(name); g.create_attribute('name', name); g.create_attribute('label', label); g.create_attribute('type', type); if (data !== undefined) g.create_dataset({ name: ' data', data }); return g; };
+const cgCoords = (zone, pts) => { const gc = cg(zone, 'GridCoordinates', 'GridCoordinates_t', 'MT'); ['X', 'Y', 'Z'].forEach((ax, k) => cg(gc, 'Coordinate' + ax, 'DataArray_t', 'R8', Float64Array.from(pts, (p) => p[k]))); };
+const cgBase = (f, units) => { cg(f, 'CGNSLibraryVersion', 'CGNSLibraryVersion_t', 'R4', new Float32Array([4.2])); const b = cg(f, 'Base', 'CGNSBase_t', 'I4', new Int32Array([3, 3])); if (units) cg(b, 'DimensionalUnits', 'DimensionalUnits_t', 'C1', chars(['Kilogram', units, 'Second', 'Kelvin', 'Radian'].map((w) => w.padEnd(32)).join(''))); return b; };
+
+sec('CGNS (HDF5)');
+{
+  const unstructured = h5file((f) => {
+    const base = cgBase(f, 'Meter'); cg(base, 'FAR', 'Family_t', 'MT');
+    const z = cg(base, 'Fluid', 'Zone_t', 'I4', new Int32Array([8, 6, 0])); cg(z, 'ZoneType', 'ZoneType_t', 'C1', chars('Unstructured')); cgCoords(z, CV);
+    const e1 = cg(z, 'Interior', 'Elements_t', 'I4', new Int32Array([10, 0])); cg(e1, 'ElementRange', 'IndexRange_t', 'I4', new Int32Array([1, 6])); cg(e1, 'ElementConnectivity', 'DataArray_t', 'I4', Int32Array.from(TETS.flat(), (v) => v + 1));
+    const e2 = cg(z, 'Skin', 'Elements_t', 'I4', new Int32Array([5, 0])); cg(e2, 'ElementRange', 'IndexRange_t', 'I4', new Int32Array([7, 18])); cg(e2, 'ElementConnectivity', 'DataArray_t', 'I4', Int32Array.from(BT.flat(), (v) => v + 1));
+    const zbc = cg(z, 'ZoneBC', 'ZoneBC_t', 'MT');
+    const b1 = cg(zbc, 'wall', 'BC_t', 'C1', chars('BCWall')); cg(b1, 'PointRange', 'IndexRange_t', 'I4', new Int32Array([7, 16])); cg(b1, 'GridLocation', 'GridLocation_t', 'C1', chars('FaceCenter'));
+    const b2 = cg(zbc, 'outer', 'BC_t', 'C1', chars('BCFarfield')); cg(b2, 'PointList', 'IndexArray_t', 'I4', new Int32Array([17, 18])); cg(b2, 'GridLocation', 'GridLocation_t', 'C1', chars('FaceCenter')); cg(b2, 'FamilyName', 'FamilyName_t', 'C1', chars('FAR'));
+    const b3 = cg(zbc, 'probe', 'BC_t', 'C1', chars('BCGeneral')); cg(b3, 'PointList', 'IndexArray_t', 'I4', new Int32Array([1, 2]));
+  });
+  ok('fixture is a real HDF5 file', unstructured[0] === 0x89 && unstructured.length > 2000);
+  let m = await imp('cube.cgns', keep('cube.cgns', unstructured)); fmtId('unstructured', m, 'cgns', 'partial'); await cubeCheck('TETRA_4 + TRI_3 sections', m, { nv: 8 });
+  ok('elements', m.kind === 'volume-mesh' && m.elements.find((e) => e.type === 'tet4')?.count === 6 && m.elements.find((e) => e.type === 'tri3')?.count === 12 && m.triangles.length === 36, m.elements.map((e) => e.type + e.count).join());
+  ok('BC by PointRange → group', m.groups.find((g) => g.name === 'wall')?.count === 10 && m.groups.find((g) => g.name === 'wall').bcType === 'BCWall', JSON.stringify(m.groups));
+  ok('BC by PointList with a family → group named after the family', m.groups.find((g) => g.name === 'FAR')?.count === 2 && m.groups.find((g) => g.name === 'FAR').bcName === 'outer');
+  ok('volume section → zone group', m.groups.find((g) => g.name === 'Interior')?.kind === 'zone' && m.groups.find((g) => g.name === 'Interior').count === 6);
+  ok('vertex-located BC listed, not mapped', m.meta.boundaryConditions.length === 3 && m.warnings.some((w) => /defined on vertices/.test(w)));
+  ok('DimensionalUnits → metres; version; families', m.units.length === 'm' && m.units.source === 'file' && Math.abs(m.meta.cgnsVersion - 4.2) < 1e-6 && m.meta.families[0] === 'FAR' && m.meta.zones[0].sections.length === 2, JSON.stringify(m.units) + m.meta.cgnsVersion);
+  ok('classified as CFD volume mesh', G.analyse(m).classification.label === 'CFD volume mesh'); ok('quality: no inverted cells', G.meshQuality(m).perType.find((p) => p.type === 'tet4').negJacobian === 0);
+  ok('schema taken from the content, not the extension', (await imp('mystery.h5', unstructured)).format === 'cgns' && (await imp('wrong.med', unstructured)).format === 'cgns');
+  const structured = h5file((f) => { const base = cgBase(f, null), z = cg(base, 'Block', 'Zone_t', 'I4', new Int32Array([3, 2, 2, 2, 1, 1, 0, 0, 0])); cg(z, 'ZoneType', 'ZoneType_t', 'C1', chars('Structured')); const pts = []; for (let k = 0; k < 2; k++) for (let j = 0; j < 2; j++) for (let i = 0; i < 3; i++) pts.push([i * 0.5, j, k]); cgCoords(z, pts); });
+  m = await imp('block.cgns', structured); await cubeCheck('structured zone', m, { nv: 12 }); ok('structured zone → 2 hexahedra', m.elements[0].type === 'hex8' && m.elements[0].count === 2 && m.units.length === null && m.meta.zones[0].dimensions.join() === '3,2,2');
+  const mixed = h5file((f) => { const z = cg(cgBase(f, 'Millimeter'), 'Z', 'Zone_t', 'I4', new Int32Array([8, 1, 0])); cg(z, 'ZoneType', 'ZoneType_t', 'C1', chars('Unstructured')); cgCoords(z, CV); const e = cg(z, 'Mixed', 'Elements_t', 'I4', new Int32Array([20, 0])); cg(e, 'ElementRange', 'IndexRange_t', 'I4', new Int32Array([1, 3])); cg(e, 'ElementConnectivity', 'DataArray_t', 'I4', new Int32Array([17, 1, 2, 3, 4, 5, 6, 7, 8, 7, 1, 4, 3, 2, 3, 1, 2])); cg(e, 'ElementStartOffset', 'DataArray_t', 'I4', new Int32Array([0, 9, 14, 17])); });
+  m = await imp('mixed.cgns', mixed); await cubeCheck('MIXED section', m, { nv: 8 }); ok('MIXED: hex + quad + bar, millimetres', m.elements.map((e) => e.type + ':' + e.count).sort().join() === 'hex8:1,line2:1,quad4:1' && m.units.length === 'mm', m.elements.map((e) => e.type + ':' + e.count).join());
+  const poly = h5file((f) => { const z = cg(cgBase(f, 'Meter'), 'Poly', 'Zone_t', 'I8', new BigInt64Array([8n, 1n, 0n])); cg(z, 'ZoneType', 'ZoneType_t', 'C1', chars('Unstructured')); cgCoords(z, CV); const e = cg(z, 'Faces', 'Elements_t', 'I4', new Int32Array([22, 0])); cg(e, 'ElementRange', 'IndexRange_t', 'I4', new Int32Array([1, 6])); cg(e, 'ElementConnectivity', 'DataArray_t', 'I8', BigInt64Array.from(CQ.flat(), (v) => BigInt(v + 1))); cg(e, 'ElementStartOffset', 'DataArray_t', 'I8', new BigInt64Array([0n, 4n, 8n, 12n, 16n, 20n, 24n])); const c = cg(z, 'Cells', 'Elements_t', 'I4', new Int32Array([23, 0])); cg(c, 'ElementRange', 'IndexRange_t', 'I4', new Int32Array([7, 7])); cg(c, 'ElementConnectivity', 'DataArray_t', 'I4', new Int32Array([1, 2, 3, 4, 5, 6])); cg(c, 'ElementStartOffset', 'DataArray_t', 'I4', new Int32Array([0, 6])); });
+  m = await imp('poly.cgns', poly); await cubeCheck('NGON_n / NFACE_n boundary (64-bit integers)', m, { nv: 8 }); ok('polyhedral zone: surface only, said clearly', m.kind === 'surface-mesh' && m.meta.polyhedral && m.meta.zones[0].polyhedralCells === 1 && m.warnings.some((w) => /polyhedral cells are not converted/.test(w)));
+  m = await imp('old.cgns', cat(enc('@(#)ADF Database Version B02012>'), new Uint8Array(300))); ok('legacy ADF CGNS stays metadata-only with the conversion route', m.kind === 'metadata-only' && m.meta.container === 'ADF' && m.warnings.some((w) => /cgnsconvert/.test(w)), JSON.stringify(m.meta) + m.warnings.join('|'));
+  m = await imp('cube.cgns', unstructured, { wasm: false }); ok('kernel switched off → metadata-only, no throw', m.kind === 'metadata-only' && m.warnings.some((w) => /switched off/.test(w)));
+}
+
+sec('MED (Salome)');
+{
+  const med = h5file((f) => {
+    const info = f.create_group('INFOS_GENERALES'); info.create_attribute('MAJ', new Int32Array([4])); info.create_attribute('MIN', new Int32Array([1])); info.create_attribute('REL', new Int32Array([0]));
+    const mesh = f.create_group('ENS_MAA').create_group('wingbox'); mesh.create_attribute('DIM', new Int32Array([3])); mesh.create_attribute('ESP', new Int32Array([3])); mesh.create_attribute('UNI', 'mm              mm              mm              '); mesh.create_attribute('DES', 'test mesh');
+    const step = mesh.create_group('-0000000000000000001-0000000000000000001'), noe = step.create_group('NOE'), mai = step.create_group('MAI');
+    noe.create_dataset({ name: 'COO', data: Float64Array.from([0, 1, 2].flatMap((k) => CV.map((v) => v[k]))) });
+    const te = mai.create_group('TE4'), medTets = TETS.map((t) => [t[1], t[0], t[2], t[3]]);              // MED handedness: opposite to the platform convention
+    te.create_dataset({ name: 'NOD', data: Int32Array.from([0, 1, 2, 3].flatMap((k) => medTets.map((t) => t[k] + 1))) }); te.create_dataset({ name: 'FAM', data: new Int32Array(6).fill(-1) });
+    const tr = mai.create_group('TR3'); tr.create_dataset({ name: 'NOD', data: Int32Array.from([0, 1, 2].flatMap((k) => BT.map((t) => t[k] + 1))) }); tr.create_dataset({ name: 'FAM', data: Int32Array.from(BT, (_, i) => (i < 4 ? -2 : 0)) });
+    mai.create_group('PO1').create_dataset({ name: 'NOD', data: new Int32Array([1]) });
+    const fam = f.create_group('FAS').create_group('wingbox').create_group('ELEME');
+    for (const [key, numId, gname] of [['FAM_-1_body', -1, 'body'], ['FAM_-2_root', -2, 'root rib']]) { const g = fam.create_group(key); g.create_attribute('NUM', new Int32Array([numId])); g.create_group('GRO').create_dataset({ name: 'NOM', data: chars(gname, 80) }); }
+  });
+  const m = await imp('wingbox.med', keep('wingbox.med', med)); fmtId('med', m, 'med', 'partial'); await cubeCheck('TE4 + TR3 (axis-by-axis coordinates, node-by-node connectivity)', m, { nv: 8 });
+  ok('elements + kind', m.elements.find((e) => e.type === 'tet4')?.count === 6 && m.elements.find((e) => e.type === 'tri3')?.count === 12 && m.kind === 'structural-mesh');
+  ok('families → group names', m.groups.find((g) => g.name === 'body')?.count === 6 && m.groups.find((g) => g.name === 'root rib')?.count === 4, JSON.stringify(m.groups));
+  ok('units from UNI, version, description', m.units.length === 'mm' && m.meta.medVersion === '4.1.0' && m.meta.meshes[0].description === 'test mesh' && m.meta.meshes[0].elements.TE4 === 6, JSON.stringify(m.meta.meshes) + m.meta.medVersion);
+  ok('MED handedness converted and logged', G.meshQuality(m).perType.find((p) => p.type === 'tet4').negJacobian === 0 && !G.analyse(m).inwardNormals && m.warnings.some((w) => /renumbered/.test(w)) && m.meta.reorderedBlocks[0] === '6 tet4');
+  ok('unmapped type reported', m.warnings.some((w) => /PO1/.test(w)));
+}
+
+sec('Exodus II');
+{
+  // minimal classic NetCDF (CDF-1) writer
+  const cdf = ({ dims, gatts = {}, vars }) => {
+    const TY = { char: 2, int: 4, double: 6 }, SZ = { char: 1, int: 4, double: 8 }, chunks = []; const u32 = (v) => { const b = new Uint8Array(4); new DataView(b.buffer).setUint32(0, v); chunks.push(b); };
+    const name = (s) => { const b = enc(s); u32(b.length); chunks.push(b, new Uint8Array((4 - (b.length % 4)) % 4)); };
+    const atts = (o) => { const k = Object.keys(o); if (!k.length) { u32(0); u32(0); return; } u32(0x0c); u32(k.length); for (const n of k) { name(n); const v = o[n]; if (typeof v === 'string') { const b = enc(v); u32(2); u32(b.length); chunks.push(b, new Uint8Array((4 - (b.length % 4)) % 4)); } else { u32(6); u32(1); const b = new Uint8Array(8); new DataView(b.buffer).setFloat64(0, v); chunks.push(b); } } };
+    const dimNames = dims.map((d) => d[0]), size = (v) => v.dims.reduce((s, d) => s * dims[dimNames.indexOf(d)][1], 1) * SZ[v.type], pad4 = (n) => n + ((4 - (n % 4)) % 4);
+    const header = (begins) => { chunks.length = 0; chunks.push(enc('CDF'), Uint8Array.of(1)); u32(0); u32(0x0a); u32(dims.length); for (const [n, s] of dims) { name(n); u32(s); } atts(gatts); u32(0x0b); u32(vars.length); vars.forEach((v, i) => { name(v.name); u32(v.dims.length); for (const d of v.dims) u32(dimNames.indexOf(d)); atts(v.atts || {}); u32(TY[v.type]); u32(pad4(size(v))); u32(begins[i]); }); return cat(...chunks); };
+    const h0 = header(vars.map(() => 0)), begins = []; let o = h0.length; for (const v of vars) { begins.push(o); o += pad4(size(v)); }
+    const out = new Uint8Array(o); out.set(header(begins)); const dv = new DataView(out.buffer);
+    vars.forEach((v, i) => { let p = begins[i]; if (v.type === 'char') out.set(enc(v.data), p); else for (const x of v.data) { if (v.type === 'int') dv.setInt32(p, x); else dv.setFloat64(p, x); p += SZ[v.type]; } });
+    return out;
+  };
+  const exo = cdf({
+    dims: [['len_name', 33], ['time_step', 0], ['num_dim', 3], ['num_nodes', 8], ['num_elem', 1], ['num_el_blk', 1], ['num_el_in_blk1', 1], ['num_nod_per_el1', 8], ['num_side_sets', 2], ['num_side_ss1', 4], ['num_side_ss2', 2], ['num_node_sets', 1], ['num_nod_ns1', 4]],
+    gatts: { title: 'cube database', api_version: 8.11, version: 8.11 },
+    vars: [
+      { name: 'coordx', dims: ['num_nodes'], type: 'double', data: CV.map((v) => v[0]) }, { name: 'coordy', dims: ['num_nodes'], type: 'double', data: CV.map((v) => v[1]) }, { name: 'coordz', dims: ['num_nodes'], type: 'double', data: CV.map((v) => v[2]) },
+      { name: 'eb_prop1', dims: ['num_el_blk'], type: 'int', data: [10], atts: { name: 'ID' } }, { name: 'eb_names', dims: ['num_el_blk', 'len_name'], type: 'char', data: 'core' },
+      { name: 'connect1', dims: ['num_el_in_blk1', 'num_nod_per_el1'], type: 'int', data: [1, 2, 3, 4, 5, 6, 7, 8], atts: { elem_type: 'HEX8' } },
+      { name: 'ss_prop1', dims: ['num_side_sets'], type: 'int', data: [5, 6] }, { name: 'ss_names', dims: ['num_side_sets', 'len_name'], type: 'char', data: 'sides'.padEnd(33, '\0') + 'caps' },
+      { name: 'elem_ss1', dims: ['num_side_ss1'], type: 'int', data: [1, 1, 1, 1] }, { name: 'side_ss1', dims: ['num_side_ss1'], type: 'int', data: [1, 2, 3, 4] }, { name: 'elem_ss2', dims: ['num_side_ss2'], type: 'int', data: [1, 1] }, { name: 'side_ss2', dims: ['num_side_ss2'], type: 'int', data: [5, 6] },
+      { name: 'ns_prop1', dims: ['num_node_sets'], type: 'int', data: [7] }, { name: 'ns_names', dims: ['num_node_sets', 'len_name'], type: 'char', data: 'clamped' }, { name: 'node_ns1', dims: ['num_nod_ns1'], type: 'int', data: [1, 2, 3, 4] },
+    ],
+  });
+  ok('classic NetCDF detected as Exodus', G.detectFormat('cube.exo', exo).id === 'exodus');
+  let m = await imp('cube.exo', keep('cube.exo', exo)); fmtId('classic NetCDF', m, 'exodus', 'partial'); await cubeCheck('HEX8 block', m, { nv: 8 });
+  ok('block id + name → zone', m.groups.find((g) => g.kind === 'zone')?.name === 'core' && m.groups.find((g) => g.kind === 'zone').tag === 10 && m.elements.find((e) => e.type === 'hex8')?.count === 1 && m.kind === 'volume-mesh', JSON.stringify(m.groups));
+  ok('side sets → boundary faces with names (all six sides distinct)', m.groups.find((g) => g.name === 'sides')?.count === 4 && m.groups.find((g) => g.name === 'caps')?.count === 2 && m.elements.find((e) => e.type === 'quad4')?.count === 6 && m.triangles.length === 36, JSON.stringify(m.groups));
+  const caps = m.elements.find((e) => e.type === 'quad4'), zs = []; for (let e = 0; e < 6; e++) if (m.groups[caps.group[e]].name === 'caps') zs.push([0, 1, 2, 3].map((k) => m.positions[3 * caps.conn[4 * e + k] + 2]).join(''));
+  ok('side numbering: sides 5 and 6 of a HEX are the bottom and top faces', zs.sort().join() === '0000,1111', zs.join());
+  ok('node set census + header', m.groups.find((g) => g.name === 'clamped')?.nodes === 4 && m.meta.title === 'cube database' && m.meta.container === 'NetCDF classic (CDF-1)' && m.meta.blocks[0].elemType === 'HEX8' && m.units.length === null);
+  const exo4 = h5file((f) => {
+    f.create_attribute('title', 'tet cube'); for (const [n, s] of [['num_dim', 3], ['num_nodes', 8], ['num_elem', 6], ['num_el_blk', 1]]) f.create_dataset({ name: n, data: new Float32Array(s) });
+    ['x', 'y', 'z'].forEach((ax, k) => f.create_dataset({ name: 'coord' + ax, data: Float64Array.from(CV, (v) => v[k]) }));
+    f.create_dataset({ name: 'connect1', data: Int32Array.from(TETS.flat(), (v) => v + 1), shape: [6, 4] }).create_attribute('elem_type', 'TETRA'); f.create_dataset({ name: 'eb_prop1', data: new Int32Array([3]) }); f.create_dataset({ name: 'eb_names', data: ['fuel tank'], dtype: 'S33' });
+  });
+  m = await imp('tets.e', keep('tets.e', exo4)); fmtId('NetCDF-4', m, 'exodus', 'partial'); await cubeCheck('NetCDF-4 / HDF5 TETRA block', m, { nv: 8 });
+  ok('HDF5 variant: block, name, title', m.elements[0].type === 'tet4' && m.elements[0].count === 6 && m.groups[0].name === 'fuel tank' && m.meta.title === 'tet cube' && m.meta.container === 'NetCDF-4 / HDF5', JSON.stringify(m.groups) + m.meta.title);
+  m = await imp('plain.nc', cdf({ dims: [['x', 2]], vars: [{ name: 'temperature', dims: ['x'], type: 'double', data: [1, 2] }] })); ok('NetCDF that is not Exodus → metadata-only with reason', m.kind === 'metadata-only' && m.warnings.some((w) => /not an Exodus II database/.test(w)));
+}
+
+sec('Fluent CFF (.msh.h5)');
+{
+  const cff = h5file((f) => {
+    const mesh = f.create_group('meshes').create_group('1'); mesh.create_attribute('dimension', new Int32Array([3])); mesh.create_attribute('nodeCount', new Int32Array([8])); mesh.create_attribute('faceCount', new Int32Array([7])); mesh.create_attribute('cellCount', new Int32Array([1]));
+    mesh.create_group('nodes').create_group('coords').create_dataset({ name: '1', data: Float64Array.from(CV.flat()), shape: [8, 3] });
+    const faces = mesh.create_group('faces'), zt = faces.create_group('zoneTopology');
+    zt.create_dataset({ name: 'id', data: new Int32Array([3, 4, 9]) }); zt.create_dataset({ name: 'minId', data: new Int32Array([1, 5, 7]) }); zt.create_dataset({ name: 'maxId', data: new Int32Array([4, 6, 7]) }); zt.create_dataset({ name: 'zoneType', data: new Int32Array([3, 10, 2]) }); zt.create_dataset({ name: 'name', data: 'wing-wall;inlet;interior-fluid' });
+    const sec1 = faces.create_group('nodes').create_group('1'); sec1.create_dataset({ name: 'nnodes', data: new Uint8Array([4, 4, 4, 4, 4, 4, 3]) }); sec1.create_dataset({ name: 'nodes', data: Uint32Array.from([...CQ.flat(), 0, 2, 6], (v) => v + 1) });
+    faces.create_group('c0').create_dataset({ name: '1', data: new Uint32Array(7).fill(1) }); faces.create_group('c1').create_dataset({ name: '1', data: new Uint32Array([0, 0, 0, 0, 0, 0, 1]) });
+    const cz = mesh.create_group('cells').create_group('zoneTopology'); cz.create_dataset({ name: 'id', data: new Int32Array([2]) }); cz.create_dataset({ name: 'minId', data: new Int32Array([1]) }); cz.create_dataset({ name: 'maxId', data: new Int32Array([1]) }); cz.create_dataset({ name: 'name', data: 'fluid' });
+  });
+  const m = await imp('case.msh.h5', keep('case.msh.h5', cff)); fmtId('cff', m, 'fluent-h5', 'partial'); await cubeCheck('boundary faces', m, { nv: 8 });
+  ok('face zones → boundary groups; internal face left out', m.groups.find((g) => g.name === 'wing-wall')?.count === 4 && m.groups.find((g) => g.name === 'inlet')?.count === 2 && m.meta.internalFaces === 1 && m.groups.find((g) => g.kind === 'zone')?.name === 'fluid', JSON.stringify(m.groups));
+  ok('honest: surface only', m.kind === 'surface-mesh' && m.meta.cells === 1 && m.warnings.some((w) => /NOT reconstructed/.test(w)));
+  const other = h5file((f) => { f.create_group('results').create_dataset({ name: 'pressure', data: new Float64Array([1, 2, 3]) }); });
+  const g = await imp('data.h5', other); ok('unknown HDF5 schema → object tree listed, metadata-only', g.format === 'hdf5' && g.kind === 'metadata-only' && g.meta.tree.some((l) => /\/results\/pressure\s+\[3\]/.test(l)), JSON.stringify(g.meta.tree));
+}
+
+// ---------- GeoTIFF ----------
+sec('GeoTIFF terrain');
+{
+  /** TIFF LZW encoder (MSB-first codes, early change) for the fixtures. */
+  const lzwEncode = (src) => {
+    const out = []; let buf = 0, cnt = 0, bits = 9, next = 258, table = new Map();
+    const put = (code) => { buf = (buf << bits) | code; cnt += bits; while (cnt >= 8) { out.push((buf >> (cnt - 8)) & 255); cnt -= 8; } buf &= (1 << cnt) - 1; };
+    put(256); let w = -1;
+    for (const c of src) {
+      if (w < 0) { w = c; continue; }
+      const key = w * 256 + c, hit = table.get(key);
+      if (hit !== undefined) { w = hit; continue; }
+      put(w); table.set(key, next++); if (next > (1 << bits) - 1 && bits < 12) bits++;
+      if (next >= 4094) { put(256); table = new Map(); bits = 9; next = 258; }
+      w = c;
+    }
+    if (w >= 0) put(w); put(257); if (cnt) out.push((buf << (8 - cnt)) & 255);
+    return Uint8Array.from(out);
+  };
+  /** Write a single-band (or RGB) TIFF. data: typed array of W·H·S samples. */
+  const tiff = ({ W, H, data, fmt = 3, le = true, comp = 1, pred = 1, tile = 0, rps = 8, S = 1, photo = 1, scale = null, tie = null, keys = null, nodata = null }) => {
+    const Bs = data.BYTES_PER_ELEMENT, sample = (dv, p, v) => { if (fmt === 3) { if (Bs === 4) dv.setFloat32(p, v, le); else dv.setFloat64(p, v, le); } else if (Bs === 1) dv.setUint8(p, v & 255); else if (Bs === 2) dv.setUint16(p, v & 65535, le); else dv.setUint32(p, v >>> 0, le); };
+    const block = (r0, c0, bh, bw) => {
+      const raw = new Uint8Array(bh * bw * S * Bs), dv = new DataView(raw.buffer);
+      for (let r = 0; r < bh; r++) for (let c = 0; c < bw; c++) for (let s = 0; s < S; s++) { const rr = r0 + r, cc = c0 + c; sample(dv, ((r * bw + c) * S + s) * Bs, rr < H && cc < W ? data[(rr * W + cc) * S + s] : 0); }
+      if (pred === 2) for (let r = 0; r < bh; r++) for (let i = bw * S - 1; i >= S; i--) { const p = (r * bw * S + i) * Bs; if (Bs === 1) raw[p] = (raw[p] - raw[p - S]) & 255; else if (Bs === 2) dv.setUint16(p, (dv.getUint16(p, le) - dv.getUint16(p - 2 * S, le)) & 65535, le); else dv.setUint32(p, (dv.getUint32(p, le) - dv.getUint32(p - 4 * S, le)) >>> 0, le); }
+      if (pred === 3) for (let r = 0; r < bh; r++) { const n = bw * S, row = new Uint8Array(n * Bs), o = r * n * Bs; for (let i = 0; i < n; i++) for (let q = 0; q < Bs; q++) row[q * n + i] = raw[o + i * Bs + (le ? Bs - 1 - q : q)]; for (let i = n * Bs - 1; i >= S; i--) row[i] = (row[i] - row[i - S]) & 255; raw.set(row, o); }
+      return comp === 5 ? lzwEncode(raw) : comp === 8 ? new Uint8Array(zlib.deflateSync(raw)) : raw;
+    };
+    const blocks = []; if (tile) for (let r = 0; r < H; r += tile) for (let c = 0; c < W; c += tile) blocks.push(block(r, c, tile, tile)); else for (let r = 0; r < H; r += rps) blocks.push(block(r, 0, Math.min(rps, H - r), W));
+    const entries = [], extra = []; let extraLen = 0;
+    const E = (tag, type, vals) => entries.push({ tag, type, vals });
+    E(256, 4, [W]); E(257, 4, [H]); E(258, 3, new Array(S).fill(Bs * 8)); E(259, 3, [comp]); E(262, 3, [photo]); E(277, 3, [S]); E(339, 3, new Array(S).fill(fmt)); if (pred !== 1) E(317, 3, [pred]);
+    if (tile) { E(322, 4, [tile]); E(323, 4, [tile]); E(324, 4, blocks.map(() => 0)); E(325, 4, blocks.map((b) => b.length)); } else { E(278, 4, [rps]); E(273, 4, blocks.map(() => 0)); E(279, 4, blocks.map((b) => b.length)); }
+    if (scale) E(33550, 12, scale); if (tie) E(33922, 12, tie); if (keys) E(34735, 3, [1, 1, 0, keys.length, ...keys.flatMap(([k, v]) => [k, 0, 1, v])]); if (nodata !== null) E(42113, 2, [...enc(String(nodata) + '\0')]);
+    entries.sort((a, b) => a.tag - b.tag);
+    const SZ = { 2: 1, 3: 2, 4: 4, 12: 8 }, ifdAt = 8, ifdLen = 2 + 12 * entries.length + 4; let dataAt = ifdAt + ifdLen;
+    for (const e of entries) { const n = e.vals.length * SZ[e.type]; if (n > 4) { e.at = dataAt + extraLen; extraLen += n + (n % 2); } }
+    let off = dataAt + extraLen; const offs = blocks.map((b) => { const o = off; off += b.length; return o; });
+    for (const e of entries) if (e.tag === 273 || e.tag === 324) e.vals = offs;
+    const out = new Uint8Array(off), dv = new DataView(out.buffer); out.set(le ? [0x49, 0x49] : [0x4d, 0x4d]); dv.setUint16(2, 42, le); dv.setUint32(4, ifdAt, le); dv.setUint16(ifdAt, entries.length, le);
+    const W1 = (p, type, v) => { if (type === 3) dv.setUint16(p, v, le); else if (type === 4) dv.setUint32(p, v, le); else if (type === 12) dv.setFloat64(p, v, le); else dv.setUint8(p, v); };
+    entries.forEach((e, i) => { const p = ifdAt + 2 + 12 * i; dv.setUint16(p, e.tag, le); dv.setUint16(p + 2, e.type, le); dv.setUint32(p + 4, e.vals.length, le); if (e.at) { dv.setUint32(p + 8, e.at, le); e.vals.forEach((v, k) => W1(e.at + k * SZ[e.type], e.type, v)); } else e.vals.forEach((v, k) => W1(p + 8 + k * SZ[e.type], e.type, v)); });
+    blocks.forEach((b, i) => out.set(b, offs[i])); void extra;
+    return out;
+  };
+  const W = 41, H = 31, z = (c, r) => 100 + 2 * c + 3 * r, plane = Float32Array.from({ length: W * H }, (_, i) => z(i % W, Math.floor(i / W)));
+  const geo = { scale: [10, 10, 0], tie: [0, 0, 0, 500000, 4100000, 0], keys: [[1024, 1], [1025, 2], [3072, 32633], [3076, 9001]] };
+  const exactArea = 400 * 300 * Math.sqrt(1 + 0.2 * 0.2 + 0.3 * 0.3);
+  const check = async (label, bytes, { units = 'm' } = {}) => {
+    const m = await imp('dem.tif', bytes), a = G.analyse(m);
+    ok(`${label}: height field read`, m.format === 'geotiff' && m.support === 'partial' && m.kind === 'surface' && a.nVerts === W * H && a.nTris === 2 * (W - 1) * (H - 1), `${m.kind} ${a.nVerts}/${a.nTris} ${m.warnings.join(' | ')}`);
+    ok(`${label}: georeferenced extents`, Math.abs(a.bbox.min[0] - 500000) < 1e-6 && Math.abs(a.bbox.max[0] - 500400) < 1e-6 && Math.abs(a.bbox.max[1] - 4100000) < 1e-6 && Math.abs(a.bbox.min[1] - 4099700) < 1e-6, JSON.stringify(a.bbox));
+    ok(`${label}: elevations exact`, Math.abs(a.bbox.min[2] - 100) < 1e-9 && Math.abs(a.bbox.max[2] - z(W - 1, H - 1)) < 1e-9 && m.meta.zRange[0] === 100); near(`${label}: surface area of the tilted plane`, a.area, exactArea, 1e-9);
+    ok(`${label}: units`, m.units.length === units, JSON.stringify(m.units)); return m;
+  };
+  let m = await check('float32 strips, uncompressed', keep('dem.tif', tiff({ W, H, data: plane, ...geo })));
+  ok('georeferencing in meta', m.meta.geoTiff && m.meta.pixelScale[0] === 10 && m.meta.tiePoints[3] === 500000 && m.meta.geoKeys.projectedCRS === 32633 && m.meta.geoKeys.linearUnits === 9001 && m.meta.width === W && m.meta.compression === 'none', JSON.stringify(m.meta.geoKeys));
+  ok('upward-facing surface', G.massProperties(m, 1).closed === false && (() => { const P = m.positions, T = m.triangles, u = [P[3 * T[1]] - P[3 * T[0]], P[3 * T[1] + 1] - P[3 * T[0] + 1]], v = [P[3 * T[2]] - P[3 * T[0]], P[3 * T[2] + 1] - P[3 * T[0] + 1]]; return u[0] * v[1] - u[1] * v[0] > 0; })());
+  ok('warned that the band is taken as elevation', m.warnings.some((w) => /interpreted as elevation/.test(w)));
+  await check('uint16 LZW + horizontal predictor', keep('dem_lzw.tif', tiff({ W, H, data: Uint16Array.from(plane), fmt: 1, comp: 5, pred: 2, ...geo })));
+  await check('float32 Deflate + floating-point predictor', keep('dem_def.tif', tiff({ W, H, data: plane, comp: 8, pred: 3, ...geo })));
+  await check('float64 LZW, big-endian', tiff({ W, H, data: Float64Array.from(plane), comp: 5, le: false, ...geo }));
+  await check('int16 tiles (16 × 16), big-endian', keep('dem_tiled.tif', tiff({ W, H, data: Int16Array.from(plane), fmt: 2, tile: 16, le: false, ...geo })));
+  await check('uint32 tiles, Deflate + predictor', tiff({ W, H, data: Uint32Array.from(plane), fmt: 1, tile: 16, comp: 8, pred: 2, ...geo }));
+  await check('uint8-range LZW strips of one row', tiff({ W, H, data: plane, comp: 5, rps: 1, ...geo }));
+  await check('feet', tiff({ W, H, data: plane, ...geo, keys: [[1024, 1], [1025, 2], [3076, 9002]] }), { units: 'ft' });
+  const noisy = Uint16Array.from({ length: 200 * 150 }, (_, i) => (i * 7919) % 3001); m = await imp('noise.tif', tiff({ W: 200, H: 150, data: noisy, fmt: 1, comp: 5, rps: 150 }), { maxGrid: 2000 });
+  ok('LZW with code-width growth and table resets decodes exactly', m.positions.length === 3 * 200 * 150 && (() => { for (let i = 0; i < noisy.length; i++) if (m.positions[3 * i + 2] !== noisy[i]) return false; return true; })());
+  ok('no georeferencing → pixel coordinates + warning, units null', m.units.length === null && m.meta.georeferenced === false && m.warnings.some((w) => /pixel indices/.test(w)) && G.analyse(m).bbox.size[0] === 199);
+  const holed = plane.slice(); holed[5 * W + 5] = -9999; m = await imp('hole.tif', tiff({ W, H, data: holed, nodata: -9999, ...geo })); ok('no-data sample left out with its four cells', m.positions.length / 3 === W * H - 1 && m.triangles.length / 3 === 2 * (W - 1) * (H - 1) - 8 && m.meta.noData === -9999 && m.meta.noDataSamples === 1 && m.meta.zRange[0] === 100);
+  m = await imp('big.tif', tiff({ W: 400, H: 300, data: Float32Array.from({ length: 120000 }, (_, i) => (i % 400) * 0.5), comp: 8, rps: 16, ...geo })); let a = G.analyse(m);
+  ok('large raster subsampled to opts.maxGrid (default 300)', m.meta.grid.stride === 2 && m.meta.grid.nx === 200 && m.meta.grid.ny === 150 && a.nVerts === 30000 && m.warnings.some((w) => /sampled every 2/.test(w)) && Math.abs(a.bbox.max[2] - 199) < 1e-9, JSON.stringify(m.meta.grid));
+  m = await imp('big.tif', tiff({ W: 400, H: 300, data: new Float32Array(120000), ...geo }), { maxGrid: 50 }); ok('opts.maxGrid respected', m.meta.grid.nx <= 50 && m.meta.grid.ny <= 50);
+  m = await imp('geo.tif', tiff({ W, H, data: plane, scale: [0.001, 0.001, 0], tie: [0, 0, 0, 12.5, 45.2, 0], keys: [[1024, 2], [2048, 4326]] })); ok('geographic CRS → degrees warning, units not set', m.units.length === null && m.warnings.some((w) => /degrees/.test(w)) && m.kind === 'surface');
+  m = await imp('photo.tif', tiff({ W: 8, H: 8, data: new Uint8Array(192), fmt: 1, S: 3, photo: 2 })); ok('RGB imagery is not mistaken for terrain', m.kind === 'metadata-only' && m.meta.width === 8 && m.warnings.some((w) => /imagery/.test(w)) && m.warnings.some((w) => /Conversion pathway/.test(w)));
+  const jpeg = tiff({ W, H, data: plane, ...geo }); for (let i = 10; i < 10 + 12 * 14; i += 12) if (new DataView(jpeg.buffer).getUint16(i, true) === 259) new DataView(jpeg.buffer).setUint16(i + 8, 7, true);
+  m = await imp('jpeg.tif', jpeg); ok('unsupported compression → metadata-only naming it', m.kind === 'metadata-only' && m.meta.compression === 'JPEG' && m.warnings.some((w) => /JPEG/.test(w)));
+}
+
+sec('E57 header + XML');
+{
+  const xml = enc(`<?xml version="1.0"?><e57Root type="Structure"><data3D type="Vector"><vectorChild type="Structure"><name type="String"><![CDATA[Hangar scan 1]]></name><cartesianBounds type="Structure"><xMinimum type="Float">-2.5</xMinimum><xMaximum type="Float">7.5</xMaximum><yMinimum type="Float">0</yMinimum><yMaximum type="Float">4</yMaximum><zMinimum type="Float">-1</zMinimum><zMaximum type="Float">3</zMaximum></cartesianBounds><points type="CompressedVector" fileOffset="48" recordCount="123456"><prototype type="Structure"><cartesianX type="Float"/><cartesianY type="Float"/><cartesianZ type="Float"/><intensity type="Float"/></prototype></points></vectorChild></data3D>${' '.repeat(700)}</e57Root>`);
+  const start = 700, b = new Uint8Array(4096), d = new DataView(b.buffer); b.set(enc('ASTM-E57')); d.setUint32(8, 1, true); d.setBigUint64(16, 4096n, true); d.setBigUint64(24, BigInt(start), true); d.setBigUint64(32, BigInt(xml.length), true); d.setBigUint64(40, 1024n, true);
+  for (let p = start, o = 0; o < xml.length;) { const end = (Math.floor(p / 1024) + 1) * 1024 - 4, k = Math.min(end - p, xml.length - o); b.set(xml.subarray(o, o + k), p); o += k; b.fill(0xee, end, end + 4); p = end + 4; }   // page checksums interrupt the XML
+  const m = await imp('scan.e57', keep('scan.e57', b)); fmtId('e57', m, 'e57', 'metadata');
+  ok('XML section read across page checksums', m.meta.xmlRead && m.meta.scans.length === 1 && m.meta.scans[0].points === 123456 && m.meta.scans[0].name === 'Hangar scan 1' && m.meta.totalPoints === 123456, JSON.stringify(m.meta.scans));
+  ok('bounds + fields', m.meta.cartesianBounds.min.join() === '-2.5,0,-1' && m.meta.cartesianBounds.max.join() === '7.5,4,3' && m.meta.fields.includes('cartesianX') && m.meta.fields.includes('intensity')); ok('still honest: no points', m.kind === 'metadata-only' && m.positions.length === 0 && m.warnings.some((w) => /not decoded/.test(w)));
+}
+
+sec('simplifyForSolver');
+{
+  const sph = uvSphere(500, 96, 48); sph.units = { length: 'mm', source: 'file' };
+  const s = G.simplifyForSolver(sph, 3000), nT = s.triangles.length / 3;
+  ok('plain arrays', Array.isArray(s.positions) && Array.isArray(s.triangles) && s.positions.length % 3 === 0 && s.triangles.length % 3 === 0); ok('triangle budget met and well used', nT <= 3000 && nT > 1200 && sph.triangles.length / 3 === 9024, `${nT} triangles`);
+  ok('indices valid, no degenerate triangles', s.triangles.every((v) => Number.isInteger(v) && v >= 0 && v < s.positions.length / 3) && (() => { for (let t = 0; t < s.triangles.length; t += 3) if (s.triangles[t] === s.triangles[t + 1] || s.triangles[t + 1] === s.triangles[t + 2] || s.triangles[t] === s.triangles[t + 2]) return false; return true; })());
+  const sm = mk([], []); sm.positions = Float64Array.from(s.positions); sm.triangles = Uint32Array.from(s.triangles); const a = G.analyse(sm);
+  ok('converted to metres', s.inMetres === true && s.scaleApplied === 1e-3 && a.bbox.size.every((d) => Math.abs(d - 1) < 0.06), JSON.stringify(a.bbox.size)); near('shape kept: sphere area within 5 %', a.area, Math.PI, 5e-2);
+  ok('closed sphere stays closed', a.watertight && Math.abs(a.volume - Math.PI / 6) < 0.05 * Math.PI / 6, `${a.boundaryEdges} boundary edges, V = ${a.volume}`);
+  const tight = G.simplifyForSolver(sph, 200); ok('smaller budget respected', tight.triangles.length / 3 <= 200 && tight.triangles.length / 3 > 40, String(tight.triangles.length / 3));
+  const c = G.simplifyForSolver(cube(), 3000); ok('small model passes through (welded), units unknown → unscaled', c.triangles.length === 36 && c.positions.length === 24 && c.inMetres === false && c.scaleApplied === 1);
+  const stl = await imp('c.stl', G.exportModel(cube(), 'stl')); ok('STL soup is welded on the way', G.simplifyForSolver(stl).positions.length === 24);
+  ok('volume mesh → its boundary surface', G.simplifyForSolver(tetCube(), 100).triangles.length === 36); ok('nothing to simplify → empty arrays', G.simplifyForSolver(mk(CV, [], { kind: 'pointcloud' })).triangles.length === 0);
+  const def = G.simplifyForSolver(uvSphere(1, 200, 100)); ok('default budget is 3000', def.triangles.length / 3 <= 3000 && def.sourceTriangles === 39600);
 }
 
 // ---------- metadata-only signatures ----------
@@ -410,15 +743,16 @@ sec('metadata-only formats');
     truncatable.push([name, bytes]);
     const d = G.detectFormat(name, bytes); ok(`${name} → ${id}`, d.id === id, `got ${d.id} (${d.note})`);
     const m = await imp(name, bytes);
-    ok(`${name}: metadata-only model, never pretends`, m.format === id && m.kind === 'metadata-only' && m.support === 'metadata' && m.positions.length === 0 && m.triangles.length === 0 && m.units !== undefined, `${m.kind}/${m.support}`);
+    const decodable = ['cgns', 'med', 'fluent-h5', 'exodus', 'geotiff'].includes(id);    // formats with a real reader: a bare signature still yields no geometry
+    ok(`${name}: metadata-only model, never pretends`, m.format === id && m.kind === 'metadata-only' && (decodable || m.support === 'metadata') && m.positions.length === 0 && m.triangles.length === 0 && m.units !== undefined, `${m.format}/${m.kind}/${m.support}`);
     ok(`${name}: warning names the conversion pathway`, m.warnings.some((w) => /Conversion pathway: \S+/.test(w)), m.warnings.join(' | '));
     const a = G.analyse(m); ok(`${name}: analyse is safe on it`, a.nVerts === 0 && a.classification.label.includes('metadata'));
   }
   ok('HDF5 signature wins over a misleading extension', G.detectFormat('mesh.stl', hdf5).id === 'hdf5');
   let m = await imp('part.sat', sat); ok('SAT: header + census + units from the scale', m.meta.product === 'TestCAD' && m.meta.acisVersion === 'ACIS 7.0 NT' && m.meta.census.face === 2 && m.meta.census['plane-surface'] === 1 && m.units.length === 'in', JSON.stringify(m.meta));
-  m = await imp('dem.tif', tif); ok('GeoTIFF: size + pixel scale + GeoKeys', m.meta.width === 640 && m.meta.height === 480 && m.meta.geoTiff && m.meta.pixelScale[0] === 30 && m.meta.geoKeys.linearUnits === 9001, JSON.stringify(m.meta));
-  m = await imp('scan.e57', e57); ok('E57 header', m.meta.version === '1.0' && m.meta.xmlOffset === 48 && m.meta.pageSize === 1024);
-  m = await imp('mesh.cgns', hdf5); ok('HDF5 superblock version', m.meta.container === 'HDF5' && m.meta.superblockVersion === 2);
+  m = await imp('dem.tif', tif); ok('TIFF without strip data: size + pixel scale + GeoKeys still reported', m.kind === 'metadata-only' && m.meta.width === 640 && m.meta.height === 480 && m.meta.geoTiff && m.meta.pixelScale[0] === 30 && m.meta.geoKeys.linearUnits === 9001, JSON.stringify(m.meta));
+  m = await imp('scan.e57', e57); ok('E57 header', m.meta.version === '1.0' && m.meta.xmlOffset === 48 && m.meta.pageSize === 1024 && m.meta.scans.length === 0);
+  m = await imp('mesh.cgns', hdf5); ok('corrupt HDF5: container + superblock version reported, reason given', m.meta.container === 'HDF5' && m.meta.superblockVersion === 2 && m.warnings.some((w) => /could not open/.test(w)), JSON.stringify(m.meta) + m.warnings.join('|'));
   m = await imp('part.jt', pad(enc('Version 9.5 JT  DM 4.0 \n'))); ok('JT version', m.meta.version === '9.5');
 }
 
@@ -607,7 +941,7 @@ sec('malformed input');
   let cases = 0, bad = 0; const errs = [];
   const tryOne = async (name, bytes, opts) => {
     cases++;
-    try { const m = await G.importFile(name, bytes, opts); G.analyse(m); G.meshQuality(m); if (!Array.isArray(m.warnings) || !Array.isArray(m.log) || !(m.positions instanceof Float64Array) || !(m.triangles instanceof Uint32Array) || m.positions.length % 3 || m.triangles.some((v) => v >= m.positions.length / 3)) throw new Error('inconsistent model'); }
+    try { const m = await G.importFile(name, bytes, { kernelTimeout: 15000, ...opts }); G.analyse(m); G.meshQuality(m); if (!Array.isArray(m.warnings) || !Array.isArray(m.log) || !(m.positions instanceof Float64Array) || !(m.triangles instanceof Uint32Array) || m.positions.length % 3 || m.triangles.some((v) => v >= m.positions.length / 3)) throw new Error('inconsistent model'); }
     catch (e) { if (!/not recognised|is empty/.test(e.message)) { bad++; if (errs.length < 8) errs.push(`${name} (${bytes.length} B): ${e.constructor.name}: ${e.message}`); } }
   };
   let seed = 99; const rnd = () => ((seed = (seed * 1103515245 + 12345) & 0x7fffffff) / 0x7fffffff);

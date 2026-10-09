@@ -4,13 +4,13 @@
 // and shear, viscoelastic creep / Norton relaxation, moisture diffusion and pitting, and metal yield criteria.
 
 import * as N from '../core/numerics.js';
-import { METALS, PLIES } from '../data/materials.js';
+import { METALS, PLIES, designAllowables } from '../data/materials.js';
 
 // ---- shared helpers -------------------------------------------------------------------------
 const PLY_NAMES = Object.keys(PLIES), MATS = Object.keys(METALS);
 const plyOf = (name) => PLIES[name] || PLIES['IM7/8552 carbon-epoxy'];
 const kpi = (key, label, value, unit, status, note) => ({ key, label, value, unit, ...(status ? { status } : {}), ...(note ? { note } : {}) });
-const DATA_NOTE = 'Ply and metal data are typical handbook values, not statistically based design allowables';
+const DATA_NOTE = 'Ply data are typical published values, not statistically based design allowables (B-basis values per CMH-17 are needed for substantiation)';
 const rep = (a, n) => { const o = []; for (let k = 0; k < n; k++) o.push(...a); return o; };
 
 /** Parse a stacking sequence such as "[0/45/-45/90]s", "[0_2/±45/90]s", "[0/90]2s" or "[(0/90)2/45]s" into ply angles [deg]. Returns null when it cannot be read. */
@@ -153,7 +153,7 @@ const clt = {
     { key: 'dM', label: 'Absorbed moisture (mass fraction)', unit: '-', default: 0, min: 0, max: 0.05, group: 'Environment', help: 'e.g. 0.01 = 1% by weight; see the moisture analysis' },
     { key: 'beta2', label: 'Transverse swelling coefficient β₂', unit: '1/(mass fraction)', default: 0.4, min: 0, max: 1.5, group: 'Environment', help: 'Strain per unit moisture mass fraction; roughly 0.3–0.6 for carbon/epoxy. Measure for your system' },
     { key: 'criterion', label: 'Governing failure criterion', type: 'select', options: CRIT_NAMES, default: 'Tsai–Wu', group: 'Strength' },
-    { key: 'sf', label: 'Required reserve factor at limit load', unit: '-', default: 1.5, min: 1, max: 4, group: 'Strength' },
+    { key: 'sf', label: 'Required reserve factor at limit load', unit: '-', default: 1.5, min: 1, max: 4, group: 'Strength', help: 'Factor of safety of 1.5 on limit load (14 CFR 25.303)' },
     { key: 'pPlus', label: 'Puck slope p⊥∥(+)', unit: '-', default: 0.35, min: 0.1, max: 0.5, group: 'Strength', help: '0.35 carbon, 0.30 glass (Puck recommendations)' },
     { key: 'pMinus', label: 'Puck slope p⊥∥(−)', unit: '-', default: 0.3, min: 0.1, max: 0.5, group: 'Strength', help: '0.30 carbon, 0.25 glass' },
     { key: 'stRatio', label: 'Hashin transverse shear strength / Yc', unit: '-', default: 0.378, min: 0.2, max: 0.8, group: 'Strength', help: '0.378 corresponds to a 53° fracture plane; 0.5 removes the linear compression term' },
@@ -198,7 +198,7 @@ const clt = {
       outputs: { nu_xy: E.nuxy, symmetric: sym ? 1 : 0, balanced: bal ? 1 : 0 },
       warnings,
       models: ['Classical laminate theory (Kirchhoff)', 'Hygrothermal equivalent loads', `Ply failure: ${CRIT_NAMES.join(', ')}`],
-      assumptions: ['Thin laminate, perfectly bonded plies, plane stress in each ply, linear elastic to first failure', 'Reserve factors scale the mechanical load with thermal and moisture residual stresses held constant', 'Free-edge interlaminar stresses, holes, impact damage and in-situ strength effects are not included', DATA_NOTE],
+      assumptions: ['Thin laminate, perfectly bonded plies, plane stress in each ply, linear elastic to first failure', 'Reserve factors scale the mechanical load with thermal and moisture residual stresses held constant', 'Free-edge interlaminar stresses, holes, impact damage and in-situ strength effects are not included', 'Swelling coefficient, Puck slopes and the Hashin transverse-shear ratio are typical values to be replaced by measured data', DATA_NOTE],
     };
   },
   verify() {
@@ -273,7 +273,7 @@ const strength = {
     { key: 'dT', label: 'Cure cool-down ΔT', unit: 'K', default: 0, min: -300, max: 100, group: 'Environment', help: 'Adds thermal residual stresses, which usually bring matrix cracking forward' },
     { key: 'criterion', label: 'First-ply failure criterion', type: 'select', options: CRIT_NAMES, default: 'Tsai–Wu', group: 'Strength' },
     { key: 'kd', label: 'Matrix-failed stiffness retention', unit: '-', default: 0.1, min: 0.001, max: 1, group: 'Strength', help: 'Factor on E2, G12 and ν12 of a ply after matrix failure (ply-discount model; calibrate against notched/unnotched coupon curves)' },
-    { key: 'sf', label: 'Required reserve factor at limit load', unit: '-', default: 1.5, min: 1, max: 4, group: 'Strength' },
+    { key: 'sf', label: 'Required reserve factor at limit load', unit: '-', default: 1.5, min: 1, max: 4, group: 'Strength', help: 'Factor of safety of 1.5 on limit load (14 CFR 25.303)' },
     { key: 'stRatio', label: 'Hashin transverse shear strength / Yc', unit: '-', default: 0.378, min: 0.2, max: 0.8, group: 'Strength' },
     { key: 'nDir', label: 'Envelope directions', unit: '', default: 72, min: 16, max: 360, step: 1, discrete: true, group: 'Numerics' },
   ],
@@ -310,7 +310,7 @@ const strength = {
       outputs: { first_fibre_RF: firstF ? firstF.lam : NaN, fpf_benign: benign ? 1 : 0 },
       warnings,
       models: [`First-ply failure by ${i.criterion}`, 'Ply-discount progressive failure with Hashin fibre/matrix modes', 'Proportional loading with constant thermal residual stress'],
-      assumptions: ['Sudden stiffness discount at ply failure (no fracture-energy regularisation, no delamination)', 'Load-controlled: plies that fail below the current load fail immediately', 'Unnotched laminate; compression strength excludes buckling and kink-band in-situ effects', DATA_NOTE],
+      assumptions: ['Sudden stiffness discount at ply failure (no fracture-energy regularisation, no delamination)', 'Load-controlled: plies that fail below the current load fail immediately', 'Unnotched laminate; compression strength excludes buckling and kink-band in-situ effects', 'The matrix-failed stiffness retention is an illustrative ply-discount value', DATA_NOTE],
     };
   },
   convergence: { param: 'nDir', label: 'Envelope directions', levels: [18, 36, 72, 144], metric: 'min_RF' },
@@ -318,13 +318,13 @@ const strength = {
     const p = PLIES['AS4/3501-6 carbon-epoxy'], b = { layup: '[0]8', ply: 'AS4/3501-6 carbon-epoxy', t_ply_mm: 0, n_block: 1, Nx: 1e5, Ny: 0, Nxy: 0, dT: 0, criterion: 'Maximum stress', kd: 0.1, sf: 1.5, stRatio: 0.378, nDir: 16 };
     const ud = N.kv(strength.run(b)), tr = N.kv(strength.run({ ...b, layup: '[90]8' })), cpI = { ...b, layup: '[0/90]s', criterion: 'Maximum stress' }, cp = N.kv(strength.run(cpI));
     // cross-ply ultimate by netting analysis after full matrix discount: only the 0° plies carry load, with degraded 90° stiffness
-    const Lc = lamFromInputs(cpI, []).L, e0 = p.Xt / p.E1, kd = 0.1, Qd = Qof({ ...p, E2: p.E2 * kd, G12: p.G12 * kd, nu12: p.nu12 * kd });
+    const Lc = lamFromInputs(cpI, []).L, kd = 0.1, Qd = Qof({ ...p, E2: p.E2 * kd, G12: p.G12 * kd, nu12: p.nu12 * kd });
     return [
       N.check('Unidirectional tension strength Xt·h', ud.fpf_load_Npm, p.Xt * 8 * p.t, 1e-6, 'Uniaxial strength'),
       N.check('Unidirectional compression strength Xc·h', ud.fpf_comp_Npm, p.Xc * 8 * p.t, 1e-6, 'Uniaxial strength'),
       N.check('Transverse laminate fails at Yt·h', tr.fpf_load_Npm, p.Yt * 8 * p.t, 1e-6, 'Uniaxial strength'),
       N.check('Cross-ply first-ply failure at the 90° transverse strain', cp.fpf_strain, lamReserve(Lc, [1, 0, 0, 0, 0, 0], 0, 0, 'Maximum stress').rf * Lc.abd[0][0], 1e-12, 'Consistency of strain and load'),
-      N.check('Cross-ply ultimate: 0° plies at fibre failure strain, 90° plies discounted', cp.ult_load_Npm, crossPlyUlt(p, Qd, e0), 2e-3, 'Ply-discount (netting) analysis with Poisson coupling solved independently'),
+      N.check('Cross-ply ultimate: 0° plies at fibre failure strain, 90° plies discounted', cp.ult_load_Npm, crossPlyUlt(p, Qd), 2e-3, 'Ply-discount (netting) analysis with Poisson coupling solved independently'),
     ];
   },
   calibration: { params: [{ key: 'kd', min: 0.001, max: 1 }], sweep: 'n_block', target: 'ult_strength_Pa', note: 'Unnotched tension coupon strengths calibrate the matrix-failure stiffness retention.' },
@@ -338,7 +338,7 @@ const strength = {
   },
 };
 /** Independent check: ultimate Nx of [0/90]s with matrix-discounted 90° plies when the 0° plies reach their fibre failure stress (max-stress fibre mode of Hashin with zero shear). */
-function crossPlyUlt(p, Qd, e0unused) {
+function crossPlyUlt(p, Qd) {
   // unknowns: εx, εy with Ny = 0. 0° ply: σx = Q11εx + Q12εy; 90° ply (discounted): σx = Qd22 εx + Qd12 εy, σy = Qd12 εx + Qd11 εy
   const Q = Qof(p), t = p.t, A11 = 2 * t * (Q[0] + Qd[2]), A12 = 2 * t * (Q[1] + Qd[1]), A22 = 2 * t * (Q[2] + Qd[0]);
   // per unit Nx: εy = −A12/A22 εx, εx = 1/(A11 − A12²/A22); fibre stress in the 0° ply per unit Nx
@@ -487,7 +487,7 @@ const interlaminar = {
       ],
       plots, warnings,
       models: ['Simple beam theory for DCB, ENF and MMB specimens (Reeder–Crews load partition)', 'Benzeggagh–Kenane mixed-mode criterion', 'Equilibrium-derived interlaminar shear in cylindrical bending with energy-based shear correction'],
-      assumptions: ['Unidirectional 0° arms with modulus E1 for the fracture specimens; no root rotation, large-displacement or R-curve (fibre-bridging) effects', 'Self-similar growth between the mid-plane plies', 'Interlaminar shear strength approximated by the in-plane shear strength S', DATA_NOTE],
+      assumptions: ['Unidirectional 0° arms with modulus E1 for the fracture specimens; no root rotation, large-displacement or R-curve (fibre-bridging) effects', 'Self-similar growth between the mid-plane plies', 'Interlaminar shear strength approximated by the in-plane shear strength S', 'Default specimen dimensions, load, B-K exponent and G23 are illustrative typical values', DATA_NOTE],
     };
   },
   verify() {
@@ -541,7 +541,7 @@ const visco = {
     { key: 'Ea', label: 'Activation energy (Arrhenius shift)', unit: 'J/mol', default: 1.0e5, min: 0, group: 'Viscoelastic', help: 'Time–temperature shift below Tg; illustrative default' },
     { key: 't_end_h', label: 'Duration', unit: 'h', default: 10000, min: 0.01, group: 'Viscoelastic' },
     { key: 's0', label: 'Initial preload stress (metal)', unit: 'Pa', default: 400e6, min: 1e5, group: 'Norton creep' },
-    { key: 'E_metal', label: 'Metal modulus', unit: 'Pa', default: 113.8e9, min: 1e9, group: 'Norton creep' },
+    { key: 'E_metal', label: 'Metal modulus', unit: 'Pa', default: 110.3e9, min: 1e9, group: 'Norton creep', help: 'Defaults to the structural metal of the case; 110.3 GPa is annealed Ti-6Al-4V (MIL-HDBK-5J)' },
     { key: 'A_n', label: 'Norton coefficient A', unit: '1/(s·MPaⁿ)', default: 1e-24, min: 0, group: 'Norton creep', help: 'ε̇ = A·σⁿ·exp(−Q/RT) with σ in MPa. Strongly material- and temperature-specific: supply test data' },
     { key: 'n_n', label: 'Norton exponent n', unit: '-', default: 5, min: 1.01, max: 20, group: 'Norton creep' },
     { key: 'Q_n', label: 'Creep activation energy Q', unit: 'J/mol', default: 0, min: 0, group: 'Norton creep', help: '0 when A is already given at the service temperature' },
@@ -631,13 +631,16 @@ function fick(h, D, c0, cs, tEnd, nz, nt, twoSided) {
   b[0] = 1; cc[0] = 0; if (twoSided) { a[nz] = 0; b[nz] = 1; } else { a[nz] = -2 * r; } // insulated far face by mirror node
   for (let s = 1; s <= nt; s++) {
     const d = c.map((v, k) => (k === 0 ? cs : k === nz ? (twoSided ? cs : v + 2 * r * (c[nz - 1] - v)) : v + r * (c[k - 1] - 2 * v + c[k + 1])));
-    c = N.solveTridiag(a, b, cc, d); t.push(s * dt); M.push(s === 0 ? c0 : avg(c));
+    c = N.solveTridiag(a, b, cc, d); t.push(s * dt); M.push(avg(c));
     if (s === Math.round(nt / 20) || s === Math.round(nt / 4) || s === nt) prof.push({ t: s * dt, c: c.slice() });
   }
   return { t, M, prof, z: N.range(n, (k) => k * dz) };
 }
 /** Series solution for the average moisture content of a plate exposed on both faces. */
+/** Fourier number D·t/h² at which a plate exposed on both faces reaches 90% of its equilibrium uptake: 1 − (8/π²)·exp(−π²·Fo) = 0.9 (higher series terms are below 1e-9 there). */
+const FO_90 = Math.log(80 / Math.PI ** 2) / Math.PI ** 2;
 const fickExact = (h, D, c0, cs, t) => { let s = 0; for (let j = 0; j < 200; j++) s += Math.exp((-((2 * j + 1) ** 2) * Math.PI ** 2 * D * t) / (h * h)) / (2 * j + 1) ** 2; return cs - (cs - c0) * (8 / Math.PI ** 2) * s; };
+const ENV_BASE = { h_m: 0.004, D_m2s: 2e-13, rh: 0.85, M_sat100: 1.5, M0: 0, years: 20, sides: 'both', Tg_dry_K: 473, dTg_per_pct: 20, k_str_per_pct: 8, T_service_K: 355, t_metal_m: 0.003, k_pit: 1.2e-4, n_pit: 0.333, protect_yr: 8, nz: 60 };
 const environment = {
   id: 'environment', title: 'Moisture uptake, hot-wet knock-down and corrosion pitting', fidelity: 'numerical',
   summary: 'Fickian moisture diffusion into a laminate over years of service, the resulting glass-transition and strength knock-downs, and power-law growth of corrosion pits in a metal part with the remaining section and equivalent flaw size.',
@@ -663,7 +666,7 @@ const environment = {
   defaults(c, up) { return { h_m: up.composites?.laminate_t_m, t_metal_m: up.fea?.t_skin_root_m ?? Math.min(c.struct.t_skin_mm, 3) / 1e3, years: c.econ.life_yr, rh: N.clamp(c.site.rh + 0.25, 0.3, 0.95) }; },
   run(i) {
     const tEnd = i.years * 3.15576e7, cs = i.M_sat100 * i.rh, two = i.sides === 'both', nz = Math.max(8, Math.round(i.nz)), nt = Math.max(60, 4 * nz), warnings = [];
-    const f = fick(i.h_m, i.D_m2s, i.M0, cs, tEnd, nz, nt, two), Mend = f.M[nt], heff = two ? i.h_m : 2 * i.h_m, t90 = (0.0 + 0.305 * heff * heff) / i.D_m2s; // 90% saturation: D·t/h² ≈ 0.305 for two-sided exposure (from the series solution)
+    const f = fick(i.h_m, i.D_m2s, i.M0, cs, tEnd, nz, nt, two), Mend = f.M[nt], heff = two ? i.h_m : 2 * i.h_m, t90 = (FO_90 * heff * heff) / i.D_m2s; // one-sided exposure behaves as a two-sided plate of twice the thickness
     const Tg = i.Tg_dry_K - i.dTg_per_pct * Mend, margin = Tg - i.T_service_K, ret = Math.max(0, 1 - (i.k_str_per_pct * Mend) / 100);
     if (margin < 28) warnings.push(`Wet glass transition is only ${margin.toFixed(0)} K above the service temperature; a margin of about 28 K (50 °F) is common design practice.`);
     // pitting
@@ -702,13 +705,17 @@ const environment = {
       N.check('Two-sided uptake versus the Fourier series solution', f.M[800], fickExact(h, D, 0, 1, t), 2e-4, 'Crank, The Mathematics of Diffusion, eq. 4.18'),
       N.check('One-sided plate of half thickness equals the two-sided plate', f1.M[800], f.M[800], 1e-6, 'Symmetry'),
       N.check('Short-time uptake M/M∞ = 4·√(D·t/(π·h²))', fs.M[3200], 4 * Math.sqrt(0.01 / Math.PI), 5e-3, 'Semi-infinite solution (Shen & Springer, 1976)'),
+      N.check('Reported time to 90% of equilibrium gives 90% uptake in the series solution', fickExact(h, D, 0, 1, N.kv(environment.run({ ...ENV_BASE, h_m: h, D_m2s: D })).t_90_yr * 3.15576e7), 0.9, 1e-8, 'Crank, The Mathematics of Diffusion, eq. 4.18: D·t/h² = ln(80/π²)/π² = 0.2120'),
+      N.check('One-sided exposure takes four times as long to reach 90%', N.kv(environment.run({ ...ENV_BASE, sides: 'one' })).t_90_yr / N.kv(environment.run(ENV_BASE)).t_90_yr, 4, 1e-12, 'Insulated face = symmetry plane of a plate of twice the thickness'),
     ];
   },
   calibration: { params: [{ key: 'D_m2s', min: 1e-16, max: 1e-9 }, { key: 'M_sat100', min: 0, max: 8 }], sweep: 'years', target: 'moisture_pct', note: 'Coupon mass gain versus conditioning time calibrates diffusivity and saturation content (ASTM D5229-type test).' },
   recommend(res, i) {
     const o = res.outputs, out = [];
     if (o.Tg_margin_K < 28) out.push({ severity: o.Tg_margin_K < 0 ? 'critical' : 'warn', title: 'Insufficient hot-wet margin', detail: `Wet Tg ${o.Tg_wet_K.toFixed(0)} K against ${i.T_service_K} K service temperature.`, action: 'Select a higher-Tg resin, limit the service temperature (paint colour, heat-source shielding), or seal the laminate against moisture.', basis: 'Material operational limit: wet Tg minus a margin (programme-specific; about 28 K is common)' });
-    if (o.section_remaining < 0.9) out.push({ severity: 'warn', title: 'Corrosion pitting consumes the section', detail: `Pit depth ${(o.pit_depth_m * 1e3).toFixed(2)} mm after ${i.years} years.`, action: `Inspect before year ${Number.isFinite(o.t_pit_10pct_yr) ? o.t_pit_10pct_yr.toFixed(0) : '-'}; renew surface protection, improve drainage and sealing, and pass the pit depth to Suite 9 as the initial flaw.`, basis: 'Empirical pit-growth law; blend-out limit of about 10% thickness' });
+    // the default pit-growth law is an illustrative placeholder: it can prompt an inspection plan but cannot justify a warning until it is fitted to data
+    const pitDefault = i.k_pit === ENV_BASE.k_pit && i.n_pit === ENV_BASE.n_pit && i.protect_yr === ENV_BASE.protect_yr;
+    if (o.section_remaining < 0.9) out.push({ severity: pitDefault ? 'advise' : 'warn', title: pitDefault ? 'Thin metal gauge is sensitive to corrosion pitting (illustrative growth law)' : 'Corrosion pitting consumes the section', detail: `Pit depth ${(o.pit_depth_m * 1e3).toFixed(2)} mm (${(100 * (1 - o.section_remaining)).toFixed(0)}% of the gauge) after ${i.years} years${pitDefault ? ' with the placeholder pit-growth parameters' : ''}.`, action: `Inspect before year ${Number.isFinite(o.t_pit_10pct_yr) ? o.t_pit_10pct_yr.toFixed(0) : '-'}; renew surface protection, improve drainage and sealing, and pass the pit depth to Suite 9 as the initial flaw.`, basis: 'Empirical pit-growth law; blend-out limit of about 10% thickness' });
     out.push({ severity: 'info', title: 'Durability is a sustainability lever', detail: `Laminate reaches ${(100 * o.saturation_frac).toFixed(0)}% of equilibrium moisture in ${i.years} years.`, action: 'Design to end-of-life (saturated) properties from the start: it avoids mid-life restrictions and extends the useful life of high-embodied-energy structure.', basis: 'Environmental design condition' });
     return out;
   },
@@ -726,36 +733,37 @@ const yieldA = {
     { key: 'sx', label: 'Stress σx (rolling direction)', unit: 'Pa', default: 200e6, group: 'Stress state', help: 'Defaults to the peak structural stress from Suite 2' },
     { key: 'sy', label: 'Stress σy', unit: 'Pa', default: 0, group: 'Stress state' },
     { key: 'txy', label: 'Shear stress τxy', unit: 'Pa', default: 0, group: 'Stress state' },
-    { key: 'material', label: 'Material', type: 'select', options: MATS, default: 'Al 2024-T3', group: 'Material', help: 'Typical values, not design allowables' },
+    { key: 'material', label: 'Material', type: 'select', options: MATS, default: 'Al 2024-T3', group: 'Material', help: 'The reserve factors use the MIL-HDBK-5J design yield allowable where the database holds a verified one, otherwise the typical yield strength' },
     { key: 'r0', label: 'Lankford coefficient r₀', unit: '-', default: 1, min: 0.2, max: 5, group: 'Anisotropy (Hill)', help: 'Width/thickness plastic strain ratio in the rolling direction; 1 = isotropic. Aluminium sheet is typically 0.5–0.8' },
     { key: 'r45', label: 'Lankford coefficient r₄₅', unit: '-', default: 1, min: 0.2, max: 5, group: 'Anisotropy (Hill)' },
     { key: 'r90', label: 'Lankford coefficient r₉₀', unit: '-', default: 1, min: 0.2, max: 5, group: 'Anisotropy (Hill)' },
   ],
   defaults: (c, up) => ({ material: c.struct.material, sx: up.fea?.sigma_bend_root_Pa ?? up.fea?.sigma_max_Pa, txy: up.fea?.tau_skin_max_Pa }),
   run(i) {
-    const m = METALS[i.material] || METALS['Al 2024-T3'], c = 0.5 * (i.sx + i.sy), R = Math.hypot(0.5 * (i.sx - i.sy), i.txy), s1 = c + R, s2 = c - R, warnings = [];
+    const m = METALS[i.material] || METALS['Al 2024-T3'], al = designAllowables(m), Sy = al.Sy, c = 0.5 * (i.sx + i.sy), R = Math.hypot(0.5 * (i.sx - i.sy), i.txy), s1 = c + R, s2 = c - R, warnings = [];
     const vm = Math.sqrt(i.sx ** 2 - i.sx * i.sy + i.sy ** 2 + 3 * i.txy ** 2), tr = Math.max(Math.abs(s1 - s2), Math.abs(s1), Math.abs(s2)), hl = hill48(i.sx, i.sy, i.txy, i.r0, i.r45, i.r90);
-    const rf = (s) => (s > 0 ? m.Sy / s : Infinity), rfMin = Math.min(rf(vm), rf(tr), rf(hl));
+    const rf = (s) => (s > 0 ? Sy / s : Infinity), rfMin = Math.min(rf(vm), rf(tr), rf(hl));
     if (rfMin < 1) warnings.push('The stress state is outside at least one yield surface: permanent deformation is predicted.');
-    const th = N.linspace(0, 2 * Math.PI, 145), locus = (f) => { const x = [], y = []; for (const a of th) { const k = m.Sy / f(Math.cos(a), Math.sin(a)); x.push((k * Math.cos(a)) / 1e6); y.push((k * Math.sin(a)) / 1e6); } return { x, y }; };
+    const th = N.linspace(0, 2 * Math.PI, 145), locus = (f) => { const x = [], y = []; for (const a of th) { const k = Sy / f(Math.cos(a), Math.sin(a)); x.push((k * Math.cos(a)) / 1e6); y.push((k * Math.sin(a)) / 1e6); } return { x, y }; };
     return {
       kpis: [
         kpi('sigma_vm_Pa', 'von Mises equivalent stress', vm, 'Pa'), kpi('sigma_tresca_Pa', 'Tresca equivalent stress (2·τmax)', tr, 'Pa'), kpi('sigma_hill_Pa', 'Hill equivalent stress', hl, 'Pa'),
         kpi('sigma_1_Pa', 'Major principal stress', s1, 'Pa'), kpi('sigma_2_Pa', 'Minor principal stress', s2, 'Pa'), kpi('tau_max_Pa', 'Maximum in-plane shear stress', R, 'Pa'),
-        kpi('RF_vm', 'Reserve factor on yield (von Mises)', rf(vm), '-', rf(vm) >= 1.1 ? 'ok' : rf(vm) >= 1 ? 'warn' : 'bad'),
+        kpi('RF_vm', 'Reserve factor on yield (von Mises)', rf(vm), '-', rf(vm) >= 1.1 ? 'ok' : rf(vm) >= 1 ? 'warn' : 'bad', `Yield ${(Sy / 1e6).toFixed(0)} MPa (${al.design ? 'design allowable' : 'typical strength'})`),
         kpi('RF_tresca', 'Reserve factor on yield (Tresca)', rf(tr), '-'), kpi('RF_hill', 'Reserve factor on yield (Hill)', rf(hl), '-'),
         kpi('RF_yield_min', 'Lowest yield reserve factor', rfMin, '-', rfMin >= 1.1 ? 'ok' : rfMin >= 1 ? 'warn' : 'bad'),
       ],
       plots: [{ type: 'line', title: 'Yield loci in the σx–σy plane (τxy = 0)', xlabel: 'σx [MPa]', ylabel: 'σy [MPa]', equalAspect: true, series: [{ name: 'von Mises', ...locus((a, b) => Math.sqrt(a * a - a * b + b * b)) }, { name: 'Tresca', ...locus((a, b) => Math.max(Math.abs(a - b), Math.abs(a), Math.abs(b))) }, { name: 'Hill 1948', ...locus((a, b) => hill48(a, b, 0, i.r0, i.r45, i.r90)), style: 'dash' }, { name: 'Stress state (direct components)', x: [i.sx / 1e6], y: [i.sy / 1e6], style: 'points' }] }],
       warnings,
       models: ['von Mises (distortion energy)', 'Tresca (maximum shear stress)', 'Hill 1948 quadratic anisotropic criterion in plane stress'],
-      assumptions: ['Plane stress, initial yield only (no hardening)', 'Hill criterion normalised to the rolling-direction yield stress; r-values default to isotropy', DATA_NOTE],
+      assumptions: ['Plane stress, initial yield only (no hardening)', 'Hill criterion normalised to the rolling-direction yield stress; r-values default to isotropy', `Yield strength: ${al.basis}`],
     };
   },
   verify() {
-    const b = { material: 'Al 2024-T3', r0: 1, r45: 1, r90: 1 }, Sy = METALS['Al 2024-T3'].Sy, sh = N.kv(yieldA.run({ ...b, sx: 0, sy: 0, txy: Sy / Math.sqrt(3) })), bi = N.kv(yieldA.run({ ...b, sx: 100e6, sy: 60e6, txy: 30e6 }));
+    const b = { material: 'Al 2024-T3', r0: 1, r45: 1, r90: 1 }, Sy = designAllowables(METALS['Al 2024-T3']).Sy, sh = N.kv(yieldA.run({ ...b, sx: 0, sy: 0, txy: Sy / Math.sqrt(3) })), bi = N.kv(yieldA.run({ ...b, sx: 100e6, sy: 60e6, txy: 30e6 }));
     return [
       N.check('Pure shear yields at Sy/√3 (von Mises)', sh.RF_vm, 1, 1e-12, 'von Mises (1913)'),
+      N.check('Uniaxial reserve factor uses the A-basis yield allowable of 2024-T3 sheet', N.kv(yieldA.run({ ...b, sx: 162e6, sy: 0, txy: 0 })).RF_vm, 2, 1e-12, 'MIL-HDBK-5J Fty (A) = 47 ksi = 324 MPa'),
       N.check('Pure shear: Tresca predicts yield at Sy/2', sh.RF_tresca, Math.sqrt(3) / 2, 1e-12, 'Tresca (1864)'),
       N.check('Hill with r = 1 reduces to von Mises', bi.sigma_hill_Pa, bi.sigma_vm_Pa, 1e-12, 'Hill (1948)'),
       N.check('Hill equibiaxial yield = σ0·√((1+r)/2) for planar isotropy r = 2', 1 / hill48(1, 1, 0, 2, 2, 2), Math.sqrt(1.5), 1e-12, 'Hill (1948), normal anisotropy'),

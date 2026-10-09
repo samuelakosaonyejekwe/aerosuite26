@@ -55,9 +55,9 @@ const feed = {
     num('npsh_req', 'Pump NPSH required', 'm', 1, 0, 50, 'Requirement'), num('p_req', 'Required engine inlet pressure above vapour pressure', 'Pa', 35e3, 0, 5e5, 'Requirement', 'Engine manufacturers typically ask for about 35 kPa (5 psi) above true vapour pressure'),
   ],
   defaults: (c, up, d) => {
-    const n = Math.max(1, c.prop.n_eng), jet = d.T_total > 0 && !(c.prop.P0_W > 0), md = Math.max(1e-6, jet ? 0.6 * c.prop.tsfc_kg_Ns * c.prop.T0_N : c.prop.bsfc_kg_Ws * c.prop.P0_W), f = fuelOf(c.prop.fuel), Q = md / f.rho, turbine = c.prop.type !== 'piston';
+    const jet = d.T_total > 0 && !(c.prop.P0_W > 0), md = Math.max(1e-6, jet ? 0.6 * c.prop.tsfc_kg_Ns * c.prop.T0_N : c.prop.bsfc_kg_Ws * c.prop.P0_W), f = fuelOf(c.prop.fuel), Q = md / f.rho, turbine = c.prop.type !== 'piston';
     const heli = c.meta.type === 'helicopter', D = Math.max(0.004, Math.sqrt((4 * Q) / (Math.PI * 1.8)));
-    return { fuel: fuelName(c), T_fuel: Math.max(siteT(c), 288.15) + 10, mdot: md, alt_m: cruise(c).alt, D, L: Math.max(0.3, 0.3 * (c.fuselage.len_m || 3)), Q_max: 3 * Q, dp0: turbine ? 150e3 : 35e3, p_req: turbine ? 35e3 : 5e3, h_fuel: N.clamp(0.4 * c.wing.tc * (d.c_root || 0.5), 0.03, 0.6), dz: heli ? 1.5 : c.prop.type === 'piston' ? -0.5 : c.prop.type === 'turboprop' ? 0.3 : -0.4, npsh_req: turbine ? 1 : 0.3, n_feed: n };
+    return { fuel: fuelName(c), T_fuel: Math.max(siteT(c), 288.15) + 10, mdot: md, alt_m: cruise(c).alt, D, L: Math.max(0.3, 0.3 * (c.fuselage.len_m || 3)), Q_max: 3 * Q, dp0: turbine ? 150e3 : 35e3, p_req: turbine ? 35e3 : 5e3, h_fuel: N.clamp(0.4 * c.wing.tc * (d.c_root || 0.5), 0.03, 0.6), dz: heli ? 1.5 : c.prop.type === 'piston' ? -0.5 : c.prop.type === 'turboprop' ? 0.3 : -0.4, npsh_req: turbine ? 1 : 0.3 };
   },
   run(i) {
     const s = feedState(i), Q = i.mdot / s.rho, Ppump = (Q * Math.max(s.dpp, 0)) / i.eta_pump, Qmax = feedMaxQ(i, i.alt_m, true), Qg = feedMaxQ(i, i.alt_m, false), nm = s.npsh - i.npsh_req, warnings = [];
@@ -84,7 +84,7 @@ const feed = {
         { type: 'bar', title: 'Pressure build-up from tank to engine', ylabel: 'Pressure [kPa]', categories: ['Tank surface', 'Fuel head', 'Pump rise', 'Line loss', 'Elevation', 'Engine inlet', 'Vapour pressure + requirement'], series: [{ name: 'Pressure', y: [s.pt, s.rho * G0 * i.h_fuel, s.dpp, -s.dpl, -s.rho * G0 * i.dz, s.pe, s.pv + i.p_req].map((v) => v / 1e3) }] },
       ],
       warnings, models: ['Quadratic centrifugal pump characteristic', 'Darcy–Weisbach line with minor losses', 'Hydrostatic head and vented-tank pressure from the standard atmosphere', 'Exponential (Clausius–Clapeyron type) fuel vapour-pressure model — approximate'],
-      assumptions: ['Steady single-phase flow; no dissolved-air evolution', 'Fuel vapour pressure from representative constants; real fuels vary with batch and weathering', 'Tank vented to ambient static pressure plus the stated ullage pressure', '1 g level flight (no manoeuvre or attitude head changes)'],
+      assumptions: ['Steady single-phase flow; no dissolved-air evolution', 'Fuel vapour pressure from representative constants; real fuels vary with batch and weathering', 'Tank vented to ambient static pressure plus the stated ullage pressure', '1 g level flight (no manoeuvre or attitude head changes)', 'Pump characteristic, loss coefficients, NPSH and the engine inlet pressure requirement are typical values; the default case combines take-off fuel flow with cruise altitude and warm fuel, which is conservative'],
     };
   },
   verify() {
@@ -176,7 +176,7 @@ const cg = {
         { type: 'line', title: 'Rolling moment from lateral fuel imbalance', xlabel: 'Time [h]', ylabel: 'Rolling moment [kN·m]', series: [{ name: 'Moment (right wing heavy +)', x: th, y: r.roll.map((v) => v / 1e3) }] },
       ],
       warnings, models: ['Quasi-static tank quantity bookkeeping with sequenced burn', 'Wing tank fuel centroid from chord² area distribution with inboard collection', 'Mass-weighted centre of gravity'],
-      assumptions: ['Level 1 g attitude: fuel collects at the inboard (lowest) end of each wing tank', 'Tank cross-section proportional to chord squared between the stated span stations, centroid at 40% chord', 'Positions are measured aft of the zero-fuel centre of gravity', 'No fuel transfer other than the burn sequence; unusable fuel ignored'],
+      assumptions: ['Level 1 g attitude: fuel collects at the inboard (lowest) end of each wing tank', 'Tank cross-section proportional to chord squared between the stated span stations, centroid at 40% chord', 'Positions are measured aft of the zero-fuel centre of gravity', 'No fuel transfer other than the burn sequence; unusable fuel ignored', 'Tank span stations, tank positions, burn mismatch and the certified CG range are illustrative defaults, not data for a specific aircraft'],
     };
   },
   verify() {
@@ -280,7 +280,7 @@ const slosh = {
         { type: 'line', title: 'First sloshing frequency versus fuel depth', xlabel: 'Fuel depth [m]', ylabel: 'Frequency [Hz]', series: [{ name: 'Exact linear theory', x: hs, y: hs.map((h) => sloshModes(i.shape, i.L, h, 1)[0].w / (2 * Math.PI)) }, { name: 'Shallow-water limit', x: hs, y: hs.map((h) => Math.sqrt(G0 * h) / (2 * i.L) * (rect ? 1 : (2 * XI[0]) / Math.PI)), style: 'dash' }], annotations: [{ x: i.h, label: 'Fill' }, ...(i.f_aircraft > 0 ? [{ y: i.f_aircraft, label: 'Aircraft mode' }] : [])] },
       ],
       warnings, models: ['Linear potential-flow slosh modes: ω² = g·k·tanh(k·h)', 'Equivalent mechanical model (sloshing masses on springs, Graham–Rodriguez / Abramson)', 'Nonlinear shallow-water equations: MUSCL–HLL finite volume, Heun time stepping'],
-      assumptions: ['Rigid tank, inviscid fuel with equivalent viscous damping ratio', 'Excitation along one horizontal axis; no roof impact', 'Shallow-water model: hydrostatic pressure, depth-uniform velocity (valid for depth/length below about 0.15)', 'No coupling back to the aircraft motion'],
+      assumptions: ['Rigid tank, inviscid fuel with equivalent viscous damping ratio', 'Excitation along one horizontal axis; no roof impact', 'Shallow-water model: hydrostatic pressure, depth-uniform velocity (valid for depth/length below about 0.15)', 'No coupling back to the aircraft motion', 'Tank dimensions are scaled from the fuselage and root chord and the damping ratio is a typical test value'],
     };
   },
   convergence: { param: 'nCells', label: 'Shallow-water cells', levels: [15, 30, 60, 120], metric: 'sw_wall_rise_m' },
@@ -300,9 +300,9 @@ const slosh = {
     ];
   },
   calibration: { params: [{ key: 'zeta', min: 0, max: 0.4 }], sweep: 'T_exc', target: 'slosh_force_peak_N', note: 'Supply measured peak slosh force against excitation period from a shaker-table tank test to fit the damping ratio.' },
-  recommend(res, i) {
-    const o = res.outputs, out = [];
-    if (i.f_aircraft > 0 && Math.abs(o.slosh_freq_Hz / i.f_aircraft - 1) < 0.2) out.push({ severity: 'warn', title: 'Slosh frequency close to an aircraft mode', detail: `${o.slosh_freq_Hz.toFixed(2)} Hz against ${i.f_aircraft.toFixed(2)} Hz.`, action: 'Add baffles or ribs to shorten the free-surface length (frequency rises as the cell length falls), or check the coupled response in Suite 4.', basis: 'Frequency separation of 20%' });
+  recommend(res, i, ctx) {
+    const o = res.outputs, out = [], share = o.slosh_mass_kg / (ctx?.case?.mass?.mtow_kg || Infinity); // coupling strength grows with the sloshing mass relative to the aircraft
+    if (i.f_aircraft > 0 && Math.abs(o.slosh_freq_Hz / i.f_aircraft - 1) < 0.2) out.push({ severity: share > 0.05 ? 'warn' : 'advise', title: 'Slosh frequency close to an aircraft mode', detail: `${o.slosh_freq_Hz.toFixed(2)} Hz against ${i.f_aircraft.toFixed(2)} Hz${share > 0 ? `; the sloshing mass is ${(100 * share).toFixed(1)}% of the take-off mass` : ''}. The tank size is a generic default: enter the real free-surface length between ribs or baffles.`, action: 'Add baffles or ribs to shorten the free-surface length (frequency rises as the cell length falls), or check the coupled response in Suite 4.', basis: 'Frequency separation of 20% (rule of thumb); the coupling matters once the sloshing mass exceeds a few percent of the aircraft mass' });
     if (o.dynamic_factor > 1.3) out.push({ severity: 'advise', title: 'Sloshing amplifies the manoeuvre load', detail: `Peak tank force is ${o.dynamic_factor.toFixed(2)} times the frozen-fuel value.`, action: 'Increase damping with perforated baffles, and use the peak force for tank-wall and attachment loads in Suite 2.', basis: 'Equivalent mechanical slosh model' });
     if (o.sw_wall_rise_m > 0.5 * i.h) out.push({ severity: 'advise', title: 'Steep waves at this fill level', detail: `Wall wave height ${o.sw_wall_rise_m.toFixed(2)} m on ${i.h.toFixed(2)} m depth.`, action: 'Check pump-inlet uncovering (use a collector cell with flapper valves) and consider a volume-of-fluid CFD study for impact pressures.', basis: 'Nonlinear shallow-water response' });
     return out;
@@ -362,7 +362,7 @@ const fueltherm = {
         { type: 'line', title: 'Fuel remaining', xlabel: 'Time [h]', ylabel: 'Fuel mass [kg]', series: [{ name: 'Fuel in tank', x: thin(th), y: thin(r.m) }] },
       ],
       warnings, models: ['Lumped (well-mixed) fuel energy balance with decreasing mass', 'Well-mixed ullage oxygen balance with enriched-air wash and vent make-up', 'Specification-maximum freezing points'],
-      assumptions: ['Uniform bulk fuel temperature (no stratification; fuel next to the skin is colder than the bulk)', 'Constant heat-transfer coefficient and wetted area', 'Ullage at constant pressure and temperature; fuel vapour and oxygen evolution from the fuel neglected', 'Vent make-up is ambient air at 21% oxygen when enriched-air flow is below the ullage growth rate'],
+      assumptions: ['Uniform bulk fuel temperature (no stratification; fuel next to the skin is colder than the bulk)', 'Constant heat-transfer coefficient and wetted area', 'Ullage at constant pressure and temperature; fuel vapour and oxygen evolution from the fuel neglected', 'Vent make-up is ambient air at 21% oxygen when enriched-air flow is below the ullage growth rate', 'Heat-transfer coefficient, enriched-air flow and purity, the 12% oxygen limit and the 3 K freezing margin are typical or commonly used values; volatility constants are representative'],
     };
   },
   convergence: { param: 'nSteps', label: 'Time steps', levels: [25, 50, 100, 200, 400], metric: 'T_fuel_end_K' },
@@ -447,7 +447,7 @@ const cabin = {
         { type: 'line', title: 'Net heat gain versus outside skin temperature', xlabel: 'Skin temperature [K]', ylabel: 'Net heat gain [kW]', series: [{ name: 'Net load (cooling +, heating −)', x: Tsk, y: Tsk.map((T) => cabinCalc({ ...i, T_skin: T }).Q / 1e3) }], annotations: [{ x: i.T_skin, label: 'Condition' }, { y: 0, label: 'Balance' }] },
       ],
       outputs, warnings, models: ['Steady sensible heat balance', 'Well-mixed CO₂ dilution (mole balance)', 'Psychrometrics: humidity ratio 0.622·p_v/(p − p_v), Magnus saturation pressure', 'Wall surface temperature from series film resistance'],
-      assumptions: ['Perfectly mixed compartment air', 'Sensible loads only for the supply sizing; latent load reported through humidity', 'Recirculated air returns at cabin temperature; fan heat neglected', 'Uniform wall coefficient and skin temperature'],
+      assumptions: ['Perfectly mixed compartment air', 'Sensible loads only for the supply sizing; latent load reported through humidity', 'Recirculated air returns at cabin temperature; fan heat neglected', 'Uniform wall coefficient and skin temperature', 'Occupant heat, CO₂ and moisture rates, equipment heat, glazing and wall coefficients are typical values'],
     };
   },
   convergence: { param: 'nSteps', label: 'Time steps', levels: [10, 20, 40, 80], metric: 'co2_end_ppm' },
@@ -493,7 +493,7 @@ const pressurisation = {
   applicable: (c) => (c.fuselage.cabin_dp_Pa > 0 ? true : 'This aircraft is unpressurised (cabin pressure differential is 0): cabin altitude equals flight altitude. See the cabin air analysis.'),
   inputs: [
     num('alt_m', 'Flight altitude', 'm', 10668, 0, 20000, 'Schedule'), num('dp_max', 'Maximum cabin pressure differential', 'Pa', 57000, 1000, 100000, 'Schedule'),
-    num('cab_alt_max', 'Cabin altitude at the ceiling', 'm', 2400, 0, 4500, 'Schedule', '2438 m (8000 ft) is the usual maximum in normal operation; newer composite fuselages use about 1800 m'), num('ceiling_m', 'Maximum operating altitude', 'm', 12500, 500, 20000, 'Schedule'),
+    num('cab_alt_max', 'Cabin altitude at the ceiling', 'm', 2400, 0, 4500, 'Schedule', '2438 m (8000 ft) is the maximum in normal operation for transport aircraft (14 CFR 25.841(a)); newer composite fuselages use about 1800 m'), num('ceiling_m', 'Maximum operating altitude', 'm', 12500, 500, 20000, 'Schedule'),
     num('field_m', 'Departure field elevation', 'm', 0, -400, 4500, 'Schedule'), num('roc', 'Aircraft rate of climb', 'm/s', 10, 0.1, 60, 'Schedule'),
     num('V_cab', 'Pressurised volume', 'm³', 330, 0.5, 5000, 'Cabin'), num('T_cab', 'Cabin temperature', 'K', 295, 250, 320, 'Cabin'), num('m_in', 'Air supply (pack) flow', 'kg/s', 0.9, 0, 50, 'Cabin'),
     num('A_leak', 'Effective fuselage leakage area', 'm²', 8e-4, 0, 0.5, 'Cabin', 'Structural leakage through seals and drains'),
@@ -513,12 +513,12 @@ const pressurisation = {
     const t10 = up(3048), t15 = up(4572), t25 = up(7620), n = d.t.length - 1, tau = d.m0 / Math.max(1e-12, orifice(d.A, s.pc, i.T_cab, s.pa));
     if (s.limited) warnings.push(`The scheduled cabin altitude cannot be held at this flight altitude: the differential limit governs and cabin altitude rises to ${s.hc.toFixed(0)} m.`);
     if (mOfv < 0) warnings.push('Fuselage leakage exceeds the air supply: the cabin cannot hold pressure at this altitude with the stated inflow.');
-    if (s.hc > 2440) warnings.push('Cabin altitude exceeds 2440 m (8000 ft), the usual maximum for normal operation of transport aircraft.');
+    if (s.hc > 2440) warnings.push('Cabin altitude exceeds 2438 m (8000 ft), the maximum for normal operation of transport aircraft (14 CFR 25.841(a)).');
     if (rMax > 2.6) warnings.push(`Cabin climb rate reaches ${rMax.toFixed(1)} m/s during the climb: above the roughly 2.5 m/s (500 ft/min) comfort guideline.`);
     const nan = (v) => (Number.isNaN(v) ? i.t_end : v), nt = (v) => (Number.isNaN(v) ? 'Not reached within the simulated time' : '');
     return {
       kpis: [
-        kp('cabin_alt_m', 'Cabin altitude', s.hc, 'm', s.hc <= 2440 ? 'ok' : 'warn'), kp('cabin_p_Pa', 'Cabin pressure', s.pc, 'Pa'), kp('cabin_dp_Pa', 'Cabin pressure differential', s.dp, 'Pa', s.limited ? 'warn' : 'ok', `Limit ${(i.dp_max / 1e3).toFixed(1)} kPa`),
+        kp('cabin_alt_m', 'Cabin altitude', s.hc, 'm', s.hc <= 2440 ? 'ok' : 'warn', 'Transport-category maximum in normal operation: 2438 m (8000 ft)'), kp('cabin_p_Pa', 'Cabin pressure', s.pc, 'Pa'), kp('cabin_dp_Pa', 'Cabin pressure differential', s.dp, 'Pa', s.limited ? 'warn' : 'ok', `Limit ${(i.dp_max / 1e3).toFixed(1)} kPa`),
         kp('leak_flow_kgs', 'Fuselage leakage flow', mLeak, 'kg/s'), kp('ofv_flow_kgs', 'Outflow-valve flow', mOfv, 'kg/s', mOfv > 0 ? 'ok' : 'bad'), kp('ofv_area_m2', 'Outflow-valve effective area', Aofv, 'm²'),
         kp('cabin_rate_ms', 'Cabin climb rate at this point of the climb', rate, 'm/s'), kp('cabin_rate_max_ms', 'Largest cabin climb rate over the climb', rMax, 'm/s', rMax <= 2.6 ? 'ok' : 'warn', 'Comfort guideline ≈ 2.5 m/s climb, 1.5 m/s descent'),
         kp('hoop_stress_Pa', 'Fuselage skin hoop stress', hoop, 'Pa', hoop <= i.sigma_allow ? 'ok' : 'warn'),
@@ -531,7 +531,7 @@ const pressurisation = {
         { type: 'line', title: 'Cabin altitude after the opening appears', xlabel: 'Time [s]', ylabel: 'Cabin altitude [m]', series: [{ name: 'Cabin altitude', x: thin(d.t), y: thin(d.alt) }], annotations: [{ y: 3048, label: '3048 m' }, { y: 4572, label: '4572 m' }, { y: i.alt_m, label: 'Flight altitude' }] },
       ],
       warnings, models: ['Proportional cabin-altitude schedule with differential-pressure limit', 'Compressible (choked/unchoked) orifice flow for leakage, outflow valve and decompression', 'Lumped cabin mass balance, RK4', 'Thin-wall hoop stress Δp·r/t'],
-      assumptions: ['Standard-atmosphere ambient pressure', 'Uniform cabin air; packs continue at constant flow during the decompression, outflow valve closed', 'Aircraft holds altitude during the decompression (no emergency descent)', 'Hoop stress ignores frames, stringers and cut-outs'],
+      assumptions: ['Standard-atmosphere ambient pressure', 'Uniform cabin air; packs continue at constant flow during the decompression, outflow valve closed', 'Aircraft holds altitude during the decompression (no emergency descent)', 'Hoop stress ignores frames, stringers and cut-outs', 'The opening is postulated by the input; leakage area, allowable hoop stress, pack flow and the comfort rate limits are typical values'],
     };
   },
   convergence: { param: 'nSteps', label: 'Time steps', levels: [50, 100, 200, 400, 800], metric: 'p_cabin_end_Pa' },
@@ -548,7 +548,9 @@ const pressurisation = {
   calibration: { params: [{ key: 'A_leak', min: 0, max: 0.05 }, { key: 'Cd', min: 0.4, max: 1 }], sweep: 't_end', target: 'p_cabin_end_Pa', note: 'Supply measured cabin pressure against time from a ground leak-down test (packs off) to fit the effective leakage area.' },
   recommend(res, i) {
     const o = res.outputs, out = [];
-    if (o.t_to_4572m_s < i.t_end) out.push({ severity: 'warn', title: 'Rapid loss of cabin pressure through the opening', detail: `Cabin altitude passes 3048 m after ${o.t_to_3048m_s.toFixed(0)} s and 4572 m after ${o.t_to_4572m_s.toFixed(0)} s.`, action: 'Size oxygen system deployment and the emergency descent profile to this time; smaller windows or a lower cruise altitude lengthen it. Carry the event into Suite 22.', basis: 'Decompression mass balance' });
+    // the decompression is a postulated failure: it sizes the oxygen system and the emergency descent, and only an excursion that no descent can prevent is a design finding
+    if (o.cabin_alt_end_m > 12192) out.push({ severity: 'warn', title: 'Cabin altitude would exceed 12 190 m (40 000 ft) after the decompression', detail: `With a ${i.d_hole.toFixed(2)} m opening the cabin reaches ${o.cabin_alt_end_m.toFixed(0)} m, passing 7620 m after ${o.t_to_7620m_s.toFixed(0)} s.`, action: 'Limit the largest credible opening (smaller windows, structural containment) or the cruise altitude: an emergency descent cannot prevent an excursion this fast. Carry the event into Suite 22.', basis: 'Decompression mass balance; transport-category practice keeps the cabin below 12 190 m (40 000 ft) at all times after a credible failure' });
+    else if (o.t_to_4572m_s < i.t_end) out.push({ severity: 'advise', title: 'Decompression sets the oxygen and emergency-descent requirement', detail: `With a ${i.d_hole.toFixed(2)} m opening and the aircraft holding altitude, cabin altitude passes 3048 m after ${o.t_to_3048m_s.toFixed(0)} s and 4572 m after ${o.t_to_4572m_s.toFixed(0)} s${o.t_to_7620m_s < i.t_end ? `, and 7620 m after ${o.t_to_7620m_s.toFixed(0)} s` : ''}.`, action: 'Size oxygen deployment and the emergency-descent profile to these times, so that the cabin is back below 7620 m (25 000 ft) within about two minutes; a smaller opening or a lower cruise altitude lengthens them. Carry the event into Suite 22.', basis: 'Decompression mass balance for a postulated opening' });
     if (o.hoop_stress_Pa > i.sigma_allow) out.push({ severity: 'warn', title: 'Hoop stress exceeds the fatigue allowable', detail: `${(o.hoop_stress_Pa / 1e6).toFixed(0)} MPa per pressurisation cycle.`, action: 'Increase skin gauge or reduce the differential; pass the pressure cycle to Suite 9 for fatigue and crack-growth life.', basis: 'Pressure-cabin fatigue practice' });
     out.push({ severity: 'info', title: 'Cabin altitude versus structure trade', detail: `Cabin altitude ${o.cabin_alt_m.toFixed(0)} m at ${(o.cabin_dp_Pa / 1e3).toFixed(1)} kPa differential.`, action: 'A lower cabin altitude improves passenger comfort but raises the differential, skin stress and structural mass (fuel); the leakage flow of ' + o.leak_flow_kgs.toFixed(2) + ' kg/s is conditioned air thrown away, so tighter sealing saves bleed or compressor power.', basis: 'Pressurisation design trade' });
     return out;
@@ -633,7 +635,7 @@ const aircycle = {
       kpis, plots, warnings,
       tables: vc ? [] : [{ title: 'Pack stations (selected architecture)', columns: ['Station', 'Temperature [K]', 'Pressure [kPa]'], rows: st.map((nm, j) => [nm, [b.T1, b.T2, b.T3, b.T4, b.T5][j], [b.p1, b.p2, b.p3, b.p4, b.p5][j] / 1e3]) }],
       models: vc ? ['Vapour-compression cycle as a fraction of the Carnot COP', 'Fuel penalty from electrical power and intake momentum drag'] : ['Bootstrap air-cycle: isentropic-efficiency compressor and turbine, effectiveness heat exchangers', 'Turbine–compressor power balance solved for the compressor pressure ratio', 'Saturated-outlet water condensation with latent heat', 'Fuel penalty: compression work × shaft SFC plus ram-air momentum drag × TSFC'],
-      assumptions: ['Calorically perfect air (cp = 1004.7 J/kg/K, γ = 1.4)', 'Heat exchangers reject to ram air at total temperature; fan power neglected', 'Bleed fuel penalty approximated as the engine compression work embodied in the bleed air at a constant shaft SFC', 'All intake momentum of the cabin air and heat-exchanger cooling air is lost (no thrust recovery), for both supply architectures', 'Steady state at one flight condition'],
+      assumptions: ['Calorically perfect air (cp = 1004.7 J/kg/K, γ = 1.4)', 'Heat exchangers reject to ram air at total temperature; fan power neglected', 'Bleed fuel penalty approximated as the engine compression work embodied in the bleed air at a constant shaft SFC', 'All intake momentum of the cabin air and heat-exchanger cooling air is lost (no thrust recovery), for both supply architectures', 'Steady state at one flight condition', 'Component efficiencies, heat-exchanger effectiveness, bleed pressures, ram-air ratio and specific fuel consumptions are typical values, not data for a specific pack or engine'],
     };
   },
   verify() {

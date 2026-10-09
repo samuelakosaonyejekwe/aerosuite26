@@ -57,7 +57,7 @@ const ins = {
     const d1h = at(3600), d60 = at(60), parts = ['bg', 'ba', 'rw', 'init'].map((k) => insCov(s, i, i.t_end, nt, k)), tm = r.t.map((v) => v / 60), warnings = [];
     const gr = Object.keys(GRADE).map((gname) => insCov(gradeOf({ grade: gname }), { ...i, tilt0_mrad: { 'Consumer MEMS': 10, 'Tactical': 1, 'Navigation': 0.1 }[gname] }, i.t_end, nt));
     if (i.t_end > 4 * 3600) warnings.push('Beyond a few hours the 24-hour (Earth-rate) and Foucault modes, heading error coupling and vertical-channel instability matter; the single-channel model then understates the error.');
-    if (r.sf[last] > 0.1 || s.bg * 3600 > 0.1) warnings.push('Tilt error grows beyond about 0.1 rad: the small-angle linear error model is no longer valid and the figures only indicate that unaided navigation is impossible for this long.');
+    if (N.amax(r.sf) > 0.1) warnings.push('Tilt error grows beyond about 0.1 rad: the small-angle linear error model is no longer valid and the figures only indicate that unaided navigation is impossible for this long.');
     if (d1h > 1e5) warnings.push('Unaided drift exceeds 100 km in the first hour: this sensor grade is only usable with continuous external aiding.');
     return {
       kpis: [
@@ -72,7 +72,7 @@ const ins = {
         { type: 'line', title: 'Velocity error', xlabel: 'Time [min]', ylabel: 'Velocity error 1σ [m/s]', series: [{ name: 'Velocity', x: thin(tm), y: thin(r.sv) }] },
       ],
       warnings, models: ['Single-axis Schuler-tuned INS error model with bias states', 'Linear covariance propagation (Lyapunov equation, RK4)', 'Typical sensor-grade error budgets'],
-      assumptions: ['One horizontal channel on a non-rotating spherical Earth; channels uncoupled', 'Constant (turn-on) biases with the stated 1σ values; white sensor noise', 'No scale-factor, misalignment or g-sensitivity errors, no vertical channel', 'Stationary or benign trajectory'],
+      assumptions: ['One horizontal channel on a non-rotating spherical Earth; channels uncoupled', 'Constant (turn-on) biases with the stated 1σ values; white sensor noise', 'No scale-factor, misalignment or g-sensitivity errors, no vertical channel', 'Stationary or benign trajectory', 'Sensor-grade presets and alignment errors are typical orders of magnitude, not a specific product'],
     };
   },
   convergence: { param: 'nSteps', label: 'Time steps', levels: [50, 100, 200, 400, 800], metric: 'pos_sigma_end_m' },
@@ -163,7 +163,7 @@ const fusion = {
         { type: 'line', title: 'Filter consistency (NEES averaged over the runs)', xlabel: 'Time [s]', ylabel: 'NEES [-]', series: [{ name: 'NEES', x: thin(T), y: thin(neesAt) }], annotations: [{ y: 2, label: 'Expected' }] },
       ],
       warnings, models: ['Planar strapdown mechanisation (heading, velocity, position)', 'Eight-state extended Kalman filter: position, velocity, heading, accelerometer and gyro biases', 'Loosely coupled GNSS position updates', 'Seeded Monte Carlo with biases drawn from their 1σ values'],
-      assumptions: ['Horizontal plane only; level flight with coordinated turns', 'White GNSS position errors (real errors are time-correlated)', 'Constant sensor biases; no scale-factor or misalignment errors', 'Outage removes all GNSS measurements simultaneously'],
+      assumptions: ['Horizontal plane only; level flight with coordinated turns', 'White GNSS position errors (real errors are time-correlated)', 'Constant sensor biases; no scale-factor or misalignment errors', 'Outage removes all GNSS measurements simultaneously', 'Inertial sensor error defaults are typical for the aircraft class, not a specific unit'],
     };
   },
   verify() {
@@ -250,7 +250,7 @@ const gnss = {
         { type: 'bar', title: 'Range error budget', ylabel: 'Error 1σ [m]', categories: ['Ionosphere', 'Troposphere', 'Clock / ephemeris', 'Multipath', 'Receiver noise', 'Total (RSS)'], series: [{ name: 'Range error', y: [...ue.parts, ue.total] }] },
       ],
       warnings, models: ['Nominal Walker 24/6/1 constellation at 55° inclination on circular orbits (approximate almanac)', 'Spherical rotating Earth, east-north-up line-of-sight geometry', 'DOP from (HᵀH)⁻¹', 'Root-sum-square user-equivalent range error; position error = UERE × DOP'],
-      assumptions: ['Nominal constellation: real constellations have more satellites and uneven slots, so real DOP is usually better', 'No terrain or airframe masking beyond the elevation mask', 'Equal, uncorrelated range errors on all satellites', 'Kp scaling of the ionospheric term is a heuristic, not an ionospheric model; no augmentation (SBAS/GBAS) credited'],
+      assumptions: ['Nominal constellation: real constellations have more satellites and uneven slots, so real DOP is usually better', 'No terrain or airframe masking beyond the elevation mask', 'Equal, uncorrelated range errors on all satellites', 'Kp scaling of the ionospheric term is a heuristic, not an ionospheric model; no augmentation (SBAS/GBAS) credited', 'Range-error terms are typical single-frequency values; the dual-frequency option only removes the ionospheric term (the higher noise and multipath of the ionosphere-free combination are not added)', 'Integrity availability is a satellite-count screen with an indicative protection level, not a RAIM computation'],
     };
   },
   convergence: { param: 'nTimes', label: 'Time samples over the day', levels: [36, 72, 144, 288], metric: 'pdop_mean' },
@@ -287,7 +287,7 @@ const radar = {
   equations: ['Radar range equations', 'Doppler shift equations', 'Antenna radiation equations', 'Electromagnetic wave equations'],
   inputs: [
     num('P_t', 'Peak transmit power', 'W', 150, 0.001, 1e7, 'Radar', 'Solid-state weather radar ≈ 40–150 W; small sense-and-avoid radar ≈ 1–10 W'), num('G_dB', 'Antenna gain', 'dBi', 34, 0, 60, 'Radar'), num('f_Hz', 'Carrier frequency', 'Hz', 9.375e9, 1e8, 1e11, 'Radar', 'X band 9.3–9.5 GHz'),
-    num('tau', 'Pulse length (or 1/bandwidth with pulse compression)', 's', 1e-6, 1e-9, 1e-2, 'Radar'), num('prf', 'Pulse repetition frequency', 'Hz', 1500, 10, 1e6, 'Radar'), num('n_pulses', 'Pulses integrated per dwell', '', 16, 1, 10000, 'Radar', '', { step: 1, discrete: true }),
+    num('tau', 'Transmitted pulse length', 's', 1e-6, 1e-9, 1e-2, 'Radar', 'Sets the pulse energy P·τ and the matched-filter bandwidth 1/τ. With pulse compression enter the uncompressed length: detection is then right and the range resolution is finer than shown by the compression ratio'), num('prf', 'Pulse repetition frequency', 'Hz', 1500, 10, 1e6, 'Radar'), num('n_pulses', 'Pulses integrated per dwell', '', 16, 1, 10000, 'Radar', '', { step: 1, discrete: true }),
     num('F_dB', 'Receiver noise figure', 'dB', 4, 0, 20, 'Radar'), num('L_dB', 'System losses', 'dB', 6, 0, 30, 'Radar'),
     num('rcs', 'Target radar cross-section', 'm²', 5, 1e-4, 1e5, 'Target', 'Typical orders: small drone 0.01–0.1, light aircraft 1–3, airliner 20–100 (aspect dependent)'), num('Pd', 'Required detection probability', '-', 0.9, 0.1, 0.999, 'Target'), num('Pfa', 'False-alarm probability', '-', 1e-6, 1e-12, 1e-2, 'Target'),
     num('V_close', 'Closing speed', 'm/s', 250, 0, 2000, 'Target'), num('h_radar', 'Radar altitude', 'm', 10668, 0, 30000, 'Geometry'), num('h_target', 'Target altitude', 'm', 3000, 0, 30000, 'Geometry'),
@@ -304,8 +304,8 @@ const radar = {
       kpis: [
         kp('radar_range_m', 'Usable detection range', use, 'm', undefined, `${(use / 1852).toFixed(1)} NM`), kp('range_power_m', 'Detection range from the radar equation', r.Rm, 'm'), kp('radar_horizon_m', 'Radar horizon (4/3 Earth)', r.hz, 'm'),
         kp('snr_required_dB', 'Single-pulse SNR required', r.req, 'dB', undefined, `Pd ${i.Pd}, Pfa ${i.Pfa}, ${Math.round(i.n_pulses)} pulses`), kp('snr_at_10km_dB', 'Single-pulse SNR at 10 km', r.snr(1e4), 'dB'),
-        kp('range_unambiguous_m', 'Unambiguous range', r.Ru, 'm', r.Rm <= r.Ru ? 'ok' : 'warn'), kp('range_resolution_m', 'Range resolution', r.dR, 'm'), kp('doppler_Hz', 'Doppler shift at the closing speed', r.fd, 'Hz'),
-        kp('blind_speed_ms', 'First blind speed', r.vb, 'm/s', undefined, i.V_close <= r.vb ? 'Doppler unambiguous at the closing speed' : 'Closing speed is above it: Doppler is ambiguous (normal for a low-PRF mode; use staggered or higher PRF for velocity measurement)'), kp('wavelength_m', 'Wavelength', r.lam, 'm'), kp('rain_atten_dBkm', 'One-way rain attenuation', r.gam, 'dB/km'),
+        kp('range_unambiguous_m', 'Unambiguous range', r.Ru, 'm', r.Rm <= r.Ru ? 'ok' : 'warn'), kp('range_resolution_m', 'Range resolution', r.dR, 'm', undefined, 'c·τ/2 for an unmodulated pulse'), kp('doppler_Hz', 'Doppler shift at the closing speed', r.fd, 'Hz'),
+        kp('blind_speed_ms', 'First blind speed', r.vb, 'm/s', undefined, i.V_close <= r.vb ? 'Doppler unambiguous at the closing speed' : 'Closing speed is above it: Doppler is ambiguous (normal for a low-PRF mode; use staggered or higher PRF for velocity measurement)'), kp('wavelength_m', 'Wavelength', r.lam, 'm'), kp('beamwidth_deg', 'Antenna beamwidth, 70·λ/D', r.bw, '°', undefined, 'Aperture diameter from the gain at 60% efficiency'), kp('rain_atten_dBkm', 'One-way rain attenuation', r.gam, 'dB/km'),
         kp('ralt_resolution_m', 'Radio-altimeter range resolution c/(2B)', dRa, 'm'), kp('ralt_beat_Hz', 'Radio-altimeter beat frequency', fb, 'Hz'),
       ],
       plots: [
@@ -313,7 +313,7 @@ const radar = {
         { type: 'line', title: 'Detection range versus target cross-section', xlabel: 'Radar cross-section [m²]', ylabel: 'Detection range [km]', xlog: true, ylog: true, series: [{ name: 'Radar equation', x: rc, y: rc.map((s) => r.rmax(s) / 1e3) }], annotations: [{ x: i.rcs, label: 'Target' }] },
       ],
       warnings, models: ['Monostatic pulse radar range equation with thermal noise kT₀BF', 'Albersheim detection formula with non-coherent integration (empirical fit, non-fluctuating target)', 'Power-law rain attenuation γ = k·R^α', 'Doppler, blind-speed and ambiguity relations; FMCW altimeter relations'],
-      assumptions: ['Non-fluctuating (Swerling 0) point target in free space; no clutter, multipath or jamming', 'Matched filter with bandwidth 1/τ; all other losses in the stated loss term', 'Uniform rain along the whole path', 'Horizon from 4/3 effective Earth radius, smooth Earth'],
+      assumptions: ['Non-fluctuating (Swerling 0) point target in free space; no clutter, multipath or jamming', 'Matched filter with bandwidth 1/τ; all other losses in the stated loss term', 'Uniform rain along the whole path', 'Horizon from 4/3 effective Earth radius, smooth Earth', 'Radar, target cross-section and rain-attenuation defaults are typical orders of magnitude, not a specific radar; the closing speed defaults to twice the cruise speed (head-on traffic at the same speed)'],
     };
   },
   verify() {
@@ -328,7 +328,7 @@ const radar = {
   calibration: { params: [{ key: 'L_dB', min: 0, max: 25 }, { key: 'F_dB', min: 0.5, max: 15 }], sweep: 'rcs', target: 'range_power_m', note: 'Supply measured detection range against calibrated target cross-section from range trials.' },
   recommend(res, i) {
     const o = res.outputs, out = [], tWarn = o.radar_range_m / Math.max(1, i.V_close);
-    out.push({ severity: tWarn < 25 ? 'warn' : 'info', title: 'Warning time against the target', detail: `Detection at ${(o.radar_range_m / 1e3).toFixed(1)} km gives ${tWarn.toFixed(0)} s at a ${i.V_close.toFixed(0)} m/s closing speed.`, action: tWarn < 25 ? 'Below the roughly 25–40 s usually wanted for traffic avoidance: raise power-aperture, integrate more pulses, or fuse with cooperative surveillance (ADS-B).' : 'Adequate for avoidance manoeuvres; weather radar range also allows early re-routing around storms, which saves fuel compared with late deviations.', basis: 'Range / closing speed' });
+    out.push({ severity: tWarn < 25 ? 'warn' : 'info', title: 'Warning time against the target', detail: `Detection at ${(o.radar_range_m / 1e3).toFixed(1)} km gives ${tWarn.toFixed(0)} s at a ${i.V_close.toFixed(0)} m/s closing speed.`, action: tWarn < 25 ? 'Below the roughly 25–40 s usually wanted for traffic avoidance: raise power-aperture, integrate more pulses, or fuse with cooperative surveillance (ADS-B).' : 'Adequate for avoidance manoeuvres; weather radar range also allows early re-routing around storms, which saves fuel compared with late deviations.', basis: 'Range / closing speed; 25–40 s is a typical avoidance allowance, not a sourced requirement' });
     if (o.range_power_m > o.range_unambiguous_m) out.push({ severity: 'advise', title: 'Range ambiguity', detail: `Unambiguous range ${(o.range_unambiguous_m / 1e3).toFixed(0)} km is shorter than the detection range.`, action: 'Lower the PRF for long-range search and use a medium/high PRF mode for Doppler.', basis: 'c/(2·PRF)' });
     return out;
   },
@@ -355,7 +355,7 @@ const link = {
   equations: ['Communication link budget equations', 'Antenna radiation equations', 'Electromagnetic wave equations'],
   inputs: [
     num('f_Hz', 'Carrier frequency', 'Hz', 127e6, 1e6, 1e11, 'Radio link', 'VHF comm 118–137 MHz; L band ≈ 1 GHz; unmanned C2 often 900 MHz, 2.4 GHz or 5 GHz (C band)'), num('P_t', 'Transmit power', 'W', 10, 1e-4, 1e4, 'Radio link'),
-    num('Gt_dB', 'Transmit antenna gain', 'dBi', 2, -10, 50, 'Radio link'), num('Gr_dB', 'Receive antenna gain', 'dBi', 6, -10, 50, 'Radio link'), num('L_dB', 'Cable, pointing, polarisation and atmospheric losses', 'dB', 6, 0, 40, 'Radio link'),
+    num('Gt_dB', 'Transmit antenna gain', 'dBi', 2, -10, 50, 'Radio link'), num('Gr_dB', 'Receive antenna gain', 'dBi', 6, -10, 50, 'Radio link', 'Whip 2–3 dBi, patch or sector 8–14 dBi, tracking dish 20–30 dBi (typical)'), num('L_dB', 'Cable, pointing, polarisation and atmospheric losses', 'dB', 6, 0, 40, 'Radio link'),
     num('NF_dB', 'Receiver noise figure', 'dB', 5, 0, 20, 'Radio link'), num('Rb', 'Data rate', 'bit/s', 31500, 10, 1e9, 'Radio link', 'VHF data link mode 2 carries 31.5 kbit/s; unmanned C2 and video links 0.1–10 Mbit/s'), sel('mod', 'Modulation', MOD, MOD[1], 'Radio link', 'Coherent BPSK and QPSK have the same bit-error rate against Eb/N0'),
     num('ber_req', 'Required bit-error rate', '-', 1e-6, 1e-12, 1e-2, 'Radio link'), num('L_impl', 'Implementation loss', 'dB', 2, 0, 10, 'Radio link'), num('fade_dB', 'Fade margin required', 'dB', 10, 0, 40, 'Radio link', 'Multipath and airframe shadowing: 10–20 dB is common for air-to-ground links'),
     num('dist', 'Link distance', 'm', 100000, 10, 5e6, 'Geometry'), num('h_gnd', 'Ground antenna height', 'm', 10, 0, 5000, 'Geometry'), num('h_air', 'Aircraft altitude above the ground antenna site', 'm', 3000, 0, 30000, 'Geometry'),
@@ -364,7 +364,7 @@ const link = {
     num('n_vl', 'Switched-Ethernet virtual links on the port', '', 60, 1, 5000, 'Data bus', '', { step: 1, discrete: true }), num('frame_B', 'Frame size', 'bytes', 300, 64, 1518, 'Data bus'), num('bag_ms', 'Bandwidth allocation gap', 'ms', 8, 1, 128, 'Data bus'), num('link_bps', 'Port speed', 'bit/s', 100e6, 1e6, 1e10, 'Data bus'),
     { key: 'tasks', label: 'Processor tasks as period:execution time [ms]', type: 'text', default: '5:1, 20:4, 50:8, 200:30', group: 'Processor', help: 'Comma-separated list, e.g. 10:2, 40:8. Rate-monotonic priorities are assumed.' },
   ],
-  defaults: (c) => { const f = flightOf(c), uav = c.meta.type === 'uav', big = c.mass.mtow_kg > 5700, hz = Math.sqrt(2 * (4 / 3) * RE) * (Math.sqrt(10) + Math.sqrt(Math.max(f.alt, 1))); return { h_air: f.alt, dist: uav ? Math.min(0.6 * hz, Math.max(2000, (c.mission.range_km || 10) * 500)) : 0.6 * hz, f_Hz: uav ? 2.4e9 : 127e6, P_t: uav ? (c.mass.mtow_kg < 20 ? 0.5 : 2) : big ? 25 : 10, Rb: uav ? 1e6 : 31500, Gr_dB: uav ? 12 : 3, n50: big ? 12 : 4, n10: big ? 40 : 12, n1: big ? 60 : 20, n_vl: big ? 60 : 8 }; },
+  defaults: (c) => { const f = flightOf(c), uav = c.meta.type === 'uav', big = c.mass.mtow_kg > 5700, hz = Math.sqrt(2 * (4 / 3) * RE) * (Math.sqrt(10) + Math.sqrt(Math.max(f.alt, 1))), dist = uav ? Math.min(0.6 * hz, Math.max(2000, (c.mission.range_km || 10) * 500)) : 0.6 * hz; return { h_air: f.alt, dist, f_Hz: uav ? 2.4e9 : 127e6, P_t: uav ? (c.mass.mtow_kg < 20 ? 0.5 : 2) : big ? 25 : 10, Rb: uav ? 1e6 : 31500, Gr_dB: uav ? (dist > 20e3 ? 24 : 12) : 3, n50: big ? 12 : 4, n10: big ? 40 : 12, n1: big ? 60 : 20, n_vl: big ? 60 : 8 }; },
   run(i) {
     const r = linkCalc(i), hz = Math.sqrt(2 * (4 / 3) * RE) * (Math.sqrt(i.h_gnd) + Math.sqrt(i.h_air)), d0 = i.dist * 10 ** (r.margin / 20), use = Math.min(d0, hz), warnings = [];
     // ARINC 429: 32-bit word + 4-bit gap; switched Ethernet: one frame per virtual link every BAG, FIFO worst case behind every other link
@@ -393,7 +393,7 @@ const link = {
       ],
       tables: rm.ts.length ? [{ title: 'Rate-monotonic response times', columns: ['Period [ms]', 'Execution time [ms]', 'Worst-case response [ms]', 'Deadline met'], rows: rm.ts.map((t, k) => [t[0], t[1], rm.resp[k], rm.resp[k] <= t[0] ? 'yes' : 'no']) }] : [],
       warnings, models: ['Friis free-space link budget with thermal noise −174 dBm/Hz + noise figure', 'Coherent BPSK/QPSK bit-error rate ½·erfc(√(Eb/N0))', '4/3-Earth radio horizon', 'ARINC 429 word timing (32 bits + 4-bit gap)', 'Switched-Ethernet (AFDX-style) bandwidth-allocation-gap loading with FIFO worst case', 'Rate-monotonic utilisation bound and exact response-time analysis'],
-      assumptions: ['Free-space propagation with a lumped fade margin: no terrain diffraction, ground-reflection nulls or rain cells', 'Uncoded modulation (forward error correction would add coding gain)', 'Generic message sets: equal frame size and gap for all virtual links, one switch port', 'Independent periodic tasks with deadlines equal to periods and no blocking'],
+      assumptions: ['Free-space propagation with a lumped fade margin: no terrain diffraction, ground-reflection nulls or rain cells', 'Uncoded modulation (forward error correction would add coding gain)', 'Generic message sets: equal frame size and gap for all virtual links, one switch port', 'Independent periodic tasks with deadlines equal to periods and no blocking', 'Radio, antenna, bus-load and task-set defaults are generic illustrative values; the default link distance is 60% of the radio horizon (or the mission radius of a small unmanned aircraft)'],
     };
   },
   verify() {
@@ -455,7 +455,7 @@ const airdata = {
         { type: 'line', title: 'Airspeed error versus static-source position error', xlabel: 'Position error ΔCp [-]', ylabel: 'Calibrated airspeed error [m/s]', series: [{ name: 'CAS', x: cps, y: cps.map((c) => { const q = airMeas(i, i.e_static, i.e_pitot, i.e_tat, c).m; return q.cas - t.cas; }) }] },
       ],
       warnings, models: ['Standard-atmosphere pressure altitude', 'Subsonic compressible pitot relation for Mach and calibrated airspeed', 'Total-temperature recovery relation', 'Seeded Monte Carlo of pressure-sensor noise'],
-      assumptions: ['Subsonic flight; calorically perfect air', 'Position error proportional to impact pressure (single ΔCp); no angle-of-attack or sideslip dependence', 'No pneumatic lag, probe icing or blockage', 'Probe recovery factor known exactly'],
+      assumptions: ['Subsonic flight; calorically perfect air', 'Position error proportional to impact pressure (single ΔCp); no angle-of-attack or sideslip dependence', 'No pneumatic lag, probe icing or blockage', 'Probe recovery factor known exactly', 'Sensor error defaults are typical for the equipment class, not a specific air-data unit'],
     };
   },
   verify() {
@@ -483,12 +483,12 @@ const qEuler = (q) => [Math.atan2(2 * (q[0] * q[1] + q[2] * q[3]), 1 - 2 * (q[1]
 const eulerQ = (ph, th, ps) => { const c1 = Math.cos(ph / 2), s1 = Math.sin(ph / 2), c2 = Math.cos(th / 2), s2 = Math.sin(th / 2), c3 = Math.cos(ps / 2), s3 = Math.sin(ps / 2); return [c1 * c2 * c3 + s1 * s2 * s3, s1 * c2 * c3 - c1 * s2 * s3, c1 * s2 * c3 + s1 * c2 * s3, c1 * c2 * s3 - s1 * s2 * c3]; };
 /** Third row of the direction-cosine matrix: the navigation down axis expressed in body axes. */
 const downB = (q) => [2 * (q[1] * q[3] - q[0] * q[2]), 2 * (q[2] * q[3] + q[0] * q[1]), 1 - 2 * (q[1] * q[1] + q[2] * q[2])];
-const wrap = (a) => Math.atan2(Math.sin(a), Math.cos(a));
+const wrap = (a) => Math.atan2(Math.sin(a), Math.cos(a)), TB = 1; // TB [s]: correlation time of the gyro-bias allowance in the heading filter
 function attSim(i, noise = 1, init = null) {
   const u = N.rng(Math.round(i.seed)), gn = () => noise * N.randn(u), dt = 1 / i.rate_hz, nt = Math.round(i.t_end * i.rate_hz), A = i.amp_deg * D2R, w1 = 2 * Math.PI * i.f_man, w2 = 0.7 * w1, yr = i.yaw_dps * D2R;
   const bg = [i.bg_dps, -0.6 * i.bg_dps, 0.8 * i.bg_dps].map((v) => v * D2R * noise), sg = i.sg_dps * D2R, sa = i.sa_g, sm = i.sm_deg * D2R, tau = i.tau_c, al = tau / (tau + dt), thr = N.normInv(1 - i.pfa / 2) ** 2;
   let qg = init || eulerQ(0, 0.5 * A * Math.sin(1), 0), qm = qg.slice(), bm = [0, 0, 0], ce = init ? [0, 0] : [0, 0.5 * A * Math.sin(1)], hk = 0, Pk = (5 * D2R) ** 2, hn = 0, Pn = Pk, tDet = NaN, fa = 0;
-  const T = [], tru = [], eg = [], em = [], ec = [], hT = [], hF = [], hN = [], nis = [];
+  const T = [], tru = [], eg = [], em = [], ec = [], hT = [], hF = [], hN = [], hP = [], nis = [];
   for (let k = 0; k < nt; k++) {
     const t = (k + 0.5) * dt, ph = A * Math.sin(w1 * t), th = 0.5 * A * Math.sin(w2 * t + 1), ps = yr * t, dph = A * w1 * Math.cos(w1 * t), dth = 0.5 * A * w2 * Math.cos(w2 * t + 1);
     // body rates from the Euler kinematics; accelerometer senses −g plus a lateral manoeuvre disturbance
@@ -504,15 +504,15 @@ function attSim(i, noise = 1, init = null) {
     const er = [wm[0] + Math.tan(ce[1]) * (wm[1] * Math.sin(ce[0]) + wm[2] * Math.cos(ce[0])), wm[1] * Math.cos(ce[0]) - wm[2] * Math.sin(ce[0])];
     ce = [al * (ce[0] + er[0] * dt) + (1 - al) * Math.atan2(-f[1], -f[2]), al * (ce[1] + er[1] * dt) + (1 - al) * Math.atan2(f[0], Math.hypot(f[1], f[2]))];
     // heading Kalman filters with and without the innovation χ² monitor (magnetometer step fault injected)
-    const em2 = qEuler(qm), hd = ((wm[1] * Math.sin(em2[0]) + wm[2] * Math.cos(em2[0])) / Math.cos(em2[1])) * dt, Rm = sm * sm, Q = (sg * sg + (i.bg_dps * D2R) ** 2 * dt) * dt;
+    const em2 = qEuler(qm), hd = ((wm[1] * Math.sin(em2[0]) + wm[2] * Math.cos(em2[0])) / Math.cos(em2[1])) * dt, Rm = sm * sm, Q = (sg * dt) ** 2 + (i.bg_dps * D2R) ** 2 * TB * dt; // white gyro noise per sample integrates to (σg·dt)²; the unmodelled constant bias is allowed for as a random walk that matches its drift after TB
     hk += hd; Pk += Q; hn += hd; Pn += Q; const nu = wrap(mag - hk), S = Pk + Rm, d2 = (nu * nu) / S, bad = d2 > thr;
     if (bad && te < i.t_fault) fa++; if (bad && te >= i.t_fault && Number.isNaN(tDet)) tDet = te - i.t_fault;
     if (!(bad && i.fdi_on)) { const K = Pk / S; hk += K * nu; Pk *= 1 - K; } { const K = Pn / (Pn + Rm); hn += K * wrap(mag - hn); Pn *= 1 - K; }
     const ag = qEuler(qg);
-    T.push(te); tru.push([phe, the]); eg.push(Math.hypot(wrap(ag[0] - phe), ag[1] - the)); em.push(Math.hypot(wrap(em2[0] - phe), em2[1] - the)); ec.push(Math.hypot(wrap(ce[0] - phe), ce[1] - the)); hT.push(pse); hF.push(wrap(hk - pse)); hN.push(wrap(hn - pse)); nis.push(d2);
+    T.push(te); tru.push([phe, the]); eg.push(Math.hypot(wrap(ag[0] - phe), ag[1] - the)); em.push(Math.hypot(wrap(em2[0] - phe), em2[1] - the)); ec.push(Math.hypot(wrap(ce[0] - phe), ce[1] - the)); hT.push(pse); hF.push(wrap(hk - pse)); hN.push(wrap(hn - pse)); hP.push(Pn); nis.push(d2);
   }
   const k0 = Math.round(0.2 * nt), rms = (a) => Math.sqrt(N.mean(a.slice(k0).map((v) => v * v))) / D2R, kf = T.findIndex((t) => t >= i.t_fault), post = (a) => (kf >= 0 && kf < nt - 2 ? N.amax(a.slice(kf).map(Math.abs)) / D2R : 0);
-  return { T, tru, eg, em, ec, hF, hN, nis, thr, rg: rms(eg), rm: rms(em), rc: rms(ec), tDet, fa, hFmax: post(hF), hNmax: post(hN), qm, bm, bg };
+  return { T, tru, eg, em, ec, hF, hN, hP, nis, thr, rg: rms(eg), rm: rms(em), rc: rms(ec), tDet, fa, hFmax: post(hF), hNmax: post(hN), qm, bm, bg };
 }
 const attitude = {
   id: 'attitude', title: 'Attitude estimation and sensor fault detection', fidelity: 'numerical',
@@ -529,8 +529,8 @@ const attitude = {
   ],
   defaults: (c) => { const g = c.mass.mtow_kg > 5700 ? 0.02 : c.mass.mtow_kg > 600 ? 0.3 : 1; return { bg_dps: 0.1 * g, sg_dps: 0.1 * Math.max(g, 0.1), sa_g: 0.01 * Math.max(g, 0.2), amp_deg: c.meta.type === 'uav' ? 25 : 20, yaw_dps: N.clamp((G0 * Math.tan(15 * D2R)) / flightOf(c).V / D2R, 0.5, 6) }; },
   run(i) {
-    const r = attSim(i), dg = (a) => thin(a).map((v) => v / D2R), warnings = [], best = Math.min(r.rm, r.rc);
-    if (Number.isNaN(r.tDet) && i.t_fault < i.t_end && i.fault_deg > 0) warnings.push('The injected magnetometer fault was not detected: it is too small relative to the heading uncertainty, or the filter absorbed it. Lower the threshold or add an independent heading source.');
+    const r = attSim(i), dg = (a) => thin(a).map((v) => v / D2R), warnings = [], best = Math.min(r.rm, r.rc), faulted = i.t_fault < i.t_end && i.fault_deg > 0;
+    if (Number.isNaN(r.tDet) && faulted) warnings.push('The injected magnetometer fault was not detected: it is too small relative to the heading uncertainty, or the filter absorbed it. Lower the threshold or add an independent heading source.');
     if (r.fa > 0.02 * r.T.length) warnings.push('The monitor raises frequent false alarms before the fault: the filter noise model is optimistic.');
     if (best > 2) warnings.push('Attitude error exceeds 2° RMS: the gravity reference is disturbed by manoeuvre accelerations; add airspeed/GNSS-velocity compensation of the accelerometer.');
     return {
@@ -538,7 +538,7 @@ const attitude = {
         kp('att_rms_mahony_deg', 'Roll/pitch error, quaternion (Mahony) filter (RMS)', r.rm, '°', r.rm < 1 ? 'ok' : r.rm < 2.5 ? 'warn' : 'bad'), kp('att_rms_comp_deg', 'Roll/pitch error, complementary filter (RMS)', r.rc, '°', r.rc < 1 ? 'ok' : r.rc < 2.5 ? 'warn' : 'bad'),
         kp('att_rms_gyro_deg', 'Roll/pitch error, gyro integration only (RMS)', r.rg, '°'), kp('gyro_drift_end_deg', 'Gyro-only error at the end', r.eg[r.eg.length - 1] / D2R, '°'),
         kp('bias_est_dps', 'Gyro bias estimated by the Mahony filter (x axis)', r.bm[0] / D2R, '°/s', undefined, `True ${(r.bg[0] / D2R).toFixed(3)} °/s`),
-        kp('fault_detect_s', 'Time to detect the magnetometer fault', Number.isNaN(r.tDet) ? i.t_end : r.tDet, 's', Number.isNaN(r.tDet) ? 'bad' : r.tDet < 2 ? 'ok' : 'warn', Number.isNaN(r.tDet) ? 'Not detected' : ''),
+        kp('fault_detect_s', 'Time to detect the magnetometer fault', Number.isNaN(r.tDet) ? i.t_end : r.tDet, 's', !faulted ? undefined : Number.isNaN(r.tDet) ? 'bad' : r.tDet < 2 ? 'ok' : 'warn', !faulted ? 'No fault is injected within the simulated time' : Number.isNaN(r.tDet) ? 'Not detected' : ''),
         kp('false_alarms', 'False alarms before the fault', r.fa, ''), kp('chi2_threshold', 'Chi-square threshold (1 degree of freedom)', r.thr, '-'),
         kp('heading_err_fdi_deg', 'Largest heading error after the fault, with the monitor', r.hFmax, '°', r.hFmax < 5 ? 'ok' : 'warn'), kp('heading_err_nofdi_deg', 'Largest heading error after the fault, without the monitor', r.hNmax, '°'),
       ],
@@ -548,19 +548,22 @@ const attitude = {
         { type: 'line', title: 'Normalised innovation squared of the heading filter', xlabel: 'Time [s]', ylabel: 'ν²/S [-]', ylog: true, series: [{ name: 'Test statistic', x: thin(r.T), y: thin(r.nis).map((v) => Math.max(v, 1e-6)) }], annotations: [{ y: r.thr, label: 'Threshold' }] },
       ],
       warnings, models: ['Quaternion strapdown attitude propagation (exact rotation-vector update)', 'Mahony explicit complementary filter on SO(3) with gyro-bias estimation', 'Euler-angle complementary filter (gyro high-pass, accelerometer low-pass)', 'Scalar heading Kalman filter with innovation chi-square fault monitor', 'Seeded sensor simulation with constant gyro bias and white noise'],
-      assumptions: ['Accelerometer measures gravity plus a prescribed lateral disturbance (no centripetal compensation)', 'Magnetometer provides tilt-compensated heading with white noise', 'Constant gyro biases; no scale-factor, misalignment or vibration rectification errors', 'Single simulated realisation (change the seed to see the scatter)'],
+      assumptions: ['Accelerometer measures gravity plus a prescribed lateral disturbance (no centripetal compensation)', 'Magnetometer provides tilt-compensated heading with white noise', 'Constant gyro biases; no scale-factor, misalignment or vibration rectification errors', 'Single simulated realisation (change the seed to see the scatter)', 'Heading filter process noise: integrated white gyro noise plus a random-walk allowance for the unestimated gyro bias (1 s correlation time)', 'Sensor noise, bias and filter-gain defaults are typical values, not a specific unit'],
     };
   },
   verify() {
     const w = [0.3, -0.2, 0.5], q = N.range(1000, () => 0).reduce((a) => qstep(a, w, 0.01), [1, 0, 0, 0]), ang = 2 * Math.acos(N.clamp(q[0], -1, 1)), tot = N.norm(w) * 10;
     const b = { amp_deg: 0, f_man: 0.1, yaw_dps: 0, a_dist_g: 0, bg_dps: 0.5, sg_dps: 0, sa_g: 0, sm_deg: 1, tau_c: 2, kp_m: 2, ki_m: 0.5, kp_yaw: 1, t_fault: 1e9, fault_deg: 0, pfa: 0.05, fdi_on: true, rate_hz: 100, t_end: 120, seed: 2 };
     const c = attSim(b), cv = attSim({ ...b, bg_dps: 0, t_end: 40 }, 0, eulerQ(20 * D2R, -10 * D2R, 0)), e = qEuler(cv.qm);
+    // heading filter with a bias-free noisy gyro: the actual error variance must equal the variance the filter reports
+    const hc = attSim({ ...b, bg_dps: 0, sg_dps: 2, sm_deg: 0.5, t_end: 300, seed: 9 }), k0 = 2000, hvar = N.mean(hc.hN.slice(k0).map((v) => v * v)) / N.mean(hc.hP.slice(k0));
     return [
       N.check('Quaternion propagation: rotation angle = |ω|·t', Math.abs(ang - 2 * Math.PI * Math.round(tot / (2 * Math.PI))), Math.abs(tot - 2 * Math.PI * Math.round(tot / (2 * Math.PI))), 1e-9, 'Exact rotation-vector integration at constant rate'),
       N.check('Complementary filter steady error with a constant gyro bias = b·τ', c.ec[c.ec.length - 1] / D2R, Math.hypot(0.5 * 2, 0.3 * 2), 2e-3, 'First-order blend: error = bias × time constant'),
       N.check('Mahony filter removes a constant gyro bias (integral action)', c.em[c.em.length - 1] / D2R, 0, 1e-3, 'Zero steady-state attitude error'),
       N.check('Mahony filter converges from a 20° initial error', Math.hypot(e[0], e[1]) / D2R, 0, 1e-3, 'Almost-global convergence of the explicit complementary filter'),
       N.check('Chi-square threshold for 5% false alarms, 1 degree of freedom', c.thr, 3.8415, 1e-3, 'χ² tables'),
+      N.check('Heading Kalman filter: actual error variance / reported variance', hvar, 1, 0.15, 'Consistency of a correctly tuned Kalman filter (about 1000 independent samples)'),
     ];
   },
   calibration: { params: [{ key: 'kp_m', min: 0.05, max: 20 }, { key: 'tau_c', min: 0.1, max: 30 }], sweep: 'a_dist_g', target: 'att_rms_mahony_deg', note: 'Supply measured attitude error (against a reference attitude system or motion table) for different manoeuvre disturbance levels to tune the filter gains.' },

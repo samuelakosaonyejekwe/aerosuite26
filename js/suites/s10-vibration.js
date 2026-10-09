@@ -128,7 +128,9 @@ const harmonic = (M, C, K, F, w) => N.csolve(K.map((r, p) => r.map((k, q) => [k 
 /** Thin-walled two-spar wing-box stiffness at the root and the wing mass model (preliminary, constant gauge). */
 function wingDefaults(c, up, d) {
   if (!(c.wing.S_m2 > 0)) return {};
-  const mat = METALS[c.struct.material] || METALS['Al 2024-T3'], cr = d.c_root, w = c.struct.box_chord_frac * cr, h = c.struct.box_height_frac * c.wing.tc * cr, ts = c.struct.t_skin_mm / 1e3, tw = c.struct.t_spar_mm / 1e3;
+  const mat = METALS[c.struct.material] || METALS['Al 2024-T3'], cr = d.c_root, w = c.struct.box_chord_frac * cr, h = c.struct.box_height_frac * c.wing.tc * cr;
+  // same gauge caps as the structures suite (0.06% and 0.1% of the root chord) so that small vehicles are not given airliner gauges
+  const ts = Math.min(c.struct.t_skin_mm, Math.max(0.4, 0.6 * cr)) / 1e3, tw = Math.min(c.struct.t_spar_mm, Math.max(0.5, cr)) / 1e3;
   const EI = mat.E * (2 * 1.6 * w * ts * (h / 2) ** 2 + (2 * tw * h ** 3) / 12); // stringers smeared as 60% extra skin area
   const GJ = (mat.G * 4 * (w * h) ** 2) / ((2 * w) / ts + (2 * h) / tw);
   return {
@@ -202,7 +204,7 @@ const wingModal = {
       tables: [{ title: 'Natural frequencies', columns: ['Mode', 'Bending [Hz]', 'Torsion [Hz]'], rows: [0, 1, 2, 3].filter((k) => k < ft.length).map((k) => [k + 1, f[k], ft[k]]) }],
       outputs: { wing_modes_Hz: f.slice(0, 6), wing_torsion_Hz: ft.slice(0, 3) },
       warnings, models: ['Finite element modal model (Hermitian beam, linear torsion rod)', 'Consistent mass matrices', 'Jacobi generalised eigen-solver'],
-      assumptions: ['Wing clamped at the root; fuselage flexibility and free-free aircraft modes are not included', 'Bending and torsion are uncoupled (no mass or elastic offset coupling)', 'Stiffness ∝ chord^p and mass ∝ chord² along the span', 'No shear deformation or rotary inertia (slender beam)'],
+      assumptions: ['Wing clamped at the root; fuselage flexibility and free-free aircraft modes are not included', 'Bending and torsion are uncoupled (no mass or elastic offset coupling)', 'Stiffness ∝ chord^p and mass ∝ chord² along the span', 'No shear deformation or rotary inertia (slender beam)', 'Default stiffness (when the structures suite has not run), mass fractions, stiffness exponent and radius of gyration are typical estimates'],
     };
   },
   convergence: { param: 'nEl', label: 'Beam elements', levels: [4, 8, 16, 32], metric: 'f1_Hz' },
@@ -215,6 +217,7 @@ const wingModal = {
       N.check('Uniform cantilever mode 3 (β₃L = 7.8548)', b.w[2], 7.854757 ** 2 * k, 5e-4, 'Euler–Bernoulli exact'),
       N.check('Fixed–free torsion rod mode 1', t.w[0], (Math.PI / (2 * L)) * Math.sqrt(GJ / Ia), 2e-4, 'Exact (π/2L)·sqrt(GJ/Iα)'),
       N.check('Effective masses sum to the free mass', N.sum(b.meff), 1, 1e-6, 'Completeness of the modal basis'),
+      N.check('Default box stiffness of a small wing uses the capped gauges (0.4 mm skin, 0.5 mm web at a 0.5 m chord)', wingDefaults({ wing: { S_m2: 1, b_m: 4, tc: 0.12, taper: 1, sweep_deg: 0 }, struct: { material: 'Al 2024-T3', box_chord_frac: 0.5, box_height_frac: 1, t_skin_mm: 3, t_spar_mm: 5, zeta: 0.02 }, mass: { mtow_kg: 20, fuel_kg: 0 } }, {}, { c_root: 0.5 }).EI_root, METALS['Al 2024-T3'].E * (2 * 1.6 * 0.25 * 0.0004 * 0.03 ** 2 + (2 * 0.0005 * 0.06 ** 3) / 12), 1e-12, 'Thin-walled box second moment of area with the gauge caps of the structures suite'),
     ];
   },
   recommend(res) {
@@ -289,9 +292,9 @@ const blade = {
         { type: 'line', title: 'Blade mode shapes at operating speed', xlabel: 'Radius / R [-]', ylabel: 'Normalised deflection [-]', series: [0, 1, 2].map((k) => ({ name: `Flap ${k + 1}`, x: op.flap.x.map((x) => (x + i.e_root * i.R) / i.R), y: unit(op.flap.shapes[k]) })) }],
       tables: [{ title: 'Blade modes at operating speed', columns: ['Mode', 'Non-rotating [Hz]', 'Rotating [Hz]', 'Per rev', 'Southwell K', 'Nearest harmonic', 'Separation [%]'], rows },
         { title: 'Resonance crossings', columns: ['Mode', 'Harmonic', 'Speed [rpm]', '% of operating'], rows: cross.slice(0, 40) }],
-      outputs: pure ? { f1_Hz: op.flap.w[0] / TAU, f2_Hz: op.flap.w[1] / TAU, f3_Hz: op.flap.w[2] / TAU, lag_freq_rev: lagRev } : { lag_freq_rev: lagRev },
+      outputs: { ...(pure ? { f1_Hz: op.flap.w[0] / TAU, f2_Hz: op.flap.w[1] / TAU, f3_Hz: op.flap.w[2] / TAU } : {}), lag_freq_rev: lagRev, nearest_harmonic: worst.h },
       warnings, models: ['Finite element beam with centrifugal geometric stiffness', 'Southwell relation', 'Fan (Campbell) diagram'],
-      assumptions: ['Uniform blade; flap, lag and torsion uncoupled (no twist, pitch or Coriolis coupling)', 'Lead-lag includes the −Ω² centrifugal softening of in-plane motion', 'No aerodynamic damping or stiffness', 'Default stiffnesses are section-shape estimates'],
+      assumptions: ['Uniform blade; flap, lag and torsion uncoupled (no twist, pitch or Coriolis coupling)', 'Lead-lag includes the −Ω² centrifugal softening of in-plane motion', 'No aerodynamic damping or stiffness', 'Default stiffnesses and blade mass are section-shape estimates (typical values), so default frequency placements are indicative only: enter measured blade data before acting on a resonance finding'],
     };
   },
   convergence: { param: 'nEl', label: 'Beam elements', levels: [4, 6, 9, 14, 21], metric: 'blade_flap2_rev' },
@@ -308,7 +311,9 @@ const blade = {
   },
   recommend(res, i) {
     const o = res.outputs, out = [];
-    if (o.min_separation_pct < i.margin_req) out.push({ severity: 'warn', title: 'Blade mode too close to an excitation harmonic', detail: res.kpis[6].note + `: separation ${o.min_separation_pct.toFixed(1)}% against ${i.margin_req}% required.`, action: 'Retune with tip or spanwise mass, change the stiffness distribution or shift the operating speed; then re-check blade loads and hub vibration in Suite 6.', basis: 'Fan-diagram frequency placement' });
+    // harmonics up to N + 1 per rev carry the significant airloads and feed the N/rev hub loads; higher ones are weak, and a ±5% band around them covers most of the frequency axis
+    const strong = o.nearest_harmonic <= Math.round(i.n_blades) + 1;
+    if (o.min_separation_pct < i.margin_req) out.push({ severity: strong ? 'warn' : 'advise', title: 'Blade mode too close to an excitation harmonic', detail: res.kpis.find((k) => k.key === 'min_separation_pct').note + `: separation ${o.min_separation_pct.toFixed(1)}% against ${i.margin_req}% required` + (strong ? '.' : '; this harmonic is above N + 1 per rev, where the airload excitation is weak.'), action: 'Retune with tip or spanwise mass, change the stiffness distribution or shift the operating speed; then re-check blade loads and hub vibration in Suite 6.', basis: 'Fan-diagram frequency placement' });
     if (o.blade_lag1_rev < 1) out.push({ severity: 'advise', title: 'Soft in-plane rotor', detail: `First lag mode is ${o.blade_lag1_rev.toFixed(2)}/rev.`, action: 'Run the ground-resonance analysis and size the lag dampers and landing-gear damping.', basis: 'Coleman–Feingold mechanical instability' });
     return out;
   },
@@ -378,7 +383,7 @@ const forced = {
         { type: 'line', title: 'Run-up transient: isolator deflection envelope', xlabel: 'Time [s]', ylabel: 'Deflection amplitude [mm]', series: [{ name: 'Newmark envelope', x: te, y: env }], annotations: [{ y: steady * 1e3, label: 'Steady state' }] },
       ],
       warnings, models: ['Two-degree-of-freedom lumped-mass model', 'Harmonic response by complex solution', 'Newmark average-acceleration transient'],
-      assumptions: ['Linear isolators with viscous damping', 'Single translational direction; rocking modes of the mounted mass are not included', 'Excitation force ∝ speed² during the run-up'],
+      assumptions: ['Linear isolators with viscous damping', 'Single translational direction; rocking modes of the mounted mass are not included', 'Excitation force ∝ speed² during the run-up', 'Default masses, mount and support frequencies, damping and force amplitude are class-level estimates (typical values), not data for a specific installation'],
     };
   },
   convergence: { param: 'nSteps', label: 'Time steps per forcing period', levels: [8, 16, 32, 64], metric: 'x_runup_mm' },
@@ -432,13 +437,15 @@ function whirl(s, Om) {
 function unbalance(s, Om, e) {
   const D = s.K.map((r, p) => r.map((k, q) => [k - Om * Om * s.M[p][q], Om * Om * s.G[p][q] + (p === q ? Om * s.Cd[p] : 0)]));
   const f = s.m * e * Om * Om, Q = N.csolve(D, [[f, 0], [0, -f], [0, 0], [0, 0]]);
-  // orbit semi-major axis from forward/backward circular components
-  const fw = N.C.scale(N.C.add(Q[0], N.C.mul([0, 1], Q[1])), 0.5), bw = N.C.scale(N.C.sub(Q[0], N.C.mul([0, 1], Q[1])), 0.5);
+  // semi-axes of the ellipse traced by a rotating vector (x, y) from its forward and backward circular components
+  const axes = (x, y) => { const f = N.C.abs(N.C.scale(N.C.add(x, N.C.mul([0, 1], y)), 0.5)), b = N.C.abs(N.C.scale(N.C.sub(x, N.C.mul([0, 1], y)), 0.5)); return { major: f + b, minor: Math.abs(f - b), backward: b > f }; };
+  const orb = axes(Q[0], Q[1]);
   const Fx = N.C.add(N.C.scale(Q[0], s.kx[0]), N.C.scale(Q[3], s.kx[1])), My = N.C.add(N.C.scale(Q[0], s.kx[1]), N.C.scale(Q[3], s.kx[2]));
   const Fy = N.C.sub(N.C.scale(Q[1], s.ky[0]), N.C.scale(Q[2], s.ky[1])), Mx = N.C.sub(N.C.scale(Q[2], s.ky[2]), N.C.scale(Q[1], s.ky[1]));
-  const r1 = Math.hypot(N.C.abs(N.C.sub(N.C.scale(Fx, s.b / s.L), N.C.scale(My, 1 / s.L))), N.C.abs(N.C.add(N.C.scale(Fy, s.b / s.L), N.C.scale(Mx, 1 / s.L))));
-  const r2 = Math.hypot(N.C.abs(N.C.add(N.C.scale(Fx, s.a / s.L), N.C.scale(My, 1 / s.L))), N.C.abs(N.C.sub(N.C.scale(Fy, s.a / s.L), N.C.scale(Mx, 1 / s.L))));
-  return { Q, major: N.C.abs(fw) + N.C.abs(bw), minor: Math.abs(N.C.abs(fw) - N.C.abs(bw)), backward: N.C.abs(bw) > N.C.abs(fw), bearing: Math.max(r1, r2) / Math.SQRT2 };
+  // bearing reactions rotate with the shaft: the load amplitude is the semi-major axis of the force ellipse at each bearing
+  const r1 = axes(N.C.sub(N.C.scale(Fx, s.b / s.L), N.C.scale(My, 1 / s.L)), N.C.add(N.C.scale(Fy, s.b / s.L), N.C.scale(Mx, 1 / s.L))).major;
+  const r2 = axes(N.C.add(N.C.scale(Fx, s.a / s.L), N.C.scale(My, 1 / s.L)), N.C.sub(N.C.scale(Fy, s.a / s.L), N.C.scale(Mx, 1 / s.L))).major;
+  return { Q, major: orb.major, minor: orb.minor, backward: orb.backward, bearing: Math.max(r1, r2) };
 }
 const shaft = {
   id: 'shaft', title: 'Rotor-bearing whirl, Campbell diagram and unbalance response', fidelity: 'reduced-order',
@@ -452,7 +459,7 @@ const shaft = {
     { key: 'pos', label: 'Disc position / span', unit: '-', default: 0.35, min: 0.05, max: 0.95, group: 'Shaft', help: '0.5 is the classical Jeffcott rotor with no gyroscopic coupling' },
     { key: 'd_o', label: 'Shaft outer diameter', unit: 'm', default: 0.1, min: 1e-4, group: 'Shaft', help: 'Default is sized for the first rigid-bearing critical speed at 1.4 × operating speed; enter the real shaft' },
     { key: 'd_ratio', label: 'Bore / outer diameter', unit: '-', default: 0.6, min: 0, max: 0.95, group: 'Shaft' },
-    { key: 'E', label: 'Shaft Young\'s modulus', unit: 'Pa', default: 205e9, min: 1e9, group: 'Shaft' },
+    { key: 'E', label: 'Shaft Young\'s modulus', unit: 'Pa', default: 200e9, min: 1e9, group: 'Shaft', help: '200 GPa for low-alloy steel (MIL-HDBK-5J), about 71 GPa for aluminium, 110 GPa for titanium' },
     { key: 'kb_x', label: 'Bearing stiffness, horizontal (each)', unit: 'N/m', default: 2e8, min: 1e3, group: 'Bearings' },
     { key: 'kb_y', label: 'Bearing stiffness, vertical (each)', unit: 'N/m', default: 3e8, min: 1e3, group: 'Bearings', help: 'Unequal stiffness splits the critical speeds and makes the orbit elliptical' },
     { key: 'zeta', label: 'Support damping ratio', unit: '-', default: 0.03, min: 1e-4, max: 0.5, group: 'Bearings', help: '0.01–0.03 rolling bearings, 0.05–0.15 with squeeze-film dampers' },
@@ -467,7 +474,7 @@ const shaft = {
     const p = c.prop, jet = p.type === 'turbofan' || p.type === 'turbojet', heli = c.meta.type === 'helicopter', D = p.prop_dia_m > 0 ? p.prop_dia_m : c.rotor.R_m > 0 && !heli ? 2 * c.rotor.R_m : 0;
     // representative rotor: fan (jets), tail-rotor drive shaft segment (helicopter), propeller on its shaft (others)
     const m = jet ? 0.002 * p.T0_N : heli ? 6 : Math.max(0.02, 6 * D ** 2.5), r = jet ? 0.07 * Math.sqrt(p.T0_N / 1000) : heli ? 0.06 : Math.max(0.02, 0.25 * D), rpm = jet ? 4500 : heli ? 4100 : p.rpm || c.rotor.rpm || 2500;
-    const L = jet ? 2 * r : heli ? 1.4 : Math.max(0.03, 0.35 * D), pos = heli ? 0.5 : 0.35, a = pos * L, b = L - a, ratio = heli ? 0.9 : 0.6, E = heli ? 71e9 : 205e9;
+    const L = jet ? 2 * r : heli ? 1.4 : Math.max(0.03, 0.35 * D), pos = heli ? 0.5 : 0.35, a = pos * L, b = L - a, ratio = heli ? 0.9 : 0.6, E = heli ? METALS['Al 7075-T6'].E : METALS['Steel 4340 (QT)'].E;
     const k = m * (1.4 * rads(rpm)) ** 2, EI = (k * a * a * b * b) / (3 * L), d = ((64 * EI) / (E * Math.PI * (1 - ratio ** 4))) ** 0.25, kb = 12 * k;
     return { m_disc: m, r_disc: r, t_disc: 0.25 * r, L, pos, d_o: d, d_ratio: ratio, E, kb_x: kb, kb_y: 1.5 * kb, rpm, G_grade: jet || p.type === 'turboshaft' ? 2.5 : 6.3 };
   },
@@ -506,14 +513,14 @@ const shaft = {
         { key: 'orbit_op_um', label: 'Orbit semi-major axis at operating speed', value: at.major * 1e6, unit: 'µm' },
         { key: 'orbit_peak_um', label: 'Largest orbit passing the first critical', value: (peaks[0]?.amp ?? NaN) * 1e6, unit: 'µm' },
         { key: 'vib_velocity_mms', label: 'Vibration velocity at operating speed', value: vel, unit: 'mm/s RMS', status: vel <= i.v_limit ? 'ok' : 'warn' },
-        { key: 'bearing_load_N', label: 'Dynamic bearing load at operating speed', value: at.bearing * Math.SQRT2, unit: 'N' },
+        { key: 'bearing_load_N', label: 'Dynamic bearing load at operating speed', value: at.bearing, unit: 'N', note: 'Amplitude of the rotating reaction at the more heavily loaded bearing' },
         { key: 'unbalance_force_N', label: 'Unbalance force at operating speed', value: s.m * e * Om0 * Om0, unit: 'N' },
       ].filter((k) => fin(k.value) || k.key === 'crit_speed_rpm'),
       plots: [
         { type: 'line', title: 'Campbell diagram', xlabel: 'Rotor speed [rpm]', ylabel: 'Whirl frequency [Hz]', series: [{ name: 'Forward whirl', x: fw.x, y: fw.y, style: 'points' }, { name: 'Backward whirl', x: bw.x, y: bw.y, style: 'points' }, { name: '1× (synchronous)', x: [0, (top * 60) / TAU], y: [0, top / TAU], style: 'dash' }], annotations: [{ x: i.rpm, label: 'Operating' }] },
         { type: 'line', title: 'Unbalance response', xlabel: 'Rotor speed [rpm]', ylabel: 'Orbit semi-axis [µm]', ylog: true, series: [{ name: 'Semi-major axis', x: thin(os.map((o) => (o * 60) / TAU)), y: thin(amp.map((v) => v * 1e6)) }, { name: 'Semi-minor axis', x: thin(os.map((o) => (o * 60) / TAU)), y: thin(U.map((u) => Math.max(u.minor * 1e6, 1e-6))) }], annotations: [{ x: i.rpm, label: 'Operating' }] },
         { type: 'line', title: 'Disc orbit', xlabel: 'Horizontal displacement [µm]', ylabel: 'Vertical displacement [µm]', equalAspect: true, series: [{ name: 'At operating speed', ...orbit(at.Q) }, { name: 'At the first response peak', ...orbit(pk.Q) }] },
-        { type: 'line', title: 'Dynamic bearing load', xlabel: 'Rotor speed [rpm]', ylabel: 'Bearing load amplitude [N]', ylog: true, series: [{ name: 'More heavily loaded bearing', x: thin(os.map((o) => (o * 60) / TAU)), y: thin(U.map((u) => Math.max(u.bearing * Math.SQRT2, 1e-9))) }] },
+        { type: 'line', title: 'Dynamic bearing load', xlabel: 'Rotor speed [rpm]', ylabel: 'Bearing load amplitude [N]', ylog: true, series: [{ name: 'More heavily loaded bearing', x: thin(os.map((o) => (o * 60) / TAU)), y: thin(U.map((u) => Math.max(u.bearing, 1e-9))) }] },
       ],
       tables: [{ title: 'Synchronous (1×) crossings and response peaks', columns: ['Kind', 'Speed [rpm]', '% of operating'], rows: [...crit.map((c) => [c.dir >= 0 ? 'Forward critical' : 'Backward crossing', c.rpm, (100 * c.rpm) / i.rpm]), ...peaks.map((p) => ['Unbalance response peak', p.rpm, (100 * p.rpm) / i.rpm])] }],
       warnings, models: ['Jeffcott rotor generalised to an off-centre disc with gyroscopic moments (4 degrees of freedom)', 'Campbell diagram model', 'Rotor-bearing model with anisotropic support stiffness', 'ISO balance quality grade G = e·Ω'],
@@ -533,6 +540,7 @@ const shaft = {
       N.check('Forward whirl satisfies the gyroscopic characteristic equation', det(f[0].w) / sc, 0, 1e-6, 'det[k11−mω², k12; k12, k22−Id·ω²+Ip·Ω·ω] = 0'),
       N.check('Two forward and two backward whirl modes', f.length + 10 * m.filter((x) => x.dir < 0).length, 22, 1e-9, 'Isotropic rotor with one disc'),
       N.check('Forward critical with gyroscopic stiffening', o.crit_speed_rpm, (cr * 60) / TAU, 1e-5, 'Synchronous whirl: effective inertia Id − Ip'),
+      N.check('Mid-span disc on rigid bearings: each bearing carries half the transmitted force m·e·Ω²/(1 − r²)', (2 * unbalance(rotorSys({ ...b, pos: 0.5 }), 30, 1e-5).bearing) / (20 * 1e-5 * 900), 1 / (1 - 900 / (kJ / 20)), 1e-6, 'Jeffcott rotor below the critical speed'),
       N.check('Unbalance orbit tends to e at high speed (self-centring)', unbalance(rotorSys({ ...b, pos: 0.5 }), 6000, 1e-5).major / 1e-5, 1 / (1 - (kJ / 20) / 6000 ** 2), 1e-4, 'Jeffcott response r²/(r²−1)'),
     ];
   },
@@ -671,7 +679,7 @@ const random = {
         { type: 'line', title: 'Cumulative response RMS', xlabel: 'Frequency [Hz]', ylabel: 'Cumulative acceleration [g RMS]', xlog: true, series: [{ name: 'Response', x: thin(f), y: thin(N.cumtrapz(f, Wout).map(Math.sqrt)) }, { name: 'Input', x: thin(f), y: thin(N.cumtrapz(f, Win).map(Math.sqrt)) }] },
       ],
       warnings, models: ['Single-degree-of-freedom base-excitation transmissibility', "Miles' equation", 'Gaussian narrow-band response with Rayleigh peaks'],
-      assumptions: ['Stationary Gaussian excitation', 'One dominant mode of the mounted item', 'Linear response: no rattling, snubbing or mount non-linearity'],
+      assumptions: ['Stationary Gaussian excitation', 'One dominant mode of the mounted item', 'Linear response: no rattling, snubbing or mount non-linearity', 'The default input spectrum is illustrative: take the level and shape from the applicable environmental test standard for the equipment zone'],
     };
   },
   convergence: { param: 'nFreq', label: 'Frequency points', levels: [250, 500, 1000, 2000, 4000], metric: 'grms_out' },
@@ -681,7 +689,7 @@ const random = {
     return [
       N.check('White-noise response equals the exact integral πfn(1+4ζ²)/(4ζ)·W', r.grms_out, ex, 2e-3, 'Crandall & Mark, Random Vibration in Mechanical Systems'),
       N.check("Miles' equation within 4ζ² of the exact white-noise result", r.grms_miles, ex, 1e-3, 'Miles (1954)'),
-      N.check('Positive zero-crossing rate tends to fn for light damping', random.run({ ...b, f_hi: 400, f2: 400 }).kpis[7].value, 100, 2e-2, 'Narrow-band process'),
+      N.check('Positive zero-crossing rate tends to fn for light damping', N.kv(random.run({ ...b, f_hi: 400, f2: 400 })).nu0_Hz, 100, 2e-2, 'Narrow-band process'),
     ];
   },
   recommend(res, i) {
@@ -782,7 +790,7 @@ const groundRes = {
         { type: 'heat', title: 'Stability map: growth rate', xlabel: 'Rotor speed [% NR]', ylabel: 'Lag damper ratio [-]', zlabel: 'Largest real part [1/s]', x: spm.map((o) => (100 * o) / Om0), y: zl, z: map, contours: 10, diverging: true },
       ],
       warnings, models: ['Ground resonance model (Coleman–Feingold): hub translation with cyclic lag in multiblade coordinates', 'Deutsch damping criterion', 'Eigenvalue stability analysis'],
-      assumptions: ['Three or more identical blades, isotropic rotor: constant coefficients in the fixed frame', 'Rigid blades with lag hinge and linear viscous lag damper; uniform blade mass', 'Two uncoupled airframe-on-gear modes represented by effective mass, frequency and damping at the hub', 'No aerodynamics (air resonance is not covered)', 'Default airframe modes are rigid-body-on-tyres estimates without oleo flexibility'],
+      assumptions: ['Three or more identical blades, isotropic rotor: constant coefficients in the fixed frame', 'Rigid blades with lag hinge and linear viscous lag damper; uniform blade mass', 'Two uncoupled airframe-on-gear modes represented by effective mass, frequency and damping at the hub', 'No aerodynamics (air resonance is not covered)', 'Default airframe modes are rigid-body-on-tyres estimates without oleo flexibility; default damping ratios are typical values'],
     };
   },
   convergence: { param: 'nSpeeds', label: 'Rotor speed points', levels: [15, 30, 60, 120], metric: 'gr_growth_1s' },

@@ -6,16 +6,17 @@
 
 import * as N from '../core/numerics.js';
 import { G0, RHO0 } from '../core/atmosphere.js';
-import { METALS } from '../data/materials.js';
+import { METALS, designAllowables } from '../data/materials.js';
 
 // ---- shared helpers -------------------------------------------------------------------------
 const MATS = Object.keys(METALS);
 const mat = (name) => METALS[name] || METALS['Al 2024-T3'];
-const MAT = { key: 'material', label: 'Material', type: 'select', options: MATS, default: 'Al 2024-T3', group: 'Material', help: 'Typical room-temperature handbook values, not certified design allowables' };
+const MAT = { key: 'material', label: 'Material', type: 'select', options: MATS, default: 'Al 2024-T3', group: 'Material', help: 'Elastic constants are typical handbook values. Strength margins use the MIL-HDBK-5J design allowable where the database holds a verified one, otherwise the typical strength; each result states which' };
 const kpi = (key, label, value, unit, status, note) => ({ key, label, value, unit, ...(status ? { status } : {}), ...(note ? { note } : {}) });
 const st3 = (m, warnAt = 0.15) => (m >= warnAt ? 'ok' : m >= 0 ? 'warn' : 'bad');
 const thin = (a, max = 200) => { if (a.length <= max) return a.slice(); const o = []; for (let k = 0; k < max; k++) o.push(a[Math.round((k * (a.length - 1)) / (max - 1))]); return o; };
-const MAT_NOTE = 'Material data are typical handbook values, not statistically based design allowables';
+/** Assumption line naming the strength basis used for the margins of material m. */
+const matNote = (m) => { const a = designAllowables(m); return a.design ? `Strength margins use ${a.basis}; elastic constants are typical handbook values. Confirm product form, grain direction and thickness against your own allowables` : `Strength margins use ${a.basis}; they are not statistically based design allowables`; };
 /** Rough installed engine mass per engine [kg] from rating — an order-of-magnitude statistical estimate used only as a default. */
 const engineMass = (p) => (p.type === 'turbofan' || p.type === 'turbojet' ? p.T0_N / (5 * G0) : p.type === 'electric' ? p.P0_W / 5000 : p.P0_W * (p.type === 'piston' ? 1.1e-3 : 4e-4));
 
@@ -92,7 +93,7 @@ const beam = {
     { key: 't_web_mm', label: 'Spar web thickness', unit: 'mm', default: 5, min: 0.1, max: 80, group: 'Section' },
     { key: 'k_str', label: 'Stringer area / skin area', unit: '-', default: 0.5, min: 0, max: 2, group: 'Section', help: 'Smeared stringers add bending material but carry no shear; 0.4–0.6 for transport wings, 0 for a plain tube' },
     { key: 'sizing', label: 'Cover thickness', type: 'select', options: ['sized', 'as specified'], default: 'sized', group: 'Section', help: '"sized" thickens each station until the ultimate bending stress equals the design allowable (fully-stressed design)' },
-    { key: 'f_design', label: 'Design stress / ultimate strength', unit: '-', default: 0.6, min: 0.2, max: 1, group: 'Section', help: 'Knock-down kept for compression stability, fatigue and joints when sizing; 0.55–0.7 is typical for metallic covers' },
+    { key: 'f_design', label: 'Design stress / ultimate strength', unit: '-', default: 0.6, min: 0.2, max: 1, group: 'Section', help: 'Knock-down on the ultimate strength (the design allowable when the database holds one) kept for compression stability, fatigue and joints when sizing; 0.55–0.7 is typical for metallic covers' },
     MAT,
     { key: 'n_load', label: 'Limit load factor', unit: 'g', default: 2.5, min: -6, max: 12, group: 'Loads', help: 'From the V–n diagram of Suite 5 when available' },
     { key: 'sf', label: 'Ultimate safety factor', unit: '-', default: 1.5, min: 1, max: 3, group: 'Loads' },
@@ -135,7 +136,7 @@ const beam = {
       L_1g_N: 0, dist: 'uniform', P_tip_1g_N: d.W / nm, m_fuel_kg: 0, m_eng_kg: 0, m_tip_kg: engineMass(c.prop), k_nonopt: 1.2, q_Pa: 0, Cm0: 0, ea_offset: 0, n_members: nm };
   },
   run(i) {
-    const m = mat(i.material), n = Math.max(2, Math.round(i.nElem)), cosL = Math.cos(N.rad(i.sweep_deg)), Ls = i.L / cosL, warnings = [];
+    const m = mat(i.material), al = designAllowables(m), n = Math.max(2, Math.round(i.nElem)), cosL = Math.cos(N.rad(i.sweep_deg)), Ls = i.L / cosL, warnings = [];
     const s = N.linspace(0, Ls, n + 1), eta = s.map((v) => v / Ls), chord = eta.map((e) => i.c_root + (i.c_tip - i.c_root) * e), cm = 0.5 * (i.c_root + i.c_tip);
     const bw = chord.map((c) => i.box_chord_frac * c), bh = chord.map((c) => i.box_height_frac * i.tc * c), tw = i.t_web_mm / 1e3, tmin = i.t_skin_mm / 1e3, sized = i.sizing === 'sized';
     const shape = eta.map((e, j) => (i.dist === 'elliptic' ? Math.sqrt(Math.max(0, 1 - e * e)) : i.dist === 'uniform' ? 1 : i.dist === 'triangular' ? (i.r0 + s[j]) / (i.r0 + Ls) : 0.5 * (chord[j] / cm + (4 / Math.PI) * Math.sqrt(Math.max(0, 1 - e * e)))));
@@ -158,15 +159,17 @@ const beam = {
       sol = beamSolve(s, fe.map((x) => m.E * x.I), fe.map((x) => (i.theory === 'Timoshenko' ? m.G * x.As : Infinity)), q, P,
         { fixed: pinned ? [0] : [0, 1], springs: pinned && i.k_root > 0 ? [[1, i.k_root]] : [], Tg: i.omega > 0 ? (e, z) => Tn[e + 1] + dT(e, z) : null });
       if (!sized || it === nIt - 1) break;
-      ts = ts.map((_, j) => Math.max(tmin, ((Math.abs(sol.M[j]) * i.sf * bh[j]) / (2 * i.f_design * m.Su) - (tw * bh[j] ** 3) / 6) / (0.5 * bw[j] * bh[j] ** 2 * (1 + i.k_str))));
+      ts = ts.map((_, j) => Math.max(tmin, ((Math.abs(sol.M[j]) * i.sf * bh[j]) / (2 * i.f_design * al.Su) - (tw * bh[j] ** 3) / 6) / (0.5 * bw[j] * bh[j] ** 2 * (1 + i.k_str))));
     }
     // torque about the elastic axis and twist (Bredt–Batho single cell)
     const tq = lift.map((l, j) => l * i.ea_offset * chord[j] + i.Cm0 * i.q_Pa * chord[j] ** 2 * cosL), Tq = N.cumtrapz(s, tq).map((v, _, a) => a[n] - v);
     const twist = N.cumtrapz(s, Tq.map((t, j) => t / (m.G * sec[j].J)));
     const sb = sol.M.map((M, j) => (Math.abs(M) * bh[j]) / (2 * sec[j].I)), sax = Tn.map((T, j) => T / sec[j].A);
-    const tauS = Tq.map((t, j) => Math.abs(t) / (2 * sec[j].Aenc * ts[j])), tauW = sol.V.map((V, j) => Math.abs(V) / sec[j].As + Math.abs(Tq[j]) / (2 * sec[j].Aenc * tw));
+    // sol.V is the total transverse force on the cut; under centrifugal tension part of it, T·w′, is carried by the inclined axial force, not by the webs
+    const Qs = sol.V.map((V, j) => V - Tn[j] * sol.th[j]);
+    const tauS = Tq.map((t, j) => Math.abs(t) / (2 * sec[j].Aenc * ts[j])), tauW = Qs.map((Q, j) => Math.abs(Q) / sec[j].As + Math.abs(Tq[j]) / (2 * sec[j].Aenc * tw));
     const vm = sb.map((b, j) => Math.max(Math.hypot(b + sax[j], Math.sqrt(3) * tauS[j]), Math.sqrt(3) * tauW[j])), jm = N.argmax(vm), sMax = vm[jm];
-    const mosU = sMax > 0 ? m.Su / (i.sf * sMax) - 1 : Infinity, mosY = sMax > 0 ? m.Sy / sMax - 1 : Infinity, mos = Math.min(mosU, mosY);
+    const mosU = sMax > 0 ? al.Su / (i.sf * sMax) - 1 : Infinity, mosY = sMax > 0 ? al.Sy / sMax - 1 : Infinity, mos = Math.min(mosU, mosY);
     const mBox = N.trapz(s, sec.map((x) => m.rho * x.A)), mOne = mBox * i.k_nonopt, mAll = mOne * Math.round(i.n_members), tip = sol.w[n], y = s.map((v) => v * cosL);
     const gauge = sized ? ts.filter((t) => t <= tmin * 1.0001).length / (n + 1) : NaN;
     if (Math.abs(tip) / Ls > 0.15 && !pinned) warnings.push(`Tip deflection is ${(100 * Math.abs(tip) / Ls).toFixed(0)}% of the length: small-deflection theory overstates it. Use the large-deflection analysis.`);
@@ -178,12 +181,12 @@ const beam = {
     const rows = thin(N.range(n + 1), 11).map((j) => [y[j], chord[j], ts[j] * 1e3, (m.E * sec[j].I) / 1e6, (m.G * sec[j].J) / 1e6, sol.V[j] / 1e3, sol.M[j] / 1e3, Tq[j] / 1e3, vm[j] / 1e6]);
     return {
       kpis: [
-        kpi('sigma_max_Pa', 'Peak von Mises stress at limit load', sMax, 'Pa', st3(mos), `Yield ${(m.Sy / 1e6).toFixed(0)} MPa, ultimate ${(m.Su / 1e6).toFixed(0)} MPa`),
-        kpi('margin_of_safety', 'Governing margin of safety', mos, '-', st3(mos), mosU < mosY ? 'Ultimate strength governs' : 'Yield at limit load governs'),
+        kpi('sigma_max_Pa', 'Peak von Mises stress at limit load', sMax, 'Pa', st3(mos), `Yield ${(al.Sy / 1e6).toFixed(0)} MPa, ultimate ${(al.Su / 1e6).toFixed(0)} MPa (${al.design ? 'design allowables' : 'typical strengths'})`),
+        kpi('margin_of_safety', 'Governing margin of safety', mos, '-', st3(mos), `${mosU < mosY ? 'Ultimate strength governs' : 'Yield at limit load governs'}; ${al.design ? 'design allowables' : 'typical strengths, not design allowables'}`),
         kpi('tip_deflection_m', 'Tip deflection at limit load', tip, 'm', Math.abs(tip) / Ls > 0.15 && !pinned ? 'warn' : 'ok', pinned ? `Rigid-body coning of ${N.deg(Math.atan2(tip, Ls)).toFixed(1)}° about the hinge plus elastic bending` : ''),
         kpi('tip_twist_deg', 'Tip twist', N.deg(twist[n]), 'deg'),
         kpi('root_moment_Nm', 'Root bending moment', sol.M[0], 'N·m'),
-        kpi('root_shear_N', 'Root shear force', sol.V[0], 'N'),
+        kpi('root_shear_N', 'Root shear force', sol.V[0], 'N', undefined, i.omega > 0 ? 'Total transverse force (root reaction); the web shear excludes the part carried by the inclined centrifugal tension' : ''),
         kpi('root_torque_Nm', 'Root torque', Tq[0], 'N·m'),
         kpi('sigma_bend_root_Pa', 'Root cover bending stress', sb[0] + sax[0], 'Pa'),
         kpi('tau_skin_max_Pa', 'Peak skin shear stress', N.amax(tauS), 'Pa'),
@@ -201,14 +204,14 @@ const beam = {
         { type: 'line', title: 'Shear force diagram', xlabel: 'Spanwise position [m]', ylabel: 'Shear force [kN]', series: [{ name: 'Shear', x: yk, y: pick(sol.V, 1e-3) }] },
         { type: 'line', title: 'Bending moment and torque diagrams', xlabel: 'Spanwise position [m]', ylabel: 'Moment [kN·m]', series: [{ name: 'Bending moment', x: yk, y: pick(sol.M, 1e-3) }, { name: 'Torque', x: yk, y: pick(Tq, 1e-3) }] },
         { type: 'line', title: 'Deflected shape at limit load', xlabel: 'Spanwise position [m]', ylabel: 'Deflection [m]', series: [{ name: 'Deflection', x: yk, y: pick(sol.w) }] },
-        { type: 'line', title: 'Stress along the member at limit load', xlabel: 'Spanwise position [m]', ylabel: 'Stress [MPa]', series: [{ name: 'Cover direct stress', x: yk, y: k.map((j) => (sb[j] + sax[j]) / 1e6) }, { name: 'Web shear', x: yk, y: pick(tauW, 1e-6) }, { name: 'Skin shear (torque)', x: yk, y: pick(tauS, 1e-6) }, { name: 'von Mises', x: yk, y: pick(vm, 1e-6), style: 'dash' }], annotations: [{ y: m.Sy / 1e6, label: 'Yield' }] },
+        { type: 'line', title: 'Stress along the member at limit load', xlabel: 'Spanwise position [m]', ylabel: 'Stress [MPa]', series: [{ name: 'Cover direct stress', x: yk, y: k.map((j) => (sb[j] + sax[j]) / 1e6) }, { name: 'Web shear', x: yk, y: pick(tauW, 1e-6) }, { name: 'Skin shear (torque)', x: yk, y: pick(tauS, 1e-6) }, { name: 'von Mises', x: yk, y: pick(vm, 1e-6), style: 'dash' }], annotations: [{ y: al.Sy / 1e6, label: al.design ? 'Yield allowable' : 'Yield (typical)' }] },
         { type: 'line', title: 'Cover skin thickness', xlabel: 'Spanwise position [m]', ylabel: 'Thickness [mm]', series: [{ name: 'Skin', x: yk, y: pick(ts, 1e3), style: sized ? 'line' : 'dash' }] },
       ],
       tables: [{ title: 'Station summary', columns: ['y [m]', 'Chord [m]', 'Skin [mm]', 'EI [MN·m²]', 'GJ [MN·m²]', 'Shear [kN]', 'Moment [kN·m]', 'Torque [kN·m]', 'von Mises [MPa]'], rows }],
-      outputs: { span_y_m: thin(y, 41), EI_Nm2: thin(sec.map((x) => m.E * x.I), 41), GJ_Nm2: thin(sec.map((x) => m.G * x.J), 41), mass_per_m_kgm: thin(mdist.map((v, j) => (v + fuel[j]) / cosL), 41), min_gauge_fraction: gauge },
+      outputs: { span_y_m: thin(y, 41), EI_Nm2: thin(sec.map((x) => m.E * x.I), 41), GJ_Nm2: thin(sec.map((x) => m.G * x.J), 41), mass_per_m_kgm: thin(mdist.map((v, j) => (v + fuel[j]) / cosL), 41), min_gauge_fraction: gauge, web_shear_root_N: Qs[0], allowable_basis: al.design ? 1 : 0 },
       warnings,
       models: [`${i.theory} Hermite beam elements (${n})`, sized ? 'Fully-stressed cover sizing with minimum gauge' : 'Thicknesses as specified', i.dist === 'schrenk' ? 'Schrenk spanwise lift approximation' : `${i.dist} lift distribution`, 'Bredt–Batho single-cell torsion', ...(i.omega > 0 ? ['Centrifugal tension with consistent geometric stiffness'] : [])],
-      assumptions: ['Straight beam along the swept structural axis; no bending–torsion coupling', 'Thin-walled rectangular box: covers and smeared stringers carry bending, webs carry shear', 'Structural mass = ideal box mass × empirical non-optimum factor; relief from structure, fuel and point masses scales with load factor', 'Stresses are nominal: no joints, cut-outs, buckling or fatigue knock-downs', MAT_NOTE],
+      assumptions: ['Straight beam along the swept structural axis; no bending–torsion coupling', 'Thin-walled rectangular box: covers and smeared stringers carry bending, webs carry shear', 'Structural mass = ideal box mass × empirical non-optimum factor; relief from structure, fuel and point masses scales with load factor', 'Default non-optimum factor, design-stress ratio, stringer ratio, fuel share and engine mass are typical or empirical values, not sourced data', 'Stresses are nominal: no joints, cut-outs, buckling or fatigue knock-downs', matNote(m)],
     };
   },
   convergence: { param: 'nElem', label: 'Beam elements', levels: [5, 10, 20, 40, 80], metric: 'tip_deflection_m' },
@@ -218,13 +221,17 @@ const beam = {
     const r1 = N.kv(beam.run(b)), r2 = N.kv(beam.run({ ...b, theory: 'Timoshenko' })), r3 = N.kv(beam.run({ ...b, L_1g_N: 500, P_tip_1g_N: 0, material: 'Al 2024-T3' }));
     // rotating pinned blade under a load proportional to radius: exact solution is a straight line w = k·r/(m'Ω²) with zero bending
     // (the difference of two lift levels removes the self-weight contribution, which has no straight-line solution)
-    const om = 60, kq = (2 * 500) / (L * L), rot = (Lf) => N.kv(beam.run({ ...b, L_1g_N: Lf, P_tip_1g_N: 0, dist: 'triangular', omega: om, root: 'pinned' })).tip_deflection_m;
+    const om = 60, kq = (2 * 500) / (L * L), rotRun = (Lf) => beam.run({ ...b, L_1g_N: Lf, P_tip_1g_N: 0, dist: 'triangular', omega: om, root: 'pinned' }), rot = (Lf) => N.kv(rotRun(Lf)).tip_deflection_m;
+    const q1 = rotRun(1000), q5 = rotRun(500), dV = N.kv(q1).root_shear_N - N.kv(q5).root_shear_N, dQ = q1.outputs.web_shear_root_N - q5.outputs.web_shear_root_N;
     return [
       N.check('Cantilever tip load: PL³/3EI + self-weight qL⁴/8EI', r1.tip_deflection_m, (P * L ** 3) / (3 * EI) + (wq * L ** 4) / (8 * EI), 1e-9, 'Euler–Bernoulli beam theory (Hermite elements are nodally exact)'),
       N.check('Timoshenko shear deflection adds PL/kGA + qL²/2kGA', r2.tip_deflection_m - r1.tip_deflection_m, (P * L) / (mm.G * sec.As) + (wq * L * L) / (2 * mm.G * sec.As), 1e-6, 'Timoshenko beam theory'),
       N.check('Uniform load root moment qL²/2', r3.root_moment_Nm, ((500 / L + wq) * L * L) / 2, 1e-9, 'Statics'),
       N.check('Strain energy equals ∫M²/2EI', r1.strain_energy_J, N.simpson((x) => (P * (L - x) + (wq * (L - x) ** 2) / 2) ** 2 / (2 * EI), 0, L, 200), 1e-6, 'Clapeyron theorem (cubic interpolation of the quartic self-weight deflection gives O(h⁴) work error)'),
       N.check('Rotating hinged blade cones as a straight line: w_tip = k·R/(m′Ω²)', rot(1000) - rot(500), (kq * L) / (mp * om * om), 1e-8, 'String equation (T w′)′ + f = 0 with T = ½m′Ω²(R² − r²) and f = k·r'),
+      N.check('Rotating hinged blade: the root reaction equals the added lift', dV, 500, 1e-8, 'Vertical equilibrium of the straight-line coning solution'),
+      N.check('Rotating hinged blade: no web shear in pure coning (reaction carried by the inclined tension)', dQ / dV, 0, 1e-8, 'Q = −(EI·w″)′ = 0 for a straight line; V = Q + T·w′'),
+      N.check('Margins use the A-basis allowable when the database holds one', (N.kv(beam.run({ ...b, material: 'Al 2024-T3' })).margin_of_safety + 1) * N.kv(beam.run({ ...b, material: 'Al 2024-T3' })).sigma_max_Pa, Math.min(441e6 / 1.5, 324e6), 1e-12, 'MIL-HDBK-5J 2024-T3 sheet A-basis Ftu 64 ksi, Fty 47 ksi'),
       N.check('Bredt–Batho GJ of the rectangular cell', r1.GJ_root_Nm2, (mm.G * 4 * (0.1 * 0.05) ** 2 * 0.002) / (2 * 0.1 + 2 * 0.05), 1e-12, 'Bredt–Batho formula'),
     ];
   },
@@ -368,11 +375,11 @@ const plane = {
     const top = r.sx[pk], side = r.sy[pk2], peak = Math.abs(top) >= Math.abs(side) ? top : side, Ktg = peak / sRef, net = Math.abs(top) >= Math.abs(side) ? 1 - b / Ly : 1 - a / Lx;
     const inf = (1 + 2 / i.ellip) * i.sx_Pa - i.sy_Pa; // Inglis/Kirsch stress at the end of the transverse axis, infinite plate
     const heywood = circ && i.sy_Pa === 0 ? ((2 + (1 - b / Ly) ** 3) / (1 - b / Ly)) * i.sx_Pa : NaN;
-    const vmMax = N.amax(r.vm), mos = m.Sy / vmMax - 1, uEnd = r.u[2 * id[0][NI]];
+    const al = designAllowables(m), vmMax = N.amax(r.vm), mos = al.Sy / vmMax - 1, uEnd = r.u[2 * id[0][NI]];
     let Rx = 0; for (let k = 0; k <= NI; k++) Rx += r.resid[2 * id[NJ][k]];
     const eqErr = i.sx_Pa ? Math.abs(Rx + i.sx_Pa * Ly * i.t_m) / Math.abs(i.sx_Pa * Ly * i.t_m) : 0;
     if (b / Ly > 0.6 || a / Lx > 0.6) warnings.push('The hole removes more than 60% of the section: the mapped mesh is strongly distorted and net-section yielding governs.');
-    if (vmMax > m.Sy) warnings.push('Peak elastic stress exceeds yield: the real material yields locally and redistributes; the elastic peak is still the correct input for fatigue (Suite 9).');
+    if (vmMax > al.Sy) warnings.push('Peak elastic stress exceeds yield: the real material yields locally and redistributes; the elastic peak is still the correct input for fatigue (Suite 9).');
     if (i.elem === 'Q4' && i.nMesh < 16) warnings.push('Bilinear Q4 elements converge slowly at a stress raiser; run the convergence study or use Q8.');
     // sections for the line plots
     const lig = N.range(NI + 1, (k) => id[NJ][k]), yl = lig.map((k) => nodes[k][1]), hole = N.range(NJ + 1, (j) => id[j][0]);
@@ -393,7 +400,7 @@ const plane = {
         kpi('sigma_peak_Pa', 'Peak stress at the hole edge', peak, 'Pa'),
         kpi('sigma_inf_plate_Pa', 'Infinite-plate reference (Kirsch / Inglis)', inf, 'Pa'),
         kpi('sigma_heywood_Pa', 'Finite-width reference (Heywood, empirical)', heywood, 'Pa', undefined, 'Circular hole under uniaxial load only'),
-        kpi('vm_max_Pa', 'Peak von Mises stress', vmMax, 'Pa', mos >= 0 ? 'ok' : 'warn', `Yield ${(m.Sy / 1e6).toFixed(0)} MPa; local yielding at a notch is a fatigue, not a static, concern`),
+        kpi('vm_max_Pa', 'Peak von Mises stress', vmMax, 'Pa', mos >= 0 ? 'ok' : 'warn', `Yield ${(al.Sy / 1e6).toFixed(0)} MPa (${al.design ? 'design allowable' : 'typical'}); local yielding at a notch is a fatigue, not a static, concern`),
         kpi('mos_local_yield', 'Margin against first local yield', mos, '-'),
         kpi('elongation_m', 'End displacement of the quarter model', uEnd, 'm'),
         kpi('equilibrium_err', 'Reaction vs applied load error', eqErr, '-', eqErr < 1e-8 ? 'ok' : 'warn'),
@@ -407,7 +414,7 @@ const plane = {
       ],
       warnings,
       models: [`${i.elem} isoparametric quadrilaterals, ${mesh.elems.length} elements, ${r.ndof} DOF`, 'Banded Cholesky direct solver', 'Gauss-point stress recovery with nodal averaging'],
-      assumptions: ['Quarter model with two symmetry planes', 'Linear elastic, small strain', `${i.state}; uniform remote traction on the plate ends`, 'Open (unloaded) hole: pin bearing and fastener load transfer are not modelled', MAT_NOTE],
+      assumptions: ['Quarter model with two symmetry planes', 'Linear elastic, small strain', `${i.state}; uniform remote traction on the plate ends`, 'Open (unloaded) hole: pin bearing and fastener load transfer are not modelled', matNote(m)],
     };
   },
   convergence: { param: 'nMesh', label: 'Elements from hole to edge', levels: [4, 8, 16, 24], metric: 'Kt_gross' },
@@ -489,7 +496,7 @@ const buckling = {
     return { material: c.struct.material, sf, sc_Pa: sc, tau_Pa: f.tau_skin_max_Pa ?? 0.15 * sc, t_m: t, b_m: b, h_s: hs, b_f: 0.4 * hs, t_s: Math.max(t, hs / 14), a_m: N.clamp(wing ? 0.12 * d.c_root : 10 * hs, 2 * b, Math.min(0.75, 9 * hs)) };
   },
   run(i) {
-    const m = mat(i.material), { a_m: a, b_m: b, t_m: t } = i, D = (m.E * t ** 3) / (12 * (1 - m.nu ** 2)), Ke = (Math.PI ** 2 * m.E) / (12 * (1 - m.nu ** 2)), M = Math.max(2, Math.round(i.nTerms)), warnings = [];
+    const m = mat(i.material), Sy = designAllowables(m).Sy, { a_m: a, b_m: b, t_m: t } = i, D = (m.E * t ** 3) / (12 * (1 - m.nu ** 2)), Ke = (Math.PI ** 2 * m.E) / (12 * (1 - m.nu ** 2)), M = Math.max(2, Math.round(i.nTerms)), warnings = [];
     const sc = i.sc_Pa * i.sf, sy = i.sy_Pa * i.sf, tau = i.tau_Pa * i.sf, ar = a / b;
     // classical coefficients
     let kc = Infinity; for (let mm = 1; mm <= 40; mm++) kc = Math.min(kc, (mm / ar + ar / mm) ** 2);
@@ -498,15 +505,15 @@ const buckling = {
     const lamInt = Rs > 0 ? (-Rc + Math.sqrt(Rc * Rc + 4 * Rs * Rs)) / (2 * Rs * Rs) : Rc > 0 ? 1 / Rc : Infinity;
     const rz = ritzBuckle(a, b, D, sc * t, sy * t, tau * t, M), lamSkinE = clamped ? lamInt : rz.lambda;
     // plasticity cut-off: elastic buckling stress cannot exceed yield
-    const vmApp = Math.sqrt(sc * sc - sc * sy + sy * sy + 3 * tau * tau), lamY = vmApp > 0 ? m.Sy / vmApp : Infinity, lamSkin = Math.min(lamSkinE, lamY);
+    const vmApp = Math.sqrt(sc * sc - sc * sy + sy * sy + 3 * tau * tau), lamY = vmApp > 0 ? Sy / vmApp : Infinity, lamSkin = Math.min(lamSkinE, lamY);
     if (lamSkinE > lamY) warnings.push('Elastic skin buckling stress exceeds yield: the skin is stocky and the result is capped at yield (no plasticity-corrected buckling curve is applied).');
     // stringer: local buckling of flange (one edge free, k = 0.43) and web (k = 4) taken as the crippling cut-off
-    const sFl = 0.43 * Ke * (i.t_s / i.b_f) ** 2, sWeb = 4 * Ke * (i.t_s / i.h_s) ** 2, scc = Math.min(m.Sy, sFl, sWeb);
+    const sFl = 0.43 * Ke * (i.t_s / i.b_f) ** 2, sWeb = 4 * Ke * (i.t_s / i.h_s) ** 2, scc = Math.min(Sy, sFl, sWeb);
     // column of stringer + effective skin (von Kármán–Sechler effective width, iterated on the column stress)
     let scol = scc, we = b, sec;
     for (let it = 0; it < 30; it++) {
       we = lamSkinE * sc >= scol || !(sc > 0) ? b : Math.min(b, 1.7 * t * Math.sqrt(m.E / scol));
-      const parts = [[we * t, 0], [i.b_f * i.t_s, t / 2 + i.t_s / 2], [i.h_s * i.t_s, t / 2 + i.h_s / 2], [i.b_f * i.t_s, t / 2 + i.h_s]], own = [(we * t ** 3) / 12, (i.b_f * i.t_s ** 3) / 12, (i.t_s * i.h_s ** 3) / 12, (i.b_f * i.t_s ** 3) / 12];
+      const parts = [[we * t, 0], [i.b_f * i.t_s, t / 2 + i.t_s / 2], [i.h_s * i.t_s, t / 2 + i.h_s / 2], [i.b_f * i.t_s, t / 2 + i.h_s - i.t_s / 2]], own = [(we * t ** 3) / 12, (i.b_f * i.t_s ** 3) / 12, (i.t_s * i.h_s ** 3) / 12, (i.b_f * i.t_s ** 3) / 12];
       const A = N.sum(parts.map((p) => p[0])), zb = N.sum(parts.map((p) => p[0] * p[1])) / A, I = N.sum(parts.map((p, k) => own[k] + p[0] * (p[1] - zb) ** 2));
       sec = { A, I, rho: Math.sqrt(I / A), zb };
       const nw = eulerJohnson(m.E, scc, a / Math.sqrt(i.fixity) / sec.rho);
@@ -529,8 +536,8 @@ const buckling = {
         kpi('lambda_interaction', 'Classical interaction estimate', lamInt, '-'),
         kpi('lambda_column', 'Stringer column factor', lamCol, '-', st3(lamCol - 1, 0.1)),
         kpi('lambda_local', 'Stringer local-buckling factor', lamLoc, '-', st3(lamLoc - 1, 0.1)),
-        kpi('sigma_cr_skin_Pa', 'Skin compression buckling stress', Math.min(scr, m.Sy), 'Pa'),
-        kpi('tau_cr_skin_Pa', 'Skin shear buckling stress', Math.min(tcr, m.Sy / Math.sqrt(3)), 'Pa'),
+        kpi('sigma_cr_skin_Pa', 'Skin compression buckling stress', Math.min(scr, Sy), 'Pa'),
+        kpi('tau_cr_skin_Pa', 'Skin shear buckling stress', Math.min(tcr, Sy / Math.sqrt(3)), 'Pa'),
         kpi('k_compression', 'Compression buckling coefficient', kcU, '-'),
         kpi('k_shear', 'Shear buckling coefficient', ks, '-'),
         kpi('sigma_column_Pa', 'Column failure stress', scol, 'Pa'),
@@ -541,12 +548,12 @@ const buckling = {
       ],
       plots: [
         { type: 'heat', title: 'Critical skin buckling mode (normalised deflection)', xlabel: 'Along the load x [m]', ylabel: 'Across the bay y [m]', zlabel: 'w / w_max', x: xs, y: ys, z: z.map((r) => r.map((v) => v / zm)), contours: 10, diverging: true },
-        { type: 'line', title: 'Euler–Johnson column curve', xlabel: 'Slenderness L′/ρ [-]', ylabel: 'Failure stress [MPa]', series: [{ name: 'Euler–Johnson', x: sls, y: sls.map((s) => eulerJohnson(m.E, scc, s) / 1e6) }, { name: 'Euler', x: sls, y: sls.map((s) => Math.min(2 * m.Sy, (Math.PI ** 2 * m.E) / (s * s)) / 1e6), style: 'dash' }, { name: 'This panel', x: [sl], y: [scol / 1e6], style: 'points' }], annotations: [{ y: sc / 1e6, label: 'Applied' }] },
+        { type: 'line', title: 'Euler–Johnson column curve', xlabel: 'Slenderness L′/ρ [-]', ylabel: 'Failure stress [MPa]', series: [{ name: 'Euler–Johnson', x: sls, y: sls.map((s) => eulerJohnson(m.E, scc, s) / 1e6) }, { name: 'Euler', x: sls, y: sls.map((s) => Math.min(2 * Sy, (Math.PI ** 2 * m.E) / (s * s)) / 1e6), style: 'dash' }, { name: 'This panel', x: [sl], y: [scol / 1e6], style: 'points' }], annotations: [{ y: sc / 1e6, label: 'Applied' }] },
         { type: 'bar', title: 'Buckling factors by mode', ylabel: 'Critical / applied [-]', categories: ['Skin', 'Stringer local', 'Stringer column'], series: [{ name: 'Factor', y: [lamSkin, lamLoc, lamCol].map((v) => (Number.isFinite(v) ? Math.min(v, 20) : 20)) }] },
       ],
       warnings,
       models: [`Rayleigh–Ritz double-sine series (${M}×${M} terms) with symmetric Jacobi eigen-solution`, 'Classical plate buckling coefficients', 'von Kármán–Sechler effective width (semi-empirical)', 'Euler–Johnson column curve'],
-      assumptions: ['Flat, perfect, isotropic panel; no curvature benefit, imperfection knock-down or plasticity correction below yield', 'Stringer torsional restraint of the skin is ignored when simply supported', 'Crippling taken as the lower of yield and elastic local buckling instead of an empirical crippling curve', MAT_NOTE],
+      assumptions: ['Flat, perfect, isotropic panel; no curvature benefit, imperfection knock-down or plasticity correction below yield', 'Stringer torsional restraint of the skin is ignored when simply supported', 'Default stringer and rib pitches and stringer proportions come from a sizing rule (starting point only)', 'Crippling taken as the lower of yield and elastic local buckling instead of an empirical crippling curve', 'Tension yield is used as the compression cut-off (compression yield Fcy of sheet is usually a little lower)', matNote(m)],
     };
   },
   convergence: { param: 'nTerms', label: 'Ritz terms per direction', levels: [2, 4, 6, 8, 10], metric: 'lambda_ritz' },
@@ -605,7 +612,7 @@ const fuselage = {
     const w = sol.w, Mb = sol.M, hoop = w.map((v) => (m.E * v) / R + nu * sxM), sb = Mb.map((M) => (6 * M) / (t * t));
     const sxB = i.M_Nm / (Math.PI * R * R * (t + i.Astr_m2 / (2 * Math.PI * R))), sxO = sb.map((v) => sxM + sxB + Math.abs(v)), hO = hoop.map((h, j) => h + nu * Math.abs(sb[j]));
     const vm = sxO.map((s, j) => Math.sqrt(s * s - s * hO[j] + hO[j] ** 2)), vmMax = N.amax(vm), hoopU = (p * R) / t, sFrame = (m.E * w[0]) / R;
-    const mos = m.Su / (i.kp * i.sf * vmMax) - 1, mosY = m.Sy / (i.kp * vmMax) - 1, ri = R - t / 2, ro = R + t / 2, lame = (p * (ro * ro + ri * ri)) / (ro * ro - ri * ri);
+    const al = designAllowables(m), mos = al.Su / (i.kp * i.sf * vmMax) - 1, mosY = al.Sy / (i.kp * vmMax) - 1, ri = R - t / 2, ro = R + t / 2, lame = (p * (ro * ro + ri * ri)) / (ro * ro - ri * ri);
     const tMin = (p * R) / i.s_hoop_allow, beta = (3 * (1 - nu * nu) / (R * R * t * t)) ** 0.25, mPerM = m.rho * (Ask + i.Astr_m2 + (2 * Math.PI * R * i.Af_m2) / i.Lf_m);
     if (R / t < 10) warnings.push('R/t < 10: thin-shell theory is inaccurate; use the Lamé thick-wall value.');
     if (hoop[n] > i.s_hoop_allow) warnings.push(`Mid-bay hoop stress ${(hoop[n] / 1e6).toFixed(0)} MPa exceeds the design hoop stress: fatigue life and crack-arrest capability of the cabin are at risk.`);
@@ -620,7 +627,7 @@ const fuselage = {
         kpi('sigma_bend_frame_Pa', 'Skin bending stress at the frame', Math.abs(sb[0]), 'Pa', undefined, 'Local discontinuity stress: a fatigue driver at the frame shear ties'),
         kpi('sigma_frame_Pa', 'Frame hoop stress', sFrame, 'Pa'),
         kpi('sigma_vm_max_Pa', 'Peak skin von Mises stress', vmMax, 'Pa'),
-        kpi('mos_pressure', 'Margin of safety under factored pressure', Math.min(mos, mosY), '-', st3(Math.min(mos, mosY))),
+        kpi('mos_pressure', 'Margin of safety under factored pressure', Math.min(mos, mosY), '-', st3(Math.min(mos, mosY)), al.design ? 'Design allowables' : 'Typical strengths, not design allowables'),
         kpi('radial_growth_m', 'Radial growth at mid-bay', w[n], 'm'),
         kpi('lame_hoop_Pa', 'Thick-wall (Lamé) hoop stress at the inner surface', lame, 'Pa'),
         kpi('t_min_m', 'Minimum skin gauge for the design hoop stress', tMin, 'm', t >= tMin ? 'ok' : 'warn'),
@@ -632,7 +639,7 @@ const fuselage = {
       ],
       warnings,
       models: ['Axisymmetric cylindrical shell strip (beam on elastic foundation) with Hermite elements', 'Frame as a ring spring E·A/R²', 'Lamé thick-wall solution'],
-      assumptions: ['Circular section, uniform skin, frames attached continuously to the skin', 'Closed-end axial load shared by skin and stringers', 'No cut-outs, doors, lap joints, bulkheads or floor-beam effects', MAT_NOTE],
+      assumptions: ['Circular section, uniform skin, frames attached continuously to the skin', 'Closed-end axial load shared by skin and stringers', 'The 1.33 pressure factor and default frame and stringer proportions are typical transport practice: confirm against the certification basis', 'No cut-outs, doors, lap joints, bulkheads or floor-beam effects', 'The design hoop stress is a typical durability value, not a sourced limit', matNote(m)],
     };
   },
   convergence: { param: 'nElem', label: 'Elements in a half bay', levels: [5, 10, 20, 40, 80], metric: 'sigma_bend_frame_Pa' },
@@ -712,14 +719,14 @@ const frame = {
     return o;
   },
   run(i) {
-    const m = mat(i.material), { nodes, members, names, At } = mountModel(i), c = i.c_m / 2, W = i.m_eng_kg * G0, warnings = [];
+    const m = mat(i.material), al = designAllowables(m), { nodes, members, names, At } = mountModel(i), c = i.c_m / 2, W = i.m_eng_kg * G0, warnings = [];
     // rigid engine: resolve CG forces and moments into the four ring nodes
     const Fz = -i.n_z * W, Fy = i.n_y * W, My = -Fz * i.x_cg, Mz = Fy * i.x_cg, loads = [];
     for (let k = 4; k < 8; k++) { const [, y, z] = nodes[k]; loads.push([k, i.T_N / 4 + (My * z) / (4 * c * c) - (Mz * y) / (4 * c * c), Fy / 4 - (i.Q_Nm * z) / (8 * c * c), Fz / 4 + (i.Q_Nm * y) / (8 * c * c)]); }
     let sol;
     try { sol = truss3d(nodes, members, [0, 1, 2, 3], loads, m.E); } catch { throw new Error('The mount truss is a mechanism for this geometry; check the attachment spacings.'); }
     const I = (Math.PI / 64) * (i.D_m ** 4 - (i.D_m - 2 * i.tw_m) ** 4), stress = sol.force.map((F) => F / At), Pcr = sol.geo.map((g) => (Math.PI ** 2 * m.E * I) / (g.L * g.L));
-    const rho = Math.sqrt(I / At), util = sol.force.map((F, e) => { const sAllow = F >= 0 ? m.Su : Math.min(eulerJohnson(m.E, m.Sy, sol.geo[e].L / rho), m.Su); return (i.sf * Math.abs(F)) / (sAllow * At); });
+    const rho = Math.sqrt(I / At), util = sol.force.map((F, e) => { const sAllow = F >= 0 ? al.Su : Math.min(eulerJohnson(m.E, al.Sy, sol.geo[e].L / rho), al.Su); return (i.sf * Math.abs(F)) / (sAllow * At); });
     const je = N.argmax(util), uMax = util[je], mos = 1 / uMax - 1, disp = Math.max(...N.range(4, (k) => Math.hypot(sol.u[12 + 3 * k], sol.u[13 + 3 * k], sol.u[14 + 3 * k])));
     const Rsum = [0, 1, 2].map((p) => N.sum([0, 1, 2, 3].map((k) => sol.R[3 * k + p]))), eq = Math.hypot(Rsum[0] + i.T_N, Rsum[1] + Fy, Rsum[2] + Fz) / Math.max(1, Math.hypot(i.T_N, Fy, Fz));
     const Rmax = Math.max(...[0, 1, 2, 3].map((k) => Math.hypot(sol.R[3 * k], sol.R[3 * k + 1], sol.R[3 * k + 2]))), mass = m.rho * At * N.sum(sol.geo.map((g) => g.L));
@@ -745,7 +752,7 @@ const frame = {
       tables: [{ title: 'Members', columns: ['Member', 'Length [m]', 'Force [kN]', 'Stress [MPa]', 'Euler load [kN]', 'Utilisation'], rows: members.map((_, e) => [names[e], sol.geo[e].L, sol.force[e] / 1e3, stress[e] / 1e6, Pcr[e] / 1e3, util[e]]) }],
       warnings,
       models: ['3-D pin-jointed direct-stiffness truss (13 members, 12 free DOF)', 'Euler–Johnson column strength for compression members'],
-      assumptions: ['Engine treated as a rigid body loading the four ring nodes', 'Pin joints: welded-joint bending and fatigue at clusters are not modelled', 'Firewall attachments rigid', 'Vertical, side, thrust and torque loads applied together (conservative combination)', MAT_NOTE],
+      assumptions: ['Engine treated as a rigid body loading the four ring nodes', 'Pin joints: welded-joint bending and fatigue at clusters are not modelled', 'Firewall attachments rigid', 'Vertical, side, thrust and torque loads applied together (conservative combination)', 'No fitting factor is applied: fittings not proven by test need at least 1.15 (14 CFR 25.625(a))', 'Default engine mass, mount geometry and side load factor are class-level estimates', matNote(m)],
     };
   },
   verify() {
@@ -843,7 +850,7 @@ const nonlinear = {
       kpis: [
         kpi('tip_deflection_nl_m', 'Tip deflection (nonlinear)', last.uy, 'm'),
         kpi('tip_deflection_lin_m', 'Tip deflection (linear theory)', linTip * last.lam, 'm'),
-        kpi('nl_to_lin_ratio', 'Nonlinear / linear deflection', ratio, '-', Math.abs(1 - ratio) < 0.05 ? 'ok' : 'warn', 'Within 5% means linear analysis is adequate'),
+        kpi('nl_to_lin_ratio', 'Nonlinear / linear deflection', ratio, '-', !Number.isFinite(ratio) ? undefined : Math.abs(1 - ratio) < 0.05 ? 'ok' : 'warn', Number.isFinite(ratio) ? 'Within 5% means linear analysis is adequate' : 'Undefined: no transverse load'),
         kpi('tip_shortening_m', 'Tip axial shortening', -last.ux, 'm'),
         kpi('tip_rotation_deg', 'Tip rotation', N.deg(last.th), 'deg'),
         kpi('deflection_over_L', 'Tip deflection / length', last.uy / i.L, '-'),
@@ -882,6 +889,7 @@ const nonlinear = {
   },
   recommend(res) {
     const o = res.outputs, out = [];
+    if (!Number.isFinite(o.nl_to_lin_ratio)) return [{ severity: 'info', title: 'No transverse load', detail: 'The linear deflection is zero, so the nonlinear / linear ratio is undefined.', action: 'Enter a distributed load, tip force or tip moment.', basis: 'Input check' }];
     if (Math.abs(1 - o.nl_to_lin_ratio) > 0.05) out.push({ severity: 'advise', title: 'Geometric nonlinearity matters', detail: `Linear theory misses the true deflection by ${(100 * Math.abs(1 - o.nl_to_lin_ratio)).toFixed(0)}% (deflection is ${(100 * o.deflection_over_L).toFixed(0)}% of the length).`, action: 'Use nonlinear static aeroelastic loads for this configuration: lift tilts inboard as the wing bends, changing root bending moment, trim and flutter (Suite 3).', basis: 'Elastica theory; linear beam theory is accurate below about 10% deflection' });
     else out.push({ severity: 'info', title: 'Linear analysis is adequate', detail: `Nonlinear and linear deflections agree within ${(100 * Math.abs(1 - o.nl_to_lin_ratio)).toFixed(1)}%.`, action: 'Linear loads and aeroelastic analysis can be used with confidence at this load level.', basis: 'Nonlinear / linear deflection ratio' });
     return out;
@@ -930,7 +938,7 @@ const torsion = {
     const pn = 0.5 * Math.PI * (3 * (an + bn) - Math.sqrt((3 * an + bn) * (an + 3 * bn))), box = { A: w * h, d: (2 * w) / i.t_skin + h / i.t_fs + h / i.t_rs }, nose = { A: 0.5 * Math.PI * an * bn, d: pn / i.t_nose + h / i.t_fs };
     const two = i.cells !== 'box only', r = two ? multicell([nose, box], [h / i.t_fs], i.T_Nm, m.G) : multicell([box], [], i.T_Nm, m.G), qB = r.q[two ? 1 : 0], qN = two ? r.q[0] : 0;
     const walls = [['Box skins', qB, i.t_skin], ['Rear spar web', qB, i.t_rs], ['Front spar web', qB - qN, i.t_fs], ...(two ? [['Nose skin', qN, i.t_nose]] : [])], tau = walls.map(([, q, t]) => Math.abs(q) / t), jm = N.argmax(tau);
-    const tauAllow = m.Su / Math.sqrt(3), mos = tau[jm] > 0 ? tauAllow / (i.sf * tau[jm]) - 1 : Infinity;
+    const al = designAllowables(m), tauAllow = al.Su / Math.sqrt(3), mos = tau[jm] > 0 ? tauAllow / (i.sf * tau[jm]) - 1 : Infinity;
     const Jopen = ((2 * w * i.t_skin ** 3 + h * i.t_fs ** 3 + (two ? pn * i.t_nose ** 3 : 0)) / 3), GJopen = m.G * Jopen, single = (m.G * 4 * box.A ** 2) / box.d;
     // skin shear buckling screen between spars is left to the buckling analysis; flag very thin walls
     if (Math.min(i.t_skin, i.t_nose) / c < 2e-4) warnings.push('Very thin skins relative to chord: shear buckling will limit the usable shear flow (see the buckling analysis).');
@@ -944,7 +952,7 @@ const torsion = {
         kpi('q_box_Npm', 'Shear flow in the main box', qB, 'N/m'),
         kpi('q_nose_Npm', 'Shear flow in the nose cell', qN, 'N/m'),
         kpi('tau_max_Pa', `Peak shear stress (${walls[jm][0]})`, tau[jm], 'Pa'),
-        kpi('mos_shear', 'Margin of safety in shear (ultimate)', mos, '-', st3(mos), 'Allowable Su/√3'),
+        kpi('mos_shear', 'Margin of safety in shear (ultimate)', mos, '-', st3(mos), `Allowable Su/√3 with Su = ${(al.Su / 1e6).toFixed(0)} MPa (${al.design ? 'design allowable' : 'typical'}); a measured shear allowable Fsu should replace it`),
         kpi('GJ_box_only_Nm2', 'GJ of the main box alone', single, 'N·m²'),
         kpi('nose_torque_share', 'Share of torque carried by the nose cell', two ? (2 * nose.A * qN) / (i.T_Nm || 1) : 0, '-'),
         kpi('GJ_open_Nm2', 'GJ if the section were cut open', GJopen, 'N·m²', undefined, 'Σ b·t³/3: shows why closing the cell matters'),
@@ -957,7 +965,7 @@ const torsion = {
       tables: [{ title: 'Shear flows', columns: ['Wall', 'Shear flow [kN/m]', 'Thickness [mm]', 'Shear stress [MPa]'], rows: walls.map(([nm, q, t], k) => [nm, q / 1e3, t * 1e3, tau[k] / 1e6]) }],
       warnings,
       models: [two ? 'Two-cell Bredt–Batho torsion with compatibility of twist' : 'Single-cell Bredt–Batho torsion', 'Open-section Saint-Venant torsion constant Σbt³/3'],
-      assumptions: ['Thin walls with constant shear flow per wall; free warping (no root restraint stiffening)', 'Nose cell idealised as a half ellipse; trailing-edge structure ignored', 'Skins assumed not to buckle in shear', MAT_NOTE],
+      assumptions: ['Thin walls with constant shear flow per wall; free warping (no root restraint stiffening)', 'Nose cell idealised as a half ellipse; trailing-edge structure ignored', 'Default spar positions and nose-skin gauge are typical values', 'Skins assumed not to buckle in shear', matNote(m)],
     };
   },
   verify() {

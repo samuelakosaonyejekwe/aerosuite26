@@ -10,6 +10,7 @@ import { isa, G0, R_AIR, sutherland, kAir, CP_AIR, PR_AIR, pSat } from '../core/
 const PI = Math.PI, TF = 273.15, RHO_W = 1000, C_W = 4218, C_I = 2050, L_F = 3.34e5, L_V = 2.5e6, L_S = 2.834e6, REC = 0.85, SC = 0.6;
 const pSatIce = (T) => 611.2 * Math.exp((22.46 * (T - TF)) / (T - 0.53)); // Magnus form over ice
 const LANGMUIR_D = { w: [0.05, 0.1, 0.2, 0.3, 0.2, 0.1, 0.05], r: [0.31, 0.52, 0.71, 1, 1.37, 1.74, 2.22] };
+const SLD_UM = 40; // CS/FAR 25 Appendix O: supercooled large drops are spectra beyond the 40 µm maximum mean effective diameter of Appendix C continuous-maximum cloud
 const rLE = (tc, c) => 1.1019 * tc * tc * c; // NACA 4-digit leading-edge radius
 /** Air state at the icing condition. */
 const air = (alt, T_C) => { const p = isa(alt).p, T = T_C + TF, rho = p / (R_AIR * T), mu = sutherland(T); return { p, T, rho, mu, k: kAir(T) }; };
@@ -83,8 +84,8 @@ const CLOUD = [
   { key: 'V', label: 'True airspeed', unit: 'm/s', default: 90, min: 5, max: 300, group: 'Flight condition' },
   { key: 'alt_m', label: 'Pressure altitude', unit: 'm', default: 3000, min: 0, max: 12000, group: 'Flight condition' },
   { key: 'T_C', label: 'Static air temperature', unit: '°C', default: -10, min: -40, max: 5, group: 'Cloud', help: 'Supercooled cloud exists mostly between 0 and −20 °C, rarely below −30 °C' },
-  { key: 'lwc', label: 'Liquid water content', unit: 'g/m³', default: 0.5, min: 0, max: 5, group: 'Cloud', help: 'Typically 0.1–0.8 in layer cloud and up to about 3 in convective cloud; take the design value from the certification envelope you are working to' },
-  { key: 'mvd', label: 'Median volumetric diameter', unit: 'µm', default: 20, min: 5, max: 1000, group: 'Cloud', help: '15–40 µm in ordinary cloud; above about 50 µm is supercooled large droplet (SLD) icing' },
+  { key: 'lwc', label: 'Liquid water content', unit: 'g/m³', default: 0.5, min: 0, max: 5, group: 'Cloud', help: 'Typically 0.1–0.8 in layer cloud and up to about 3 in convective cloud. The default is illustrative: take the design value from the certification envelope you are working to (it falls with temperature and droplet size; CS/FAR 25 Appendix C take-off icing is 0.35 g/m³ at 20 µm and −9 °C)' },
+  { key: 'mvd', label: 'Median volumetric diameter', unit: 'µm', default: 20, min: 5, max: 1000, group: 'Cloud', help: '15–40 µm in ordinary cloud; above 40 µm is supercooled large drop (SLD) icing, outside the ordinary certification envelope' },
   { key: 'chord', label: 'Chord', unit: 'm', default: 1.5, min: 0.01, group: 'Geometry' },
   { key: 'tc', label: 'Thickness ratio', unit: '-', default: 0.12, min: 0.04, max: 0.3, group: 'Geometry', help: 'Sets the leading-edge radius 1.1019·(t/c)²·c' },
   { key: 'd_le', label: 'Leading-edge diameter override', unit: 'm', default: 0, min: 0, group: 'Geometry', help: '0 uses the NACA leading-edge radius; enter a diameter for a strut, probe or cylinder' },
@@ -94,7 +95,7 @@ const cloudDefaults = (c, d) => {
   return { V: (wing ? V0 * Math.sqrt(isa(c.atm.alt_m).rho / isa(alt).rho) : V0) || undefined, alt_m: alt, T_C: N.clamp(isa(alt, c.atm.dISA_K).T - TF, -25, -5), chord: (wing ? d.mac : c.rotor.chord_m) || undefined, tc: wing ? c.wing.tc : 0.12 };
 };
 const radius = (i) => (i.d_le > 0 ? i.d_le / 2 : rLE(i.tc, i.chord));
-const sldNote = (i, w) => { if (i.mvd > 50) w.push(`MVD ${i.mvd} µm is in the supercooled-large-droplet range: droplet splashing, break-up and impingement well aft of the protected zone are not modelled, so catch on the leading edge is over-predicted and aft ice is missed.`); };
+const sldNote = (i, w) => { if (i.mvd > SLD_UM) w.push(`MVD ${i.mvd} µm is in the supercooled-large-droplet range: droplet splashing, break-up and impingement well aft of the protected zone are not modelled, so catch on the leading edge is over-predicted and aft ice is missed.`); };
 
 const impingement = {
   id: 'impingement', title: 'Droplet trajectories and collection efficiency', fidelity: 'numerical',
@@ -124,7 +125,7 @@ const impingement = {
         { key: 's_limit_mm', label: 'Impingement limit, surface distance', value: col.thetaMax * R * 1e3, unit: 'mm', note: 'Measured from the stagnation line on each surface' },
         { key: 'catch_kg_m_s', label: 'Water catch per unit span', value: catchRate, unit: 'kg/(m·s)' },
         { key: 'r_le_mm', label: 'Leading-edge radius', value: R * 1e3, unit: 'mm' },
-        { key: 'sld_flag', label: 'Supercooled large droplets', value: i.mvd > 50 ? 1 : 0, unit: '', status: i.mvd > 50 ? 'warn' : 'ok', note: '1 when MVD exceeds 50 µm' },
+        { key: 'sld_flag', label: 'Supercooled large droplets', value: i.mvd > SLD_UM ? 1 : 0, unit: '', status: i.mvd > SLD_UM ? 'warn' : 'ok', note: '1 when MVD exceeds 40 µm (Appendix O)' },
       ],
       plots: [
         { type: 'line', title: 'Local collection efficiency', xlabel: 'Surface angle from stagnation [deg]', ylabel: 'β [-]', series: [{ name: i.dist, x: th.map(N.deg), y: th.map(col.fn) }, ...(col.parts.length > 1 ? [{ name: 'MVD only', x: th.map(N.deg), y: th.map((t) => (t <= mono.t.thetaMax ? N.interp1(mono.t.theta, mono.t.beta, t) : 0)), style: 'dash' }] : [])], annotations: [{ x: N.deg(col.thetaMax), label: 'Impingement limit' }] },
@@ -151,7 +152,7 @@ const impingement = {
   },
   recommend(res, i) {
     const o = res.outputs, out = [];
-    if (i.mvd > 50) out.push({ severity: 'warn', title: 'Supercooled large droplet conditions', detail: `MVD ${i.mvd} µm. Ice forms aft of conventional protected zones as ridges that cause large lift and control losses.`, action: 'Treat as outside ordinary cloud-icing protection: check the aircraft is approved for these conditions, plan an immediate exit, and analyse aft impingement with a splashing-capable 3-D code.', basis: 'Large-droplet impingement physics' });
+    if (i.mvd > SLD_UM) out.push({ severity: 'warn', title: 'Supercooled large droplet conditions', detail: `MVD ${i.mvd} µm. Ice forms aft of conventional protected zones as ridges that cause large lift and control losses.`, action: 'Treat as outside ordinary cloud-icing protection: check the aircraft is approved for these conditions, plan an immediate exit, and analyse aft impingement with a splashing-capable 3-D code.', basis: 'Large-droplet impingement physics; MVD above the 40 µm anchor of CS/FAR 25 Appendix O' });
     out.push({ severity: 'info', title: 'Size the protected zone from the impingement limit', detail: `Droplets strike up to ${o.s_limit_mm.toFixed(1)} mm (${o.theta_limit_deg.toFixed(0)}°) from the stagnation line at zero incidence.`, action: 'Extend heaters or boots beyond this limit with allowance for the incidence range and for runback; a smaller heated area cuts electrical or bleed demand and therefore fuel burn.', basis: 'Trajectory impingement limits' });
     if (o.E_total > 0.6) out.push({ severity: 'advise', title: 'Small leading edge collects efficiently', detail: `Total collection efficiency ${(100 * o.E_total).toFixed(0)}%: thin sections, tails, probes and rotor blades ice faster than the wing.`, action: 'Check tailplane and blade icing first; they limit the aircraft before the wing does.', basis: 'Inertia parameter scaling' });
     return out;
@@ -181,7 +182,7 @@ const accretion = {
   inputs: [...CLOUD,
     { key: 'rh', label: 'Relative humidity of the airstream', unit: '-', default: 1, min: 0, max: 1, group: 'Cloud', help: '1 inside cloud' },
     { key: 'time_min', label: 'Exposure time', unit: 'min', default: 10, min: 0.1, max: 120, group: 'Flight condition', help: 'Time in cloud without ice protection or since the last de-icing cycle' },
-    { key: 'rho_ice', label: 'Ice density', unit: 'kg/m³', default: 900, min: 300, max: 917, group: 'Model', help: '917 clear glaze, 850–900 typical, down to 300–600 for feathery rime' },
+    { key: 'rho_ice', label: 'Ice density', unit: 'kg/m³', default: 900, min: 300, max: 917, group: 'Model', help: 'Typical accreted ice 850–900; solid ice is 916.7 (clear glaze approaches it); 300–600 for feathery rime. Calibration parameter' },
     { key: 'k_h', label: 'Roughness heat-transfer multiplier', unit: '-', default: 1.5, min: 1, max: 4, group: 'Model', help: 'Ratio of rough-ice to smooth laminar-cylinder heat transfer: 1 clean surface, 1.5–3 on accreted ice' },
     { key: 'q_heat', label: 'Surface heater flux', unit: 'W/m²', default: 0, min: 0, max: 1e5, group: 'Model', help: '0 for an unprotected surface' },
     { key: 'dist', label: 'Droplet size distribution', type: 'select', options: ['Monodisperse (MVD)', 'Langmuir D'], default: 'Monodisperse (MVD)', group: 'Cloud' },
@@ -211,6 +212,7 @@ const accretion = {
         { key: 'runback_kg_m_s', label: 'Runback leaving the leading edge', value: 2 * r.st[r.st.length - 1].mOut * r.R0 * (r.th[1] - r.th[0]), unit: 'kg/(m·s)', note: 'Can refreeze aft of a heated zone' },
         { key: 'mass_balance_error', label: 'Water mass balance residual', value: res, unit: '-', status: Math.abs(res) < 1e-9 ? 'ok' : 'warn' },
         { key: 'h_stag_Wm2K', label: 'Stagnation heat-transfer coefficient', value: hCyl(0, i.V, 2 * (r.R0 + r.tk[0]), r.a, i.k_h), unit: 'W/(m²·K)' },
+        { key: 'cloud_extent_km', label: 'Distance flown in cloud during the exposure', value: (i.V * i.time_min * 60) / 1e3, unit: 'km', note: 'Appendix C standard cloud extents are 17.4 nmi (32 km) continuous maximum and 2.6 nmi (4.8 km) intermittent maximum; the design water content is scaled for other extents' },
       ],
       plots: [
         { type: 'line', title: 'Ice thickness around the leading edge', xlabel: 'Surface angle from stagnation [deg]', ylabel: 'Ice thickness [mm]', series: [{ name: `After ${i.time_min} min`, x: deg, y: r.tk.map((v) => v * 1e3) }] },
@@ -221,8 +223,8 @@ const accretion = {
       ],
       outputs: { ice_type_code: kind === 'rime' ? 1 : kind === 'mixed' ? 2 : kind === 'glaze' ? 3 : 0 },
       warnings,
-      models: ['Messinger control-volume mass and energy balance with runback', 'Lagrangian droplet impingement on the growing leading-edge cylinder', 'Frössling laminar cylinder heat transfer with a roughness multiplier (empirical)', 'Chilton–Colburn heat–mass transfer analogy for evaporation and sublimation', 'Multi-step quasi-steady ice growth'],
-      assumptions: ['Leading edge treated as a cylinder at zero incidence; ice grows normal to the original surface', 'Unfrozen water runs back along the surface at 0 °C; no shedding, splashing or film dynamics', 'Constant ice density; conduction into the structure neglected', 'Recovery factor 0.85 and freestream speed in the kinetic terms'],
+      models: ['Messinger (1953) control-volume mass and energy balance with runback', 'Lagrangian droplet impingement on the growing leading-edge cylinder', 'Frössling laminar cylinder heat transfer with a roughness multiplier (empirical)', 'Chilton–Colburn heat–mass transfer analogy for evaporation and sublimation', 'Multi-step quasi-steady ice growth'],
+      assumptions: ['Leading edge treated as a cylinder at zero incidence; ice grows normal to the original surface', 'Unfrozen water runs back along the surface at 0 °C; no shedding, splashing or film dynamics', 'Constant ice density; conduction into the structure neglected', 'Recovery factor 0.85 and freestream speed in the kinetic terms', 'The default cloud (0.5 g/m³, 20 µm) and exposure time are illustrative, not a certification design point; ice density and the roughness heat-transfer multiplier are typical values'],
     };
   },
   convergence: { param: 'nSteps', label: 'Time steps (geometry updates)', levels: [1, 2, 4, 8], metric: 'ice_thickness_mm' },
@@ -250,6 +252,12 @@ const accretion = {
 
 // ---- empirical aerodynamic penalties ----------------------------------------------------------------
 /** Empirical section penalties from an ice (or roughness) height ratio k/c and freezing fraction. */
+/** Stagnation-line estimate of the ice a case collects in the default cloud (0.5 g/m³, 20 µm) in tMin minutes: default for analyses run on their own. */
+function iceEstimate(c, d, tMin = 10) {
+  const cd = cloudDefaults(c, d), i = { ...Object.fromEntries(CLOUD.map((f) => [f.key, f.default])), ...Object.fromEntries(Object.entries(cd).filter(([, v]) => Number.isFinite(v))) };
+  const a = air(i.alt_m, i.T_C), R = radius(i), q = inertia(i.V, i.mvd * 1e-6, R, a), m = messinger({ beta: q.beta0, mIn: 0, h: hCyl(0, i.V, 2 * R, a, 1.5), V: i.V, T: a.T, p: a.p, lwc: i.lwc / 1e3, rh: 1, q: 0 }), t = (m.mIce / 900) * tMin * 60;
+  return { mm: t * 1e3, n: m.mIce > 0 ? m.n : 1, kg_m: 900 * t * R }; // mass: thickness tapering to zero about one radian either side of the stagnation line
+}
 const penalty = (kc, n, A, m, ch, cr) => ({ dcl: kc > 0 ? Math.min(0.6, A * kc ** m) : 0, dcd: kc > 0 ? cr + ch * kc * (1 - 0.7 * N.clamp(n, 0, 1)) : 0 });
 const degradation = {
   id: 'degradation', title: 'Aerodynamic penalties of the ice (empirical)', fidelity: 'reduced-order',
@@ -257,7 +265,7 @@ const degradation = {
   equations: ['Iced-airfoil aerodynamic models', 'Aerodynamic–icing feedback equations'],
   applicable: (c) => (c.wing.S_m2 > 0 ? true : 'This analysis needs a wing; rotor and propeller penalties are in the blade-icing analysis.'),
   inputs: [
-    { key: 'ice_mm', label: 'Ice thickness on the leading edge', unit: 'mm', default: 8, min: 0, max: 150, group: 'Ice', help: 'From the accretion analysis' },
+    { key: 'ice_mm', label: 'Ice thickness on the leading edge', unit: 'mm', default: 8, min: 0, max: 150, group: 'Ice', help: 'From the accretion analysis; otherwise a stagnation-line estimate for 10 minutes in the default cloud at this aircraft\'s speed and leading-edge radius' },
     { key: 'freezing_fraction', label: 'Freezing fraction', unit: '-', default: 0.5, min: 0, max: 1, group: 'Ice', help: '1 = streamlined rime, low values = glaze horns' },
     { key: 'ice_mass_kg_m', label: 'Ice mass per unit span', unit: 'kg/m', default: 0.5, min: 0, group: 'Ice' },
     { key: 'span_frac', label: 'Unprotected fraction of wing span', unit: '-', default: 1, min: 0, max: 1, group: 'Ice', help: '1 = no ice protection or system failed' },
@@ -278,7 +286,8 @@ const degradation = {
     { key: 'dcd_rough', label: 'Roughness drag increment', unit: '-', default: 0.002, min: 0, max: 0.01, group: 'Empirical model', help: 'Section drag added by a rough leading edge even when the ice is thin' },
   ],
   defaults: (c, up, d) => { const p = c.prop, jet = p.type === 'turbofan' || p.type === 'turbojet', alt = Math.min(c.atm.alt_m, 5000), V = c.flight.V_ms * Math.sqrt(isa(c.atm.alt_m).rho / isa(alt).rho);
-    return { ice_mm: up.icing?.ice_max_mm ?? up.icing?.ice_thickness_mm, freezing_fraction: up.icing?.freezing_fraction, ice_mass_kg_m: up.icing?.ice_mass_kg_m, chord: d.mac || undefined, S: c.wing.S_m2, b: c.wing.b_m, tail_frac: (c.htail.S_m2 + c.vtail.S_m2) / c.wing.S_m2, mass_kg: c.mass.mtow_kg, V, alt_m: alt, CLmax: up.cfd?.CLmax ?? c.aero.CLmax_clean, CD0: up.cfd?.CD0 ?? c.aero.CD0, k: up.cfd?.k_induced ?? (d.k_induced || undefined), sfc_power: p.type === 'electric' ? 0 : jet ? p.tsfc_kg_Ns / Math.max(V, 1) : p.bsfc_kg_Ws / Math.max(p.eta_prop, 0.3) }; },
+    const est = up.icing?.ice_thickness_mm === undefined ? iceEstimate(c, d) : null;
+    return { ice_mm: up.icing?.ice_max_mm ?? up.icing?.ice_thickness_mm ?? est.mm, freezing_fraction: up.icing?.freezing_fraction ?? est?.n, ice_mass_kg_m: up.icing?.ice_mass_kg_m ?? est?.kg_m, chord: d.mac || undefined, S: c.wing.S_m2, b: c.wing.b_m, tail_frac: (c.htail.S_m2 + c.vtail.S_m2) / c.wing.S_m2, mass_kg: c.mass.mtow_kg, V, alt_m: alt, CLmax: up.cfd?.CLmax ?? c.aero.CLmax_clean, CD0: up.cfd?.CD0 ?? c.aero.CD0, k: up.cfd?.k_induced ?? (d.k_induced || undefined), sfc_power: p.type === 'electric' ? 0 : jet ? p.tsfc_kg_Ns / Math.max(V, 1) : p.bsfc_kg_Ws / Math.max(p.eta_prop, 0.3) }; },
   run(i) {
     const a = isa(i.alt_m), q = 0.5 * a.rho * i.V ** 2, W = i.mass_kg * G0, kc = (i.ice_mm / 1e3) / i.chord, pn = penalty(kc, i.freezing_fraction, i.A_cl, i.m_cl, i.cd_horn, i.dcd_rough);
     const dCLmax = pn.dcl * Math.min(1, i.span_frac * 1.5), dCD = pn.dcd * i.span_frac * (1 + i.tail_frac), CL = W / (q * i.S), CDc = i.CD0 + i.k * CL * CL, CDi = CDc + dCD;
@@ -306,7 +315,7 @@ const degradation = {
         { type: 'bar', title: 'Drag coefficient, clean and iced', ylabel: 'CD [-]', categories: ['Clean', 'Iced'], stacked: true, series: [{ name: 'Zero-lift', y: [i.CD0, i.CD0] }, { name: 'Induced', y: [i.k * CL * CL, i.k * CL * CL] }, { name: 'Ice', y: [0, dCD] }] },
       ],
       warnings,
-      models: ['Power-law maximum-lift loss against ice height ratio (empirical, Brumby-type trend; default coefficients indicative)', 'Protuberance drag of the ice shape plus a roughness increment (empirical)', 'Parabolic drag polar for the clean aircraft'],
+      models: ['Power-law maximum-lift loss against ice height ratio (empirical, Brumby-type trend; the default coefficients are this suite\'s indicative fit, not a published formula)', 'Protuberance drag of the ice shape plus a roughness increment (empirical)', 'Parabolic drag polar for the clean aircraft'],
       assumptions: ['Penalties scale with the unprotected span fraction; the tail carries the same section penalty', 'Lift-curve slope and trim changes, tailplane stall and control hinge-moment effects are not modelled', 'Added ice weight is reported but not included in the stall speed'],
     };
   },
@@ -322,8 +331,8 @@ const degradation = {
   },
   recommend(res, i) {
     const o = res.outputs, out = [];
-    if (o.stall_margin < 1.3) out.push({ severity: o.stall_margin < 1.15 ? 'critical' : 'warn', title: 'Reduced stall margin with ice', detail: `Iced stall speed ${o.V_stall_iced_ms.toFixed(1)} m/s (+${o.dV_stall_pct.toFixed(0)}%); margin ${o.stall_margin.toFixed(2)}.`, action: 'Raise minimum manoeuvring and approach speeds, limit bank angle and flap extension, and leave the icing layer.', basis: '1.3 × stall speed margin with the estimated iced CLmax' });
-    if (o.dCD_pct > 20) out.push({ severity: 'advise', title: 'Significant drag and fuel penalty', detail: `Drag +${o.dCD_pct.toFixed(0)}%, about ${o.fuel_penalty_kg_h.toFixed(1)} kg/h more fuel (${o.co2_penalty_kg_h.toFixed(1)} kg/h CO₂) and ${o.ice_mass_total_kg.toFixed(0)} kg of ice.`, action: 'Compare this with the ice-protection power in the protection analysis: running the system is normally the lower-fuel option; route or level changes to avoid icing save both.', basis: 'Drag power and specific fuel consumption' });
+    if (o.stall_margin < 1.3) out.push({ severity: o.stall_margin < 1.15 ? 'critical' : 'warn', title: 'Reduced stall margin with ice', detail: `Iced stall speed ${o.V_stall_iced_ms.toFixed(1)} m/s (+${o.dV_stall_pct.toFixed(0)}%); margin ${o.stall_margin.toFixed(2)}.`, action: 'Raise minimum manoeuvring and approach speeds, limit bank angle and flap extension, and leave the icing layer.', basis: '1.3 × stall speed margin with the estimated iced CLmax (empirical lift-loss trend with unverified default coefficients: confirm with tunnel or flight data)' });
+    if (o.dCD_pct > 20) out.push({ severity: 'advise', title: 'Significant drag and fuel penalty', detail: `Drag +${o.dCD_pct.toFixed(0)}%, about ${o.fuel_penalty_kg_h.toFixed(1)} kg/h more fuel (${o.co2_penalty_kg_h.toFixed(1)} kg/h CO₂) and ${o.ice_mass_total_kg.toFixed(o.ice_mass_total_kg < 10 ? 1 : 0)} kg of ice.`, action: 'Compare this with the ice-protection power in the protection analysis: running the system is normally the lower-fuel option; route or level changes to avoid icing save both.', basis: 'Drag power and specific fuel consumption' });
     out.push({ severity: 'info', title: 'Empirical estimate', detail: 'The lift and drag penalties are correlations with large scatter between ice shapes.', action: 'Calibrate the four coefficients against tunnel data, or hand the ice shape to a RANS solver for the iced-section polar.', basis: 'Model limitation' });
     return out;
   },
@@ -360,14 +369,14 @@ const protection = {
     return { ...cloudDefaults(c, d), span_prot: rot ? 0.8 * c.rotor.R_m * c.rotor.n_blades * (c.meta.type === 'helicopter' ? 1 : c.prop.n_eng) || undefined : 0.75 * c.wing.b_m + 0.8 * c.htail.b_m, sfc_elec: c.prop.type === 'electric' ? 0 : undefined, batt_kWh: c.prop.type === 'electric' ? c.systems.batt_kWh : undefined, heated_pct: rot ? 12 : undefined }; },
   run(i) {
     const r = protect(i), A = r.A1 * i.span_prot, Prw = (r.qRW * A) / i.eta_heater, Pev = (r.qEV * A) / i.eta_heater, duty = N.clamp(i.t_on / i.t_cycle, 0, 1);
-    const Pde = ((i.q_deice * A * (1 - i.ps_frac) * duty + r.qRW * A * i.ps_frac) / i.eta_heater), rate = (r.tr.beta0 * (i.lwc / 1e3) * i.V) / i.rho_ice, tIC = rate * (i.t_cycle - i.t_on);
+    const Pde = ((i.q_deice * A * (1 - i.ps_frac) * duty + r.qRW * A * i.ps_frac) / i.eta_heater), m0 = messinger({ beta: r.tr.beta0, mIn: 0, h: hCyl(0, i.V, 2 * r.R, r.a, i.k_h), V: i.V, T: r.a.T, p: r.a.p, lwc: i.lwc / 1e3, rh: 1, q: 0 }), rate = m0.mIce / i.rho_ice, tIC = rate * Math.max(0, i.t_cycle - i.t_on); // unheated stagnation-line growth between pulses: zero when kinetic heating keeps the surface above freezing
     const eNeed = i.rho_ice * (0.5 * tIC * C_I * Math.max(TF - r.a.T, 0) + 1e-4 * (L_F + C_I * Math.max(TF - r.a.T, 0))), eHave = i.q_deice * i.t_on * i.eta_heater, bleed = Prw * i.eta_heater / (0.6 * CP_AIR * i.dT_bleed), warnings = [];
     sldNote(i, warnings);
     if (r.runback > 0) warnings.push(`Running wet, ${(r.runback * i.span_prot * 3600).toFixed(1)} kg/h of water leaves the heated zone and can refreeze behind it as a runback ridge.`);
     if (r.qEV > 4e4) warnings.push('The fully evaporative heat flux exceeds 40 kW/m², beyond what electro-thermal mats normally deliver; this condition is a running-wet or de-icing case.');
     if (eHave < eNeed) warnings.push('The de-icing pulse delivers less energy than is needed to warm the ice layer and melt the bond line: lengthen the on-time or raise the heater flux.');
-    if (r.Trec > TF) warnings.push('The recovery temperature is above freezing: no ice protection heat is required at this speed and temperature.');
-    const Ts = N.linspace(-30, -1, 30), sw = Ts.map((t) => protect({ ...i, T_C: t })), fuel = (P) => P * i.sfc_elec * 3600;
+    if (r.Trec > TF) warnings.push(m0.mIce > 0 ? 'The recovery temperature is above freezing, but evaporative cooling and the cold water load still freeze part of the catch on an unheated surface: some protection is needed.' : 'The recovery temperature is above freezing and the unheated surface stays wet: kinetic heating alone prevents ice at this speed, temperature and water content.');
+    const Ts = N.linspace(-30, -1, 12), sw = Ts.map((t) => protect({ ...i, T_C: t })), fuel = (P) => P * i.sfc_elec * 3600; // each point re-solves the droplet trajectories: keep the sweep short
     return {
       kpis: [
         { key: 'antiice_power_W', label: 'Running-wet anti-icing power', value: Prw, unit: 'W' },
@@ -378,7 +387,7 @@ const protection = {
         { key: 'heated_area_m2', label: 'Heated area', value: A, unit: 'm²' },
         { key: 'water_catch_kg_h', label: 'Water catch on the protected span', value: r.mCatch * i.span_prot * 3600, unit: 'kg/h' },
         { key: 'runback_kg_h', label: 'Runback when running wet', value: r.runback * i.span_prot * 3600, unit: 'kg/h', status: r.runback > 0 ? 'warn' : 'ok' },
-        { key: 'intercycle_ice_mm', label: 'Inter-cycle ice thickness', value: tIC * 1e3, unit: 'mm', status: tIC < 0.003 ? 'ok' : 'warn', note: 'Rime growth between heater pulses; keep to a few millimetres' },
+        { key: 'intercycle_ice_mm', label: 'Inter-cycle ice thickness', value: tIC * 1e3, unit: 'mm', status: tIC < 0.003 ? 'ok' : 'warn', note: 'Stagnation-line growth between heater pulses (Messinger freezing rate); keep to a few millimetres' },
         { key: 'deice_energy_ratio', label: 'De-icing pulse energy / required', value: eHave / eNeed, unit: '-', status: eHave >= eNeed ? 'ok' : 'bad' },
         { key: 'bleed_kgs', label: 'Equivalent bleed-air flow (running wet)', value: bleed, unit: 'kg/s' },
         { key: 'fuel_penalty_kg_h', label: 'Fuel for running-wet power', value: fuel(Prw), unit: 'kg/h' },
@@ -392,25 +401,28 @@ const protection = {
       outputs: { h_protected_Wm2K: r.h },
       warnings,
       models: ['Steady surface energy balance: convection, droplet sensible heating, kinetic heating and evaporation', 'Chilton–Colburn analogy for evaporation', 'Flat-plate turbulent or cylinder laminar heat transfer, whichever is larger (empirical correlations)', 'Duty-cycle average for electro-thermal de-icing with a parting strip'],
-      assumptions: ['Heated zone treated as one control volume at uniform temperature', 'Water catch from the leading-edge cylinder at zero incidence', 'De-icing bond-line criterion: warm half the ice layer and melt 0.1 mm at the interface; skin thermal mass neglected', 'Bleed estimate assumes 60% piccolo effectiveness'],
+      assumptions: ['Heated zone treated as one control volume at uniform temperature', 'Water catch from the leading-edge cylinder at zero incidence', 'De-icing bond-line criterion: warm half the ice layer and melt 0.1 mm at the interface; skin thermal mass neglected', 'Bleed estimate assumes 60% piccolo effectiveness', 'Heater flux, on-time, cycle period, parting-strip share and heater efficiency are typical values, not data for a specific system; the default cloud is illustrative'],
     };
   },
   calibration: { params: [{ key: 'k_h', min: 1, max: 3 }, { key: 'eta_heater', min: 0.5, max: 1 }], sweep: 'T_C', target: 'q_running_wet_Wm2', note: 'Supply measured heater flux needed to hold the surface temperature against air temperature in an icing tunnel.' },
   verify() {
     const b = { V: 80, alt_m: 0, T_C: -10, lwc: 0, mvd: 20, chord: 1, tc: 0.12, d_le: 0, heated_pct: 10, span_prot: 5, T_surf_C: 5, k_h: 1, eta_heater: 1, q_deice: 20000, t_on: 10, t_cycle: 100, ps_frac: 0, rho_ice: 900, dT_bleed: 120, sfc_elec: 0, batt_kWh: 0 };
     const dry = protection.run(b), o = N.kv(dry), h = dry.outputs.h_protected_Wm2K, Trec = 263.15 + (0.85 * 6400) / (2 * CP_AIR), wet = N.kv(protection.run({ ...b, lwc: 0.5 }));
+    const cold = N.kv(protection.run({ ...b, lwc: 0.2, T_C: -25 })), qi = inertia(80, 20e-6, rLE(0.12, 1), air(0, -25)), b0 = trajectories(qi.K, qi.Red, 16).beta0;
     return [
       N.check('Dry air: power = h·A·(Ts − Trec)', o.antiice_power_W, h * 1 * (278.15 - Trec), 1e-10, 'Newton cooling of the heated zone'),
       N.check('De-icing average power = q·A·t_on/t_cycle', o.deice_power_W, 20000 * 1 * 0.1, 1e-12, 'Duty cycle'),
       N.check('Evaporative power exceeds running-wet power', wet.evap_power_W > wet.antiice_power_W ? 1 : 0, 1, 1e-12, 'Latent heat of the full catch'),
       N.check('Wet running adds droplet heating and evaporation', wet.antiice_power_W > o.antiice_power_W ? 1 : 0, 1, 1e-12, 'Energy balance ordering'),
+      N.check('Inter-cycle ice in the rime limit = β0·LWC·V·(t_cycle − t_on)/ρ_ice', cold.intercycle_ice_mm, ((b0 * 0.2e-3 * 80 * 90) / 900) * 1e3, 0.03, 'All impinging water freezes; sublimation removes about 2%'),
+      N.check('No inter-cycle ice when kinetic heating keeps the unheated surface wet', N.kv(protection.run({ ...b, lwc: 0.2, T_C: -3, V: 200 })).intercycle_ice_mm, 0, 1e-12, 'Recovery temperature −3 + 16.9 °C: no freezing in the Messinger balance'),
     ];
   },
   recommend(res, i) {
     const o = res.outputs, out = [];
     out.push({ severity: 'info', title: 'Choose the protection mode by energy', detail: `Cyclic de-icing ${(o.deice_power_W / 1e3).toFixed(1)} kW, running wet ${(o.antiice_power_W / 1e3).toFixed(1)} kW, fully evaporative ${(o.evap_power_W / 1e3).toFixed(1)} kW.`, action: 'Use evaporative anti-icing only where no runback or shed ice can be tolerated (engine intakes, probes); de-ice the wing and tail cyclically to cut power off-take, fuel and CO₂.', basis: 'Surface energy balance' });
     if (o.runback_kg_h > 0) out.push({ severity: 'advise', title: 'Runback water leaves the heated zone', detail: `${o.runback_kg_h.toFixed(1)} kg/h.`, action: 'Extend the heated zone, raise the surface temperature, or accept and periodically shed a runback ridge; check its aerodynamic effect.', basis: 'Water mass balance' });
-    if (o.intercycle_ice_mm > 3) out.push({ severity: 'warn', title: 'Thick inter-cycle ice', detail: `${o.intercycle_ice_mm.toFixed(1)} mm builds between pulses.`, action: 'Shorten the cycle period; inter-cycle ice still costs lift and drag.', basis: 'Accretion rate × off-time' });
+    if (o.intercycle_ice_mm > 3) out.push({ severity: o.intercycle_ice_mm > 6 ? 'warn' : 'advise', title: 'Thick inter-cycle ice', detail: `${o.intercycle_ice_mm.toFixed(1)} mm builds between pulses with a ${i.t_cycle.toFixed(0)} s cycle.`, action: `Shorten the cycle period to about ${Math.max(i.t_on + 5, (i.t_cycle - i.t_on) * (2.5 / o.intercycle_ice_mm) + i.t_on).toFixed(0)} s to hold about 2.5 mm; inter-cycle ice still costs lift and drag.`, basis: 'Messinger freezing rate × off-time; a few millimetres is the usual design allowance' });
     if (i.batt_kWh > 0 && o.battery_pct_per_h > 15) out.push({ severity: 'warn', title: 'Ice protection is a major battery load', detail: `${o.battery_pct_per_h.toFixed(0)}% of the battery per hour when running wet.`, action: 'Prefer cyclic de-icing, hydrophobic or low-adhesion coatings and operational avoidance; include this load in the Suite 19 energy budget and reserves.', basis: 'Energy budget' });
     return out;
   },
@@ -490,6 +502,7 @@ const rotorIce = {
     { key: 'tc', label: 'Blade thickness ratio', unit: '-', default: 0.12, min: 0.04, max: 0.25, group: 'Rotor' },
     { key: 'rpm', label: 'Rotational speed', unit: 'rpm', default: 260, min: 10, group: 'Rotor' },
     { key: 'n_blades', label: 'Blades', unit: '', default: 4, min: 2, max: 12, step: 1, discrete: true, group: 'Rotor' },
+    { key: 'V_axial', label: 'Axial flight speed (propellers)', unit: 'm/s', default: 0, min: 0, max: 250, group: 'Rotor', help: '0 for a hovering rotor or static propeller; the flight speed for a propeller, which raises the section speed, the water catch and the kinetic heating' },
     { key: 'cd0', label: 'Clean blade profile drag coefficient', unit: '-', default: 0.01, min: 0.004, max: 0.05, group: 'Rotor' },
     ...CLOUD.filter((f) => ['alt_m', 'T_C', 'lwc', 'mvd'].includes(f.key)),
     { key: 'time_min', label: 'Exposure time', unit: 'min', default: 5, min: 0.1, max: 60, group: 'Flight condition' },
@@ -499,18 +512,20 @@ const rotorIce = {
     { key: 'cd_horn', label: 'Ice-shape drag coefficient', unit: '-', default: 1.0, min: 0, max: 3, group: 'Model', help: 'Empirical: Δcd = 0.002 + this × (k/c) × (1 − 0.7·freezing fraction)' },
     { key: 'nR', label: 'Radial stations', unit: '', default: 30, min: 8, max: 200, step: 1, discrete: true, group: 'Numerics' }],
   defaults: (c) => { const rot = c.rotor.R_m > 0, alt = Math.min(c.atm.alt_m, 5000), R = rot ? c.rotor.R_m : c.prop.prop_dia_m / 2;
-    return { R, chord: rot ? c.rotor.chord_m : 0.15 * R, rpm: (rot ? c.rotor.rpm : c.prop.rpm) || undefined, n_blades: (rot ? c.rotor.n_blades : c.prop.n_blades) || undefined, cd0: rot ? c.rotor.cd0 : undefined, alt_m: alt, T_C: N.clamp(isa(alt, c.atm.dISA_K).T - TF, -25, -5) }; },
+    return { R, chord: rot ? c.rotor.chord_m : 0.15 * R, rpm: (rot ? c.rotor.rpm : c.prop.rpm) || undefined, n_blades: (rot ? c.rotor.n_blades : c.prop.n_blades) || undefined, cd0: rot ? c.rotor.cd0 : undefined, alt_m: alt,
+      V_axial: rot ? 0 : c.flight.V_ms * Math.sqrt(isa(c.atm.alt_m).rho / isa(alt).rho), // propeller in flight at the same equivalent airspeed as the wing analyses
+      T_C: N.clamp(isa(alt, c.atm.dISA_K).T - TF, -25, -5) }; },
   run(i) {
     const Om = (i.rpm * 2 * PI) / 60, n = Math.round(N.clamp(i.nR, 8, 200)), rr = N.linspace(0.15, 1, n).map((x) => x * i.R), Rle = rLE(i.tc, i.chord), a = air(i.alt_m, i.T_C), tSec = i.time_min * 60;
-    const st = rr.map((r) => { const V = Math.max(Om * r, 1), q = inertia(V, i.mvd * 1e-6, Rle, a), m = messinger({ beta: q.beta0, mIn: 0, h: hCyl(0, V, 2 * Rle, a, i.k_h), V, T: a.T, p: a.p, lwc: i.lwc / 1e3, rh: 1, q: 0 }), rate = m.mIce / i.rho_ice, tShed = i.tau_adh / (i.rho_ice * Om * Om * r);
+    const Vax = i.V_axial || 0, st = rr.map((r) => { const V = Math.max(Math.hypot(Om * r, Vax), 1), q = inertia(V, i.mvd * 1e-6, Rle, a), m = messinger({ beta: q.beta0, mIn: 0, h: hCyl(0, V, 2 * Rle, a, i.k_h), V, T: a.T, p: a.p, lwc: i.lwc / 1e3, rh: 1, q: 0 }), rate = m.mIce / i.rho_ice, tShed = i.tau_adh / (i.rho_ice * Om * Om * r);
       const tk = Math.min(rate * tSec, tShed), pn = penalty(tk / i.chord, m.mIce > 0 ? m.n : 1, 1.8, 1 / 3, i.cd_horn, 0.002); return { r, V, m, rate, tShed, tk, shed: rate * tSec >= tShed, tToShed: rate > 0 ? tShed / rate : Infinity, pn }; });
     const w3 = st.map((s) => s.r ** 3), dP = N.trapz(rr, st.map((s, j) => s.pn.dcd * w3[j])) / (i.cd0 * N.trapz(rr, w3)), iced = st.filter((s) => s.tk > 0), free = st.find((s) => s.rate <= 0 && s.m.Trec > TF), shedSt = st.filter((s) => s.shed);
     const tFirst = Math.min(...st.map((s) => s.tToShed)), jMax = N.argmax(st.map((s) => s.tk)), wIce = 0.08 * i.chord, mBlade = N.trapz(rr, st.map((s) => i.rho_ice * s.tk * wIce));
     // out-of-balance force if one blade sheds its outboard ice (beyond the first shedding radius) and the others do not
     const jS = st.findIndex((s) => s.tToShed === tFirst), Fimb = Number.isFinite(tFirst) && jS >= 0 ? N.trapz(rr.slice(jS), st.slice(jS).map((s) => i.rho_ice * Math.min(s.rate * tFirst, s.tShed) * wIce * Om * Om * s.r)) : 0, warnings = ['Blade drag and lift penalties use the same empirical correlation as the wing analysis; calibrate before relying on the power figure.'];
-    if (i.mvd > 50) warnings.push('Supercooled large droplets: impingement aft of the blade leading-edge protection is not modelled.');
+    if (i.mvd > SLD_UM) warnings.push('Supercooled large droplets: impingement aft of the blade leading-edge protection is not modelled.');
     if (shedSt.length) warnings.push(`Ice sheds outboard of r/R = ${(shedSt[0].r / i.R).toFixed(2)} within the exposure time. Shedding is rarely symmetric: expect vibration and ice impact on the fuselage, tail rotor or pusher propeller.`);
-    if (Om * i.R / Math.sqrt(1.4 * R_AIR * a.T) > 0.75) warnings.push('Tip Mach number above 0.75: compressibility raises the true tip recovery temperature and heat transfer beyond this incompressible estimate.');
+    if (Math.hypot(Om * i.R, Vax) / Math.sqrt(1.4 * R_AIR * a.T) > 0.75) warnings.push('Tip Mach number above 0.75: compressibility raises the true tip recovery temperature and heat transfer beyond this incompressible estimate.');
     return {
       kpis: [
         { key: 'ice_max_mm', label: 'Maximum blade ice thickness', value: st[jMax].tk * 1e3, unit: 'mm', note: `at r/R = ${(st[jMax].r / i.R).toFixed(2)}` },
@@ -520,6 +535,7 @@ const rotorIce = {
         { key: 'shed_thickness_tip_mm', label: 'Shedding thickness at the tip', value: st[n - 1].tShed * 1e3, unit: 'mm' },
         { key: 'profile_power_increase_pct', label: 'Profile power increase', value: 100 * dP, unit: '%', status: dP < 0.2 ? 'ok' : dP < 0.6 ? 'warn' : 'bad', note: 'Empirical' },
         { key: 'ice_mass_blade_kg', label: 'Ice mass per blade', value: mBlade, unit: 'kg' },
+        { key: 'ice_mass_rotor_kg', label: 'Ice mass on all blades', value: Math.round(i.n_blades) * mBlade, unit: 'kg' },
         { key: 'imbalance_force_N', label: 'Out-of-balance force after one-blade shed', value: Fimb, unit: 'N', note: 'Rotating 1/rev hub force' },
         { key: 'iced_span_frac', label: 'Fraction of stations carrying ice', value: iced.length / n, unit: '-' },
         { key: 'T_recovery_tip_C', label: 'Tip recovery temperature', value: st[n - 1].m.Trec - TF, unit: '°C' },
@@ -533,23 +549,24 @@ const rotorIce = {
       outputs: { dCD_pct: 100 * dP, dCLmax_pct: 100 * Math.max(...st.map((s) => s.pn.dcl)) },
       warnings,
       models: ['Stagnation-line Messinger balance at each radius with the local blade speed', 'Langmuir–Blodgett stagnation collection efficiency (empirical fit)', 'Centrifugal shedding when ρ_ice·t·Ω²·r exceeds the adhesion shear strength', 'Empirical iced-section drag penalty weighted by r³ for profile power'],
-      assumptions: ['Hover or static operation: section speed is Ω·r; forward speed and inflow are neglected', 'Ice cohesion between neighbouring stations is ignored, so shedding is local and conservative in time', 'Ice strip width is 8% of chord for the mass and imbalance estimates', 'Adhesion strength is a single user value'],
+      assumptions: ['Section speed is the helical speed √((Ω·r)² + V²) with the entered axial speed (zero in hover); induced inflow and edgewise flight are neglected, and the power weighting r³ assumes rotational speed dominates', 'Ice cohesion between neighbouring stations is ignored, so shedding is local and conservative in time', 'Ice strip width is 8% of chord for the mass and imbalance estimates', 'Adhesion strength is a single user value: the 0.3 MPa default is an order-of-magnitude figure (reported values scatter widely with temperature, surface and ice type)', 'Drag-penalty coefficients are the unverified empirical defaults of the wing analysis; the default cloud is illustrative'],
     };
   },
   convergence: { param: 'nR', label: 'Radial stations', levels: [10, 20, 40, 80], metric: 'ice_mass_blade_kg' },
   calibration: { params: [{ key: 'tau_adh', min: 3e4, max: 1e6 }, { key: 'k_h', min: 1, max: 4 }, { key: 'cd_horn', min: 0.2, max: 2.5 }], sweep: 'time_min', target: 'r_shed_frac', note: 'Supply observed shedding radius (or torque rise, target profile_power_increase_pct) against exposure time from a rotor icing test.' },
   verify() {
-    const i = { R: 5, chord: 0.4, tc: 0.12, rpm: 300, n_blades: 4, cd0: 0.01, alt_m: 0, T_C: -20, lwc: 0.3, mvd: 20, time_min: 2, tau_adh: 3e5, rho_ice: 900, k_h: 1, cd_horn: 1, nR: 40 }, o = N.kv(rotorIce.run(i)), Om = 10 * PI;
+    const i = { R: 5, chord: 0.4, tc: 0.12, rpm: 300, n_blades: 4, V_axial: 0, cd0: 0.01, alt_m: 0, T_C: -20, lwc: 0.3, mvd: 20, time_min: 2, tau_adh: 3e5, rho_ice: 900, k_h: 1, cd_horn: 1, nR: 40 }, o = N.kv(rotorIce.run(i)), Om = 10 * PI;
     return [
       N.check('Tip shedding thickness = τ/(ρ·Ω²·R)', o.shed_thickness_tip_mm, (3e5 / (900 * Om * Om * 5)) * 1e3, 1e-12, 'Centrifugal force balance on the ice layer'),
       N.check('Tip recovery temperature = T + r·V²/2cp', o.T_recovery_tip_C, -20 + (0.85 * (Om * 5) ** 2) / (2 * CP_AIR), 1e-10, 'Adiabatic wall'),
       N.check('Tip speed', o.tip_speed_ms, Om * 5, 1e-12, 'Kinematics'),
+      N.check('Propeller in flight: tip recovery temperature uses the helical speed', N.kv(rotorIce.run({ ...i, V_axial: 100 })).T_recovery_tip_C, -20 + (0.85 * ((Om * 5) ** 2 + 1e4)) / (2 * CP_AIR), 1e-10, 'Adiabatic wall at √((ΩR)² + V²)'),
     ];
   },
   recommend(res, i) {
     const o = res.outputs, out = [];
-    if (o.r_shed_frac < 1) out.push({ severity: 'warn', title: 'Self-shedding of blade ice', detail: `First shed after ${o.t_first_shed_min.toFixed(1)} min, outboard of ${(100 * o.r_shed_frac).toFixed(0)}% radius; a one-blade shed gives about ${(o.imbalance_force_N / 1e3).toFixed(1)} kN of rotating imbalance.`, action: 'Check hub and mount loads in Suite 10, protect structure in the shed-ice path, and use blade heating in symmetric cycles so that blades shed together.', basis: 'Centrifugal force against adhesion strength' });
-    if (o.profile_power_increase_pct > 20) out.push({ severity: 'warn', title: 'Large power rise in icing', detail: `Profile power +${o.profile_power_increase_pct.toFixed(0)}% (empirical).`, action: 'Confirm the power margin in Suite 6; torque rise is the pilot’s main cue of rotor ice. More power is more fuel or battery energy, so plan the shortest exposure.', basis: 'Iced-section drag weighted by r³' });
+    if (o.r_shed_frac < 1) out.push({ severity: 'warn', title: 'Self-shedding of blade ice', detail: `First shed after ${o.t_first_shed_min.toFixed(1)} min, outboard of ${(100 * o.r_shed_frac).toFixed(0)}% radius; a one-blade shed gives about ${o.imbalance_force_N >= 1000 ? (o.imbalance_force_N / 1e3).toFixed(1) + ' kN' : o.imbalance_force_N.toFixed(o.imbalance_force_N < 10 ? 1 : 0) + ' N'} of rotating imbalance.`, action: 'Check hub and mount loads in Suite 10, protect structure in the shed-ice path, and use blade heating in symmetric cycles so that blades shed together.', basis: 'Centrifugal force against adhesion strength' });
+    if (o.profile_power_increase_pct > 20) out.push({ severity: o.profile_power_increase_pct > 60 ? 'warn' : 'advise', title: o.profile_power_increase_pct > 60 ? 'Large power rise in icing' : 'Noticeable power rise in icing', detail: `Blade profile power +${o.profile_power_increase_pct.toFixed(0)}% (empirical; profile power is typically a fifth to a quarter of rotor hover power and less than a tenth of propeller cruise power).`, action: 'Confirm the power margin in Suite 6; torque rise is the pilot’s main cue of rotor ice. More power is more fuel or battery energy, so plan the shortest exposure.', basis: 'Iced-section drag weighted by r³ (empirical penalty with unverified default coefficients)' });
     if (o.r_ice_free_frac < 1) out.push({ severity: 'info', title: 'Kinetic heating keeps the outer blade clear', detail: `No ice beyond ${(100 * o.r_ice_free_frac).toFixed(0)}% radius at ${i.T_C} °C.`, action: 'Heater mats can stop short of this radius at warm icing temperatures, but check the coldest design point, where ice reaches the tip.', basis: 'Recovery temperature above 0 °C' });
     return out;
   },

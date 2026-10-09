@@ -3,21 +3,29 @@
 // traceable allowables (e.g. MMPDS / CMH-17 basis values) before any substantiation work.
 // Units: E,G,Sy,Su [Pa]; rho [kg/m3]; k [W/m/K]; cp [J/kg/K]; alpha [1/K]; KIc [Pa sqrt(m)].
 // Fatigue: Basquin S = sf*(2N)^b (stress amplitude); Coffin-Manson ef, c; Paris da/dN = C (dK)^m with dK in MPa sqrt(m), da/dN in m/cycle.
+//
+// Sy, Su are TYPICAL strengths. Where a statistically based design allowable was verified against MIL-HDBK-5J
+// (see js/data/sources.json, ids mmpds-*), it is held separately as Sy_A (Fty) and Su_A (Ftu) [Pa], longitudinal grain,
+// with allow_ref naming the basis, product form and table. Strength margins should use designAllowables(); fatigue,
+// fracture and energy-absorption models keep the typical values. Elastic constants of the low-alloy steels and of
+// Ti-6Al-4V are the MIL-HDBK-5J values; the 300M strengths equal its S-basis values for the 280 ksi condition. Fatigue,
+// fracture, thermal and Johnson-Cook constants are unsourced typical values.
 
 export const METALS = {
-  'Al 2024-T3': { E: 73.1e9, G: 28e9, nu: 0.33, rho: 2780, Sy: 345e6, Su: 483e6, k: 121, cp: 875, alpha: 23.2e-6, KIc: 37e6, sf: 850e6, b: -0.086, ef: 0.22, c: -0.59, parisC: 5e-11, parisM: 3.0, dKth: 3.0, JC: { A: 369e6, B: 684e6, n: 0.73, C: 0.0083, m: 1.7, Tm: 775 } },
-  'Al 7075-T6': { E: 71.7e9, G: 26.9e9, nu: 0.33, rho: 2810, Sy: 503e6, Su: 572e6, k: 130, cp: 960, alpha: 23.6e-6, KIc: 29e6, sf: 1050e6, b: -0.09, ef: 0.19, c: -0.52, parisC: 2.7e-11, parisM: 3.3, dKth: 2.5, JC: { A: 520e6, B: 477e6, n: 0.52, C: 0.001, m: 1.61, Tm: 893 } },
-  'Al 7050-T7451': { E: 71.7e9, G: 26.9e9, nu: 0.33, rho: 2830, Sy: 469e6, Su: 524e6, k: 157, cp: 860, alpha: 23.5e-6, KIc: 35e6, sf: 950e6, b: -0.09, ef: 0.2, c: -0.55, parisC: 3e-11, parisM: 3.1, dKth: 2.5 },
+  'Al 2024-T3': { E: 73.1e9, G: 28e9, nu: 0.33, rho: 2780, Sy: 345e6, Su: 483e6, Sy_A: 324e6, Su_A: 441e6, allow_ref: 'MIL-HDBK-5J A-basis, bare sheet 0.010–0.128 in, Table 3.2.3.0(b1)', k: 121, cp: 875, alpha: 23.2e-6, KIc: 37e6, sf: 850e6, b: -0.086, ef: 0.22, c: -0.59, parisC: 5e-11, parisM: 3.0, dKth: 3.0, JC: { A: 369e6, B: 684e6, n: 0.73, C: 0.0083, m: 1.7, Tm: 775 } },
+  'Al 7075-T6': { E: 71.7e9, G: 26.9e9, nu: 0.33, rho: 2810, Sy: 503e6, Su: 572e6, Sy_A: 483e6, Su_A: 538e6, allow_ref: 'MIL-HDBK-5J A-basis, bare sheet 0.040–0.125 in, Table 3.7.6.0(b1)', k: 130, cp: 960, alpha: 23.6e-6, KIc: 29e6, sf: 1050e6, b: -0.09, ef: 0.19, c: -0.52, parisC: 2.7e-11, parisM: 3.3, dKth: 2.5, JC: { A: 520e6, B: 477e6, n: 0.52, C: 0.001, m: 1.61, Tm: 893 } },
+  'Al 7050-T7451': { E: 71.7e9, G: 26.9e9, nu: 0.33, rho: 2830, Sy: 469e6, Su: 524e6, Sy_A: 441e6, Su_A: 510e6, allow_ref: 'MIL-HDBK-5J S/A-basis design values, plate 0.250–1.500 in, Table 3.7.4.0(b1)', k: 157, cp: 860, alpha: 23.5e-6, KIc: 35e6, sf: 950e6, b: -0.09, ef: 0.2, c: -0.55, parisC: 3e-11, parisM: 3.1, dKth: 2.5 },
   'Al-Li 2195': { E: 76e9, G: 28.5e9, nu: 0.33, rho: 2700, Sy: 560e6, Su: 600e6, k: 90, cp: 900, alpha: 22e-6, KIc: 33e6, sf: 1000e6, b: -0.09, ef: 0.15, c: -0.55, parisC: 3e-11, parisM: 3.2, dKth: 2.5 },
-  'Ti-6Al-4V': { E: 113.8e9, G: 44e9, nu: 0.342, rho: 4430, Sy: 880e6, Su: 950e6, k: 6.7, cp: 526, alpha: 8.6e-6, KIc: 75e6, sf: 1700e6, b: -0.095, ef: 0.8, c: -0.7, parisC: 1e-11, parisM: 3.2, dKth: 4.0, JC: { A: 1098e6, B: 1092e6, n: 0.93, C: 0.014, m: 1.1, Tm: 1878 } },
-  'Steel 4340 (QT)': { E: 205e9, G: 80e9, nu: 0.29, rho: 7850, Sy: 1470e6, Su: 1720e6, k: 44.5, cp: 475, alpha: 12.3e-6, KIc: 60e6, sf: 2000e6, b: -0.091, ef: 0.48, c: -0.6, parisC: 5e-12, parisM: 3.0, dKth: 5.0, JC: { A: 792e6, B: 510e6, n: 0.26, C: 0.014, m: 1.03, Tm: 1793 } },
-  'Steel 300M': { E: 205e9, G: 80e9, nu: 0.28, rho: 7870, Sy: 1586e6, Su: 1931e6, k: 37, cp: 448, alpha: 11.3e-6, KIc: 57e6, sf: 2100e6, b: -0.09, ef: 0.4, c: -0.6, parisC: 5e-12, parisM: 3.0, dKth: 5.0 },
-  'Inconel 718': { E: 200e9, G: 77e9, nu: 0.29, rho: 8190, Sy: 1100e6, Su: 1375e6, k: 11.4, cp: 435, alpha: 13e-6, KIc: 100e6, sf: 2200e6, b: -0.1, ef: 0.5, c: -0.65, parisC: 4e-12, parisM: 3.1, dKth: 6.0 },
+  'Ti-6Al-4V': { E: 110.3e9, G: 42.7e9, nu: 0.31, rho: 4430, Sy: 880e6, Su: 950e6, Sy_A: 827e6, Su_A: 896e6, allow_ref: 'MIL-HDBK-5J A-basis, annealed plate 0.1875–2.000 in, Table 5.4.1.0(b)', k: 6.7, cp: 526, alpha: 8.6e-6, KIc: 75e6, sf: 1700e6, b: -0.095, ef: 0.8, c: -0.7, parisC: 1e-11, parisM: 3.2, dKth: 4.0, JC: { A: 1098e6, B: 1092e6, n: 0.93, C: 0.014, m: 1.1, Tm: 1878 } },
+  'Steel 4340 (QT)': { E: 200e9, G: 75.8e9, nu: 0.32, rho: 7850, Sy: 1470e6, Su: 1720e6, k: 44.5, cp: 475, alpha: 12.3e-6, KIc: 60e6, sf: 2000e6, b: -0.091, ef: 0.48, c: -0.6, parisC: 5e-12, parisM: 3.0, dKth: 5.0, JC: { A: 792e6, B: 510e6, n: 0.26, C: 0.014, m: 1.03, Tm: 1793 } },
+  'Steel 300M': { E: 200e9, G: 75.8e9, nu: 0.32, rho: 7870, Sy: 1586e6, Su: 1931e6, k: 37, cp: 448, alpha: 11.3e-6, KIc: 57e6, sf: 2100e6, b: -0.09, ef: 0.4, c: -0.6, parisC: 5e-12, parisM: 3.0, dKth: 5.0 },
+  'Inconel 718': { E: 200e9, G: 77e9, nu: 0.29, rho: 8190, Sy: 1100e6, Su: 1375e6, Sy_A: 1000e6, Su_A: 1241e6, allow_ref: 'MIL-HDBK-5J A-basis, solution-treated and aged sheet 0.010–0.187 in, Table 6.3.5.0(b)', k: 11.4, cp: 435, alpha: 13e-6, KIc: 100e6, sf: 2200e6, b: -0.1, ef: 0.5, c: -0.65, parisC: 4e-12, parisM: 3.1, dKth: 6.0 },
   'Mg AZ31B': { E: 45e9, G: 17e9, nu: 0.35, rho: 1770, Sy: 200e6, Su: 260e6, k: 96, cp: 1000, alpha: 26e-6, KIc: 28e6, sf: 450e6, b: -0.1, ef: 0.15, c: -0.55, parisC: 2e-10, parisM: 3.2, dKth: 1.5 },
 };
 
 // Unidirectional ply properties: E1,E2,G12 [Pa], nu12, strengths Xt,Xc,Yt,Yc,S [Pa], ply thickness t [m],
-// fracture energies GIc/GIIc [J/m2], CTE a1,a2 [1/K].
+// fracture energies GIc/GIIc [J/m2], CTE a1,a2 [1/K]. Typical published characterisation sets, not basis values; the
+// IM7/8552 strengths are lower than the manufacturer's typical datasheet values and the AS4/3501-6 set is unverified.
 export const PLIES = {
   'T300/5208 carbon-epoxy': { E1: 181e9, E2: 10.3e9, G12: 7.17e9, nu12: 0.28, Xt: 1500e6, Xc: 1500e6, Yt: 40e6, Yc: 246e6, S: 68e6, rho: 1600, t: 0.125e-3, GIc: 200, GIIc: 600, a1: 0.02e-6, a2: 22.5e-6 },
   'AS4/3501-6 carbon-epoxy': { E1: 142e9, E2: 10.3e9, G12: 7.2e9, nu12: 0.27, Xt: 2280e6, Xc: 1440e6, Yt: 57e6, Yc: 228e6, S: 71e6, rho: 1580, t: 0.125e-3, GIc: 190, GIIc: 570, a1: -0.9e-6, a2: 27e-6 },
@@ -44,4 +52,12 @@ export const BATTERIES = {
 };
 
 export const metalNames = () => Object.keys(METALS);
+/**
+ * Static strengths to use in a margin of safety: the verified design allowable when the database holds one, otherwise the
+ * typical value. Returns { Sy, Su, design (bool), basis (text naming which was used) }.
+ */
+export function designAllowables(m) {
+  const design = m.Sy_A > 0 && m.Su_A > 0, Sy = design ? m.Sy_A : m.Sy, Su = design ? m.Su_A : m.Su, v = `Fty ${(Sy / 1e6).toFixed(0)} MPa, Ftu ${(Su / 1e6).toFixed(0)} MPa`;
+  return { Sy, Su, design, basis: design ? `${m.allow_ref}: ${v}` : `typical handbook strengths (${v}); no verified design allowable is held for this material` };
+}
 export const plyNames = () => Object.keys(PLIES);

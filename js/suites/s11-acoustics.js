@@ -8,6 +8,7 @@
 import * as N from '../core/numerics.js';
 import { isa, G0 } from '../core/atmosphere.js';
 import { METALS } from '../data/materials.js';
+import { CERT_NOISE, CERT_NOISE_ISSUE } from '../data/ref/cert-noise.js';
 
 const PI = Math.PI, PREF = 2e-5, dB = (p) => 20 * Math.log10(Math.max(p, 1e-12) / PREF), sumdB = (a) => 10 * Math.log10(a.reduce((s, v) => s + 10 ** (v / 10), 0) || 1e-30);
 /** Bessel function of the first kind, integer order, from its integral representation (Simpson; exact to round-off). */
@@ -22,6 +23,8 @@ export function absorption(f, T = 293.15, rh = 0.7, p = 101325) {
 }
 const BANDS = N.range(28, (k) => 1000 * 10 ** ((k - 17) / 10)); // one-third-octave centres, 20 Hz – 10 kHz
 const bandOf = (f) => N.clamp(Math.round(10 * Math.log10(f / 1000)) + 17, 0, 27);
+/** Speech interference level: arithmetic mean of the 500 Hz, 1, 2 and 4 kHz octave-band levels, each octave summed from its three one-third-octave bands. */
+export const speechInterference = (L) => N.mean([14, 17, 20, 23].map((k) => sumdB([L[k - 1], L[k], L[k + 1]])));
 /** Generic broadband hump: share of the overall mean-square pressure in each band for a peak frequency fp. */
 const hump = (fp) => { const w = BANDS.map((f) => { const x = f / fp; return (x * x) / (1 + x * x) ** 2; }), s = N.sum(w); return w.map((v) => v / s); };
 
@@ -77,7 +80,7 @@ const rotorDefaults = (c, up, d) => {
   if (!hasRotor(c)) return { n_rotors: 0 };
   const a = isa(c.atm.alt_m, c.atm.dISA_K);
   if (c.rotor.R_m > 0) { const nR = c.meta.type === 'helicopter' ? 1 : Math.max(1, c.prop.n_eng), T = d.W / nR; return { T_N: T, P_W: (c.meta.type === 'helicopter' ? up.rotorcraft?.hover_power_W : undefined) ?? T ** 1.5 / Math.sqrt(2 * a.rho * d.A_disk) / 0.7, R: c.rotor.R_m, B: c.rotor.n_blades, rpm: c.rotor.rpm, chord: c.rotor.chord_m, tc: 0.12, n_rotors: nR, V_axial: 0 }; }
-  const R = c.prop.prop_dia_m / 2; return { T_N: up.propeller?.thrust_static_N ?? (c.prop.T0_N || undefined), P_W: c.prop.P0_W || undefined, R, B: c.prop.n_blades, rpm: c.prop.rpm, chord: 0.16 * R, tc: 0.08, n_rotors: c.prop.n_eng, V_axial: 0 };
+  const R = c.prop.prop_dia_m / 2; return { T_N: c.prop.T0_N || undefined, P_W: c.prop.P0_W || undefined, R, B: c.prop.n_blades, rpm: c.prop.rpm, chord: 0.16 * R, tc: 0.08, n_rotors: c.prop.n_eng, V_axial: 0 };
 };
 const siteDefaults = (c) => ({ alt_m: c.site.elev_m ?? 0, T_C: c.site.T_C, rh: c.site.rh });
 const rotorState = (i) => { const a = isa(i.alt_m, i.T_C + 273.15 - isa(i.alt_m).T), Om = (i.rpm * 2 * PI) / 60; return { a, T: i.T_N, Q: i.P_W / Math.max(Om, 1e-6), R: i.R, B: Math.round(i.B), Om, c: a.a, rho: a.rho, chord: i.chord, tc: i.tc, M: Math.min(i.V_axial / a.a, 0.9), nRad: i.nRad ?? 8 }; };
@@ -90,10 +93,10 @@ const tonal = {
   inputs: [...ROTOR,
     { key: 'r_obs', label: 'Observer distance from the hub', unit: 'm', default: 150, min: 1, group: 'Observer' },
     { key: 'theta_deg', label: 'Observer angle from the thrust axis', unit: 'deg', default: 105, min: 0, max: 180, group: 'Observer', help: '0 = ahead on the axis, 90 = in the disc plane, > 90 = behind (for a hovering rotor: below the disc)' },
-    ...SITE,
+    ...SITE.filter((f) => f.key !== 'rh'), // absorption is not applied to the tone levels here, so humidity is not an input
     { key: 'nHarm', label: 'Harmonics', unit: '', default: 8, min: 1, max: 20, step: 1, discrete: true, group: 'Numerics' },
     { key: 'nRad', label: 'Radial source stations', unit: '', default: 8, min: 1, max: 40, step: 1, discrete: true, group: 'Numerics', help: '1 reproduces the classical effective-radius (0.8R) Gutin model' }],
-  defaults: (c, up, d) => ({ ...rotorDefaults(c, up, d), ...siteDefaults(c), r_obs: c.rotor.R_m > 0 ? 150 : 300 }),
+  defaults: (c, up, d) => ({ ...rotorDefaults(c, up, d), alt_m: c.site.elev_m ?? 0, T_C: c.site.T_C, r_obs: c.rotor.R_m > 0 ? 150 : 300 }),
   run(i) {
     const o = rotorState(i), st = stations(o), nH = Math.round(N.clamp(i.nHarm, 1, 20)), th = N.rad(i.theta_deg), nR = Math.max(1, Math.round(i.n_rotors)), add = 10 * Math.log10(nR), bpf = (o.B * o.Om) / (2 * PI);
     const hs = N.range(nH, (k) => harmonic(o, st, k + 1, i.r_obs, th)), lev = hs.map((h) => dB(h.p) + add), levL = hs.map((h) => dB(h.L) + add), levT = hs.map((h) => dB(h.T) + add), fr = hs.map((_, k) => (k + 1) * bpf);
@@ -114,8 +117,8 @@ const tonal = {
         { key: 'SPL_loading_dB', label: 'Loading noise at BPF', value: Math.max(levL[0], 0), unit: 'dB' },
         { key: 'SPL_thickness_dB', label: 'Thickness noise at BPF', value: Math.max(levT[0], 0), unit: 'dB' },
         { key: 'SPL_gutin_dB', label: 'Gutin effective-radius estimate at BPF', value: Math.max(gut, 0), unit: 'dB', note: 'Single source ring at 0.8R, loading only' },
-        { key: 'tip_mach', label: 'Rotational tip Mach number', value: Mt, unit: '-', status: Mt < 0.65 ? 'ok' : Mt < 0.85 ? 'warn' : 'bad', note: 'Tone level rises steeply with tip Mach; below about 0.6 for quiet designs' },
-        { key: 'tip_mach_helical', label: 'Helical tip Mach number', value: Mh, unit: '-' },
+        { key: 'tip_mach', label: 'Rotational tip Mach number', value: Mt, unit: '-', note: 'Tone level rises steeply with tip Mach: about 0.6–0.7 for helicopter rotors, 0.7–0.8 for propellers at take-off, below 0.6 for quiet designs' },
+        { key: 'tip_mach_helical', label: 'Helical tip Mach number', value: Mh, unit: '-', status: Mh < 0.85 ? 'ok' : Mh < 0.95 ? 'warn' : 'bad', note: 'Above about 0.85–0.9 the tip flow is transonic and impulsive noise appears' },
         { key: 'theta_peak_deg', label: 'Direction of the loudest BPF radiation', value: ths[kp], unit: 'deg' },
         { key: 'SPL_peak_dir_dB', label: 'BPF level in the loudest direction', value: dir[kp], unit: 'dB' },
       ],
@@ -144,7 +147,8 @@ const tonal = {
   },
   recommend(res, i) {
     const o = res.outputs, out = [];
-    if (o.tip_mach > 0.65) out.push({ severity: o.tip_mach > 0.85 ? 'critical' : 'warn', title: 'High tip speed dominates the tone noise', detail: `Tip Mach ${o.tip_mach.toFixed(2)}; BPF tone ${o.SPL_bpf_dB.toFixed(0)} dB at ${i.r_obs} m.`, action: 'Reduce rotational speed and recover thrust with more blades, larger diameter or more chord; a 10% tip-speed cut is typically worth several decibels and usually improves static efficiency as well.', basis: 'Bessel-function radiation efficiency J_mB(mB·Mt·sin θ)' });
+    if (o.tip_mach_helical > 0.85) out.push({ severity: o.tip_mach_helical > 0.95 ? 'critical' : 'warn', title: 'Transonic blade tips', detail: `Helical tip Mach ${o.tip_mach_helical.toFixed(2)}: shocks and quadrupole noise appear, which this compact-source model does not include; BPF tone ${o.SPL_bpf_dB.toFixed(0)} dB at ${i.r_obs} m is a lower bound.`, action: 'Reduce rotational speed or diameter, or use thin swept tips; recover thrust with more blades or chord.', basis: 'Helical tip Mach number above the range of acoustically compact sources (about 0.85–0.9)' });
+    else if (o.tip_mach > 0.65) out.push({ severity: 'advise', title: 'Tip speed is the main lever on tone noise', detail: `Rotational tip Mach ${o.tip_mach.toFixed(2)} (normal for a propeller at take-off power); BPF tone ${o.SPL_bpf_dB.toFixed(0)} dB at ${i.r_obs} m.`, action: 'Reduce rotational speed and recover thrust with more blades, larger diameter or more chord; a 10% tip-speed cut is typically worth several decibels and usually improves static efficiency as well.', basis: 'Bessel-function radiation efficiency J_mB(mB·Mt·sin θ)' });
     if (o.SPL_thickness_dB > o.SPL_loading_dB) out.push({ severity: 'advise', title: 'Thickness noise exceeds loading noise', detail: `${o.SPL_thickness_dB.toFixed(0)} dB against ${o.SPL_loading_dB.toFixed(0)} dB at BPF.`, action: 'Thin the outer blade, sweep the tip, or lower the tip Mach number.', basis: 'Monopole source strength ∝ blade volume × (mBΩ)²' });
     out.push({ severity: 'info', title: 'More blades move energy to higher, weaker harmonics', detail: `BPF is ${o.bpf_Hz.toFixed(0)} Hz with ${Math.round(i.B)} blades.`, action: 'Re-run with one more blade at the same thrust and tip speed: the Bessel order rises and the tone falls, but the frequency moves towards the ear’s most sensitive range, so compare A-weighted levels.', basis: 'Harmonic order mB' });
     return out;
@@ -200,7 +204,7 @@ const SRC_INPUTS = [...ROTOR,
 ];
 const srcDefaults = (c, up, d) => {
   const p = c.prop, jet = p.type === 'turbofan' || p.type === 'turbojet', Uj = 1000 / (1 + (p.type === 'turbojet' ? 0 : p.bpr)) ** 0.6, wing = c.wing.S_m2 > 0;
-  const Vto = wing ? 1.2 * (up.performance?.V_stall_ms ?? Math.sqrt((2 * d.W) / (1.225 * c.wing.S_m2 * c.aero.CLmax_to))) : 0;
+  const Vto = wing ? up.performance?.V_2_ms ?? 1.2 * Math.sqrt((2 * d.W) / (1.225 * c.wing.S_m2 * c.aero.CLmax_to)) : 0; // take-off safety speed V2 = 1.2·VS in the take-off configuration
   return { ...rotorDefaults(c, up, d), ...siteDefaults(c), n_jets: jet ? p.n_eng : 0, U_jet: jet ? Uj : undefined, D_jet: jet ? Math.sqrt((4 * p.T0_N) / (PI * 1.225 * Uj * Uj)) : undefined, S_wing: c.wing.S_m2, b_wing: c.wing.b_m || undefined, V_flight: Vto };
 };
 const spectrum = {
@@ -208,7 +212,7 @@ const spectrum = {
   summary: 'Adds rotor or propeller tones, rotor broadband noise, jet mixing noise and airframe noise at an observer, in one-third-octave bands with atmospheric absorption and A-weighting, to show which source sets the level people hear.',
   equations: ['Lighthill acoustic analogy', 'Acoustic propagation equations', 'Acoustic intensity equations', 'Acoustic energy equations', 'Broadband noise models', 'Engine noise models', 'Stochastic broadband noise prediction formulations'],
   inputs: [...SRC_INPUTS,
-    { key: 'r_obs', label: 'Observer distance', unit: 'm', default: 300, min: 1, group: 'Observer' },
+    { key: 'r_obs', label: 'Observer distance', unit: 'm', default: 300, min: 1, group: 'Observer', help: '450 m is the lateral reference distance of the transport noise certification (Annex 16 / FAR 36); 150 m is the helicopter overflight height' },
     { key: 'theta_deg', label: 'Observer angle from the forward axis', unit: 'deg', default: 110, min: 0, max: 180, group: 'Observer', help: 'Jet noise peaks towards the rear (130–150°)' }],
   defaults: (c, up, d) => ({ ...srcDefaults(c, up, d), r_obs: c.mass.mtow_kg > 5700 ? 450 : 150 }),
   run(i) {
@@ -220,7 +224,7 @@ const spectrum = {
     return {
       kpis: [
         { key: 'OASPL_dB', label: 'Overall sound pressure level', value: r.oa, unit: 'dB' },
-        { key: 'SPL_dBA', label: 'A-weighted level', value: r.dBA, unit: 'dBA', status: r.dBA < 65 ? 'ok' : r.dBA < 85 ? 'warn' : 'bad', note: 'Guide only: about 65 dBA is conversational level, 85 dBA is a hearing-protection threshold' },
+        { key: 'SPL_dBA', label: 'A-weighted level', value: r.dBA, unit: 'dBA', status: r.dBA < 85 ? 'ok' : 'warn', note: 'For orientation: about 65 dBA is conversational level; 85 dBA is the usual hearing-protection threshold for sustained exposure. Community limits depend on the airport and the metric' },
         { key: 'f_peak_dBA_Hz', label: 'Band with the highest A-weighted level', value: BANDS[kMax], unit: 'Hz' },
         { key: 'dominant_dBA', label: 'A-weighted level of the dominant source', value: top ? top.dBA : 0, unit: 'dBA', note: top ? top.name : 'none' },
         { key: 'jet_PWL_dB', label: 'Jet sound power level (per engine)', value: jetS ? 10 * Math.log10(jetS.W / 1e-12) : 0, unit: 'dB re 1 pW' },
@@ -235,7 +239,9 @@ const spectrum = {
       tables: [{ title: 'Sources at the observer', columns: ['Source', 'OASPL [dB]', 'Level [dBA]'], rows: r.src.map((s) => [s.name, +s.oa.toFixed(1), +s.dBA.toFixed(1)]) }],
       warnings,
       models: ['Harmonic rotor noise (see the tonal analysis)', 'Schlegel–King–Mull rotor vortex-noise correlation (empirical)', 'Lighthill U⁸ jet mixing noise with convective-amplification directivity and a relative-velocity flight effect', 'Fink-type trailing-edge airframe noise scaling, V⁵ (empirical)', 'ISO 9613-1 atmospheric absorption; A-weighting; one-third-octave energy summation'],
-      assumptions: ['Sources are uncorrelated and add on an energy basis', 'Generic single-hump broadband spectra; tones assigned to the band containing them', 'Homogeneous still atmosphere: no refraction by wind or temperature gradients, no shielding', 'Fan, core, combustion and turbine noise of turbofans, tail-rotor noise and blade–vortex interaction are not modelled, so turbofan and helicopter totals are lower bounds'],
+      assumptions: ['Sources are uncorrelated and add on an energy basis', 'Generic single-hump broadband spectra; tones assigned to the band containing them', 'Homogeneous still atmosphere: no refraction by wind or temperature gradients, no shielding', 'Fan, core, combustion and turbine noise of turbofans, tail-rotor noise and blade–vortex interaction are not modelled, so turbofan and helicopter totals are lower bounds',
+        'Unverified constants (illustrative until calibrated): jet acoustic efficiency 10⁻⁴·M⁵, flight-effect exponent 5, jet peak Strouhal number 0.25, and the clean-airframe constant 101.3 dB (one opened reference prints a form equivalent to 107.5 dB for jet aircraft, 6.2 dB higher). The class estimate of jet velocity 1000/(1 + BPR)^0.6 m/s is a rough default',
+        'Sourced constants: rotor vortex-noise law and Strouhal number 0.28 (Schlegel, King & Mull as reproduced in JPL TR 32-1462), jet convection factor 0.62 and airframe peak Strouhal number 0.1 (NASA RP-1258), +8 dB from clean to conventional airframes (NASA TM-83199)'],
     };
   },
   calibration: { params: [{ key: 'K_jet', min: 3e-5, max: 4e-4 }, { key: 'K_bb', min: -12, max: 12 }, { key: 'K_af', min: -5, max: 15 }], sweep: 'r_obs', target: 'SPL_dBA', note: 'Supply measured A-weighted (or overall, target OASPL_dB) level against distance or against jet velocity / rotor speed; the three constants set the absolute level of each source.' },
@@ -273,6 +279,18 @@ function footprint(i, att, n) {
   const z = ys.map((y) => xs.map((x) => { let best = -1e9; for (const [px, pz] of path) { const r = Math.hypot(x - px, y, pz), cT = ((x - px) * Math.cos(g) - pz * Math.sin(g)) / r, L = flyLevel(i, r, cT, pz / r, i.f0, att); if (L > best) best = L; } if (best >= i.L_th) cells++; return best; }));
   return { area: 2 * cells * dx * dy, x: xs, y: ys, z, track: S, rTh };
 }
+const CERT_CLASSES = ['Jet aeroplane', 'Propeller aeroplane', 'Helicopter', 'None'];
+/**
+ * Certified noise levels of the aircraft closest in maximum take-off mass (EASA type-certificate data sheets for noise).
+ * Returns the data set used, the index of the level most comparable to a flyover and the n nearest rows.
+ */
+export function certNeighbours(cls, mtom, n = 5) {
+  const key = cls === 'Jet aeroplane' ? 'jets' : cls === 'Propeller aeroplane' ? (mtom > 8618 ? 'heavyProp' : 'lightProp') : cls === 'Helicopter' ? (mtom <= 3175 ? 'rotor11' : 'rotor8') : null;
+  if (!key || !(mtom > 0)) return null;
+  const set = CERT_NOISE[key], rows = set.rows.slice().sort((a, b) => Math.abs(Math.log(a[2] / mtom)) - Math.abs(Math.log(b[2] / mtom))).slice(0, n), ref = set.points.length > 1 ? 1 : 0;
+  const lev = rows.map((r) => r[set.first + 2 * ref]).sort((a, b) => a - b);
+  return { key, set, rows, ref, median: lev[lev.length >> 1], lo: lev[0], hi: lev[lev.length - 1], direct: key === 'rotor11' || key === 'lightProp' };
+}
 const flyover = {
   id: 'flyover', title: 'Flyover: moving source, Doppler shift and ground footprint', fidelity: 'numerical',
   summary: 'Time history of the level heard on the ground as the aircraft passes, solved at the retarded (emission) time with convective amplification and Doppler shift, the single-event exposure level, and the ground area enclosed by a chosen noise contour during climb-out or hover.',
@@ -290,11 +308,21 @@ const flyover = {
     { key: 'L_th', label: 'Footprint contour level', unit: 'dBA', default: 65, min: 30, max: 110, group: 'Footprint' },
     ...SITE.filter((f) => f.key !== 'alt_m'),
     { key: 'absorb', label: 'Apply atmospheric absorption', type: 'bool', default: true, group: 'Atmosphere' },
+    { key: 'mtom_kg', label: 'Maximum take-off mass, to look up certified aircraft', unit: 'kg', default: 0, min: 0, group: 'Reality check', help: '0 = no comparison. Certified levels of the nearest aircraft by mass are listed beside the prediction' },
+    { key: 'cert_class', label: 'Certification class for the comparison', type: 'select', options: CERT_CLASSES, default: 'None', group: 'Reality check' },
     { key: 'nGrid', label: 'Footprint grid points along track', unit: '', default: 80, min: 20, max: 300, step: 1, discrete: true, group: 'Numerics' },
   ],
-  defaults: (c, up, d) => { const wing = c.wing.S_m2 > 0, V = wing ? 1.25 * (up.performance?.V_stall_ms ?? Math.sqrt((2 * d.W) / (1.225 * c.wing.S_m2 * c.aero.CLmax_to))) : 0, roc = up.performance?.roc_max_ms;
-    const fpk = up.acoustics?.f_peak_dBA_Hz ?? up.acoustics?.bpf_Hz;
-    return { L_ref: up.acoustics?.SPL_dBA !== undefined && fpk ? up.acoustics.SPL_dBA - aWeight(fpk) : undefined, r_ref: up.acoustics?.SPL_dBA !== undefined ? (c.mass.mtow_kg > 5700 ? 450 : 150) : undefined, f0: fpk, V: wing ? V : c.flight.V_ms, h: wing ? (c.mass.mtow_kg > 5700 ? 450 : 150) : 150, gamma_deg: wing ? (roc > 0 ? N.clamp(N.deg(Math.asin(Math.min(roc / Math.max(V, 1), 0.5))), 2, 30) : undefined) : 0, h0: wing ? undefined : 150, T_C: c.site.T_C, rh: c.site.rh }; },
+  defaults: (c, up, d) => { const wing = c.wing.S_m2 > 0, V = wing ? (1.25 / 1.2) * (up.performance?.V_2_ms ?? 1.2 * Math.sqrt((2 * d.W) / (1.225 * c.wing.S_m2 * c.aero.CLmax_to))) : 0, roc = up.performance?.roc_sl_ms; // initial climb at about V2 + 10 kt; climb rate at the airfield, not at the cruise point
+    // source level and characteristic frequency: from the source-breakdown analysis when it has run, otherwise from the same source models on the case
+    let dBA = up.acoustics?.SPL_dBA, fpk = up.acoustics?.f_peak_dBA_Hz ?? up.acoustics?.bpf_Hz; const rRef = c.mass.mtow_kg > 5700 ? 450 : 150;
+    if (dBA === undefined || !fpk) {
+      const si = Object.fromEntries(spectrum.inputs.map((f) => [f.key, f.default])), sd = spectrum.defaults(c, up, d);
+      for (const k of Object.keys(sd)) if (sd[k] !== undefined && sd[k] !== null && !(typeof sd[k] === 'number' && !Number.isFinite(sd[k]))) si[k] = sd[k];
+      const r = received(si, rRef, N.rad(si.theta_deg));
+      if (r.src.length) { dBA = r.dBA; fpk = BANDS[N.argmax(r.tot.map((v, k) => v + aWeight(BANDS[k])))]; } else { dBA = undefined; fpk = undefined; }
+    }
+    return { L_ref: dBA !== undefined && fpk ? dBA - aWeight(fpk) : undefined, r_ref: dBA !== undefined && fpk ? rRef : undefined, f0: fpk, V: wing ? V : c.flight.V_ms, h: wing ? (c.mass.mtow_kg > 5700 ? 450 : 150) : 150, gamma_deg: wing ? (roc > 0 ? N.clamp(N.deg(Math.asin(Math.min(roc / Math.max(V, 1), 0.5))), 2, 30) : undefined) : 0, h0: wing ? undefined : 150, T_C: c.site.T_C, rh: c.site.rh, mtom_kg: c.mass.mtow_kg,
+      cert_class: c.meta.type === 'helicopter' ? 'Helicopter' : c.meta.type !== 'aeroplane' ? 'None' : c.prop.type === 'turbofan' || c.prop.type === 'turbojet' ? 'Jet aeroplane' : 'Propeller aeroplane' }; },
   run(i0) {
     const T = i0.T_C + 273.15, c0 = Math.sqrt(1.4 * 287.05287 * T), i = { ...i0, c0, V: Math.min(i0.V, 0.85 * c0) }, M = i.V / c0, d2 = i.h ** 2 + i.y_side ** 2, d = Math.sqrt(d2), al = (f) => (i.absorb ? absorption(f, T, i.rh) : 0), warnings = [];
     // time history at the microphone: emission time τ from c(t − τ) = |x_obs − x_src(τ)| (uniform motion → quadratic)
@@ -307,8 +335,16 @@ const flyover = {
     if (fp.area === 0) warnings.push(`The ${i.L_th} dBA contour does not reach the ground from the starting height.`);
     if (fp.track >= 30000) warnings.push('In level or shallow flight the contour is an open strip: the area is for the first 30 km of track only.');
     if (i.gamma_deg > 0 && M >= 0.01 && fp.track > 0) warnings.push('The footprint treats the whole source as one tone at the characteristic frequency; use the band spectrum for certification-type metrics.');
+    // reality check: certified levels of real aircraft of similar mass
+    const cert = certNeighbours(i.cert_class, i.mtom_kg), certKpi = [], certTab = [];
+    if (cert) {
+      const u = cert.set.unit, pt = cert.set.points, own = cert.key === 'rotor11' ? sel : LAmax;
+      certKpi.push({ key: 'cert_level_ref', label: `Certified ${pt[cert.ref].toLowerCase()} level of comparable aircraft (median of ${cert.rows.length})`, value: cert.median, unit: u, note: `${cert.lo}–${cert.hi} ${u} for ${cert.rows[0][0]} and neighbours in mass; measured at the certification reference point, not at this microphone` });
+      if (cert.direct) certKpi.push({ key: 'cert_level_delta_dB', label: `This prediction minus the certified ${cert.key === 'rotor11' ? 'exposure level' : 'maximum level'}`, value: own - cert.median, unit: 'dB', note: cert.key === 'rotor11' ? 'Comparable when the flyover is at 150 m in level flight at high speed' : 'Indicative only: the certification microphone is 2 500 m from brake release, under the climbing aircraft' });
+      certTab.push({ title: `Certified noise levels of comparable aircraft: ${cert.set.metric}`, columns: ['Type', 'Engine', 'MTOM [kg]', 'Annex 16 chapter', ...pt.flatMap((q) => [`${q} [${u}]`, `${q} limit [${u}]`])], rows: cert.rows.map((r) => [r[0], r[1], r[2], r[cert.set.first - 1], ...r.slice(cert.set.first)]) });
+    }
     return {
-      kpis: [
+      kpis: [...certKpi,
         { key: 'SPL_peak_dBA', label: 'Maximum A-weighted level at the microphone', value: LAmax, unit: 'dBA' },
         { key: 'SEL_dBA', label: 'Sound exposure level', value: sel, unit: 'dBA', note: 'Event energy normalised to 1 s' },
         { key: 'duration_10dB_s', label: 'Time within 10 dB of the maximum', value: above, unit: 's' },
@@ -326,9 +362,11 @@ const flyover = {
         { type: 'line', title: 'Received frequency (Doppler shift)', xlabel: 'Time after overhead passage [s]', ylabel: 'Frequency [Hz]', series: [{ name: 'Received', x: ts.map((t) => t - d / c0), y: hist.map((h) => h.f) }], annotations: [{ y: i.f0, label: 'Emitted' }] },
         { type: 'heat', title: `Maximum level on the ground (half footprint, contour at ${i.L_th} dBA)`, xlabel: 'Distance along track [m]', ylabel: 'Sideline distance [m]', zlabel: 'L_Amax [dBA]', x: fp.x, y: fp.y, z: fp.z, contours: 12 },
       ],
+      tables: certTab,
       warnings,
-      models: ['Uniformly moving point source solved at the retarded time (far-field Ffowcs Williams–Hawkings monopole/dipole)', 'Convective amplification (1 − M cos θ)⁻² in pressure and Doppler shift f/(1 − M cos θ)', 'Spherical spreading and ISO 9613-1 absorption at the received frequency', 'Footprint from the maximum level over a straight climb track'],
-      assumptions: ['The source is represented by one overall level and one characteristic frequency', 'Straight flight path, homogeneous still air, flat ground, no ground-reflection correction', 'Footprint uses the emission geometry; propagation delay does not change the maximum level'],
+      models: ['Uniformly moving point source solved at the retarded time (far-field Ffowcs Williams–Hawkings monopole/dipole)', 'Convective amplification (1 − M cos θ)⁻² in pressure and Doppler shift f/(1 − M cos θ)', 'Spherical spreading and ISO 9613-1 absorption at the received frequency', 'Footprint from the maximum level over a straight climb track', ...(cert ? [`Measured reference: ${CERT_NOISE_ISSUE}`] : [])],
+      assumptions: ['The source is represented by one overall level and one characteristic frequency', 'Straight flight path, homogeneous still air, flat ground, no ground-reflection correction', 'Footprint uses the emission geometry; propagation delay does not change the maximum level',
+        ...(cert ? [cert.direct ? 'Certified levels are for real aircraft of similar mass at the Annex 16 reference conditions; they are a plausibility check, not a prediction for this design' : 'Certified levels are effective perceived noise levels (EPNdB) at the Annex 16 reference points: a tone- and duration-corrected metric that typically runs 10–15 dB above the maximum A-weighted level of the same event, so compare trends and orders of magnitude only'] : [])],
     };
   },
   convergence: { param: 'nGrid', label: 'Footprint grid points along track', levels: [40, 80, 160, 320], metric: 'footprint_km2' },
@@ -341,12 +379,16 @@ const flyover = {
       N.check('Retarded-time equation satisfied', 1 + o.retarded_time_residual_m, 1, 1e-8, 'c(t − τ) = r(τ)'),
       N.check('Hover footprint area = π(r_c² − h²)', hov.footprint_km2, (PI * (rTh ** 2 - 100 ** 2)) / 1e6, 0.03, 'Spherical spreading; grid quadrature of the contour'),
       N.check('Hover level = L_ref − 20·log(h/r_ref) + A(f)', hov.SPL_peak_dBA, 90 - 20 * Math.log10(2) + aWeight(500), 1e-9, 'Inverse-square law'),
+      N.check('Certified-noise lookup: lightest jet in the extract, lateral level', certNeighbours('Jet aeroplane', 2722, 1).rows[0][5], 81.3, 1e-12, 'EASA TCDSN jets issue 53: SF50 with FJ33-5A, 81.3 EPNdB lateral'),
+      N.check('Certified-noise lookup: light helicopters use the Chapter 11 overflight exposure level', certNeighbours('Helicopter', 621, 1).median, 77.4, 1e-12, 'EASA TCDSN rotorcraft issue 52: R22 Beta, 77.4 dB(A) SEL'),
+      N.check('Neighbours are ordered by mass ratio', (() => { const r = certNeighbours('Jet aeroplane', 78000, 5).rows.map((q) => Math.abs(Math.log(q[2] / 78000))); return r.every((v, k) => !k || v >= r[k - 1]) && r[4] < 0.2 ? 1 : 0; })(), 1, 1e-12, 'Sorting on |ln(MTOM ratio)|; five types within 20% of 78 t'),
     ];
   },
   recommend(res, i) {
     const o = res.outputs, out = [];
     out.push({ severity: 'info', title: 'Height is the cheapest noise reduction', detail: `L_Amax ${o.SPL_peak_dBA.toFixed(1)} dBA at ${i.h} m; the ${i.L_th} dBA footprint is ${o.footprint_km2.toFixed(3)} km².`, action: 'Doubling the height over the community lowers the maximum level by about 6 dB (more with absorption); steeper climb-out or approach shrinks the footprint roughly in proportion.', basis: 'Spherical spreading' });
     if (o.footprint_km2 > 1) out.push({ severity: 'advise', title: 'Large noise footprint', detail: `${o.footprint_km2.toFixed(2)} km² inside ${i.L_th} dBA.`, action: 'Evaluate a steeper initial climb, reduced-thrust or reduced-rotor-speed procedures and track changes away from housing; lower source noise usually also means lower tip or jet speeds and lower energy use.', basis: 'Contour area' });
+    if (Number.isFinite(o.cert_level_ref)) { const kc = res.kpis.find((k) => k.key === 'cert_level_ref'); out.push({ severity: Number.isFinite(o.cert_level_delta_dB) && Math.abs(o.cert_level_delta_dB) > 10 ? 'advise' : 'info', title: 'Compare with certified aircraft of this size', detail: `Aircraft near ${i.mtom_kg.toFixed(0)} kg: ${kc.label.toLowerCase()} ${o.cert_level_ref} ${kc.unit} (see the table). This prediction gives L_Amax ${o.SPL_peak_dBA.toFixed(1)} dBA and SEL ${o.SEL_dBA.toFixed(1)} dBA at ${i.h} m${Number.isFinite(o.cert_level_delta_dB) ? `, ${o.cert_level_delta_dB >= 0 ? '+' : ''}${o.cert_level_delta_dB.toFixed(1)} dB against the certified figure` : ''}.`, action: 'If the prediction is far from real aircraft of the same class, calibrate the source constants in the source-breakdown analysis before using the footprint; sources not modelled (fan, core, tail rotor, blade–vortex interaction) make the prediction a lower bound.', basis: 'EASA certification noise levels (type-certificate data sheets for noise)' }); }
     if (o.duration_10dB_s > 20) out.push({ severity: 'info', title: 'Long event duration', detail: `${o.duration_10dB_s.toFixed(0)} s within 10 dB of the peak raises the exposure level to ${o.SEL_dBA.toFixed(1)} dBA.`, action: 'Slow, low overflights are judged by exposure, not peak level: trade speed against height.', basis: 'Sound exposure level' });
     return out;
   },
@@ -368,7 +410,7 @@ const cabin = {
     { key: 'V', label: 'Cruise true airspeed', unit: 'm/s', default: 140, min: 1, group: 'Exterior' },
     { key: 'alt_m', label: 'Cruise altitude', unit: 'm', default: 6000, min: 0, max: 15000, group: 'Exterior' },
     { key: 'x_m', label: 'Distance from the nose to the cabin station', unit: 'm', default: 8, min: 0.1, group: 'Exterior', help: 'Sets the boundary-layer thickness and its peak frequency' },
-    { key: 'L_tone', label: 'Exterior tone level on the fuselage', unit: 'dB', default: 0, min: 0, max: 160, group: 'Exterior', help: 'Propeller or rotor blade-passing tone at the skin; 0 for none' },
+    { key: 'L_tone', label: 'Exterior tone level on the fuselage', unit: 'dB', default: 0, min: 0, max: 160, group: 'Exterior', help: 'Propeller or rotor blade-passing tone at the skin in cruise; 0 for none. The default extrapolates the far-field tone to 1.5 radii from the hub and is a rough estimate: enter a measured or near-field value when available' },
     { key: 'f_tone', label: 'Tone frequency', unit: 'Hz', default: 100, min: 10, max: 5000, group: 'Exterior' },
     { key: 'material', label: 'Skin material', type: 'select', options: Object.keys(METALS), default: 'Al 2024-T3', group: 'Wall' },
     { key: 't_skin_mm', label: 'Skin thickness', unit: 'mm', default: 1.6, min: 0.3, max: 10, group: 'Wall' },
@@ -378,13 +420,18 @@ const cabin = {
     { key: 'alpha_cabin', label: 'Mean cabin absorption coefficient', unit: '-', default: 0.3, min: 0.02, max: 0.9, group: 'Cabin', help: '0.1 bare, 0.3 furnished with seats and carpet, 0.5 well treated' },
     { key: 'cabin_alt_m', label: 'Cabin altitude', unit: 'm', default: 2400, min: 0, max: 5000, group: 'Cabin' },
   ],
-  defaults: (c, up, d) => ({ V: c.mission.cruise_V_ms || c.flight.V_ms, alt_m: c.mission.cruise_alt_m || c.atm.alt_m, x_m: Math.max(0.3 * c.fuselage.len_m, 0.2) || undefined, L_tone: hasRotor(c) && up.acoustics?.SPL_bpf_dB ? up.acoustics.SPL_bpf_dB + 20 * Math.log10((c.rotor.R_m > 0 ? 150 : 300) / Math.max(1.5 * (c.rotor.R_m || c.prop.prop_dia_m / 2), 0.5)) : undefined, f_tone: up.acoustics?.bpf_Hz, material: c.struct.material in METALS ? c.struct.material : undefined, t_skin_mm: Math.min(c.struct.t_skin_mm, 2.5) || undefined, cabin_alt_m: c.fuselage.cabin_dp_Pa > 0 ? c.systems.cabin_alt_m : Math.min(c.mission.cruise_alt_m || c.atm.alt_m, 5000), m_trim: c.mission.pax > 0 ? undefined : 0 }),
+  defaults: (c, up, d) => {
+    // exterior tone on the skin: the blade-passing tone of the tonal analysis brought in to 1.5 radii from the hub; for a propeller the tone was
+    // computed at static take-off thrust, so the loading noise is scaled to the cruise thrust (level ∝ thrust)
+    const V = c.mission.cruise_V_ms || c.flight.V_ms, alt = c.mission.cruise_alt_m || c.atm.alt_m, prop = !(c.rotor.R_m > 0) && c.wing.S_m2 > 0 && c.prop.T0_N > 0, qS = 0.5 * isa(alt, c.atm.dISA_K).rho * V * V * c.wing.S_m2;
+    const Tcr = prop && qS > 0 ? (qS * (c.aero.CD0 + d.k_induced * (d.W / qS) ** 2)) / Math.max(1, c.prop.n_eng) : 0, dT = Tcr > 0 ? Math.min(0, 20 * Math.log10(Tcr / c.prop.T0_N)) : 0;
+    return { V, alt_m: alt, x_m: Math.max(0.3 * c.fuselage.len_m, 0.2) || undefined, L_tone: hasRotor(c) && up.acoustics?.SPL_bpf_dB ? up.acoustics.SPL_bpf_dB + dT + 20 * Math.log10((c.rotor.R_m > 0 ? 150 : 300) / Math.max(1.5 * (c.rotor.R_m || c.prop.prop_dia_m / 2), 0.5)) : undefined, f_tone: up.acoustics?.bpf_Hz, material: c.struct.material in METALS ? c.struct.material : undefined, t_skin_mm: Math.min(c.struct.t_skin_mm, 2.5) || undefined, cabin_alt_m: c.fuselage.cabin_dp_Pa > 0 ? c.systems.cabin_alt_m : Math.min(c.mission.cruise_alt_m || c.atm.alt_m, 5000), m_trim: c.mission.pax > 0 ? undefined : 0 }; },
   run(i) {
     const a = isa(i.alt_m), ci = isa(i.cabin_alt_m), mat = METALS[i.material] || METALS['Al 2024-T3'], t = i.t_skin_mm / 1e3, m1 = mat.rho * t, M = i.V / a.a, q = 0.5 * a.rho * i.V ** 2;
     const prms = (0.006 * q) / (1 + 0.14 * M * M), Rex = Math.max((i.V * i.x_m) / a.nu, 1e4), dstar = (0.046 * i.x_m) / Rex ** 0.2, fp = (0.1 * i.V) / dstar, ext = hump(fp).map((w) => dB(prms) + 10 * Math.log10(w));
     if (i.L_tone > 0) { const b = bandOf(i.f_tone); ext[b] = sumdB([ext[b], i.L_tone]); }
     const rc = 0.5 * (a.rho * a.a + ci.rho * ci.a), cL = Math.sqrt(mat.E / (mat.rho * (1 - mat.nu ** 2))), fc = (ci.a ** 2 * Math.sqrt(3)) / (PI * cL * t), tl = BANDS.map((f) => wallTL(f, m1, i.m_trim, i.gap_m, fc, i.eta, rc, ci.a));
-    const room = 10 * Math.log10(0.8 / i.alpha_cabin), inn = ext.map((v, k) => v - tl[k] + room), dBAi = sumdB(inn.map((v, k) => v + aWeight(BANDS[k]))), sil = N.mean([14, 17, 20, 23].map((k) => inn[k])), f0 = i.m_trim > 0 ? (1 / (2 * PI)) * Math.sqrt(((rc * ci.a) / i.gap_m) * (1 / m1 + 1 / i.m_trim)) : NaN;
+    const room = 10 * Math.log10(0.8 / i.alpha_cabin), inn = ext.map((v, k) => v - tl[k] + room), dBAi = sumdB(inn.map((v, k) => v + aWeight(BANDS[k]))), sil = speechInterference(inn), f0 = i.m_trim > 0 ? (1 / (2 * PI)) * Math.sqrt(((rc * ci.a) / i.gap_m) * (1 / m1 + 1 / i.m_trim)) : NaN;
     const warnings = ['Idealised infinite-panel transmission: frames, stringers, windows, structure-borne paths and leaks are not represented, so real cabins are typically several decibels louder than this estimate.'];
     if (i.L_tone > 0 && i.m_trim > 0 && Math.abs(Math.log2(i.f_tone / f0)) < 0.35) warnings.push(`The exterior tone at ${i.f_tone.toFixed(0)} Hz is close to the double-wall resonance at ${f0.toFixed(0)} Hz, where the trim panel gives no benefit.`);
     if (!(i.m_trim > 0)) warnings.push('Single wall (no trim panel): the double-wall resonance is undefined.');
@@ -392,10 +439,10 @@ const cabin = {
     const kb = bandOf(i.f_tone);
     return {
       kpis: [
-        { key: 'cabin_SPL_dBA', label: 'Cabin level', value: dBAi, unit: 'dBA', status: dBAi < 80 ? 'ok' : dBAi < 88 ? 'warn' : 'bad', note: 'Guide: 75–80 dBA modern jets in cruise, 85+ dBA needs hearing protection for crews' },
+        { key: 'cabin_SPL_dBA', label: 'Cabin level', value: dBAi, unit: 'dBA', status: dBAi < 85 ? 'ok' : dBAi < 95 ? 'warn' : 'bad', note: 'Guide: 75–85 dBA in airliner cabins in cruise; 80 and 85 dBA are the occupational action values for an 8-hour day, above which crews need hearing protection' },
         { key: 'cabin_OASPL_dB', label: 'Cabin overall level', value: sumdB(inn), unit: 'dB' },
         { key: 'exterior_OASPL_dB', label: 'Exterior level on the skin', value: sumdB(ext), unit: 'dB' },
-        { key: 'SIL_dB', label: 'Speech interference level', value: sil, unit: 'dB', status: sil < 60 ? 'ok' : sil < 70 ? 'warn' : 'bad', note: 'Mean of the 500 Hz–4 kHz octave-centre bands; below about 60 dB for normal conversation' },
+        { key: 'SIL_dB', label: 'Speech interference level', value: sil, unit: 'dB', status: sil < 60 ? 'ok' : sil < 70 ? 'warn' : 'bad', note: 'Mean of the 500 Hz, 1, 2 and 4 kHz octave-band levels; below about 60 dB for normal conversation' },
         { key: 'TL_500_dB', label: 'Wall transmission loss at 500 Hz', value: tl[14], unit: 'dB' },
         { key: 'TL_tone_dB', label: 'Wall transmission loss at the tone', value: tl[kb], unit: 'dB' },
         { key: 'tone_inside_dB', label: 'Tone level inside', value: i.L_tone > 0 ? i.L_tone - tl[kb] + room : 0, unit: 'dB' },
@@ -410,7 +457,7 @@ const cabin = {
       ],
       warnings,
       models: ['Turbulent-boundary-layer wall-pressure level p_rms = 0.006·q/(1 + 0.14·M²) (Lowson, empirical) with a generic spectrum', 'Mass-law transmission loss, field incidence (normal incidence − 5 dB)', 'Double-wall mass–air–mass resonance and coincidence dip (infinite-panel theory)', 'Diffuse-field receiving-room relation L_in = L_ext − TL + 10·log(S/A)'],
-      assumptions: ['Wall area is 80% of the cabin surface; uniform absorption', 'Characteristic impedance is the mean of the outside and cabin air', 'Airborne path only; engine, ECS and structure-borne noise are not included', 'Skin material properties from the shared materials table'],
+      assumptions: ['Wall area is 80% of the cabin surface; uniform absorption', 'Characteristic impedance is the mean of the outside and cabin air', 'Airborne path only; engine, ECS and structure-borne noise are not included', 'Skin material properties from the shared materials table', 'Trim mass, insulation gap, damping and absorption defaults are typical values, not data for a specific cabin; a cabin altitude of 2 400 m is the 8 000 ft maximum of CS/FAR 25.841(a)'],
     };
   },
   calibration: { params: [{ key: 'alpha_cabin', min: 0.05, max: 0.8 }, { key: 'eta', min: 0.005, max: 0.2 }, { key: 'm_trim', min: 0, max: 10 }], sweep: 'V', target: 'cabin_SPL_dBA', note: 'Supply measured cabin level against airspeed (or a measured transmission-loss curve); cabin absorption, damping and effective trim mass absorb the idealisations of the wall model.' },
@@ -421,12 +468,13 @@ const cabin = {
       N.check('Doubling the mass adds 6.02 dB', b - a, 20 * Math.log10(2), 1e-4, 'Mass law (high-frequency limit)'),
       N.check('Mass–air–mass resonance', o.f_mass_air_mass_Hz, Math.sqrt(((r0.rho * r0.a ** 2) / 0.1) * (1 / (2780 * 0.002) + 1 / 2)) / (2 * PI), 1e-10, 'f0 = (1/2π)·√(ρc²/d·(1/m1 + 1/m2))'),
       N.check('Coincidence frequency of a 2 mm aluminium skin', o.f_coincidence_Hz, (r0.a ** 2 * Math.sqrt(3)) / (PI * Math.sqrt(73.1e9 / (2780 * (1 - 0.33 ** 2))) * 0.002), 1e-10, 'Thin-plate bending wave speed equal to the speed of sound'),
+      N.check('Speech interference level of a flat one-third-octave spectrum: band level + 10·log 3', speechInterference(BANDS.map(() => 60)), 60 + 10 * Math.log10(3), 1e-12, 'Octave band = energy sum of its three one-third-octave bands'),
       N.check('Boundary-layer pressure level', o.p_rms_tbl_Pa, (0.006 * 0.5 * r0.rho * 1e4) / (1 + 0.14 * (100 / r0.a) ** 2), 1e-12, 'Lowson correlation as implemented'),
     ];
   },
   recommend(res, i) {
     const o = res.outputs, out = [];
-    if (o.cabin_SPL_dBA > 80) out.push({ severity: o.cabin_SPL_dBA > 88 ? 'critical' : 'warn', title: 'Cabin is loud', detail: `${o.cabin_SPL_dBA.toFixed(0)} dBA, speech interference level ${o.SIL_dB.toFixed(0)} dB.`, action: 'Add skin damping, increase the insulation gap, or raise trim mass in the loudest zone only; every kilogram of treatment costs fuel for the life of the aircraft, so target the dominant band first.', basis: 'Mass law and double-wall theory' });
+    if (o.cabin_SPL_dBA > 80) out.push({ severity: o.cabin_SPL_dBA > 85 ? 'warn' : 'advise', title: o.cabin_SPL_dBA > 85 ? 'Cabin is loud' : 'Cabin level is at the upper end of normal', detail: `${o.cabin_SPL_dBA.toFixed(0)} dBA, speech interference level ${o.SIL_dB.toFixed(0)} dB${o.cabin_SPL_dBA > 85 ? ': above the 85 dBA action value for a working day, so crews need hearing protection or headsets' : ' (the estimate carries several decibels of uncertainty)'}.`, action: 'Add skin damping, increase the insulation gap, or raise trim mass in the loudest zone only; every kilogram of treatment costs fuel for the life of the aircraft, so target the dominant band first.', basis: 'Mass law and double-wall theory; occupational noise action values of 80 and 85 dB(A) for an 8-hour day (EU Directive 2003/10/EC)' });
     if (i.L_tone > 0 && o.tone_inside_dB > o.cabin_OASPL_dB - 3) out.push({ severity: 'advise', title: 'A propeller or rotor tone dominates the cabin', detail: `${o.tone_inside_dB.toFixed(0)} dB at ${i.f_tone.toFixed(0)} Hz with only ${o.TL_tone_dB.toFixed(0)} dB of wall attenuation.`, action: 'Low-frequency tones are better treated at source (tip clearance, blade count, synchrophasing) or with tuned vibration absorbers and active noise control than with added mass.', basis: 'Mass law: 6 dB per octave' });
     if (Number.isFinite(o.f_mass_air_mass_Hz) && o.f_mass_air_mass_Hz > 150) out.push({ severity: 'info', title: 'Double-wall resonance is in the audible working range', detail: `${o.f_mass_air_mass_Hz.toFixed(0)} Hz.`, action: 'A deeper gap or heavier trim lowers it; keep it at least an octave below the blade-passing frequency.', basis: 'Mass–air–mass resonance' });
     return out;
@@ -521,9 +569,8 @@ export default {
   tagline: 'How loud the aircraft is, which source is responsible, what people on the ground and in the cabin hear, and what would make it quieter.',
   analyses: [tonal, spectrum, flyover, cabin, duct],
   consumes: [
-    { from: 'propeller', keys: ['thrust_static_N'], why: 'Blade loading for propeller tones' },
     { from: 'rotorcraft', keys: ['hover_power_W'], why: 'Rotor torque for loading noise' },
-    { from: 'performance', keys: ['V_stall_ms', 'roc_max_ms'], why: 'Take-off speed and climb angle for the footprint' },
+    { from: 'performance', keys: ['V_2_ms', 'roc_sl_ms'], why: 'Take-off safety speed and sea-level climb rate for the source speed and the footprint climb angle' },
   ],
   provides: [
     { key: 'OASPL_dB', label: 'Overall sound pressure level', unit: 'dB' }, { key: 'SPL_peak_dBA', label: 'Maximum flyover level', unit: 'dBA' }, { key: 'bpf_Hz', label: 'Blade-passing frequency', unit: 'Hz' },

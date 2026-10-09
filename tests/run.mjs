@@ -64,7 +64,7 @@ for (const meta of SUITES) {
         res.plots.forEach((p) => checkPlot(p, where));
         for (const tb of res.tables) if (!tb.columns || tb.rows.some((r) => r.length !== tb.columns.length)) bad(`${where}: table "${tb.title}" shape`);
         try { structuredClone(res); } catch { bad(`${where}: result is not structured-cloneable (functions/classes in result)`); }
-        if (Date.now() - t > 4000) bad(`${where}: too slow (${Date.now() - t} ms)`);
+        if (Date.now() - t > (Number(process.env.AERO_SLOW_MS) || 4000)) bad(`${where}: too slow (${Date.now() - t} ms)`);
         if (an.recommend) { const rec = an.recommend(res, inp, ctx) || []; for (const r of rec) if (!r.title || !r.action || !r.severity) bad(`${where}: malformed recommendation`); }
       } catch (e) { bad(`${where}: threw ${e.stack?.split('\n').slice(0, 3).join(' | ')}`); }
     }

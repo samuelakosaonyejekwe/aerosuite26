@@ -24,7 +24,7 @@ const errors = []; let step = 'boot';
 page.on('console', (m) => { if (m.type() === 'error' && !/Failed to load resource|net::ERR|status of 4\d\d|status of 5\d\d/.test(m.text())) errors.push(`[${step}] console: ${m.text()}`); });
 page.on('pageerror', (e) => errors.push(`[${step}] exception: ${e.message}`));
 const shot = async (name) => { if (shotDir) await page.screenshot({ path: join(shotDir, `${mobile ? 'm-' : ''}${name}.png`), fullPage: false }); };
-const go = async (hash, name) => { step = name; await page.goto(base + hash); await page.waitForSelector('#page > *', { timeout: 15000 }); await page.waitForTimeout(350); };
+const go = async (hash, name) => { step = name; await page.goto(base + hash); await page.waitForSelector(`#page[data-route="${hash}"]`, { timeout: 60000 }); await page.waitForTimeout(150); };
 const want = (name) => !only || only.includes(name);
 const fail = (m) => errors.push(`[${step}] ${m}`);
 
@@ -69,6 +69,14 @@ try {
     await page.locator('.btn.primary', { hasText: 'Cut section' }).click(); await page.waitForSelector('.plot canvas', { timeout: 10000 });
     await page.locator('.btn', { hasText: 'with mesh-sensitivity study' }).click(); await page.waitForSelector('.plot-tri canvas', { timeout: 30000 }); await page.waitForTimeout(300);
     await page.locator('.plot-tri').scrollIntoViewIfNeeded(); await shot('geometry-section');
+  }
+  if (want('cad')) { // exact CAD through the embedded geometry kernel
+    await go('#/home', 'cad'); await go('#/geometry', 'cad');
+    const [ch] = await Promise.all([page.waitForEvent('filechooser'), page.locator('.drop').click()]); await ch.setFiles(fileURLToPath(new URL('./fixtures/box.stp', import.meta.url)));
+    let txt = ''; for (let k = 0; k < 480; k++) { txt = await page.locator('#page').innerText(); if (/box\.stp/.test(txt) && /12 triangles/.test(txt)) break; await page.waitForTimeout(250); }
+    if (!(await page.locator('.viewer canvas').count())) fail('STEP file produced no 3-D view');
+    if (!/Read in full/.test(txt)) fail('STEP not reported as read in full');
+    if (!/12 triangles/.test(txt)) fail('STEP faces were not tessellated in the browser (expected 12 triangles for a box)'); await shot('geometry-step');
   }
   if (want('integrated')) {
     await go('#/integrated', 'integrated'); await page.waitForSelector('.flowmap .nd', { timeout: 30000 }); await page.locator('.btn.primary.big').click();
