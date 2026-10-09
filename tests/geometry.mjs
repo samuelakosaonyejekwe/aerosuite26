@@ -4,6 +4,7 @@
 import zlib from 'node:zlib';
 import * as G from '../js/core/geometry/index.js';
 import { loadH5 } from '../js/core/geometry/parsers-wasm.js';
+import { xtBaseSchema } from '../js/core/geometry/parsers-xt.js';
 
 let pass = 0, fail = 0, section = '';
 const failures = [];
@@ -86,7 +87,7 @@ sec('formats');
     if (f.support !== 'native') ok(`profile ${f.id} has a conversion pathway`, f.pathway.length > 20);
     ok(`profile ${f.id} unique id`, !ids.has(f.id)); ids.add(f.id);
   }
-  for (const e of ['step', 'stp', 'iges', 'igs', 'x_t', 'x_b', 'sat', 'sab', 'jt', 'stl', 'obj', 'ply', '3mf', 'amf', 'gltf', 'glb', 'dae', 'wrl', 'x3d', 'off', 'vtk', 'vtp', 'las', 'laz', 'e57', 'pcd', 'xyz', 'cgns', 'msh', 'vtu', 'vts', 'vtr', 'vti', 'vtm', 'e', 'exo', 'med', 'unv', 'bdf', 'nas', 'dat', 'inp', 'cdb', 'h5', 'su2', 'plt', 'szplt', 'p3d', 'q', 'tif', 'catpart', 'sldprt'])
+  for (const e of ['step', 'stp', 'iges', 'igs', 'x_t', 'x_b', 'sat', 'sab', 'jt', 'dxf', 'stl', 'obj', 'ply', '3mf', 'amf', 'gltf', 'glb', 'dae', 'wrl', 'x3d', 'off', 'vtk', 'vtp', 'las', 'laz', 'e57', 'pcd', 'xyz', 'cgns', 'msh', 'vtu', 'vts', 'vtr', 'vti', 'vtm', 'e', 'exo', 'med', 'unv', 'bdf', 'nas', 'dat', 'inp', 'cdb', 'h5', 'su2', 'plt', 'szplt', 'p3d', 'q', 'tif', 'catpart', 'sldprt'])
     ok(`extension .${e} has a profile`, G.FORMATS.some((f) => f.ext.includes(e)));
 }
 
@@ -383,12 +384,12 @@ sec('IGES');
   ok('parameter-space curve excluded from extents', m.meta.skippedParametricCurves === 1); ok('kind cad-brep + clear warning', m.kind === 'cad-brep' && m.warnings.some((w) => /NOT tessellated/.test(w)));
 }
 
-sec('Parasolid text');
+sec('Parasolid header only');
 {
-  const src = '**ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz**************************\n**PARASOLID !"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~0123456789**************************\n**PART1;\nMC=x64;\nMC_MODEL=unknown;\nAPPL=TestCAD 2024;\nFORMAT=text;\nGUISE=transmit;\nDATE=1-may-2024;\n**PART2;\nSCH=SCH_3400201_34000;\nUSFLD_SIZE=0;\n**PART3;\n**END_OF_HEADER*****************************************************************\nT51 : TRANSMIT FILE created by modeller version 3400201 17 SCH_3400201_34000_13006 0\n12 1 12 0 2 0 0 0 0 1e3 1e-8 0 0 0 1 0 3 1 3 4 5 0 6 7 0\n';
-  const m = await imp('part.x_t', keep('part.x_t', src)); fmtId('x_t', m, 'xt', 'metadata');
-  ok('header fields + schema + version', m.meta.header.APPL === 'TestCAD 2024' && m.meta.header.FORMAT === 'text' && m.meta.schema.startsWith('SCH_3400201') && m.meta.modellerVersion === '3400201', JSON.stringify(m.meta));
-  ok('honest: metadata only, no invented census', m.kind === 'metadata-only' && m.meta.entityCensus === null && m.positions.length === 0 && m.warnings.some((w) => /NOT decoded/.test(w)) && m.warnings.some((w) => /pathway/i.test(w)));
+  const src = '**ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz**************************\n**PARASOLID !"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~0123456789**************************\n**PART1;\nMC=x64;\nMC_MODEL=unknown;\nAPPL=TestCAD 2024;\nFORMAT=text;\nGUISE=transmit;\nDATE=1-may-2024;\n**PART2;\nSCH=SCH_3400201_34000;\nUSFLD_SIZE=0;\n**PART3;\n**END_OF_HEADER*****************************************************************\nT51 : TRANSMIT FILE created by modeller version 340020117 SCH_3400201_340000 12 1 12 0 2 0 0 0 0 1e3 1e-8 0 0 0 1 0 3 1 3 4 5 0 6 7 0\n';
+  const m = await imp('part.x_t', keep('part.x_t', src)); ok('format', m.format === 'xt');
+  ok('header fields + schema + version survive a stream that cannot be decoded', m.meta.header.APPL === 'TestCAD 2024' && m.meta.header.FORMAT === 'text' && m.meta.schema.startsWith('SCH_3400201') && m.meta.modellerVersion === '3400201', JSON.stringify(m.meta));
+  ok('honest: metadata only, reason and pathway given', m.kind === 'metadata-only' && m.positions.length === 0 && m.warnings.some((w) => /schema 34000 without embedding/.test(w)) && m.warnings.some((w) => /pathway/i.test(w)), m.warnings.join(' | '));
 }
 
 // ---------- kernel-backed readers (vendored WebAssembly) ----------
@@ -723,6 +724,497 @@ sec('simplifyForSolver');
   const def = G.simplifyForSolver(uvSphere(1, 200, 100)); ok('default budget is 3000', def.triangles.length / 3 <= 3000 && def.sourceTriangles === 39600);
 }
 
+// ---------- kernel-format translators: Parasolid XT, ACIS SAT/SAB, JT ----------
+/** Node list of a Parasolid body for an axis-aligned box of side `s` (metres) at the origin: [{ type, index, vlen?, f }]. */
+function xtBoxNodes(s, { colour = [0.2, 0.4, 0.8], legacyAttribDef = true } = {}) {
+  const P = CV.map((v) => v.map((c) => c * s)), N = [], add = (type, index, f, vlen) => N.push({ type, index, f, vlen });
+  const geo = (id, owner) => ({ node_id: id, attributes_groups: 0, owner, next: 0, previous: 0, geometric_owner: 0, sense: '+' });
+  const ekey = (a, b) => Math.min(a, b) + '_' + Math.max(a, b), edges = new Map(), finsOf = new Map(); let fin = 100;
+  for (const q of CQ) for (let k = 0; k < 4; k++) { const key = ekey(q[k], q[(k + 1) % 4]); if (!edges.has(key)) edges.set(key, 40 + edges.size); }
+  add(12, 1, { highest_node_id: 200, attributes_groups: 130, attribute_chains: 0, surface: 0, curve: 0, point: 0, key: 0, res_size: 1000, res_linear: 1e-8, ref_instance: 0, next: 0, previous: 0, state: 1, owner: 0, body_type: 1, nom_geom_state: 1, shell: 4, boundary_surface: 30, boundary_curve: 60, boundary_point: 90, region: 2, edge: 40, vertex: 80 });
+  add(19, 2, { node_id: 2, attributes_groups: 0, body: 1, next: 3, previous: 0, shell: 0, type: 'V' }); add(19, 3, { node_id: 3, attributes_groups: 0, body: 1, next: 0, previous: 2, shell: 4, type: 'S' });
+  add(13, 4, { node_id: 4, attributes_groups: 0, body: 1, next: 0, face: 10, edge: 0, vertex: 0, region: 3, front_face: 0 });
+  CQ.forEach((q, i) => {
+    const u = P[q[1]].map((c, j) => c - P[q[0]][j]), w = P[q[3]].map((c, j) => c - P[q[0]][j]), n = [u[1] * w[2] - u[2] * w[1], u[2] * w[0] - u[0] * w[2], u[0] * w[1] - u[1] * w[0]].map((c) => c / (s * s));
+    add(14, 10 + i, { node_id: 10 + i, attributes_groups: 0, tolerance: null, next: i < 5 ? 11 + i : 0, previous: i ? 9 + i : 0, loop: 20 + i, shell: 4, surface: 30 + i, sense: '+', next_on_surface: 0, previous_on_surface: 0, next_front: 0, previous_front: 0, front_shell: 0 });
+    add(15, 20 + i, { node_id: 20 + i, attributes_groups: 0, fin: fin, face: 10 + i, next: 0 });
+    add(50, 30 + i, { ...geo(30 + i, 10 + i), pvec: P[q[0]], normal: n, x_axis: u.map((c) => c / s) });
+    for (let k = 0; k < 4; k++) { const a = q[k], b = q[(k + 1) % 4], e = edges.get(ekey(a, b)), id = fin + k; (finsOf.get(e) || finsOf.set(e, []).get(e)).push(id); add(17, id, { attributes_groups: 0, loop: 20 + i, forward: fin + ((k + 1) % 4), backward: fin + ((k + 3) % 4), vertex: 80 + b, other: 0, edge: e, curve: 0, next_at_vx: 0, sense: a < b ? '+' : '-' }); }
+    fin += 4;
+  });
+  for (const [key, e] of edges) { const [a, b] = key.split('_').map(Number), fs = finsOf.get(e), d = P[b].map((c, j) => (c - P[a][j]) / s); for (const nd of N) if (nd.type === 17 && fs.includes(nd.index)) nd.f.other = fs.find((x) => x !== nd.index); add(16, e, { node_id: e, attributes_groups: 0, tolerance: null, fin: fs[0], previous: 0, next: 0, curve: e + 20, next_on_curve: 0, previous_on_curve: 0, owner: 1 }); add(30, e + 20, { ...geo(e + 20, e), pvec: P[a], direction: d }); }
+  P.forEach((p, i) => { add(18, 80 + i, { node_id: 80 + i, attributes_groups: 0, fin: 0, previous: 0, next: 0, point: 90 + i, tolerance: null, owner: 1 }); add(29, 90 + i, { node_id: 90 + i, attributes_groups: 0, owner: 80 + i, next: 0, previous: 0, pvec: p }); });
+  // colour attribute on the body
+  add(81, 130, { node_id: 130, definition: 131, owner: 1, next: 0, previous: 0, next_of_type: 0, previous_of_type: 0, fields: [133] }, 1);
+  add(80, 131, legacyAttribDef ? { next: 0, identifier: 132, type_id: 8001, actions: [0, 0, 0, 0, 3, 5, 0, 0], legal_owners: 'FFFFTFTFFFFFF'.split('').map((c) => c === 'T'), fields: [2] } : { next: 0, identifier: 132, type_id: 8001, actions: [0, 0, 0, 0, 3, 5, 0, 0], field_names: 0, legal_owners: 'FFFFTFTFFFFFFF'.split('').map((c) => c === 'T'), fields: [2] }, 1);
+  add(79, 132, { string: 'SDL/TYSA_COLOUR' }, 15); add(83, 133, { values: colour }, 3);
+  return N;
+}
+const XT_HEAD = (fmt, sch) => `**ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz**************************\n**PARASOLID !"#$%&'()*+,-./:;<=>?@[\\]^_\`{|}~0123456789**************************\n**PART1;\nMC=test;\nAPPL=geometry-test;\nFORMAT=${fmt};\nGUISE=transmit;\nDATE=1-jan-2024;\n**PART2;\nSCH=${sch};\nUSFLD_SIZE=0;\n**PART3;\n**END_OF_HEADER*****************************************************************\n`;
+const xtSchema = () => { const S = xtBaseSchema(); return S; };
+/** Serialise nodes as an XT text file. mode: 'v12' (schema 12006, not embedded) or 'embedded' (V14 style, edits against 13006). */
+function xtText(nodes, mode = 'v12', o = {}) {
+  const S = xtSchema(), emb = mode === 'embedded', sch = o.sch || (emb ? 'SCH_1400068_14000_13006' : 'SCH_1200000_12006'), mv = ': TRANSMIT FILE created by modeller version 1200000';
+  for (const [t, f] of o.layouts || []) { if (S.has(t)) S.get(t).fields = f; else S.set(t, { name: 'X', fields: f }); }
+  if (!emb && !o.modern) { const ad = S.get(80); ad.fields = ad.fields.filter((f) => f.name !== 'field_names').map((f) => (f.name === 'legal_owners' ? { ...f, n: 13 } : f)); }
+  let out = `T${mv.length} ${mv}${sch.length} ${sch}${emb ? '200 ' : ''}0 `; const seen = new Set();
+  const val = (code, v) => (code === 'c' ? v : code === 'l' ? (v ? 'T' : 'F') : code === 'v' ? (v === null ? '?' : v.map((x) => x + ' ').join('')) : v === null ? '?' : v + ' ');
+  for (const nd of nodes) {
+    const d = S.get(nd.type); out += nd.type + ' ';
+    let fields = d.fields, extra = '';
+    if (emb && !seen.has(nd.type)) { seen.add(nd.type); if (nd.type === 18) { out += `${fields.length + 1} ${'C'.repeat(fields.length)}A5 extra0 0 1 dZ`; } else out += '255 '; }
+    if (emb && nd.type === 18) extra = '7 ';                                   // the appended integer field of the edited VERTEX schema
+    if (nd.vlen !== undefined) out += nd.vlen + ' ';
+    out += nd.index + ' ';
+    for (const fd of fields) { const v = nd.f[fd.name] ?? 0; if (fd.n === 0) out += val(fd.code, v); else if (fd.code === 'c') out += v; else for (const x of v) out += val(fd.code, x); }
+    out += extra;
+  }
+  out += '1 0 ';
+  return XT_HEAD('text', sch.replace(/_13006$/, '')) + out.match(/.{1,80}/g).join('\n') + '\n';
+}
+/** Serialise nodes as a neutral-binary XT stream (optionally behind the textual file header). */
+function xtBinary(nodes, withHeader = true, o = {}) {
+  const S = xtSchema(), sch = o.sch || 'SCH_1200000_12006', mv = ': TRANSMIT FILE created by modeller version 1200000', parts = [], LE = !!o.bare;
+  for (const [t, f] of o.layouts || []) S.get(t).fields = f;
+  if (!o.modern) { const ad = S.get(80); ad.fields = ad.fields.filter((f) => f.name !== 'field_names').map((f) => (f.name === 'legal_owners' ? { ...f, n: 13 } : f)); }
+  const i16 = (v) => { const b = new Uint8Array(2); new DataView(b.buffer).setInt16(0, v, LE); parts.push(b); }, i32 = (v) => { const b = new Uint8Array(4); new DataView(b.buffer).setInt32(0, v, LE); parts.push(b); }, f64 = (v) => { const b = new Uint8Array(8); new DataView(b.buffer).setFloat64(0, v, LE); parts.push(b); };
+  const ptr = (v) => { if (v < 32767) i16(v + 1); else { i16(-((v % 32767) + 1)); i16(Math.floor(v / 32767)); } };
+  const val = (code, v) => { if (code === 'd') i32(v === null ? -32764 : v); else if (code === 'n' || code === 'w') i16(v); else if (code === 'u') parts.push(Uint8Array.of(v)); else if (code === 'f') f64(v === null ? -3.14158e13 : v); else if (code === 'p') ptr(v); else if (code === 'c') parts.push(enc(v)); else if (code === 'l') parts.push(Uint8Array.of(v ? 1 : 0)); else if (code === 'v') for (let k = 0; k < 3; k++) f64(v === null ? -3.14158e13 : v[k]); };
+  if (o.bare) { parts.push(Uint8Array.of(0x42)); i32(mv.length); parts.push(enc(mv)); i32(sch.length); parts.push(enc(sch)); i32(0); }
+  else { parts.push(Uint8Array.of(0x50, 0x53, 0, 0)); i16(mv.length); parts.push(enc(mv)); i32(sch.length); parts.push(enc(sch)); i32(0); }
+  for (const nd of nodes) { const d = S.get(nd.type); i16(nd.type); if (nd.vlen !== undefined) i32(nd.vlen); ptr(nd.index); for (const fd of d.fields) { const v = nd.f[fd.name] ?? 0; if (fd.n === 0) val(fd.code, v); else if (fd.code === 'c') parts.push(enc(v)); else for (const x of v) val(fd.code, x); } }
+  i16(1); i16(1);
+  return withHeader ? cat(enc(XT_HEAD('binary', sch)), ...parts) : cat(...parts);
+}
+
+sec('Parasolid XT (text and neutral binary)');
+{
+  const nodes = xtBoxNodes(0.02), txt = xtText(nodes); keep('box.x_t', txt);
+  ok('detected as Parasolid text', G.detectFormat('box.x_t', enc(txt)).id === 'xt');
+  let m = await imp('box.x_t', txt), a = G.analyse(m); fmtId('text', m, 'xt', 'native');
+  ok('B-rep graph translated and tessellated: 6 faces → 12 triangles', m.kind === 'surface' && a.nTris === 12 && m.meta.translation.faces === 6 && m.meta.translation.facesTranslated === 6 && m.meta.translation.edges === 12, `${m.kind} ${a.nTris} ${m.warnings.join(' | ')}`);
+  ok('20 mm box in metres', a.bbox.size.every((d) => Math.abs(d - 0.02) < 1e-12) && m.units.length === 'm' && m.units.source === 'file', JSON.stringify(a.bbox.size)); near('volume', a.volume, 8e-6, 1e-9); near('area', a.area, 6 * 4e-4, 1e-9);
+  ok('closed, outward', a.watertight && !a.inwardNormals && a.orientationConflicts === 0); ok('body colour from SDL/TYSA_COLOUR', Array.isArray(m.groups[0]?.color) && m.groups[0].kind === 'solid', JSON.stringify(m.groups));
+  ok('schema + header in the metadata', m.meta.schema === 'SCH_1200000_12006' && m.meta.header.APPL === 'geometry-test' && m.meta.encoding === 'text' && m.meta.embeddedSchema === false && m.meta.nodeCount === nodes.length);
+  m = await imp('box14.x_t', keep('box14.x_t', xtText(xtBoxNodes(0.02, { legacyAttribDef: false }), 'embedded'))); a = G.analyse(m);
+  ok('embedded schema (255 flags and a Copy/Append edit sequence)', m.meta.embeddedSchema === true && a.nTris === 12 && Math.abs(a.volume - 8e-6) < 1e-14 && a.watertight, `${m.kind} ${m.warnings.join(' | ')}`);
+  const bin = keep('box.x_b', xtBinary(nodes));
+  ok('detected as Parasolid binary', G.detectFormat('box.x_b', bin).id === 'xb' && G.detectFormat('stream.bin', xtBinary(nodes, false)).id === 'xb');
+  m = await imp('box.x_b', bin); a = G.analyse(m); ok('neutral binary: same solid', m.format === 'xb' && m.meta.encoding === 'neutral binary' && a.nTris === 12 && Math.abs(a.volume - 8e-6) < 1e-14 && a.watertight, `${m.kind} ${m.warnings.join(' | ')}`);
+  m = await imp('stream.x_b', xtBinary(nodes, false)); ok('bare node stream without the text header', G.analyse(m).nTris === 12);
+  // unsupported surface: every face on a blend surface type is skipped with a count, the rest is still returned
+  const blended = xtBoxNodes(0.02); blended.find((n) => n.type === 50 && n.index === 31).type = 59; Object.assign(blended.find((n) => n.index === 31).f, { boundary: 0, blend: 0 });
+  m = await imp('blend.x_t', xtText(blended)); a = G.analyse(m);
+  ok('unsupported surface type: other faces returned + precise warning + support downgraded', a.nTris === 10 && m.support === 'partial' && m.meta.translation.skippedFaces.BLEND_BOUND === 1 && m.warnings.some((w) => /1 of 6 face\(s\) could not be translated.*BLEND_BOUND/.test(w)), `${a.nTris} ${m.support} ${m.warnings.join(' | ')}`);
+  m = await imp('new.x_t', txt.replace(/SCH_1200000_12006/g, 'SCH_3200000_32001')); a = G.analyse(m); ok('old layouts under a modern schema name: read through layout inference, or refused with the reason - never silently', m.meta.schema === 'SCH_3200000_32001' && ((m.kind === 'surface' && a.nTris === 12 && m.meta.inferredSchema?.version === 32001 && m.warnings.some((w) => /without embedding it/.test(w))) || (m.kind === 'metadata-only' && m.warnings.some((w) => /schema 32001 without embedding/.test(w)))), `${m.kind} ${m.warnings[0]?.slice(0, 200)}`);
+  m = await imp('cut.x_t', xtText(nodes).replace(/SCH_1200000_12006/g, 'SCH_3200000_32001').slice(0, 2600)); ok('truncated file without embedded schema is refused at once', m.kind === 'metadata-only' && m.warnings.some((w) => /ends without the stream terminator \(truncated\)/.test(w)), m.warnings[0]?.slice(0, 200));
+  m = await imp('box.x_t', txt, { wasm: false }); ok('kernel switched off → graph census kept, no faces', m.kind === 'metadata-only' && m.meta.translation.facesTranslated === 6 && m.warnings.some((w) => /switched off/.test(w)));
+  m = await imp('cut.x_t', txt.slice(0, txt.length - 300)); ok('truncated stream → metadata-only, says where it stopped', m.kind === 'metadata-only' && m.warnings.some((w) => /nodes read/.test(w)), m.warnings[0]);
+}
+
+// ---------- ACIS ----------
+/** SAT (ACIS 7 layout) of a box a × b × c; records are written in index order so the same list can be re-encoded as SAB. */
+function satBox(a, b, c, { name = 'spar', rgb = [1, 0, 0], unitsMM = 1, version = 700 } = {}) {
+  const P = CV.map((v) => [v[0] * a, v[1] * b, v[2] * c]), R = [], C = version >= 700 ? '$-1 -1 $-1' : '$-1', rec = (s) => R.push(s) - 1;
+  const ekey = (i, j) => Math.min(i, j) + '_' + Math.max(i, j), E = new Map(); for (const q of CQ) for (let k = 0; k < 4; k++) { const key = ekey(q[k], q[(k + 1) % 4]); if (!E.has(key)) E.set(key, E.size); }
+  // index layout: 0 body, 1 name attrib, 2 colour attrib, 3 lump, 4 shell, then per face (face, loop, plane, 4 coedges), then edges, lines, vertices, points
+  const F0 = 5, face = (i) => F0 + 7 * i, loop = (i) => face(i) + 1, plane = (i) => face(i) + 2, coedge = (i, k) => face(i) + 3 + k, E0 = F0 + 42, edge = (e) => E0 + e, line = (e) => E0 + 12 + e, vtx = (v) => E0 + 24 + v, pnt = (v) => E0 + 32 + v;
+  const partner = new Map(); CQ.forEach((q, i) => q.forEach((v, k) => { const key = ekey(v, q[(k + 1) % 4]); (partner.get(key) || partner.set(key, []).get(key)).push(coedge(i, k)); }));
+  rec(`body $1 ${C.slice(4)} $3 $-1 $-1 #`.replace('$1  ', '$1 '));
+  rec(`string_attrib-name_attrib-gen-attrib ${C} $2 $-1 $0 @9 PART_NAME @${name.length} ${name} #`);
+  rec(`rgb_color-st-attrib ${C} $-1 $1 $0 ${rgb.join(' ')} #`);
+  rec(`lump ${C} $-1 $4 $0 #`); rec(`shell ${C} $-1 $-1 $${face(0)} $-1 $3 #`);
+  CQ.forEach((q, i) => {
+    const u = P[q[1]].map((x, j) => x - P[q[0]][j]), w = P[q[3]].map((x, j) => x - P[q[0]][j]), n = [u[1] * w[2] - u[2] * w[1], u[2] * w[0] - u[0] * w[2], u[0] * w[1] - u[1] * w[0]], nl = Math.hypot(...n), ul = Math.hypot(...u);
+    rec(`face ${C} $${i < 5 ? face(i + 1) : -1} $${loop(i)} $4 $-1 $${plane(i)} forward single #`);
+    rec(`loop ${C} $-1 $${coedge(i, 0)} $${face(i)} #`);
+    rec(`plane-surface ${C} ${P[q[0]].join(' ')} ${n.map((x) => x / nl).join(' ')} ${u.map((x) => x / ul).join(' ')} forward_v I I I I #`);
+    q.forEach((v, k) => { const w2 = q[(k + 1) % 4], key = ekey(v, w2); rec(`coedge ${C} $${coedge(i, (k + 1) % 4)} $${coedge(i, (k + 3) % 4)} $${partner.get(key).find((x) => x !== coedge(i, k))} $${edge(E.get(key))} ${v < w2 ? 'forward' : 'reversed'} $${loop(i)} $-1 #`); });
+  });
+  for (const [key, e] of E) { const [i, j] = key.split('_').map(Number), L = Math.hypot(...P[j].map((x, q) => x - P[i][q])); rec(`edge ${C} $${vtx(i)} 0 $${vtx(j)} ${L} $${partner.get(key)[0]} $${line(e)} forward @7 unknown #`); }
+  for (const [key] of E) { const [i, j] = key.split('_').map(Number), d = P[j].map((x, q) => x - P[i][q]), L = Math.hypot(...d); rec(`straight-curve ${C} ${P[i].join(' ')} ${d.map((x) => x / L).join(' ')} I I #`); }
+  P.forEach((p, v) => rec(`vertex ${C} $${edge([...E].find(([key]) => key.split('_').map(Number).includes(v))[1])} $${pnt(v)} #`)); P.forEach((p) => rec(`point ${C} ${p.join(' ')} #`));
+  R[0] = `body $1 ${version >= 700 ? '-1 $-1 ' : ''}$3 $-1 $-1 #`;
+  return `${version} 0 1 0\n9 test-case 12 ACIS ${version / 100}.0 NT 24 Mon Jan 01 00:00:00 2024\n${unitsMM} 9.9999999999999995e-07 1e-10\n${R.join('\n')}\nEnd-of-ACIS-data\n`;
+}
+/** SAT of a closed cylinder (radius r, height h, axis z): a cone-surface with zero half angle and two circular edges. */
+function satCylinder(r, h) {
+  const C = '$-1 -1 $-1', R = [
+    `body ${C} $1 $-1 $-1 #`, `lump ${C} $-1 $2 $0 #`, `shell ${C} $-1 $-1 $3 $-1 $1 #`,
+    `face ${C} $4 $6 $2 $-1 $9 forward single #`, `face ${C} $5 $8 $2 $-1 $10 forward single #`, `face ${C} $-1 $7 $2 $-1 $11 forward single #`,
+    `loop ${C} $12 $13 $3 #`, `loop ${C} $-1 $15 $5 #`, `loop ${C} $-1 $16 $4 #`,
+    `cone-surface ${C} 0 0 0 0 0 1 ${r} 0 0 1 I I 0 1 ${r} forward I I I I #`, `plane-surface ${C} 0 0 ${h} 0 0 1 1 0 0 forward_v I I I I #`, `plane-surface ${C} 0 0 0 0 0 -1 1 0 0 forward_v I I I I #`,
+    `loop ${C} $-1 $14 $3 #`,
+    `coedge ${C} $13 $13 $15 $17 forward $6 $-1 #`, `coedge ${C} $14 $14 $16 $18 reversed $12 $-1 #`, `coedge ${C} $15 $15 $13 $17 reversed $7 $-1 #`, `coedge ${C} $16 $16 $14 $18 forward $8 $-1 #`,
+    `edge ${C} $21 0 $21 6.283185307179586 $13 $19 forward @7 unknown #`, `edge ${C} $22 0 $22 6.283185307179586 $14 $20 forward @7 unknown #`,
+    `ellipse-curve ${C} 0 0 0 0 0 1 ${r} 0 0 1 I I #`, `ellipse-curve ${C} 0 0 ${h} 0 0 1 ${r} 0 0 1 I I #`,
+    `vertex ${C} $17 $23 #`, `vertex ${C} $18 $24 #`, `point ${C} ${r} 0 0 #`, `point ${C} ${r} 0 ${h} #`,
+  ];
+  return `700 0 1 0\n9 test-case 12 ACIS 7.0 NT 24 Mon Jan 01 00:00:00 2024\n1000 9.9999999999999995e-07 1e-10\n${R.join('\n')}\nEnd-of-ACIS-data\n`;
+}
+/** Re-encode a SAT file as SAB (tagged binary). */
+function satToSab(sat) {
+  const lines = sat.trim().split('\n'), h = lines[0].trim().split(/\s+/).map(Number), strs = [...lines[1].matchAll(/(\d+) /g)], parts = [enc('ACIS BinaryFile')];
+  const i32 = (v) => { const b = new Uint8Array(4); new DataView(b.buffer).setInt32(0, v, true); return b; }, f64 = (v) => { const b = new Uint8Array(8); new DataView(b.buffer).setFloat64(0, v, true); return b; }, tagStr = (s) => cat(Uint8Array.of(7, s.length), enc(s));
+  for (const v of h) parts.push(i32(v));
+  { let l2 = lines[1], i = 0; for (let k = 0; k < 3; k++) { const m = /^\s*(\d+)\s/.exec(l2.slice(i)); parts.push(tagStr(l2.substr(i + m[0].length, +m[1]))); i += m[0].length + +m[1]; } void strs; }
+  for (const v of lines[2].trim().split(/\s+/).map(Number)) parts.push(Uint8Array.of(6), f64(v));
+  const ident = (w) => { const p = w.split('-'), out = []; p.forEach((q, i) => out.push(Uint8Array.of(i < p.length - 1 ? 0x0e : 0x0d, q.length), enc(q))); return cat(...out); };
+  for (const ln of lines.slice(3)) {
+    if (/^End-of-ACIS-data/.test(ln)) { parts.push(ident('End-of-ACIS-data')); break; }
+    const tok = ln.trim().split(/\s+/); parts.push(ident(tok[0]));
+    for (let i = 1; i < tok.length; i++) {
+      const w = tok[i];
+      if (w === '#') parts.push(Uint8Array.of(0x11)); else if (/^\$-?\d+$/.test(w)) parts.push(Uint8Array.of(0x0c), i32(+w.slice(1)));
+      else if (/^@\d+$/.test(w)) { const n = +w.slice(1); let s = tok[++i]; while (s.length < n) s += ' ' + tok[++i]; parts.push(tagStr(s)); }
+      else if (w === 'reversed' || w === 'double' || w === 'F') parts.push(Uint8Array.of(0x0a)); else if (w === 'forward' || w === 'single' || w === 'I') parts.push(Uint8Array.of(0x0b));
+      else if (w === '{') parts.push(Uint8Array.of(0x0f)); else if (w === '}') parts.push(Uint8Array.of(0x10));
+      else if (/^[-+.\d]/.test(w) && Number.isFinite(+w)) { if (/^-?\d+$/.test(w)) parts.push(Uint8Array.of(0x04), i32(+w)); else parts.push(Uint8Array.of(0x06), f64(+w)); }
+      else parts.push(ident(w));
+    }
+  }
+  return cat(...parts);
+}
+
+sec('ACIS SAT / SAB');
+{
+  const sat = satBox(20, 30, 40); keep('box.sat', sat);
+  ok('detected as ACIS', G.detectFormat('box.sat', enc(sat)).id === 'acis');
+  let m = await imp('box.sat', sat), a = G.analyse(m); fmtId('sat', m, 'acis', 'native');
+  ok('records translated and tessellated: 6 faces → 12 triangles', m.kind === 'surface' && a.nTris === 12 && m.meta.translation.facesTranslated === 6 && m.meta.translation.edges === 12, `${m.kind} ${a.nTris} ${m.warnings.join(' | ')}`);
+  ok('bbox 20 × 30 × 40', a.bbox.size.every((d, i) => Math.abs(d - [20, 30, 40][i]) < 1e-9)); near('volume', a.volume, 24000, 1e-9); ok('closed, outward', a.watertight && !a.inwardNormals && a.orientationConflicts === 0);
+  ok('units from the header scale (1 mm per unit)', m.units.length === 'mm' && m.units.source === 'file' && m.meta.millimetresPerUnit === 1);
+  ok('body name and colour from attributes', m.groups[0]?.name === 'spar' && m.groups[0].color?.[0] === 1 && m.groups[0].color[1] === 0, JSON.stringify(m.groups));
+  ok('header + census', m.meta.saveVersion === 700 && m.meta.product === 'test-case' && m.meta.census.face === 6 && m.meta.census.coedge === 24 && m.meta.census['plane-surface'] === 6 && m.meta.encoding === 'SAT (text)');
+  m = await imp('inch.sat', satBox(1, 1, 1, { unitsMM: 25.4 })); ok('inch file: units "in", coordinates untouched', m.units.length === 'in' && Math.abs(G.analyse(m).volume - 1) < 1e-12);
+  m = await imp('odd.sat', satBox(1, 1, 1, { unitsMM: 123 })); ok('non-standard unit scale → units null + warning', m.units.length === null && m.warnings.some((w) => /123 mm per model unit/.test(w)));
+  m = await imp('old.sat', satBox(2, 2, 2, { version: 600 })); a = G.analyse(m); ok('pre-7.0 record layout (no entity tags)', a.nTris === 12 && Math.abs(a.volume - 8) < 1e-12 && m.meta.saveVersion === 600, `${m.kind} ${m.warnings.join(' | ')}`);
+  const cyl = satCylinder(0.5, 2); keep('cyl.sat', cyl); m = await imp('cyl.sat', cyl); a = G.analyse(m);
+  ok('cylinder: cone-surface with zero half angle, circular edges', m.kind === 'surface' && a.watertight && !a.inwardNormals && m.units.length === 'm', `${m.kind} ${a.boundaryEdges} ${m.warnings.join(' | ')}`); near('cylinder volume → π r² h', a.volume, Math.PI * 0.25 * 2, 5e-3); near('cylinder area', a.area, 2 * Math.PI * 0.25 + 2 * Math.PI * 0.5 * 2, 5e-3);
+  const fineCyl = await imp('cyl.sat', cyl, { linearDeflection: 0.0002, angularDeflection: 0.1 }); ok('deflection options reach the kernel', fineCyl.triangles.length > m.triangles.length && Math.abs(G.analyse(fineCyl).volume - Math.PI / 2) < Math.abs(a.volume - Math.PI / 2));
+  const sab = keep('box.sab', satToSab(sat));
+  ok('SAB detected by signature', G.detectFormat('whatever.bin', sab).id === 'acis');
+  m = await imp('box.sab', sab); a = G.analyse(m); ok('SAB (tagged binary) → same solid', m.meta.encoding === 'SAB (binary)' && a.nTris === 12 && Math.abs(a.volume - 24000) < 1e-6 && a.watertight && m.groups[0].name === 'spar', `${m.kind} ${m.warnings.join(' | ')}`);
+  m = await imp('cyl.sab', satToSab(cyl)); a = G.analyse(m); ok('SAB cylinder', a.watertight && Math.abs(a.volume - Math.PI / 2) < 0.01, `${m.kind} ${m.warnings.join(' | ')}`);
+  const sph = sat.replace(/plane-surface (\S+ \S+ \S+) [^#]*#/, 'meshsurf-surface $1 0 #'); m = await imp('unk.sat', sph); a = G.analyse(m);
+  ok('unknown surface type: other faces returned + precise warning', a.nTris === 10 && m.support === 'partial' && m.warnings.some((w) => /1 of 6 face\(s\).*meshsurf-surface/.test(w)), `${a.nTris} ${m.warnings.join(' | ')}`);
+  m = await imp('wire.sat', '700 0 1 0\n9 test-case 12 ACIS 7.0 NT 24 Mon Jan 01 00:00:00 2024\n1 1e-06 1e-10\nbody $-1 -1 $-1 $1 $-1 $-1 #\nlump $-1 -1 $-1 $-1 $-1 $0 #\nEnd-of-ACIS-data\n'); ok('body without faces → metadata-only with census', m.kind === 'metadata-only' && m.meta.census.body === 1 && m.warnings.some((w) => /no faces/.test(w)));
+}
+
+// ---------- JT ----------
+const guidBytes = (g) => { const h = g.replace(/-/g, ''), b = new Uint8Array(16), dv = new DataView(b.buffer); dv.setUint32(0, parseInt(h.slice(0, 8), 16), true); dv.setUint16(4, parseInt(h.slice(8, 12), 16), true); dv.setUint16(6, parseInt(h.slice(12, 16), 16), true); for (let i = 0; i < 8; i++) b[8 + i] = parseInt(h.slice(16 + 2 * i, 18 + 2 * i), 16); return b; };
+const le32 = (v) => { const b = new Uint8Array(4); new DataView(b.buffer).setInt32(0, v, true); return b; }, le16 = (v) => { const b = new Uint8Array(2); new DataView(b.buffer).setInt16(0, v, true); return b; }, lef32 = (v) => { const b = new Uint8Array(4); new DataView(b.buffer).setFloat32(0, v, true); return b; };
+const lef64 = (v) => { const b = new Uint8Array(8); new DataView(b.buffer).setFloat64(0, v, true); return b; }, leu32 = (v) => { const b = new Uint8Array(4); new DataView(b.buffer).setUint32(0, v, true); return b; };
+const crc32 = (b) => { let c = ~0; for (const x of b) { c ^= x; for (let k = 0; k < 8; k++) c = (c >>> 1) ^ (0xedb88320 & -(c & 1)); } return ~c >>> 0; };
+/** A valid .xz stream holding `raw` in uncompressed LZMA2 chunks (Node has no LZMA encoder). */
+function xzStore(raw) {
+  const varint = (v) => { const o = []; while (v >= 0x80) { o.push((v & 0x7f) | 0x80); v = Math.floor(v / 128); } o.push(v); return Uint8Array.from(o); }, pad4 = (b) => cat(b, new Uint8Array((4 - (b.length % 4)) % 4));
+  const flags = Uint8Array.of(0, 0), bh = Uint8Array.of(0x02, 0x00, 0x21, 0x01, 0x00, 0, 0, 0), chunks = [];
+  for (let i = 0; i < raw.length; i += 65536) { const part = raw.subarray(i, i + 65536); chunks.push(Uint8Array.of(i === 0 ? 1 : 2, (part.length - 1) >> 8, (part.length - 1) & 255), part); }
+  const block = cat(bh, leu32(crc32(bh)), ...chunks, Uint8Array.of(0)), idx = pad4(cat(Uint8Array.of(0), varint(1), varint(block.length), varint(raw.length))), index = cat(idx, leu32(crc32(idx))), ff = cat(leu32(index.length / 4 - 1), flags);
+  return cat(Uint8Array.of(0xfd, 0x37, 0x7a, 0x58, 0x5a, 0x00), flags, leu32(crc32(flags)), pad4(block), index, leu32(crc32(ff)), ff, enc('YZ'));
+}
+/** MSB-first bit writer into 32-bit code-text words. */
+class BitW {
+  constructor() { this.bits = []; }
+  put(v, n) { for (let i = n - 1; i >= 0; i--) this.bits.push(Math.floor(v / 2 ** i) % 2); return this; }
+  s(v, n) { return this.put(v < 0 ? v + 2 ** n : v, n); }
+  nib(v) { for (let x = v; ;) { const nb = ((x % 16) + 16) % 16; x = Math.floor(x / 16); const done = (x === 0 && nb < 8) || (x === -1 && nb >= 8); this.put(nb, 4).put(done ? 0 : 1, 1); if (done) return this; } }
+  words() { const out = []; for (let i = 0; i < this.bits.length; i += 32) { let w = 0; for (let k = 0; k < 32; k++) w = w * 2 + (this.bits[i + k] || 0); out.push(leu32(w)); } return cat(...out); }
+}
+const sbits = (v) => { if (v === 0) return 0; let n = 1; while (!(v >= -(2 ** (n - 1)) && v < 2 ** (n - 1))) n++; return n; }, ubits = (v) => { let n = 0; for (; v >= 1; v = Math.floor(v / 2)) n++; return n; };
+const lag1 = (v) => v.map((x, i) => (i < 4 ? x : (x - v[i - 1]) | 0));
+/** Int32 compressed data packets, fixed-width Bitlength codec: Mk. 2 (JT 9) and the JT 10 form with nibbler-coded bounds. */
+const cdpFixed = (vals, v10) => {
+  if (!vals.length) return le32(0);
+  const mn = Math.min(...vals), mx = Math.max(...vals), w = new BitW().put(0, 1), width = ubits(mx - mn);
+  if (v10) w.nib(mn).nib(mx); else { w.put(sbits(mn), 6).put(sbits(mx), 6).s(mn, sbits(mn)).s(mx, sbits(mx)); }
+  for (const v of vals) w.put(v - mn, width);
+  return cat(le32(vals.length), Uint8Array.of(1), le32(w.bits.length), w.words());
+};
+/** Int32 compressed data packet of JT 8, Bitlength codec (adaptive field width in steps of two bits). */
+const cdp1Bitlength = (vals) => {
+  const w = new BitW(); let width = 0;
+  for (const v of vals) { const need = 2 * Math.ceil(sbits(v) / 2); if (need > width) { w.put(1, 1).put(1, 1); for (width += 2; width < need; width += 2) w.put(1, 1); w.put(0, 1); } else w.put(0, 1); w.s(v, width); }
+  const words = w.words(); return cat(Uint8Array.of(1), le32(w.bits.length), le32(vals.length), le32(words.length / 4), words);
+};
+const f32bits = (x) => { const f = new Float32Array([x]); return new Uint32Array(f.buffer)[0]; };
+const TRISTRIP_LOD = '10dd10ab-2ac8-11d1-9b6b0080c7bb5997';
+/**
+ * Tri-strip Shape LOD element holding a box of the given size, in the layout of JT 8 (vertex-based: six 4-vertex strips,
+ * lossless zlib-packed vertices), JT 9 or JT 10 (topologically compressed mesh). The topological symbol sequence is
+ * that of a 12-triangle box as a JT writer emits it; coordinates are stored lossless, or quantised with `bits`.
+ */
+function jtShapeElement(major, size, o = {}) {
+  const bits = o.bits || 0;
+  const el = (body) => { const e = cat(guidBytes(TRISTRIP_LOD), Uint8Array.of(4), le32(77), body); return cat(le32(e.length), e); };
+  if (major < 9) {
+    const P = [], prim = [0];
+    for (let a = 0; a < 3; a++) for (let sgn = 0; sgn < 2; sgn++) { const u = (a + 1) % 3, w = (a + 2) % 3, q = (i, j) => { const p = [0, 0, 0]; p[a] = sgn * size[a]; p[u] = i * size[u]; p[w] = j * size[w]; return p; }; P.push(...(sgn ? [q(0, 0), q(1, 0), q(0, 1), q(1, 1)] : [q(0, 0), q(0, 1), q(1, 0), q(1, 1)])); prim.push(P.length); }
+    const raw = cat(...P.flat().map(lef32)), z = new Uint8Array(zlib.deflateSync(raw)), stride1 = prim.map((x, i) => (i < 4 ? x : x - (2 * prim[i - 1] - prim[i - 2])));
+    return el(cat(new Uint8Array(8), le16(1), Uint8Array.of(0, 0, 0, 0), new Uint8Array(3), cdp1Bitlength(stride1), le32(raw.length), le32(z.length), z));
+  }
+  const v10 = major >= 10, pk = (v) => cdpFixed(v, v10), none = le32(0);
+  // JT 10 only: Move-to-Front packet (window of 16, offset -1 = new value) and the variable-width Bitlength form
+  const mtf = (vals) => { const win = [], values = [], offs = []; for (const v of vals) { const k = win.indexOf(v); if (k < 0) { values.push(v); offs.push(-1); } else { offs.push(k); win.splice(k, 1); } win.unshift(v); if (win.length > 16) win.pop(); } return cat(le32(vals.length), Uint8Array.of(5), pk(values), pk(offs)); };
+  const varWidth = (vals, mean, width) => { const w = new BitW().put(1, 1).nib(mean).s(width, 4).put(vals.length, 4); for (const v of vals) w.s(v - mean, width); return cat(le32(vals.length), Uint8Array.of(1), le32(w.bits.length), w.words()); };
+  const nullPk = (vals) => cat(le32(vals.length), Uint8Array.of(0), le32(32 * vals.length), ...vals.map(leu32));
+  const deg0 = [5, 6, 4, 5, 4, 5, 3], grp = [0, 4, 1, 1, 4, 3, 5, 3, 2, 5, 2, 0];
+  const topo = [o.nullCodec ? nullPk(deg0) : o.varWidth ? varWidth(deg0, 5, 2) : o.chopper ? cat(le32(7), Uint8Array.of(4, 0), pk(deg0)) : pk(deg0), pk([4]), none, none, none, none, none, none,                    // face degrees, by context
+    pk(new Array(12).fill(3)), o.mtf ? mtf(grp) : pk(grp), pk(new Array(12).fill(0)),          // vertex valences, groups, flags
+    none, pk([7]), pk([7, 13, 7]), pk([22, 26, 21]), pk([21]), none, none, none,                             // face attribute masks, by context
+    ...(v10 ? [none] : [none, none]), none, none, none];                                                     // high mask words, large-face masks, split faces, split positions
+  const unit = [[1, 0, 0], [1, 1, 0], [1, 0, 1], [0, 0, 0], [0, 1, 0], [0, 0, 1], [0, 1, 1], [1, 1, 1]], comps = [];
+  for (let c = 0; c < 3; c++) {
+    const x = unit.map((p) => p[c] * size[c]);
+    if (bits) comps.push(pk(lag1(x.map((v) => Math.round((v / size[c]) * (2 ** bits - 1))))));
+    else if (v10) comps.push(pk(lag1(x.map(f32bits))));
+    else comps.push(pk(lag1(x.map((v) => f32bits(v) >>> 23))), pk(lag1(x.map((v) => f32bits(v) & 0x7fffff))));
+  }
+  const quant = cat(...[0, 1, 2].map((c) => cat(lef32(0), lef32(size[c]), Uint8Array.of(bits))));
+  const mesh = cat(...topo, le32(0x1234), new Uint8Array(8), new Uint8Array(4), le32(8), le32(8), le32(8), Uint8Array.of(3), quant, ...comps, le32(0x5678));
+  if (!v10) return el(cat(le16(1), le16(1), new Uint8Array(8), le16(2), le32(3), le16(2), mesh));
+  const rep = cat(guidBytes('f830a5ad-be4c-4fbc-9b5fb9269278d2e1'), Uint8Array.of(9), le32(1), Uint8Array.of(1), le32(0), Uint8Array.of(1), mesh);
+  return el(cat(Uint8Array.of(1, 1), new Uint8Array(8), le32(rep.length), rep));
+}
+/**
+ * A JT file in the JT 8, 9 or 10 container / scene-graph layout: partition → part (transform, name, units) → tri-strip
+ * shape node, with an optional XT B-Rep segment and an optional tessellated box (`shape` = size in model units).
+ */
+function jtFile({ version = '9.5', xt = null, shape = null, shapeOpts = {}, tx = 100, units = 'Millimeters', name = 'Rib', rawShape = null, external = null } = {}) {
+  const major = parseInt(version, 10), V = major >= 10 ? Uint8Array.of(1) : major >= 9 ? le16(1) : new Uint8Array(0);
+  const G1 = '10dd103e-2ac8-11d1-9b6b0080c7bb5997', GPART = 'ce357244-38fb-11d1-a506006097bdc6e1', GXF = '10dd1083-2ac8-11d1-9b6b0080c7bb5997', GSTR = '10dd106e-2ac8-11d1-9b6b0080c7bb5997', GLL = 'e0b05be5-fbbd-11d1-a3a700aa00d10954', GXT = '873a70e0-2ac9-11d1-9b6b0080c7bb5997', GTRI = '10dd1077-2ac8-11d1-9b6b0080c7bb5997', EOEG = 'ffffffff-ffff-ffff-ffffffffffffffff';
+  const SEG = { lsg: '11111111-1111-1111-1111111111111111', xt: '22222222-2222-2222-2222222222222222', shape: '33333333-3333-3333-3333333333333333' };
+  const el = (guid, base, id, ...data) => { const body = cat(guidBytes(guid), Uint8Array.of(base), le32(id), ...data); return cat(le32(body.length), body); }, eoe = cat(le32(16), guidBytes(EOEG));
+  const mb = (s) => cat(le32(s.length), ...Array.from(s, (c) => le16(c.charCodeAt(0)))), baseNode = (attrs) => cat(V, le32(0), le32(attrs.length), ...attrs.map(le32)), group = (kids) => cat(V, le32(kids.length), ...kids.map(le32));
+  const strProp = (id, s) => el(GSTR, 5, id, V, le32(0), V, mb(s)), late = (id, seg, type) => el(GLL, 8, id, V, le32(0), V, guidBytes(seg), le32(type), le32(99), le32(1));
+  const v105 = version === '10.5', attrBase = v105 ? cat(Uint8Array.of(2), new Uint8Array(9)) : major >= 10 ? cat(Uint8Array.of(1), new Uint8Array(8)) : cat(V, new Uint8Array(5));       // JT 10.5: base attribute version 2 is one byte longer
+  const partition = (id, kids, file) => el(G1, 1, id, baseNode([]), group(kids), ...(major >= 10 ? [Uint8Array.of(1)] : []), le32(0), mb(file), new Uint8Array(40));
+  const lsg = cat(
+    partition(1, [2], ''),
+    el(GPART, 1, 2, baseNode([3]), group([external ? 5 : 4]), le16(1), le16(1), le32(0)),
+    ...(external ? [partition(5, [], external)] : []),
+    el(GTRI, 2, 4, baseNode([]), new Uint8Array(12)),
+    el(GXF, 3, 3, attrBase, V, le16(0x0008), major < 9 ? lef32(tx) : lef64(tx), ...(v105 ? [le32(-1)] : [])),          // one stored element: the x translation
+    eoe,
+    strProp(10, 'JT_PROP_NAME'), strProp(11, `${name}.part;0;0:`), strProp(12, 'JT_PROP_MEASUREMENT_UNITS'), strProp(13, units), strProp(14, 'XT_BREP'), late(15, SEG.xt, 17), strProp(16, 'JT_LLPROP_SHAPEIMPL'), late(17, SEG.shape, 7),
+    eoe,
+    le16(1), le32(2), le32(2), le32(10), le32(11), le32(12), le32(13), ...(xt ? [le32(14), le32(15)] : []), le32(0), le32(4), le32(16), le32(17), le32(0));
+  const packed = (id, type, raw) => { const z = major >= 10 ? xzStore(raw) : new Uint8Array(zlib.deflateSync(raw)), tag = major >= 10 ? 3 : 2, body = cat(le32(tag), le32(z.length + 1), Uint8Array.of(tag), z); return cat(guidBytes(id), le32(type), le32(24 + body.length), body); };
+  const segs = [[SEG.lsg, 1, packed(SEG.lsg, 1, lsg)]];
+  if (xt) segs.push([SEG.xt, 17, packed(SEG.xt, 17, el(GXT, 9, 99, le32(2), le32(25), le32(0), le32(176), le32(xt.length), xt))]);
+  const shapeBody = rawShape || (shape ? jtShapeElement(major, shape, shapeOpts) : null);
+  if (shapeBody) segs.push([SEG.shape, 7, cat(guidBytes(SEG.shape), le32(7), le32(24 + shapeBody.length), shapeBody)]);
+  const head = new Uint8Array(80).fill(32); head.set(enc(`Version ${version} JT  DM 7.3.4.0`)); head.set([32, 10, 13, 10, 32], 75);
+  const wide = major >= 10, tocAt = 80 + 1 + 4 + (wide ? 8 : 4) + 16, tocLen = 4 + (wide ? 32 : 28) * segs.length; let off = tocAt + tocLen; const toc = [le32(segs.length)], bodies = [];
+  for (const [id, type, bytes] of segs) { toc.push(guidBytes(id), ...(wide ? [le32(off), le32(0)] : [le32(off)]), le32(bytes.length), le32(type << 24)); bodies.push(bytes); off += bytes.length; }
+  return cat(head, Uint8Array.of(0), le32(0), ...(wide ? [le32(tocAt), le32(0)] : [le32(tocAt)]), guidBytes(SEG.lsg), ...toc, ...bodies);
+}
+
+sec('JT (container, scene graph, XT B-Rep)');
+{
+  const xtStream = xtBinary(xtBoxNodes(0.02), false), jt = keep('rib.jt', jtFile({ xt: xtStream, shape: [20, 20, 20] }));
+  ok('detected by the version header', G.detectFormat('rib.jt', jt).id === 'jt');
+  let m = await imp('rib.jt', jt), a = G.analyse(m); fmtId('jt', m, 'jt', 'partial');
+  ok('XT B-Rep segment translated and tessellated', m.kind === 'surface' && a.nTris === 12 && a.watertight, `${m.kind} ${m.warnings.join(' | ')}`);
+  ok('scaled from metres to the model unit and placed by the scene-graph transform', m.units.length === 'mm' && a.bbox.size.every((d) => Math.abs(d - 20) < 1e-9) && Math.abs(a.bbox.min[0] - 100) < 1e-9 && Math.abs(a.bbox.min[1]) < 1e-9, JSON.stringify(a.bbox)); near('volume in mm³', a.volume, 8000, 1e-9);
+  ok('part name from JT_PROP_NAME, units from JT_PROP_MEASUREMENT_UNITS', m.groups[0]?.name === 'Rib' && m.meta.partNames[0] === 'Rib' && m.meta.units === 'Millimeters' && m.meta.lsgLayout === 'v9', JSON.stringify(m.groups) + JSON.stringify(m.meta.partNames));
+  ok('segment + node census', m.meta.version === '9.5' && m.meta.segments['XT B-Rep'] === 1 && m.meta.segments['Logical Scene Graph'] === 1 && m.meta.nodeCensus.part === 1 && m.meta.nodeCensus.triStripShape === 1 && m.meta.shapeSegments === 1);
+  ok('exact B-Rep preferred over the tessellation of the same part, and said so', m.meta.shapeDecoding.partsFromXT === 1 && m.meta.shapeDecoding.shapesUsed === 0 && m.warnings.some((w) => /exact XT B-Rep of 1 part\(s\).*opts\.jtTessellation/.test(w)), m.warnings.join(' | '));
+  m = await imp('rib.jt', jt, { jtTessellation: true }); a = G.analyse(m);
+  ok('opts.jtTessellation forces the file tessellation', m.kind === 'surface' && m.meta.shapeDecoding.partsFromXT === 0 && m.meta.shapeDecoding.shapesUsed === 1 && a.nTris === 12 && Math.abs(a.bbox.min[0] - 100) < 1e-9, JSON.stringify(m.meta.shapeDecoding));
+  m = await imp('inch.jt', jtFile({ xt: xtStream, units: 'Inches', tx: 2 })); a = G.analyse(m); ok('inch model unit', m.units.length === 'in' && Math.abs(a.bbox.size[0] - 0.02 / 0.0254) < 1e-9 && Math.abs(a.bbox.min[0] - 2) < 1e-9, JSON.stringify(a.bbox));
+  m = await imp('bare.jt', keep('bare.jt', jtFile({})));
+  ok('JT without B-Rep and without shapes → metadata-only, with names/units and the reason', m.kind === 'metadata-only' && m.meta.partNames[0] === 'Rib' && m.meta.units === 'Millimeters' && m.warnings.some((w) => /no XT B-Rep and no tri-strip tessellation/.test(w)) && m.warnings.some((w) => /Conversion pathway/.test(w)), m.warnings.join(' | '));
+}
+
+sec('JT (tessellation: Shape LOD decoding, JT 8 / 9 / 10 layouts, LZMA2)');
+{
+  const { unxz } = await import('../js/core/geometry/parsers-lzma.js');
+  // an .xz stream written by a reference LZMA encoder (preset 6): 40 short records, 1400 bytes
+  const xzRef = Uint8Array.from(Buffer.from('/Td6WFoAAATm1rRGAgAhARYAAAB0L+Wj4AV3AMVdACCaSkZFkcAhYCI0y6v8uHV7uMNdQvT6dJW6NLbf347KqkTit57GIBX5Lm/5HkTSPGYgNQfhYXg1PIj/TWubzuVJaaKU4HaM913orQIRfxWdW4uzxWsZZ530iKqDKqDfQoh56YnJLdLsKbdJZ6rVauEdy+fyiofDF0i6v32tW9o0U8Di6Non0RYA/kSSfSY6QerduqgncI13g4s+u0GSfneQUwniJoHuExlK8NuxA++kkmqDn87t4bDsZqBa4cpw4/udyXBqAAAAAF1myyGx9KLPAAHhAfgKAADUjmhtscRn+wIAAAAABFla', 'base64'));
+  let expect = ''; for (let i = 0; i < 40; i++) expect += `Aircraft rib ${String(i).padStart(3, '0')}: station ${(i * 0.125).toFixed(3)} m; `;
+  ok('LZMA2 / XZ decoder reproduces a reference-compressed stream', new TextDecoder().decode(unxz(xzRef)) === expect);
+  const big = new Uint8Array(150000).map((_, i) => (i * 7 + (i >> 8)) & 255), back = unxz(xzStore(big)); ok('XZ with stored chunks round-trips', back.length === big.length && back.every((v, i) => v === big[i]));
+  let threw = 0; for (const cut of [0, 5, 12, 20, 60, 200, 230]) { try { unxz(xzRef.subarray(0, cut)); } catch { threw++; } } ok('truncated XZ streams raise an error instead of hanging', threw === 7, String(threw));
+  { const bad = xzRef.slice(); for (let i = 30; i < 200; i += 7) bad[i] ^= 0x5a; let r = 'ok'; try { unxz(bad, 1e6); } catch { r = 'threw'; } ok('corrupted XZ payload terminates', r === 'ok' || r === 'threw'); }
+
+  for (const [version, layout] of [['8.1', 'v8'], ['9.5', 'v9'], ['10.0', 'v10']]) {
+    const f = keep(`tess${layout}.jt`, jtFile({ version, shape: [30, 20, 10], tx: 5, name: 'Bracket' }));
+    const m = await imp(`tess${layout}.jt`, f), a = G.analyse(m), tag = `JT ${version}`;
+    ok(`${tag}: tessellation-only file read as a surface`, m.kind === 'surface' && m.format === 'jt' && a.nTris === 12, `${m.kind} ${a.nTris} ${m.warnings.join(' | ')}`);
+    ok(`${tag}: scene-graph layout, name, units`, m.meta.lsgLayout === layout && m.meta.version === version && m.groups[0]?.name === 'Bracket' && m.units.length === 'mm' && m.units.source === 'file', `${m.meta.lsgLayout} ${JSON.stringify(m.groups)} ${JSON.stringify(m.units)}`);
+    ok(`${tag}: placed by the transform, exact size`, Math.abs(a.bbox.min[0] - 5) < 1e-9 && Math.abs(a.bbox.min[1]) < 1e-9 && [30, 20, 10].every((d, i) => Math.abs(a.bbox.size[i] - d) < 1e-5), JSON.stringify(a.bbox));
+    const h = G.heal(m, { weld: true }).model, ah = G.analyse(h); near(`${tag}: closed after welding, volume`, ah.volume, 6000, 1e-6); ok(`${tag}: outward, consistently oriented`, ah.watertight && !ah.inwardNormals && ah.orientationConflicts === 0, JSON.stringify([ah.watertight, ah.inwardNormals, ah.orientationConflicts]));
+    ok(`${tag}: codec census reported`, Object.keys(m.meta.shapeDecoding.codecs).length > 0 && m.meta.shapeDecoding.segmentsDecoded === 1 && m.meta.shapeDecoding.segmentsFailed === 0, JSON.stringify(m.meta.shapeDecoding));
+  }
+  for (const version of ['9.5', '10.0']) {
+    const m = await imp('q.jt', keep(`quant${version}.jt`, jtFile({ version, shape: [30, 20, 10], shapeOpts: { bits: 16 }, tx: 0 }))), a = G.analyse(G.heal(m, { weld: true }).model);
+    near(`JT ${version}: quantised coordinates (16 bit)`, a.volume, 6000, 1e-6);
+  }
+  // XT B-Rep inside a JT 10 container (XZ-compressed segments)
+  let m = await imp('rib10.jt', keep('rib10.jt', jtFile({ version: '10.0', xt: xtBinary(xtBoxNodes(0.02), false), shape: [20, 20, 20] }))), a = G.analyse(m);
+  ok('JT 10: XZ-compressed scene graph and XT B-Rep', m.kind === 'surface' && m.meta.lsgLayout === 'v10' && m.meta.shapeDecoding.partsFromXT === 1 && a.watertight && Math.abs(a.volume - 8000) < 1e-6 && Math.abs(a.bbox.min[0] - 100) < 1e-9, `${m.kind} ${JSON.stringify(m.meta.shapeDecoding)} ${m.warnings.join(' | ')}`);
+  // kernel switched off: the tessellation is used although a B-Rep exists
+  m = await imp('rib.jt', jtFile({ xt: xtBinary(xtBoxNodes(0.02), false), shape: [20, 20, 20] }), { wasm: false }); ok('without the kernel the tessellation is used', m.kind === 'surface' && m.meta.shapeDecoding.shapesUsed === 1 && m.meta.shapeDecoding.partsFromXT === 0);
+  // a shape segment that cannot be decoded is reported, never guessed
+  const dummy = cat(le32(21), guidBytes(TRISTRIP_LOD), Uint8Array.of(4), le32(50));
+  m = await imp('broken.jt', keep('broken.jt', jtFile({ rawShape: dummy })));
+  ok('undecodable Shape LOD → metadata-only with the reason', m.kind === 'metadata-only' && m.warnings.some((w) => /no shape could be decoded|could not be decoded/.test(w)) && m.meta.partNames[0] === 'Rib', m.warnings.join(' | '));
+  const poly = cat(le32(21), guidBytes('10dd10a1-2ac8-11d1-9b6b0080c7bb5997'), Uint8Array.of(4), le32(50));
+  m = await imp('poly.jt', jtFile({ rawShape: poly })); ok('non-tri-strip shape element is not decoded as triangles', m.kind === 'metadata-only', m.kind);
+  // paths that no real sample exercised stay disabled unless explicitly enabled
+  // JT 10 codecs seen in real JT 10.5 files: Move-to-Front, variable-width Bitlength, Chopper
+  const { decodeShapeLOD } = await import('../js/core/geometry/parsers-jtshape.js');
+  for (const [label, so] of [['Move-to-Front', { mtf: true }], ['variable-width Bitlength', { varWidth: true }], ['Chopper', { chopper: true }]]) {
+    const el = jtShapeElement(10, [30, 20, 10], so), lod = await decodeShapeLOD(el, true, 10, '10dd10ab-2ac8-11d1-9b6b0080c7bb5997');
+    m = await imp('c.jt', jtFile({ version: '10.5', rawShape: el, tx: 7 })); a = G.analyse(G.heal(m, { weld: true }).model);
+    ok(`JT 10 ${label} packet`, lod.triangles.length === 36 && Array.from(lod.faceGroups).join() === '0,4,1,1,4,3,5,3,2,5,2,0' && Math.abs(a.volume - 6000) < 1e-3 && a.watertight, `${lod.triangles.length} ${Array.from(lod.faceGroups || []).join()} ${a.volume} ${m.warnings.join(' | ').slice(0, 200)}`);
+    if (label === 'Move-to-Front') ok('JT 10.5 transform attribute layout (longer base data, trailing field)', m.meta.lsgLayout === 'v10' && Math.abs(G.analyse(m).bbox.min[0] - 7) < 1e-9, JSON.stringify(G.analyse(m).bbox.min));
+  }
+  // an assembly whose part lives in another file: supplied through opts.companions, placed by both scene graphs
+  const asm = keep('asm.jt', jtFile({ version: '10.5', external: 'parts/Bracket.jt', tx: 100 })), partFile = jtFile({ version: '10.5', shape: [30, 20, 10], tx: 5, name: 'Bracket' });
+  m = await imp('asm.jt', asm, { companions: [{ name: 'bracket.JT', bytes: partFile }] }); a = G.analyse(m);
+  ok('JT assembly with an external part file', m.kind === 'surface' && a.nTris === 12 && Math.abs(a.bbox.min[0] - 105) < 1e-9 && m.meta.externalParts.referenced === 1 && m.meta.externalParts.supplied === 1, `${m.kind} ${JSON.stringify(a.bbox.min)} ${m.warnings.join(' | ').slice(0, 300)}`);
+  m = await imp('asm.jt', asm); ok('missing part files are named, not ignored', m.kind === 'metadata-only' && m.warnings.some((w) => /1 separate file\(s\), of which 1 were not supplied.*parts\/Bracket\.jt.*opts\.companions/.test(w)), m.warnings.join(' | ').slice(0, 300));
+  // the Null codec was exercised by no real sample: disabled unless explicitly enabled
+  const nul = jtShapeElement(10, [30, 20, 10], { nullCodec: true });
+  m = await imp('null.jt', jtFile({ version: '10.0', rawShape: nul }));
+  ok('unverified codec path is disabled with a precise message', m.kind === 'metadata-only' && m.warnings.some((w) => /Null codec of the Int32 compressed data packet Mk\. 2 could not be verified against real data and is disabled/.test(w)), m.warnings.join(' | '));
+  m = await imp('null.jt', jtFile({ version: '10.0', rawShape: nul }), { jtUnverified: true });
+  ok('opts.jtUnverified enables it and flags the result', m.kind === 'surface' && G.analyse(m).nTris === 12 && m.warnings.some((w) => /could not be verified against real data were enabled/.test(w)), `${m.kind} ${m.warnings.join(' | ')}`);
+}
+
+// ---------- Parasolid: schema not embedded (learned layouts), bare binary ----------
+sec('Parasolid XT (schema inferred from learned layouts, bare binary)');
+{
+  const { xtLearnedVersions } = await import('../js/core/geometry/parsers-xt.js');
+  ok('learned schema versions are tabulated', xtLearnedVersions().length >= 8 && xtLearnedVersions().includes(31001));
+  // layouts of schema 31001 as embedded files of that version state them: BODY and REGION differ from the V13 base
+  const F = (s) => s.split(' ').map((f) => { const [name, code, n] = f.split(':'); return { name, code, n: n === '*' ? -1 : n ? +n : 0 }; });
+  const layouts = new Map([
+    [12, F('highest_node_id:d attributes_groups:p attribute_chains:p surface:p curve:p point:p mesh:p polyline:p key:p res_size:f res_linear:f ref_instance:p next:p previous:p state:u owner:p body_type:u nom_geom_state:u shell:p boundary_surface:p boundary_curve:p boundary_point:p boundary_mesh:p boundary_polyline:p region:p edge:p vertex:p index_map_offset:d index_map:p node_id_index_map:p schema_embedding_map:p child:p lowest_node_id:d mesh_offset_data:p')],
+    [19, F('node_id:d attributes_groups:p body:p next:p previous:p shell:p type:c owner:p')]]);
+  const nodes = xtBoxNodes(0.02, { legacyAttribDef: false }), opt = { sch: 'SCH_3100000_31001', layouts, modern: true };
+  const txt = keep('learned.x_t', xtText(nodes, 'v12', opt));
+  let m = await imp('learned.x_t', txt), a = G.analyse(m);
+  ok('text file with a non-embedded V31 schema is read', m.kind === 'surface' && a.nTris === 12 && a.watertight && Math.abs(a.volume - 8e-6) < 1e-14, `${m.kind} ${m.warnings.join(' | ').slice(0, 400)}`);
+  ok('the inference is reported (version, layouts used, warning)', m.meta.inferredSchema?.version === 31001 && m.meta.inferredSchema.layouts.some((l) => /BODY as in schema 31001/.test(l)) && m.meta.inferredSchema.guessedLayouts.length === 0 && m.warnings.some((w) => /uses schema 31001 without embedding it.*inferred/.test(w)), JSON.stringify(m.meta.inferredSchema));
+  const bare = keep('learned_bare.x_b', xtBinary(nodes, true, { ...opt, bare: true }));
+  m = await imp('learned_bare.x_b', bare); a = G.analyse(m);
+  ok('bare (little-endian) binary with the same non-embedded schema', m.format === 'xb' && /bare binary/.test(m.meta.encoding) && a.nTris === 12 && a.watertight && Math.abs(a.volume - 8e-6) < 1e-14 && m.meta.inferredSchema?.version === 31001, `${m.kind} ${m.meta.encoding} ${m.warnings.join(' | ').slice(0, 300)}`);
+  m = await imp('learned.x_b', keep('learned.x_b', xtBinary(nodes, true, opt))); a = G.analyse(m);
+  ok('neutral binary with the same non-embedded schema', /neutral/.test(m.meta.encoding) && a.nTris === 12 && Math.abs(a.volume - 8e-6) < 1e-14, `${m.kind} ${m.warnings.join(' | ').slice(0, 300)}`);
+  // a version nobody has seen whose BODY carries two more pointers than any known layout: several placements of the extra
+  // fields parse equally well and name the body's pointers differently, so the file is refused instead of guessed
+  const odd = new Map(layouts); odd.set(12, [...layouts.get(12).slice(0, 8), { name: 'x1', code: 'p', n: 0 }, { name: 'x2', code: 'p', n: 0 }, ...layouts.get(12).slice(8)]);
+  m = await imp('ambiguous.x_t', xtText(nodes, 'v12', { sch: 'SCH_3000000_30000', layouts: odd, modern: true }));
+  ok('ambiguous layout is refused with the precise reason', m.kind === 'metadata-only' && m.warnings.some((w) => /schema 30000 without embedding it, and its node layouts cannot be determined uniquely: two different layouts of BODY nodes/.test(w)), `${m.kind} ${m.warnings[0]?.slice(0, 300)}`);
+  // a node type nobody documents (as written by recent modellers ahead of the bodies) is stepped over and declared
+  const withRoot = [{ type: 177, index: 900, f: { a: 3, b: 0, c: 0 } }, ...nodes], l2 = new Map(layouts); l2.set(177, F('a:d b:d c:d'));
+  m = await imp('root.x_t', xtText(withRoot, 'v12', { ...opt, layouts: l2 })); a = G.analyse(m);
+  ok('undocumented node type stepped over and declared', a.nTris === 12 && Math.abs(a.volume - 8e-6) < 1e-14 && m.meta.inferredSchema?.guessedLayouts.some((l) => /^UNKNOWN_177/.test(l)) && m.warnings.some((w) => /had to be guessed/.test(w)), `${m.kind} ${JSON.stringify(m.meta.inferredSchema)} ${m.warnings[0]?.slice(0, 300)}`);
+}
+
+// ---------- DXF ----------
+const dxfText = (pairs) => pairs.map(([c, v]) => `${String(c).padStart(3)}\n${v}\n`).join('');
+/** Binary DXF (R13+ form: 16-bit group codes) of the same group list. */
+function dxfBinary(pairs) {
+  const parts = [enc('AutoCAD Binary DXF\r\n\u001a\u0000')], kind = (c) => (c <= 9 || (c >= 100 && c <= 105) || (c >= 300 && c <= 369 && !(c >= 310 && c <= 319)) || c === 999 ? 's' : (c >= 10 && c <= 59) || (c >= 210 && c <= 239) ? 'f' : (c >= 60 && c <= 79) || (c >= 270 && c <= 289) ? 'h' : c >= 90 && c <= 99 ? 'i' : c >= 290 && c <= 299 ? 'b' : c >= 310 && c <= 319 ? 'x' : 's');
+  for (const [c, v] of pairs) {
+    parts.push(Uint8Array.of(c & 255, c >> 8)); const k = kind(c);
+    if (k === 's') parts.push(enc(String(v)), Uint8Array.of(0)); else if (k === 'f') parts.push(lef64(+v)); else if (k === 'h') parts.push(le16(+v)); else if (k === 'i') parts.push(le32(+v)); else if (k === 'b') parts.push(Uint8Array.of(+v));
+    else { const h = String(v), u = new Uint8Array(h.length / 2); for (let i = 0; i < u.length; i++) u[i] = parseInt(h.substr(2 * i, 2), 16); parts.push(Uint8Array.of(u.length), u); }
+  }
+  return cat(...parts);
+}
+const dxfPt = (p, k = 0) => [[10 + k, p[0]], [20 + k, p[1]], [30 + k, p[2]]];
+function dxfDrawing({ version = 'AC1015', insunits = 4, entities = [], blocks = [], tail = [] } = {}) {
+  return [[0, 'SECTION'], [2, 'HEADER'], [9, '$ACADVER'], [1, version], [9, '$INSUNITS'], [70, insunits], [0, 'ENDSEC'],
+    [0, 'SECTION'], [2, 'TABLES'], [0, 'TABLE'], [2, 'LAYER'], [0, 'LAYER'], [2, 'SKIN'], [70, 0], [0, 'LAYER'], [2, 'FRAME'], [70, 0], [0, 'ENDTAB'], [0, 'ENDSEC'],
+    [0, 'SECTION'], [2, 'BLOCKS'], ...blocks, [0, 'ENDSEC'], [0, 'SECTION'], [2, 'ENTITIES'], ...entities, [0, 'ENDSEC'], ...tail, [0, 'EOF']];
+}
+/** ACIS text as the group-1 / group-3 lines of a 3DSOLID (obfuscated as DXF R2000-R2010 stores it). */
+function dxfSatLines(sat, encode) { const out = []; for (const ln of sat.split('\n')) { if (!ln) continue; const e = encode(ln); for (let i = 0; i < e.length; i += 255) out.push([i ? 3 : 1, e.slice(i, i + 255)]); } return out; }
+
+sec('DXF (faces, wires, blocks, layers, units)');
+{
+  const cubeFaces = CQ.flatMap((q) => [[0, '3DFACE'], [8, 'SKIN'], ...q.flatMap((vi, k) => dxfPt(CV[vi].map((c) => 2 * c), k))]);
+  const tetra = [[0, 'POLYLINE'], [8, 'FRAME'], [66, 1], [70, 64], [71, 4], [72, 4],
+    ...[[20, 0, 0], [21, 0, 0], [20, 1, 0], [20, 0, 1]].flatMap((p) => [[0, 'VERTEX'], [8, 'FRAME'], ...dxfPt(p), [70, 192]]),
+    ...[[1, 3, 2], [1, 2, 4], [1, 4, 3], [2, 3, 4]].flatMap((f) => [[0, 'VERTEX'], [8, 'FRAME'], ...dxfPt([0, 0, 0]), [70, 128], [71, f[0]], [72, f[1]], [73, f[2]]]), [0, 'SEQEND']];
+  const entities = [...cubeFaces,
+    [0, 'LINE'], [8, 'FRAME'], ...dxfPt([0, 0, 0]), ...dxfPt([5, 0, 0], 1),
+    [0, 'LWPOLYLINE'], [8, 'FRAME'], [90, 4], [70, 1], [38, 3], [10, 0], [20, 0], [42, 1], [10, 4], [20, 0], [10, 4], [20, 4], [10, 0], [20, 4],
+    [0, 'CIRCLE'], [8, 'FRAME'], ...dxfPt([10, 0, 0]), [40, 1],
+    [0, 'INSERT'], [8, 'FRAME'], [2, 'TAB'], ...dxfPt([10, 10, 0]), [41, 2], [42, 2], [43, 1], [50, 90],
+    ...tetra, [0, 'TEXT'], [8, 'FRAME'], ...dxfPt([0, 0, 0]), [40, 1], [1, 'note']];
+  const blocks = [[0, 'BLOCK'], [8, '0'], [2, 'TAB'], [70, 0], ...dxfPt([0, 0, 0]), [0, '3DFACE'], [8, '0'], ...[[0, 0, 0], [1, 0, 0], [1, 1, 0], [0, 1, 0]].flatMap((p, k) => dxfPt(p, k)), [0, 'ENDBLK']];
+  const pairs = dxfDrawing({ entities, blocks }), ascii = keep('part.dxf', dxfText(pairs));
+  ok('detected as DXF (by content and by the binary sentinel)', G.detectFormat('part.dxf', ascii).id === 'dxf' && G.detectFormat('x.bin', ascii).id === 'dxf' && G.detectFormat('b.dxf', dxfBinary(pairs)).id === 'dxf');
+  let m = await imp('part.dxf', ascii), a = G.analyse(m); fmtId('ascii', m, 'dxf', 'partial');
+  ok('3DFACE quads, polyface mesh and block face as triangles', a.nTris === 12 + 4 + 2, String(a.nTris));
+  ok('units from $INSUNITS, release from $ACADVER', m.units.length === 'mm' && m.units.source === 'file' && m.meta.release === '2000' && m.meta.encoding === 'ASCII');
+  ok('layers become groups; block entities on layer 0 take the layer of the INSERT', m.groups.some((g) => g.name === 'SKIN' && g.kind === 'layer') && m.groups.some((g) => g.name === 'FRAME') && !m.groups.some((g) => g.name === '0'), JSON.stringify(m.groups.map((g) => g.name)));
+  ok('INSERT scale 2, rotation 90°, translation (10,10): block face lands on x 8..10, y 10..12', Math.abs(a.bbox.max[1] - 12) < 1e-9 && (() => { const P = m.positions; for (let i = 0; i < P.length; i += 3) if (Math.abs(P[i] - 8) < 1e-9 && Math.abs(P[i + 1] - 12) < 1e-9) return true; return false; })(), JSON.stringify(a.bbox));
+  ok('LWPOLYLINE bulge 1 is a semicircle (reaches y = −2 at elevation 3), circle reaches x = 11', Math.abs(a.bbox.min[1] + 2) < 1e-9 && Math.abs(a.bbox.max[0] - 21) < 1e-9 && m.lines.length > 2 * 40, JSON.stringify(a.bbox) + m.lines.length);
+  ok('annotation skipped with a note, census kept', m.warnings.some((w) => /1 annotation entity/.test(w)) && m.meta.entityCensus['3DFACE'] === 7 && m.meta.layers.includes('SKIN'), m.warnings.join(' | '));
+  const cubeOnly = await imp('cube.dxf', dxfText(dxfDrawing({ entities: cubeFaces }))), hc = G.analyse(G.heal(cubeOnly, { weld: true }).model); near('cube of 3DFACEs: volume after welding', hc.volume, 8, 1e-9); ok('cube closed and outward', hc.watertight && !hc.inwardNormals);
+  const mb = await imp('part_bin.dxf', keep('part_bin.dxf', dxfBinary(pairs)));
+  ok('binary DXF gives the same model', mb.meta.encoding === 'binary' && mb.positions.length === m.positions.length && mb.triangles.length === m.triangles.length && Array.from(mb.positions).every((v, i) => Math.abs(v - m.positions[i]) < 1e-12) && mb.units.length === 'mm');
+  m = await imp('inch.dxf', dxfText(dxfDrawing({ insunits: 1, entities: cubeFaces }))); ok('inches', m.units.length === 'in');
+  m = await imp('nounit.dxf', dxfText(dxfDrawing({ insunits: 0, entities: cubeFaces }))); ok('unitless drawing: units stay unknown', m.units.length === null);
+  m = await imp('odd.dxf', dxfText(dxfDrawing({ insunits: 10, entities: cubeFaces }))); ok('unit without platform equivalent is named, not guessed', m.units.length === null && m.warnings.some((w) => /\$INSUNITS = 10, yards/.test(w)));
+  m = await imp('empty.dxf', dxfText(dxfDrawing({}))); ok('drawing without geometry → metadata-only', m.kind === 'metadata-only' && m.format === 'dxf');
+  // deeply recursive block: expansion stops instead of overflowing
+  const rec = [[0, 'BLOCK'], [8, '0'], [2, 'LOOP'], [70, 0], ...dxfPt([0, 0, 0]), [0, 'INSERT'], [8, '0'], [2, 'LOOP'], ...dxfPt([1, 0, 0]), [0, 'LINE'], [8, '0'], ...dxfPt([0, 0, 0]), ...dxfPt([1, 0, 0], 1), [0, 'ENDBLK']];
+  m = await imp('rec.dxf', dxfText(dxfDrawing({ blocks: rec, entities: [[0, 'INSERT'], [8, '0'], [2, 'LOOP'], ...dxfPt([0, 0, 0])] }))); ok('self-referencing block terminates with a note', m.lines.length > 0 && m.warnings.some((w) => /nested deeper than 16/.test(w)), m.warnings.join(' | '));
+}
+
+sec('DXF (embedded ACIS solids: SAT text and SAB binary)');
+{
+  const { dxfDecodeSat, dxfEncodeSat } = await import('../js/core/geometry/parsers-dxf.js');
+  const sample = 'body $-1 -1 $-1 $2 $-1 $3 # Alpha A_b {x}';
+  ok('SAT obfuscation round-trips (mirror about 79.5, "^ " for A)', dxfDecodeSat(dxfEncodeSat(sample)) === sample && dxfEncodeSat('400 0 1 0 ') === 'koo o n o ' && dxfEncodeSat('A') === '^ ');
+  const sat = satBox(30, 20, 10), solid = [[0, '3DSOLID'], [5, '9C'], [8, 'SKIN'], [100, 'AcDbModelerGeometry'], [70, 1], ...dxfSatLines(sat, dxfEncodeSat)];
+  let m = await imp('solid.dxf', keep('solid.dxf', dxfText(dxfDrawing({ entities: solid })))), a = G.analyse(m);
+  ok('3DSOLID with obfuscated SAT → exact solid', m.kind === 'surface' && a.nTris === 12 && a.watertight && m.meta.acis.sat === 1 && m.meta.acis.translated === 1, `${m.kind} ${m.warnings.join(' | ').slice(0, 300)}`); near('volume in drawing units', a.volume, 6000, 1e-9);
+  ok('solid is a body group, units from the drawing', m.groups.some((g) => g.kind === 'body' && /3DSOLID 9C/.test(g.name)) && m.units.length === 'mm');
+  const blk = [[0, 'BLOCK'], [8, '0'], [2, 'PART'], [70, 0], ...dxfPt([0, 0, 0]), ...solid, [0, 'ENDBLK']];
+  m = await imp('solid2.dxf', dxfText(dxfDrawing({ blocks: blk, entities: [[0, 'INSERT'], [8, 'FRAME'], [2, 'PART'], ...dxfPt([100, 0, 0]), [0, 'INSERT'], [8, 'FRAME'], [2, 'PART'], ...dxfPt([0, 50, 0]), [41, -1]] }))); a = G.analyse(m);
+  ok('solids inside inserted blocks are placed (and mirrored copies stay outward)', a.nTris === 24 && Math.abs(a.volume - 12000) < 1e-6 && Math.abs(a.bbox.max[0] - 130) < 1e-9 && Math.abs(a.bbox.min[0] + 30) < 1e-9 && !a.inwardNormals && a.orientationConflicts === 0, JSON.stringify(a.bbox) + a.volume);
+  // R2013+: the entity carries no data; the SAB sits in ACDSDATA under the entity handle
+  const sab = satToSab(sat), hex = Array.from(sab, (v) => v.toString(16).padStart(2, '0').toUpperCase()).join(''), chunks = hex.match(/.{1,254}/g).map((h) => [310, h]);
+  const acds = [[0, 'SECTION'], [2, 'ACDSDATA'], [70, 2], [71, 2], [0, 'ACDSRECORD'], [90, 1], [2, 'AcDbDs::ID'], [280, 10], [320, 'AB'], [2, 'ASM_Data'], [280, 15], [94, sab.length], ...chunks, [0, 'ENDSEC']];
+  const pairs13 = dxfDrawing({ version: 'AC1027', entities: [[0, '3DSOLID'], [5, 'AB'], [8, 'SKIN'], [100, 'AcDbModelerGeometry'], [290, 1]], tail: acds });
+  m = await imp('solid2013.dxf', keep('solid2013.dxf', dxfText(pairs13))); a = G.analyse(m);
+  ok('3DSOLID with binary SAB in ACDSDATA → same solid', a.nTris === 12 && a.watertight && Math.abs(a.volume - 6000) < 1e-6 && m.meta.acis.sab === 1 && m.meta.release === '2013', `${m.kind} ${m.warnings.join(' | ').slice(0, 300)}`);
+  m = await imp('solid2013b.dxf', dxfBinary(pairs13)); ok('the same through binary DXF (310 chunks as bytes)', G.analyse(m).nTris === 12 && m.meta.acis.sab === 1, m.warnings.join(' | ').slice(0, 200));
+  m = await imp('solid.dxf', dxfText(dxfDrawing({ entities: solid })), { wasm: false }); ok('kernel off: solids reported, nothing invented', m.kind === 'metadata-only' && m.warnings.some((w) => /1 ACIS solid\(s\) \/ surface\(s\) were found but not tessellated/.test(w)), m.warnings.join(' | ').slice(0, 300));
+  m = await imp('nodata.dxf', dxfText(dxfDrawing({ version: 'AC1027', entities: [[0, '3DSOLID'], [5, 'AB'], [8, 'SKIN']] }))); ok('3DSOLID whose ACIS data is missing is counted', m.kind === 'metadata-only' && m.warnings.some((w) => /3DSOLID without ACIS data/.test(w)), m.warnings.join(' | ').slice(0, 300));
+}
+
+// ---------- optional: real sample files (set GEOMETRY_SAMPLES to a directory of .x_t/.x_b/.sat/.sab/.jt files) ----------
+if (process.env.GEOMETRY_SAMPLES) {
+  sec('real samples');
+  const fs = await import('node:fs'), path = await import('node:path');
+  // volumes confirmed analytically for files from public repositories (SCOREC/pumi-meshes, ansys/example-data, bitbybit3d/dxjt_toolkit, NicholasSeward/ConceptFORGE, mozman/ezdxf, jscad/sample-files, Himalia13/42006-Technic-Model, Hyperspawn/Dropbear)
+  const KNOWN = { 'plate.x_t': [0.2, 1e-9], 'longbar.x_t': [80, 1e-9], 'annular.x_t': [Math.PI * (1.5 ** 2 - 0.5 ** 2) * 0.2, 2e-3], 'sph_full.x_t': [(4 / 3) * Math.PI * 5e-4 ** 3, 5e-3], 'example_block_jt9.5.jt': [480000, 1e-9], 'example_block_jt8.1.jt': [480000, 1e-9], 'example_block_jt10.3.jt': [480000, 1e-9], 'washer.sat': [Math.PI * (8 ** 2 - 4.2 ** 2) * 1.5, 2e-3], 'sph_full_nat.x_t': [(4 / 3) * Math.PI * 5e-4 ** 3, 5e-3], 'sphere1.xmt_txt': [(4 / 3) * Math.PI * 0.5 ** 3, 5e-3], 'sphere.dxf': [(4 / 3) * Math.PI * 5 ** 3, 5e-3], 'torus_r2000.dxf': [2 * Math.PI ** 2 * 32 * 100, 1e-2], 'torus_r2010.dxf': [2 * Math.PI ** 2 * 32 * 100, 1e-2] };
+  const walk = (d) => fs.readdirSync(d, { withFileTypes: true }).flatMap((e) => (e.isDirectory() ? walk(path.join(d, e.name)) : [path.join(d, e.name)]));
+  let read = 0, total = 0;
+  for (const f of walk(process.env.GEOMETRY_SAMPLES).filter((x) => /\.(x_t|xmt_txt|x_b|xmt_bin|sat|sab|jt|dxf)$/i.test(x)).sort()) {
+    total++; let line = path.basename(f).padEnd(44);
+    try {
+      const m = await G.importFile(path.basename(f), new Uint8Array(fs.readFileSync(f)), { kernelTimeout: 300000 }), a = G.analyse(m); if (m.kind !== 'metadata-only') read++;
+      line += `${m.format.padEnd(5)} ${m.kind.padEnd(13)} tris ${String(a.nTris).padStart(6)}  bbox ${a.bbox.size.map((v) => +v.toPrecision(4)).join(' × ').padEnd(28)} vol ${a.volume === null ? 'open' : +a.volume.toPrecision(6)}${a.orientationConflicts ? `  CONFLICTS ${a.orientationConflicts}` : ''}${m.kind === 'metadata-only' ? '  — ' + (m.warnings[0] || '').slice(0, 110) : ''}`;
+      const kk = Object.keys(KNOWN).find((n) => path.basename(f).toLowerCase().endsWith(n.toLowerCase())), k = kk ? KNOWN[kk] : null; if (k) near(`${path.basename(f)}: volume`, a.volume, k[0], k[1]);
+      if (m.format !== 'dxf' || !m.meta.entityCensus?.['3DFACE'] && !m.meta.entityCensus?.MESH && !m.meta.entityCensus?.SOLID) ok(`${path.basename(f)}: consistent orientation`, a.orientationConflicts === 0);      // loose DXF faces carry no orientation guarantee
+    } catch (e) { ok(`${path.basename(f)}: importFile must not throw`, false, e.message); line += 'THREW ' + e.message; }
+    console.log('  ' + line);
+  }
+  console.log(`  real samples: ${read} of ${total} files produced geometry`);
+}
+
 // ---------- metadata-only signatures ----------
 sec('metadata-only formats');
 {
@@ -743,13 +1235,13 @@ sec('metadata-only formats');
     truncatable.push([name, bytes]);
     const d = G.detectFormat(name, bytes); ok(`${name} → ${id}`, d.id === id, `got ${d.id} (${d.note})`);
     const m = await imp(name, bytes);
-    const decodable = ['cgns', 'med', 'fluent-h5', 'exodus', 'geotiff'].includes(id);    // formats with a real reader: a bare signature still yields no geometry
+    const decodable = ['cgns', 'med', 'fluent-h5', 'exodus', 'geotiff', 'xb', 'acis', 'jt'].includes(id);    // formats with a real reader: a bare signature still yields no geometry
     ok(`${name}: metadata-only model, never pretends`, m.format === id && m.kind === 'metadata-only' && (decodable || m.support === 'metadata') && m.positions.length === 0 && m.triangles.length === 0 && m.units !== undefined, `${m.format}/${m.kind}/${m.support}`);
     ok(`${name}: warning names the conversion pathway`, m.warnings.some((w) => /Conversion pathway: \S+/.test(w)), m.warnings.join(' | '));
     const a = G.analyse(m); ok(`${name}: analyse is safe on it`, a.nVerts === 0 && a.classification.label.includes('metadata'));
   }
   ok('HDF5 signature wins over a misleading extension', G.detectFormat('mesh.stl', hdf5).id === 'hdf5');
-  let m = await imp('part.sat', sat); ok('SAT: header + census + units from the scale', m.meta.product === 'TestCAD' && m.meta.acisVersion === 'ACIS 7.0 NT' && m.meta.census.face === 2 && m.meta.census['plane-surface'] === 1 && m.units.length === 'in', JSON.stringify(m.meta));
+  let m = await imp('part.sat', sat); ok('SAT without usable topology: header + census + unit scale still reported', m.kind === 'metadata-only' && m.meta.product === 'TestCAD' && m.meta.acisVersion === 'ACIS 7.0 NT' && m.meta.census.face === 2 && m.meta.census['plane-surface'] === 1 && m.meta.millimetresPerUnit === 25.4, JSON.stringify(m.meta));
   m = await imp('dem.tif', tif); ok('TIFF without strip data: size + pixel scale + GeoKeys still reported', m.kind === 'metadata-only' && m.meta.width === 640 && m.meta.height === 480 && m.meta.geoTiff && m.meta.pixelScale[0] === 30 && m.meta.geoKeys.linearUnits === 9001, JSON.stringify(m.meta));
   m = await imp('scan.e57', e57); ok('E57 header', m.meta.version === '1.0' && m.meta.xmlOffset === 48 && m.meta.pageSize === 1024 && m.meta.scans.length === 0);
   m = await imp('mesh.cgns', hdf5); ok('corrupt HDF5: container + superblock version reported, reason given', m.meta.container === 'HDF5' && m.meta.superblockVersion === 2 && m.warnings.some((w) => /could not open/.test(w)), JSON.stringify(m.meta) + m.warnings.join('|'));

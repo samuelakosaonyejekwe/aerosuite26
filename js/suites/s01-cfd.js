@@ -2,14 +2,16 @@
 // Native solvers: 2-D linear-vortex panel method with integral boundary layer, 3-D vortex-lattice and lifting-line
 // wing, component drag build-up with Korn wave drag, 1-D finite-volume Euler (shock tube) with an exact Riemann
 // solver, shock/expansion relations, a 2-D incompressible Navier–Stokes projection solver (lid-driven cavity) and a
-// 1-D Spalart–Allmaras wall-turbulence solve with a first-cell-height calculator, and — through the native 3-D
+// 1-D Spalart–Allmaras wall-turbulence solve with a first-cell-height calculator, a body-fitted 2-D RANS solver for the wing
+// section (core/solvers/rans2d.js) coupled strip by strip to the vortex lattice for viscous wing forces, and — through the native 3-D
 // Navier–Stokes kernel in core/solvers/cfd3d.js — DNS (Taylor–Green vortex), LES (turbulent channel), RANS with the
 // Spalart–Allmaras model around an immersed wing, fuselage or imported surface, and unsteady bluff-body flow.
-// What still needs an external solver (body-fitted, wall-resolved, compressible, moving meshes) is in `handoff`.
+// What still needs an external solver (body-fitted 3-D, compressible, moving meshes) is in `handoff`.
 
 import * as N from '../core/numerics.js';
 import { isa, G0, GAMMA } from '../core/atmosphere.js';
 import { createSolver, wallFriction } from '../core/solvers/cfd3d.js';
+import { createRans2d, cGrid, boxGrid, plateGrid, resampleSection, wallSpacing } from '../core/solvers/rans2d.js';
 
 const PI = Math.PI;
 const fixedWing = (c) => (c.wing.S_m2 > 0 && c.wing.b_m > 0 ? true : 'This analysis needs a lifting wing; the current case is a pure rotorcraft. Use the airfoil analysis for the blade section and Suite 6 for the rotor.');
@@ -324,7 +326,7 @@ export function vlm(g, nS, nC, beta = 1, slope = () => 0, cosine = false) {
     return { strip, CL: (2 * N.dot(strip, dy)) / S, mom };
   };
   const trefftz = (strip) => { let D = 0; for (let i = 0; i < n2; i++) { let w = 0; for (let j = 0; j < n2; j++) w += (strip[j] / (2 * PI)) * (1 / (yE[j] - ym[i]) - 1 / (yE[j + 1] - ym[i])); D -= strip[i] * w * dy[i]; } return D / S; };
-  return { pn, yE, ym, dy, S, AR, chord, xle, Ga, G0, a: post(Ga), z: post(G0), trefftz, n2, nC };
+  return { pn, yE, ym, dy, S, AR, chord, xle, Ga, G0, a: post(Ga), z: post(G0), trefftz, n2, nC, solve: (rhs) => N.luSolve(f, rhs) };
 }
 /** Prandtl lifting line by Glauert's Fourier series (symmetric loading). cOverB(θ), alpha(θ) [rad], a0 section slope. */
 export function liftingLine(AR, cOverB, alpha, a0 = 2 * PI, nT = 40) {
@@ -571,6 +573,381 @@ const dragBuildup = {
     if (o.LD < 0.85 * o.LD_max) out.push({ severity: 'advise', title: 'Cruise point is away from best lift-to-drag', detail: `L/D = ${o.LD.toFixed(1)} against a maximum of ${o.LD_max.toFixed(1)} (CL ${o.CL.toFixed(2)} versus ${o.CL_md.toFixed(2)} for best L/D).`, action: o.CL < o.CL_md ? 'Fly higher or slower, or reduce wing area in Suite 23; jets cruise best slightly below CL for maximum L/D.' : 'Fly faster or lower, or increase wing area.', basis: 'Breguet range: fuel burn is inversely proportional to L/D' });
     if (o.CD_wave > 0.002) out.push({ severity: 'warn', title: 'Operating beyond drag divergence', detail: `Wave drag is ${(1e4 * o.CD_wave).toFixed(0)} counts at Mach ${o.mach.toFixed(2)} (Mdd = ${o.M_dd.toFixed(3)}).`, action: 'Reduce cruise Mach, add sweep, thin the wing or use supercritical sections; confirm with transonic CFD and tunnel data.', basis: 'Korn equation' });
     if (i.lam_wing < 0.2 && o.mach < 0.7) out.push({ severity: 'info', title: 'Laminar-flow potential', detail: 'The wing is assumed almost fully turbulent.', action: 'Re-run with a laminar fraction of 0.3–0.5 to size the benefit of natural laminar flow against its surface-quality and contamination demands.', basis: 'Skin-friction build-up' });
+    return out;
+  },
+};
+
+// ---- body-fitted 2-D RANS of the section and the viscous-coupled wing ---------------------------
+const WALLS = ['Wall functions (first cell at y⁺ ≈ 50)', 'Wall-resolved (first cell at y⁺ ≈ 1)'];
+const RANS_GRID = [
+  { key: 'wall', label: 'Wall treatment', type: 'select', options: WALLS, default: WALLS[0], group: 'Numerics', help: 'Wall functions need far fewer cells and are the fast default; wall-resolved grids need about 48 or more wall-normal cells and are more reliable near separation' },
+  { key: 'nSurf', label: 'Cells around the section', unit: '', default: 56, min: 32, max: 320, step: 2, discrete: true, group: 'Numerics', help: '48–64 fast look, 96–128 for drag within a few percent, 192 or more for reference work' },
+  { key: 'nNormal', label: 'Wall-normal cells', unit: '', default: 22, min: 16, max: 128, step: 1, discrete: true, group: 'Numerics', help: '20–24 with wall functions; 48–64 wall-resolved' },
+  { key: 'nWake', label: 'Cells along the wake', unit: '', default: 12, min: 6, max: 96, step: 1, discrete: true, group: 'Numerics' },
+  { key: 'radius', label: 'Far-field distance', unit: 'chords', default: 30, min: 10, max: 200, group: 'Numerics', help: 'A point-vortex correction is applied at the far field, so 20–30 chords is enough' },
+];
+const gridOf = (i) => { const wfn = i.wall !== WALLS[1]; return { wfn, yplus: wfn ? 50 : 1, nSurf: even(i.nSurf, 32, 320), nNormal: Math.round(N.clamp(i.nNormal, wfn ? 16 : 32, 128)), nWake: Math.round(N.clamp(i.nWake, 6, 96)), radius: N.clamp(i.radius, 10, 200) }; };
+/** C-grid and solver for a NACA section at chord Reynolds number Re and angle of attack al [rad]. */
+function sectionSolver(af, Re, al, G, clInit = 0, extra = {}) {
+  const nd = nacaNodes(af, 400), sec = resampleSection(nd.X, nd.Y, G.nSurf), ReS = N.clamp(Re, 2e4, 2e9);
+  const grid = cGrid({ X: sec.X, Y: sec.Y, nWake: G.nWake, nj: G.nNormal, h1: wallSpacing(ReS, G.yplus), radius: G.radius });
+  return { grid, sec, s: createRans2d(grid, { Re: ReS, alpha: al, wallFunction: G.wfn, clInit, ...extra }) };
+}
+/** Iterate until lift and drag stop changing (relative change over the last ten iterations below tol) or the cap is reached. */
+function settle(s, cap, tol = 5e-4) {
+  const h = s.history, n0 = h.cl.length; let change = Infinity;
+  while (h.cl.length - n0 < cap && !s.diverged) {
+    s.iterate(Math.min(5, cap - (h.cl.length - n0))); const n = h.cl.length;
+    if (n - n0 >= 15) { change = Math.max(Math.abs(h.cl[n - 1] - h.cl[n - 11]) / Math.max(0.2, Math.abs(h.cl[n - 1])), (0.5 * Math.abs(h.cd[n - 1] - h.cd[n - 11])) / Math.max(1e-4, Math.abs(h.cd[n - 1]))); if (change < tol) break; }
+  }
+  return { change, its: h.cl.length - n0, converged: change < 2e-3 && !s.diverged };
+}
+const sepPoint = (sf, upper) => { const n = sf.x.length, h = n >> 1; let x = 1; for (let m = upper ? h : h - 1; upper ? m < n : m >= 0; m += upper ? 1 : -1) if (sf.cf[m] < 0 && sf.x[m] > 0.03) { x = sf.x[m]; break; } return x; };
+const polarCache = new Map();
+/**
+ * Section polar by body-fitted RANS: the angles of attack [deg, ascending] are run in sequence, each warm-started from the one
+ * before. Results are cached on section, Reynolds number (three significant figures) and grid, so wings sharing a section reuse them.
+ */
+export function ransPolar(af, Re, alphas, G, cap = 40, progress = null) {
+  const ReK = Number(Re.toPrecision(3)), key = [af.name, af.t.toFixed(4), ReK, alphas.join(','), G.wfn, G.nSurf, G.nNormal, G.nWake, G.radius, cap].join('|');
+  if (polarCache.has(key)) return { ...polarCache.get(key), cached: true };
+  const cla = 2 * PI * (1 + 0.77 * af.t), a0 = thinAirfoil(af).alphaL0, { grid, s } = sectionSolver(af, ReK, N.rad(alphas[0]), G, 0.92 * cla * (N.rad(alphas[0]) - a0));
+  const P = { alpha: alphas.slice(), cl: [], cd: [], cdp: [], cdf: [], cm: [], conv: [], xsep: [], yplus: [], its: 0, cells: grid.ni * grid.nj, Re: ReK, quality: grid.quality };
+  alphas.forEach((a, k) => {
+    if (k) s.setAlpha(N.rad(a));
+    const st = settle(s, cap, 1e-3), h = s.history, n = h.cl.length, F = s.forces(), sf = s.surface(), m = st.converged ? 1 : Math.min(10, st.its);
+    // an unsteady (stalled) point is represented by the mean of its last iterations
+    P.cl.push(N.mean(h.cl.slice(n - m))); const cd = N.mean(h.cd.slice(n - m)); P.cd.push(cd); P.cdf.push(F.cdf); P.cdp.push(cd - F.cdf); P.cm.push(F.cm); P.conv.push(st.converged); P.xsep.push(sepPoint(sf, P.cl[k] >= 0)); P.yplus.push(N.mean(sf.yplus)); P.its += st.its;
+    progress?.((k + 1) / alphas.length, `Section polar: α = ${a}°`);
+  });
+  const km = N.argmax(P.cl); [P.aStall, P.clmax] = vertex(P.alpha, P.cl, km); P.kMax = km; P.stallInside = km < alphas.length - 1;
+  if (polarCache.size > 24) polarCache.delete(polarCache.keys().next().value);
+  polarCache.set(key, P);
+  return P;
+}
+/** Polar look-up at α [deg]: linear between points, extrapolated along the first interval below the table, held above it. */
+const polarAt = (P, key, a) => (a < P.alpha[0] ? P[key][0] + ((P[key][1] - P[key][0]) * (a - P.alpha[0])) / (P.alpha[1] - P.alpha[0]) : N.interp1(P.alpha, P[key], a));
+const yPlusOk = (yp, wfn) => (wfn ? yp >= 15 && yp <= 300 : yp <= 5);
+const nearField = (s, grid, names, win = [-0.6, 1.9, -0.75, 0.75]) => {
+  // cell-centre lattice inside a window around the section, as a triangle mesh for contour plots
+  const { ni, nj } = grid, id = new Int32Array(ni * nj).fill(-1), nodes = [], tris = [], F = names.map((n) => s.field(n)), vals = names.map(() => []);
+  for (let q = 0; q < ni * nj; q++) if (s.xc[q] > win[0] && s.xc[q] < win[1] && s.yc[q] > win[2] && s.yc[q] < win[3]) { id[q] = nodes.length; nodes.push([s.xc[q], s.yc[q]]); F.forEach((f, m) => vals[m].push(f[q])); }
+  for (let i = 0; i < ni - 1; i++) for (let j = 0; j < nj - 1; j++) { const a = id[i * nj + j], b = id[(i + 1) * nj + j], c = id[(i + 1) * nj + j + 1], d = id[i * nj + j + 1]; if (a >= 0 && b >= 0 && c >= 0 && d >= 0) tris.push([a, b, c], [a, c, d]); }
+  return { nodes, tris, vals };
+};
+const gridLines = (grid, win = [-0.25, 1.3, -0.35, 0.35]) => {
+  const { ni, nj, x, y } = grid, N1 = nj + 1, X = [], Y = [], inW = (q) => x[q] > win[0] && x[q] < win[1] && y[q] > win[2] && y[q] < win[3];
+  for (let i = 0; i <= ni; i += 1) { let on = false; for (let j = 0; j <= nj; j++) { const q = i * N1 + j; if (inW(q)) { X.push(x[q]); Y.push(y[q]); on = true; } else if (on) break; } if (on) { X.push(NaN); Y.push(NaN); } }
+  for (let j = 0; j <= nj; j += 2) { let on = false; for (let i = 0; i <= ni; i++) { const q = i * N1 + j; if (inW(q)) { X.push(x[q]); Y.push(y[q]); on = true; } else if (on) { X.push(NaN); Y.push(NaN); on = false; } } if (on) { X.push(NaN); Y.push(NaN); } }
+  return { X, Y };
+};
+const TMR_SRC = 'NASA Turbulence Modeling Resource, 2D NACA 0012 airfoil validation, SA model: CFL3D on the 897 × 257 grid, M = 0.15, Re = 6 million, fully turbulent (https://tmbwg.github.io/turbmodels/naca0012_val_sa.html, formerly turbmodels.larc.nasa.gov; read 2026-10-09)';
+
+// chord for Re = 6 million at sea level and 51 m/s (M = 0.15); the 'accurate' grid setting
+const TMR_IN = { airfoil: '0012', tc: 0, chord: 1.7185, sweep_deg: 0, V: 51, alt_m: 0, dISA: 0, wall: WALLS[1], nSurf: 128, nNormal: 64, nWake: 24, radius: 30, max_iter: 600 };
+// the same condition at 10 m/s, so that the Prandtl–Glauert factor is 1.0004 and the incompressible SU2 solution is compared like for like
+const SU2_IN = { ...TMR_IN, chord: 8.764, V: 10 };
+const SU2_SRC = 'SU2 8.5.0 (official linux64 binary), incompressible RANS with Spalart–Allmaras, on the C-grid and configuration written by this project\'s High-fidelity bridge (medium resolution: 28 416 cells, y⁺ ≈ 1, far field 40 chords), 1 600 iterations, lift steady to 1e-4; run 2026-10-09. SU2 lift on this grid is 2–3.5% below the present solver and the NASA reference trend';
+const rans2d = {
+  id: 'rans2d', title: '2-D section: body-fitted RANS (Spalart–Allmaras)', fidelity: 'numerical',
+  summary: 'Reynolds-averaged Navier–Stokes solution of the flow around the wing section on a body-fitted C-grid with a boundary-layer mesh: lift, pressure and friction drag, moment, surface pressure and skin friction, separation, the wall-layer profile and the flow field, compared with the panel and boundary-layer method.',
+  equations: ['Reynolds-averaged Navier–Stokes equations', 'Navier–Stokes equations', 'Continuity equation', 'Conservation of momentum equation', 'Spalart–Allmaras', 'Wall-resolved or wall-modelled turbulence simulations', 'Finite-volume methods', 'Prandtl–Glauert compressibility correction'],
+  inputs: [
+    { key: 'airfoil', label: 'NACA section', type: 'text', default: '2412', group: 'Geometry', help: '4-digit (2412, 0012, 4415) or 5-digit (23012) designation' },
+    { key: 'tc', label: 'Thickness ratio override', unit: '-', default: 0, min: 0, max: 0.4, group: 'Geometry', help: '0 uses the thickness in the designation' },
+    { key: 'chord', label: 'Chord', unit: 'm', default: 1.5, min: 0.005, group: 'Geometry' },
+    { key: 'sweep_deg', label: 'Sweep (simple sweep theory)', unit: 'deg', default: 0, min: 0, max: 60, group: 'Geometry', help: 'The section sees V·cos Λ and M·cos Λ' },
+    { key: 'alpha_deg', label: 'Angle of attack', unit: 'deg', default: 3, min: -10, max: 22, group: 'Flow' },
+    { key: 'V', label: 'Freestream speed', unit: 'm/s', default: 70, min: 1, group: 'Flow' },
+    ...ATM,
+    ...RANS_GRID,
+    { key: 'max_iter', label: 'Maximum iterations', unit: '', default: 70, min: 10, max: 5000, step: 1, discrete: true, group: 'Numerics', help: 'The run stops earlier once lift and drag are steady. 70 suits the default grid; use 300–600 on fine grids' },
+    { key: 'x_profile', label: 'Station of the wall-layer profile', unit: 'x/c', default: 0.5, min: 0.05, max: 0.98, group: 'Numerics' },
+  ],
+  defaults: (c, up, d) => {
+    const base = { alt_m: c.atm.alt_m, dISA: c.atm.dISA_K };
+    if (c.wing.S_m2 > 0) return { ...base, airfoil: c.wing.airfoil, tc: c.wing.tc, chord: d.mac || undefined, sweep_deg: Math.abs(c.wing.sweep_deg), alpha_deg: c.flight.alpha_deg, V: c.flight.V_ms };
+    if (!(c.rotor.R_m > 0)) return base;
+    return { ...base, airfoil: '0012', tc: 0.12, chord: c.rotor.chord_m, sweep_deg: 0, V: 0.75 * d.v_tip, alpha_deg: 4 };
+  },
+  run(i, ctx) {
+    const a = isa(i.alt_m, i.dISA), cosL = Math.cos(N.rad(i.sweep_deg)), Vn = i.V * cosL, M = Vn / a.a, Mc = Math.min(M, 0.9), Re = (Vn * i.chord) / a.nu, beta = Math.sqrt(1 - Mc * Mc);
+    const af = parseNaca(i.airfoil, i.tc), G = gridOf(i), al = N.rad(i.alpha_deg), cap = Math.round(N.clamp(i.max_iter, 10, 5000));
+    // panel and integral boundary-layer solution: initial circulation and the comparison
+    const nd = nacaNodes(af, 120), Pn = panelSolve(nd.X, nd.Y), c0 = panelAt(Pn, 0), c1 = panelAt(Pn, N.rad(1)), cla = (c1.cl - c0.cl) / N.rad(1), bo = { Re: Math.max(Re, 1e4), xtU: 1, xtL: 1, Hsep: 2.2, kd: 1, cla }, ibl = sectionPoint(Pn, al, bo), iblT = sectionPoint(Pn, al, { ...bo, xtU: 0.03, xtL: 0.03 });
+    const { grid, s } = sectionSolver(af, Re, al, G, 0.93 * ibl.inv.cl), h = s.history;
+    ctx?.progress?.(0.05, 'Grid generated');
+    let st = { change: Infinity, its: 0, converged: false };
+    for (let done = 0; done < cap && !st.converged && !s.diverged;) { const n = Math.min(25, cap - done); st = settle(s, n); done += st.its; ctx?.progress?.(0.05 + (0.9 * done) / cap, `${done} iterations, residual down ${s.residualDrop.toFixed(1)} orders`); if (st.its < n) break; }
+    const F = s.forces(), sf = s.surface(), nW = sf.x.length, half = nW >> 1, ypM = N.mean(sf.yplus), ypX = N.amax(sf.yplus), up = F.cl >= 0, xsep = sepPoint(sf, up), pr = s.profile(N.clamp(i.x_profile, 0.05, 0.98), up) || { yplus: [1], uplus: [1], utau: 0 };
+    const cpC = sf.cp.map((v) => cpKT(v, Mc)), cl = F.cl / beta, cm = F.cm / beta, drop = s.residualDrop, q = grid.quality, ypGood = yPlusOk(ypM, G.wfn), conv = st.converged && !s.diverged;
+    const warnings = [];
+    if (!af.ok) warnings.push(`"${i.airfoil}" is not a supported NACA 4-digit or non-reflex 5-digit designation; NACA 0012 thickness form was used.`);
+    if (s.diverged) warnings.push('The iteration diverged. Use a finer grid or the other wall treatment.');
+    else if (!conv) warnings.push(`Not fully converged — raise the iterations: lift and drag still change by ${(100 * st.change).toPrecision(2)}% over the last ten of ${h.cl.length} iterations (residual down ${drop.toFixed(1)} orders). ${xsep < 0.9 ? 'The flow is separated; a steady RANS solution may not exist here and the values are means of an oscillating iteration.' : ''}`);
+    if (!ypGood) warnings.push(G.wfn ? `Mean y⁺ of the first cells is ${ypM.toFixed(0)}: the log-law wall function needs roughly 20–200. ${ypM < 15 ? 'At this low Reynolds number choose the wall-resolved treatment.' : 'Use more wall-normal cells.'}` : `Mean y⁺ of the first cells is ${ypM.toFixed(1)}; a wall-resolved solution needs about 1 (at most 5).`);
+    if (G.nSurf < 96) warnings.push(`Fast-look grid (${grid.ni} × ${grid.nj} = ${grid.ni * grid.nj} cells). Against the NASA reference solutions for the NACA 0012 at Re = 6 million grids of this size give drag about 7% high at zero lift and 7–12% high at α = 10°, with lift 3–4% low; near stall the drag error exceeds 25%. For numbers to quote use 128 cells around the section with 64 wall-normal cells, wall-resolved, and 300–600 iterations (drag within about 1–3% up to 10°), and run the mesh-convergence study.`);
+    if (G.wfn && xsep < 0.95) warnings.push('Wall functions assume an attached equilibrium boundary layer: with separation present the wall-resolved treatment is more trustworthy.');
+    if (M > 0.3) warnings.push(`Section Mach number ${M.toFixed(2)}: the flow solution is incompressible. Lift and moment are multiplied by the Prandtl–Glauert factor 1/√(1 − M²) = ${(1 / beta).toFixed(3)} and Cp is corrected with the Kármán–Tsien rule; drag is not corrected. ${M > 0.6 ? 'Above about Mach 0.6 shocks appear on the section and this correction is not valid: use a compressible solver (High-fidelity bridge).' : ''}`);
+    if (Re < 2e5) warnings.push(`Chord Reynolds number ${Re.toExponential(2)}: the Spalart–Allmaras model is run fully turbulent and has no transition model, so laminar separation bubbles and laminar drag buckets are not represented.`);
+    if (i.sweep_deg > 0) warnings.push('Simple sweep theory: the section is solved in the flow normal to the sweep line; coefficients refer to that normal dynamic pressure.');
+    const xs = sf.x, lo = (A) => A.slice(0, half).reverse(), hi = (A) => A.slice(half), [itT, resT] = thin(N.range(h.res.length, (k) => k + 1), h.res.map((v) => Math.max(v, 1e-16)), 300), [, clT] = thin(h.res, h.cl, 300), [, cdT] = thin(h.res, h.cd.map((v) => 100 * v), 300);
+    const nf = nearField(s, grid, ['speed', 'p', 'nut']), gl = gridLines(grid), ov = [{ name: af.name, x: nd.X, y: nd.Y }], k0 = Math.min(5, itT.length - 1);
+    const logY = pr.yplus.filter((v) => v > 0.2 && v < 3000), logU = logY.map((v) => (v < 11.06 ? v : Math.log(v) / 0.41 + 5));
+    return {
+      kpis: [
+        { key: 'cl_rans', label: 'Section lift coefficient', value: cl, unit: '-', status: conv ? 'ok' : 'warn', note: M > 0.3 ? 'incompressible solution × Prandtl–Glauert factor' : '' },
+        { key: 'cd_rans', label: 'Section drag coefficient', value: F.cd, unit: '-', status: conv && ypGood ? 'ok' : 'warn', note: `${(1e4 * F.cd).toFixed(1)} counts, fully turbulent` },
+        { key: 'cd_pressure_rans', label: 'Pressure (form) drag', value: F.cdp, unit: '-' },
+        { key: 'cd_friction_rans', label: 'Friction drag', value: F.cdf, unit: '-' },
+        { key: 'cm_c4_rans', label: 'Moment about quarter chord', value: cm, unit: '-', note: 'nose-up positive' },
+        { key: 'ld_rans', label: 'Section lift-to-drag ratio', value: cl / F.cd, unit: '-' },
+        { key: 'cp_min_rans', label: 'Minimum pressure coefficient', value: N.amin(cpC), unit: '-' },
+        { key: 'x_sep_rans', label: 'Separation, suction side', value: xsep, unit: 'x/c', status: xsep >= 0.98 ? 'ok' : xsep > 0.8 ? 'warn' : 'bad', note: '1 = attached to the trailing edge (first point of negative skin friction)' },
+        { key: 'y_plus_mean', label: 'Mean y⁺ of the first cells', value: ypM, unit: '-', status: ypGood ? 'ok' : 'warn', note: G.wfn ? 'wall functions: 20–200 wanted' : 'wall-resolved: about 1 wanted' },
+        { key: 'y_plus_max', label: 'Maximum y⁺ of the first cells', value: ypX, unit: '-' },
+        { key: 'residual_drop', label: 'Residual reduction', value: drop, unit: 'orders', status: conv ? 'ok' : 'warn' },
+        { key: 'force_change_pct', label: 'Change of lift and drag over the last ten iterations', value: Number.isFinite(st.change) ? 100 * st.change : 100, unit: '%', status: conv ? 'ok' : 'warn', note: 'converged below 0.2%' },
+        { key: 'iterations', label: 'Iterations', value: h.cl.length, unit: '' },
+        { key: 'cl_panel_bl', label: 'Lift, panel + boundary layer', value: ibl.cl / beta, unit: '-', note: 'existing airfoil analysis, free transition' },
+        { key: 'cd_panel_bl', label: 'Drag, panel + boundary layer (free transition)', value: ibl.cd, unit: '-', note: 'Squire–Young with Michel transition: lower than a fully turbulent solution when laminar flow is present' },
+        { key: 'cd_panel_bl_turb', label: 'Drag, panel + boundary layer (transition at 3% chord)', value: iblT.cd, unit: '-', note: 'the like-for-like comparison with the fully turbulent RANS solution' },
+        { key: 'Re_chord', label: 'Chord Reynolds number', value: Re, unit: '-' },
+        { key: 'mach_section', label: 'Section Mach number', value: M, unit: '-' },
+        { key: 'cells', label: 'Grid cells', value: grid.ni * grid.nj, unit: '', note: `${grid.ni} × ${grid.nj}` },
+        { key: 'min_orthogonality_deg', label: 'Smallest grid-line angle', value: q.minOrthogonality_deg, unit: 'deg', status: q.minOrthogonality_deg > 30 ? 'ok' : 'warn', note: `${q.minOrthogonalityWall_deg.toFixed(0)}° in the four layers next to the wall` },
+        { key: 'growth_bl', label: 'Wall-normal growth ratio in the boundary layer', value: grid.growth, unit: '-', status: grid.growth <= 1.3 ? 'ok' : 'warn', note: `largest anywhere ${q.maxGrowth.toFixed(2)}; 1.2–1.3 wanted in the boundary layer` },
+        { key: 'aspect_ratio_max', label: 'Largest cell aspect ratio', value: q.maxAspectRatio, unit: '-' },
+      ],
+      plots: [
+        { type: 'line', title: `Pressure distribution, ${af.name} at α = ${i.alpha_deg}°`, xlabel: 'x/c [-]', ylabel: '−Cp [-]', series: [{ name: 'RANS, upper surface', x: hi(xs), y: hi(cpC).map((v) => -v) }, { name: 'RANS, lower surface', x: lo(xs), y: lo(cpC).map((v) => -v) }, { name: 'Inviscid panel method', x: nd.X, y: ibl.inv.cp.map((v) => -cpKT(v, Mc)), style: 'dash' }] },
+        { type: 'line', title: 'Skin-friction coefficient', xlabel: 'x/c [-]', ylabel: 'cf [-]', series: [{ name: 'RANS, upper surface', x: hi(xs), y: hi(sf.cf) }, { name: 'RANS, lower surface', x: lo(xs), y: lo(sf.cf) }, { name: 'Integral method, upper (free transition)', x: ibl.sf.up.x.slice(1), y: ibl.bu.cf.slice(1), style: 'dash' }], annotations: [{ y: 0, label: 'Separation below this line' }] },
+        { type: 'line', title: `First-cell y⁺ (target ${G.yplus})`, xlabel: 'x/c [-]', ylabel: 'y⁺ [-]', series: [{ name: 'Upper surface', x: hi(xs), y: hi(sf.yplus) }, { name: 'Lower surface', x: lo(xs), y: lo(sf.yplus) }] },
+        { type: 'line', title: `Wall-layer profile at x/c = ${(pr.x ?? i.x_profile).toFixed(2)}, ${up ? 'upper' : 'lower'} surface`, xlabel: 'y⁺ [-]', ylabel: 'u⁺ [-]', xlog: true, series: [{ name: 'RANS', x: pr.yplus, y: pr.uplus, style: 'line+points' }, { name: 'u⁺ = y⁺ and u⁺ = ln(y⁺)/0.41 + 5.0', x: logY, y: logU, style: 'dash' }] },
+        { type: 'line', title: 'Residual history', xlabel: 'Iteration [-]', ylabel: 'Residual / initial residual [-]', ylog: true, series: [{ name: 'Mean-flow residual', x: itT, y: resT }] },
+        { type: 'line', title: 'Force history', xlabel: 'Iteration [-]', ylabel: 'cl and 100·cd [-]', series: [{ name: 'cl', x: itT.slice(k0), y: clT.slice(k0) }, { name: '100 · cd', x: itT.slice(k0), y: cdT.slice(k0) }] },
+        { type: 'line', title: `C-grid near the section (${grid.ni} × ${grid.nj} cells, every second wall-parallel line)`, xlabel: 'x/c [-]', ylabel: 'y/c [-]', equalAspect: true, series: [{ name: 'Grid lines', x: gl.X, y: gl.Y }, { name: af.name, x: nd.X, y: nd.Y }] },
+        { type: 'tri', title: 'Velocity magnitude', xlabel: 'x/c [-]', ylabel: 'y/c [-]', zlabel: '|V|/V∞ [-]', nodes: nf.nodes, tris: nf.tris, values: nf.vals[0], equalAspect: true, overlay: ov },
+        { type: 'tri', title: 'Pressure coefficient (incompressible)', xlabel: 'x/c [-]', ylabel: 'y/c [-]', zlabel: 'Cp [-]', nodes: nf.nodes, tris: nf.tris, values: nf.vals[1].map((v) => N.clamp(2 * v, -3, 1)), equalAspect: true, diverging: true, overlay: ov },
+        { type: 'tri', title: 'Eddy-viscosity ratio', xlabel: 'x/c [-]', ylabel: 'y/c [-]', zlabel: 'ν_t/ν [-]', nodes: nf.nodes, tris: nf.tris, values: nf.vals[2], equalAspect: true, overlay: ov },
+      ],
+      tables: [{ title: 'Body-fitted RANS against the panel and boundary-layer method', columns: ['Quantity', 'RANS (fully turbulent)', 'Panel + boundary layer, free transition', 'Panel + boundary layer, transition at 3%'], rows: [['cl', +cl.toFixed(4), +(ibl.cl / beta).toFixed(4), +(iblT.cl / beta).toFixed(4)], ['cd', +F.cd.toFixed(5), +ibl.cd.toFixed(5), +iblT.cd.toFixed(5)], ['cm about c/4', +cm.toFixed(4), +(ibl.inv.cm4 / beta).toFixed(4), +(iblT.inv.cm4 / beta).toFixed(4)], ['Separation x/c', +xsep.toFixed(3), +ibl.f.toFixed(3), +iblT.f.toFixed(3)]] }],
+      outputs: { rans2d_converged: conv ? 1 : 0, cd_counts_rans: 1e4 * F.cd },
+      warnings,
+      models: ['Steady incompressible Reynolds-averaged Navier–Stokes equations by artificial compressibility, cell-centred finite volume on a body-fitted C-grid', 'Spalart–Allmaras one-equation model, standard constants, no trip term (fully turbulent), negative-ν̃ continuation; free-stream ν̃ = 3ν', G.wfn ? 'Log-law wall function in the first cell (κ = 0.41, B = 5.0), ν̃ = κ·u_τ·y there' : 'No-slip wall resolved to the viscous sublayer', 'Roe flux-difference splitting with third-order upwind-biased (QUICK, κ = 1/2) reconstruction weighted for the grid stretching; first-order upwind turbulence convection', 'Implicit line-relaxation time march with local time steps and residual-driven CFL', 'Far field: characteristic boundary with point-vortex correction', 'Prandtl–Glauert (loads) and Kármán–Tsien (Cp) compressibility corrections', 'Comparison: linear-vortex panel method with Thwaites / Michel / Head boundary layer'],
+      assumptions: ['Steady, two-dimensional, incompressible, fully turbulent flow; no transition model', 'Closed (sharp) trailing edge as in the NACA thickness form used throughout this suite', 'Algebraic C-grid: wall-normal lines blended into rays, wake cut along the chord line', i.sweep_deg > 0 ? 'Simple sweep theory for the swept-wing section' : 'Unswept section'],
+    };
+  },
+  convergence: { param: 'nSurf', label: 'Cells around the section', levels: [40, 56, 80, 112], metric: 'cd_rans' },
+  calibration: { params: [{ key: 'alpha_deg', min: -5, max: 15 }], sweep: 'alpha_deg', target: 'cl_rans', note: 'The turbulence model has no free constants here. Supply a measured lift curve or drag polar at the same Reynolds number to quantify the model-form error (transition, stall); a constant angle offset absorbs tunnel flow-angularity.' },
+  verify() {
+    const lin = (a, b, n) => N.range(n + 1, (k) => a + ((b - a) * k) / n);
+    // 1. free stream on a randomly distorted grid
+    const rnd = N.rng(7), gF = boxGrid({ xf: lin(0, 1, 16), yf: lin(0, 1, 12), distort: () => [0.02 * (rnd() - 0.5), 0.025 * (rnd() - 0.5)] }), sF = createRans2d(gF, { Re: 100, alpha: 0.3, vortex: false, noDamp: true }), rF = sF.residualOnly();
+    // 2. observed order on the Kovasznay flow (exact Navier–Stokes solution), distorted grids
+    const lam = 20 - Math.sqrt(400 + 4 * PI * PI), kov = (x, y) => { const e = Math.exp(lam * x); return [0.5 * (1 - e * e), 1 - e * Math.cos(2 * PI * y), (lam / (2 * PI)) * e * Math.sin(2 * PI * y)]; };
+    const err = [16, 32].map((n) => { const g = boxGrid({ xf: lin(-0.5, 1, n), yf: lin(-0.5, 0.5, n), distort: (x, y) => [(0.15 / n) * Math.sin(7 * x + 3 * y), (0.15 / n) * Math.cos(5 * x - 4 * y)] }), s = createRans2d(g, { Re: 40, turbulent: false, vortex: false, farState: kov, init: kov, beta: 4, kappa: 1 / 3 }); s.iterate(250, 1e-9); let e = 0, v = 0; for (let q = 0; q < n * n; q++) { const d = s.state.U[q] - kov(s.xc[q], s.yc[q])[1]; e += d * d * s.vol[q]; v += s.vol[q]; } return Math.sqrt(e / v); });
+    // 3. laminar flat plate against Blasius
+    const ReL = 2e5, sL = createRans2d(plateGrid({ ni: 48, nj: 32, h1: 2e-4, height: 0.5, rBL: 1.15 }), { Re: ReL, turbulent: false }); sL.iterate(300, 1e-7);
+    const fL = sL.surface(), kL = fL.x.findIndex((x) => x > 0.5);
+    // 4. turbulent flat plate (wall-resolved and wall-function grids) against White's correlation and the log law
+    const ReT = 5e6, white = (x) => 0.455 / Math.log(0.06 * ReT * x) ** 2, at = (f, x) => f.cf[f.x.findIndex((v) => v > x)] / white(f.x[f.x.findIndex((v) => v > x)]);
+    const sT = createRans2d(plateGrid({ ni: 40, nj: 36, h1: wallSpacing(ReT, 1), height: 0.5 }), { Re: ReT }); sT.iterate(260, 1e-6);
+    const sW = createRans2d(plateGrid({ ni: 40, nj: 20, h1: wallSpacing(ReT, 60), height: 0.5 }), { Re: ReT, wallFunction: true }); sW.iterate(150, 1e-6);
+    const pT = sT.profile(0.9), jL = pT.yplus.findIndex((v) => v > 80), uLog = Math.log(pT.yplus[jL]) / 0.41 + 5;
+    // 5. symmetric section at zero incidence
+    const z = sectionSolver(parseNaca('0012'), 6e6, 0, { wfn: true, yplus: 50, nSurf: 48, nNormal: 20, nWake: 10, radius: 30 }).s; z.iterate(60);
+    return [
+      N.check('Free stream preserved on a distorted grid', 1 + rF, 1, 1e-11, 'Uniform flow is an exact solution; the finite-volume metrics are closed'),
+      N.check('Observed order of accuracy, Kovasznay flow on distorted grids', Math.log2(err[0] / err[1]), 1.75, 0.2, 'Exact Navier–Stokes solution (Kovasznay 1948), Re = 40, grids 16² and 32²; design order 2 in the interior, the weakly imposed first-order boundaries lower the observed order to about 1.5–1.9'),
+      N.check('Laminar flat plate: cf at Re_x = 1.0e5', fL.cf[kL], 0.664 / Math.sqrt(ReL * fL.x[kL]), 0.02, 'Blasius'),
+      N.check('Laminar flat plate: drag coefficient', sL.forces().cd, 1.328 / Math.sqrt(ReL), 0.02, 'Blasius, Re_L = 2e5'),
+      N.check('Turbulent flat plate, wall-resolved: cf at Re_x = 4.5e6', at(sT.surface(), 0.9), 1, 0.08, 'White: cf = 0.455/ln²(0.06 Re_x). The Spalart–Allmaras model sits about 5% below this correlation at this Reynolds number'),
+      N.check('Turbulent flat plate, wall functions: cf at Re_x = 4.5e6', at(sW.surface(), 0.9), 1, 0.08, 'White: cf = 0.455/ln²(0.06 Re_x)'),
+      N.check('Turbulent flat plate: u⁺ in the log layer', pT.uplus[jL], uLog, 0.04, 'Law of the wall u⁺ = ln(y⁺)/0.41 + 5.0'),
+      N.check('Symmetric section at zero incidence carries no lift', 1 + z.forces().cl, 1, 2e-3, 'Symmetry'),
+    ];
+  },
+  validation: [
+    { name: 'NACA 0012 drag at Re = 6 million, α = 0°, 10°, 15° (fully turbulent Spalart–Allmaras)', source: TMR_SRC + '. The reference section is the sharp-trailing-edge NACA 0012 rescaled to unit chord, about 0.9% thinner than the closed-trailing-edge form used here; the reference is a compressible solution at M = 0.15 with the far field 500 chords away', inputs: { ...TMR_IN }, sweep: { key: 'alpha_deg', values: [0, 10, 15] }, target: 'cd_rans', observed: [0.00819, 0.01231, 0.02124], tol_pct: 12 },
+    { name: 'NACA 0012 lift at Re = 6 million, α = 10°, 15° (fully turbulent Spalart–Allmaras)', source: TMR_SRC, inputs: { ...TMR_IN }, sweep: { key: 'alpha_deg', values: [10, 15] }, target: 'cl_rans', observed: [1.0909, 1.5461], tol_pct: 4 },
+    { name: 'NACA 0012 lift at Re = 6 million, α = 4°, 8°: cross-check with SU2', source: SU2_SRC, inputs: { ...SU2_IN }, sweep: { key: 'alpha_deg', values: [4, 8] }, target: 'cl_rans', observed: [0.4319, 0.8386], tol_pct: 5 },
+    { name: 'NACA 2412 lift at Re = 6 million, α = 0°, 4°, 8°: cross-check with SU2', source: SU2_SRC, inputs: { ...SU2_IN, airfoil: '2412' }, sweep: { key: 'alpha_deg', values: [0, 4, 8] }, target: 'cl_rans', observed: [0.2205, 0.6497, 1.0487], tol_pct: 5 },
+    { name: 'NACA 0012 and 2412 drag at zero incidence: cross-check with SU2', source: SU2_SRC + '. Drag is compared at α = 0° only: on this medium grid SU2 itself is 7.6% above the NASA reference for the NACA 0012 at α = 0° and its drag error grows quickly with lift (its fine-grid value at α = 4° is 12% below its medium-grid value), so the lifting-case SU2 drag is not a reference', inputs: { ...SU2_IN }, sweep: { key: 'airfoil', values: ['0012', '2412'] }, target: 'cd_rans', observed: [0.008816, 0.009005], tol_pct: 10 },
+  ],
+  recommend(res, i) {
+    const o = res.outputs, out = [];
+    if (!o.rans2d_converged) out.push({ severity: 'warn', title: 'Solution not converged', detail: `Forces still change by ${o.force_change_pct.toPrecision(2)}% per ten iterations after ${o.iterations} iterations.`, action: 'Raise the maximum iterations (300–600 on fine grids). If the flow is separated, treat the value as the mean of an unsteady flow and confirm with the wall-resolved treatment.', basis: 'Iterative convergence of the steady RANS equations' });
+    if (o.x_sep_rans < 0.9) out.push({ severity: o.x_sep_rans < 0.6 ? 'critical' : 'warn', title: 'Separated flow on the suction side', detail: `Skin friction changes sign at x/c = ${o.x_sep_rans.toFixed(2)}.`, action: 'Lower the angle of attack or accept the loss; near and beyond maximum lift a steady one-equation RANS solution is a trend, not a prediction. Use the wing analysis below for the stall margin.', basis: 'Sign of the wall shear stress' });
+    if (i.nSurf < 96) out.push({ severity: 'advise', title: 'Refine before quoting drag', detail: `${o.cells} cells is the one-second preview grid.`, action: 'Set 128 cells around the section, 64 wall-normal cells, wall-resolved, 400 iterations (about 15–30 s), and check with the mesh-convergence tab.', basis: 'Grid study against the NASA Turbulence Modeling Resource NACA 0012 case' });
+    if (o.cd_panel_bl < 0.8 * o.cd_rans) out.push({ severity: 'info', title: 'Laminar flow would save drag', detail: `Fully turbulent: ${o.cd_counts_rans.toFixed(0)} counts. With natural transition the integral method gives ${(1e4 * o.cd_panel_bl).toFixed(0)} counts.`, action: 'The difference is the value of keeping the leading edge clean and smooth; every count of section drag is fuel and CO₂.', basis: 'Comparison of fully turbulent RANS with the free-transition integral boundary layer' });
+    return out;
+  },
+};
+
+/**
+ * Viscous-coupled wing: vortex lattice with sectional decambering (α-shift method of van Dam / Mukherjee–Gopalarathnam).
+ * Every spanwise strip is rotated by δ so that its lattice lift equals the viscous section lift at its effective angle
+ * α_e = cl/a0 + α_L0 + δ. sec(j, α_e [rad]) returns the strip's { cl, cd, cm }. Returns one record per wing angle [rad].
+ */
+export function viscousWing(g, nS, nC, beta, af, a0, sec, alphas) {
+  const L = vlm(g, nS, nC, beta, (xf) => af.camber(xf)[1], true), n2 = L.n2, aL0 = thinAirfoil(af).alphaL0, ch = L.ym.map((y) => L.chord(y));
+  // strip circulation produced by a unit decambering of the symmetric strip pair m
+  const D = N.range(nS, (m) => { const G = L.solve(L.pn.map((p) => (p.js === nS + m || p.js === nS - 1 - m ? 1 : 0))), st = new Array(n2).fill(0); L.pn.forEach((p, k) => { st[p.js] += G[k]; }); return st; });
+  const dl = new Array(nS).fill(0), out = [], clOf = sec.cl || ((j, e) => sec(j, e).cl);
+  for (const al of alphas) {
+    let strip = [], cl = [], ae = [], res = 1, it = 0;
+    for (; it < 150; it++) {
+      strip = L.a.strip.map((v, j) => v * al + L.z.strip[j]); for (let m = 0; m < nS; m++) if (dl[m]) for (let j = 0; j < n2; j++) strip[j] += D[m][j] * dl[m];
+      cl = strip.map((v, j) => (2 * v) / ch[j]); res = 0; ae = [];
+      for (let m = 0; m < nS; m++) { const j = nS + m, e = cl[j] / a0 + aL0 + dl[m], r = cl[j] - clOf(j, e); ae.push(e); res = Math.max(res, Math.abs(r)); dl[m] += (0.35 * r) / a0; }
+      if (res < 2e-5) break;
+    }
+    const half = N.range(nS, (m) => nS + m), sc = half.map((j, m) => sec(j, ae[m])), S2 = L.S / 2, CL = N.sum(half.map((j) => cl[j] * ch[j] * L.dy[j])) / S2, CDp = N.sum(half.map((j, m) => sc[m].cd * ch[j] * L.dy[j])) / S2;
+    const xr = g.cr / 4 + g.ymac * g.tanL, CM = N.sum(half.map((j, m) => (sc[m].cm * ch[j] - cl[j] * (g.cr / 4 + L.ym[j] * g.tanL - xr)) * ch[j] * L.dy[j])) / (S2 * g.mac);
+    out.push({ alpha: al, CL, CDi: L.trefftz(strip), CDp, CM, cl: half.map((j) => cl[j]), cd: sc.map((v) => v.cd), ae, eta: half.map((j) => (2 * L.ym[j]) / g.b), strip: half.map((j) => strip[j]), residual: res, iterations: it });
+  }
+  return { L, pts: out };
+}
+
+const wingRans = {
+  id: 'wingrans', title: '3-D wing with viscous sections: vortex lattice coupled to section RANS', fidelity: 'numerical',
+  summary: 'Viscous lift, drag and stall of the wing at flight Reynolds number: a vortex lattice carries the three-dimensional induced flow and every spanwise strip takes its lift, drag and moment from a body-fitted RANS polar of the wing section at its effective angle of attack. Gives the wing polar, span loading, drag breakdown, maximum lift and where the stall starts.',
+  equations: ['Reynolds-averaged Navier–Stokes equations', 'Spalart–Allmaras', 'Prandtl lifting-line theory', 'Lifting-surface integral equations', 'Kutta–Joukowski lift theorem', 'Vortex lattice models', 'Prandtl–Glauert compressibility correction'],
+  applicable: fixedWing,
+  inputs: [
+    { key: 'S', label: 'Wing area', unit: 'm²', default: 16.2, min: 0.01, group: 'Geometry' },
+    { key: 'b', label: 'Span', unit: 'm', default: 11, min: 0.05, group: 'Geometry' },
+    { key: 'taper', label: 'Taper ratio', unit: '-', default: 0.6, min: 0.05, max: 1, group: 'Geometry' },
+    { key: 'sweep_deg', label: 'Quarter-chord sweep', unit: 'deg', default: 0, min: -30, max: 45, group: 'Geometry' },
+    { key: 'twist_deg', label: 'Tip twist (washout negative)', unit: 'deg', default: -2, min: -10, max: 5, group: 'Geometry' },
+    { key: 'airfoil', label: 'NACA section', type: 'text', default: '2412', group: 'Geometry' },
+    { key: 'tc', label: 'Thickness ratio override', unit: '-', default: 0, min: 0, max: 0.4, group: 'Geometry', help: '0 uses the thickness in the designation' },
+    { key: 'alpha_deg', label: 'Wing angle of attack', unit: 'deg', default: 4, min: -6, max: 22, group: 'Flow', help: 'Root-chord incidence to the freestream' },
+    { key: 'V', label: 'True airspeed', unit: 'm/s', default: 60, min: 1, group: 'Flow' },
+    ...ATM,
+    { key: 'CL_flight', label: 'Lift coefficient in flight (0 = use the angle of attack)', unit: '-', default: 0, min: 0, max: 3, group: 'Aircraft', help: 'Weight / (q·S): the published lift and drag are taken at this point of the polar' },
+    { key: 'CD_other', label: 'Drag of everything except the wing', unit: '-', default: 0.012, min: 0, max: 0.2, group: 'Aircraft', help: 'Fuselage, tails, nacelles, excrescences, extra drag area and wave drag from the drag build-up; added to the wing drag for the aircraft polar' },
+    { key: 'CD_wing_buildup', label: 'Wing profile drag in the drag build-up (reference)', unit: '-', default: 0, min: 0, max: 0.1, group: 'Aircraft', help: 'Flat-plate friction × form factor, shown beside the RANS value' },
+    { key: 'alpha_table', label: 'Section angles of attack', type: 'text', default: '0, 6, 11, 14, 17, 20', group: 'Numerics', help: 'Angles [deg] of the section RANS polar, ascending. More points near stall sharpen the maximum lift: e.g. -4, 0, 4, 8, 10, 12, 14, 15, 16, 17, 18, 20' },
+    { key: 'nRe', label: 'Reynolds numbers along the span', unit: '', default: 1, min: 1, max: 3, step: 1, discrete: true, group: 'Numerics', help: '1: one polar at the mean-chord Reynolds number, friction scaled to each strip. 2–3: separate polars between root and tip, interpolated in log Re' },
+    ...RANS_GRID.map((f) => (f.key === 'nSurf' ? { ...f, default: 48 } : f.key === 'nNormal' ? { ...f, default: 20 } : f.key === 'nWake' ? { ...f, default: 10 } : f)),
+    { key: 'iter_alpha', label: 'Iterations per section angle (cap)', unit: '', default: 120, min: 10, max: 2000, step: 1, discrete: true, group: 'Numerics', help: 'Each angle starts from the one before and stops once lift and drag are steady; attached flow needs 40–70 iterations on the default grid, 150–300 on a fine one' },
+    { key: 'nSpan', label: 'Spanwise strips per half wing', unit: '', default: 12, min: 4, max: 40, step: 1, discrete: true, group: 'Numerics' },
+  ],
+  defaults: (c, up, d) => {
+    const bi = {}; for (const f of dragBuildup.inputs) bi[f.key] = f.default; const src = dragBuildup.defaults(c, up, d); for (const k of Object.keys(src)) if (src[k] !== undefined && Number.isFinite(src[k])) bi[k] = src[k];
+    let other, wingBu, CLf;
+    if (bi.S > 0 && bi.b > 0) { const r = buildup(bi), w = r.comp.find((q) => q.name === 'Wing'), wcd = w ? w.CD * (1 + bi.exc_pct / 100) : 0; other = r.CD0 - wcd + r.w.CDw; wingBu = wcd; CLf = r.CL; }
+    return { S: c.wing.S_m2, b: c.wing.b_m, taper: c.wing.taper, sweep_deg: c.wing.sweep_deg, twist_deg: c.wing.twist_deg, airfoil: c.wing.airfoil, tc: c.wing.tc, alpha_deg: c.flight.alpha_deg + c.wing.incidence_deg, V: c.flight.V_ms, alt_m: c.atm.alt_m, dISA: c.atm.dISA_K, CD_other: other, CD_wing_buildup: wingBu, CL_flight: CLf };
+  },
+  run(i, ctx) {
+    const a = isa(i.alt_m, i.dISA), M = i.V / a.a, g = wingGeom(i), af = parseNaca(i.airfoil, i.tc), G = gridOf(i), cosL = Math.cos(N.rad(i.sweep_deg)), Mn = M * cosL, bn = Math.sqrt(1 - Math.min(Mn, 0.9) ** 2), beta = Math.sqrt(1 - Math.min(M, 0.9) ** 2);
+    const cbar = i.S / i.b, ReN = (c) => (i.V * cosL * c * cosL) / a.nu, nS = Math.round(N.clamp(i.nSpan, 4, 40));
+    let tab = String(i.alpha_table).split(/[,;\s]+/).map(Number).filter(Number.isFinite); tab = [...new Set(tab)].sort((p, q) => p - q).filter((v) => v >= -12 && v <= 24); if (tab.length < 3) tab = [0, 6, 11, 14, 17, 20];
+    const nRe = Math.round(N.clamp(i.nRe, 1, 3)), ct = g.cr * g.taper, cRe = nRe === 1 ? [g.mac] : nRe === 2 ? [ct, g.cr] : [ct, g.mac, g.cr], cap = Math.round(N.clamp(i.iter_alpha, 10, 2000));
+    const pol = cRe.map((c, k) => ransPolar(af, ReN(c), tab, G, cap, (f, msg) => ctx?.progress?.((0.9 * (k + f)) / cRe.length, msg))), lr = pol.map((p) => Math.log(p.Re)), P0 = pol[nRe === 3 ? 1 : 0];
+    // section data of a strip: simple sweep theory, Prandtl–Glauert on lift and moment, friction scaled to the strip Reynolds number when only one polar is used
+    const a0 = (2 * PI * cosL) / bn, cs = [], look = (key, an, lRe) => { if (nRe === 1) return polarAt(P0, key, an); const v = pol.map((p) => polarAt(p, key, an)); return N.interp1(lr, v, lRe); };
+    const sec = (j, ae) => {
+      if (!cs[j]) { const c = g.cr * (1 - (1 - g.taper) * Math.abs(cs.eta[j])), Re = ReN(c); cs[j] = { lRe: Math.log(Re), kf: nRe === 1 ? cfTurb(Math.max(Re, 1e4)) / cfTurb(Math.max(P0.Re, 1e4)) : 1 }; }
+      const an = N.deg(ae) / cosL, q = cs[j];
+      return { cl: (look('cl', an, q.lRe) * cosL * cosL) / bn, cd: look('cdp', an, q.lRe) * cosL ** 3 + look('cdf', an, q.lRe) * q.kf, cm: (look('cm', an, q.lRe) * cosL * cosL) / bn };
+    };
+    sec.cl = (j, ae) => { if (!cs[j]) sec(j, ae); return (look('cl', N.deg(ae) / cosL, cs[j].lRe) * cosL * cosL) / bn; };
+    cs.eta = N.range(2 * nS, (j) => -Math.cos((PI * (j + 0.5)) / (2 * nS)));
+    const aW = N.range(27, (k) => k - 4), W = viscousWing(g, nS, 3, beta, af, a0, sec, [...aW.map(N.rad), N.rad(i.alpha_deg)]), pts = W.pts.slice(0, aW.length), here = W.pts[aW.length], L = W.L;
+    ctx?.progress?.(0.97, 'Wing solved');
+    const CLs = pts.map((p) => p.CL), km = N.argmax(CLs), [aSt, CLmax] = vertex(aW, CLs, km), pS = pts[km], secMaxN = (P0.clmax * cosL * cosL) / bn;
+    // stall onset: first strip whose effective angle reaches the section stall angle as the wing angle increases
+    const aSecStall = N.rad(P0.aStall) * cosL; let onset = null; for (const p of pts) { const m = p.ae.findIndex((e) => e >= aSecStall); if (m >= 0) { onset = { alpha: N.deg(p.alpha), eta: p.eta[N.argmax(p.ae)], CL: p.CL }; break; } }
+    const etaSt = onset ? onset.eta : pS.eta[N.argmax(pS.cl)];
+    const CDw = (p) => p.CDp + p.CDi, lin = pts.filter((p, k) => aW[k] >= -2 && aW[k] <= 4), CLa = (lin[lin.length - 1].CL - lin[0].CL) / (lin[lin.length - 1].alpha - lin[0].alpha), CLaV = L.a.CL;
+    const up = pts.slice(0, km + 1), LD = up.map((p) => (p.CL > 0.05 ? p.CL / (CDw(p) + i.CD_other) : 0)), kL = N.argmax(LD), LDmax = LD[kL];
+    // flight point on the polar (below maximum lift)
+    const CLup = up.map((p) => p.CL), mono = CLup.every((v, k) => k === 0 || v > CLup[k - 1]), useCL = i.CL_flight > 0 && mono && i.CL_flight < CLmax && i.CL_flight > CLup[0], at = (f) => (useCL ? N.interp1(CLup, up.map(f), i.CL_flight) : f(here));
+    const CLf = useCL ? i.CL_flight : here.CL, CDpf = at((p) => p.CDp), CDif = at((p) => p.CDi), CDf = CDpf + CDif + i.CD_other, aF = useCL ? N.interp1(CLup, up.map((p) => N.deg(p.alpha)), i.CL_flight) : i.alpha_deg, eV = CDif > 1e-9 ? (CLf * CLf) / (PI * L.AR * CDif) : 1;
+    // sanity gate for publishing as the suite's primary viscous values
+    const used = P0.alpha.map((v, k) => k <= P0.kMax), convAll = pol.every((p) => p.conv.every((c, k) => c || k > p.kMax)), ypM = N.mean(P0.yplus.filter((_, k) => used[k])), ypGood = yPlusOk(ypM, G.wfn), cplOk = up.every((p) => p.residual < 1e-3), stallIn = P0.stallInside && km < aW.length - 1, machOk = Mn <= 0.6, reOk = P0.Re >= 3e5;
+    const gate = convAll && ypGood && cplOk && stallIn && machOk && reOk && CLmax > 0.3 && CLa > 0, why = [];
+    if (!convAll) why.push('section polar points below maximum lift did not converge within the iteration cap');
+    if (!ypGood) why.push(`mean first-cell y⁺ = ${ypM.toFixed(G.wfn ? 0 : 1)} is outside the range of the wall treatment`);
+    if (!cplOk) why.push('the strip coupling did not converge');
+    if (!stallIn) why.push('no lift maximum inside the table of section angles (extend the table)');
+    if (!machOk) why.push(`normal Mach number ${Mn.toFixed(2)} is above 0.6, beyond an incompressible section solution with Prandtl–Glauert scaling`);
+    if (!reOk) why.push(`section Reynolds number ${P0.Re.toExponential(2)} is below 3e5, where a fully turbulent model without transition is not representative`);
+    const warnings = [];
+    if (!af.ok) warnings.push(`"${i.airfoil}" is not a supported NACA designation; NACA 0012 thickness form was used.`);
+    warnings.push(gate ? 'Sanity gate passed (section polar converged below maximum lift, y⁺ in range, coupling converged, subcritical): the lift, drag, maximum lift and best lift-to-drag ratio at the flight point are published as the suite\'s viscous values, in place of the handbook build-up values.' : `Sanity gate NOT passed: ${why.join('; ')}. The values below are shown for inspection only; the published CL, CD, CLmax and L/D of the suite remain those of the drag build-up.`);
+    if (G.nSurf < 96) warnings.push(`Fast-look section grid (${P0.cells} cells, ${tab.length} angles). On this grid section drag is typically 5–20% high and maximum lift is resolved only to the spacing of the angle table. For design numbers use 96–128 cells around the section, 48–64 wall-normal cells wall-resolved, 150–300 iterations per angle and a table with 1° steps through the stall (one to a few minutes; the polar is cached, so later runs with the same section and Reynolds number are immediate).`);
+    if (Math.abs(i.sweep_deg) > 1) warnings.push('Simple sweep theory: sections are solved in the flow normal to the quarter-chord line. Spanwise boundary-layer flow, which thickens the tip boundary layer of a swept wing and promotes tip stall, is not modelled; the stall of a swept wing is therefore optimistic.');
+    if (M > 0.3) warnings.push(`Mach ${M.toFixed(2)}: the lattice uses the Prandtl–Glauert transformation and section lift is scaled by 1/√(1 − M_n²) = ${(1 / bn).toFixed(2)}; section drag is the incompressible value. Wave drag enters only through the build-up term.`);
+    if (nRe === 1 && g.taper < 0.7) warnings.push(`One polar at the mean-chord Reynolds number ${P0.Re.toExponential(2)} is used for all strips (tip ${ReN(ct).toExponential(2)}); friction drag is scaled to the strip Reynolds number but maximum lift is not. Set "Reynolds numbers along the span" to 2 or 3 to compute tip and root polars.`);
+    if (i.CL_flight > 0 && !useCL) warnings.push(`The flight lift coefficient ${i.CL_flight.toFixed(2)} is outside the attached part of the computed polar (maximum ${CLmax.toFixed(2)}); the values at the entered angle of attack are shown instead.`);
+    warnings.push('Wing alone: no fuselage carry-over, nacelles, flaps or tail; planar wake. Post-stall points use steady RANS section data and are a trend only.');
+    const cnt = (v) => +(1e4 * v).toFixed(1), eta = pS.eta, pF = useCL ? pts[N.argmin(pts.map((p) => Math.abs(p.CL - CLf)))] : here, CLv = (ad) => L.a.CL * N.rad(ad) + L.z.CL;
+    const kpis = [
+      { key: 'CL_wingrans', label: useCL ? 'Lift coefficient at the flight point' : 'Wing lift coefficient at this angle', value: CLf, unit: '-', status: CLf < 0.9 * CLmax ? 'ok' : 'warn', note: `α = ${aF.toFixed(2)}°` },
+      { key: 'CD_wingrans', label: 'Aircraft drag coefficient (viscous wing + other components)', value: CDf, unit: '-', status: gate ? 'ok' : 'warn', note: `${cnt(CDf)} counts` },
+      { key: 'CD_wing_profile', label: 'Wing profile drag (integrated section RANS)', value: CDpf, unit: '-', note: `${cnt(CDpf)} counts; drag build-up has ${cnt(i.CD_wing_buildup)}` },
+      { key: 'CD_wing_induced', label: 'Induced drag (Trefftz plane)', value: CDif, unit: '-', note: `span efficiency ${eV.toFixed(3)}` },
+      { key: 'LD_wingrans', label: 'Lift-to-drag ratio at this point', value: CLf / CDf, unit: '-' },
+      { key: 'LD_max_wingrans', label: 'Maximum lift-to-drag ratio', value: LDmax, unit: '-', note: `at CL = ${up[kL].CL.toFixed(2)}` },
+      { key: 'CLmax_wingrans', label: 'Clean wing maximum lift', value: CLmax, unit: '-', status: stallIn ? 'ok' : 'warn', note: `section maximum ${secMaxN.toFixed(2)} (normal to the sweep line: ${P0.clmax.toFixed(2)})` },
+      { key: 'alpha_stall_wingrans_deg', label: 'Wing angle at maximum lift', value: aSt, unit: 'deg' },
+      { key: 'eta_stall_wingrans', label: 'Spanwise station where stall starts', value: Math.abs(etaSt), unit: '2y/b', status: Math.abs(etaSt) < 0.7 ? 'ok' : 'warn', note: onset ? `first strip to reach the section stall angle, at α = ${onset.alpha.toFixed(0)}°` : 'strip with the highest lift at maximum lift' },
+      { key: 'CLa_wingrans_per_rad', label: 'Viscous wing lift-curve slope', value: CLa, unit: '1/rad' },
+      { key: 'CLa_vlm_per_rad', label: 'Inviscid vortex-lattice slope (reference)', value: CLaV, unit: '1/rad' },
+      { key: 'CLa_ratio', label: 'Viscous / inviscid lift slope', value: CLa / CLaV, unit: '-', status: Math.abs(CLa / CLaV - 1) < 0.08 ? 'ok' : 'warn', note: 'viscous sections lose a few percent of slope to the boundary layer' },
+      { key: 'CM_wingrans', label: 'Wing pitching moment about the quarter chord of the mean chord', value: at((p) => p.CM), unit: '-' },
+      { key: 'gate_passed', label: 'Sanity gate for publishing', value: gate ? 1 : 0, unit: '', status: gate ? 'ok' : 'warn', note: gate ? 'passed' : why[0] || '' },
+      { key: 'y_plus_mean', label: 'Mean first-cell y⁺ of the section solutions', value: ypM, unit: '-', status: ypGood ? 'ok' : 'warn' },
+      { key: 'Re_section', label: 'Section Reynolds number (normal to the sweep line)', value: P0.Re, unit: '-' },
+      { key: 'rans_iterations', label: 'RANS iterations in this run', value: pol.reduce((s2, p) => s2 + (p.cached ? 0 : p.its), 0), unit: '', note: pol.every((p) => p.cached) ? 'polar taken from the cache' : `${P0.cells} cells per section grid` },
+    ];
+    return {
+      kpis,
+      plots: [
+        { type: 'line', title: 'Wing lift curve', xlabel: 'Angle of attack [deg]', ylabel: 'CL [-]', series: [{ name: 'Viscous sections (RANS)', x: aW, y: CLs }, { name: 'Inviscid vortex lattice', x: aW.filter((v) => v <= 14), y: aW.filter((v) => v <= 14).map(CLv), style: 'dash' }], annotations: [{ x: aSt, label: 'Maximum lift' }] },
+        { type: 'line', title: 'Drag polar', xlabel: 'CD [-]', ylabel: 'CL [-]', series: [{ name: 'Aircraft (wing + other components)', x: up.map((p) => CDw(p) + i.CD_other), y: CLup }, { name: 'Wing alone', x: up.map(CDw), y: CLup, style: 'dash' }, { name: 'Wing profile drag only', x: up.map((p) => p.CDp), y: CLup, style: 'dash' }], annotations: [{ y: CLf, label: 'Flight point' }] },
+        { type: 'line', title: 'Section lift along the span', xlabel: 'Span station 2y/b [-]', ylabel: 'cl [-]', series: [{ name: `Flight point, α = ${N.deg(pF.alpha).toFixed(1)}°`, x: eta, y: pF.cl }, { name: `Maximum lift, α = ${aW[km]}°`, x: eta, y: pS.cl }, { name: 'Section maximum', x: eta, y: eta.map(() => secMaxN), style: 'dash' }] },
+        { type: 'line', title: 'Section profile drag along the span', xlabel: 'Span station 2y/b [-]', ylabel: 'cd [-]', series: [{ name: `Flight point`, x: eta, y: pF.cd }, { name: 'Maximum lift', x: eta, y: pS.cd }] },
+        { type: 'line', title: 'Span loading at the flight point', xlabel: 'Span station 2y/b [-]', ylabel: 'cl·c [m]', series: [{ name: 'Viscous', x: eta, y: pF.strip.map((v) => 2 * v) }, { name: 'Elliptic, same lift', x: eta, y: eta.map((e) => ((4 * pF.CL * L.S) / (PI * i.b)) * Math.sqrt(Math.max(0, 1 - e * e))), style: 'dash' }] },
+        { type: 'line', title: `Section polar from RANS, ${af.name}, Re = ${P0.Re.toExponential(2)}`, xlabel: 'Angle of attack [deg]', ylabel: 'cl and 50·cd [-]', series: [{ name: 'cl', x: P0.alpha, y: P0.cl, style: 'line+points' }, { name: '50 · cd', x: P0.alpha, y: P0.cd.map((v) => 50 * v), style: 'line+points' }], annotations: [{ x: P0.aStall, label: 'Section stall' }] },
+        { type: 'bar', title: 'Drag breakdown at the flight point', ylabel: 'Drag counts (CD × 10⁴) [-]', categories: ['Wing profile (RANS)', 'Wing profile (build-up)', 'Induced', 'Other components', 'Total'], series: [{ name: 'CD', y: [cnt(CDpf), cnt(i.CD_wing_buildup), cnt(CDif), cnt(i.CD_other), cnt(CDf)] }] },
+      ],
+      tables: [
+        { title: 'Wing polar', columns: ['α [deg]', 'CL', 'CD profile', 'CD induced', 'CD aircraft', 'L/D', 'CM'], rows: pts.filter((_, k) => k % 2 === 0 && k <= km + 2).map((p) => [N.deg(p.alpha).toFixed(0), +p.CL.toFixed(4), +p.CDp.toFixed(5), +p.CDi.toFixed(5), +(CDw(p) + i.CD_other).toFixed(5), +(p.CL / (CDw(p) + i.CD_other)).toFixed(2), +p.CM.toFixed(4)]) },
+        { title: 'Section polar (body-fitted RANS, normal to the sweep line)', columns: ['α [deg]', 'cl', 'cd', 'cd pressure', 'cd friction', 'cm c/4', 'Separation x/c', 'y⁺', 'Converged'], rows: P0.alpha.map((v, k) => [v, +P0.cl[k].toFixed(4), +P0.cd[k].toFixed(5), +P0.cdp[k].toFixed(5), +P0.cdf[k].toFixed(5), +P0.cm[k].toFixed(4), +P0.xsep[k].toFixed(2), +P0.yplus[k].toFixed(1), P0.conv[k] ? 'yes' : 'no']) },
+      ],
+      outputs: gate ? { CL: CLf, CD: CDf, CLmax, LD_max: LDmax } : {},
+      warnings,
+      models: ['Vortex-lattice method with Prandtl–Glauert transformation and Trefftz-plane induced drag', 'Sectional decambering (α-shift) coupling: each strip is rotated until its lattice lift equals the viscous section lift at its effective angle of attack (van Dam; Mukherjee & Gopalarathnam)', `Section data: body-fitted incompressible RANS, Spalart–Allmaras, fully turbulent, ${G.wfn ? 'wall functions' : 'wall-resolved'}, ${tab.length} angles of attack at ${nRe} Reynolds number${nRe > 1 ? 's' : ''}`, 'Simple sweep theory for the section flow; Prandtl–Glauert scaling of section lift and moment', 'Aircraft polar: viscous wing + non-wing drag from the component build-up'],
+      assumptions: ['Each strip behaves as a two-dimensional section at its effective angle of attack (high aspect ratio, no strong spanwise flow)', 'Same section along the span; rigid, planar wing; clean configuration', 'Profile drag integrated strip by strip; induced drag from the viscous span loading', nRe === 1 ? 'Friction part of the section drag scaled to the strip Reynolds number with the flat-plate law; pressure part and maximum lift taken at the mean-chord Reynolds number' : 'Section data interpolated in the logarithm of the strip Reynolds number'],
+    };
+  },
+  convergence: { param: 'nSpan', label: 'Spanwise strips per half wing', levels: [6, 12, 24], metric: 'CLa_wingrans_per_rad' },
+  calibration: { params: [{ key: 'CD_other', min: 0, max: 0.05 }], sweep: 'alpha_deg', target: 'CL_wingrans', note: 'Supply a measured wing or aircraft lift curve; the drag of the non-wing components is the uncertain handbook term in the aircraft polar.' },
+  verify() {
+    // coupling alone, with analytic section data: a section slope of 0.9 × 2π must reproduce lifting-line theory, and a lift cap must cap the wing
+    const g = wingGeom({ S: 12, b: 12, taper: 1, sweep_deg: 0, twist_deg: 0 }), af = parseNaca('0012'), k = 0.9;
+    const W = viscousWing(g, 16, 2, 1, af, 2 * PI, (j, ae) => ({ cl: k * 2 * PI * ae, cd: 0.01, cm: 0 }), [0, N.rad(2)]), slope = (W.pts[1].CL - W.pts[0].CL) / N.rad(2), ll = liftingLine(12, () => 1 / 12, () => 1, k * 2 * PI, 60), ll1 = liftingLine(12, () => 1 / 12, () => 1, 2 * PI, 60);
+    const Wi = viscousWing(g, 16, 2, 1, af, 2 * PI, (j, ae) => ({ cl: 2 * PI * ae, cd: 0.01, cm: 0 }), [N.rad(3)]);
+    const Wc = viscousWing(g, 12, 2, 1, af, 2 * PI, (j, ae) => ({ cl: Math.min(2 * PI * ae, 1.2), cd: 0.01, cm: 0 }), N.range(10, (q) => N.rad(2 * q + 2)));
+    return [
+      N.check('Coupled wing, section slope 0.9 × 2π: loss of wing lift slope against lifting line', slope / W.L.a.CL, ll.CL / ll1.CL, 0.01, 'Prandtl lifting line with section slopes 0.9 × 2π and 2π (rectangular wing, aspect ratio 12): the ratio isolates the coupling from the 2–3% difference between lattice and lifting line'),
+      N.check('Inviscid section data return the vortex-lattice lift', Wi.pts[0].CL, Wi.L.a.CL * N.rad(3), 1e-3, 'Zero decambering when the section follows thin-airfoil theory'),
+      N.check('Uniform section drag integrates to the same wing profile drag', Wi.pts[0].CDp, 0.01, 1e-9, 'Area-weighted strip integration'),
+      N.check('A section lift limit of 1.2 limits the wing below it', N.amax(Wc.pts.map((p) => p.CL)) < 1.2 && N.amax(Wc.pts.map((p) => p.CL)) > 1.0 ? 1 : 0, 1, 1e-12, 'Wing maximum lift is below the section maximum because the span loading is not uniform'),
+    ];
+  },
+  recommend(res, i) {
+    const o = res.outputs, out = [];
+    if (!o.gate_passed) out.push({ severity: 'warn', title: 'Viscous wing result not published', detail: 'The run did not pass its sanity gate, so the rest of the app keeps the handbook drag build-up values.', action: 'Raise "Iterations per section angle", extend the table of section angles through the stall, or switch the wall treatment as the warning explains; then re-run.', basis: 'Internal gate: converged section polar, y⁺ in range, coupling converged, subcritical normal Mach number' });
+    if (o.eta_stall_wingrans > 0.7) out.push({ severity: 'warn', title: 'Stall starts outboard', detail: `The first strip to stall is at ${(100 * o.eta_stall_wingrans).toFixed(0)}% semispan, in the aileron region.`, action: 'Add washout, reduce taper or use a higher-lift tip section; re-run until the stall starts inboard of about 60% semispan.', basis: 'Viscous strip analysis' });
+    if (o.CL_wingrans > 0.85 * o.CLmax_wingrans) out.push({ severity: 'warn', title: 'Little stall margin at this point', detail: `CL = ${o.CL_wingrans.toFixed(2)} against a clean maximum of ${o.CLmax_wingrans.toFixed(2)}.`, action: 'Fly faster, lower the mass or deploy high-lift devices (outside this clean-wing model).', basis: 'CL / CLmax' });
+    if (i.CD_wing_buildup > 0 && Math.abs(o.CD_wing_profile / i.CD_wing_buildup - 1) > 0.3) out.push({ severity: 'advise', title: 'Wing profile drag differs from the handbook build-up', detail: `RANS strips: ${(1e4 * o.CD_wing_profile).toFixed(0)} counts; flat-plate build-up: ${(1e4 * i.CD_wing_buildup).toFixed(0)} counts.`, action: 'Part of the difference is real (lift-dependent profile drag, fully turbulent sections, no laminar run) and part is grid error on the fast-look grid: refine the section grid before changing the build-up factors.', basis: 'Cross-check of two independent methods' });
+    out.push({ severity: 'info', title: 'What this method adds', detail: `Maximum L/D ${o.LD_max_wingrans.toFixed(1)}, clean CLmax ${o.CLmax_wingrans.toFixed(2)} with viscous sections at flight Reynolds number.`, action: 'Use it to trade twist, taper and section choice for stall behaviour and cruise drag; one drag count is roughly ' + (100 / (1e4 * o.CD_wingrans)).toFixed(2) + '% of fuel burn and CO₂. Confirm final numbers with 3-D body-fitted RANS from the High-fidelity bridge.', basis: 'Fidelity ladder' });
     return out;
   },
 };
@@ -1464,8 +1841,8 @@ function ransBody(i, ctx, n) {
 }
 
 const rans3d = {
-  id: 'rans3d', title: '3-D RANS: flow over a wing, fuselage or imported shape', fidelity: 'numerical',
-  summary: 'Reynolds-averaged Navier–Stokes solution of the flow around a three-dimensional body on a Cartesian grid: the body (the wing of the case, a fuselage ellipsoid, or a surface imported from the geometry workbench) is immersed in the grid, turbulence is modelled with the Spalart–Allmaras equation, and the flow is marched to a steady state. Lift, drag, pressure and velocity fields, the wake and the wall-layer resolution are reported.',
+  id: 'rans3d', title: '3-D flow-field visualisation: immersed-boundary RANS over a wing, fuselage or imported shape', fidelity: 'numerical',
+  summary: 'A picture of the three-dimensional flow, not a force prediction. The body (the wing of the case, a fuselage ellipsoid, or a surface imported from the geometry workbench) is immersed in a Cartesian grid and the Reynolds-averaged Navier–Stokes equations with the Spalart–Allmaras model are marched to a steady state: pressure and velocity fields, the wake and the tip vortex. A Cartesian grid that a browser can afford cannot resolve a flight-Reynolds-number boundary layer, so its lift is typically far too low and its drag far too high; viscous wing forces come from the viscous-section wing analysis, which is shown beside it.',
   equations: ['Reynolds-averaged Navier–Stokes equations', 'Navier–Stokes equations', 'Continuity equation', 'Conservation of momentum equation', 'Spalart–Allmaras', 'Immersed-boundary formulations', 'Wall-resolved or wall-modelled turbulence simulations'],
   inputs: [
     { key: 'body', label: 'Body', type: 'select', options: RANS_BODIES, default: RANS_BODIES[0], group: 'Geometry', help: 'An imported surface is used automatically when one has been sent from the geometry workbench' },
@@ -1488,11 +1865,13 @@ const rans3d = {
     { key: 'clearance', label: 'Domain clearance around a body', unit: 'body widths', default: 1.25, min: 0.5, max: 4, group: 'Numerics', help: 'Fuselage, sphere and imported shapes; the wing domain is set from the chord and span' },
     { key: 't_flow', label: 'Simulated time', unit: 'body lengths', default: 4, min: 1, max: 100, group: 'Numerics', help: 'Distance flown, in root chords (wing) or body lengths. The starting vortex must leave the domain: 6–10 for a wing' },
     { key: 'max_steps', label: 'Maximum time steps', unit: '', default: 120, min: 20, max: 50000, step: 1, discrete: true, group: 'Numerics' },
+    { key: 'CL_wingrans_ref', label: 'Viscous-section wing lift (reference)', unit: '-', default: 0, min: -2, max: 4, group: 'Reference', help: 'Filled from the viscous-section wing analysis when it has been run; 0 = not available' },
+    { key: 'CD_wing_ref', label: 'Viscous-section wing drag, profile + induced (reference)', unit: '-', default: 0, min: 0, max: 1, group: 'Reference' },
     { key: 'n', label: 'Cells across the domain (y and z); twice as many along x', unit: '', default: 12, min: 8, max: 64, step: 1, discrete: true, group: 'Numerics', help: '16 gives 32 × 16 × 16; 64 gives 128 × 64 × 64' },
   ],
   defaults: (c, up) => {
     const hasShape = !!(c.shape && c.shape.positions && c.shape.positions.length >= 9), wingOk = c.wing.S_m2 > 0 && c.wing.b_m > 0, fusOk = c.fuselage.len_m > 0 && c.fuselage.dia_m > 0;
-    return { body: hasShape ? RANS_BODIES[3] : wingOk ? RANS_BODIES[0] : fusOk ? RANS_BODIES[1] : RANS_BODIES[2], S: c.wing.S_m2, b: c.wing.b_m, taper: c.wing.taper, sweep_deg: c.wing.sweep_deg, twist_deg: c.wing.twist_deg, airfoil: c.wing.airfoil, tc: c.wing.tc, fus_L: c.fuselage.len_m || undefined, fus_D: c.fuselage.dia_m || undefined, alpha_deg: wingOk ? c.flight.alpha_deg + c.wing.incidence_deg : 0, V: c.flight.V_ms, alt_m: c.atm.alt_m, dISA: c.atm.dISA_K };
+    return { body: hasShape ? RANS_BODIES[3] : wingOk ? RANS_BODIES[0] : fusOk ? RANS_BODIES[1] : RANS_BODIES[2], S: c.wing.S_m2, b: c.wing.b_m, taper: c.wing.taper, sweep_deg: c.wing.sweep_deg, twist_deg: c.wing.twist_deg, airfoil: c.wing.airfoil, tc: c.wing.tc, fus_L: c.fuselage.len_m || undefined, fus_D: c.fuselage.dia_m || undefined, alpha_deg: wingOk ? c.flight.alpha_deg + c.wing.incidence_deg : 0, V: c.flight.V_ms, alt_m: c.atm.alt_m, dISA: c.atm.dISA_K, CL_wingrans_ref: wingOk ? up.cfd?.CL_wingrans : undefined, CD_wing_ref: wingOk && up.cfd?.CD_wing_profile > 0 ? up.cfd.CD_wing_profile + up.cfd.CD_wing_induced : undefined };
   },
   run(i, ctx) {
     const a = isa(i.alt_m, i.dISA), n = cellsOf(i.n, 8, 64), B = ransBody(i, ctx, n), nuS = a.nu / i.V, Re = B.Lref / nuS, M = i.V / a.a, lam = i.turb === RANS_MODELS[2];
@@ -1512,6 +1891,8 @@ const rans3d = {
     let CLref = NaN, CDref = NaN;
     if (B.kind === RANS_BODIES[0]) { const L = vlm(B.g, 12, 3, 1, (xf) => B.af.camber(xf)[1], true), al = N.rad(i.alpha_deg), strip = L.a.strip.map((v, j) => v * al + L.z.strip[j]); CLref = L.a.CL * al + L.z.CL; CDref = L.trefftz(strip) + 2 * cfTurb(Math.max(Re, 1e4), M) * (1 + 2 * B.af.t + 60 * B.af.t ** 4); }
     else if (B.kind === RANS_BODIES[2]) CDref = Re > 3.5e5 ? 0.2 : 0.47;
+    const hasWR = B.kind === RANS_BODIES[0] && i.CD_wing_ref > 0;
+    warnings.unshift(`Flow-field visualisation only. The integrated forces of this immersed-boundary grid are not force-accurate (lift is typically a third to a half of the correct value and drag several times too high) and are not published to other suites. ${B.half ? (hasWR ? `For the wing use the viscous-section analysis: CL = ${i.CL_wingrans_ref.toFixed(3)}, wing CD = ${i.CD_wing_ref.toFixed(4)}.` : 'For wing forces run the viscous-section wing analysis (vortex lattice coupled to body-fitted section RANS) and the vortex-lattice analysis.') : 'For forces on this body use the drag build-up or a body-fitted solver through the High-fidelity bridge.'}`);
     if (s.diverged || !Number.isFinite(CL)) warnings.push('The time march diverged: raise the upwind fraction, switch the wall model on or refine the grid.');
     if (n <= 20) warnings.push(COARSE_NOTE(`${g.nx} × ${g.ny} × ${g.nz} cells`, 'Cells across the domain'));
     warnings.push(`Resolution: ${cellsLen.toFixed(1)} cells along the ${B.half ? 'mean chord' : 'body length'}${B.half ? ` (${(B.cr / dxc).toFixed(1)} at the root, ${(B.ct / dxc).toFixed(1)} at the tip)` : ''} and ${cellsThk.toFixed(1)} across the ${B.half ? 'maximum thickness' : 'smallest body dimension'}. ${cellsLen < 32 || cellsThk < 6 ? 'The immersed boundary places the wall to within about one cell, so at this resolution the leading-edge suction, the trailing edge and the boundary layer are smeared: the numerical boundary layer is about one cell thick, the flow separates early, the lift can be less than half the true value and the drag several times too high. Read this run as a flow visualisation and a trend, not as a drag prediction.' : 'This is enough for pressure lift within roughly 10%; friction drag still relies entirely on the wall model.'}`);
@@ -1524,7 +1905,7 @@ const rans3d = {
     if (lam) warnings.push('No turbulence model: at this Reynolds number the result is an under-resolved, numerically damped solution, not a laminar flow.');
     const cpClip = (v) => N.clamp(cpOf(v), -2.5, 1.2), ovl = { overlay: ol, xlabel: 'x [m]', ylabel: 'y [m]' }, [tcT, clT] = thin(tc, clH, 300), [, cdT] = thin(tc, cdH, 300), [, rsT] = thin(tc, H.residual.map((v) => Math.max(v, 1e-16)), 300);
     const plots = [
-      { type: 'line', title: 'Force convergence', xlabel: `Distance flown [${B.half ? 'root chords' : 'body lengths'}]`, ylabel: 'Coefficient [-]', series: [{ name: 'CL', x: tcT.slice(1), y: clT.slice(1) }, { name: 'CD', x: tcT.slice(1), y: cdT.slice(1) }], annotations: Number.isFinite(CLref) ? [{ y: CLref, label: 'CL, vortex lattice' }] : [] },
+      { type: 'line', title: 'Force convergence (iteration monitor; not force-accurate at this grid)', xlabel: `Distance flown [${B.half ? 'root chords' : 'body lengths'}]`, ylabel: 'Coefficient [-]', series: [{ name: 'CL', x: tcT.slice(1), y: clT.slice(1) }, { name: 'CD', x: tcT.slice(1), y: cdT.slice(1) }], annotations: [...(Number.isFinite(CLref) ? [{ y: CLref, label: 'CL, vortex lattice' }] : []), ...(hasWR ? [{ y: i.CL_wingrans_ref, label: 'CL, viscous-section wing' }] : [])] },
       { type: 'line', title: 'Residual history', xlabel: `Distance flown [${B.half ? 'root chords' : 'body lengths'}]`, ylabel: 'RMS |∂u/∂t| · L/V² [-]', ylog: true, series: [{ name: 'Momentum residual', x: tcT.slice(1), y: rsT.slice(1).map((v) => v * B.Lflow) }] },
       heatOf(`Pressure coefficient, plane z = ${g.z[kz].toFixed(2)} m`, s.slice('z', kz, 'p', lim), 'Cp [-]', { ...ovl, map: cpClip, diverging: true }),
       heatOf(`Velocity magnitude, plane z = ${g.z[kz].toFixed(2)} m`, s.slice('z', kz, 'speed', lim), '|V|/V∞ [-]', ovl),
@@ -1535,20 +1916,19 @@ const rans3d = {
     ];
     return {
       kpis: [
-        { key: 'CL_rans3d', label: 'Lift coefficient', value: CL, unit: '-', note: `mean of the last quarter of the run; reference area ${B.Sref.toFixed(3)} m²` },
-        { key: 'CD_rans3d', label: 'Drag coefficient', value: CD, unit: '-', status: cellsLen >= 32 && cellsThk >= 6 ? 'ok' : 'warn', note: cellsLen < 32 ? 'dominated by numerical diffusion at this resolution' : 'pressure plus modelled friction' },
-        { key: 'LD_rans3d', label: 'Lift-to-drag ratio', value: CD > 0 ? CL / CD : NaN, unit: '-' },
-        ...(Number.isFinite(CLref) ? [{ key: 'CL_vlm_ref', label: 'Lift coefficient, vortex lattice (reference)', value: CLref, unit: '-', note: 'Inviscid, incompressible, same planform, twist and camber' }, { key: 'CL_ratio', label: 'RANS lift / vortex-lattice lift', value: CL / CLref, unit: '-', status: Math.abs(CL / CLref - 1) < 0.15 ? 'ok' : 'warn' }] : []),
+        { key: 'cells_streamwise', label: B.half ? 'Cells along the mean chord' : 'Cells along the body', value: cellsLen, unit: '', status: cellsLen >= 32 ? 'ok' : cellsLen >= 12 ? 'warn' : 'bad' },
+        { key: 'cells_thickness', label: 'Cells across the thickness', value: cellsThk, unit: '', status: cellsThk >= 6 ? 'ok' : cellsThk >= 3 ? 'warn' : 'bad' },
+        { key: 'wake_deficit', label: 'Peak wake velocity deficit', value: deficit, unit: 'V∞', note: `one reference length behind the body` },
+        ...(hasWR ? [{ key: 'CL_wingrans_ref', label: 'Lift coefficient, viscous-section wing analysis (use this)', value: i.CL_wingrans_ref, unit: '-', status: 'ok', note: 'vortex lattice coupled to body-fitted section RANS, at the flight point' }, { key: 'CD_wing_ref', label: 'Wing drag coefficient, viscous-section wing analysis (use this)', value: i.CD_wing_ref, unit: '-', status: 'ok', note: 'profile + induced' }] : []),
+        ...(Number.isFinite(CLref) ? [{ key: 'CL_vlm_ref', label: 'Lift coefficient, vortex lattice (reference)', value: CLref, unit: '-', note: 'Inviscid, incompressible, same planform, twist and camber' }] : []),
+        { key: 'CL_rans3d', label: 'Integrated lift coefficient of this grid — not force-accurate', value: CL, unit: '-', status: 'warn', note: `not force-accurate at this grid: a ${cellsLen.toFixed(0)}-cell chord cannot carry the leading-edge suction; expect far too little lift. Mean of the last quarter of the run` },
+        { key: 'CD_rans3d', label: 'Integrated drag coefficient of this grid — not force-accurate', value: CD, unit: '-', status: 'warn', note: 'not force-accurate at this grid: dominated by numerical diffusion and a one-cell boundary layer; expect several times the true drag' },
+        ...(Number.isFinite(CLref) ? [{ key: 'CL_ratio', label: 'Immersed-boundary lift / vortex-lattice lift', value: CL / CLref, unit: '-', status: 'warn', note: 'a measure of how much lift the grid loses, not a viscous effect' }] : []),
         ...(Number.isFinite(CDref) ? [{ key: 'CD_ref_est', label: B.half ? 'Drag coefficient, handbook estimate (reference)' : 'Sphere drag coefficient, textbook (reference)', value: CDref, unit: '-', note: B.half ? 'Induced (Trefftz) plus flat-plate friction × form factor (empirical)' : Re > 3.5e5 ? 'supercritical, ≈ 0.2 (empirical)' : 'subcritical, ≈ 0.47 (empirical)' }] : []),
-        { key: 'lift_N', label: 'Lift', value: CL * 0.5 * a.rho * i.V ** 2 * B.Sref * (B.half ? 2 : 1), unit: 'N', note: B.half ? 'both wing halves' : '' },
-        { key: 'drag_N', label: 'Drag', value: CD * 0.5 * a.rho * i.V ** 2 * B.Sref * (B.half ? 2 : 1), unit: 'N' },
         { key: 'force_drift_pct', label: 'Change of mean force over the last quarter', value: 100 * Math.max(drCL, drCD), unit: '%', status: Math.max(drCL, drCD) < 0.02 ? 'ok' : 'warn' },
         { key: 'residual', label: 'Final momentum residual', value: d.residual * B.Lflow, unit: 'V²/L' },
         { key: 'y_plus_mean', label: 'Mean y⁺ of the first fluid cells', value: d.yPlus.mean, unit: '-', status: d.yPlus.mean < 5 || (d.yPlus.mean >= 30 && d.yPlus.mean <= 300) ? 'ok' : 'warn', note: d.yPlus.mean < 5 ? 'wall-resolved' : d.yPlus.mean <= 300 ? 'log layer: wall-modelled' : 'beyond the log layer: wall model extrapolated' },
         { key: 'y_plus_max', label: 'Maximum y⁺ of the first fluid cells', value: d.yPlus.max, unit: '-' },
-        { key: 'cells_streamwise', label: B.half ? 'Cells along the mean chord' : 'Cells along the body', value: cellsLen, unit: '', status: cellsLen >= 32 ? 'ok' : cellsLen >= 12 ? 'warn' : 'bad' },
-        { key: 'cells_thickness', label: 'Cells across the thickness', value: cellsThk, unit: '', status: cellsThk >= 6 ? 'ok' : cellsThk >= 3 ? 'warn' : 'bad' },
-        { key: 'wake_deficit', label: 'Peak wake velocity deficit', value: deficit, unit: 'V∞', note: `one reference length behind the body` },
         { key: 'nut_max_ratio', label: 'Peak eddy viscosity ν_t/ν', value: d.nutMax / nuS, unit: '-' },
         { key: 'Re_ref', label: 'Reynolds number on the reference length', value: Re, unit: '-' },
         { key: 'blockage_pct', label: 'Domain blockage', value: 100 * B.blockage, unit: '%', status: B.blockage < 0.05 ? 'ok' : 'warn' },
@@ -1725,7 +2105,7 @@ const bluffMemo = memoLast((i, ctx) => bluff3d.runNow(i, ctx));
 export default {
   id: 'cfd', n: 1,
   tagline: 'How much lift and drag the aircraft makes, where the flow separates or shocks, and how fine a mesh the answer needs.',
-  analyses: [airfoil, wing, dragBuildup, shockTube, shocks, cavityFlow, wallTurb, dns3d, les3d, rans3d, bluff3d],
+  analyses: [airfoil, wing, dragBuildup, rans2d, wingRans, shockTube, shocks, cavityFlow, wallTurb, dns3d, les3d, rans3d, bluff3d],
   consumes: [],
   provides: [
     { key: 'CL', label: 'Lift coefficient', unit: '-' }, { key: 'CD', label: 'Drag coefficient', unit: '-' }, { key: 'CD0', label: 'Zero-lift drag coefficient', unit: '-' },
@@ -1734,7 +2114,7 @@ export default {
     { key: 'cp_min', label: 'Minimum pressure coefficient', unit: '-' }, { key: 'x_cp_frac', label: 'Centre of pressure', unit: 'x/c' },
   ],
   handoff: [
-    { model: 'Body-fitted, wall-resolved 3-D RANS of the complete aircraft at flight Reynolds number (realizable k–ε, k–ω SST, Reynolds-stress, transition SST, γ–Reθ) on 10⁷–10⁸ cells', why: '3-D RANS (Spalart–Allmaras, mixing length), LES and DNS are solved natively here on Cartesian immersed-boundary grids up to the resolution the device allows (about 128³ cells). Such a grid places the wall to within one cell and cannot carry a y⁺ ≈ 1 boundary-layer mesh on the real surface, so drag to a few counts, maximum lift, separation onset and transition still need a body-fitted mesh and hours of parallel computing. Only the Spalart–Allmaras and mixing-length closures are implemented', tool: 'Finite-volume RANS solver (SU2, OpenFOAM, CFL3D, Fluent, STAR-CCM+). The High-fidelity bridge page of this app exports ready-to-run SU2 and OpenFOAM cases for the same geometry and flight condition; the wall-layer analysis gives the first-cell height' },
+    { model: 'Body-fitted, wall-resolved 3-D RANS of the complete aircraft at flight Reynolds number (realizable k–ε, k–ω SST, Reynolds-stress, transition SST, γ–Reθ) on 10⁷–10⁸ cells', why: 'Natively, viscous wing forces come from body-fitted 2-D section RANS (Spalart–Allmaras, wall-resolved or wall functions) coupled strip by strip to the vortex lattice: that is a quasi-3-D method without spanwise boundary-layer flow, junctions, nacelles or shocks. 3-D RANS (Spalart–Allmaras, mixing length), LES and DNS are solved natively only on Cartesian immersed-boundary grids, for flow visualisation, up to the resolution the device allows (about 128³ cells). Such a grid places the wall to within one cell and cannot carry a y⁺ ≈ 1 boundary-layer mesh on the real surface, so drag to a few counts, maximum lift, separation onset and transition still need a body-fitted mesh and hours of parallel computing. Only the Spalart–Allmaras and mixing-length closures are implemented', tool: 'Finite-volume RANS solver (SU2, OpenFOAM, CFL3D, Fluent, STAR-CCM+). The High-fidelity bridge page of this app exports ready-to-run SU2 and OpenFOAM cases for the same geometry and flight condition; the wall-layer analysis gives the first-cell height' },
     { model: 'Industrial wall-resolved and wall-modelled LES, DES / DDES / IDDES and dynamic Smagorinsky on the real geometry; DNS at flight Reynolds number', why: 'LES (Smagorinsky, WALE, equilibrium wall model) and DNS run natively for canonical flows and immersed bodies at modest Reynolds number. Scale-resolving simulation of an aircraft needs 10⁸–10¹¹ body-fitted cells and 10⁵–10⁷ time steps; hybrid RANS–LES and the dynamic procedure are not implemented', tool: 'HPC scale-resolving solver (OpenFOAM, PyFR, CharLES, Nek5000), prepared through the High-fidelity bridge' },
     { model: 'Compressible transonic 3-D Euler / RANS with shock–boundary-layer interaction and buffet; Favre-averaged equations', why: 'The native 3-D solver is incompressible. Shocks on the wing are represented only by the Korn equation and the 1-D shock relations; the panel and lattice methods are linear subsonic', tool: 'Compressible RANS solver (SU2, OpenFOAM rhoSimpleFoam / HiSA) from the High-fidelity bridge, validated on NASA Common Research Model data' },
     { model: 'High-lift (slats, flaps, spoilers) aerodynamics', why: 'Multi-element gaps and confluent boundary layers are far below the cell size of a Cartesian immersed-boundary grid and beyond single-element integral methods', tool: 'Body-fitted RANS validated against the High-Lift Prediction Workshop cases' },

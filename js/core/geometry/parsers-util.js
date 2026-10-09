@@ -251,8 +251,10 @@ export const xmlFirst = (node, name) => xmlAll(node, name)[0] ?? null;
 export const xmlChild = (node, name) => node.children.find((c) => c.name === name) ?? null;
 
 // ---------- ZIP (stored + deflate entries via the central directory) ----------
-async function inflateRaw(data, cap) {
-  const ds = new DecompressionStream('deflate-raw'), w = ds.writable.getWriter();
+/** Inflate a raw-deflate ('deflate-raw') or zlib-wrapped ('deflate') stream, refusing to expand beyond `cap` bytes. */
+export async function inflate(data, cap = LIMITS.inflate, format = 'deflate-raw') {
+  if (typeof DecompressionStream === 'undefined') throw new Error('this runtime has no DecompressionStream; compressed content cannot be read');
+  const ds = new DecompressionStream(format), w = ds.writable.getWriter();
   w.write(data).catch(() => {}); w.close().catch(() => {});
   const r = ds.readable.getReader(), chunks = []; let total = 0;
   for (;;) {
@@ -289,7 +291,7 @@ export function zipEntries(b) {
         if (method === 0) return data;
         if (method !== 8) throw new Error(`ZIP entry "${name}" uses unsupported compression method ${method}`);
         if (typeof DecompressionStream === 'undefined') throw new Error('this runtime has no DecompressionStream; cannot inflate ZIP content');
-        return inflateRaw(data, LIMITS.inflate);
+        return inflate(data, LIMITS.inflate);
       },
     });
     p += 46 + nl + xl + cl;

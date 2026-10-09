@@ -1,4 +1,4 @@
-// occt-import-js 0.0.23 (LGPL-2.1, see LICENSE.occt-import-js.txt and LICENSE.occt.txt). Modified from dist/occt-import-js.js for use as an ES module:
+// occt-import-js 0.0.23 (LGPL-2.1, see LICENSE.occt-import-js.txt and LICENSE.occt.txt). Modified on 2026-10-09 from dist/occt-import-js.js for use as an ES module:
 // a module-scope 'process' shadow (so the loader supplies the .wasm bytes itself in every runtime) and a default export were added; nothing else is changed.
 var process;
 

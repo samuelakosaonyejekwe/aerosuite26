@@ -17,7 +17,7 @@ const READERS = {
   dae: S.readDAE, vrml: S.readVRML, x3d: S.readX3D, xyz: S.readXYZ, pcd: S.readPCD, las: S.readLAS,
   vtk: Me.readVTK, vtkxml: Me.readVTKXML, gmsh: Me.readGmsh, su2: Me.readSU2, nastran: Me.readNastran, abaqus: Me.readAbaqus, unv: Me.readUNV,
   cdb: Me.readCDB, fluent: Me.readFluent, tecplot: Me.readTecplot, plot3d: Me.readPlot3D, openfoam: Me.readOpenFOAM,
-  step: K.readSTEPKernel, iges: K.readIGESKernel, brep: K.readBREP, xt: C.readXT, laz: K.readLAZ,
+  step: K.readSTEPKernel, iges: K.readIGESKernel, brep: K.readBREP, xt: K.readXT, xb: K.readXT, acis: K.readACIS, jt: K.readJT, dxf: K.readDXF, laz: K.readLAZ,
   cgns: H.readHDF5Any, med: H.readHDF5Any, 'fluent-h5': H.readHDF5Any, exodus: H.readHDF5Any, hdf5: H.readHDF5Any, geotiff: R.readGeoTIFF, e57: R.readE57,
 };
 const STRUCTURAL = new Set(['nastran', 'abaqus', 'cdb', 'unv']);
@@ -50,12 +50,15 @@ function validIndices(arr, per, nVerts) {
 /**
  * Import one file. opts:
  *   format      force a format id from FORMATS instead of detecting it
- *   companions  [{ name, bytes }] extra files (OpenFOAM points/faces/boundary/owner, external glTF .bin buffers)
+ *   companions  [{ name, bytes }] extra files (OpenFOAM points/faces/boundary/owner, external glTF .bin buffers, part files of a JT assembly)
  *   maxPoints   cap for subsampled point clouds (LAS / LAZ), default 200 000
  *   maxGrid     largest number of height-field samples per side for GeoTIFF rasters, default 300
  *   linearDeflection, angularDeflection, linearDeflectionType   tessellation accuracy for STEP / IGES / BREP
  *                (default 0.001 of the bounding box and 0.5 rad; 'absolute_value' makes linearDeflection a length)
  *   kernelTimeout  milliseconds after which a STEP / IGES / BREP translation is stopped (default 180 000)
+ *   lod         JT: which tessellation LOD to load, 0 = finest (default), n = n-th coarser, 'coarsest'
+ *   jtTessellation  true to use a JT file's own tessellation even where an exact XT B-Rep exists
+ *   jtUnverified    true to enable JT decoding paths that no real sample file exercised (flagged in the warnings)
  *   wasm        false to skip the WebAssembly kernels (text-level results only)
  * Throws only for empty input or content that matches no known format.
  */
