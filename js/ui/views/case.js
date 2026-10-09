@@ -8,7 +8,7 @@ import { METALS, PLIES, BATTERIES } from '../../data/materials.js';
 import { geocode, searchAirports, live, refreshSite, refreshGlobal, config, loadConfig, attributions, osmAvailable, placeSearchAvailable, CONNECTORS } from '../../core/live.js';
 import { isa } from '../../core/atmosphere.js';
 
-const OPTS = { METALS: Object.keys(METALS), PLIES: Object.keys(PLIES), BATTERIES: Object.keys(BATTERIES) };
+const OPTS = { get METALS() { return Object.keys(METALS); }, get PLIES() { return Object.keys(PLIES); }, get BATTERIES() { return Object.keys(BATTERIES); } }; // read live so the user's own materials are listed
 // Rolling friction by surface word. The bundled airport database (OurAirports codes such as ASP, CON, GRS, GVL mapped to
 // plain words by tools/fetch-data.mjs) and OpenStreetMap both use these words; water, metal, wood and unknown fall to 0.04.
 const SURFACE_MU = { asphalt: 0.03, concrete: 0.03, paved: 0.03, grass: 0.07, gravel: 0.05, dirt: 0.06, unpaved: 0.06, sand: 0.1, compacted: 0.05, ice: 0.02, snow: 0.05 };

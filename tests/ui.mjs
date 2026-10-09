@@ -78,6 +78,17 @@ try {
     if (!/Read in full/.test(txt)) fail('STEP not reported as read in full');
     if (!/12 triangles/.test(txt)) fail('STEP faces were not tessellated in the browser (expected 12 triangles for a box)'); await shot('geometry-step');
   }
+  if (want('materials')) { // library page: browse, add a material of one's own, and use it in a suite
+    await go('#/materials', 'materials'); if ((await page.locator('table.data tbody tr').count()) < 9) fail('built-in metals not listed');
+    await page.locator('table.data tbody tr', { hasText: 'Ti-6Al-4V' }).click(); await page.waitForSelector('.card h3:has-text("Ti-6Al-4V")'); await shot('materials');
+    await page.locator('.btn', { hasText: 'Copy and edit' }).click(); await page.locator('input[aria-label="Material name"]').fill('Test alloy X'); await page.locator('#m-E').fill('80'); await page.locator('.btn.primary', { hasText: 'Save material' }).click();
+    await page.waitForSelector('table.data tbody tr:has-text("Test alloy X")', { timeout: 10000 }).catch(() => fail('own material was not saved'));
+    await page.locator('.btn.primary', { hasText: 'Use in my aircraft' }).click(); await page.waitForTimeout(300);
+    await go('#/suite/fea', 'materials-suite'); const opts = await page.locator('select.inp option').allInnerTexts(); if (!opts.includes('Test alloy X')) fail('own material is not offered in the structures suite');
+    await page.locator('.btn.primary.big').click(); try { await page.waitForSelector('.kpis .kpi', { timeout: 60000 }); } catch { fail('structures suite did not run with the user material'); }
+    await go('#/materials', 'materials-cleanup'); page.once('dialog', (d) => d.accept()); await page.locator('table.data tbody tr', { hasText: 'Test alloy X' }).click(); await page.locator('.btn', { hasText: 'Delete' }).click(); await page.waitForTimeout(400);
+    if (await page.locator('table.data tbody tr:has-text("Test alloy X")').count()) fail('own material was not deleted');
+  }
   if (want('integrated')) {
     await go('#/integrated', 'integrated'); await page.waitForSelector('.flowmap .nd', { timeout: 30000 }); await page.locator('.btn.primary.big').click();
     await page.waitForSelector('table.data', { timeout: 180000 }); await page.waitForTimeout(400); await shot('integrated');

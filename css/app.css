@@ -219,3 +219,4 @@ html, body { overflow-x: clip; }
 .side-foot { border-top: 1px solid var(--line); padding: 10px 8px 4px; font-size: .74rem; color: var(--ink-3); display: grid; gap: 6px; }
 .side-foot .btn { width: 100%; }
 @media (max-width: 900px) { .side { display: flex; flex-direction: column; height: 100dvh; } .side .nav { flex: 1; overflow-y: auto; min-height: 0; } }
+table.data td b { white-space: nowrap; }

@@ -2,6 +2,9 @@
 // single-file standalone build opened from disk). Supports progress reporting and cancellation.
 
 import { execute } from './jobs.js';
+import { customMaterials } from './matlib.js';
+
+const withMaterials = (job) => (job.materials ? job : { ...job, materials: customMaterials() });
 
 let worker = null, seq = 0, workerBroken = typeof Worker === 'undefined' || globalThis.__AEROSUITE_STANDALONE__ === true;
 const pending = new Map();
@@ -24,6 +27,7 @@ function spawn() {
 }
 
 export function runJob(job, onProgress) {
+  job = withMaterials(job);
   if (workerBroken) return yieldThen(() => execute(job, onProgress));
   if (!worker) spawn();
   if (!worker) return yieldThen(() => execute(job, onProgress));
@@ -45,6 +49,7 @@ export const usingWorker = () => !workerBroken;
  * Falls back to sequential execution where module workers are unavailable. Resolves to results in order.
  */
 export async function runJobsParallel(jobs, onProgress = () => {}, size = Math.max(1, Math.min(6, (globalThis.navigator?.hardwareConcurrency || 4) - 1))) {
+  jobs = jobs.map(withMaterials);
   if (workerBroken || jobs.length < 2 || size < 2) { const out = []; for (let i = 0; i < jobs.length; i++) out.push(await runJob(jobs[i], (f, m) => onProgress(i, f, m))); return out; }
   const results = new Array(jobs.length); let next = 0, failed = null;
   const lane = async () => {

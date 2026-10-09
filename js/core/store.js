@@ -82,13 +82,15 @@ export async function clearRuns() {
 
 /** Whole-project export/import (case, inputs, published outputs, run summaries, recommendations). */
 export function exportProject() {
-  return { app: 'AeroSuite 26', schema: 1, exported: new Date().toISOString(), preset: state.preset, case: state.case, overrides: state.overrides, up: state.up, runs: state.runs, recs: state.recs, geometry: state.geometry.map((g) => g.summary).filter(Boolean) };
+  let materials = null; try { materials = JSON.parse(localStorage.getItem('aerosuite26.materials') || 'null'); } catch { /* none */ }
+  return { materials, app: 'AeroSuite 26', schema: 1, exported: new Date().toISOString(), preset: state.preset, case: state.case, overrides: state.overrides, up: state.up, runs: state.runs, recs: state.recs, geometry: state.geometry.map((g) => g.summary).filter(Boolean) };
 }
 export function importProject(p) {
   if (!p || typeof p !== 'object' || !p.case) throw new Error('This file is not an AeroSuite project or case file.');
   state.overrides = p.overrides && typeof p.overrides === 'object' ? p.overrides : {}; ls.set('overrides', state.overrides);
   state.up = p.up && typeof p.up === 'object' ? p.up : {}; state.runs = {}; state.recs = p.recs && typeof p.recs === 'object' ? p.recs : {}; state.results = {};
   ls.set('up', state.up); ls.set('runs', state.runs); ls.set('recs', state.recs);
+  if (p.materials && typeof p.materials === 'object') { try { const mine = JSON.parse(localStorage.getItem('aerosuite26.materials') || '{}'), merged = {}; for (const k of ['metals', 'plies', 'fluids', 'batteries']) merged[k] = { ...(mine[k] || {}), ...(p.materials[k] || {}) }; localStorage.setItem('aerosuite26.materials', JSON.stringify(merged)); emit('materials', merged); } catch { /* storage blocked */ } }
   setCase(p.case, p.preset || 'custom');
   emit('run', {});
 }

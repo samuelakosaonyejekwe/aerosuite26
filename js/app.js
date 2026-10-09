@@ -7,20 +7,21 @@ import { startLive, status as liveStatus } from './core/live.js';
 import { t, LANGS, lang, applyLang } from './ui/i18n.js';
 import { unitSystem } from './ui/units.js';
 import { pageGuide, toggleGuide } from './ui/guide.js';
+import { registerCustom, customMaterials } from './core/matlib.js';
 
 const VIEWS = {
   home: () => import('./ui/views/home.js'), case: () => import('./ui/views/case.js'), geometry: () => import('./ui/views/geometry.js'),
   suite: () => import('./ui/views/suite.js'), integrated: () => import('./ui/views/integrated.js'), decisions: () => import('./ui/views/decisions.js'),
-  live: () => import('./ui/views/livehub.js'), bridge: () => import('./ui/views/bridge.js'), share: () => import('./ui/views/share.js'), reports: () => import('./ui/views/reports.js'), about: () => import('./ui/views/about.js'),
+  live: () => import('./ui/views/livehub.js'), materials: () => import('./ui/views/materials.js'), bridge: () => import('./ui/views/bridge.js'), share: () => import('./ui/views/share.js'), reports: () => import('./ui/views/reports.js'), about: () => import('./ui/views/about.js'),
 };
 const MAIN = [
-  { path: 'home', label: 'Overview', ic: 'home' }, { path: 'case', label: 'Case & input portal', ic: 'sliders' }, { path: 'geometry', label: 'Geometry & mesh', ic: 'cube' },
+  { path: 'home', label: 'Overview', ic: 'home' }, { path: 'case', label: 'Case & input portal', ic: 'sliders' }, { path: 'geometry', label: 'Geometry & mesh', ic: 'cube' }, { path: 'materials', label: 'Materials library', ic: 'layers' },
   { path: 'integrated', label: 'Integrated run', ic: 'graph' }, { path: 'bridge', label: 'High-fidelity bridge', ic: 'external' }, { path: 'decisions', label: 'Decision support', ic: 'bulb' }, { path: 'live', label: 'Live data', ic: 'globe' },
   { path: 'reports', label: 'Reports & assurance', ic: 'doc' }, { path: 'about', label: 'Install, offline & about', ic: 'install' },
 ];
 /** Linear page order used by the previous/next arrows at the foot of every page. */
 export const SEQUENCE = [
-  { hash: '#/home', label: 'Overview' }, { hash: '#/case', label: 'Case & input portal' }, { hash: '#/geometry', label: 'Geometry & mesh' },
+  { hash: '#/home', label: 'Overview' }, { hash: '#/case', label: 'Case & input portal' }, { hash: '#/geometry', label: 'Geometry & mesh' }, { hash: '#/materials', label: 'Materials library' },
   ...SUITES.map((s) => ({ hash: `#/suite/${s.id}`, label: `${s.d}. ${s.short}` })),
   { hash: '#/integrated', label: 'Integrated run' }, { hash: '#/bridge', label: 'High-fidelity bridge' }, { hash: '#/decisions', label: 'Decision support' }, { hash: '#/live', label: 'Live data' }, { hash: '#/reports', label: 'Reports & assurance' }, { hash: '#/about', label: 'Install, offline & about' },
 ];
@@ -228,12 +229,13 @@ window.addEventListener('keydown', (e) => {
   if (e.altKey && e.key === 'ArrowLeft') history.back();
   if (e.altKey && e.key === 'ArrowRight') history.forward();
 });
+registerCustom(customMaterials());
 applyLang();
 buildShell();
 window.addEventListener('hashchange', route);
 window.addEventListener('online', () => { paintLive(); toast('Back online. Refreshing live data.', 'ok'); });
 window.addEventListener('offline', () => { paintLive(); toast('You are offline. Everything keeps working with the data already saved on this device.', 'info'); });
-on('live', paintLive); on('run', renderNav);
+on('live', paintLive); on('run', renderNav); on('materials', registerCustom);
 route();
 registerSW();
 startLive();

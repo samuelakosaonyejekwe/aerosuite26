@@ -3,11 +3,13 @@
 
 import { loadSuite, executionOrder, SUITES } from './registry.js';
 import * as S from './studies.js';
+import { registerCustom, extendOptions } from './matlib.js';
 
 // Solvers that march a 3-D or coupled field in time. They are optional in the integrated run because each takes seconds.
 export const HEAVY = { cfd: ['dns3d', 'les3d', 'rans3d', 'bluff3d', 'cavity'], crash: ['barrel3d', 'aircraft3d', 'impact3d'], aeroelastic: ['uvlmfsi', 'cfdfsi'] };
 
 export async function execute(job, progress = () => {}) {
+  if (job.materials) registerCustom(job.materials); // the user's own materials, selectable like built-in ones
   const def = job.suite ? await loadSuite(job.suite) : null;
   const an = def && job.analysis ? def.analyses.find((a) => a.id === job.analysis) : null;
   const ctx = job.case ? S.makeCtx(job.case, job.up || {}, progress) : null;
@@ -19,7 +21,7 @@ export async function execute(job, progress = () => {}) {
         id: def.id, n: def.n, tagline: def.tagline, consumes: def.consumes || [], provides: def.provides || [], handoff: def.handoff || [],
         analyses: def.analyses.map((a) => {
           const ok = S.applicable(a, c), r = S.resolveInputs(a, c, (job.overridesBy || {})[a.id] || {});
-          return { id: a.id, title: a.title, summary: a.summary, fidelity: a.fidelity, equations: a.equations || [], inputs: a.inputs, values: r.inp, linked: r.linked, applicable: ok,
+          return { id: a.id, title: a.title, summary: a.summary, fidelity: a.fidelity, equations: a.equations || [], inputs: a.inputs.map((f) => (f.type === 'select' ? { ...f, options: extendOptions(f.options) } : f)), values: r.inp, linked: r.linked, applicable: ok,
             convergence: a.convergence ? { param: a.convergence.param, label: a.convergence.label, levels: a.convergence.levels, metric: a.convergence.metric } : null,
             hasVerify: !!a.verify, validation: a.validation || [], calibration: a.calibration || null };
         }),
