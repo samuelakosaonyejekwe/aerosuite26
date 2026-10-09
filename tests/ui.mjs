@@ -83,7 +83,7 @@ try {
     await go('#/materials', 'materials'); if ((await page.locator('table.data tbody tr').count()) < 9) fail('built-in metals not listed');
     await page.locator('input[type=search]').fill('Ti-6Al-4V'); await page.waitForTimeout(300);
     await page.locator('table.data tbody tr', { hasText: 'Ti-6Al-4V' }).first().click(); await page.waitForSelector('.card h3:has-text("Ti-6Al-4V")'); await shot('materials');
-    await page.locator('.btn', { hasText: 'Copy and edit' }).click(); await page.locator('input[aria-label="Material name"]').fill('Test alloy X'); await page.locator('#m-E').fill('80'); await page.locator('.btn.primary', { hasText: 'Save material' }).click();
+    await page.locator('.btn', { hasText: 'Copy and edit' }).click(); await page.locator('input[aria-label="Material name"]').fill('Test alloy X'); await page.locator('#m-E').fill('80'); if (Math.abs(Number(await page.locator('#m-G').inputValue()) - 80 / (2 * 1.31)) > 0.1) fail('shear modulus did not follow the new Young’s modulus'); await page.locator('.btn.primary', { hasText: 'Save material' }).click();
     await page.waitForSelector('table.data tbody tr:has-text("Test alloy X")', { timeout: 10000 }).catch(() => fail('own material was not saved'));
     await page.locator('.btn.primary', { hasText: 'Use in my aircraft' }).click(); await page.waitForTimeout(300);
     await go('#/suite/fea', 'materials-suite'); const opts = await page.locator('select.inp option').allInnerTexts(); if (!opts.includes('Test alloy X')) fail('own material is not offered in the structures suite');

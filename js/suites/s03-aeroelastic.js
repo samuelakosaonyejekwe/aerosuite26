@@ -1459,7 +1459,7 @@ const cfdfsi = {
   defaults(c, up, d) {
     const wing = c.wing.S_m2 > 0, at = isa(c.atm.alt_m, c.atm.dISA_K);
     // aeroplanes: a wing-section-like plate at the cruise speed; rotorcraft and multirotors: a landing-gear or boom tube
-    return wing ? { body: IB_BODIES[1], L_ref: d.mac || undefined, U_ms: c.flight.V_ms, rho: at.rho, Re: 300, Ur_min: 0.7, Ur_max: 1.7, n_sweep: 2, t_start: 4, t_stage: 12, zeta: c.struct.zeta }
+    return wing ? { body: IB_BODIES[1], L_ref: d.mac || undefined, U_ms: c.flight.V_ms, rho: at.rho, Re: 300, Ur_min: 0.7, Ur_max: 1.7, n_sweep: 2, t_start: 4, t_stage: 30, zeta: c.struct.zeta }
       : { body: IB_BODIES[0], L_ref: N.clamp(0.04 * (c.fuselage.dia_m || 1), 0.005, 0.2), U_ms: Math.max(1, c.flight.V_ms), rho: at.rho };
   },
   run(i, ctx) {

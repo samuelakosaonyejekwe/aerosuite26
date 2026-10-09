@@ -112,13 +112,20 @@ export async function render(root, [clsArg, nameArg], { setCrumb }) {
       const name = nameIn.value.trim(), m = read(), v = validate(cls, name, m, { editing: editing.fresh ? null : editing.base });
       clear(msg); add(msg, [...v.errors.map((e) => h('div', { class: 'note bad' }, icon('warn'), h('div', null, e))), ...v.warnings.map((w) => h('div', { class: 'note warn' }, icon('info'), h('div', null, w)))]);
       if (v.errors.length) return;
-      saveCustom(cls, name, m, editing.fresh ? null : editing.base); selected = name; editing = null; query = ''; family = 'all'; toast(`“${name}” saved. It now appears in every suite’s material list.`, 'ok'); paintTabs(); paint();
+      saveCustom(cls, name, m, editing.fresh ? null : editing.base); selected = name; editing = null; query = ''; family = 'all'; toast(`“${name}” saved. It now appears in every suite’s material list.${v.warnings.length ? ' Worth checking: ' + v.warnings.join(' ') : ''}`, v.warnings.length ? 'warn' : 'ok'); paintTabs(); paint();
     };
-    return card(editing.fresh ? 'New material' : `Edit ${editing.base}`, h('div', { class: 'stack' },
+    const body = card(editing.fresh ? 'New material' : `Edit ${editing.base}`, h('div', { class: 'stack' },
       h('p', { class: 'muted small' }, editing.fresh ? `Values start from “${editing.base}”. Replace what you have data for; anything you leave is carried over from that material, so say so in the source note.` : 'Change any value and save.'),
       h('div', { class: 'grid g2' }, h('label', { class: 'stack small', style: { gap: '4px' } }, h('span', { class: 'muted' }, 'Name'), nameIn), h('label', { class: 'stack small', style: { gap: '4px' } }, h('span', { class: 'muted' }, 'Source note'), noteIn)),
       h('div', { class: 'grid g3' }, groups.map((g) => h('div', { class: 'form' }, h('h4', null, g), F.filter((f) => f.group === g).map((f) => { const id = `m-${f.key}`; inputs[f.key] = h('input', { class: 'inp', id, type: 'number', step: 'any', inputMode: 'decimal', value: base[f.key] == null ? '' : Number((base[f.key] / f.scale).toPrecision(7)), placeholder: f.req ? '' : 'optional' }); return h('div', { class: 'field' }, h('label', { for: id }, f.label, f.unit !== '-' ? h('span', { class: 'u' }, `[${f.unit}]`) : null), inputs[f.key], f.help ? h('div', { class: 'help' }, f.help) : null); })))),
-      msg, h('div', { class: 'row' }, btn('Save material', save, { ic: 'check', kind: 'primary' }), btn('Cancel', () => { editing = null; paint(); }, { kind: 'ghost' }))));
+      msg, h('div', { class: 'row' }, btn('Save material', save, { ic: 'check', kind: 'primary' }), btn('Cancel', () => { editing = null; paint(); }, { kind: 'ghost' }))));    if (cls === 'metals' && inputs.E && inputs.nu && inputs.G) { // an isotropic metal has G = E/(2(1+ν)): keep G in step while it was in step, so changing E does not leave a stale shear modulus
+      const iso = () => { const E = Number(inputs.E.value), nu = Number(inputs.nu.value); return E > 0 && nu > -1 && nu < 0.5 ? E / (2 * (1 + nu)) : NaN; }, near = () => Math.abs(Number(inputs.G.value) / iso() - 1) < 0.03;
+      const hint = h('div', { class: 'help' }), set = () => { const g = iso(); if (Number.isFinite(g)) inputs.G.value = Number(g.toPrecision(4)); linked = true; tell(); };
+      const tell = () => { const g = iso(); clear(hint); add(hint, linked ? ['Kept equal to E/(2(1+ν)) as you change E or ν. Type a value here to set it yourself.'] : [Number.isFinite(g) ? `Set by hand; E/(2(1+ν)) would be ${Number(g.toPrecision(4))} GPa. ` : 'Set by hand. ', h('a', { href: '#', onclick: (e) => { e.preventDefault(); set(); } }, 'Use that value')]); };
+      let linked = near(); inputs.E.addEventListener('input', () => { if (linked) set(); else tell(); }); inputs.nu.addEventListener('input', () => { if (linked) set(); else tell(); }); inputs.G.addEventListener('input', () => { linked = false; tell(); });
+      inputs.G.parentNode.append(hint); tell();
+    }
+    return body;
   }
 
   // ---- import ---------------------------------------------------------------------------------

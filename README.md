@@ -260,8 +260,8 @@ serving it even if the source repository host is unavailable, and installed copi
 
 Results state their model, assumptions and validity limits and distinguish calculated values, empirical
 estimates and assumed inputs. Verification benchmarks demonstrate that equations are solved correctly; they
-do not demonstrate that a model represents a particular aircraft. Models that cannot be solved credibly in
-a browser (three-dimensional RANS/LES/DNS, full-aircraft explicit crash FE, coupled high-fidelity CFD–CSD
-and similar) are listed per suite as handed off to external solvers. Default material properties, failure
-rates, cost coefficients and correlations are typical or illustrative values to be replaced with sourced
-data. Nothing produced here is, on its own, airworthiness evidence.
+do not demonstrate that a model represents a particular aircraft. Each analysis states the resolution it
+runs at and what that resolution supports: where a browser-sized grid gives a trend rather than a design
+value, the result says so and the high-fidelity bridge writes the same case for SU2, OpenFOAM or CalculiX.
+Default material properties, failure rates, cost coefficients and correlations carry their source beside
+the input; values marked as estimated or assumed are to be replaced with programme data. Nothing produced here is, on its own, airworthiness evidence.
