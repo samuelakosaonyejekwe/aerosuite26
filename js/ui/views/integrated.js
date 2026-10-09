@@ -4,7 +4,8 @@
 import { h, setKids, icon, clear, num, btn, badge, card, toast } from '../dom.js';
 import { SUITES, suiteMeta } from '../../core/registry.js';
 import { state, saveRun, on } from '../../core/store.js';
-import { runJob, cancelAll } from '../../core/runner.js';
+import { runJob, runJobsParallel, cancelAll } from '../../core/runner.js';
+import { executionOrder } from '../../core/registry.js';
 import { dataTable } from '../results.js';
 
 let graphCache = null;
@@ -21,6 +22,7 @@ export async function render(root, _p, { setCrumb }) {
   const mapHost = h('div'), detail = h('div', { class: 'muted small', style: { minHeight: '3em' } }, 'Hover or tap a suite to see what it receives and what it passes on.');
   const prog = h('progress', { max: 1, value: 0, hidden: true }), msg = h('span', { class: 'muted small' }), out = h('div', { class: 'stack' });
   const runBtn = btn('Run all suites', () => go(), { ic: 'play', kind: 'primary big' }), stopBtn = btn('Stop', () => cancelAll(), { ic: 'stop', kind: 'ghost' }); stopBtn.hidden = true;
+  const heavy = h('input', { type: 'checkbox' });
   const passes = h('select', { class: 'inp', style: { width: 'auto' }, 'aria-label': 'Coupling passes' }, h('option', { value: 1 }, 'One pass'), h('option', { value: 2, selected: true }, 'Two passes (feeds results back upstream)'), h('option', { value: 3 }, 'Three passes'));
   host.append(
     h('div', { class: 'page-h' }, h('div', { class: 'grow' }, h('div', { class: 'eyebrow' }, 'Coupled multidisciplinary analysis'), h('h1', null, 'Integrated run'), h('p', null, 'The suites are connected, not merged: each keeps its own models, but they exchange loads, masses, performance, limits and costs through a shared data bus. Running the chain propagates one change — a heavier wing, a hotter day, a dearer fuel — through every discipline to the bottom line.'))),
@@ -29,6 +31,7 @@ export async function render(root, _p, { setCrumb }) {
       card('Run the chain', h('div', { class: 'stack' },
         h('p', { class: 'muted small' }, 'Upstream suites run first (aerodynamics and propulsion before performance, performance before mission, mission before economics). A second pass lets downstream results — optimised mass, fatigue life, availability — flow back into the suites that use them.'),
         h('div', { class: 'row' }, runBtn, stopBtn, passes), prog, msg,
+        h('label', { class: 'switch', title: 'Time-marching 3-D flow, crash and coupled fluid–structure solvers add tens of seconds' }, heavy, 'Include the heavy 3-D solvers'),
         h('div', { class: 'note' }, icon('info'), h('div', null, 'Each suite uses your saved input overrides. Analyses that do not apply to the current aircraft class are skipped and listed.'))))),
     h('div', { class: 'gap' }), out);
 
@@ -62,10 +65,19 @@ export async function render(root, _p, { setCrumb }) {
     runBtn.disabled = true; stopBtn.hidden = false; prog.hidden = false; prog.value = 0; clear(out);
     const t0 = Date.now(), nPass = Number(passes.value); let up = state.up, last = null;
     try {
+      // Suites that do not depend on each other run at the same time on separate processor cores.
+      const order = executionOrder(nodes.map((n) => ({ id: n.id, n: suiteMeta(n.id).n, consumes: n.consumes }))), level = {};
+      for (const id of order) level[id] = 1 + Math.max(0, ...nodes.find((n) => n.id === id).consumes.map((c) => (c.from !== id && level[c.from]) || 0));
+      const nLevels = Math.max(...Object.values(level)), stages = nPass * nLevels; let stage = 0;
       for (let p = 0; p < nPass; p++) {
-        last = await runJob({ kind: 'integrated', case: state.case, up, overridesAll: state.overrides }, (f, m) => { prog.value = (p + f) / nPass; msg.textContent = `Pass ${p + 1} of ${nPass} · ${m || ''}`; });
-        for (const e of last.log) if (e.payload) await saveRun(e.suite, e.analysis, e.payload);
-        up = state.up;
+        const log = [];
+        for (let L = 1; L <= nLevels; L++, stage++) {
+          const ids = order.filter((id) => level[id] === L), frac = new Array(ids.length).fill(0);
+          const res = await runJobsParallel(ids.map((id) => ({ kind: 'integrated', only: [id], case: state.case, up, overridesAll: state.overrides, includeHeavy: heavy.checked })), (i, f, m) => { frac[i] = f; prog.value = (stage + frac.reduce((a, b) => a + b, 0) / ids.length) / stages; msg.textContent = `Pass ${p + 1} of ${nPass} · stage ${L} of ${nLevels} · ${m || ''}`; });
+          for (const r of res) { for (const e of r.log) { log.push(e); if (e.payload) await saveRun(e.suite, e.analysis, e.payload); } }
+          up = state.up;
+        }
+        last = { order, log };
       }
       const ok = last.log.filter((e) => e.payload), skipped = last.log.filter((e) => e.skipped), failed = last.log.filter((e) => e.error), recs = ok.flatMap((e) => e.payload.recs), crit = recs.filter((r) => r.severity === 'critical').length;
       msg.textContent = '';

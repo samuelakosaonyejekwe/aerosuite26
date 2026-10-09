@@ -4,6 +4,9 @@
 import { loadSuite, executionOrder, SUITES } from './registry.js';
 import * as S from './studies.js';
 
+// Solvers that march a 3-D or coupled field in time. They are optional in the integrated run because each takes seconds.
+export const HEAVY = { cfd: ['dns3d', 'les3d', 'rans3d', 'bluff3d', 'cavity'], crash: ['barrel3d', 'aircraft3d', 'impact3d'], aeroelastic: ['uvlmfsi', 'cfdfsi'] };
+
 export async function execute(job, progress = () => {}) {
   const def = job.suite ? await loadSuite(job.suite) : null;
   const an = def && job.analysis ? def.analyses.find((a) => a.id === job.analysis) : null;
@@ -41,8 +44,8 @@ export async function execute(job, progress = () => {}) {
       return out;
     }
     case 'integrated': { // run every applicable analysis of every (selected) suite in dependency order
-      const defs = []; for (const m of SUITES) defs.push(await loadSuite(m.id));
-      const order = executionOrder(defs).filter((id) => !job.only || job.only.includes(id));
+      const defs = []; for (const m of SUITES) if (!job.only || job.only.includes(m.id)) defs.push(await loadSuite(m.id)); // a single-suite job loads only that suite
+      const order = executionOrder(defs);
       const up = JSON.parse(JSON.stringify(job.up || {})), log = [], total = order.reduce((n, id) => n + defs.find((d) => d.id === id).analyses.length, 0); let done = 0;
       for (const id of order) {
         const d = defs.find((x) => x.id === id); up[id] = up[id] || {};
@@ -50,6 +53,7 @@ export async function execute(job, progress = () => {}) {
           progress(done++ / total, a.title);
           const c = S.makeCtx(job.case, up), ok = S.applicable(a, c);
           if (ok !== true) { log.push({ suite: id, analysis: a.id, title: a.title, skipped: ok }); continue; }
+          if (!job.includeHeavy && HEAVY[id]?.includes(a.id)) { log.push({ suite: id, analysis: a.id, title: a.title, skipped: 'Heavy 3-D solver, left out for speed: tick “Include the heavy 3-D solvers” or run it from its suite' }); continue; }
           try {
             const { inp, linked } = S.resolveInputs(a, c, (job.overridesAll || {})[`${id}.${a.id}`] || {}), res = await S.runAnalysis(a, inp, c);
             let recs = []; try { recs = (a.recommend ? a.recommend(res, inp, c) : []) || []; } catch { recs = []; }

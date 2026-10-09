@@ -35,11 +35,14 @@ const installBtn = h('button', { class: 'btn primary sm', hidden: true, onclick:
 const themeBtn = h('button', { class: 'icon-btn', title: 'Switch light / dark theme', 'aria-label': 'Switch theme', onclick: toggleTheme });
 const sideNav = h('nav', { class: 'nav', 'aria-label': 'Main' });
 const bottom = h('nav', { class: 'bottom', 'aria-label': 'Quick' });
+const versionLabel = h('span', null, 'Version …');
+const updateBtn = h('button', { class: 'btn sm', title: 'Look for a newer version of AeroSuite 26 now', onclick: () => checkForUpdate(true) }, icon('refresh', 16), h('span', null, 'Check for updates'));
+const sideFoot = h('div', { class: 'side-foot' }, versionLabel, updateBtn);
 
 function buildShell() {
   const side = h('aside', { class: 'side' },
     h('a', { class: 'brand', href: '#/home' }, h('span', { class: 'logo' }, icon('jet', 22)), h('span', null, h('b', null, 'AeroSuite 26'), h('small', null, 'Aircraft engineering simulation'))),
-    sideNav);
+    sideNav, sideFoot);
   const top = h('header', { class: 'top' },
     h('button', { class: 'icon-btn menu-btn', 'aria-label': 'Open menu', onclick: () => app.classList.toggle('open') }, icon('menu')),
     backBtn, fwdBtn, crumb,
@@ -65,7 +68,10 @@ function renderNav() {
       links.push(h('a', { href: `#/suite/${s.id}`, class: cur.startsWith(`#/suite/${s.id}`) ? 'on' : '', title: s.title }, h('span', { class: 'n' }, s.d), h('span', { class: 't' }, s.short), h('i', { class: `dot ${st}`, title: st ? `Last run: ${st}` : 'Not run yet' })));
     }
   }
+  const keep = sideNav.scrollTop;                       // rebuilding the list must not move the menu
   clear(sideNav); add(sideNav, links);
+  sideNav.scrollTop = keep;
+  const cur_el = sideNav.querySelector('a.on'); if (cur_el) { const r = cur_el.getBoundingClientRect(), b = sideNav.getBoundingClientRect(); if (r.top < b.top || r.bottom > b.bottom) cur_el.scrollIntoView({ block: 'nearest' }); }
   clear(bottom);
   add(bottom, [['home', 'Overview', 'home'], ['case', 'Case', 'sliders'], ['suite/' + lastSuite(), 'Suites', 'layers'], ['integrated', 'Run all', 'graph'], ['decisions', 'Advice', 'bulb']].map(([p, l, ic]) => h('a', { href: `#/${p}`, class: cur.startsWith(`#/${p.split('/')[0]}`) ? 'on' : '' }, icon(ic, 21), t(l))));
 }
@@ -136,31 +142,56 @@ export async function installApp() {
 window.addEventListener('beforeinstallprompt', (e) => { e.preventDefault(); deferredPrompt = e; installBtn.hidden = false; });
 window.addEventListener('appinstalled', () => { deferredPrompt = null; installBtn.hidden = true; });
 
-// ---- service worker -----------------------------------------------------------------------
-async function registerSW() {
-  if (!('serviceWorker' in navigator) || location.protocol === 'file:') return;
+// ---- service worker and updates ----------------------------------------------------------------
+let swReg = null, runningVersion = null;
+/** Ask the active service worker which build it is serving. */
+function askVersion() {
+  return new Promise((res) => { const c = navigator.serviceWorker?.controller; if (!c) return res(null); const on = (e) => { if (e.data?.type === 'version') { navigator.serviceWorker.removeEventListener('message', on); res(e.data.version); } }; navigator.serviceWorker.addEventListener('message', on); c.postMessage({ type: 'version' }); setTimeout(() => res(null), 1500); });
+}
+const applyUpdate = async () => {
+  // switch to the waiting build; if none is waiting yet, fetch it first; as a last resort clear the stored copy and reload
+  try { await swReg?.update(); } catch { /* offline */ }
+  const w = swReg?.waiting || swReg?.installing;
+  if (w) { if (w.state === 'installed') w.postMessage({ type: 'skip-waiting' }); else w.addEventListener('statechange', () => { if (w.state === 'installed') w.postMessage({ type: 'skip-waiting' }); }); }
+  setTimeout(async () => { try { for (const k of await caches.keys()) if (k.startsWith('aerosuite-app-')) await caches.delete(k); await swReg?.unregister(); } catch { /* ignore */ } location.reload(); }, 12000);
+};
+/** Compare the running build with the published one; show the prompt if a newer one exists. */
+export async function checkForUpdate(manual = false) {
+  if (location.protocol === 'file:') { if (manual) toast('This is the single-file copy. Download a fresh copy from the website to update.', 'info'); return; }
+  if (manual) { updateBtn.disabled = true; updateBtn.lastChild.textContent = 'Checking…'; }
   try {
-    const reg = await navigator.serviceWorker.register('sw.js');
-    // Update prompt: when a newer version has been downloaded and is waiting, ask before switching to it.
+    try { await swReg?.update(); } catch { /* offline */ }
+    const latest = await fetch('version.json', { cache: 'no-store' }).then((r) => r.json()).catch(() => null);
+    runningVersion = (await askVersion()) || runningVersion;
+    versionLabel.textContent = runningVersion ? `Version ${runningVersion}` : latest?.version ? `Version ${latest.version}` : 'Version unknown';
+    const newer = (swReg?.waiting && navigator.serviceWorker.controller) || (latest?.version && runningVersion && latest.version !== runningVersion && runningVersion !== 'dev');
+    if (newer) showUpdatePrompt(applyUpdate, latest?.version);
+    else if (manual) toast(navigator.onLine === false ? 'You are offline. Updates are checked when you reconnect.' : 'You have the latest version.', navigator.onLine === false ? 'info' : 'ok');
+  } finally { if (manual) { updateBtn.disabled = false; updateBtn.lastChild.textContent = 'Check for updates'; } }
+}
+async function registerSW() {
+  if (!('serviceWorker' in navigator) || location.protocol === 'file:') { versionLabel.textContent = location.protocol === 'file:' ? 'Single-file copy' : 'Version (no offline engine)'; return; }
+  try {
+    swReg = await navigator.serviceWorker.register('sw.js');
     const hadController = !!navigator.serviceWorker.controller; let reloading = false;
-    const offer = (w) => { if (w && navigator.serviceWorker.controller) showUpdatePrompt(() => w.postMessage({ type: 'skip-waiting' })); };
-    offer(reg.waiting);
-    reg.addEventListener('updatefound', () => { const w = reg.installing; w?.addEventListener('statechange', () => { if (w.state === 'installed') offer(w); }); });
+    swReg.addEventListener('updatefound', () => { const w = swReg.installing; w?.addEventListener('statechange', () => { if (w.state === 'installed' && navigator.serviceWorker.controller) checkForUpdate(); }); });
     navigator.serviceWorker.addEventListener('controllerchange', () => { if (hadController && !reloading) { reloading = true; location.reload(); } });
-    setInterval(() => reg.update().catch(() => {}), 30 * 60e3);                     // look for app updates while open
-    document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible') reg.update().catch(() => {}); });
+    await navigator.serviceWorker.ready; setTimeout(() => checkForUpdate(), 1200);
+    setInterval(() => checkForUpdate(), 20 * 60e3);                                  // look for a newer version while open
+    document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible') checkForUpdate(); });
     // background refresh of live data when the installed app is closed (supported browsers only)
-    try { const perm = await navigator.permissions.query({ name: 'periodic-background-sync' }); if (perm.state === 'granted' && reg.periodicSync) await reg.periodicSync.register('refresh-live', { minInterval: 6 * 3600e3 }); } catch { /* not supported */ }
+    try { const perm = await navigator.permissions.query({ name: 'periodic-background-sync' }); if (perm.state === 'granted' && swReg.periodicSync) await swReg.periodicSync.register('refresh-live', { minInterval: 6 * 3600e3 }); } catch { /* not supported */ }
   } catch (e) { console.warn('Service worker registration failed', e); }
 }
 
-/** Persistent banner inviting the person to switch to the newly downloaded version. */
-function showUpdatePrompt(apply) {
+/** Persistent banner inviting the person to switch to the newly published version. */
+function showUpdatePrompt(apply, version) {
   if (document.querySelector('.update-bar')) return;
+  updateBtn.classList.add('primary'); updateBtn.lastChild.textContent = 'Update available';
   const bar = h('div', { class: 'update-bar', role: 'alert' }, icon('refresh', 20),
-    h('span', null, h('b', null, 'A new version of AeroSuite 26 is ready. '), 'Update to get the latest fixes and features. Your case and results are kept.'),
-    h('button', { class: 'btn primary', onclick: (e) => { e.target.disabled = true; e.target.textContent = 'Updating…'; apply(); setTimeout(() => location.reload(), 4000); } }, 'Update now'),
-    h('button', { class: 'btn ghost', onclick: () => bar.remove(), title: 'Keep working; the prompt returns next time you open the app' }, 'Later'));
+    h('span', null, h('b', null, 'A new version of AeroSuite 26 is ready. '), version ? `(${version}) ` : '', 'Update to get the latest fixes and features. Your case and results are kept.'),
+    h('button', { class: 'btn primary', onclick: (e) => { e.target.disabled = true; e.target.textContent = 'Updating…'; apply(); } }, 'Update now'),
+    h('button', { class: 'btn ghost', onclick: () => bar.remove(), title: 'Keep working; use “Check for updates” in the menu whenever you are ready' }, 'Later'));
   document.body.append(bar);
 }
 

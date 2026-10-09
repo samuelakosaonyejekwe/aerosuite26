@@ -22,7 +22,7 @@
 }
 * { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; font: 15px/1.5 var(--font); color: var(--ink); background: var(--bg); overflow-x: hidden; }
+body { margin: 0; font: 15px/1.5 var(--font); color: var(--ink); background: var(--bg); }
 h1, h2, h3, h4 { margin: 0; line-height: 1.25; font-weight: 650; letter-spacing: -.01em; }
 h1 { font-size: 1.55rem; } h2 { font-size: 1.2rem; } h3 { font-size: 1rem; } h4 { font-size: .9rem; }
 p { margin: 0 0 .6em; } a { color: var(--accent); text-decoration: none; } a:hover { text-decoration: underline; }
@@ -34,7 +34,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
 
 /* ---------- shell ---------- */
 .app { display: grid; grid-template-columns: var(--side) minmax(0, 1fr); min-height: 100vh; min-height: 100dvh; }
-.side { position: sticky; top: 0; height: 100vh; height: 100dvh; overflow-y: auto; background: var(--surface); border-right: 1px solid var(--line); padding: 12px 10px 24px; overscroll-behavior: contain; }
+/* desktop: fixed (see end of file) */ .side { background: var(--surface); border-right: 1px solid var(--line); padding: 12px 10px 24px; overscroll-behavior: contain; }
 .brand { display: flex; align-items: center; gap: 10px; padding: 6px 8px 14px; color: var(--ink); }
 .brand:hover { text-decoration: none; }
 .brand .logo { width: 36px; height: 36px; border-radius: 10px; background: linear-gradient(135deg, #1f6fd1, #12b0a0); display: grid; place-items: center; color: #fff; }
@@ -205,5 +205,17 @@ details.guide ol { margin: 8px 0 4px; padding-left: 22px; display: grid; gap: 3p
 .update-bar { position: fixed; left: 50%; transform: translateX(-50%); bottom: 18px; z-index: 120; display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: center; max-width: min(720px, calc(100vw - 24px)); padding: 12px 16px; border-radius: 14px; background: var(--surface); border: 2px solid var(--accent); box-shadow: 0 12px 40px rgba(0, 0, 0, .28); color: var(--ink); }
 .update-bar > span { flex: 1; min-width: 200px; font-size: .92rem; } .update-bar .ico { color: var(--accent); }
 @media (max-width: 900px) { .update-bar { bottom: 74px; } }
-html { overflow-x: hidden; } .top { max-width: 100vw; }
+.top { max-width: 100vw; }
 @media (max-width: 900px) { .top select.pill { max-width: 74px; } }
+/* Sidebar stays put while the page scrolls: fixed, with the content column reserved beside it. (overflow-x: hidden on
+   html/body turned them into scroll containers and broke position: sticky, leaving a blank strip under the menu.) */
+html, body { overflow-x: clip; }
+@media (min-width: 901px) {
+  .side { position: fixed; top: 0; left: 0; width: var(--side); height: 100vh; height: 100dvh; display: flex; flex-direction: column; }
+  .side .nav { flex: 1; overflow-y: auto; min-height: 0; padding-bottom: 8px; }
+  .main { grid-column: 2; }
+  [dir="rtl"] .side { left: auto; right: 0; }
+}
+.side-foot { border-top: 1px solid var(--line); padding: 10px 8px 4px; font-size: .74rem; color: var(--ink-3); display: grid; gap: 6px; }
+.side-foot .btn { width: 100%; }
+@media (max-width: 900px) { .side { display: flex; flex-direction: column; height: 100dvh; } .side .nav { flex: 1; overflow-y: auto; min-height: 0; } }

@@ -38,3 +38,29 @@ export function cancelAll() {
   for (const [id, p] of pending) { pending.delete(id); p.reject(new Error('Cancelled')); }
 }
 export const usingWorker = () => !workerBroken;
+
+// ---- parallel pool: independent jobs on several cores at once ---------------------------------
+/**
+ * Run jobs concurrently on up to `size` workers. onProgress(index, fraction, message) reports per job.
+ * Falls back to sequential execution where module workers are unavailable. Resolves to results in order.
+ */
+export async function runJobsParallel(jobs, onProgress = () => {}, size = Math.max(1, Math.min(6, (globalThis.navigator?.hardwareConcurrency || 4) - 1))) {
+  if (workerBroken || jobs.length < 2 || size < 2) { const out = []; for (let i = 0; i < jobs.length; i++) out.push(await runJob(jobs[i], (f, m) => onProgress(i, f, m))); return out; }
+  const results = new Array(jobs.length); let next = 0, failed = null;
+  const lane = async () => {
+    let w; try { w = new Worker(new URL('./worker.js', import.meta.url), { type: 'module' }); } catch { w = null; }
+    while (next < jobs.length && !failed) {
+      const i = next++;
+      try {
+        results[i] = w ? await new Promise((res, rej) => { w.onmessage = (ev) => { const d = ev.data; if (d.progress !== undefined) onProgress(i, d.progress, d.msg); else d.ok ? res(d.result) : rej(new Error(d.error)); }; w.onerror = (e) => rej(new Error(e.message || 'Worker failed')); w.postMessage({ id: i, job: jobs[i] }); })
+          : await execute(jobs[i], (f, m) => onProgress(i, f, m));
+      } catch (e) { failed = e; }
+    }
+    w?.terminate(); pool.delete(w);
+  };
+  const lanes = []; for (let k = 0; k < Math.min(size, jobs.length); k++) lanes.push(lane());
+  await Promise.all(lanes);
+  if (failed) throw failed;
+  return results;
+}
+const pool = new Set();

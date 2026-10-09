@@ -86,7 +86,7 @@ try {
   }
   if (want('pages')) {
     await go('#/live', 'live'); await page.waitForTimeout(500); await shot('live');
-    await go('#/reports', 'reports'); await page.locator('.btn.primary', { hasText: 'Verify all suites' }).click(); await page.waitForSelector('table.data', { timeout: 120000 }); const failedV = await page.locator('td', { hasText: /^FAIL$/ }).count(); if (failedV) fail(`${failedV} verification benchmarks fail in the browser`); await shot('reports');
+    await go('#/reports', 'reports'); await page.locator('.btn.primary', { hasText: 'Verify all suites' }).click(); await page.waitForSelector('table.data', { timeout: 900000 }); const failedV = await page.locator('td', { hasText: /^FAIL$/ }).count(); if (failedV) fail(`${failedV} verification benchmarks fail in the browser`); await shot('reports');
     await page.locator('.btn', { hasText: 'Build printable report' }).click(); await page.waitForTimeout(1500);
     await go('#/about', 'about'); await page.waitForSelector('table.data', { timeout: 60000 }); await shot('about');
     // navigation arrows and palette

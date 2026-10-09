@@ -132,3 +132,14 @@ statements:
 - Literature index: OpenAlex (CC0)
 
 None of these providers endorses AeroSuite 26.
+
+## Where to get the source code of the LGPL components
+
+The complete corresponding source code of occt-import-js 0.0.23 and of the Open CASCADE Technology revision it was built
+from (commit d2abb6d844231cb8f29be6894440874a4700e4a5), together with the modified loader script, is published with this
+application at:
+
+https://github.com/samuelakosaonyejekwe/aerosuite26/releases/tag/third-party-sources
+
+The loader script `js/vendor/occt/occt-import-js.js` was modified on 2026-10-09 (a module-scope `process` declaration and a
+default export were added). The library is shipped as separate run-time files and may be replaced by a rebuilt version.
