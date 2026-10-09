@@ -1,0 +1,5259 @@
+#AD|Sant Julià de Loria
+Sant Julià de Lòria|Sant Julia de Loria|42464|1491|921|8
+#AE|Abu Dhabi
+Sha'biyyat Al Hiyar||24582|55747|343|8
+Shakhbout City||24367|54637|5|7
+Suwayḩān|Suwayhan|24462|55337|147|5
+#AF|Helmand
+Sangīn|Sangin|32073|64836|885|14
+#AF|Kapisa
+Sidqābād|Sidqabad|35023|69351|1486|7
+#AF|Paktika
+Sharan||33176|68730|2145|2
+#AG|Saint George Parish
+St. George Parish||17117|-61796|1|8
+#AG|Saint Mary Parish
+St. Mary Parish||17072|-61874|1|7
+#AG|Saint Paul Parish
+St. Paul Parish||17023|-61769||8
+#AG|Saint Philip Parish
+St. Peter Parish||17085|-61712|1|5
+#AI|Sandy Ground
+Sandy Ground Village||18201|-63090|4|0
+#AI|Sandy Hill
+Sandy Hill||18221|-63013|18|1
+#AI|South Hill
+South Hill Village||18192|-63088|40|0
+#AI|Stoney Ground
+Stoney Ground||18220|-63046|26|0
+#AL|Dibër County
+Shupenzë|Shupenze|41530|20424|499|6
+#AL|Durrës County
+Shijak||41346|19567|34|14
+Sukth||41381|19538|13|13
+#AL|Elbasan County
+Shushicë|Shushice|41098|20148|199|9
+#AL|Lezhë County
+Shëngjin|Shengjin|41814|19594|1|7
+#AL|Vlorë County
+Selenicë|Selenice|40531|19636|73|7
+#AM|Armavir
+Sardarapat||40132|44010|862|7
+#AM|Gegharkunik
+Sarukhan||40292|45131|1990|7
+#AM|Lori
+Spitak||40831|44270|1514|14
+Stepanavan||41010|44385|1405|12
+#AM|Syunik
+Sisian||39522|46027|1609|13
+#AR|Buenos Aires
+San Andrés de Giles|San Andres de Giles|-34447|-59444|51|14
+San Clemente del Tuyú|San Clemente del Tuyu|-36354|-56726|16|11
+Suipacha||-34769|-59687|47|10
+Salliqueló|Salliquelo|-36752|-62959|125|8
+San Bernardo del Tuyú|San Bernardo del Tuyu|-36697|-56683|8|7
+#AR|Catamarca
+San José|San Jose|-28388|-65701|574|13
+#AR|Chaco
+San Bernardo||-27287|-60713|81|11
+Santa Sylvina||-27832|-61136|63|9
+#AR|Chubut
+Sarmiento||-45587|-69069|260|8
+#AR|Cordoba
+Santa Rosa de Calamuchita||-32064|-64540|583|10
+Sampacho||-33385|-64723|513|7
+Santa Rosa de Río Primero|Santa Rosa de Rio Primero|-31154|-63399|160|7
+Salsipuedes||-31138|-64293|724|6
+San José de la Dormida|San Jose de la Dormida|-30356|-63950|570|6
+#AR|Corrientes
+Santa Lucía|Santa Lucia|-28990|-59101|49|14
+Santa Rosa||-28266|-58121|84|8
+San Miguel||-27998|-57587|59|7
+#AR|Entre Rios
+San Salvador||-31625|-58505|75|12
+San José de Feliciano|San Jose de Feliciano|-30385|-58750|58|11
+San Benito||-31783|-60439|40|7
+#AR|Mendoza
+San Carlos||-33775|-69043|958|14
+San Roque||-33029|-68597|669|10
+#AR|Misiones
+San Javier||-27874|-55135|112|13
+San Ignacio||-27259|-55539|115|11
+Santa Ana||-27369|-55582|156|7
+San José|San Jose|-27769|-55780|167|6
+Santo Pipó|Santo Pipo|-27141|-55409|174|5
+#AR|Neuquen
+Senillosa||-39014|-68433|294|10
+#AR|Rio Negro
+Sierra Grande||-41605|-65357|241|7
+#AR|San Juan
+San José de Jáchal|San Jose de Jachal|-30242|-68747|1176|14
+#AR|Santa Fe
+San Cristóbal|San Cristobal|-30310|-61235|70|14
+San José del Rincón|San Jose del Rincon|-31604|-60568|18|14
+San Carlos Centro||-31729|-61092|44|10
+San Guillermo||-30359|-61917|98|9
+Suardi||-30534|-61960|89|7
+Santa Rosa de Calchines||-31421|-60333|12|6
+Sastre||-31767|-61829|92|6
+#AR|Santiago del Estero
+Suncho Corral||-27932|-63430|121|6
+#AR|Tucuman
+Simoca||-27263|-65358|300|8
+#AT|Carinthia
+Spittal an der Drau||46800|13500|553|13
+Sankt Veit an der Glan||46768|14360|485|11
+Sankt Ruprecht||46600|14317|438|7
+#AT|Lower Austria
+Schwechat||48133|16467|163|12
+Strasshof an der Nordbahn||48317|16667|161|10
+Sankt Valentin||48167|14517|269|9
+Spratzern||48170|15618|286|6
+Sollenau||47898|16248|271|5
+#AT|Styria
+Seiersberg||47000|15400|342|8
+#AT|Tyrol
+Schwaz||47352|11710|537|14
+Sankt Johann in Tirol||47523|12423|659|9
+#AT|Upper Austria
+Sankt Martin||48231|14268|263|7
+Schärding|Schaerding|48453|13437|319|5
+#AU|New South Wales
+Smithfield||-33850|150933|29|12
+South Penrith||-33773|150695|43|12
+Sutherland||-34031|151055|107|11
+Sylvania||-34012|151097|35|10
+Sans Souci||-33990|151133|13|10
+Stanhope Gardens||-33722|150926|63|9
+Springwood||-33700|150550|357|8
+Stanmore||-33894|151164|30|8
+Summer Hill||-33891|151138|20|7
+Sanctuary Point||-35104|150627|18|7
+Seaforth||-33801|151240|63|7
+South Tamworth||-31110|150923|394|7
+St Helens Park||-34105|150814|139|7
+St Leonards||-33823|151198|96|6
+South Wentworthville||-33818|150963|50|6
+South Grafton||-29708|152926|2|6
+St Johns Park||-33883|150902|29|6
+South Windsor||-33618|150804|26|6
+Sefton||-33888|151011|38|6
+St Andrews||-34022|150830|55|6
+Scone||-32050|150869|216|6
+Shell Cove||-34590|150862|15|5
+South Granville||-33859|151011|13|5
+South Coogee||-33931|151256|55|5
+South Hurstville||-33978|151106|38|5
+Singleton||-32567|151166|45|5
+#AU|Queensland
+Shailer Park||-27650|153178|52|12
+Slacks Creek||-27650|153150|13|10
+Sippy Downs||-26718|153055|31|10
+Strathpine||-27304|152990|8|9
+Springwood||-27612|153129|46|9
+South Brisbane||-27480|153020|15|9
+Sunnybank||-27580|153061|58|9
+Scarborough||-27201|153109|14|9
+Spring Hill||-27461|153023|49|7
+Springfield||-27654|152917|69|7
+Stafford Heights||-27394|153011|46|7
+South Mackay||-21163|149178|3|6
+Stafford||-27410|153011|24|6
+Sinnamon Park||-27544|152949|32|6
+Salisbury||-27551|153033|33|6
+Southside||-26210|152647|94|6
+South Toowoomba||-27571|151947|606|6
+Sarina||-21419|149217|17|6
+Stanthorpe||-28654|151934|796|5
+#AU|South Australia
+Seaton||-34900|138517|7|10
+Salisbury North||-34750|138621|25|10
+Salisbury East||-34791|138655|31|9
+Salisbury||-34767|138633|31|8
+Sheidow Park||-35079|138527|127|7
+Strathalbyn||-35260|138892|72|6
+Seaford Rise||-35193|138482|37|6
+Salisbury Downs||-34768|138622|25|6
+Somerton Park||-34997|138522|15|5
+Salisbury Heights||-34763|138676|63|5
+#AU|Tasmania
+Sandy Bay||-42894|147324|27|12
+South Hobart||-42895|147309|69|5
+#AU|Victoria
+Sale||-38111|147068|12|14
+Surrey Hills||-37817|145100|108|14
+Springvale South||-37967|145150|39|13
+St Kilda East||-37866|145000|21|13
+Sunshine North||-37770|144828|47|12
+Somerville||-38217|145167|65|12
+South Melbourne||-37833|144967|9|12
+Swan Hill||-35338|143554|75|12
+Sandringham||-37952|145011|31|11
+Sydenham||-37700|144767|115|11
+Sebastopol||-37585|143840|425|10
+Sunshine||-37783|144833|40|10
+Strathmore||-37736|144921|66|8
+Skye||-38105|145216|33|8
+Seymour||-37027|145139|148|6
+Scoresby||-37900|145233|66|6
+Stawell||-37056|142781|254|6
+Strathdale||-36766|144315|241|6
+Strathfieldsaye||-36807|144355|208|5
+Seddon||-37806|144891|24|5
+#AU|Western Australia
+Southern River||-32107|115959|28|13
+South Perth||-31983|115867|19|13
+Secret Harbour||-32406|115759|7|12
+South Hedland||-20407|118601|16|11
+Seville Grove||-32136|115989|36|10
+Success||-32143|115850|27|10
+Spearwood||-32105|115778|5|10
+Subiaco||-31948|115827|30|10
+Stirling||-31883|115810|24|10
+South Bunbury||-33349|115634|11|8
+Swan View||-31883|116050|51|8
+Sorrento||-31825|115752|28|7
+Safety Bay||-32305|115742|8|7
+South Lake||-32111|115839|20|6
+#AW|
+San Nicolas||12436|-69907|14|14
+Savaneta||12450|-69938|13|12
+#AZ|Nakhchivan
+Sharur City||39553|44980|810|8
+#AZ|Neftçala
+Severo-Vostotchnyi Bank||39411|49248|-25|7
+#AZ|Samux
+Samukh||40765|46409|251|11
+#BA|Federation of B&H
+Sanski Most||44767|16667|158|14
+Stijena||44936|16022|354|11
+Široki Brijeg|Siroki Brijeg|43383|17594|281|9
+Stolac||43084|17960|61|8
+Srebrenik||44708|18488|181|7
+Sanica||44614|16641|204|6
+Šturlić|Sturlic|45064|15778|275|5
+#BA|Srpska
+Šipovo|Sipovo|44282|17086|446|11
+Sokolac||43938|18801|876|9
+Srbac||45097|17523|102|7
+Šekovići|Sekovici|44299|18855|340|6
+#BB|Saint Peter
+Speightstown||13251|-59644|9|4
+#BD|Chittagong
+Singārbīl|Singarbil|23907|91217|9|13
+#BD|Dhaka Division
+Singair||23788|90165|12|6
+#BD|Khulna Division
+Samonta Bazar||23248|88784|12|10
+#BE|Flanders
+Strombeek-Bever||50910|4356|48|14
+Sint-Gillis-bij-Dendermonde||51019|4111|7|13
+Sint-Michiels||51188|3211|7|12
+Staden||50975|3015|21|11
+Steenokkerzeel||50919|4510|23|11
+Sint-Lievens-Houtem||50920|3862|38|9
+Sint-Stevens-Woluwe||50868|4452|36|9
+Sint-Martens-Lennik||50812|4170|57|9
+Sint-Job-in-'t-Goor||51299|4573|18|9
+Sterrebeek||50862|4494|56|8
+Sint-Martens-Latem||51015|3638|8|8
+Schelle||51126|4341|7|8
+Sint-Amands||51056|4210|5|8
+Sleidinge||51134|3674|6|8
+Scherpenheuvel||50981|4976|63|7
+Sint-Lenaarts||51349|4680|24|7
+Sint-Laureins||51242|3524|2|7
+Sint-Katherina-Lombeek||50873|4154|19|7
+Sint-Maria-Lierde||50819|3844|33|6
+Sint-Denijs-Westrem||51021|3672|9|6
+'s-Gravenwezel||51263|4561|12|6
+Sinaai||51158|4041|6|6
+Stene||51204|2913|3|6
+Schepdaal||50838|4196|76|6
+Sint-Kwintens-Lennik||50804|4155|55|6
+Sijsele||51208|3317|5|5
+Schriek||51028|4694|10|5
+#BE|Wallonia
+Sprimont||50509|5660|224|13
+Seneffe||50531|4263|112|11
+Spa||50484|5867|312|11
+Saint-Servais||50476|4837|133|10
+Saint-Vith||50281|6127|474|9
+Strépy-Bracquegnies|Strepy-Bracquegnies|50473|4120|82|9
+Stembert||50591|5894|272|9
+Silly||50649|3924|59|8
+Sombreffe||50529|4601|146|7
+Saint-Georges-sur-Meuse||50600|5357|187|7
+Stavelot||50395|5931|297|7
+Saint-Vaast||50454|4160|53|6
+Seilles||50501|5093|93|6
+Saint-Hubert||50027|5374|432|6
+Sauvenière|Sauveniere|50582|4725|151|5
+#BF|Cascades Region
+Sindou||10667|-5167|370|7
+#BF|Sahel
+Sebba||13436|530|252|11
+#BG|Blagoevgrad
+Simitli||41883|23117|280|7
+#BG|Burgas
+Sredets||42347|27179|25|10
+#BG|Haskovo
+Simeonovgrad||42033|25833|104|7
+#BG|Pazardzhik
+Septemvri||42220|24119|235|8
+#BG|Plovdiv
+Stamboliyski||42133|24533|188|12
+Saedinenie||42267|24550|203|6
+#BG|Sofia
+Svoge||42967|23350|455|9
+Slivnitsa||42852|23038|591|8
+#BG|Veliko Tarnovo
+Strazhitsa||43233|25967|107|6
+#BG|Yambol
+Straldzha||42600|26683|149|6
+#BH|Manama
+Sanābis|Sanabis|26227|50551|6|7
+#BH|Northern
+Sār|Sar|26194|50482|14|6
+#BJ|Alibori
+Sam||11033|2733|286|12
+#BM|Saint Georgeʼs
+St George's Parish||32372|-64698|1|6
+#BM|Sandys
+Sandys Parish||32296|-64869|1|8
+#BM|Smithʼs
+Smith's Parish||32314|-64739|1|5
+#BM|Southampton
+Southampton Parish||32252|-64855|1|7
+#BN|Brunei-Muara District
+Sungai Hanching||4968|114978|15|6
+#BO|Beni Department
+Santa Ana de Yacuma||-13744|-65427|148|13
+San Ignacio de Moxo||-14995|-65641|165|10
+#BO|La Paz Department
+San Pedro||-16237|-68851|4013|5
+#BO|Santa Cruz Department
+San Julian||-17783|-62867|332|8
+San Matías|San Matias|-16360|-58400|175|6
+Santa Rosa del Sara||-17108|-63600|288|5
+#BR|Alagoas
+Santana do Mundaú|Santana do Mundau|-9168|-36222|229|12
+São Miguel dos Milagres|Sao Miguel dos Milagres|-9266|-35373|11|9
+Santa Luzia do Norte||-9603|-35822|34|7
+São Brás|Sao Bras|-10128|-36901|7|7
+#BR|Amazonas
+São Sebastião do Uatumã|Sao Sebastiao do Uatuma|-2565|-57873|15|12
+Silves||-2839|-58209|18|9
+#BR|Bahia
+Salinas da Margarida||-12871|-38764|1|15
+Santa Brígida|Santa Brigida|-9736|-38128|306|14
+Serrolândia|Serrolandia|-11416|-40302|457|13
+Sítio do Mato|Sitio do Mato|-13085|-43465|431|13
+Santana||-14467|-41800|519|13
+Santa Luzia||-15429|-39334|111|12
+Sobrado||-9296|-40819|445|12
+Saubara||-12737|-38769|20|12
+São Miguel das Matas|Sao Miguel das Matas|-13048|-39456|312|12
+São Félix|Sao Felix|-12605|-38972|25|11
+Saúde|Saude|-10941|-40419|542|10
+Santa Terezinha||-12772|-39523|220|10
+Santa Inês|Santa Ines|-13292|-39819|400|10
+São José do Jacuípe|Sao Jose do Jacuipe|-11504|-40022|366|10
+Sítio do Quinto|Sitio do Quinto|-10366|-38203|302|10
+São Felipe|Sao Felipe|-14840|-41395|529|10
+Sebastião Laranjeiras|Sebastiao Laranjeiras|-14573|-42940|537|9
+Santanópolis|Santanopolis|-12025|-38866|249|9
+São Domingos|Sao Domingos|-11466|-39526|298|8
+São José da Vitória|Sao Jose da Vitoria|-15081|-39338|156|5
+#BR|Ceará
+Saboeiro||-6542|-39907|296|14
+São Luís do Curu|Sao Luis do Curu|-3670|-39243|29|13
+Senador Sá|Senador Sa|-3351|-40463|87|7
+São João do Jaguaribe|Sao Joao do Jaguaribe|-5271|-38274|51|6
+#BR|Espírito Santo
+Santa Leopoldina||-20101|-40530|54|13
+São José do Calçado|Sao Jose do Calcado|-21025|-41654|327|11
+São Domingos do Norte|Sao Domingos do Norte|-19145|-40622|276|9
+#BR|Federal District
+Setor de Indústria e Abastecimiento|Setor de Industria e Abastecimiento|-15807|-47958|1096|5
+#BR|Goiás
+São João d'Aliança|Sao Joao d'Alianca|-14706|-47525|1011|14
+São Domingos|Sao Domingos|-13398|-46318|681|10
+Serranópolis|Serranopolis|-18306|-51962|718|8
+Sanclerlândia|Sanclerlandia|-16198|-50314|626|8
+Santo Antônio de Goiás|Santo Antonio de Goias|-16484|-49311|759|7
+São Francisco de Goiás|Sao Francisco de Goias|-15931|-49261|750|6
+Santa Bárbara de Goiás|Santa Barbara de Goias|-16578|-49698|654|6
+Santa Rita do Araguaia||-17326|-53205|702|6
+Simolândia|Simolandia|-14474|-46483|513|6
+#BR|Maranhão
+Senador La Rocque||-5442|-47291|166|15
+Santo Antônio dos Lopes|Santo Antonio dos Lopes|-4867|-44367|131|15
+São Pedro da Água Branca|Sao Pedro da Agua Branca|-5085|-48429|159|14
+Santa Rita||-3864|-43860|44|13
+São João do Carú|Sao Joao do Caru|-3554|-46256|44|12
+São Francisco do Maranhão|Sao Francisco do Maranhao|-6251|-42870|125|12
+Sucupira do Norte||-6477|-44192|478|11
+Santana do Maranhão|Santana do Maranhao|-3116|-42412|28|11
+Senador Alexandre Costa||-5256|-44056|120|10
+Serrano do Maranhão|Serrano do Maranhao|-1856|-45122|14|10
+São João do Paraíso|Sao Joao do Paraiso|-6461|-47057|270|10
+São Francisco do Brejão|Sao Francisco do Brejao|-5123|-47386|263|9
+Satubinha||-4038|-45238|42|9
+São Domingos do Azeitão|Sao Domingos do Azeitao|-6813|-44644|311|8
+São José dos Basílios|Sao Jose dos Basilios|-5051|-44584|71|7
+Santa Filomena do Maranhão|Santa Filomena do Maranhao|-5498|-44559|158|7
+São Pedro dos Crentes|Sao Pedro dos Crentes|-6826|-46532|342|6
+São Raimundo do Doca Bezerra|Sao Raimundo do Doca Bezerra|-5105|-45077|110|6
+Sambaíba|Sambaiba|-7140|-45346|208|6
+#BR|Mato Grosso
+São José do Rio Claro|Sao Jose do Rio Claro|-13447|-56721|365|15
+São Félix do Araguaia|Sao Felix do Araguaia|-11617|-50669|197|14
+Santa Terezinha||-10471|-50514|204|8
+São José do Xingu|Sao Jose do Xingu|-10804|-52744|339|6
+Santa Carmem||-11975|-55279|400|6
+#BR|Mato Grosso do Sul
+Sonora||-17577|-54758|446|15
+Sete Quedas||-23970|-55036|418|11
+Selvíria|Selviria|-20367|-51419|352|8
+#BR|Minas Gerais
+Sabinópolis|Sabinopolis|-18666|-43084|714|14
+Santa Maria do Suaçuí|Santa Maria do Suacui|-18190|-42414|474|13
+São Gonçalo do Rio Abaixo|Sao Goncalo do Rio Abaixo|-19826|-43362|664|12
+Serra do Salitre||-19111|-46690|1205|12
+São Gonçalo do Pará|Sao Goncalo do Para|-19983|-44859|735|12
+São João do Manhuaçu|Sao Joao do Manhuacu|-20394|-42151|825|11
+São Tiago|Sao Tiago|-20913|-44509|1112|11
+Santa Maria de Itabira||-19449|-43112|528|10
+Senhora dos Remédios|Senhora dos Remedios|-21028|-43582|799|10
+Santo Antônio do Jacinto|Santo Antonio do Jacinto|-16534|-40176|406|10
+São Romão|Sao Romao|-16369|-45069|488|10
+São Geraldo|Sao Geraldo|-20924|-42835|385|10
+São Sebastião do Maranhão|Sao Sebastiao do Maranhao|-18084|-42571|517|10
+Setubinha||-17602|-42162|712|10
+Santana do Manhuaçu|Santana do Manhuacu|-20107|-41925|511|9
+São Sebastião do Oeste|Sao Sebastiao do Oeste|-20276|-45005|789|9
+Santa Rita de Caldas||-22029|-46337|1095|8
+Santa Bárbara do Leste|Santa Barbara do Leste|-19978|-42143|910|8
+Santa Cruz de Minas||-21120|-44223|904|8
+São José da Barra|Sao Jose da Barra|-20718|-46311|741|8
+Senador Firmino||-20912|-43097|674|8
+São João Batista do Glória|Sao Joao Batista do Gloria|-20641|-46506|704|8
+Serrania||-21548|-46040|878|8
+São Gonçalo do Abaeté|Sao Goncalo do Abaete|-18338|-45833|796|7
+Sericita||-20474|-42482|701|7
+São Pedro dos Ferros|Sao Pedro dos Ferros|-20170|-42524|368|7
+São Roque de Minas|Sao Roque de Minas|-20245|-46366|806|7
+São João do Oriente|Sao Joao do Oriente|-19339|-42158|221|7
+Santana de Pirapama||-19006|-44043|639|7
+Serra dos Aimorés|Serra dos Aimores|-17782|-40247|202|7
+São Thomé das Letras|Sao Thome das Letras|-21722|-44985|1275|7
+São Vicente de Minas|Sao Vicente de Minas|-21712|-44444|1010|7
+Santa Rita de Minas||-19874|-42132|914|7
+São Tomás de Aquino|Sao Tomas de Aquino|-20784|-47098|983|7
+Santana da Vargem||-21249|-45507|826|7
+Santo Antônio do Retiro|Santo Antonio do Retiro|-15343|-42622|943|7
+São Sebastião da Bela Vista|Sao Sebastiao da Bela Vista|-22159|-45754|847|6
+São Miguel do Anta|Sao Miguel do Anta|-20707|-42719|677|6
+Sapucaí-Mirim|Sapucai-Mirim|-22748|-45742|885|6
+Senador Amaral||-22587|-46177|1481|6
+São José do Jacuri|Sao Jose do Jacuri|-18275|-42670|547|6
+São Francisco de Paula|Sao Francisco de Paula|-20710|-44985|947|6
+Silvianópolis|Silvianopolis|-22029|-45835|896|6
+Salto da Divisa||-16003|-39947|133|6
+Santa Helena de Minas||-16939|-40683|305|6
+Santa Rita do Itueto||-19360|-41380|315|6
+São Francisco de Sales|Sao Francisco de Sales|-19863|-49774|414|6
+São Domingos das Dores|Sao Domingos das Dores|-19527|-42011|733|6
+Soledade de Minas||-22060|-45045|882|6
+Senhora de Oliveira||-20794|-43344|733|5
+São José do Goiabal|Sao Jose do Goiabal|-19929|-42705|293|5
+São João do Manteninha|Sao Joao do Manteninha|-18721|-41160|250|5
+Santana do Riacho||-19169|-43714|933|5
+Sobrália|Sobralia|-19235|-42098|273|5
+Sardoá|Sardoa|-18784|-42365|700|5
+São Pedro do Suaçuí|Sao Pedro do Suacui|-18366|-42602|511|5
+#BR|Paraná
+São João do Triunfo|Sao Joao do Triunfo|-25683|-50297|835|15
+Santa Izabel do Oeste||-25821|-53484|513|14
+Santa Tereza do Oeste||-25053|-53617|610|13
+Santa Mariana||-23151|-50519|459|12
+Santa Fé|Santa Fe|-23037|-51805|481|11
+São Jerônimo da Serra|Sao Jeronimo da Serra|-23716|-50741|931|11
+São João do Ivaí|Sao Joao do Ivai|-23994|-51819|404|11
+São João|Sao Joao|-25828|-52725|658|10
+Santa Maria do Oeste||-24939|-51871|899|10
+São Jorge d'Oeste|Sao Jorge d'Oeste|-25706|-52918|456|9
+Santa Isabel do Ivaí|Santa Isabel do Ivai|-23003|-53197|398|9
+Sabáudia|Sabaudia|-23317|-51552|736|9
+São Pedro do Ivaí|Sao Pedro do Ivai|-23865|-51856|418|9
+Santa Cruz de Monte Castelo||-22953|-53297|395|9
+São Sebastião da Amoreira|Sao Sebastiao da Amoreira|-23465|-50761|673|8
+Sapopema||-23911|-50580|733|7
+São Carlos do Ivaí|Sao Carlos do Ivai|-23315|-52476|387|7
+São Jorge do Patrocínio|Sao Jorge do Patrocinio|-23762|-53879|373|7
+Santo Inácio|Santo Inacio|-22698|-51794|359|6
+Saudade do Iguaçu|Saudade do Iguacu|-25694|-52619|635|6
+São José da Boa Vista|Sao Jose da Boa Vista|-23916|-49652|519|6
+São Pedro do Iguaçu|Sao Pedro do Iguacu|-24936|-53855|553|6
+Sertaneja||-23037|-50817|416|6
+São João do Caiuá|Sao Joao do Caiua|-22852|-52337|437|6
+Santana do Itararé|Santana do Itarare|-23755|-49629|550|6
+São Tomé|Sao Tome|-23538|-52591|457|5
+Salto do Itararé|Salto do Itarare|-23601|-49626|508|5
+São Jorge do Ivaí|Sao Jorge do Ivai|-23433|-52293|444|5
+Serranópolis do Iguaçu|Serranopolis do Iguacu|-25380|-54052|329|5
+#BR|Paraíba
+Serra Branca||-7483|-36665|495|14
+Salgado de São Félix|Salgado de Sao Felix|-7357|-35441|64|12
+São Sebastião de Lagoa de Roça|Sao Sebastiao de Lagoa de Roca|-7106|-35869|414|11
+São Vicente do Seridó|Sao Vicente do Serido|-6934|-36402|538|10
+Serra Branca||-6533|-38267|327|9
+Sobrado||-7145|-35236|52|8
+Santa Cecília|Santa Cecilia|-7739|-35879|518|8
+São Mamede|Sao Mamede|-6927|-37096|270|7
+São José da Lagoa Tapada|Sao Jose da Lagoa Tapada|-6941|-38162|259|7
+São Miguel de Taipu|Sao Miguel de Taipu|-7250|-35210|42|7
+Serra Redonda||-7178|-35675|356|7
+Santana dos Garrotes||-7384|-37986|324|7
+Santa Cruz||-6533|-38062|326|6
+São José dos Ramos|Sao Jose dos Ramos|-7249|-35379|149|6
+Santa Helena||-6720|-38638|286|6
+Sertãozinho|Sertaozinho|-6751|-35442|134|5
+São José de Caiana|Sao Jose de Caiana|-7249|-38301|603|5
+Santana de Mangueira||-7555|-38332|347|5
+#BR|Pará
+São Francisco do Pará|Sao Francisco do Para|-1169|-47795|38|15
+São João do Araguaia|Sao Joao do Araguaia|-5358|-48791|109|14
+Senador José Porfírio|Senador Jose Porfirio|-2591|-51954|7|11
+Santa Cruz do Arari||-663|-49175|4|7
+Santarém Novo|Santarem Novo|-929|-47397|30|6
+Sapucaia||-6947|-49682|203|6
+#BR|Pernambuco
+Saloá|Saloa|-8976|-36687|751|14
+Santa Maria do Cambucá|Santa Maria do Cambuca|-7829|-35881|489|14
+São Benedito do Sul|Sao Benedito do Sul|-8807|-35933|363|13
+Santa Filomena||-8162|-40616|639|12
+Santa Cruz da Baixa Verde||-7821|-38153|853|12
+Sairé|Saire|-8327|-35706|605|11
+Santa Terezinha||-7378|-37480|817|10
+Salgadinho||-7936|-35633|262|6
+Solidão|Solidao|-7600|-37652|586|5
+#BR|Piauí
+Simões|Simoes|-7599|-40818|442|15
+São Pedro do Piauí|Sao Pedro do Piaui|-5929|-42719|263|14
+Simplício Mendes|Simplicio Mendes|-7854|-41910|292|13
+Sigefredo Pacheco||-4914|-41732|239|9
+São João do Arraial|Sao Joao do Arraial|-3815|-42452|102|8
+São José do Piauí|Sao Jose do Piaui|-6872|-41475|397|7
+Sussuapara||-7012|-41384|273|6
+São João da Serra|Sao Joao da Serra|-5514|-41899|172|6
+Santa Filomena||-9112|-45922|278|6
+São Julião|Sao Juliao|-7085|-40826|381|6
+Santo Antônio de Lisboa|Santo Antonio de Lisboa|-6981|-41234|237|6
+Santa Cruz do Piauí|Santa Cruz do Piaui|-7185|-41767|188|6
+São Francisco de Assis do Piauí|Sao Francisco de Assis do Piaui|-8238|-41686|425|6
+São João da Fronteira|Sao Joao da Fronteira|-3956|-41257|234|6
+São Francisco do Piauí|Sao Francisco do Piaui|-7251|-42543|151|5
+Santa Luz||-8954|-44129|333|5
+#BR|Rio Grande do Norte
+Serra do Mel||-5170|-37029|217|13
+São Miguel|Sao Miguel|-5467|-35367|23|13
+Santana do Matos||-5957|-36656|144|12
+São José do Campestre|Sao Jose do Campestre|-6316|-35714|153|11
+São Miguel do Gostoso|Sao Miguel do Gostoso|-5123|-35637|15|10
+Serra Caiada||-6104|-35711|125|10
+São Tomé|Sao Tome|-5972|-36075|167|10
+São Rafael|Sao Rafael|-5802|-36887|78|8
+Serra Negra do Norte||-6666|-37397|179|8
+Santa Luzia||-5311|-35475|37|7
+Serrinha||-6276|-35499|86|6
+São Vicente|Sao Vicente|-6217|-36684|319|6
+Senador Elói de Souza|Senador Eloi de Souza|-6036|-35693|115|6
+São João do Sabugi|Sao Joao do Sabugi|-6718|-37201|196|6
+São Pedro|Sao Pedro|-5898|-35634|63|6
+Serra de São Bento|Serra de Sao Bento|-6417|-35704|395|6
+Severiano Melo||-5777|-37958|150|5
+#BR|Rio Grande do Sul
+Sobradinho||-29421|-53029|425|14
+Santo Augusto||-27851|-53777|533|14
+Seberi||-27478|-53402|543|11
+Santo Antônio das Missões|Santo Antonio das Missoes|-28511|-55227|200|10
+Salto do Jacuí|Salto do Jacui|-29088|-53212|324|10
+Sinimbu||-29539|-52522|68|9
+Santa Bárbara do Sul|Santa Barbara do Sul|-28358|-53247|526|8
+São Vicente do Sul|Sao Vicente do Sul|-29692|-54679|139|8
+São Miguel das Missões|Sao Miguel das Missoes|-28563|-54554|282|7
+Santana da Boa Vista||-30872|-53115|305|7
+Santa Clara do Sul||-29469|-52087|120|7
+Salvador do Sul||-29438|-51511|500|7
+São José do Ouro|Sao Jose do Ouro|-27769|-51594|771|7
+Santa Maria do Herval||-29498|-50993|395|6
+Segredo||-29341|-52979|333|6
+Sertão Santana|Sertao Santana|-30460|-51603|81|6
+São Paulo das Missões|Sao Paulo das Missoes|-28021|-54936|165|6
+Sertão|Sertao|-27980|-52260|752|6
+São Martinho|Sao Martinho|-27707|-53969|456|5
+Sentinela do Sul||-30612|-51581|185|5
+São Nicolau|Sao Nicolau|-28182|-55267|157|5
+Selbach||-28629|-52952|409|5
+#BR|Rio de Janeiro
+Santa Maria Madalena||-21955|-42008|594|11
+Santo Cristo||-22899|-43201|9|10
+São Conrado|Sao Conrado|-22997|-43270|30|10
+São Sebastião do Alto|Sao Sebastiao do Alto|-21957|-42135|543|8
+São José de Ubá|Sao Jose de Uba|-21357|-41942|127|7
+#BR|Rondônia
+Seringueiras||-11798|-63031|180|11
+Santa Luzia d'Oeste||-11908|-61779|266|7
+São Felipe d'Oeste|Sao Felipe d'Oeste|-11902|-61502|260|5
+#BR|Roraima
+São João da Baliza|Sao Joao da Baliza|950|-59912|128|9
+São Luiz|Sao Luiz|1010|-60043|110|7
+#BR|Santa Catarina
+São José do Cedro|Sao Jose do Cedro|-26455|-53494|708|14
+Saco dos Limoes||-27609|-48536|20|14
+Siderópolis|Sideropolis|-28598|-49424|115|14
+São Ludgero|Sao Ludgero|-28326|-49177|53|14
+Sangão|Sangao|-28638|-49129|28|13
+São Carlos|Sao Carlos|-27077|-53004|261|10
+Saudades||-26924|-53003|306|10
+Santa Rosa do Sul||-29136|-49700|12|10
+São Domingos|Sao Domingos|-26558|-52532|640|9
+São José do Cerrito|Sao Jose do Cerrito|-27663|-50580|872|9
+São João do Sul|Sao Joao do Sul|-29223|-49810|7|9
+Santa Terezinha||-26779|-50008|600|8
+São João do Oeste|Sao Joao do Oeste|-27099|-53592|441|6
+São Cristovão do Sul|Sao Cristovao do Sul|-27267|-50441|1051|6
+São Pedro de Alcântara|Sao Pedro de Alcantara|-27566|-48805|254|6
+Santa Monica||-27591|-48508|5|5
+#BR|Sergipe
+Santa Luzia do Itanhy||-11355|-37449|12|14
+Santo Amaro das Brotas||-10789|-37054|56|11
+São Domingos|Sao Domingos|-10791|-37568|211|10
+Siriri||-10604|-37113|82|8
+Santana do São Francisco|Santana do Sao Francisco|-10291|-36608|41|7
+#BR|São Paulo
+Severínia|Severinia|-20809|-48803|588|15
+Santa Adélia|Santa Adelia|-21243|-48804|617|14
+Santa Branca||-23397|-45884|648|14
+São Simão|Sao Simao|-21479|-47551|659|13
+Serra Azul||-21311|-47566|611|13
+Sete Barras||-24388|-47926|37|13
+São Bento do Sapucaí|Sao Bento do Sapucai|-22689|-45731|887|12
+Sales Oliveira||-20772|-47838|732|11
+São Sebastião da Grama|Sao Sebastiao da Grama|-21711|-46821|942|10
+Sarapuí|Sarapui|-23641|-47825|590|10
+São Luís do Paraitinga|Sao Luis do Paraitinga|-23222|-45310|754|10
+Salto Grande||-22893|-49986|401|9
+Santo Antônio do Aracanguá|Santo Antonio do Aracangua|-20937|-50496|392|8
+Saltinho||-22847|-47677|602|8
+São José da Bela Vista|Sao Jose da Bela Vista|-20593|-47640|718|8
+Sud Mennucci||-20691|-50924|396|7
+São Pedro do Turvo|Sao Pedro do Turvo|-22747|-49740|459|7
+Santa Lúcia|Santa Lucia|-21685|-48084|715|7
+Santo Antônio do Pinhal|Santo Antonio do Pinhal|-22827|-45662|1095|7
+Santo Antônio da Alegria|Santo Antonio da Alegria|-21087|-47151|791|7
+Sales||-21342|-49499|431|6
+Santa Albertina||-20032|-50728|421|6
+Silveiras||-22664|-44853|619|6
+Santo Antônio do Jardim|Santo Antonio do Jardim|-22115|-46684|854|6
+Santa Ernestina||-21463|-48391|571|6
+Santa Maria da Serra||-22567|-48161|498|5
+Sabino||-21460|-49578|412|5
+#BR|Tocantins
+São Miguel do Tocantins|Sao Miguel do Tocantins|-5552|-47578|182|12
+Sítio Novo do Tocantins|Sitio Novo do Tocantins|-5600|-47641|186|11
+Santa Fé do Araguaia|Santa Fe do Araguaia|-7156|-48703|170|7
+São Bento do Tocantins|Sao Bento do Tocantins|-6020|-47902|185|6
+Silvanópolis|Silvanopolis|-11147|-48169|262|5
+#BS|North Andros
+San Andros||25067|-78050|15|8
+#BS|Spanish Wells
+Spanish Wells||25547|-76764|9|2
+#BT|Samdrup Jongkhar
+Samdrup Jongkhar||26801|91505|173|9
+#BT|Samtse District
+Samtse||26899|89100|417|5
+#BT|Sarpang District
+Sarpang||26864|90267|344|10
+#BT|Zhemgang District
+Shemgang||27217|90658|1900|1
+#BW|Central
+Shoshong||-23039|26510|1076|9
+Sefophe||-22183|27967|848|6
+Shashe Mooke||-21188|27379|998|6
+Sefhare||-23029|27469|892|5
+#BW|Ngwaketsi
+Sese||-24656|24806|1216|7
+#BW|North-West
+Shakawe||-18365|21842|1000|11
+#BY|Brest
+Stolin||51890|26836|115|14
+#BY|Grodnenskaya
+Skidel’|Skidel'|53590|24248|113|10
+Svislach||53034|24097|168|6
+#BY|Minsk
+Staryye Dorogi||53040|28267|160|11
+Starobin||52727|27461|146|6
+Smilavičy|Smilavicy|53750|28012|180|5
+#BY|Mogilev
+Shklov||54213|30287|158|15
+Slawharad||53443|31000|158|8
+#BY|Vitebsk
+Shumilino||55298|29613|146|7
+Senno||54812|29701|163|7
+Sharkovshchina||55368|27470|136|6
+#BZ|Cayo District
+Santa Elena||17161|-89055|94|9
+#CA|Alberta
+Strathmore||51050|-113385|976|14
+Signal Hill||51024|-114174|1192|13
+Skyview Ranch||51158|-113957|1092|13
+Springbank Hill||51033|-114195|1210|10
+Sundance||50900|-114039|1040|10
+Sage Hill||51176|-114141|1127|9
+Shawnessy||50907|-114082|1070|9
+Strathcona||53521|-113483|668|9
+Silver Springs||51104|-114192|1118|9
+Somerset||50896|-114086|1081|8
+Silver Berry||53458|-113382|713|8
+Summerside||53417|-113461|694|8
+Silverado||50885|-114072|1063|8
+Scenic Acres||51118|-114222|1168|8
+South Terwillegar||53440|-113579|683|8
+Slave Lake||55283|-114769|583|7
+Sherwood||51160|-114153|1186|7
+Southwood||50956|-114085|1069|6
+Sandstone Valley||51138|-114094|1109|6
+St. Paul||53983|-111285|632|6
+Stettler||52317|-112719|814|5
+#CA|British Columbia
+Sahali||50650|-120333|606|13
+South Slope||49217|-123000|116|13
+Strathcona||49277|-123091|10|13
+Shelbourne||48453|-123329|58|13
+Sidney||48650|-123403|5|12
+Summerland||49600|-119669|475|12
+Shellmont||49135|-123096|4|11
+Surrey Centre||49117|-122750|26|11
+South Clearbrook||49041|-122328|72|10
+Sardis||49133|-121950|13|10
+Sunshine Hills||49117|-122900|89|10
+Sechelt||49475|-123759|10|9
+Shaughnessy||49250|-123133|74|8
+South Cambie||49250|-123117|70|8
+South Arm||49140|-123125|4|8
+Sapperton||49226|-122895|51|6
+Stride Hill||49210|-122964|80|6
+Second Street||49224|-122922|83|6
+Saanich Core||48455|-123375|46|5
+Smithers||54780|-127174|494|5
+Spallumcheen||50401|-119220|422|5
+#CA|Manitoba
+Selkirk||50144|-96885|227|10
+South Pointe||49779|-97180|234|8
+Silver Heights||49881|-97251|236|5
+#CA|New Brunswick
+Saint John East||45288|-66041|14|15
+Shediac||46220|-64541|16|8
+Sunbury-York South||45838|-66610|47|7
+Saint-Anselme||46064|-64713|26|7
+Sussex||45723|-65507|23|5
+#CA|Newfoundland and Labrador
+Stephenville||48550|-58582|15|7
+Southlands||47493|-52824|162|5
+#CA|Nova Scotia
+Sydney Mines||46237|-60218|0|12
+Spryfield||44612|-63618|63|10
+#CA|Ontario
+Simcoe||42833|-80300|210|14
+Sandy Hill||45425|-75679|69|12
+Shuniah||48463|-89207|214|10
+South Huron||43317|-81516|246|10
+Smiths Falls||44905|-76023|131|9
+Silver Heights||43440|-80315|304|8
+Shelburne||44079|-80204|497|8
+St. Marys||43250|-81133|325|7
+Stanley Park||43446|-80444|331|7
+Sturgeon Falls||46367|-79916|211|7
+Sioux Lookout||50099|-91922|366|6
+Sunnyside||44233|-76508|98|6
+Southdale||43434|-80491|327|5
+#CA|Prince Edward Island
+Summerside||46391|-63789||15
+Stratford||46218|-63079|27|11
+Sherwood||46268|-63128|35|7
+#CA|Quebec
+Sainte-Monique||48733|-71849|144|14
+Sainte-Marie||46434|-71012|159|14
+Saint Romuald||46758|-71239|7|12
+Sainte-Marthe-sur-le-Lac||45533|-73932|35|11
+Saint-Raymond||46890|-71834|142|11
+Sainte-Anne-des-Plaines||45765|-73812|67|11
+Saint-Canut||45715|-74084|76|11
+Sainte-Adèle|Sainte-Adele|45950|-74133|246|11
+Saint-Félicien|Saint-Felicien|48650|-72449|111|10
+Sainte-Agathe-des-Monts||46050|-74283|375|10
+Saint-Amable||45650|-73299|44|9
+Saint-Sauveur||45887|-74179|254|9
+Saint-Hippolyte||45933|-74016|254|8
+Saint-Apollinaire||46613|-71513|105|8
+Saint-Sauveur-des-Monts||45900|-74166|216|8
+Saint-Philippe||45376|-73481|23|8
+Saint-Rémi|Saint-Remi|45267|-73616|55|7
+Saint-Zotique||45250|-74249|47|7
+Saint-Honoré|Saint-Honore|48533|-71082|144|6
+Saint-Joseph-du-Lac||45533|-73999|63|6
+Saint-Félix-de-Valois|Saint-Felix-de-Valois|46170|-73425|123|6
+Saint-Césaire|Saint-Cesaire|45409|-73001|32|6
+Sainte-Anne-des-Monts||49124|-66492|15|6
+Saint-Roch-de-l'Achigan||45859|-73590|47|5
+Saint-Pie||45503|-72909|38|5
+Sainte-Anne-de-Bellevue||45406|-73946|34|5
+Shannon||46880|-71515|170|5
+Saint-Henri||46693|-71069|87|5
+Sainte Catherine de la Jacques Cartier||46852|-71621|159|5
+Saint-Joseph-de-Beauce||46300|-70867|170|5
+#CA|Saskatchewan
+Silverwood Heights||52180|-106620|499|11
+Sutherland||52139|-106604|504|6
+Sherwood-McCarthy||50492|-104681|577|6
+Silverspring||52156|-106592|465|5
+#CG|Sangha
+Sémbé|Sembe|1648|14581|427|7
+Souanké|Souanke|2060|14132|556|6
+#CH|Aargau
+Spreitenbach||47423|8368|403|12
+Suhr||47372|8080|396|9
+#CH|Basel-Landschaft
+Sissach||47464|7809|374|6
+#CH|Bern
+Spiez||46685|7691|595|13
+Saanen||46489|7260|1010|7
+Saint-Imier||47153|6997|814|5
+Sumiswald||47027|7745|703|5
+#CH|Lucerne
+Sursee||47171|8111|503|10
+#CH|Nidwalden
+Stans||46958|8366|453|8
+#CH|Obwalden
+Sarnen||46896|8245|473|10
+#CH|Saint Gallen
+Sargans||47049|9441|487|6
+Sankt Margrethen||47453|9637|403|5
+#CH|Schwyz
+Schübelbach|Schubelbach|47173|8928|429|8
+Siebnen||47174|8898|447|7
+#CH|Thurgau
+Sirnach||47462|8998|541|6
+#CH|Valais
+Savièse|Saviese|46251|7346|840|6
+#CH|Zug
+Steinhausen||47195|8486|425|9
+#CH|Zurich
+Schlieren||47397|8448|399|13
+Stäfa|Stafa|47243|8723|425|6
+#CI|Abidjan Autonomous District
+Songon||5320|-4254|19|15
+#CI|Bas-Sassandra District
+Sarakagui||5819|-6804|215|11
+Saph||5133|-6727|131|10
+Sago||5267|-5916|78|10
+Sagboya||5966|-6913|249|9
+Sérigbangan|Serigbangan|5528|-6713|173|6
+#CI|Comoé District
+Songan||6109|-3208|135|13
+Sankadiokro||6862|-3486|212|13
+Samo||5284|-3518|61|8
+Sanhoukro||5785|-3130|109|8
+Siakakro||6912|-3245|227|8
+Satikran||6827|-3743|144|7
+Saykro||5274|-2784|71|6
+#CI|Denguélé District
+Samatiguila||9820|-7561|386|6
+#CI|Goh-Djiboua
+Scierie||6328|-5522|220|14
+Sérihio|Serihio|5901|-6118|211|9
+Sakaouo||6464|-5691|243|6
+Sané-Gazé|Sane-Gaze|6459|-5802|228|5
+#CI|Lagunes District
+Séchi|Sechi|6251|-4422|124|13
+Sikensi||5668|-4574|85|9
+Sahuyé|Sahuye|5733|-4527|99|7
+Séguié|Seguie|6056|-4094|90|5
+#CI|Montagnes
+Sémien|Semien|7614|-7130|297|14
+Sangouiné|Sangouine|7275|-7779|338|10
+Sipilou||7865|-8101|556|7
+Santa||7664|-7848|565|7
+Samapleu||7762|-7938|532|5
+#CI|Sassandra-Marahoue
+Séitifla|Seitifla|7439|-6718|275|10
+Siétinfla|Sietinfla|6828|-5730|230|10
+Séliéguhé|Selieguhe|6623|-6868|244|7
+Sanégourifla|Sanegourifla|6655|-5800|220|6
+Suéfla|Suefla|6852|-5715|241|5
+#CI|Savanes District
+Sinématiali|Sinematiali|9584|-5385|333|13
+Sirasso||9274|-6099|354|11
+Sodesucre Village||9507|-5278|298|10
+San||10391|-6436|348|7
+Sépénédyokaha|Sepenedyokaha|9843|-5158|329|6
+#CI|Vallée du Bandama District
+Sran-Bélakro|Sran-Belakro|7351|-5591|235|8
+Sucaf Ci Village||9298|-5293|306|7
+#CI|Woroba
+Sononzo||8626|-6130|391|9
+Soukourougban||7849|-5935|297|6
+Sarhala||8418|-6171|397|6
+#CI|Yamoussoukro
+Séman|Seman|6894|-5297|230|6
+#CI|Zanzan District
+Soko||7992|-2744|333|8
+Sapli||8145|-2986|453|8
+#CL|Antofagasta
+San Pedro de Atacama||-22911|-68201|2444|11
+#CL|Araucania
+Saavedra||-38787|-73397|5|11
+#CL|Biobio
+Santa Bárbara|Santa Barbara|-37668|-72023|235|13
+Santa Juana||-37175|-72943|58|13
+#CL|Coquimbo Region
+Salamanca||-31779|-70964|508|13
+#CL|Los Lagos Region
+San Pablo||-40413|-73011|81|5
+#CL|Los Ríos Region
+San José de la Mariquina|San Jose de la Mariquina|-39536|-72966|25|10
+#CL|Maule Region
+San Rafael||-35306|-71519|156|8
+#CL|O'Higgins Region
+San Francisco de Mostazal||-33982|-70710|478|12
+#CL|Santiago Metropolitan
+San José de Maipo|San Jose de Maipo|-33639|-70353|966|6
+#CL|Valparaiso
+Santa María|Santa Maria|-32747|-70657|716|8
+Santo Domingo||-33636|-71627|86|7
+#CM|Centre
+Saa||4367|11450|512|6
+#CN|
+Shekou Residential||22488|113927||6
+#CN|Chongqing
+Shuanglu||29864|107775|471|14
+Songgai||29058|105892|230|14
+Shidi||28753|109192|277|14
+Shiyu||29772|106093|313|14
+Sanquan||29132|107204|593|14
+Shazi||30028|108408|1021|13
+Sanhuikou||31255|108100|596|13
+Sanyuan||30105|107652|211|13
+Shuanghekou||29619|106918|224|13
+Shuanglongchang||30132|107721|235|12
+Shaba||29482|108639|1000|11
+Sanhe||29348|106100|292|11
+Sanxi||30064|107454|339|11
+Shitan||29176|106885|669|11
+Shi’an|Shi'an|30590|107977|262|11
+Sanba||29672|107758|1129|11
+Shayu||30243|106367|330|10
+Shixi||29335|107039|776|10
+Shuanghe||29549|107718|1350|10
+Sunjia||30730|108014|739|10
+Sanjian||29805|107864|267|10
+Shijia||29237|108612|668|10
+Shilin||28876|106902|438|9
+Shuishi||29243|108698|1151|9
+Shiye||28382|109057|379|9
+Shuangquan||29030|108647|739|9
+Shijialiang||29788|106472|219|9
+Shiqiao||29198|107829|255|8
+Shuanghe||31942|108348|856|8
+Shiliu||29610|108462|1015|8
+Sanxing||29897|108108|953|8
+Shuangshan||29821|105829|276|7
+Shengli||31434|109447|1097|7
+Shiqiang||29274|107204|715|7
+Shentong||29179|106931|643|7
+Shanling||29736|108620|628|7
+Shanwangping||29147|107312|860|7
+Shouqiao||29900|105894|245|6
+Shijia||30287|108325|1133|6
+Shahe||30282|107566|418|6
+Shuitian||29401|108736|720|6
+Shuikou||29930|106113|247|6
+Shangan||29083|108355|540|5
+Songnong||28676|109105|300|5
+Shilian||29069|106925|655|5
+Sanyi||29724|108383|693|5
+#CN|Fujian
+Shanyang||26670|119205|642|7
+Shajiang||26783|119967|13|6
+#CN|Gansu
+Shijiba||33067|104453|1428|14
+Shuiyang||33748|106103|923|13
+Sancang||33014|105115|1537|13
+Sanhe||33299|105167|1105|12
+Songshu||34933|106057|1701|12
+Shixia||33783|105388|1409|11
+Shimen||33486|104738|1149|11
+Shaba||33731|105564|1378|10
+Shangde||32907|104770|877|10
+Shifang||33003|104571|1002|10
+Shanmen||34686|106363|1639|9
+Suochi||33646|105514|1305|9
+Shencang||34735|103380|2959|8
+Shajin||33988|104812|1975|8
+Suyuan||33673|105453|1280|7
+Sangke||35112|102427|3073|7
+Shimen||34736|103701|2460|7
+Sanheba||33142|105683|871|6
+Sitai||33486|105610|998|6
+Shizi||33744|104680|2124|6
+Shangping||34176|104862|1883|6
+Sanyu||33699|105020|1615|6
+Shuangcha||34561|102830|2940|5
+Songping||33603|105911|853|5
+#CN|Guangdong
+Shuangjinhui||22686|113793|7|13
+Shatou Residential||22528|114043|2|12
+Sanwei||22613|113845|6|11
+Shahe Residential||22535|113980|8|9
+Southeast Gate||22585|113883|8|7
+Shangxing||22732|113830|7|7
+Shangzi||22581|113908|9|7
+Shazui||22519|114033|11|5
+Shahe Jiangong||22550|113992|90|5
+Shenzhen||22182|111118|263|5
+#CN|Guangxi
+Shatian||21519|109656||15
+#CN|Guizhou
+Shiqian||27523|108228|477|10
+#CN|Hunan
+Shijiang||27082|110793|277|9
+Shuangjiang||26155|109714|525|8
+Simenqian||27487|110886|376|6
+#CN|Qinghai
+Shaliuhe||37326|100134|3302|13
+Sanjiaocheng||36891|101000|3002|11
+#CN|Xinjiang
+Segezikule||37466|79910|1283|10
+Sishilichengzi||41962|86477|1057|9
+Sadikyüzi|Sadikyuezi|43928|81556|721|5
+#CO|Antioquia
+San Carlos||7792|-74773|59|14
+San Jerónimo|San Jeronimo|6443|-75728|728|13
+Santa Bárbara|Santa Barbara|5875|-75567|1792|13
+San Rafael||6294|-75026|994|13
+Santo Domingo||6473|-75165|1968|12
+San Pedro||6461|-75558|2482|9
+San Carlos||6188|-74993|989|8
+San Roque||6485|-75020|1426|6
+#CO|Atlántico
+Suan||10333|-74880|10|10
+#CO|Bolívar
+Santa Catalina||10604|-75288|39|14
+Santa Rosa del Sur||7964|-74054|628|9
+Soplaviento||10393|-75141|8|8
+#CO|Boyacá
+Santa Rosa de Viterbo||5874|-72982|2752|11
+Soatá|Soata|6334|-72683|1979|11
+San Pablo de Borbur||5651|-74070|677|6
+#CO|Caquetá
+Solano||699|-75254|204|10
+#CO|Cauca Department
+Silvia||2616|-76383|2532|7
+#CO|Cesar Department
+San Alberto||7761|-73392|118|11
+#CO|Cundinamarca
+Sasaima||4967|-74435|1141|10
+Sopó|Sopo|4908|-73938|2584|8
+#CO|Córdoba
+San Bernardo del Viento||9353|-75952|8|9
+San Pelayo||8958|-75836|11|6
+#CO|Huila Department
+Saladoblanco||1992|-76043|1489|10
+San Agustín|San Agustin|1879|-76267|1632|9
+#CO|Magdalena Department
+Santa Ana||9321|-74568|29|14
+San Antonio||9933|-74693|110|8
+San Zenón|San Zenon|9242|-74500|15|7
+Salamina||10490|-74795|7|6
+#CO|Meta Department
+San Carlos de Guaroa||3712|-73243|224|12
+#CO|Nariño
+Sandoná|Sandona|1286|-77469|1817|10
+Sotomayor||1495|-77521|1556|9
+Salahonda||2041|-78659|4|7
+San Pablo||1673|-77014|1733|7
+#CO|Norte de Santander Department
+Sardinata||8083|-72801|309|8
+#CO|Putumayo Department
+Sibundoy||1203|-76923|2106|9
+Santiago||1148|-77004|2115|7
+#CO|Risaralda Department
+Santuario||5073|-75963|1406|12
+#CO|Santander Department
+San Vicente de Chucurí|San Vicente de Chucuri|6881|-73410|645|11
+#CO|Sucre Department
+San Pedro||9396|-75065|144|11
+San Juan de Betulia||9273|-75241|152|9
+#CO|Tolima Department
+Saldaña|Saldana|3929|-75015|311|9
+Santa Isabel||3349|-74981|1094|6
+San Antonio||3914|-75480|1431|5
+#CO|Valle del Cauca Department
+San Pedro||3994|-76229|988|5
+#CR|Alajuela Province
+San Ramón|San Ramon|10088|-84470|1061|11
+San Juan||10102|-84317|1090|8
+#CR|Guanacaste Province
+Santa Cruz||10261|-85585|58|12
+#CR|Heredia Province
+San Josecito||10013|-84107|1241|12
+San Antonio||9982|-84186|900|11
+San Rafael||10018|-84095|1303|9
+Santo Domingo||10064|-84155|1327|6
+#CR|San José
+Sabanilla||9947|-84034|1249|13
+Santiago||9846|-84314|1109|8
+Santa Ana||9933|-84183|909|8
+Salitrillos||9854|-84092|1327|6
+#CU|Artemisa
+Soroa||22798|-83013|247|7
+#CU|Mayabeque
+San Nicolás de Bari|San Nicolas de Bari|22784|-81913|31|15
+#CU|Pinar del Río
+San Luis||22278|-83761|22|7
+#CV|Boa Vista
+Sal Rei||16176|-22917|8|11
+#CV|Praia
+São Filipe Praia|Sao Filipe Praia|14956|-23516|32|8
+Safende||14941|-23515|57|7
+#CV|Sal
+Santa Maria||16598|-22905|5|8
+#CV|Santa Cruz
+Santa Cruz||15134|-23559|11|9
+#CV|São Domingos
+São Domingos|Sao Domingos|15024|-23562|327|3
+#CV|São Filipe
+São Filipe|Sao Filipe|14896|-24496|40|10
+#CW|
+St. Michiel||12143|-68995|29|6
+Santa Rosa||12117|-68883|34|5
+Sint Michiel Liber||12150|-68983|21|5
+#CZ|Central Bohemia
+Sedlčany|Sedlcany|49661|14427|356|8
+Stochov||50146|13963|439|6
+#CZ|Liberec Region
+Semily||50602|15336|340|8
+#CZ|Moravian-Silesian Region
+Studénka|Studenka|49723|18079|240|9
+Šenov|Senov|49793|18376|275|7
+#CZ|Olomouc Region
+Šternberk|Sternberk|49730|17299|280|13
+#CZ|Pardubice Region
+Skuteč|Skutec|49843|15997|412|5
+#CZ|Plzeň Region
+Sušice|Susice|49231|13520|472|11
+Stříbro|Stribro|49756|12997|402|8
+Starý Plzenec|Stary Plzenec|49698|13474|343|5
+#CZ|Prague
+Suchdol||50141|14384|271|7
+Střešovice|Stresovice|50095|14383|275|7
+Staré Město|Stare Mesto|50087|14420|206|6
+#CZ|South Bohemian Region
+Sezimovo Ústí|Sezimovo Usti|49385|14685|400|7
+Soběslav|Sobeslav|49260|14719|408|7
+#CZ|South Moravian
+Starý Lískovec|Stary Liskovec|49164|16561|229|12
+Slatina||49176|16688|257|9
+Slavkov u Brna||49153|16876|211|7
+Šlapanice|Slapanice|49169|16727|230|7
+Strážnice|Straznice|48901|17317|177|5
+#CZ|Vysocina
+Světlá nad Sázavou|Svetla nad Sazavou|49668|15404|515|6
+#CZ|Zlín
+Staré Město|Stare Mesto|49075|17433|205|7
+Slavičín|Slavicin|49088|17873|367|6
+#CZ|Ústí nad Labem Region
+Štětí|Steti|50453|14374|160|9
+Šluknov|Sluknov|51004|14453|355|6
+#DE|Baden-Wurttemberg
+Schriesheim||49474|8664|118|14
+Sandhausen||49343|8659|109|14
+Sankt Georgen im Schwarzwald||48127|8335|852|14
+Sulz am Neckar||48362|8633|300|13
+Spaichingen||48075|8735|657|12
+Sankt Leon-Rot||49266|8618|110|12
+Steinheim an der Murr||48968|9277|212|11
+Salem||47763|9290|440|11
+Sinzheim||48767|8167|125|11
+Schwaigern||49145|9055|202|11
+Schwieberdingen||48876|9074|256|11
+Schönaich|Schonaich|48659|9060|436|10
+Süßen|Sussen|48679|9755|361|10
+Steinen||47644|7739|330|10
+Schwaikheim||48877|9350|267|9
+Steinheim am Albuch||48691|10064|534|9
+Schömberg|Schomberg|48787|8645|629|9
+Salach||48692|9737|354|8
+Sankt Leon||49268|8600|109|7
+Schelklingen||48376|9733|538|7
+Schutterwald||48450|7883|150|7
+Schwanau||48367|7762|151|7
+Schwendi||48174|9975|528|6
+Steinenbronn||48667|9117|439|6
+Schrozberg||49345|9979|461|6
+Schallstadt||47959|7758|223|6
+Sontheim an der Brenz||48552|10291|443|6
+Sasbach||48640|8094|142|6
+Stetten am Kalten Markt||48124|9078|804|5
+Sulzbach an der Murr||49003|9500|278|5
+Stühlingen|Stuhlingen|47746|8448|454|5
+Seelbach||48311|7941|217|5
+Schliengen||47757|7576|243|5
+Sersheim||48967|9017|234|5
+Sankt Johann||48454|9344|732|5
+Satteldorf||49170|10080|430|5
+#DE|Bavaria
+Stadtbergen||48366|10846|488|15
+Stein||49416|11016|304|14
+Schwabmünchen|Schwabmunchen|48179|10757|554|13
+Schongau||47812|10897|713|12
+Schwarzenbach an der Saale||50223|11935|498|11
+Simbach am Inn||48265|13023|355|10
+Stephanskirchen||47854|12186|483|10
+Schwarzenbruck||49358|11243|364|9
+Schwaig||49470|11201|324|8
+Schnaittach||49560|11343|349|8
+Siegsdorf||47823|12643|605|8
+Schonungen||50050|10308|262|8
+Strullendorf||49844|10972|254|8
+Stockstadt am Main||49970|9072|118|8
+Schierling||48834|12139|379|7
+Scheßlitz|Schesslitz|49976|11033|307|7
+Sulzbach am Main||49911|9153|129|7
+Seefeld||48035|11214|568|7
+Salzweg||48617|13483|454|7
+Stegaurach||49865|10844|287|7
+Sinzing||49000|12033|337|7
+Schliersee||47736|11859|787|6
+Schwarzenfeld||49388|12135|364|6
+Speichersdorf||49871|11781|464|6
+Sauerlach||47972|11654|619|6
+Schlüsselfeld|Schlusselfeld|49756|10619|298|6
+Saal||48901|11932|348|6
+Sonnefeld||50217|11133|315|5
+Schönau am Königssee|Schoenau am Koenigssee|47601|12987|576|5
+Stockheim||50306|11282|343|5
+Schäftlarn|Schaftlarn|47990|11456|658|5
+Spalt||49176|10925|368|5
+Schöllnach|Schollnach|48754|13178|381|5
+Seubersdorf||49162|11627|515|5
+#DE|Brandenburg
+Stahnsdorf||52383|13217|43|13
+Schönefeld|Schoenefeld|52389|13504|45|12
+Schöneiche|Schoeneiche|52473|13692|45|12
+Storkow||52257|13933|39|10
+Schipkau||51518|13897|113|8
+Schulzendorf||52358|13598|40|7
+Schwarzheide||51477|13856|100|7
+Seelow||52534|14381|51|6
+#DE|Hamburg
+St. Georg||53555|10012|12|11
+Sülldorf|Suelldorf|53579|9800|38|9
+Sternschanze||53562|9966|16|8
+#DE|Hesse
+Schwalbach am Taunus||50150|8533|142|14
+Solms||50536|8407|156|13
+Schotten||50503|9125|282|12
+Steinau an der Straße|Steinau an der Strasse|50314|9463|175|11
+Schierstein||50045|8198|94|11
+Schlitz||50674|9561|243|10
+Steinbach am Taunus||50168|8573|170|10
+Schmitten||50267|8450|465|9
+Sulzbach||50134|8528|135|9
+Schaafheim||49924|9009|151|9
+Sontra||51072|9936|225|9
+Staufenberg||50662|8732|209|8
+Selters||50517|8290|157|8
+Sonnenberg||50098|8262|219|8
+Sinn||50650|8333|213|7
+Schöffengrund|Schoeffengrund|50493|8472|285|6
+Schlangenbad||50093|8103|287|6
+Spangenberg||51116|9663|237|6
+Stockstadt am Rhein||49809|8473|89|6
+#DE|Lower Saxony
+Sahlkamp||52419|9771|53|14
+Schiffdorf||53532|8656|8|14
+Schöningen|Schoeningen|52138|10967|136|13
+Scheeßel|Scheessel|53169|9483|31|13
+Stöcken|Stoecken|52411|9659|55|13
+Sulingen||52683|8813|54|13
+Schüttorf|Schuettorf|52323|7222|34|11
+Stelle||53384|10111|8|11
+Sassenburg||52517|10633|67|11
+Salzhemmendorf||52067|9587|119|11
+Steinfeld||52585|8211|56|9
+Sande||53505|8014|2|9
+Schellerten||52185|10102|91|9
+Stöckheim|Stoeckheim|52211|10522|75|8
+Söhlde|Sohlde|52189|10232|99|8
+Spelle||52367|7467|35|8
+Salzbergen||52333|7350|31|8
+Siegfriedviertel||52289|10533|75|7
+Stolzenau||52517|9070|30|7
+Sögel|Sogel|52841|7519|34|7
+Sottrum||53114|9232|20|6
+Stadtoldendorf||51882|9627|219|6
+Schöppenstedt|Schoeppenstedt|52143|10775|109|6
+Sickte||52218|10642|110|6
+Sittensen||53276|9504|32|5
+Steyerberg||52568|9023|32|5
+Schladen||52022|10540|98|5
+Schwarmstedt||52678|9618|30|5
+#DE|Mecklenburg-Vorpommern
+Sassnitz||54516|13645|32|11
+Strasburg||53507|13744|59|6
+Schwaan||53940|12111|10|5
+#DE|North Rhine-Westphalia
+Sassenberg||51992|8041|61|14
+Schleiden||50529|6477|367|14
+Steinheim||51871|9091|148|14
+Schermbeck||51683|6867|32|14
+Sendenhorst||51843|7830|69|13
+Scharnhorst-Ost||51550|7533|73|13
+Schalksmühle|Schalksmuehle|51241|7528|253|12
+Schüren|Schueren|51493|7544|119|10
+Schieder-Schwalenberg||51877|9195|218|9
+Schlangen||51810|8846|169|9
+Südlohn|Sudlohn|51945|6867|51|9
+Schöppingen|Schoppingen|52100|7233|86|8
+Saerbeck||52174|7634|46|7
+Sölderholz|Soelderholz|51482|7593|168|6
+Sinnersdorf||51024|6818|46|6
+Sölde|Soelde|51497|7588|121|6
+Stockum||51470|7368|156|5
+Sonsbeck||51607|6379|25|5
+Simmerath||50600|6300|536|5
+Sechtem||50791|6953|66|5
+#DE|Rheinland-Pfalz
+Simmern||49982|7524|333|8
+Schweich||49822|6753|135|8
+Saarburg||49606|6544|177|6
+Schönenberg-Kübelberg|Schoenenberg-Kuebelberg|49407|7372|264|6
+#DE|Saarland
+Spiesen-Elversberg||49317|7133|353|15
+Saarwellingen||49354|6805|205|14
+#DE|Saxony
+Stollberg||50710|12780|417|11
+Sebnitz||50975|14276|319|9
+Sohland||51041|14419|316|8
+Stolpen||51049|14079|305|6
+Schönheide|Schoenheide|50505|12522|669|5
+#DE|Saxony-Anhalt
+Sandersdorf||51628|12265|87|7
+#DE|Schleswig-Holstein
+Schwarzenbek||53505|10482|42|15
+Scharbeutz||54024|10752|1|12
+Schönkirchen|Schonkirchen|54333|10233|16|6
+Süsel|Suesel|54081|10702|35|5
+Schilksee||54418|10172|16|5
+#DE|State of Berlin
+Siemensstadt||52541|13263|34|13
+#DE|Thuringia
+Schmölln|Schmoelln|50897|12353|211|14
+Steinbach-Hallenberg||50696|10565|435|9
+Schleiz||50579|11810|437|9
+Stadtroda||50857|11727|199|7
+Schleusingen||50511|10757|411|6
+Stadtilm||50776|11083|358|5
+#DK|Capital Region
+Skovlunde||55716|12398|21|15
+Smørumnedre|Smorumnedre|55742|12303|31|10
+Slangerup||55850|12183|29|7
+Stavnsholt||55815|12405|35|6
+#DK|Central Jutland
+Skanderborg||56034|9932|38|14
+Struer||56492|8594|4|11
+Skødstrup|Skodstrup|56263|10304|49|10
+Skjern||55950|8500|9|7
+#DK|North Denmark
+Støvring|Stovring|56885|9838|18|9
+Sæby|Saeby|57332|10523|8|9
+Svenstrup||56972|9848|15|8
+Svenstrup||56603|9944|36|8
+Skagen||57721|10584|3|7
+#DK|South Denmark
+Strib||55540|9767|13|5
+#DK|Zealand
+Sorø|Soro|55432|11555|43|8
+Svinninge||55721|11465|9|7
+Skælskør|Skaelskor|55251|11294|4|6
+#DM|Saint Joseph Parish
+Saint Joseph||15406|-61424|1|2
+#DM|Saint Mark Parish
+Soufrière|Soufriere|15234|-61359|34|1
+#DO|Azua Province
+Sabana Yegua||18717|-71017|393|11
+#DO|Espaillat Province
+San Víctor Arriba|San Victor Arriba|19477|-70536|530|6
+#DO|Hato Mayor Province
+Sabana de la Mar||19059|-69388|9|14
+#DO|Hermanas Mirabal
+Salsipuedes||19406|-70380|252|12
+#DO|La Altagracia Province
+San Rafael del Yuma||18430|-68674|49|5
+#DO|Nacional
+San Carlos||18477|-69894|28|13
+#DO|Puerto Plata
+Sosúa|Sosua|19752|-70520|27|8
+#DO|Samaná
+Samaná|Samana|19204|-69334|23|11
+Sánchez|Sanchez|19228|-69614|25|11
+#DO|San Cristóbal
+San Gregorio de Nigua||18383|-70052|8|12
+#DO|Santiago Province
+San José de Las Matas|San Jose de Las Matas|19339|-70938|524|10
+Sabana Iglesia||19321|-70760|291|5
+#DZ|Aïn Témouchent
+Sidi Ben Adda||35306|-1181|252|12
+#DZ|Tlemcen
+Sidi Senoussi سيدي سنوسي|Sidi Senoussi sydy snwsy|34997|-1094|589|8
+#EC|Bolívar
+San Miguel de Bolívar|San Miguel de Bolivar|-1709|-79042|2323|13
+#EC|Carchi
+San Gabriel||594|-77831|2860|14
+#EC|Cotopaxi
+San Miguel||-1046|-78590|2650|11
+#EC|Guayas
+Santa Lucía|Santa Lucia|-2183|-80000|15|13
+#EC|Los Ríos
+San Juan||-1667|-79767|9|13
+#EC|Manabí
+Santa Ana de Vuelta Larga||-1208|-80371|101|13
+#EC|Morona-Santiago Province
+Sucúa|Sucua|-2457|-78171|1076|7
+#EC|Pichincha
+Sangolquí|Sangolqui|-334|-78452|2513|5
+#EE|Harjumaa
+Saue||59323|24550|41|6
+#EE|Ida-Virumaa
+Sillamäe|Sillamaee|59397|27763|23|12
+#EG|Red Sea
+Shalateen||23132|35591|10|12
+Shalātīn|Shalatin|23139|35598|11|12
+#ES|Andalusia
+Sanlúcar la Mayor|Sanlucar la Mayor|37388|-6203|141|13
+Salobreña|Salobrena|36743|-3587|45|13
+Santiponce||37436|-6041|12|8
+San Juan del Puerto||37317|-6841|9|7
+Santaella||37563|-4844|260|6
+#ES|Aragon
+Sabiñánigo|Sabinanigo|42519|-366|790|10
+#ES|Asturias
+Salas||43412|-6260|297|6
+#ES|Balearic Islands
+Sóller|Soller|39766|2715|45|14
+sa Pobla||39769|3024|29|13
+Santanyí|Santanyi|39355|3129|65|13
+Son Servera||39621|3360|82|12
+Santa Margalida||39701|3102|88|12
+Santa Ponsa||39509|2477|34|11
+s'Arenal||39500|2750|5|10
+Son Ferriol||39567|2717|11|8
+Sant Lluís|Sant Lluis|39849|4258|60|7
+Son Ferrer||39497|2501|20|6
+Santa Maria del Camí|Santa Maria del Cami|39651|2773|131|6
+Son Roca||39604|2607|131|5
+#ES|Basque Country
+Sopela||43379|-2983|51|12
+#ES|Canary Islands
+Santa Úrsula|Santa Ursula|28426|-16489|283|14
+Santiago del Teide||28294|-16816|922|12
+San Sebastián de la Gomera|San Sebastian de la Gomera|28092|-17113|8|9
+Sauzal||28467|-16417|681|8
+San Nicolás|San Nicolas|27989|-15781|57|8
+San Juan de la Rambla||28393|-16650|99|5
+#ES|Cantabria
+Santoña|Santona|43444|-3458|10|12
+Santa Cruz de Bezana||43444|-3903|44|11
+Suances||43433|-4043|7|7
+Santa María de Cayón|Santa Maria de Cayon|43308|-3837|105|7
+#ES|Castille and León
+Santa Marta de Tormes||40951|-5627|788|15
+San Ildefonso||40902|-4007|1166|5
+#ES|Castille-La Mancha
+Socuéllamos|Socuellamos|39286|-2792|682|13
+Sonseca||39677|-3974|755|11
+San Clemente||39404|-2428|728|7
+#ES|Catalonia
+Sant Sadurní d'Anoia|Sant Sadurni d'Anoia|41426|1785|170|12
+Santa Coloma de Farners||41867|2667|158|12
+Sant Andreu de Llavaneres||41567|2483|107|11
+Sant Joan de Vilatorrada||41745|1805|230|11
+Sant Cristòfol de les Fonts|Sant Cristofol de les Fonts|42170|2499|472|9
+Solsona||41994|1517|687|8
+Sant Vicenç de Castellet|Sant Vicenc de Castellet|41667|1867|198|8
+Santa Maria de Palautordera||41694|2446|213|8
+Sentmenat||41609|2135|213|8
+Sallent||41826|1896|290|7
+Santa Coloma de Cervelló|Santa Coloma de Cervello|41367|2014|16|7
+Sant Genís dels Agudells|Sant Genis dels Agudells|41425|2130|255|7
+Súria|Suria|41833|1750|281|6
+Sant Vicenç de Montalt|Sant Vicenc de Montalt|41579|2509|144|6
+Santa Eulàlia de Ronçana|Santa Eulalia de Roncana|41650|2233|155|6
+Santa Cristina d'Aro||41817|3000|55|5
+Sant Pol de Mar||41602|2617|15|5
+#ES|Galicia
+Sada||43356|-8258|44|14
+Sarria||42781|-7414|422|14
+Santa Comba||43033|-8809|384|10
+Salvatierra de Miño|Salvatierra de Mino|42083|-8500|35|10
+Silleda||42696|-8247|494|9
+Santa Marta de Ortigueira||43683|-7850|37|8
+#ES|La Rioja
+Santo Domingo de la Calzada||42440|-2954|646|6
+#ES|Madrid
+San Agustín del Guadalix|San Agustin del Guadalix|40679|-3616|674|13
+San Juan Bautista||40451|-3656|699|12
+Salvador||40445|-3631|687|11
+Soto del Real||40753|-3780|932|9
+Sol||40417|-3703|661|8
+San Martín de Valdeiglesias|San Martin de Valdeiglesias|40362|-4398|675|7
+Sevilla La Nueva||40348|-4027|675|6
+#ES|Murcia
+San Antonio Abad||37618|-997|20|13
+Sangonera la Verde||37929|-1208|85|10
+Santiago de la Ribera||37797|-805|7|8
+San Ginés de la Jara|San Gines de la Jara|37641|-823|34|5
+#ES|Navarre
+Sarriguren||42813|-1598|510|15
+San Adrián|San Adrian|42334|-1935|301|6
+Sangüesa/Zangoza|Sangueesa/Zangoza|42575|-1283|405|5
+#ES|Valencia
+Sax||38537|-818|480|10
+Sedaví|Sedavi|39433|-383|8|9
+Segorbe||39850|-483|340|8
+San Miguel de Salinas||37980|-789|78|6
+#FI|Central Finland
+Saarijärvi|Saarijaervi|62705|25254|140|9
+Suolahti||62564|25854|123|5
+#FI|Kainuu
+Sotkamo||64133|28417|134|10
+Suomussalmi||64887|28908|193|7
+#FI|Lapland
+Saarenkylä|Saarenkylae|66519|25767|84|9
+Sodankylä|Sodankylae|67417|26600|191|8
+#FI|North Savo
+Suonenjoki||62617|27133|104|7
+#FI|Satakunta
+Säkylä|Saekylae|61033|22333|39|6
+#FI|Southwest Finland
+Somero||60617|23533|93|8
+#FI|Uusimaa
+Sörnäinen|Soernaeinen|60186|24965|20|15
+Saunalahti||60163|24620|25|11
+Siltamäki|Siltamaeki|60278|24983|18|8
+Simonkylä|Simonkylae|60310|25030|27|8
+Soukka||60142|24671|21|8
+Siuntio||60139|24227|40|6
+#FJ|Northern
+Savusavu||-16779|179336|6|7
+#FO|Sandoy
+Sandur||61843|-6808|113|1
+#FR|Auvergne-Rhône-Alpes
+Saint-Just-Saint-Rambert||45500|4241|392|14
+Saint-François|Saint-Francois|46415|3905|290|14
+Seyssinet-Pariset||45177|5694|222|13
+Sassenage||45213|5663|204|11
+Saint-Julien-en-Genevois||46144|6083|464|10
+Saint-Jean-de-Maurienne||45275|6353|541|10
+Saint-Paul-Trois-Châteaux|Saint-Paul-Trois-Chateaux|44346|4764|88|8
+Saint-Marcellin||45149|5317|280|8
+Sorbiers||45491|4442|540|8
+Saint-Flour||45034|3093|889|7
+Saint-Genis-Pouilly||46244|6021|453|7
+Seyssins||45162|5687|276|7
+Saint-Péray|Saint-Peray|44949|4845|133|7
+Scionzier||46060|6553|486|7
+Saint-Ismier||45252|5831|367|7
+Saint-Quentin-Fallavier||45643|5113|235|6
+Saint-Jean-Bonnefonds||45456|4442|608|6
+Saint-Priest-en-Jarez||45474|4377|517|6
+Saint-Bonnet-de-Mure||45690|5029|249|6
+Saint-Gervais-les-Bains||45891|6717|840|6
+Saint-Genest-Lerpt||45443|4340|593|6
+Sainte-Sigolène|Sainte-Sigolene|45243|4233|818|6
+Saint-Martin-le-Vinoux||45203|5716|257|6
+Saint-Jorioz||45831|6158|474|6
+Saint-Galmier||45598|4311|393|5
+Saint-Pourçain-sur-Sioule|Saint-Pourcain-sur-Sioule|46307|3289|250|5
+Saint-Alban-Leysse||45583|5950|305|5
+Sury-le-Comtal||45537|4186|377|5
+Saint-Genis-les-Ollières|Saint-Genis-les-Ollieres|45757|4726|291|5
+#FR|Bourgogne-Franche-Comté
+Saint-Claude||46387|5865|442|12
+Saint-Vallier||46641|4371|332|10
+Seloncourt||47460|6855|361|6
+Saint-Rémy|Saint-Remy|46763|4839|185|6
+Saint-Florentin||48001|3725|129|6
+Saint-Apollinaire||47333|5083|249|5
+Semur-en-Auxois||47483|4333|264|5
+#FR|Brittany
+Saint-Avé|Saint-Ave|47687|-2735|47|9
+Saint-Jacques-de-la-Lande||48065|-1721|38|9
+Séné|Sene|47619|-2737|9|8
+Saint-Grégoire|Saint-Gregoire|48151|-1686|41|8
+Saint-Pol-de-Léon|Saint-Pol-de-Leon|48685|-3988|41|8
+Saint-Renan||48431|-4622|57|7
+Sarzeau||47527|-2770|31|7
+Scaër|Scaer|48027|-3703|184|6
+Saint-Martin-des-Champs||48577|-3845|87|5
+#FR|Centre-Val de Loire
+Saint-Amand-Montrond||46723|2505|159|12
+Saint-Doulchard||47104|2352|138|9
+Saint-Jean-le-Blanc||47893|1915|96|9
+Saint-Denis-en-Val||47873|1966|94|8
+Saint-Florent-sur-Cher||46996|2251|145|7
+Sully-sur-Loire||47764|2372|116|6
+Salbris||47424|2051|108|6
+Saint-Pryvé-Saint-Mesmin|Saint-Pryve-Saint-Mesmin|47882|1870|93|5
+Saint-Germain-du-Puy||47100|2483|151|5
+#FR|Grand Est
+Sarrebourg||48736|7057|264|15
+Stiring-Wendel||49202|6932|227|13
+Saverne||48742|7362|200|12
+Saint-André-les-Vergers|Saint-Andre-les-Vergers|48285|4052|105|11
+Sainte-Savine||48296|4046|112|11
+Saint-Max||48704|6207|214|11
+Saint-Nicolas-de-Port||48629|6297|235|8
+Soultz-Haut-Rhin||47888|7229|272|7
+Saint-Julien-les-Villas||48271|4099|110|7
+Souffelweyersheim||48635|7741|142|6
+Sainte-Marie-aux-Mines||48246|7184|374|6
+Saint-Memmie||48952|4384|89|6
+Sézanne|Sezanne|48720|3723|130|6
+Sausheim||47787|7373|230|6
+Seichamps||48715|6261|223|6
+Saint-Mihiel||48887|5551|226|5
+Sainte-Menehould||49090|4897|163|5
+#FR|Hauts-de-France
+Saint-Martin-Boulogne||50727|1619|63|12
+Somain||50360|3281|26|12
+Seclin||50549|3027|27|12
+Saint-Saulve||50371|3556|28|11
+Saint-André-lez-Lille|Saint-Andre-lez-Lille|50667|3050|22|11
+Sallaumines||50417|2862|40|11
+Sains-en-Gohelle||50445|2683|62|6
+Saint-Nicolas||50304|2779|73|6
+Saint-Just-en-Chaussée|Saint-Just-en-Chaussee|49505|2433|99|6
+Saint-Laurent-Blangy||50294|2807|71|6
+Sainghin-en-Weppes||50564|2898|30|6
+Saint-Pol-sur-Ternoise||50381|2334|91|6
+Saint-Étienne-au-Mont|Saint-Etienne-au-Mont|50678|1631|13|5
+Santes||50593|2963|20|5
+#FR|New Aquitaine
+Saint-Jean-de-Luz||43389|-1663|8|15
+Saint-Paul-lès-Dax|Saint-Paul-les-Dax|43726|-1053|24|12
+Saint-Junien||45887|902|228|12
+Soyaux||45641|198|138|11
+Sarlat-la-Canéda|Sarlat-la-Caneda|44889|1217|147|11
+Saint-Yrieix-la-Perche||45515|1203|351|8
+Saint-Loubès|Saint-Loubes|44917|-429|25|8
+Saint-Pierre-du-Mont||43885|-522|79|8
+Saint-Benoît|Saint-Benoit|46550|342|83|8
+Saint-Jean-d'Angély|Saint-Jean-d'Angely|45944|-521|26|7
+Saint-Yrieix-sur-Charente||45675|127|64|7
+Saint-Jean-d'Illac||44810|-784|45|7
+Saint-Pierre-d'Oléron|Saint-Pierre-d'Oleron|45944|-1306|12|7
+Soustons||43752|-1330|10|7
+Sainte-Livrade-sur-Lot||44398|589|59|6
+Saint-Pierre-d'Irube||43474|-1453|34|6
+Saint-Vincent-de-Tyrosse||43661|-1304|33|6
+Surgères|Surgeres|46108|-751|31|6
+Saujon||45672|-926|7|6
+Saint-Aubin-de-Médoc|Saint-Aubin-de-Medoc|44912|-725|38|5
+Saint-Georges-de-Didonne||45605|-1000|3|5
+Salies-de-Béarn|Salies-de-Bearn|43474|-924|70|5
+#FR|Normandy
+Saint-Pierre-lès-Elbeuf|Saint-Pierre-les-Elbeuf|49279|1043|13|9
+Saint-Aubin-lès-Elbeuf|Saint-Aubin-les-Elbeuf|49304|1011|13|8
+Sainte-Adresse||49509|84|43|8
+Saint-Marcel||49100|1450|28|5
+Saint-Valery-en-Caux||49867|733|68|5
+#FR|Occitanie
+Saint-Gilles||43677|4430|12|13
+Saint-Orens-de-Gameville||43552|1534|199|13
+Saint-Gaudens||43108|723|411|12
+Saint-Estève|Saint-Esteve|42713|2842|61|10
+Saint-Cyprien-Plage||42632|3033|2|9
+Saint-Jean||43665|1505|207|9
+Saint-Jean-de-Védas|Saint-Jean-de-Vedas|43578|3826|48|9
+Saint-Gély-du-Fesc|Saint-Gely-du-Fesc|43693|3806|118|9
+Saint-Affrique||43956|2889|324|9
+Saint-Laurent-de-la-Salanque||42774|2990|8|8
+Saint-Girons||42985|1146|394|7
+Saint-Juéry|Saint-Juery|43948|2209|185|7
+Sérignan|Serignan|43279|3277|5|7
+Saint-Sulpice-la-Pointe||43775|1685|115|7
+Seysses||43498|1311|179|6
+Saint-Lys||43514|1177|219|6
+Saint-Christol-les-Alès|Saint-Christol-les-Ales|44084|4077|138|6
+Saint-Alban||43693|1410|129|5
+Saint-Clément-de-Rivière|Saint-Clement-de-Riviere|43683|3833|90|5
+#FR|Pays de la Loire
+Sablé-sur-Sarthe|Sable-sur-Sarthe|47838|-333|39|15
+Sainte-Luce-sur-Loire||47255|-1483|18|13
+Saint-Brevin-les-Pins||47247|-2166|9|10
+Saint-Hilaire-de-Riez||46721|-1946|13|9
+Segré|Segre|47687|-873|42|7
+Saint-Jean-de-Monts||46793|-2061|6|7
+Sautron||47263|-1672|67|7
+Saint-Gilles-Croix-de-Vie||46700|-1946|1|7
+Saint-Berthevin||48069|-826|104|7
+Saint-Étienne-de-Montluc|Saint-Etienne-de-Montluc|47276|-1780|24|7
+Savenay||47361|-1942|57|7
+Saint-Julien-de-Concelles||47254|-1386|12|7
+Saint-Philbert-de-Grand-Lieu||47036|-1641|7|7
+Sucé-sur-Erdre|Suce-sur-Erdre|47333|-1533|22|6
+Saint-Macaire-en-Mauges||47124|-992|102|6
+Saint-Hilaire de Talmont||46470|-1603|18|6
+#FR|Provence-Alpes-Côte d'Azur
+Saint-Sylvestre||43723|7250|73|15
+Saint-Just||43317|5406|62|14
+Saint-Tronc||43271|5423|55|14
+Saint-Giniez||43269|5386|17|14
+Sainte-Maxime||43309|6638|8|14
+Saint-Cyr-sur-Mer||43180|5701|12|12
+Saint-Barnabé|Saint-Barnabe|43300|5417|79|12
+Solliès-Pont|Sollies-Pont|43190|6041|81|12
+Saint-Mauront||43316|5375|13|12
+Saint-Martin-de-Crau||43640|4813|22|12
+Saint-Rémy-de-Provence|Saint-Remy-de-Provence|43788|4832|63|11
+Saint-Marcel||43287|5466|63|10
+Septèmes-les-Vallons|Septemes-les-Vallons|43398|5366|196|10
+Saint-Pancrace||43744|7240|274|10
+Saint-Jérôme|Saint-Jerome|43334|5417|97|10
+Saint-Lazare||43305|5374|40|10
+Saint-Julien||43313|5449|164|10
+Sainte-Anne||43257|5394|22|10
+Saint-Maurice||43724|7263|74|10
+Saint-Lambert||43286|5360|48|9
+Saint-Louis||43345|5359|64|9
+Sophia Antipolis||43622|7047|167|9
+Saint-Pierre||43293|5407|41|9
+Saint-Charles||43302|5384|52|8
+Saint-Mitre||43346|5423|139|8
+Saint-Pierre-de-Féric|Saint-Pierre-de-Feric|43715|7238|140|8
+Sausset-les-Pins||43331|5104|4|8
+Sisteron||44190|5946|483|8
+Saint-Victoret||43420|5234|24|7
+Saint-Mandrier-sur-Mer||43078|5929|22|7
+Saint-Chamas||43550|5035|7|7
+Sormiou||43210|5419|43|7
+Saint-Antoine||43371|5359|135|6
+Sénas|Senas|43744|5078|96|6
+Saint-Tropez||43268|6640|15|6
+Sarrians||44083|4971|42|6
+Saint-Mitre-les-Remparts||43455|5014|90|6
+Saint-Henri||43362|5331|49|6
+Simiane-Collongue||43431|5435|229|6
+Saint-Barthélemy|Saint-Barthelemy|43718|7250|111|5
+Saint-Joseph||43346|5380|81|5
+#FR|Île-de-France
+Saint-Maurice||48822|2427|60|14
+Saint-Brice-sous-Forêt|Saint-Brice-sous-Foret|49001|2354|84|14
+Saint-Fargeau-Ponthierry||48557|2528|84|12
+Saint-Germain-lès-Arpajon|Saint-Germain-les-Arpajon|48597|2265|48|9
+Saint-Rémy-lès-Chevreuse|Saint-Remy-les-Chevreuse|48707|2077|84|8
+Soisy-sur-Seine||48649|2452|59|8
+Saint-Germain-lès-Corbeil|Saint-Germain-les-Corbeil|48622|2488|78|7
+Saint-Prix||49017|2267|132|7
+Saint-Thibault-des-Vignes||48871|2680|42|7
+Saint-Pierre-lès-Nemours|Saint-Pierre-les-Nemours|48267|2680|76|6
+Saint-Pierre-du-Perray||48611|2494|80|6
+Souppes-sur-Loing||48183|2735|69|6
+Saint-Arnoult-en-Yvelines||48571|1940|118|6
+Saintry-sur-Seine||48596|2495|60|5
+Saint-Pathus||49071|2799|101|5
+Saulx-les-Chartreux||48691|2267|72|5
+#GB|England
+Sudbury||51555|-324|58|15
+St. Ann's||51582|-90|17|15
+Skipton||53961|-2017|113|15
+Southgate||51617|-100|30|14
+Shirley||51378|-50|67|14
+Stone||52906|-2154|94|14
+Stoke Gifford||51517|-2541|65|14
+Shepshed||52766|-1290|81|14
+Streetly||52583|-1883|164|13
+Sheerness||51440|763|5|13
+Stocksbridge||53482|-1594|164|13
+Street||51125|-2740|22|13
+Sanderstead||51336|-78|168|13
+Sidmouth||50691|-3240|40|13
+St. Helier||51382|-183|48|12
+Snaresbrook||51584|19|33|12
+Stroud Green||51575|-111|52|12
+Sandy||52129|-289|30|12
+Sunninghill||51401|-656|75|12
+Syston||52683|-1067|63|12
+Stanwell||51454|-478|19|11
+Shirebrook||53203|-1213|87|11
+Selsey||50735|-790|7|11
+Swanage||50608|-1957|5|10
+Sidcup||51426|104|64|10
+Shepton Mallet||51190|-2547|144|10
+St James's||51507|-140|32|10
+Spitalfields||51520|-74|21|10
+Snodland||51330|443|11|10
+Shepperton||51395|-449|14|10
+Saint Leonards-on-Sea||50856|545|50|10
+Shildon||54630|-1643|132|10
+Sowerby Bridge||53709|-1909|86|10
+Soham||52335|337|10|10
+Stakeford||55161|-1575|24|10
+Steyning||50887|-328|17|10
+Sherborne||50946|-2518|58|10
+Scalby||53767|-717|6|9
+Seaton Delaval||55072|-1526|38|9
+Shortlands||51399|4|56|9
+Saltaire||53833|-1783|110|9
+Southwater||51024|-352|44|9
+Storrington||50918|-455|42|9
+Sawbridgeworth||51817|150|67|8
+Sheringham||52941|1209|26|8
+Shanklin||50626|-1178|47|8
+Silsden||53914|-1938|115|8
+Sopwell||51739|-330|76|8
+Stonehouse||51750|-2283|42|7
+Sturry||51301|1122|13|7
+Shaftesbury||51005|-2193|207|7
+Shefford||52039|-334|40|7
+Sawston||52121|169|27|7
+Sileby||52733|-1108|52|7
+Swaffham||52648|686|76|7
+Seaton||50705|-3070|8|7
+Sacriston||54818|-1624|154|7
+Stotfold||52016|-232|48|7
+Southwell||53078|-955|42|7
+Sherburn in Elmet||53795|-1247|12|7
+Send||51289|-527|32|7
+Saint Blazey||50363|-4719|31|7
+Southam||52253|-1388|87|7
+Skelton||53725|-842|5|7
+Skelton||54561|-988|102|7
+Stainforth||53600|-1033|10|6
+Stockton Heath||53371|-2574|21|6
+Shifnal||52670|-2372|91|6
+Studley||52270|-1892|75|6
+Stone||51450|265|28|6
+Stone||51000|767|2|6
+Strensall||54040|-1035|18|6
+St Leonards||50831|-1844|18|6
+Saltburn-by-the-Sea||54582|-974|52|6
+Shenfield||51632|332|73|5
+Shepley||53583|-1717|232|5
+Stansted Mountfitchet||51900|200|83|5
+St Ives||50209|-5487|83|5
+Shelley||53600|-1683|217|5
+Sawtry||52440|-284|15|5
+Shevington||53572|-2693|61|5
+South Molton||51017|-3833|131|5
+Staplehurst||51161|552|33|5
+Shipston on Stour||52061|-1628|72|5
+#GB|Northern Ireland
+Strabane||54824|-7469|7|14
+#GB|Scotland
+Saltcoats||55636|-4786|10|12
+Stonehaven||56964|-2212|11|11
+Stranraer||54902|-5027|12|11
+Stenhousemuir||56027|-3815|28|10
+Stevenston||55640|-4753|9|9
+Shotts||55820|-3797|216|8
+Stornoway||58209|-6386|12|8
+Strathaven||55677|-4067|182|7
+Stewarton||55680|-4514|97|7
+Stepps||55889|-4152|85|7
+Sauchie||56129|-3766|40|6
+Selkirk||55547|-2839|178|6
+Stonehouse||55694|-3988|153|6
+Scone||56419|-3405|52|5
+#GD|Saint David Parish
+Saint David’s|Saint David's|12049|-61669|179|1
+#GD|Saint Patrick Parish
+Sauteurs||12218|-61639|46|1
+#GE|Imereti
+Sachkhere||42336|43406|439|5
+#GE|Kakheti
+Sagarejo||41737|45326|764|10
+#GE|Kvemo Kartli
+Sadakhlo||41240|44789|430|7
+Sartich’ala|Sartich'ala|41718|45176|707|6
+#GE|Samegrelo and Zemo Svaneti
+Senaki||42271|42063|45|15
+#GE|Shida Kartli
+Surami||42024|43556|745|7
+#GG|Alderney
+St Anne||49715|-2208|65|0
+#GG|Saint Andrew
+Saint Andrew||49444|-2580|81|0
+#GG|Saint Saviour
+Saint Saviour||49457|-2636|12|0
+#GG|St Martin
+St Martin||49437|-2555|97|0
+#GG|St Pierre du Bois
+Saint Pierre du Bois Parish||49454|-2638|41|2
+#GG|St Sampson
+Saint Sampson||49484|-2523|3|9
+#GH|Ashanti
+Sefwi||6523|-1636|220|14
+#GH|Eastern
+Saman||6324|-501|230|9
+#GH|Savannah
+Sawla||9273|-2414|313|11
+#GH|Western North
+Sefwi Wiawso||6206|-2489|193|0
+#GI|
+South District||36114|-5347||5
+#GL|Qeqqata
+Sisimiut||66939|-53673||5
+#GM|Central River
+Sinchu Balla||13600|-15033|26|8
+#GM|Upper River
+Sabi||13233|-14200|39|8
+#GM|Western
+Sinchu Sorry||13388|-16685|20|8
+Sifoe||13184|-16697|17|6
+#GN|Boké Region
+Sanguéya|Sangueya|10700|-14367|18|8
+#GN|Faranah
+Selouma||11117|-10983|431|13
+#GP|Guadeloupe
+Saint-François|Saint-Francois|16252|-61273|5|13
+Saint-Claude||16025|-61700|462|10
+#GQ|Annobon
+San Antonio de Palé|San Antonio de Pale|-1407|5632||4
+#GR|Attica
+Spáta|Spata|37962|23915|142|9
+#GR|Central Macedonia
+Síndos|Sindos|40670|22805|8|9
+Sidirókastro|Sidirokastro|41235|23389|90|5
+#GR|Crete
+Sitia||35208|26105|17|9
+Soúda|Souda|35487|24073|8|7
+#GR|West Macedonia
+Siátista|Siatista|40262|21544|948|6
+#GT|Alta Verapaz
+San Juan Chamelco||15424|-90330|1386|13
+Senahú|Senahu|15416|-89822|963|12
+Santa Cruz Verapaz||15373|-90429|1412|6
+#GT|Baja Verapaz
+San Miguel Chicaj||15095|-90394|943|14
+San Jerónimo|San Jeronimo|15060|-90240|1001|8
+#GT|Chimaltenango
+San Martín Jilotepeque|San Martin Jilotepeque|14780|-90793|1791|10
+Santa Cruz Balanyá|Santa Cruz Balanya|14685|-90919|2074|8
+San José Poaquil|San Jose Poaquil|14818|-90912|1977|6
+#GT|El Progreso
+San Agustín Acasaguastlán|San Agustin Acasaguastlan|14945|-89970|303|10
+San Antonio La Paz||14759|-90285|1225|8
+#GT|Escuintla
+San Vicente Pacaya||14415|-90636|1525|7
+#GT|Guatemala
+San Pedro Sacatepéquez|San Pedro Sacatepequez|14686|-90643|2100|14
+San Raimundo||14765|-90595|1580|9
+#GT|Huehuetenango
+San Mateo Ixtatán|San Mateo Ixtatan|15832|-91478|2599|13
+San Antonio Huista||15650|-91772|1243|6
+#GT|Jutiapa
+Santa Catarina Mita||14451|-89743|702|11
+San José Acatempa|San Jose Acatempa|14265|-90127|1346|6
+#GT|Petén
+Santa Ana||16806|-89827|209|10
+Sayaxché|Sayaxche|16524|-90188|134|9
+San Andrés|San Andres|16969|-89912|182|7
+San Luis||16199|-89440|381|7
+#GT|Quetzaltenango
+Samayac||14581|-91461|621|9
+San Miguel Sigüilá|San Miguel Siguila|14895|-91615|2451|8
+San Carlos Sija||14984|-91549|2646|7
+San Mateo||14858|-91590|2504|6
+#GT|Quiché
+Sacapulas||15288|-91089|1198|12
+San Juan Cotzal||15434|-91035|1769|11
+#GT|Retalhuleu
+San Andrés Villa Seca|San Andres Villa Seca|14578|-91585|465|5
+#GT|Sacatepéquez
+Santa Lucía Milpas Altas|Santa Lucia Milpas Altas|14577|-90676|1973|12
+Santo Domingo Xenacoj||14681|-90700|1835|9
+San Miguel Dueñas|San Miguel Duenas|14522|-90799|1465|8
+San Antonio Aguas Calientes||14547|-90781|1471|8
+San Bartolomé Milpas Altas|San Bartolome Milpas Altas|14607|-90678|2102|6
+#GT|San Marcos
+San Pablo||14933|-92004|617|14
+San Cristóbal Cucho|San Cristobal Cucho|14905|-91781|2367|9
+#GT|Santa Rosa Department
+Santa Cruz Naranjo||14388|-90370|1174|6
+Santa Rosa de Lima||14388|-90296|948|6
+#GT|Sololá
+Santa Catarina Ixtahuacán|Santa Catarina Ixtahuacan|14798|-91359|2303|15
+San Lucas Tolimán|San Lucas Toliman|14595|-91147|1576|15
+San Pedro La Laguna||14693|-91272|1590|10
+San Pablo La Laguna||14721|-91272|1666|6
+Santa Clara La Laguna||14715|-91304|2095|5
+#GT|Suchitepeque
+San Antonio Suchitepéquez|San Antonio Suchitepequez|14539|-91414|396|14
+Santo Tomás La Unión|Santo Tomas La Union|14632|-91411|870|7
+Santo Domingo Suchitepéquez|Santo Domingo Suchitepequez|14479|-91483|217|6
+San Bernardino||14542|-91458|425|6
+#GT|Totonicapán
+Santa María Chiquimula|Santa Maria Chiquimula|15030|-91329|2085|7
+#GU|Santa Rita
+Santa Rita Village||13386|144672|66|8
+#GU|Sinajana
+Sinajana Village||13463|144754|55|3
+#GW|Cacheu
+São Domingos|Sao Domingos|12402|-16201|10|6
+#GY|East Berbice-Corentyne
+Skeldon||5870|-57147|1|6
+#HK|Central and Western
+Sai Wan||22281|114126|57|15
+Sai Ying Pun||22290|114142|5|14
+#HK|Eastern District
+Shau Kei Wan||22278|114229|29|13
+#HK|Islands
+Sok Kwu Wan||22205|114132|37|5
+#HK|Kowloon City
+Sky Tower||22324|114190|19|6
+#HK|North District
+Sha Tau Kok||22546|114224|5|5
+#HK|Sai Kung District
+Siu Chik Sha||22301|114275|35|6
+#HK|Southern District
+Shek Pai Wan Estate||22249|114158|56|15
+#HK|Tsuen Wan
+Shek Wai Kok||22375|114124|49|12
+#HK|Tuen Mun
+So Kwun Wat||22376|114007|7|14
+Siu Hei||22374|113967||12
+So Kwun Wat Tsuen||22385|114004|274|5
+#HK|Yau Tsim Mong District
+Sorrento||22306|114162||6
+#HN|Atlántida Department
+San Juan Pueblo||15583|-87233|171|6
+#HN|Choluteca Department
+San Marcos de Colón|San Marcos de Colon|13433|-86800|997|9
+#HN|Colón Department
+Santa Rosa de Aguán|Santa Rosa de Aguan|15950|-85717|3|5
+#HN|Comayagua Department
+San José de Comayagua|San Jose de Comayagua|14733|-88033|716|8
+#HN|Copán Department
+San Juan de Opoa||14779|-88696|803|10
+#HN|Cortés Department
+San Manuel||15331|-87921|48|6
+#HN|Intibucá Department
+Santa Cruz||14017|-88383|387|7
+#HN|La Paz Department
+San Pedro de Tutule||14251|-87854|1244|7
+#HN|Lempira Department
+San Manuel de Colohete||14450|-88667|1677|15
+San Andrés|San Andres|14217|-88550|1721|14
+San Sebastián|San Sebastian|14250|-88500|1706|11
+San Francisco||14117|-88367|599|9
+#HN|Ocotepeque Department
+Sensenti||14494|-88938|872|12
+San Francisco del Valle||14435|-88956|926|10
+Sinuapa||14443|-89186|820|9
+San Marcos||14408|-88955|956|5
+#HN|Olancho Department
+Santa María del Real|Santa Maria del Real|14767|-85950|337|11
+San Francisco de la Paz||14900|-86200|667|5
+#HN|Santa Bárbara Department
+San Pedro Zacapa||14757|-88114|320|11
+San Francisco de Ojuera||14750|-88183|434|7
+#HN|Valle Department
+San Francisco de Coray||13661|-87533|164|10
+#HN|Yoro Department
+Santa Rita||15167|-87283|885|13
+#HR|Split-Dalmatia
+Sinj||43704|16639|322|11
+#HR|Virovitica-Podravina
+Slatina||45703|17703|124|9
+#HT|Grand'Anse
+Sassier||18583|-74118|121|10
+Sources Chaudes||18484|-74287|140|6
+#HT|Nord-Ouest
+Saint-Louis du Nord||19934|-72721|10|12
+#HU|Baranya
+Szigetvár|Szigetvar|46049|17806|113|11
+Siklós|Siklos|45855|18298|104|10
+Szentlőrinc|Szentlorinc|46040|17987|119|7
+#HU|Bekes County
+Sarkad||46750|21383|86|11
+Szeghalom||47033|21167|83|10
+#HU|Borsod-Abaúj-Zemplén
+Sárospatak|Sarospatak|48325|21574|106|12
+Sajószentpéter|Sajoszentpeter|48217|20717|125|12
+Szerencs||48160|21210|97|10
+Szikszó|Szikszo|48200|20933|115|6
+#HU|Budapest
+Soroksár|Soroksar|47405|19124|106|14
+Szemeretelep||47439|19213|122|7
+Szent Imre-kertváros|Szent Imre-kertvaros|47430|19207|131|7
+Soroksár-Ujtelep|Soroksar-Ujtelep|47416|19132|106|6
+#HU|Bács-Kiskun
+Soltvadkert||46579|19394|111|8
+Solt||46801|19001|98|7
+Szabadszállás|Szabadszallas|46876|19223|97|7
+#HU|Csongrád
+Sándorfalva|Sandorfalva|46361|20099|83|8
+#HU|Fejér
+Sárbogárd|Sarbogard|46887|18620|107|13
+#HU|Nógrád
+Szécsény|Szecseny|48081|19520|172|6
+#HU|Pest County
+Szigethalom||47322|19003|99|13
+Solymár|Solymar|47592|18932|193|9
+Sülysáp|Suelysap|47452|19534|142|8
+#HU|Vas County
+Szentgotthárd|Szentgotthard|46953|16274|229|9
+#HU|Veszprém
+Sümeg|Sumeg|46977|17282|185|7
+#ID|Aceh
+Sinabang||2480|96380|6|15
+#ID|Bali
+Sanur||-8675|115261|10|15
+Sukasada||-8139|115103|110|8
+#ID|Maluku
+Saumlaki||-7986|131297|29|13
+#ID|Papua
+Sarmi||-1853|138751|7|14
+Serui||-1880|136243|10|14
+#IE|Leinster
+Shankill||53226|-6124|33|14
+Skerries||53581|-6107||10
+Sandymount||53328|-6222|5|9
+Sallynoggin||53279|-6141|42|7
+Sutton||53389|-6111|5|6
+Sallins||53249|-6666|77|5
+#IE|Munster
+Shannon||52704|-8864|2|10
+#IL|Northern District
+Sha‘ab|Sha`ab|32890|35239|135|7
+Shlomi||33072|35145|82|7
+Shibli–Umm al-Ghanam|Shibli-Umm al-Ghanam|32691|35401|96|6
+#IL|Southern District
+Segev Shalom||31199|34840|315|10
+#IM|Santon
+Santon||54117|-4583|71|0
+#IN|Andhra Pradesh
+Sanivārapupeta|Sanivarapupeta|16730|81078|25|8
+Seethanagaram||17177|81693|29|8
+S. Rayavaram||17455|82806|17|7
+Satrampādu|Satrampadu|16706|81074|17|6
+Survepalle Bit ? II||14269|79962|12|5
+#IN|Arunachal Pradesh
+Shi Yomi||28530|94373|1384|13
+#IN|Assam
+Soalkuchi||26168|91571|55|14
+Sapatgrām|Sapatgram|26337|90124|43|12
+Salpara Molandubi Pt.-I||26028|90673|44|12
+Sarupathar||26193|93864|109|10
+Sarupathar||26206|96810|223|10
+Sarupathar Bengali||27341|95314|112|9
+Simaluguri||26919|94757|100|8
+Sarbhog||26489|90884|50|8
+Sorbhog||26486|90886|54|8
+Sarthebari||26363|91223|46|7
+Sarpara||26095|91518|55|7
+Silchar Part-X||24817|92814|20|6
+#IN|Bihar
+Sabaur||25243|87045|43|13
+Shitāb Diāra|Shitab Diara|25756|84613|62|12
+Sānrha|Sanrha|25798|84750|58|11
+Shekhpura||26144|85391|45|10
+Saraiya||24801|84082|122|8
+Satghara||26398|86168|65|8
+Sarimpur||25588|83993|55|8
+Saidpura||25577|85045|54|7
+Singhesar Asthan||25982|86795|53|5
+#IN|Chhattisgarh
+Sārangarh|Sarangarh|21586|83079|235|15
+Sukma||18327|81626|183|14
+Sakrī|Sakri|22105|82082|288|13
+Siltara||21381|81664|275|11
+Seorīnārāyan|Seorinarayan|21721|82593|228|10
+Sitapur||22781|83495|576|9
+Sargaon||21901|81977|255|7
+Sāragaon|Saragaon|21987|82756|254|7
+Saria||21640|83363|213|7
+Shivnandanpur||23190|82953|534|7
+Sāja|Saja|21667|81317|302|5
+#IN|Dadra and Nagar Haveli and Daman and Diu
+Samarvarni||20256|73008|32|13
+#IN|Delhi
+Saidabad||28528|77290|207|10
+#IN|Goa
+Sanquelim||15564|74008|17|14
+Serula||15548|73843|43|13
+Solim||15615|73767|11|11
+São José de Areal|Sao Jose de Areal|15255|74015|19|10
+Sanguem||15229|74151|26|6
+Salvador do Mundo||15530|73836|63|6
+Saligao||15554|73790|6|6
+Sanvordem||15263|74120|20|5
+#IN|Gujarat
+Saij||23218|72522|66|14
+Savgadh||23616|72950|128|14
+Shaktinagar||22200|69659|63|13
+Sukhpar||23216|69609|132|13
+Shāhpur|Shahpur|22156|70771|182|13
+Singarva||23023|72697|52|13
+Sankheda||22170|73578|68|12
+Sidsar||21719|72111|38|12
+Sinor||21911|73340|37|11
+Sanjeli||23058|73970|218|7
+Sathamba||23171|73328|143|7
+Selamba||21518|73822|129|7
+Shivrājpur|Shivrajpur|22423|73609|106|7
+Saktasanala||22787|70803|63|6
+Sherpura||21714|72972|12|6
+Salvav||20409|72922|26|5
+Sanjali||21548|72990|13|5
+#IN|Haryana
+Sādhaura|Sadhaura|30385|77222|310|15
+Sātraud Kalān|Satraud Kalan|29103|75815|215|12
+Satrod Khas||29131|75792|210|11
+Sikandarpur||29415|76934|239|9
+Sāha|Saha|30312|76977|285|8
+Sunāri Kalān|Sunari Kalan|28861|76569|223|8
+Salamba||28115|77046|200|6
+Sātraud Khurd|Satraud Khurd|29131|75788|218|6
+#IN|Himachal Pradesh
+Santokhgarh||31352|76318|348|9
+Shamshi||31866|77147|1231|9
+Sabāthu|Sabathu|30975|76991|1235|7
+#IN|Jammu and Kashmir
+Safāpūr|Safapur|34261|74664|1590|10
+Sogām|Sogam|34501|74382|1727|10
+Seer Hamdan||33789|75243|1720|8
+Shangus||33697|75284|1735|8
+Sunderbani||33048|74488|579|7
+Surankōt|Surankot|33627|74275|1465|7
+#IN|Jharkhand
+Sudnā|Sudna|24053|84072|232|15
+Saraikela||22700|85931|181|14
+Shāhpur|Shahpur|24031|84054|227|14
+Satgawan||24548|84282|157|12
+Sewāi|Sewai|23618|85678|347|8
+Sirsia||24212|86313|305|7
+Sahnidih||23782|86251|206|7
+Seota||23668|85521|364|7
+Sini||22793|85945|193|6
+Sānri|Sanri|23683|85506|381|6
+Sangrāmpur|Sangrampur|24674|87847|32|6
+Sialgudri||23761|86352|175|5
+Sinduria||24390|83604|205|5
+#IN|Karnataka
+Siddāpur|Siddapur|14343|74894|592|15
+Sāmbre|Sambre|15870|74611|745|13
+Sarjāpur|Sarjapur|12860|77787|881|12
+Sargūr|Sargur|12000|76396|693|11
+Sorab||14381|75092|590|11
+Srirampura||12255|76622|723|11
+Sūlibele|Sulibele|13184|77801|881|10
+Sulebhāvi|Sulebhavi|15896|74655|748|9
+Somvārpet|Somvarpet|12597|75850|1133|7
+Sānūru|Sanuru|13175|74992|81|7
+Srāvana Belgola|Sravana Belgola|12857|76489|878|6
+Sajipanadu||12854|74996|38|6
+Saidāpur|Saidapur|16564|77265|375|5
+#IN|Kerala
+Shiravāgilu|Shiravagilu|12549|74988|27|8
+Shiriya||12633|74931|30|5
+#IN|Madhya Pradesh
+Suhāgi|Suhagi|23221|79957|391|15
+Soyatkalan||24189|76178|339|15
+Satlapur||23113|77527|456|15
+Satwās|Satwas|22536|76685|306|14
+Sītāmau|Sitamau|24015|75353|484|14
+Simaria||24795|81152|298|14
+Shāhpura|Shahpura|23137|79664|379|14
+Suwāsra|Suwasra|24070|75652|459|13
+Shāhpur|Shahpur|23894|79051|418|13
+Sailāna|Sailana|23462|74923|547|12
+Sirmaur||24836|81364|313|12
+Shamsābād|Shamsabad|23815|77496|456|11
+Suthālia|Suthalia|23996|77140|433|11
+Satai||24722|79631|324|11
+Sultānpur|Sultanpur|23138|77934|368|10
+Singoli||24967|75300|370|10
+Shāhpur|Shahpur|23024|81004|736|9
+Sohāgi|Sohagi|24982|81696|116|9
+Sānchi|Sanchi|23486|77738|427|8
+Sirgora||22206|78883|717|7
+Sardārpur|Sardarpur|22666|74977|504|7
+Swroop Nagar||23827|77942|411|7
+Sāter|Sater|22570|75779|574|7
+Sangvi||21808|75613|256|5
+Sihāsa|Sihasa|22703|75779|554|5
+#IN|Maharashtra
+Shelar||19322|73068|16|15
+Sakharkherda||20206|76398|584|15
+Sākoli|Sakoli|21087|79991|252|15
+Shivaji Nagar||20126|79034|193|14
+Sivni||20688|77049|305|14
+Sindi||20805|78888|249|14
+Sanaswadi||18664|74109|569|14
+Shirwal||18151|73978|594|13
+Sonegaon||20629|78692|254|13
+Shāhāpur|Shahapur|19452|73326|59|12
+Shivatkar||18102|74214|556|11
+Sangmeshwār|Sangmeshwar|20550|74528|430|11
+Saravli||19777|72753|10|10
+Sonegaon||21137|78997|345|9
+Sāori|Saori|21112|79546|262|9
+Sultanpur||20087|76519|524|9
+Shirud||20735|74892|307|8
+Sironchā|Sironcha|18848|79964|125|7
+Silewāra|Silewara|21291|79124|290|7
+Surgāna|Surgana|20560|73637|526|7
+Sangramnagar||17892|75006|491|6
+Sivar||20692|77051|307|6
+Shirgaon||19696|72715|15|6
+Sansari||19906|73840|540|6
+Samangaon||19968|73876|547|5
+#IN|Manipur
+Sikhong Sekmai||24638|94093|802|7
+Shuganu||24295|93874|774|5
+Sengmai||24946|93881|823|5
+#IN|Mizoram
+Saitual||23683|92967|969|12
+Sāitlaw|Saitlaw|23972|92575|799|11
+Sairang||23810|92652|111|6
+#IN|Odisha
+Sayadpur||20728|86401|12|9
+Sorala||19131|84751|10|8
+Suvani||19133|84715|20|8
+Sohela||21302|83398|224|7
+Sheragada||19513|84604|60|7
+Saranga||20926|85264|71|6
+Sunākhala|Sunakhala|20167|85332|78|6
+Subulia||20896|84169|103|5
+#IN|Punjab
+Shāhkot|Shahkot|31082|75337|227|14
+Sufipind||31277|75639|226|9
+Sohāna|Sohana|30689|76707|316|9
+Satiāwāla|Satiawala|30927|74646|192|9
+Srīgobindpur|Srigobindpur|31689|75478|255|8
+Sarai Khas||31409|75511|229|7
+Sarna||32263|75583|301|6
+Shankar||31148|75532|233|6
+Samrai||31179|75632|238|5
+#IN|Rajasthan
+Siāt|Siat|25888|73738|293|12
+Sāwa|Sawa|24759|74580|442|12
+Singhāna|Singhana|28100|75839|357|11
+Shāhjahānpur|Shahjahanpur|27997|76449|287|10
+Sāntpur|Santpur|24471|72770|255|9
+Semarwāra|Semarwara|23567|73743|222|7
+Sapotra||26293|76752|264|7
+#IN|Sikkim
+Singtam||27235|88502|477|6
+#IN|Tamil Nadu
+Sayalgudi||9169|78447|12|15
+Somāmpālaiyam|Somampalaiyam|11048|76897|464|15
+Samsikāpuram|Samsikapuram|9416|77592|144|15
+Sendārappatti|Sendarappatti|11437|78521|289|14
+Sivandipuram||8707|77400|84|14
+Sathankulam||8442|77913|25|14
+Srīmushnam|Srimushnam|11401|79404|33|14
+Singapperumālkovil|Singapperumalkovil|12759|80008|53|14
+Suchindram||8154|77467|15|13
+South Kannanur||10919|78740|74|13
+Sawyerpuram||8682|78027|17|13
+Sembedu||13130|79563|113|13
+Sirāppalli|Sirappalli|11454|78245|248|12
+Sevugampatti||10199|77805|278|12
+Sēvūr|Sevur|12955|78853|287|11
+Sakkimangalam||9881|78192|126|11
+Sirugamani||10895|78530|84|11
+Srīrāmpuram|Srirampuram|10435|77808|317|11
+Sūrappattu|Surappattu|13143|80192|15|10
+Sankaramanallur||10481|77362|351|10
+Sikkarayapuram||13018|80103|21|10
+Shōlūr|Sholur|11485|76656|1879|10
+Samayanallūr|Samayanallur|9979|78036|158|9
+Senur||12947|79107|218|9
+Sethiyathope||11437|79543|19|9
+Sundarapāndiyam|Sundarapandiyam|9613|77674|147|9
+Semmipālaiyam|Semmipalaiyam|11009|77236|388|8
+Sirukkāveripākkam|Sirukkaveripakkam|12853|79677|91|8
+Sedaikavundanūr|Sedaikavundanur|11640|78181|302|8
+Settithāngal|Settithangal|12957|79337|182|8
+Sembianallur||11177|77241|319|8
+Swāmimalai|Swamimalai|10957|79329|36|7
+Sankarnagar||8797|77734|77|7
+Selattānpatti|Selattanpatti|11663|78095|276|7
+Silaimān|Silaiman|9873|78191|122|6
+Sirukalathur||12982|80055|33|6
+Sarkār Periyapālaiyam|Sarkar Periyapalaiyam|11131|77404|284|6
+Sattiyavijayanagaram||12676|79318|138|6
+Samattūr|Samattur|10603|77014|276|6
+Samayapuram||10924|78743|76|6
+#IN|Telangana
+Sirpur||19480|79576|174|10
+Soanpeta||18970|78356|317|7
+Sivunipalli||17844|79382|332|6
+Shankrampet||18049|77914|453|6
+#IN|Tripura
+Santirbazar||23312|91561|28|12
+Sonāmura|Sonamura|23475|91266|23|11
+Sabroom||23002|91724|26|7
+#IN|Uttar Pradesh
+Sidhpura||27633|78869|169|15
+Saidpur||28611|77909|215|14
+Salon||26029|81454|119|14
+Shankargarh||25182|81618|136|14
+Shergarh||28651|79368|184|14
+Sirāthu|Sirathu|25643|81319|112|14
+Sāsni|Sasni|27703|78083|185|13
+Sirsā|Sirsa|25263|82092|96|13
+Sikandra||26367|79630|141|12
+Saurikh||27031|79488|150|12
+Sādāt|Sadat|25671|83303|80|11
+Satrikh||26860|81196|119|11
+Sarai Ekdil||26744|79094|153|11
+Sarīla|Sarila|25776|79675|148|8
+Sakīt|Sakit|27435|78779|173|8
+Sikhera||28862|77571|221|5
+#IN|Uttarakhand
+Sultānpur|Sultanpur|29755|78110|244|9
+#IN|West Bengal
+Solap||22128|88159|6|14
+Sāhāpur|Sahapur|22524|88167|9|8
+#IQ|Diyala
+Sarājīq|Sarajiq|34024|44742|68|10
+#IR|Bushehr
+Sa‘dābād|Sa'dabad|29385|51115|43|8
+Shabānkāreh|Shabankareh|29472|50995|36|8
+#IR|Chaharmahal and Bakhtiari
+Sāmān|Saman|32450|50911|1953|14
+Sūreshjān|Sureshjan|32316|50677|2097|12
+Shalamzār|Shalamzar|32047|50816|2029|7
+Sūd Jān|Sud Jan|32522|50399|2292|6
+Sefīd Dasht|Sefid Dasht|32132|51182|2138|5
+#IR|East Azerbaijan
+Şūfīān|Sufian|38278|45981|1386|10
+Shendābād|Shendabad|38144|45630|1308|8
+Sīs|Sis|38200|45813|1435|6
+Shādbād-e Mashāyekh|Shadbad-e Mashayekh|37989|46359|1705|6
+Sara'eyn||38150|48071|1671|5
+#IR|Fars
+Şoghād|Soghad|31193|52518|2124|13
+Shāpūr Jān|Shapur Jan|29532|52467|1488|10
+Shahr-e Pīr|Shahr-e Pir|28310|54335|1088|9
+Solţānābād|Soltanabad|29529|52544|1535|9
+Seyyedān|Seyyedan|30004|53006|1659|9
+#IR|Gilan Province
+Sangar||37179|49694|28|13
+Shaft||37170|49400|45|8
+Shalmān|Shalman|37155|50215|-14|5
+#IR|Golestan
+Sarkhonkalāteh|Sarkhonkalateh|36891|54569|68|8
+#IR|Hamadan Province
+Şāleḩābād|Salehabad|34924|48343|1777|8
+#IR|Hormozgan
+Sūzā|Suza|26781|56063|8|6
+#IR|Ilam Province
+Sarābleh|Sarableh|33768|46566|1027|12
+#IR|Isfahan
+Shāhpūrābād|Shahpurabad|32843|51743|1569|6
+Sefidshahr||34127|51352|867|6
+Sīn|Sin|32853|51656|1581|5
+Sagzī|Sagzi|32691|52124|1533|5
+#IR|Kerman
+Shahrak-e Pābedānā|Shahrak-e Pabedana|31134|56398|2117|7
+Shahdād|Shahdad|30417|57707|448|5
+#IR|Khuzestan
+Sharāfat|Sharafat|32088|48768|86|12
+Shahr-e Emām|Shahr-e Emam|32228|48426|78|11
+Shamsābād|Shamsabad|32298|48429|96|11
+Şafīābād|Safiabad|32263|48419|86|10
+Ṣāleḥ Shahr|Saleh Shahr|32213|48672|86|7
+Sardasht||30328|50219|169|7
+Shahrak-e Salmān Fārsī|Shahrak-e Salman Farsi|32202|48281|87|6
+Shahrak-e Madanī|Shahrak-e Madani|30547|49259|7|6
+Sardārān|Sardaran|32021|48791|46|5
+#IR|Kohgiluyeh and Boyer-Ahmad
+Sarāb-e Tāveh|Sarab-e Taveh|30598|51577|1822|11
+Sīsakht|Sisakht|30864|51456|2267|8
+Sarūk|Saruk|30615|51615|1841|5
+#IR|Kurdistan Province
+Sarvābād|Sarvabad|35313|46367|1130|5
+#IR|Markazi
+Senjān|Senjan|34053|49621|1859|12
+Shahbāz|Shahbaz|33879|49532|1958|8
+#IR|Māzandarān
+Shīrūd|Shirud|36850|50803|-18|11
+Salmānshahr|Salmanshahr|36703|51196|-12|10
+Sūrak|Surak|36595|53208|38|9
+Shālāsh|Shalash|36908|53926|-29|7
+Sorkhrūd-e Gharbī|Sorkhrud-e Gharbi|36679|52452|-22|7
+#IR|Qazvin Province
+Saggez Ābād|Saggez Abad|35773|49937|1297|5
+#IR|Razavi Khorasan
+Sangān|Sangan|34399|60258|867|12
+Salāmī|Salami|34744|59976|1062|8
+#IR|Semnan
+Sorkheh||35463|53214|1139|10
+#IR|South Khorasan Province
+Sarāyān|Sarayan|33860|58522|1449|14
+Sarbīsheh|Sarbisheh|32576|59798|1824|9
+#IR|Tehran
+Shahrak-e Ja‘farīyeh|Shahrak-e Ja'fariyeh|35663|50997|1161|9
+Sharīfābād|Sharifabad|35427|51785|1056|9
+Shahrak-e Goldasteh||35604|51271|1094|8
+Sa‘īdābād|Sa'idabad|35734|51701|1475|7
+Shahrak-e Shāţarreh|Shahrak-e Shatarreh|35588|51287|1082|7
+Sefīdār|Sefidar|35472|51111|1009|7
+Shahrak-e Qamşar|Shahrak-e Qamsar|35509|51402|1006|6
+Shahrak-e Emām Ḩasan|Shahrak-e Emam Hasan|35488|51346|991|5
+Sūleqān|Suleqan|35822|51265|1667|5
+#IR|Zanjan
+Solţānīyeh|Soltaniyeh|36433|48795|1775|8
+Sojās|Sojas|36239|48549|1771|7
+#IS|Northwest
+Sauðárkrókur|Saudarkrokur|65746|-19639|1|3
+#IS|South
+Selfoss||63933|-20997|16|9
+#IT|Abruzzo
+Silvi||42550|14118|2|13
+Sambuceto||42422|14187|15|10
+Sant'Egidio alla Vibrata||42817|13722|237|8
+San Nicolò a Tordino|San Nicolo a Tordino|42696|13797|138|5
+#IT|Apulia
+San Giorgio Ionico||40458|17380|75|15
+Squinzano||40435|18041|48|14
+Statte||40529|17201|150|14
+San Ferdinando di Puglia||41303|16070|68|14
+San Pietro Vernotico||40489|17998|36|14
+San Marco in Lamis||41712|15638|550|13
+Surbo||40394|18135|52|11
+San Pancrazio Salentino||40418|17834|62|10
+Sannicandro di Bari||41000|16797|183|9
+San Marzano di San Giuseppe||40455|17504|134|9
+Salice Salentino||40385|17961|48|8
+San Cesario di Lecce||40302|18161|42|7
+San Donaci||40449|17923|42|7
+Spinazzola||40964|16091|435|7
+Sammichele di Bari||40887|16949|280|7
+Scorrano||40090|18300|95|6
+San Michele Salentino||40632|17633|153|6
+San Paolo di Civitate||41739|15261|187|6
+Stornara||41287|15770|107|5
+Soleto||40188|18206|89|5
+#IT|Basilicate
+Senise||40146|16289|335|6
+#IT|Calabria
+Scalea||39806|15796|25|9
+Soverato Marina||38685|16550|8|7
+Spezzano Albanese||39669|16309|320|7
+Serra San Bruno||38575|16326|790|6
+#IT|Campania
+Sorrento||40627|14378|50|15
+Santa Maria A Vico||41026|14465|75|14
+San Cipriano d'Aversa||40999|14132|20|13
+Saviano||40905|14505|35|13
+San Marcellino||40990|14176|36|13
+Sant'Arpino||40957|14251|43|12
+Solofra||40833|14837|400|12
+San Prisco||41086|14277|48|12
+Sala Consilina||40401|15591|614|12
+Sant'Agata de'Goti||41089|14497|165|12
+Santa Maria La Carità|Santa Maria La Carita|40716|14510|30|11
+San Gennaro Vesuviano||40862|14524|56|11
+Siano||40802|14693|126|10
+San Marzano sul Sarno||40778|14580|20|9
+San Valentino Torio||40791|14603|22|9
+San Sebastiano al Vesuvio||40843|14364|175|9
+San Giorgio del Sannio||41068|14853|380|9
+Succivo||40968|14256|35|8
+Sant'Agnello||40629|14400|67|8
+Striano||40815|14575|22|8
+Sant'Egidio del Monte Albino||40739|14595|60|8
+Sparanise||41188|14096|65|7
+Serino||40855|14872|414|7
+Sapri||40075|15632|5|7
+San Marco Evangelista||41037|14340|45|6
+Sala||40855|14873|412|6
+San Vitaliano||40924|14475|30|6
+Sessa Aurunca||41240|13930|203|5
+San Giuseppe||40845|14252|35|5
+#IT|Emilia-Romagna
+Savignano sul Rubicone||44090|12399|32|15
+Santarcangelo||44063|12447|42|11
+Spilamberto||44533|11017|69|9
+San Nicolò a Trebbia|San Nicolo a Trebbia|45057|9605|61|8
+San Mauro Pascoli||44109|12420|21|8
+Soliera||44734|10922|28|8
+Sant'Ilario d'Enza||44759|10447|59|8
+San Pietro in Casale||44701|11405|17|8
+San Felice sul Panaro||44837|11138|19|7
+Sorbolo||44846|10444|34|7
+Sasso Marconi||44401|11252|128|6
+San Martino in Rio||44734|10785|36|6
+San Giorgio di Piano||44647|11374|21|6
+Sant'Agata Bolognese||44660|11133|21|6
+San Giovanni in Marignano||43940|12712|29|5
+#IT|Friuli Venezia Giulia
+San Vito al Tagliamento||45917|12859|30|13
+Spilimbergo||46113|12892|132|12
+Staranzano||45802|13502|7|7
+San Daniele del Friuli||46157|13007|252|7
+San Giorgio di Nogaro||45827|13211|7|6
+#IT|Lazio
+Santa Marinella||42034|11854|7|14
+San Cesareo||41821|12804|312|11
+Santa Lucia||41982|12656|35|7
+Selcetta||41765|12475|66|7
+Segni||41689|13019|668|7
+San Felice Circeo||41237|13094|98|6
+Subiaco||41926|13089|408|6
+Soriano nel Cimino||42418|12234|480|6
+#IT|Liguria
+Santa Margherita Ligure||44335|9212|13|8
+Santo Stefano di Magra||44149|9922|50|8
+Serra Riccò|Serra Ricco|44511|8938|145|8
+#IT|Lombardy
+Settimo Milanese||45478|9056|134|15
+Somma Lombardo||45682|8708|282|15
+Samarate||45624|8785|221|14
+Sant'Antonio||45196|10794|29|14
+Solaro||44880|9173|441|13
+Sarezzo||45661|10197|273|13
+San Siro||45478|9126|144|13
+Stezzano||45650|9652|211|12
+Solaro||45614|9083|211|12
+Sant'Angelo Lodigiano||45235|9407|73|12
+Sedriano||45491|8972|145|11
+Stradella||45074|9302|101|11
+Salò|Salo|45607|10521|75|11
+Soresina||45288|9859|70|9
+Sorisole||45731|9637|415|9
+Sesto Calende||45726|8634|198|8
+San Vittore Olona||45586|8941|197|8
+Sovico||45646|9263|221|8
+San Colombano al Lambro||45183|9490|80|7
+Sirmione||45497|10605|66|7
+San Giorgio Su Legnano||45574|8914|199|7
+Spino d'Adda||45401|9487|84|7
+Scanzorosciate||45711|9735|276|6
+Sarnico||45671|9962|197|6
+Sumirago||45737|8784|392|6
+Spirano||45581|9669|154|6
+Soncino||45400|9868|86|5
+Solbiate Olona||45650|8882|245|5
+San Benedetto Po||45046|10934|19|5
+Siziano||45316|9204|93|5
+Sannazzaro de' Burgondi||45102|8906|88|5
+#IT|Piedmont
+Santena||44946|7773|237|10
+San Maurizio||45217|7631|317|9
+Santhià|Santhia|45368|8170|183|8
+Spinetta Marengo||44886|8678|96|6
+Sommariva del Bosco||44773|7782|298|6
+Serravalle Scrivia||44723|8856|225|6
+Susa||45137|7058|503|6
+San Benigno Canavese||45226|7784|213|5
+#IT|Sardinia
+Sorso||40799|8576|136|11
+Sant'Antioco||39070|8452|7|11
+San Gavino Monreale||39550|8791|54|9
+Serramanna||39423|8922|30|9
+Siniscola||40573|9697|19|8
+Sanluri||39562|8900|135|8
+San Sperate||39358|9008|41|7
+Sennori||40788|8593|277|7
+Settimo San Pietro||39291|9186|70|6
+Samassi||39482|8905|56|5
+#IT|Sicily
+San Leone Mosè|San Leone Mose|37265|13584|10|13
+Sant'Agata di Militello||38068|14636|30|10
+Sant'Agata Li Battiati||37557|15080|314|10
+Santa Flavia||38104|13533|45|9
+Sortino||37159|15030|438|9
+San Giuseppe Jato||37973|13189|467|8
+Santa Teresa di Riva||37946|15367|6|8
+Sferracavallo||38200|13283|19|8
+Salemi||37822|12805|446|8
+San Giovanni Gemini||37628|13644|670|8
+Santa Croce Camerina||36828|14525|105|8
+Solarino||37101|15120|165|7
+Sommatino||37335|13997|359|7
+San Pietro Clarenza||37569|15023|463|7
+Santa Maria di Licodia||37617|14893|442|7
+Santa Margherita di Belice||37693|13016|400|7
+Sambuca di Sicilia||37653|13115|350|6
+Serradifalco||37454|13880|504|6
+Santa Caterina Villarmosa||37590|14036|606|6
+San Cipirello||37961|13177|394|5
+San Gregorio di Catania||37568|15111|321|5
+#IT|The Marches
+San Severino Marche||43230|13180|235|9
+Sant'Elpidio a Mare||43230|13688|251|5
+#IT|Trentino-Alto Adige
+San Michele||46455|11262|416|6
+#IT|Tuscany
+Signa||43794|11104|96|13
+Sansepolcro||43573|12139|330|12
+Santa Croce sull'Arno||43717|10772|18|12
+Spicchio-Sovigliana||43730|10939|32|8
+Sinalunga||43215|11745|364|7
+Santa Maria a Monte||43708|10692|56|6
+San Casciano in Val di Pesa||43660|11185|310|6
+San Vincenzo||43091|10542|5|6
+Seano||43830|11021|45|6
+San Donnino||43795|11147|37|6
+Scarperia||43994|11354|287|5
+#IT|Umbria
+Santa Maria degli Angeli||43057|12575|218|8
+#IT|Veneto
+San Martino Buon Albergo||45421|11096|45|12
+San Martino di Lupari||45651|11860|40|11
+Sant'Ambrogio di Valpolicella||45521|10836|158|10
+Spresiano||45779|12256|56|10
+San Zeno-San Giuseppe||45757|11762|117|9
+San Vendemiano||45887|12352|44|9
+Scorzè|Scorze|45574|12112|16|9
+Santa Lucia di Piave||45862|12294|55|9
+Santa Maria Maddalena||44902|11607|5|8
+Selvazzano Dentro||45388|11792|18|8
+Sarmeola||45424|11817|16|8
+Salzano||45522|12102|10|7
+Sommacampagna||45405|10844|121|7
+San Stino di Livenza||45726|12690|6|7
+San Giorgio delle Pertiche||45541|11894|22|7
+Solesino||45179|11746|10|7
+San Zenone degli Ezzelini||45780|11837|116|7
+Sandrigo||45661|11589|64|6
+Stra||45411|12014|9|6
+Sant'Angelo di Piove di Sacco||45317|12009|8|6
+San Pietro in Cariano||45518|10886|151|6
+Silea||45654|12297|7|6
+San Vendemiano-Fossamerlo||45892|12330|51|6
+Setteville||45921|11931|194|6
+Salgareda||45705|12488|9|6
+Sedico||46106|12093|317|5
+Santorso||45734|11388|240|5
+Soave||45420|11246|40|5
+#JE|
+St Lawrence||49216|-2141|83|6
+#JM|Saint Andrew Parish
+Stony Hill||18077|-76790|429|9
+#JM|Saint Ann Parish
+Saint Ann’s Bay|Saint Ann's Bay|18436|-77201|14|14
+#JM|St. Elizabeth
+Santa Cruz||18053|-77698|13|8
+#JO|Ajloun
+Şakhrah|Sakhrah|32371|35843|1083|11
+#JO|Irbid
+Şammā|Samma|32571|35690|320|9
+Sāl|Sal|32569|35912|571|7
+Saḩam al Kaffārāt|Saham al Kaffarat|32698|35774|402|6
+#JO|Jerash
+Sūf|Suf|32314|35837|965|13
+Sakib||32284|35809|1200|12
+#JO|Mafraq
+Şabḩā|Sabha|32327|36502|834|5
+#JP|Aichi
+Sakae||35170|136908|12|11
+#JP|Aomori
+Shichinohe||40691|141155|39|15
+Shibayama||40612|141335|28|10
+Sannohe||40373|141257|97|9
+Sarugamori||41291|141396|28|6
+#JP|Chiba
+Sukayama||35833|140667|0|13
+Shinmachi||35187|140358|8|8
+Shibayama||35683|140433|42|7
+#JP|Fukui
+Sugahama||35656|135973|0|9
+#JP|Fukuoka
+Shiida||33653|131058|6|12
+Soeda||33572|130854|73|10
+#JP|Fukushima
+Shimomatsumoto||37253|140242|295|5
+#JP|Gifu
+Sakahogi||35427|136985|96|8
+Sekigahara||35367|136467|136|7
+#JP|Gunma
+Saikubo||36522|138540|806|9
+Shimonita||36217|138783|317|7
+#JP|Hiroshima
+Saka||34333|132517|31|13
+Sakaridani||34270|132917|5|7
+#JP|Hokkaido
+Shimizu||43006|142885|157|10
+Shiranuka||42963|144089|21|8
+Setana||42451|139851|7|7
+Shibecha||43278|144563|21|7
+Shintoku||43075|142835|182|6
+Shihoro||43167|143250|204|6
+Shikaoi||43105|142999|204|5
+#JP|Ishikawa
+Suzu||37435|137260|6|13
+#JP|Iwate
+Setamai||39133|141583|151|5
+#JP|Kagoshima
+Seisui||28137|129331|13|9
+Shiromoto||31241|130789|13|7
+#JP|Kanagawa
+Sakai||35353|139210|136|9
+Shinkoyasu||35490|139655|18|8
+Suga-inadazutsumi||35635|139540|30|6
+#JP|Kochi
+Sakawa||33507|133285|80|13
+#JP|Kumamoto
+Samata||32621|130821|112|9
+Sekimachi||33063|130543|81|9
+#JP|Mie
+Shimo-ichigi||33831|136051|16|8
+Saki||34298|136393|197|8
+Sekichō-furumaya|Sekicho-furumaya|34850|136400|73|7
+#JP|Miyagi
+Sakamoto||37917|140900|25|12
+Satohata||38432|141022|12|8
+Shikama||38548|140857|28|7
+#JP|Nagasaki
+Shukugō|Shukugo|33136|129891|37|14
+Sonogishukugō|Sonogishukugo|33037|129920|-1|8
+#JP|Nara
+Shimoichi||34371|135788|180|5
+#JP|Niigata
+Seirō|Seiro|37983|139255|5|14
+Shimoseki||38091|139560|34|5
+#JP|Okayama
+Sakai||34955|133912|287|13
+Satoshō|Satosho|34514|133557|100|11
+Shimogamo||34862|133812|201|11
+#JP|Osaka
+Shin’imazato|Shin'imazato|34662|135548|7|11
+Shojihigashi||34659|135558|7|8
+Shoji||34660|135556|6|5
+#JP|Saga
+Sarushi||33217|130167|-2|10
+#JP|Tokushima
+Shichijō|Shichijo|34119|134406|13|11
+Sadamitsu||34032|134071|168|8
+#JP|Tokyo
+Shimura||35776|139690|26|13
+Senzoku||35722|139792|14|11
+Sendagaya||35678|139708|35|11
+Senju||35749|139803|9|10
+Sekimachi-higashi||35726|139584|56|5
+Sumiyoshi||35689|139815|7|5
+#JP|Wakayama
+Sato||33960|135119|37|5
+#JP|Yamagata
+Sukekawa||38752|139860|11|8
+#JP|Yamanashi
+Saruhashi||35617|138983|315|6
+#KE|
+Sololo||3564|38643|698|8
+#KE|Homa Bay County
+Sindo||-541|34169|1143|10
+#KE|Kakamega County
+Shianda||319|34574|1391|8
+#KE|Kericho County
+Sondu||-391|35013|1522|7
+#KE|Kirinyaga County
+Sagana||-668|37209|1194|13
+#KE|Kwale County
+Sawa Sawa||-4472|39485|15|13
+#KE|Makueni County
+Sultan Hamud||-2020|37372|1226|9
+#KE|Migori County
+Sori||-841|34160|1151|7
+#KE|Nakuru County
+Subukia||-16|36209|2316|10
+#KG|Batken
+Samarkandyk||39998|70546|1100|8
+#KG|Chuy Region
+Sosnovka||42637|73896|1208|6
+#KG|Jalal-Abad Region
+Sovetskoye||41052|72740|747|13
+#KH|Kampong Speu Province
+Svay Rumpea||11213|104576|51|9
+#KH|Kampot
+Sdach Kong Khang Cheung||10606|104553|10|5
+#KH|Mondolkiri
+Sen Monorom||12456|107188|678|8
+#KH|Siem Reap
+Siem Reab||11400|104864|15|5
+#KM|Anjouan
+Sima||-12196|44277|120|9
+#KN|Saint Anne Sandy Point
+Sandy Point Town||17359|-62849|23|3
+#KN|Saint Paul Capesterre
+Saint Paul’s|Saint Paul's|17406|-62836|59|2
+#KP|North Hamgyong
+Sŏngnae-ri|Songnae-ri|42812|130154|81|13
+Sŭngam-nodongjagu|Sungam-nodongjagu|41670|129669|12|11
+Satan||42482|130143|146|6
+#KP|P'yŏngan-bukto
+Sindo||39806|124233|51|12
+#KP|South Hamgyong
+Sinsang-ni||39650|127407|2|15
+#KP|South Pyongan
+Sangsŏng-ni|Sangsong-ni|39169|126886|263|10
+#KP|Yanggang-do
+Sŭngjibaegam|Sungjibaegam|41243|128799|1466|12
+#KR|Daejeon
+Sintansin||36454|127431|40|15
+Songgangdong||36434|127376|184|10
+#KR|Jeju-do
+Sanji||33517|126533|25|9
+#KY|
+Savannah Acres||19280|-81300|4|9
+Savannah||19281|-81299|7|9
+Saint James||19267|-81289|6|9
+Spotts||19274|-81313|10|8
+#KZ|Abai Region
+Shar||49587|81049|339|9
+#KZ|Aktobe
+Shubarkuduk||49144|56482|191|12
+Shubarshi||48580|57183|183|9
+#KZ|Aqmola
+Shortandy||51699|70991|367|7
+Shantobe||52454|68175|385|6
+#KZ|Karaganda
+Shakhan||49820|72654|478|13
+#KZ|Kyzylorda
+Saksaul’skiy|Saksaul'skiy|47082|61152|77|9
+#KZ|Mangystau
+Shetpe||44139|52153|186|12
+#KZ|North Kazakhstan
+Sergeyevka||53881|67409|149|9
+Smirnovo||54515|69427|135|6
+#KZ|Turkistan
+Sholakkorgan||43765|69179|472|11
+Shayan||43034|69380|381|10
+Sastobe||42553|69998|559|7
+#KZ|West Kazakhstan
+Shyngyrlau||51100|54084|119|6
+#KZ|Zhetysu Region
+Saryozek||44362|77973|932|14
+#LA|Salavan Province
+Salavan||15717|106417|183|6
+#LA|Xiagnabouli
+Sainyabuli||19258|101710|292|14
+#LB|South Governorate
+Sarafand||33449|35299|90|11
+#LC|Soufrière
+Soufrière|Soufriere|13856|-61057|12|3
+#LI|Schaan
+Schaan||47165|9509|453|6
+#LI|Schellenberg
+Schellenberg||47231|9547|631|1
+#LS|Berea
+Sefikeng||-29279|27808|1929|5
+#LS|Maseru District
+Semonkong||-29843|28050|2141|9
+#LT|Klaipėda County
+Silute||55349|21483|8|15
+Skuodas||56271|21532|25|6
+#LT|Vilnius
+Širvintos|Sirvintos|55044|24954|115|7
+Šalčininkai|Salcininkai|54309|25387|176|7
+Švenčionys|Svencionys|55135|26159|200|6
+#LU|Esch-sur-Alzette
+Schifflange||49506|6013|292|8
+Soleuvre||49521|5938|350|6
+#LU|Luxembourg
+Strassen||49621|6073|309|6
+#LU|Remich
+Schengen||49470|6362|172|5
+#LV|Saldus Rajons
+Saldus||56664|22488|92|10
+#LV|Saulkrasti Municipality
+Saulkrasti||57262|24415|13|3
+#LV|Sigulda Municipality
+Sigulda||57154|24860|100|15
+#LV|Smiltene Municipality
+Smiltene||57424|25902|98|5
+#LY|Al Jabal al Akhdar
+Sūsah|Susah|32897|21966|9|7
+#LY|Al Jufrah
+Sūknah|Suknah|29069|15783|300|12
+#LY|Tripoli
+Sīdī aş Şayd|Sidi as Sayd|32335|13479|405|10
+#MA|Beni Mellal-Khenifra
+Sidi Bou Lanouar||32860|-6880|766|14
+Souq Al Had Bradya||32449|-6537|443|9
+Sidi Jaber||32390|-6421|469|5
+#MA|Casablanca-Settat
+Sidi Ali Ben Hamdouche||33287|-8327|36|9
+Sidi Bouzid||33232|-8551|8|7
+Souq at Tlata des Loulad||32995|-7120|723|7
+Sidi Smai’il|Sidi Smai'il|32825|-8511|151|6
+#MA|Marrakesh-Safi
+Sidi Lmokhtar||31577|-9016|386|15
+Sidi Zouine||31669|-8345|350|14
+Sidi Rahhal||31650|-7473|695|11
+Sidi Bou Othmane||31902|-7942|513|10
+Sidi Ahmed||32208|-8491|392|8
+Skhour Rehamna||32482|-7915|473|6
+#MA|Oriental
+Saidia||35082|-2229|4|10
+#MA|Rabat-Salé-Kénitra
+Sidi Yahya Zaer||33830|-6913|146|11
+Souq Khmis Aït Yadine|Souq Khmis Ait Yadine|33972|-6017|318|8
+Sidi Allal Tazi||34523|-6322|12|5
+#MA|Souss-Massa
+Sidi Bibi||30238|-9529|64|7
+Souk El Arba Des Aït Baha|Souk El Arba Des Ait Baha|30070|-9155|555|6
+#MA|Tanger-Tetouan-Al Hoceima
+Sebt Bni Garfett||35258|-5833|154|11
+#MD|Chișinău Municipality
+Sîngera|Singera|46916|28967|50|7
+Stăuceni|Stauceni|47096|28868|188|6
+#MD|Stefan-Voda
+Ştefan Vodă|Stefan Voda|46513|29662|166|8
+#MD|Sîngerei
+Sîngerei|Singerei|47637|28141|105|15
+#MD|Şoldăneşti
+Şoldăneşti|Soldanesti|47816|28798|152|6
+#ME|Opština Šavnik
+Šavnik|Savnik|42957|19096|843|1
+#MG|Analamanga
+Sambaina||-18900|47783|1459|7
+#MG|Analanjirofo
+Sahatavy||-17450|49000|187|10
+#MG|Diana
+Sadjoavato||-12617|49350|268|8
+#MK|Dojran
+Star Dojran||41187|22719|131|3
+#MK|Sopište
+Sopište|Sopiste|41956|21429|421|9
+#MK|Staro Nagorichane
+Старо Нагоричане|Staro Nagorichane|42198|21829|427|4
+#MK|Sveti Nikole
+Sveti Nikole||41870|21953|297|13
+#MK|Tetovo
+Šipkovica|Sipkovica|42035|20916|1086|8
+#MM|Kayin State
+Shwe Kokko||16821|98531|191|10
+#MM|Yangon
+Seikgyi||16759|96116|8|14
+Sar Bu Taung||17213|96230|7|14
+San Gyi Wa||16935|96137|3|10
+Shwe Pyauk||16661|96313|14|6
+#MN|Selenge Province
+Sharïngol|Sharingol|49237|106430|904|8
+#MP|Tinian
+San Jose Village||14968|145620|15|15
+#MQ|Martinique
+Sainte-Luce||14468|-60921|6|9
+Saint-Esprit||14550|-60933|103|9
+#MR|Gorgol
+Sagné|Sagne|15205|-12790|24|8
+#MS|Saint Peter
+Saint Peters||16773|-62217|67|0
+#MT|Is-Siġġiewi
+Siġġiewi|Siggiewi|35855|14436|126|9
+#MT|Is-Swieqi
+Swieqi||35922|14480|30|14
+#MT|Safi
+Safi||35833|14485|106|2
+#MT|Saint John
+San Ġwann|San Gwann|35906|14476|67|15
+#MT|Saint Julian
+San Ġiljan|San Giljan|35918|14490|19|14
+#MT|Saint Lawrence
+San Lawrenz||36055|14204|131|1
+#MT|Saint Venera
+Santa Venera||35890|14473|54|8
+#MT|Sannat
+Sannat||36025|14243|119|2
+#MT|Senglea
+Senglea||35888|14516|1|3
+#MU|Flacq
+Sebastopol||-20291|57688|217|6
+#MU|Savanne
+Surinam||-20510|57505|28|11
+Souillac||-20517|57517|18|4
+#MX|Baja California
+San Luis||32432|-116954|188|9
+San Luis||28433|-113750|534|8
+#MX|Baja California Sur
+Santa Rosalía|Santa Rosalia|27340|-112267|53|12
+#MX|Campeche
+Seybaplaya||19640|-90686|7|9
+Sabancuy||18971|-91179|1|7
+#MX|Chiapas
+Simojovel de Allende||17140|-92714|679|11
+San Fernando||16871|-93207|880|10
+San Pedro Buenavista||16083|-93117|636|8
+San Francisco Pujiltic||16279|-92453|625|7
+San Juan Cancuc||16893|-92370|1415|6
+Salto de Agua||17554|-92340|14|5
+#MX|Chihuahua
+Saucillo||28030|-105293|1197|11
+San Juanito||27972|-107601|2376|11
+Santa Bárbara|Santa Barbara|26803|-105820|1938|9
+Santa Eulalia||28595|-105888|1690|7
+San Buenaventura||29843|-107461|1564|7
+Santa Cruz de Rosales||28187|-105556|1181|6
+#MX|Coahuila
+San Antonio del Coyote||25697|-103284|1109|9
+#MX|Durango
+Santa María del Oro|Santa Maria del Oro|25949|-105364|1702|6
+#MX|Guanajuato
+San Miguel Octopan||20574|-100748|1767|13
+Santa Ana Pacueco||20347|-102016|1686|10
+San Juan de la Vega||20624|-100761|1777|10
+San Nicolás de los Agustinos|San Nicolas de los Agustinos|20246|-100966|1746|7
+San Diego de la Unión|San Diego de la Union|21468|-100873|2071|7
+Santa Teresa||20960|-101317|1898|7
+Santiago de Cuenda||20599|-100996|1763|7
+San Bartolo de Berrios||21612|-101068|1878|6
+San José Temascatío|San Jose Temascatio|20692|-101260|1745|6
+San Roque||20599|-101341|1729|6
+Sarabia||20523|-101061|1746|5
+San José Agua Azul|San Jose Agua Azul|20486|-100656|1829|5
+#MX|Guerrero
+San Marcos||16796|-99389|86|13
+San José Ixtapa (Barrio Viejo)|San Jose Ixtapa (Barrio Viejo)|17702|-101619|14|9
+San Luis Acatlán|San Luis Acatlan|16809|-98734|292|8
+San Jerónimo de Juárez|San Jeronimo de Juarez|17137|-100469|27|7
+San Jeronimito||17567|-101345|55|7
+San Luis de La Loma||17270|-100894|26|5
+#MX|Hidalgo
+San Marcos||20030|-99336|2048|13
+San Agustín Tlaxiaca|San Agustin Tlaxiaca|20117|-98885|2345|10
+San Miguel Vindho||19990|-99326|2090|8
+San Francisco||19938|-98982|2389|7
+San Felipe Orizatlán|San Felipe Orizatlan|21171|-98608|178|7
+San Juan Tepa||20216|-99066|2018|6
+Santa Ana Hueytlalpan||20171|-98310|2182|6
+#MX|Jalisco
+Santa Cruz del Valle||20533|-103433|1567|15
+San Julián|San Julian|21010|-102180|2068|13
+Santa Cruz de las Flores||20481|-103503|1513|11
+San Ignacio Cerro Gordo||20743|-102537|2078|10
+San Martín Hidalgo|San Martin Hidalgo|20435|-103929|1308|8
+San Patricio||19225|-104704|10|8
+San José el Verde|San Jose el Verde|20555|-103278|1542|8
+San Miguel Cuyutlán|San Miguel Cuyutlan|20417|-103389|1590|8
+San Juan Cosalá|San Juan Cosala|20288|-103341|1536|7
+San Juanito de Escobedo||20798|-104002|1400|5
+San Diego de Alejandría|San Diego de Alejandria|20993|-101993|1970|5
+San Francisco de Asís|San Francisco de Asis|20597|-102564|1966|5
+San Andrés Ixtlán|San Andres Ixtlan|19820|-103470|1575|5
+San Pedro Itzicán|San Pedro Itzican|20317|-102954|1538|5
+San José de Gracia|San Jose de Gracia|20675|-102570|1907|5
+#MX|Mexico City
+San Salvador Cuauhtenco||19193|-99090|2756|14
+San Andrés Mixquic|San Andres Mixquic|19225|-98964|2248|13
+San Francisco Tecoxpa||19192|-99006|2377|11
+Santa Ana Tlacotenco||19176|-98998|2615|11
+Santa Catarina Yecahuizotl||19312|-98965|2241|10
+San Pedro Atocpan||19202|-99050|2455|8
+#MX|Michoacán
+Santa Clara del Cobre||19407|-101640|2232|14
+San Pedro Cahro||20115|-102653|1531|12
+Santiago Tangamandapio||19956|-102435|1673|10
+San José de Gracia|San Jose de Gracia|19990|-103021|2001|10
+Santa Ana Maya||20007|-101021|1868|7
+Santa Clara de Valladares||19639|-102491|1325|7
+#MX|Morelos
+San Pedro Apatlaco||18793|-98960|1291|13
+San Nicolás Galeana|San Nicolas Galeana|18639|-99212|938|11
+#MX|México
+Santa Ana Nextlalpan||19742|-99075|2251|15
+San Pedro Tultepec||19265|-99509|2592|14
+San Gregorio Cuautzingo||19260|-98857|2252|13
+Santiago Tianguistenco de Galeana||19180|-99466|2637|13
+San Sebastián Chimalpa|San Sebastian Chimalpa|19382|-98955|2241|13
+San Martín de las Pirámides|San Martin de las Piramides|19706|-98836|2311|13
+San Antonio la Isla||19164|-99567|2589|13
+Santa María Huexoculco|Santa Maria Huexoculco|19258|-98820|2293|12
+Santiago Cuautlalpan||19432|-98901|2254|12
+San Juan de las Huertas||19248|-99758|2864|12
+San Marcos Huixtoco||19297|-98864|2261|12
+San Bartolo del Llano||19591|-99741|2548|12
+San Pedro de los Baños|San Pedro de los Banos|19669|-99835|2554|12
+San Pedro Los Baños|San Pedro Los Banos|19625|-99822|2527|12
+San Juan y San Pedro Tezompa||19207|-98961|2251|12
+San Pedro Tlaltizapan||19200|-99500|2580|11
+San Pablo Atlazalpan||19217|-98908|2252|11
+San Bartolomé Tlaltelulco|San Bartolome Tlaltelulco|19227|-99630|2688|11
+San Bartolo Cuautlalpan||19815|-99010|2269|11
+Santa Catarina Ayotzingo||19209|-98930|2246|11
+Santa María Zolotepec|Santa Maria Zolotepec|19417|-99493|2636|11
+Santiago Tílapa|Santiago Tilapa|19190|-99421|2777|10
+Santiago Yancuitlalpan||19384|-99305|2631|10
+San Buenaventura||19266|-99673|2716|10
+Santiago Cuautlalpan||19684|-99289|2352|10
+San Felipe Tlalmimilolpan||19239|-99642|2726|10
+Santa María Ajoloapan|Santa Maria Ajoloapan|19977|-99045|2349|9
+San Mateo Xoloc||19707|-99248|2293|9
+San Francisco Chimalpa||19443|-99344|2884|9
+San Pedro Cholula||19264|-99486|2577|9
+San Pedro Chochula||19264|-99486|2577|9
+Santiaguito Tlalcilalcalli||19340|-99727|2703|9
+Santa María Rayón|Santa Maria Rayon|19148|-99580|2595|9
+San Gaspar Tlahuelilpan||19243|-99546|2582|8
+San Juan Tilapa||19220|-99660|2785|8
+San Miguel Totocuitlapilco||19229|-99594|2616|8
+San José las Palmas|San Jose las Palmas|19367|-98934|2379|8
+Santa Cruz Atizapán|Santa Cruz Atizapan|19177|-99489|2594|8
+Santo Domingo de Guzmán|Santo Domingo de Guzman|19593|-99780|2536|8
+San Bartolo||19833|-99193|2307|8
+Santo Tomás Chiconautla|Santo Tomas Chiconautla|19639|-99008|2251|8
+San Lorenzo Tlacotepec||19813|-99912|2544|8
+San Gaspar Tonatico||18807|-99669|1678|8
+Santa Cruz Cuauhtenco||19249|-99729|2803|7
+San Miguel Tlaixpan||19510|-98811|2417|7
+San Pedro Arriba||19486|-99563|2850|7
+San Francisco Tepeolulco||19833|-99988|2553|7
+San Nicolás Tolentino|San Nicolas Tolentino|19359|-99572|2583|7
+San Joaquín Coapango|San Joaquin Coapango|19540|-98827|2297|7
+Santa María Jajalpa|Santa Maria Jajalpa|19112|-99536|2583|7
+San Juan Tehuixtitlán|San Juan Tehuixtitlan|19054|-98767|2446|7
+Santa Cruz del Monte||19767|-99229|2318|7
+Santa Ana Ixtlahuatzingo (Santa Ana)||18971|-99624|2106|7
+San Cristóbal Nexquipayac|San Cristobal Nexquipayac|19580|-98931|2250|7
+Santa Ana Jilotzingo||19456|-99488|2841|7
+Santa María Magdalena Ocotitlán|Santa Maria Magdalena Ocotitlan|19237|-99624|2656|7
+San Jerónimo Amanalco|San Jeronimo Amanalco|19518|-98757|2673|7
+San Bartolo Tlaxihuicalco||19731|-99160|2252|6
+San Bartolomé Atlatlahuca|San Bartolome Atlatlahuca|19070|-99610|2683|6
+San Matías Cuijingo|San Matias Cuijingo|19085|-98853|2514|6
+Santa María Nativitas|Santa Maria Nativitas|19211|-99629|2703|6
+Salitrillo||19829|-99216|2259|6
+Santa María Citendejé|Santa Maria Citendeje|19782|-99929|2575|6
+San Antonio Buenavista||19261|-99712|2771|6
+San Marcos Yachihuacaltepec||19323|-99679|2639|6
+San Nicolás Guadalupe|San Nicolas Guadalupe|19614|-100031|2754|6
+San Sebastián|San Sebastian|19784|-99056|2261|6
+Santiago Acutzilapan||19786|-99766|2757|6
+San Miguel Tenochtitlán|San Miguel Tenochtitlan|19760|-99922|2586|6
+Santa Ana Tlachiahualpa||19769|-98909|2424|6
+San Lorenzo Oyamel||19434|-99578|2605|6
+San Luis Tecuhautitlán|San Luis Tecuhautitlan|19767|-98889|2455|6
+San Bernardino||19477|-98896|2247|6
+Santa Catarina del Monte||19484|-98772|2704|6
+San Pedro Abajo||19481|-99567|2807|6
+San Pedro Zictepec||19037|-99578|2572|6
+San Miguel Totoltepec||19324|-99578|2591|5
+San Andrés Ocotlán|San Andres Ocotlan|19193|-99586|2612|5
+San Miguel Ameyalco||19307|-99459|2587|5
+San Lorenzo Tlalmimilolpan||19667|-98872|2281|5
+San Sebastián Xolalpa|San Sebastian Xolalpa|19677|-98845|2286|5
+San Pablo Tecalco||19673|-98958|2362|5
+San Pedro Tlanixco||19063|-99652|2858|5
+Santa María Magdalena Cahuacán|Santa Maria Magdalena Cahuacan|19638|-99413|2700|5
+San Mateo Atarasquíllo|San Mateo Atarasquillo|19323|-99462|2621|5
+San Mateo Ixtacalco||19699|-99172|2255|5
+San José el Vidrio|San Jose el Vidrio|19653|-99384|2623|5
+Santa Gertrudis||19733|-99367|2448|5
+San Bartolo Oxtotitlán|San Bartolo Oxtotitlan|19619|-99613|2731|5
+San Juan Coajomulco||19753|-99969|2651|5
+Santa Catarina||19637|-98927|2273|5
+San Bartolo||19655|-98902|2263|5
+San Bartolomé Coatepec|San Bartolome Coatepec|19398|-99312|2473|5
+#MX|Nayarit
+San Vicente||20749|-105250|18|14
+San Juan de Abajo||20815|-105193|40|10
+San Blas||21541|-105288|1|10
+#MX|Nuevo León
+Santa Rosa||25823|-100220|440|10
+Salinas Victoria||25964|-100292|447|9
+#MX|Oaxaca
+San Jacinto Amilpas||17102|-96762|1562|14
+San Pedro Pochutla||15746|-96466|156|14
+San Francisco Telixtlahuaca||17296|-96905|1723|11
+Santa Cruz Amilpas||17058|-96683|1544|10
+Santiago Jamiltepec||16281|-97823|460|10
+Santiago Juxtlahuaca||17335|-98011|1693|10
+Santa María Jalapa del Marqués|Santa Maria Jalapa del Marques|16440|-95444|161|9
+San Pablo Huixtepec||16822|-96781|1489|9
+San Pablo Villa de Mitla||16922|-96363|1689|8
+Santa María del Tule|Santa Maria del Tule|17047|-96636|1565|8
+Santa María Xadani|Santa Maria Xadani|16362|-95018|10|8
+San Pedro Tapanatepec||16371|-94193|57|7
+Santa María Huatulco|Santa Maria Huatulco|15833|-96321|230|7
+San Lorenzo Cacaotepec||17128|-96802|1611|7
+Santiago Suchilquitongo||17248|-96874|1674|7
+Santo Domingo Zanatepec||16483|-94348|70|7
+San Agustin de las Juntas||17012|-96712|1536|7
+San Lucas Ojitlán|San Lucas Ojitlan|18058|-96398|158|6
+Santa Catarina Juquila||16238|-97292|1441|6
+San Felipe Jalapa de Díaz|San Felipe Jalapa de Diaz|18071|-96536|148|6
+San Mateo del Mar||16211|-94982|10|6
+San Miguel Panixtlahuaca||16260|-97377|783|6
+San Juan Colorado||16461|-97954|449|6
+San Pablo Huitzo||17277|-96885|1695|6
+San Juan Bautista Valle Nacional||17775|-96304|97|5
+San Dionisio Ocotepec||16797|-96396|1698|5
+Santo Domingo Petapa||16818|-95140|288|5
+San Francisco Ixhuatan||16351|-94484|19|5
+San Antonino Castillo Velasco||16801|-96683|1508|5
+Santos Reyes Nopala||16107|-97144|478|5
+#MX|Puebla
+San Miguel Canoa||19152|-98103|2596|15
+Santa María Xonacatepec|Santa Maria Xonacatepec|19089|-98104|2351|14
+Santa María Zacatepec|Santa Maria Zacatepec|19123|-98365|2223|12
+San Gabriel Chilac||18326|-97347|1232|12
+San Francisco Ocotlán|San Francisco Ocotlan|19134|-98283|2189|12
+San Miguel Xoxtla||19168|-98308|2203|11
+San Matias Tlalancaleca||19325|-98499|2364|11
+San Marcos Tlacoyalco||18674|-97604|1966|10
+San Hipólito|San Hipolito|18941|-97873|2157|9
+San Lucas el Grande||19306|-98478|2315|9
+San Andrés Azumiatla|San Andres Azumiatla|18904|-98253|2142|9
+Santa Rita Tlahuapan||19332|-98577|2599|8
+San Juan Xiutetelco||19796|-97326|1941|8
+San Juan Tepulco||19117|-97988|2581|8
+Santiago Alseseca||18845|-97707|2058|8
+Santiago Acatlán|Santiago Acatlan|18993|-97934|2306|8
+San Lorenzo Chiautzingo||19204|-98467|2372|7
+Santa María Ixtiyucán|Santa Maria Ixtiyucan|19187|-97811|2429|7
+San Andrés Calpan|San Andres Calpan|19104|-98462|2427|7
+San Antonio Mihuacán|San Antonio Mihuacan|19153|-98305|2203|7
+San Sebastián de Aparicio|San Sebastian de Aparicio|19103|-98161|2277|7
+Santa María la Alta|Santa Maria la Alta|18600|-97658|1961|7
+San Jerónimo Coyula|San Jeronimo Coyula|18894|-98517|1954|7
+Soltepec||19121|-97709|2429|7
+San Juan Tuxco||19259|-98452|2298|6
+San Agustín Tlaxco|San Agustin Tlaxco|19056|-97992|2341|6
+San Gabriel Tetzoyocán|San Gabriel Tetzoyocan|18757|-97703|2012|6
+San Nicolás de los Ranchos|San Nicolas de los Ranchos|19071|-98486|2448|6
+Santa Maria Coatepec||19109|-97593|2504|6
+San Martín Caltenco|San Martin Caltenco|18885|-97819|2015|5
+#MX|Querétaro
+San José el Alto|San Jose el Alto|20653|-100382|2036|14
+San Pedro Mártir|San Pedro Martir|20618|-100470|1823|12
+Santa María Magdalena|Santa Maria Magdalena|20598|-100447|1807|9
+Saldarriaga||20628|-100291|1895|6
+San Nicolás|San Nicolas|20478|-99940|1875|6
+#MX|San Luis Potosí
+Santa María del Río|Santa Maria del Rio|21796|-100738|1736|13
+San Ciro de Acosta||21651|-99819|910|7
+San Vicente Tancuayalab||21719|-98588|49|6
+#MX|Sinaloa
+San Blas||26082|-108761|39|6
+San Miguel Zapotitlán|San Miguel Zapotitlan|25948|-109047|19|6
+Sinaloa de Leyva||25822|-108223|69|5
+#MX|Sonora
+Sonoyta||31863|-112850|400|13
+Santa Ana||30541|-111119|694|12
+San Ignacio Río Muerto|San Ignacio Rio Muerto|27416|-110245|16|8
+#MX|Tabasco
+Santa Rosalía|Santa Rosalia|18089|-93358|22|6
+#MX|Tamaulipas
+Soto la Marina||23769|-98205|20|11
+Santander Jiménez|Santander Jimenez|24216|-98484|113|6
+#MX|Tlaxcala
+San Andrés Ahuashuatepec|San Andres Ahuashuatepec|19378|-98107|2459|10
+San Francisco Tetlanohcan||19260|-98164|2434|10
+San Isidro Buen Suceso||19155|-98105|2618|9
+Santa Catarina Ayometla||19198|-98214|2266|8
+Santa Anita Huiloac||19388|-98144|2429|7
+Santa Ana Nopalucan||19298|-98333|2228|7
+San Juan Huactzinco||19233|-98253|2217|7
+San Esteban Tizatlán|San Esteban Tizatlan|19339|-98214|2280|6
+San Luis Apizaquito||19425|-98117|2413|6
+San José Tetel|San Jose Tetel|19433|-98159|2487|6
+San Miguel Contla||19361|-98132|2360|6
+San José Xicohténcatl|San Jose Xicohtencatl|19354|-97831|2455|6
+San José Teacalco|San Jose Teacalco|19336|-98065|2609|5
+San Benito Xaltocan||19406|-98167|2401|5
+Santa María Ixtulco|Santa Maria Ixtulco|19325|-98208|2264|5
+San Damián Texoloc|San Damian Texoloc|19278|-98285|2262|5
+San Lorenzo Axocomanitla||19224|-98249|2212|5
+#MX|Veracruz
+Sayula de Alemán|Sayula de Aleman|17882|-94960|93|14
+Soledad de Doblado||19046|-96421|102|12
+Santiago de la Peña|Santiago de la Pena|20945|-97407|4|9
+San Marcos de León|San Marcos de Leon|19423|-96964|1145|7
+San Rafael||20189|-96867|13|7
+Soconusco||17963|-94881|78|6
+Soteapan||18234|-94873|450|5
+#MX|Yucatán
+Seyé|Seye|20838|-89372|16|8
+Sotuta||20597|-89008|19|6
+#MX|Zacatecas
+San Pedro Piedra Gorda||22450|-102346|2051|8
+San Jose de Lourdes||23276|-103010|2044|5
+Sain Alto||23580|-103248|2050|5
+#MY|Kedah
+Sintok||6442|100524|66|13
+Simpang Empat||6027|100396|8|9
+Sungai Kob||5430|100645|45|6
+#MY|Negeri Sembilan
+Seremban 3||2674|101931|61|8
+#MY|Pahang
+Sungai Koyan||4219|101802|118|13
+#MY|Penang
+Simpang Empat||5282|100478|6|9
+#MY|Perak
+Seri Iskandar||4360|100985|25|15
+Sungai Sumun||3892|100853|5|11
+Serdang||5204|100625|28|7
+Slim River||3833|101400|29|6
+Simpang||4817|100700|7|5
+#MY|Sarawak
+Sebuyau||1517|110933|55|13
+Spaoh||1500|111500|15|11
+Song||2017|112550|63|10
+Sematan||1800|109767|9|7
+Sundar||4890|115208|10|7
+#MY|Selangor
+Sungai Pelek New Village||2650|101700|12|14
+Sekinchan||3507|101104|7|13
+Sabak Bernam||3770|100988|4|9
+#NG|Bauchi
+Sade||11360|10673|414|8
+#NG|Borno State
+Shani||10218|12061|239|14
+Shaffa||10507|12333|649|7
+#NG|Edo State
+Siluko||6536|5160|21|8
+#NG|Jigawa State
+Samamiya||11349|9640|437|8
+#NG|Kebbi
+Shanga||11214|4579|167|7
+#NG|Kwara State
+Suya||9469|3183|435|8
+#NG|Zamfara State
+Sauri||11727|6784|612|13
+Shinkafi||13073|6506|329|9
+#NI|Boaco Department
+San Lorenzo||12378|-85666|340|9
+#NI|Chontales Department
+Santo Tomás|Santo Tomas|12069|-85091|412|15
+Santo Domingo||12264|-85082|509|6
+#NI|Jinotega Department
+San Rafael del Norte||13212|-86111|1081|5
+#NI|Rivas Department
+San Juan del Sur||11253|-85870|9|8
+San Jorge||11456|-85803|54|7
+#NI|Río San Juan Department
+San Carlos||11127|-84778|29|13
+#NI|South Caribbean Coast
+South End||12170|-83041|3|8
+#NL|Flevoland
+Swifterbant||52568|5643|-3|6
+#NL|Friesland
+Stiens||53262|5758|2|7
+Surhuisterveen||53185|6170|0|6
+#NL|Gelderland
+Scherpenzeel||52080|5489|8|9
+#NL|Groningen
+Sappemeer||53164|6790|2|8
+Selwerd||53235|6555|1|7
+#NL|Limburg
+Stein||50969|5767|61|11
+Scharn||50850|5733|58|7
+Sevenum||51413|6038|31|5
+#NL|North Brabant
+Someren||51385|5711|27|11
+Sint Willebrord||51548|4589|9|9
+Schaijk||51746|5632|11|6
+Sleeuwijk||51816|4953|0|6
+#NL|North Holland
+Sint Pancras||52660|4783|4|6
+#NL|South Holland
+Schoonhoven||51948|4849|1|12
+Spangen||51917|4435|7|10
+'s-Gravenland||51923|4553|-1|10
+Strijen||51745|4551|2|9
+Statenkwartier||52093|4276|10|9
+s-Gravendeel||51780|4617|1|9
+Slikkerveer||51885|4605|-1|9
+#NL|Utrecht
+Soesterberg||52118|5286|18|8
+#NO|Agder
+Søgne|Sogne|58093|7783|10|9
+#NO|Akershus
+Ski||59719|10836|133|13
+Strømmen|Strommen|59951|11010|146|11
+Sørumsand|Sorumsand|59986|11242|127|6
+#NO|Nordland
+Sortland||68696|15405|5|10
+Sandnessjøen|Sandnessjoen|66022|12632|10|6
+#NO|Rogaland
+Strand||59050|5933|43|13
+Sæveland|Saeveland|59267|5200|6|8
+#NO|Trøndelag
+Steinkjer||64015|11495|20|13
+Stjørdal|Stjordal|63468|10918|12|13
+#NO|Vestfold
+Stokke||59223|10301|63|12
+Stavern||59000|10033|22|6
+#NO|Vestland
+Stryn||61903|6718|20|7
+#NZ|Auckland
+Sandringham||-36888|174730|40|13
+Saint Heliers||-36850|174867|41|12
+Sunnyvale||-36888|174630|24|7
+Saint Johns||-36868|174840|40|6
+Sunnyhills||-36898|174880|18|6
+#NZ|Canterbury
+Spreydon||-43557|172617|11|10
+Somerfield||-43559|172631|10|7
+Shirley||-43498|172650|7|7
+Sydenham||-43547|172636|11|6
+#NZ|Marlborough
+Springlands||-41509|173937|11|6
+#NZ|Otago
+Saint Kilda||-45902|170502|13|6
+#NZ|Taranaki Region
+Stratford||-39338|174284|315|6
+#NZ|Wellington Region
+Stokes Valley||-41178|174980|52|11
+Solway||-40958|175610|130|7
+#PA|Chiriquí Province
+San Pablo Viejo Abajo||8455|-82505|79|6
+#PA|Herrera Province
+San Juan Bautista||7965|-80416|27|12
+#PA|Panamá
+San Vicente||9115|-79599|107|14
+#PA|Veraguas Province
+Soná|Sona|8009|-81317|27|8
+#PE|Apurímac Department
+San Jerónimo|San Jeronimo|-13651|-73364|2958|6
+#PE|Ayacucho
+San Miguel||-13012|-73981|2667|8
+#PE|Cajamarca Department
+San Ignacio||-5146|-79001|1271|8
+#PE|Huánuco Department
+San Miguel de Cauri||-10138|-76623|3586|5
+#PE|Ica
+San Juan||-15365|-75162|23|13
+Santiago||-14185|-75711|379|10
+Subtanjalla||-14019|-75758|429|9
+San Juan Bautista||-14011|-75736|427|7
+#PE|Junin
+San Ramón|San Ramon|-11124|-75357|832|15
+Santa Rosa de Sacco||-11551|-75943|3785|11
+San Jeronimo De Tunan||-11956|-75284|3250|9
+Sicaya||-12015|-75280|3793|7
+San Agustin||-11990|-75244|3988|6
+San Pedro de Cajas||-11251|-75861|4022|6
+#PE|La Libertad
+Salaverry||-8221|-78977|8|10
+Santiago de Chuco||-8141|-78173|3095|7
+#PE|Lambayeque
+Santa Rosa||-6758|-79827|33|11
+San José|San Jose|-6738|-79827|31|7
+#PE|Lima region
+Santa María|Santa Maria|-12005|-76893|545|15
+Supe||-10797|-77713|54|14
+Supe Puerto||-10801|-77743|25|11
+San Luis||-12077|-76994|191|9
+Sayán|Sayan|-11133|-77195|659|6
+San Bartolo||-12383|-76783|22|6
+#PE|Loreto
+San Lorenzo||-4817|-76600|146|11
+San Antonio del Estrecho||-2450|-72669|116|8
+#PE|Piura
+Salinera Colán|Salinera Colan|-5033|-81067|1|14
+San Lucas ( Pueblo Nuevo de Colan)||-4909|-81057|16|10
+Salitral||-4857|-80681|52|5
+#PE|San Martín Department
+Saposoa||-6934|-76772|311|15
+Soritor||-6139|-77104|884|11
+Sisa||-6611|-76693|375|9
+San Jose De Sisa||-6614|-76693|347|7
+Segunda Jerusalén - Azunguillo|Segunda Jerusalen - Azunguillo|-5989|-77277|830|6
+#PH|Autonomous Region in Muslim Mindanao
+Siasi||5546|120815|8|13
+South Upi||6833|124150|515|13
+Simbahan||6303|120584|8|6
+Sanga-Sanga||5073|119785|94|5
+#PH|Bicol Region
+Santa Elena||14170|122382|28|15
+Sipocot||13768|122976|20|13
+San Jacinto||12568|123734|16|8
+Sagpon||13150|123733|15|7
+San Fernando||13566|123145|8|6
+San Fernando||12483|123762|7|6
+San Pascual||13129|122977|22|6
+Santa Justina||13397|123473|70|6
+San Gabriel||13567|123100|25|5
+Santo Domingo||13420|123449|126|5
+#PH|Cagayan Valley
+San Mariano||16983|122014|74|12
+San Manuel||17024|121636|64|10
+Salinungan Proper||16869|121615|80|8
+Saguday||16543|121564|104|7
+Santa Ana||18470|122148|8|6
+Sinamar||16900|121567|82|6
+San Jose||17150|121600|65|6
+Soyung||16700|121666|66|5
+#PH|Calabarzon
+San Narciso||13568|122567|21|11
+Santa Rita Aplaya||13772|121035|9|10
+Subic||13949|120940|21|9
+Sampaloc||14163|121640|68|7
+Santa Maria||14472|121429|12|7
+Santa Catalina Sur||13874|121431|22|6
+San Andres||14050|121217|238|6
+Santa Catalina Norte||13871|121358|30|5
+San Andres||13323|122678|7|5
+#PH|Caraga
+Socorro||9618|125966|11|10
+San Luis||8478|125744|16|7
+Salvacion||8000|126125|69|6
+#PH|Central Luzon
+Santa Rosa||15424|120938|31|12
+Santa Ignacia||15617|120436|44|11
+Sapang||15703|120525|21|11
+San Roque Dau First||14977|120577|15|10
+San Nicolas||15584|120677|26|10
+Santo Cristo||15297|120890|22|9
+Santa Lucia||15368|120486|109|9
+Sibul||15169|121062|54|8
+San Basilio||15033|120584|39|8
+San Jose||15033|120783|13|7
+San Vicente||15213|120819|14|7
+Santa Barbara||15385|120796|20|7
+San Vicente||14946|120749|7|6
+Santo Rosario||15645|120861|49|6
+San Isidro||15021|120820|12|6
+Santo Rosario||15434|120890|27|6
+San Manuel||15491|120665|35|6
+Santiago||14904|120511|18|6
+Salapungan||15134|120928|15|6
+Santa Ines West||15557|120464|98|6
+Suklayin||15757|121550|12|6
+Sulucan||14794|120926|8|6
+San Mariano||15321|120876|24|6
+Santa Monica||15358|120720|20|5
+Sabang||14695|120251|13|5
+Santo Tomas||15750|120962|88|5
+Santo Domingo||14991|120743|8|5
+Sinilian First||15693|120459|43|5
+San Juan||15290|120065|26|5
+#PH|Central Visayas
+Siquijor||9214|123515|17|10
+San Isidro||9917|123883|2|9
+San Francisco||10646|124382|7|9
+Siaton||9065|123034|16|7
+San Francisco||10160|124311|8|5
+#PH|Davao Region
+Santo Niño|Santo Nino|7624|125625|52|10
+Sibulan||6934|125462|63|9
+Sampao||7594|125661|34|9
+Sigaboy||6654|126073|13|8
+Sarangani||5403|125464||8
+Sulop||6599|125344|16|7
+San Ignacio||7119|126488|22|6
+Simod||7476|125341|334|5
+Sirib||7133|125407|482|5
+#PH|Eastern Visayas
+Sogod||10385|124981|10|8
+San Policarpio||12069|124570|7|6
+#PH|Ilocos
+Suyo||16976|120525|89|11
+San Jacinto||16073|120438|12|11
+Sison||16174|120515|93|9
+Subusub||16227|120495|153|7
+Sarrat||18157|120647|22|6
+Sual||16067|120094|11|5
+#PH|Mimaropa
+Santa Cruz||13476|122028|50|10
+Santa Cruz||13074|120723|8|10
+San Jose||9801|118757|9|6
+Socorro||13067|121399|15|6
+#PH|Northern Mindanao
+Sumpong||8163|125118|655|7
+Salawagan||7705|125115|285|7
+Salay||8859|124789|9|6
+San Luis||8483|125000|914|6
+San Jose||7737|125070|271|6
+Sultan Naga Dimaporo||7796|123715|6|6
+Santa Ana||8517|124783|57|6
+Sumilao||8287|124946|728|5
+San Miguel||8030|124754|1314|5
+#PH|Soccsksargen
+Sapu Padidu||5917|125267|2|10
+Santo Niño|Santo Nino|6435|124698|148|10
+Silway 7||6177|125121|146|8
+Suyan||6060|125385|112|7
+Sampao||6877|124596|16|5
+Saguing||6980|125078|219|5
+Sulit||6236|125021|343|5
+#PH|Western Visayas
+San Enrique||10416|122850|8|10
+Santa Barbara||10823|122534|37|9
+San Miguel||10780|122466|40|8
+Sagang||10361|123072|0|8
+San Pablo||10912|123142|58|8
+Sibalom||10790|122018|25|7
+Santol||10173|122995|50|6
+Salvacion||10683|122617|19|6
+Semirara||12070|121399|17|5
+San Pedro||10802|121950|12|5
+#PH|Zamboanga Peninsula
+Sangali||7069|122201|8|15
+Salug||8115|122783|28|7
+Sindangan||8238|122997|7|6
+#PK|Azad Kashmir
+Sehnsa||33514|73755|674|11
+#PK|Balochistan
+Surab||28493|66260|1762|13
+Sohbatpur||28520|68543|59|9
+#PK|Islamabad
+Saidpur||33742|73070|618|15
+#PK|Punjab
+Shahpur||32268|72469|184|14
+Sanjwal||33761|72433|357|11
+#PK|Sindh
+Sobhodero||27305|68397|55|15
+Sann||26040|68138|35|9
+Samaro||25281|69396|18|9
+#PL|Greater Poland
+Słupca|Slupca|52287|17872|94|14
+Sieraków|Sierakow|52651|16080|42|6
+Stęszew|Steszew|52284|16701|73|6
+Śmigiel|Smigiel|52013|16527|103|6
+Strzałkowo|Strzalkowo|52307|17818|100|5
+#PL|Kujawsko-Pomorskie
+Sępólno Krajeńskie|Sepolno Krajenskie|53452|17532|119|9
+Szubin||53010|17740|80|9
+Strzelno||52628|18172|106|6
+#PL|Lesser Poland
+Sulęcin|Sulecin|52444|15117|78|10
+Sucha Beskidzka||49742|19594|338|10
+Stary Sącz|Stary Sacz|49564|20635|318|9
+Sułkowice|Sulkowice|49841|19801|290|6
+Szczawnica||49424|20485|464|6
+Stryszawa||49713|19522|435|5
+#PL|Lower Silesia
+Stabłowice|Stablowice|51154|16900|114|14
+Strzelin||50782|17065|164|12
+Syców|Sycow|51308|17720|169|11
+Środa Śląska|Sroda Slaska|51164|16595|127|9
+Stare Miasto||51110|17037|121|9
+Sępolno|Sepolno|51110|17102|119|8
+Szklarska Poręba|Szklarska Poreba|50826|15523|647|7
+Sobótka|Sobotka|50900|16744|183|7
+Stronie Śląskie|Stronie Slaskie|50296|16874|493|6
+Ścinawa|Scinawa|51416|16425|94|6
+Szczawno-Zdrój|Szczawno-Zdroj|50804|16257|413|6
+Szczytna||50413|16447|457|5
+#PL|Lublin
+Szczebrzeszyn||50695|22980|214|5
+#PL|Lubusz
+Szprotawa||51566|15537|130|13
+Skwierzyna||52599|15507|30|10
+Strzelce Krajeńskie|Strzelce Krajenskie|52877|15530|75|10
+#PL|Mazovia
+Szydłowiec|Szydlowiec|51228|20861|223|12
+#PL|Podlasie
+Szerszenie||52398|22956|133|14
+Sejny||54108|23347|136|6
+#PL|Pomerania
+Siedlce||54347|18617|42|12
+Sztum||53921|19031|58|10
+Suchanino||54355|18604|74|10
+Sierakowice||54346|17893|215|7
+Skarszewy||54069|18444|112|7
+Strzyża|Strzyza|54386|18586|22|5
+#PL|Silesia
+Skoczów|Skoczow|49801|18788|293|15
+Sławków|Slawkow|50299|19390|308|7
+Stare Bielsko||49825|19009|336|7
+Szczyrk||49717|19032|501|6
+Siewierz||50467|19230|299|5
+Słoneczne|Sloneczne|49815|19027|363|5
+#PL|Subcarpathia
+Strzyżów|Strzyzow|49871|21794|232|9
+Sędziszów Małopolski|Sedziszow Malopolski|50071|21701|220|7
+#PL|Warmia-Masuria
+Susz||53717|19336|111|6
+#PL|West Pomerania
+Sławno|Slawno|54363|16679|21|13
+Sianów|Sianow|54226|16291|7|7
+#PL|Łódź Voivodeship
+Sulejów|Sulejow|51354|19885|168|6
+#PL|Świętokrzyskie
+Suchedniów|Suchedniow|51048|20829|265|9
+Sędziszów|Sedziszow|50566|20056|253|7
+Stąporków|Staporkow|51138|20572|268|6
+#PR|Canóvanas
+San Isidro||18392|-65885|13|8
+Santa Barbara||18394|-65919|14|5
+#PR|Dorado
+San Antonio||18449|-66303|7|6
+#PR|Sabana Grande
+Sabana Grande||18078|-66960|95|9
+#PR|Salinas
+Salinas||17977|-66298|7|6
+#PR|San Germán
+San Germán|San German|18082|-67045|60|12
+#PR|San Lorenzo
+San Lorenzo||18189|-65961|92|9
+#PR|San Sebastián
+San Sebastián|San Sebastian|18337|-66990|77|12
+#PR|Santa Isabel
+Santa Isabel||17966|-66405|7|7
+#PR|Toa Baja
+Sabana Seca||18427|-66185|15|6
+#PS|Gaza Strip
+Shokat as-Sufi||31259|34282|90|15
+Shūkat aş Şūfī|Shukat as Sufi|31260|34283|92|11
+#PS|West Bank
+Şūr Bāhir|Sur Bahir|31737|35233|751|15
+Salfīt|Salfit|32084|35181|510|11
+Sīlat al Ḩārithīyah|Silat al Harithiyah|32508|35228|128|10
+Silwād|Silwad|31976|35261|844|7
+Sīlat az̧ Z̧ahr|Silat az Zahr|32319|35184|390|6
+Sinjil||32033|35265|801|5
+#PT|Aveiro
+São João de Ver|Sao Joao de Ver|40955|-8551|170|10
+Sol Posto||40633|-8618|44|8
+Silvalde||40992|-8626|54|7
+São João|Sao Joao|40868|-8607|24|7
+São Roque|Sao Roque|40872|-8471|208|6
+#PT|Beja
+Serpa||37946|-7598|198|7
+#PT|Braga
+Semelhe||41554|-8463|126|12
+Selho||41419|-8346|180|10
+Serzedo||41405|-8229|175|8
+Sande||41702|-8392|195|8
+#PT|Castelo Branco
+Sertã|Serta|39802|-8096|233|6
+#PT|Coimbra
+Santa Clara||40200|-8440|104|10
+Soure||40060|-8626|23|8
+#PT|Faro
+São Brás de Alportel|Sao Bras de Alportel|37153|-7888|254|11
+Silves||37189|-8438|27|11
+São Bartolomeu de Messines|Sao Bartolomeu de Messines|37256|-8287|132|8
+#PT|Guarda
+Seia||40415|-7709|551|7
+São Romão|Sao Romao|40401|-7715|594|7
+#PT|Lisbon
+São João das Lampas|Sao Joao das Lampas|38874|-9398|154|10
+Santa Maria de Belém|Santa Maria de Belem|38700|-9200|23|9
+Silveira||39111|-9364|37|7
+São Sebastião da Pedreira|Sao Sebastiao da Pedreira|38734|-9154|92|6
+São Mamede|Sao Mamede|38713|-9143|66|5
+#PT|Madeira
+Santa Maria Maior||32648|-16891|100|12
+São Roque|Sao Roque|32667|-16917|294|9
+Santana||32800|-16883|492|9
+São Vicente|Sao Vicente|32797|-17043|111|6
+Santa Cruz||32688|-16794|22|6
+São Gonçalo|Sao Goncalo|32658|-16871|527|6
+Santa Luzia||32657|-16905|184|5
+#PT|Portalegre
+Santo André|Santo Andre|39055|-8244|94|11
+#PT|Porto
+Santo Tirso||41343|-8477|81|14
+São Félix da Marinha|Sao Felix da Marinha|41036|-8623|62|12
+Senhora do Porto||41167|-8633|87|11
+Sardão|Sardao|41118|-8588|116|10
+Silva Escura||41258|-8581|105|8
+Serzedo||41051|-8616|89|8
+Sobrado||41210|-8455|121|7
+Sandim||41035|-8507|179|6
+Santa Cruz do Bispo||41215|-8674|67|6
+Santa Maria de Avioso||41268|-8606|86|6
+São Miguel do Couto|Sao Miguel do Couto|41332|-8462|119|5
+#PT|Santarém
+Samora Correia||38937|-8872|10|14
+Salvaterra de Magos||39028|-8793|13|5
+#PT|Setúbal
+Sines||37956|-8870|40|13
+Sobreda||38650|-9190|58|11
+Santo António da Charneca|Santo Antonio da Charneca|38626|-9030|49|11
+Santo André|Santo Andre|38061|-8782|32|11
+Santiago do Cacém|Santiago do Cacem|38017|-8695|220|8
+#PT|Vila Real
+Sabrosa||41267|-7576|584|6
+#PT|Viseu
+Santa Comba Dão|Santa Comba Dao|40399|-8132|192|12
+São João da Pesqueira|Sao Joao da Pesqueira|41148|-7405|609|8
+Sernancelhe||40899|-7493|753|6
+São Pedro do Sul|Sao Pedro do Sul|40755|-8073|210|5
+#PW|Sonsorol
+Sonsorol Village||5326|132219|7|0
+#PY|Alto Paraná Department
+Santa Rita||-25796|-55088|303|12
+#PY|Caaguazú Department
+San José de los Arroyos|San Jose de los Arroyos|-25533|-56732|124|5
+#PY|Caazapá
+San Juan Nepomuceno||-26112|-55939|145|8
+#PY|Canindeyú
+San Isidro de Curuguaty||-24472|-55692|215|11
+Salto del Guairá|Salto del Guaira|-24063|-54308|247|7
+#PY|Itapúa
+San Pedro del Paraná|San Pedro del Parana|-26834|-56207|144|6
+#PY|Misiones Department
+Santa Rosa||-26887|-56849|200|7
+#PY|San Pedro Department
+San Pedro de Ycuamandyyú|San Pedro de Ycuamandyyu|-24085|-57087|81|12
+#RE|Reunion
+Salazie||-21027|55540|452|8
+Sainte-Rose||-21129|55796|33|7
+Saint-Philippe||-21361|55768|28|5
+#RO|Alba County
+Săsciori|Sasciori|45867|23583|460|6
+#RO|Arad County
+Sântana|Santana|46350|21500|109|13
+Şiria|Siria|46267|21633|110|8
+Sebiş|Sebis|46367|22117|132|6
+Secusigiu||46083|20983|97|6
+#RO|Arges
+Ştefăneşti|Stefanesti|44865|24950|284|13
+Stâlpeni|Stalpeni|45050|24967|356|5
+Slobozia||44525|25243|158|5
+#RO|Bacău County
+Sascut||46200|27100|152|10
+#RO|Bihor County
+Săcueni|Sacueni|47350|22100|126|7
+Ștei|Stei|46533|22450|241|7
+#RO|Bistrița-Năsăud County
+Sângeorz-Băi|Sangeorz-Bai|47369|24672|434|8
+#RO|Botoșani County
+Storeşti|Storesti|47550|26867|164|12
+Săveni|Saveni|47950|26867|83|8
+Ştefăneşti-Sat|Stefanesti-Sat|47795|27195|66|6
+Suharău|Suharau|48133|26417|193|5
+#RO|Brașov County
+Sânpetru|Sanpetru|45711|25637|528|15
+#RO|Buzău County
+Smeeni||44983|26850|78|7
+Săgeata|Sageata|45100|26983|68|5
+#RO|Dolj
+Sadova||43900|23950|85|8
+Segarcea||44100|23750|146|8
+#RO|Harghita County
+Siculeni||46417|25750|669|7
+Sândominic|Sandominic|46584|25780|767|6
+Sâncrăieni|Sancraieni|46314|25839|657|6
+Suseni||46667|25550|745|5
+#RO|Hunedoara County
+Simeria||45850|23017|200|14
+#RO|Ialomița County
+Săveni|Saveni|44600|27650|36|6
+#RO|Iași County
+Scobinţi|Scobinti|47402|26912|149|8
+Şipote|Sipote|47467|27217|54|6
+Stolniceni-Prăjescu|Stolniceni-Prajescu|47199|26748|239|6
+#RO|Ilfov
+Snagov||44700|26183|102|6
+#RO|Maramureş
+Seini||47750|23283|140|10
+Şomcuta Mare|Somcuta Mare|47517|23467|190|8
+Suciu de Sus||47433|24033|418|6
+Satulung||47567|23433|164|5
+Săliştea de Sus|Salistea de Sus|47650|24350|498|5
+#RO|Mehedinți County
+Strehaia||44617|23200|136|12
+Şimian|Simian|44614|22707|55|9
+#RO|Mureș County
+Sovata||46583|25067|454|11
+Sângeorgiu de Mureş|Sangeorgiu de Mures|46570|24595|315|8
+Sărmaşu|Sarmasu|46750|24167|340|7
+Sâncraiu de Mureş|Sancraiu de Mures|46551|24527|308|6
+#RO|Neamț County
+Săbăoani|Sabaoani|47011|26865|231|10
+Sagna||46983|27017|236|7
+Săvineşti|Savinesti|46850|26467|274|6
+#RO|Olt
+Scorniceşti|Scornicesti|44567|24550|204|12
+#RO|Prahova
+Sinaia||45350|25550|813|12
+Slănic|Slanic|45250|25933|515|7
+Starchiojd||45317|26183|449|7
+Scorţeni|Scorteni|45100|25850|410|6
+Şirna|Sirna|44800|25950|133|5
+Sângeru|Sangeru|45133|26350|260|5
+#RO|Satu Mare County
+Sanislău|Sanislau|47633|22333|133|5
+#RO|Sibiu County
+Sălişte|Saliste|45796|23887|545|6
+#RO|Suceava
+Siret||47950|26067|319|9
+Salcea||47650|26367|329|9
+Scheia||47650|26233|307|8
+Stulpicani||47467|25767|570|6
+Straja||47917|25550|512|5
+Slatina||47450|26017|454|5
+#RO|Sălaj County
+Şărmăşag|Sarmasag|47350|22833|234|6
+#RO|Timiș County
+Sânnicolau Mare|Sannicolau Mare|46083|20633|80|13
+Săcălaz|Sacalaz|45758|21112|84|6
+Sânpetru Mare|Sanpetru Mare|46045|20818|90|6
+Sânandrei|Sanandrei|45853|21168|90|5
+#RO|Tulcea County
+Sarichioi||44950|28850|35|7
+#RO|Vaslui County
+Stănileşti|Stanilesti|46618|28171|47|6
+#RO|Vrancea
+Suraia||45683|27400|22|8
+Sihlea||45500|27117|107|5
+Slobozia Bradului||45500|27050|171|5
+#RS|Central Serbia
+Surčin|Surcin|44793|20280|87|13
+#RS|Vojvodina
+Sremska Kamenica||45223|19843|105|14
+Sremski Karlovci||45203|19934|88|9
+Sivac||45704|19383|84|7
+Starčevo|Starcevo|44807|20705|76|7
+Sonta||45594|19097|83|6
+Stanišić|Stanisic|45939|19167|95|5
+Srpska Crnja||45725|20690|76|5
+#RU|Altai Krai
+Sibirskiy||53580|83767|184|12
+Shipunovo||52217|82267|190|11
+Smolenskoye||52304|85076|179|9
+Sorokino||53750|84917|165|6
+Stepnoye Ozero||52779|79856|125|6
+Sovetskoye||52288|85412|212|5
+Staroaleyskoye||51008|81995|290|5
+#RU|Amur Oblast
+Seryshevo||51094|128381|167|12
+Skovorodino||53984|123940|393|10
+Srednebelaya||50659|128011|151|6
+#RU|Arkhangelskaya
+Shenkursk||62109|42901|57|6
+Savinskiy||62932|40141|76|6
+#RU|Astrakhan Oblast
+Starokucherganovka||46325|47956|-18|6
+#RU|Bashkortostan Republic
+Serafimovskiy||54424|53796|271|10
+Sterlibashevo||53438|55257|254|6
+Subkhankulovo||54557|53812|119|6
+Starobaltachevo||56001|55916|107|6
+Sharan||54821|53992|165|6
+#RU|Belgorod Oblast
+Severnyy||50675|36559|210|8
+#RU|Bryansk Oblast
+Surazh||53017|32392|173|12
+Suzëmka|Suzemka|52318|34079|168|9
+Suponevo||53210|34307|195|8
+Sevsk||52149|34493|177|8
+Seshcha||53736|33339|207|5
+#RU|Buryatiya Republic
+Selenginsk||52006|106865|476|13
+Sokol||51800|107444|508|6
+Sosnovo-Ozërskoye|Sosnovo-Ozerskoye|52523|111538|954|6
+#RU|Chechnya
+Samashki||43289|45298|216|11
+Staryye Atagi||43120|45741|280|10
+Sernovodsk||43313|45160|265|10
+Shelkovskaya||43508|46336|14|10
+Staraya Sunzha||43335|45744|112|8
+Shalazhi||43095|45359|377|5
+#RU|Chelyabinsk
+Starokamyshinsk||55039|61588|209|11
+#RU|Dagestan
+Shamkhal||43060|47337|3|8
+Sergokala||42454|47660|517|8
+Shamil’kala|Shamil'kala|42687|46868|665|7
+Sulak||43273|47515|-24|7
+Shamkhal-Termen||43034|47311|34|6
+#RU|Ingushetiya Republic
+Sagopshi||43485|44591|397|12
+#RU|Irkutsk Oblast
+Svirsk||53091|103343|426|15
+Sredniy||52888|103490|459|5
+#RU|Ivanovo Oblast
+Savino||56593|41213|115|6
+Staraya Vichuga||57268|41879|117|6
+#RU|Jewish Autonomous Oblast
+Smidovich||48594|133810|62|6
+#RU|Kabardino-Balkariya Republic
+Shalushka||43533|43566|493|12
+Sarmakovo||43746|43200|686|10
+Staryy Cherek||43471|43856|383|7
+#RU|Kaliningrad Oblast
+Svetlogorsk||54940|20155|44|11
+Slavsk||55043|21677|2|5
+#RU|Kalmykiya Republic
+Sadovoye||47774|44511|32|6
+#RU|Kaluga Oblast
+Sosenskiy||54059|35962|219|12
+Spas-Demensk||54412|34023|226|5
+#RU|Karachayevo-Cherkesiya Republic
+Storozhevaya||43879|41451|923|8
+#RU|Karelia
+Suoyarvi||62088|32373|161|11
+#RU|Khabarovsk
+Solnechnyy||50725|136636|289|14
+Solnechnyy||50583|137033|33|14
+#RU|Khakasiya Republic
+Sorsk||54001|90252|711|13
+Shira||54494|89970|468|9
+#RU|Khanty-Mansia
+Solnechniy||61279|73181|49|10
+Salym||60063|71479|54|6
+#RU|Kirov Oblast
+Sosnovka||56255|51284|91|12
+Sanchursk||56941|47250|86|6
+#RU|Kostroma Oblast
+Soligalich||59078|42287|121|7
+Sudislavl’|Sudislavl'|57882|41707|128|5
+#RU|Krasnodar Krai
+Sirius||43405|39960|1|14
+Starovelichkovskaya||45429|38733|13|13
+Staroderevyankovskaya||46128|38967|22|13
+Starotitarovskaya||45219|37155|1|12
+Starokorsunskaya||45057|39316|38|11
+Staromyshastovskaya||45343|39076|22|11
+Staronizhestebliyevskaya||45383|38443|8|10
+Sovetskaya||44777|41172|287|10
+Smolenskaya||44786|38803|37|8
+Staraya Stanitsa||45010|41151|161|7
+Supsekh||44863|37366|83|7
+Saratovskaya||44708|39222|47|6
+Shirochanka||46656|38337|25|6
+Staroleushkovskaya||45987|39760|33|6
+Strelka||45206|37287|11|5
+Spokoynaya||44247|41402|565|5
+Shkurinskaya||46586|39360|8|5
+#RU|Krasnoyarsk Krai
+Solnechnyy||56116|92925|315|11
+Severo-Yeniseyskiy||60376|93030|491|7
+Strelka||58073|93034|84|6
+#RU|Kurgan Oblast
+Shchuch’ye|Shchuch'ye|55364|66093|145|8
+Shatrovo||56520|64633|114|6
+#RU|Kursk Oblast
+Sudzha||51191|35271|155|7
+#RU|Kuzbass
+Sheregesh||52921|87987|603|10
+Salair||54231|85797|349|9
+#RU|Leningradskaya Oblast'
+Syas’stroy|Syas'stroy|60137|32569|9|13
+Shlissel’burg|Shlissel'burg|59947|31038|12|12
+Siverskiy||59354|30078|102|12
+Sovetskiy||60539|28678|20|7
+Sosnovo||60551|30214|58|6
+#RU|Lipetsk Oblast
+Stanovoye||52761|38344|225|5
+#RU|Magadan Oblast
+Susuman||62780|148154|634|7
+#RU|Mariy-El Republic
+Sovetskiy||56762|48476|156|11
+Sernur||56936|49149|158|9
+Semenovka||56647|47980|99|6
+#RU|Moscow Oblast
+Selyatino||55515|36977|202|13
+Shakhovskaya||56031|35506|249|10
+Serebryanyye Prudy||54475|38728|114|9
+Stromyn’|Stromyn'|56043|38483|144|7
+Sheremet’yevskiy|Sheremet'yevskiy|55976|37494|180|7
+Sverdlovskiy||55910|38150|142|6
+Skoropuskovskiy||56367|38167|199|5
+Stolbovaya||55250|37492|187|5
+#RU|Murmansk
+Snezhnogorsk||69193|33253|74|12
+#RU|Nizhny Novgorod Oblast
+Shatki||55188|44121|136|9
+Sosnovskoye||55806|43172|188|8
+Sharanga||57177|46538|163|7
+Sokol’skoye|Sokol'skoye|57139|43163|91|6
+Sukhobezvodnoye||57049|44889|150|6
+Sechenovo||55224|45889|186|5
+#RU|North Ossetia–Alania
+Sunzha||43059|44823|685|12
+#RU|Novgorod Oblast
+Sol’tsy|Sol'tsy|58122|30318|19|11
+#RU|Novosibirsk Oblast
+Sokur||55209|83319|229|6
+Severnoye||56350|78365|118|5
+#RU|Omsk Oblast
+Sargatskoye||55610|73499|84|8
+Sherbakul’|Sherbakul'|54631|72397|116|7
+#RU|Orenburg Oblast
+Svetlyy||50820|60851|303|9
+Sharlyk||52926|54741|175|8
+#RU|Penza Oblast
+Srednyaya Yelyuzan’|Srednyaya Yelyuzan'|53024|45953|236|8
+Sursk||53075|45685|217|8
+Sosnovoborsk||53291|46248|188|7
+Spassk||53926|43184|184|7
+Shemysheyka||52892|45393|169|7
+#RU|Perm Krai
+Suksun||57145|57395|180|8
+Sylva||58033|56771|170|8
+Sars||56550|57137|311|5
+#RU|Primorye
+Slavyanka||42862|131389|5|10
+Sibirtsevo||44202|132461|93|7
+Spasskoye||44612|132799|119|6
+Smolyaninovo||43287|132455|53|5
+Shkotovo||43321|132354|8|5
+Sergeyevka||43350|133358|191|5
+#RU|Pskov Oblast
+Strugi-Krasnyye||58271|29112|112|9
+Sebezh||56287|28483|137|7
+#RU|Republic of Tyva
+Shagonar||51534|92932|556|11
+#RU|Rostov
+Samarskoye||46936|39683|8|11
+Sholokhovskiy||48281|41046|153|10
+Sokolovo-Kundryuchenskiy||47835|39947|126|10
+Staraya Stanitsa||48346|40294|38|8
+Sinegorskiy||48014|40845|67|7
+Sambek||47743|39824|143|5
+Starocherkasskaya||47241|40042|2|5
+#RU|Ryazan Oblast
+Spassk-Ryazanskiy||54408|40377|108|9
+Sarayi||53729|41002|127|6
+Spas-Klepiki||55138|40180|110|6
+Shatsk||54024|41717|148|6
+Starozhilovo||54233|39909|129|5
+#RU|Sakha
+Suntar||62161|117655|125|9
+#RU|Sakhalin Oblast
+Shakhtërsk|Shakhtersk|49168|142116|9|10
+Smirnykh||49746|142834|82|7
+#RU|Samara Oblast
+Sukhodol||53901|51212|87|14
+Shentala||54434|51466|217|7
+Smyshlyayevka||53239|50391|36|6
+Shigony||53386|48674|74|5
+#RU|Saratov Oblast
+Stepnoye||51380|46849|68|14
+Svetlyy||51674|45631|212|12
+Staryye Ozinki||51179|49677|91|10
+Samoylovka||51185|43709|126|9
+Sennoy||52151|46963|48|7
+Shikhany||52116|47199|225|7
+Sokolovyy||51569|45833|182|6
+#RU|Smolensk Oblast
+Sychëvka|Sychevka|55830|34277|202|9
+#RU|St.-Petersburg
+Strel'na||59852|30036|22|13
+Shuvalovo||60047|30300|26|6
+#RU|Stavropol Kray
+Solnechnodol’sk|Solnechnodol'sk|45318|41541|151|13
+Soldato-Aleksandrovskoye||44266|43753|189|11
+Sovetskaya||44027|44050|217|8
+Stepnoye||44270|44582|157|6
+Sotnikovskoye||45004|43777|126|5
+#RU|Sverdlovsk Oblast
+Sos’va|Sos'va|59177|61856|77|10
+Svobodnyy||58040|60396|223|10
+Shalya||57247|58730|330|7
+#RU|Tambov Oblast
+Sosnovka||53231|41366|137|10
+Staroyur’yevo|Staroyur'yevo|53319|40702|155|7
+#RU|Tatarstan Republic
+Staroye Arakchino||55804|48971|86|7
+Sarmanovo||55254|52588|130|6
+Shemordan||56186|50397|194|6
+#RU|Tomsk Oblast
+Svetlyy||56917|85967|140|8
+Samus’|Samus'|56745|84704|83|6
+#RU|Tula Oblast
+Skuratovskiy||54102|37604|250|13
+Sovetsk||53936|37628|229|8
+Shvartsevskiy||54092|37991|229|5
+#RU|Tver Oblast
+Staritsa||56505|34934|161|9
+Selizharovo||56852|33449|207|7
+Spirovo||57420|34981|171|7
+#RU|Udmurtiya Republic
+Sharkan||57299|53871|142|7
+Sigayevo||56422|53776|86|6
+Syumsi||57111|51615|99|6
+Selty||57313|52135|138|6
+#RU|Ulyanovsk
+Sengiley||53958|48795|53|8
+Surskoye||54480|46721|95|7
+Staraya Mayna||54606|48925|66|7
+Staraya Kulatka||52729|47621|120|6
+#RU|Vladimir Oblast
+Sudogda||55952|40874|89|13
+Suzdal’|Suzdal'|56424|40450|127|11
+Stavrovo||56133|40013|116|8
+#RU|Volgograd Oblast
+Srednyaya Akhtuba||48710|44867|17|14
+Svetlyy Yar||48474|44785|17|13
+Serafimovich||49576|42732|116|10
+#RU|Vologda Oblast
+Suda||59153|37558|110|6
+#RU|Voronezh Oblast
+Somovo||51742|39366|112|14
+Sadovoye||51531|40502|102|5
+#RU|Yaroslavl Oblast
+Semibratovo||57305|39537|101|8
+#RU|Zabaykalskiy (Transbaikal) Kray
+Shilka||51851|116029|490|14
+Sherlovaya Gora||50534|116318|701|10
+Sretensk||52249|117709|449|8
+#SA|Al Jawf Region
+Şuwayr|Suwayr|30117|40389|592|9
+#SA|Riyadh Region
+Sājir|Sajir|25183|44600|732|12
+#SE|Blekinge
+Sölvesborg|Soelvesborg|56052|14575|15|9
+#SE|Dalarna
+Smedjebacken||60142|15414|105|5
+#SE|Gävleborg
+Söderhamn|Soederhamn|61304|17059|2|12
+#SE|Jönköping
+Sävsjö|Saevsjoe|57403|14662|226|5
+#SE|Kalmar
+Södra Sandby|Sodra Sandby|56567|16617|13|6
+#SE|Skåne
+Svedala||55508|13235|48|12
+Skurup||55478|13502|55|8
+Sjöbo|Sjoebo|55631|13706|50|8
+Skanör med Falsterbo|Skanoer med Falsterbo|55400|12850|4|7
+Simrishamn||55557|14350|12|7
+Södra Sandby|Soedra Sandby|55717|13347|31|6
+Skåre|Skare|55383|13050|2|5
+#SE|Stockholm
+Segeltorp||59276|17931|41|11
+Saltsjöbaden|Saltsjoebaden|59283|18300|14|9
+Sigtuna||59617|17724|16|9
+#SE|Södermanland
+Strängnäs|Straengnaes|59377|17031|14|14
+#SE|Uppsala
+Sävja|Saevja|59819|17700|36|10
+Storvreta||59959|17706|39|6
+Skutskär|Skutskaer|60625|17416|3|6
+#SE|Värmland
+Skoghall||59323|13466|56|14
+Säffle|Saeffle|59132|12929|60|9
+Skåre|Skare|59433|13433|52|5
+Sunne||59838|13143|71|5
+#SE|Västernorrland
+Sollefteå|Solleftea|63167|17267|2|7
+#SE|Västmanland
+Sala||59920|16607|62|13
+Surahammar||59707|16222|72|6
+#SE|Västra Götaland
+Stenungsund||58070|11818|6|13
+Skara||58387|13438|120|11
+Strömstad|Stroemstad|58939|11171|5|7
+Surte||57825|12016|8|6
+#SE|Östergötland
+Söderköping|Soederkoeping|58481|16322|8|7
+#SG|
+Sennett Estate||1332|103872|10|7
+Sembawang Hills Estate||1373|103830|30|7
+#SI|Municipality of Duplek
+Spodnji Duplek||46504|15745|236|2
+#SI|Municipality of Hoče–Slivnica
+Spodnje Hoče|Spodnje Hoce|46500|15649|270|3
+#SI|Municipality of Selnica ob Dravi
+Selnica ob Dravi||46552|15493|309|1
+#SI|Municipality of Semič
+Semič|Semic|45647|15181|214|2
+#SI|Municipality of Sevnica
+Sevnica||46008|15316|206|5
+#SI|Municipality of Sežana
+Sežana|Sezana|45709|13873|370|6
+#SI|Municipality of Slovenska Bistrica
+Slovenska Bistrica||46393|15573|274|7
+#SI|Municipality of Slovenske Konjice
+Slovenske Konjice||46337|15423|326|5
+#SI|Municipality of Sodražica
+Sodražica|Sodrazica|45761|14636|542|1
+#SI|Municipality of Solčava
+Solčava|Solcava|46420|14694|642|0
+#SI|Municipality of Središče ob Dravi
+Središče ob Dravi|Sredisce ob Dravi|46394|16268|182|1
+#SI|Municipality of Starše
+Starše|Starse|46466|15767|240|1
+#SI|Municipality of Straža
+Straža|Straza|45781|15076|175|2
+#SI|Municipality of Sveta Ana
+Sv. Ana v Slov. Goricah||46649|15844|349|0
+#SI|Municipality of Sveta Trojica v Slovenskih Goricah
+Sv. Trojica v Slov. Goricah||46577|15877|272|1
+#SI|Municipality of Sveti Jurij ob Ščavnici
+Sveti Jurij||46570|16023|218|0
+#SI|Municipality of Sveti Tomaž
+Sveti Tomaž|Sveti Tomaz|46484|16079|268|0
+#SI|Municipality of Šalovci
+Šalovci|Salovci|46824|16298|247|0
+#SI|Municipality of Šempeter–Vrtojba
+Šempeter pri Gorici|Sempeter pri Gorici|45929|13641|77|4
+#SI|Municipality of Šentilj
+Šentilj v Slov. Goricah|Sentilj v Slov. Goricah|46682|15648|306|8
+#SI|Municipality of Šentjernej
+Šentjernej|Sentjernej|45842|15334|181|1
+#SI|Municipality of Šentrupert
+Šentrupert na Dolenjskem|Sentrupert na Dolenjskem|45978|15093|305|0
+#SI|Municipality of Šenčur
+Šenčur|Sencur|46247|14420|397|3
+#SI|Municipality of Škocjan
+Škocjan|Skocjan|45907|15291|168|0
+#SI|Municipality of Škofljica
+Škofljica|Skofljica|45984|14575|313|2
+#SI|Municipality of Šmarje pri Jelšah
+Šmarje pri Jelšah|Smarje pri Jelsah|46227|15519|239|2
+#SI|Municipality of Šmarješke Toplice
+Šmarjeta|Smarjeta|45883|15250|180|0
+#SI|Municipality of Šmartno ob Paki
+Šmartno ob Paki|Smartno ob Paki|46333|15033|322|1
+#SI|Municipality of Šmartno pri Litiji
+Šmartno pri Litiji|Smartno pri Litiji|46044|14845|249|1
+#SI|Municipality of Šoštanj
+Šoštanj|Sostanj|46380|15049|361|3
+#SI|Municipality of Štore
+Štore|Store|46221|15314|273|2
+#SI|Sentjur
+Šentjur|Sentjur|46217|15398|301|5
+#SI|Urban Municipality of Slovenj Gradec
+Slovenj Gradec||46511|15084|447|7
+#SI|Škofja Loka
+Škofja Loka|Skofja Loka|46166|14306|360|12
+#SK|Bratislava Region
+Stupava||48275|17032|179|13
+Slovenský Grob|Slovensky Grob|48258|17274|139|6
+Svätý Jur|Svaety Jur|48252|17215|152|6
+Šenkvice|Senkvice|48298|17350|160|5
+#SK|Košice Region
+Smižany|Smizany|48954|20523|482|9
+Sečovce|Secovce|48701|21661|125|9
+Sobrance||48745|22181|118|6
+#SK|Nitra Region
+Štúrovo|Sturovo|47795|18718|110|9
+Šurany|Surany|48086|18184|122|9
+Šahy|Sahy|48074|18949|143|7
+#SK|Prešov Region
+Sabinov||49103|21099|318|12
+Svidník|Svidnik|49308|21570|229|10
+Stropkov||49202|21652|201|10
+Svit||49060|20207|723|8
+Spišská Belá|Spisska Bela|49187|20459|625|7
+#SK|Trenčín Region
+Stará Turá|Stara Tura|48777|17694|279|8
+#SK|Trnava Region
+Šamorín|Samorin|48030|17310|125|14
+Sládkovičovo|Sladkovicovo|48201|17639|118|5
+#SK|Žilina Region
+Skalité|Skalite|49497|18897|532|5
+#SL|Southern Province
+Sumbuya||7648|-11961|39|7
+#SM|Serravalle
+Serravalle||43969|12482|119|9
+#SN|Dakar
+Sangalkam||14780|-17228|16|12
+#SN|Fatick
+Sokone||13878|-16368|19|15
+Soum||14082|-16481|6|5
+#SN|Kaolack
+Sibassor||14186|-16159|10|8
+#SN|Matam
+Sintiou Bamambé|Sintiou Bamambe|15367|-13135|37|14
+Sémé|Seme|15194|-12945|42|7
+#SN|Thies
+Somone||14486|-17075|11|5
+#SO|Middle Juba
+Saacow||1628|42441|63|8
+#ST|Príncipe
+Santo António|Santo Antonio|1639|7420|8|1
+#SV|Cuscatlan
+Suchitoto||13938|-89028|391|6
+#SV|La Libertad Department
+San Juan Opico||13876|-89360|518|7
+#SV|La Paz Department
+Santiago Nonualco||13517|-88950|134|9
+#SV|La Union
+Santa Rosa de Lima||13625|-87894|96|13
+San Alejo||13431|-87963|177|5
+#SV|San Salvador Department
+Santo Tomás|Santo Tomas|13641|-89133|712|15
+#SV|San Vicente Department
+San Sebastián|San Sebastian|13733|-88833|690|7
+#SV|Sonsonate Department
+San Antonio del Monte||13716|-89738|224|9
+#SV|Usulutan
+Santa Elena||13383|-88417|180|6
+#SY|Hama
+Shaţḩah|Shathah|35505|36244|207|8
+#SY|Suwayda
+Shahbā|Shahba|32852|36628|1085|15
+Şalākhid|Salakhid|32871|36573|883|13
+Şalkhad|Salkhad|32492|36711|1383|9
+Shaqqā|Shaqqa|32898|36697|1193|5
+#SZ|Lubombo Region
+Siteki||-26452|31947|663|6
+#TD|Barh el Gazel
+Salal||14844|17225|270|7
+#TH|Bangkok
+Siriraj||13758|100485|2|13
+Samphantawong||13740|100508|0|8
+#TH|Buriram
+Satuek||15297|103292|135|11
+#TH|Kanchanaburi
+Sangkhla Buri||15156|98454|211|10
+#TH|Krabi
+Saladan||7613|99037|14|8
+#TH|Nakhon Ratchasima
+Sung Noen||14899|101821|216|14
+Soeng Sang||14426|102461|266|14
+#TH|Nong Bua Lamphu
+Si Bun Rueang||16967|102276|211|13
+#TH|Nong Khai
+Si Chiang Mai||17956|102587|175|14
+#TH|Pattani
+Sai Buri||6701|101617|12|14
+#TH|Roi Et
+Suwannaphum||15603|103802|136|12
+#TH|Ubon Ratchathani
+Sawang Wirawong||15242|105092|138|8
+#TJ|Khatlon Province
+Shahritus||37262|68138|367|13
+Sovet||38047|69588|672|9
+Sarikhosor||38539|69831|1464|6
+#TJ|Republican Subordination
+Shahrinav||38571|68335|850|5
+#TJ|Sughd
+Shaydon||40670|70350|838|12
+#TL|Manufahi
+Same||-9004|125649|481|8
+#TM|Dasoguz
+Saparmurat Turkmenbashy||42380|58814|59|7
+#TM|Mary
+Sakarçäge|Sakarcaege|37664|61660|213|12
+Şatlyk|Satlyk|37607|61594|209|8
+Serhetabat||35280|62344|643|5
+#TN|Ariana Governorate
+Sidi Tabet||36910|10042|15|11
+#TN|Bizerte Governorate
+Sejenane||37057|9238|133|6
+#TN|Kairouan
+Sbikha||35933|10021|66|8
+Sidi Amor Bou Hajela||35397|10048|116|8
+#TN|Kasserine Governorate
+Sbiba||35543|9074|637|7
+#TN|Kebili Governorate
+Souk Lahad||33776|8860|44|13
+#TN|Kef Governorate
+Sakiet Sidi Youssef||36223|8355|808|6
+#TN|Mahdia Governorate
+Sidi Alouane||35375|10939|58|8
+Souassi||35343|10547|51|5
+#TN|Monastir Governorate
+Seïada|Seiada|35669|10892|13|14
+Sidi Ameur||35750|10700|23|8
+#TN|Sfax Governorate
+Skhira||34299|10070|33|12
+#TN|Sousse Governorate
+Sidi Bou Ali||35957|10473|19|10
+#TR|Adana
+Sarıhamzalı|Sarihamzali|36978|35225|16|12
+Sarıçam|Saricam|37152|35508|303|8
+Saimbeyli||37986|36091|982|5
+Şambayadı|Sambayadi|37042|35199|108|5
+#TR|Adıyaman Province
+Samsat||37582|38474|587|9
+Sincik||38036|38613|1266|6
+#TR|Afyonkarahisar Province
+Şuhut|Suhut|38531|30546|1138|14
+Sultandağı|Sultandagi|38531|31228|1017|8
+Sinanpaşa|Sinanpasa|38744|30243|1121|6
+#TR|Aksaray
+Sarıyahşi|Sariyahsi|38983|33841|971|9
+#TR|Antalya
+Side||36767|31389|15|11
+#TR|Artvin
+Şavşat|Savsat|41253|42355|1128|8
+#TR|Aydın
+Savulca||37738|27399|46|7
+Sultanhisar||37890|28154|89|6
+#TR|Balıkesir
+Sındırgı|Sindirgi|39241|28178|220|11
+Savaştepe|Savastepe|39383|27656|295|10
+#TR|Batman
+Sason||38328|41414|981|11
+#TR|Diyarbakır Province
+Salat||37842|40887|526|7
+#TR|Elazığ
+Sivrice||38442|39309|1298|5
+#TR|Eskişehir
+Sivrihisar||39450|31534|1090|11
+#TR|Gümüşhane Province
+Şiran|Siran|40191|39117|1424|15
+#TR|Hatay
+Sutaşı|Sutasi|36082|36006|22|6
+#TR|Istanbul
+Selimpaşa|Selimpasa|41055|28368||11
+Salacak||41015|29013|48|10
+#TR|Iğdır
+Söğütlü Mahallesi|Soeguetlue Mahallesi|39921|44052|860|9
+#TR|Karaman
+Sarıveliler|Sariveliler|36698|32617|1406|8
+#TR|Kayseri
+Sarıoğlan|Sarioglan|39077|35967|1165|5
+#TR|Konya
+Sarayönü|Sarayoenue|38262|32405|1062|10
+#TR|Kütahya
+Şaphane|Saphane|39027|29222|994|5
+#TR|Kırıkkale
+Sulakyurt||40157|33716|833|7
+#TR|Manisa
+Saruhanlı|Saruhanli|38735|27568|43|13
+Sarıgöl|Sarigoel|38240|28697|214|13
+Selendi||38744|28868|443|9
+#TR|Mardin
+Şenköy|Senkoey|37464|41191|952|9
+Savur||37535|40879|961|9
+#TR|Sakarya
+Söğütlü|Soeguetlue|40906|30474|20|8
+#TR|Siirt
+Şirvan|Sirvan|38063|42025|985|6
+#TR|Trabzon
+Şalpazarı|Salpazari|40938|39190|506|10
+#TR|Uşak
+Sivaslı|Sivasli|38499|29684|942|7
+#TR|Yozgat
+Şefaatlı|Sefaatli|39504|34756|925|14
+Saraykent||39694|35511|1116|11
+#TR|Çankırı
+Şabanözü|Sabanoezue|40482|33284|1032|8
+#TR|İzmir Province
+Şirintepe|Sirintepe|38496|27067|16|8
+#TR|Şırnak
+Şenoba|Senoba|37463|42723|838|8
+#TT|Siparia Regional Corporation
+Siparia||10145|-61507|61|9
+#TV|Nukufetau
+Savave Village||-8027|178314|12|1
+#TW|Taipei
+Shimen||25290|121566|15|13
+Shiding||24993|121655|135|7
+#TW|Taiwan
+Shenzhen||24957|121012|24|7
+#TZ|Tanga
+Soni||-4850|38367|1191|12
+#UA|Cherkasy
+Sloboda||49373|32157|87|9
+#UA|Chernihiv Oblast
+Snovsk||51817|31942|113|11
+Sosnytsia||51524|32500|117|8
+Semenivka||52179|32582|160|6
+#UA|Chernivtsi
+Storozhynets||48159|25721|366|14
+Sokyryany||48449|27411|228|9
+#UA|Crimea
+Shcholkine||45430|35823|3|11
+Staryi Krym||45029|35092|300|9
+#UA|Dnipropetrovsk
+Slobozhanske||48532|35071|66|14
+Shyroke||47686|33261|42|10
+Solone||48209|34876|109|8
+Sofiyivka||48047|33872|94|7
+#UA|Donetsk
+Sofiyivka||48264|38159|197|11
+Syeverne||48096|38684|295|11
+Svitlodarsk||48434|38223|172|11
+Siversk||48865|38097|90|11
+Soledar||48692|38071|115|10
+Stare Misto||48726|37547|63|10
+Sartana||47175|37692|7|10
+Starobesheve||47751|38030|126|6
+Staryi Krym||47161|37488|41|6
+Sotsmistechko||48007|37808|150|6
+Staromykhailivka||47993|37586|175|5
+#UA|Ivano-Frankivsk
+Sniatyn||48449|25560|227|10
+Stari Kuty||48279|25163|381|5
+#UA|Kharkiv
+Solonytsivka||49997|36035|118|12
+Shevchenkove||49695|37176|175|7
+Sakhnovshchyna||49150|35873|179|7
+Slatyne||50210|36154|132|7
+Savyntsi||49400|37051|106|5
+#UA|Khmelnytskyi
+Stara Synyava||49597|27615|267|5
+#UA|Kirovohrad
+Smoline||48601|31313|185|10
+#UA|Kyiv City
+Shevchenka||50519|30435|118|7
+Synyoozernyi Masyv||50511|30405|158|6
+#UA|Kyiv Oblast
+Shchaslyve||50378|30791|118|7
+Sofiyivska Borschagivka||50410|30367|163|7
+Stavyshche||49392|30191|197|6
+#UA|Luhansk
+Stanytsya-Luhanska||48662|39484|40|12
+Shchastya||48738|39230|55|11
+Slov`yanoserbsk||48698|38981|68|8
+#UA|Lviv
+Sosnivka||50290|24251|196|11
+Sokilnyky||49782|23982|309|9
+Skole||49038|23514|439|6
+Sudova Vyshnia||49787|23374|206|6
+Shklo||49957|23544|265|6
+Shchyrets||49653|23858|268|6
+Staryi Sambir||49440|23001|337|6
+#UA|Mykolaiv
+Snihurivka||47077|32820|51|12
+#UA|Odesa
+Shabo||46127|30386|15|7
+Shyryayeve||47385|30191|51|7
+Savran||48129|30083|89|6
+Shevchenkove||45555|29334|32|6
+Serhiyivka||46025|30368|15|5
+Starokozache||46336|29989|95|5
+#UA|Poltava
+Shchemylivka||49076|33400|65|10
+Semenivka||49597|33179|92|6
+#UA|Sumy
+Seredyna-Buda||52189|34036|194|7
+Svesa||51951|33934|181|6
+#UA|Ternopil
+Shumsk||50118|26118|215|5
+#UA|Vinnytsia
+Stryzhavka||49310|28472|234|9
+Sharhorod||48736|28085|245|7
+Sutysky||49039|28420|255|6
+#UA|Volyn
+Shatsk||51499|23936|166|5
+Stara Vyzhivka||51437|24440|173|5
+#UA|Zakarpattia
+Solotvyno||47947|23874|281|9
+Serednie Vodiane||47983|23909|274|5
+#UA|Zaporizhzhia
+Selyshche 8 Bereznya||46769|36817|49|6
+#US|Alabama
+Scottsboro||34672|-86034|196|15
+Saraland||30821|-88071|4|14
+Sylacauga||33173|-86252|166|13
+Saks||33699|-85840|250|11
+Sheffield||34765|-87699|157|9
+Southside||33925|-86022|189|9
+Spanish Fort||30675|-87915|8|8
+Satsuma||30853|-88056|4|6
+Smiths Station||32540|-85099|162|5
+#US|Alaska
+Sitka||57053|-135331|8|9
+Sterling||60537|-150765|67|6
+#US|Arizona
+Sierra Vista Southeast||31454|-110216|1387|15
+Sun Lakes||33211|-111875|364|14
+Saddlebrooke||32539|-110901|1015|13
+Show Low||34254|-110030|1927|11
+Sedona||34870|-111761|1326|10
+Safford||32834|-109708|889|10
+South Tucson||32200|-110968|739|6
+Snowflake||34513|-110078|1702|6
+Summit||32067|-110951|799|5
+#US|Arkansas
+Stuttgart||34500|-91553|64|9
+#US|California
+Stanford||37424|-122166|23|14
+Salida||37706|-121085|21|14
+San Marino||34121|-118106|172|13
+Solana Beach||32991|-117271|22|13
+Shadow Hills||34262|-118352|362|13
+San Anselmo||37975|-122562|14|13
+Scotts Valley||37051|-122015|171|12
+Signal Hill||33804|-118168|45|12
+Sun Village||34560|-117957|834|12
+Sierra Madre||34162|-118053|252|11
+Sonoma||38292|-122458|26|11
+Shasta Lake||40680|-122371|246|10
+San Diego Country Estates||33007|-116784|460|10
+Soquel||36988|-121957|10|10
+Spring Valley Lake||34494|-117268|847|8
+South San Gabriel||34049|-118095|83|8
+Sebastopol||38402|-122824|25|8
+Sausalito||37859|-122485|4|7
+San Martin||37085|-121610|88|7
+Saint Helena||38505|-122470|77|6
+South Oroville||39481|-121536|57|6
+Solvang||34596|-120138|154|6
+Silver Lakes||34746|-117341|745|6
+Strawberry||37897|-122509|71|5
+Saranap||37885|-122076|55|5
+Sunnyslope||34012|-117433|275|5
+#US|Colorado
+Sterling||40626|-103208|1200|14
+Superior||39953|-105169|1675|13
+Steamboat Springs||40485|-106832|2052|12
+Stonegate||39531|-104804|1791|9
+Stratmoor||38774|-104780|1764|7
+Sheridan||39647|-105025|1623|6
+Salida||38535|-105999|2159|5
+Shaw Heights||39853|-105043|1661|5
+#US|Connecticut
+Stafford||41985|-72289|177|12
+Southwood Acres||41963|-72571|39|8
+Simsbury Center||41881|-72811|88|6
+Sherwood Manor||42013|-72564|46|5
+#US|Delaware
+Smyrna||39300|-75605|10|11
+Seaford||38641|-75611|7|8
+#US|Florida
+Scott Lake||25941|-80232|2|14
+Sarasota Springs||27309|-82480|7|14
+South Venice||27053|-82424|4|14
+Saint Augustine||29895|-81315|0|13
+South Daytona||29166|-81004|3|13
+South Miami||25708|-80293|3|12
+Shady Hills||28410|-82543|16|12
+Satellite Beach||28176|-80590|4|11
+Sebring||27496|-81441|41|10
+Silver Springs||29217|-82058|15|10
+Springfield||30153|-85611|8|9
+Saint Pete Beach||27725|-82741|0|9
+Sugarmill Woods||28732|-82506|25|8
+Southwest Ranches||26059|-80337|1|8
+Seffner||27984|-82276|21|8
+Saint Augustine Shores||29811|-81310|8|7
+Sanibel||26449|-82022|1|7
+Southgate||27308|-82510|0|7
+Siesta Key||27268|-82545|1|7
+Southeast Arcadia||27186|-81852|17|7
+Silver Springs Shores||29104|-82021|29|7
+Saint Augustine Beach||29851|-81265|2|6
+Sky Lake||28457|-81391|30|6
+Surfside||25878|-80126|0|6
+South Patrick Shores||28202|-80609|0|6
+South Apopka||28662|-81510|38|6
+South Gate Ridge||27286|-82497|9|6
+Starke||29944|-82110|50|5
+South Highpoint||27917|-82713|4|5
+South Bay||26664|-80716|5|5
+South Pasadena||27755|-82738|1|5
+Samsula-Spruce Creek||29049|-81062|8|5
+#US|Georgia
+Saint Simon Mills||31171|-81407|3|14
+Saint Simons Island||31151|-81370|2|13
+Scottdale||33790|-84264|314|11
+Skidaway Island||31935|-81047|3|8
+Swainsboro||32597|-82334|99|7
+Stone Mountain||33808|-84170|318|6
+Sylvester||31531|-83837|118|6
+Sandersville||32982|-82810|137|6
+#US|Hawaii
+Spreckelsville||20897|-156415|22|6
+Sunset Beach-Pūpūkea|Sunset Beach-Pupukea|21662|-158054|6|5
+#US|Idaho
+Sandpoint||48277|-116553|639|8
+Star||43692|-116493|753|8
+#US|Illinois
+Swansea||38534|-89989|166|14
+Streator||41121|-88835|189|13
+Shiloh||38561|-89897|202|13
+Schiller Park||41956|-87871|195|12
+Summit||41788|-87810|187|11
+Sauk Village||41488|-87568|199|10
+Steger||41470|-87636|217|10
+Sugar Grove||41761|-88444|219|10
+Savoy||40055|-88252|224|8
+South Beloit||42493|-89037|225|8
+Silvis||41512|-90415|181|7
+Sandwich||41646|-88622|203|7
+Salem||38627|-88946|165|7
+Stickney||41821|-87783|184|7
+Spring Grove||42444|-88236|233|6
+Spring Valley||41328|-89200|182|5
+Staunton||39012|-89791|189|5
+#US|Indiana
+Saint John||41450|-87470|221|15
+Speedway||39802|-86267|228|12
+Sellersburg||38398|-85755|148|9
+Scottsburg||38686|-85770|172|7
+Salem||38606|-86101|229|6
+South Haven||41542|-87137|199|5
+#US|Iowa
+Spencer||43141|-95144|400|11
+Storm Lake||42641|-95210|433|11
+Sioux Center||43080|-96176|446|7
+Sheldon||43181|-95856|435|5
+Shenandoah||40766|-95372|299|5
+Spirit Lake||43422|-95102|449|5
+#US|Kansas
+Spring Hill||38743|-94826|324|6
+#US|Kentucky
+Shepherdsville||37988|-85716|137|12
+Somerset||37092|-84604|296|11
+Saint Dennis||38188|-85846|134|9
+#US|Louisiana
+Scott||30236|-92095|11|9
+Saint Rose||29947|-90323|3|8
+Schriever||29742|-90810|4|7
+Saint Gabriel||30258|-91099|7|7
+Saint Martinville||30125|-91833|7|6
+Springhill||33006|-93467|88|5
+#US|Maine
+South Berwick||43235|-70809|34|7
+Skowhegan||44765|-69719|52|6
+#US|Maryland
+Summerfield||38905|-76868|64|11
+South Kensington||39013|-77071|86|8
+Savage||39138|-76824|64|7
+Stevensville||38981|-76314|4|7
+Sandtown-Winchester||39304|-76643|59|6
+Silver Hill||38842|-76946|89|6
+Shady Side||38842|-76512|3|6
+Spring Ridge||39401|-77352|112|6
+#US|Massachusetts
+Suffolk Downs Station||42390|-70998|3|15
+Seekonk||41808|-71337|12|14
+Swampscott||42471|-70918|8|14
+South Yarmouth||41667|-70185|6|11
+Southborough||42306|-71525|90|10
+Southwick||42055|-72770|81|9
+Sutton||42150|-71763|212|9
+Spring Hill||42386|-71109|40|8
+Sterling||42438|-71761|153|7
+Stow||42437|-71506|71|6
+Spencer||42244|-71992|259|6
+Sharon||42124|-71179|90|6
+Southampton||42229|-72730|71|5
+Savin Hill||42313|-71058|5|5
+Scituate||42196|-70726|11|5
+#US|Michigan
+Sault Ste. Marie||46495|-84345|188|14
+South Lyon||42461|-83652|282|12
+Sturgis||41799|-85419|279|11
+Saline||42167|-83782|250|9
+Saint Joseph||42110|-86480|193|8
+Saint Johns||43001|-84559|242|8
+Saint Louis||43408|-84607|223|7
+Shields||43415|-84056|182|7
+South Monroe||41896|-83418|182|6
+Swartz Creek||42957|-83831|240|6
+Saint Clair||42821|-82486|178|5
+Springfield||42326|-85239|269|5
+#US|Minnesota
+Sauk Rapids||45592|-94166|313|13
+Saint Peter||44324|-93958|234|11
+Saint Anthony||45021|-93218|281|8
+Shorewood||44901|-93589|299|8
+Saint Francis||45387|-93359|280|7
+Saint Joseph||45565|-94318|334|7
+Spring Lake Park||45108|-93238|275|6
+Stewartville||43856|-92489|374|6
+Saint Paul Park||44842|-92991|239|5
+#US|Mississippi
+Senatobia||34618|-89969|88|8
+Saint Martin||30438|-88868|3|8
+Saltillo||34376|-88682|98|5
+#US|Missouri
+Saint Ann||38727|-90383|177|13
+Smithville||39387|-94581|248|9
+Sunset Hills||38539|-90407|188|9
+Saint Johns||38713|-90343|185|8
+Sappington||38537|-90380|182|8
+Sullivan||38208|-91160|299|7
+Saint John||38715|-90346|196|7
+Shrewsbury||38590|-90337|167|6
+Savannah||39942|-94830|337|5
+#US|Montana
+Sidney||47717|-104156|594|7
+#US|Nebraska
+Scottsbluff||41867|-103667|1186|15
+South Sioux City||42474|-96414|337|13
+Seward||40907|-97099|455|7
+Sidney||41143|-102978|1246|7
+Schuyler||41447|-97059|412|6
+#US|Nevada
+Spring Creek||40727|-115586|1725|12
+Silver Springs||39415|-119225|1280|5
+#US|New Hampshire
+Somersworth||43262|-70865|71|12
+Seabrook||42895|-70871|15|9
+Swanzey||42870|-72282|149|7
+Stratham Station||43053|-70895|12|7
+Sandown||42929|-71187|69|6
+South Hooksett||43026|-71435|134|5
+Suncook||43131|-71453|82|5
+#US|New Jersey
+Springdale||39881|-74970|27|15
+Springfield||40705|-74317|32|14
+Short Hills||40748|-74325|84|13
+Saddle Brook||40899|-74093|14|13
+Somerville||40574|-74610|18|12
+Somers Point||39318|-74595|8|11
+Succasunna||40868|-74640|220|9
+South Amboy||40478|-74291|38|9
+Spotswood||40392|-74398|9|8
+Strathmore||40396|-74213|43|7
+Smithville||39494|-74457|10|7
+Stratford||39827|-75015|24|7
+Somerdale||39844|-75023|20|5
+#US|New Mexico
+Silver City||32770|-108280|1809|10
+Socorro||34058|-106891|1403|9
+Shiprock||36786|-108687|1492|8
+#US|New York
+South Farmingdale||40721|-73440|18|14
+Stony Brook||40926|-73141|27|14
+Saint James||40879|-73157|46|13
+Seaside||40583|-73828|3|13
+Stony Point||41230|-73987|36|12
+Salisbury||40746|-73560|33|12
+Suffern||41115|-74150|95|11
+Spuyten Duyvil||40881|-73917|59|11
+Sleepy Hollow||41086|-73858|27|10
+South Huntington||40824|-73399|63|9
+Scotchtown||41481|-74360|220|9
+South Lockport||43150|-78697|193|8
+South Beach||40583|-74076|2|8
+Scotia||42826|-73964|74|8
+Sound Beach||40956|-72968|54|8
+Southport||42055|-76819|271|7
+Seneca Falls||42911|-76797|137|7
+South Hill||42406|-76485|237|7
+Springs||41016|-72159|3|7
+Solvay||43058|-76207|152|6
+South Valley Stream||40656|-73718|2|6
+Southold||41065|-72426|7|6
+Salamanca||42158|-78715|421|6
+Stapleton||40626|-74078|3|5
+Saranac Lake||44330|-74131|471|5
+Sea Cliff||40849|-73645|57|5
+#US|North Carolina
+Southern Pines||35174|-79392|152|14
+Spring Lake||35168|-78973|84|13
+Smithfield||35508|-78339|45|12
+Summerfield||36209|-79905|276|11
+Saint Stephens||35765|-81273|341|9
+Siler City||35723|-79462|185|8
+Selma||35537|-78284|53|6
+Silver Lake||34149|-77914|10|6
+Stokesdale||36237|-79979|291|5
+South Gastonia||35219|-81206|221|5
+Sawmills||35825|-81475|376|5
+#US|Ohio
+Sharonville||39268|-84413|178|14
+Salem||40901|-80857|374|12
+Seven Hills||41395|-81676|269|12
+Shiloh||39819|-84229|248|11
+Springdale||39287|-84485|225|11
+Struthers||41053|-80608|307|10
+Shelby||40881|-82662|336|9
+Sheffield Lake||41488|-82102|183|9
+Saint Marys||40542|-84389|264|8
+Saint Clairsville||40081|-80900|388|5
+Sunbury||40243|-82859|296|5
+Summerside||39105|-84288|268|5
+#US|Oklahoma
+Sallisaw||35460|-94787|162|9
+Skiatook||36368|-96001|197|8
+Seminole||35225|-96671|272|8
+Sulphur||34508|-96968|305|5
+#US|Oregon
+Saint Helens||45864|-122806|27|13
+Sandy||45397|-122261|299|11
+Silverton||45005|-122783|78|10
+Sweet Home||44398|-122736|161|9
+Stayton||44801|-122795|139|8
+Sutherlin||43390|-123313|157|8
+Scappoose||45754|-122878|19|7
+Seaside||45993|-123923|2|7
+Sheridan||45099|-123395|56|6
+#US|Pennsylvania
+Sharon||41233|-80493|305|14
+South Park Township||40299|-79994|296|13
+Saint Marys||41428|-78561|506|13
+Southwest Center City Philadelphia||39943|-75181|12|11
+Shiloh||39978|-76797|141|11
+Shiloh||41042|-78291|481|11
+Spruce Hill||39953|-75210|28|10
+Sunbury||40863|-76794|142|10
+Swissvale||40424|-79883|312|9
+Southwest Schuylkill||39945|-75204|12|9
+Sanatoga||40245|-75595|72|8
+Shamokin||40789|-76559|220|7
+Souderton||40312|-75325|128|7
+South Williamsport||41232|-76999|159|6
+Swarthmore||39902|-75350|39|6
+Somerset||40008|-79078|669|6
+Steelton||40235|-76841|97|6
+Shawmont||40053|-75236|110|6
+Selinsgrove||40799|-76862|134|6
+Sharon Hill||39907|-75272|23|6
+Shippensburg||40051|-77520|200|6
+Stroudsburg||40987|-75195|132|5
+Sayre||41979|-76515|235|5
+Schlusser||40242|-77177|129|5
+Shillington||40308|-75965|107|5
+Schuylkill Haven||40631|-76171|169|5
+Sugarcreek||41421|-79881|316|5
+Shanor-Northvue||40910|-79916|348|5
+#US|South Carolina
+Seneca||34686|-82953|294|8
+Sangaree||33035|-80128|26|8
+Sans Souci||34878|-82424|309|8
+#US|South Dakota
+Spearfish||44491|-103859|1112|11
+Sturgis||44410|-103509|1043|7
+#US|Tennessee
+Soddy-Daisy||35236|-85191|213|13
+Seymour||35891|-83725|285|11
+Signal Mountain||35123|-85344|519|9
+Savannah||35225|-88249|135|7
+South Cleveland||35106|-84890|282|7
+Sweetwater||35601|-84461|278|6
+Sparta||35926|-85464|281|5
+#US|Texas
+Sienna Plantation||29486|-95508|18|14
+Seabrook||29564|-95025|3|14
+Santa Fe||29378|-95106|9|13
+Snyder||32718|-100918|707|12
+Sweetwater||32471|-100406|661|11
+Selma||29584|-98306|230|9
+San Elizario||31585|-106273|1110|9
+Sanger||33363|-97174|206|8
+Seminole||32719|-102645|1005|7
+Silsbee||30349|-94178|25|7
+Sealy||29781|-96157|61|6
+Slaton||33437|-101643|940|6
+Sunnyvale||32797|-96561|148|6
+Sinton||28037|-97509|15|6
+Shady Hollow||30165|-97862|229|5
+#US|Utah
+Smithfield||41838|-111833|1403|11
+Santaquin||39976|-111785|1519|11
+Summit Park||40746|-111612|2098|8
+Salem||40053|-111674|1405|7
+South Weber||41132|-111930|1375|7
+Santa Clara||37133|-113654|842|7
+Snyderville||40694|-111544|2013|6
+Sunset||41136|-112031|1375|5
+Stansbury park||40638|-112296|1309|5
+#US|Vermont
+St Johnsbury||44425|-72015|212|8
+Saint Albans||44811|-73083|127|7
+Saint Johnsbury||44419|-72015|182|6
+#US|Virginia
+Sugarland Run||39038|-77375|88|12
+Seven Corners||38872|-77155|117|9
+Stuarts Draft||38030|-79034|433|9
+Smithfield||36982|-76631|9|8
+South Boston||36699|-78901|131|8
+Sandston||37523|-77316|51|8
+Strasburg||38989|-78359|174|7
+#US|Washington
+Snoqualmie||47529|-121825|129|13
+Sedro-Woolley||48504|-122236|17|11
+Shelton||47215|-123101|7|10
+Sumner||47203|-122240|23|10
+Snohomish||47913|-122098|20|10
+Summit||47162|-122357|145|8
+Selah||46654|-120530|341|8
+Summit View||47136|-122352|155|7
+Sequim||48080|-123102|55|7
+Stanwood||48241|-122371|2|7
+Sudden Valley||48723|-122347|205|6
+Steilacoom||47170|-122603|20|6
+#US|West Virginia
+South Charleston||38368|-81700|183|13
+Saint Albans||38386|-81836|186|11
+#US|Wisconsin
+Shorewood||43089|-87888|207|13
+Stoughton||42917|-89218|267|13
+Suamico||44632|-88039|180|12
+Salem||42555|-88111|237|11
+Sussex||43134|-88222|280|11
+Sparta||43944|-90813|241|10
+Somers||42640|-87910|213|9
+Saint Francis||42968|-87878|211|9
+Shawano||44782|-88609|249|9
+Sturgeon Bay||44834|-87377|183|9
+Sheboygan Falls||43732|-87822|201|8
+Sturtevant||42698|-87895|214|7
+Slinger||43334|-88286|323|5
+#UY|Canelones
+Salinas||-34777|-55840|21|9
+San Ramón|San Ramon|-34292|-55956|44|7
+Sauce||-34652|-56064|42|6
+#UY|Durazno Department
+Sarandí del Yi|Sarandi del Yi|-33350|-55633|126|7
+#UY|Florida
+Sarandí Grande|Sarandi Grande|-33733|-56333|132|6
+#UZ|Fergana
+Shohimardon||39983|71805|1464|5
+#UZ|Karakalpakstan
+Shumanay||42643|58913|68|14
+#VE|Amazonas
+San Fernando de Atabapo||4046|-67699|93|12
+#VE|Anzoátegui
+San Mateo||9740|-64549|137|12
+#VE|Monagas
+San Antonio||10119|-63725|474|13
+#VE|Nueva Esparta
+San Pedro de Coche||10782|-63996|2|7
+#VE|Sucre
+San Lorenzo||10223|-63925|272|8
+#VN|Dong Thap
+Sa Rài|Sa Rai|10870|105466|6|9
+#VN|Ho Chi Minh City (HCMC)
+Suối Nghệ|Suoi Nghe|10592|107216|66|12
+#VN|Hà Tĩnh Province
+Sơn Lộc|Son Loc|18372|105780|5|6
+#VN|Lao Cai
+Sa Pa||22340|103844|1500|11
+Si Ma Cai||22695|104279|1065|6
+#VN|Điện Biên Province
+Si Pa Phìn|Si Pa Phin|21801|102963|1123|6
+#VU|Penama
+Saratamata||-15286|167991|1|0
+#VU|Torba
+Sola||-13876|167552|11|1
+#WS|Fa'asaleleaga
+Safotulafai||-13671|-172178|10|0
+#WS|Gaga'ifomauga
+Safotu||-13451|-172402|15|1
+#WS|Satupa'itea
+Satupa‘itea|Satupa`itea|-13766|-172327|11|0
+#WS|Va'a-o-Fonoti
+Samamea||-13934|-171531|13|0
+#XK|Ferizaj
+Štrpce|Strpce|42239|21027|851|7
+#XK|Gjakova
+Strellc i Epërm|Strellc i Eperm|42578|20294|624|6
+#XK|Mitrovica
+Srbica||42747|20789|612|5
+#YE|Muhafazat Hadramaout
+Shibām|Shibam|15927|48627|683|7
+#YT|Sada
+Sada||-12851|45102|82|10
+#ZA|Eastern Cape
+Steynsburg||-31296|25823|1451|9
+Sterkstroom||-31557|26554|1347|9
+St Francis Bay||-34160|24826|9|6
+#ZA|Free State
+Steynsrus||-27953|27564|1536|11
+Smithfield||-30214|26531|1401|6
+#ZA|KwaZulu-Natal
+Sundumbili||-29134|31398|64|12
+#ZA|Limpopo
+Sebayeng||-23758|29667|1188|11
+Senwamokgope||-23409|30160|639|5
+#ZA|Mpumalanga
+Shatale||-24796|31047|602|9
+#ZA|North West
+Sannieshof||-26529|25809|1388|13
+Swartruggens||-25650|26689|1253|13
+Stella||-26553|24867|1299|6
+#ZA|Northern Cape
+Springbok||-29664|17887|925|10
+#ZA|Western Cape
+Saint Helena Bay||-32767|18033|31|14
+Sedgefield||-34021|22806|11|10
+Saron||-33181|19009|105|9
+Stilbaai||-34369|21407|36|8
+Simon's Town||-34193|18436|15|7
+Stanford||-34439|19456|22|6
+Struisbaai||-34804|20055|12|5
+#ZW|Mashonaland Central
+Shamva||-17312|31576|947|10

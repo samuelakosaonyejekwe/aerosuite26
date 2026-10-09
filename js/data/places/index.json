@@ -1,0 +1,59 @@
+{
+ "schema": 1,
+ "source": "GeoNames",
+ "home": "https://www.geonames.org/",
+ "files": [
+  "https://download.geonames.org/export/dump/cities15000.zip",
+  "https://download.geonames.org/export/dump/cities5000.zip",
+  "https://download.geonames.org/export/dump/admin1CodesASCII.txt"
+ ],
+ "license": "Creative Commons Attribution 4.0 (CC BY 4.0)",
+ "attribution": "Place names: GeoNames (geonames.org), CC BY 4.0",
+ "registry": "geonames",
+ "dataset_date": "2026-10-09",
+ "generated": "2026-10-09T11:10:26.171Z",
+ "selection": "cities15000: populated places with more than 15 000 inhabitants, and capitals",
+ "changes": "Reduced to name, ASCII name, country, first-order division, position (0.001°), elevation (GeoNames elevation, else its digital-elevation-model value) and population (thousands)",
+ "counts": {
+  "places": 34156,
+  "groups": 2790,
+  "small": 35624
+ },
+ "file": "cities.txt",
+ "bytes": 1156761,
+ "small": {
+  "selection": "cities5000 without the places above: 5 000 to 15 000 inhabitants",
+  "dir": "small/",
+  "by": "first letter of the ASCII name (0 = other)",
+  "buckets": {
+   "0": 4,
+   "s": 4141,
+   "o": 799,
+   "l": 1846,
+   "e": 819,
+   "c": 2662,
+   "m": 2649,
+   "a": 2116,
+   "n": 1374,
+   "k": 2042,
+   "z": 439,
+   "b": 3007,
+   "d": 1217,
+   "u": 345,
+   "t": 1747,
+   "y": 336,
+   "r": 1160,
+   "q": 193,
+   "p": 2142,
+   "f": 755,
+   "i": 624,
+   "h": 1214,
+   "w": 950,
+   "g": 1423,
+   "x": 72,
+   "v": 1032,
+   "j": 516
+  },
+  "bytes": 1372127
+ }
+}

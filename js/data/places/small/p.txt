@@ -1,0 +1,2876 @@
+#AF|Bamyan
+Panjāb|Panjab|34388|67023|2728|13
+#AF|Logar
+Pul-e ‘Alam|Pul-e 'Alam|33995|69023|1921|13
+#AF|Nuristan
+Pārūn|Parun|35421|70923|2756|1
+#AG|Saint George Parish
+Piggotts||17117|-61800|11|2
+#AG|Saint Peter Parish
+Parham||17097|-61770|18|1
+#AL|Berat County
+Perondi||40779|19923|41|9
+Poshnjë|Poshnje|40780|19844|31|7
+#AL|Dibër County
+Peshkopi||41685|20429|660|15
+#AL|Elbasan County
+Papër|Paper|41052|19961|85|6
+Përrenjas|Perrenjas|41073|20549|591|6
+#AL|Gjirokastër County
+Përmet|Permet|40234|20352|244|8
+#AL|Shkodër County
+Pukë|Puke|42044|19900|799|6
+#AL|Tirana
+Petrelë|Petrele|41253|19853|298|6
+#AM|Armavir
+Parakar||40164|44406|872|7
+#AM|Kotayk
+Proshyan||40247|44419|1185|6
+#AO|Bengo
+Paredes||-8607|14667|989|6
+#AO|Benguela
+Praia Bebe||-12410|13503|7|9
+#AO|Uíge
+Puri||-7695|15654|1136|8
+#AR|Buenos Aires
+Pedro Luro||-39501|-62680|24|11
+Pellegrini||-36267|-63165|106|6
+Puán|Puan|-37548|-62768|224|5
+Pérez Millán|Perez Millan|-33770|-60094|51|5
+#AR|Chaco
+Presidencia de la Plaza||-27002|-59845|84|12
+Pampa del Indio||-26050|-59937|95|12
+Puerto Tirol||-27374|-59089|40|10
+Puerto Vilelas||-27511|-58942|42|8
+Pampa del Infierno||-26504|-61177|119|8
+#AR|Cordoba
+Pozo del Molle||-32021|-62919|157|5
+#AR|Corrientes
+Paso de la Patria||-27317|-58573|56|6
+Perugorría|Perugorria|-29341|-58608|55|6
+#AR|Formosa
+Palo Santo||-25565|-59338|78|5
+#AR|Jujuy
+Palma Sola||-23978|-64303|685|5
+#AR|Mendoza
+Puente de Hierro||-32866|-68674|641|12
+#AR|Misiones
+Puerto Piray||-26469|-54707|162|9
+Puerto Libertad||-25920|-54582|213|6
+Panambí|Panambi|-27722|-54915|112|6
+#AR|Neuquen
+Plaza Huincul||-38930|-69208|585|12
+#AR|Santa Cruz
+Perito Moreno||-46590|-70926|342|8
+Puerto San Julián|Puerto San Julian|-49307|-67730|22|6
+Puerto Santa Cruz||-50019|-68524|17|5
+#AT|Burgenland
+Pinkafeld||47371|16124|396|5
+#AT|Lower Austria
+Purkersdorf||48208|16175|250|10
+Pressbaum||48183|16083|317|6
+#AT|Styria
+Puntigam||47033|15433|348|9
+Pöllau|Poellau|47300|15833|422|6
+#AT|Upper Austria
+Perg||48250|14633|252|6
+#AU|Australian Capital Territory
+Palmerston||-35194|149119|617|5
+#AU|New South Wales
+Pyrmont||-33870|151194|20|14
+Penrith||-33750|150700|31|13
+Padstow||-33957|151032|23|13
+Paddington||-33884|151232|51|13
+Penshurst||-33967|151083|63|13
+Panania||-33954|150997|17|12
+Potts Point||-33867|151226|23|12
+Pymble||-33744|151142|145|12
+Peakhurst||-33963|151052|36|10
+Parkes||-33137|148176|335|10
+Plumpton||-33752|150837|58|9
+Petersham||-33895|151155|42|8
+Pennant Hills||-33738|151072|172|7
+Pendle Hill||-33804|150955|54|7
+Pottsville||-28387|153559|9|7
+Picnic Point||-33981|150997|7|6
+Port Kembla||-34482|150901|15|5
+#AU|Queensland
+Parkinson||-27643|153030|42|11
+Pimpama||-27817|153300|3|9
+Parkwood||-27955|153363|28|9
+Petrie||-27267|152983|13|8
+Paddington||-27459|152995|32|8
+Peregian Springs||-26488|153076|16|7
+Paradise Point||-27887|153393|4|6
+Pelican Waters||-26834|153100|2|6
+Point Vernon||-25257|152817|5|6
+Palmwoods||-26686|152961|34|6
+Park Avenue||-23353|150519|22|5
+#AU|South Australia
+Prospect||-34882|138593|43|15
+Port Pirie||-33192|138017|10|14
+Port Lincoln||-34726|135874|32|14
+Port Augusta||-32496|137773|11|13
+Pooraka||-34825|138626|20|7
+Paradise||-34874|138669|72|7
+Para Hills||-34812|138658|87|6
+#AU|Victoria
+Parkdale||-37992|145081|23|12
+Prahran||-37851|144993|26|12
+Pascoe Vale South||-37740|144946|70|10
+Portland||-38346|141603|16|9
+Patterson Lakes||-38069|145143|6|8
+Parkville||-37783|144950|40|7
+Phillip Island||-38483|145231|48|7
+#AU|Western Australia
+Perth city centre||-31953|115852|45|14
+Port Kennedy||-32373|115752|9|13
+Piara Waters||-32133|115916|30|9
+Padbury||-31806|115769|45|8
+Palmyra||-32045|115786|35|7
+Parmelia||-32258|115822|26|6
+Parkwood||-32049|115918|14|6
+#AW|
+Paradera||12535|-70007|42|14
+Palm Beach||12568|-70039|8|6
+Pos Chiquito||12465|-69962|8|5
+#AZ|Baki
+Pirallahı|Pirallahi|40470|50325|-19|13
+#BA|Federation of B&H
+Prozor||43822|17609|711|10
+Potoci||43410|17879|91|8
+Podzvizd||45174|15874|239|7
+Pećigrad|Pecigrad|45054|15897|290|7
+Posušje|Posusje|43473|17326|667|6
+Podhum||43723|16999|730|6
+#BA|Srpska
+Pale||43817|18569|834|7
+Prnjavor||44870|17663|173|7
+#BD|Barisal Division
+Phuljhuri||22200|90067|4|13
+#BE|Flanders
+Paal||51040|5172|39|12
+Petegem-aan-de-Leie||50967|3533|11|10
+Pamel||50845|4071|35|9
+Pittem||50993|3263|32|7
+#BE|Wallonia
+Profondeville||50376|4865|93|11
+Plombières|Plombieres|50737|5959|167|10
+Pepinster||50566|5804|147|10
+Pâturages|Paturages|50407|3855|73|8
+Philippeville||50196|4544|290|8
+Prayon||50578|5675|89|5
+Paliseul||49904|5135|409|5
+#BF|Centre-Ouest
+Pitmoaga||12246|-1881|344|8
+#BF|Est
+Pama||11250|708|222|14
+#BG|Burgas
+Pomorie||42563|27630|6|14
+#BG|Plovdiv
+Perushtitsa||42050|24550|407|5
+#BG|Sofia
+Pirdop||42700|24183|675|8
+#BG|Varna
+Provadia||43183|27433|173|14
+#BG|Veliko Tarnovo
+Pavlikeni||43243|25322|157|11
+Polski Trambesh||43372|25635|50|6
+#BM|Paget
+Paget Parish||32280|-64783|1|6
+#BM|Pembroke
+Pembroke Parish||32300|-64792|8|11
+#BN|
+Perumahan Negara Panchor||4967|115017|46|13
+Pengkalan Batu||4783|114833|19|12
+#BO|La Paz Department
+Patacamaya||-17236|-67914|3874|12
+Pucarani||-16400|-68478|3865|5
+#BO|Potosí Department
+Porco||-21053|-66430|3990|6
+#BO|Santa Cruz Department
+Puerto Suárez|Puerto Suarez|-18967|-57801|218|13
+Portachuelo||-17354|-63396|298|11
+Puerto Quijarro||-17783|-57767|92|10
+Pailón|Pailon|-17664|-62718|250|9
+#BR|Acre
+Porto Walter||-8269|-72744|195|12
+#BR|Alagoas
+Paripueira||-9465|-35552|11|14
+Passo de Camaragibe||-9238|-35493|1|14
+Poço das Trincheiras|Poco das Trincheiras|-9312|-37286|292|13
+Pariconha||-9253|-38005|383|11
+Porto de Pedras||-9158|-35295|1|10
+Paulo Jacinto||-9366|-36370|307|7
+#BR|Amapá
+Portuário do Igarapé da Fortaleza|Portuario do Igarape da Fortaleza|51|-51126|14|6
+#BR|Amazonas
+Pirapetinga||-7033|-62867|41|11
+#BR|Bahia
+Ponto Novo||-10863|-40134|370|15
+Pedro Alexandre||-10013|-37895|359|14
+Pé de Serra|Pe de Serra|-11834|-39612|273|13
+Presidente Jânio Quadros|Presidente Janio Quadros|-14689|-41678|707|12
+Pintadas||-11812|-39909|302|10
+Piraí do Norte|Pirai do Norte|-13762|-39379|163|10
+Pau Brasil||-15464|-39651|180|9
+Piripá|Piripa|-14940|-41720|638|9
+Palmeiras||-12529|-41559|846|9
+Planaltino||-13259|-40369|709|8
+Potiraguá|Potiragua|-15595|-39877|183|7
+Pedrão|Pedrao|-12146|-38643|182|6
+#BR|Ceará
+Palmácia|Palmacia|-4150|-38846|403|13
+Paramoti||-4097|-39239|96|12
+Poranga||-4745|-40926|716|12
+Pacoti||-4225|-38923|735|11
+Pires Ferreira||-4247|-40645|191|11
+Palhano||-4745|-37959|18|10
+Potengi||-7091|-40027|567|9
+Pacujá|Pacuja|-3980|-40698|134|6
+Potiretama||-5724|-38156|161|6
+#BR|Espírito Santo
+Presidente Kennedy||-21099|-41047|30|14
+Ponto Belo||-18124|-40541|265|6
+#BR|Goiás
+Piranhas||-16427|-51822|366|12
+Paraúna|Parauna|-16948|-50449|679|11
+Petrolina de Goiás|Petrolina de Goias|-16095|-49338|720|10
+Paranaiguara||-18916|-50654|493|8
+#BR|Maranhão
+Presidente Juscelino||-2927|-44065|15|13
+Presidente Vargas||-3407|-44024|59|11
+Peri Mirim||-2577|-44854|11|11
+Porto Rico do Maranhão|Porto Rico do Maranhao|-1860|-44586|1|6
+#BR|Mato Grosso
+Porto Alegre do Norte||-10877|-51632|202|13
+Paranaíta|Paranaita|-9665|-56477|274|12
+Porto Esperidião|Porto Esperidiao|-15853|-58460|147|10
+Pontal do Araguaia||-15907|-52257|293|7
+Porto dos Gaúchos|Porto dos Gauchos|-11535|-57414|256|6
+#BR|Mato Grosso do Sul
+Pôrto Barra do Ivinheima|Porto Barra do Ivinheima|-22967|-53667|234|15
+Paranhos||-23893|-55431|417|13
+Porto Murtinho||-21699|-57882|79|13
+Pedro Gomes||-18101|-54552|273|7
+Paraíso das Águas|Paraiso das Aguas|-19017|-53012|594|6
+#BR|Minas Gerais
+Papagaios||-19449|-44748|722|14
+Poté|Pote|-17807|-41786|492|14
+Perdigão|Perdigao|-19953|-45084|800|12
+Piraúba|Pirauba|-21276|-43026|360|12
+Prudente de Morais||-19482|-44155|741|11
+Planura||-20138|-48702|483|11
+Ponto dos Volantes||-16753|-41504|411|11
+Pedralva||-22243|-45466|903|11
+Porto Firme||-20673|-43084|604|11
+Pedras de Maria da Cruz||-15607|-44391|492|10
+Piranguinho||-22401|-45532|840|9
+Prados||-21057|-44080|1010|9
+Paula Cândido|Paula Candido|-20874|-42980|743|9
+Pimenta||-20484|-45799|789|9
+Piedade de Caratinga||-19761|-42076|914|9
+Passa Tempo||-20651|-44496|984|8
+Pratápolis|Pratapolis|-20745|-46861|716|8
+Pocrane||-19620|-41637|233|8
+Pains||-20371|-45661|708|8
+Pavão|Pavao|-17428|-40999|239|8
+Pedra Bonita||-20521|-42330|895|7
+Pintópolis|Pintopolis|-16059|-45156|492|7
+Piracema||-20508|-44482|873|7
+Pouso Alto||-22194|-44972|923|7
+Periquito||-19155|-42241|220|7
+Palmópolis|Palmopolis|-16735|-40420|589|6
+Piranguçu|Pirangucu|-22528|-45495|881|6
+Palma||-21375|-42314|190|6
+Patrocínio do Muriaé|Patrocinio do Muriae|-21152|-42215|182|6
+Pai Pedro||-15517|-43065|498|6
+Pirajuba||-19907|-48701|535|6
+Padre Carvalho||-16364|-42515|754|5
+Piedade dos Gerais||-20471|-44227|999|5
+#BR|Paraná
+Planalto||-25716|-53766|395|14
+Paraíso do Norte|Paraiso do Norte|-23281|-52602|372|14
+Peabiru||-23913|-52343|527|14
+Palmital||-24893|-52203|842|13
+Piên|Pien|-26098|-49429|841|13
+Porecatu||-22756|-51379|404|12
+Pérola|Perola|-23805|-53684|440|11
+Primeiro de Maio||-22851|-51028|367|11
+Paranacity||-22930|-52151|438|10
+Perobal||-23896|-53410|407|7
+Pinhalão|Pinhalao|-23792|-50056|597|7
+Paulo Frontin||-26040|-50836|780|6
+Pérola d'Oeste|Perola d'Oeste|-25825|-53741|413|6
+Pranchita||-26020|-53740|538|6
+Pato Bragado||-24626|-54225|281|6
+Paula Freitas||-26208|-50938|768|6
+#BR|Paraíba
+Puxinanã|Puxinana|-7161|-35961|671|14
+Pilar||-7267|-35260|38|12
+Paulista||-6594|-37624|165|12
+Pirpirituba||-6780|-35499|107|9
+Pedra Lavrada||-6758|-36471|514|7
+Pilões|Piloes|-6872|-35612|177|7
+Pedro Régis|Pedro Regis|-6640|-35276|161|6
+Pilõezinhos|Piloezinhos|-6843|-35530|170|5
+#BR|Pará
+Piçarra|Picarra|-6438|-48872|198|13
+Primavera||-940|-47116|19|11
+Peixe-Boi||-1192|-47312|14|8
+Pau d'Arco||-7833|-50044|204|7
+Palestina do Pará|Palestina do Para|-5742|-48317|132|7
+#BR|Pernambuco
+Primavera||-8331|-35354|164|14
+Paranatama||-8921|-36658|876|13
+Poção|Pocao|-8186|-36705|1004|11
+Palmeirina||-9004|-36326|542|7
+#BR|Piauí
+Palmeirais||-5978|-43063|90|15
+Pimenteiras||-6245|-41419|280|12
+Porto||-3893|-42710|40|12
+Parnaguá|Parnagua|-10227|-44639|336|10
+Padre Marcos||-7355|-40904|362|6
+Patos do Piauí|Patos do Piaui|-7679|-41245|290|5
+Palmeira do Piauí|Palmeira do Piaui|-8726|-44237|257|5
+#BR|Rio Grande do Norte
+Pedro Velho||-6439|-35221|25|14
+Paraú|Parau|-5774|-37101|79|14
+Poço Branco|Poco Branco|-5623|-35663|87|12
+Pendências|Pendencias|-5260|-36722|14|12
+Patu||-6110|-37637|253|11
+Passa e Fica||-6436|-35643|183|11
+Pureza||-5467|-35556|42|9
+Portalegre||-6024|-37988|650|8
+Pedro Avelino||-5522|-36388|98|6
+Porto do Mangue||-5068|-36782|4|5
+#BR|Rio Grande do Sul
+Palmares do Sul||-30258|-50510|5|11
+Pinheiro Machado||-31578|-53381|437|11
+Planalto||-27329|-53059|567|10
+Pantano Grande||-30191|-52374|50|10
+Porto Xavier||-27906|-55137|104|10
+Paverama||-29552|-51730|111|8
+Palmitinho||-27355|-53555|511|8
+Pedro Osório|Pedro Osorio|-31866|-52827|85|7
+Paraí|Parai|-28597|-51791|650|7
+Paraíso do Sul|Paraiso do Sul|-29669|-53149|84|7
+Passo do Sobrado||-29748|-52275|70|6
+Picada Café|Picada Cafe|-29452|-51133|163|5
+Progresso||-29244|-52312|473|5
+#BR|Santa Catarina
+Passo de Torres||-29321|-49724|6|13
+Ponte Serrada||-26872|-52016|987|11
+Pescaria Brava||-28374|-48883|20|10
+Paulo Lopes||-27962|-48684|3|9
+Praia Grande||-29197|-49950|45|8
+Palma Sola||-26347|-53278|870|8
+Petrolândia|Petrolandia|-27535|-49698|429|7
+Piratuba||-27420|-51772|442|6
+#BR|Sergipe
+Pacatuba||-10453|-36651|64|13
+Pirambu||-10738|-36856|6|8
+Pedrinhas||-11192|-37674|177|7
+Pinhão|Pinhao|-10567|-37723|252|6
+#BR|São Paulo
+Panorama||-21356|-51860|295|15
+Pacaembu||-21562|-51261|417|15
+Pindorama||-21186|-48907|530|15
+Patrocínio Paulista|Patrocinio Paulista|-20639|-47282|737|15
+Presidente Bernardes||-22006|-51553|417|14
+Piquete||-22614|-45176|642|12
+Palestina||-20390|-49433|555|11
+Pedro de Toledo||-24275|-47233|45|11
+Pirangi||-21091|-48658|534|11
+Parapuã|Parapua|-21783|-50791|397|11
+Porangaba||-23176|-48125|544|10
+Palmares Paulista||-21083|-48801|510|10
+Palmeira d'Oeste||-20416|-50762|434|9
+Pereiras||-23076|-47976|503|9
+Paulicéia|Pauliceia|-21318|-51831|344|8
+Paulo de Faria||-20032|-49406|451|7
+Pardinho||-23081|-48374|898|7
+Pedra Bela||-22793|-46443|1107|7
+Paraíso|Paraiso|-23576|-46651|781|6
+Paraíso|Paraiso|-21016|-48774|581|6
+Poloni||-20785|-49824|513|6
+Piacatu||-21592|-50599|423|6
+Pratânia|Pratania|-22808|-48666|701|5
+#BR|Tocantins
+Pedro Afonso||-8967|-48175|192|15
+Paranã|Parana|-12615|-47883|276|10
+Praia Norte||-5393|-47811|120|9
+Peixe||-12025|-48539|243|9
+Ponte Alta do Tocantins||-10744|-47536|302|8
+Pium||-10442|-49182|275|7
+Palmeirópolis|Palmeiropolis|-13044|-48402|431|7
+Pequizeiro||-8594|-48934|295|5
+#BS|Rum Cay
+Port Nelson||23650|-74842|4|0
+#BT|Paro
+Paro||27431|89413|2266|11
+#BT|Pemagatshel
+Pemagatshel||27038|91403|1207|14
+#BY|Homyel’ Voblasc’
+Petrikov||52130|28496|125|10
+#BY|Minsk
+Plyeshchanitsy||54424|27830|211|8
+#BZ|Toledo District
+Punta Gorda||16098|-88810|8|5
+#CA|Alberta
+Pineridge||51074|-113946|1077|10
+Penbrooke Meadows||51046|-113950|1060|8
+Peace River||56237|-117292|330|7
+Ponoka||52677|-113581|806|7
+#CA|British Columbia
+Prince Rupert||54315|-130321|26|15
+Powell River||49833|-124524|41|13
+Parksville||49319|-124316|26|12
+Promontory||49104|-121935|120|12
+Port Haney||49212|-122605|2|7
+Punjabi Market||49233|-123102|62|7
+Peachland||49769|-119746|396|5
+#CA|Manitoba
+Portage la Prairie||49973|-98293|263|13
+#CA|New Brunswick
+Parkton||46086|-64795|17|14
+#CA|Newfoundland and Labrador
+Portugal Cove-St. Phillip’s|Portugal Cove-St. Phillip's|47629|-52848|40|8
+Pearlgate||47502|-52803|138|7
+#CA|Nova Scotia
+Port Wallace||44699|-63548|36|7
+Princeville||45767|-61299|43|6
+#CA|Ontario
+Pembroke||45817|-77116|120|14
+Palmerston-Little Italy||43659|-79418|106|14
+Port Hope||44017|-78400|144|13
+Paris||43200|-80383|255|12
+Princess-Rosethorn||43666|-79545|151|11
+Pelmo Park-Humberlea||43718|-79528|134|11
+Preston Centre||43394|-80359|274|10
+Penetanguishene||44783|-79916|243|10
+Plantagenet||45533|-74994|51|10
+Port Perry||44107|-78944|252|10
+Pioneer Park||43393|-80441|304|9
+Popcorn House||43420|-80299|319|8
+Port Elgin||44436|-81390|201|8
+Playter Estates-Danforth||43680|-79355|123|8
+Parry Sound||45347|-80035|199|6
+Petrolia||42882|-82152|202|6
+Perth||44900|-76249|134|6
+#CA|Quebec
+Pont-Viau||45572|-73686|35|14
+Pointe-Saint-Charles||45481|-73555|16|14
+Pincourt||45383|-73982|27|11
+Prévost|Prevost|45867|-74083|166|10
+Petite-Bourgogne||45489|-73568|20|10
+Pont-Rouge||46755|-71696|104|9
+Pont Rouge||48883|-72082|135|8
+Pointe-du-Lac||48500|-71782|101|7
+Plessisville||46219|-71762|163|7
+Port-Cartier||50033|-66865|31|7
+Pointe-Calumet||45500|-73966|23|6
+Princeville||46172|-71875|160|6
+#CA|Saskatchewan
+Prairie View||50477|-104686|571|8
+Parkridge||52124|-106751|502|5
+Pleasant Hill||52126|-106699|500|5
+#CH|Basel-Landschaft
+Pratteln||47521|7694|291|15
+#CH|Geneva
+Plan-les-Ouates||46168|6117|407|11
+#CH|Jura
+Porrentruy||47417|7076|425|7
+#CH|Neuchâtel
+Peseux||46987|6889|539|6
+#CH|Schwyz
+Pfäffikon|Pfaeffikon|47201|8778|416|7
+#CH|Ticino
+Pregassona||46020|8974|373|8
+#CH|Vaud
+Prilly||46537|6605|489|11
+Payerne||46822|6938|455|10
+#CH|Zurich
+Pfäffikon|Pfaeffikon|47365|8792|557|12
+Pfäffikon / Pfäffikon (Dorfkern)|Pfaeffikon / Pfaeffikon (Dorfkern)|47369|8783|549|6
+#CI|Bas-Sassandra District
+Pauli-Brousse||4963|-6190|34|8
+#CI|Goh-Djiboua
+Pissékou|Pissekou|6287|-5820|228|6
+#CI|Lacs District
+Prikro||7647|-3996|213|10
+#CI|Lagunes District
+Petit Badien||5257|-4640|16|9
+Palmindustrie Tamabo||5441|-4795|77|5
+#CI|Montagnes
+Pinhou||6921|-7758|265|12
+Poumbly||7359|-7205|315|9
+Pona-Vahi||6947|-7161|232|6
+Ponan||5903|-7477|174|6
+Pagnébly|Pagnebly|7248|-7132|223|5
+#CI|Sassandra-Marahoue
+Pakouabo||7157|-5792|202|7
+Piébly Un|Piebly Un|7251|-7083|234|6
+#CI|Savanes District
+Pogo||10437|-5631|341|10
+#CI|Vallée du Bandama District
+Pétyonara|Petyonara|8431|-5114|281|5
+#CL|Araucania
+Purén|Puren|-38033|-73071|106|12
+#CL|Aysén
+Puerto Cisnes||-44747|-72697|12|6
+#CL|Coquimbo Region
+Punitaqui||-30834|-71259|217|10
+#CL|Maule Region
+Pencahue||-35393|-71801|72|8
+Pelarco||-35384|-71445|170|8
+#CL|O'Higgins Region
+Pichilemu||-34383|-72000|22|14
+Peumo||-34387|-71176|179|9
+Pichidegua||-34355|-71288|156|5
+Peralillo||-34478|-71480|134|5
+#CL|Region of Magallanes
+Porvenir||-53296|-70366|25|7
+#CL|Tarapacá
+Pica||-20491|-69331|1327|9
+#CL|Valparaiso
+Panquehue||-32771|-70836|538|7
+Puchuncaví|Puchuncavi|-32726|-71415|34|5
+#CL|Ñuble
+Pinto||-36704|-71892|310|11
+Pemuco||-36978|-72096|201|8
+#CM|North
+Poli||8476|13241|477|6
+#CN|Chongqing
+Pingqiao||29374|107338|307|15
+Ping’an|Ping'an|31350|109156|808|13
+Peixing||30126|107518|392|11
+Pianbai||29031|109092|329|10
+Pingba||31998|108517|581|10
+Pinghe||31260|109948|195|10
+Pulian||31301|109560|510|9
+Ping’an|Ping'an|29467|108144|714|9
+Puzi||30571|108818|513|8
+Peishi||31007|110095|315|6
+Pengdong||29386|108823|767|6
+#CN|Gansu
+Pipa||33166|105313|1429|14
+Pingluo||33549|105410|1094|10
+Pangjia||34287|104281|2379|8
+Ping'an||35021|106325|2151|7
+Pingding||33825|104311|2153|5
+#CN|Guangdong
+Pingzhou||22566|113847||6
+#CN|Guizhou
+Pingzhai||26417|108817|795|8
+#CN|Heilongjiang
+Pangu||52717|123817|706|6
+#CO|Antioquia
+Peque||7021|-75909|1204|7
+Pueblorrico||5792|-75841|1805|5
+#CO|Boyacá
+Paipa||5780|-73117|2508|14
+Pauna||5659|-73982|1080|6
+Pesca||5550|-73050|2728|5
+#CO|Caldas Department
+Palestina||5021|-75622|1364|14
+Pácora|Pacora|5527|-75459|1809|13
+Pensilvania||5383|-75161|2070|8
+#CO|Cesar Department
+Pelaya||8688|-73665|73|11
+#CO|Córdoba
+Purísima de la Concepción|Purisima de la Concepcion|9237|-75722|6|15
+Pueblo Nuevo||8241|-74958|32|9
+#CO|Huila Department
+Pital||2267|-75804|922|12
+Palestina||1724|-76134|1546|10
+Palermo||2889|-75435|606|10
+#CO|Magdalena Department
+Pijiño del Carmen|Pijino del Carmen|9329|-74453|21|11
+#CO|Meta Department
+Puerto Concordia||2622|-72757|188|8
+Puerto Gaitán|Puerto Gaitan|4313|-72082|160|6
+Puerto Lleras||3022|-73404|251|5
+Puerto Yuca||2938|-73208|212|5
+#CO|Nariño
+Potosí|Potosi|807|-77572|2742|10
+Policarpa||1628|-77460|1046|8
+#CO|Quindío Department
+Pijao||4334|-75704|1647|6
+#CO|Risaralda Department
+Pueblo Rico||5222|-76030|1554|14
+#CO|Santander Department
+Puente Nacional||5877|-73678|1621|13
+#CO|Sucre Department
+Palmito||9332|-75542|38|5
+#CO|Tolima Department
+Palocabildo||5117|-75017|1451|9
+Prado||3751|-74930|322|8
+Piedras||4543|-74878|394|6
+Playarrica||4057|-75410|1049|5
+#CR|Limón Province
+Pocora||10172|-83603|95|5
+#CU|Artemisa
+Playa Baracoa||23046|-82567|10|7
+#CU|Havana
+Puentes Grandes||23100|-82400|31|6
+#CV|Paul
+Pombas||17150|-25020|191|1
+#CV|Porto Novo
+Porto Novo||17020|-25065|9|11
+#CV|Praia
+Palmarejo||14910|-23531|41|13
+Ponta de Água|Ponta de Agua|14936|-23511|44|9
+#CV|Santa Cruz
+Pedra Badejo||15138|-23531|35|10
+#CV|São Salvador do Mundo
+Picos||15084|-23632|432|2
+#CY|Ammochostos
+Paralímni|Paralimni|35039|33982|81|12
+#CY|Larnaka
+Pérgamos|Pergamos|35042|33708|85|15
+#CZ|Moravian-Silesian Region
+Příbor|Pribor|49641|18145|285|9
+Petřvald|Petrvald|49831|18389|265|7
+#CZ|Pardubice Region
+Přelouč|Prelouc|50040|15560|212|10
+Polička|Policka|49715|16265|555|9
+#CZ|Plzeň Region
+Přeštice|Prestice|49573|13334|353|6
+Planá|Plana|49868|12744|514|5
+#CZ|Prague
+Podolí|Podoli|50055|14420|198|14
+Petrovice||50034|14547|260|6
+#CZ|South Bohemian Region
+Prachatice||49013|13998|561|11
+#CZ|South Moravian
+Pohořelice|Pohorelice|48981|16524|181|6
+#CZ|Vysocina
+Polná|Polna|49487|15719|490|5
+#CZ|Ústí nad Labem Region
+Podbořany|Podborany|50229|13412|320|6
+#DE|Baden-Wurttemberg
+Plochingen||48711|9419|276|15
+Pfullendorf||47926|9258|669|13
+Philippsburg||49232|8461|100|12
+Pliezhausen||48559|9207|341|10
+Plüderhausen|Pluderhausen|48799|9596|270|10
+Plankstadt||49394|8596|103|9
+Pfedelbach||49178|9505|238|9
+Petershausen-Ost||47672|9191|414|7
+Pfalzgrafenweiler||48527|8566|634|7
+Pleidelsheim||48959|9203|199|6
+Paradies||47666|9164|402|6
+#DE|Bavaria
+Pocking||48401|13313|321|15
+Pegnitz||49752|11542|433|14
+Peißenberg|Peissenberg|47805|11070|582|13
+Plattling||48779|12875|319|12
+Peiting||47795|10930|719|12
+Pfarrkirchen||48432|12938|384|12
+Poing||48170|11819|519|12
+Prien am Chiemsee||47856|12346|533|11
+Planegg||48107|11425|547|11
+Pullach im Isartal||48061|11521|582|9
+Pfronten||47582|10550|867|8
+Pleinfeld||49105|10982|385|7
+Postbauer-Heng||49305|11357|460|7
+Pfaffenhofen an der Roth||48355|10162|488|7
+Parsberg||49161|11718|535|7
+Pöttmes|Pottmes|48584|11088|408|6
+Pilsting||48701|12651|343|6
+Petershausen||48410|11471|463|6
+Pyrbaum||49296|11287|439|6
+Putzbrunn||48076|11716|556|6
+Pöcking|Pocking|47967|11300|673|6
+Pfreimd||49491|12181|372|6
+Pottenstein||49771|11408|362|6
+Pentling||48983|12059|410|5
+Pommelsbrunn||49504|11511|371|5
+Piding||47767|12917|449|5
+Petersaurach||49300|10750|450|5
+#DE|Brandenburg
+Pritzwalk||53149|12174|63|13
+Perleberg||53075|11857|32|13
+Petershagen||52521|13787|57|13
+Premnitz||52532|12348|31|10
+Peitz||51858|14411|64|5
+#DE|Lower Saxony
+Prinzenpark||52265|10550|82|14
+Pattensen||52264|9764|67|14
+Petritor - Ost||52268|10507|75|10
+Petritor - Nord||52277|10502|76|6
+#DE|Mecklenburg-Vorpommern
+Pasewalk||53506|13990|16|12
+Paulsstadt||53633|11404|59|8
+Plau am See||53458|12262|74|6
+#DE|North Rhine-Westphalia
+Preußisch Oldendorf|Preussisch Oldendorf|52306|8493|61|13
+Poll||50913|6991|52|11
+Pfalzdorf||51708|6164|24|5
+#DE|Rheinland-Pfalz
+Polch||50300|7313|214|7
+Plaidt||50393|7393|115|6
+Prüm|Pruem|50208|6420|462|5
+#DE|Saxony
+Penig||50933|12704|207|11
+Pulsnitz||51183|14014|275|7
+#DE|Schleswig-Holstein
+Plön|Ploen|54162|10428|22|13
+#DE|State of Berlin
+Plänterwald|Plaenterwald|52481|13473|31|11
+#DE|Thuringia
+Pößneck|Poessneck|50694|11592|228|12
+#DM|Saint John Parish
+Portsmouth||15583|-61456|1|4
+#DM|Saint Luke Parish
+Pointe Michel||15260|-61375|57|1
+#DM|Saint Paul Parish
+Pont Cassé|Pont Casse|15367|-61350|595|1
+#DO|Azua Province
+Padre Las Casas||18732|-70939|518|8
+Peralta||18582|-70770|482|7
+#DO|Barahona Province
+Paraíso|Paraiso|17992|-71165|28|6
+#DO|Duarte Province
+Pimentel||19184|-70109|42|10
+#DO|Monseñor Nouel
+Piedra Blanca||18844|-70317|180|9
+#DO|Pedernales Province
+Pedernales||18036|-71747|12|11
+#DO|Peravia
+Paya||18262|-70296|47|7
+#EC|El Oro
+Portovelo||-3716|-79619|966|10
+Puerto Bolívar|Puerto Bolivar|-3266|-79997|6|8
+#EC|Galápagos
+Puerto Ayora||-740|-90314|15|13
+Puerto Baquerizo Moreno||-902|-89610|9|7
+#EC|Guayas
+Palestina||-1937|-79714|9|9
+#EC|Imbabura
+Pimampiro||391|-77941|2149|7
+#EC|Los Ríos
+Palenque||-1438|-79757|31|9
+#EC|Manabí
+Paján|Pajan|-1553|-80428|156|9
+Pedernales||72|-80052|32|6
+#EC|Morona-Santiago Province
+Palora||-1701|-77966|1329|6
+#EC|Tungurahua Province
+Píllaro|Pillaro|-1174|-78551|2809|7
+#EE|Harjumaa
+Peetri||59395|24815|46|6
+#EE|Järvamaa
+Paide||58888|25540|65|8
+#EE|Põlvamaa
+Põlva|Polva|58060|27069|63|5
+#ES|Andalusia
+Punta Umbría|Punta Umbria|37182|-6966|10|15
+Pinos Puente||37251|-3750|573|14
+Pilas||37303|-6301|74|13
+Peñarroya-Pueblonuevo|Penarroya-Pueblonuevo|38300|-5267|544|12
+Palos de la Frontera||37235|-6895|9|11
+Peligros||37232|-3629|693|11
+Pulpí|Pulpi|37412|-1745|196|10
+Posadas||37802|-5107|93|7
+Pizarra||36765|-4708|78|7
+Padul||37025|-3627|766|7
+Paradas||37290|-5497|120|7
+Puerto Serrano||36922|-5543|166|7
+Porcuna||37871|-4185|472|7
+Prado del Rey||36788|-5556|441|6
+Pozo Alcón|Pozo Alcon|37703|-2934|861|5
+Paterna de Rivera||36522|-5866|129|5
+Peal de Becerro||37913|-3121|549|5
+Pedrera||37226|-4894|459|5
+#ES|Asturias
+Pola de Siero||43392|-5663|218|13
+Pola de Lena||43161|-5829|308|11
+Piedras Blancas||43559|-5976|28|10
+Pola de Laviana||43245|-5563|296|9
+Parres||43350|-5150|125|6
+#ES|Balearic Islands
+Porto Cristo||39540|3333|6|7
+Palmanova||39525|2539|7|7
+Platja d'Alcúdia|Platja d'Alcudia|39834|3121|1|7
+Port de Pollença|Port de Pollenca|39908|3081|7|6
+Port d'Alcúdia|Port d'Alcudia|39842|3133|7|5
+Porreres||39514|3022|128|5
+#ES|Canary Islands
+Puerto Rico||27789|-15710|10|11
+Playa Blanca||28864|-13828|16|10
+Playa de San Juan||28182|-16817|17|7
+#ES|Castille and León
+Peñaranda de Bracamonte|Penaranda de Bracamonte|40901|-5200|908|6
+Peñafiel|Penafiel|41602|-4114|756|5
+#ES|Castille-La Mancha
+Pedro Muñoz|Pedro Munoz|39403|-2947|666|8
+#ES|Catalonia
+Pedralbes||41390|2110|130|12
+Pallejà|Palleja|41424|1995|50|11
+Premià de Dalt|Premia de Dalt|41500|2350|70|10
+Puigcerdà|Puigcerda|42432|1928|1202|9
+Polinyà|Polinya|41550|2150|162|6
+#ES|Ceuta
+Principe||35879|-5347|88|12
+#ES|Extremadura
+Puebla de la Calzada||38894|-6626|194|6
+#ES|Galicia
+Porto do Son||42725|-9005|12|10
+Padrón|Padron|42739|-8661|13|9
+Pereiro de Aguiar||42345|-7800|327|5
+#ES|Madrid
+Paracuellos de Jarama||40504|-3528|695|14
+Pavones||40399|-3632|677|9
+Palomas||40453|-3616|657|7
+Pedrezuela||40743|-3600|874|6
+#ES|Murcia
+Puerto Lumbreras||37563|-1810|475|15
+Puente Tocinos||37993|-1102|41|13
+#ES|Navarre
+Peralta||42338|-1800|290|6
+#ES|Valencia
+Pego||38843|-117|80|11
+Picanya||39433|-433|35|11
+Puig||39589|-303|13|8
+Pinoso||38402|-1042|573|8
+Peníscola|Peniscola|40357|407|22|7
+Pedreguer||38793|34|92|7
+#FI|Lapland
+Pyhäjärvi|Pyhaejaervi|67070|27218|182|6
+#FI|North Karelia
+Pyhäselkä|Pyhaeselkae|62433|29967|95|7
+#FI|North Ostrobothnia
+Pudasjärvi|Pudasjaervi|65383|26917|115|7
+#FI|Ostrobothnia
+Pedersöre|Pedersoere|63650|22683|18|11
+#FI|Pirkanmaa
+Pälkäne|Paelkaene|61334|24272|93|6
+Parkano||62017|23017|114|6
+#FI|Southwest Finland
+Pargas||60307|22301|23|12
+Paimio||60457|22687|43|11
+Pöytyä|Poeytyae|60767|22667|91|8
+Piikkiö|Piikkioe|60425|22516|11|7
+Port Arthur||60447|22242|24|6
+Perniö|Pernioe|60200|23133|58|6
+#FI|Uusimaa
+Pasila||60199|24932|35|13
+Pakila||60243|24949|30|11
+Patola||60233|24954|35|10
+Pakkala||60286|24957|31|10
+Pohjois-Haaga||60227|24896|38|10
+Punavuori||60161|24937|39|9
+Pukinmäki|Pukinmaeki|60245|24989|20|9
+Pihlajamäki|Pihlajamaeki|60236|25011|15|7
+Pohjois-Tapiola||60187|24797|7|7
+Puistola||60271|25047|21|7
+Pikku-Huopalahti||60205|24895|25|7
+Paloheinä|Paloheinae|60254|24928|28|6
+Pojo||60096|23528|7|5
+#FR|Auvergne-Rhône-Alpes
+Pierrelatte||44375|4703|54|13
+Passy||45923|6696|654|12
+Pierre-Bénite|Pierre-Benite|45704|4824|166|10
+Privas||44735|4599|306|10
+Pont-du-Château|Pont-du-Chateau|45798|3248|357|9
+Portes-lès-Valence|Portes-les-Valence|44876|4874|110|9
+Pontcharra||45436|6018|266|7
+Péronnas|Peronnas|46183|5211|242|6
+Poisy||45921|6064|517|6
+Publier||46388|6544|502|6
+Pont-Évêque|Pont-Eveque|45532|4909|199|5
+#FR|Bourgogne-Franche-Comté
+Paray-le-Monial||46455|4116|244|10
+#FR|Brittany
+Plérin|Plerin|48535|-2770|108|14
+Plougastel-Daoulas||48374|-4370|109|14
+Plouzané|Plouzane|48381|-4618|68|13
+Ploufragan||48490|-2796|138|12
+Pacé|Pace|48149|-1774|52|9
+Paimpol||48778|-3047|6|9
+Ploërmel|Ploermel|47932|-2397|78|8
+Perros-Guirec||48814|-3444|44|8
+Plabennec||48502|-4426|86|8
+Pont-l'Abbé|Pont-l'Abbe|47867|-4224|11|7
+Plouguerneau||48607|-4506|63|6
+Pluvigner||47775|-3010|88|6
+Plédran|Pledran|48446|-2746|152|6
+Pordic||48571|-2817|103|5
+Ploudalmézeau|Ploudalmezeau|48540|-4658|55|5
+Plouay||47915|-3335|81|5
+Plonéour-Lanvern|Ploneour-Lanvern|47903|-4283|77|5
+#FR|Centre-Val de Loire
+Pithiviers||48172|2252|121|10
+#FR|Corsica
+Porto-Vecchio||41591|9279|16|12
+#FR|Grand Est
+Pfastatt||47769|7303|243|8
+Petite-Rosselle||49212|6856|245|7
+Pompey||48769|6126|203|5
+Pont-Sainte-Marie||48318|4094|104|5
+#FR|Hauts-de-France
+Pont-Sainte-Maxence||49302|2605|37|14
+Péronne|Peronne|49932|2936|52|9
+Pérenchies|Perenchies|50670|2970|32|8
+Pecquencourt||50379|3213|20|7
+Petite-Forêt|Petite-Foret|50367|3483|45|5
+#FR|New Aquitaine
+Parthenay||46648|-247|166|12
+Panazol||45839|1310|302|10
+Parempuyre||44951|-606|8|7
+Périgny|Perigny|46154|-1097|10|6
+Pauillac||45200|-749|14|6
+Pons||45580|-548|43|5
+#FR|Normandy
+Pont-Audemer||49350|517|8|10
+Petit-Couronne||49383|1017|7|9
+Pavilly||49567|954|56|6
+Pacy-sur-Eure||49017|1383|51|5
+#FR|Occitanie
+Pont-Saint-Esprit||44257|4648|90|10
+Portet-sur-Garonne||43523|1405|153|10
+Pérols|Perols|43565|3950|6|9
+Pézenas|Pezenas|43460|3423|29|9
+Pibrac||43620|1285|163|8
+Prades||42618|2422|354|7
+Pignan||43584|3759|52|6
+Palavas-les-Flots||43530|3930|0|6
+Port-La Nouvelle||43018|3050|5|6
+Pia||42745|2920|23|6
+#FR|Pays de la Loire
+Pornic||47116|-2103|22|13
+Pornichet||47267|-2338|7|11
+Pontchâteau|Pontchateau|47439|-2094|13|8
+Pouzauges||46782|-838|216|6
+Pont-Saint-Martin||47124|-1585|12|5
+#FR|Provence-Alpes-Côte d'Azur
+Pasteur||43721|7283|35|13
+Périer|Perier|43278|5379|70|13
+Plan-de-Cuques||43348|5464|133|11
+Pernes-les-Fontaines||43998|5059|92|11
+Pélissanne|Pelissanne|43633|5152|89|9
+Port-Saint-Louis-du-Rhône|Port-Saint-Louis-du-Rhone|43388|4804||9
+Peymeinade||43642|6876|208|7
+Puget-sur-Argens||43456|6685|38|7
+Pégomas|Pegomas|43597|6932|19|6
+Palais de Justice||43287|5376|53|6
+Peypin||43385|5578|291|5
+#FR|Île-de-France
+Provins||48559|3299|90|13
+Ponthierry||48534|2544|45|12
+Persan||49153|2272|27|9
+Plaine 2||48915|2364|37|8
+Paray-Vieille-Poste||48714|2363|86|8
+Pierrelaye||49021|2155|44|7
+Pleyel||48920|2343|40|6
+Plaine 3||48905|2363|41|6
+Parmain||49112|2215|29|6
+#GB|England
+Petersfield||51005|-934|62|15
+Portswood||50927|-1390|20|15
+Prenton||53368|-3055|39|14
+Pinxton||53091|-1318|102|14
+Poynton||53350|-2117|97|14
+Portland||50567|-2445|11|13
+Prudhoe||54962|-1852|99|12
+Pelsall||52629|-1967|146|11
+Padiham||53802|-2315|88|11
+Penistone||53526|-1630|231|11
+Ponteland||55050|-1745|63|10
+Polesworth||52620|-1610|71|10
+Parkstone||50730|-1945|60|10
+Par||50351|-4703|3|9
+Plympton||50391|-4060|22|9
+Pocklington||53933|-781|37|8
+Princes Risborough||51725|-831|112|8
+Poplar||51511|-16|7|8
+Partington||53419|-2428|20|8
+Paddock Wood||51182|382|16|8
+Penkridge||52726|-2116|82|8
+Pershore||52112|-2076|22|8
+Pinkneys Green||51533|-761|70|8
+Penryn||50168|-5104|29|7
+Pickering||54250|-767|62|7
+Peasedown Saint John||51317|-2424|165|6
+Pembury||51143|322|132|6
+Purfleet-on-Thames||51484|242|7|6
+Preesall||53918|-2966|19|5
+Pelton||54873|-1609|87|5
+Poringland||52568|1350|49|5
+Pyrford||51315|-510|35|5
+#GB|Northern Ireland
+Portstewart||55181|-6714|26|8
+Portrush||55196|-6649|11|7
+#GB|Scotland
+Prestwick||55483|-4617|14|15
+Port Glasgow||55935|-4689|7|14
+Prestonpans||55959|-2980|18|9
+Peebles||55652|-3189|170|8
+Portlethen||57069|-2132|80|8
+Polmont||55991|-3707|46|5
+#GB|Wales
+Pyle||51517|-3700|37|14
+Pembroke Dock||51692|-4940|21|10
+Pencoed||51524|-3500|33|9
+Pontarddulais||51714|-4039|15|9
+Pembroke||51675|-4913|19|8
+Pontyclun||51522|-3391|49|6
+Pentre||51654|-3491|165|5
+#GP|Guadeloupe
+Petit-Canal||16379|-61487|16|9
+Pointe-Noire||16232|-61789|9|8
+Port-Louis||16417|-61530|6|6
+#GR|Attica
+Pallíni|Pallini|38005|23883|199|15
+Paianía|Paiania|37955|23854|183|15
+Papágou|Papagou|37986|23793|222|14
+Psychikó|Psychiko|38013|23772|197|10
+Pikérmi|Pikermi|38002|23941|106|8
+#GR|Central Greece
+Psachná|Psachna|38579|23643|22|6
+#GR|Central Macedonia
+Péfka|Pefka|40658|22994|250|13
+Polýgyros|Polygyros|40377|23441|523|10
+Platý|Platy|40642|22535|5|8
+Polýkastro|Polykastro|40994|22569|36|7
+Paralía|Paralia|40267|22596|3|6
+Plagiári|Plagiari|40473|22958|139|5
+#GR|Epirus
+Párga|Parga|39286|20400|12|11
+#GR|North Aegean
+Pythagóreio|Pythagoreio|37691|26943|7|8
+#GR|South Aegean
+Páros|Paros|37083|25150|10|5
+#GR|Thessaly
+Platýkampos|Platykampos|39617|22533|66|7
+Palamás|Palamas|39467|22083|92|6
+#GR|West Greece
+Paralía|Paralia|38198|21703|5|9
+#GT|Baja Verapaz
+Purulhá|Purulha|15236|-90236|1560|5
+#GT|Chimaltenango
+Parramos||14609|-90803|1767|10
+#GT|Sacatepéquez
+Pastores||14594|-90755|1564|13
+#GT|San Marcos
+Pajapita||14722|-92035|99|8
+#GT|Sololá
+Panajachel||14742|-91157|1582|11
+#GU|Piti
+Piti Village||13463|144693|3|2
+#GW|
+Pefiné|Pefine|11872|-15594|44|15
+#GW|Gabú
+Pitche||12323|-13953|74|6
+#HK|Islands
+Peng Chau||22283|114033||8
+Pui O||22246|113978|24|5
+#HK|Sha Tin
+Pak Shek Kok||22427|114204|3|12
+#HK|Sham Shui Po District
+Parc Oasis||22333|114175|11|5
+#HN|Cortés Department
+Pimienta Vieja||15233|-87967|92|9
+#HN|Gracias a Dios Department
+Puerto Lempira||15266|-83774|2|5
+#HN|Lempira Department
+Piraera||14067|-88467|819|14
+#HN|Santa Bárbara Department
+Petoa||15269|-88289|255|12
+#HR|Istria
+Poreč|Porec|45226|13595|4|9
+Pazin||45239|13939|278|4
+#HR|Sisak-Moslavina
+Petrinja||45438|16290|111|13
+#HR|Split-Dalmatia
+Podstrana||43487|16550|20|9
+#HT|Nord
+Pignon||19336|-72117|346|7
+#HU|Borsod-Abaúj-Zemplén
+Putnok||48300|20433|178|8
+#HU|Budapest
+Pacsirtatelep||47422|19122|107|12
+Pestújhely|Pestujhely|47540|19134|115|11
+Palotanegyed||47493|19065|95|10
+Pesthidegkút|Pesthidegkut|47558|18964|257|9
+#HU|Fejér
+Polgárdi|Polgardi|47061|18302|151|7
+Pusztaszabolcs||47137|18767|111|6
+#HU|Hajdú-Bihar
+Polgár|Polgar|47867|21117|91|8
+#HU|Nógrád
+Pásztó|Paszto|47920|19698|168|10
+#HU|Pest County
+Pomáz|Pomaz|47642|19028|125|15
+Pilisvörösvár|Pilisvoeroesvar|47614|18909|178|14
+Pécel|Pecel|47490|19342|160|13
+Pilis||47289|19548|139|11
+Piliscsaba||47634|18829|211|6
+Páty|Paty|47517|18829|195|5
+#ID|Bali
+Pabean||-8650|115239|32|6
+#ID|North Sumatra
+Parmonangan||2397|99052|920|13
+Parapat||2663|98935|940|10
+#IE|Leinster
+Palmerstown||53350|-6378|51|11
+Portmarnock||53423|-6137|4|9
+Portarlington||53162|-7191|67|8
+#IE|Munster
+Passage West||51871|-8335|11|6
+#IL|Central District
+Pardesiya||32307|34911|78|6
+#IM|Patrick
+Patrick||54204|-4694|32|0
+#IM|Peel
+Peel||54222|-4691|22|5
+#IM|Port Erin
+Port Erin||54085|-4751|24|4
+#IM|Port St Mary
+Port Saint Mary||54074|-4739|10|0
+#IN|Andaman and Nicobar
+Prothrapur||11618|92724|69|10
+#IN|Andhra Pradesh
+Prasadampadu||16612|80684|46|14
+Pāpampeta|Papampeta|14686|77578|347|14
+Peddaboddepalle||17661|82630|80|13
+Pondūru|Ponduru|18350|83756|49|13
+Perur||13619|79383|182|11
+Pavuluru||15853|80165|137|11
+Puttaparthi||14165|77812|466|9
+Pippara||16717|81550|9|9
+Pedda bhogili||18661|83378|101|7
+Pātrapur|Patrapur|19132|84570|40|6
+#IN|Assam
+Pathsala||26511|91180|43|11
+Padmabīl|Padmabil|26436|89963|50|7
+Pub - Dhaniram Pather||26014|92872|57|6
+Parlli Part||26099|91540|54|6
+#IN|Bihar
+Pareo||25558|84802|65|8
+Padri||26164|85912|39|8
+#IN|Chhattisgarh
+Pendra||22775|81960|613|14
+Pāndātarai|Pandatarai|22187|81328|357|11
+Pākhanjur|Pakhanjur|20033|80621|326|10
+Pātan|Patan|21033|81533|300|10
+Pāparhāhāndi|Paparhahandi|19333|82517|598|9
+Palāri|Palari|21536|82159|277|9
+Pithora||21250|82517|301|8
+Patharia||22018|81835|278|6
+Parasgaon||19862|81640|615|6
+Partābpur|Partabpur|23485|83210|566|6
+Pāli|Pali|22378|82326|331|6
+#IN|Delhi
+Pūth Khurd|Puth Khurd|28770|77049|221|11
+#IN|Goa
+Priol||15417|73983|113|8
+Palle||15467|74083|12|6
+Pilerne||15534|73795|72|6
+Pernem||15723|73795|16|6
+#IN|Gujarat
+Palej||21915|73079|13|12
+Parnera||20561|72948|29|12
+Pāliyād|Paliyad|22258|71560|115|11
+Paddhari||22437|70602|68|11
+Pardi Kanade||21094|72877|12|9
+Pardi Sondhpur||20620|72940|20|8
+Pipodara||21361|72960|12|8
+Palod||21385|72958|10|8
+Parabada||23598|72949|135|6
+Pardi Parnera||20571|72951|29|5
+#IN|Haryana
+Pingawān|Pingawan|27896|77102|201|13
+#IN|Himachal Pradesh
+Parwanoo||30837|76961|789|9
+#IN|Jammu and Kashmir
+Patha Deōsar|Patha Deosar|33634|75072|1669|10
+Pahalgam||34016|75319|2155|9
+Parol||32346|75434|287|8
+Prisal||33756|75042|1603|5
+#IN|Jharkhand
+Pelāwāl|Pelawal|24016|85338|619|15
+patamda||24300|85417|390|11
+Panrra||23800|86723|153|10
+Patra||24970|87842|24|10
+Paratdiha||24164|86307|297|9
+Purihasa||22745|86193|153|8
+Panchet||23688|86757|101|7
+Pondarkanali||23770|86352|181|7
+Phulwartanr||23773|86232|203|6
+Patrodih||24158|86317|293|5
+#IN|Karnataka
+Pudu||12867|74967|39|14
+Ponnampet||12145|75945|858|6
+#IN|Kerala
+Perole||12257|75139|18|15
+Pallikere||12406|75040|26|14
+Pazhanji||10688|76053|15|14
+Peramangalam||10573|76169|3|13
+Perya||11833|75854|742|13
+Pullur||10345|76244|36|13
+Puthukkad||10418|76270|10|13
+Pāvaratti|Pavaratti|10565|76062|13|12
+Pēragam|Peragam|10599|76024|10|12
+Parappukkara||10401|76249|11|12
+Panamaram||11740|76074|728|12
+Padiyam||10453|76103|18|12
+Poomangalam||10311|76193|25|11
+Puranattukara||10545|76152|14|11
+Poyya||10210|76255|19|10
+Pilikōdu|Pilikodu|12192|75164|16|10
+Pūkkōd|Pukkod|10624|76043|13|9
+Paralam||10459|76194|31|9
+Paluvai||10578|76055|16|9
+Parakād|Parakad|10500|76154|13|9
+Puzhakkal||10547|76178|13|9
+Pottōr|Pottor|10579|76203|13|8
+Porkolam||10677|76069|30|7
+Peringandūr|Peringandur|10625|76199|20|6
+#IN|Madhya Pradesh
+Pātan|Patan|23286|79690|378|15
+Pawai||24266|80162|327|14
+Pandhāna|Pandhana|21698|76225|364|14
+Phūp Kalān|Phup Kalan|26645|78874|146|13
+Polāia Kalān|Polaia Kalan|23212|76553|473|12
+Pānsemāl|Pansemal|21660|74699|243|12
+Pachmarhi||22468|78433|1061|12
+Partābpur|Partabpur|21834|75637|257|12
+Pankhedi||23347|76836|458|12
+Pīplya Kumar|Piplya Kumar|22769|75912|549|11
+Palsud||21826|74969|328|10
+Pipalrawān|Pipalrawan|23163|76470|467|10
+Pīpla|Pipla|21591|78735|372|9
+Piploda||23607|74942|525|8
+Piploda||23350|75433|469|8
+Pālāchaurai|Palachaurai|22200|78659|800|7
+Pipri||22063|75401|164|7
+#IN|Maharashtra
+Pānchgani|Panchgani|17924|73801|1263|15
+Pirangut||18508|73689|585|14
+Pātan|Patan|17375|73901|589|14
+Palidevad||19001|73134|19|9
+Pāli|Pali|18538|73222|40|9
+Pimpalgaon||20413|78128|425|8
+Pāl|Pal|21362|75901|400|7
+Padghe||19367|73176|27|7
+Purne||19259|73027|21|7
+Poladpur||17984|73464|63|6
+Pimpalgaon||20145|74241|589|6
+Padoli||20000|79262|187|5
+#IN|Manipur
+Patsoi||24786|93880|783|5
+#IN|Nagaland
+Pfutsero||25570|94298|2023|10
+#IN|Odisha
+Pratapsasan||20205|85872|21|13
+Pathar||19642|85167|1|6
+Pāl Laharā|Pal Lahara|21434|85192|150|6
+Pālūru|Paluru|19467|85133|4|5
+#IN|Punjab
+Pakhi Khanauri||29843|76114|233|14
+Pratāp Singhwāla|Pratap Singhwala|30928|75779|235|11
+Pail||30721|76060|274|8
+#IN|Rajasthan
+Pirāwa|Pirawa|24155|76027|372|13
+Pākhar|Pakhar|27117|76911|239|12
+Partāpur|Partapur|23593|74174|155|11
+#IN|Tamil Nadu
+Pandavarmangalam||9153|77882|91|15
+Palanisettipatti||10000|77464|307|15
+Pedappai||12885|80022|35|14
+Pennāthur|Pennathur|12247|79226|151|14
+Pūlāngudi|Pulangudi|10727|78807|85|13
+Puttalam||8098|77464|14|13
+Pūluvappatti|Puluvappatti|10963|76816|447|13
+Puliyūr|Puliyur|10950|78145|114|13
+Ponnamarāvati|Ponnamaravati|10280|78536|151|13
+Pudur||9000|77208|195|12
+Periyakoduveri||11478|77299|226|12
+Papparapatti||12221|78059|496|12
+Ponnampatti||10367|78396|237|12
+Paramati||11154|78021|142|12
+Pallappālaiyam|Pallappalaiyam|10995|77084|388|12
+Panapākkam|Panapakkam|12921|79566|114|12
+Puduppatti||9766|77307|403|12
+Pudūr|Pudur|12998|79144|234|11
+Pudupalayam||12362|78878|238|11
+Puduvayal||10103|78846|81|11
+Pillānallūr|Pillanallur|11432|78133|223|11
+Puliyūr|Puliyur|10634|78841|113|11
+Pudūr|Pudur|11633|78105|267|11
+Pulāmbādi|Pulambadi|11412|78714|170|11
+Periyapatti||10758|77271|317|11
+Pālamedu|Palamedu|10105|78113|227|10
+Padaivedu||11440|77809|226|10
+Peraiyur||9736|77790|173|10
+Pullambādi|Pullambadi|10941|78910|65|10
+Puthukkadai||8276|77179|30|10
+Puduvāyal|Puduvayal|13330|80146|16|10
+Periyapattinam||9273|78902|8|10
+Pallattūr|Pallattur|10146|78803|105|10
+Pūlāmpatti|Pulampatti|11657|77766|189|9
+Pennathur||12847|79111|249|9
+Pāpireddippatti|Papireddippatti|11918|78369|433|9
+Panamarattuppatti||11562|78165|290|9
+Pannaipuram||9866|77284|424|9
+Panpuli||9021|77250|196|9
+Pattanam||10981|77054|393|9
+Pallipattu||13339|79445|157|9
+Pattanam||11473|78211|244|9
+Pudūr|Pudur|9292|78138|59|9
+Pannaikadu||10279|77628|1343|9
+Perumpāndi|Perumpandi|10969|79374|31|9
+Perūr|Perur|10975|76913|421|8
+Puduppatti||9617|77638|160|8
+Pārtibanūr|Partibanur|9586|78455|62|8
+Peddikuppam||13441|80122|22|8
+Pudūr|Pudur|8869|77994|39|8
+Periyanegamam||10743|77103|357|8
+Pūvalūr|Puvalur|10899|78830|64|8
+Pavali||9602|77921|103|8
+Periyākkurichchi|Periyakkurichchi|11540|79489|37|8
+Puduppatti||11152|78212|156|8
+Paiyūr|Paiyur|12671|79302|141|8
+P. J. Cholapuram||10906|78279|114|7
+Puduppatti||11496|78271|273|7
+Perumānallūr|Perumanallur|11205|77359|326|7
+Pāndamangalam|Pandamangalam|11103|77967|139|7
+Perungulam||8641|77998|15|7
+Pettāmpālaiyam|Pettampalaiyam|11350|77571|242|7
+Panaikulam||9376|78954|5|7
+Paloor||8243|77236|105|7
+Perumbākkam|Perumbakkam|13039|79813|65|6
+Pallippadai||11410|79707|8|6
+Puliyoorsalai||8420|77197|215|6
+Peralam||10963|79661|13|6
+Peruvila||8185|77396|44|6
+Peranamallūr|Peranamallur|12571|79433|130|6
+Perumagalur||10198|79192|5|6
+Puderiyūr|Puderiyur|8215|77434|28|6
+Pugalūr Agrahāram|Pugalur Agraharam|11088|78006|129|6
+Puttantura||8103|77419|18|5
+#IN|Telangana
+Pochampalli||17349|78823|390|13
+Potreddipalli||17588|78080|534|12
+Palakurthy||18717|79381|209|7
+#IN|Tripura
+Panisagar||24255|92149|54|15
+#IN|Uttar Pradesh
+Pratāpgarh|Pratapgarh|25895|81942|101|14
+Patiāli|Patiali|27691|78998|172|14
+Parshādepur|Parshadepur|26074|81492|112|11
+Patti||25922|82200|95|10
+Pāli|Pali|24492|78416|393|9
+Phūlpur|Phulpur|26078|82876|89|9
+Pārīchha|Parichha|25508|78760|207|7
+Pharihā|Phariha|27322|78473|171|6
+#IN|West Bengal
+Pātrasāer|Patrasaer|23197|87533|58|12
+Parbatipur||22663|88222|11|9
+#IR|Chaharmahal and Bakhtiari
+Pardanjān|Pardanjan|32253|50599|2023|9
+#IR|Gilan Province
+Pareh Sar||37600|49071|22|8
+Pīr Bāzār|Pir Bazar|37344|49548|-20|5
+#IR|Golestan
+Pīshkamar|Pishkamar|37530|55593|302|6
+#IR|Isfahan
+Pīr Bakrān|Pir Bakran|32468|51560|1616|13
+#IR|Kerman
+Pārīz|Pariz|29872|55750|2316|8
+#IR|Markazi
+Parandak||35362|50682|1189|7
+#IR|Māzandarān
+Pol-e Sefīd|Pol-e Sefid|36118|53055|560|8
+#IR|Tehran
+Parandak||35512|51053|1056|5
+#IT|Abruzzo
+Pratola Peligna||42097|13875|342|7
+Penne||42455|13928|438|6
+Popoli||42169|13830|254|5
+Pineto||42609|14066|4|5
+#IT|Apulia
+Palese||41150|16767|14|15
+Polignano a Mare||40992|17221|24|13
+Pulsano||40381|17356|37|9
+Parabita||40051|18127|80|9
+Palagianello||40609|16978|133|7
+Poggiardo||40053|18378|86|6
+Presicce||39901|18263|104|5
+#IT|Basilicate
+Policoro||40213|16678|25|12
+Pisticci||40390|16559|364|6
+#IT|Calabria
+Pellaro||38017|15650|37|13
+Paola||39363|16037|94|13
+Polistena||38405|16073|254|10
+Pizzo||38753|16187|44|8
+Praia a Mare||39894|15784|5|6
+Petilia Policastro||39113|16782|436|6
+#IT|Campania
+Palma Campania||40866|14552|63|13
+Piano di Sorrento||40628|14417|96|12
+Pollena Trocchia||40851|14379|149|12
+Piedimonte Matese||41351|14368|170|11
+Pontecagnano||40644|14876|28|11
+Parete||40959|14162|62|11
+Procida||40756|14015|27|10
+Portico di Caserta||41056|14280|31|7
+Pianillo||40634|14549|630|7
+Pimonte||40674|14510|415|6
+Pignataro Maggiore||41190|14170|93|6
+Piazza del Galdo-Sant'Angelo||40774|14717|107|6
+Polla||40514|15497|468|5
+#IT|Emilia-Romagna
+Progresso||44569|11364|24|12
+Pavullo nel Frignano||44334|10835|682|9
+Pianoro||44389|11343|200|8
+Portomaggiore||44698|11808|3|7
+Pieve di Cento||44713|11309|18|6
+Podenzano||44955|9683|118|6
+Pontenure||44998|9791|65|5
+Poggio Renatico||44766|11487|10|5
+#IT|Friuli Venezia Giulia
+Porcia||45963|12616|29|13
+Pasian di Prato||46047|13188|105|5
+Panzano||45796|13533|1|5
+#IT|Lazio
+Palestrina||41833|12882|450|15
+Prati||41909|12468|27|15
+Priverno||41470|13179|151|10
+Pontecorvo||41459|13666|97|8
+Pontinia||41411|13043|4|6
+Palombara Sabina||42069|12767|372|6
+Paliano||41780|13077|471|6
+#IT|Liguria
+Pietra Ligure||44149|8282|3|8
+Pedemonte||44503|8926|128|6
+#IT|Lombardy
+Piazza||45587|10155|186|14
+Pieve Emanuele||45351|9203|97|12
+Ponte San Pietro||45706|9591|224|11
+Paullo||45418|9400|97|11
+Pero||45510|9087|144|10
+Pessano Con Bornago||45549|9381|148|9
+Piazza||45509|10424|169|8
+Pogliano Milanese||45538|8994|164|8
+Ponte Cingoli||45598|10107|175|8
+Pandino||45406|9552|85|7
+Pontevico||45273|10092|55|7
+Pregnana Milanese||45516|9007|154|7
+Prevalle||45551|10422|186|6
+Ponteranica||45732|9652|381|6
+Pontoglio||45569|9853|155|6
+Provaglio d'Iseo||45635|10045|216|6
+Pantigliate||45435|9352|102|6
+Pedrengo||45696|9735|262|6
+Poggio Rusco||44967|11104|16|6
+Passirano||45597|10070|210|5
+Pisogne||45808|10110|187|5
+Palosco||45589|9836|157|5
+Pozzuolo Martesana||45514|9456|121|5
+#IT|Piedmont
+Pianezza||45104|7550|325|13
+Pino Torinese||45040|7777|370|7
+Poirino||44920|7845|249|7
+#IT|Sicily
+Pedara||37624|15057|610|12
+Priolo Gargallo||37155|15182|30|12
+Partanna||37727|12889|414|10
+Paceco||37980|12558|36|9
+Patti||38147|14964|157|9
+Palazzolo Acreide||37063|14906|670|8
+Pietraperzia||37419|14137|476|7
+Petrosino||37713|12500|13|7
+Pantelleria||36828|11946|5|6
+Piana degli Albanesi||37994|13285|720|6
+#IT|The Marches
+Porto Recanati||43433|13662|6|10
+Piattoni-Villa Sant'Antonio||42866|13711|148|8
+Porto Potenza Picena||43358|13697|3|8
+Ponte Sasso||43799|13095|3|6
+#IT|Trentino-Alto Adige
+Pergine Valsugana||46064|11238|482|12
+#IT|Tuscany
+Ponsacco||43623|10627|24|14
+Pescia||43887|10688|62|12
+Pontassieve||43775|11431|108|10
+Porto Santo Stefano||42438|11115|5|9
+Pieve a Nievole||43881|10800|28|9
+Ponte a Ema||43740|11298|92|8
+Portoferraio||42812|10313|4|8
+Poggio A Caiano||43814|11052|42|8
+Porcari||43842|10616|32|7
+Pontasserchio||43780|10417|5|6
+Pontremoli||44375|9879|236|5
+#IT|Veneto
+Porto Viro||45027|12218|2|14
+Piove di Sacco-Piovega||45297|12037|5|13
+Ponte San Nicolò|Ponte San Nicolo|45367|11923|12|12
+Pescantina||45485|10868|80|12
+Porto Tolle||44950|12325|-2|11
+Ponzano||45715|12204|35|10
+Pieve di Soligo||45898|12171|132|10
+Paese||45674|12164|32|9
+Piovene Rocchette||45756|11433|279|8
+Ponte nelle Alpi|Ponte nell'Alpi|46181|12283|402|8
+Peschiera del Garda||45439|10686|68|8
+Priula-Colfosco||45820|12258|65|7
+Preganziol||45601|12237|12|7
+Pianiga||45457|12008|8|6
+Povegliano Veronese||45347|10881|47|6
+Ponte nelle Alpi-Polpet||46188|12278|402|5
+#JM|Manchester
+Porus||18035|-77412|128|6
+#JM|Portland Parish
+Port Antonio||18179|-76452|2|14
+#JM|Saint Andrew Parish
+Penwood||18010|-76833|22|12
+#JM|Saint Catherine Parish
+Point Hill||18090|-77108|613|5
+#JM|Saint Mary Parish
+Port Maria||18368|-76889|2|8
+#KE|Busia County
+Port Victoria||98|33972|1159|12
+#KG|Talas Region
+Pokrovka||42736|71610|768|9
+#KH|Kampong Cham
+Phumĭ Khchau|Phumi Khchau|11916|105137|18|9
+Ph’av|Ph'av|12028|104965|19|7
+#KH|Kampong Chhnang
+Phumĭ Ândong Snay|Phumi Andong Snay|12167|104669|33|6
+#KH|Kampong Thom
+Phumĭ Tnaôt Chŭm|Phumi Tnaot Chum|12523|105063|21|8
+#KH|Kratie
+Preaek Saman||12284|106027|24|9
+Pongro||12257|105922|26|8
+#KH|Prey Veng
+Preaek Khsay Kha||11262|105286|13|10
+Phumĭ Koŭk Kóng|Phumi Kouk Kong|11729|105583|20|7
+#KH|Svay Rieng
+Phumĭ Ândong Poŭthĭ|Phumi Andong Pouthi|11360|105808|10|5
+#KH|Takeo
+Phumĭ Ângkôr Borei|Phumi Angkor Borei|10995|104975|10|11
+#KH|Tboung Khmum
+Phumĭ Ânhchaeum|Phumi Anhchaeum|11847|105714|24|14
+#KP|P'yŏngan-bukto
+Pukchin-rodongjagu||40202|125748|210|14
+Panghyŏn-dong|Panghyon-dong|39887|125241|81|11
+#KP|South Hwanghae
+Pyŏksŏng-ŭp|Pyoksong-up|38048|125557|12|13
+#KR|Gangwon-do
+Pyeongchang||37370|128393|300|10
+#KR|Jeju-do
+Ponggae-dong||33491|126594|151|5
+#KY|
+Pedro||19276|-81275|5|10
+Pease Bay||19288|-81242|5|9
+Prospect Park||19281|-81330|5|8
+Prospect||19280|-81333|5|7
+#KZ|Almaty
+Pervomayka||43374|76940|670|8
+#KZ|Karaganda
+Priozersk||46031|73702|358|13
+#LA|Phôngsali
+Phôngsali|Phongsali|21681|102100|1356|14
+#LI|Planken
+Planken||47185|9544|785|0
+#LK|North Central Province
+Polonnaruwa||7940|81003|60|14
+#LS|Leribe
+Pitseng||-29007|28213|1874|6
+Peka||-28969|27763|1612|6
+#LS|Mohale's Hoek District
+Phamong||-30248|27801|1676|8
+#LT|Kaunas
+Prienai||54636|23946|59|9
+#LT|Panevėžys
+Pasvalys||56063|24400|30|6
+#LT|Vilnius
+Pabradė|Pabrade|54981|25761|128|6
+#LU|Esch-sur-Alzette
+Pétange|Petange|49558|5881|278|7
+#LV|Preiļu novads
+Preiļi|Preili|56294|26725|127|10
+#MD|Transnistria
+Pervomaisc||46733|29962|12|7
+#ME|Opština Plav
+Plav||42597|19944|1066|4
+#ME|Opština Plužine
+Plužine|Pluzine|43152|18839|693|1
+#ME|Petnjica Municipality
+Petnjica||42910|19964|708|0
+#MK|Pehchevo
+Pehčevo|Pehcevo|41763|22890|1002|2
+#MK|Petrovec
+Петровец|Petrovec|41939|21615|225|8
+#MK|Plasnica
+Plasnica||41468|21123|686|5
+#MK|Probishtip
+Probishtip||42003|22179|589|13
+#MM|Kachin State
+Putao||27353|97400|429|10
+#MM|Sagaing Region
+Pa Du Mone||26007|95865|145|8
+#MM|Yangon
+Pyin Ma Pin||16996|96132|27|14
+Pyi Taw Thar||16936|96127|11|10
+Peinnegon||16882|96103|13|8
+Pyawbwe Gyi||16677|96144|5|5
+Pya Tha Taik||16643|95918|3|5
+#MT|Paola
+Paola||35873|14499|9|9
+#MT|Pembroke
+Pembroke||35930|14478|49|4
+#MT|Tal-Pietà
+Pietà|Pieta|35893|14494|1|5
+#MU|Black River
+Petite Rivière|Petite Riviere|-20196|57446|86|5
+#MU|Flacq
+Poste de Flacq||-20163|57731|22|9
+#MU|Grand Port
+Plaine Magnien||-20430|57670|67|11
+#MU|Moka
+Pailles||-20193|57488|73|11
+#MU|Pamplemousses
+Pamplemousses||-20104|57570|64|10
+Plaine des Papayes||-20065|57573|68|8
+Pointe aux Piments||-20065|57523|7|8
+#MU|Rivière du Rempart
+Petit Raffray||-20020|57623|25|9
+Piton||-20090|57630|96|6
+#MU|Rodrigues
+Port Mathurin||-19683|63417|44|8
+#MW|Southern Region
+Phalombe||-15806|35651|766|7
+#MX|Aguascalientes
+Palo Alto||21917|-101963|2036|5
+Pocitos||21922|-102335|1861|5
+#MX|Baja California
+Progreso||32582|-115584|-2|13
+#MX|Baja California Sur
+Puerto San Carlos||24789|-112105|4|6
+#MX|Campeche
+Pomuch||20137|-90174|6|9
+#MX|Chiapas
+Pichucalco||17510|-93116|44|14
+Pueblo Nuevo||17160|-92899|1727|10
+Puerto Madero||14721|-92421|10|10
+Pantelhó|Pantelho|17005|-92471|1215|7
+Petalcingo||17227|-92415|740|7
+Paredón|Paredon|16051|-93867|7|6
+#MX|Chihuahua
+Puerto Palomas de Villa||31778|-107635|1221|6
+#MX|Durango
+Peñón Blanco|Penon Blanco|24792|-104034|1689|5
+#MX|Guanajuato
+Plan de Ayala||21071|-101723|1749|5
+#MX|Guerrero
+Petaquillas||17486|-99456|1153|10
+Pilcaya||18747|-99675|1623|5
+#MX|Hidalgo
+Presas||20160|-99253|2022|7
+Parque Urbano Napateco||20143|-98341|2165|6
+Pachuquilla||20073|-98697|2425|6
+#MX|Jalisco
+Poncitlán|Poncitlan|20381|-102924|1539|14
+Pihuamo||19250|-103383|738|7
+Puente Grande||20568|-103156|1466|6
+#MX|Michoacán
+Pajacuarán|Pajacuaran|20117|-102564|1595|10
+Puruarán|Puruaran|19097|-101522|1090|7
+Pastor Ortiz||20303|-101597|1665|7
+Pedernales||19141|-101470|1019|6
+Panindícuaro|Panindicuaro|19984|-101761|1827|6
+#MX|Morelos
+Progreso||18880|-99153|1363|15
+Pedro Amaro||18596|-99173|917|6
+#MX|México
+Progreso Industrial||19636|-99357|2451|11
+Puerto Escondido (Tepeolulco Puerto Escondido)||19552|-99098|2346|11
+Profesor Carlos Hank González|Profesor Carlos Hank Gonzalez|19372|-98939|2283|10
+Paseos de San Juan||19782|-99017|2253|10
+#MX|Nuevo León
+Prados de Santa Rosa||25798|-100227|440|10
+Pesquería|Pesqueria|25786|-100051|334|5
+#MX|Oaxaca
+Putla Villa de Guerrero||17026|-97928|747|11
+Pinotepa de Don Luis||16428|-97977|424|6
+#MX|Querétaro
+Pedro Escobedo||20502|-100145|1939|10
+#MX|Quintana Roo
+Puerto Aventuras||20501|-87226|5|6
+#MX|San Luis Potosí
+Ponciano Arriaga||22262|-98590|75|7
+#MX|Sinaloa
+Pericos||25081|-107700|50|6
+#MX|Sonora
+Pueblo Yaqui||27355|-110034|22|14
+Pótam|Potam|27626|-110418|11|7
+Pesqueira||29380|-110896|326|6
+Pitiquito||30677|-112055|318|5
+#MX|Tabasco
+Parrilla II||17877|-92925|16|11
+Pomoca||18050|-92931|10|11
+Parrilla||17913|-92918|10|10
+Pemex||17883|-92479|11|6
+#MX|Tlaxcala
+Panotla||19316|-98270|2230|7
+#MX|Veracruz
+Palmira||18883|-97111|1343|14
+Paso del Macho||18971|-96724|489|13
+Plan de Ayala||20547|-97475|55|12
+Platón Sánchez|Platon Sanchez|21272|-98375|70|11
+Playa Vicente||17831|-95812|57|9
+Piedras Negras||18769|-96173|26|9
+Pajapan||18263|-94692|198|8
+Paso de Ovejas||19285|-96440|57|7
+Peñuela|Penuela|18864|-96894|710|5
+Paso del Toro||19031|-96136|12|5
+Primero de Mayo||22228|-97820|11|5
+#MX|Yucatán
+Piste||20700|-88589|25|6
+Panabá|Panaba|21297|-88270|21|5
+Paseos de Itzincab||20916|-89698|9|5
+#MX|Zacatecas
+Pinos||22299|-101575|2472|6
+Pozo de Gamboa||22949|-102571|2263|5
+#MY|Johor
+Padang Endau||2656|103615|5|15
+Paloh||2190|103196|37|13
+Parit Jawa||1958|102640|7|10
+Pekan Serkat||1303|103489|9|9
+#MY|Kedah
+Pantai Cenang||6294|99728|8|15
+Padang Mat Sirat||6354|99734|8|10
+Pengkalan Kundor||6078|100360|5|5
+#MY|Kelantan
+Pengkalan Chepa||6175|102288|7|14
+#MY|Kuala Lumpur
+Pudu||3133|101717|54|15
+#MY|Melaka
+Pulau Sebang||2455|102233|42|12
+Pantai Belimbing||2344|102257|10|8
+#MY|Negeri Sembilan
+Pasir Panjang||2432|101935|21|8
+#MY|Penang
+Penaga||5527|100384|5|10
+#MY|Perak
+Proton City||3743|101535|141|12
+Pangkor||4213|100575|9|10
+Pusing||4494|101008|54|7
+#MY|Sarawak
+Pusa||1583|111250|2|14
+Pantu||1140|111118|7|10
+#NC|North Province
+Poindimié|Poindimie|-20937|165331||5
+#NC|South Province
+Païta|Paita|-22131|166357|11|13
+#NG|Delta
+Patani||5229|6191|13|7
+#NG|Plateau State
+Panyam||9408|9215|1133|11
+#NI|Chinandega Department
+Puerto Morazán|Puerto Morazan|12851|-87172|1|8
+Posoltega||12544|-86980|73|6
+#NI|Rivas Department
+Potosí|Potosi|11494|-85857|63|5
+#NI|South Caribbean Coast
+Pearl City||12343|-83671|10|7
+#NL|Drenthe
+Peelo||53017|6562|11|7
+#NL|Limburg
+Panningen||51327|5979|35|7
+#NL|North Brabant
+Prinsenbeek||51598|4713|5|11
+Princenhage||51576|4739|7|9
+#NL|South Holland
+Pendrecht||51872|4469|0|12
+Palenstein||52056|4509|-2|6
+Poeldijk||52024|4219|1|6
+#NZ|Auckland
+Pakuranga||-36883|174917|36|10
+Pakuranga Heights||-36908|174880|33|10
+Point Chevalier||-36863|174705|28|9
+Parnell||-36867|174783|43|8
+Ponsonby||-36850|174733|15|6
+#NZ|Canterbury
+Parklands||-43478|172690|5|11
+Papanui||-43500|172617|10|8
+Prebbleton||-43583|172517|50|6
+#NZ|Otago
+Papatowai||-46561|169471|25|7
+#NZ|Waikato Region
+Pokeno||-37245|175020|28|5
+#NZ|Wellington Region
+Petone||-41228|174870|114|8
+#PA|Chiriquí Province
+Puerto Armuelles||8278|-82862|11|12
+#PA|Coclé
+Pocrí|Pocri|8256|-80546|28|12
+#PA|Colón
+Puerto Escondido||9194|-80096|15|12
+Puerto Pilón|Puerto Pilon|9363|-79793|22|9
+#PA|Panamá
+Pacora||9083|-79290|11|7
+#PE|Amazonas
+Pedro Ruiz Gallo||-5945|-77980|1296|6
+#PE|Ancash
+Puerto Santa||-8990|-78646|2|14
+Pilcomayo||-9047|-77811|2271|13
+#PE|Arequipa
+Punta de Bombón|Punta de Bombon|-17172|-71792|25|6
+#PE|Ayacucho
+Puquio||-14700|-74133|3195|10
+#PE|Cuzco Department
+Pichari||-12500|-73817|745|11
+Pangoa||-12117|-73000|646|7
+#PE|Huancavelica
+Pampas||-12399|-74868|3947|6
+#PE|Ica
+Palpa||-14534|-75186|349|6
+Pampa de Tate||-14145|-75692|410|5
+#PE|Junin
+Pilcomayo||-12047|-75249|3205|8
+Perené|Perene|-10949|-75226|665|7
+#PE|La Libertad
+Puente Viru||-8425|-78781|59|9
+Pacanga||-7167|-79500|82|9
+Pueblo Nuevo||-7188|-79515|75|6
+#PE|Lambayeque
+Pueblo Nuevo||-5717|-79883|170|12
+#PE|Lima region
+Pativilca||-10700|-77783|76|14
+#PE|Moquegua Department
+Pacocha||-17646|-71345|24|8
+#PE|Pasco
+Paragsha- San Andres - Jose Carlos Mariategui||-10671|-76271|4336|6
+#PE|Puno
+Putina||-14917|-69867|3863|11
+Putina||-15475|-69431|3827|8
+#PE|San Martín Department
+Picota||-6920|-76331|223|7
+#PE|Tumbes
+Papayal||-4078|-80737|262|5
+#PF|Îles du Vent
+Pirae||-17530|-149551|26|14
+Paea||-17683|-149583|16|12
+Papao||-17750|-149550|7|10
+#PH|Autonomous Region in Muslim Mindanao
+Parang||5914|120906|7|10
+Punay||5961|121198|28|6
+Pagalungan||7057|124701|11|6
+#PH|Bicol Region
+Pio Duran||13029|123445|7|13
+Pasacao||13512|123043|10|11
+Pilar||12923|123672|11|9
+Paracale||14280|122788|5|8
+Pantao||13194|123327|7|7
+Placer||11869|123918|6|6
+Puro||12484|123383|0|5
+Pandan||14045|124169|4|5
+#PH|Cagayan Valley
+Piat||17791|121478|56|6
+#PH|Calabarzon
+Pagsañgahan|Pagsangahan|13216|122543|27|14
+Pakil||14384|121479|14|11
+Palangue||14284|120811|61|10
+Paradahan||14321|120861|66|9
+Pitogo||13784|122090|17|8
+Pamayanang University of Philippines Employment Housing Cooperative Subdivision||14346|120976|91|7
+Pasong Kawayan Primero||14343|120882|47|7
+Patnanungan||14783|122183|23|7
+Pansol||13887|121243|147|6
+Pantay Na Matanda||14118|121121|135|6
+Pansoy||13182|122600|226|6
+Pinugay||14597|121262|199|6
+Polillo||14717|121949|35|6
+Putol||13992|120728|55|5
+Pantijan No 2||14233|120801|104|5
+#PH|Caraga
+Placer||9658|125602|1|10
+Patin-ay||8551|125937|38|7
+#PH|Central Luzon
+Poblacion, San Felipe||15062|120070|14|15
+Pulo||15246|120929|17|11
+Pulungmasle||15000|120558|25|9
+Pura||15625|120648|29|7
+Pantabangan||15811|121144|278|6
+Pulung Santol||15046|120562|60|6
+#PH|Central Visayas
+Pamplona||9472|123119|40|12
+Perrelos||10117|123674|44|11
+Panglao||9578|123746|7|7
+Patao||11220|123693|4|6
+#PH|Cordillera
+Pasil||17383|121133|999|10
+#PH|Davao Region
+Padada||6641|125345|17|11
+Pandasan||7284|125854|24|5
+#PH|Eastern Visayas
+Palompon||11051|124384|7|12
+Pambujan||12564|124928|5|11
+Palapag||12546|125115|12|8
+Pagsanghan||11966|124721|5|8
+#PH|Ilocos
+Payocpoc Sur||16494|120328|14|13
+Puelay||15887|120574|28|7
+Paringao||16572|120324|7|7
+Pasuquin||18333|120618|12|6
+#PH|Mimaropa
+Panacan||9246|118408|7|11
+Panitian||9097|118086|9|7
+Pañgobilian|Pangobilian|8801|117859|15|7
+#PH|National Capital Region
+Project 6||14659|121040|43|13
+#PH|Soccsksargen
+Pikit||7054|124672|14|15
+Pigcawayan||7277|124426|19|11
+President Roxas||7154|125056|125|11
+Polonoling||6285|124969|378|7
+Pangyan||5701|125281|1|5
+Puloypuloy||6635|124096|24|5
+#PH|Western Visayas
+Pototan||10944|122635|28|10
+Pilar||11487|122996|7|10
+Payao||10179|122924|22|9
+Palampas||10525|123421|52|9
+Pontevedra||10375|122868|10|8
+President Roxas||11431|122928|8|7
+Punao||10565|123408|126|6
+Pavia||10776|122546|17|6
+Patnongon||10913|121994|17|6
+Panitan||11466|122773|14|5
+Plaridel||10897|123489|10|5
+#PH|Zamboanga Peninsula
+Ponot||8452|123022|8|7
+Pitogo||7455|123311|15|6
+#PK|Sindh
+Pithoro||25511|69378|12|6
+#PL|Greater Poland
+Puszczykowo||52286|16849|76|9
+Pobiedziska||52478|17288|109|9
+Pniewy||52509|16257|99|8
+Plewiska||52367|16810|82|6
+#PL|Kujawsko-Pomorskie
+Pakość|Pakosc|52802|18085|80|6
+Piotrków Kujawski|Piotrkow Kujawski|52551|18499|103|5
+#PL|Lesser Poland
+Proszowice||50193|20289|222|6
+Piwniczna-Zdrój|Piwniczna-Zdroj|49441|20714|394|6
+#PL|Lower Silesia
+Przedmieście Świdnickie|Przedmiescie Swidnickie|51101|17035|122|14
+Plac Grunwaldzki||51112|17060|114|13
+Powstańców Śląskich Zachód-Centrum Południow|Powstancow Slaskich Zachod-Centrum Poludniow|51096|17018|121|12
+Powstańców Śląskich Wschód|Powstancow Slaskich Wschod|51092|17025|125|11
+Pieszyce||50713|16582|299|9
+Polanica-Zdrój|Polanica-Zdroj|50404|16513|374|7
+Piława Górna|Pilawa Gorna|50684|16744|304|7
+Piechowice||50850|15599|380|6
+Przemków|Przemkow|51525|15794|156|6
+Polanowice-Poświętne-Ligota|Polanowice-Poswietne-Ligota|51160|17039|113|6
+Pieńsk|Piensk|51249|15047|186|6
+Pilczyce||51137|16958|117|6
+Psie Pole Południe-Kiełczów|Psie Pole Poludnie-Kielczow|51148|17127|130|5
+#PL|Lublin
+Parczew||51640|22901|148|10
+Poniatowa||51180|22131|206|10
+#PL|Mazovia
+Przysucha||51359|20629|209|6
+#PL|Opole Voivodeship
+Praszka||51054|18453|190|8
+Paczków|Paczkow|50464|17007|229|8
+#PL|Pomerania
+Przymorze Małe|Przymorze Male|54410|18578|17|15
+Puck||54718|18408|14|11
+Prabuty||53755|19205|95|8
+Pelplin||53928|18698|41|8
+#PL|Silesia
+Pszów|Pszow|50040|18395|300|14
+Pawłowice|Pawlowice|49961|18718|264|10
+Poręba|Poreba|50488|19339|312|9
+#PL|Warmia-Masuria
+Pasłęk|Paslek|54062|19659|39|12
+#PL|West Pomerania
+Pyrzyce||53146|14893|39|13
+Połczyn-Zdrój|Polczyn-Zdroj|53764|16096|92|9
+Podjuchy||53362|14600|28|9
+#PL|Łódź Voivodeship
+Poddębice|Poddebice|51893|18957|126|8
+Pajęczno|Pajeczno|51144|18996|222|7
+#PL|Świętokrzyskie
+Pińczów|Pinczow|50521|20526|204|12
+Połaniec|Polaniec|50433|21281|164|8
+#PR|Cabo Rojo
+Puerto Real||18075|-67187|3|6
+#PR|Humacao
+Punta Santiago||18166|-65748|1|6
+#PR|Patillas
+Patillas||18006|-66016|20|4
+#PR|Peñuelas
+Peñuelas|Penuelas|18056|-66722|56|7
+#PR|Toa Alta
+Pájaros|Pajaros|18369|-66217|55|9
+#PT|Azores
+Praia da Vitória|Praia da Vitoria|38733|-27067|26|6
+#PT|Braga
+Ponte||41471|-8330|133|7
+Palmeira||41591|-8428|113|6
+Póvoa de Lanhoso|Povoa de Lanhoso|41576|-8270|182|5
+#PT|Coimbra
+Poiares||40210|-8257|136|6
+#PT|Faro
+Parchal||37138|-8517|9|5
+#PT|Leiria
+Porto de Mós|Porto de Mos|39602|-8818|136|6
+Pataias||39670|-8996|126|6
+#PT|Lisbon
+Póvoa de Santo Adrião|Povoa de Santo Adriao|38800|-9167|51|15
+Porto Salvo||38723|-9305|99|14
+Principe Real||38718|-9152|54|10
+Prazeres||38708|-9168|62|8
+Prior Velho||38792|-9121|87|7
+#PT|Portalegre
+Ponte de Sôr|Ponte de Sor|39250|-8010|108|11
+#PT|Porto
+Pedrouços|Pedroucos|41189|-8586|144|13
+Perafita||41183|-8254|437|13
+Penafiel||41208|-8283|286|8
+Pinheiro Manso||41162|-8652|62|7
+Paços de Ferreira|Pacos de Ferreira|41277|-8376|312|7
+Pereiro||41174|-8655|75|7
+Pedras Rubras||41244|-8667|79|6
+Perozinho||41065|-8585|137|6
+Paços|Pacos|41162|-8671|57|5
+#PT|Setúbal
+Pragal||38675|-9170|96|8
+#PT|Vila Real
+Peso da Régua|Peso da Regua|41163|-7789|105|5
+#PY|Concepción
+Puerto Vallemí|Puerto Vallemi|-22158|-57951|81|5
+#PY|Cordillera Department
+Piribebuy||-25465|-57042|253|10
+#PY|Paraguarí
+Paraguarí|Paraguari|-25621|-57147|134|10
+#PY|San Pedro Department
+Puerto Rosario||-24441|-57143|70|5
+#RE|Reunion
+Petite-Île|Petite-Ile|-21353|55564|315|13
+#RO|Arad County
+Pecica||46167|21067|100|13
+Pâncota|Pancota|46333|21700|105|7
+#RO|Arges
+Poiana Lacului||44817|24733|355|7
+Pietroşani|Pietrosani|45183|24850|437|6
+#RO|Bacău County
+Poduri||46467|26533|449|8
+Pârjol|Parjol|46583|26600|395|7
+Podu Turcului||46200|27383|114|5
+#RO|Bihor County
+Popeşti|Popesti|47233|22417|169|8
+#RO|Brașov County
+Prejmer||45717|25767|523|8
+Predeal||45500|25567|1110|6
+#RO|Buzău County
+Pogoanele||44917|27000|62|8
+Poşta Câlnău|Posta Calnau|45233|26850|159|6
+Pârscov|Parscov|45283|26550|179|6
+#RO|Călărași County
+Perişoru|Perisoru|44450|27550|35|6
+#RO|Dolj
+Poiana Mare||43917|23067|41|13
+Podari||44250|23783|73|6
+Piscu Vechi||43900|23167|37|5
+Pleniţa|Plenita|44217|23183|146|5
+#RO|Dâmbovița County
+Pucioasa||45078|25432|407|15
+Potlogi||44550|25583|133|8
+Petreşti|Petresti|44650|25333|174|6
+#RO|Galați County
+Pechea||45633|27800|44|11
+Piscu||45500|27733|14|5
+#RO|Gorj County
+Plopşoru|Plopsoru|44783|23350|141|7
+Padeş|Pades|45017|22850|274|5
+#RO|Harghita County
+Praid||46550|25133|527|7
+#RO|Iași County
+Podu Iloaiei||47217|27267|84|10
+Popricani||47300|27517|143|7
+#RO|Ilfov
+Periş|Peris|44685|26014|108|7
+#RO|Maramureş
+Poienile de sub Munte||47817|24433|634|10
+#RO|Mureș County
+Pănet|Panet|46555|24470|318|6
+#RO|Neamț County
+Pipirig||47250|26067|737|9
+Piatra Şoimului|Piatra Soimului|46833|26433|325|8
+Petricani||47167|26467|304|6
+Podoleni||46800|26617|247|6
+Poiana Teiului||47100|25967|664|5
+#RO|Olt
+Piatra Olt||44367|24267|132|6
+Potcoava||44483|24650|185|6
+#RO|Prahova
+Puchenii Mari||44817|26083|103|9
+Plopeni||45050|25952|254|8
+Poiana Câmpina|Poiana Campina|45127|25711|395|5
+Păuleşti|Paulesti|45001|25960|219|5
+#RO|Suceava
+Preuteşti|Preutesti|47450|26417|268|9
+Păltinoasa|Paltinoasa|47550|25950|459|6
+#RO|Teleorman County
+Peretu||44050|25083|70|8
+Plosca||44033|25133|65|6
+#RO|Timiș County
+Periam||46050|20867|88|7
+#RO|Vaslui County
+Perieni||46300|27617|241|5
+Puieşti|Puiesti|46429|27490|143|5
+#RO|Vrancea
+Panciu||45900|27083|201|9
+Păuneşti|Paunesti|46033|27100|261|7
+#RS|Central Serbia
+Padinska Skela||44943|20425|68|9
+Paraćin|Paracin|43861|21408|130|6
+#RS|Vojvodina
+Petrovaradin||45247|19879|78|14
+Padina||45120|20729|110|6
+Palić|Palic|46106|19756|107|5
+Prigrevica||45676|19088|85|5
+#RU|Altai Krai
+Pavlovsk||53320|82990|178|15
+Pospelikha||51950|81767|188|14
+Pervomayskoye||52599|85258|243|7
+Pervomayskiy||52917|81662|226|5
+Pankrushikha||53829|80349|152|5
+Pervomayskoye||53721|84018|192|5
+#RU|Amur Oblast
+Progress||49745|129672|146|10
+Poyarkovo||49625|128651|109|7
+#RU|Arkhangelskaya
+Plesetsk||62712|40291|130|11
+#RU|Belgorod Oblast
+Prokhorovka||51036|36731|263|10
+Proletarskiy||50791|35773|216|9
+#RU|Bryansk Oblast
+Pogar||52553|33260|121|11
+#RU|Buryatiya Republic
+Petropavlovka||50612|105324|681|8
+#RU|Chechnya
+Pervomayskaya||43403|45523|175|5
+#RU|Chelyabinsk
+Pervomayskiy||54866|61170|274|10
+Potanino||55179|61622|206|9
+Poletayevo||55034|61114|244|7
+#RU|Chuvash Republic
+Poretskoye||55197|46329|114|6
+#RU|Dagestan
+Pervomayskoye||43919|46710|-11|9
+Pervomayskoye||42496|47896|46|9
+#RU|Ingushetiya Republic
+Psedakh||43467|44569|464|7
+#RU|Ivanovo Oblast
+Puchezh||56976|43167|111|10
+Palekh||56801|41857|111|6
+#RU|Kabardino-Balkariya Republic
+Psygansu||43413|43791|484|7
+#RU|Kaliningrad Oblast
+Pionerskiy||54951|20227|23|12
+Polessk||54862|21103|3|8
+#RU|Kalmykiya Republic
+Priyutnoye||46101|43511|39|6
+#RU|Karachayevo-Cherkesiya Republic
+Psyzh||44233|42018|552|7
+Pregradnaya||43952|41191|825|7
+Pervomayskoye||43938|42476|984|5
+#RU|Karelia
+Pitkyaranta||61574|31479|34|13
+Pudozh||61804|36528|60|11
+Pindushi||62915|34580|56|5
+#RU|Khabarovsk
+Pereyaslavka||47965|135064|93|8
+#RU|Khanty-Mansia
+Priob’ye|Priob'ye|62521|65596|5|7
+Pionerskiy||61195|62869|97|5
+#RU|Kirov Oblast
+Peskovka||59045|52361|197|7
+Pervomayskiy||59064|49288|145|5
+#RU|Krasnodar Krai
+Petrovskaya||45431|37955|2|13
+Platnirovskaya||45395|39384|34|12
+Psebay||44123|40811|613|11
+Plastunovskaya||45294|39265|36|10
+Pereyaslovskaya||45841|39024|21|9
+Petropavlovskaya||45082|40451|117|7
+Poputnaya||44513|41439|407|6
+#RU|Krasnoyarsk Krai
+Podgornyy||53848|92850|302|5
+#RU|Kurgan Oblast
+Petukhovo||55069|67902|137|12
+Polovinnoye||54791|65990|153|5
+#RU|Kursk Oblast
+Pristen’|Pristen'|51237|36698|251|5
+Pryamitsyno||51656|35937|175|5
+#RU|Kuzbass
+Promyshlennovskiy||55483|86200|197|6
+Pioner||55317|85951|157|6
+#RU|Leningradskaya Oblast'
+Primorsk||60366|28606||6
+Priladozhskiy||59872|31318|23|5
+#RU|Mariy-El Republic
+Paran’ga|Paran'ga|56704|49404|141|7
+#RU|Moscow Oblast
+Peresvet||56423|38176|220|15
+Pravdinskiy||56060|37863|167|10
+Povarovo||56067|37050|217|8
+Pirogovskiy||55978|37734|152|6
+Pavlovskaya Sloboda||55815|37082|161|6
+#RU|Nizhny Novgorod Oblast
+Pervomaysk||54869|43803|160|15
+Pochinki||54701|44858|137|12
+Perevoz||55596|44545|99|9
+Pil’na|Pil'na|55554|45918|73|7
+#RU|North Ossetia–Alania
+Pavlodol’skaya|Pavlodol'skaya|43719|44478|149|6
+#RU|Novgorod Oblast
+Pankovka||58500|31200|25|10
+Parfino||57973|31648|28|8
+Proletariy||58434|31705|24|5
+#RU|Novosibirsk Oblast
+Prokudskoye||55009|82457|115|6
+#RU|Omsk Oblast
+Poltavka||54363|71762|134|7
+Pavlogradka||54201|73564|123|6
+#RU|Orenburg Oblast
+Perevolotskiy||51878|54190|170|10
+#RU|Penza Oblast
+Pachelma||53244|43352|186|9
+#RU|Perm Krai
+Polazna||58292|56416|159|13
+#RU|Primorye
+Pogranichnyy||44410|131378|168|12
+Pokrovka||43951|131638|45|11
+Preobrazheniye||42901|133904|29|9
+Plastun||44760|136284|21|6
+#RU|Pskov Oblast
+Pechory||57816|27612|92|13
+Porkhov||57765|29556|53|12
+Pytalovo||57069|27915|70|7
+Pushkinskiye Gory||57017|28925|124|6
+Pustoshka||56335|29369|161|5
+#RU|Rostov
+Pokrovskoye||47414|38899|52|13
+Peschanokopskoye||46194|41081|76|11
+#RU|Ryazan Oblast
+Polyany||54718|39829|102|6
+#RU|Sakha
+Pokrovsk||61479|129139|121|10
+#RU|Samara Oblast
+Pribrezhnyy||53487|49858|175|12
+Povolzhskiy||53585|49763|153|9
+Petrova Dubrava||53300|50367|148|7
+Petra-Dubrava||53296|50366|148|7
+Pestravka||52403|49958|41|7
+#RU|Saratov Oblast
+Perelyub||51863|50354|69|6
+Piterka||50679|47444|68|5
+#RU|Smolensk Oblast
+Pochinok||54405|32439|195|9
+#RU|St.-Petersburg
+Pargolovo||60081|30276|38|12
+Pontonnyy||59787|30615|19|9
+Pesochnyy||60123|30164|25|8
+#RU|Stavropol Kray
+Praskoveya||44744|44203|113|11
+Pokoynoye||44810|44252|92|9
+Pelagiada||45206|42024|330|7
+Podgornaya||44203|43430|244|5
+Pravokumskoye||44769|44647|88|5
+#RU|Sverdlovsk Oblast
+Pyshma||56953|63252|94|10
+#RU|Tambov Oblast
+Pervomayskiy||53246|40289|159|13
+Pokrovo-Prigorodnoye||52683|41423|126|5
+#RU|Tatarstan Republic
+Pestretsy||55754|49651|99|7
+#RU|Tomsk Oblast
+Parabel’|Parabel'|58696|81493|52|6
+Pervomayskoye||57075|86241|102|6
+Podgornoye||57788|82652|97|5
+#RU|Tula Oblast
+Pervomayskiy||54045|37509|239|11
+#RU|Tver Oblast
+Peno||56925|32744|198|5
+#RU|Ulyanovsk
+Pavlovka||52690|47141|176|6
+Pavlovka||53596|46766|257|6
+#RU|Volgograd Oblast
+Petrov Val||50143|45210|108|15
+Preobrazhenskaya||50741|43053|93|5
+#RU|Voronezh Oblast
+Podgornoye||51736|39148|129|8
+Panino||51654|40131|175|7
+Podgorenskiy||50410|39642|132|7
+#RU|Yamalo-Nenets
+Pangody||65850|74486|37|11
+Purpe||64480|76690|49|9
+#RU|Yaroslavl Oblast
+Poshekhon’ye|Poshekhon'ye|58499|39135|109|7
+Petrovsk||57010|39269|135|5
+#RU|Zabaykalskiy (Transbaikal) Kray
+Pervomayskiy||51663|115624|712|13
+Priargunsk||50365|119095|525|8
+#SC|
+Perseverance||-4604|55464||6
+#SC|Port Glaud
+Port Glaud||-4663|55418|189|3
+#SE|Skåne
+Perstorp||56138|13395|93|6
+#SG|
+Pandan Valley||1318|103776|27|11
+#SI|Municipality of Piran
+Piran||45528|13571|46|4
+#SI|Municipality of Podlehnik
+Podlehnik||46335|15879|231|0
+#SI|Municipality of Podvelka
+Podvelka||46588|15328|503|0
+#SI|Municipality of Podčetrtek
+Podčetrtek|Podcetrtek|46157|15597|222|1
+#SI|Municipality of Poljčane
+Poljčane|Poljcane|46314|15578|291|1
+#SI|Municipality of Polzela
+Polzela||46284|15065|308|2
+#SI|Municipality of Postojna
+Postojna||45774|14215|548|10
+#SI|Municipality of Preddvor
+Preddvor||46303|14422|488|4
+#SI|Municipality of Prevalje
+Prevalje||46547|14920|409|5
+#SI|Municipality of Puconci
+Puconci||46705|16157|207|1
+#SI|Pesnica
+Pesnica||46607|15677|257|1
+#SI|Pivka
+Pivka||45683|14196|550|2
+#SI|Prebold
+Prebold||46237|15093|283|2
+#SK|Banská Bystrica Region
+Poltár|Poltar|48431|19794|246|5
+#SL|Eastern Province
+Pendembu||8098|-10694|204|9
+Panguma||8185|-11133|309|8
+#SL|Southern Province
+Pujehun||7358|-11721|26|8
+#SM|Chiesanuova
+Poggio di Chiesanuova||43905|12421|475|1
+#SN|Fatick
+Passy||13986|-16262|15|13
+#SN|Saint-Louis
+Podor||16649|-14961|8|12
+Pal||15914|-16260|20|8
+#SN|Thies
+Poponguine||14557|-17114|11|9
+#SV|San Salvador Department
+Panchimalco||13613|-89180|603|7
+#SZ|Hhohho Region
+Piggs Peak||-25961|31247|1018|6
+#TG|Kara
+Pagouda||9753|1328|415|8
+#TH|Ang Thong
+Pho Thong||14666|100409|12|12
+#TH|Chanthaburi
+Pong Nam Ron||12905|102264|239|9
+#TH|Chiang Mai
+Phrao||19366|99202|438|5
+#TH|Chiang Rai
+Pa Daet||19505|99992|384|14
+#TH|Kanchanaburi
+Phanom Thuan||14130|99699|19|12
+#TH|Khon Kaen
+Phon||15816|102600|177|15
+#TH|Maha Sarakham
+Phayakkhaphum Phisai||15516|103194|139|10
+#TH|Nakhon Ratchasima
+Phimai||15223|102495|157|13
+#TH|Nakhon Sawan
+Phai Sali||15600|100649|55|13
+Phayuha Khiri||15455|100135|27|12
+#TH|Phang Nga
+Phang Nga||8451|98530|15|10
+#TH|Phayao
+Pong||19149|100275|300|14
+#TH|Phuket
+Patong||7896|98297|8|15
+#TH|Si Sa Ket
+Phrai Bueng||14748|104363|151|11
+#TJ|Khatlon Province
+Panj||37236|69099|368|8
+Panji Poyon||37194|68577|328|5
+#TJ|Sughd
+Pakhtakoron||40157|68747|387|8
+#TL|Oecusse
+Pante Makasar||-9200|124383|24|5
+#TN|Sousse Governorate
+Port el Kantaoui||35892|10594|8|6
+#TO|Haapai
+Pangai||-19815|-174354|6|2
+#TR|Adana
+Pozantı|Pozanti|37428|34872|827|11
+#TR|Antalya
+Payallar||36602|31851|35|5
+#TR|Bilecik
+Pazaryeri||39994|29904|808|7
+#TR|Denizli
+Pamukkale||37916|29117|255|10
+Pınarkent|Pinarkent|37797|29222|358|7
+#TR|Elazığ
+Palu||38691|39920|889|11
+#TR|Erzurum
+Pazaryolu||40411|40768|1507|6
+#TR|Giresun
+Piraziz||40922|38125|321|10
+#TR|Kayseri
+Pınarbaşı|Pinarbasi|38723|36393|1509|12
+#TR|Kütahya
+Pazarlar||38995|29126|936|6
+#TR|Kırklareli
+Pınarhisar|Pinarhisar|41627|27515|237|11
+#TR|Mersin
+Pınarbaşı|Pinarbasi|36703|34363|175|11
+#TR|Ordu
+Perşembe|Persembe|41066|37771|45|12
+#TR|Sakarya
+Pamukova||40508|30167|106|15
+#TR|Siirt
+Pervari||37936|42549|1294|6
+#TR|Tokat Province
+Pazar||40277|36283|576|5
+#TR|Tunceli
+Pertek||38866|39323|1058|7
+#TR|İzmir Province
+Poyracık|Poyracik|39087|27351|70|6
+#TT|Diego Martin Regional Corporation
+Petit Valley||10700|-61547|66|8
+#TT|Penal/Debe
+Peñal|Penal|10167|-61467|8|12
+#TT|Princes Town
+Princes Town||10272|-61371|69|10
+#TW|Taipei
+Pinglin||24935|121710|195|7
+#TZ|Arusha
+Poli||-3361|36818|1216|10
+#TZ|Tanga
+Pangani||-5425|38975|9|8
+#UA|Crimea
+Primorskyi||45112|35479|6|13
+Pervomayske||45717|33856|30|8
+Petrovka||45498|34288|37|7
+Partenit||44578|34345|90|6
+Pionerskoye||44881|34202|317|6
+#UA|Dnipropetrovsk
+Prydniprovsk||48413|35130|61|15
+Pokrovske||47981|36234|110|10
+Pereshchepyne||49025|35369|90|10
+Petropavlivka||48464|36431|80|7
+Pivdennyi Hirnycho-Zbahachuvalnyi Kombinat||47840|33343|53|7
+#UA|Donetsk
+Pivnichne||48398|37909|229|12
+Panteleymonivka||48202|37974|226|8
+Putylivka||48060|37793|233|6
+#UA|Ivano-Frankivsk
+Perehinske||48811|24192|466|13
+Pechenizhyn||48517|24883|319|5
+#UA|Kharkiv
+Pokotylivka||49913|36175|153|10
+Pyatykhatka||50089|36247|195|9
+Podvirky||49980|36092|120|8
+Pivdenne||49881|36068|150|7
+Peresichna||50025|35979|121|7
+Pechenihy||49869|36939|97|5
+#UA|Khmelnytskyi
+Poninka||50184|27528|243|7
+#UA|Kirovohrad
+Pomichna||48240|31409|178|9
+Petrove||48338|33265|98|7
+Pobuzke||48160|30592|149|6
+Pivdennyi||48658|33132|114|5
+#UA|Kyiv City
+Post-Volynskyi||50417|30428|175|6
+#UA|Kyiv Oblast
+Piskivka||50694|29622|139|7
+Petropavlivska Borshchahivka||50434|30329|152|6
+#UA|Luhansk
+Petrovo-Krasnosillya||48297|38879|367|13
+Pryvillia||49006|38299|172|7
+#UA|Lviv
+Pustomyty||49717|23907|282|9
+Peremyshliany||49669|24558|277|7
+#UA|Odesa
+Peresyp||46535|30727|1|8
+Plakhtiyivka||46095|29719|47|5
+#UA|Poltava
+Pyryatyn||50244|32520|117|15
+#UA|Sumy
+Putyvl||51335|33869|192|15
+#UA|Ternopil
+Pidvolochysk||49531|26144|281|8
+Pochayiv||50004|25509|346|8
+#UA|Vinnytsia
+Pohrebyshche||49485|29260|226|10
+Pishchanka||48212|28881|232|5
+#UA|Zakarpattia
+Perechyn||48735|22477|149|7
+#UA|Zaporizhzhia
+Prymorsk||46734|36346|5|11
+Pryazovske||46731|35641|28|7
+#UA|Zhytomyr Oblast
+Popilnia||49953|29453|212|6
+Pulyny||50467|28270|232|5
+#UG|Northern Region
+Pader||2880|33087|1055|15
+Pader||3050|33217|1061|12
+Pader Palwo||2801|33135|1034|11
+#US|Alabama
+Pell City||33586|-86286|177|14
+Pleasant Grove||33491|-86970|185|10
+Pike Road||32284|-86103|90|8
+Pinson||33689|-86683|189|7
+#US|Alaska
+Palmer||61599|-149115|72|7
+#US|Arizona
+Paradise Valley||33531|-111943|409|14
+Picture Rocks||32346|-111246|634|10
+Page||36915|-111456|1326|7
+Paulden||34886|-112468|1344|5
+#US|Arkansas
+Pocahontas||36261|-90971|92|6
+Pea Ridge||36454|-94115|393|5
+Prairie Grove||35976|-94318|355|5
+#US|California
+Parkway||38496|-121459|6|15
+Phelan||34426|-117572|1256|14
+Palos Verdes Estates||33801|-118392|64|14
+Pedley||33975|-117476|220|13
+Piedmont||37824|-122232|100|11
+Placerville||38730|-120799|569|11
+Portola Hills||33679|-117631|381|9
+Pismo Beach||35143|-120641|17|8
+Piñon Hills|Pinon Hills|34433|-117647|1272|7
+Pollock Pines||38762|-120586|1198|7
+Plumas Lake||39021|-121558|14|6
+Palermo||39435|-121538|59|5
+#US|Connecticut
+Plymouth||41672|-73053|214|12
+Prospect||41502|-72979|268|9
+Putnam||41915|-71909|92|7
+Portland||41573|-72641|24|6
+Pawcatuck||41377|-71834|3|6
+#US|Delaware
+Pike Creek Valley||39736|-75698|74|11
+Pike Creek||39731|-75704|38|8
+#US|District of Columbia
+Pennsylvania Avenue SE||38868|-76958|43|5
+#US|Florida
+Palmetto Estates||25621|-80362|3|13
+Palmetto||27521|-82572|3|13
+Panama City Beach||30177|-85805|3|13
+Port Saint John||28477|-80789|8|12
+Pine Castle||28472|-81368|30|11
+Palatka||29649|-81638|6|10
+Port Salerno||27144|-80201|4|10
+Pine Ridge||28938|-82473|29|10
+Palm Beach||26706|-80036|2|9
+Pebble Creek||28148|-82346|15|8
+Pasadena Hills||28280|-82224|67|8
+Pompano Beach Highlands||26283|-80107|4|7
+Perry||30118|-83583|14|7
+Pelican Bay||26231|-81806|4|6
+Pembroke Park||25988|-80175|1|6
+Pahokee||26820|-80665|4|6
+Progress Village||27900|-82365|5|5
+Palm Springs North||25935|-80334|1|5
+Pine Island Ridge||26095|-80274|2|5
+#US|Georgia
+Powder Springs||33860|-84684|288|15
+Panthersville||33707|-84272|271|10
+Port Wentworth||32149|-81163|7|8
+#US|Hawaii
+Palolo||21313|-157780|246|13
+Pukalani||20837|-156337|465|8
+Pacific Palisades||21426|-157953|174|7
+Pauoa||21321|-157838|67|5
+Pupukea||21655|-158061|7|5
+Punahou||21300|-157827|13|5
+#US|Idaho
+Payette||44078|-116934|655|7
+Preston||42096|-111877|1437|5
+#US|Illinois
+Palos Heights||41668|-87796|190|13
+Pontiac||40881|-88630|196|12
+Plano||41663|-88537|198|11
+Peru||41328|-89129|183|10
+Paris||39611|-87696|220|8
+Princeton||41368|-89465|219|8
+Park City||42348|-87884|213|7
+Pingree Grove||42069|-88413|278|7
+Posen||41632|-87681|183|6
+Peoria Heights||40747|-89574|239|6
+Pontoon Beach||38732|-90080|127|6
+Pana||39389|-89080|213|6
+Pinckneyville||38080|-89382|132|5
+Poplar Grove||42368|-88822|274|5
+#US|Indiana
+Peru||40754|-86069|199|11
+Plymouth||41344|-86310|243|10
+Princeton||38355|-87568|152|9
+Portland||40434|-84978|277|6
+#US|Iowa
+Pella||41408|-92916|270|10
+Pleasant Hill||41584|-93520|267|9
+Perry||41839|-94107|293|8
+#US|Kansas
+Parsons||37340|-95261|275|10
+Park City||37800|-97318|417|8
+Pratt||37644|-98738|575|7
+Paola||38572|-94879|279|6
+#US|Kentucky
+Paris||38210|-84253|257|10
+Pikeville||37479|-82519|207|7
+Princeton||37109|-87882|147|6
+#US|Louisiana
+Pineville||31322|-92434|36|14
+Prien||30182|-93274|4|8
+Ponchatoula||30439|-90441|8|7
+Plaquemine||30290|-91235|7|7
+Patterson||29693|-91302|3|6
+Port Allen||30452|-91210|8|5
+#US|Maine
+Presque Isle||46681|-68016|139|9
+Poland||44061|-70394|101|5
+Paris||44260|-70501|247|5
+#US|Maryland
+Patterson Park Neighborhood||39293|-76575|10|5
+Pumphrey||39217|-76637|24|5
+Poolesville||39146|-77417|125|5
+#US|Massachusetts
+Plainville||42004|-71333|72|8
+Plymouth||41958|-70667|23|7
+Pinehurst||42529|-71228|32|7
+#US|Michigan
+Plymouth||42371|-83470|221|9
+Petoskey||45373|-84955|203|6
+#US|Mississippi
+Petal||31347|-89260|48|11
+Picayune||30526|-89678|22|11
+Philadelphia||32772|-89117|128|7
+Pontotoc||34248|-88999|152|6
+Pass Christian||30316|-89248|4|5
+#US|Missouri
+Park Hills||37854|-90518|232|9
+Perryville||37724|-89861|177|8
+Pleasant Hill||38788|-94269|277|8
+Pacific||38482|-90742|142|7
+Parkville||39195|-94682|253|6
+Pevely||38283|-90395|137|6
+#US|Nebraska
+Plattsmouth||41011|-95882|299|6
+#US|New Hampshire
+Pelham||42735|-71325|47|13
+Plaistow||42836|-71095|31|8
+Pembroke||43147|-71458|128|7
+#US|New Jersey
+Phillipsburg||40694|-75190|96|15
+Princeton Meadows||40332|-74564|25|14
+Pennsville||39653|-75517|3|12
+Pompton Lakes||41005|-74291|67|11
+Pine Hill||39784|-74992|49|11
+Park Ridge||41038|-74041|50|9
+Pitman||39733|-75132|37|9
+Pine Lake Park||40003|-74257|18|9
+Palmyra||40007|-75028|3|7
+Pomona||39478|-74575|20|7
+Paulsboro||39830|-75240|3|6
+Prospect Park||40937|-74174|66|6
+Prospect Park||40240|-74766|28|6
+#US|New Mexico
+Portales||34186|-103334|1221|12
+#US|New York
+Patchogue||40766|-73015|6|12
+Potsdam||44670|-74981|132|10
+Plainedge||40717|-73484|20|9
+Port Jervis||41375|-74693|136|9
+Port Jefferson||40946|-73069|1|8
+Port Jefferson Station||40925|-73047|54|8
+Pleasantville||41133|-73793|89|7
+Pelham||40910|-73808|22|7
+Pelham Manor||40895|-73807|19|6
+Pound Ridge||41209|-73575|189|5
+Penn Yan||42661|-77054|222|5
+#US|North Carolina
+Piney Green||34716|-77320|12|13
+Pineville||35083|-80892|174|8
+Pope Air Force Base (historical)||35171|-79010|67|8
+#US|Ohio
+Powell||40158|-83075|277|13
+Perry Heights||40795|-81473|335|8
+Portage Lakes||41007|-81527|321|7
+Pepper Pike||41478|-81464|323|6
+Port Clinton||41512|-82938|177|6
+#US|Oklahoma
+Pryor Creek||36309|-95318|194|9
+Poteau||35054|-94624|149|9
+Pryor||36308|-95317|192|9
+Piedmont||35642|-97746|363|7
+Purcell||35014|-97361|335|6
+Pauls Valley||34740|-97222|266|6
+Perry||36289|-97288|308|5
+#US|Oregon
+Prineville||44300|-120834|877|10
+#US|Pennsylvania
+Pottsville||40686|-76195|191|14
+Paschall||39924|-75239|23|12
+Pennypack||40067|-75045|27|10
+Progress||40285|-76831|151|10
+Park Forest Village||40807|-77917|384|10
+Perkasie||40372|-75293|110|8
+Pleasant Hills||40336|-79961|374|8
+Pittston||41326|-75789|179|8
+Palmyra||40309|-76593|139|7
+Parkville||39781|-76963|233|7
+Prospect Park||39888|-75308|27|6
+Pittville||40057|-75145|72|6
+Plymouth Meeting||40102|-75274|56|6
+Punxsutawney||40944|-78971|374|6
+Plymouth||41240|-75945|160|6
+Penn Wynne||39986|-75275|66|6
+Paoli||40042|-75476|155|6
+Paxtonia||40317|-76794|159|5
+Palmerton||40801|-75612|122|5
+#US|South Carolina
+Port Royal||32379|-80693|7|12
+Parker||34851|-82453|309|11
+Powdersville||34792|-82493|296|8
+Piedmont||34702|-82465|240|5
+#US|South Dakota
+Pierre||44368|-100351|451|14
+#US|Tennessee
+Portland||36582|-86516|244|12
+Paris||36302|-88327|157|10
+Pulaski||35200|-87031|213|8
+Pigeon Forge||35788|-83554|305|6
+#US|Texas
+Port Neches||29991|-93959|5|13
+Port Lavaca||28615|-96626|4|12
+Pearsall||28892|-99095|193|10
+Pleasanton||28967|-98479|110|10
+Pecos||31423|-103493|787|10
+Perryton||36400|-100803|896|9
+Princeton||33180|-96498|175|9
+Prairie View||30093|-95988|82|6
+Progreso||26092|-97957|21|6
+Palmview||26233|-98371|45|6
+Palmview South||26216|-98379|42|6
+Perezville||26225|-98401|40|5
+Post||33191|-101379|794|5
+Pecan Plantation||32360|-97676|219|5
+Port Isabel||26073|-97209|2|5
+#US|Utah
+Pleasant View||41318|-111992|1341|9
+Price||39599|-110811|1696|8
+Park City||40646|-111498|2141|8
+Providence||41706|-111817|1401|7
+Plain City||41298|-112086|1293|6
+#US|Virginia
+Poquoson||37122|-76346|1|12
+Purcellville||39137|-77715|170|9
+Pulaski||37048|-80780|580|9
+Pimmit Hills||38913|-77201|110|6
+Potomac Mills||38646|-77294|64|6
+#US|Washington
+Port Orchard||47540|-122636|22|14
+Prairie Ridge||47138|-122149|209|11
+Poulsbo||47736|-122647|10|10
+Port Townsend||48117|-122761|40|9
+Picnic Point||47881|-122328|24|9
+Parkwood||47533|-122610|81|7
+Pacific||47265|-122250|24|7
+Prosser||46207|-119769|203|6
+#US|West Virginia
+Pea Ridge||38414|-82320|191|7
+Princeton||37366|-81103|743|6
+#US|Wisconsin
+Platteville||42734|-90478|300|13
+Plover||44456|-89544|328|12
+Port Washington||43387|-87876|183|12
+Portage||43539|-89463|241|10
+Plymouth||43749|-87977|257|9
+Pewaukee||43081|-88261|266|8
+Prairie du Chien||43052|-91141|195|6
+#US|Wyoming
+Powell||44754|-108757|1339|6
+#UY|Maldonado
+Punta del Este||-34947|-54934|15|9
+Piriápolis|Piriapolis|-34863|-55275|0|8
+Pan de Azúcar|Pan de Azucar|-34779|-55236|22|7
+#UY|Tacuarembó Department
+Paso de los Toros||-32817|-56517|57|13
+#UZ|Qashqadaryo
+Po‘loti|Po'loti|39034|65729|368|7
+#UZ|Samarqand Region
+Payariq Shahri||39992|66850|614|12
+#VC|Grenadines Parish
+Port Elizabeth||13011|-61235|10|1
+#VE|Zulia
+Punta Gorda||10334|-71414|6|15
+#VN|Gia Lai
+Phú Túc|Phu Tuc|13197|108690|135|12
+#VN|Hanoi
+Phụng Nghia|Phung Nghia|20950|105717|12|12
+Phong Châu|Phong Chau|21239|105432|20|7
+#VN|Hà Tĩnh Province
+Phố Châu|Pho Chau|18513|105424|17|8
+Phúc Trạch|Phuc Trach|18133|105767|16|6
+Phú Lộc|Phu Loc|18441|105671|20|5
+#VN|Nghệ An Province
+Phúc Sơn|Phuc Son|18967|105050|23|8
+#WS|
+Palauli||-13759|-172299|17|9
+#YT|Mamoudzou
+Passamainty||-12802|45208|11|8
+#YT|Pamandzi
+Pamandzi||-12797|45279|23|11
+#ZA|Eastern Cape
+Phakamisa||-32933|27457|325|9
+Paterson||-33441|25974|309|7
+Patensie||-33760|24814|68|6
+Port Saint John’s|Port Saint John's|-31623|29545|7|6
+Peddie||-33201|27114|314|6
+Pearston||-32582|25138|715|5
+#ZA|Free State
+Petrusburg||-29116|25414|1253|10
+Paul Roux||-28297|27950|1573|7
+#ZA|Gauteng
+Poortje||-26460|27767|1548|13
+#ZA|KwaZulu-Natal
+Paulpietersburg||-27424|30817|1126|13
+Port Edward||-31051|30228|15|7
+#ZA|Mpumalanga
+Perdekop||-27166|29624|1733|6
+#ZA|North West
+Phatsima||-25395|27015|1088|9
+#ZA|Northern Cape
+Prieska||-29668|22743|942|11
+#ZA|Western Cape
+Piketberg||-32903|18757|203|15
+Prince Albert||-33225|22027|633|13
+Porterville||-33018|18993|146|8
+Prince Alfred Hamlet||-33304|19325|500|8
+#ZW|Manicaland
+Penhalonga||-18891|32698|1364|8
+#ZW|Matabeleland South Province
+Plumtree||-20483|27817|1384|14

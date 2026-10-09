@@ -1,0 +1,559 @@
+#AF|Takhar
+Yangī Qal‘ah|Yangi Qal'ah|37466|69611|471|11
+#AM|Gegharkunik
+Yeranos||40204|45192|2000|5
+#AM|Kotayk
+Yeghvard||40323|44484|1356|13
+#AM|Vayots Dzor
+Yeghegnadzor||39764|45333|1242|7
+#AR|Jujuy
+Yuto||-23643|-64472|355|8
+#AR|Santa Cruz
+Yacimientos Río Turbio|Yacimientos Rio Turbio|-51536|-72338|408|7
+#AU|New South Wales
+Young||-34313|148301|438|10
+Yamba||-29437|153359|7|7
+Yass||-34840|148910|486|6
+#AU|Queensland
+Yeppoon||-23127|150744|30|7
+Yeppoon city centre||-23129|150736|18|6
+Yeronga||-27516|153016|13|6
+#AU|Victoria
+Yarrawonga||-36019|146000|130|8
+#AU|Western Australia
+Yokine||-31901|115853|39|13
+Yanchep||-31547|115632|15|9
+Yangebup||-32121|115816|37|7
+#AX|Ålands landsbygd
+Ytterby||60167|20017||6
+Yomala||60167|19933|36|6
+#AZ|Nakhchivan
+Yaycı|Yayci|38941|45732|706|9
+#AZ|Yardimli District
+Yardımlı|Yardimli|38908|48241|726|8
+#BE|Wallonia
+Yvoir||50328|4881|96|8
+#BG|Blagoevgrad
+Yakoruda||42025|23684|1028|6
+#BY|Homyel’ Voblasc’
+Yel’sk|Yel'sk|51814|29154|126|9
+#CA|British Columbia
+Yaletown||49276|-123118|16|15
+Yennadon||49233|-122586|25|7
+#CA|Nova Scotia
+Yarmouth||43833|-66116|26|7
+#CA|Ontario
+Yorkdale-Glen Park||43715|-79457|180|15
+Yonge-St.Clair||43688|-79398|155|13
+Yonge-Eglinton||43705|-79404|163|12
+#CI|Bas-Sassandra District
+Yacoéoua|Yacoeoua|5977|-6488|206|9
+#CI|Comoé District
+Yaou||5798|-3138|103|10
+Yakassé-Feyassé|Yakasse-Feyasse|6956|-3413|273|10
+#CI|Goh-Djiboua
+Yokoboué|Yokoboue|5269|-5107|64|7
+Yopohua||6396|-5830|269|5
+#CI|Lagunes District
+Yakassé-Attobrou|Yakasse-Attobrou|6182|-3651|144|15
+Yakassémé|Yakasseme|5811|-3951|58|13
+Yaobou||5712|-4413|71|6
+#CI|Montagnes
+Yaoudé|Yaoude|6559|-7446|235|14
+Yapleu||7091|-7710|293|9
+Yorodougou||7784|-7880|490|6
+Yrozon||6840|-7219|256|6
+#CI|Sassandra-Marahoue
+Yala||7378|-6826|255|6
+#CI|Zanzan District
+Yorobodi||8119|-3682|214|6
+#CL|Biobio
+Yumbel||-37098|-72561|105|11
+#CL|Ñuble
+Yungay||-37120|-72020|278|11
+#CM|Centre
+Yoko||5533|12317|992|5
+#CM|Littoral
+Yabassi||4457|9968|49|8
+#CN|Chongqing
+Yangjiao||29398|107606|209|15
+Yongrong||29339|105658|452|14
+Yiju||28877|108591|566|14
+Yanxi||30297|108127|197|13
+Yuelai||30205|108267|1010|12
+Yajiang||28459|109178|393|12
+Yuelai||29730|106545|327|11
+Yuchi||30266|108224|1100|11
+Yongping||30151|107435|394|10
+Yangshi||30814|109046|258|10
+Yanshan||30554|108309|321|10
+Yuanjue||29558|105317|376|10
+Yanwan||31196|109530|803|9
+Yongdong||28611|109122|415|8
+Yandong||29286|108238|827|7
+Yudi||29003|108915|806|6
+Yanhe||32059|108396|538|5
+Yulin||31675|109486|631|5
+#CN|Fujian
+Yongning||24680|118690|21|8
+#CN|Gansu
+Yinxingshu||33805|106038|958|15
+Yupan||34917|104916|1943|14
+Yan’anxiang|Yan'anxiang|34460|104917|2026|14
+Yanghe||34518|105008|1902|13
+Yangba||33010|105766|943|12
+Yuntai||33446|105666|1214|11
+Yacheng||34323|105135|1598|10
+Yeliguan||34964|103660|2195|10
+Yongning||33840|106189|849|10
+Yuanmen||34797|105893|1762|10
+Yuhuang||33292|105225|1338|8
+Yanjia||34923|106374|1875|8
+Yangyong||34646|103472|2680|8
+Yangsha||34832|103668|2558|6
+Yushu||33960|106006|1235|6
+Yuguan||33635|106167|947|6
+#CN|Guangdong
+Yuye shequ||22566|113869|5|10
+Yanhanshan||22537|113982|8|10
+Yuehai Residential||22514|113929||10
+Yuehai||22548|113947|10|9
+Yuzaixue||22497|113872|0|7
+Yu'hu Bay||22574|113854|4|5
+#CN|Guizhou
+Yongcong||26042|109131|544|14
+Yandong||26099|108966|724|11
+Yangliujie||26367|107500|911|10
+#CN|Hubei
+Yangri||31740|110815|513|10
+#CN|Ningxia
+Yuquanying||38138|105985|1131|5
+#CN|Xinjiang
+Yingye'er||37373|79777|1315|11
+Yingwusitang||38314|77228|1240|11
+Ying'airike||37255|79900|1298|10
+Yak'airike||38196|76965|1336|10
+Yengibag||36966|81678|1379|9
+Yingwusitangcun||38179|85415|1241|6
+#CO|Antioquia
+Yolombó|Yolombo|6598|-75011|1459|6
+#CO|Cundinamarca
+Yacopí|Yacopi|5459|-74338|1281|11
+#CO|Huila Department
+Yaguará|Yaguara|2664|-75518|578|6
+#CO|Nariño
+Yacuanquer||1116|-77402|2708|11
+#CO|Valle del Cauca Department
+Yotoco||3860|-76383|956|8
+#CY|Limassol
+Ýpsonas|Ypsonas|34688|32962|90|7
+#DO|Azua Province
+Yayas de Viajama||18607|-70928|317|6
+#DO|Monte Plata Province
+Yamasá|Yamasa|18773|-70026|89|12
+#DO|San Cristóbal
+Yaguate||18335|-70181|52|6
+#EC|Zamora Chinchipe
+Yantzaza||-3833|-78761|826|10
+#ES|Castille-La Mancha
+Yuncos||40086|-3871|553|6
+#FI|Uusimaa
+Yliskylä|Yliskylae|60177|25054|6|14
+Ylä-Malmi|Ylae-Malmi|60254|25009|14|7
+Ylästö|Ylaestoe|60284|24914|46|6
+#FR|Auvergne-Rhône-Alpes
+Yzeure||46566|3354|239|13
+Yssingeaux||45143|4124|864|7
+#FR|Normandy
+Yvetot||49617|758|148|11
+#GB|England
+Yatton||51388|-2824|11|10
+Yaxley||52518|-259|23|9
+Yapton||50821|-613|6|5
+#GB|Wales
+Ystalyfera||51767|-3781|74|10
+#GM|Western
+Yundum||13346|-16673|23|13
+#GN|Boké Region
+Youkounkoun||12531|-13122|76|8
+#GN|Nzérékoré Region
+Yomou||7567|-9263|395|9
+#GR|Attica
+Ymittos||37953|23749|120|11
+#GU|Yona
+Yona Village||13410|144777|90|6
+#HK|Eastern District
+Yue Wan Estate||22266|114241||8
+#HK|Islands
+Yung Shue Wan||22226|114112|19|6
+#HK|Sha Tin
+Yu Chui||22381|114205|1|15
+#HK|Sham Shui Po District
+Yau Yat Chuen||22331|114174|11|14
+#HK|Southern District
+Yue On Court||22243|114157|3|5
+#HK|Tuen Mun
+Yuet Wu||22375|113968||13
+#HN|El Paraíso Department
+Yuscarán|Yuscaran|13944|-86852|958|2
+#HN|La Paz Department
+Yarula||14117|-88083|1798|9
+#HN|Olancho Department
+Yocón|Yocon|15017|-86700|745|12
+#IE|Munster
+Youghal||51950|-7851|60|8
+#IL|Northern District
+Yanuah Jat||32980|35238|492|7
+Yanuh-Jat||32985|35249|581|7
+#IL|Southern District
+Yeroẖam|Yeroham|30988|34932|499|10
+#IN|Andhra Pradesh
+Yenumalapalle||14144|77817|465|10
+Yerrabalem||13705|80019|13|8
+#IN|Arunachal Pradesh
+Yingkiong||28610|95048|457|7
+#IN|Delhi
+Yamuna Vihar||28699|77274|210|10
+#IN|Himachal Pradesh
+Yol Cantonment||32184|76382|1391|12
+Yol||32164|76196|672|11
+#IN|Jammu and Kashmir
+Yāripur|Yaripur|33722|75018|1659|12
+Yechagām|Yechagam|33987|74752|1620|7
+#IN|Karnataka
+Yelbarga||15615|76012|604|15
+Yelur||15782|74518|763|12
+Yelandūr|Yelandur|12046|77030|663|9
+#IN|Manipur
+Yairipok||24678|94048|791|10
+#IN|Tamil Nadu
+Yercaud||11776|78209|1414|12
+#IN|Telangana
+Yellāreddi|Yellareddi|18194|78018|446|15
+Yenugonda||16757|78036|508|11
+#IR|East Azerbaijan
+Yāmchī|Yamchi|38523|45638|1161|10
+#IR|Tehran
+Yūsefābād|Yusefabad|35581|51052|1101|5
+#JM|Saint Thomas Parish
+Yallahs||17875|-76562|29|8
+#JP|Fukui
+Yunoo||35793|136196|103|10
+#JP|Fukuoka
+Yamada||33663|130488|53|9
+Yoshitomi||33602|131176|6|7
+#JP|Fukushima
+Yamakiya||37605|140661|583|12
+Yachigoya||37877|140905|23|8
+Yagoshima||37269|139887|487|5
+#JP|Gifu
+Yaotsu||35467|137150|222|11
+#JP|Hokkaido
+Yūbari|Yubari|43038|141958|280|7
+Yuni||43007|141784|38|5
+#JP|Hyōgo
+Yonedacho Sendo||34776|134826|6|6
+#JP|Kanagawa
+Yabe||35572|139386|119|12
+Yurigaoka||35605|139517|91|10
+Yamakita||35363|139080|144|10
+#JP|Kochi
+Yoshino||33317|133133|470|6
+#JP|Kumamoto
+Yamada||32697|130965|501|14
+#JP|Nagano
+Yamabuki||35577|137900|453|13
+#JP|Nara
+Yoshino-chō|Yoshino-cho|34396|135858|165|9
+Yūzaki|Yuzaki|34587|135779|39|8
+#JP|Niigata
+Yuzawa||36938|138813|343|8
+Yahiko||37700|138833|17|8
+#JP|Okayama
+Yakage||34628|133592|31|14
+#JP|Saitama
+Yokoze||35985|139095|247|8
+#JP|Tokyo
+Yushima||35706|139767|28|10
+Yokokawa||35705|139816|7|9
+#JP|Tottori
+Yura||35483|133750|16|14
+#JP|Wakayama
+Yuasa||34037|135180|7|12
+#JP|Yamagata
+Yamanobe||38291|140267|107|14
+Yuza||39016|139929|25|14
+#JP|Yamanashi
+Yamanaka||35425|138842|1022|5
+#KH|Banteay Meanchey
+Yeang Dangkum||13755|102756|41|8
+#KP|P'yŏngan-bukto
+Yŏngbyŏn|Yongbyon|39813|125804|140|10
+Yŏmju|Yomju|39893|124598|15|9
+#KR|Seoul
+Yongsan-dong||37545|126984|85|13
+#KZ|Aqmola
+Yereymentau||51624|73103|392|14
+#MM|Yangon
+Ywar Ma Middle||16895|96097|5|11
+Ye Su||17056|96129|15|9
+Ye Mun||17143|96283|5|5
+#MX|Guanajuato
+Yerbabuena||20963|-101274|1939|8
+#MX|Jalisco
+Yahualica de González Gallo|Yahualica de Gonzalez Gallo|21180|-102886|1792|14
+#MX|Puebla
+Yehualtepec||18795|-97662|2130|7
+#MX|Veracruz
+Yanga||18833|-96798|518|6
+#NG|Bauchi
+Yuli||9697|10274|283|10
+Yamrat||10112|9826|553|7
+Yanda Bayo||11507|10746|455|6
+#NG|Benue State
+Yandev||7363|9042|225|8
+#NG|Borno State
+Yajiwa||11386|12720|377|7
+#NG|Kwara State
+Yashikira||9768|3398|412|14
+#NG|Plateau State
+Yelwa||8833|9633|221|13
+#NL|Zeeland
+Yerseke||51493|4050|4|7
+#NR|Aiwo District
+Yangor||-535|166910|5|1
+#PE|Ancash
+Yauya||-8991|-77291|3071|9
+Yungay||-9138|-77744|2521|5
+#PE|Arequipa
+Yura||-16252|-71680|2598|6
+#PE|Pasco
+Yanahuanca||-10517|-76499|4216|6
+#PE|Puno
+Yunguyo||-16250|-69083|3857|12
+#PH|Calabarzon
+Yuni||13412|122485|7|6
+#PK|Gilgit-Baltistan
+Yougu||35184|76159|2464|6
+#PR|Yabucoa
+Yabucoa||18051|-65879|33|7
+#PS|West Bank
+Ya‘bad|Ya'bad|32446|35168|351|13
+#PY|Central Department
+Ypacarai||-25408|-57289|91|10
+#PY|Paraguarí
+Yaguarón|Yaguaron|-25562|-57287|131|7
+#RU|Amur Oblast
+Yekaterinoslavka||50374|129111|236|10
+Yerofey Pavlovich||53961|121958|532|5
+#RU|Arkhangelskaya
+Yemetsk||63472|41780|10|12
+#RU|Astrakhan Oblast
+Yenotayevka||47243|47029|1|8
+#RU|Bashkortostan Republic
+Yermolayevo||52704|55821|287|6
+Yazykovo||55220|56135|174|6
+Yumaguzino||52904|56393|209|5
+#RU|Chelyabinsk
+Yuryuzan’|Yuryuzan'|54863|58422|398|13
+Yetkul’|Yetkul'|54823|61584|230|6
+#RU|Chuvash Republic
+Yadrin||55941|46206|77|11
+#RU|Dagestan
+Yuzhno-Sukhokumsk||44660|45648|9|11
+#RU|Irkutsk Oblast
+Yurty||56050|97635|301|6
+#RU|Ivanovo Oblast
+Yuzha||56584|42012|107|15
+Yur’yevets|Yur'yevets|57312|43104|82|11
+#RU|Kaliningrad Oblast
+Yantarnyy||54871|19940|24|6
+#RU|Kalmykiya Republic
+Yashkul’|Yashkul'|46171|45342|-6|7
+#RU|Kaluga Oblast
+Yermolino||55195|36595|141|10
+Yukhnov||54744|35232|168|8
+#RU|Komi
+Yarega||63435|53577|168|8
+#RU|Krasnodar Krai
+Yaroslavskaya||44611|40464|264|5
+#RU|Krasnoyarsk Krai
+Yemel’yanovo|Yemel'yanovo|56170|92672|214|11
+Yermakovskoye||53275|92400|298|9
+#RU|Kurgan Oblast
+Yurgamysh||55375|64460|156|8
+#RU|Kuzbass
+Yaya||56199|86434|124|13
+Yagunovskiy||55283|85978|157|8
+#RU|Mordoviya Republic
+Yavas||54416|42849|109|8
+Yalga||54126|45130|145|6
+#RU|Moscow Oblast
+Yakhroma||56301|37458|216|13
+Yershovo||55769|36859|205|9
+#RU|Novosibirsk Oblast
+Yarkovo||54806|82599|144|5
+#RU|Perm Krai
+Yayva||59335|57259|137|11
+Yugo-Kamskiy||57703|55590|121|8
+Yelovo||57052|54920|84|6
+#RU|Primorye
+Yaroslavskiy||44186|132229|121|10
+#RU|Sakha
+Ytyk-Kyuyël’|Ytyk-Kyuyel'|62362|133562|180|7
+#RU|Sakhalin Oblast
+Yuzhno-Kurilsk||44027|145861|41|8
+#RU|Saratov Oblast
+Yekaterinovka||52049|44346|237|6
+#RU|Smolensk Oblast
+Yel’nya|Yel'nya|54577|33185|223|10
+#RU|Stavropol Kray
+Yutsa||43956|43013|679|9
+Yasnaya Polyana||44023|42754|747|5
+#RU|Sverdlovsk Oblast
+Yelanskiy||56842|62501|114|9
+#RU|Tyumen Oblast
+Yarkovo||57403|67068|47|7
+#RU|Udmurtiya Republic
+Yar||58246|52105|147|7
+#RU|Volgograd Oblast
+Yërzovka|Yerzovka|48937|44646|29|6
+#RU|Voronezh Oblast
+Yelan’-Koleno|Yelan'-Koleno|51152|41231|95|5
+#RU|Zabaykalskiy (Transbaikal) Kray
+Yasnogorsk||50873|115696|622|9
+Yasnaya||50828|115803|616|8
+#SL|Eastern Province
+Yengema||8714|-11171|390|13
+#SO|Bakool
+Yeed||4550|43033|355|8
+#SO|Sool
+Yagoori||8752|46964|669|12
+#SS|Lakes
+Yirol||6553|30498|444|12
+#TD|Batha
+Yao||12849|17557|293|8
+#TH|Kalasin
+Yang Talat||16400|103368|148|13
+#TM|
+Ýagtyýol|Yagtyyol|37803|62023|221|10
+#TM|Ahal
+Ýaňgala|Yangala|38123|57947|254|9
+Ýaşlyk|Yaslyk|37780|58889|197|8
+Ýaşyldepe|Yasyldepe|37803|58844|221|7
+Yzgant||38182|58113|162|7
+#TR|Artvin
+Yusufeli||40820|41537|761|7
+#TR|Aydın
+Yenipazar||37823|28196|63|7
+#TR|Bolu
+Yeniçağa|Yenicaga|40771|32034|1005|7
+#TR|Burdur
+Yeşilova|Yesilova|37508|29755|1206|7
+#TR|Bursa Province
+Yalıntaş|Yalintas|40018|28398|43|6
+#TR|Gaziantep
+Yavuzeli||37318|37568|565|8
+#TR|Hatay
+Yayladağı|Yayladagi|35903|36063|421|8
+#TR|Isparta
+Yenişarbademli|Yenisarbademli|37708|31386|1185|5
+#TR|Istanbul
+Yeniköy|Yenikoey|41122|29070||15
+Yıldız|Yildiz|41050|29016|70|5
+#TR|Kayseri
+Yeşilhisar|Yesilhisar|38352|35089|1135|14
+#TR|Kocaeli
+Yuvacık|Yuvacik|40688|29967|166|7
+#TR|Konya
+Yunak||38814|31732|1088|14
+Yalıhüyük|Yalihueyuek|37301|32085|1106|6
+#TR|Malatya
+Yeşilyurt|Yesilyurt|38296|38245|989|14
+Yazıhan|Yazihan|38593|38173|826|5
+#TR|Mardin
+Yolbaşı|Yolbasi|37387|41317|958|5
+#TR|Muğla
+Yalıkavak|Yalikavak|37105|27297|13|11
+#TR|Samsun
+Yakakent||41633|35529|13|5
+#TR|Sivas
+Yıldızeli|Yildizeli|39866|36599|1365|6
+#TR|Tokat Province
+Yeşilyurt|Yesilyurt|40328|36351|574|7
+#TR|Trabzon
+Yıldızlı|Yildizli|41001|39607|166|13
+#TR|Yozgat
+Yenifakılı|Yenifakili|39211|35000|1026|11
+#TR|Çankırı
+Yapraklı|Yaprakli|40758|33778|1206|6
+#TR|İzmir Province
+Yakakent||38508|27073|117|10
+#UA|Chernivtsi
+Yizhivtsi||48025|25646|383|6
+#UA|Crimea
+Yedy-Kuyu||45299|35777|22|7
+#UA|Dnipropetrovsk
+Yavornytske||48405|35279|152|9
+#UA|Donetsk
+Yasnohirka||48774|37554|66|8
+Yalta||46961|37274|29|6
+#UA|Ivano-Frankivsk
+Yaremche||48449|24553|580|8
+#UA|Khmelnytskyi
+Yarmolyntsi||49193|26834|300|7
+#UA|Lviv
+Yavoriv||49938|23384|210|13
+#UA|Sumy
+Yampil’|Yampil'|51948|33788|157|7
+#UA|Vinnytsia
+Yampil||48241|28281|81|11
+#UA|Zakarpattia
+Yasinya||48273|24360|650|9
+#UA|Zaporizhzhia
+Yakymivka||46701|35163|33|11
+#UA|Zhytomyr Oblast
+Yemilchyne||50872|27802|195|6
+#US|Arizona
+Youngtown||33594|-112303|347|7
+#US|California
+Yreka||41735|-122634|788|8
+#US|Florida
+Yulee||30632|-81606|11|11
+#US|Indiana
+Yorktown||40174|-85494|279|11
+#US|Louisiana
+Youngsville||30100|-91990|9|12
+#US|Maine
+York Beach||43171|-70609|7|13
+Yarmouth||43801|-70187|24|6
+#US|Massachusetts
+Yarmouth Port||41702|-70249|16|5
+#US|Mississippi
+Yazoo City||32855|-90406|34|11
+#US|Nebraska
+York||40868|-97592|488|8
+#US|New Jersey
+Yardville||40181|-74664|18|7
+Yorketown||40308|-74338|29|7
+#US|New York
+Yaphank||40837|-72917|12|6
+#US|Pennsylvania
+Yeadon||39939|-75255|34|12
+Yorktown||39973|-75153|17|6
+#US|South Carolina
+York||34994|-81242|232|8
+#US|South Dakota
+Yankton||42871|-97397|368|15
+#US|Texas
+Yoakum||29288|-97152|98|6
+#US|Virginia
+Yorkshire||38793|-77448|65|8
+#US|Washington
+Yelm||46942|-122606|105|8
+#UZ|Fergana
+Yangi Marg‘ilon|Yangi Marg`ilon|40427|71719|534|14
+#VE|Sucre
+Yaguaraparo||10568|-62826|15|14
+#VN|Hanoi
+Yên Viên|Yen Vien|21083|105917|14|14

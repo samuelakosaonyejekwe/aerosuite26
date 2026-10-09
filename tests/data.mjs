@@ -92,6 +92,21 @@ ok(auctions.length === 2 && auctions[0].date === '2026-10-08' && auctions[0].eur
 let threw = false; try { parseEexAuctions([{ B: 'Date', G: 'Auction Price $/t' }]); } catch { threw = true; } ok(threw, 'a changed price unit in the auction report is refused, not misread');
 threw = false; try { unzip(Buffer.from('not a zip file at all, just text.')); } catch { threw = true; } ok(threw, 'unzip rejects non-archives');
 
+// EU carbon price table: the quarterly layout of 2026 and the weekly layouts announced for 2027
+{
+  const { parseCbamPrices } = await import('../tools/carbon-markets.mjs'), tbl = (head, rows) => `<table><thead><tr>${head.map((h) => `<th>${h}</th>`).join('')}</tr></thead><tbody>${rows.map((r) => `<tr>${r.map((c) => `<td>${c}</td>`).join('')}</tr>`).join('')}</tbody></table>`;
+  const q = parseCbamPrices(tbl(['Quarter of application', 'Date of publication', 'Price (€)'], [['Q1 2026', '7 April 2026', '75.36'], ['Q2 2026', '6 July 2026', '75.28'], ['Q3 2026', '5 October 2026', '82.32'], ['Q4 2026', '4 January 2027', '']]));
+  ok(q.length === 3 && q[0].period === 'Q3 2026' && q[0].quarterly && q[0].date === '2026-09-30' && q[0].published === '2026-10-05' && q[0].price === 82.32 && q[2].date === '2026-03-31', 'EU price table, quarterly layout: newest published quarter, dated at its last day; the empty row is skipped');
+  const w1 = parseCbamPrices(tbl(['Week', 'Date of publication', 'Price (€)'], [['Week 1 2027', '11 January 2027', '81,10'], ['Week 2 2027', '18 January 2027', '€ 83.45'], ['Week 3 2027', '25 January 2027', '–']]));
+  ok(w1.length === 2 && w1[0].price === 83.45 && !w1[0].quarterly && w1[0].date === '2027-01-15' && w1[1].price === 81.1 && w1[1].date === '2027-01-08', 'EU price table, weekly layout by ISO week number: the week is dated at its Friday; decimal comma and € sign are read');
+  const w2 = parseCbamPrices(tbl(['Period', 'Price in EUR per certificate', 'Published'], [['4–8 January 2027', '81.10', '11/01/2027'], ['11 January 2027 – 15 January 2027', '83.45', '18/01/2027']]));
+  ok(w2[0].price === 83.45 && w2[0].date === '2027-01-15' && w2[0].published === '2027-01-18' && w2[1].date === '2027-01-08', 'EU price table, weekly layout by date range, columns in another order');
+  const w3 = parseCbamPrices(`<table><tr><th>Week</th><th>CBAM certificate price (EUR)</th></tr><tr><th>2027-W02</th><td>83.45</td></tr><tr><th>2027-W01</th><td>81.10</td></tr></table>` + tbl(['Quarter of application', 'Date of publication', 'Price (€)'], [['Q3 2026', '5 October 2026', '82.32']]));
+  ok(w3.length === 3 && w3[0].date === '2027-01-15' && w3[0].price === 83.45 && w3[2].quarterly && w3[2].price === 82.32, 'EU price table: weekly rows with heading cells, alongside the quarterly table, newest first');
+  let bad = false; try { parseCbamPrices(tbl(['Week', 'Price (€)'], [['Week 2 2027', 'eighty']])); } catch { bad = true; }
+  ok(bad && parseCbamPrices('<p>no table here</p>').length === 0, 'EU price table: an unreadable price is refused; a page without the table yields nothing (the feed then keeps its last value)');
+}
+
 // ---- snapshot file -------------------------------------------------------------------------------
 section('Cloud snapshot file');
 let snap = null; try { snap = JSON.parse(readFileSync(root + 'data/snapshot.json', 'utf8')); } catch (e) { ok(false, 'data/snapshot.json is missing or not JSON: ' + e.message); }
@@ -110,8 +125,8 @@ if (snap) {
   if (d('spaceweather')) ok(d('spaceweather').kp >= 0 && d('spaceweather').kp <= 9, 'space weather: Kp in range');
   if (d('macro')) ok(d('macro').country === 'World', 'macro: world aggregate');
   if (d('jetfuel')) ok(near(d('jetfuel').usd_kg, usdKgFromUsdGal(d('jetfuel').usd_gal), 1e-4) && d('jetfuel').density_kg_l === JET_DENSITY_KG_L && /Gulf Coast/.test(d('jetfuel').instrument) && d('jetfuel').history.length > 10, 'jet fuel: USD/kg is consistent with USD/gal and the stated density');
-  if (d('carbon')?.eur_t != null) ok(d('carbon').eur_t > 1 && d('carbon').eur_t < 1000 && near(d('carbon').usd_t, usdFromEur(d('carbon').eur_t, d('carbon').eur_per_usd), 0.006) && /EUA/.test(d('carbon').instrument) && /^\d{4}-\d{2}-\d{2}$/.test(d('carbon').date) && snap.feeds.carbon.registry.join() === 'eex-auction', 'carbon: USD/t is consistent with EUR/t and the stated exchange rate');
-  if (d('carbon') && snap.commercial) ok(d('carbon').currency === 'GBP' && d('carbon').price > 1 && d('carbon').price < 1000 && near(d('carbon').usd_t, usdFromEur(d('carbon').price, d('carbon').fx_per_usd), 0.006) && /UK Emissions Trading Scheme/.test(d('carbon').instrument) && snap.feeds.carbon.registry.join() === 'uk-ets-price' && !('eur_t' in d('carbon')), 'carbon (commercial snapshot): UK ETS determination in GBP, consistent USD value, no EEX data');
+  if (d('carbon')) { const ms = d('carbon').markets || {}, ids = Object.keys(ms); ok(ids.length >= 1 && d('carbon').order.every((id) => ms[id]) && ids.every((id) => ms[id].price > 1 && ms[id].price < 1000 && /^[A-Z]{3}$/.test(ms[id].currency) && /^\d{4}-\d{2}-\d{2}$/.test(ms[id].date) && typeof ms[id].market === 'string' && ms[id].market.length > 5 && typeof ms[id].scheme === 'string' && Array.isArray(ms[id].registry) && ms[id].registry.length === 1 && snap.feeds.carbon.registry.includes(ms[id].registry[0]) && /^https:\/\//.test(ms[id].url) && (ms[id].usd_t == null || near(ms[id].usd_t, ms[id].price / ms[id].fx_per_usd, 0.006))), `carbon: each market has price, currency, date, label, source and a consistent USD value (${ids.join(', ')})`); ok(ids.some((id) => ms[id].scheme === 'EU ETS'), 'carbon: the EU ETS is covered'); }
+  ok(!snap.feeds.carbon.registry.includes('eex-auction'), 'carbon: the EEX report is not part of a default snapshot');
   ok(typeof snap.commercial === 'boolean', 'snapshot records whether it was built for a commercial deployment');
   if (d('jetfuel')) ok(d('jetfuel').via === 'EIA' && /^EIA /.test(d('jetfuel').series), 'jet fuel: read from the EIA, the primary publisher');
   if (d('rates') && d('rates').us_fed_funds_pct != null) ok(/Federal Reserve/.test(d('rates').us_via), 'rates: US rate from the Federal Reserve Board or the New York Fed');
@@ -155,13 +170,13 @@ if (process.argv.includes('--browser')) {
     ok(await until(async () => (await page.evaluate(() => JSON.parse(localStorage.getItem('aerosuite26.case')).site.runway_len_m)) === 3900, 8000), 'choosing a runway writes its length into the case');
     const site = await page.evaluate(() => JSON.parse(localStorage.getItem('aerosuite26.case')).site), econ = await page.evaluate(() => JSON.parse(localStorage.getItem('aerosuite26.case')).econ);
     ok(site.runway_surface === 'asphalt' && site.runway_mu === 0.03 && near(site.runway_heading_deg, 180, 3), 'surface, rolling friction and heading follow the runway');
-    ok(await until(async () => { const e = await page.evaluate(() => JSON.parse(localStorage.getItem('aerosuite26.case')).econ); return /EUA/.test(e.carbon_source || '') && /jet fuel spot|Brent/.test(e.fuel_source || ''); }, 20000), `carbon and fuel prices reach the case from the feeds (carbon: ${econ.carbon_source || 'none yet'})`);
+    ok(await until(async () => { const e = await page.evaluate(() => JSON.parse(localStorage.getItem('aerosuite26.case')).econ); return /EU ETS|UK ETS/.test(e.carbon_source || '') && /jet fuel spot|Brent/.test(e.fuel_source || ''); }, 20000), `carbon and fuel prices reach the case from the feeds (carbon: ${econ.carbon_source || 'none yet'})`);
     await page.locator('#page input[type=search]').fill('EGLL'); await page.locator('.btn.primary', { hasText: 'Search' }).click();
     { const found = await until(() => page.locator('.hit-airport', { hasText: 'London Heathrow' }).count(), 60000); ok(found, `an ICAO code typed into the place search finds the airport (input "${await page.locator('#page input[type=search]').inputValue()}"; list: ${(await page.locator('.card').first().innerText()).replace(/\s+/g, ' ').slice(0, 300)})`); }
 
     // live-data page rows for the snapshot-only feeds
     step = 'live page'; await page.goto(base + '#/live'); await page.waitForSelector('#page .card', { timeout: 20000 });
-    ok(await until(() => page.locator('.card', { hasText: 'Carbon price (EU ETS allowance)' }).locator('dd').count(), 20000), 'Live data page shows the carbon price row');
+    ok(await until(() => page.locator('.card', { hasText: 'Carbon prices (official, by market)' }).locator('table.carbon-markets tbody tr').count(), 20000), 'Live data page shows the carbon price row');
     ok(await until(() => page.locator('.card', { hasText: 'Jet-fuel spot price' }).locator('dd').count(), 20000), 'Live data page shows the jet-fuel row');
     ok((await page.locator('.card', { hasText: 'Cloud snapshot' }).first().innerText()).includes('feeds fetched'), 'Live data page shows the snapshot status');
 

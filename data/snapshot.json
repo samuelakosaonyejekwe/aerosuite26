@@ -1,14 +1,14 @@
 {
  "schema": 1,
- "generated": "2026-10-09T02:10:03.302Z",
+ "generated": "2026-10-09T11:19:53.784Z",
  "generator": "tools/snapshot.mjs",
  "interval_h": 3,
  "commercial": false,
  "feeds": {
   "fx": {
    "ok": true,
-   "ts": 1791511800281,
-   "fetched": "2026-10-09T02:10:00.281Z",
+   "ts": 1791544785612,
+   "fetched": "2026-10-09T11:19:45.612Z",
    "source": "European Central Bank euro reference rates (ECB Data Portal; Frankfurter as fall-back)",
    "home": "https://data.ecb.europa.eu",
    "terms": "ECB euro foreign exchange reference rates: free reuse with the source quoted (\"Source: ECB statistics\"); rates per USD are own calculations. Frankfurter is the fall-back.",
@@ -92,8 +92,8 @@
   },
   "oil": {
    "ok": true,
-   "ts": 1791511800733,
-   "fetched": "2026-10-09T02:10:00.733Z",
+   "ts": 1791544787102,
+   "fetched": "2026-10-09T11:19:47.102Z",
    "source": "US Energy Information Administration — Europe Brent Spot Price FOB (series RBRTE), daily",
    "home": "https://www.eia.gov/dnav/pet/hist/RBRTED.htm",
    "terms": "EIA data are US Government works in the public domain; acknowledgment requested: \"Source: U.S. Energy Information Administration\".",
@@ -327,8 +327,8 @@
   },
   "spaceweather": {
    "ok": true,
-   "ts": 1791511801590,
-   "fetched": "2026-10-09T02:10:01.590Z",
+   "ts": 1791544788238,
+   "fetched": "2026-10-09T11:19:48.238Z",
    "source": "NOAA Space Weather Prediction Center",
    "home": "https://www.swpc.noaa.gov",
    "terms": "NOAA SWPC products are US Government works in the public domain",
@@ -340,21 +340,9 @@
     "https://services.swpc.noaa.gov/products/noaa-planetary-k-index.json"
    ],
    "data": {
-    "time": "2026-10-08T21:00:00",
-    "kp": 1.33,
+    "time": "2026-10-09T06:00:00",
+    "kp": 2,
     "history": [
-     {
-      "t": "2026-10-06T00:00:00",
-      "kp": 3
-     },
-     {
-      "t": "2026-10-06T03:00:00",
-      "kp": 3
-     },
-     {
-      "t": "2026-10-06T06:00:00",
-      "kp": 2.33
-     },
      {
       "t": "2026-10-06T09:00:00",
       "kp": 2.67
@@ -438,14 +426,26 @@
      {
       "t": "2026-10-08T21:00:00",
       "kp": 1.33
+     },
+     {
+      "t": "2026-10-09T00:00:00",
+      "kp": 3.33
+     },
+     {
+      "t": "2026-10-09T03:00:00",
+      "kp": 2.67
+     },
+     {
+      "t": "2026-10-09T06:00:00",
+      "kp": 2
      }
     ]
    }
   },
   "macro": {
    "ok": true,
-   "ts": 1791511801728,
-   "fetched": "2026-10-09T02:10:01.728Z",
+   "ts": 1791544788759,
+   "fetched": "2026-10-09T11:19:48.759Z",
    "source": "World Bank Open Data",
    "home": "https://data.worldbank.org",
    "terms": "World Bank Open Data, CC BY 4.0",
@@ -469,8 +469,8 @@
   },
   "jetfuel": {
    "ok": true,
-   "ts": 1791511801899,
-   "fetched": "2026-10-09T02:10:01.899Z",
+   "ts": 1791544789380,
+   "fetched": "2026-10-09T11:19:49.380Z",
    "source": "US Energy Information Administration — U.S. Gulf Coast Kerosene-Type Jet Fuel Spot Price FOB (series EER_EPJK_PF4_RGC_DPG)",
    "home": "https://www.eia.gov/dnav/pet/hist/EER_EPJK_PF4_RGC_DPGD.htm",
    "terms": "EIA data are US Government works in the public domain; acknowledgment requested: \"Source: U.S. Energy Information Administration\".",
@@ -709,41 +709,153 @@
   },
   "carbon": {
    "ok": true,
-   "ts": 1791511802623,
-   "fetched": "2026-10-09T02:10:02.623Z",
-   "source": "UK ETS Authority — determination of the UK ETS carbon price (GOV.UK)",
-   "home": "https://www.gov.uk/government/publications/determinations-of-the-uk-ets-carbon-price",
-   "terms": "Open Government Licence v3.0: contains public sector information licensed under the Open Government Licence v3.0. A UK ETS figure fixed once a year; not an EU ETS price.",
+   "ts": 1791544790132,
+   "fetched": "2026-10-09T11:19:50.132Z",
+   "source": "European Commission (price of CBAM certificates: quarterly average EU ETS auction clearing price); UK ETS Authority (GOV.UK); Gouvernement du Québec (joint California–Québec auctions)",
+   "home": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/price-cbam-certificates_en",
+   "terms": "European Commission content: CC BY 4.0 (reuse allowed with credit and changes indicated). GOV.UK: Open Government Licence v3.0. Données Québec: CC BY 4.0. Each record names its market, date, instrument and source.",
    "registry": [
-    "uk-ets-price"
+    "ec-cbam-price",
+    "uk-ets-price",
+    "quebec-wci-auction"
    ],
-   "url": "https://www.gov.uk/api/content/government/publications/determinations-of-the-uk-ets-carbon-price/uk-ets-carbon-price-for-use-in-civil-penalties-2026",
+   "url": "https://www.donneesquebec.ca/recherche/dataset/4719fd2b-458b-4058-ac3a-12bed98f50b6/resource/10273e0d-0aae-42fd-9366-5fd2181e0a5a/download/donnees-ouvertes-encheres.csv",
    "urls": [
+    "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/price-cbam-certificates_en",
     "https://www.gov.uk/api/content/government/publications/determinations-of-the-uk-ets-carbon-price",
-    "https://www.gov.uk/api/content/government/publications/determinations-of-the-uk-ets-carbon-price/uk-ets-carbon-price-for-use-in-civil-penalties-2026"
+    "https://www.gov.uk/api/content/government/publications/determinations-of-the-uk-ets-carbon-price/uk-ets-carbon-price-for-use-in-civil-penalties-2026",
+    "https://www.donneesquebec.ca/recherche/api/3/action/package_show?id=resultats-et-statistiques-des-ventes-aux-encheres-d-unites-d-emission",
+    "https://www.donneesquebec.ca/recherche/dataset/4719fd2b-458b-4058-ac3a-12bed98f50b6/resource/10273e0d-0aae-42fd-9366-5fd2181e0a5a/download/donnees-ouvertes-encheres.csv"
    ],
    "data": {
-    "date": "2025-11-28",
-    "price": 49.41,
-    "currency": "GBP",
-    "gbp_t": 49.41,
-    "scheme_year": 2026,
-    "valid_from": "2026-01-01",
-    "valid_to": "2026-12-31",
-    "market": "UK ETS",
-    "instrument": "UK Emissions Trading Scheme carbon price determined by the UK ETS Authority for scheme year 2026, GBP per tonne CO₂e (annual statutory figure; not an EU ETS price and not a daily market price)",
-    "source": "UK ETS Authority, GOV.UK",
-    "attribution": "Contains public sector information licensed under the Open Government Licence v3.0.",
-    "url": "https://www.gov.uk/government/publications/determinations-of-the-uk-ets-carbon-price/uk-ets-carbon-price-for-use-in-civil-penalties-2026",
-    "usd_t": 65.26,
-    "fx_per_usd": 0.757178616127302,
-    "fx_date": "2026-10-08"
+    "markets": {
+     "eu-ets-cbam": {
+      "id": "eu-ets-cbam",
+      "date": "2026-09-30",
+      "price": 82.32,
+      "currency": "EUR",
+      "period": "Q3 2026",
+      "quarterly": true,
+      "published": "2026-10-05",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/price-cbam-certificates_en",
+      "instrument": "Price of CBAM certificates for Q3 2026: volume-weighted average of the clearing prices of EU ETS allowance (EUA) auctions on the common auction platform over that period, EUR per tonne CO2e (Regulation (EU) 2023/956, Implementing Regulation (EU) 2025/2548)",
+      "lag_note": "A quarterly average, published in the first week after the quarter ends; not a daily or spot price. The date is the last day of the quarter. Weekly averages are announced from 2027.",
+      "scheme": "EU ETS",
+      "market": "EU ETS (EUA) — average auction clearing price (price of CBAM certificates)",
+      "countries": [
+       "AT",
+       "BE",
+       "BG",
+       "HR",
+       "CY",
+       "CZ",
+       "DK",
+       "EE",
+       "FI",
+       "FR",
+       "DE",
+       "GR",
+       "HU",
+       "IE",
+       "IT",
+       "LV",
+       "LT",
+       "LU",
+       "MT",
+       "NL",
+       "PL",
+       "PT",
+       "RO",
+       "SK",
+       "SI",
+       "ES",
+       "SE",
+       "IS",
+       "LI",
+       "NO"
+      ],
+      "source": "European Commission, Directorate-General for Taxation and Customs Union",
+      "attribution": "Source: European Commission, \"Price of CBAM certificates\" (© European Union, CC BY 4.0).",
+      "licence": "Creative Commons Attribution 4.0 International (CC BY 4.0) — European Commission reuse policy (Decision 2011/833/EU)",
+      "valid_to": "2027-01-18",
+      "registry": [
+       "ec-cbam-price"
+      ],
+      "usd_t": 92.08,
+      "fx_per_usd": 0.8939746111210441,
+      "fx_date": "2026-10-08"
+     },
+     "uk-ets": {
+      "id": "uk-ets",
+      "date": "2025-11-28",
+      "price": 49.41,
+      "currency": "GBP",
+      "gbp_t": 49.41,
+      "scheme_year": 2026,
+      "valid_from": "2026-01-01",
+      "valid_to": "2026-12-31",
+      "market": "UK ETS — carbon price determined for the scheme year",
+      "instrument": "UK Emissions Trading Scheme carbon price determined by the UK ETS Authority for scheme year 2026, GBP per tonne CO₂e (annual statutory figure; not an EU ETS price and not a daily market price)",
+      "source": "UK ETS Authority, GOV.UK",
+      "attribution": "Contains public sector information licensed under the Open Government Licence v3.0.",
+      "url": "https://www.gov.uk/government/publications/determinations-of-the-uk-ets-carbon-price/uk-ets-carbon-price-for-use-in-civil-penalties-2026",
+      "scheme": "UK ETS",
+      "countries": [
+       "GB"
+      ],
+      "licence": "Open Government Licence v3.0",
+      "registry": [
+       "uk-ets-price"
+      ],
+      "usd_t": 65.26,
+      "fx_per_usd": 0.757178616127302,
+      "fx_date": "2026-10-08"
+     },
+     "wci-joint-auction": {
+      "id": "wci-joint-auction",
+      "date": "2026-08-19",
+      "price": 32.48,
+      "currency": "USD",
+      "price_cad": 45.11,
+      "auction": "48",
+      "url": "https://www.donneesquebec.ca/recherche/dataset/4719fd2b-458b-4058-ac3a-12bed98f50b6/resource/10273e0d-0aae-42fd-9366-5fd2181e0a5a/download/donnees-ouvertes-encheres.csv",
+      "instrument": "Settlement price of current-vintage allowances at California–Québec joint auction no. 48, USD per allowance (1 t CO2e)",
+      "lag_note": "Joint auctions are held four times a year (February, May, August, November); the open-data file is updated a few weeks after each auction. Not a secondary-market price.",
+      "scheme": "WCI (California–Québec)",
+      "market": "WCI linked market (California Cap-and-Trade / Québec SPEDE) — joint auction settlement price",
+      "countries": [
+       "US",
+       "CA"
+      ],
+      "subnational": true,
+      "subdivisions": [
+       "US-CA",
+       "CA-QC"
+      ],
+      "source": "Gouvernement du Québec, Ministère de l’Environnement, de la Lutte contre les changements climatiques, de la Faune et des Parcs (MELCCFP)",
+      "attribution": "Source: Gouvernement du Québec (MELCCFP), « Résultats et statistiques des ventes aux enchères d’unités d’émission de GES », Données Québec, CC BY 4.0.",
+      "licence": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "valid_to": "2026-12-07",
+      "registry": [
+       "quebec-wci-auction"
+      ],
+      "usd_t": 32.48,
+      "fx_per_usd": 1,
+      "fx_date": "2026-10-08"
+     }
+    },
+    "order": [
+     "eu-ets-cbam",
+     "uk-ets",
+     "wci-joint-auction"
+    ],
+    "errors": {}
    }
   },
   "rates": {
    "ok": true,
-   "ts": 1791511802941,
-   "fetched": "2026-10-09T02:10:02.941Z",
+   "ts": 1791544792916,
+   "fetched": "2026-10-09T11:19:52.916Z",
    "source": "Board of Governors of the Federal Reserve System (effective federal funds rate, H.15 series RIFSPFF_N.D; Federal Reserve Bank of New York EFFR as fall-back) and European Central Bank (deposit facility rate, ECB Data Portal series FM.D.U2.EUR.4F.KR.DFR.LEV)",
    "home": "https://data.ecb.europa.eu/data/datasets/FM/FM.D.U2.EUR.4F.KR.DFR.LEV",
    "terms": "Federal Reserve Board: information on the Board's website is in the public domain, cite the Board as the source. New York Fed: licence to use, copy and distribute for personal or business purposes, source identified, no endorsement implied. ECB statistics: free reuse with the source quoted.",

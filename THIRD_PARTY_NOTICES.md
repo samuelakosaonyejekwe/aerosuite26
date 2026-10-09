@@ -109,6 +109,17 @@ output (`standalone.html`) contains only the application's own code.
 | EASA certification noise levels (TCDSN databases, reduced extract) | `js/data/ref/cert-noise.json`, `.js` | EASA copyright notice | © European Union Aviation Safety Agency. Reproduction is authorised, provided the source is acknowledged. |
 | FAA Aircraft Characteristics Database (extract) | `js/data/ref/aircraft-characteristics.json` | Work of the United States Government (17 U.S.C. § 105) | Source: U.S. Federal Aviation Administration. |
 | Source registry with short quotations | `js/data/sources.json` | US Government works (eCFR, FAA Advisory Circulars, NASA reports, MIL handbooks): not subject to copyright in the United States. Other publishers: short quotations with the source named, each publisher's copyright reserved | Each entry names its document, section and address. |
+| GeoNames cities15000 and cities5000 (reduced extract) | `js/data/places/` | Creative Commons Attribution 4.0 | Place names: GeoNames (geonames.org), CC BY 4.0 — reduced to name, country, division, position, elevation, population. |
+| NOAA NCEI ETOPO 2022 (0.5° cell means) | `js/data/terrain/` | CC0 1.0 (NOAA) | Terrain: NOAA National Centers for Environmental Information, ETOPO 2022, doi:10.25921/fd45-gt74. Not for navigation. |
+| NCEP-DOE Reanalysis 2 statistics, 2015–2024 | `js/data/climate/` | US Government product, public domain | NCEP-DOE Reanalysis 2 data provided by the NOAA PSL, Boulder, Colorado, USA, from their website at https://psl.noaa.gov; percentiles computed by this application. |
+| Ember yearly electricity data (latest year per country, rounded) | `js/data/grid-factors.json` | Creative Commons Attribution 4.0 | Grid emission factors: Ember, Yearly Electricity Data (ember-energy.org), CC BY 4.0. |
+| Forecast grids rebuilt by the snapshot job | `data/grid/` | NOAA GFS and GEFS-Aerosols: US Government, public domain; DWD wave model: CC BY 4.0 | Forecast grid: NOAA/NWS/NCEP (public domain). Sea state: Deutscher Wetterdienst (DWD), CC BY 4.0. Reduced to coarse grids by this application; not original, unaltered NOAA or DWD data. |
+| MIL-HDBK-5J design and fracture-toughness values of metals (converted extract) | `js/data/materials-catalogue.json`, `tools/materials-data/mil-hdbk-5j-*.csv` | Work of the United States Government, Distribution Statement A (public release) | Material design values: MIL-HDBK-5J, U.S. Department of Defense, 2003. Superseded by MMPDS; not certified allowables. |
+| MIL-HDBK-17-2F lamina properties (converted extract) | `js/data/materials-catalogue.json`, `tools/materials-data/mil-hdbk-17-2f-lamina.csv` | Work of the United States Government, Distribution Statement A (public release) | Composite lamina data: MIL-HDBK-17-2F, U.S. Department of Defense, 2002. Screening and interim data are not design allowables. |
+| MIL-C-7438G aluminium honeycomb core values (converted extract) | `js/data/materials-catalogue.json`, `tools/materials-data/mil-c-7438g-cores.csv` | Work of the United States Government, Distribution Statement A (public release) | Honeycomb core values: MIL-C-7438G, U.S. Department of Defense, 1985. The specification gives them for test purposes only. |
+| DOT/FAA/AR-05/15 crack-growth constants (individual values) | `js/data/materials-catalogue.json`, `tools/materials-data/records.csv` | FAA technical report available to the U.S. public through NTIS; values cited as facts | Crack-growth constants: DOT/FAA/AR-05/15, Federal Aviation Administration, 2005. |
+| NASA technical reports: AAFEX fuel analyses, IM7/8552 interlaminar fracture energies (individual values) | `js/data/materials-catalogue.json`, `tools/materials-data/records.csv` | NASA scientific and technical information, not protected by copyright unless noted | Source: NASA Langley Research Center (NASA/TM-2011-217059, NASA/TM-2010-216838, NTRS 20120016494). NASA does not endorse AeroSuite 26. |
+| References to other publishers in the materials catalogue: NCAMP report NCP-RP-2009-028 Rev B, LLNL report UCRL-ID-134691, Molicel INR-21700-P42A datasheet (individual values) | `js/data/materials-catalogue.json`, `tools/materials-data/records.csv` | Facts cited with document, locator and link; no text reproduced | Cited per value in the catalogue. |
 
 ## Live data sources
 
@@ -130,6 +141,10 @@ statements:
 - EU allowance auction price: EEX (European Energy Exchange) — non-commercial deployments only
 - Carbon intensity: National Energy System Operator (NESO) Carbon Intensity API (CC BY 4.0)
 - Literature index: OpenAlex (CC0)
+- EU ETS price: European Commission, “Price of CBAM certificates” (© European Union, CC BY 4.0)
+- California–Québec auction price: Gouvernement du Québec (MELCCFP), Données Québec, CC BY 4.0
+- Forecast grid and aerosol forecast: NOAA/NWS/NCEP (GFS, GEFS-Aerosols), public domain
+- Sea state: Deutscher Wetterdienst (DWD), global wave model GWAM, CC BY 4.0
 
 None of these providers endorses AeroSuite 26.
 

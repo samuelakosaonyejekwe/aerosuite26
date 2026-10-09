@@ -1324,7 +1324,9 @@ function oscStats(y, dt, k0, k1) {
 /**
  * Coupled immersed-boundary Navier–Stokes / rigid-body simulation in non-dimensional units (U = ρ = 1; length unit = cylinder
  * diameter or plate semi-chord). o.fixed holds the body (after a short transverse kick that triggers shedding); o.still
- * removes the stream (body released in fluid at rest, time still measured in the same units).
+ * removes the stream (body released in fluid at rest, time still measured in the same units). o.load(vNew, vOld, dt, t) replaces
+ * the fluid sub-solve by a prescribed load [Fx, Fy, Mz] on the body, the mean over the step that ends at time t with the body
+ * velocities vNew (verification of the coupling algebra).
  */
 function ibRun(i, ctx, o = {}) {
   const plate = i.body === IB_BODIES[1], cells = i.cells, h = 1 / cells, nx = Math.max(16, Math.round(i.len * cells)), ny = 2 * Math.max(4, Math.round((i.height * cells) / 2)), Lre = plate ? 2 : 1, nu = Lre / i.Re;
@@ -1332,7 +1334,12 @@ function ibRun(i, ctx, o = {}) {
   const body = plate ? nsBody({ type: 'plate', c: 2, thick, xm: -i.a_ea, x: x0, y: y0 }) : nsBody({ type: 'circle', R: 0.5, x: x0, y: y0 });
   const dt = Math.min((i.cfl * h) / 1, (0.2 * h * h) / nu), nSw = Math.max(1, Math.round(i.n_sweep)), Urs = nSw === 1 ? [i.Ur_min] : N.linspace(i.Ur_min, i.Ur_max, nSw);
   const stages = Urs.map((Ur, k) => ({ Ur, n: Math.max(20, Math.round((i.t_stage + (k === 0 ? i.t_start : 0)) / dt)) })), nTot = N.sum(stages.map((g) => g.n));
-  // structure: q = [y] or [y, x] for the cylinder; q = [h (down), α (nose-up)] for the plate
+  // structure: q = [y] or [y, x] for the cylinder; q = [h (down), α (nose-up)] for the plate.
+  // Time integration: the fluid sub-step returns the momentum it exchanged with the body over the step, i.e. the step-mean load
+  // H. It is paired with the structural equation in the same time-centred (impulse) form, M·ā + C·(v + ½Δt·ā) + K·(q + ½Δt·v + ¼Δt²·ā) = H,
+  // with the step-mean acceleration ā as the unknown and v ← v + Δt·ā, q ← q + Δt·v + ½Δt²·ā (the average-acceleration rule).
+  // Body momentum then changes by exactly H·Δt, the work of the fluid is H·Δq, and an added-mass reaction H = −m_a·ā is carried
+  // in full by the interface operator. In the arrays below a, a1, aj, an, ap are step-mean accelerations.
   const fixed = !!o.fixed, nd = fixed ? 0 : plate ? 2 : i.inline ? 2 : 1, M = [[0, 0], [0, 0]], Kd = [0, 0], Cd = [0, 0], Mv = [0, 0];
   const setStage = (Ur) => {
     if (plate) { const m = i.mu * Math.PI, wa = 1 / Ur, wh = i.w_ratio * wa, Ia = m * i.r_alpha ** 2; M[0][0] = m; M[0][1] = M[1][0] = m * i.x_alpha; M[1][1] = Ia; Kd[0] = m * wh * wh; Kd[1] = Ia * wa * wa; Cd[0] = 2 * i.zeta * m * wh; Cd[1] = 2 * i.zeta * Ia * wa; Mv[0] = Math.PI; Mv[1] = Math.PI * (0.125 + i.a_ea ** 2); }
@@ -1345,10 +1352,11 @@ function ibRun(i, ctx, o = {}) {
   const nNewton = fixed ? 0 : Math.max(0, Math.round(i.subiter)), T = [], Y = [], X = [], CL = [], CDh = [], CM = [], marks = [], slots = nd > 1 ? [1, 2] : [1], del = 1;
   // the fluid inside the mask starts with the free-stream momentum, not the body's: that is the reference for the interior-inertia term
   pose(q); body.vx = s.U; body.vy = 0; body.om = 0; const P0 = nsInterior(s, body); body.vx = 0;
-  let Pp = [0, 0, 0, P0.Px, P0.Py, P0.Lz], its = 0, resMax = 0, resSum = 0, cflMax = 0, divMax = 0, step = 0, amMax = 0;
-  /** One fluid sub-solve from the stored predictor field for body accelerations acc: force – project – force. Returns [Hx, Hy, Hz, Px, Py, Lz]. */
+  let Pp = [0, 0, 0, P0.Px, P0.Py, P0.Lz], its = 0, resMax = 0, resSum = 0, cflMax = 0, divMax = 0, step = 0, amMax = 0, tNow = 0;
+  /** One fluid sub-solve from the stored predictor field for step-mean body accelerations acc: force – project – force. Returns [Hx, Hy, Hz, Px, Py, Lz]. */
   const evalAt = (acc) => {
-    nsRecall(s, 0); for (let d = 0; d < nd; d++) vk[d] = v[d] + 0.5 * dt * (a[d] + acc[d]); vel(vk);
+    nsRecall(s, 0); for (let d = 0; d < nd; d++) vk[d] = v[d] + dt * acc[d]; vel(vk);
+    if (o.load) return [...o.load(vk, v, dt, tNow), 0, 0, 0];
     const f0 = nsForce(s, body, dt); nsProject(s, dt); const f1 = nsForce(s, body, dt), pp = Pp;
     return [f0.Fx + f1.Fx + (f1.Px - pp[3]) / dt, f0.Fy + f1.Fy + (f1.Py - pp[4]) / dt, f0.Mz + f1.Mz + (f1.Lz - pp[5]) / dt + body.vx * f1.Py - body.vy * f1.Px, f1.Px, f1.Py, f1.Lz];
   };
@@ -1356,51 +1364,51 @@ function ibRun(i, ctx, o = {}) {
   for (let sg = 0; sg < stages.length; sg++) {
     setStage(stages[sg].Ur); marks.push(step);
     for (let k = 0; k < stages[sg].n; k++, step++) {
-      const t = (step + 1) * dt; let H = null, res = 0;
+      const t = tNow = (step + 1) * dt; let H = null, res = 0;
       nsPredict(s, dt);
       if (fixed || nNewton === 0) {
         // fixed body, or loosely coupled: one forcing pass with the load of the previous pressure field and a lagged added-mass term
         if (fixed) { const vy = t < 4 ? 0.3 * Math.sin((Math.PI * t) / 2) : 0; body.vy = vy; body.y = t < 4 ? body.y + vy * dt : y0; }
-        else { for (let d = 0; d < nd; d++) { qk[d] = q[d] + dt * v[d] + 0.5 * dt * dt * a[d]; vk[d] = v[d] + dt * a[d]; } pose(qk); vel(vk); }
+        else { for (let d = 0; d < nd; d++) { qk[d] = q[d] + dt * v[d] + 0.5 * dt * dt * a[d]; vk[d] = v[d] + dt * a[d]; } pose(qk); vel(vk); } // motion predicted with the mean acceleration of the previous step
         const f = nsForce(s, body, dt), pp = Pp; nsProject(s, dt);
-        H = [f.Fx + (f.Px - pp[3]) / dt, f.Fy + (f.Py - pp[4]) / dt, f.Mz + (f.Lz - pp[5]) / dt + body.vx * f.Py - body.vy * f.Px, f.Px, f.Py, f.Lz];
+        H = o.load ? [...o.load(vk, v, dt, t), 0, 0, 0] : [f.Fx + (f.Px - pp[3]) / dt, f.Fy + (f.Py - pp[4]) / dt, f.Mz + (f.Lz - pp[5]) / dt + body.vx * f.Py - body.vy * f.Px, f.Px, f.Py, f.Lz];
         if (!fixed) {
-          const b0 = gen(H, 0) + Mv[0] * a[0] - Cd[0] * (v[0] + 0.5 * dt * a[0]) - Kd[0] * (q[0] + dt * v[0] + 0.25 * dt * dt * a[0]), A00 = M[0][0] + Mv[0] + 0.5 * dt * Cd[0] + 0.25 * dt * dt * Kd[0];
+          const b0 = gen(H, 0) + Mv[0] * a[0] - Cd[0] * v[0] - Kd[0] * (q[0] + 0.5 * dt * v[0]), A00 = M[0][0] + Mv[0] + 0.5 * dt * Cd[0] + 0.25 * dt * dt * Kd[0];
           if (nd === 1) aj[0] = b0 / A00;
-          else { const b1 = gen(H, 1) + Mv[1] * a[1] - Cd[1] * (v[1] + 0.5 * dt * a[1]) - Kd[1] * (q[1] + dt * v[1] + 0.25 * dt * dt * a[1]), A11 = M[1][1] + Mv[1] + 0.5 * dt * Cd[1] + 0.25 * dt * dt * Kd[1], A01 = M[0][1], det = A00 * A11 - A01 * A01; aj[0] = (b0 * A11 - A01 * b1) / det; aj[1] = (A00 * b1 - A01 * b0) / det; }
-          res = 0.5 * dt * Math.hypot(aj[0] - a[0], nd > 1 ? aj[1] - a[1] : 0); its++;
+          else { const b1 = gen(H, 1) + Mv[1] * a[1] - Cd[1] * v[1] - Kd[1] * (q[1] + 0.5 * dt * v[1]), A11 = M[1][1] + Mv[1] + 0.5 * dt * Cd[1] + 0.25 * dt * dt * Kd[1], A01 = M[0][1], det = A00 * A11 - A01 * A01; aj[0] = (b0 * A11 - A01 * b1) / det; aj[1] = (A00 * b1 - A01 * b0) / det; }
+          res = dt * Math.hypot(aj[0] - a[0], nd > 1 ? aj[1] - a[1] : 0); its++;
         }
       } else {
-        // strong coupling: for a frozen pose the fluid sub-step is affine in the body accelerations, so nd + 1 sub-solves give the
+        // strong coupling: for a frozen pose the fluid sub-step is affine in the body's step-mean accelerations, so nd + 1 sub-solves give the
         // load, its discrete added-mass operator J and the matching sensitivity fields; the interface condition is then solved
         // directly (a Newton step) and the field corrected by superposition. With one iteration per step J and the sensitivity
         // fields are refreshed every fourth step (quasi-Newton); with more they are rebuilt in every iteration.
         nsStore(s, 0); const ext = k >= 2 ? 1 : 0; aj[0] = a[0] + ext * (a[0] - a1[0]); aj[1] = a[1] + ext * (a[1] - a1[1]);
         for (let j = 0; j < nNewton; j++) {
-          for (let d = 0; d < nd; d++) qk[d] = q[d] + dt * v[d] + 0.25 * dt * dt * (a[d] + aj[d]);
+          for (let d = 0; d < nd; d++) qk[d] = q[d] + dt * v[d] + 0.5 * dt * dt * aj[d];
           pose(qk); const fresh = nNewton > 1 || k % 4 === 0;
           if (fresh) for (let d = 0; d < nd; d++) { ap[0] = aj[0]; ap[1] = aj[1]; ap[d] += del; dH[d] = evalAt(ap); nsStore(s, d + 1); }
           const Hb = evalAt(aj);
           if (fresh) for (let d = 0; d < nd; d++) { nsDiff(s, d + 1); for (let m = 0; m < 6; m++) dH[d][m] -= Hb[m]; }
-          const J00 = gen(dH[0], 0) / del, b0 = gen(Hb, 0) - Cd[0] * (v[0] + 0.5 * dt * a[0]) - Kd[0] * (q[0] + dt * v[0] + 0.25 * dt * dt * a[0]), A00 = M[0][0] + 0.5 * dt * Cd[0] + 0.25 * dt * dt * Kd[0] - J00;
-          if (nd === 1) { an[0] = (b0 - J00 * aj[0]) / A00; an[1] = 0; amMax = Math.max(amMax, (-2 * J00) / M[0][0]); }
+          const J00 = gen(dH[0], 0) / del, b0 = gen(Hb, 0) - Cd[0] * v[0] - Kd[0] * (q[0] + 0.5 * dt * v[0]), A00 = M[0][0] + 0.5 * dt * Cd[0] + 0.25 * dt * dt * Kd[0] - J00;
+          if (nd === 1) { an[0] = (b0 - J00 * aj[0]) / A00; an[1] = 0; amMax = Math.max(amMax, -J00 / M[0][0]); }
           else {
             const J10 = gen(dH[0], 1) / del, J01 = gen(dH[1], 0) / del, J11 = gen(dH[1], 1) / del;
-            const b1 = gen(Hb, 1) - Cd[1] * (v[1] + 0.5 * dt * a[1]) - Kd[1] * (q[1] + dt * v[1] + 0.25 * dt * dt * a[1]), A11 = M[1][1] + 0.5 * dt * Cd[1] + 0.25 * dt * dt * Kd[1] - J11, A01 = M[0][1] - J01, A10 = M[1][0] - J10;
+            const b1 = gen(Hb, 1) - Cd[1] * v[1] - Kd[1] * (q[1] + 0.5 * dt * v[1]), A11 = M[1][1] + 0.5 * dt * Cd[1] + 0.25 * dt * dt * Kd[1] - J11, A01 = M[0][1] - J01, A10 = M[1][0] - J10;
             const r0 = b0 - J00 * aj[0] - J01 * aj[1], r1 = b1 - J10 * aj[0] - J11 * aj[1], det = A00 * A11 - A01 * A10;
-            an[0] = (r0 * A11 - A01 * r1) / det; an[1] = (A00 * r1 - A10 * r0) / det; amMax = Math.max(amMax, (-2 * J00) / M[0][0], (-2 * J11) / M[1][1]);
+            an[0] = (r0 * A11 - A01 * r1) / det; an[1] = (A00 * r1 - A10 * r0) / det; amMax = Math.max(amMax, -J00 / M[0][0], -J11 / M[1][1]);
           }
           for (let d = 0; d < nd; d++) cc[d] = (an[d] - aj[d]) / del;
           nsCombine(s, 1, slots, cc);
           H = Hb.map((x, m) => x + (nd > 1 ? cc[0] * dH[0][m] + cc[1] * dH[1][m] : cc[0] * dH[0][m]));
           // pose inconsistency left by this iteration: structural position minus the position the fluid was solved with
-          res = 0.25 * dt * dt * Math.hypot(an[0] - aj[0], an[1] - aj[1]); aj[0] = an[0]; aj[1] = an[1]; its++;
+          res = 0.5 * dt * dt * Math.hypot(an[0] - aj[0], an[1] - aj[1]); aj[0] = an[0]; aj[1] = an[1]; its++;
           if (res < i.tol) break;
         }
         nsProject(s, dt);
       }
       Pp = H;
-      if (!fixed) { for (let d = 0; d < nd; d++) { q[d] += dt * v[d] + 0.25 * dt * dt * (a[d] + aj[d]); v[d] += 0.5 * dt * (a[d] + aj[d]); a1[d] = a[d]; a[d] = aj[d]; } if (res > resMax) resMax = res; resSum += res; }
+      if (!fixed) { for (let d = 0; d < nd; d++) { q[d] += dt * v[d] + 0.5 * dt * dt * aj[d]; v[d] += dt * aj[d]; a1[d] = a[d]; a[d] = aj[d]; } if (res > resMax) resMax = res; resSum += res; }
       const Hy = H[1], Hx = H[0], Hz = H[2];
       if (!fin(Hy) || !fin(q[0]) || Math.abs(q[0]) > 0.45 * ny * h) throw new Error('The coupled flow solution diverged or the body left the domain: reduce the Courant number, raise the sub-iteration count or enlarge the domain.');
       T.push(t); Y.push(plate ? -q[0] : fixed ? body.y - y0 : q[0]); X.push(plate ? q[1] : nd > 1 ? q[1] : 0); CL.push(Hy / (0.5 * Lre)); CDh.push(Hx / (0.5 * Lre)); CM.push(-Hz / (0.5 * Lre * Lre));
@@ -1469,7 +1477,7 @@ const cfdfsi = {
     const common = [
       { key: 'subiter_mean', label: 'Mean coupling iterations per step', value: R.its, unit: '-', note: R.nNewton > 1 ? `${R.nd + 1} fluid sub-solves per iteration` : R.nNewton ? `1 fluid sub-solve per step plus ${R.nd} more every fourth step` : 'staggered' },
       { key: 'coupling_residual', label: R.nNewton ? 'Largest body-position mismatch between fluid and structure in a step' : 'Largest body-velocity change not yet seen by the fluid in a step', value: R.resMax, unit: R.nNewton ? 'L' : 'U', status: R.resMax <= 5e-3 ? 'ok' : 'warn', note: R.nNewton ? 'Velocity and load are matched exactly for the position used; this is what remains' : 'Staggered scheme' },
-      ...(R.nNewton ? [{ key: 'added_mass_ratio', label: 'Largest implicit added mass / structural mass', value: R.amMax, unit: '-', note: 'Added mass (or inertia) carried implicitly by the coupling Jacobian of the force–project–force sub-step; the remainder of the fluid reaction follows one step later' }] : []),
+      ...(R.nNewton ? [{ key: 'added_mass_ratio', label: 'Largest implicit added mass / structural mass', value: R.amMax, unit: '-', note: 'Added mass (or inertia) seen by the coupling Jacobian of the force–project–force sub-step and carried implicitly in full; the part of the fluid reaction that one sub-step does not yet develop follows one step later' }] : []),
       { key: 'cfl_max', label: 'Largest local Courant number', value: R.cflMax, unit: '-', status: R.cflMax <= 0.8 ? 'ok' : 'warn' },
       { key: 'div_max', label: 'Largest velocity divergence after projection', value: R.divMax, unit: 'U/L', status: R.divMax < 1e-8 ? 'ok' : 'bad' },
       { key: 'n_cells', label: 'Grid cells', value: R.nx * R.ny, unit: '-' }, { key: 'n_steps', label: 'Time steps', value: R.nTot, unit: '-' },
@@ -1553,7 +1561,27 @@ const cfdfsi = {
     const sf = ibRun({ ...IB_BASE, m_star: 1, zeta: 0, Re: 2000, cells: 8, len: 8, height: 8, n_sweep: 1, Ur_min: 5, t_start: 2, t_stage: 13 }, null, { still: true }), ex = [];
     for (let k = 1; k < sf.Y.length - 1 && ex.length < 4; k++) if ((sf.Y[k] - sf.Y[k - 1]) * (sf.Y[k + 1] - sf.Y[k]) < 0) ex.push(sf.T[k]);
     const fStill = ex.length > 2 ? (ex.length - 1) / (2 * (ex[ex.length - 1] - ex[0])) : NaN;
+    // coupling algebra alone: the flow sub-solve is replaced by a prescribed added-mass reaction H = −m_a·Δv/Δt, so the coupled system is
+    // a linear oscillator of mass m + m_a whose average-acceleration solution obeys an exact linear recurrence
+    const cy = { ...IB_BASE, m_star: 1, zeta: 0.02, cells: 3, len: 6, height: 3, n_sweep: 1, Ur_min: 5, t_start: 2, t_stage: 20, cfl: 0.05, tol: 1e-13 }, mc = Math.PI / 4, ma = 1.5 * mc, wn0 = TAU / cy.Ur_min;
+    const am = (vn, vo, dt) => [0, (-ma * (vn[0] - vo[0])) / dt, 0], c1 = ibRun(cy, null, { still: true, load: am }), c3 = ibRun({ ...cy, subiter: 3 }, null, { still: true, load: am }), Yc = c1.Y, hs = c1.dt / 2;
+    const w2 = (mc * wn0 * wn0) / (mc + ma), cz = (2 * cy.zeta * mc * wn0) / (mc + ma), den = 1 + cz * hs + w2 * hs * hs, trA = (2 * (2 + cz * hs)) / den - 2, detA = (1 - cz * hs + w2 * hs * hs) / den, wd = Math.sqrt(w2 - 0.25 * cz * cz), yA = 0.2 / wd;
+    let rec1 = 0, dev = 0, d13 = 0; for (let k = 1; k + 1 < Yc.length; k++) rec1 = Math.max(rec1, Math.abs(Yc[k + 1] - trA * Yc[k] + detA * Yc[k - 1]) / yA);
+    for (let k = 0; k < Yc.length; k++) { dev = Math.max(dev, Math.abs(Yc[k] - yA * Math.exp(-0.5 * cz * c1.T[k]) * Math.sin(wd * c1.T[k])) / yA); d13 = Math.max(d13, Math.abs(c3.Y[k] - Yc[k]) / yA); }
+    // plate: two degrees of freedom with inertial coupling and a full added-mass matrix [[π, −πa], [−πa, π(1/8 + a²)]]; the free response is a
+    // sum of two modes, so y(k+2) + y(k−2) − 2(c1 + c2)·(y(k+1) + y(k−1)) + (2 + 4·c1·c2)·y(k) = 0 with c = cos of the discrete modal phase step
+    const pb = { ...IB_BASE, body: IB_BODIES[1], mu: 2, a_ea: -0.2, x_alpha: 0.2, r_alpha: 0.5, w_ratio: 0.6, zeta: 0, alpha0_deg: 4, cells: 3, len: 8, height: 6, n_sweep: 1, Ur_min: 1, t_start: 2, t_stage: 20, cfl: 0.1, tol: 1e-13 };
+    const A2 = [[Math.PI, -Math.PI * pb.a_ea], [-Math.PI * pb.a_ea, Math.PI * (0.125 + pb.a_ea ** 2)]], amP = (vn, vo, dt) => [0, (A2[0][0] * (vn[0] - vo[0]) + A2[0][1] * (vn[1] - vo[1])) / dt, (A2[1][0] * (vn[0] - vo[0]) + A2[1][1] * (vn[1] - vo[1])) / dt];
+    const p1 = ibRun(pb, null, { still: true, load: amP }), mp = pb.mu * Math.PI, Ip = mp * pb.r_alpha ** 2, m11 = mp + A2[0][0], m12 = mp * pb.x_alpha + A2[0][1], m22 = Ip + A2[1][1], k1 = mp * pb.w_ratio ** 2, k2 = Ip;
+    const qa = m11 * m22 - m12 * m12, qb = -(k1 * m22 + k2 * m11), disc = Math.sqrt(qb * qb - 4 * qa * k1 * k2), cosd = [(-qb - disc) / (2 * qa), (-qb + disc) / (2 * qa)].map((l) => { const x = 0.25 * l * p1.dt * p1.dt; return (1 - x) / (1 + x); });
+    let rec2 = 0; for (const sig of [p1.X, p1.Y]) { const sc = N.amax(sig.map(Math.abs)); for (let k = 2; k + 2 < sig.length; k++) rec2 = Math.max(rec2, Math.abs(sig[k + 2] + sig[k - 2] - 2 * (cosd[0] + cosd[1]) * (sig[k + 1] + sig[k - 1]) + (2 + 4 * cosd[0] * cosd[1]) * sig[k]) / sc); }
     return [
+      N.check('Coupling with a prescribed added-mass reaction: damped oscillator of mass m + m_a, exact recurrence of the average-acceleration rule', rec1, 0, 1e-10, 'y(k+1) − tr(A)·y(k) + det(A)·y(k−1) = 0 with A = (I − ½Δt·B)⁻¹(I + ½Δt·B), B the state matrix of (m + m_a)ÿ + cẏ + ky = 0; any staggering between fluid load and structural equation would show as numerical damping'),
+      N.check('Coupling with a prescribed added-mass reaction: response against the analytic damped oscillator with the added-mass frequency shift', dev, 0, 1e-3, 'y = (v0/ω_d)·e^(−ζωt)·sin(ω_d·t), ω² = k/(m + m_a) with m_a = 1.5 m; the phase error of the second-order rule, (ωΔt)²/12·ωt, is about 3e-4 at the end of the run'),
+      N.check('Coupling iteration: one Newton step solves the interface equation (iterations per step with a limit of three)', c3.its, 2, 1e-12, 'The sub-step is affine in the body acceleration, so Newton with its exact operator converges in one step; the second iteration only confirms a zero residual'),
+      N.check('Coupling iteration: one and three iterations per step give the same response', d13, 0, 1e-10, 'Exactness of the single Newton step'),
+      N.check('Coupling residual after convergence', c3.resMax, 0, 1e-13, 'Body position used by the flow minus the structural position'),
+      N.check('Two-degree-of-freedom plate with a prescribed full added-mass matrix: exact two-mode recurrence', rec2, 0, 1e-9, 'Generalised eigenvalues of (M + M_a, K) mapped through the average-acceleration rule, cos(ω_d·Δt) = (1 − ¼ω²Δt²)/(1 + ¼ω²Δt²); verifies the 2 × 2 interface solve with off-diagonal structural and added mass'),
       N.check('Light cylinder in still fluid: frequency f_n·√(m/(m + m_a)) with m_a = ρπD²/4', fStill, 0.2 * Math.sqrt(0.5), 0.12, 'Potential-flow added mass of a circular cylinder; with 8 cells per diameter the smeared interface, the 12.5% confinement and the unresolved Stokes layer raise the effective added mass to about 1.3, so the frequency is 7–8% low (it approaches the exact value as the grid is refined)'),
       N.check('Fixed-cylinder Strouhal number at Re = 150', St, 0.183, 0.1, 'Williamson’s St–Re relation (0.183); deliberately coarse grid of 5 cells per diameter with 16% blockage, hence the 10% tolerance'),
       N.check('Velocity field is divergence-free after projection', R.divMax, 0, 1e-9, 'Exact discrete projection (cosine transform + tridiagonal solve)'),
@@ -1571,7 +1599,7 @@ const cfdfsi = {
     return out;
   },
 };
-const IB_MODELS = (R, i) => [`Incompressible Navier–Stokes on a ${R.nx} × ${R.ny} staggered grid, fractional-step projection with an exact transform-based pressure solve`, 'Third-order upwind-biased advection (fourth-order central part by Adams–Bashforth, dissipative part by forward Euler), explicit diffusion', 'Direct-forcing immersed boundary with a one-cell smoothed body mask; loads from the momentum exchanged plus the inertia of the fluid inside the mask', `Rigid body on linear springs and dampers, Newmark average acceleration; ${R.nNewton ? `strong coupling: force–project–force fluid sub-solves give the load and, by perturbing each degree of freedom, its discrete added-mass operator; the interface condition is solved implicitly with it and the flow corrected by superposition (stable for mass ratios below one); ${R.nNewton > 1 ? `operator rebuilt in each of up to ${R.nNewton} iterations per step` : 'operator refreshed every fourth step (quasi-Newton)'}` : 'loose (staggered) coupling with a lagged analytical added-mass term'}`, 'Stepped reduced-velocity sweep in one continuous simulation', 'CFD-based aeroelastic model; limit-cycle oscillation model'];
+const IB_MODELS = (R, i) => [`Incompressible Navier–Stokes on a ${R.nx} × ${R.ny} staggered grid, fractional-step projection with an exact transform-based pressure solve`, 'Third-order upwind-biased advection (fourth-order central part by Adams–Bashforth, dissipative part by forward Euler), explicit diffusion', 'Direct-forcing immersed boundary with a one-cell smoothed body mask; loads from the momentum exchanged plus the inertia of the fluid inside the mask', `Rigid body on linear springs and dampers, average-acceleration rule in time-centred (impulse) form, which pairs with the step-mean fluid load without a half-step lag; ${R.nNewton ? `strong coupling: force–project–force fluid sub-solves give the load and, by perturbing each degree of freedom, its discrete added-mass operator; the interface condition is solved implicitly with it and the flow corrected by superposition (stable for mass ratios below one); ${R.nNewton > 1 ? `operator rebuilt in each of up to ${R.nNewton} iterations per step` : 'operator refreshed every fourth step (quasi-Newton)'}` : 'loose (staggered) coupling with a lagged analytical added-mass term'}`, 'Stepped reduced-velocity sweep in one continuous simulation', 'CFD-based aeroelastic model; limit-cycle oscillation model'];
 const IB_ASSUME = ['Two-dimensional, laminar, incompressible flow at low Reynolds number', 'Uniform inflow, convective outflow, free-slip walls at the top and bottom (blockage raises forces and shedding frequency)', 'First-order accurate interface treatment on a Cartesian grid: the body surface is smeared over one cell', 'Structure moves as a rigid body; springs are linear'];
 
 export default {

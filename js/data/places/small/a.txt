@@ -1,0 +1,2910 @@
+#AE|Ajman
+Al Manāmah|Al Manamah|25330|56022|213|6
+#AE|Dubai
+Al Qusais Second||25271|55386|8|13
+Al Khawaneej 1||25249|55485|42|12
+Al Twar First||25271|55362|2|12
+Al Mizhar Second||25243|55462|34|12
+As Saţwah Sharq|As Satwah Sharq|25238|55287|3|12
+Al Twar 3||25252|55394|15|11
+Ar Riqqah||25268|55313|7|8
+Al Hudaiba||25242|55278|3|8
+Al Khabaisi||25266|55334|16|7
+AL Twar Second||25263|55380|4|5
+#AE|Ras Al Khaimah
+Ar Rams||25877|56019|3|13
+Al Jazīrah al Ḩamrā’|Al Jazirah al Hamra'|25709|55808|3|10
+#AE|Sharjah
+Al Madam||24974|55778|172|9
+#AF|Badakhshan
+Ashkāsham|Ashkasham|36683|71533|3057|12
+#AF|Farah
+Anār Darah|Anar Darah|32759|61654|778|10
+#AF|Helmand
+‘Alāqahdārī Dīshū|'Alaqahdari Dishu|30432|63298|596|9
+#AM|Aragatsotn
+Aragatsavan||40321|43662|1258|7
+Aparan||40593|44359|1892|6
+#AM|Ararat
+Ayntap||40097|44465|888|10
+Ararat village||39832|44705|822|8
+#AM|Kotayk
+Arinj||40234|44582|1327|8
+#AM|Lori
+Alaverdi||41098|44673|699|12
+#AM|Shirak
+Akhuryan||40781|43900|1544|10
+Azatan||40720|43827|1498|6
+#AO|Bengo
+Ambriz||-7846|13108||12
+#AR|Buenos Aires
+América|America|-35498|-62974|105|14
+Alberti||-35032|-60280|40|9
+#AR|Catamarca
+Andalgalá|Andalgala|-27582|-66316|1080|14
+#AR|Chaco
+Avia Terai||-26687|-60728|100|7
+#AR|Cordoba
+Almafuerte||-32192|-64256|430|11
+Arias||-33640|-62403|119|7
+Adelia María|Adelia Maria|-33632|-64021|266|6
+#AR|Corrientes
+Alvear||-29097|-56550|65|8
+#AR|Jujuy
+Abra Pampa||-22723|-65697|3508|9
+#AR|La Rioja
+Arauco||-28581|-66792|816|14
+#AR|Misiones
+Aristóbulo del Valle|Aristobulo del Valle|-27096|-54893|491|15
+Andresito||-25670|-54046|251|14
+Alba Posse||-27569|-54684|117|7
+#AR|Neuquen
+Añelo|Anelo|-38354|-68788|403|6
+#AR|Salta
+Aguaray||-22245|-63735|585|12
+Apolinario Saravia||-24432|-63996|361|9
+#AR|Santa Fe
+Armstrong||-32785|-61603|109|11
+#AT|Carinthia
+Annabichl||46650|14317|454|11
+Auen||46600|13844|492|7
+#AT|Tyrol
+Arzl||47283|11433|638|11
+Absam||47296|11506|641|7
+Amras||47250|11417|781|6
+Axams||47231|11279|876|5
+#AT|Upper Austria
+Attnang-Puchheim||48008|13717|417|9
+#AT|Vorarlberg
+Altach||47354|9652|413|7
+#AU|Australian Capital Territory
+Amaroo||-35170|149128|625|6
+Ainslie||-35263|149144|586|5
+#AU|New South Wales
+Albion Park||-34571|150776|13|13
+Arncliffe||-33936|151148|19|11
+Artarmon||-33817|151183|99|9
+Annandale||-33883|151167|20|9
+Alexandria||-33900|151200|22|8
+Ambarvale||-34089|150797|103|7
+Allambie Heights||-33767|151250|117|7
+Albion Park Rail||-34566|150792|14|7
+Adamstown||-32938|151725|31|6
+Alstonville||-28842|153440|152|6
+Allawah||-33973|151114|39|6
+Albury||-36075|146924|164|5
+Abbotsford||-33849|151128|24|5
+Aberglasslyn||-32700|151533|33|5
+Adamstown Heights||-32949|151710|56|5
+#AU|Queensland
+Ashgrove||-27446|152992|36|13
+Aspley||-27367|153017|28|12
+Ashmore||-27989|153376|29|12
+Annerley||-27512|153032|43|11
+Arundel||-27938|153363|18|10
+Andergrove||-21083|149183|9|9
+Ayr||-19574|147407|15|9
+Annandale||-19315|146791|14|8
+Algester||-27613|153032|35|8
+Atherton||-17269|145475|765|8
+Acacia Ridge||-27583|153033|30|7
+Arana Hills||-27398|152958|51|7
+Auchenflower||-27474|152992|28|6
+Alderley||-27426|153001|38|6
+Ascot||-27432|153058|30|6
+#AU|South Australia
+Aberfoyle Park||-35077|138592|177|11
+Aldinga Beach||-35278|138458|24|10
+Athelstone||-34870|138700|109|9
+Andrews Farm||-34676|138662|31|8
+#AU|Victoria
+Altona North||-37835|144847|18|13
+Avondale Heights||-37762|144863|48|12
+Altona||-37870|144830|9|11
+Armadale||-37855|145021|52|9
+Alfredton||-37567|143817|448|9
+Ararat||-37285|142927|325|9
+Abbotsford||-37800|145000|25|8
+Aintree||-37723|144668|103|8
+Ashburton||-37867|145083|68|8
+Airport West||-37725|144881|77|7
+Aspendale||-38029|145103|9|7
+Ashwood||-37867|145106|56|7
+Aspendale Gardens||-38023|145118|6|6
+Albert Park||-37841|144952|9|6
+Alphington||-37783|145033|36|6
+Albanvale||-37746|144769|73|5
+#AU|Western Australia
+Armadale||-32146|116009|54|13
+Aveley||-31781|115990|26|10
+Atwell||-32143|115865|28|9
+Alexander Heights||-31828|115865|74|8
+Applecross||-32017|115833|14|7
+Attadale||-32025|115802|17|6
+Aubin Grove||-32167|115863|27|6
+Alkimos||-31630|115686|46|6
+#AW|
+Alto Vista||12571|-70019|41|5
+#AZ|Abşeron
+Ashaghi Guzdak||40481|49666|88|8
+#AZ|Ağcabǝdi
+Avşar|Avsar|39974|47424|45|6
+#AZ|Ağstafa
+Aghstafa||41119|45454|327|12
+#AZ|Yevlax
+Aran||40625|46976|53|7
+#AZ|Zaqatala District
+Aliabad||41483|46635|262|9
+#BD|Sylhet Division
+Ajmiriganj||24557|91242|14|13
+#BE|Flanders
+Aartselaar||51134|4387|12|14
+Anzegem||50837|3478|51|14
+Assenede||51226|3751|3|13
+Arendonk||51323|5083|25|12
+Alken||50876|5306|39|11
+Ardooie||50976|3197|21|9
+Avelgem||50776|3445|17|9
+As||51008|5585|81|7
+Adegem||51205|3495|8|6
+Alsemberg||50741|4338|65|6
+Achel||51253|5480|34|5
+#BE|Wallonia
+Aubange||49567|5805|278|15
+Amay||50548|5310|131|13
+Anderlues||50407|4271|181|12
+Aiseau||50412|4587|117|11
+Angleur||50611|5599|64|11
+Aywaille||50474|5677|124|11
+Alleur||50675|5513|165|10
+Awans||50668|5463|152|9
+Auvelais||50450|4632|96|8
+Athus||49565|5837|281|8
+Antoing||50568|3449|31|8
+Anhée|Anhee|50310|4878|91|7
+Andrimont||50613|5883|290|7
+Assesse||50369|5022|247|6
+Amblève|Ambleve|50354|6170|467|5
+#BG|Varna
+Aksakovo||43259|27818|260|7
+#BH|Muharraq
+Al Ḩadd|Al Hadd|26246|50654|7|13
+#BH|Southern Governorate
+Az Zallāq|Az Zallaq|26048|50486|5|9
+#BJ|Mono
+Agoué|Agoue|6246|1676|7|5
+#BO|Cochabamba
+Aiquile||-18204|-65181|2258|8
+#BO|La Paz Department
+Achacachi||-16047|-68685|3847|8
+#BO|Santa Cruz Department
+Ascensión|Ascension|-15700|-63083|198|14
+#BR|Acre
+Acrelândia|Acrelandia|-9828|-66883|136|14
+Assis Brasil||-10941|-69567|240|8
+#BR|Amapá
+Araxá|Araxa|0|-51062||10
+Amapá|Amapa|2045|-50788|9|8
+#BR|Amazonas
+Amaturá|Amatura|-3375|-68202|66|11
+Anamã|Anama|-3580|-61404|22|10
+#BR|Bahia
+Água Fria|Agua Fria|-11867|-38767|309|14
+Antas||-10412|-38331|440|14
+Angical||-12007|-44694|471|14
+Andaraí|Andarai|-12807|-41331|403|13
+Aracatu||-14427|-41462|735|13
+Araçás|Aracas|-12211|-38202|77|12
+Anguera||-12151|-39246|238|11
+Aurelino Leal||-14317|-39327|68|11
+Antônio Cardoso|Antonio Cardoso|-12435|-39120|175|11
+Antônio Gonçalves|Antonio Goncalves|-10572|-40276|486|11
+Arataca||-15263|-39414|148|10
+Aramari||-12082|-38499|191|10
+Aratuípe|Aratuipe|-13079|-39002|6|9
+Abaíra|Abaira|-13250|-41664|641|7
+Apuarema||-13856|-39744|273|7
+Almadina||-14705|-39637|291|5
+#BR|Ceará
+Apuiarés|Apuiares|-3949|-39432|78|15
+Alto Santo||-5521|-38272|79|14
+Aiuaba||-6574|-40124|468|14
+Acarape||-4224|-38708|91|14
+Alcântaras|Alcantaras|-3589|-40546|687|11
+Aratuba||-4418|-39045|850|11
+Ararendá|Ararenda|-4753|-40833|385|11
+Abaiara||-7360|-39049|425|10
+Arneiroz||-6324|-40161|342|7
+Antonina do Norte||-6775|-39989|368|7
+Altaneira||-7002|-39741|648|7
+#BR|Espírito Santo
+Alfredo Chaves||-20635|-40750|19|14
+Água Doce do Norte|Agua Doce do Norte|-18547|-40979|214|12
+Atilio Vivacqua||-20914|-41198|78|11
+Águia Branca|Aguia Branca|-18983|-40740|143|10
+Alto Rio Novo||-19056|-41017|518|7
+Apiacá|Apiaca|-21154|-41567|76|7
+#BR|Goiás
+Aragoiânia|Aragoiania|-16912|-49451|878|10
+Alto Paraíso de Goiás|Alto Paraiso de Goias|-14136|-47522|1243|10
+Alvorada do Norte||-14481|-46492|514|8
+Aruanã|Aruana|-14920|-51083|257|8
+Araguapaz||-15091|-50632|307|7
+Abadiânia|Abadiania|-16204|-48707|1057|7
+Alto Horizonte||-14196|-49339|403|6
+Americano do Brasil||-16255|-49983|894|5
+#BR|Maranhão
+Anapurus||-3672|-43116|86|14
+Axixá|Axixa|-2837|-44053|19|12
+Água Doce do Maranhão|Agua Doce do Maranhao|-2841|-42112|13|12
+Araguanã|Araguana|-2946|-45661|35|11
+Alto Parnaíba|Alto Parnaiba|-9111|-45930|284|11
+Amapá do Maranhão|Amapa do Maranhao|-1676|-46013|16|7
+Altamira do Maranhão|Altamira do Maranhao|-4166|-45465|70|6
+Afonso Cunha||-4133|-43324|68|6
+#BR|Mato Grosso
+Araputanga||-15471|-58353|223|15
+Alto Garças|Alto Garcas|-16944|-53528|758|14
+Alto Taquari||-17836|-53282|754|12
+Arenápolis|Arenapolis|-14450|-56846|231|11
+Apiacás|Apiacas|-9544|-57449|242|9
+Alto Paraguai||-14514|-56482|232|8
+Alto Boa Vista||-11674|-51379|250|6
+#BR|Mato Grosso do Sul
+Aral Moreira||-22934|-55635|583|11
+Antônio João|Antonio Joao|-22191|-55947|695|9
+Anaurilândia|Anaurilandia|-22187|-52718|300|8
+#BR|Minas Gerais
+Astolfo Dutra||-21315|-42862|256|14
+Águas Vermelhas|Aguas Vermelhas|-15747|-41460|735|14
+Abre Campo||-20301|-42477|547|14
+Alterosa||-21249|-46143|836|14
+Areado||-21359|-46146|819|14
+Ataléia|Ataleia|-18044|-41110|260|14
+Água Boa|Agua Boa|-17996|-42389|414|13
+Andrelândia|Andrelandia|-21740|-44309|964|12
+Antônio Carlos|Antonio Carlos|-21318|-43747|1047|11
+Alto Rio Doce||-21026|-43411|816|11
+Araújos|Araujos|-19948|-45166|801|9
+Arceburgo||-21364|-46940|716|9
+Antônio Dias|Antonio Dias|-19653|-42872|409|9
+Açucena|Acucena|-19073|-42546|480|9
+Araporã|Arapora|-18436|-49185|468|8
+Alto Jequitibá|Alto Jequitiba|-20428|-41965|638|8
+Araponga||-20667|-42521|961|8
+Angelândia|Angelandia|-17727|-42273|914|8
+Alfredo Vasconcelos||-21145|-43777|1057|7
+Alpercata||-18990|-41990|312|7
+Abadia dos Dourados||-18486|-47403|748|6
+Aiuruoca||-21976|-44603|985|6
+Alto Caparaó|Alto Caparao|-20444|-41871|981|6
+#BR|Paraná
+Alto Paraná|Alto Parana|-23129|-52319|520|15
+Araruna||-23932|-52496|619|14
+Assaí|Assai|-23373|-50841|572|14
+Alvorada do Sul||-22780|-51231|363|12
+Alto Piquiri||-24028|-53441|424|10
+Agudos do Sul||-25992|-49335|859|9
+Abatiá|Abatia|-23304|-50312|610|7
+Antônio Olinto|Antonio Olinto|-25986|-50197|820|7
+Adrianópolis|Adrianopolis|-24657|-48991|168|6
+#BR|Paraíba
+Alagoinha||-6950|-35545|136|14
+Arara||-6828|-35758|461|12
+Água Branca|Agua Branca|-7512|-37641|738|9
+Aparecida||-6784|-38087|207|8
+Areial||-7061|-35926|689|7
+Alcantil||-7744|-36056|510|6
+Aguiar||-7092|-38171|261|5
+#BR|Pará
+Alter do Chão|Alter do Chao|-2504|-54952|16|7
+Abel Figueiredo||-4954|-48393|177|6
+#BR|Pernambuco
+Alagoinha||-8466|-36776|733|14
+Angelim||-8890|-36286|653|11
+#BR|Piauí
+Alto Longá|Alto Longa|-5251|-42210|141|14
+Avelino Lopes||-10137|-43949|439|11
+Anísio de Abreu|Anisio de Abreu|-9189|-43046|437|9
+Assunção do Piauí|Assuncao do Piaui|-5863|-41049|571|7
+Angical do Piauí|Angical do Piaui|-6086|-42739|195|7
+Alagoinha do Piauí|Alagoinha do Piaui|-7010|-40938|327|7
+Acauã|Acaua|-8215|-41082|360|6
+Aroazes||-6119|-41793|216|5
+Alvorada do Gurguéia|Alvorada do Gurgueia|-8448|-43867|233|5
+#BR|Rio Grande do Norte
+Alexandria||-6412|-38016|314|14
+Arês|Ares|-6194|-35160|55|13
+Alto do Rodrigues||-5288|-36762|15|12
+Angicos||-5666|-36601|113|12
+Afonso Bezerra||-5498|-36506|68|11
+Acari||-6436|-36639|275|11
+Antônio Martins|Antonio Martins|-6213|-37906|335|7
+#BR|Rio Grande do Sul
+Arroio dos Ratos||-30077|-51729|70|14
+Arroio do Tigre||-29333|-53093|369|13
+Antônio Prado|Antonio Prado|-28858|-51283|645|13
+Arroio do Sal||-29551|-49889|6|11
+Arvorezinha||-28872|-52175|732|10
+Araricá|Ararica|-29614|-50925|47|9
+Ametista do Sul||-27361|-53182|488|8
+Augusto Pestana||-28515|-53993|315|7
+Alpestre||-27249|-53035|452|7
+Ajuricaba||-28239|-53771|340|7
+Aratiba||-27394|-52300|410|6
+Alecrim||-27655|-54764|315|6
+Anta Gorda||-28970|-52005|397|6
+Amaral Ferrador||-30878|-52257|52|5
+#BR|Rio de Janeiro
+Areal||-22231|-43106|496|12
+Aperibé|Aperibe|-21621|-42103|67|11
+#BR|Rondônia
+Alvorada d'Oeste||-11341|-62286|194|13
+Alto Alegre dos Parecis||-12128|-61851|375|11
+#BR|Roraima
+Amajari||3652|-61371|96|14
+#BR|Santa Catarina
+Antônio Carlos|Antonio Carlos|-27517|-48767|25|11
+Agrolândia|Agrolandia|-27412|-49826|397|11
+Alfredo Wagner||-27700|-49334|482|10
+Apiúna|Apiuna|-27036|-49390|88|10
+Armazém|Armazem|-28262|-49017|24|9
+Ascurra||-26955|-49376|90|8
+Anita Garibaldi||-27689|-51130|887|8
+Aurora||-27315|-49637|348|7
+Águas Mornas|Aguas Mornas|-27694|-48824|66|7
+Água Doce|Agua Doce|-26998|-51556|830|7
+Agronômica|Agronomica|-27265|-49711|344|6
+Águas de Chapecó|Aguas de Chapeco|-27070|-52987|254|6
+Anchieta||-26534|-53331|708|6
+Angelina||-27569|-48985|434|5
+#BR|Sergipe
+Arauá|Araua|-11262|-37620|112|10
+#BR|São Paulo
+Auriflama||-20686|-50555|473|14
+Arcadas||-22723|-46845|675|12
+Avanhandava||-21461|-49950|441|11
+Areiópolis|Areiopolis|-22668|-48665|653|10
+Arealva||-22029|-48911|427|8
+Ariranha||-21188|-48787|593|8
+Águas da Prata|Aguas da Prata|-21937|-46717|838|7
+Águas de Santa Bárbara|Aguas de Santa Barbara|-22881|-49239|542|7
+Arandu||-23134|-49054|613|7
+Alambari||-23551|-47899|582|6
+Américo de Campos|Americo de Campos|-20299|-49732|474|6
+Anhembi||-22789|-48127|472|6
+Aramina||-20090|-47786|627|6
+#BR|Tocantins
+Axixá do Tocantins|Axixa do Tocantins|-5616|-47786|247|11
+Ananás|Ananas|-6365|-48073|208|11
+Arraias||-12931|-46938|695|11
+Alvorada||-12480|-49125|298|9
+Araguaçu|Araguacu|-12931|-49826|294|8
+Almas||-11574|-47170|442|7
+Araguacema||-8804|-49556|167|6
+Arapoema||-7658|-49064|218|6
+Aragominas||-7160|-48527|313|5
+Aliança do Tocantins|Alianca do Tocantins|-11306|-48936|333|5
+Aparecida do Rio Negro||-9952|-47972|258|5
+#BS|Bimini
+Alice Town||25728|-79297|1|1
+#BS|Cat Island
+Arthur’s Town|Arthur's Town|24622|-75672|5|1
+#BS|Mayaguana
+Abraham’s Bay|Abraham's Bay|22367|-72967|7|0
+#BY|Homyel’ Voblasc’
+Aktsyabrski||52648|28880|113|7
+#CA|Alberta
+Arbour Lake||51135|-114203|1214|10
+Acadia||50972|-114057|1051|10
+Aspen Woods||51043|-114193|1225|9
+Altadore||51017|-114103|1095|7
+Allard||53400|-113527|694|7
+Applewood Park||51043|-113925|1059|7
+Albert Park/Radisson Heights||51043|-113996|1076|7
+Alberta Avenue||53567|-113483|663|7
+Ambleside||53430|-113599|684|6
+Abbeydale||51059|-113929|1069|6
+Aldergrove||53517|-113641|681|5
+#CA|British Columbia
+Aberdeen||50650|-120367|667|12
+Albion||49188|-122557|23|12
+Aldergrove||49058|-122471|102|12
+Ambleside||49328|-123144|52|12
+Agassiz||49233|-121769|17|6
+Armstrong||50450|-119202|359|5
+#CA|Nova Scotia
+Amherst||45833|-64199|20|9
+Albro Lake||44684|-63581|67|9
+Antigonish||45617|-61999|17|5
+#CA|Ontario
+Amherstburg||42100|-83100|181|14
+Alderwood||43603|-79546|106|12
+Angus||44317|-79883|193|10
+Acton||43630|-80041|349|9
+Arnprior||45433|-76349|72|9
+Amherstview||44223|-76645|94|8
+Aylmer||42767|-80983|229|7
+Ayr||43283|-80450|287|5
+Auden Park||44233|-76585|91|5
+Almonte||45230|-76196|130|5
+#CA|Quebec
+Acton Vale||45650|-72566|90|8
+Amqui||48464|-67431|161|6
+#CA|Saskatchewan
+Albert Park||50407|-104631|578|12
+Al Ritchie||50442|-104585|573|8
+Argyle Park||50490|-104628|581|6
+Arbor Creek||52132|-106572|490|5
+#CH|Aargau
+Aarburg||47321|7900|408|7
+#CH|Appenzell Innerrhoden
+Appenzell||47331|9410|783|6
+#CH|Basel-Landschaft
+Aesch||47471|7597|307|10
+Arlesheim||47494|7620|332|9
+#CH|Lucerne
+Adligenswil||47065|8361|547|6
+#CH|Obwalden
+Alpnach||46942|8272|463|5
+#CH|Saint Gallen
+Altstätten|Altstatten|47378|9547|447|11
+Au||47431|9634|403|7
+#CH|Schwyz
+Arth||47063|8523|425|10
+Altendorf||47190|8838|414|5
+#CH|Thurgau
+Arbon||47517|9433|408|15
+Amriswil||47547|9296|451|11
+Aadorf||47492|8901|526|8
+#CH|Ticino
+Ascona||46155|8773|202|5
+#CH|Uri
+Altdorf||46880|8644|458|9
+#CH|Vaud
+Aigle||46318|6965|410|10
+#CH|Zurich
+Affoltern am Albis||47277|8451|496|12
+#CI|Abidjan Autonomous District
+Anonkoua||5427|-4049|76|14
+Attinguié|Attinguie|5467|-4185|42|9
+#CI|Bas-Sassandra District
+Adjaméné|Adjamene|4766|-6843|134|14
+Adébem|Adebem|5473|-5837|186|7
+Angagui||5947|-6811|181|6
+Amaragui||5813|-6716|157|5
+#CI|Comoé District
+Abongoua||6653|-4102|164|13
+Appouessou||6548|-3428|183|12
+Aniassué|Aniassue|6654|-3681|122|12
+Amélékia|Amelekia|6830|-3575|192|11
+Ayamé|Ayame|5605|-3157|82|11
+Assié koumassi|Assie koumassi|6770|-4290|131|11
+Amoriakro||7099|-3528|164|9
+Assaie-kouassikro||6965|-3903|173|9
+Amian||6467|-3640|122|9
+Aféré|Afere|6903|-4084|256|9
+Affalikro||6645|-3384|227|9
+Affiénou|Affienou|5411|-2925|41|9
+Adaou||5428|-3264|73|8
+Alosso-II||5564|-3500|142|8
+Assaoufoué|Assaoufoue|6577|-4224|160|8
+Anoumaba||6337|-4516|105|8
+Appouasso||5963|-3176|138|8
+Assouba||5460|-3257|88|8
+Agbossou||6861|-4082|216|7
+Assinie-Mafia||5134|-3291|6|7
+Ayénoua|Ayenoua|5367|-3318|59|7
+Apprompron||6292|-3315|172|7
+Abronambué|Abronambue|6756|-3341|186|7
+Assié Akpessé|Assie Akpesse|6465|-4336|120|7
+Assoumoukro||6464|-4373|130|6
+Adikokoi||6633|-3712|120|6
+Akati||6399|-3215|155|6
+Apron-Pronou||7001|-3360|276|6
+#CI|Goh-Djiboua
+Adahidoukou||5311|-5225|72|12
+Akridou||5627|-5607|212|8
+Ahizabré|Ahizabre|6049|-6100|168|6
+#CI|Lacs District
+Amoriki||7088|-4162|168|6
+Allangbakro||6753|-4412|101|6
+Adiékro|Adiekro|7067|-3693|160|5
+Agba-Mbayassou||7115|-4268|136|5
+Abéanou|Abeanou|6973|-4233|139|5
+#CI|Lagunes District
+Aboudé|Aboude|5896|-4563|95|15
+Ananguié|Ananguie|6223|-3773|133|13
+Alépé|Alepe|5500|-3663|13|12
+Atrobou||6090|-4059|129|11
+Abongoua||6247|-3543|153|11
+Agbaou||6341|-3854|137|10
+Attinguié|Attinguie|6064|-4548|122|10
+Assangbadji||6408|-3877|152|8
+Agou||5983|-3944|93|8
+Anno||5860|-4379|63|8
+Akradio||5437|-4364|33|7
+Abradine||6200|-3611|154|7
+Amani||5698|-4723|125|7
+Abié|Abie|5866|-3926|63|6
+Akoudzin||6026|-3983|100|6
+Ahéoua|Aheoua|6361|-3861|141|6
+Annépé|Annepe|5906|-3770|67|6
+Amangbo||6021|-4371|75|6
+Ahouakro||6120|-4872|106|5
+Aouabo||6240|-3792|148|5
+Assikoun||6418|-3883|156|5
+#CI|Sassandra-Marahoue
+Angovia||7033|-5537|232|6
+#CI|Vallée du Bandama District
+Ayaou-Sokpa||7421|-5614|228|12
+#CI|Yamoussoukro
+Akpessékro|Akpessekro|6725|-5306|203|6
+#CI|Zanzan District
+Assuéfri|Assuefri|7700|-2978|275|13
+#CL|Atacama
+Alto del Carmen||-28759|-70487|822|5
+#CL|Coquimbo Region
+Andacollo||-30234|-71085|1018|11
+#CL|Valparaiso
+Algarrobo||-33370|-71677|42|10
+#CM|South
+Akom II||2783|10567|507|10
+#CN|Chongqing
+Aikou||28329|108803|477|15
+Anzi||29128|108470|690|12
+Ansheng||30690|107721|453|9
+Anxi||29564|106042|280|6
+#CN|Gansu
+Amuquhu||34811|102687|3111|13
+Awu||34287|104149|2410|10
+Anmenkou||33278|105627|1258|9
+Azitan||34709|103313|2845|7
+Awancang||33771|101697|3504|7
+#CN|Guangdong
+Aojingchong||22683|113787|6|9
+Anle Garden||22582|113899|11|9
+Anle||22560|113900|7|8
+#CN|Guizhou
+Aoshi||26402|109071|453|11
+#CN|Heilongjiang
+Amu’er Jingtao Shequ|Amu'er Jingtao Shequ|52861|123149|511|11
+#CN|Xinjiang
+Aykol||40958|80136|1075|11
+Alakak||47745|87498|506|10
+Alashankou||45170|82570|307|9
+Aqqan||36467|81967|2428|8
+#CN|Yunnan
+Ankang||23183|99744|1796|13
+#CO|Antioquia
+Amagá|Amaga|6040|-75703|1370|12
+Amalfi||6910|-75078|1544|10
+Arboletes||8851|-76427|10|8
+#CO|Arauca Department
+Arauquita||7029|-71428|156|10
+#CO|Bolívar
+Achí|Achi|8570|-74557|23|8
+Arenal||8459|-73942|69|5
+Altos del Rosario||8792|-74166|35|5
+#CO|Boyacá
+Aquitania||5519|-72884|3042|6
+#CO|Caldas Department
+Aranzazu||5271|-75490|1900|10
+#CO|Cundinamarca
+Anolaima||4763|-74465|1651|12
+Agua de Dios||4376|-74670|384|11
+Arbeláez|Arbelaez|4273|-74415|1379|5
+#CO|Huila Department
+Algeciras||2524|-75317|995|11
+Aipe||3222|-75237|393|8
+#CO|Magdalena Department
+Algarrobo||10187|-74575|51|10
+#CO|Nariño
+Aldana||883|-77701|3016|6
+Ancuya||1263|-77514|1360|6
+#CO|Norte de Santander Department
+Abrego||8082|-73221|1414|11
+#CO|Risaralda Department
+Apía|Apia|5107|-75942|1621|7
+#CO|Tolima Department
+Ataco||3591|-75382|453|13
+Armero-Guyabal||4967|-74903|341|12
+Alvarado||4568|-74952|415|9
+Ambalema||4784|-74763|231|7
+#CO|Valle del Cauca Department
+Ansermanuevo||4797|-75995|971|12
+Alcalá|Alcala|4675|-75782|1235|9
+#CR|Alajuela Province
+Atenas||9975|-84379|704|7
+#CR|San José
+Alajuelita||9903|-84100|1108|14
+#CU|Havana
+Alta Habana||23063|-82395|52|8
+#CU|Matanzas Province
+Alacranes||22767|-81568|31|6
+Australia||22499|-81136|7|5
+#CV|Praia
+Achada Santo Antonio||14910|-23517|3|11
+Achadinha||14928|-23512|9|7
+Achada Eugénio Lima|Achada Eugenio Lima|14929|-23521|74|7
+#CY|Larnaka
+Athíenou|Athienou|35062|33542|146|5
+#CY|Nicosia
+Ágios Dométios|Agios Dometios|35173|33340|159|13
+#CZ|Carlsbad Region
+Aš|As|50224|12195|666|13
+#DE|Baden-Wurttemberg
+Altes Lager||48418|9536|794|14
+Asperg||48905|9135|275|13
+Altstadt||47661|9173|409|12
+Altensteig||48586|8604|505|11
+Aulendorf||47951|9637|571|10
+Aidlingen||48678|8895|428|9
+Althengstett||48723|8794|506|8
+Aspach||48967|9400|280|8
+Aldingen||48100|8700|644|8
+Abtsgmünd|Abtsgmund|48895|10002|374|7
+Albbruck||47591|8130|315|7
+Alfdorf||48844|9719|488|7
+Allensbach||47715|9071|403|7
+Alpirsbach||48345|8402|434|7
+Altbach||48723|9381|247|6
+Adelsheim||49402|9393|232|6
+Allmannsdorf||47680|9204|429|5
+Altlußheim|Altlussheim|49302|8499|102|5
+#DE|Bavaria
+Altötting|Altoetting|48225|12677|406|13
+Abensberg||48817|11850|371|13
+Altdorf||48154|12184|508|11
+Ainring||47813|12940|439|10
+Altusried||47804|10214|721|10
+Auerbach||49692|11633|441|9
+Arnstein||49978|9970|221|8
+Allersberg||49251|11237|387|8
+Altomünster|Altomunster|48388|11257|510|7
+Adelsdorf||49470|10685|328|7
+Arnstorf||48558|12817|390|7
+Aschheim||48171|11717|515|7
+Ampfing||48254|12415|418|6
+Arzberg||50058|12187|470|6
+Altenkunstadt||50125|11250|289|6
+Abenberg||49243|10964|416|5
+Au in der Hallertau||48558|11741|455|5
+Aschau im Chiemgau||47777|12323|608|5
+Affing||48467|10983|476|5
+#DE|Brandenburg
+Altlandsberg||52565|13728|62|9
+#DE|Hesse
+Aßlar|Asslar|50592|8463|166|14
+Altenstadt||50287|8944|133|12
+Alsbach-Hähnlein|Alsbach-Hahnlein|49739|8596|98|9
+Alsbach||49741|8623|125|9
+Allendorf||51030|8672|310|6
+Amöneburg|Amoeneburg|50796|8923|323|5
+#DE|Lower Saxony
+Am Hagenring||52273|10542|79|13
+Ahlem||52378|9664|68|11
+Apen||53221|7809|2|11
+Aerzen||52050|9259|100|11
+Adendorf||53282|10438|28|10
+Algermissen||52253|9969|79|8
+Anderten||52363|9857|64|8
+Ankum||52542|7875|65|7
+Auf der Horst||52419|9602|51|7
+Adelebsen||51583|9755|187|7
+Ahlerstedt||53407|9454|37|5
+#DE|Mecklenburg-Vorpommern
+Anklam||53856|13690|8|15
+Altentreptow||53693|13256|10|6
+Alt-Sanitz||53814|13588|8|6
+#DE|North Rhine-Westphalia
+Alpen||51583|6517|22|13
+Anröchte|Anroechte|51567|8333|188|11
+Augustdorf||51909|8732|169|10
+Altenberge||52050|7467|108|10
+Asseln||51528|7589|80|9
+Aldenhoven||50900|6283|111|7
+Altenbeken||51765|8942|247|5
+#DE|Rheinland-Pfalz
+Altrip||49436|8495|97|8
+Annweiler am Trifels||49206|7975|179|7
+Asbach||50667|7417|249|7
+Altenkirchen||50686|7642|217|6
+#DE|Saxony
+Adorf||50320|12260|443|6
+Augustusburg||50812|13102|479|5
+Altenberg||50766|13753|753|5
+#DE|Saxony-Anhalt
+Aken||51853|12045|55|9
+#DE|Schleswig-Holstein
+Altenholz||54398|10128|24|10
+Ahrensbök|Ahrensbok|54009|10574|62|9
+Appen||53658|9746|3|6
+#DE|State of Berlin
+Alt-Treptow||52489|13459|36|13
+#DE|Thuringia
+Artern||51364|11292|127|6
+#DJ|Dikhil
+‘As ‘Êla|'As 'Ela|11004|42103|351|5
+#DK|Capital Region
+Ålsgårde|Alsgarde|56076|12540|22|6
+#DK|North Denmark
+Aars||56804|9514|36|8
+Åbybro|Abybro|57162|9730|6|6
+#DK|South Denmark
+Assens||55270|9901|14|6
+#DK|Zealand
+Alholm||54665|11723|3|10
+#DZ|Aïn Defla
+Aïn Lechiakh|Ain Lechiakh|36158|2405|470|14
+#DZ|Aïn Témouchent
+Aghlal||35201|-1070|490|7
+#DZ|Béchar
+Abadla||31019|-2724|585|14
+#DZ|Medea
+Aziz||35823|2452|895|13
+’Aïn Boucif|'Ain Boucif|35891|3159|1123|12
+#DZ|Saida
+’Aïn el Hadjar|'Ain el Hadjar|34758|145|1024|13
+#DZ|Timimoun
+Aougrout||28703|335|295|7
+#EC|Chimborazo Province
+Alausí|Alausi|-2201|-78848|2740|14
+#EC|Guayas
+Alfredo Baquerizo Moreno||-1917|-79517|9|13
+#EC|Napo
+Archidona||-909|-77808|576|7
+#EG|Beheira
+Al Yāsīnīyah|Al Yasiniyah|30950|30067|-1|7
+#EG|Matruh
+Al ‘Alamayn|Al `Alamayn|30830|28955|7|7
+#ER|Debub
+Adi Keyh||14844|39377|2391|13
+#ER|Gash-Barka
+Ak’ordat|Ak'ordat|15548|37883|612|9
+#ES|Andalusia
+Aguadulce||36814|-2572|38|14
+Aguilar||37515|-4657|370|14
+Alora||36824|-4706|215|13
+Albox||37389|-2149|420|11
+Alcaudete||37591|-4082|672|11
+Alcalá del Río|Alcala del Rio|37518|-5982|22|11
+Archidona||37097|-4389|730|9
+Almodóvar del Río|Almodovar del Rio|37811|-5020|119|7
+Aracena||37894|-6561|675|7
+Albuñol|Albunol|36792|-3205|259|6
+Alhama de Granada||37007|-3990|879|6
+Aznalcóllar|Aznalcollar|37519|-6270|126|6
+Algodonales||36880|-5405|369|6
+Arjona||37935|-4055|452|6
+Alcalá de los Gazules|Alcala de los Gazules|36462|-5724|209|6
+Alcalá del Valle|Alcala del Valle|36904|-5172|619|5
+Alameda||37209|-4659|430|5
+Algarrobo||36774|-4040|90|5
+#ES|Aragon
+Andorra||40977|-447|712|8
+Alagón|Alagon|41770|-1119|232|6
+#ES|Balearic Islands
+Andratx||39576|2420|81|12
+Alaior||39930|4140|117|9
+Artà|Arta|39693|3350|128|6
+#ES|Basque Country
+Azpeitia||43182|-2267|84|15
+Andoain||43217|-2025|50|15
+Arrigorriaga||43210|-2886|50|12
+Azkoitia||43177|-2311|115|11
+Amurrio||43050|-3000|219|10
+Aretxabaleta||43034|-2505|246|6
+#ES|Canary Islands
+Antigua||28423|-14014|263|12
+Agaete||28100|-15700|55|5
+Arafo||28340|-16422|500|5
+#ES|Castille and León
+Astorga||42459|-6056|865|12
+Arroyo de la Encomienda||41610|-4797|691|12
+Arévalo|Arevalo|41063|-4720|827|8
+Aguilar de Campoo||42795|-4259|904|7
+Arenas de San Pedro||40210|-5087|531|7
+Almazán|Almazan|41486|-2531|948|6
+#ES|Castille-La Mancha
+Alovera||40594|-3245|644|11
+Almagro||38889|-3711|651|9
+Argés|Arges|39806|-4057|655|7
+Argamasilla de Alba||39129|-3092|674|7
+Almodóvar del Campo|Almodovar del Campo|38709|-4179|675|7
+Argamasilla de Calatrava||38730|-4076|668|5
+Añover de Tajo|Anover de Tajo|39989|-3766|598|5
+#ES|Catalonia
+Abrera||41517|1901|111|12
+Argentona||41553|2401|85|12
+Alcanar||40543|481|67|9
+Alella||41494|2295|98|9
+Arenys de Munt||41614|2540|149|9
+Alpicat||41666|556|260|6
+Artés|Artes|41798|1954|317|6
+Almacelles||41732|437|253|6
+Anglès|Angles|41956|2636|183|6
+Agramunt||41787|1097|342|5
+Alcarràs|Alcarras|41567|517|130|5
+#ES|Extremadura
+Azuaga||38267|-5683|583|8
+Arroyo de la Luz||39485|-6584|352|7
+Alburquerque||39221|-7002|426|6
+Aceuchal||38646|-6486|307|5
+#ES|Galicia
+As Pontes de García Rodríguez|As Pontes de Garcia Rodriguez|43453|-7852|361|11
+A Pobra do Caramiñal|A Pobra do Caraminal|42603|-8938|8|9
+Arzúa|Arzua|42933|-8150|408|7
+Abegondo||43217|-8283|97|5
+Allariz||42190|-7802|467|5
+Ares||43430|-8243|6|5
+#ES|La Rioja
+Arnedo||42228|-2101|531|14
+Alfaro||42180|-1750|298|10
+#ES|Madrid
+Alpedrete||40659|-4025|919|13
+Amposta||40426|-3622|692|9
+#ES|Murcia
+Abarán|Abaran|38206|-1399|188|13
+Alguazas||38054|-1251|100|8
+Abanilla||38205|-1042|207|7
+Algar||37647|-867|39|6
+#ES|Navarre
+Atarrabia||42832|-1607|436|10
+Altsasu||42900|-2165|517|7
+#ES|Valencia
+Alginet||39267|-467|34|13
+Albatera||38179|-871|21|12
+Alberic||39117|-517|29|11
+Alcàsser|Alcasser|39368|-444|31|10
+Almussafes||39283|-417|8|7
+Alcalà de Xivert|Alcala de Xivert|40300|233|147|7
+Albaida||38838|-517|328|6
+Ayora||39059|-1056|609|6
+Almenara||39750|-217|7|5
+#FI|Paijat-Hame
+Asikkala||61217|25500|74|8
+#FI|Pirkanmaa
+Akaa||61167|23867|84|8
+Amuri||61500|23745|129|5
+#FI|South Ostrobothnia
+Alavus||62583|23617|98|11
+Älajärvi|AElajaervi|63000|23816|69|10
+Alajärvi|Alajaervi|63000|23817|113|9
+Ähtäri|AEhtaeri|62554|24062|175|5
+#FI|Uusimaa
+Alppiharju||60189|24949|46|11
+Aurinkolahti||60203|25153|6|8
+Arabianranta||60207|24980|1|7
+Ala-Malmi||60248|25013|15|6
+Asola||60330|25051|30|6
+#FJ|Rotuma
+Ahau||-12500|177050|53|0
+#FR|Auvergne-Rhône-Alpes
+Ambérieu-en-Bugey|Amberieu-en-Bugey|45959|5352|247|13
+Aubenas||44620|4390|320|13
+Aubière|Aubiere|45751|3111|382|11
+Andrézieux-Bouthéon|Andrezieux-Boutheon|45526|4260|387|9
+Ambert||45549|3742|542|8
+Allières-et-Risset|Allieres-et-Risset|45099|5679|262|7
+Arpajon-sur-Cère|Arpajon-sur-Cere|44904|2457|604|6
+Amplepuis||45973|4330|435|5
+Aurec-sur-Loire||45369|4202|450|5
+Anse||45936|4719|178|5
+#FR|Bourgogne-Franche-Comté
+Avallon||47490|3908|259|9
+Auxonne||47193|5387|189|8
+#FR|Brittany
+Auray||47667|-2984|35|12
+Acigné|Acigne|48135|-1534|51|6
+Arradon||47626|-2823|24|5
+#FR|Centre-Val de Loire
+Amilly||47973|2772|115|13
+Amboise||47412|983|61|13
+Aubigny-sur-Nère|Aubigny-sur-Nere|47488|2439|186|6
+Argenton-sur-Creuse||46590|1520|112|5
+#FR|Grand Est
+Amnéville|Amneville|49257|6134|161|10
+Algrange||49363|6051|252|6
+Audun-le-Tiche||49472|5956|307|6
+Altkirch||47624|7240|311|6
+Ars-sur-Moselle||49078|6074|176|5
+#FR|Hauts-de-France
+Anzin||50372|3504|50|14
+Auchel||50503|2473|99|11
+Albert||50001|2651|69|11
+Annoeullin||50529|2932|25|11
+Aire-sur-la-Lys||50639|2399|24|10
+Aniche||50330|3253|48|10
+Arques||50734|2302|9|10
+Aulnoye-Aymeries||50201|3838|149|9
+Aulnoy-lez-Valenciennes||50333|3533|37|8
+Auby||50415|3054|27|8
+Achicourt||50274|2758|64|8
+Annezin||50532|2618|25|6
+#FR|New Aquitaine
+Ambarès-et-Lagrave|Ambares-et-Lagrave|44927|-491|10|13
+Arcachon||44661|-1173|5|12
+Andernos-les-Bains||44746|-1104|4|10
+Aytré|Aytre|46134|-1118|10|8
+Artigues-près-Bordeaux|Artigues-pres-Bordeaux|44859|-497|45|7
+Aire-sur-l'Adour||43703|-263|85|6
+Aixe-sur-Vienne||45797|1136|225|6
+Audenge||44684|-1013|5|6
+Arès|Ares|44766|-1134|7|5
+Ambazac||45957|1400|375|5
+#FR|Normandy
+Avranches||48684|-1357|101|9
+Agneaux||49119|-1106|47|5
+#FR|Occitanie
+Argeles||42547|3023|20|10
+Aureilhan||43244|96|309|8
+Auterive||43351|1475|181|7
+Aussillon||43499|2363|257|7
+Aigues-Mortes||43567|4191|7|7
+Aucamville||43671|1428|134|6
+#FR|Pays de la Loire
+Avrillé|Avrille|47507|-590|49|14
+Allonnes||47967|160|53|12
+Ancenis||47367|-1167|7|8
+Aizenay||46740|-1609|61|7
+Arnage||47926|187|42|6
+#FR|Provence-Alpes-Côte d'Azur
+Apt||43876|5396|231|12
+Auriol||43372|5634|232|10
+Auguste Raynaud||43714|7259|54|7
+#FR|Île-de-France
+Andrésy|Andresy|48982|2057|62|13
+Arnouville||48983|2417|69|13
+Aubergenville||48960|1855|46|12
+Arpajon||48589|2247|50|10
+Auvers-sur-Oise||49072|2170|31|7
+Ablon-sur-Seine||48727|2427|34|6
+#GA|Haut-Ogooué
+Akiéni|Akieni|-1175|13876|446|8
+#GB|England
+Addlestone||51371|-494|19|15
+Ashtead||51309|-300|75|13
+Alsager||53096|-2306|95|13
+Abbey Road||51535|-178|50|13
+Armthorpe||53535|-1053|10|13
+Ashby-de-la-Zouch||52746|-1473|126|12
+Atherstone||52575|-1547|89|11
+Aylestone||52604|-1146|72|11
+Attleborough||52518|1016|41|11
+Abbots Langley||51706|-418|128|10
+Annfield Plain||54857|-1738|237|10
+Amesbury||51175|-1781|81|10
+Abram||53509|-2593|38|10
+Attleborough||52513|-1455|87|10
+Alnwick||55413|-1706|62|8
+Ashbourne||53017|-1733|126|8
+Aveley||51500|252|32|8
+Adlington||53613|-2607|94|8
+Alcester||52217|-1867|45|7
+Anstey||52674|-1188|70|7
+Amble||55333|-1583|8|6
+Aylsham||52797|1251|34|6
+Axminster||50783|-2998|44|6
+Ash Vale||51264|-723|69|6
+Audley||53050|-2300|143|6
+Arlesey||52007|-266|43|6
+Askern||53616|-1152|13|6
+Aigburth||53365|-2918|28|6
+Appley Bridge||53578|-2721|21|5
+#GB|Northern Ireland
+Armagh||54350|-6667|37|15
+#GB|Scotland
+Armadale||55883|-3700|187|13
+Ardrossan||55650|-4807|21|11
+Annan||54988|-3256|20|9
+Alexandria||55994|-4586|23|7
+Auchterarder||56296|-3707|108|6
+Alness||57696|-4255|26|6
+#GB|Wales
+Abergavenny||51821|-3017|60|14
+Abergele||53284|-3582|18|11
+Abertillery||51730|-3134|228|11
+Abercarn||51647|-3135|103|10
+Aberkenfig||51540|-3596|39|10
+Abertridwr||51596|-3268|145|7
+Abercynon||51645|-3327|84|6
+Abercanaid||51724|-3366|160|5
+#GE|Kakheti
+Akhmeta||42035|45208|565|6
+#GE|Racha-Lechkhumi and Kvemo Svaneti
+Ambrolauri||42523|43150|564|2
+#GE|Samtskhe-Javakheti
+Akhalkalaki||41405|43486|1717|7
+#GF|Guyane
+Apatou||5155|-54343|15|10
+#GH|Eastern
+Akropong||5975|-85|454|11
+Akim Swedru||5894|-1016|140|10
+#GH|Western
+Aboso||5361|-1949|92|9
+#GL|Qeqertalik
+Aasiaat||68709|-52864|1|3
+#GM|Upper River
+Alohungari||13317|-14233|21|7
+#GP|Guadeloupe
+Anse-Bertrand||16472|-61507|17|5
+#GQ|Annobon
+Aual||-1446|5627||6
+#GQ|Wele-Nzas
+Abaamang||1676|10631|625|8
+#GR|Attica
+Ágios Stéfanos|Agios Stefanos|38147|23856|368|10
+Ampelákia|Ampelakia|37951|23528|19|7
+Aegina||37747|23428|4|7
+Anoixi||38133|23859|359|7
+Anávyssos|Anavyssos|37734|23944|6|6
+#GR|Central Greece
+Ámfissa|Amfissa|38528|22377|178|7
+Amárynthos|Amarynthos|38393|23885|6|6
+Alivéri|Aliveri|38417|24033|48|5
+#GR|Central Macedonia
+Alexándreia|Alexandreia|40627|22444|8|14
+Ágios Athanásios|Agios Athanasios|40716|22728|21|13
+Ágios Pávlos|Agios Pavlos|40641|22960|145|7
+Aridaía|Aridaia|40973|22056|127|7
+Asvestochóri|Asvestochori|40641|23025|357|7
+#GR|Crete
+Ágios Nikólaos|Agios Nikolaos|35191|25715|30|11
+Arkalochóri|Arkalochori|35146|25265|386|9
+Atsipópoulo|Atsipopoulo|35353|24434|174|5
+#GR|East Macedonia and Thrace
+Arrianá|Arriana|41081|25695|58|15
+#GR|Epirus
+Anatolí|Anatoli|39635|20866|503|12
+#GR|Ionian Islands
+Argostólion|Argostolion|38181|20489|2|10
+#GR|Peloponnese
+Asíni|Asini|37544|22864|29|5
+#GR|South Aegean
+Archángelos|Archangelos|36215|28115|163|8
+Afántou|Afantou|36294|28162|28|6
+#GR|Thessaly
+Almyrós|Almyros|39182|22759|58|8
+Ampelóna|Ampelona|39745|22366|72|7
+Agriá|Agria|39341|23013|1|6
+#GR|West Greece
+Archaía Olympía|Archaia Olympia|37648|21627|46|11
+Áyios Konstandínos|Ayios Konstandinos|38633|21400|81|7
+Aitolikó|Aitoliko|38437|21354|4|6
+Astakós|Astakos|38536|21081|7|6
+#GR|West Macedonia
+Argos Orestiko||40454|21259|654|7
+#GT|Chimaltenango
+Acatenango||14555|-90944|1563|12
+#GT|Huehuetenango
+Aguacatán|Aguacatan|15342|-91311|1667|6
+#GT|Jutiapa
+Atescatempa||14176|-89742|684|12
+#GT|Quetzaltenango
+Almolonga||14816|-91495|2261|12
+#GU|Agana Heights
+Agana Heights Village||13466|144748|52|4
+#GU|Agat
+Agat Village||13383|144660|3|3
+#GU|Asan
+Asan-Maina Village||13472|144717|3|2
+#GU|Tamuning
+Apotgan||13488|144776|7|5
+#GW|Bissau
+Ajuda||11860|-15614|45|10
+#GY|Pomeroon-Supenaam
+Anna Regina||7266|-58483|1|12
+#HK|Central and Western
+Admiralty||22280|114163|66|5
+#HK|Eastern District
+Aldrich Garden||22281|114229||9
+#HK|Southern District
+Ap Lei Chau Estate||22245|114151|3|12
+Aberdeen Centre||22248|114154|3|8
+#HN|Comayagua Department
+Ajuterique||14383|-87710|681|11
+#HN|El Paraíso Department
+Alauca||13850|-86683|510|9
+#HN|Francisco Morazán Department
+Alubarén|Alubaren|13796|-87469|311|6
+#HN|Santa Bárbara Department
+Azacualpa||15344|-88552|279|6
+#HN|Valle Department
+Amapala||13292|-87654|25|13
+Aramecina||13742|-87710|136|7
+#HN|Yoro Department
+Agua Blanca Sur||15250|-87883|49|8
+#HT|Ouest
+Anse à Galets|Anse a Galets|18834|-72866|22|7
+#HT|Sud
+Aquin||18280|-73394|11|5
+#HU|Borsod-Abaúj-Zemplén
+Alsózsolca|Alsozsolca|48070|20880|113|6
+#HU|Csongrád
+Algyő|Algyo|46335|20208|78|5
+#HU|Heves County
+Átány|Atany|47616|20362|93|5
+#HU|Komárom-Esztergom
+Ács|Acs|47712|18011|116|7
+#HU|Pest County
+Albertirsa||47243|19617|125|12
+Albertfalva||47444|19037|102|12
+Aszód|Aszod|47652|19479|128|6
+Árpádföld|Arpadfoeld|47533|19197|147|6
+#IE|Leinster
+Arklow||52794|-6150|2|13
+Ashbourne||53512|-6398|68|13
+Athy||52991|-6980|62|10
+An Ros||53524|-6105|19|9
+Artane||53387|-6214|39|5
+#IL|Haifa
+Atlit||32689|34942|22|9
+#IL|Jerusalem
+Abū Ghaush|Abu Ghaush|31806|35109|707|8
+#IL|Northern District
+Abū Sinān|Abu Sinan|32959|35172|97|14
+Al-Bi‘na|Al-Bi`na|32930|35271|321|8
+#IL|Southern District
+AlSayid Tribe||31283|34915|393|6
+#IL|Tel Aviv
+Azor||32024|34806|25|13
+#IM|Andreas
+Andreas||54367|-4433|26|0
+#IN|Andhra Pradesh
+Arempudi||17270|82375|32|5
+Amarāvati|Amaravati|16542|80515|7|0
+#IN|Assam
+Ambikapur Part-X||24799|92792|20|14
+Ambicapur Pt VIII||24821|92775|15|12
+Amingaon||26185|91679|51|9
+Azara||26124|91612|52|9
+Amguri||26815|94526|104|8
+Ambicapur Pt VI||24783|92789|19|8
+Asudubi||26023|90666|47|7
+#IN|Bihar
+Anwāri|Anwari|25153|83623|80|7
+Asarganj||25150|86686|51|6
+Arak||25612|84222|68|6
+#IN|Chhattisgarh
+Abhanpur||21053|81741|324|14
+Ambāgarh Chauki|Ambagarh Chauki|20776|80746|335|10
+Adbhār|Adbhar|21953|83025|252|7
+Antāgarh|Antagarh|20093|81159|368|7
+Aamadi||20771|81490|305|7
+#IN|Delhi
+Asola||28457|77184|253|13
+#IN|Goa
+Arambol||15687|73704|7|10
+Anjuna||15580|73745|100|10
+Aldona||15593|73875|17|7
+Aquem||15258|73986|15|7
+#IN|Gujarat
+Anandpar||22322|70846|123|13
+Adalaj||23165|72581|70|12
+Antarjal||23054|70083|37|11
+Alikherva||22281|73718|90|9
+Ahmadabad Cantonment||23048|72610|68|8
+Ambaliyasan||23450|72423|93|7
+Ādri|Adri|20966|70289|10|7
+Antaliya||20765|72991|11|7
+Amboli||21289|72951|12|6
+Amardad||21697|69721|33|6
+Arsodiya||23249|72521|69|6
+#IN|Haryana
+Ateli Mandi||28101|76260|290|8
+Akaira||28231|76851|267|7
+Āsan Khurd|Asan Khurd|29404|76873|237|7
+#IN|Jammu and Kashmir
+Awantipur||33920|75015|1601|13
+Arwani||33782|75067|1593|12
+Abbaspur||33817|73976|1318|10
+Aish Maqām|Aish Maqam|33865|75284|1911|7
+Ashmuji Khalsa||33671|75073|1643|6
+#IN|Jharkhand
+Arā|Ara|23760|85542|347|14
+Arsande||23430|85351|628|10
+Akdoni Khurd||24158|86280|273|6
+#IN|Karnataka
+Ajjampur||13728|76007|756|11
+Arshakunti||13078|77422|874|11
+Allipura||13488|77459|728|10
+Adyār|Adyar|12870|74923|15|7
+Alūr|Alur|12978|75991|975|7
+Alevūr|Alevur|13310|74789|16|6
+Addūru|Adduru|12920|74957|20|5
+Arkula||12874|74943|33|5
+#IN|Kerala
+Avinissery||10470|76230|32|14
+Anjūr|Anjur|10592|76154|14|11
+Ala||10254|76186|11|10
+Anthicad||10458|76121|24|10
+Alūr|Alur|10603|76096|34|10
+Azhikkal||11940|75305|11|8
+Āvānūr|Avanur|10602|76175|18|8
+Akathiyūr|Akathiyur|10681|76094|31|6
+Adātt|Adatt|10544|76142|20|6
+#IN|Lakshadweep
+Andrott||10812|73674||11
+Amini||11114|72719|1|8
+Agatti||10835|72182|1|8
+#IN|Madhya Pradesh
+Amarwāra|Amarwara|22298|79169|807|14
+Amānganj|Amanganj|24427|80036|314|14
+Akoda||26533|78904|145|13
+Athner||21624|77915|671|12
+Akodia||23380|76599|463|12
+Alampur||26025|78797|161|11
+Ahīrkheri|Ahirkheri|22680|75805|570|10
+Antri||26058|78210|266|10
+Amkhera||23213|79933|392|9
+Amarkantak||22675|81759|1042|8
+Ambara||22190|78671|821|6
+#IN|Maharashtra
+Ahiri||19414|80004|140|15
+Asangaon||19439|73306|80|13
+Ashti||19377|76225|441|13
+Āshti|Ashti|18805|75176|604|12
+Amgaon||21372|80384|314|11
+Allāpalli|Allapalli|19432|80064|144|11
+Ambivali T. Tungartan||18898|73173|25|6
+Anantpur||19933|75012|536|6
+Artist Village||19032|73043|200|6
+Anjani Budruk||20172|76648|549|6
+Ambepur||18688|72986|20|5
+#IN|Manipur
+Andro||24749|94043|775|9
+#IN|Odisha
+Athmallik||20721|84535|91|12
+Arjyapalli Marine||19317|84974|12|8
+Anjira||20826|86034|142|7
+Agastinuagan||19370|85034|1|6
+#IN|Punjab
+Amloh||30608|76232|267|15
+Alāwalpur|Alawalpur|31432|75656|248|8
+Akālgarh|Akalgarh|30760|75646|241|8
+Amargarh||30462|76014|254|7
+Akālgarh|Akalgarh|29821|75891|230|7
+Apra||31086|75879|252|6
+#IN|Rajasthan
+Atru||24877|76661|290|11
+Ākera|Akera|27012|75809|462|9
+Alīgarh|Aligarh|25965|76083|279|8
+#IN|Tamil Nadu
+Ammāpettai|Ammapettai|10795|79320|35|15
+Alapakam||12894|80111|28|14
+Aliyābād|Aliyabad|12632|79216|172|14
+Adigaratti||11334|76697|2007|14
+Attayampatti||11533|78054|235|14
+Achanputtūr|Achanputtur|9041|77297|187|14
+Anuppankulam||9419|77843|95|14
+Ashokapuram||11102|76954|434|13
+Ammūr|Ammur|12975|79363|178|13
+Arumbāvūr|Arumbavur|11381|78730|157|12
+Aravakkurichchi||10776|77909|170|12
+Ālangudi|Alangudi|10361|78985|81|12
+Alangānallūr|Alanganallur|10047|78090|25|12
+Ayyampālaiyam|Ayyampalaiyam|10225|77748|278|12
+Arachchalūr|Arachchalur|11163|77701|251|12
+Attūr|Attur|8322|77256|48|12
+Avalpūndurai|Avalpundurai|11231|77718|223|12
+Aduthurai||11015|79481|25|12
+Ayodhyāpattanam|Ayodhyapattanam|11675|78241|323|12
+Arasūr|Arasur|11087|77115|378|12
+Azhagiapāndipuram|Azhagiapandipuram|8301|77444|49|11
+Annāl Agrahāram|Annal Agraharam|10949|79368|30|11
+Attippattu||13263|80291|7|11
+Anjugramam||8154|77578|16|11
+Ammavarikuppam||13178|79413|169|11
+Āppukkudal|Appukkudal|11468|77577|183|11
+Acharapākkam|Acharapakkam|12403|79817|44|10
+Agrahāra Sāmakkulam|Agrahara Samakkulam|11153|77011|407|10
+Agaram||13110|80233|13|10
+Ālwārkurichchi|Alwarkurichchi|8784|77395|91|10
+Āvadattūr|Avadattur|11701|77864|282|10
+Achchippatti||10700|77012|285|10
+Attanūr|Attanur|11501|78136|267|10
+Agastīswaram|Agastiswaram|8100|77522|15|10
+Alagappapuram||8147|77541|27|10
+Ālappākkam|Alappakkam|12676|79995|51|9
+Alwa Tirunagari||8606|77940|20|9
+Arimalam||10255|78884|80|9
+Annavāsal|Annavasal|10461|78700|128|9
+Adaikkakuzhi||8308|77141|20|9
+Ayakod||8346|77299|71|9
+Ammāpettai|Ammapettai|11620|77743|186|9
+Attāni|Attani|11522|77512|192|8
+Attippatti||9494|78127|96|8
+Alagāpuram|Alagapuram|11887|78918|159|8
+Abirāmam|Abiramam|9442|78440|45|8
+Alamelumangapuram||12942|79187|200|8
+Ammanūr|Ammanur|13065|79653|92|8
+Alamādi|Alamadi|13209|80110|33|7
+Airāvadanallūr|Airavadanallur|9906|78155|131|7
+Ariyur||12876|79103|224|7
+Ālāndurai|Alandurai|10953|76790|448|7
+Ayyānūr Teppakkuttai|Ayyanur Teppakkuttai|11596|77984|266|7
+Anantapuram||12119|79382|101|7
+Ammāpattinam|Ammapattinam|10015|79231|7|7
+Arumbanūr|Arumbanur|9994|78192|151|6
+Arakandanallūr|Arakandanallur|11972|79223|97|6
+Ālappākkam|Alappakkam|11599|79719|7|6
+Aruvankad||11363|76758|1920|5
+#IN|Telangana
+Ālampur|Alampur|15880|78134|274|14
+Atmākūr|Atmakur|16338|77809|327|12
+Allipur||17676|77629|623|11
+Anwaram||17633|78380|605|7
+#IN|Tripura
+Anandanagar||23809|91313|48|14
+Amarpur||23526|91659|42|12
+#IN|Uttar Pradesh
+Ambahta||29857|77336|269|14
+Allāhganj|Allahganj|27545|79687|144|14
+Amethī|Amethi|26157|81805|109|14
+Amethi||28017|81050|133|12
+Atraulia||26333|82947|91|12
+Anandnagar||27101|83272|89|11
+Amānpur|Amanpur|27712|78738|171|10
+Antu||26057|81903|100|8
+Ant||27443|80469|135|7
+Aurās|Auras|26914|80508|131|7
+#IN|West Bengal
+Ahmadpur||23830|87687|51|9
+#IQ|Salah ad Din
+AlZwya||35261|43407|140|15
+#IR|Ardabil Province
+Ābī Beyglū|Abi Beyglu|38281|48551|1319|7
+Aşlān Dūz|Aslan Duz|39444|47406|154|6
+‘Anbarān|'Anbaran|38488|48432|1530|6
+#IR|Bushehr
+Ābdān|Abdan|28080|51768|38|7
+Akhand||27436|52750|23|7
+#IR|Chaharmahal and Bakhtiari
+Ardal||32000|50662|1860|10
+Ālūnī|Aluni|31553|51061|1849|5
+#IR|East Azerbaijan
+Ānā Khātūn|Ana Khatun|38153|46257|1391|8
+Alvār-e Pā’īn|Alvar-e Pa'in|38145|46147|1337|7
+#IR|Fars
+Ārdaḵān|Ardakan|30260|51985|2235|15
+Ābādeh Ţashk|Abadeh Tashk|29811|53728|1598|7
+Akbarābād|Akbarabad|29246|52781|1505|6
+#IR|Gilan Province
+Asālem|Asalem|37733|48953|34|11
+#IR|Golestan
+Āq Qāyeh|Aq Qayeh|37275|55159|37|8
+Anbār Ālūm|Anbar Alum|37133|54620|3|7
+Āqābād|Aqabad|37300|55242|52|6
+#IR|Hamadan Province
+Aznāv|Aznav|34300|48858|1807|5
+#IR|Ilam Province
+Arkavaz||33383|46598|1326|12
+Āsmānābād|Asmanabad|33853|46461|1216|6
+#IR|Isfahan
+Alavijeh||33055|51083|1857|15
+Aşgharābād|Asgharabad|32652|51480|1613|7
+#IR|Khuzestan
+Arvand Kenār|Arvand Kenar|29978|48518|11|11
+Abū Ḩomeyz̧eh|Abu Homeyzeh|31529|48220|14|6
+Ām Ālṭamīr|Am Altamir|31250|48555|13|5
+#IR|Kurdistan Province
+Āsāvleh|Asavleh|35295|47043|1433|8
+#IR|Markazi
+Āshtīān|Ashtian|34523|50006|2073|9
+Āstāneh|Astaneh|33883|49352|2014|7
+#IR|Māzandarān
+'Abās Ābād|'Abas Abad|36728|51106|-19|13
+Araţeh|Arateh|36491|52951|30|10
+#IR|Qazvin Province
+Asfarvarīn|Asfarvarin|35935|49749|1274|12
+Ardāq|Ardaq|36053|49824|1233|5
+#IR|Semnan
+Ārādān|Aradan|35249|52494|874|6
+#IR|South Khorasan Province
+Āyask|Ayask|33887|58382|1367|5
+#IR|Tehran
+Aḥmad Ābād Mostūfī|Ahmad Abad Mostufi|35640|51213|1118|14
+Ālārd|Alard|35513|51060|1062|12
+Āb Sard|Ab Sard|35623|52153|1931|11
+#IR|Zanjan
+Ābbar|Abbar|36926|48958|624|8
+#IS|West
+Akranes||64322|-22075|8|7
+#IT|Abruzzo
+Alba Adriatica||42832|13926|5|11
+Atri||42576|13989|444|6
+#IT|Apulia
+Apricena||41786|15444|73|13
+Aradeo||40129|18130|75|10
+Alberobello||40784|17236|428|9
+Avetrana||40351|17733|62|7
+Ascoli Satriano||41204|15566|393|6
+Alezio||40062|18057|75|5
+Alessano||39894|18332|140|5
+#IT|Basilicate
+Avigliano||40733|15720|800|6
+#IT|Calabria
+Acri||39496|16386|720|10
+Amantea||39127|16075|50|9
+Andreotta||39308|16218|300|7
+#IT|Campania
+Ariano Irpino-Martiri||41160|15106|617|10
+Atripalda||40919|14827|294|9
+Avella||40960|14601|207|7
+Agerola||40638|14539|670|7
+Airola||41059|14559|270|7
+Anacapri||40552|14212|275|6
+Arienzo||41027|14498|103|5
+#IT|Emilia-Romagna
+Alfonsine||44508|12037|6|10
+Anzola dell'Emilia||44542|11205|38|9
+Argenta||44614|11835|4|7
+#IT|Friuli Venezia Giulia
+Azzano Decimo||45909|12664|14|12
+Aviano||46071|12595|159|8
+Aviano-Castello||46068|12583|159|5
+#IT|Lazio
+Anguillara Sabazia||42079|12284|195|14
+Artena||41741|12907|420|11
+Alatri||41732|13341|502|10
+Anagni||41744|13155|424|9
+Ara Nova||41933|12240|73|6
+#IT|Liguria
+Arenzano||44405|8683|10|11
+Alassio||44004|8167|6|11
+Albisola Superiore||44339|8510|10|10
+Andora||43955|8141|7|7
+Arcola||44118|9912|70|6
+Albissola Marina||44329|8503||5
+#IT|Lombardy
+Agrate Brianza||45574|9348|165|14
+Albino||45764|9799|342|13
+Alzano Lombardo||45737|9726|304|13
+Arluno||45503|8942|156|10
+Assago||45409|9126|109|8
+Albano Sant'Alessandro||45688|9767|243|8
+Arcisate||45856|8868|381|8
+Azzano San Paolo||45658|9673|230|7
+Asola||45220|10412|42|7
+Appiano Gentile||45735|8981|366|7
+Arconate||45541|8849|178|6
+Albiate||45655|9250|233|6
+Albavilla||45800|9185|423|6
+Almenno San Salvatore||45750|9597|328|6
+Almè|Alme|45739|9616|294|6
+Adro||45621|9962|271|6
+Albizzate||45727|8803|334|5
+#IT|Piedmont
+Arona||45759|8557|212|13
+Avigliana||45080|7396|383|9
+Airali||44817|7252|472|6
+Almese-Rivera||45119|7401|421|5
+#IT|Sardinia
+Arzachena||41076|9391|85|6
+Arbus||39526|8600|311|6
+#IT|Sicily
+Aci Sant'Antonio||37605|15123|302|10
+Aragona||37399|13620|400|9
+Acate||37023|14493|199|8
+Agira||37656|14520|650|8
+Altofonte||38043|13294|350|7
+Altavilla Milicia||38038|13549|73|5
+#IT|Trentino-Alto Adige
+Arco||45918|10887|91|12
+Ala||45761|11005|180|5
+#IT|Tuscany
+Agliana||43902|11005|46|15
+Altopascio||43816|10677|19|9
+Abbadia San Salvatore||42881|11672|822|6
+#IT|Umbria
+Amelia||42552|12421|405|6
+#IT|Veneto
+Adria||45054|12056|4|13
+Altavilla Vicentina||45513|11469|45|10
+Arbizzano-Santa Maria||45495|10938|90|5
+#JM|Saint Catherine Parish
+Above Rocks||18107|-76876|290|5
+#JM|Saint Mary Parish
+Annotto Bay||18272|-76765|5|6
+#JO|Ajloun
+‘Ayn Jannā|`Ayn Janna|32335|35764|871|10
+#JO|Balqa
+Al Karāmah|Al Karamah|31954|35580|-255|9
+#JO|Irbid
+Aţ Ţurrah|At Turrah|32640|35989|466|15
+Aţ Ţayyibah|At Tayyibah|32543|35718|388|13
+Ash Shajarah||32644|35942|454|11
+#JO|Jerash
+Al Kittah||32277|35841|698|6
+#JO|Karak
+Al Mazār al Janūbī|Al Mazar al Janubi|31067|35695|1239|9
+‘Ayy|`Ayy|31134|35644|909|7
+Al Qaţrānah|Al Qatranah|31251|36049|773|7
+Al Khinzīrah|Al Khinzirah|31051|35606|1067|5
+#JO|Mafraq
+Al Ḩamrā’|Al Hamra'|32440|36153|697|6
+#JO|Ma’an
+Al Quwayrah||29800|35312|813|7
+#JO|Zarqa
+Al Azraq ash Shamālī|Al Azraq ash Shamali|31882|36830|521|15
+#JP|Aomori
+Ajigasawa||40774|140203|37|10
+#JP|Fukui
+Asahi||35973|136125|19|10
+#JP|Fukuoka
+Ashiya||33873|130654|37|14
+#JP|Fukushima
+Asakawa||37083|140414|306|6
+#JP|Gifu
+Anpachi||35335|136665|13|14
+#JP|Gunma
+Akaiwa||36207|139439|27|11
+#JP|Hokkaido
+Akabira||43551|142053|57|14
+Akkeshi||43036|144853|57|9
+Abira||42817|141833|34|8
+Ashoro||43237|143543|117|7
+#JP|Hyōgo
+Amaji||34991|134759|89|11
+#JP|Kagoshima
+Akaren||28317|129933|6|7
+Amagi||27817|128900|51|6
+#JP|Mie
+Aoyama-hane||34662|136170|200|12
+Asahi||35034|136664|45|11
+#JP|Miyazaki
+Aya||31983|131267|100|7
+#JP|Nagano
+Ashida||36270|138318|730|7
+Ajima||35517|137883|496|6
+#JP|Nara
+Asuka||34481|135820|100|6
+#JP|Tokyo
+Akabane||35782|139721|13|11
+Aobadai||35651|139693|31|8
+Asakusabashi||35700|139784|12|8
+Asahigaoka||35735|139677|39|7
+Azabu-jūban|Azabu-juban|35656|139735|19|6
+#JP|Toyama
+Asahi||36946|137560|58|9
+#JP|Yamagata
+Aratokō|Aratoko|38184|140093|185|13
+Aterazawa||38384|140212|113|8
+#KE|Kisumu County
+Ahero||-174|34919|1155|12
+Awasi||-168|35082|1293|5
+#KG|Batken
+Aydarken||39943|71342|1928|12
+Andarak||39768|69464|1601|8
+#KG|Issyk-Kul
+Ak-Suu||42499|78527|1814|14
+#KG|Naryn Region
+At-Bashi||41170|75801|2047|15
+Ak-Dzhar||41174|75789|2042|6
+#KH|Battambang
+Ampil Pram Daeum||13260|102770|32|13
+#KH|Kampong Cham
+Areaks Tnaot||12367|105638|28|7
+#KH|Kampong Chhnang
+Anhchanh Rung||12352|104426|32|5
+#KH|Kampong Thom
+Aachar Leak||12726|104894|22|6
+#KH|Kampot
+Andoung Khmaer||10607|104174|4|11
+Angkor Meas||10769|104376|31|7
+#KH|Kandal
+Ampov Prey||11387|104880|12|8
+#KH|Kep
+Angkoul||10467|104386|3|9
+#KH|Preah Sihanouk
+Andoung Thma||10670|103797|7|7
+#KH|Prey Veng
+Angkor Sar||11252|105623|11|10
+Angkor Angk||11161|105314|6|5
+#KH|Pursat
+Anlong Thnaot||12528|104200|17|9
+Anlong Reab||12279|103017|290|5
+#KH|Svay Rieng
+Andoung Trabaek||11580|105765|19|6
+#KM|Anjouan
+Adda-Douéni|Adda-Doueni|-12292|44497|706|11
+#KW|Al Asimah
+Ash Shāmīyah|Ash Shamiyah|29347|47962|9|14
+Az Zawr||29443|48275|5|6
+#KW|Al Aḩmadī
+Al Wafrah||28639|47931|164|10
+#KY|
+Ally Land||19341|-81119|10|9
+#KZ|
+Aksuat||48717|83700|534|7
+#KZ|Aqmola
+Aksu||52444|71958|278|9
+Astrakhanka||51531|69797|302|6
+#KZ|Atyrau Oblisi
+Akkistau||47221|51006|-8|8
+#KZ|East Kazakhstan
+Asubulak||49540|82995|609|6
+#KZ|Karaganda
+Aktau||48033|72833|765|10
+Aktas||49780|72961|558|10
+Aqadyr||48260|72859|693|10
+Aktau||50235|73067|503|10
+#KZ|Turkistan
+Atakent||40848|68506|263|13
+Asyqata||40895|68364|265|11
+Ashchysay||43554|68898|816|6
+#KZ|Zhetysu Region
+Atameken||44213|80206|721|5
+#LA|Attapu
+Attapeu||14811|106832|100|4
+#LB|Bekaa
+Aaïtanît|Aaitanit|33561|35670|1051|7
+#LB|Mount Lebanon
+Aajaltoûn|Aajaltoun|33965|35683|882|10
+#LC|Anse-la-Raye
+Anse La Raye||13946|-61039|99|1
+#LT|Utena
+Anykščiai|Anyksciai|55526|25103|74|11
+#LV|Aizkraukle Municipality
+Aizkraukle||56605|25255|88|7
+#LV|Alūksne Municipality
+Alūksne|Aluksne|57422|27047|193|6
+#LV|South Kurzeme Municipality
+Aizpute||56721|21602|62|8
+#LV|Ādaži
+Ādaži|Adazi|57071|24337|5|7
+#LY|Al Butnan
+Al Bardīyah|Al Bardiyah|31756|25085|98|9
+#LY|Al Jabal al Akhdar
+Al Abraq||32790|22001|682|8
+#LY|Al Jafarah
+Al Māyah|Al Mayah|32802|12879|19|14
+#LY|Al Marqab
+Al Khaḑrā’|Al Khadra'|32444|13767|402|10
+#LY|Al Wahat
+Awjilah||29108|21287|41|5
+#LY|Ghat
+Al Barakāt|Al Barakat|24894|10183|677|10
+#LY|Jabal al Gharbi
+Abū Zayyān|Abu Zayyan|32100|12979|818|14
+Ar-Raḥaībāt|Ar-Rahaibat|31846|11844|574|10
+Ar Rujbān|Ar Rujban|31950|12167|523|6
+#LY|Murzuq District
+Al Qaţrūn|Al Qatrun|24951|14649|479|7
+#MA|Beni Mellal-Khenifra
+Afourer||32207|-6538|516|14
+Al Qbab||32741|-5520|1251|9
+Aghbala||32481|-5643|1703|7
+Aït Ouaoumana|Ait Ouaoumana|32710|-5806|718|6
+#MA|Casablanca-Settat
+Arbaa Laaounate||32743|-8195|182|6
+#MA|Dakhla-Oued Ed-Dahab
+Aousserd||22554|-14330|306|6
+#MA|Drâa-Tafilalet
+Agdz||30694|-6446|940|12
+Alnif||31114|-5172|871|5
+#MA|Fes-Meknes
+Almis du Guigou||33387|-4829|1491|11
+Aïn Cheggag|Ain Cheggag|33893|-5037|626|11
+Ain Aicha||34461|-4690|253|8
+Aïn Leuh|Ain Leuh|33290|-5339|1424|5
+Ain Karma||34007|-5616|267|5
+Al Machouar - Stinia||33885|-5556|547|5
+#MA|Oriental
+Aklim||34920|-2430|102|11
+#MA|Rabat-Salé-Kénitra
+Ar Rommani||33528|-6603|313|13
+Al M’aziz|Al M'aziz|33671|-6316|214|10
+#MA|Souss-Massa
+Akka||29389|-8255|522|8
+#MA|Tanger-Tetouan-Al Hoceima
+Ajdir||35195|-3912|115|6
+#MD|Anenii Noi
+Anenii Noi||46878|29235|28|8
+#ME|Andrijevica
+Andrijevica||42734|19792|783|1
+#MG|Alaotra Mangoro
+Antanandava||-19083|47950|1090|13
+#MG|Analamanga
+Ambohitrandriamanitra||-19083|47783|1465|8
+Anjepy||-18850|47717|1550|6
+Ambohitseheno||-18783|47800|1479|6
+#MG|Analanjirofo
+Antakotako||-15317|49800|62|11
+#MG|Atsinanana
+Andovoranto||-18954|49109|10|10
+#MG|Sava
+Ambodivoara||-14333|49983|43|10
+#MG|Sofia
+Antsirabe Afovoany||-15950|48967|359|13
+Analalava||-14633|47750|20|10
+#MG|Upper Matsiatra
+Ambohimahasoa||-21117|47217|1141|12
+#MH|Ailinglaplap Atoll
+Airuk||7277|168820|13|0
+#MH|Ailuk Atoll
+Ailuk||10220|169980|10|0
+#MH|Arno Atoll
+Arno||7067|171554|14|2
+#MH|Aur Atoll
+Aur||8150|171169|10|0
+#MK|Arachinovo
+Арачиново|Arachinovo|42027|21563|313|13
+#ML|Bamako
+Abdel Begrou||15498|-6951|255|11
+#ML|Kidal
+Aguelhok||19461|859|421|8
+#MM|Yangon
+Ah Twin Pa Dan||16872|96030|5|13
+Ah Pyin Pa Dan||16861|96028|5|11
+Ananbin||16913|96133|21|8
+#MR|Hodh Ech Chargi
+Amourj||16109|-7214|267|6
+#MR|Nouakchott South
+Arafat||18046|-15972|3|0
+#MT|Attard
+Attard||35890|14443|69|11
+#MU|
+Anse La Raye||-19991|57632|6|6
+#MX|Chiapas
+Acala||16556|-92808|409|14
+Altamirano||16734|-92039|1270|9
+Acacoyagua||15343|-92676|95|8
+Altamirano||16883|-92150|1736|7
+Acapetahua||15282|-92689|33|6
+Álvaro Obregón|Alvaro Obregon|14922|-92378|47|6
+#MX|Chihuahua
+Ascensión|Ascension|31092|-107996|1299|13
+Ascención|Ascencion|31100|-107983|1297|12
+Adolfo López Mateos|Adolfo Lopez Mateos|28467|-107300|2097|9
+#MX|Coahuila
+Arteaga||25445|-100847|1679|8
+#MX|Guanajuato
+Arandas||20725|-101373|1736|8
+#MX|Guerrero
+Ajuchitlán del Progreso|Ajuchitlan del Progreso|18152|-100484|297|6
+Atliaca||17652|-99375|1291|6
+Acamixtla||18565|-99565|1566|5
+#MX|Hidalgo
+Acayuca||20028|-98841|2440|8
+Atotonilco de Tula||20007|-99220|2185|8
+Atotonilco el Grande||20287|-98669|2099|7
+Ajacuba||20093|-99122|2156|7
+Atitalaquia||20060|-99222|2096|6
+#MX|Jalisco
+Acatic||20781|-102911|1666|12
+Ayotlán|Ayotlan|20529|-102328|1620|12
+Ajijic||20300|-103261|1548|11
+Amatitán|Amatitan|20834|-103730|1251|11
+Acatlán de Juárez|Acatlan de Juarez|20422|-103591|1371|10
+Atotonilquillo||20392|-103124|1528|7
+Ayutla||20129|-104347|1344|7
+Atequiza||20395|-103139|1561|6
+Atemajac de Brizuela||20141|-103728|2322|5
+Antonio Escobedo||20800|-104017|1360|5
+Atoyac||20009|-103517|1356|5
+#MX|Michoacán
+Arteaga||18357|-102291|839|11
+Antúnez (Morelos)|Antunez (Morelos)|19013|-102204|368|9
+Álvaro Obregón|Alvaro Obregon|19825|-101039|1893|9
+Aguililla||18737|-102789|923|9
+Antúnez|Antunez|19016|-102206|353|9
+Ario de Rayón|Ario de Rayon|20026|-102347|1586|8
+Acuitzio del Canje||19496|-101333|2085|7
+Angahuan||19548|-102225|2396|6
+Angamacutiro de la Unión|Angamacutiro de la Union|20151|-101710|1693|5
+#MX|Morelos
+Anenecuilco||18779|-98986|1287|11
+Alpuyeca||18742|-99260|1050|8
+Atlatlahucan||18936|-98897|1636|8
+Amacuzac||18599|-99369|922|5
+Amayuca||18724|-98798|1442|5
+#MX|México
+Apaxco de Ocampo||19975|-99171|2201|14
+Atarasquillo||19328|-99469|2633|14
+Atlautla||19022|-98779|2365|11
+Almoloya del Río|Almoloya del Rio|19160|-99487|2604|10
+Atizapán|Atizapan|19250|-99550|2580|7
+Arenal||19381|-98943|2256|7
+Ayapango||19127|-98800|2447|6
+Amanalco de Becerra||19317|-100017|2807|6
+Acambay||19955|-99844|2559|6
+Acolman de Netzahualcóyotl|Acolman de Netzahualcoyotl|19640|-98908|2259|6
+Arbolada los Sauces||19816|-99044|2265|5
+#MX|Nayarit
+Ahuacatlán|Ahuacatlan|21051|-104485|984|7
+#MX|Oaxaca
+Asunción Nochixtlán|Asuncion Nochixtlan|17459|-97226|2080|13
+Asunción Ixtaltepec|Asuncion Ixtaltepec|16503|-95060|40|7
+Acatlán de Pérez Figueroa|Acatlan de Perez Figueroa|18539|-96605|162|6
+#MX|Puebla
+Almecatla||19143|-98236|2224|13
+Atencingo||18513|-98605|1096|11
+Actipan de Morelos||18960|-97799|2159|7
+Atempan||19839|-97459|1960|6
+Atoyatempan||18819|-97914|1952|6
+Atoluca||19855|-97354|1761|5
+#MX|Querétaro
+Amealco de Bonfil||20187|-100144|2633|8
+Amazcala||20700|-100263|1928|6
+Ajuchitlán|Ajuchitlan|20708|-100021|1970|5
+#MX|Quintana Roo
+Alfredo V. Bonfil||21088|-86847|7|15
+#MX|San Luis Potosí
+Axtla de Terrazas||21439|-98875|86|8
+#MX|Sinaloa
+Adolfo Ruiz Cortines||25704|-108719|21|13
+Adolfo Ruíz Cortínes|Adolfo Ruiz Cortines|25750|-108750|19|13
+Ahome||25920|-109173|13|11
+Adolfo López Mateos (El Tamarindo)|Adolfo Lopez Mateos (El Tamarindo)|24896|-107633|42|6
+Angostura||25366|-108161|28|5
+#MX|Sonora
+Álamos|Alamos|27030|-108939|381|9
+Altar||30716|-111838|414|8
+#MX|Tabasco
+Ayapa||18223|-93112|7|6
+Aldama||18241|-93351|12|5
+Anacleto Canabal 2da. Sección|Anacleto Canabal 2da. Seccion|17976|-93024|12|5
+#MX|Tamaulipas
+Aldama||22921|-98075|133|14
+Abasolo||24059|-98374|56|6
+#MX|Tlaxcala
+Acuitlapilco||19273|-98235|2300|13
+Amaxac de Guerrero||19347|-98171|2303|9
+Apetatitlán Antonio Carbajal|Apetatitlan Antonio Carbajal|19336|-98179|2291|7
+#MX|Veracruz
+Anahuac||22203|-97855|8|14
+Ángel R. Cabada|Angel R. Cabada|18596|-95446|30|12
+Amatlán de los Reyes|Amatlan de los Reyes|18847|-96916|751|9
+Atzacan||18907|-97083|1299|9
+Acultzingo||18719|-97304|1670|7
+Antón Lizardo|Anton Lizardo|19060|-95993|9|6
+Agua Dulce||20363|-97293|38|6
+#MX|Yucatán
+Acanceh||20813|-89453|14|11
+Akil||20265|-89347|29|10
+#MY|Johor
+Ayer Hitam||1915|103181|15|7
+#MY|Kedah
+Ayer Hangat||6421|99822|12|10
+Alor Merah||6167|100383|3|7
+#MY|Melaka
+Ayer Molek||2203|102317|10|11
+#NA|Erongo Region
+Arandis||-22417|14974|585|6
+#NA|Karas Region
+Aussenkehr||-28363|17413|147|5
+#NE|Agadez
+Adérbissinat|Aderbissinat|15628|7895|470|6
+#NE|Tillabéri Region
+Abala||14937|3434|239|15
+#NG|Abia State
+Arochukwu||5389|7912|82|11
+#NG|Akwa Ibom State
+Abak||4982|7789|56|13
+#NG|Bayelsa State
+Amassoma||4970|6109|11|7
+#NG|Benue State
+Aliade||7296|8483|161|10
+#NG|Cross River State
+Akankpa||5126|8190|80|7
+#NG|Delta
+Abraka||5790|6105|29|7
+#NG|Edo State
+Agenebode||7105|6694|55|13
+#NG|Enugu State
+Amagunze||6331|7652|92|10
+Ake-Eze||5917|7676|52|7
+Adani||6740|7011|59|6
+#NG|Gombe State
+Akko||10289|10973|615|6
+#NG|Kogi State
+Ankpa||7402|7632|334|15
+Adoru||6977|7163|90|8
+Abocho||7568|6986|412|7
+#NG|Kwara State
+Ajasse Ipo||8233|4817|402|13
+#NG|Lagos
+Aiyetoro||6459|3343|6|5
+#NG|Niger State
+Agaie||9009|6318|120|12
+Auna||10188|4723|198|9
+#NG|Ondo State
+Agbabu||6589|4834|12|9
+#NG|Oyo State
+Ago-Are||8505|3421|333|14
+Alapa||8617|4383|357|10
+#NG|Plateau State
+Amper||9355|9701|461|12
+#NG|Rivers State
+Ahoada||5083|6650|13|13
+#NG|Zamfara State
+Anka||12113|5927|318|12
+#NI|Chontales Department
+Acoyapa||11970|-85171|101|11
+#NL|Drenthe
+Angelslo||52781|6926|24|8
+#NL|Groningen
+Appingedam||53322|6858|2|12
+#NL|Limburg
+Arcen||51477|6181|18|9
+Amby||50862|5732|53|7
+#NL|North Brabant
+Asten||51404|5749|27|10
+Aalburg||51755|5132|3|7
+Aarle-Rixtel||51510|5638|19|5
+#NL|North Holland
+Anna Paulowna||52861|4836|-3|9
+Andijk||52747|5222|-1|7
+Akersloot||52561|4733|1|5
+#NL|Overijssel
+Aalanden||52533|6101|3|13
+#NL|Utrecht
+Abcoude||52273|4969|1|7
+Amerongen||52003|5460|19|5
+#NL|Zeeland
+Axel||51267|3908|5|8
+Arnemuiden||51502|3675|2|5
+#NO|Akershus
+Ås|As|59665|10795|98|8
+Ask||60071|11036|160|7
+#NO|Rogaland
+Åkrehamn|Akrehamn|59261|5187|4|5
+#NO|Vestland
+Austevoll||60110|5162|20|5
+#NO|Østfold
+Askim||59583|11163|136|12
+#NR|Anabar District
+Anabar||-508|166953|1|0
+#NR|Anibare District
+Anibare||-528|166952|8|0
+#NZ|Auckland
+Albany||-36717|174700|53|13
+#NZ|Canterbury
+Avonhead||-43508|172550|28|10
+Allenton||-43888|171740|110|7
+Addington||-43550|172617|12|5
+#NZ|Hawke's Bay Region
+Akina||-39648|176840|16|5
+#NZ|Manawatu-Wanganui
+Awapuni||-40376|175584|27|9
+#NZ|Otago
+Alexandra||-45248|169370|152|6
+#NZ|Wellington Region
+Avalon||-41198|174920|13|6
+#OM|Northeastern Governorate
+Al Qābil|Al Qabil|22571|58695|343|14
+#PA|Bocas del Toro Province
+Almirante||9301|-82402|9|9
+#PA|Coclé
+Aguadulce||8241|-80540|23|9
+Antón|Anton|8397|-80265|37|7
+#PA|Panamá Oeste Province
+Altos de San Francisco||8862|-79790|84|8
+#PE|Cuzco Department
+Anta||-13471|-72148|3431|6
+#PE|Huancavelica
+Ascencion||-12784|-74981|3690|9
+#PE|Huánuco Department
+Ambo||-10131|-76205|2098|7
+#PE|Junin
+Acolla||-11732|-75546|3465|7
+#PE|La Libertad
+Ascope||-7714|-79108|231|14
+Alto Salaverry||-8187|-78986|66|5
+#PE|Lima region
+Asentamiento Humano Nicolas de Pierola||-11936|-76706|1016|6
+#PE|Piura
+Ayabaca||-4640|-79715|2715|5
+#PE|Puno
+Azángaro|Azangaro|-14914|-70198|3914|13
+Atuncolla||-15689|-70144|3857|13
+#PE|Tumbes
+Aguas Verdes||-3481|-80245|9|9
+#PF|Îles du Vent
+Arue||-17528|-149534|39|9
+Afaahiti||-17744|-149324|16|5
+#PG|Milne Bay Province
+Alotau||-10315|150457|11|10
+#PG|Sandaun Province
+Aitape||-3137|142349|7|6
+#PH|Autonomous Region in Muslim Mindanao
+Anuling||6036|121007|54|10
+Awang||7153|124221|66|8
+#PH|Bicol Region
+Agupit||13423|123325|13|7
+Antipolo||13529|123162|23|5
+#PH|Cagayan Valley
+Alfonso Castañeda|Alfonso Castaneda|15801|121305|317|9
+Aritao||16298|121035|389|8
+Atulayan||17665|121694|26|6
+#PH|Calabarzon
+Alfonso||14141|120854|413|9
+Ambulong||14088|121061|14|9
+Alabat||14101|122013|4|8
+Aga||14097|120802|368|5
+#PH|Caraga
+Alegria||9467|125577|59|6
+Aras-asan||8888|126311|5|5
+#PH|Central Luzon
+Amuñgan|Amungan|15365|119958|10|12
+#PH|Central Visayas
+Asturias||10567|123716|4|8
+Argao||9879|123596|10|6
+Anonang||11000|124033|74|6
+#PH|Davao Region
+Astorga||6907|125456|45|11
+Andop||7861|125754|136|9
+Alejal||7384|125660|10|8
+#PH|Eastern Visayas
+Alangalang||11206|124847|45|8
+Allen||12501|124285|12|8
+Alegria||12398|124326|7|6
+Arteche||12265|125405|7|5
+#PH|Ilocos
+Alaminos||16156|119981|15|10
+Aguilar||15888|120238|12|10
+Asingan||16005|120670|50|9
+Alcala||15847|120524|27|9
+#PH|Mimaropa
+Agutaya||11148|120942|23|13
+#PH|Northern Mindanao
+Agusan||8491|124737|0|15
+Aglayan||8055|125134|403|6
+Alae||8424|124813|420|5
+#PH|Soccsksargen
+Amas||7057|124984|107|6
+#PH|Western Visayas
+Aguisan||10160|122862|9|12
+Ajuy||11172|123020|9|9
+Alicante||10897|123019|9|9
+Antipolo||10357|122965|77|7
+Alimodian||10821|122431|69|7
+Andres Bonifacio||10917|123250|36|6
+#PH|Zamboanga Peninsula
+Aurora||7951|123583|259|9
+#PK|Azad Kashmir
+Athhmuqam||34589|73913|1430|8
+#PK|Balochistan
+Alik Ghund||30490|67522|2325|8
+#PK|Khyber Pakhtunkhwa
+Abdul Khel||32400|70913|498|12
+Arbora||34462|73057|1260|9
+#PK|Sindh
+Adilpur||27937|69319|73|8
+#PL|Kujawsko-Pomorskie
+Aleksandrów Kujawski|Aleksandrow Kujawski|52877|18693|72|12
+#PR|Adjuntas
+Adjuntas||18163|-66722|502|5
+#PR|Aguada
+Aguada||18379|-67188|18|4
+#PR|Aguas Buenas
+Aguas Buenas||18257|-66103|258|5
+#PR|Aibonito
+Aibonito||18140|-66266|604|9
+#PR|Arroyo
+Arroyo||17966|-66061|7|8
+#PR|Añasco
+Añasco|Anasco|18283|-67140|9|6
+#PS|Gaza Strip
+Al Mughrāqah|Al Mughraqah|31466|34412|14|6
+An Naşr|An Nasr|31281|34303|62|6
+‘Abasān al Jadīdah|'Abasan al Jadidah|31342|34346|82|6
+Al Fukhkhārī|Al Fukhkhari|31293|34331|68|5
+#PS|West Bank
+‘Anātā|'Anata|31809|35259|714|12
+Abū Dīs|Abu Dis|31762|35262|671|12
+Al ‘Ubaydīyah|Al 'Ubaydiyah|31717|35290|508|11
+‘Attīl|'Attil|32369|35072|111|10
+‘Arrābah|'Arrabah|32405|35202|353|10
+Ad Dawḩah|Ad Dawhah|31699|35180|838|10
+Al Khaḑir|Al Khadir|31694|35167|828|9
+Ash Shuyūkh|Ash Shuyukh|31570|35156|955|8
+Alfei Menasheh||32173|35012|218|8
+‘Azzūn|'Azzun|32175|35058|253|8
+‘Aqrabā|'Aqraba|32125|35345|622|8
+‘Aşīrah ash Shamālīyah|'Asirah ash Shamaliyah|32251|35267|638|7
+‘Anabtā|'Anabta|32308|35117|174|7
+Az Zaytūnīyah|Az Zaytuniyah|31954|35162|695|6
+‘Awartā|'Awarta|32161|35284|549|6
+#PT|Aveiro
+Águeda|Agueda|40577|-8444|39|12
+Aradas||40621|-8642|23|10
+Argoncilhe||41025|-8539|167|9
+Albergaria-a-Velha||40693|-8480|128|8
+Arrifana||40916|-8497|271|7
+Arcos||40448|-8442|35|7
+Avanca||40808|-8572|34|7
+#PT|Azores
+Angra do Heroísmo|Angra do Heroismo|38654|-27218|1|12
+Arrifes||37767|-25700|193|7
+#PT|Beja
+Almodôvar|Almodovar|37513|-8060|290|7
+Aljustrel||37878|-8165|182|5
+#PT|Braga
+Apúlia e Fão|Apulia e Fao|41512|-8773|9|7
+Arcos||41522|-8422|167|7
+Aveleda||41521|-8467|152|7
+#PT|Coimbra
+Arganil||40218|-8054|175|12
+Arazede||40286|-8650|89|6
+Assafarge||40159|-8432|171|5
+Antanhol||40168|-8463|110|5
+#PT|Faro
+Almancil||37087|-8031|55|11
+Armação de Pêra|Armacao de Pera|37103|-8357|8|6
+Aljezur||37317|-8801|10|6
+Alvor||37130|-8592|16|5
+#PT|Guarda
+Aguiar da Beira||40817|-7544|794|5
+#PT|Leiria
+Atouguia da Baleia||39338|-9326|31|8
+Aljubarrota||39567|-8929|183|6
+#PT|Lisbon
+Ajuda||38700|-9208|24|14
+Alenquer||39053|-9009|32|10
+Anjos||38726|-9135|56|9
+Almargem||38845|-9273|267|8
+Alhandra||38927|-9009|13|7
+Apelação|Apelacao|38814|-9132|89|7
+A dos Cunhados||39152|-9297|32|7
+Arruda dos Vinhos||38984|-9077|99|6
+Azinhaga||39050|-9350|73|5
+#PT|Porto
+Areosa||41181|-8588|128|15
+Arcozelo||41062|-8632|54|14
+Azevedo||41150|-8567|43|14
+Azenha||41077|-8625|74|12
+Avintes||41107|-8551|107|12
+Anta||41266|-8628|121|11
+Aver-o-Mar||41406|-8780|5|11
+Ameal||41167|-8600|142|10
+Aves||41370|-8410|116|9
+Alpendurada||41089|-8246|140|8
+Amarante||41273|-8082|96|7
+Árvore|Arvore|41339|-8718|36|5
+Angeiras||41267|-8711|41|5
+#PT|Santarém
+Abrantes||39467|-8200|133|14
+Almeirim||39208|-8626|19|12
+Alpiarça|Alpiarca|39257|-8582|24|8
+Alcanede||39415|-8822|89|5
+#PT|Setúbal
+Alhos Vedros||38655|-9024|14|13
+Aldeia de Paio Pires||38617|-9083|33|12
+Alcochete||38755|-8961|11|10
+Alcácer do Sal|Alcacer do Sal|38373|-8514|49|9
+#PT|Vila Real
+Alijó|Alijo|41276|-7475|610|12
+#PT|Viseu
+Abraveses||40681|-7921|512|9
+#PW|Angaur
+Angaur State||6906|134130|0|0
+#PY|Central Department
+Areguá|Aregua|-25312|-57385|114|11
+#PY|Misiones Department
+Ayolas||-27384|-56840|83|12
+#QA|Al Wakrah
+Al Wukayr||25151|51537|7|5
+#QA|Al-Shahaniya
+Ash Shīḩānīyah|Ash Shihaniyah|25371|51223|43|8
+#QA|Baladiyat ad Dawhah
+Ad Dawḩah al Jadīdah|Ad Dawhah al Jadidah|25277|51533|16|15
+Al Markhīyah|Al Markhiyah|25325|51498|12|11
+Aţ Ţarfah|At Tarfah|25373|51490|16|9
+Al Hitmī|Al Hitmi|25285|51546|13|8
+#RO|Alba County
+Abrud||46274|23063|598|6
+#RO|Arges
+Albeştii Pământeni|Albestii Pamanteni|45207|24668|544|6
+#RO|Bacău County
+Asău|Asau|46443|26400|426|7
+Agăş|Agas|46483|26217|563|7
+#RO|Bihor County
+Aleşd|Alesd|47058|22400|233|10
+#RO|Botoșani County
+Albeşti|Albesti|47700|27067|64|7
+Avrămeni|Avrameni|48017|26950|233|5
+#RO|Caraș-Severin County
+Anina||45079|21857|755|9
+#RO|Cluj County
+Apahida||46817|23750|299|9
+#RO|Constanța County
+Agigea||44093|28611|10|5
+#RO|Dolj
+Amărăştii de Jos|Amarastii de Jos|43950|24167|120|6
+#RO|Dâmbovița County
+Aninoasa||44967|25433|307|6
+#RO|Ialomița County
+Amara||44617|27317|28|8
+Armăşeşti|Armasesti|44750|26583|60|7
+#RO|Ilfov
+Afumaţi|Afumati|44517|26267|79|7
+#RO|Mureș County
+Adămuş|Adamus|46300|24233|310|6
+Albeşti|Albesti|46233|24850|367|5
+#RO|Prahova
+Ariceştii-Rahtivani|Aricestii-Rahtivani|44950|25833|238|9
+Albeşti-Paleologu|Albesti-Paleologu|44950|26217|116|6
+#RO|Satu Mare County
+Ardud||47633|22883|129|6
+#RO|Sibiu County
+Avrig||45717|24383|385|14
+Agnita||45967|24617|464|11
+#RO|Suceava
+Adâncata|Adancata|47733|26300|401|8
+Arbore||47733|25933|367|7
+#RS|Central Serbia
+Aleksinac||43542|21708|169|15
+Arilje||43753|20096|334|7
+#RU|Adygeya Republic
+Adygeysk||44885|39191|61|12
+#RU|Altai Krai
+Altayskoye||51952|85337|253|14
+#RU|Amur Oblast
+Arkhara||49424|130084|144|10
+#RU|Bashkortostan Republic
+Askarovo||53333|58517|467|9
+Askino||56088|56578|190|7
+Akyar||51859|58221|330|6
+#RU|Chechnya
+Assinovskaya||43242|45182|273|10
+Alleroy||43217|46282|270|10
+Alkhan-Kala||43259|45539|196|10
+Alkhan-Yurt||43232|45572|165|9
+Alkhazurovo||43064|45651|352|5
+Alpatovo||43703|45242|93|5
+#RU|Chelyabinsk
+Argayash||55488|60874|247|10
+Agapovka||53297|59134|344|6
+#RU|Dagestan
+Akhty||41459|47732|1032|14
+Al’burikent|Al'burikent|42974|47471|43|11
+Aksay||43373|46445|34|9
+Ansalta||42689|46118|1145|6
+Andi||42784|46262|1551|5
+#RU|Ingushetiya Republic
+Alkhan-Churt||43352|44787|546|8
+Ali-Yurt||43143|44853|713|8
+#RU|Irkutsk Oblast
+Alzamay||55556|98664|298|7
+#RU|Jewish Autonomous Oblast
+Amurzet||47694|131096|67|5
+#RU|Kabardino-Balkariya Republic
+Argudan||43416|43911|368|8
+Altud||43722|43866|237|6
+#RU|Karachayevo-Cherkesiya Republic
+Ali-Berdukovskiy||43990|41742|738|5
+#RU|Khakasiya Republic
+Askiz||53131|90528|349|7
+#RU|Krasnodar Krai
+Anapskaya||44897|37386|16|14
+Anastasiyevskaya||45216|37893|2|11
+Arkhipo-Osipovka||44372|38530|6|8
+#RU|Krasnoyarsk Krai
+Aban||56677|96065|236|10
+Aginskoye||55259|94912|336|6
+#RU|Kuzbass
+Abagur||53731|87253|202|7
+#RU|Leningradskaya Oblast'
+Agalatovo||60220|30274|84|5
+#RU|Mordoviya Republic
+Ardatov||54845|46244|177|9
+Atyashevo||54564|46069|215|6
+#RU|Moscow Oblast
+Andreyevka||55980|37135|218|8
+Ashukino||56167|37950|191|6
+Avsyunino||55565|39123|149|5
+#RU|Murmansk
+Alakurtti||66967|30349|161|6
+#RU|Nizhny Novgorod Oblast
+Ardatov||55239|43096|175|9
+#RU|North Ossetia–Alania
+Arkhonskaya||43110|44513|534|8
+#RU|Omsk Oblast
+Azovo||54705|73024|104|5
+#RU|Orenburg Oblast
+Adamovka||51520|59937|278|8
+Asekeyevo||53578|52822|109|5
+#RU|Republic of Tyva
+Ak-Dovurak||51175|90598|834|13
+#RU|Rostov
+Ayutinskiy||47782|40148|124|11
+#RU|Sakha
+Amga||60899|131982|155|6
+#RU|Sakhalin Oblast
+Aleksandrovsk-Sakhalinskiy||50896|142163|37|12
+Aniva||46716|142532|3|8
+#RU|Samara Oblast
+Alekseyevka||53248|50491|86|11
+#RU|Saratov Oblast
+Arkadak||51938|43504|146|14
+Aleksandrov Gay||50142|48569|22|10
+#RU|Stavropol Kray
+Aleksandriyskaya||44227|43345|259|10
+Achikulak||44552|44838|68|7
+Andzhiyevskiy||44239|43086|306|7
+#RU|Sverdlovsk Oblast
+Arti||56420|58539|237|14
+Achit||56800|57902|233|5
+#RU|Tatarstan Republic
+Aktyubinskiy||54814|52806|307|10
+Alekseyevskoye||55307|50119|72|10
+Aksubayevo||54847|50796|75|9
+Aktanysh||55717|54071|73|8
+#RU|Tomsk Oblast
+Aleksandrovskoye||56741|85391|149|8
+#RU|Tula Oblast
+Ageyevo||54159|36469|173|6
+#RU|Tver Oblast
+Andreapol’|Andreapol'|56651|32264|208|9
+#RU|Tyumen Oblast
+Abalak||58129|68594|98|14
+Abatskoye||56288|70454|78|8
+Aromashevo||56868|68645|70|6
+Antipino||57107|65758|67|5
+#RU|Udmurtiya Republic
+Alnashi||56187|52479|120|6
+#RU|Vladimir Oblast
+Andreyevo||55947|41151|168|5
+#RU|Zabaykalskiy (Transbaikal) Kray
+Atamanovka||51929|113644|671|11
+#SA|'Asir Region
+Al Majāridah|Al Majaridah|19132|41924|456|15
+#SA|Al Bahah Region
+Al Mindak||20159|41283|2006|9
+#SA|Al-Qassim Region
+Al Mulaydā’|Al Mulayda'|26318|43785|648|7
+Ayn Ibn Fuhayd||26772|44207|544|7
+Al Fuwayliq||26444|43252|766|5
+Adh Dhibiyah||26027|43157|745|5
+#SA|Eastern Province
+Al Qurayn||25483|49600|140|12
+Al Awjām|Al Awjam|26563|49943|14|11
+Al Jubayl||25400|49650|140|9
+Al Qārah|Al Qarah|25417|49667|137|9
+Al Jafr||25377|49722|135|9
+At Tūbī|At Tubi|26558|49992|11|8
+As Saffānīyah|As Saffaniyah|27971|48730|14|7
+Al Markaz||25400|49733|128|6
+Al Muţayrifī|Al Mutayrifi|25479|49558|153|6
+Al Ju‘aymah|Al Ju'aymah|26750|49905|9|6
+#SA|Jazan Region
+Az̧ Z̧abyah|Az Zabyah|17118|42667|44|11
+Al Jarādīyah|Al Jaradiyah|16579|42912|49|7
+Ash Shuqayrī|Ash Shuqayri|17131|42827|103|6
+Ad Darb||17723|42253|73|5
+#SA|Mecca Region
+Al Muwayh||22433|41758|975|7
+Al Hadā|Al Hada|21359|40280|1961|7
+#SA|Najran Region
+Al Wadī‘ah|Al Wadi'ah|17058|47089|821|8
+#SA|Riyadh Region
+Al Hayāthim|Al Hayathim|24166|47238|442|14
+Al Arţāwīyah|Al Artawiyah|26504|45348|609|9
+Al ‘Uyaynah|Al 'Uyaynah|24907|46385|730|9
+Al Jubaylah||24911|46447|710|8
+#SB|Malaita Province
+Auki||-8768|160698|18|7
+#SC|Anse Boileau
+Anse Boileau||-4717|55483|3|4
+#SC|Anse Royale
+Anse Royale||-4733|55517|106|4
+#SD|Al Jazirah
+Al Kiremit al ‘Arakiyyīn|Al Kiremit al `Arakiyyin|14348|32944|405|10
+Al Masallamiyya||14575|33337|407|9
+#SD|Blue Nile
+Ash Shallāl|Ash Shallal|11800|34400|483|14
+#SD|Kassala
+Aroma||15817|36133|443|13
+#SD|Northern State
+Ad Dabbah||18050|30950|242|12
+Argo||19517|30417|224|8
+#SD|West Kordofan
+Al Lagowa||11400|29133|566|11
+Al-Fulah||11712|28346|517|0
+#SD|White Nile
+ALdinigila wad dhahi||13882|32377|345|15
+Al Kawa||13746|32500|385|10
+#SE|Dalarna
+Avesta||60143|16163|89|12
+#SE|Halland
+Åsa|Asa|57350|12117|25|6
+#SE|Jönköping
+Anderstorp||57283|13633|159|5
+#SE|Kronoberg
+Älmhult|AElmhult|56551|14138|144|9
+Alvesta||56899|14556|152|9
+#SE|Skåne
+Åhus|Ahus|55917|14283|1|10
+Åstorp|Astorp|56136|12944|33|9
+Arlöv|Arloev|55632|13071|7|9
+Åkarp|Akarp|55654|13111|8|6
+#SE|Stockholm
+Alby||59234|17854|32|11
+Älta|Alta|59267|18183|46|9
+Akalla||59415|17914|42|8
+#SE|Värmland
+Arvika||59655|12585|52|14
+#SE|Västmanland
+Arboga||59394|15839|18|11
+#SE|Västra Götaland
+Åmål|Amal|59051|12705|52|9
+Åkarp|Akarp|58233|13650|161|5
+#SE|Östergötland
+Åtvidaberg|Atvidaberg|58202|15998|94|7
+Åby|Aby|58667|16183|27|7
+#SG|
+Admiralty||1441|103801|23|14
+Alexandra Estate||1294|103820|13|13
+#SI|Municipality of Ajdovščina
+Ajdovščina|Ajdovscina|45886|13909|103|7
+#SI|Municipality of Ankaran
+Ankaran||45579|13736|12|3
+#SI|Municipality of Apače
+Apače|Apace|46698|15909|216|1
+#SM|Acquaviva
+Acquaviva||43946|12419|289|2
+#SN|Matam
+Amady Ounaré|Amady Ounare|15347|-13016|22|10
+#SO|Woqooyi Galbeed
+Agabar||9926|43917|928|7
+#SR|Commewijne District
+Alkmaar||5849|-55018|2|6
+#SR|Marowijne District
+Albina||5498|-54055|1|4
+#ST|São Tomé Island
+Água Izé|Agua Ize|220|6728|148|7
+#SV|Ahuachapan
+Atiquizaya||13977|-89752|615|9
+#SV|San Vicente Department
+Apastepeque||13667|-88783|623|6
+#SV|Sonsonate Department
+Armenia||13744|-89499|559|15
+#SY|Daraa
+Al Musayfirah||32633|36340|695|10
+#SY|Deir ez-Zor
+As Sūsah|As Susah|34534|40958|173|9
+#SY|Homs
+Al Ghanţū|Al Ghantu|34822|36696|455|9
+#SY|Idlib
+Afis||35907|36804|335|6
+#SY|Suwayda
+Al Qurayyā|Al Qurayya|32543|36598|1059|7
+#SY|Tartus
+Ad Duraykīsh|Ad Duraykish|34895|36143|436|12
+#TD|Ouadaï
+Abdi||12800|21300|528|9
+#TD|Salamat
+Abou Déïa|Abou Deia|11448|19279|502|11
+#TD|Sila
+Am Dam||12767|20483|443|8
+#TG|Maritime
+Afanyangan||6483|1650|56|9
+#TG|Plateaux
+Amlamé|Amlame|7467|900|324|10
+Adéta|Adeta|7133|733|274|8
+#TH|Ang Thong
+Ang Thong||14588|100453|12|14
+#TH|Krabi
+Ao Luek||8378|98721|15|10
+#TJ|Khatlon Province
+Avzikent||37803|69277|525|10
+Abdurahmoni Jomí|Abdurahmoni Jomi|37946|68809|424|10
+#TJ|Sughd
+Amondara||39514|67811|1091|13
+Adrasmon||40649|69985|1599|13
+#TK|Atafu
+Atafu Village||-8542|-172516|10|1
+#TL|Ainaro
+Ainaro||-8992|125508|820|12
+#TL|Dili Municipality
+Atauro||-8267|125601|26|9
+#TM|Ahal
+Altyn asyr||37282|60704|186|14
+Akdepe||38308|57598|209|9
+Arçman|Arcman|38543|57157|111|6
+Akgoňur|Akgonur|38091|58061|212|5
+#TM|Balkan
+Akdaş|Akdas|40042|53127|132|7
+#TM|Dasoguz
+Akdepe||42055|59379|76|14
+Aşyr Kakabaýew|Asyr Kakabayew|42282|58719|51|10
+#TM|Lebap
+Astanababa||37902|65125|245|11
+#TN|Bizerte Governorate
+Al Matlīn|Al Matlin|37245|10050|180|10
+Aousja||37141|10102|10|5
+#TN|Gafsa
+As Sanad||34463|9264|600|10
+#TN|Jendouba Governorate
+Aïne Draham|Aine Draham|36779|8687|702|10
+#TN|Kef Governorate
+As Sars||36076|9021|487|12
+#TN|Monastir Governorate
+Amiret Hajjaj||35501|10820|59|8
+Amiret Touazra||35486|10763|71|6
+Amiret El Fhoul||35444|10828|80|5
+#TN|Sfax Governorate
+Agareb||34741|10525|83|12
+#TR|Aksaray
+Ağaçören|Agacoeren|38875|33917|1232|6
+#TR|Ankara
+Altpınar|Altpinar|39204|32748|1062|13
+Ayaş|Ayas|40019|32332|953|9
+#TR|Antalya
+Avsallar||36624|31769|20|13
+Akseki||37049|31790|1105|12
+Aşağı Hisar|Asagi Hisar|36782|31448|1|9
+#TR|Artvin
+Ardanuç|Ardanuc|41120|42069|517|5
+#TR|Aydın
+Acarlar||37824|27747|30|12
+Atça|Atca|37889|28215|84|8
+Altınkum|Altinkum|37358|27288|12|6
+#TR|Balıkesir
+Altınoluk|Altinoluk|39579|26737|120|14
+#TR|Bartın
+Amasra||41746|32386|14|6
+#TR|Bayburt Province
+Aydıntepe|Aydintepe|40383|40143|1594|8
+#TR|Canakkale
+Ayvacık|Ayvacik|39601|26405|273|7
+#TR|Denizli
+Acıpayam|Acipayam|37424|29349|947|11
+#TR|Diyarbakır Province
+Ambar||37853|40528|562|5
+#TR|Elazığ
+Arıcak|Aricak|38563|40125|1116|5
+#TR|Eskişehir
+Alpu||39769|30961|765|6
+#TR|Gaziantep
+Araban||37427|37689|527|11
+Aktoprak||37186|37286|958|8
+#TR|Hakkâri
+Altınsu|Altinsu|37322|44552|1486|5
+#TR|Hatay
+Akbez||36856|36518|624|10
+Avsuyu||36194|36313|185|5
+#TR|Isparta
+Atabey||37951|30639|1039|13
+#TR|Istanbul
+Altunizade||41018|29048|91|13
+Ağva|Agva|41138|29857|4|9
+Aksaray||41009|28950|15|9
+Adalar||40868|29133|65|7
+#TR|Iğdır
+Aralık|Aralik|39873|44519|817|6
+#TR|Kahramanmaraş
+Andırın|Andirin|37578|36355|1047|9
+#TR|Kars Province
+Arpaçay|Arpacay|40845|43327|1692|5
+#TR|Kastamonu
+Araç|Arac|41242|33328|675|6
+#TR|Konya
+Altınekin|Altinekin|38308|32869|985|13
+#TR|Malatya
+Akçadağ|Akcadag|38339|37970|1067|15
+Arapgir||39041|38495|1149|10
+#TR|Manisa
+Ahmetli||38520|27939|85|11
+Akgedik||38640|27279|28|8
+#TR|Mardin
+Acırlı|Acirli|37456|41295|978|8
+Akarsu||37226|41051|914|5
+#TR|Mersin
+Aydıncık|Aydincik|36144|33320|29|8
+Atakent||36401|34058|17|8
+Arpaçbahşiş|Arpacbahsis|36646|34351|19|7
+Atayurt||36384|34022|8|7
+Alifakı|Alifaki|36883|34995|11|7
+#TR|Nevşehir Province
+Avanos||38715|34847|927|13
+Acıgöl|Acigoel|38550|34509|1246|7
+#TR|Ordu
+Akkuş|Akkus|40793|37016|1292|10
+Ayazlı|Ayazli|41027|37479|1|9
+#TR|Samsun
+Ayvacık|Ayvacik|40991|36631|66|6
+#TR|Sinop
+Ayancık|Ayancik|41945|34586|69|12
+#TR|Sivas
+Aksu||40090|38035|1665|11
+Altınyayla|Altinyayla|39272|36751|1465|6
+#TR|Tokat Province
+Almus||40376|36904|848|6
+Artova||40116|36300|1182|6
+#TR|Yozgat
+Aydıncık|Aydincik|40127|35288|875|7
+#TR|Çankırı
+Atkaracalar||40816|33076|1247|5
+#TR|İzmir Province
+Ahmet Taner Kışlalı|Ahmet Taner Kislali|38498|27084|157|6
+Atakent||38463|27089|6|6
+#TT|Tunapuna/Piarco
+Arouca||10629|-61335|31|12
+#TV|Vaitupu
+Asau Village||-7490|178680|9|0
+#UA|Crimea
+Alupka||44420|34045|90|8
+#UA|Donetsk
+Abakumova||48002|37597|182|15
+Avdotyine||47916|37850|152|11
+Aerodrom||47132|37559|42|9
+#UA|Kharkiv
+Andriyivka||49535|36626|95|10
+#UA|Kherson
+Antonivka||46677|32731|9|13
+#UA|Kyiv City
+Antyfiyivka||50486|30470|95|10
+Akademmistechko||50469|30362|169|10
+Aviamistechko||50464|30381|174|5
+#UA|Luhansk
+Aydar||49533|39118|97|10
+#UA|Mykolaiv
+Arbuzynka||47908|31317|124|6
+#UA|Odesa
+Artsyz||45985|29433|16|14
+Ananyiv||47720|29957|83|8
+Avanhard||46469|30616|62|6
+#UA|Zhytomyr Oblast
+Andrushivka||50019|29019|226|8
+#UG|Northern Region
+Amudat||1950|34950|1244|15
+#US|Alabama
+Alexander City||32944|-85954|214|15
+Atmore||31024|-87494|87|10
+Andalusia||31308|-86482|106|9
+Arab||34318|-86496|336|8
+Attalla||34022|-86089|167|6
+#US|Arizona
+Arizona City||32756|-111671|460|10
+Avra Valley||32438|-111315|585|6
+#US|Arkansas
+Arkadelphia||34121|-93054|75|11
+Alma||35478|-94222|132|6
+#US|California
+Alamo||37850|-122032|79|15
+Alpine||32835|-116766|559|14
+Auburn||38897|-121077|374|14
+Avenal||36004|-120129|246|13
+Anderson||40448|-122298|132|10
+Alondra Park||33889|-118331|16|9
+August||37979|-121262|8|8
+Acton||34470|-118197|826|8
+Atherton||37461|-122198|18|7
+Alta Sierra||35731|-118554|1743|7
+Alta Sierra||39142|-121054|704|7
+Aptos||36977|-121899|33|6
+#US|Colorado
+Alamosa||37469|-105870|2299|10
+Applewood||39758|-105162|1702|7
+Aspen||39191|-106818|2405|7
+Air Force Academy||38994|-104864|2069|7
+Avon||39631|-106522|2265|7
+#US|District of Columbia
+Anacostia||38867|-76984|13|12
+#US|Florida
+Apollo Beach||27773|-82408|1|14
+Atlantic Beach||30334|-81399|3|13
+Azalea Park||28541|-81301|29|13
+Avon Park||27596|-81506|46|10
+Andover||25968|-80213|1|10
+Alachua||29752|-82425|42|10
+Asbury Lake||30049|-81821|10|9
+Arcadia||27216|-81858|18|8
+Ave Maria||26337|-81438|6|6
+#US|Georgia
+Auburn||34014|-83828|320|8
+Austell||33813|-84634|283|7
+Adel||31137|-83424|73|5
+#US|Hawaii
+‘Aiea|'Aiea|21382|-157934|30|9
+‘Āhuimanu|'Ahuimanu|21445|-157838|25|9
+Ala Moana||21292|-157843|9|6
+‘Aiea Heights|'Aiea Heights|21391|-157921|126|5
+#US|Idaho
+Ammon||43470|-111967|1437|15
+#US|Illinois
+Antioch||42477|-88096|239|14
+#US|Indiana
+Auburn||41367|-85059|264|13
+Angola||41635|-84999|324|9
+Alexandria||40263|-85676|265|5
+#US|Iowa
+Atlantic||41404|-95014|369|7
+Algona||43070|-94233|364|5
+Anamosa||42108|-91285|253|5
+Asbury||42514|-90752|284|5
+#US|Kansas
+Andover||37714|-97136|412|13
+Arkansas City||37062|-97038|341|12
+Atchison||39563|-95122|248|11
+Augusta||37687|-96977|389|9
+Abilene||38917|-97214|352|7
+#US|Kentucky
+Alexandria||38960|-84388|269|9
+#US|Louisiana
+Abbeville||29975|-92134|5|12
+#US|Maryland
+Accokeek||38668|-77028|58|11
+Ashton-Sandy Spring||39150|-77005|148|6
+#US|Massachusetts
+Acushnet||41681|-70908|23|11
+Andover||42658|-71137|55|9
+Athol||42596|-72227|170|8
+Auburndale||42347|-71249|22|7
+Ashburnham||42636|-71908|309|6
+Adams||42624|-73118|242|6
+#US|Michigan
+Alpena||45062|-83433|180|10
+Alma||43379|-84660|224|9
+Albion||42243|-84753|290|8
+Allegan||42529|-85855|199|5
+#US|Minnesota
+Alexandria||45885|-95378|428|12
+Arden Hills||45050|-93157|286|10
+Albertville||45238|-93654|293|7
+#US|Mississippi
+Amory||33984|-88488|73|7
+Aberdeen||33825|-88544|73|5
+#US|Missouri
+Aurora||36971|-93718|427|7
+#US|Montana
+Anaconda||46129|-112942|1601|9
+#US|Nebraska
+Alliance||42102|-102872|1209|9
+#US|New Hampshire
+Atkinson||42838|-71147|91|7
+Auburn||43005|-71348|78|5
+#US|New Jersey
+Atco||39770|-74887|45|12
+Audubon||39891|-75073|17|9
+Absecon||39428|-74496|8|8
+Ashland||39863|-75006|26|8
+Allendale||41041|-74129|108|7
+#US|New Mexico
+Artesia||32842|-104403|1030|12
+Anthony||32004|-106606|1159|9
+Aztec||36822|-107993|1721|6
+#US|New York
+Arverne||40591|-73796|2|14
+Arrochar||40598|-74073|16|13
+Amityville||40679|-73417|6|9
+Airmont||41101|-74116|178|9
+Albion||43246|-78194|164|6
+Albertson||40773|-73643|39|5
+#US|North Carolina
+Archdale||35915|-79972|264|12
+Aberdeen||35132|-79429|105|7
+Ayden||35473|-77416|20|5
+#US|Ohio
+Amherst||41398|-82222|210|12
+Ada||40770|-83823|292|6
+Apple Valley||40439|-82354|343|5
+#US|Oklahoma
+Anadarko||35073|-98244|360|7
+Alva||36805|-98667|411|5
+#US|Oregon
+Agate Beach||44677|-124062|48|12
+Astoria||46188|-123831|7|10
+#US|Pennsylvania
+Allegheny West||40008|-75178|39|14
+Ardmore||40007|-75285|107|12
+Aliquippa||40637|-80240|226|9
+Audubon||40128|-75432|59|8
+Archbald||41495|-75537|283|7
+Ambridge||40589|-80225|235|7
+Ancient Oaks||40547|-75589|120|7
+Ambler||40155|-75222|65|7
+Angora||39944|-75238|26|6
+Arlington Heights||40990|-75216|155|6
+Academy Garden||40062|-74996|10|5
+#US|South Carolina
+Abbeville||34178|-82379|180|5
+#US|Tennessee
+Athens||35443|-84593|262|14
+Arlington||35296|-89661|86|12
+Alcoa||35790|-83974|257|9
+Atoka||35441|-89778|132|9
+#US|Texas
+Andrews||32319|-102546|968|14
+Athens||32205|-95856|149|13
+Azle||32895|-97546|217|12
+Anna||33349|-96549|217|11
+Anderson Mill||30455|-97806|292|9
+Aransas Pass||27909|-97150|5|9
+Alamo Heights||29485|-98466|244|8
+Alpine||30359|-103662|1364|6
+Atlanta||33114|-94164|79|6
+Alton North (historical)||26295|-98304|47|6
+Anthony||31999|-106606|1160|6
+#US|Utah
+Alpine||40453|-111778|1509|10
+#US|Virginia
+Abingdon||36710|-81977|629|8
+Ashland||37759|-77480|65|8
+Aquia Harbour||38463|-77389|3|7
+#US|Washington
+Artondale||47300|-122621|6|13
+Alderwood Manor||47808|-122261|129|8
+Airway Heights||47645|-117593|731|7
+#US|West Virginia
+Augusta||39295|-78638|396|6
+#US|Wisconsin
+Allouez||44477|-88016|182|14
+Ashland||46592|-90884|197|8
+Antigo||45140|-89152|455|8
+Altoona||44805|-91443|273|7
+#UY|Canelones
+Atlántida|Atlantida|-34772|-55758|22|6
+#UZ|Tashkent Region
+Amir Timur||41019|68941|319|0
+#VE|Sucre
+Aricagua||10239|-63898|259|9
+Arenas||10279|-63937|209|6
+#VN|An Giang
+Ấp Phú Hòa|Ap Phu Hoa|10900|105133|3|12
+Ấp Bình Chánh|Ap Binh Chanh|10553|105258|1|10
+#VN|Da Nang City
+An Hà|An Ha|15583|108483|10|8
+#VN|Dong Thap
+An Hòa|An Hoa|10297|105744|8|11
+Ấp Tân Mỹ|Ap Tan My|10617|105517|3|9
+#VN|Ho Chi Minh City (HCMC)
+Ấp Xuân Sơn|Ap Xuan Son|10650|107350|69|9
+#VN|Thừa Thiên Huế Province
+A Lưới|A Luoi|16272|107234|589|5
+#VN|Vinh Long
+Ấp Tân Ngãi|Ap Tan Ngai|10233|106283|5|9
+#WF|Alo
+Alo||-14311|-178111|10|0
+#WS|Tuamasaga
+Afega||-13797|-171853|11|2
+#WS|Vaisigano
+Asau||-13520|-172638|13|7
+#YE|Al Mahrah Governorate
+Al Ghayz̧ah|Al Ghayzah|16208|52176|17|11
+#YE|Al Mahwit Governorate
+Al Maḩwīt|Al Mahwit|15470|43545|2124|11
+#YE|Aḑ Ḑāli‘
+Aḑ Ḑāli‘|Ad Dali`|13696|44731|1517|15
+#YE|Raymah
+Al Jabīn|Al Jabin|14704|43599|2427|0
+#YT|Acoua
+Acoua||-12724|45058|10|5
+#ZA|Eastern Cape
+Adelaide||-32707|26296|587|15
+Alexandria||-33653|26413|175|12
+Aberdeen||-32476|24065|750|9
+Addo||-33548|25690|40|7
+#ZA|KwaZulu-Natal
+Albert Falls||-29440|30433|622|5
+#ZA|Mpumalanga
+Amersfoort||-27009|29866|1651|15
+Allemansdrif||-25114|28909|961|13
+#ZA|North West
+Amalia||-27248|25046|1312|7
+#ZA|Western Cape
+Albertina||-34205|21580|183|8

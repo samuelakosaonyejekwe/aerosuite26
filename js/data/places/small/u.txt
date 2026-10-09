@@ -1,0 +1,581 @@
+#AE|Dubai
+Umm Al Sheif||25132|55206|21|6
+#AF|Oruzgan
+Uruzgān|Uruzgan|32928|66633|2026|13
+#AL|Berat County
+Ura Vajgurore||40769|19878|33|7
+#AR|Entre Rios
+Urdinarrain||-32691|-58888|60|8
+#AR|Santa Fe
+Umberto I||-30868|-61348|87|5
+#AU|New South Wales
+Ultimo||-33877|151197|30|7
+Ulladulla||-35359|150472|32|6
+Unanderra||-34453|150847|13|5
+#AU|Queensland
+Urangan||-25292|152905|11|11
+Upper Mount Gravatt||-27561|153085|63|9
+Urraween||-25295|152822|10|7
+Underwood||-27609|153111|32|6
+#AU|Tasmania
+Ulverstone||-41160|146182|18|6
+#AU|Victoria
+Upwey||-37900|145333|219|7
+#BE|Flanders
+Uitkerke||51307|3137|2|8
+#BO|Potosí Department
+Uyuni||-20460|-66825|3673|10
+Uncía|Uncia|-18467|-66567|3788|9
+#BR|Bahia
+Uibaí|Uibai|-11337|-42132|572|13
+#BR|Ceará
+Uruoca||-3314|-40557|83|14
+Umari||-6648|-38700|281|7
+#BR|Goiás
+Uruana||-15504|-49683|595|14
+#BR|Minas Gerais
+Ubaporanga||-19635|-42106|520|13
+Ubaí|Ubai|-16285|-44778|587|12
+Urucânia|Urucania|-20351|-42739|450|11
+#BR|Paraná
+Uraí|Urai|-23197|-50796|411|11
+#BR|Paraíba
+Uiraúna|Uirauna|-6518|-38412|298|15
+Umbuzeiro||-7696|-35664|527|9
+#BR|Rio Grande do Norte
+Upanema||-5642|-37258|46|14
+Umarizal||-5991|-37814|174|10
+#BR|Rondônia
+Urupá|Urupa|-11126|-62372|200|11
+#BR|Roraima
+Uiramutã|Uiramuta|4596|-60168|524|14
+#BR|Santa Catarina
+Urubici||-28015|-49592|920|11
+#BR|São Paulo
+Urupês|Urupes|-21202|-49290|441|14
+Uchoa||-20953|-49175|499|10
+Urânia|Urania|-20246|-50643|449|9
+Ubarana||-21166|-49717|431|5
+Ubirajara||-22527|-49663|497|5
+#BY|Minsk
+Uzda||53463|27214|177|10
+#BY|Vitebsk
+Ushachi||55176|28619|148|6
+#CA|British Columbia
+Uptown||49212|-122919|91|9
+#CA|New Brunswick
+Uptown Saint John||45273|-66059|1|8
+#CA|Ontario
+University||43663|-79401|116|8
+United Townships of Dysart, Dudley, Harcourt, Guilford, Harburn, Bruton, Havelock, Eyre and Clyde||45200|-78417|421|7
+#CA|Saskatchewan
+Uplands||50493|-104606|585|5
+#CH|Aargau
+Untersiggenthal||47502|8256|385|6
+#CH|Bern
+Uetendorf||46774|7573|557|6
+Urtenen||47027|7501|528|5
+Unterseen||46685|7847|570|5
+#CH|Saint Gallen
+Uzwil||47437|9134|542|13
+Uznach||47224|8983|411|6
+#CH|Zug
+Unterägeri|Unterageri|47136|8585|727|8
+#CH|Zurich
+Uster / Kirch-Uster||47346|8718|475|10
+Uster / Ober-Uster||47349|8733|502|5
+#CO|Atlántico
+Usiacurí|Usiacuri|10743|-74976|112|10
+#CO|Chocó
+Unguía|Unguia|8044|-77091|14|12
+#CO|La Guajira Department
+Urumita||10561|-73013|315|9
+Uribia||11715|-72266|22|8
+#CZ|Central Bohemia
+Úvaly|Uvaly|50074|14731|253|8
+Unhošť|Unhost|50085|14130|389|5
+#CZ|Hradec Králové Region
+Úpice|Upice|50512|16016|352|5
+#CZ|Olomouc Region
+Uničov|Unicov|49771|17121|242|11
+#CZ|Pardubice Region
+Ústí nad Orlicí|Usti nad Orlici|49974|16394|340|14
+#CZ|Prague
+Uhříněves|Uhrineves|50029|14599|290|11
+Újezd nad Lesy|Ujezd nad Lesy|50076|14660|268|10
+#DE|Baden-Wurttemberg
+Uhingen||48705|9586|292|14
+Ubstadt-Weiher||49163|8632|129|13
+Unterhausen||48430|9255|509|9
+Urbach||48817|9577|271|9
+Uhldingen-Mühlhofen|Uhldingen-Muhlhofen|47733|9250|418|8
+Untergruppenbach||49089|9275|254|8
+Ühlingen-Birkendorf|Uhlingen-Birkendorf|47717|8317|637|5
+Umkirch||48033|7767|206|5
+#DE|Bavaria
+Unterföhring|Unterfoehring|48193|11643|505|11
+Uffenheim||49544|10233|327|7
+Untermeitingen||48161|10807|563|6
+Untergriesbach||48574|13667|555|6
+#DE|Hesse
+Usingen||50336|8537|299|14
+#DE|Lower Saxony
+Uetze||52465|10205|51|8
+Uelsen||52494|6883|48|5
+#DE|Mecklenburg-Vorpommern
+Ueckermünde|Ueckermuende|53738|14045|2|11
+#DE|North Rhine-Westphalia
+Uedem||51665|6274|35|9
+Überruhr-Holthausen|UEberruhr-Holthausen|51418|7085|90|8
+#DE|Saarland
+Überherrn|Uberherrn|49242|6698|211|12
+#ES|Andalusia
+Umbrete||37369|-6158|122|6
+#ES|Basque Country
+Urnieta||43247|-1991|60|6
+Usurbil||43272|-2049|33|6
+#ES|Catalonia
+Ulldecona||40597|447|133|6
+#ES|Valencia
+Utiel||39567|-1200|738|12
+#FI|Satakunta
+Ulvila||61428|21871|5|12
+#FI|Southwest Finland
+Uusikaupunki||60800|21408|16|15
+#FI|Uusimaa
+Ullanlinna||60158|24949|3|11
+#FR|Auvergne-Rhône-Alpes
+Unieux||45404|4271|484|8
+Ugine||45756|6415|461|8
+#FR|Grand Est
+Uckange||49303|6149|157|7
+#FR|New Aquitaine
+Ussel||45548|2309|639|11
+Urrugne||43362|-1700|37|8
+Ustaritz||43400|-1457|15|6
+#FR|Occitanie
+Uzès|Uzes|44013|4420|141|8
+#GB|England
+Uttoxeter||52898|-1865|92|14
+Ulverston||54196|-3096|30|11
+Uppermill||53549|-2005|168|11
+Upminster||51556|256|19|10
+Upton Lea||51518|-577|48|8
+Ushaw Moor||54778|-1647|116|7
+Upton||53615|-1287|64|6
+#GB|Scotland
+Uddingston||55820|-4084|47|6
+#GB|Wales
+Undy||51575|-2815|6|6
+#GT|Quiché
+Uspantán|Uspantan|15347|-90870|1836|7
+#GU|Umatac
+Umatac Village||13298|144663|3|1
+#HK|Wong Tai Sin District
+Upper Wong Tai Sin Estate||22343|114192|44|12
+#HR|Istria
+Umag||45431|13524|4|7
+#HU|Bekes County
+Újkígyós|Ujkigyos|46583|21033|91|6
+#HU|Budapest
+Újhegy|Ujhegy|47467|19166|133|15
+Újpéteritelep|Ujpeteritelep|47407|19190|114|11
+Újlak|Ujlak|47529|19038|75|7
+Újpest városközpont|Ujpest varoskoezpont|47561|19090|92|7
+#HU|Jász-Nagykun-Szolnok
+Újszász|Ujszasz|47300|20083|85|7
+#HU|Pest County
+Üllő|UEllo|47388|19355|126|12
+#HU|Szabolcs-Szatmár-Bereg
+Újfehértó|Ujfeherto|47800|21683|121|14
+#IN|Assam
+Umrangso||25512|92738|625|10
+Upar Hali||26103|91509|52|7
+Uttar Krishnapur Part-I||24791|92793|25|7
+Uttar Athiabari||26523|90962|50|6
+Uttar Krishnapur Pt III||24776|92792|24|5
+#IN|Chhattisgarh
+Utai||21117|81383|314|9
+#IN|Goa
+Usgao||15433|74067|82|12
+#IN|Gujarat
+Utrān|Utran|21233|72867|14|15
+Umrāla|Umrala|21844|71803|27|12
+Ukal||21237|73578|77|7
+Umbergaon INA||20169|72775|11|7
+#IN|Haryana
+Uklāna|Uklana|29511|75878|222|13
+Ūncha Sawāna|Uncha Sawana|29621|76999|249|9
+#IN|Jammu and Kashmir
+Uri||34086|74032|1302|9
+#IN|Karnataka
+Udiyāvara|Udiyavara|13302|74739|15|12
+Uppinangadi||12836|75246|34|8
+#IN|Kerala
+Urakam||10433|76217|20|13
+Uppala||12684|74901|14|12
+Uduma||12436|75018|15|8
+#IN|Madhya Pradesh
+Umri||26511|78937|150|9
+Ukwā|Ukwa|21971|80466|630|7
+#IN|Maharashtra
+Umri||19039|77645|377|14
+Utekhol||18244|73287|28|11
+Ujalaiwadi||16665|74271|598|9
+#IN|Meghalaya
+Umsning||25736|91888|806|8
+#IN|Odisha
+Udala||21578|86567|66|13
+Udayagiri||20124|84369|646|11
+#IN|Rajasthan
+Uniāra|Uniara|25915|76026|276|13
+Uniāra|Uniara|26153|75215|352|11
+Udpura||24734|75975|338|10
+#IN|Tamil Nadu
+Udayendram||12696|78623|346|14
+Uthukkottai||13336|79890|49|13
+Udaiyārpālaiyam|Udaiyarpalaiyam|11187|79293|85|13
+Ullūr|Ullur|10971|79406|25|12
+Uppidamangalam||10903|78158|124|11
+Ūttukkuli|Uttukkuli|11169|77454|295|10
+Usuppūr|Usuppur|11382|79697|8|8
+Uppiliyapuram||11264|78514|180|8
+Uppalavādi|Uppalavadi|11765|79776|7|7
+#IN|Telangana
+Umarkhāngūda|Umarkhanguda|17266|78673|471|5
+#IN|Tripura
+Uttar Champamura||23831|91340|40|11
+#IN|Uttar Pradesh
+Ugu||26797|80321|134|7
+#IT|Apulia
+Ugento||39927|18158|108|9
+#IT|Lombardy
+Uboldo||45615|9004|205|10
+Usmate-Velate||45648|9362|221|9
+Urgnano||45599|9695|173|8
+#IT|Sardinia
+Uta||39292|8952|6|7
+#IT|The Marches
+Urbino||43726|12636|485|6
+Urbania||43668|12521|273|5
+#IT|Umbria
+Umbertide||43303|12337|247|11
+#JP|Chiba
+Ushigome||35464|140392|1|10
+Usui||35733|140183|8|7
+#JP|Hokkaido
+Urakawa||42156|142784|1|13
+Utashinai||43517|142050|169|5
+#JP|Kumamoto
+Uejima||32741|130747|6|10
+#JP|Mie
+Udono||33737|136011|2|10
+#JP|Saitama
+Uetake||36214|139099|96|13
+#JP|Tochigi
+Ubagai||36550|140067|100|15
+#JP|Tokyo
+Umejima||35776|139798|4|12
+Umegaoka||35655|139654|36|9
+#KE|Siaya County
+Usenge||-67|34057|1156|8
+#KG|Batken
+Uch-Korgon||40229|72059|971|15
+#KP|Rason
+Ungsang-nodongjagu||42358|130462|40|8
+#KY|
+Upper Land||19363|-81387|1|5
+#KZ|East Kazakhstan
+Urzhar||47093|81629|479|15
+Ūst’-Talovka|Ust'-Talovka|50551|81848|275|6
+Ulken Naryn||49212|84508|403|5
+#LV|Ropaži Municipality
+Ulbroka||56936|24304|21|6
+#LY|Al Butnan
+Umm Sā'ad|Umm Sa'ad|31610|25050|189|9
+#LY|Darnah
+Umm ar Rizam||32533|23009|62|9
+#LY|Murzuq District
+Umm al Arānib|Umm al Aranib|26134|14737|422|10
+#ME|Ulcinj
+Ulcinj||41929|19224|8|11
+#MH|Ujae Atoll
+Ujae||8932|165764|8|0
+#MH|Utrik Atoll
+Utrik||11228|169847|10|0
+#MV|Raa Atoll
+Un’goofaaru|Un'goofaaru|5668|73030|9|2
+#MX|Guanajuato
+Urireo||20214|-100843|1799|9
+#MX|Hidalgo
+Unidad Minera 11 de Julio||20105|-98723|2420|6
+#MX|Jalisco
+Unión de Tula|Union de Tula|19956|-104268|1346|9
+Unión de San Antonio|Union de San Antonio|21127|-102006|1929|8
+Usmajac||19875|-103541|1364|7
+#MX|Morelos
+Unidad Habitacional José María Morelos y Pavón|Unidad Habitacional Jose Maria Morelos y Pavon|18820|-99262|1273|11
+#MX|Oaxaca
+Unión Hidalgo|Union Hidalgo|16472|-94830|15|14
+#MX|Veracruz
+Unión y Progreso|Union y Progreso|18873|-97119|1334|8
+Úrsulo Galván|Ursulo Galvan|19405|-96361|10|5
+#MY|Perak
+Ulu Kinta||4667|101217|227|10
+#NA|Erongo Region
+Usakos||-22002|15586|865|9
+#NG|Anambra
+Uruobo-Okija||5900|6843|86|14
+#NG|Benue State
+Ugbokpo||7653|7884|138|14
+#NG|Borno State
+Uba||10455|13222|496|12
+#NG|Delta
+Umunede||6265|6310|247|8
+#NG|Enugu State
+Udi||6316|7421|437|15
+#NG|Niger State
+Ukata||10831|5825|420|6
+#NL|Gelderland
+Ulft||51890|6378|15|10
+#NL|North Brabant
+Udenhout||51609|5143|11|8
+#NL|North Holland
+Uitgeest||52529|4710|1|12
+#NO|Møre og Romsdal
+Ulsteinvik||62343|5849|60|6
+#NR|Uaboe District
+Uaboe||-514|166924|5|0
+#NZ|Auckland
+Unsworth Heights||-36754|174722|57|7
+#NZ|Canterbury
+Upper Riccarton||-43528|172570|20|8
+#PA|Embera
+Unión Chocó|Union Choco|8084|-77535|61|9
+#PE|Cuzco Department
+Urubamba||-13305|-72116|2875|8
+Urcos||-13686|-71623|3127|5
+#PF|Leeward Islands
+Uturoa||-16730|-151443|1|4
+#PH|Autonomous Region in Muslim Mindanao
+Upi||7026|124167|447|9
+#PH|Cagayan Valley
+Upi||17083|121835|48|6
+#PH|Central Luzon
+Umiray||15221|121411|7|5
+#PH|Ilocos
+Urbiztondo||15823|120330|19|13
+#PH|Western Visayas
+Ungca||10750|122550|10|6
+#PL|Subcarpathia
+Ustrzyki Dolne||49430|22594|462|10
+#PR|Utuado
+Utuado||18266|-66700|142|10
+#PT|Braga
+Urgeses||41427|-8298|252|5
+#PT|Lisbon
+Unhos||38820|-9120|109|11
+#PW|Ngaraard
+Ulimang||7624|134642|11|1
+#QA|Umm Salal
+Umm Şalāl ‘Alī|Umm Salal `Ali|25470|51398|16|0
+#RO|Botoșani County
+Ungureni-Jianu||47883|26783|110|7
+#RO|Călărași County
+Ulmeni||44150|26717|34|5
+#RO|Galați County
+Umbrăreşti|Umbraresti|45717|27467|21|7
+#RO|Giurgiu County
+Ulmi||44487|25780|111|8
+#RO|Hunedoara County
+Uricani||45337|23152|692|10
+#RO|Maramureş
+Ulmeni||47467|23300|168|7
+#RO|Mureș County
+Ungheni||46483|24467|297|6
+#RO|Prahova
+Urlaţi|Urlati|44983|26233|125|12
+#RO|Suceava
+Udeşti|Udesti|47567|26417|331|7
+#RO|Vrancea
+Urecheşti|Urechesti|45600|27067|164|6
+#RS|Central Serbia
+Umka||44678|20305|82|6
+#RU|Altai Krai
+Ust’-Kalmanka|Ust'-Kalmanka|52123|83308|163|7
+Ust’-Charyshskaya Pristan’|Ust'-Charyshskaya Pristan'|52395|83663|180|6
+#RU|Belgorod Oblast
+Urazovo||50084|38040|90|7
+#RU|Buryatiya Republic
+Ust’-Barguzin|Ust'-Barguzin|53411|109031|459|7
+#RU|Chelyabinsk
+Uvel’skiy|Uvel'skiy|54443|61355|236|11
+Uyskoye||54378|60005|327|8
+#RU|Chuvash Republic
+Urmary||55679|47944|159|6
+#RU|Dagestan
+Untsukul’|Untsukul'|42711|46787|874|6
+Ulluaya||42374|47375|1422|6
+Urkarakh||42163|47630|1293|6
+#RU|Irkutsk Oblast
+Ust’-Ordynskiy|Ust'-Ordynskiy|52809|104747|513|15
+Ust’-Uda|Ust'-Uda|54174|103029|436|5
+#RU|Kabardino-Balkariya Republic
+Urvan’|Urvan'|43489|43764|375|5
+#RU|Khakasiya Republic
+Ust’-Abakan|Ust'-Abakan|53836|91390|238|15
+#RU|Kirov Oblast
+Urzhum||57114|49999|104|11
+#RU|Komi
+Usogorsk||63411|48687|123|5
+Ust’-Kulom|Ust'-Kulom|61688|53689|146|5
+Ust-Tsilma||65441|52150|49|5
+#RU|Krasnodar Krai
+Uspenskoye||44832|41386|250|12
+Udobnaya||44193|41553|548|6
+#RU|Krasnoyarsk Krai
+Uyar||55815|94327|357|13
+#RU|Leningradskaya Oblast'
+Ul’yanovka|Ul'yanovka|59639|30765|41|9
+#RU|Moscow Oblast
+Udel’naya|Udel'naya|55636|38045|142|13
+#RU|Murmansk
+Umba||66687|34343|1|6
+#RU|Nizhny Novgorod Oblast
+Uren’|Uren'|57461|45786|118|12
+#RU|Novosibirsk Oblast
+Ubinskoye||55307|79682|138|6
+#RU|Perm Krai
+Ugleural’skiy|Ugleural'skiy|58944|57594|405|9
+Ural’skiy|Ural'skiy|57935|55551|95|7
+Usol’ye|Usol'ye|59422|56684|103|5
+#RU|Primorye
+Uglovoye||43332|132086|9|12
+Uglekamensk||43221|133232|121|6
+#RU|Rostov
+Ust’-Donetskiy|Ust'-Donetskiy|47644|40872|87|11
+#RU|Ryazan Oblast
+Ukholovo||53792|40487|144|6
+#RU|Sakha
+Ust-Nera||64570|143237|492|9
+#RU|Sakhalin Oblast
+Uglegorsk||49080|142069|35|13
+#RU|Samara Oblast
+Ust’-Kinel’skiy|Ust'-Kinel'skiy|53268|50578|53|11
+#RU|Tatarstan Republic
+Urussu||54597|53456|111|11
+#RU|Tyumen Oblast
+Uporovo||56312|66270|66|5
+#RU|Vologda Oblast
+Ustyuzhna||58839|36432|118|11
+#RU|Voronezh Oblast
+Uryv-Pokrovka||51116|39164|92|5
+#RU|Yamalo-Nenets
+Urengoy||65966|78369|14|9
+#RU|Zabaykalskiy (Transbaikal) Kray
+Ulety||51356|112484|740|6
+#SA|Al-Qassim Region
+‘Uqlat aş Şuqūr|'Uqlat as Suqur|25829|42201|785|10
+#SA|Eastern Province
+Umm as Sāhik|Umm as Sahik|26654|49916|9|12
+#SD|Northern Darfur
+Umm Kaddadah||13602|26688|601|11
+#SD|Southern Darfur
+Umm Dafog||10463|23317|485|7
+#SD|White Nile
+Um Jar Al Gharbiyya||13801|32408|384|9
+#SE|Västra Götaland
+Ulricehamn||57792|13414|189|11
+#TR|Aydın
+Umurlu||37850|27963|52|12
+#TR|Bartın
+Ulus||41584|32641|180|6
+#TR|Erzurum
+Uzundere||40532|41538|1148|6
+#TR|Isparta
+Uluborlu||38078|30450|1050|13
+#TR|Istanbul
+Uskumruköy|Uskumrukoey|41220|29023|53|10
+#TR|Muğla
+Ula||37105|28417|606|5
+#TR|Ordu
+Ulubey||40869|37754|619|9
+#TR|Uşak
+Ulubey||38420|29291|743|5
+#TR|Çorum
+Uğurludağ|Ugurludag|40446|34453|821|7
+#TR|İzmir Province
+Uğur Mumcu|Ugur Mumcu|38527|27045|15|6
+#TR|Şırnak
+Uludere||37441|42852|1346|9
+Uzungeçit|Uzungecit|37494|42993|1494|6
+#TZ|Mbeya
+Ulenje||-8933|33683|1929|12
+#TZ|Pwani
+Utete||-7986|38758|31|12
+#TZ|Tabora
+Usoke||-5167|32350|1161|7
+#UA|Donetsk
+Ukrayinsk||48098|37365|206|11
+#UA|Kyiv Oblast
+Ukrayinka||50143|30746|98|14
+Uzyn||49825|30425|182|12
+#UA|Luhansk
+Uspenka||48391|39163|93|9
+#UA|Odesa
+Usatove||46529|30650|39|8
+#US|California
+University Park||33662|-117810|38|8
+University Town Center||33652|-117834|35|6
+#US|District of Columbia
+Union Market||38909|-76998|31|12
+#US|Florida
+Upper Grand Lagoon||30163|-85741|0|14
+Union Park||28568|-81286|25|10
+#US|Illinois
+Ukrainian Village||41899|-87685|184|15
+University Park||41443|-87684|239|7
+#US|Kansas
+Ulysses||37581|-101355|930|6
+#US|Kentucky
+Union||38946|-84680|255|6
+#US|Maryland
+Urbana||39326|-77351|140|9
+#US|Massachusetts
+Union Square||42380|-71097|13|14
+Uxbridge||42077|-71630|74|13
+#US|Missouri
+Union||38450|-91008|162|11
+#US|New Jersey
+Upper Montclair||40846|-74201|96|12
+Upper Saddle River||41058|-74098|67|8
+Union Beach||40447|-74178|1|6
+#US|North Carolina
+Unionville||35087|-80509|181|7
+#US|Ohio
+University Heights||41498|-81537|313|13
+Urbana||40108|-83752|320|12
+Upper Sandusky||40827|-83281|258|7
+Union||39898|-84306|281|6
+Uhrichsville||40393|-81346|261|5
+#US|Oregon
+Umatilla||45917|-119343|98|7
+#US|Pennsylvania
+Upper Roxborough||40060|-75239|121|11
+Uniontown||39900|-79716|328|10
+#US|South Carolina
+Union||34715|-81624|196|8
+#US|Tennessee
+Union City||36424|-89057|102|11
+#US|Washington
+Union Gap||46557|-120475|300|6
+#UZ|Tashkent Region
+Ŭrtaowul|Urtaowul|41187|69145|386|14
+#VN|Ca Mau
+U Minh||9413|104974|2|9
+#ZA|KwaZulu-Natal
+Utrecht||-27659|30322|1217|8
+#ZA|North West
+Umzimhle||-26935|26731|1306|7
+#ZA|Western Cape
+Uniondale||-33659|23123|729|5

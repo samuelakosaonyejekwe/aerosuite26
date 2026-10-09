@@ -137,10 +137,10 @@ const OCCUPANCY = [
   { key: 'unmanned', label: 'Unmanned aircraft (nobody on board)', type: 'bool', default: false, group: 'Architecture', help: 'Loss of the aircraft is then not catastrophic by itself; effects are taken one severity class lower and the fault tree adds the chance of striking a person.' },
 ];
 const RATES = [
-  { key: 'lam_engine', label: 'Engine in-flight shutdown rate', unit: '1/FH', default: 3e-5, min: 0, max: 1, group: 'Failure rates', help: 'Per engine. The turbine default is the AC 120-42B in-flight-shutdown threshold for diversion times above 120 and up to 180 minutes (5e-5 up to 120 minutes, 2e-5 beyond 180 minutes): a regulatory ceiling, not a measured rate. The piston (1e-4) and electric-motor (2e-5) values are unsourced placeholders. Replace with fleet or supplier data.' },
+  { key: 'lam_engine', label: 'Engine in-flight shutdown rate', unit: '1/FH', default: 3e-5, min: 0, max: 1, group: 'Failure rates', help: 'Per engine. The turbine default is the AC 120-42B in-flight-shutdown threshold for diversion times above 120 and up to 180 minutes (5e-5 up to 120 minutes, 2e-5 beyond 180 minutes): a regulatory ceiling, not a measured rate. The piston value 1.2e-4 is the rate of engine failures or malfunctions of Lycoming and Continental engines in light aeroplanes (1.27 and 1.21 per 10 000 hours flown, ATSB AR-2013-107, 2009–2014; Rotax 1.56, Jabiru 3.21) — it counts malfunctions as well as complete power losses. The electric-motor value 4e-5 is a handbook prediction for the motor alone (NSWC-11: brushless DC base rate 1.75 plus the default winding rate 40 per million hours, before load, temperature and altitude factors; controller excluded). Replace with fleet or supplier data.' },
   { key: 'lam_hyd', label: 'Hydraulic system loss rate', unit: '1/FH', default: 1e-4, min: 0, max: 1, group: 'Failure rates (illustrative)' },
   { key: 'lam_gen', label: 'Generator channel loss rate', unit: '1/FH', default: 2e-4, min: 0, max: 1, group: 'Failure rates (illustrative)' },
-  { key: 'lam_fcc', label: 'Flight-control channel loss rate', unit: '1/FH', default: 1e-4, min: 0, max: 1, group: 'Failure rates (illustrative)' },
+  { key: 'lam_fcc', label: 'Flight-control channel loss rate', unit: '1/FH', default: 2e-4, min: 0, max: 1, group: 'Failure rates', help: 'Per computer channel. In-service removals of B-747 flight-control computers were 202 (yaw), 401 (roll) and 438 (pitch) per million hours (one airline, 1977; NASA CR-159275 Table 3); the default is the lowest of the three. Analogue-era equipment: a modern digital channel should be better, so replace with supplier data.' },
 ];
 const OBJ_HELP = 'AC 25.1309-1B for large aeroplanes: 1e-9 catastrophic, 1e-7 hazardous, 1e-5 major, 1e-3 minor per flight hour ("on the order of"). AC 23.1309-1E Figure 2 relaxes them for small aeroplanes, down to 1e-6 / 1e-5 / 1e-4 / 1e-3 for a single piston engine up to 6000 lb (Class I). Filled from the vehicle class; set the values of your own certification basis.';
 const OBJECTIVES = [
@@ -169,13 +169,13 @@ const archDefaults = (c) => {
     n_eng: n, eng_need: elec && n >= 6 ? n - 1 : elec && rotary ? n : 1,
     n_hyd: c.systems.hyd_p_Pa > 0 && !small ? (c.mass.mtow_kg > (heli ? 8000 : 40000) ? 3 : 2) : 0, n_gen: c.systems.gen_kVA > 0 ? Math.max(1, Math.min(n, 2)) : 0,
     n_fcc: c.meta.type === 'uav' ? 1 : fbw ? 3 : 0,
-    lam_engine: c.prop.type === 'piston' ? 1e-4 : elec ? 2e-5 : 3e-5,
+    lam_engine: c.prop.type === 'piston' ? 1.2e-4 : elec ? 4e-5 : 3e-5,
   };
 };
 const occDefaults = (c) => ({ n_batt: c.prop.type === 'electric' && !(c.systems.gen_kVA > 0) ? (c.meta.type === 'evtol' ? 4 : c.mass.mtow_kg > 600 ? 2 : 1) : 1, unmanned: c.meta.type === 'uav' });
 const SEV = ['Catastrophic', 'Hazardous', 'Major', 'Minor'];
 const objOf = (i) => [i.obj_cat, i.obj_haz, i.obj_maj, i.obj_min];
-const ILLUSTRATIVE = 'Failure rates and conditional probabilities are illustrative generic placeholders, not sourced reliability data (the turbine in-flight-shutdown default is a regulatory threshold and the common-cause factor a generic screening value)';
+const ILLUSTRATIVE = 'Failure rates and conditional probabilities are illustrative generic placeholders, not sourced reliability data, except where the input help names a source: turbine in-flight shutdown (AC 120-42B threshold), piston engine failure or malfunction (ATSB AR-2013-107), electric motor (NSWC-11 base rates), flight-control computer channel (NASA CR-159275, B-747 fleet data of 1977), common-cause factor (NUREG/CR-5485 screening value), engine-fire frequency of turbine transports (DOT/FAA/TC-16/49), deferred-defect interval (CS-MMEL category B) and rest-of-aircraft dispatch rate (a manufacturer statement). Hydraulic, generator, battery and control-jam rates and every conditional probability remain unsourced';
 // ---- analyses -------------------------------------------------------------------------------
 const fta = {
   id: 'fta', title: 'Fault tree analysis of the catastrophic top event', fidelity: 'analytical',
@@ -189,7 +189,7 @@ const fta = {
     { key: 'lam_batt', label: 'Battery / standby source failure rate', unit: '1/FH', default: 2e-5, min: 0, max: 1, group: 'Failure rates (illustrative)', help: 'Per pack for a battery-only aircraft' },
     { key: 'lam_jam', label: 'Single-point control jam or disconnect rate', unit: '1/FH', default: 1e-10, min: 0, max: 1, group: 'Failure rates (illustrative)', help: 'A single failure with a catastrophic effect has to be excluded by design; the placeholder is a tenth of the catastrophic objective' },
     { key: 'beta', label: 'Common-cause β-factor', unit: '-', default: 0.05, min: 0, max: 0.5, group: 'Failure rates', help: 'Share of a channel\'s failures that also take out the next redundant channel; m channels are lost together at rate λ·β^(m−1). The default 0.05 is the NUREG/CR-5485 generic screening value for a redundant pair tested at staggered times (0.10 when tested together). It is a nuclear-industry screening number, deliberately conservative: replace it only with a value backed by a common-cause analysis of your own channels.' },
-    { key: 'p_forced', label: 'P(aircraft lost | total power loss)', unit: '-', default: 0.2, min: 0, max: 1, group: 'Failure rates (illustrative)', help: 'Chance that the forced landing, ditching or autorotation after total power loss is not survivable' },
+    { key: 'p_forced', label: 'P(aircraft lost | total power loss)', unit: '-', default: 0.2, min: 0, max: 1, group: 'Failure rates (illustrative)', help: 'Chance that the forced landing, ditching or autorotation after total power loss is not survivable. For light single-engine aeroplanes the value 0.02 is of the order observed: 4 of 322 reported engine failures or malfunctions ended in fatalities (1.2%; ATSB AR-2013-107, 2009–2014). The values filled for other classes are unsourced placeholders' },
     { key: 'p_third', label: 'P(person fatally struck | unmanned aircraft lost)', unit: '-', default: 0.01, min: 0, max: 1, group: 'Failure rates (illustrative)', help: 'Used only for unmanned aircraft. Depends on the population overflown and the size of the aircraft; take it from your operational risk assessment.' },
     ...OBJECTIVES.slice(0, 1),
     { key: 'tree_text', label: 'Custom fault tree (optional)', type: 'text', default: '', group: 'Custom tree', help: 'e.g. TOP = OR(A, C); A = AND(e1, e2); C = 2oo3(x, y, z); e1 = 1e-5; e2 = 2e-4 @ 500; x = p:0.01 — rates per hour, "@" sets an exposure time in hours, "p:" a fixed probability. Leave empty to use the tree built from the architecture.' },
@@ -490,8 +490,8 @@ const markov = {
     { key: 'mttr_h', label: 'Mean time to repair', unit: 'h', default: 4, min: 0.01, max: 1e4, group: 'Failure and repair (illustrative)', help: 'Active repair including access, fault-finding and test' },
     { key: 'crews', label: 'Simultaneous repair crews', unit: '', default: 1, min: 1, max: 8, step: 1, discrete: true, group: 'Failure and repair (illustrative)' },
     { key: 'mel_allowed', label: 'Failed units allowed at dispatch (MEL)', unit: '', default: 1, min: 0, max: 7, step: 1, discrete: true, group: 'Dispatch', help: '0 = no dispatch with any unit failed' },
-    { key: 'mel_interval_h', label: 'Mean time to rectify a deferred defect', unit: 'h', default: 72, min: 0.1, max: 3000, group: 'Dispatch', help: 'Deferred items are repaired at the next convenient opportunity inside the rectification interval' },
-    { key: 'nogo_per_100dep', label: 'Other technical no-go events per 100 departures', unit: '-', default: 0.8, min: 0, max: 50, group: 'Dispatch', help: 'Rest-of-aircraft technical delays and cancellations; illustrative, replace with operator data' },
+    { key: 'mel_interval_h', label: 'Mean time to rectify a deferred defect', unit: 'h', default: 72, min: 0.1, max: 3000, group: 'Dispatch', help: 'Deferred items are repaired at the next convenient opportunity inside the rectification interval. The default 72 h is the CS-MMEL category B interval (3 calendar days, excluding the day of discovery); category C is 10 days (240 h) and category D 120 days.' },
+    { key: 'nogo_per_100dep', label: 'Other technical no-go events per 100 departures', unit: '-', default: 0.7, min: 0, max: 50, group: 'Dispatch', help: 'Rest-of-aircraft technical delays and cancellations. The default corresponds to the 99.3% gate dispatch reliability Boeing stated for the 737 fleet in 2002 (a manufacturer statement, not an audited statistic); replace with operator data.' },
     { key: 't_end', label: 'Simulated time', unit: 'h', default: 200, min: 1, max: 1e5, group: 'Numerics' },
     { key: 'nSteps', label: 'Time steps', unit: '', default: 400, min: 20, max: 20000, step: 1, discrete: true, group: 'Numerics' },
   ],
@@ -561,7 +561,7 @@ const eventTree = {
   summary: 'Follows an initiating event through detection, shutdown, two extinguisher shots and the diversion, multiplying branch probabilities to get the frequency and severity of every outcome.',
   equations: ['Event tree probability equations', 'Conditional probability equations', 'Total probability theorem'],
   inputs: [
-    { key: 'f_init', label: 'Initiating event frequency (engine fire)', unit: '1/FH', default: 1e-6, min: 0, max: 1, group: 'Initiating event (illustrative)', help: 'Per aircraft flight hour. Placeholder.' },
+    { key: 'f_init', label: 'Initiating event frequency (engine fire)', unit: '1/FH', default: 1e-6, min: 0, max: 1, group: 'Initiating event', help: 'Per aircraft flight hour. For turbine transports the order of 1e-6 is supported by service data: about 3.6 engine fire-detector events per million engine flights, of which roughly 30% were genuine (DOT/FAA/TC-16/49), i.e. about 1e-6 per flight hour for a twin on two-hour flights; in-flight engine fire-bottle discharges ran at about 3e-7 per flight hour over 180 million flight hours of four transport types (HAAPS consortium, 2019). The piston (3e-6) and electric (2e-7) values are unsourced placeholders.' },
     { key: 'p_detect', label: 'P(fire detected)', unit: '-', default: 0.999, min: 0, max: 1, group: 'Branch probabilities (illustrative)' },
     { key: 'p_shutdown', label: 'P(engine shut down and isolated)', unit: '-', default: 0.995, min: 0, max: 1, group: 'Branch probabilities (illustrative)' },
     { key: 'p_ext1', label: 'P(first extinguisher shot succeeds)', unit: '-', default: 0.9, min: 0, max: 1, group: 'Branch probabilities (illustrative)' },

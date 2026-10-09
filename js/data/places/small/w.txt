@@ -1,0 +1,1172 @@
+#AI|West End
+West End Village||18172|-63149|23|0
+#AO|Kwanza Sul
+Waku Kungo||-11357|15117|1304|11
+#AT|Burgenland
+Walbersdorf||47742|16421|221|8
+#AT|Carinthia
+Wölfnitz|Woelfnitz|46666|14258|458|5
+#AT|Lower Austria
+Wiener Neudorf||48083|16314|202|9
+Wilhelmsburg||48106|15605|320|7
+#AT|Styria
+Waltendorf||47067|15467|377|12
+Weiz||47217|15617|506|9
+#AT|Tyrol
+Wörgl|Woergl|47489|12062|506|14
+Wattens||47294|11591|555|8
+#AT|Upper Austria
+Wimpassing||48167|13983|332|6
+#AT|Vorarlberg
+Wolfurt||47467|9750|413|8
+#AU|Australian Capital Territory
+Wanniassa||-35398|149091|628|7
+Watson||-35238|149153|592|6
+#AU|New South Wales
+West Ryde||-33805|151074|31|13
+Wallsend||-32901|151664|18|12
+Woonona||-34349|150914|12|12
+Winston Hills||-33776|150981|85|12
+Wentworthville||-33807|150968|29|11
+Woy Woy||-33484|151325|4|11
+Wiley Park||-33924|151067|36|10
+West Hoxton||-33934|150832|59|10
+Wyoming||-33404|151363|50|10
+Wattle Grove||-33954|150944|16|9
+Wollstonecraft||-33833|151190|46|8
+Wagga Wagga||-35126|147354|201|8
+Warners Bay||-32973|151653|23|8
+Woollahra||-33888|151237|67|7
+Warriewood||-33689|151295|6|7
+Wentworth Point||-33831|151074|4|7
+Wolli Creek||-33931|151152|3|7
+Willoughby||-33805|151199|86|6
+Woodcroft||-33756|150881|40|6
+Wamberal||-33416|151446|45|6
+Warilla||-34552|150858|7|6
+Wauchope||-31458|152726|26|6
+Wetherill Park||-33843|150901|46|6
+Winmalee||-33678|150612|272|6
+Wentworth Falls||-33710|150375|871|6
+Whalan||-33757|150804|40|6
+Waitara||-33711|151103|192|6
+Warwick Farm||-33913|150937|12|6
+Woolgoolga||-30111|153201|7|5
+Wingham||-31867|152370|17|5
+West Tamworth||-31102|150914|411|5
+West Pymble||-33767|151133|79|5
+Woongarrah||-33241|151476|30|5
+#AU|Queensland
+Wynnum||-27445|153158|29|13
+Woodridge||-27633|153100|40|13
+Wellington Point||-27483|153250|2|12
+Wynnum West||-27458|153153|11|12
+Warner||-27312|152950|60|11
+Wishart||-27554|153101|57|10
+Wavell Heights||-27394|153047|41|9
+West End||-27479|153010|22|9
+Wakerley||-27483|153156|26|8
+Windsor||-27436|153029|29|7
+Waterford West||-27691|153133|18|6
+West Mackay||-21155|149162|12|6
+Woolloongabba||-27489|153037|12|6
+Wilsonton||-27543|151917|632|6
+Wurtulla||-26756|153128|5|6
+Worongary||-28050|153350|39|6
+Woree||-16950|145750|7|5
+#AU|South Australia
+Woodcroft||-35102|138563|142|11
+Wynn Vale||-34799|138687|191|8
+Whyalla Norrie||-33029|137539|20|7
+Whyalla Stuart||-33025|137525|19|7
+West Lakes||-34873|138495|6|6
+Windsor Gardens||-34865|138647|81|5
+Warradale||-34997|138532|18|5
+#AU|Tasmania
+Wynyard||-40990|145726|17|6
+West Hobart||-42877|147307|97|6
+#AU|Victoria
+Wendouree||-37531|143828|462|15
+Williamstown||-37863|144899|13|14
+West Wodonga||-36123|146852|175|14
+Wantirna||-37850|145217|91|14
+West Footscray||-37797|144877|37|12
+Windsor||-37853|144992|25|7
+Williams Landing||-37862|144744|19|7
+Whittlesea||-37512|145118|198|6
+Westmeadows||-37676|144887|81|6
+Woodend||-37355|144529|558|6
+West Melbourne||-37810|144950|23|6
+Warrandyte||-37750|145233|83|5
+Watsonia||-37717|145083|91|5
+Waurn Ponds||-38217|144283|89|5
+#AU|Western Australia
+Wanneroo||-31750|115800|43|12
+Wembley||-31933|115818|37|12
+Waikiki||-32316|115755|6|12
+Warnbro||-32340|115747|9|11
+Woodvale||-31789|115797|44|9
+Wellard||-32267|115833|21|9
+West Busselton||-33658|115323|6|8
+Wilson||-32021|115912|4|6
+Wembley Downs||-31912|115774|33|6
+Westminster||-31867|115839|47|6
+Wattle Grove||-32007|116000|30|6
+Winthrop||-32052|115830|29|6
+West Perth||-31949|115842|52|6
+#BB|Saint Andrew
+White Hill||13214|-59581|266|5
+#BB|Saint Thomas
+Welchman Hall||13187|-59577|291|0
+#BE|Flanders
+Wuustwezel||51392|4595|18|15
+Wemmel||50908|4306|39|14
+Wezembeek-Oppem||50840|4494|67|13
+Wingene||51058|3274|26|13
+Wommelgem||51205|4523|9|12
+Wichelen||51005|3977|8|11
+Waasmunster||51106|4086|5|10
+Wilsele||50892|4698|49|10
+Wijnegem||51228|4519|8|9
+Wielsbeke||50900|3367|9|9
+Westmalle||51298|4690|23|8
+Wolvertem||50952|4310|33|8
+Waarschoot||51153|3605|6|8
+Wachtebeke||51169|3872|7|7
+Wellen||50841|5339|47|7
+Westende||51160|2769|4|6
+#BE|Wallonia
+Waremme||50698|5255|117|14
+Wanze||50539|5208|96|13
+Wasmes||50415|3847|80|12
+Welkenraedt||50661|5970|256|9
+Wanfercée-Baulet|Wanfercee-Baulet|50473|4587|154|7
+Waimes||50415|6112|492|7
+Wépion|Wepion|50422|4864|135|7
+Wandre||50668|5660|59|6
+Walhain-Saint-Paul||50626|4698|147|6
+#BM|Warwick
+Warwick Parish||32266|-64809|1|9
+#BR|Bahia
+Wanderley||-12120|-43887|554|13
+Wagner||-12287|-41168|466|10
+#BR|Tocantins
+Wanderlândia|Wanderlandia|-6849|-47963|252|12
+#BS|West Grand Bahama
+West End||26687|-78977|5|13
+#BT|Wangdi Phodrang
+Wangdue Phodrang||27486|89899|1273|9
+#CA|Alberta
+Wetaskiwin||52967|-113369|758|13
+West Springs||51061|-114198|1232|12
+Whitehorn||51083|-113967|1099|11
+Whitecourt||54150|-115685|689|9
+Woodbine||50938|-114129|1109|9
+Wild Rose||53471|-113381|717|8
+Walden||50870|-114026|1042|8
+West Hillhurst||51054|-114121|1056|7
+Wainwright||52835|-110853|680|6
+Westmount||53555|-113542|666|6
+Woodlands||50942|-114108|1098|6
+Willow Park||50956|-114056|1050|5
+#CA|British Columbia
+Williams Lake||52142|-122145|674|14
+West Clayton||49129|-122716|57|13
+West Point Grey||49267|-123200|47|13
+Willingdon Heights||49275|-123008|78|12
+West Cambie||49183|-123117|3|12
+Westsyde||50767|-120350|353|11
+Whatcom||49041|-122240|27|10
+Winfield||50021|-119407|443|9
+Whistler||50118|-122954|673|9
+Woodwards||49147|-123155|4|8
+#CA|Manitoba
+Winkler||49182|-97941|271|13
+West St. Paul||50010|-97142|229|7
+Waverley Heights||49808|-97168|234|5
+#CA|New Brunswick
+Woodstock||46158|-67584|75|6
+#CA|Nova Scotia
+Woodside||44650|-63549|20|8
+Westmount||44647|-63611|36|6
+Williams Lake||44618|-63609|50|6
+Willowdale||44651|-63478|50|6
+#CA|Ontario
+West Nipissing||46372|-79925|211|15
+Wychwood||43678|-79422|149|14
+Woodbine Corridor||43678|-79316|111|13
+Weston-Pellam Park||43674|-79460|125|11
+Wallaceburg||42593|-82389|177|10
+Westfort||48365|-89289|190|8
+Willowdale||43479|-80504|333|8
+Woodbine-Lumsden||43692|-79310|129|8
+Westvale||43445|-80557|363|7
+#CA|Quebec
+Windsor||45567|-71999|173|5
+#CA|Saskatchewan
+Walsh Acres-Lakeridge-Garden Ridge||50497|-104657|582|13
+Warman||52317|-106568|507|11
+Weyburn||49667|-103851|568|11
+Willowgrove||52147|-106555|493|9
+Wildwood||52110|-106594|516|8
+Whitmore Park||50404|-104607|578|7
+#CH|Aargau
+Wohlen||47351|8275|418|14
+Windisch||47479|8218|363|7
+Würenlos|Wurenlos|47442|8363|407|5
+#CH|Bern
+Worb||46930|7563|585|11
+Wohlen||46971|7357|546|9
+#CH|Lucerne
+Willisau||47122|7994|558|8
+#CH|Saint Gallen
+Wittenbach||47461|9386|615|9
+Wattwil||47300|9087|613|8
+#CH|Schwyz
+Wollerau||47195|8719|520|7
+#CH|Thurgau
+Weinfelden||47567|9100|429|9
+#CH|Zurich
+Wädenswil|Waedenswil|47227|8669|450|13
+Wülflingen (Kreis 6)|Wuelflingen (Kreis 6)|47510|8683|410|13
+Wallisellen||47415|8597|462|12
+Wallisellen / Wallisellen-Ost||47414|8597|455|5
+#CI|Bas-Sassandra District
+Walébo|Walebo|5584|-6833|183|14
+Wonséaly|Wonsealy|6171|-7037|183|8
+#CI|Goh-Djiboua
+Wagana||5581|-5368|74|10
+Wanéwa|Wanewa|5824|-6112|164|7
+#CI|Savanes District
+Wora||10084|-6327|341|7
+Waranyéné|Waranyene|9420|-5667|396|6
+Wataradougou||8672|-5815|355|6
+#CI|Woroba
+Wongé|Wonge|8327|-6574|373|6
+#CN|Chongqing
+Weilong||29623|106007|338|15
+Wenhua||30814|107774|460|12
+Wanchao||30192|108147|549|12
+Weixin||30047|105891|266|11
+Wuping||29796|108085|978|11
+Wanling||29488|105649|337|11
+Wangchang||30324|108182|309|10
+Wufu||29122|109117|346|8
+Wugui||29819|105756|282|8
+Wuli||29359|108875|887|8
+Wenfu||29279|107952|821|7
+Wulingshan||29530|107560|1001|6
+Wulong||31654|109431|678|6
+Wutong||30890|108057|237|6
+Wangjia||30346|108312|699|6
+Wanzu||29214|108214|381|5
+#CN|Gansu
+Wujiahe||34672|105244|1764|15
+Wanghe||34901|105948|1667|12
+Wangqi||34685|103846|2244|12
+Wuku||33029|105014|1344|11
+Wangba||33743|105010|1469|10
+Wangmo||33851|105676|1063|9
+Wangba||33343|105695|1242|8
+Wangzang||33951|103600|2142|7
+Wuma||33064|105443|1225|7
+Wangguan||33459|105362|1269|6
+Wuping||33629|104336|2188|6
+#CN|Guangdong
+Wanfeng||22723|113826|6|12
+Wangyao||22906|115699|2|6
+Wuwu||22545|113957|7|6
+#CN|Guizhou
+Wanchao||26600|107850|835|12
+Wenshui||28451|106527|1039|6
+#CN|Xinjiang
+Waxxari||38689|87372|993|6
+#CN|Yunnan
+Wendong||23167|99900|1846|15
+#DE|Baden-Wurttemberg
+Walldorf||49306|8642|105|15
+Wehr||47630|7904|358|13
+Wernau||48693|9415|260|13
+Walldürn|Walldurn|49584|9366|417|12
+Weinsberg||49151|9288|203|12
+Welzheim||48877|9634|508|11
+Wildberg||48623|8745|401|10
+Weil im Schönbuch|Weil im Schonbuch|48623|9064|481|10
+Weilheim an der Teck||48616|9538|383|10
+Weingarten||49055|8527|115|10
+Willstätt|Willstaett|48541|7893|145|9
+Waldenbuch||48638|9133|347|9
+Winterbach||48799|9479|243|8
+Weissach||48847|8928|358|8
+Weikersheim||49479|9900|237|8
+Waldstetten||48766|9821|382|7
+Wollmatingen||47692|9146|416|7
+Wüstenrot|Wustenrot|49081|9461|495|7
+Winterlingen||48183|9117|781|7
+Wutöschingen|Wutoeschingen|47660|8368|387|7
+Wiernsheim||48883|8850|423|6
+Wolfschlugen||48650|9283|373|6
+Wolfach||48293|8216|277|6
+Westhausen||48883|10183|487|6
+Waibstadt||49295|8918|182|6
+Wannweil||48517|9150|320|5
+#DE|Bavaria
+Weißenhorn|Weissenhorn|48305|10160|503|13
+Wasserburg am Inn||48053|12223|461|12
+Wolnzach||48604|11626|413|11
+Waldkirchen||48733|13601|547|11
+Wunsiedel||50039|12003|545|10
+Werneck||49982|10099|220|10
+Waltenhofen||47673|10307|716|9
+Wertingen||48563|10681|428|9
+Wetzendorf||49471|11041|305|8
+Wenzenbach||49076|12200|358|8
+Waldsassen||50002|12304|485|8
+Waldmünchen|Waldmunchen|49378|12709|526|7
+Wallersdorf||48738|12747|335|7
+Weiler-Simmerberg||47583|9914|624|7
+Waging am See||47934|12734|465|6
+Wassertrüdingen|Wassertrudingen|49043|10599|427|6
+Windsbach||49248|10827|389|6
+Weisendorf||49623|10825|308|6
+Wernberg-Köblitz|Wernberg-Koblitz|49539|12161|380|6
+Wegscheid||48601|13787|716|6
+Wemding||48875|10725|458|6
+Windischeschenbach||49801|12157|450|6
+Waakirchen||47773|11673|767|5
+Weitramsdorf||50256|10880|304|5
+Weßling|Wessling|48075|11248|596|5
+Weitnau||47642|10127|791|5
+Wilhermsdorf||49483|10716|320|5
+Waldbüttelbrunn|Waldbuttelbrunn|49788|9847|323|5
+Wiggensbach||47748|10230|853|5
+#DE|Brandenburg
+Wriezen||52721|14134|12|8
+Werneuchen||52633|13734|73|8
+Wustermark||52550|12950|33|8
+Woltersdorf||52456|13750|51|8
+Wusterhausen||52891|12460|36|7
+Wiesenburg||52115|12455|172|5
+#DE|Hamburg
+Wellingsbüttel|Wellingsbuettel|53641|10080|27|11
+#DE|Hesse
+Weilburg||50484|8262|165|14
+Wolfhagen||51326|9170|283|13
+Wächtersbach|Waechtersbach|50255|9296|148|12
+Wald-Michelbach||49570|8832|339|12
+Wieseck||50605|8702|173|10
+Wölfersheim|Wolfersheim|50400|8817|153|10
+Wehrheim||50300|8567|314|9
+Wetter||50903|8724|213|9
+Weilmünster|Weilmuenster|50431|8377|179|9
+Waldeck||51206|9063|399|8
+Wabern||51100|9350|165|8
+Wixhausen||49931|8650|122|6
+Waldbrunn||50519|8108|316|6
+Waldems||50250|8333|356|6
+Wehrda||50838|8756|224|6
+Walluf||50040|8155|118|6
+Willingen||51294|8609|571|6
+Willingshausen||50850|9200|230|5
+Waldkappel||51145|9877|237|5
+#DE|Lower Saxony
+Wiefelstede||53256|8117|15|15
+Wennigsen||52274|9573|91|14
+Wiesmoor||53415|7736|8|13
+Wettbergen||52330|9695|64|13
+Winsen||52683|9910|35|13
+Wittingen||52727|10736|84|12
+Wietmarschen||52518|7134|23|11
+Wendeburg||52330|10393|69|10
+Worpswede||53221|8926|11|9
+Werlte||52851|7675|35|9
+Westhagen||52404|10739|105|9
+Weinberg||52257|10474|83|9
+Wilhelmitor - Süd|Wilhelmitor - Sued|52251|10511|75|8
+Wietze||52651|9845|32|8
+Wagenfeld||52549|8589|37|7
+Wathlingen||52537|10150|44|6
+Wilhelmitor - Nord||52259|10498|73|6
+#DE|Mecklenburg-Vorpommern
+Wolgast||54052|13771|1|13
+Weststadt||53635|11396|65|12
+Warnemünde|Warnemuende|54177|12084|4|8
+Wittenburg||53506|11079|44|5
+#DE|North Rhine-Westphalia
+Winterberg||51192|8535|679|15
+Wickede||51496|7866|168|13
+Werther||52078|8418|129|12
+Westerkappeln||52317|7883|64|11
+Worringen||51065|6859|43|10
+Weeze||51627|6198|21|10
+Waldfeucht||51066|5988|50|9
+Willebadessen||51626|9037|221|9
+Wettringen||52209|7319|49|8
+Wachtendonk||51409|6339|31|8
+Wahn-Heide||50859|7107|59|8
+Wambel||51518|7526|101|8
+Wellinghofen||51469|7490|147|7
+Westerfilde||51544|7374|81|7
+Walheim - Hahn||50707|6178|277|5
+Wadersloh||51733|8250|95|5
+Westhofen||51423|7533|118|5
+Wenden||50967|7867|405|5
+Welver||51617|7967|76|5
+#DE|Rheinland-Pfalz
+Wissen||50779|7735|193|9
+Wörrstadt|Worrstadt|49849|8124|208|8
+Weißenthurm|Weissenthurm|50417|7451|79|8
+Westerburg||50559|7975|325|6
+Waldmohr||49383|7333|270|5
+Waldsee||49395|8440|102|5
+Wirges||50472|7798|271|5
+Waldfischbach-Burgalben||49283|7667|352|5
+#DE|Saarland
+Wallerfangen||49327|6711|188|10
+Weiskirchen||49550|6817|352|6
+#DE|Saxony
+Wilsdruff||51052|13537|269|14
+Wilkau-Haßlau|Wilkau-Hasslau|50675|12515|279|12
+Weinböhla|Weinbohla|51167|13567|137|10
+Waldheim||51073|13020|191|9
+Wilthen||51097|14393|289|6
+Wittichenau||51385|14244|126|6
+Wermsdorf||51283|12950|179|6
+#DE|Saxony-Anhalt
+Wolmirstedt||52249|11629|52|11
+Wanzleben||52061|11441|97|5
+#DE|Schleswig-Holstein
+Westerland||54908|8303|8|13
+Wentorf bei Hamburg||53495|10254|46|12
+Wahlstedt||53953|10213|45|10
+Wittorf||54057|9967|19|6
+Westerrönfeld|Westerronfeld|54280|9650|9|5
+#DE|State of Berlin
+Waidmannslust||52607|13320|47|11
+Wannsee||52419|13155|40|10
+Wilhelmsruh||52587|13369|44|8
+#DE|Thuringia
+Wenigenjena||50932|11600|143|12
+Waltershausen||50898|10558|330|11
+Winzerla||50893|11584|182|11
+Weida||50774|12060|239|9
+Worbis||51420|10363|324|5
+#DM|Saint Andrew Parish
+Wesley||15567|-61317|90|2
+#FM|Chuuk
+Weno||7446|151841|0|14
+#FR|Grand Est
+Woippy||49151|6151|170|14
+Wittelsheim||47809|7242|256|10
+Wissembourg||49037|7945|161|9
+Wintzenheim||48073|7291|230|8
+Wasselonne||48638|7445|216|6
+#FR|Hauts-de-France
+Wattignies||50586|3044|37|15
+Wingles||50494|2855|26|9
+Wambrechies||50683|3048|19|9
+Wavrin||50574|2936|27|8
+Wimereux||50770|1611|7|8
+Waziers||50387|3115|22|7
+Wallers||50374|3392|22|6
+Wormhout||50881|2469|15|5
+#GB|England
+Whitechapel||51514|-66|18|15
+West Drayton||51500|-467|29|14
+West Wickham||51367|-17|88|14
+Wavertree||53398|-2916|52|14
+Woolston||50893|-1378|16|14
+West Derby||53433|-2910|36|14
+World's End||51657|-110|37|14
+Whiston||53420|-2789|62|14
+Wetherby||53928|-1387|30|14
+Wombourne||52533|-2183|90|14
+Whitby||54488|-615|14|13
+Wantage||51588|-1426|95|13
+Woolton||53374|-2870|62|13
+West Watford||51657|-417|67|13
+Whittlesey||52558|-130|8|13
+Westbourne||51521|-194|34|12
+Wallingford||51600|-1125|51|12
+Wanstead||51577|25|33|12
+West End||51512|-144|31|12
+Woodbridge||52093|1320|8|11
+Wimbledon Park||51435|-199|23|11
+Wells||51208|-2649|42|11
+West End of London||51514|-155|39|11
+Whitchurch||52967|-2683|101|10
+Waltham Cross||51686|-36|20|10
+Watton||52567|833|55|10
+Westergate||50840|-671|10|10
+Warsop||53214|-1151|61|10
+Wivenhoe||51856|958|10|10
+Wideopen||55045|-1622|69|9
+Water Eaton||51987|-722|75|8
+Woodside||51694|-402|78|8
+Warlingham||51310|-58|186|8
+West Thurrock||51478|277|14|8
+Windermere||54381|-2907|120|8
+Wendover||51762|-740|131|8
+West Kirby||53373|-3184|11|8
+Watton||53933|-450|8|8
+Wareham||50688|-2111|11|8
+Wardle||53650|-2133|200|7
+West Mersea||51778|919|15|7
+Willington||54717|-1700|140|7
+Wadebridge||50517|-4836|3|7
+Westgate on Sea||51382|1337|18|7
+Waltham||53517|-100|19|7
+Whetstone||52567|-1183|71|7
+Wroughton||51524|-1796|118|6
+Washingborough||53224|-475|10|6
+Witley||51150|-648|88|6
+Wingerworth||53202|-1434|151|6
+West Hallam||52971|-1358|86|6
+Withernsea||53731|32|8|6
+Weaverham||53260|-2573|46|6
+Wellesbourne Mountford||52192|-1610|49|6
+Wales||53341|-1282|110|6
+Wem||52858|-2718|82|6
+Wellesbourne||52197|-1591|50|6
+Wigton||54825|-3161|33|6
+Whitworth||53656|-2177|222|6
+Waterbeach||52266|191|10|6
+Wotton-under-Edge||51632|-2345|82|6
+Wheatley||51747|-1139|79|6
+Wilsden||53821|-1860|216|6
+West Kingsdown||51343|261|163|5
+Wincanton||51057|-2406|110|5
+West Clandon||51261|-503|64|5
+Whitburn||54953|-1369|40|5
+Whaley Bridge||53330|-1983|170|5
+Wingate||54732|-1379|132|5
+Woburn Sands||52016|-650|90|5
+West Byfleet||51338|-506|27|5
+Wirksworth||53082|-1574|170|5
+West Ilsley||51540|-1324|135|0
+#GB|Northern Ireland
+Warrenpoint||54101|-6257|5|8
+#GB|Scotland
+Westhill||57153|-2280|127|12
+Whitburn||55867|-3683|173|11
+Wick||58439|-3094|17|7
+Westhill||57473|-4149|92|5
+#GB|Wales
+Whitchurch||51512|-3221|32|14
+Welshpool||52660|-3147|84|7
+#HK|Eastern District
+Wan Tsui Estate||22261|114237||10
+#HK|Kowloon City
+Whampoa Estate||22306|114188|2|7
+#HK|Southern District
+Wah Kwai||22251|114140|51|13
+Wah Kwai Estate||22250|114140|51|9
+#HK|Tuen Mun
+Wu King||22376|113965|8|13
+#HU|Budapest
+Wekerletelep||47456|19126|104|11
+#IE|Connacht
+Westport||53800|-9517|19|6
+#IE|Leinster
+Wicklow||52975|-6049|53|13
+Walkinstown||53330|-6340|39|7
+#IN|Chhattisgarh
+Wādrupnagar|Wadrupnagar|23766|83206|467|6
+#IN|Gujarat
+Waghāi|Waghai|20770|73501|147|7
+#IN|Jammu and Kashmir
+Wail||34271|74804|1668|8
+Watargām|Watargam|34319|74374|1595|7
+#IN|Maharashtra
+Wadgaon||18739|73639|631|15
+Worthi||21240|79644|268|13
+Wājegaon|Wajegaon|19144|77346|362|10
+Walni||21323|79087|301|9
+Wāghoda|Waghoda|21373|78935|322|8
+Wardhāmna|Wardhamna|21127|78950|325|6
+#IN|Manipur
+Wangoi||24675|93900|775|15
+Wāngjing|Wangjing|24589|94064|793|8
+#IN|Tamil Nadu
+Wālājābād|Walajabad|12790|79824|62|15
+#JO|Irbid
+Waqqāş|Waqqas|32542|35605|-192|6
+#JO|Ma’an
+Wādī Mūsá|Wadi Musa|30321|35479|1127|14
+#JP|Chiba
+Wada||35037|140016|40|8
+#JP|Gifu
+Wanouchi||35285|136637|11|10
+#JP|Kagoshima
+Wadomari||27383|128650|16|7
+#JP|Kumamoto
+Wakasu||32603|130643|2|11
+#JP|Okayama
+Wake||34812|134143|22|14
+#JP|Tokyo
+Waseda-tsurumakichō|Waseda-tsurumakicho|35707|139725|17|6
+#JP|Wakayama
+Wasa||33896|135208|20|9
+#JP|Yamaguchi
+Waki||34200|132217|54|6
+#KE|Lamu
+Witu||-2389|40438|16|5
+#KE|Taita Taveta
+Wundanyi||-3396|38357|1472|13
+#KY|
+Whitehall Estates||19313|-81382|3|11
+#LK|Uva Province
+Wellawaya||6737|81103|188|10
+Wattegama||6799|81481|105|8
+#LU|Luxembourg
+Walferdange||49663|6132|232|8
+#LU|Wiltz
+Wiltz||49965|5934|382|5
+#LY|Al Jabal al Akhdar
+Wardāmah|Wardamah|32797|21791|590|11
+#LY|Al Jufrah
+Waddān|Waddan|29161|16139|251|10
+#MH|Wotho Atoll
+Wotho||10166|166010|8|0
+#MH|Wotje Atoll
+Wotje||9454|170237|9|1
+#MM|Yangon
+War Net Kone||17130|96269|5|10
+Ward 1||16913|96189|3|9
+Ward 5||16893|96200|3|8
+#MR|Gorgol
+Wali Djantang||15333|-12875|15|8
+#NA|Karas Region
+Warmbad||-28446|18736|730|7
+#NC|Loyalty Islands
+Wé|We|-20917|167265|9|10
+#NG|Borno State
+Wuyo||10385|11697|312|9
+#NG|Katsina State
+Wagini||12688|7196|488|10
+#NG|Kebbi
+Wasagu||11376|5795|501|8
+#NG|Niger State
+Wawa||9903|4408|228|10
+#NG|Sokoto
+Wurno||13290|5424|273|13
+#NI|North Caribbean Coast
+Waslala||13335|-85370|376|6
+Waspán|Waspan|14742|-83972|46|6
+#NI|Nueva Segovia Department
+Wiwilí|Wiwili|13627|-85825|313|7
+#NL|Friesland
+Wolvega||52875|5997|5|13
+#NL|Gelderland
+Wezep||52462|5999|6|14
+Warnsveld||52138|6231|10|9
+Wehl||51961|6211|15|7
+Woudhuis||52213|6011|9|6
+Westervoort||51956|5972|11|6
+#NL|North Brabant
+Werkendam||51810|4894|2|11
+Waalre||51387|5444|24|6
+Woenselse Heide||51483|5467|17|5
+Waspik||51687|4944|2|5
+#NL|North Holland
+Wormer||52495|4806|1|13
+Warmenhuizen||52723|4738|3|6
+Westzaan||52464|4772|3|5
+#NL|Overijssel
+Wijhe||52387|6135|7|6
+#NL|Utrecht
+Woudenberg||52081|5417|4|11
+Wilnis||52197|4897|-2|6
+#NZ|Auckland
+West Harbour||-36818|174610|48|12
+Western Heights||-36878|174610|39|10
+Waiuku||-37248|174735|13|10
+Wattle Downs||-37038|174890|20|10
+Warkworth||-36400|174667|23|7
+Wiri||-36998|174860|23|7
+#NZ|Canterbury
+Wigram||-43550|172550|21|12
+Woodend||-43317|172667|13|5
+#NZ|Chatham Islands
+Waitangi||-43954|-176560|18|0
+#NZ|Manawatu-Wanganui
+West End||-40366|175598|31|6
+#NZ|Marlborough
+Witherlea||-41528|173950|13|6
+#NZ|Otago
+Wanaka||-44700|169150|325|13
+#NZ|Taranaki Region
+Waitara||-39002|174238|8|8
+#NZ|Waikato Region
+Whitianga||-36833|175700|8|6
+#NZ|Wellington Region
+Waikanae||-40883|175067|30|14
+Whitby||-41108|174890|49|12
+Waterloo||-41215|174926|30|6
+#NZ|West Coast
+Waikowhai||-43450|169883|51|6
+#PG|Enga Province
+Wabag||-5491|143722|2069|4
+#PG|Morobe Province
+Wau||-7342|146724|1179|15
+#PH|Davao Region
+Wañgan|Wangan|7160|125445|279|8
+#PL|Greater Poland
+Wolsztyn||52116|16117|63|14
+Wronki||52711|16380|47|11
+Witkowo||52440|17773|120|8
+Wieleń|Wielen|52895|16171|35|6
+Wyrzysk||53153|17268|67|5
+#PL|Kujawsko-Pomorskie
+Wąbrzeźno|Wabrzezno|53280|18948|105|14
+Więcbork|Wiecbork|53354|17491|113|6
+#PL|Lesser Poland
+Wolbrom||50380|19758|375|9
+Wieprz||49891|19357|289|5
+#PL|Lower Silesia
+Wołów|Wolow|51337|16644|113|12
+Wojszyce||51058|17045|128|7
+#PL|Lublin
+Włodawa|Wlodawa|51550|23550|173|13
+#PL|Lubusz
+Wschowa||51807|16317|100|14
+Witnica||52673|14898|22|7
+#PL|Mazovia
+Wilanów|Wilanow|52163|21087|85|14
+Węgrów|Wegrow|52400|22016|121|13
+Warka||51784|21191|115|11
+#PL|Opole Voivodeship
+Wołczyn|Wolczyn|51018|18050|169|6
+#PL|Podlasie
+Wasilków|Wasilkow|53199|23208|129|9
+Wysokie Mazowieckie||52917|22517|143|9
+#PL|Pomerania
+Władysławowo|Wladyslawowo|54791|18401|19|15
+Wielki Kack||54468|18488|134|10
+#PL|Silesia
+Wisła|Wisla|49656|18859|428|11
+Wapienica||49817|18983|340|11
+Wojkowice||50365|19037|289|9
+Wola||50017|19123|239|9
+Wilkowice||49763|19090|402|6
+#PL|Warmia-Masuria
+Węgorzewo|Wegorzewo|54216|21737|120|12
+#PL|West Pomerania
+Wolin||53842|14615|6|12
+#PL|Łódź Voivodeship
+Wieruszów|Wieruszow|51295|18155|154|9
+#PL|Świętokrzyskie
+Włoszczowa|Wloszczowa|50853|19966|239|11
+#PS|West Bank
+Wadi al-Joz||31790|35237|743|13
+#SD|Al Jazirah
+Wad Rāwah|Wad Rawah|15160|33140|394|10
+#SD|Kassala
+Wagar||16153|36203|421|12
+#SD|White Nile
+Wad az Zāki|Wad az Zaki|14462|32207|390|9
+#SG|
+Woodlands North Coast||1451|103784|1|11
+West Coast Village||1317|103750|10|7
+#SN|Matam
+Waoundé|Waounde|15264|-12868|24|8
+#SO|Bakool
+Waajid||3810|43246|381|7
+#TH|Bangkok
+Wat Arun||13741|100488|2|14
+#TH|Maha Sarakham
+Wapi Pathum||15845|103377|147|10
+#TH|Phichit
+Wang Sai Phun||16389|100538|50|9
+#TH|Roi Et
+Waeng||16300|103978|148|13
+#TH|Surat Thani
+Wiang Sa||8636|99367|41|12
+#TN|Gabès Governorate
+Wadhraf||33983|9970|27|10
+#TW|Taipei
+Wulai||24864|121551|127|6
+#UG|Western Region
+Wanseko||2178|31382|625|14
+#US|Alabama
+Wetumpka||32544|-86212|55|8
+#US|Alaska
+Wasilla||61581|-149441|106|9
+#US|Arizona
+West Sedona||34867|-111805|1354|11
+Winslow||35024|-110697|1479|10
+Wickenburg||33969|-112730|627|7
+Williamson||34690|-112541|1541|5
+#US|Arkansas
+Wynne||35225|-90787|80|8
+West Helena||34551|-90642|78|8
+Warren||33613|-92065|67|6
+White Hall||34274|-92091|87|5
+#US|California
+Woodcrest||33882|-117357|468|14
+Winton||37389|-120613|54|11
+Waterford||37641|-120760|52|9
+West Athens||33923|-118303|58|9
+Westlake Village||34146|-118806|281|9
+Walnut Village||33710|-117797|28|8
+Woodlake||36414|-119099|134|8
+Winters||38525|-121971|41|7
+Willows||39524|-122194|42|6
+West Modesto||37618|-121039|21|6
+West Rancho Dominguez||33894|-118271|25|6
+Woodside||37430|-122254|118|6
+Waldon||37926|-122056|28|5
+Wilton||38412|-121272|24|5
+Williams||39155|-122149|25|5
+#US|Colorado
+Welby||39837|-104959|1565|15
+Woodmoor||39101|-104847|2208|9
+Wellington||40704|-105009|1586|8
+Woodland Park||38994|-105057|2585|7
+#US|Connecticut
+Windsor Locks||41929|-72627|13|12
+Winchester Center||41900|-73135|404|11
+Woodbury||41545|-73209|79|10
+Woodbridge||41353|-73008|116|9
+Winsted||41921|-73060|216|8
+#US|Delaware
+Wilmington Manor||39687|-75584|18|8
+#US|District of Columbia
+Woodley Park||38929|-77056|69|10
+Woodridge||38931|-76971|45|7
+#US|Florida
+Warrington||30384|-87275|2|15
+Wilton Manors||26160|-80139|2|12
+Westwood Lake||25729|-80373|1|12
+West Perrine||25606|-80363|3|11
+Westview||25882|-80242|1|10
+Winston||28032|-82015|42|9
+West Gate||26703|-80098|4|8
+Williamsburg||28414|-81443|27|8
+West Vero Corridor||27638|-80486|6|7
+Willow Oak||27916|-82018|34|7
+Wedgefield||28488|-81077|21|7
+Wildwood||28865|-82041|20|7
+Wimauma||27713|-82299|31|6
+West Miami||25763|-80296|3|6
+West Samoset||27469|-82557|12|6
+Wahneta||27953|-81727|41|5
+Warm Mineral Springs||27060|-82260|1|5
+#US|Georgia
+Waycross||31214|-82356|39|14
+Whitemarsh Island||32029|-81017|1|7
+Waynesboro||33090|-82016|88|6
+#US|Hawaii
+Waimalu||21390|-157939|115|14
+Waianae||21438|-158186|5|13
+Waipio||21418|-157999|116|12
+Waimea||20023|-155673|813|9
+Waihee-Waiehu||20930|-156505|38|9
+Wailea||20690|-156442|17|6
+Wailea-Makena||20663|-156427|129|6
+Waipi‘o Acres|Waipi'o Acres|21465|-158013|211|6
+West Loch Estates||21372|-158024|18|6
+Waimanalo||21346|-157724|7|5
+Wailua Homesteads||22072|-159377|114|5
+#US|Idaho
+Weiser||44251|-116969|649|5
+#US|Illinois
+Wood Dale||41963|-87979|211|14
+Wauconda||42259|-88139|245|14
+Western Springs||41810|-87901|205|13
+Warrenville||41818|-88173|212|13
+Winnetka||42108|-87736|199|12
+Worth||41690|-87797|186|11
+Wood River||38861|-90098|133|10
+Waterloo||38336|-90150|216|10
+Winfield||41862|-88161|235|10
+Willowbrook||41770|-87936|223|9
+West Frankfort||37898|-88931|122|8
+West Dundee||42098|-88283|232|7
+Winthrop Harbor||42479|-87824|194|7
+Willow Springs||41741|-87860|188|6
+Wilmington||41308|-88147|166|6
+Watseka||40776|-87736|193|5
+#US|Indiana
+Warsaw||41238|-85853|252|14
+Washington||38659|-87173|153|12
+Wabash||40798|-85821|217|10
+Whitestown||39997|-86346|286|6
+Westville||41541|-86901|242|6
+Winfield||41405|-87275|216|5
+#US|Iowa
+Waverly||42726|-92475|278|10
+Webster City||42469|-93816|317|8
+Washington||41299|-91693|232|7
+Winterset||41331|-94014|332|5
+#US|Kansas
+Winfield||37240|-96996|344|12
+Wellington||37265|-97372|375|8
+#US|Kentucky
+Wilmore||37862|-84662|269|6
+Williamsburg||36743|-84160|283|5
+#US|Louisiana
+West Monroe||32518|-92148|25|13
+Woodmere||29858|-90080|0|12
+Waggaman||29919|-90211|2|10
+Westwego||29906|-90142|0|9
+Walker||30488|-90861|14|6
+#US|Maine
+Wells Beach Station||43324|-70591|30|10
+Winslow||44547|-69621|43|8
+Waterboro||43536|-70715|81|8
+#US|Maryland
+Walker Mill||38875|-76888|61|11
+White Marsh||39384|-76432|16|10
+Westphalia||38845|-76811|52|7
+Woodlawn||38950|-76891|47|6
+Waltherson||39347|-76563|74|6
+Walkersville||39486|-77352|94|6
+#US|Massachusetts
+Whitman||42081|-70936|36|14
+Westwood||42214|-71224|73|14
+Wayland||42363|-71361|36|13
+Winter Hill||42396|-71099|36|13
+Weston||42367|-71303|56|12
+Webster||42050|-71880|140|11
+Wrentham||42067|-71328|76|11
+West Newton||42350|-71233|15|9
+West Cambridge/Harvard Square||42372|-71119|3|8
+West Boylston||42367|-71786|154|8
+Westminster||42546|-71911|325|7
+West Bridgewater||42019|-71008|19|7
+Whitinsville||42111|-71666|98|7
+West Fens||42343|-71098|3|7
+West Somerville/Davis Square||42396|-71123|7|6
+Ware||42260|-72240|129|6
+West Concord||42458|-71395|36|6
+West Yarmouth||41650|-70241|6|6
+Walpole||42142|-71249|45|6
+Watertown Square||42365|-71185|4|5
+#US|Michigan
+Wixom||42525|-83536|283|14
+Woodhaven||42139|-83242|184|13
+Westwood||42303|-85634|287|9
+Walled Lake||42538|-83481|287|7
+Whitmore Lake||42440|-83745|281|6
+#US|Minnesota
+Worthington||43620|-95596|486|13
+Waconia||44851|-93787|309|12
+Waseca||44078|-93507|351|9
+Wyoming||45336|-92997|276|8
+Waite Park||45557|-94224|327|8
+#US|Mississippi
+West Point||33608|-88650|71|11
+Waveland||30287|-89376|5|6
+West Hattiesburg||31319|-89375|77|6
+#US|Missouri
+Washington||38558|-91012|168|14
+West Plains||36728|-91852|306|12
+Webb City||37146|-94463|305|11
+Warrenton||38811|-91142|270|8
+Weldon Spring||38713|-90689|165|6
+Willard||37305|-93429|377|5
+Waynesville||37829|-92201|246|5
+#US|Montana
+Whitefish||48411|-114338|923|7
+#US|Nebraska
+Wayne||42231|-97018|443|6
+#US|Nevada
+Winnemucca||40973|-117736|1309|8
+#US|New Hampshire
+Windham||42801|-71304|60|13
+Weare||43095|-71731|194|9
+#US|New Jersey
+Weehawken||40770|-74020|50|14
+West Freehold||40242|-74301|53|14
+Woodland Park||40890|-74195|107|13
+Wanaque||41038|-74294|70|12
+Wallington||40853|-74114|4|12
+Westwood||40991|-74033|22|11
+Waldwick||41011|-74118|76|10
+Woodbury||39838|-75153|17|10
+White Horse||40191|-74702|26|9
+White Meadow Lake||40924|-74511|228|9
+Whippany||40825|-74417|71|9
+Wood-Ridge||40846|-74088|53|8
+West Long Branch||40290|-74018|9|8
+Wharton||40893|-74582|205|7
+Washington||40758|-74979|139|6
+Woodcliff Lake||41023|-74067|75|6
+Watchung||40638|-74451|54|6
+Wildwood||38992|-74815|0|5
+#US|New Mexico
+White Rock||35828|-106204|1940|6
+#US|New York
+Wykagyl||40941|-73799|39|14
+Wawarsing||41759|-74357|90|13
+West Henrietta||43040|-77662|184|12
+Wyandanch||40754|-73360|17|12
+Woodbury||41365|-74106|147|11
+West Haverstraw||41210|-73985|33|10
+Watervliet||42730|-73701|9|10
+Westerleigh||40621|-74132|19|9
+Woodbury||40826|-73468|54|9
+Wading River||40950|-72843|28|8
+Williston Park||40756|-73645|37|7
+Woodlawn||40898|-73867|43|7
+Westmere||42691|-73869|89|7
+West Glens Falls||43300|-73684|116|7
+Walden||41561|-74188|114|7
+Warwick||41256|-74360|158|7
+West Point||41391|-73956|47|7
+Wesley Hills||41159|-74070|164|6
+Washingtonville||41428|-74166|93|6
+West Hills||40816|-73432|106|6
+Wappingers Falls||41596|-73911|47|6
+Webster||43212|-77430|136|6
+Williamsville||42964|-78738|206|5
+Wheatley Heights||40764|-73370|31|5
+Waterloo||42905|-76863|138|5
+West Sayville||40728|-73098|4|5
+#US|North Carolina
+Waxhaw||34925|-80743|202|13
+Weddington||35022|-80761|222|11
+Waynesville||35489|-82989|837|10
+Washington||35547|-77052|3|10
+Winterville||35529|-77401|21|9
+Wesley Chapel||35007|-80675|186|8
+Woodfin||35633|-82582|645|6
+Wendell||35781|-78370|97|6
+Whiteville||34339|-78703|30|6
+Wadesboro||34968|-80077|156|6
+Williamston||35855|-77056|21|6
+#US|North Dakota
+Wahpeton||46265|-96606|294|8
+Watford City||47802|-103283|646|7
+#US|Ohio
+Worthington||40093|-83018|263|14
+Washington Court House||39536|-83439|297|14
+Willowick||41633|-81469|190|14
+Warrensville Heights||41435|-81536|316|14
+West Carrollton City||39672|-84252|214|13
+Wickliffe||41605|-81453|234|13
+Wilmington||39445|-83829|310|12
+Wapakoneta||40568|-84194|273|10
+Willoughby Hills||41598|-81418|245|9
+Wyoming||39231|-84466|175|8
+Wauseon||41549|-84142|235|7
+Withamsville||39062|-84288|268|7
+Wheelersburg||38730|-82855|169|6
+Walnut Hills||39127|-84484|243|6
+Willard||41053|-82726|283|6
+Waterville||41501|-83718|187|6
+Wellston||39123|-82533|226|5
+#US|Oklahoma
+Woodward||36434|-99390|582|13
+Weatherford||35526|-98708|504|12
+Warr Acres||35523|-97619|399|10
+Wagoner||35960|-95369|180|9
+#US|Oregon
+West Haven-Sylvan||45516|-122768|162|8
+White City||42437|-122832|400|8
+West Slope||45499|-122765|114|7
+West Haven||45518|-122770|159|6
+Winston||43122|-123413|169|5
+Warrenton||46165|-123924|7|5
+#US|Pennsylvania
+West Norriton||40130|-75379|71|15
+Whitehall||40361|-79991|382|14
+Washington||40174|-80246|356|13
+Washington Square||39950|-75162|30|13
+Weigelstown||39984|-76822|157|13
+West Mount Airy||40053|-75198|100|13
+West Kensington||39987|-75139|18|12
+Waynesboro||39756|-77578|216|11
+Wyomissing||40330|-75965|96|10
+Woodlyn||39872|-75337|20|9
+Warren||41844|-79145|366|9
+Wilson||40684|-75242|117|8
+White Oak||40338|-79809|250|8
+Wynnefield Heights||40003|-75205|68|8
+Willow Street||39979|-76276|147|8
+Wilson||40310|-79891|230|8
+West View||40522|-80034|345|7
+Wescosville||40567|-75553|126|6
+Wyndmoor||40081|-75189|128|5
+#US|Rhode Island
+Warren||41730|-71283|15|11
+Wakefield-Peacedale||41446|-71500|11|8
+West Greenwich||41637|-71660|77|6
+#US|South Carolina
+Woodfield||34059|-80931|104|9
+Welcome||34827|-82439|300|7
+Walterboro||32905|-80667|21|5
+#US|Tennessee
+White House||36470|-86651|263|11
+Winchester||35186|-86112|298|9
+#US|Texas
+Wells Branch||30446|-97679|250|12
+Webster||29538|-95118|7|11
+Woodway||31506|-97205|193|9
+Wharton||29312|-96103|31|9
+Whitehouse||32227|-95225|146|8
+West Livingston||30698|-95002|43|8
+White Oak||32528|-94861|126|6
+Willis||30425|-95480|116|6
+Windcrest||29516|-98380|240|6
+Wake Village||33427|-94106|104|5
+#US|Utah
+West Haven||41203|-112051|1302|12
+Woods Cross||40872|-111892|1334|11
+West Point||41118|-112084|1315|10
+Washington Terrace||41173|-111977|1405|9
+West Bountiful||40894|-111902|1301|6
+White City||40566|-111864|1397|5
+#US|Vermont
+Williston||44438|-73068|151|8
+Winooski||44491|-73186|54|7
+#US|Virginia
+Warrenton||38713|-77795|195|10
+Wyndham||37698|-77612|76|10
+Woodburn||38847|-77236|82|8
+Wytheville||36948|-81085|697|8
+West Gate||38783|-77497|63|8
+Woodlake||37421|-77679|76|7
+Woodstock||38882|-78506|239|5
+#US|Washington
+West Richland||46304|-119361|126|14
+White Center||47517|-122355|116|13
+West Valley||46592|-120605|364|13
+Woodinville||47754|-122163|12|12
+Walnut Grove||45668|-122599|83|10
+Waller||47201|-122369|119|8
+Wollochet||47269|-122584|59|7
+Woodland||45905|-122744|9|6
+Woods Creek||47879|-121898|112|6
+West Side Highway||46184|-122917|18|6
+West Clarkston-Highland||46403|-117064|285|5
+Wapato||46448|-120420|261|5
+#US|Wisconsin
+Whitewater||42834|-88732|251|15
+Whitefish Bay||43113|-87900|198|14
+Waunakee||43192|-89456|283|13
+Waupun||43633|-88730|272|11
+Waupaca||44358|-89086|259|6
+Waterford||42763|-88214|236|5
+Wind Lake||42829|-88159|242|5
+West Salem||43899|-91081|226|5
+#US|Wyoming
+Worland||44017|-107955|1239|5
+#ZA|Eastern Cape
+Willowmore||-33293|23490|828|9
+#ZA|Free State
+Warden||-27855|28965|1628|13
+Wepener||-29729|27038|1429|11
+#ZA|Gauteng
+Walkerville||-26421|27953|1690|8
+#ZA|KwaZulu-Natal
+Weenen||-28849|30077|859|8
+Winterton||-28812|29541|1041|7
+#ZA|Limpopo
+Welverdiend||-24580|31326|513|8
+#ZA|Mpumalanga
+Wakkerstroom||-27355|30144|1774|8
+#ZA|Western Cape
+Wolseley||-33414|19201|265|15
+Wilderness||-33994|22576|15|7

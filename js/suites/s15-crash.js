@@ -3,7 +3,7 @@
 // energy absorbers; head strike and HIC; bird strike by hydrodynamic theory; explicit 1-D elastic–plastic wave
 // propagation with Johnson–Cook / Cowper–Symonds rate effects; water impact of a wedge; emergency-landing inertia loads.
 // Explicit 3-D finite elements (native kernel): fuselage barrel-section drop test, full-aircraft hybrid crash model
-// (masses, nonlinear beams, crush springs) and projectile impact on a panel of solid elements with erosion.
+// (masses, nonlinear beams, crush springs) and projectile impact on a panel of shell or solid elements with erosion.
 
 import * as N from '../core/numerics.js';
 import { G0 } from '../core/atmosphere.js';
@@ -76,7 +76,7 @@ const pulse = {
     { key: 'F_crush', label: 'Subfloor crush plateau force per seat', unit: 'N', default: 96000, min: 1, group: 'Crush zone', help: 'Mean crushing force of the structure below one seat' },
     { key: 'd_crush', label: 'Available crush depth', unit: 'm', default: 0.3, min: 0.001, group: 'Crush zone', help: 'Subfloor structure plus landing-gear stroke' },
     { key: 'k_crush', label: 'Initial crush stiffness', unit: 'N/m', default: 9.6e6, min: 1, group: 'Crush zone' },
-    { key: 'F_ea', label: 'Seat energy-absorber limit load', unit: 'N', default: 12700, min: 1, group: 'Seat', help: 'Stroking seats are commonly set at about 12–14.5 g on the effective occupant mass; a rigid seat has a very high value' },
+    { key: 'F_ea', label: 'Seat energy-absorber limit load', unit: 'N', default: 12700, min: 1, group: 'Seat', help: 'Stroking seats are commonly set at about 12–14.5 g on the effective occupant mass; a rigid seat has a very high value. 14.5 g is the energy-absorber limit-load factor marked in the Aircraft Crash Survival Design Guide (USAAVSCOM TR 89-D-22B, Vol. II, Figure 25); the default equals 14.5 g on the default seat and upper-body masses' },
     { key: 's_ea', label: 'Available seat stroke', unit: 'm', default: 0.3, min: 0, group: 'Seat' },
     { key: 'k_seat', label: 'Seat and cushion stiffness', unit: 'N/m', default: 2.5e6, min: 1, group: 'Seat' },
     { key: 't_end', label: 'Simulated time', unit: 's', default: 0.3, min: 0.01, max: 5, group: 'Numerics' },
@@ -335,12 +335,12 @@ const bird = {
   equations: ['Conservation of linear momentum', 'Conservation of energy', 'Impact contact equations', 'Fracture criteria'],
   inputs: [
     { key: 'm_bird', label: 'Bird mass', unit: 'kg', default: 1.81, min: 0.01, max: 10, group: 'Bird', help: '1.81 kg (4 lb) is the usual transport-aircraft bird; 3.6 kg (8 lb) is used for some empennage requirements. Confirm against your certification basis' },
-    { key: 'rho_bird', label: 'Bird density', unit: 'kg/m³', default: 950, min: 300, max: 1100, group: 'Bird', help: 'About 950 kg/m³ for gelatine substitutes with porosity' },
+    { key: 'rho_bird', label: 'Bird density', unit: 'kg/m³', default: 950, min: 300, max: 1100, group: 'Bird', help: '950 kg/m³ was measured for chickens and corresponds to water-like tissue of 1060 kg/m³ with 10% porosity (Wilbeck, AFML-TR-77-134, Appendix C)' },
     { key: 'LD', label: 'Bird length / diameter', unit: '-', default: 2, min: 1, max: 4, group: 'Bird' },
     { key: 'V', label: 'Impact speed', unit: 'm/s', default: 180, min: 5, max: 400, group: 'Impact', help: 'Design cruise speed at sea level for transport aircraft' },
     { key: 'angle_deg', label: 'Angle between flight path and surface', unit: 'deg', default: 90, min: 5, max: 90, group: 'Impact', help: '90° = normal impact; leading edges and windshields are oblique' },
-    { key: 'c0', label: 'Bird-material sound speed', unit: 'm/s', default: 1482, min: 300, max: 2000, group: 'Bird', help: 'Water value; porosity lowers the effective shock speed' },
-    { key: 'k_h', label: 'Hugoniot slope', unit: '-', default: 2.0, min: 1, max: 3, group: 'Bird', help: 'Shock speed = c₀ + k·particle speed (≈ 2 for water)' },
+    { key: 'c0', label: 'Bird-material sound speed', unit: 'm/s', default: 1482, min: 300, max: 2000, group: 'Bird', help: 'Water at 20 °C: 1482.9 m/s (Wilbeck, AFML-TR-77-134, Appendix C); porosity lowers the effective shock speed' },
+    { key: 'k_h', label: 'Hugoniot slope', unit: '-', default: 2.0, min: 1, max: 3, group: 'Bird', help: 'Linear Hugoniot, shock speed = c₀ + k·particle speed, with k = 2.0 for water and for birds treated as porous water (Wilbeck, AFML-TR-77-134, eq. 48 and Appendix C)' },
     { key: 't_skin', label: 'Target skin thickness', unit: 'm', default: 0.003, min: 1e-4, group: 'Target' },
     MAT,
     { key: 'k_area', label: 'Deforming area / bird footprint (empirical)', unit: '-', default: 3, min: 1, max: 20, group: 'Target', help: 'Ratio of the skin area that stretches plastically to the bird cross-section; calibrate against gun tests' },
@@ -834,9 +834,11 @@ function aircraftSim(i, ctx) {
   const Rb = (p) => { const y = p[1] * cp - p[2] * sp, z = p[1] * sp + p[2] * cp; return [p[0] * ct - z * st, y, p[0] * st + z * ct]; };
   const P = [], tgt = [], node = (p, mass) => { P.push(p); tgt.push(mass); return P.length - 1; }, beams = [], fe = createFE({ gravity: [0, 0, -G0] });
   // ---- masses
-  const mEngW = wing ? i.n_eng_wing * i.m_engine : 0, mArms = multi ? i.n_eng_wing * i.m_engine : 0, mWing = wing ? i.wing_mass_frac * M + i.m_fuel_wing : 0, mTail = multi ? 0 : 0.02 * M, mOh = heli ? i.m_overhead : 0;
+  // wing engines go in pairs to the inboard and outboard wing nodes, an odd one to the wing station; every rotor arm carries a motor
+  const nEng = Math.max(0, Math.round(i.n_eng_wing)), pairs = nEng >> 1, nArm = Math.max(2, nEng), mArm = Math.max(i.m_engine, 1e-3 * M);
+  const mEngW = wing ? nEng * i.m_engine : 0, mArms = multi ? nArm * mArm : 0, mWing = wing ? i.wing_mass_frac * M + i.m_fuel_wing : 0, mTail = multi ? 0 : 0.02 * M, mOh = heli ? i.m_overhead : 0;
   const mFus = Math.max(0.15 * M, M - mEngW - mArms - mWing - mTail - mOh - i.m_nose), wts = N.range(n, (k) => 0.4 + Math.sin((Math.PI * k) / (n - 1))), wS = N.sum(wts);
-  const iw = N.clamp(Math.round(0.45 * (n - 1)), 0, n - 1), stn = N.range(n, (k) => node([L / 2 - (L * k) / (n - 1), 0, 0], (mFus * wts[k]) / wS + (k === 0 ? i.m_nose : 0) + (k === n - 1 ? 0.5 * mTail : 0) + (k === iw ? 0.3 * mWing : 0)));
+  const iw = N.clamp(Math.round(0.45 * (n - 1)), 0, n - 1), stn = N.range(n, (k) => node([L / 2 - (L * k) / (n - 1), 0, 0], (mFus * wts[k]) / wS + (k === 0 ? i.m_nose : 0) + (k === n - 1 ? 0.5 * mTail : 0) + (k === iw ? 0.3 * mWing + (wing ? (nEng & 1) * i.m_engine : 0) : 0)));
   const sup = stn.map((s) => tgt[s]), X = (k) => P[stn[k]][0], sy = m.Sy;
   // ---- fuselage beams
   const Af = Math.PI * D * i.t_fus, If = Math.PI * (D / 2) ** 3 * i.t_fus, MpF = i.buckle_eff * sy * D * D * i.t_fus, base = { E: m.E, G: m.G, rho: m.rho, hard: (capH - 1) / 0.1, cap: capH };
@@ -848,15 +850,15 @@ function aircraftSim(i, ctx) {
     const b2 = i.span_m / 2, tn = Math.tan(N.rad(i.sweep_deg)), zw = (i.wing_pos === 'low' ? -0.3 : 0.4) * D, dih = i.wing_pos === 'low' ? Math.tan(N.rad(5)) : 0, Iw = i.EI_wing / m.E;
     const secW = (f) => ({ ...base, A: f * i.A_wing, Iy: f * f * Iw, Iz: 4 * f * f * Iw, J: f * f * Iw, Np: sy * f * i.A_wing, Mpy: f * Math.sqrt(f) * i.Mp_wing, Mpz: 3 * f * Math.sqrt(f) * i.Mp_wing, thetaSoft: 0.15, residual: 0.1 });
     for (const s of [1, -1]) {
-      const eng = i.n_eng_wing >= 2 ? i.m_engine : 0, eng2 = i.n_eng_wing >= 4 ? i.m_engine : 0;
+      const eng = ((pairs + 1) >> 1) * i.m_engine, eng2 = (pairs >> 1) * i.m_engine;
       const mid = node([X(iw) - 0.35 * b2 * tn, s * 0.35 * b2, zw + 0.35 * b2 * dih], 0.2 * mWing + eng), out = node([X(iw) - 0.85 * b2 * tn, s * 0.85 * b2, zw + 0.85 * b2 * dih], 0.15 * mWing + eng2);
       add(stn[iw], mid, secW(1), [1, 0, 0], `${s > 0 ? 'Left' : 'Right'} wing, inboard`, false); add(mid, out, secW(0.4), [1, 0, 0], `${s > 0 ? 'Left' : 'Right'} wing, outboard`, false);
       lat.push({ s, mid, out, eng }); sup[iw] += 0.35 * mWing + eng + eng2;
     }
   }
   if (multi) {
-    const a = i.arm_m, da = 0.1 * a, ta = 0.06 * da, Aa = Math.PI * da * ta, Ia = (Math.PI * da ** 3 * ta) / 8, secA = { ...base, A: Aa, Iy: Ia, Iz: Ia, J: 2 * Ia, Np: sy * Aa, Mpy: sy * da * da * ta, Mpz: sy * da * da * ta, thetaSoft: 0.3, residual: 0.1 }, nr = Math.max(2, Math.round(i.n_eng_wing));
-    for (let q = 0; q < nr; q++) { const az = (2 * Math.PI * (q + 0.5)) / nr, tip = node([X(iw) + a * Math.cos(az), a * Math.sin(az), 0.1 * D], i.m_engine); add(stn[iw], tip, secA, [0, 0, 1], `Rotor arm ${q + 1}`, false); lat.push({ s: Math.sin(az) >= 0 ? 1 : -1, tip }); sup[iw] += i.m_engine; }
+    const a = i.arm_m, da = 0.1 * a, ta = 0.06 * da, Aa = Math.PI * da * ta, Ia = (Math.PI * da ** 3 * ta) / 8, secA = { ...base, A: Aa, Iy: Ia, Iz: Ia, J: 2 * Ia, Np: sy * Aa, Mpy: sy * da * da * ta, Mpz: sy * da * da * ta, thetaSoft: 0.3, residual: 0.1 }, nr = nArm;
+    for (let q = 0; q < nr; q++) { const az = (2 * Math.PI * (q + 0.5)) / nr, tip = node([X(iw) + a * Math.cos(az), a * Math.sin(az), 0.1 * D], mArm); add(stn[iw], tip, secA, [0, 0, 1], `Rotor arm ${q + 1}`, false); lat.push({ s: Math.sin(az) >= 0 ? 1 : -1, tip }); sup[iw] += mArm; }
   }
   // ---- tail fin and overhead rotor / transmission mass
   let fin = -1, oh = -1; const ohLegs = [];
@@ -867,13 +869,13 @@ function aircraftSim(i, ctx) {
     for (const k of [j - 1, j, j + 1]) { add(stn[k], oh, secM, [0, 1, 0], `Transmission mount to station ${k + 1}`, false); ohLegs.push(k); }
   }
   // ---- attitude, then shift so that the lowest contact point just touches
-  const shape = (k) => (k === 0 ? 0.6 : k === n - 1 ? 0.5 : 1), cps = [], hw = heli || multi;
-  const dc = (k) => i.d_crush * shape(k), cArea = ((L / (n - 1)) * D) / 2;
-  for (let k = 0; k < n; k++) for (const s of [1, -1]) { const F = (i.crush_g * G0 * sup[k]) / 2, kk = F / (0.05 * dc(k)); cps.push({ node: stn[k], off: [0, s * 0.3 * D, -0.4 * D * shape(k)], law: i.surface === 'water' ? null : { k: kk, Fy: F, dmax: dc(k), kb: 20 * kk }, area: cArea, name: `Belly at station ${k + 1}`, kind: 'belly', stn: k }); }
+  const shape = (k) => (k === 0 ? 0.6 : k === n - 1 ? 0.5 : 1), cps = [];
+  const dc = (k) => i.d_crush * shape(k), cArea = (k) => ((k === 0 || k === n - 1 ? 0.5 : 1) * (L / (n - 1)) * D) / 2; // tributary belly area per contact point
+  for (let k = 0; k < n; k++) for (const s of [1, -1]) { const F = (i.crush_g * G0 * sup[k]) / 2, kk = F / (0.05 * dc(k)); cps.push({ node: stn[k], off: [0, s * 0.3 * D, -0.4 * D * shape(k)], law: i.surface === 'water' ? null : { k: kk, Fy: F, dmax: dc(k), kb: 20 * kk }, area: cArea(k), name: `Belly at station ${k + 1}`, kind: 'belly', stn: k }); }
   if (i.gear === 'extended') {
     const wheels = i.gear_type !== 'skid', aux = N.clamp(i.gear_type === 'tailwheel' ? n - 2 : 1, 0, n - 1), auxI = aux === iw ? (i.gear_type === 'tailwheel' ? n - 1 : 0) : aux, gl = { failAtMax: true, dmax: 1.2 * i.gear_stroke };
     for (const s of [1, -1]) { const F = 0.45 * i.gear_g * M * G0; cps.push({ node: stn[iw], off: [0, s * i.track_m / 2, -(0.5 * D + i.gear_len)], law: { ...gl, k: F / (0.35 * i.gear_stroke), Fy: F }, mu: wheels ? 0.05 : undefined, name: `${s > 0 ? 'Left' : 'Right'} main gear`, kind: 'gear' }); }
-    const Fa = 0.2 * i.gear_g * M * G0; cps.push({ node: stn[auxI], off: [0, 0, -(0.5 * D * shape(auxI) + i.gear_len)], law: { ...gl, k: Fa / (0.35 * i.gear_stroke), Fy: Fa }, mu: wheels ? 0.05 : undefined, name: i.gear_type === 'tailwheel' ? 'Tail gear' : 'Nose gear', kind: 'gear' });
+    const Fa = 0.1 * i.gear_g * M * G0; cps.push({ node: stn[auxI], off: [0, 0, -(0.5 * D * shape(auxI) + i.gear_len)], law: { ...gl, k: Fa / (0.35 * i.gear_stroke), Fy: Fa }, mu: wheels ? 0.05 : undefined, name: i.gear_type === 'tailwheel' ? 'Tail gear' : 'Nose gear', kind: 'gear' });
   }
   for (const w of lat) {
     if (w.tip !== undefined) { cps.push({ node: w.tip, off: [0, 0, -0.15 * D], name: 'Rotor arm tip', kind: 'tip' }); continue; }
@@ -890,7 +892,8 @@ function aircraftSim(i, ctx) {
   // ---- occupants (one representative seat per chosen station)
   const pick = heli ? [N.clamp(Math.round(0.4 * (n - 1)) - 1, 0, n - 1), N.clamp(Math.round(0.4 * (n - 1)), 0, n - 1)] : multi || !i.occupied ? [iw] : [Math.round(0.15 * (n - 1)), iw, Math.round(0.75 * (n - 1))];
   const occK = [...new Set(pick)], mo = i.occupied ? 89 : Math.min(0.2 * M, Math.max(1e-3 * M, i.m_payload)), occ = occK.map((k) => { const mk = Math.min(mo, 0.5 * tgt[stn[k]]); tgt[stn[k]] -= mk; return { k, ...addOccupant(fe, stn[k], P[stn[k]], up, { ...seatSplit(mk, i.occupied, i.seat_g, i.s_ea), hgt: 0.25 * D }) }; });
-  for (let k = 0; k < P.length; k++) fe.mass(k, Math.max(tgt[k] - share[k], 0.02 * tgt[k]));
+  // a fuselage station is a slice of the cross-section: its mass carries the rotary inertia of a disc of the fuselage diameter
+  for (let k = 0; k < P.length; k++) { const mk = Math.max(tgt[k] - share[k], 0.02 * tgt[k]); fe.mass(k, mk, k < n ? 0.125 * mk * D * D : 0); }
   const pl = fe.plane({ mu: i.mu, fluid: i.surface === 'water' ? { rho: 1000, Cd: 1 } : null }); for (const c of cps) c.id = pl.contact(c.node, c);
   fe.velocity(-1, [i.v_fwd, 0, -i.v_sink]); fe.init();
   const E = fe.energy, mid = stn[iw], x0 = fe.x[3 * mid], wpB = () => { let s = 0; for (let e = 0; e < fe.nb; e++) s += fe.sec[e].wp || 0; return s; };
@@ -1041,42 +1044,59 @@ const aircraft3d = {
   },
 };
 
-// ---- 10. rigid or soft-equivalent impactor on a plate of solid elements ---------------------
+// ---- 10. rigid or soft-equivalent impactor on a plate of shell or solid elements ------------
 const PROJ = { 'bird (soft-body equivalent)': { rho: 950, soft: 'stagnation' }, 'hail (ice)': { rho: 900, soft: 'crush' }, 'hard fragment (steel)': { rho: 7850, soft: null } };
 const RATE = ['Johnson–Cook', 'Cowper–Symonds', 'rate-independent'];
+/**
+ * Quarter model of the panel. Solid elements are used for a thick panel: layers at least half as thick as the in-plane element
+ * size, and a thickness that can be resolved within the time-step budget (the step is set by the layer thickness). Otherwise
+ * the panel is a thin shell with Gauss points through the true thickness, whose step is set by the in-plane element size. o.solid forces solid elements, o.free removes the edge clamping, o.elastic the yield.
+ */
 function impactSim(i, ctx, o = {}) {
   const m = mat(i.material), jc = jcOf(m), pr = PROJ[i.projectile] || PROJ['hard fragment (steel)'], Rs = ((3 * i.m_proj) / (4 * Math.PI * pr.rho)) ** (1 / 3), half = i.a_plate / 2, ne = Math.max(2, Math.round(i.nEl)), h = half / ne;
-  const K = m.E / (3 * (1 - 2 * m.nu)), G = m.E / (2 * (1 + m.nu)), cs = Math.sqrt(Math.max(K + (4 / 3) * G, 3 * K) / m.rho), tSim = (i.t_factor * 2 * Rs) / i.V;
-  // thickness handling: true thickness when affordable, otherwise one membrane-equivalent layer of scaled thickness
-  let nz = Math.max(1, Math.round(i.nThk)), sc = 1; const need = tSim / ((0.9 * i.t_plate) / nz / cs);
-  if (need > i.max_steps && !o.noScale) { nz = 1; sc = N.clamp(((tSim / i.max_steps) * cs) / 0.9 / i.t_plate, 1, Math.max(1, h / i.t_plate)); }
-  const Tp = sc * i.t_plate, fe = createFE({ hourglass: 0.05 / (sc * sc) }), rate = i.rate_model === 'Johnson–Cook' ? { C: jc.C } : i.rate_model === 'Cowper–Symonds' ? { csD: i.cs_D, csQ: i.cs_q } : {};
-  const mt = fe.material({ E: m.E / sc, nu: m.nu, rho: m.rho / sc, A: o.elastic ? Infinity : jc.A / sc, B: jc.B / sc, n: jc.n, m: jc.m, Tm: i.rate_model === 'Johnson–Cook' ? jc.Tm : 0, cp: m.cp, efail: o.elastic ? 0 : i.eps_fail, ...rate });
-  const Rc = i.R_curv, blk = hexBlock(fe, ne, ne, nz, half, half, Tp, mt, Rc > 0 ? (p) => { const r = Rc + p[2] - Tp, a = p[0] / Rc; return [r * Math.sin(a), p[1], r * Math.cos(a) - Rc + Tp]; } : undefined);
-  const top = [], caps = [], pc = pr.soft === 'stagnation' ? 0.5 * pr.rho * i.V * i.V : pr.soft === 'crush' ? i.p_crush : Infinity;
-  for (let a = 0; a <= ne; a++) for (let b = 0; b <= ne; b++) {
-    for (let k = 0; k <= nz; k++) { const nd = blk.id(a, b, k), edge = a === ne || b === ne; if (edge && i.clamped && !o.free) fe.fix(nd, [1, 1, 1]); else if (a === 0 || b === 0) fe.fix(nd, [a === 0 ? 1 : 0, b === 0 ? 1 : 0, 0]); }
-    top.push(blk.id(a, b, nz)); caps.push(pc * h * h * (a === 0 || a === ne ? 0.5 : 1) * (b === 0 || b === ne ? 0.5 : 1));
+  const K = m.E / (3 * (1 - 2 * m.nu)), G = m.E / (2 * (1 + m.nu)), cs = Math.sqrt(Math.max(K + (4 / 3) * G, 3 * K) / m.rho), tSim = (i.t_factor * 2 * Rs) / i.V, Tp = i.t_plate;
+  const nzS = Math.max(1, Math.round(i.nThk)), need = tSim / ((0.9 * Tp) / nzS / cs), shell = (need > i.max_steps || Tp / nzS < 0.5 * h) && !o.solid, nz = shell ? 1 : nzS, nq = 5, zTop = shell ? Tp / 2 : Tp;
+  const fe = createFE(), rate = i.rate_model === 'Johnson–Cook' ? { C: jc.C } : i.rate_model === 'Cowper–Symonds' ? { csD: i.cs_D, csQ: i.cs_q } : {};
+  const mt = fe.material({ E: m.E, nu: m.nu, rho: m.rho, A: o.elastic ? Infinity : jc.A, B: jc.B, n: jc.n, m: jc.m, Tm: i.rate_model === 'Johnson–Cook' ? jc.Tm : 0, cp: m.cp, efail: o.elastic ? 0 : i.eps_fail, ...rate });
+  // cylindrical panel, convex towards the projectile: the struck surface has the radius Rc and its crown at z = zTop
+  const Rc = i.R_curv, zRef = shell ? 0 : Tp, bend = Rc > 0 ? (p) => { const r = Rc + p[2] - zRef, a = p[0] / Rc; return [r * Math.sin(a), p[1], r * Math.cos(a) - Rc + zRef]; } : (p) => p;
+  let hit0, secN, cN, all; const els = [];
+  if (shell) {
+    const id = (a, b) => a * (ne + 1) + b; all = []; for (let a = 0; a <= ne; a++) for (let b = 0; b <= ne; b++) all.push(fe.node(...bend([a * h, b * h, 0])));
+    for (let a = 0; a < ne; a++) for (let b = 0; b < ne; b++) els.push(fe.shell([id(a, b), id(a + 1, b), id(a + 1, b + 1), id(a, b + 1)], mt, Tp, nq));
+    hit0 = id; secN = (a) => id(a, 0); cN = id(0, 0);
+    for (let a = 0; a <= ne; a++) for (let b = 0; b <= ne; b++) { if ((a === ne || b === ne) && i.clamped && !o.free) fe.fix(id(a, b)); else if (a === 0 || b === 0) fe.fix(id(a, b), [a === 0 ? 1 : 0, b === 0 ? 1 : 0, 0, b === 0 ? 1 : 0, a === 0 ? 1 : 0, 1]); }
+  } else {
+    const blk = hexBlock(fe, ne, ne, nz, half, half, Tp, mt, bend); all = blk.nd; els.push(...blk.els); hit0 = (a, b) => blk.id(a, b, nz); secN = (a, k) => blk.id(a, 0, k); cN = blk.id(0, 0, 0);
+    for (let a = 0; a <= ne; a++) for (let b = 0; b <= ne; b++) for (let k = 0; k <= nz; k++) { const nd = blk.id(a, b, k); if ((a === ne || b === ne) && i.clamped && !o.free) fe.fix(nd, [1, 1, 1]); else if (a === 0 || b === 0) fe.fix(nd, [a === 0 ? 1 : 0, b === 0 ? 1 : 0, 0]); }
   }
-  const gap = 1e-3 * Rs, imp = fe.impactor({ c: [0, 0, Tp + Rs + gap], v: [0, 0, -i.V], R: Rs, mass: i.m_proj / 4, free: [0, 0, 1], nodes: Number.isFinite(pc) ? top : blk.nd, ...(Number.isFinite(pc) ? { fcaps: caps } : {}) });
+  const top = [], caps = [], pc = pr.soft === 'stagnation' ? 0.5 * pr.rho * i.V * i.V : pr.soft === 'crush' ? i.p_crush : Infinity;
+  for (let a = 0; a <= ne; a++) for (let b = 0; b <= ne; b++) { top.push(hit0(a, b)); caps.push(pc * h * h * (a === 0 || a === ne ? 0.5 : 1) * (b === 0 || b === ne ? 0.5 : 1)); }
+  // the sphere meets the struck surface: for the shell its contact radius includes half the thickness above the mid-surface nodes
+  const gap = 1e-3 * Rs, imp = fe.impactor({ c: [0, 0, zTop + Rs + gap], v: [0, 0, -i.V], R: Rs + (shell ? Tp / 2 : 0), mass: i.m_proj / 4, free: [0, 0, 1], nodes: Number.isFinite(pc) ? top : all, ...(Number.isFinite(pc) ? { fcaps: caps } : {}) });
   fe.init();
-  const cN = blk.id(0, 0, 0), E = fe.energy, rec = recorder(tSim, 300, [() => -imp.v[2], () => 4 * imp.force, (f) => -(f.x[3 * cN + 2] - f.x0[3 * cN + 2]), () => E.kinetic, () => E.internal + E.viscous, () => E.plastic, () => E.hourglass, () => E.contact, () => E.total]);
+  const E = fe.energy, alive0 = () => (shell ? fe.shellAlive[els[0]] : fe.hexAlive[els[0]]), rec = recorder(tSim, 300, [() => -imp.v[2], () => 4 * imp.force, (f) => -(f.x[3 * cN + 2] - f.x0[3 * cN + 2]), () => E.kinetic, () => E.internal + E.viscous, () => E.plastic, () => E.hourglass, () => E.contact, () => E.total]);
   let errMax = 0, Fpk = 0, impulse = 0, tSep = NaN, hit = false, defl = 0; rec.take(fe);
   fe.run(tSim, () => {
-    rec.take(fe); if (E.error > errMax) errMax = E.error; const F = 4 * imp.force; if (F > Fpk) Fpk = F; impulse += F * fe.dtLast; const d = -(fe.x[3 * cN + 2] - fe.x0[3 * cN + 2]); if (d > defl && fe.hexAlive[blk.els[0]]) defl = d;
+    rec.take(fe); if (E.error > errMax) errMax = E.error; const F = 4 * imp.force; if (F > Fpk) Fpk = F; impulse += F * fe.dtLast; const d = -(fe.x[3 * cN + 2] - fe.x0[3 * cN + 2]); if (d > defl && alive0()) defl = d;
     if (F > 0) hit = true; else if (hit && !(tSep > 0) && imp.v[2] > 0) tSep = fe.t;
     if (fe.nStep % 200 === 0) ctx?.progress?.(fe.t / tSim, 'Explicit integration');
     return (tSep > 0 && fe.t > 1.15 * tSep) || imp.c[2] < -3 * Rs - Tp || (hit && F === 0 && d < 0.9 * defl && imp.c[2] < -Rs); // rebounded, passed through, or passed with the dent recovering
   }, o.maxSteps || 40 * i.max_steps);
-  // through-thickness erosion of any column of elements = perforation
-  let holes = 0, epMax = 0; const col = (a, b, k) => blk.els[(a * ne + b) * nz + k];
-  for (let a = 0; a < ne; a++) for (let b = 0; b < ne; b++) { let dead = 0; for (let k = 0; k < nz; k++) { const e = col(a, b, k); if (!fe.hexAlive[e]) dead++; if (fe.ep[e] > epMax) epMax = fe.ep[e]; } if (dead === nz) holes++; }
-  return { fe, rec, imp, blk, Rs, sc, nz, ne, h, Tp, tSim, errMax, Fpk, impulse, tSep, defl, holes, epMax, pc, col, jc, need };
+  // cell (a, b, layer k): largest plastic strain and whether it still carries load; a column eroded through the full thickness is a hole
+  const cell = (a, b, k) => els[(a * ne + b) * nz + k], sp = fe.shellPoints;
+  const cellEp = shell ? (a, b) => { const e = cell(a, b, 0); let v = 0; for (let q = sp[e]; q < sp[e + 1]; q++) v = Math.max(v, fe.shellEp[q]); return v; } : (a, b, k) => fe.ep[cell(a, b, k)];
+  const cellAlive = shell ? (a, b) => !!fe.shellAlive[cell(a, b, 0)] : (a, b, k) => !!fe.hexAlive[cell(a, b, k)];
+  let holes = 0, epMax = 0;
+  for (let a = 0; a < ne; a++) for (let b = 0; b < ne; b++) { let dead = 0; for (let k = 0; k < nz; k++) { if (!cellAlive(a, b, k)) dead++; epMax = Math.max(epMax, cellEp(a, b, k)); } if (dead === nz) holes++; }
+  // corner (a, layer face k) of the section in the symmetry plane y = 0, for plotting: the shell is drawn with its thickness about the mid-surface
+  const secPoint = (a, k) => { const nd = 3 * secN(a, k); return [fe.x[nd], fe.x[nd + 2] + (shell ? (k - 0.5) * Tp : 0)]; };
+  return { fe, rec, imp, Rs, shell, nq, nz, ne, h, Tp, tSim, errMax, Fpk, impulse, tSep, defl, holes, epMax, pc, jc, need, cellEp, cellAlive, secPoint, eroded: shell ? fe.erodedShell : fe.erodedHex, hgShare: E.hourglass / Math.max(E.hourglass + E.internal, 1e-300) };
 }
 const IMPACT_BASE = { projectile: 'hard fragment (steel)', m_proj: 0.025, V: 100, material: 'Al 2024-T3', t_plate: 0.003, a_plate: 0.11, R_curv: 0, clamped: true, eps_fail: 0.18, rate_model: 'Johnson–Cook', cs_D: 6500, cs_q: 4, p_crush: 1e7, t_factor: 2.5, max_steps: 1500, nThk: 2, nEl: 6 };
 const impact3d = {
-  id: 'impact3d', title: 'Projectile impact on a skin panel (explicit 3-D solid elements with erosion)', fidelity: 'numerical',
-  summary: 'A sphere — a hard fragment, a hailstone or a soft-body equivalent of a bird — strikes the centre of a flat or curved panel meshed with solid elements. Johnson–Cook plasticity and erosion at a failure strain decide whether the panel is perforated; the run gives the residual velocity, contact force, dent depth and plastic strain, next to the analytical energy screening.',
+  id: 'impact3d', title: 'Projectile impact on a skin panel (explicit shell or solid elements with erosion)', fidelity: 'numerical',
+  summary: 'A sphere — a hard fragment, a hailstone or a soft-body equivalent of a bird — strikes the centre of a flat or curved panel meshed with thin-shell elements (thin skins) or solid elements (thick plates). Johnson–Cook plasticity and erosion at a failure strain decide whether the panel is perforated; the run gives the residual velocity, contact force, dent depth and plastic strain, next to the analytical energy screening.',
   equations: ['Conservation of linear momentum', 'Conservation of energy', 'Transient structural dynamics equations', 'Plasticity constitutive equations', 'Strain-rate-dependent material equations', 'Impact contact equations', 'Fracture criteria'],
   inputs: [
     { key: 'projectile', label: 'Projectile', type: 'select', options: Object.keys(PROJ), default: 'bird (soft-body equivalent)', group: 'Projectile', help: 'Hard fragment: rigid sphere. Hail: rigid sphere whose contact pressure is capped at the ice crushing strength. Bird: sphere whose contact pressure is capped at the stagnation pressure ½ρV²' },
@@ -1093,8 +1113,8 @@ const impact3d = {
     { key: 'cs_D', label: 'Cowper–Symonds D', unit: '1/s', default: 6500, min: 1, group: 'Material' },
     { key: 'cs_q', label: 'Cowper–Symonds q', unit: '-', default: 4, min: 1, max: 20, group: 'Material' },
     { key: 't_factor', label: 'Simulated time / projectile transit time 2R/V', unit: '-', default: 2.5, min: 0.5, max: 50, group: 'Numerics', help: 'The run stops earlier once the projectile has left the panel and the dent is rebounding' },
-    { key: 'max_steps', label: 'Time-step budget for the true thickness', unit: '', default: 1500, min: 200, max: 2e6, step: 1, discrete: true, group: 'Numerics', help: 'If resolving the true thickness needs more steps, one layer of scaled thickness with scaled modulus, strength and density is used (same membrane stiffness, strength and mass per area)' },
-    { key: 'nThk', label: 'Elements through the thickness', unit: '', default: 2, min: 1, max: 8, step: 1, discrete: true, group: 'Numerics' },
+    { key: 'max_steps', label: 'Time-step budget for solid elements through the thickness', unit: '', default: 1500, min: 200, max: 2e6, step: 1, discrete: true, group: 'Numerics', help: 'Solid elements are used for a thick panel: layers at least half as thick as the in-plane element size and a thickness resolvable within this many steps. Otherwise the panel is modelled with thin-shell elements integrated through the true thickness, whose time step follows from the in-plane element size' },
+    { key: 'nThk', label: 'Solid elements through the thickness (solid-element model)', unit: '', default: 2, min: 1, max: 8, step: 1, discrete: true, group: 'Numerics' },
     { key: 'nEl', label: 'Elements along the half side', unit: '', default: 6, min: 4, max: 40, step: 1, discrete: true, group: 'Numerics', help: 'A quarter of the panel is modelled using the two symmetry planes' },
   ],
   defaults(c, up) {
@@ -1106,33 +1126,35 @@ const impact3d = {
     const perf = r.holes > 0, passed = !soft && r.imp.c[2] < -r.Rs, vRes = perf || passed ? Math.max(0, vEnd) : 0, reb = vEnd < 0 ? -vEnd : 0, dp = i.m_proj * (i.V - vEnd);
     // analytical screening by the membrane-energy model of the bird-strike analysis
     const scr = N.kv(bird.run({ m_bird: i.m_proj, rho_bird: (PROJ[i.projectile] || PROJ['hard fragment (steel)']).rho, LD: 1, V: i.V, angle_deg: 90, c0: 1482, k_h: 2, t_skin: i.t_plate, material: i.material, k_area: 3, eps_f: i.eps_fail, eta: 0.5 }));
-    if (r.sc > 1) warnings.push(`Resolving the true ${(i.t_plate * 1e3).toFixed(2)} mm thickness would need about ${Math.round(r.need)} time steps; one layer ${r.sc.toFixed(1)}× thicker with modulus, strength and density divided by ${r.sc.toFixed(1)} is used instead. Membrane stiffness, strength and mass per area are preserved, but bending and through-thickness (plugging) response are not: raise the step budget for a thick or bending-dominated panel.`);
+    const hg = r.hgShare, hgBad = hg > 0.25, simPerf = perf || passed, scrPerf = scr.penetration_RF < 1, verdict = hgBad ? scrPerf : simPerf, ind = hgBad ? 'warn' : undefined, indNote = `Indicative: ${(100 * hg).toFixed(0)}% of the deformation energy is hourglass stabilisation`;
+    if (r.shell) warnings.push(`The ${(i.t_plate * 1e3).toFixed(2)} mm panel is thin against the ${(r.h * 1e3).toFixed(1)} mm in-plane element size${r.need > i.max_steps ? ` and solid elements would need about ${Math.round(r.need)} time steps to resolve its thickness` : ''}, so it is modelled with thin-shell elements: membrane, bending and plasticity are integrated at ${r.nq} points through the true thickness. Transverse shear is elastic up to the shear yield of the section, so shear plugging by a small hard projectile is not represented. Solid elements are used for thick panels (layers at least half the in-plane element size, within the step budget).`);
     if (r.h > r.Rs / 1.5) warnings.push('The in-plane element size exceeds two thirds of the projectile radius: the node-based contact is too coarse; refine the mesh or shrink the panel.');
     if (i.a_plate < 2.99 * D) warnings.push('The panel is smaller than three projectile diameters: the clamped edges stiffen the response.');
     if (soft) warnings.push('Soft-body equivalent: the projectile is a sphere whose contact pressure is capped (stagnation pressure for a bird, crushing strength for ice). It transfers a realistic impulse over a realistic footprint but has no spreading flow or initial shock (Hugoniot) peak; use an SPH or Eulerian bird for substantiation.');
     if (i.material && jcOf(m).fitted && i.rate_model === 'Johnson–Cook') warnings.push('No Johnson–Cook constants are tabulated for this material: a simple fit through yield and ultimate strength with C = 0.01 was used.');
-    if (E.hourglass > 0.5 * Math.max(E.internal, 1e-300)) warnings.push(`The hourglass stabilisation carries ${(100 * E.hourglass / (E.hourglass + E.internal)).toFixed(0)}% of the deformation energy. In thin one-point elements it stands in for plate bending and for the local dent under a contact only a few nodes wide (it is scaled to the plate-bending stiffness and capped at the plastic moment), so the dent depth is indicative: refine the in-plane mesh and use four or more elements through the thickness for a resolved answer.`);
+    if (hgBad) warnings.push(`The hourglass stabilisation carries ${(100 * hg).toFixed(0)}% of the deformation energy, so dent depth, contact force and plastic strain rest largely on the stabilisation and are indicative only; the perforation verdict is therefore taken from the energy screening (reserve factor ${scr.penetration_RF.toFixed(2)}), not from the simulated field (which ${simPerf ? 'shows' : 'does not show'} perforation). ${r.shell ? 'Refine the in-plane mesh so that the contact patch spans several elements.' : 'Use four or more solid elements through the thickness and a finer in-plane mesh.'}`);
+    else if (hg > 0.1) warnings.push(`The hourglass stabilisation carries ${(100 * hg).toFixed(0)}% of the deformation energy: refine the in-plane mesh${r.shell ? '' : ' and use more elements through the thickness'} before relying on the dent depth.`);
     if (r.errMax > 0.05) warnings.push(`The energy balance error reached ${(100 * r.errMax).toFixed(1)}%.`);
     if (!perf && !passed && !(r.tSep > 0) && !soft) warnings.push('The projectile is still in contact at the end of the run: extend the simulated time.');
     // deformed section in the symmetry plane y = 0, coloured by plastic strain
     const nodes = [], tris = [], values = [], ne = r.ne, nz = r.nz, nid = (a, k) => a * (nz + 1) + k, cnt = new Array((ne + 1) * (nz + 1)).fill(0), val = new Array((ne + 1) * (nz + 1)).fill(0);
-    for (let a = 0; a <= ne; a++) for (let k = 0; k <= nz; k++) { const nd = r.blk.id(a, 0, k); nodes.push([fe.x[3 * nd] * 1e3, fe.x[3 * nd + 2] * 1e3]); }
-    for (let a = 0; a < ne; a++) for (let k = 0; k < nz; k++) { const e = r.col(a, 0, k); if (!fe.hexAlive[e]) continue; const q = [nid(a, k), nid(a + 1, k), nid(a + 1, k + 1), nid(a, k + 1)]; tris.push([q[0], q[1], q[2]], [q[0], q[2], q[3]]); for (const j of q) { val[j] += fe.ep[e]; cnt[j]++; } }
+    for (let a = 0; a <= ne; a++) for (let k = 0; k <= nz; k++) { const pt = r.secPoint(a, k); nodes.push([pt[0] * 1e3, pt[1] * 1e3]); }
+    for (let a = 0; a < ne; a++) for (let k = 0; k < nz; k++) { if (!r.cellAlive(a, 0, k)) continue; const q = [nid(a, k), nid(a + 1, k), nid(a + 1, k + 1), nid(a, k + 1)], ev = r.cellEp(a, 0, k); tris.push([q[0], q[1], q[2]], [q[0], q[2], q[3]]); for (const j of q) { val[j] += ev; cnt[j]++; } }
     for (let j = 0; j < val.length; j++) values.push(cnt[j] ? val[j] / cnt[j] : 0);
-    const arc = N.linspace(-Math.PI / 2, 0, 24), ms = rec.t.map((t) => t * 1e3), xs = N.range(ne, (a) => (a + 0.5) * r.h * 1e3), map = N.range(ne, (b) => N.range(ne, (a) => { let v = 0; for (let k = 0; k < nz; k++) v = Math.max(v, fe.ep[r.col(a, b, k)]); return v; }));
+    const arc = N.linspace(-Math.PI / 2, 0, 24), ms = rec.t.map((t) => t * 1e3), xs = N.range(ne, (a) => (a + 0.5) * r.h * 1e3), map = N.range(ne, (b) => N.range(ne, (a) => { let v = 0; for (let k = 0; k < nz; k++) v = Math.max(v, r.cellEp(a, b, k)); return v; }));
     return {
       kpis: [
-        kpi('impact_perforated', 'Panel perforated (1 = yes)', perf || passed ? 1 : 0, '-', perf || passed ? 'bad' : 'ok', 'Erosion through the full thickness at the stated failure strain'),
+        kpi('impact_perforated', 'Panel perforated (1 = yes)', verdict ? 1 : 0, '-', verdict ? 'bad' : 'ok', hgBad ? 'From the energy screening: the simulated field is dominated by hourglass stabilisation' : 'Erosion through the full thickness at the stated failure strain'),
         kpi('impact_v_residual_ms', 'Residual projectile velocity', vRes, 'm/s'), kpi('impact_v_rebound_ms', 'Rebound velocity', reb, 'm/s'),
-        kpi('impact_force_N', 'Peak contact force', r.Fpk, 'N'), kpi('impact_impulse_Ns', 'Impulse delivered to the panel', r.impulse, 'N·s', undefined, `Projectile momentum ${(i.m_proj * i.V).toFixed(2)} N·s`),
-        kpi('impact_defl_m', 'Peak deflection at the impact point', r.defl, 'm'), kpi('impact_eps_p_max', 'Peak equivalent plastic strain', r.epMax, '-', r.epMax < 0.7 * i.eps_fail ? 'ok' : 'warn', `Failure strain ${i.eps_fail}`),
-        kpi('impact_eroded', 'Eroded elements (quarter model)', fe.erodedHex, '-'), kpi('impact_plastic_frac', 'Share of the projectile energy dissipated in the panel', E.plastic / KE0, '-'),
+        kpi('impact_force_N', 'Peak contact force', r.Fpk, 'N', ind, hgBad ? indNote : undefined), kpi('impact_impulse_Ns', 'Impulse delivered to the panel', r.impulse, 'N·s', undefined, `Projectile momentum ${(i.m_proj * i.V).toFixed(2)} N·s`),
+        kpi('impact_defl_m', 'Peak deflection at the impact point', r.defl, 'm', ind, hgBad ? indNote : undefined), kpi('impact_eps_p_max', 'Peak equivalent plastic strain', r.epMax, '-', hgBad || r.epMax >= 0.7 * i.eps_fail ? 'warn' : 'ok', hgBad ? indNote : `Failure strain ${i.eps_fail}`),
+        kpi('impact_eroded', 'Eroded elements (quarter model)', r.eroded, '-'), kpi('impact_plastic_frac', 'Share of the projectile energy dissipated in the panel', E.plastic / KE0, '-'),
         kpi('impact_dia_m', 'Projectile diameter', D, 'm'), kpi('impact_ke_J', 'Projectile kinetic energy', KE0, 'J'),
         kpi('impact_screen_RF', 'Energy-screening reserve factor (analytical)', scr.penetration_RF, '-', scr.penetration_RF >= 1 ? 'ok' : 'warn', 'Membrane-energy screening of the bird-strike analysis with its default factors; below 1 predicts rupture'),
-        kpi('impact_screen_agree', 'Screening agrees with the simulation (1 = yes)', (scr.penetration_RF < 1) === (perf || passed) ? 1 : 0, '-'),
-        kpi('impact_thickness_scale', 'Thickness scale of the equivalent layer', r.sc, '-', r.sc > 1 ? 'warn' : 'ok', '1 = true thickness resolved'),
-        kpi('impact_hourglass_frac', 'Share of deformation energy carried by the hourglass stabilisation', E.hourglass / Math.max(E.hourglass + E.internal, 1e-300), '-', E.hourglass < 0.5 * E.internal ? 'ok' : 'warn', 'Stands in for bending of thin one-point elements; small values mean the bending is resolved by the mesh'),
-        kpi('impact_energy_err', 'Energy balance error', r.errMax, '-', r.errMax < 0.03 ? 'ok' : 'warn'), kpi('impact_elements', 'Solid elements (quarter model)', fe.nh, '-'), kpi('impact_steps', 'Time steps', fe.nStep, '-'),
+        kpi('impact_screen_agree', 'Screening agrees with the simulation (1 = yes)', scrPerf === simPerf ? 1 : 0, '-'),
+        kpi('impact_thickness_scale', 'Thickness scale of the model', 1, '-', 'ok', r.shell ? 'True thickness, thin-shell elements' : 'True thickness, solid elements'),
+        kpi('impact_hourglass_frac', 'Share of deformation energy carried by the hourglass stabilisation', hg, '-', hg <= 0.1 ? 'ok' : 'warn', 'Below about 10% the deformation is carried by the stress field of the elements; above 25% the field results are flagged as indicative'),
+        kpi('impact_energy_err', 'Energy balance error', r.errMax, '-', r.errMax < 0.03 ? 'ok' : 'warn'), kpi('impact_elements', r.shell ? 'Shell elements (quarter model)' : 'Solid elements (quarter model)', fe.nh + fe.ns, '-'), kpi('impact_steps', 'Time steps', fe.nStep, '-'),
       ],
       plots: [
         { type: 'tri', title: `Deformed panel section in the symmetry plane at ${(fe.t * 1e3).toFixed(2)} ms`, xlabel: 'Distance from the impact point [mm]', ylabel: 'Height [mm]', zlabel: 'Equivalent plastic strain [-]', nodes, tris, values, equalAspect: r.defl > 0.05 * i.a_plate, edges: true, overlay: [{ name: 'Projectile', x: arc.map((a) => r.Rs * Math.cos(a) * 1e3), y: arc.map((a) => (r.imp.c[2] + r.Rs * Math.sin(a)) * 1e3) }] },
@@ -1143,17 +1165,37 @@ const impact3d = {
       ],
       outputs: { impact_momentum_change_Ns: dp },
       warnings,
-      models: [`Explicit finite elements: ${fe.nh} one-point hexahedra with Flanagan–Belytschko hourglass control (quarter model, ${r.nz} through the thickness), ${fe.nStep} steps`, `J2 plasticity with ${i.rate_model} flow stress${i.rate_model === 'Johnson–Cook' ? ' and adiabatic heating' : ''}, erosion at an equivalent plastic strain of ${i.eps_fail}`, soft ? 'Rigid sphere with capped contact pressure as a soft-body equivalent' : 'Rigid sphere with penalty contact', 'Membrane-energy penetration screening for comparison'],
-      assumptions: ['Normal impact at the panel centre; two symmetry planes', 'Node-to-sphere penalty contact without friction', 'Erosion at a single failure strain: no stress-triaxiality or shear-band criterion, and the result depends on the element size', 'With one or two one-point elements through the thickness, plate bending is carried largely by the hourglass stabilisation (scaled to the plate-bending stiffness, capped at the plastic moment)', 'The projectile does not deform; soft bodies are represented only by the pressure cap', DATA_NOTE],
+      models: [r.shell ? `Explicit finite elements: ${fe.ns} four-node co-rotational thin-shell elements (Belytschko–Lin–Tsay, quarter model) with ${r.nq} integration points through the true thickness, ${fe.nStep} steps` : `Explicit finite elements: ${fe.nh} one-point hexahedra with Flanagan–Belytschko hourglass control (quarter model, ${r.nz} through the thickness), ${fe.nStep} steps`, `J2 plasticity with ${i.rate_model} flow stress${i.rate_model === 'Johnson–Cook' ? ' and adiabatic heating' : ''}, erosion at an equivalent plastic strain of ${i.eps_fail}`, soft ? 'Rigid sphere with capped contact pressure as a soft-body equivalent' : 'Rigid sphere with penalty contact', 'Membrane-energy penetration screening for comparison'],
+      assumptions: ['Normal impact at the panel centre; two symmetry planes', 'Node-to-sphere penalty contact without friction', 'Erosion at a single failure strain: no stress-triaxiality or shear-band criterion, and the result depends on the element size', r.shell ? 'Thin-shell kinematics: plane stress, constant thickness, elastic transverse shear capped at the shear yield of the section; no through-thickness (plugging) failure' : 'With one or two one-point solid elements through the thickness, plate bending is carried largely by the hourglass stabilisation; the hourglass share is reported and the results are flagged when it is large', 'The projectile does not deform; soft bodies are represented only by the pressure cap', DATA_NOTE],
     };
   },
   convergence: { param: 'nEl', label: 'Elements along the half side', levels: [4, 6, 8, 10], metric: 'impact_defl_m' },
   calibration: { params: [{ key: 'eps_fail', min: 0.02, max: 1 }], sweep: 'V', target: 'impact_v_residual_ms', note: 'Residual velocities from gas-gun penetration tests at several impact speeds calibrate the erosion strain for the element size in use.' },
   verify() {
     // free elastic panel struck by a rigid sphere: momentum and energy are conserved
-    const b = { ...IMPACT_BASE, clamped: false, V: 20, t_factor: 4 }, r = impactSim(b, null, { free: true, elastic: true, noScale: true, maxSteps: 3000 }), p = r.fe.momentum()[2], E = r.fe.energy;
-    const pl = impactSim({ ...IMPACT_BASE, V: 120 }, null, { noScale: true, maxSteps: 3000 });
+    const b = { ...IMPACT_BASE, clamped: false, V: 20, t_factor: 4 }, r = impactSim(b, null, { free: true, elastic: true, solid: true, maxSteps: 3000 }), p = r.fe.momentum()[2], E = r.fe.energy;
+    const pl = impactSim({ ...IMPACT_BASE, V: 120 }, null, { solid: true, maxSteps: 3000 });
+    // thin-shell model: simply supported square plate under uniform pressure (quarter model, dynamic relaxation) against the Navier series
+    const Em = 70e9, nu = 0.3, a = 1, t = 0.02, q0 = 1e4, Dp = (Em * t ** 3) / (12 * (1 - nu * nu)), ne = 6, h = a / 2 / ne, fs = createFE(), ms = fs.material({ E: Em, nu, rho: 2700, A: Infinity }), id = (c, d) => c * (ne + 1) + d;
+    for (let c = 0; c <= ne; c++) for (let d = 0; d <= ne; d++) fs.node(c * h, d * h, 0);
+    for (let c = 0; c < ne; c++) for (let d = 0; d < ne; d++) fs.shell([id(c, d), id(c + 1, d), id(c + 1, d + 1), id(c, d + 1)], ms, t, 2);
+    for (let c = 0; c <= ne; c++) for (let d = 0; d <= ne; d++) { // symmetry on x = 0 and y = 0; w = 0 and no rotation about the edge normal on the supported edges
+      fs.fix(id(c, d), [c === 0 ? 1 : 0, d === 0 ? 1 : 0, c === ne || d === ne ? 1 : 0, d === 0 || c === ne ? 1 : 0, c === 0 || d === ne ? 1 : 0, 1]);
+      fs.load(id(c, d), [0, 0, -q0 * h * h * (c === 0 || c === ne ? 0.5 : 1) * (d === 0 || d === ne ? 0.5 : 1)]);
+    }
+    fs.init(); const w1 = ((2 * Math.PI ** 2) / a ** 2) * Math.sqrt(Dp / (2700 * t)); fs.damping = 2 * w1; fs.run(12 / w1);
+    let ser = 0; for (let mm = 1; mm < 120; mm += 2) for (let nn = 1; nn < 120; nn += 2) ser += (((mm + nn) / 2) % 2 ? 1 : -1) / (mm * nn * (mm * mm + nn * nn) ** 2);
+    // plane-stress return: stretching in x with εy = 0 at constant yield stress tends to σx = 2σy/√3, σy = σx/2
+    const fp = createFE(), q4 = [fp.node(0, 0, 0), fp.node(1, 0, 0), fp.node(1, 1, 0), fp.node(0, 1, 0)]; fp.shell(q4, fp.material({ E: Em, nu, rho: 2700, A: 300e6 }), 0.01, 3); fp.init(); fp.v[3] = fp.v[6] = 1; for (let k = 0; k < 400; k++) fp.internalForces(1e-4);
+    // thin free elastic panel struck by a rigid sphere, and the reference bird strike on a thin skin, both through the shell model
+    const bs = { ...IMPACT_BASE, t_plate: 0.001, clamped: false, V: 20, t_factor: 4 }, rs = impactSim(bs, null, { free: true, elastic: true }), bd = impactSim({ ...IMPACT_BASE, projectile: 'bird (soft-body equivalent)', m_proj: 1.81, V: 120, t_plate: 0.002, a_plate: 0.46 }, null);
     return [
+      N.check('Shell element: centre deflection of a simply supported square plate under uniform pressure', -fs.x[2], ((16 * q0 * a ** 4) / (Math.PI ** 6 * Dp)) * ser, 0.01, 'Navier double series of Kirchhoff plate theory (0.00406·q·a⁴/D); 6 × 6 one-point shell elements on a quarter plate, a/t = 50'),
+      N.check('Shell element: hourglass energy in plate bending', fs.energy.hourglass / fs.energy.internal, 0, 0.01, 'Bending is carried by the through-thickness stress integration, not by the stabilisation'),
+      N.check('Shell element: plane-stress plastic limit under plane strain in y, σx = 2σy/√3', fp.shellSig[0], (2 * 300e6) / Math.sqrt(3), 1e-6, 'von Mises yield with σz = 0 and εy = 0'), N.check('Shell element: plane-stress plastic limit, σy = σx/2', fp.shellSig[1] / fp.shellSig[0], 0.5, 1e-3, 'Flow rule: no plastic strain rate in y'),
+      N.check('Shell panel: momentum of sphere + free panel is conserved', rs.fe.momentum()[2], (-bs.m_proj / 4) * bs.V, 1e-9, 'Newton’s third law in the penalty contact'), N.check('Shell panel: the thin-shell model is selected for a thin skin', rs.shell && bd.shell ? 1 : 0, 1, 1e-12, 'Layers thinner than half the in-plane element size, or not resolvable within the step budget'),
+      N.check('Shell panel: energy balance, elastic impact', rs.errMax, 0, 0.02, 'Kinetic + internal + hourglass + contact = initial kinetic energy'), N.check('Shell panel: energy balance of a bird strike with plasticity', bd.errMax, 0, 0.03, 'Same balance with Johnson–Cook plasticity'),
+      N.check('Shell panel: hourglass share of the deformation energy in a bird strike on a 2 mm skin', bd.hgShare, 0, 0.1, 'Dent and force rest on the element stress field: below 10% (the former single-layer solid model gave 39–97%)'),
       N.check('Momentum of sphere + free panel is conserved', p, (-b.m_proj / 4) * b.V, 1e-9, 'Newton’s third law in the penalty contact'),
       N.check('Impulse on the panel = momentum lost by the sphere', r.impulse / 4, (b.m_proj / 4) * (b.V + r.imp.v[2]), 0.01, 'Impulse–momentum theorem (time-centred sum of the contact force)'),
       N.check('Energy balance, elastic impact', r.errMax, 0, 0.02, 'Kinetic + internal + hourglass + contact = initial kinetic energy'),
@@ -1208,6 +1250,18 @@ function kernelChecks() {
     fe.load(nd[0], [0, 0, -Pt]); fe.load(nd[n / 2], [0, 0, Pt]); fe.init(); const w = 2.683 * Math.sqrt((Em * I) / (2700 * A)); fe.damping = 2 * w; fe.run(14 / w);
     out.push(N.check('Ring of beam elements loaded across a diameter: (π/4 − 2/π)·PR³/EI', fe.x[3 * nd[n / 2] + 2] - fe.x[3 * nd[0] + 2] - 2, ((Math.PI / 4 - 2 / Math.PI) * Pt) / (Em * I), 0.02, 'Castigliano solution for a thin ring; 32 straight elements'));
   }
+  for (const both of [false, true]) { // plastic hinges of one beam element under prescribed end rotations: load past the plastic moment, then unload
+    // one end clamped: M_far = 4kθ, M_near = 2kθ, the far end yields at θy = Mp/4k. Both ends rotated alike (double curvature): M = 6kθ at each end, θy = Mp/6k
+    const Em = 70e9, I = 1e-6, k = Em * I, thY = 0.01, thMax = 0.05, Mp = (both ? 6 : 4) * k * thY, dt = 1e-4, fe = createFE({ dtMax: dt }), a = fe.node(0, 0, 0), b = fe.node(1, 0, 0);
+    fe.beam(a, b, { E: Em, rho: 2700, A: 1e-3, Iy: I, Iz: 2 * I, Mpy: Mp, Mpz: 3 * Mp }, [0, 0, 1]); fe.fix(a, both ? [1, 1, 1, 0, 0, 0] : undefined); fe.fix(b, [1, 1, 1, 0, 0, 0]);
+    fe.mass(b, 1, 1e30); if (both) fe.mass(a, 1, 1e30); fe.init(); fe.step(); // the huge rotary inertia turns the nodal spin into a prescribed rotation rate
+    const turn = (rate, steps) => { fe.w[3 * b + 2] = rate; if (both) fe.w[3 * a + 2] = rate; for (let q = 0; q < steps; q++) fe.step(); }, nH = both ? 2 : 1, name = both ? 'Beam in double curvature (hinge at both ends)' : 'Propped beam end (hinge at the rotated end)';
+    turn(1, Math.round(thMax / dt)); const M1 = fe.beamF[2], M2 = fe.beamF[4];
+    turn(-1, Math.round(thY / dt)); // elastic unloading by exactly the yield rotation
+    out.push(N.check(`${name}: moment stays at the plastic moment`, M2, Mp, 1e-10, 'Elastic–perfectly-plastic hinge'), N.check(`${name}: moment at the other end`, M1, both ? Mp : Mp / 2, 1e-10, both ? 'Symmetry of the two hinges' : 'Carry-over of one half: the plastic rotation of the far end relieves the near end'),
+      N.check(`${name}: plastic hinge rotation θmax − θy`, fe.beamKappa[1], thMax - thY, 1e-10, 'Closed form for an elastic–perfectly-plastic hinge loaded monotonically'), N.check(`${name}: moment after unloading by θy (relative to Mp)`, 1 + fe.beamF[4] / Mp, 1, 1e-10, 'Elastic unloading: the residual rotation equals the plastic rotation'),
+      N.check(`${name}: dissipated energy Mp·θp per hinge`, fe.sec[0].wp, nH * Mp * (thMax - thY), 1e-10, 'Plastic work of an elastic–perfectly-plastic hinge'), N.check(`${name}: work of the end moments = dissipated + stored elastic energy`, fe.energy.internal, nH * Mp * (thMax - thY), 1e-10, 'Energy bookkeeping of the element; the element is unloaded, so no elastic energy remains'));
+  }
   { // free fall and bounce of an elastic block
     const h0 = 0.05, fe = createFE({ gravity: [0, 0, -G0] }), b = hexBlock(fe, 2, 2, 2, 0.2, 0.2, 0.2, fe.material({ E: 2e9, nu: 0.3, rho: 1000, A: Infinity }), (p) => [p[0], p[1], p[2] + h0]), pl = fe.plane({});
     for (const k of b.nd) pl.contact(k); fe.init(); let tHit = NaN, vHit = 0, eMax = 0; const top = b.id(1, 1, 2);
@@ -1244,8 +1298,23 @@ function aircraftChecks() {
     out.push(N.check('Spinning beam: angular momentum conserved over three revolutions', Lz(), L0, 1e-3, 'Free rigid-body motion: orbital plus nodal spin angular momentum about the origin'),
       N.check('Spinning beam: kinetic energy conserved', fe.energy.kinetic + fe.energy.internal, fe.energy.initial, 1e-3, 'No spurious strain energy from the co-rotational formulation'), N.check('Spinning beam: length preserved (centrifugal stretch only)', len, 2, 2e-5, 'Rigid rotation; the centrifugal stretch is of order 1e-5 m'));
   }
+  { // level drop of a stiff, fore–aft balanced fuselage on the belly springs of its centre station, kept below their crush plateau: a rigid block on a linear spring
+    const b = { ...AC_BASE, mass_kg: 1000, len_m: 3.2, dia_m: 2, span_m: 0, n_eng_wing: 0, m_nose: 20, fin_h: 0, occupied: false, m_payload: 0, t_fus: 0.05, d_crush: 0.5, crush_g: 20, gear: 'retracted', v_sink: 1, v_fwd: 0, pitch_deg: 0, roll_deg: 0, mu: 0, t_end: 0.06, nStations: 3 };
+    const r = aircraftSim(b, null), fe = r.fe, belly = r.cps.filter((c) => c.kind === 'belly' && c.stn === r.iw), K = N.sum(belly.map((c) => c.law.k)), Mt = fe.totalMass, vc2 = b.v_sink ** 2 + 2 * G0 * 1e-4 * b.dia_m;
+    const del = (Mt * G0 + Math.sqrt((Mt * G0) ** 2 + K * Mt * vc2)) / K, dL = r.pl.pts[belly[0].id].dMax, dR = r.pl.pts[belly[1].id].dMax, tip = (w) => fe.x[3 * w.out + 2];
+    out.push(N.check('Rigid block on a linear crush spring through the full-aircraft model: stop distance', 0.5 * (dL + dR), del, 2e-4, '½Mv² + M·g·δ = ½K·δ²; one thousandth of the mass rides on the payload mount and the fuselage beam is stiff, not rigid, hence 0.02%'),
+      N.check('Rigid block on a linear crush spring: peak deceleration K·δ/M − g', N.amax(r.rec.data[6]) / Mt - G0, (K * del) / Mt - G0, 2e-4, 'Peak ground reaction of the linear spring'),
+      N.check('Rigid block on a linear crush spring: springs stay below their plateau', K * del < N.sum(belly.map((c) => c.law.Fy)) ? 1 : 0, 1, 1e-12, 'Validity of the linear closed form'),
+      N.check('Rigid block on a linear crush spring: energy balance', r.errMax, 0, 1e-3, 'Kinetic + contact work − gravity work = initial kinetic energy'),
+      N.check('Symmetric impact: left and right belly springs crush alike', dL / dR, 1, 1e-9, 'Mirror symmetry about the vertical plane'));
+    const sy = aircraftSim({ ...AC_BASE, t_end: 0.3 }, null), [wl, wr] = [1, -1].map((q) => sy.lat.find((w) => w.s === q)), ptL = sy.pl.pts[sy.cps.find((c) => c.name === 'Left main gear').id], ptR = sy.pl.pts[sy.cps.find((c) => c.name === 'Right main gear').id];
+    out.push(N.check('Symmetric crash of the reference aeroplane: left and right wing tips at the same height', sy.fe.x[3 * wl.out + 2] / sy.fe.x[3 * wr.out + 2], 1, 1e-9, 'Mirror symmetry of model and solution (wings, engines, gear, belly springs)'),
+      N.check('Symmetric crash of the reference aeroplane: left and right main gear strokes', ptL.dMax / ptR.dMax, 1, 1e-9, 'Mirror symmetry'), N.check('Symmetric crash of the reference aeroplane: no lateral drift of the centre fuselage', sy.fe.x[3 * sy.mid + 1] / AC_BASE.dia_m, 0, 1e-9, 'Mirror symmetry'));
+  }
   const r = N.kv(aircraft3d.run(AC_BASE));
-  out.push(N.check('Full-aircraft model: energy balance error of the reference crash', r.ac_energy_err, 0, 0.03, 'Global energy balance of the explicit solution'), N.check('Full-aircraft model: generated masses add up to the aircraft mass', r.ac_mass_kg, AC_BASE.mass_kg, 1e-6, 'Mass bookkeeping of the model generator'));
+  out.push(N.check('Full-aircraft model: energy balance error of the reference crash', r.ac_energy_err, 0, 0.03, 'Global energy balance of the explicit solution'), N.check('Full-aircraft model: generated masses add up to the aircraft mass', r.ac_mass_kg, AC_BASE.mass_kg, 1e-6, 'Mass bookkeeping of the model generator'),
+    N.check('Full-aircraft model: mass bookkeeping with an odd number of wing engines', aircraftSim({ ...AC_BASE, n_eng_wing: 3, t_end: 1e-3 }, null).fe.totalMass, AC_BASE.mass_kg, 1e-9, 'Engines in pairs on the wing nodes, the odd one on the wing station'),
+    N.check('Full-aircraft model: mass bookkeeping of a multirotor with one motor entered', aircraftSim({ ...AC_BASE, config: 'multirotor', mass_kg: 10, len_m: 0.6, dia_m: 0.2, m_engine: 0.3, n_eng_wing: 1, t_end: 1e-4 }, null).fe.totalMass, 10, 1e-9, 'At least two rotor arms are generated and each carries a motor mass'));
   return out;
 }
 
@@ -1259,7 +1328,7 @@ export default {
     { key: 'bird_force_N', label: 'Bird strike peak force', unit: 'N' }, { key: 'HIC', label: 'Head Injury Criterion', unit: '-' },
   ],
   handoff: [
-    { model: 'Detailed full-airframe crash models with millions of shell and solid elements', why: 'The native explicit kernel solves a frame-bay barrel model, a hybrid mass–beam–spring model of the whole aircraft and small solid-element panels in about a second; detailed shell meshes with self-contact, rivet and joint failure and local buckling need 10⁵–10⁷ elements and hours of computing. The High-fidelity bridge page exports a ready-to-run case for them', tool: 'Explicit FE (LS-DYNA / Radioss / Abaqus Explicit / PAM-CRASH class)' },
+    { model: 'Detailed full-airframe crash models with millions of shell and solid elements', why: 'The native explicit kernel solves a frame-bay barrel model, a hybrid mass–beam–spring model of the whole aircraft and small shell or solid-element panels in about a second; detailed shell meshes with self-contact, rivet and joint failure and local buckling need 10⁵–10⁷ elements and hours of computing. The High-fidelity bridge page exports a ready-to-run case for them', tool: 'Explicit FE (LS-DYNA / Radioss / Abaqus Explicit / PAM-CRASH class)' },
     { model: 'Anthropomorphic dummy, restraint and airbag models', why: 'Multibody or FE dummies with validated joints, belts, airbags and contact are required for certification injury metrics; a DRI spine on a stroking seat and a head form are used here. The High-fidelity bridge page exports the seat pulse and model set-up', tool: 'MADYMO / LS-DYNA dummy models and dynamic seat tests' },
     { model: 'Smoothed particle hydrodynamics and ALE bird, hail and water models', why: 'A fluid-like projectile with large deformation coupled to a deforming target; natively the bird is hydrodynamic theory or a pressure-capped rigid sphere, and water is a pressure surface. The High-fidelity bridge page exports the impact case', tool: 'Explicit FE with SPH/ALE/CEL' },
     { model: 'Composite progressive crush and delamination under impact', why: 'Crush stress of composite absorbers is test-derived and mesh-sensitive in simulation; the native material model is isotropic metal plasticity', tool: 'Explicit FE with composite damage models; component crush tests' },

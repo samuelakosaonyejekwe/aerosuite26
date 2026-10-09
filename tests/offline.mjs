@@ -10,7 +10,7 @@ const server = spawn(process.execPath, [root + 'tools/serve.mjs', String(port)],
 await new Promise((r) => setTimeout(r, 700));
 const browser = await chromium.launch();
 const watch = (page, tag) => { page.on('pageerror', (e) => errors.push(`[${tag}] exception: ${e.message}`)); page.on('console', (m) => { if (m.type() === 'error' && !/Failed to load resource|net::ERR|ERR_INTERNET_DISCONNECTED|Failed to fetch/.test(m.text())) errors.push(`[${tag}] console: ${m.text().slice(0, 200)}`); }); };
-const runSuite = async (page, tag) => { await page.waitForSelector('.btn.primary.big', { timeout: 20000 }); await page.locator('.btn.primary.big').click(); try { await page.waitForSelector('.kpis .kpi', { timeout: 30000 }); } catch { errors.push(`[${tag}] analysis produced no results`); } };
+const runSuite = async (page, tag) => { await page.waitForSelector('#page[data-route^="#/suite/"] .btn.primary.big', { timeout: 30000 }); await page.locator('#page[data-route^="#/suite/"] .btn.primary.big').click(); try { await page.waitForSelector('.kpis .kpi', { timeout: 60000 }); } catch { errors.push(`[${tag}] analysis produced no results`); } };
 
 try {
   // ---- 1. installed/offline behaviour

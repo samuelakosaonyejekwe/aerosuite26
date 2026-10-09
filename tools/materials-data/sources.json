@@ -1,0 +1,92 @@
+[
+ {
+  "id": "mil-hdbk-5j",
+  "title": "MIL-HDBK-5J, Metallic Materials and Elements for Aerospace Vehicle Structures",
+  "org": "US Department of Defense",
+  "year": 2003,
+  "url": "https://everyspec.com/MIL-HDBK/MIL-HDBK-0001-0099/MIL_HDBK_5J_139/",
+  "file": "h5j/h5j.pdf",
+  "licence_note": "Work of the United States Government, Distribution Statement A (approved for public release; distribution is unlimited): not subject to copyright in the United States. Superseded by MMPDS for certification use."
+ },
+ {
+  "id": "mil-hdbk-17-2f",
+  "title": "MIL-HDBK-17-2F, Composite Materials Handbook, Volume 2: Polymer Matrix Composites, Materials Properties",
+  "org": "US Department of Defense",
+  "year": 2002,
+  "url": "https://everyspec.com/MIL-HDBK/MIL-HDBK-0001-0099/MIL_HDBK_17_2F_250/",
+  "file": "h17/h17-2f.pdf",
+  "licence_note": "Work of the United States Government, Distribution Statement A: not subject to copyright in the United States. Superseded by CMH-17."
+ },
+ {
+  "id": "mil-c-7438g",
+  "title": "MIL-C-7438G, Core Material, Aluminum, for Sandwich Construction",
+  "org": "US Department of Defense",
+  "year": 1985,
+  "url": "https://everyspec.com/MIL-SPECS/MIL-SPECS-MIL-C/MIL-C-7438G_3941/",
+  "file": "misc/milc7438g.pdf",
+  "licence_note": "Work of the United States Government, Distribution Statement A. Cancelled specification (SAE AMS-C-7438 is the suggested replacement); its tables state that the values are for test purposes only."
+ },
+ {
+  "id": "faa-ar-05-15",
+  "title": "DOT/FAA/AR-05/15, Fatigue Crack Growth Database for Damage Tolerance Analysis",
+  "org": "US Federal Aviation Administration (Forman, Shivakumar, Cardinal, Williams, McKeighan)",
+  "year": 2005,
+  "url": "https://everyspec.com/DOT/DOT-FAA-AR-05_15__AUG2005_37908/",
+  "file": "misc/faa-ar-05-15.pdf",
+  "licence_note": "Technical report published by the FAA and available to the US public through NTIS; prepared under contract, so individual values are recorded as cited facts and no text is reproduced."
+ },
+ {
+  "id": "llnl-ucrl-id-134691",
+  "title": "UCRL-ID-134691, Experimental Investigations of Material Models for Ti-6Al-4V and 2024-T3 (also issued as DOT/FAA/AR-00/25)",
+  "org": "Lawrence Livermore National Laboratory (D. R. Lesuer) for the FAA",
+  "year": 1999,
+  "url": "https://digital.library.unt.edu/ark:/67531/metadc623770/",
+  "file": "misc/llnl-11977.pdf",
+  "licence_note": "US Department of Energy laboratory report prepared for the FAA, publicly released; individual values recorded as cited facts, no text reproduced."
+ },
+ {
+  "id": "nasa-tm-2011-217059",
+  "title": "NASA/TM-2011-217059, Alternative Aviation Fuel Experiment (AAFEX)",
+  "org": "NASA Langley Research Center (Anderson et al.)",
+  "year": 2011,
+  "url": "https://ntrs.nasa.gov/citations/20110007202",
+  "file": "misc/ntrs-20110007202.pdf",
+  "licence_note": "NASA Technical Memorandum on the NASA Technical Reports Server, public use permitted; work of the United States Government."
+ },
+ {
+  "id": "nasa-tm-2010-216838",
+  "title": "NASA/TM-2010-216838, Mode II Interlaminar Fracture Toughness and Fatigue Characterization of a Graphite Epoxy Composite Material",
+  "org": "NASA Langley Research Center (O'Brien, Johnston, Toland)",
+  "year": 2010,
+  "url": "https://ntrs.nasa.gov/citations/20100031113",
+  "file": "misc/ntrs-20100031113.pdf",
+  "licence_note": "NASA Technical Memorandum on the NASA Technical Reports Server, public use permitted."
+ },
+ {
+  "id": "nasa-ntrs-20120016494",
+  "title": "Comparison of Intralaminar and Interlaminar Mode-I Fracture Toughness of Unidirectional IM7/8552 Graphite/Epoxy Composite",
+  "org": "NASA Langley Research Center (Czabaj, Ratcliffe)",
+  "year": 2012,
+  "url": "https://ntrs.nasa.gov/citations/20120016494",
+  "file": "misc/ntrs-20120016494.pdf",
+  "licence_note": "Conference paper released on the NASA Technical Reports Server; individual values recorded as cited facts, no text reproduced."
+ },
+ {
+  "id": "ncamp-ncp-rp-2009-028",
+  "title": "NCP-RP-2009-028 Rev B, Hexcel 8552 IM7 Unidirectional Prepreg 190 gsm & 35%RC Qualification Statistical Analysis Report",
+  "org": "National Center for Advanced Materials Performance (NCAMP), Wichita State University",
+  "year": 2019,
+  "url": "https://www.wichita.edu/industry_and_defense/NIAR/Documents/NCP-RP-2009-028-Rev-B-HEXCEL-8552-IM7-Uni-SAR-4-16-2019.pdf",
+  "file": "ncamp/ncp-rp-2009-028-revb.pdf",
+  "licence_note": "Published by NCAMP with Distribution Statement A (approved for public release); not a US Government work, so individual values are recorded as cited facts and no text is reproduced."
+ },
+ {
+  "id": "molicel-inr21700-p42a",
+  "title": "Product Data Sheet, Model INR-21700-P42A",
+  "org": "E-One Moli Energy Corp. (Molicel)",
+  "year": null,
+  "url": "https://www.molicel.com/wp-content/uploads/INR21700P42A-V4-80092.pdf",
+  "file": "misc/molicel-p42a.pdf",
+  "licence_note": "Manufacturer datasheet cited by link; individual values recorded as facts, no text reproduced. The datasheet says its figures are for reference only."
+ }
+]

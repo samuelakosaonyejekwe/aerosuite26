@@ -1,0 +1,215 @@
+{
+  "retrieved": "2026-10-09",
+  "about": "Curated list of established open-source solvers and tools for each analysis suite; every link and licence was checked on the retrieval date, and licences are as stated by each project.",
+  "suites": {
+    "cfd": [
+      {"name":"SU2","what":"Finite-volume CFD suite for compressible and incompressible RANS flow with adjoint-based shape optimisation, widely used for external aerodynamics.","licence":"LGPL-2.1","url":"https://su2code.github.io/"},
+      {"name":"OpenFOAM","what":"General-purpose finite-volume CFD toolbox with a large library of solvers, turbulence models and meshing utilities.","licence":"GPL-3.0-or-later","url":"https://openfoam.org/"},
+      {"name":"OpenVSP / VSPAERO","what":"NASA parametric aircraft geometry tool with the bundled VSPAERO vortex-lattice and panel solver for conceptual-design aerodynamics.","licence":"NOSA-1.3","url":"https://openvsp.org/"},
+      {"name":"XFOIL","what":"Classic panel method with coupled boundary layer for the design and analysis of subsonic aerofoils (lift, drag, transition).","licence":"GPL-2.0","url":"https://web.mit.edu/drela/Public/web/xfoil/"},
+      {"name":"PyFR","what":"High-order flux-reconstruction solver for scale-resolving (LES/DNS) compressible flow simulations on GPUs and CPUs.","licence":"BSD-3-Clause","url":"https://www.pyfr.org/"},
+      {"name":"Gmsh","what":"Finite-element mesh generator with a built-in CAD engine and post-processor, used to prepare meshes for CFD and FEA solvers.","licence":"GPL-2.0-or-later","url":"https://gmsh.info/"},
+      {"name":"CFL3D","what":"NASA Langley structured-grid RANS solver, long used as a reference code for turbulence-model verification and validation.","licence":"Apache-2.0","url":"https://github.com/nasa/CFL3D"}
+    ],
+    "fea": [
+      {"name":"CalculiX","what":"Implicit and explicit 3D structural finite-element solver (static, dynamic, thermal, contact) with an Abaqus-like input format.","licence":"GPL-2.0-or-later","url":"https://www.calculix.de/"},
+      {"name":"Code_Aster","what":"EDF finite-element solver for structural mechanics, thermal analysis, dynamics, fatigue and fracture.","licence":"GPL-3.0","url":"https://code-aster.org/"},
+      {"name":"NASTRAN-95","what":"NASA public release of the original NASTRAN structural analysis code, the ancestor of today's commercial Nastran solvers.","licence":"NOSA-1.3","url":"https://github.com/nasa/NASTRAN-95"},
+      {"name":"MYSTRAN","what":"General-purpose linear finite-element solver that reads NASTRAN-style input decks for statics, modes and buckling.","licence":"MIT","url":"https://github.com/MystranSolver/MYSTRANSolver"},
+      {"name":"FEniCSx","what":"Finite-element computing platform for solving partial differential equations written in near-mathematical notation from Python or C++.","licence":"LGPL-3.0","url":"https://fenicsproject.org/"},
+      {"name":"Elmer","what":"Multiphysics finite-element package from CSC covering structural mechanics, heat transfer, fluid flow, electromagnetics and acoustics.","licence":"GPL-2.0","url":"https://github.com/ElmerCSC/elmerfem"},
+      {"name":"pyNastran","what":"Python library for reading, writing and post-processing NASTRAN input decks and result files.","licence":"BSD-3-Clause","url":"https://github.com/SteveDoyle2/pyNastran"}
+    ],
+    "aeroelastic": [
+      {"name":"SHARPy","what":"Nonlinear aeroelastic analysis package for very flexible aircraft, coupling geometrically exact beams with an unsteady vortex-lattice method.","licence":"BSD-3-Clause","url":"https://github.com/ImperialCollegeLondon/sharpy"},
+      {"name":"OpenAeroStruct","what":"Low-fidelity coupled aerostructural analysis and optimisation (vortex-lattice aerodynamics plus beam finite elements) built on OpenMDAO.","licence":"Apache-2.0","url":"https://github.com/mdolab/OpenAeroStruct"},
+      {"name":"Loads Kernel","what":"DLR software for quasi-steady and dynamic manoeuvre loads, unsteady gust loads and flutter analysis of flexible aircraft.","licence":"BSD-3-Clause","url":"https://github.com/DLR-AE/LoadsKernel"},
+      {"name":"MBDyn","what":"General-purpose multibody dynamics solver from Politecnico di Milano for mechanisms, flexible bodies and aeroservoelastic systems.","licence":"GPL-2.0-or-later","url":"https://www.mbdyn.org/"},
+      {"name":"NASTRAN-95","what":"NASA public release of the original NASTRAN structural analysis code, the ancestor of today's commercial Nastran solvers.","licence":"NOSA-1.3","url":"https://github.com/nasa/NASTRAN-95"},
+      {"name":"preCICE","what":"Coupling library that connects separate fluid and structure solvers for partitioned fluid-structure interaction simulations.","licence":"LGPL-3.0","url":"https://precice.org/"},
+      {"name":"TACS","what":"Toolkit for the Analysis of Composite Structures: a parallel finite-element code for analysis and gradient-based design of thin-walled aerospace structures.","licence":"Apache-2.0","url":"https://github.com/smdogroup/tacs"}
+    ],
+    "flightdyn": [
+      {"name":"JSBSim","what":"Six-degree-of-freedom flight dynamics model library used in simulators and for batch flight-mechanics studies.","licence":"LGPL-2.1","url":"https://github.com/JSBSim-Team/jsbsim"},
+      {"name":"AVL","what":"Extended vortex-lattice program for aerodynamic and flight-dynamic analysis of rigid aircraft, including trim and stability derivatives.","licence":"GPL-2.0","url":"https://web.mit.edu/drela/Public/web/avl/"},
+      {"name":"OpenVSP / VSPAERO","what":"NASA parametric aircraft geometry tool with the bundled VSPAERO vortex-lattice and panel solver for conceptual-design aerodynamics.","licence":"NOSA-1.3","url":"https://openvsp.org/"},
+      {"name":"FlightGear","what":"Open-source flight simulator used for pilot-in-the-loop evaluation and visualisation of flight dynamics models.","licence":"GPL-2.0","url":"https://www.flightgear.org/"},
+      {"name":"python-control","what":"Python Control Systems Library for analysing and designing linear and nonlinear feedback control systems.","licence":"BSD-3-Clause","url":"https://python-control.org/"},
+      {"name":"AeroSandbox","what":"Python framework for aircraft design optimisation with built-in aerodynamics, propulsion, structures and performance models.","licence":"MIT","url":"https://github.com/peterdsharpe/AeroSandbox"}
+    ],
+    "performance": [
+      {"name":"SUAVE","what":"Stanford conceptual aircraft design environment covering aerodynamics, propulsion, weights and mission analysis for conventional and unconventional configurations.","licence":"LGPL-2.1","url":"https://suave.stanford.edu/"},
+      {"name":"OpenAP","what":"Open aircraft performance model and Python toolkit for estimating thrust, drag, fuel consumption and emissions of common airliners.","licence":"LGPL-3.0","url":"https://openap.dev/"},
+      {"name":"Aviary","what":"NASA aircraft analysis, design and optimisation tool built on OpenMDAO, coupling aircraft sizing with mission analysis.","licence":"Apache-2.0","url":"https://github.com/OpenMDAO/Aviary"},
+      {"name":"FAST-OAD","what":"Future Aircraft Sizing Tool for overall aircraft design: a framework for sizing and performance evaluation of transport aircraft.","licence":"GPL-3.0","url":"https://github.com/fast-aircraft-design/FAST-OAD"},
+      {"name":"ADRpy","what":"Aircraft Design Recipes in Python: conceptual design and performance tools including design atmospheres and constraint analysis.","licence":"GPL-3.0","url":"https://github.com/sobester/ADRpy"},
+      {"name":"AeroSandbox","what":"Python framework for aircraft design optimisation with built-in aerodynamics, propulsion, structures and performance models.","licence":"MIT","url":"https://github.com/peterdsharpe/AeroSandbox"},
+      {"name":"JSBSim","what":"Six-degree-of-freedom flight dynamics model library used in simulators and for batch flight-mechanics studies.","licence":"LGPL-2.1","url":"https://github.com/JSBSim-Team/jsbsim"}
+    ],
+    "rotorcraft": [
+      {"name":"DUST","what":"Mid-fidelity aerodynamic solver from Politecnico di Milano using panels, lifting lines and vortex particles for rotorcraft and eVTOL configurations.","licence":"MIT","url":"https://www.dust.polimi.it/"},
+      {"name":"FLOWUnsteady","what":"Vortex-particle interactional aerodynamics solver for rotors, propellers and multirotor aircraft.","licence":"MIT","url":"https://github.com/byuflowlab/FLOWUnsteady"},
+      {"name":"MBDyn","what":"General-purpose multibody dynamics solver from Politecnico di Milano for mechanisms, flexible bodies and aeroservoelastic systems.","licence":"GPL-2.0-or-later","url":"https://www.mbdyn.org/"},
+      {"name":"XROTOR","what":"Interactive program for the design and analysis of ducted and free-tip propellers and windmills.","licence":"GPL-2.0","url":"https://web.mit.edu/drela/Public/web/xrotor/"},
+      {"name":"OpenFAST","what":"Aero-servo-elastic time-domain simulation framework for rotating blades and towers, developed for wind turbines.","licence":"Apache-2.0","url":"https://github.com/OpenFAST/openfast"},
+      {"name":"CCBlade","what":"Robust, fast and differentiable blade-element-momentum code for rotor aerodynamic performance.","licence":"Apache-2.0","url":"https://github.com/NLRWindSystems/CCBlade"}
+    ],
+    "propulsion": [
+      {"name":"pyCycle","what":"Thermodynamic cycle modelling library for gas-turbine engine design and off-design analysis, built on OpenMDAO.","licence":"Apache-2.0","url":"https://github.com/OpenMDAO/pyCycle"},
+      {"name":"T-MATS","what":"NASA Toolbox for the Modeling and Analysis of Thermodynamic Systems: Simulink blocks for gas-turbine engine performance and control studies.","licence":"Apache-2.0","url":"https://github.com/nasa/T-MATS"},
+      {"name":"NASA CEA","what":"Chemical Equilibrium with Applications: NASA code for equilibrium composition and thermodynamic properties of combustion products.","licence":"Apache-2.0","url":"https://github.com/nasa/cea"},
+      {"name":"Cantera","what":"Chemical kinetics, thermodynamics and transport library for combustion and reacting-flow calculations.","licence":"BSD-3-Clause","url":"https://cantera.org/"},
+      {"name":"CoolProp","what":"Thermophysical property database for pure fluids, mixtures and humid air.","licence":"MIT","url":"https://coolprop.org/"},
+      {"name":"TESPy","what":"Thermal Engineering Systems in Python: steady-state simulation of thermodynamic cycles such as heat pumps, refrigeration loops and power plants.","licence":"MIT","url":"https://github.com/oemof/tespy"}
+    ],
+    "propeller": [
+      {"name":"XROTOR","what":"Interactive program for the design and analysis of ducted and free-tip propellers and windmills.","licence":"GPL-2.0","url":"https://web.mit.edu/drela/Public/web/xrotor/"},
+      {"name":"QPROP","what":"Analysis program for predicting the performance of propeller and electric-motor combinations.","licence":"GPL-2.0","url":"https://web.mit.edu/drela/Public/web/qprop/"},
+      {"name":"CCBlade","what":"Robust, fast and differentiable blade-element-momentum code for rotor aerodynamic performance.","licence":"Apache-2.0","url":"https://github.com/NLRWindSystems/CCBlade"},
+      {"name":"CCBlade.jl","what":"Julia blade-element-momentum implementation for propellers and turbines with guaranteed convergence, suited to optimisation.","licence":"MIT","url":"https://github.com/byuflowlab/CCBlade.jl"},
+      {"name":"pyBEMT","what":"Small Python blade-element-momentum model for estimating propeller thrust or turbine power.","licence":"MIT","url":"https://github.com/kegiljarhus/pyBEMT"},
+      {"name":"XFOIL","what":"Classic panel method with coupled boundary layer for the design and analysis of subsonic aerofoils (lift, drag, transition).","licence":"GPL-2.0","url":"https://web.mit.edu/drela/Public/web/xfoil/"},
+      {"name":"DUST","what":"Mid-fidelity aerodynamic solver from Politecnico di Milano using panels, lifting lines and vortex particles for rotorcraft and eVTOL configurations.","licence":"MIT","url":"https://www.dust.polimi.it/"}
+    ],
+    "fatigue": [
+      {"name":"pyLife","what":"General Python library for fatigue and reliability: S-N curves, load collectives, rainflow counting and damage sums.","licence":"Apache-2.0","url":"https://github.com/boschresearch/pylife"},
+      {"name":"py-fatigue","what":"Python package for cyclic stress (fatigue) analysis and cycle counting.","licence":"GPL-3.0","url":"https://github.com/OWI-Lab/py_fatigue"},
+      {"name":"fatpack","what":"Python package for fatigue analysis of measured data series, including rainflow counting and S-N damage.","licence":"ISC","url":"https://github.com/Gunnstein/fatpack"},
+      {"name":"rainflow","what":"Python implementation of the ASTM E1049 rainflow cycle-counting algorithm for fatigue analysis.","licence":"MIT","url":"https://github.com/iamlikeme/rainflow"},
+      {"name":"CalculiX","what":"Structural finite-element solver that also provides the stress fields and cyclic crack-propagation calculations used in fatigue assessments.","licence":"GPL-2.0-or-later","url":"https://www.calculix.de/"},
+      {"name":"Code_Aster","what":"EDF finite-element solver for structural mechanics, thermal analysis, dynamics, fatigue and fracture.","licence":"GPL-3.0","url":"https://code-aster.org/"}
+    ],
+    "vibration": [
+      {"name":"ROSS","what":"Rotordynamic Open-Source Software: Python library for Campbell diagrams, critical speeds and unbalance response of rotating machinery.","licence":"Apache-2.0","url":"https://github.com/petrobras/ross"},
+      {"name":"SDynPy","what":"Sandia structural dynamics Python library for modal test data, signal processing and vibration analysis.","licence":"GPL-3.0","url":"https://github.com/sandialabs/sdynpy"},
+      {"name":"CalculiX","what":"Structural finite-element solver used here for natural frequencies, mode shapes and steady-state or transient dynamic response.","licence":"GPL-2.0-or-later","url":"https://www.calculix.de/"},
+      {"name":"Code_Aster","what":"EDF finite-element solver used here for modal analysis, rotating-machinery dynamics and forced vibration response.","licence":"GPL-3.0","url":"https://code-aster.org/"},
+      {"name":"Elmer","what":"Multiphysics finite-element package used here for eigenmode and harmonic vibration analysis of structures.","licence":"GPL-2.0","url":"https://github.com/ElmerCSC/elmerfem"},
+      {"name":"pyNastran","what":"Python library for reading, writing and post-processing NASTRAN input decks and result files.","licence":"BSD-3-Clause","url":"https://github.com/SteveDoyle2/pyNastran"}
+    ],
+    "acoustics": [
+      {"name":"Acoular","what":"Python framework for acoustic beamforming and microphone-array processing to locate and quantify sound sources.","licence":"BSD-3-Clause","url":"https://www.acoular.org/"},
+      {"name":"NoiseModelling","what":"Tool for producing environmental noise maps over large areas using standard outdoor propagation methods.","licence":"GPL-3.0","url":"https://github.com/Universite-Gustave-Eiffel/NoiseModelling"},
+      {"name":"SU2","what":"CFD suite whose unsteady flow solutions provide the source data for aeroacoustic noise prediction.","licence":"LGPL-2.1","url":"https://su2code.github.io/"},
+      {"name":"OpenFOAM","what":"CFD toolbox used to compute the unsteady flow sources that drive aeroacoustic noise predictions.","licence":"GPL-3.0-or-later","url":"https://openfoam.org/"},
+      {"name":"PyFR","what":"High-order scale-resolving flow solver suited to computing the turbulent noise sources needed for aeroacoustics.","licence":"BSD-3-Clause","url":"https://www.pyfr.org/"},
+      {"name":"OpenFAST","what":"Rotor aero-servo-elastic framework that includes an aeroacoustics module for blade noise.","licence":"Apache-2.0","url":"https://github.com/OpenFAST/openfast"}
+    ],
+    "thermal": [
+      {"name":"Elmer","what":"Multiphysics finite-element package from CSC covering structural mechanics, heat transfer, fluid flow, electromagnetics and acoustics.","licence":"GPL-2.0","url":"https://github.com/ElmerCSC/elmerfem"},
+      {"name":"code_saturne","what":"EDF finite-volume CFD solver for single-phase flow with conjugate heat transfer and radiation.","licence":"GPL-2.0","url":"https://www.code-saturne.org/"},
+      {"name":"OpenFOAM","what":"General-purpose finite-volume CFD toolbox with a large library of solvers, turbulence models and meshing utilities.","licence":"GPL-3.0-or-later","url":"https://openfoam.org/"},
+      {"name":"ht","what":"Python library of heat-transfer correlations for convection, heat exchangers, boiling and radiation.","licence":"MIT","url":"https://github.com/CalebBell/ht"},
+      {"name":"CoolProp","what":"Thermophysical property database for pure fluids, mixtures and humid air.","licence":"MIT","url":"https://coolprop.org/"},
+      {"name":"TESPy","what":"Thermal Engineering Systems in Python: steady-state simulation of thermodynamic cycles such as heat pumps, refrigeration loops and power plants.","licence":"MIT","url":"https://github.com/oemof/tespy"},
+      {"name":"CalculiX","what":"Finite-element solver used here for steady and transient heat conduction and coupled thermo-mechanical stress.","licence":"GPL-2.0-or-later","url":"https://www.calculix.de/"}
+    ],
+    "icing": [
+      {"name":"OpenFOAM","what":"General CFD toolbox; its flow and Lagrangian particle-tracking solvers are common building blocks for droplet impingement and ice-accretion research codes.","licence":"GPL-3.0-or-later","url":"https://openfoam.org/"},
+      {"name":"SU2","what":"CFD suite used to compute the airflow around clean and iced shapes as input to icing and performance-degradation studies.","licence":"LGPL-2.1","url":"https://su2code.github.io/"},
+      {"name":"XFOIL","what":"Aerofoil analysis code used for quick estimates of how an iced section shape changes lift and drag.","licence":"GPL-2.0","url":"https://web.mit.edu/drela/Public/web/xfoil/"},
+      {"name":"Gmsh","what":"Mesh generator used to remesh the geometry after each ice-growth step in multi-step icing simulations.","licence":"GPL-2.0-or-later","url":"https://gmsh.info/"}
+    ],
+    "gear": [
+      {"name":"MBDyn","what":"Multibody dynamics solver used for landing-gear drop, shimmy and ground-load simulations with flexible structures.","licence":"GPL-2.0-or-later","url":"https://www.mbdyn.org/"},
+      {"name":"Project Chrono","what":"Multi-physics engine with contact and tyre models, suitable for landing-gear touchdown and ground-handling dynamics.","licence":"BSD-3-Clause","url":"https://projectchrono.org/"},
+      {"name":"Simbody","what":"Multibody dynamics library for modelling articulated mechanisms such as retraction linkages and shock struts.","licence":"Apache-2.0","url":"https://github.com/simbody/simbody"},
+      {"name":"OpenModelica","what":"Modelica environment for modelling oleo struts, tyres, brakes and actuation as coupled multi-domain systems.","licence":"AGPL-3.0 or OSMC-PL-1.8","url":"https://openmodelica.org/"},
+      {"name":"JSBSim","what":"Flight dynamics model with ground-reaction (gear contact, steering, braking) modelling for take-off and landing simulation.","licence":"LGPL-2.1","url":"https://github.com/JSBSim-Team/jsbsim"}
+    ],
+    "crash": [
+      {"name":"CalculiX","what":"Finite-element solver with nonlinear explicit dynamics, contact and plasticity for impact-type simulations.","licence":"GPL-2.0-or-later","url":"https://www.calculix.de/"},
+      {"name":"Kratos Multiphysics","what":"Multiphysics framework with nonlinear structural, contact and particle methods applicable to impact problems.","licence":"BSD-4-Clause","url":"https://github.com/KratosMultiphysics/Kratos"},
+      {"name":"Code_Aster","what":"EDF finite-element solver with nonlinear transient dynamics, contact and damage models.","licence":"GPL-3.0","url":"https://code-aster.org/"},
+      {"name":"Project Chrono","what":"Multi-physics engine for multibody impact and contact dynamics.","licence":"BSD-3-Clause","url":"https://projectchrono.org/"},
+      {"name":"DualSPHysics","what":"Smoothed-particle hydrodynamics solver for violent fluid-structure impact such as water landing (ditching).","licence":"LGPL-2.1","url":"https://dual.sphysics.org/"}
+    ],
+    "control": [
+      {"name":"ArduPilot","what":"Autopilot software for fixed-wing aircraft, multicopters, helicopters and VTOLs, with a software-in-the-loop simulator.","licence":"GPL-3.0","url":"https://ardupilot.org/"},
+      {"name":"PX4 Autopilot","what":"Flight control stack for drones and other unmanned vehicles, including estimators, controllers and simulation interfaces.","licence":"BSD-3-Clause","url":"https://px4.io/"},
+      {"name":"Paparazzi UAV","what":"Long-running autopilot system for fixed-wing and rotary unmanned aircraft, widely used in research.","licence":"GPL-2.0","url":"https://github.com/paparazzi/paparazzi"},
+      {"name":"INAV","what":"Navigation-focused flight controller firmware for fixed-wing and multirotor aircraft.","licence":"GPL-3.0","url":"https://github.com/iNavFlight/inav"},
+      {"name":"Betaflight","what":"Flight controller firmware for multirotors with a focus on rate-loop performance and filtering.","licence":"GPL-3.0","url":"https://github.com/betaflight/betaflight"},
+      {"name":"python-control","what":"Python Control Systems Library for analysing and designing linear and nonlinear feedback control systems.","licence":"BSD-3-Clause","url":"https://python-control.org/"},
+      {"name":"JSBSim","what":"Six-degree-of-freedom flight dynamics model library used in simulators and for batch flight-mechanics studies.","licence":"LGPL-2.1","url":"https://github.com/JSBSim-Team/jsbsim"}
+    ],
+    "avionics": [
+      {"name":"RTKLIB","what":"Program package for standard and precise GNSS positioning, including RTK and PPP.","licence":"BSD-2-Clause","url":"https://github.com/tomojitakasu/RTKLIB"},
+      {"name":"GNSS-SDR","what":"Software-defined GNSS receiver that processes raw signal samples through to navigation solutions.","licence":"GPL-3.0","url":"https://gnss-sdr.org/"},
+      {"name":"GTSAM","what":"Factor-graph library for sensor fusion, inertial navigation and simultaneous localisation and mapping.","licence":"BSD-3-Clause","url":"https://gtsam.org/"},
+      {"name":"FilterPy","what":"Python library of Kalman, extended, unscented and particle filters for state estimation and sensor fusion.","licence":"MIT","url":"https://github.com/rlabbe/filterpy"},
+      {"name":"AHRS","what":"Python toolbox of attitude and heading reference system algorithms such as Madgwick, Mahony and EKF.","licence":"MIT","url":"https://github.com/Mayitzin/ahrs"},
+      {"name":"MAVLink","what":"Lightweight messaging protocol and code generator for communication between drones, onboard components and ground stations.","licence":"LGPL-3.0 (generator); MIT (generated code)","url":"https://mavlink.io/en/"},
+      {"name":"QGroundControl","what":"Ground control station for flight planning, vehicle setup and telemetry of MAVLink-based aircraft.","licence":"Apache-2.0","url":"https://github.com/mavlink/qgroundcontrol"}
+    ],
+    "hydmech": [
+      {"name":"Hopsan","what":"Linköping University simulation environment for fluid power and mechatronic systems such as hydraulic actuators.","licence":"Apache-2.0","url":"https://github.com/Hopsan/hopsan"},
+      {"name":"OpenModelica","what":"Modelica compiler and simulation environment for equation-based modelling of multi-domain physical systems.","licence":"AGPL-3.0 or OSMC-PL-1.8","url":"https://openmodelica.org/"},
+      {"name":"Modelica Standard Library","what":"Standard component library for Modelica tools covering mechanical, fluid, thermal, electrical and control domains.","licence":"BSD-3-Clause","url":"https://github.com/modelica/ModelicaStandardLibrary"},
+      {"name":"MBDyn","what":"Multibody dynamics solver that includes hydraulic elements for actuators coupled to mechanisms.","licence":"GPL-2.0-or-later","url":"https://www.mbdyn.org/"},
+      {"name":"Project Chrono","what":"Multi-physics engine for gears, bearings, drivelines and other mechanical transmission dynamics.","licence":"BSD-3-Clause","url":"https://projectchrono.org/"}
+    ],
+    "electrical": [
+      {"name":"PyBaMM","what":"Python Battery Mathematical Modelling: physics-based lithium-ion cell models for performance and degradation.","licence":"BSD-3-Clause","url":"https://pybamm.org/"},
+      {"name":"liionpack","what":"Battery pack simulation tool built on PyBaMM for series-parallel pack behaviour.","licence":"MIT","url":"https://github.com/pybamm-team/liionpack"},
+      {"name":"OpenConcept","what":"Conceptual design toolkit in OpenMDAO for aircraft with electric, hybrid and other unconventional propulsion architectures.","licence":"MIT","url":"https://github.com/mdolab/openconcept"},
+      {"name":"OpenModelica","what":"Modelica environment for modelling electrical machines, power electronics and distribution networks as system models.","licence":"AGPL-3.0 or OSMC-PL-1.8","url":"https://openmodelica.org/"},
+      {"name":"SUAVE","what":"Conceptual aircraft design environment with battery, motor and electric-network models for electric and hybrid aircraft.","licence":"LGPL-2.1","url":"https://suave.stanford.edu/"}
+    ],
+    "fuelecs": [
+      {"name":"CoolProp","what":"Thermophysical property database for pure fluids, mixtures and humid air.","licence":"MIT","url":"https://coolprop.org/"},
+      {"name":"TESPy","what":"Thermal Engineering Systems in Python: steady-state simulation of thermodynamic cycles such as heat pumps, refrigeration loops and power plants.","licence":"MIT","url":"https://github.com/oemof/tespy"},
+      {"name":"OpenModelica","what":"Modelica environment for fuel, thermal-fluid and air-conditioning system models.","licence":"AGPL-3.0 or OSMC-PL-1.8","url":"https://openmodelica.org/"},
+      {"name":"Modelica Standard Library","what":"Standard component library for Modelica tools covering mechanical, fluid, thermal, electrical and control domains.","licence":"BSD-3-Clause","url":"https://github.com/modelica/ModelicaStandardLibrary"},
+      {"name":"OpenFOAM","what":"CFD toolbox whose volume-of-fluid solvers are used for fuel sloshing in tanks.","licence":"GPL-3.0-or-later","url":"https://openfoam.org/"},
+      {"name":"DualSPHysics","what":"Smoothed-particle hydrodynamics solver suited to violent liquid sloshing in tanks.","licence":"LGPL-2.1","url":"https://dual.sphysics.org/"},
+      {"name":"Cantera","what":"Thermodynamics and kinetics library for fuel property and combustion calculations.","licence":"BSD-3-Clause","url":"https://cantera.org/"}
+    ],
+    "composites": [
+      {"name":"composipy","what":"Python library for composite laminate stress-strain, plate buckling and lamination-parameter optimisation.","licence":"MIT","url":"https://github.com/rafaelpsilva07/composipy"},
+      {"name":"TACS","what":"Toolkit for the Analysis of Composite Structures: a parallel finite-element code for analysis and gradient-based design of thin-walled aerospace structures.","licence":"Apache-2.0","url":"https://github.com/smdogroup/tacs"},
+      {"name":"CalculiX","what":"Finite-element solver with layered composite shell and solid elements for laminate stress analysis.","licence":"GPL-2.0-or-later","url":"https://www.calculix.de/"},
+      {"name":"Code_Aster","what":"EDF finite-element solver with multilayer shell, damage and cohesive-zone (delamination) models.","licence":"GPL-3.0","url":"https://code-aster.org/"},
+      {"name":"pyNastran","what":"Python library for building and post-processing NASTRAN composite (PCOMP) models and ply results.","licence":"BSD-3-Clause","url":"https://github.com/SteveDoyle2/pyNastran"}
+    ],
+    "safety": [
+      {"name":"SCRAM","what":"Probabilistic risk analysis tool for fault trees, event trees, common-cause failures and uncertainty analysis.","licence":"GPL-3.0","url":"https://github.com/rakhimov/scram"},
+      {"name":"reliability","what":"Python library for reliability engineering and survival analysis, including life-data distribution fitting.","licence":"LGPL-3.0","url":"https://github.com/MatthewReid854/reliability"},
+      {"name":"lifelines","what":"Python survival analysis library for estimating failure-time distributions from censored data.","licence":"MIT","url":"https://github.com/CamDavidsonPilon/lifelines"},
+      {"name":"Storm","what":"Probabilistic model checker for analysing reliability and safety properties of Markov models.","licence":"GPL-3.0","url":"https://www.stormchecker.org/"},
+      {"name":"OSATE","what":"Open Source AADL Tool Environment for modelling and analysing the architecture of embedded and avionics systems.","licence":"EPL-2.0","url":"https://osate.org/"}
+    ],
+    "mdao": [
+      {"name":"OpenMDAO","what":"NASA framework for multidisciplinary analysis and optimisation with efficient analytic derivatives across coupled models.","licence":"Apache-2.0","url":"https://openmdao.org/"},
+      {"name":"GEMSEO","what":"Python library for automating multidisciplinary design studies, including MDO formulations and design-space exploration.","licence":"LGPL-3.0","url":"https://gemseo.org/"},
+      {"name":"pyOptSparse","what":"Python framework that gives one interface to many gradient-based and gradient-free nonlinear optimisers.","licence":"LGPL-3.0","url":"https://github.com/mdolab/pyoptsparse"},
+      {"name":"Dakota","what":"Sandia toolkit for optimisation, parameter studies, calibration and uncertainty quantification around any simulation code.","licence":"LGPL-2.1","url":"https://dakota.sandia.gov/"},
+      {"name":"pymoo","what":"Python library of single- and multi-objective optimisation algorithms such as NSGA-II.","licence":"Apache-2.0","url":"https://pymoo.org/"},
+      {"name":"SMT","what":"Surrogate Modeling Toolbox: Python library of kriging and other surrogate models with derivative support.","licence":"BSD-3-Clause","url":"https://github.com/SMTorg/smt"},
+      {"name":"CPACS","what":"Common Parametric Aircraft Configuration Schema: DLR data format for exchanging aircraft design data between analysis tools.","licence":"Apache-2.0","url":"https://www.cpacs.de/"}
+    ],
+    "mission": [
+      {"name":"Dymos","what":"Optimal-control library on OpenMDAO for trajectory optimisation using collocation methods.","licence":"Apache-2.0","url":"https://github.com/OpenMDAO/dymos"},
+      {"name":"Aviary","what":"NASA aircraft analysis, design and optimisation tool built on OpenMDAO, coupling aircraft sizing with mission analysis.","licence":"Apache-2.0","url":"https://github.com/OpenMDAO/Aviary"},
+      {"name":"CasADi","what":"Symbolic framework for automatic differentiation and numerical optimal control.","licence":"LGPL-3.0","url":"https://web.casadi.org/"},
+      {"name":"Ipopt","what":"Interior-point solver for large-scale nonlinear optimisation, a common back-end for trajectory optimisation.","licence":"EPL-2.0","url":"https://github.com/coin-or/Ipopt"},
+      {"name":"OpenAP","what":"Open aircraft performance model and Python toolkit for estimating thrust, drag, fuel consumption and emissions of common airliners.","licence":"LGPL-3.0","url":"https://openap.dev/"},
+      {"name":"BlueSky","what":"Open air traffic simulator from TU Delft for flying and analysing aircraft trajectories and traffic scenarios.","licence":"MIT","url":"https://github.com/TUDelft-CNS-ATM/bluesky"},
+      {"name":"traffic","what":"Python toolbox for processing and analysing recorded aircraft trajectories and airspace data.","licence":"MIT","url":"https://github.com/xoolive/traffic"}
+    ],
+    "vvuq": [
+      {"name":"Dakota","what":"Sandia toolkit for optimisation, parameter studies, calibration and uncertainty quantification around any simulation code.","licence":"LGPL-2.1","url":"https://dakota.sandia.gov/"},
+      {"name":"OpenTURNS","what":"Library for the treatment of uncertainties, risks and statistics: probabilistic modelling, propagation, sensitivity and reliability methods.","licence":"LGPL-3.0-or-later","url":"https://openturns.github.io/www/"},
+      {"name":"UQpy","what":"Python toolbox for uncertainty quantification covering sampling, surrogates, reliability and inference.","licence":"MIT","url":"https://github.com/SURGroup/UQpy"},
+      {"name":"Chaospy","what":"Python toolbox for uncertainty quantification with polynomial chaos expansions and Monte Carlo methods.","licence":"MIT","url":"https://github.com/jonathf/chaospy"},
+      {"name":"SALib","what":"Python library of global sensitivity analysis methods such as Sobol, Morris and FAST.","licence":"MIT","url":"https://github.com/SALib/SALib"},
+      {"name":"EasyVVUQ","what":"Python library that organises verification, validation and uncertainty quantification campaigns for simulation codes.","licence":"LGPL-3.0","url":"https://github.com/UCL-CCS/EasyVVUQ"}
+    ],
+    "economics": [
+      {"name":"AeroMAPS","what":"Framework for assessing prospective air-transport scenarios, with models for energy, emissions and airline, manufacturer and carbon-tax costs.","licence":"GPL-3.0","url":"https://github.com/AeroMAPS/AeroMAPS"},
+      {"name":"SUAVE","what":"Conceptual aircraft design environment that includes industrial and operating cost estimation methods alongside mission analysis.","licence":"LGPL-2.1","url":"https://suave.stanford.edu/"},
+      {"name":"OpenAP","what":"Aircraft performance toolkit whose fuel-burn and emission estimates feed operating-cost calculations.","licence":"LGPL-3.0","url":"https://openap.dev/"},
+      {"name":"numpy-financial","what":"Small Python library of financial functions such as net present value, internal rate of return and loan payments.","licence":"BSD-3-Clause","url":"https://github.com/numpy/numpy-financial"}
+    ]
+  }
+}

@@ -1,0 +1,1175 @@
+#AD|Encamp
+Encamp||42535|1580|1257|11
+#AI|East End
+East End Village||18233|-63000|6|1
+#AL|Korçë County
+Ersekë|Erseke|40338|20679|1021|8
+#AO|Kwanza Sul
+Ebo||-11050|14717|1359|10
+#AR|Buenos Aires
+Estación Camet|Estacion Camet|-37889|-57606|22|5
+#AR|Formosa
+El Colorado||-26309|-59372|65|13
+#AR|La Pampa
+Eduardo Castex||-35916|-64296|183|10
+#AR|Salta
+El Carril||-25072|-65493|1259|13
+El Quebrachal||-25283|-64067|355|10
+El Quebachal||-25333|-64018|340|8
+El Galpón|El Galpon|-25381|-64652|527|8
+El Bordo||-24660|-65105|779|7
+#AR|Santa Fe
+El Trébol|El Trebol|-32199|-61702|89|11
+#AT|Burgenland
+Eisenstadt||47846|16523|182|9
+#AT|Carinthia
+Ebenthal||46608|14364|427|8
+#AT|Lower Austria
+Ebreichsdorf||47956|16407|199|5
+#AT|Upper Austria
+Enns||48213|14476|268|10
+#AU|Australian Capital Territory
+Evatt||-35212|149069|600|5
+#AU|New South Wales
+East Maitland||-32750|151583|24|12
+Ermington||-33815|151055|39|11
+Edensor Park||-33880|150878|55|10
+Emu Plains||-33750|150667|27|8
+Erskineville||-33903|151186|12|8
+Eastlakes||-33932|151212|20|7
+Erskine Park||-33813|150798|60|6
+Edgeworth||-32925|151616|12|6
+East Albury||-36081|146930|179|6
+Eagle Vale||-34037|150814|84|6
+East Ballina||-28857|153587|14|6
+Eleebana||-32990|151636|11|6
+Elermore Vale||-32916|151677|33|5
+East Tamworth||-31085|150937|419|5
+Elizabeth Bay||-33872|151227|46|5
+East Lismore||-28826|153289|29|5
+#AU|Queensland
+Emerald||-23523|148158|180|15
+Eagleby||-27683|153217|4|13
+Elanora||-28136|153449|24|12
+Edmonton||-17019|145744|16|11
+Everton Park||-27407|152988|45|9
+Eatons Hill||-27339|152960|39|8
+East Toowoomba||-27571|151974|648|6
+Everton Hills||-27389|152971|75|6
+East Brisbane||-27481|153044|16|6
+Enoggera||-27428|152975|55|5
+Edens Landing||-27703|153169|25|5
+#AU|South Australia
+Enfield||-34853|138603|15|5
+Elizabeth Downs||-34700|138691|71|5
+#AU|Victoria
+Elsternwick||-37886|145003|22|11
+Eltham North||-37700|145150|69|7
+East Melbourne||-37817|144988|32|6
+Emerald||-37932|145441|321|6
+Edithvale||-38037|145110|7|6
+Eaglehawk||-36716|144250|225|6
+#AU|Western Australia
+Esperance||-33859|121892|10|14
+East Perth||-31959|115871|22|12
+East Victoria Park||-31989|115904|20|10
+Eaton||-33317|115705|9|8
+East Fremantle||-32038|115768|7|7
+East Cannington||-32010|115955|11|5
+#BE|Flanders
+Erembodegem||50919|4050|15|12
+Ertvelde||51179|3747|11|11
+Eisden||50985|5714|38|10
+Essen||51468|4469|13|10
+Eernegem||51133|3026|7|7
+Erps-Kwerps||50901|4560|35|6
+Eksaarde||51149|3968|5|6
+Eksel||51152|5391|60|6
+Elewijt||50960|4497|10|5
+Eke||50959|3640|7|5
+Erpe||50936|3972|16|5
+#BE|Wallonia
+Éghezée|Eghezee|50591|4912|147|14
+Esneux||50536|5568|115|13
+Enghien||50694|4038|55|11
+Écaussinnes-d'Enghien|Ecaussinnes-d'Enghien|50568|4166|104|10
+Erquelinnes||50307|4111|137|9
+Estaimpuis||50705|3268|27|9
+Estinnes-au-Val||50410|4105|60|8
+Embourg||50590|5607|148|6
+Engis||50582|5399|80|6
+Ellezelles||50735|3680|56|6
+Étalle|Etalle|49674|5600|334|5
+#BG|Sofia
+Etropole||42833|23996|584|11
+Elin Pelin||42667|23600|549|7
+#BG|Veliko Tarnovo
+Elena||42933|25883|308|6
+#BG|Yambol
+Elhovo||42167|26567|118|10
+#BR|Amazonas
+Envira||-7437|-70023|138|10
+#BR|Bahia
+Érico Cardoso|Erico Cardoso|-13418|-42140|688|11
+Elísio Medrado|Elisio Medrado|-12946|-39522|375|8
+#BR|Ceará
+Ereré|Erere|-6032|-38349|206|6
+#BR|Goiás
+Edéia|Edeia|-17338|-49931|579|12
+#BR|Mato Grosso do Sul
+Eldorado||-23787|-54284|350|11
+#BR|Minas Gerais
+Entre Rios de Minas||-20671|-44066|942|15
+Engenheiro Caldas||-19200|-42047|305|14
+Estiva||-22463|-46017|892|12
+Eugenópolis|Eugenopolis|-21099|-42187|190|11
+Estrela do Sul||-18746|-47693|777|7
+Espírito Santo do Dourado|Espirito Santo do Dourado|-22046|-45951|910|7
+Engenheiro Navarro||-17280|-43950|665|6
+Entre Folhas||-19625|-42231|454|5
+#BR|Paraná
+Engenheiro Beltrão|Engenheiro Beltrao|-23797|-52269|479|14
+Enéas Marques|Eneas Marques|-25942|-53164|618|6
+#BR|Piauí
+Elesbão Veloso|Elesbao Veloso|-6202|-42140|196|14
+#BR|Rio Grande do Norte
+Espírito Santo|Espirito Santo|-6332|-35309|37|11
+Encanto||-6111|-38305|213|6
+Equador||-6945|-36718|562|5
+#BR|Rio Grande do Sul
+Entre-Ijuís|Entre-Ijuis|-28359|-54268|212|9
+Erval Seco||-27549|-53504|432|7
+Estação|Estacao|-27911|-52260|776|6
+#BR|Rio de Janeiro
+Engenheiro Paulo de Frontin||-22550|-43678|391|13
+#BR|Rondônia
+Extrema||-9771|-66356|144|6
+#BR|São Paulo
+Eldorado||-24520|-48108|34|13
+Estiva Gerbi||-22271|-46945|603|11
+Estrela d'Oeste||-20288|-50401|503|9
+Euclides da Cunha Paulista||-22557|-52590|304|8
+Echaporã|Echapora|-22429|-50201|694|6
+#BR|Tocantins
+Esperantina||-5343|-48511|112|7
+#CA|Alberta
+Edson||53583|-116436|913|8
+Erin Woods||51021|-113970|1050|7
+Evansdale||53610|-113481|677|6
+Ellerslie||53429|-113456|688|6
+Empire Park||53485|-113501|669|5
+Ermineskin||53458|-113504|672|5
+#CA|British Columbia
+East Clayton||49125|-122702|65|15
+English Bay||49285|-123143||14
+Eagle Ridge||49288|-122822|74|11
+East Cambie||49184|-123093|3|11
+East Newton South||49129|-122809|43|8
+East Newton North||49143|-122814|23|7
+#CA|New Brunswick
+Eastern Charlotte||45103|-66795|30|7
+#CA|Nova Scotia
+Eastern Passage||44617|-63482|31|12
+Enfield||44943|-63536|29|7
+#CA|Ontario
+Elliot Lake||46383|-82633|310|13
+Erin||43773|-80064|395|12
+Etobicoke West Mall||43646|-79570|144|12
+Elmira||43600|-80550|355|11
+Elms-Old Rexdale||43722|-79549|136|9
+Embrun||45276|-75273|68|9
+Essex||42175|-82825|198|8
+Elora||43683|-80433|388|8
+East Hespeler||43435|-80296|306|7
+Eastbridge||43513|-80508|331|7
+#CA|Saskatchewan
+Estevan||49133|-102984|563|11
+Evergreen||52167|-106567|476|10
+#CG|Cuvette
+Etoumbi||29|14906|359|11
+#CG|Cuvette-Ouest
+Ewo||-875|14816|536|12
+#CG|Likouala
+Enyellé|Enyelle|2808|18012|361|9
+#CH|Fribourg
+Estavayer-le-Lac||46849|6847|453|5
+#CH|Lucerne
+Ebikon||47079|8340|437|11
+#CH|Saint Gallen
+Eschenbach||47240|8922|480|9
+#CH|Vaud
+Ecublens||46529|6563|409|10
+Epalinges||46549|6668|782|8
+Echallens||46641|6633|622|6
+#CH|Zurich
+Effretikon||47426|8691|506|10
+Egg||47300|8690|548|9
+Embrach||47506|8594|425|7
+#CI|Abidjan Autonomous District
+Ebimpe||5499|-4082|93|5
+#CI|Comoé District
+Ebikro-Ndakro||5725|-3111|213|7
+Ehuasso||6326|-3444|152|6
+Eboué|Eboue|5344|-3125|9|5
+Elenzué|Elenzue|6808|-4097|195|5
+#CI|Lagunes District
+Ellibou||5688|-4510|72|8
+#CL|Araucania
+Ercilla||-38063|-72374|313|8
+#CL|Biobio
+El Carmen||-36291|-72037|153|12
+#CL|Valparaiso
+El Tabo||-33455|-71667|20|9
+#CL|Ñuble
+El Carmen||-36898|-72026|246|12
+#CN|Chongqing
+Echi||29138|108590|744|9
+Erping||29899|106157|302|8
+#CO|Antioquia
+Ebéjico|Ebejico|6326|-75768|1159|10
+Entrerríos|Entrerrios|6565|-75517|2312|9
+#CO|Bolívar
+El Peñón|El Penon|8989|-73949|21|7
+#CO|Caquetá
+El Paujíl|El Paujil|1570|-75329|343|8
+#CO|Cauca Department
+El Bordo||2117|-76982|990|12
+El Tambo||2452|-76810|1719|6
+#CO|Cesar Department
+El Paso||9657|-73747|41|6
+#CO|Cundinamarca
+El Rosal||4853|-74260|2612|6
+#CO|Guaviare Department
+El Retorno||2330|-72628|205|11
+#CO|La Guajira Department
+El Molino||10653|-72925|253|5
+#CO|Magdalena Department
+El Piñón|El Pinon|10403|-74824|9|7
+#CO|Nariño
+El Tambo||1408|-77392|2178|12
+El Rosario||1744|-77335|1612|6
+#CO|Norte de Santander Department
+El Carmen||8511|-73448|712|12
+#CO|Santander Department
+El Playón|El Playon|7471|-73203|439|13
+#CO|Valle del Cauca Department
+El Dovio||4508|-76236|1435|8
+El Águila|El Aguila|4908|-76042|1771|7
+#CR|San José
+Escazú|Escazu|9919|-84140|1111|12
+#CU|Villa Clara Province
+Esperanza||22446|-80096|99|10
+#CY|Pafos
+Emba||34807|32424|137|6
+#DE|Baden-Wurttemberg
+Eppelheim||49402|8636|111|14
+Edingen-Neckarhausen||49457|8606|105|14
+Erbach||48328|9888|484|13
+Ettenheim||48257|7812|173|12
+Eningen unter Achalm||48487|9259|464|11
+Endingen||48142|7700|182|9
+Efringen-Kirchen||47650|7567|248|8
+Ehningen||48659|8941|447|8
+Elzach||48172|8070|356|7
+Engen||47855|8773|530|7
+Eberdingen||48879|8965|266|7
+Essingen||48809|10028|503|6
+Eutingen an der Enz||48912|8749|251|6
+Ertingen||48100|9467|572|6
+#DE|Bavaria
+Eichstätt|Eichstaett|48889|11197|397|13
+Eggenfelden||48405|12758|405|13
+Eching||48300|11617|467|13
+Eichenau||48167|11317|527|12
+Ergolding||48577|12171|394|11
+Essenbach||48613|12218|391|11
+Ebersberg||48077|11971|563|11
+Erlenbach am Main||49803|9163|138|10
+Elsenfeld||49843|9164|125|9
+Ergoldsbach||48693|12204|420|7
+Ebermannstadt||49782|11182|297|7
+Eichendorf||48633|12856|358|7
+Ebersdorf||50329|11153|350|6
+Eggolsheim||49770|11057|263|6
+Emskirchen||49553|10713|352|6
+Emmering||48183|11283|515|6
+Ebensfeld||50066|10958|259|6
+Erdweg||48332|11303|480|6
+Eltmann||49971|10667|237|6
+Erbendorf||49840|12046|492|5
+Eckersdorf||50029|11396|352|5
+Egling||47923|11505|611|5
+#DE|Brandenburg
+Erkner||52420|13754|38|12
+Elsterwerda||51460|13520|93|10
+Eichwalde||52367|13617|36|6
+#DE|Hesse
+Erbach||49661|8994|222|14
+Eppstein||50143|8392|240|13
+Erlensee||50163|8978|114|13
+Eichenzell||50495|9697|290|11
+Egelsbach||49968|8663|124|10
+Ehringshausen||50600|8383|175|10
+Elz||50417|8033|159|8
+Eiterfeld||50767|9800|343|8
+Erzhausen||49955|8648|119|7
+Edertal||51167|9078|226|6
+Echzell||50389|8886|131|6
+Einhausen||49677|8548|93|6
+Eppertshausen||49951|8854|138|6
+#DE|Lower Saxony
+Emstek||52834|8157|53|11
+Emsbüren|Emsburen|52400|7300|28|10
+Elze||52123|9736|93|10
+Elsfleth||53237|8457|3|9
+Essen||52723|7937|26|8
+Egestorf||52286|9517|84|8
+Esens||53649|7613|6|7
+Emlichheim||52611|6851|15|7
+Ebstorf||53028|10418|71|5
+Esterwegen||52993|7633|16|5
+#DE|Mecklenburg-Vorpommern
+Eggesin||53678|14085|3|6
+#DE|North Rhine-Westphalia
+Endenich||50724|7073|72|13
+Everswinkel||51926|7847|72|10
+Eslohe||51254|8169|313|9
+Eil||50894|7080|52|9
+Eichlinghofen||51479|7409|128|8
+Erndtebrück|Erndtebrueck|50989|8253|490|8
+Elmpt||51210|6153|71|5
+#DE|Rheinland-Pfalz
+Eisenberg||49559|8072|188|10
+Ehrang||49816|6698|131|9
+Enkenbach-Alsenborn||49483|7900|298|7
+Edenkoben||49284|8127|171|7
+#DE|Saarland
+Ensdorf||49300|6783|198|7
+#DE|Saxony
+Ebersbach||51008|14586|358|9
+Eibenstock||50494|12600|641|7
+Ehrenfriedersdorf||50649|12970|532|5
+Elsterberg||50608|12168|290|5
+Eibau||50983|14662|358|5
+Ebersbach||51233|13650|160|5
+#DE|Schleswig-Holstein
+Einfeld||54121|9989|30|6
+Ellerau||53756|9931|30|6
+#DE|Thuringia
+Eisenberg||50969|11902|289|11
+Ellrich||51587|10663|255|6
+Eisfeld||50426|10907|447|6
+#DK|Capital Region
+Espergærde|Espergaerde|55995|12547|17|12
+#DK|Central Jutland
+Ebeltoft||56194|10682|28|7
+#DO|Azua Province
+Estebanía|Estebania|18458|-70643|61|6
+#DO|Barahona Province
+Enriquillo||17900|-71233|51|5
+#DO|Hato Mayor Province
+El Valle||18976|-69378|42|6
+#DO|María Trinidad Sánchez
+El Factor||19318|-69888|20|7
+#DO|Monte Plata Province
+Esperalvillo||18815|-70036|148|5
+#DO|Nacional
+Ensanche Luperón|Ensanche Luperon|18500|-69900|44|9
+#DZ|El Tarf
+El Tarf||36767|8314|24|13
+#EE|Tartu
+Elva||58223|26421|51|6
+#EG|Red Sea
+El Gouna||27394|33678|8|15
+#EH|
+El Aargub||23609|-15867|50|5
+#ER|Southern Red Sea
+Edd||13931|41694|7|11
+#ES|Andalusia
+Espartinas||37382|-6126|132|13
+Estepa||37293|-4879|523|13
+El Cuervo||36853|-6038|62|8
+El Coronil||37080|-5634|134|5
+#ES|Balearic Islands
+Es Molinar||39561|2675|4|8
+Es Castell||39878|4290|19|7
+#ES|Basque Country
+Elgoibar||43216|-2413|48|11
+Elorrio||43129|-2541|192|7
+Elexalde||43415|-2937|40|6
+#ES|Canary Islands
+El Paso||28650|-17883|641|8
+#ES|Castille and León
+El Burgo de Osma||41586|-3065|912|5
+#ES|Catalonia
+el Parc i la Llacuna del Poblenou||41399|2190|13|15
+el Congrés i els Indians|el Congres i els Indians|41425|2181|51|14
+el Bon Pastor||41437|2202|21|13
+Empuriabrava||42247|3121|2|8
+el Coll||41417|2147|174|7
+#ES|Extremadura
+El Casar||38531|-5925|499|10
+#ES|Madrid
+El Álamo|El Alamo|40231|-3994|608|9
+El Molar||40732|-3580|839|9
+#ES|Murcia
+El Plan||37650|-1017|49|7
+Esparragal||38033|-1083|44|6
+#ES|Navarre
+Estella-Lizarra||42672|-2032|430|14
+#ES|Valencia
+Enguera||38980|-687|315|5
+El Altet||38273|-540|17|5
+#FI|Kymenlaakso
+Elimäki|Elimaeki|60717|26467|34|9
+#FI|North Karelia
+Eno||62805|30154|90|7
+#FI|Pirkanmaa
+Etelä-Hervanta|Etelae-Hervanta|61444|23857|145|9
+#FI|Satakunta
+Eura||61133|22133|41|11
+Eurajoki||61200|21733|21|9
+#FI|Uusimaa
+Etu-Töölö|Etu-Toeoeloe|60173|24925|24|15
+Ekenäs|Ekenaes|59974|23434|8|14
+Etelä-Haaga|Etelae-Haaga|60213|24895|25|13
+Espoonlahden keskus||60150|24655|24|5
+#FR|Auvergne-Rhône-Alpes
+Eybens||45148|5750|244|10
+Évian-les-Bains|Evian-les-Bains|46401|6588|388|8
+#FR|Brittany
+Ergué-Gabéric|Ergue-Gaberic|47997|-4024|65|7
+#FR|Centre-Val de Loire
+Épernon|Epernon|48610|1672|118|5
+#FR|Grand Est
+Erstein||48424|7663|156|10
+Essey-lès-Nancy|Essey-les-Nancy|48705|6227|205|8
+Ensisheim||47866|7351|214|7
+Eckbolsheim||48581|7688|146|6
+#FR|Hauts-de-France
+Étaples|Etaples|50522|1633|13|11
+Escaudain||50333|3344|39|9
+Estaires||50646|2728|18|6
+#FR|New Aquitaine
+Égletons|Egletons|45406|2045|651|5
+#FR|Normandy
+Eu||50046|1421|15|8
+#FR|Occitanie
+Elne||42604|2972|8|7
+Escalquens||43518|1561|176|6
+#FR|Pays de la Loire
+Évron|Evron|48156|-402|111|8
+Ernée|Ernee|48297|-933|142|6
+#FR|Provence-Alpes-Côte d'Azur
+Éguilles|Eguilles|43569|5356|271|7
+Entraigues-sur-la-Sorgue||44003|4927|36|7
+Embrun||44564|6495|794|7
+Eyguières|Eyguieres|43695|5031|98|6
+#FR|Île-de-France
+Épinay-sous-Sénart|Epinay-sous-Senart|48690|2512|80|13
+Enghien-les-Bains||48967|2317|43|11
+Épinay-sur-Orge|Epinay-sur-Orge|48673|2311|86|10
+Ézanville|Ezanville|49028|2368|81|9
+Écouen|Ecouen|49021|2383|107|8
+Émerainville|Emerainville|48813|2621|107|7
+Épône|Epone|48955|1822|36|7
+Étréchy|Etrechy|48495|2195|79|6
+Esbly||48905|2812|56|6
+Égly|Egly|48578|2224|85|5
+#GB|England
+East Dulwich||51454|-72|53|12
+Edgwarebury||51625|-273|76|12
+Elm Park||51543|195|18|12
+Emerson Park||51575|232|34|12
+Epping||51698|111|110|11
+East Sheen||51463|-268|17|10
+Edgware||51613|-275|64|10
+Erith||51483|175|8|10
+Earls Court||51492|-198|13|9
+East Cowes||50758|-1288|6|8
+Edenbridge||51192|67|46|8
+Enderby||52588|-1206|95|8
+Eaglescliffe||54525|-1350|28|8
+Euxton||53670|-2676|52|8
+Easton||50533|-2450|61|8
+Easington||54785|-1359|134|7
+Eston||54559|-1143|43|7
+East Leake||52830|-1181|52|6
+Egremont||54479|-3528|41|6
+East Horsley||51274|-432|72|6
+Eaton Socon||52218|-289|24|6
+East Wittering||50770|-874|3|6
+East Tilbury||51481|417|6|5
+Earls Barton||52266|-752|94|5
+Edwinstowe||53195|-1064|62|5
+Earlswood||51229|-176|104|5
+East Boldon||54945|-1428|34|5
+#GB|Northern Ireland
+Enniskillen||54346|-7641|52|14
+#GB|Scotland
+Ellon||57364|-2073|12|10
+Elderslie||55833|-4486|32|6
+#GM|North Bank
+Essau||13484|-16535|12|12
+#GQ|Centro Sur
+Evinayong||1437|10551|669|8
+#GR|Attica
+Ekáli|Ekali|38110|23835|323|6
+#GR|Central Greece
+Efpálio|Efpalio|38419|21929|109|6
+#GR|Central Macedonia
+Epanomí|Epanomi|40426|22928|40|10
+Exaplátanos|Exaplatanos|40976|22130|125|6
+#GR|East Macedonia and Thrace
+Eleftherés|Eleftheres|40847|24254|71|9
+#GR|South Aegean
+Ermoúpolis|Ermoupolis|37445|24943|16|11
+#GR|Thessaly
+Elassóna|Elassona|39895|22189|284|7
+#GT|Jutiapa
+El Progreso||14356|-89849|969|7
+#GT|San Marcos
+El Quetzal||14769|-91818|941|12
+El Tumbador||14864|-91934|894|9
+#GT|Zacapa
+Estanzuela||14998|-89573|191|9
+#HN|Choluteca Department
+El Triunfo||13117|-87000|89|7
+#HN|Olancho Department
+Esquipulas del Norte||15300|-86533|512|11
+#HU|Bekes County
+Elek||46533|21250|93|5
+#HU|Borsod-Abaúj-Zemplén
+Edelény|Edeleny|48300|20733|131|11
+Encs||48331|21112|139|7
+Emőd|Emod|47933|20817|108|5
+#HU|Fejér
+Ercsi||47252|18896|123|8
+Enying||46930|18242|127|7
+#HU|Hajdú-Bihar
+Egyek||47633|20900|86|6
+#HU|Pest County
+Erdőkertes|Erdokertes|47673|19308|210|6
+#ID|Highland Papua
+Elelim||-3759|139708|142|6
+#IE|Leinster
+Enniscorthy||52501|-6558|52|10
+Edenderry||53339|-7048|90|7
+Eadestown||53203|-6578|174|5
+#IL|Central District
+Even Yehuda||32272|34886|47|14
+#IL|Northern District
+‘Ein Māhil|'Ein Mahil|32723|35353|465|13
+‘Eilabun|'Eilabun|32837|35401|187|6
+#IN|Andhra Pradesh
+Etikoppāka|Etikoppaka|17500|82733|229|12
+#IN|Bihar
+Ekangar Sarai||25223|85230|64|7
+#IN|Jharkhand
+Egarkunr||23751|86769|135|12
+#IN|Karnataka
+Elivāla|Elivala|12358|76541|830|10
+#IN|Kerala
+Edakkode||8681|76852|30|13
+Edattirutti||10364|76174|8|13
+Elavalli||10566|76091|9|13
+Enkakād|Enkakad|10658|76256|36|10
+Edakkalathur||10593|76123|29|8
+Eyyāl|Eyyal|10655|76117|18|7
+#IN|Madhya Pradesh
+Eklahra||22204|78689|778|8
+#IN|Maharashtra
+Eklahare||19980|73882|550|9
+#IN|Odisha
+Erei||21087|86527|11|8
+#IN|Tamil Nadu
+Ettaiyapuram||9144|77991|63|13
+Elandacheri||13190|80271|6|12
+Erumaippatti||11147|78290|160|12
+Ettāpur|Ettapur|11662|78476|278|11
+Eraniel||8206|77317|38|10
+Erumāpālaiyam|Erumapalaiyam|11632|78170|298|10
+Eral||8626|78023|16|9
+Ettimadai||10891|76909|303|9
+Eriyodu||10517|78063|265|9
+Eranāpuram|Eranapuram|11558|77989|244|9
+Elattūr|Elattur|11387|77308|258|8
+Elāyirampannai|Elayirampannai|9270|77825|103|7
+#IR|Fars
+Eshkanān|Eshkanan|27229|53608|391|9
+Emām Shahr|Emam Shahr|28447|53153|705|6
+#IR|Hormozgan
+Eslāmābād|Eslamabad|27384|57162|185|6
+#IR|Kerman
+Ekhtīārābād|Ekhtiarabad|30327|56920|1743|10
+#IR|Khuzestan
+Elhāyī|Elhayi|31654|48595|36|8
+#IR|Māzandarān
+Emāmzādeh ‘Abdollāh|Emamzadeh 'Abdollah|36406|52309|172|6
+#IR|South Khorasan Province
+Eslāmīyeh|Eslamiyeh|34046|58220|1333|7
+#IR|Tehran
+Eslāmābād|Eslamabad|35560|51519|1026|10
+#IS|East
+Egilsstaðir|Egilsstadir|65267|-14395|33|3
+#IT|Apulia
+Erchie||40436|17736|68|8
+#IT|Lombardy
+Eremo||45131|10743|24|5
+#IT|Sardinia
+Elmas||39269|9050|7|8
+#JM|Saint Catherine Parish
+Ewarton||18183|-77085|226|13
+#JP|Hokkaido
+Esashi||44935|142585|1|9
+Esashi||41863|140127|24|8
+#JP|Osaka
+Ebie||34697|135471|1|12
+#JP|Tokyo
+Egota||35726|139665|42|12
+Etchūjima|Etchujima|35667|139794|8|7
+#KE|Nyandarua County
+Engineer||-605|36576|2618|5
+#KE|Wajir County
+Eldas||2492|39567|405|12
+#KY|East End
+East End||19300|-81117|8|2
+#KZ|Aqmola
+Esil||51955|66408|221|14
+#LI|Eschen
+Eschen||47211|9522|446|4
+#LT|Vilnius
+Elektrėnai|Elektrenai|54785|24663|114|14
+#LU|Diekirch
+Ettelbruck||49848|6104|199|6
+#MA|Fes-Meknes
+El Menzel||33838|-4545|860|14
+#MA|Guelmim-Oued Noun
+El Ouatia||28496|-11333|33|10
+#MA|Souss-Massa
+El Guerdane||30378|-9020|167|13
+#MH|Ebon Atoll
+Ebon||4582|168696|11|1
+#MH|Enewetak Atoll
+Enewetak||11347|162337|8|0
+#MH|Kwajalein Atoll
+Ebaye||8775|167739|6|15
+#MR|Tagant
+El Ghayra||17198|-12240|78|7
+#MU|Flacq
+Ecroignard||-20226|57736|81|6
+#MV|Baa Atholhu
+Eydhafushi||5103|73071|7|3
+#MX|Baja California
+El Niño|El Nino|32508|-116792|229|9
+El Sauzal de Rodríguez|El Sauzal de Rodriguez|31895|-116693|17|9
+Emiliano Zapata||30754|-116003|41|6
+Ejido Hermosillo||32512|-114923|22|5
+#MX|Chiapas
+El Parral||16370|-93004|680|11
+Escuintla||15319|-92658|80|10
+Estación Huehuetán|Estacion Huehuetan|15011|-92407|30|6
+El Triunfo||16202|-91859|1499|5
+El Bosque||17062|-92721|1082|5
+#MX|Chihuahua
+Ejido Benito Juárez|Ejido Benito Juarez|30149|-106884|1334|6
+#MX|Colima
+El Colomo||19060|-104257|96|10
+#MX|Guanajuato
+Empalme Escobedo||20672|-100749|1792|13
+#MX|Guerrero
+El Súchil|El Suchil|17227|-100639|43|7
+El Coacoyul||17640|-101478|55|7
+#MX|Hidalgo
+El Llano||20057|-99318|2070|15
+Emiliano Zapata||19655|-98544|2489|9
+#MX|Jalisco
+Etzatlán|Etzatlan|20767|-104079|1427|14
+El Arenal||20776|-103693|1342|12
+El Refugio||20672|-103738|1289|6
+#MX|México
+Ex-hacienda de Xalpa||19822|-99183|2275|9
+El Cerrillo Vista Hermosa||19323|-99542|2603|9
+Ex-Rancho San Dimas||19174|-99565|2586|8
+El Pino||19351|-98948|2314|8
+Ejido San Lorenzo Cuauhtenco||19301|-99750|2745|8
+Emiliano Zapata (Santo Domingo)||19580|-99788|2539|7
+Ecatzingo de Hidalgo||18955|-98752|2393|7
+El Cóporo|El Coporo|19283|-99835|2995|6
+El Oro de Hidalgo||19803|-100131|2748|6
+Ex-Hacienda Santa Inés|Ex-Hacienda Santa Ines|19707|-99072|2244|5
+#MX|Nayarit
+El Porvenir||20754|-105242|23|6
+#MX|Nuevo León
+Emiliano Zapata||25910|-100281|454|6
+#MX|Oaxaca
+El Rosario||17043|-96692|1558|12
+El Espinal||16486|-95040|34|8
+El Espinal||16369|-94104|234|8
+#MX|Puebla
+Esperanza||18859|-97376|2456|8
+El Rincón Citlaltépetl|El Rincon Citlaltepetl|19156|-97894|2600|5
+#MX|Querétaro
+Ezequiel Montes||20666|-99899|1975|14
+El Sauz||20478|-100115|1908|7
+#MX|San Luis Potosí
+El Naranjo||22526|-99330|281|11
+#MX|Sinaloa
+El Rosario||24256|-107183|17|15
+Eldorado||24324|-107367|11|13
+El Fuerte||26417|-108618|84|13
+El Diez||24724|-107452|31|7
+Estación Bamoa|Estacion Bamoa|25708|-108313|39|7
+Estación Naranjo|Estacion Naranjo|25806|-108481|54|6
+#MX|Sonora
+Etchojoa||26911|-109625|18|10
+Esqueda||30728|-109588|1199|7
+#MX|Tabasco
+El Triunfo||17923|-91171|55|6
+#MX|Tamaulipas
+Estación Manuel|Estacion Manuel|22729|-98322|78|12
+El Campanario y Oradel||27473|-99620|144|7
+Estación Santa Engracia|Estacion Santa Engracia|24015|-99202|219|7
+#MX|Veracruz
+El Tejar||19075|-96161|15|11
+El Higo||21767|-98452|34|8
+El Pueblito||18886|-96969|936|8
+El Naranjito||18002|-94608|40|8
+El Castillo||19547|-96865|1179|5
+#MX|Yucatán
+Espita||21011|-88307|26|12
+#MY|Selangor
+Eco Sanctuary||2937|101535|28|6
+#NA|Ohangwena Region
+Eenhana||-17485|16329|1122|7
+#NG|Akwa Ibom State
+Etinan||4843|7853|39|10
+#NG|Enugu State
+Ete||7090|7453|338|10
+#NG|Lagos
+Ejirin||6614|3900|6|9
+#NI|Chinandega Department
+El Realejo||12543|-87165|11|6
+#NI|León Department
+El Sauce||12887|-86539|173|12
+#NL|Drenthe
+Emmer-Compascuum||52812|7047|13|8
+Emmerhout||52788|6939|27|7
+Eelde||53136|6563|2|6
+Emmermeer||52801|6893|22|6
+#NL|Gelderland
+Ermelo||52298|5622|15|10
+Eerbeek||52105|6058|20|10
+#NL|Limburg
+Eijsden||50780|5718|58|12
+Echt||51106|5874|31|8
+Elsloo||50949|5771|70|7
+#NL|North Holland
+Edam||52512|5048|5|7
+#NL|Overijssel
+Enter||52294|6578|12|8
+#NO|Innlandet
+Elverum||60882|11562|197|12
+#NO|Oslo
+Ensjø|Ensjo|59914|10787|90|10
+#NO|Rogaland
+Egersund||58451|6000|4|11
+#NZ|Auckland
+Ellerslie||-36898|174810|35|10
+#NZ|Southland
+East Gore||-46088|168950|73|8
+#NZ|Wellington Region
+Epuni||-41203|174930|91|7
+#PA|Bocas del Toro Province
+El Empalme||9415|-82522|13|11
+#PA|Guna Yala
+El Porvenir||9553|-78952||0
+#PA|Panamá Oeste Province
+El Coco||8877|-79808|94|12
+#PE|Arequipa
+El Triunfo ( El Cruce)||-16493|-71853|1499|6
+#PE|Lambayeque
+Eten||-6908|-79864|8|14
+#PE|Piura
+El Alto||-4269|-81217|277|9
+#PH|Cagayan Valley
+Enrile||17560|121697|29|10
+Echague||16705|121676|61|8
+#PH|Caraga
+Esperanza||8677|125647|14|6
+#PH|Central Luzon
+Entablado||15287|120863|19|5
+#PH|Central Visayas
+Enrique Villanueva||9276|123647|7|6
+Esperanza||10700|124314|8|5
+#PH|Mimaropa
+Eraan||9063|117702|14|5
+#PH|Northern Mindanao
+El Salvador||8563|124523|5|7
+#PH|Soccsksargen
+Esperanza||6723|124520|43|6
+#PH|Western Visayas
+Eustaquio Lopez||10820|123041|28|14
+#PR|Florida
+Estancias de Florida||18367|-66570|188|6
+#PR|San Juan
+Eleanor Roosevelt||18416|-66064|10|5
+#PS|West Bank
+Efrata||31653|35150|942|10
+#PT|Aveiro
+Esgueira||40649|-8629|26|13
+Esmoriz||40958|-8628|26|11
+Eirol||40611|-8537|43|6
+Eixo||40628|-8569|19|6
+#PT|Faro
+Estômbar|Estombar|37146|-8485|29|9
+Estói|Estoi|37095|-7894|115|8
+#PT|Lisbon
+Ericeira||38963|-9416|33|8
+#PT|Madeira
+Estreito de Câmara de Lobos|Estreito de Camara de Lobos|32661|-17000|408|9
+#PT|Portalegre
+Elvas||38882|-7163|326|10
+#PT|Évora
+Estremoz||38844|-7586|417|9
+#PY|Cordillera Department
+Eusebio Ayala||-25383|-56961|155|8
+Emboscada||-25124|-57348|204|6
+#RE|Reunion
+Entre-Deux||-21233|55467|445|7
+#RO|Constanța County
+Eforie Sud||44023|28649|23|9
+#RO|Iași County
+Erbiceni||47267|27233|128|6
+#RO|Mureș County
+Ernei||46605|24641|333|5
+#RS|Vojvodina
+Ečka|Ecka|45323|20443|77|5
+#RU|Chechnya
+Elin-Yurt||43673|44959|108|7
+Engel’-Yurt|Engel'-Yurt|43326|46360|50|6
+#RU|Dagestan
+Endirey||43163|46654|333|7
+#RU|Khabarovsk
+El’ban|El'ban|50095|136501|64|10
+#RU|Orenburg Oblast
+Energetik||51745|58793|269|9
+#RU|Stavropol Kray
+Edissiya||44051|44541|164|6
+#RU|Voronezh Oblast
+Ertil’|Ertil'|51838|40802|139|13
+#SD|River Nile
+El Matama||16710|33357|366|11
+#SE|Jönköping
+Eksjö|Eksjoe|57666|14972|215|10
+#SE|Stockholm
+Ekerö|Ekeroe|59291|17812|13|12
+#SH|Tristan da Cunha
+Edinburgh of the Seven Seas||-37068|-12312|10|3
+#SV|La Paz Department
+El Rosario||13498|-89030|104|6
+#SV|San Miguel Department
+El Tránsito|El Transito|13350|-88350|119|9
+#SV|Santa Ana Department
+El Congo||13909|-89496|847|9
+#TG|Plateaux
+Elavagnon||7283|717|804|7
+#TM|Balkan
+Esenguly||37468|53980|-2|13
+Etrek||37662|54764|49|13
+#TN|Gafsa
+El Guetar||34336|8950|241|14
+#TN|Kebili Governorate
+El Golaa||33485|9007|56|8
+#TN|Kef Governorate
+El Ksour||35896|8885|712|6
+#TN|Mahdia Governorate
+El Bahira||35333|11000|7|7
+#TN|Manouba
+El Battan||36804|9844|34|6
+#TN|Medenine Governorate
+Erriadh||33821|10854|11|14
+#TN|Nabeul Governorate
+El Haouaria||37050|11014|28|10
+El Maamoura||36465|10806|10|8
+Es Somaa||36544|10781|101|7
+#TN|Sidi Bouzid Governorate
+El Maknassi||34604|9608|259|15
+Er Regueb||34859|9787|195|11
+#TN|Sousse Governorate
+Enfidha||36135|10381|20|11
+#TN|Tozeur Governorate
+El-Hamma-Djerid||34012|8153|34|6
+#TR|Ağrı
+Eleşkirt|Eleskirt|39798|42676|1813|10
+#TR|Canakkale
+Eceabat||40184|26357|9|5
+#TR|Giresun
+Eynesil||41064|39143|15|13
+#TR|Istanbul
+Etiler||41084|29036|118|11
+#TR|Iğdır
+Emek||39921|44026|864|10
+#TR|Kahramanmaraş
+Ekinözü|Ekinoezue|38060|37188|1285|6
+#TR|Konya
+Emirgazi||37902|33837|1090|8
+#TR|Siirt
+Eruh||37742|42174|1215|8
+#TR|Uşak
+Eşme|Esme|38400|28969|826|11
+#TR|Van
+Edremit||38421|43259|1699|7
+#TR|Çankırı
+Eldivan||40530|33499|949|6
+#TR|İzmir Province
+Evka-Beş|Evka-Bes|38517|27053|228|13
+Egekent||38505|27064|100|8
+Esentepe||38512|27062|186|6
+#TW|Taiwan
+Ershui||23810|120617|85|14
+Emei||24689|121020|102|5
+#TZ|Manyara
+Endasak||-4417|35517|1600|15
+#UA|Kharkiv
+Eskhar||49797|36590|105|5
+#US|Alabama
+Eufaula||31891|-85145|80|13
+#US|Alaska
+Elmendorf Air Force Base||61257|-149631|185|7
+#US|Arkansas
+East End||34551|-92341|107|7
+#US|California
+East San Gabriel||34113|-118085|115|15
+El Sobrante||37977|-122295|57|13
+Emeryville||37831|-122285|7|12
+Exeter||36296|-119142|119|11
+East La Mirada||33924|-117989|69|10
+Earlimart||35884|-119272|86|9
+East Foothills||37381|-121817|107|8
+Escalon||37798|-120998|36|8
+El Rio||34236|-119164|28|7
+East Porterville||36057|-118976|148|7
+East Pasadena||34138|-118074|221|6
+Elverta||38714|-121463|16|5
+El Granada||37503|-122469|12|5
+Eucalyptus Hills||32880|-116947|203|5
+El Cerrito Corona||33841|-117523|267|5
+#US|Colorado
+Edwards||39645|-106594|2201|10
+Evergreen||39633|-105317|2150|9
+Eagle||39655|-106829|2012|7
+Estes Park||40377|-105522|2300|6
+Edgewater||39753|-105064|1640|5
+#US|Connecticut
+Ellington||41904|-72470|73|15
+East Haddam||41453|-72461|11|9
+Easton||41253|-73297|121|8
+#US|Delaware
+Elsmere||39739|-75598|31|6
+Edgemoor||39750|-75500|10|6
+#US|Florida
+Englewood||26962|-82353|3|15
+Elfers||28217|-82722|12|14
+East Milton||30615|-87022|4|11
+East Perrine||25609|-80339|4|7
+Eglin Village||30463|-86539|6|7
+#US|Georgia
+Eatonton||33327|-83388|172|7
+Eastman||32198|-83178|106|5
+#US|Hawaii
+ʻEwa Villages-Honouliuli|'Ewa Villages-Honouliuli|21345|-158051|24|7
+‘Ewa Villages|'Ewa Villages|21341|-158040|15|6
+East Kapolei||21359|-158051|49|5
+Enchanted Lake||21381|-157736|7|5
+#US|Idaho
+Emmett||43874|-116499|720|7
+#US|Illinois
+Effingham||39120|-88543|182|13
+East Alton||38880|-90111|132|6
+Elburn||41892|-88472|260|6
+Eureka||40721|-89273|234|5
+#US|Indiana
+Elwood||40277|-85842|263|8
+Ellettsville||39234|-86625|212|7
+#US|Iowa
+Eldridge||41658|-90585|243|6
+Estherville||43402|-94833|395|6
+#US|Kansas
+El Dorado||37817|-96862|409|13
+Eudora||38943|-95099|256|6
+#US|Kentucky
+Edgewood||39019|-84582|263|9
+Elsmere||39013|-84605|280|9
+#US|Louisiana
+Eunice||30494|-92418|14|10
+Eden Isle||30229|-89799|2|7
+#US|Maine
+Ellsworth||44543|-68419|33|8
+Eliot||43153|-70800|9|7
+#US|Maryland
+Edgewater||38938|-76557|15|9
+Edgemere||39242|-76448|6|9
+#US|Massachusetts
+East Bridgewater||42033|-70959|22|14
+East Cambridge||42367|-71080|2|13
+East Somerville||42387|-71084|9|8
+East Falmouth||41578|-70559|11|6
+Eastham||41830|-69974|13|6
+#US|Michigan
+Escanaba||45745|-87065|185|12
+East Grand Rapids||42941|-85610|229|11
+Ecorse||42244|-83146|177|9
+Eastwood||42303|-85550|262|6
+Eaton Rapids||42509|-84656|265|5
+#US|Minnesota
+East Bethel||45319|-93202|277|12
+East Grand Forks||47930|-97025|253|9
+#US|Missouri
+Excelsior Springs||39339|-94226|239|11
+Eureka||38503|-90628|139|11
+Ellisville||38593|-90587|221|9
+#US|Montana
+Evergreen||48226|-114276|891|8
+#US|Nebraska
+Elkhorn||41345|-96256|370|8
+#US|New Hampshire
+Exeter||42981|-70948|10|9
+#US|New Jersey
+Eatontown||40296|-74051|18|12
+East Hanover||40820|-74365|70|12
+Edgewater||40827|-73976|15|12
+Echelon||39848|-74996|26|11
+East Rutherford||40834|-74097|24|9
+East Franklin||40493|-74471|30|9
+Emerson||40976|-74026|14|8
+Edgewater Park||40068|-74901|7|7
+Englewood Cliffs||40885|-73952|115|5
+#US|New Mexico
+Española|Espanola|35991|-106081|1705|10
+Eldorado at Santa Fe||35526|-105935|2035|6
+#US|New York
+East Islip||40732|-73186|5|14
+Endicott||42098|-76049|256|13
+Endwell||42113|-76021|258|11
+Elwood||40845|-73335|56|11
+Eltingville||40545|-74166|21|11
+East Rockaway||40642|-73670|3|10
+Edgemere||40596|-73768|2|10
+East Hills||40794|-73627|57|7
+East Rochester||43109|-77487|128|7
+East Shoreham||40945|-72880|37|7
+East Glenville||42895|-73928|110|7
+East Farmingdale||40729|-73417|21|6
+East Aurora||42768|-78613|280|6
+East Garden City||40731|-73598|29|6
+East Moriches||40805|-72761|9|5
+#US|North Carolina
+Elon||36103|-79507|215|10
+Etowah||35318|-82594|642|7
+#US|Ohio
+Englewood||39878|-84302|279|13
+East Liverpool||40619|-80577|234|11
+Eaton||39744|-84637|317|8
+#US|Oklahoma
+Elk City||35412|-99404|585|13
+#US|Oregon
+Eagle Point||42473|-122803|398|9
+#US|Pennsylvania
+Ephrata||40180|-76179|110|14
+East Norriton||40150|-75336|75|14
+Elizabethtown||40153|-76603|136|12
+Emmaus||40540|-75497|136|11
+East Stroudsburg||41000|-75181|131|10
+East Oak Lane||40050|-75133|59|10
+East Falls||40015|-75192|45|10
+Economy||40600|-80225|242|9
+East York||39974|-76686|127|9
+Ellwood City||40862|-80286|270|8
+Elkins Park||40077|-75127|48|7
+Edinboro||41874|-80132|370|6
+Enola||40290|-76934|136|6
+Exeter||41321|-75819|172|6
+Eastwick||39890|-75242|1|5
+#US|Rhode Island
+East Greenwich||41660|-71456|48|14
+Exeter||41578|-71538|81|6
+#US|South Dakota
+Ellsworth Air Force Base||44144|-103075|972|8
+#US|Tennessee
+Elizabethton||36349|-82211|465|14
+Erwin||36145|-82417|510|6
+Eagleton Village||35795|-83932|289|5
+#US|Texas
+El Campo||29197|-96270|32|12
+Elgin||30350|-97370|177|9
+Eidson Road||28677|-100487|229|9
+Eagle Mountain||32893|-97444|204|7
+Elsa||26293|-97993|21|7
+Everman||32631|-97289|204|6
+Edna||28979|-96646|20|6
+#US|Utah
+Ephraim||39360|-111586|1689|7
+Enoch||37773|-113024|1690|6
+#US|Vermont
+Essex Junction||44491|-73111|105|10
+#US|Virginia
+East Highland Park||37581|-77407|61|15
+Ettrick||37240|-77430|32|7
+Emporia||36686|-77542|34|5
+#US|Washington
+Elk Plain||47053|-122398|132|14
+East Wenatchee||47416|-120293|208|14
+Enumclaw||47204|-121991|232|12
+East Renton Highlands||47485|-122112|158|11
+Edgewood||47250|-122294|108|10
+East Wenatchee Bench||47426|-120281|280|9
+Ephrata||47318|-119554|389|8
+East Port Orchard||47523|-122624|92|6
+#US|West Virginia
+Elkins||38926|-79847|587|7
+#US|Wisconsin
+Elkhorn||42673|-88545|314|10
+Elm Grove||43043|-88079|227|6
+Edgerton||42835|-89068|249|6
+Evansville||42780|-89299|278|5
+#US|Wyoming
+Evanston||41268|-110963|2057|12
+#UZ|Fergana
+Eskiarab||40370|71419|465|9
+#VE|Cojedes
+El Baúl|El Baul|8962|-68295|70|11
+#VN|Dak Lak
+Ea Na||12543|107990|467|13
+Ea Kar||12808|108449|490|12
+Ea Hiao||13207|108316|634|12
+Ea H'Leo||13199|108194|593|11
+Ea Súp|Ea Sup|13066|107885|208|7
+#VN|Lam Dong
+Ea Pô|Ea Po|12700|107883|315|12
+#ZA|Free State
+Edenburg||-29737|25936|1370|8
+Excelsior||-28941|27061|1473|8
+Edenville||-27552|27676|1515|8
+#ZA|Gauteng
+Eden Glen||-26132|28169|1620|7
+Eastleigh||-26130|28155|1594|7
+Eden Glen Ext 60||-26126|28165|1636|5
+#ZA|KwaZulu-Natal
+Ekuvukeni||-28468|30155|1006|14
+eManzimtoti||-30052|30885|41|14
+eMkhuze||-27621|32034|141|5
+#ZA|Limpopo
+Elandskraal||-24721|29408|841|8
+#ZA|Mpumalanga
+Embhojeni||-25718|31479|356|13
+Evander||-26471|29110|1654|12
+Emtfuntini||-25684|31637|278|11
+eManzana||-25954|30563|1104|8
+eMvelo||-26625|30662|1255|8
+Emgwenya||-25637|30324|1450|7
+Edinburgh A||-24690|31180|479|7
+eMakhazeni B||-24951|31372|379|6
+Ekulindeni||-26046|31023|716|5
+#ZA|Western Cape
+eNduli||-33356|19341|487|11

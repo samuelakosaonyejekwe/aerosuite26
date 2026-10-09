@@ -1,0 +1,2502 @@
+#AD|La Massana
+la Massana||42545|1515|1245|7
+#AF|Sar-e Pol Province
+Larkird||35489|66664|1508|12
+#AL|Elbasan County
+Librazhd-Qendër|Librazhd-Qender|41197|20336|554|13
+#AL|Lezhë County
+Laç|Lac|41636|19713|33|13
+#AM|Gegharkunik
+Lichk||40159|45235|1940|5
+#AO|Moxico
+Léua|Leua|-11658|20448|1241|5
+#AR|Buenos Aires
+Lobería|Loberia|-38163|-58782|80|14
+Lima||-34045|-59196|29|14
+Laprida||-37544|-60801|207|9
+#AR|Catamarca
+Los Altos||-28045|-65498|455|6
+#AR|Chaco
+La Leonesa||-27038|-58705|69|10
+Los Frentones||-26407|-61413|121|7
+#AR|Cordoba
+La Carlota||-33420|-63297|147|11
+Leones||-32658|-62298|114|10
+Laguna Larga||-31776|-63800|314|8
+La Cumbre||-30982|-64491|1146|7
+Luque||-31648|-63345|219|7
+Laborde||-33155|-62857|117|5
+Las Higueras||-33094|-64288|410|5
+#AR|Corrientes
+La Cruz||-29176|-56643|62|9
+#AR|Entre Rios
+Larroque||-33035|-59000|54|6
+#AR|Formosa
+Las Lomitas||-24708|-60592|128|10
+#AR|Jujuy
+La Quiaca||-22104|-65596|3408|15
+La Esperanza||-24225|-64838|515|5
+#AR|Mendoza
+La Colonia||-33099|-68480|655|11
+La Consulta||-33734|-69120|1012|10
+La Paz||-33462|-67552|503|10
+Los Corralitos||-32901|-68698|725|7
+Los Barriales||-33100|-68569|666|7
+#AR|Rio Negro
+Lamarque||-39425|-65702|121|9
+#AR|Salta
+Las Lajitas||-24728|-64193|474|13
+La Merced||-24967|-65489|1190|11
+#AR|San Juan
+Los Berros||-31953|-68654|799|6
+#AR|San Luis
+La Punta||-33184|-66313|700|15
+La Toma||-33054|-65623|884|7
+#AR|Santa Fe
+Las Rosas||-32475|-61577|99|13
+Laguna Paiva||-31307|-60661|18|12
+Las Toscas||-28354|-59259|45|12
+Las Parejas||-32685|-61516|104|11
+#AR|Tucuman
+La Cocha||-27769|-65587|448|7
+#AT|Carinthia
+Lind||46622|13847|513|5
+#AT|Lower Austria
+Langenzersdorf||48304|16361|161|8
+Laa an der Thaya||48717|16383|183|6
+Leopoldsdorf||48116|16391|185|5
+#AT|Styria
+Liebenau||47033|15467|344|14
+Leibnitz||46782|15538|273|9
+Leoben||47379|15094|530|8
+Liezen||47567|14233|642|7
+#AT|Tyrol
+Lienz||46829|12769|681|12
+Landeck||47140|10566|789|8
+#AT|Upper Austria
+Laakirchen||47982|13822|439|10
+Lichtenegg||48150|14000|314|6
+#AT|Vorarlberg
+Lauterach||47476|9729|413|10
+Lochau||47533|9750|415|6
+#AU|Australian Capital Territory
+Lyneham||-35240|149131|580|5
+#AU|New South Wales
+Leichhardt||-33883|151156|44|14
+Lane Cove||-33816|151167|73|12
+Lavington||-36040|146940|194|12
+Lane Cove North||-33805|151166|64|11
+Leumeah||-34050|150833|59|10
+Lindfield||-33783|151167|84|10
+Lurnea||-33935|150897|34|9
+Leeton||-34551|146405|148|9
+Lilyfield||-33875|151165|20|8
+Lalor Park||-33761|150931|79|8
+Long Jetty||-33359|151488|18|6
+Lennox Head||-28791|153592|10|6
+Lake Albert||-35167|147383|204|6
+Lugarno||-33983|151042|55|6
+Lake Munmorah||-33197|151582|24|5
+Lithgow||-33484|150149|916|5
+Lisarow||-33383|151367|26|5
+#AU|Queensland
+Little Mountain||-26784|153092|48|10
+Loganlea||-27675|153135|13|7
+Loganholme||-27684|153186|11|6
+Logan Central||-27644|153107|37|6
+Lawnton||-27283|152983|15|6
+#AU|South Australia
+Lockleys||-34926|138528|11|6
+#AU|Tasmania
+Lindisfarne||-42848|147362|17|6
+Lenah Valley||-42871|147275|209|6
+#AU|Victoria
+Leopold||-38190|144468|53|12
+Lynbrook||-38056|145256|27|8
+Lysterfield||-37933|145300|140|7
+Leongatha||-38476|145947|92|5
+Laverton||-37862|144770|13|5
+#AU|Western Australia
+Leeming||-32075|115866|30|11
+Lesmurdie||-32002|116048|271|8
+Langford||-32041|115942|14|6
+#AZ|Lachin Rayon
+Laçın|Lacin|39637|46550|1171|2
+#BA|Federation of B&H
+Livno||43827|17007|745|12
+Ljubuški|Ljubuski|43197|17545|95|10
+#BA|Srpska
+Laktaši|Laktasi|44909|17301|124|6
+#BE|Flanders
+Landen||50753|5082|72|14
+Leopoldsburg||51117|5250|48|14
+Lummen||50988|5191|41|14
+Lubbeek||50883|4839|59|14
+Liedekerke||50869|4087|24|12
+Laarne||51031|3851|8|12
+Lovendegem||51102|3613|6|9
+Ledeberg||51039|3745|10|8
+Lauwe||50795|3187|21|8
+Lichtervelde||51033|3150|24|8
+Lissewege||51294|3193|4|8
+Lembeek||50716|4218|45|8
+Langdorp||50996|4872|23|7
+Lemberge||50976|3771|30|7
+Lichtaart||51225|4917|19|6
+Lendelede||50886|3237|38|5
+Langemark||50913|2920|14|5
+Linden||50895|4770|36|5
+#BE|Wallonia
+La Calamine||50718|6011|220|10
+Limal||50695|4575|60|9
+Lodelinsart||50431|4449|126|8
+La Bruyère|La Bruyere|50395|4614|194|8
+Le Roeulx||50504|4112|132|8
+La Hulpe||50731|4486|86|7
+La Bouverie||50405|3874|100|7
+Leuze||50600|3600|57|7
+Lettelingen||50683|4083|63|7
+Leval-Trahegnies||50421|4226|131|6
+Limbourg||50612|5941|262|6
+Lobbes||50353|4267|170|5
+Limelette||50684|4572|56|5
+#BG|Haskovo
+Lyubimets||41844|26081|60|8
+#BG|Lovech
+Lukovit||43200|24167|136|10
+#BG|Pleven
+Levski||43367|25133|73|11
+#BG|Sofia-Capital
+Lozen||42603|23476|683|6
+#BG|Veliko Tarnovo
+Lyaskovets||43111|25728|174|8
+#BJ|Kouffo
+Lalo||6929|1890|112|13
+#BN|
+Lumapas||4850|114917|21|8
+#BO|Santa Cruz Department
+La Bélgica|La Belgica|-17550|-63217|353|6
+#BR|Bahia
+Licínio de Almeida|Licinio de Almeida|-14682|-42507|866|12
+Lençóis|Lencois|-12563|-41390|404|11
+Lamarão|Lamarao|-11793|-38884|278|9
+Lajedo do Tabocal||-13475|-40223|867|7
+#BR|Espírito Santo
+Laranja da Terra||-19899|-41057|199|11
+#BR|Goiás
+Leopoldo de Bulhões|Leopoldo de Bulhoes|-16619|-48744|1027|9
+#BR|Maranhão
+Lago Verde||-4042|-44933|25|15
+Loreto||-7084|-45141|212|12
+Lagoa Grande do Maranhão|Lagoa Grande do Maranhao|-4991|-45386|97|11
+Lima Campos||-4517|-44467|52|11
+Lagoa do Mato||-6047|-43526|226|11
+Lago do Junco||-4606|-45054|104|10
+Luís Domingues|Luis Domingues|-1327|-45898|1|7
+Lajeado Novo||-6189|-47035|195|7
+#BR|Mato Grosso do Sul
+Laguna Carapã|Laguna Carapa|-22546|-55150|499|7
+#BR|Minas Gerais
+Ladainha||-17632|-41737|481|14
+Lagoa Dourada||-20914|-44078|1074|13
+Lagoa Grande||-17835|-46514|587|9
+Lontra||-15903|-44305|781|9
+Limeira do Oeste||-19551|-50581|438|9
+Lassance||-17887|-44577|558|7
+Luisburgo||-20440|-42103|798|7
+Lagamar||-18178|-46807|799|7
+Luislândia|Luislandia|-16117|-44589|744|6
+Laranjal||-21374|-42477|226|6
+Luminárias|Luminarias|-21511|-44903|962|6
+#BR|Paraná
+Luiziana||-24286|-52276|750|7
+Laranjal||-24887|-52469|702|6
+Lindoeste||-25260|-53576|590|5
+#BR|Paraíba
+Lucena||-6900|-34869|5|13
+Lagoa de Dentro||-6673|-35379|156|8
+Livramento||-7374|-36946|577|7
+#BR|Pernambuco
+Lagoa dos Gatos||-8658|-35900|457|14
+Lagoa do Ouro||-9127|-36458|660|12
+#BR|Piauí
+Lagoa Alegre||-4516|-42625|122|8
+Lagoa de São Francisco|Lagoa de Sao Francisco|-4393|-41601|351|6
+Landri Sales||-7266|-43930|304|5
+Lagoa do Barro do Piauí|Lagoa do Barro do Piaui|-8485|-41533|455|5
+#BR|Rio Grande do Norte
+Lajes||-5700|-36245|202|10
+Luís Gomes|Luis Gomes|-6414|-38389|644|9
+Lagoa Salgada||-6121|-35477|105|8
+Lagoa de Pedras||-6149|-35438|93|7
+Lagoa d'Anta||-6391|-35598|149|7
+#BR|Rio Grande do Sul
+Lavras do Sul||-30813|-53895|286|7
+Lindolfo Collor||-29597|-51209|22|6
+Lagoão|Lagoao|-29235|-52796|609|5
+#BR|Rio de Janeiro
+Leme||-22962|-43168|2|12
+Laje do Muriaé|Laje do Muriae|-21206|-42122|177|8
+#BR|Santa Catarina
+Lauro Müller|Lauro Mueller|-28393|-49397|218|14
+Lontras||-27166|-49542|335|13
+Luiz Alves||-26721|-48933|91|12
+Lebon Régis|Lebon Regis|-26929|-50695|986|11
+Laurentino||-27217|-49733|362|8
+Luzerna||-27133|-51467|552|6
+Lagoa||-27605|-48467|2|5
+#BR|São Paulo
+Luís Antônio|Luis Antonio|-21555|-47704|661|12
+Lavínia|Lavinia|-21168|-51040|460|10
+Lavrinhas||-22571|-44902|514|7
+Lindóia|Lindoia|-22523|-46650|702|7
+Lagoinha||-23091|-45190|925|5
+#BR|Tocantins
+Lagoa da Confusão|Lagoa da Confusao|-10794|-49624|188|14
+#BT|Lhuntse
+Lhuentse||27668|91184|1403|2
+#BT|Thimphu District
+Lungtenzampa||27468|89644|2319|0
+#BW|Central
+Lerala||-22788|27765|854|7
+#BW|Kweneng
+Letlhakeng||-24094|25030|1075|8
+Lentsweletau||-24249|25852|1019|7
+#BW|Ngwaketsi
+Lotlhakane||-25086|25459|1195|6
+#BY|Brest
+Lyakhovichi||53039|26263|196|10
+#BY|Homyel’ Voblasc’
+Loyev||51941|30793|101|6
+#BY|Minsk
+Lyasny||54007|27696|246|15
+Lyuban’|Lyuban'|52799|28005|138|11
+Loshnitsa||54280|28765|176|7
+#BY|Vitebsk
+Liozno||55020|30797|193|7
+#BZ|Belize District
+Ladyville||17554|-88290|3|8
+#CA|Alberta
+Lacombe||52467|-113735|853|14
+Lake Bonavista||50942|-114054|1045|10
+Legacy||50856|-114005|1046|8
+Lymburn||53508|-113642|681|6
+Lakeview||50997|-114120|1098|6
+La Perle||53536|-113640|679|5
+#CA|British Columbia
+Ladysmith||48990|-123817|71|9
+Lochdale||49274|-122965|60|9
+Lyndhurst||49265|-122899|73|5
+#CA|New Brunswick
+Lewisville||46104|-64753|39|9
+Lakeburn||46100|-64682|50|5
+#CA|Newfoundland and Labrador
+Labrador City||52946|-66911|555|7
+#CA|Ontario
+Lawrence Park North||43730|-79404|170|15
+Lowertown||45432|-75693|57|13
+Lambton Shores||43167|-81933|207|11
+Laurentian Hills||43420|-80495|350|11
+Long Branch||43591|-79533|86|10
+Little's Corners||43344|-80276|289|9
+Lincoln||43495|-80507|330|9
+Lambton Baby Point||43657|-79496|111|8
+Listowel||43733|-80950|381|8
+Lexington||43497|-80491|311|7
+Lakeshore Village||43488|-80551|341|7
+Lively||46433|-81150|270|6
+Lang's Farm||43398|-80336|291|5
+Lakeshore North-Conservation||43497|-80561|350|5
+Laurelwood||43469|-80580|348|5
+#CA|Quebec
+Le Plateau||45435|-75780|89|15
+Laurentides||47133|-72282|239|13
+La Tuque||47433|-72782|165|11
+L'Île-Perrot|L'Ile-Perrot|45383|-73949|49|10
+Lorraine||45683|-73782|64|10
+Lachute||45650|-74333|70|10
+La Malbaie||47654|-70153|16|9
+Lavaltrie||45883|-73282|21|9
+La Sarre||48800|-79200|269|8
+Louiseville||46256|-72941|17|6
+Lac-Mégantic|Lac-Megantic|45583|-70882|396|6
+Lac-Brome||45217|-72516|209|6
+#CA|Saskatchewan
+Lakeview||52095|-106598|511|8
+Lakeview||50431|-104623|578|8
+La Ronge||55100|-105284|360|6
+Lawson Heights||52171|-106619|497|5
+#CD|Équateur
+Lukolela||-1060|17182|316|15
+#CG|Cuvette
+Loukoléla|Loukolela|-1038|17114|308|8
+#CG|Kouilou
+Loango||-4656|11810|1|0
+#CG|Plateaux
+Lékana|Lekana|-2325|14600|803|6
+#CH|Aargau
+Lenzburg||47389|8175|402|11
+#CH|Basel-Landschaft
+Liestal||47485|7734|327|13
+Laufen||47422|7499|354|6
+#CH|Bern
+Langenthal||47215|7796|478|14
+Lyss||47074|7307|445|11
+Langnau||46939|7787|677|9
+Lengnau||47182|7368|442|7
+#CH|Geneva
+Le Grand-Saconnex||46232|6121|450|10
+Les Avanchets||46222|6108|430|6
+#CH|Grisons
+Landquart||46950|9567|532|9
+#CH|Neuchâtel
+Le Locle||47056|6749|934|10
+#CH|Schwyz
+Lachen||47192|8853|412|9
+#CH|Ticino
+Losone||46169|8759|239|6
+#CH|Vaud
+La Tour-de-Peilz||46453|6859|387|11
+Lutry||46502|6686|386|9
+Le Mont-sur-Lausanne||46558|6631|684|5
+#CH|Zurich
+Langnau am Albis||47289|8541|490|7
+#CI|Bas-Sassandra District
+Lobogba||5980|-6736|155|14
+Lessiri||5910|-6489|195|12
+Liliyo||5995|-6357|233|8
+Lobozoa||6218|-6956|179|7
+#CI|Goh-Djiboua
+Loua||6438|-5606|212|9
+Labodougou||5714|-5413|178|8
+Laouda||6208|-5702|288|7
+#CI|Lagunes District
+Lopou||5422|-4470|92|10
+Loviguié I|Loviguie I|5808|-4338|49|9
+Léléblé|Leleble|6233|-5223|185|7
+#CI|Montagnes
+Ledjean||6929|-7105|248|7
+Lokossou||6601|-7379|227|6
+#CI|Sassandra-Marahoue
+Luéhouan|Luehouan|6299|-6771|199|15
+#CI|Savanes District
+Lataha||9567|-5591|403|7
+Lomara||10352|-6339|343|6
+Lasologo||9586|-5101|369|6
+#CI|Vallée du Bandama District
+Lokbonoun||8067|-5267|289|10
+Latokaha||8623|-5387|387|7
+#CI|Woroba
+Lalogo||8833|-6357|361|7
+#CI|Yamoussoukro
+Lolobo||6959|-5266|204|5
+#CI|Zanzan District
+Léomidouo|Leomidouo|9035|-2904|304|6
+#CL|Araucania
+Lumaco||-38165|-72906|65|11
+Los Sauces||-37981|-72834|123|7
+#CL|Biobio
+Laja||-37284|-72711|60|11
+#CL|Los Lagos Region
+Los Muermos||-41396|-73462|151|8
+#CL|Los Ríos Region
+Los Lagos||-39863|-72809|34|9
+Lanco||-39452|-72771|75|8
+#CL|O'Higgins Region
+Las Cabras||-34290|-71306|140|8
+#CL|Santiago Metropolitan
+La Islita||-33750|-70867|368|14
+#CL|Valparaiso
+Loncura||-32788|-71506|28|6
+#CN|Chongqing
+Luoyun||29781|107598|552|15
+Lingjiao||31398|109440|497|13
+Longtanzi||29501|105797|392|13
+Luming||29449|108082|796|13
+Longxi||29470|108516|629|13
+Lanqiao||28188|108993|479|12
+Lianhe||29593|108427|306|11
+Longshi||29559|105617|377|10
+Longji||29462|105405|400|10
+Lin’e|Lin'e|29441|108852|863|10
+Longsha||30135|108184|617|10
+Lujiao||29134|108285|329|10
+Lishui||29830|108644|541|9
+Liutang||29932|108277|1231|9
+Liaozi||31814|108642|734|9
+Liangzeng||28884|108392|446|9
+Longqiao||30615|109364|1441|9
+Lichang||30349|108141|347|8
+Lizi||29811|107924|823|8
+Lengshuiguan||29382|107144|931|7
+Langping||29081|108546|717|7
+Liren||28683|109180|546|7
+Longtian||31974|108635|739|7
+Lutang||29518|108329|748|7
+Longsheng||30775|107550|428|7
+Lengshui||30130|108546|1418|6
+Lishu||30664|108748|906|6
+Langxi||29071|108138|707|5
+Longtang||29068|107987|767|5
+Lixianghu||29359|106974|825|5
+#CN|Fujian
+Longmen||24960|118089|118|5
+#CN|Gansu
+Liangshan||35073|105974|1824|13
+Liubao||35058|106235|1806|13
+Lichuan||33773|105946|992|13
+Lianwu||35097|106111|1845|12
+Lianghekou||33690|104488|1237|12
+Liangdang Chengguanzhen||33910|106302|965|11
+Leiwang||34051|105144|1563|11
+Longtai||34599|104896|1964|11
+Longdong||34626|106191|1778|11
+Liping||33186|104884|1443|10
+Longfeng||33396|105046|1687|10
+Liulin||33874|106170|854|10
+Luoba||34323|105065|1602|9
+Leiba||33791|105038|1345|9
+Lexiu||34741|103090|2936|9
+Liushun||34649|103541|2718|9
+Longxing||33599|105193|1642|8
+Linjiang||33062|104921|819|8
+Luoda||33986|103981|1704|6
+Linjiang||33961|104510|1776|6
+Liuxiang||33799|105444|1329|6
+Lijie||33902|104072|1930|5
+Longba||33625|105294|1423|5
+Langmusi||34088|102628|3373|5
+#CN|Guangdong
+Lingxia||22694|113836|21|12
+Lei Yue Mun||22519|113897||8
+Lingzhi Town||22566|113903|9|8
+Liuxiangdong||22585|113930|36|7
+#CN|Guizhou
+Luoli||26346|108939|577|12
+Leidong||25914|109340|342|9
+#CN|Hunan
+Liuduzhai||27366|110935|311|9
+#CN|Ningxia
+Lingwu Nongchang||38133|106300|1118|10
+#CN|Tianjin
+Liukuaizhuang||39248|117339|5|5
+#CN|Yunnan
+Laba||22511|99639|1068|15
+#CO|Antioquia
+Liborina||6678|-75812|699|8
+La Pintada||5749|-75606|602|5
+#CO|Cauca Department
+La Sierra||2178|-76763|1776|10
+#CO|Cesar Department
+La Gloria||8620|-73802|22|15
+La Paz||10384|-73173|152|13
+#CO|Cundinamarca
+La Calera||4721|-73969|2690|10
+La Vega||5002|-74342|1141|6
+#CO|Meta Department
+Lejanías|Lejanias|3528|-74023|689|11
+#CO|Nariño
+Linares||1351|-77523|1475|9
+La Cruz||1602|-76971|2404|9
+Leiva||1935|-77306|1561|8
+La Tola||2399|-78189|4|6
+#CO|Putumayo Department
+La Dorada||343|-76911|306|7
+#CO|Santander Department
+Landázuri|Landazuri|6218|-73811|945|9
+Lebrija||7113|-73218|1016|9
+#CO|Sucre Department
+Los Palmitos||9379|-75268|181|14
+#CO|Tolima Department
+La Chamba||4026|-74868|294|7
+#CO|Valle del Cauca Department
+La Victoria||4525|-76039|911|11
+#CO|Vichada Department
+La Primavera||5491|-70409|118|10
+#CR|Heredia Province
+Llorente||9998|-84158|1036|7
+#CU|Havana
+Leader||23033|-82250|99|6
+#CU|Matanzas Province
+Los Arabos||22730|-80721|77|13
+#CU|Mayabeque
+La Casualidad||23000|-82217|116|5
+#CY|Keryneia
+Lápithos|Lapithos|35338|33174|85|5
+#CY|Larnaka
+Livádia|Livadia|34955|33627|17|5
+#CY|Nicosia
+Léfka|Lefka|35112|32850|129|8
+#CZ|Central Bohemia
+Lysá nad Labem|Lysa nad Labem|50201|14833|189|8
+#CZ|Liberec Region
+Lomnice nad Popelkou||50531|15373|479|6
+#CZ|Olomouc Region
+Litovel||49701|17076|239|9
+Lipník nad Bečvou|Lipnik nad Becvou|49527|17586|248|8
+#CZ|Pardubice Region
+Litomyšl|Litomysl|49868|16313|334|10
+Lanškroun|Lanskroun|49912|16612|383|10
+Letohrad||50036|16499|373|6
+#CZ|Prague
+Libuš|Libus|50010|14462|299|6
+#CZ|South Moravian
+Letovice||49547|16574|330|7
+#CZ|Vysocina
+Ledeč nad Sázavou|Ledec nad Sazavou|49695|15278|358|6
+#CZ|Ústí nad Labem Region
+Lovosice||50515|14051|156|9
+#DE|Baden-Wurttemberg
+Langenau||48496|10118|461|14
+Linkenheim-Hochstetten||49132|8412|106|12
+Ladenburg||49473|8609|107|11
+Lorch||48798|9691|288|11
+Lauffen am Neckar||49073|9146|186|11
+Laichingen||48489|9686|755|11
+Leutenbach||48888|9393|278|11
+Leingarten||49146|9117|171|11
+Laufenburg||47565|8060|341|9
+Lenningen||48550|9477|448|8
+Löffingen|Loffingen|47884|8344|801|8
+Langenargen||47599|9542|402|8
+Lauchringen||47627|8314|349|7
+Loßburg|Lossburg|48400|8450|655|7
+Laudenbach||49613|8654|121|6
+Löchgau|Lochgau|49004|9106|265|5
+Lenzkirch||47868|8202|810|5
+Lichtenau||48726|8005|128|5
+#DE|Bavaria
+Landau an der Isar||48672|12693|344|15
+Lappersdorf||49047|12091|344|13
+Lindenberg||47603|9885|762|12
+Lauingen||48568|10427|440|12
+Langenzenn||49495|10792|306|11
+Lenggries||47683|11575|683|9
+Langweid||48491|10853|449|8
+Laufen||47936|12929|394|7
+Leipheim||48450|10223|471|7
+Leinburg||49452|11310|397|6
+Litzendorf||49914|11010|318|6
+Leutershausen||49299|10412|430|6
+Laufach||50017|9300|200|5
+Langquaid||48823|12051|389|5
+#DE|Brandenburg
+Lubin||51938|13888|53|15
+Luckau||51852|13707|63|10
+Leegebruch||52723|13193|34|7
+#DE|Hamburg
+Lemsahl-Mellingstedt||53690|10096|34|7
+#DE|Hesse
+Lauterbach||50636|9398|291|14
+Lohfelden||51267|9533|204|14
+Lich||50521|8816|181|14
+Lorsch||49650|8567|99|13
+Langenselbold||50177|9040|124|13
+Langgöns|Langgons|50500|8667|207|12
+Laubach||50542|8990|209|10
+Lollar||50647|8705|166|10
+Liederbach||50122|8494|145|9
+Lützelbach|Luetzelbach|49742|8767|400|7
+Leun||50551|8358|159|6
+Lohra||50733|8633|206|6
+Lindenfels||49684|8782|345|5
+#DE|Lower Saxony
+Langwedel||52979|9184|12|15
+Langelsheim||51938|10333|201|13
+Löningen|Loeningen|52736|7757|26|13
+Lengede||52205|10308|82|13
+Linden-Mitte||52366|9701|67|12
+Lehre||52328|10669|81|12
+Linden-Süd|Linden-Sued|52358|9713|64|10
+Lüchow|Luechow|52967|11158|17|10
+Liebenburg||52022|10432|132|9
+Lemwerder||53163|8615|2|7
+Lohne||52501|7221|29|7
+Lastrup||52795|7867|34|7
+Limmer||52375|9691|59|6
+Lachendorf||52617|10242|49|6
+Lathen||52860|7324|14|6
+Lamme||52269|10441|86|5
+#DE|Mecklenburg-Vorpommern
+Ludwigslust||53325|11497|40|12
+Lankow||53650|11369|51|11
+Laage||53926|12349|29|8
+Lübz|Luebz|53463|12029|51|6
+#DE|North Rhine-Westphalia
+Langerwehe||50817|6350|157|14
+Linnich||50980|6270|64|14
+Lotte||52283|7917|60|14
+Lügde|Luegde|51958|9247|106|11
+Lichtenau||51617|8897|303|11
+Lienen||52150|7983|91|9
+Langenberg||51772|8318|86|8
+Ludenberg||51257|6865|123|8
+Legden||52033|7100|70|7
+Ladbergen||52133|7750|53|6
+Laer||51472|7274|106|6
+Lindenhorst||51547|7450|78|6
+Linn||51337|6642|35|6
+Laer||52056|7358|78|6
+#DE|Rheinland-Pfalz
+Limburgerhof||49424|8392|99|11
+Landstuhl||49413|7570|250|9
+Lambsheim||49514|8288|102|6
+Linz am Rhein||50569|7284|75|6
+Lachen-Speyerdorf||49330|8200|123|5
+Lingenfeld||49254|8339|111|5
+#DE|Saarland
+Ludweiler-Warndt||49221|6812|228|6
+#DE|Saxony
+Lichtenstein||50757|12630|308|11
+Lößnitz|Loessnitz|50622|12731|430|10
+Lengenfeld||50569|12364|393|8
+Lugau||50738|12749|407|8
+Lichtentanne||50693|12426|325|7
+Leisnig||51157|12928|221|7
+Lommatzsch||51195|13309|172|6
+Lunzenau||50963|12756|182|5
+Lauter||50563|12735|465|5
+#DE|Saxony-Anhalt
+Leuna||51318|12016|105|7
+#DE|Schleswig-Holstein
+Lauenburg||53372|10557|42|12
+Leck||54767|8983|6|8
+Lütjenburg|Luetjenburg|54292|10589|38|6
+Laboe||54403|10226|21|5
+Lensahn||54217|10883|17|5
+#DE|State of Berlin
+Lübars|Luebars|52616|13354|53|5
+#DE|Thuringia
+Leinefelde-Worbis||51388|10326|338|14
+#DK|Central Jutland
+Løsning|Losning|55802|9695|67|12
+Lystrup||56498|10469|35|10
+Lystrup||56238|10238|48|10
+Løgten|Logten|56275|10312|69|9
+Lemvig||56549|8310|5|7
+#DK|North Denmark
+Løkken|Lokken|57370|9715|8|9
+#DO|Dajabón
+Loma de Cabrera||19433|-71600|303|7
+#DO|Duarte Province
+Las Guáranas|Las Guaranas|19193|-70208|48|10
+#DO|Independencia
+La Descubierta||18571|-71730|31|6
+#DO|Monte Cristi Province
+Las Matas de Santa Cruz||19671|-71505|34|10
+#DO|Nacional
+La Julia||18467|-69933|57|13
+La Agustina||18500|-69933|31|10
+#DO|Samaná
+Las Terrenas||19311|-69543|17|8
+#DO|San Pedro de Macorís
+Los Llanos||18620|-69496|45|6
+#DO|Santiago Province
+Licey al Medio||19433|-70600|199|6
+#DO|Valverde Province
+Laguna Salada||19650|-71084|77|8
+#EC|Guayas
+Lomas de Sargentillo||-1881|-80084|57|8
+#EE|Harjumaa
+Laagri||59351|24614|40|5
+#ES|Andalusia
+La Carlota||37674|-4931|213|13
+La Puebla del Río|La Puebla del Rio|37268|-6063|22|12
+La Puebla de Cazalla||37222|-5312|177|11
+La Palma del Condado||37386|-6552|99|11
+La Gangosa Vistasol||36806|-2622|78|10
+La Mojonera||37292|-2437|1106|8
+La Rambla||37608|-4740|334|7
+Los Villares||37691|-3819|617|5
+La Campana||37569|-5427|140|5
+#ES|Aragon
+La Almunia de Doña Godina|La Almunia de Dona Godina|41477|-1375|372|8
+La Muela||41580|-1117|598|5
+#ES|Asturias
+Lugones||43403|-5812|165|14
+Llanera||43440|-5851|164|14
+Llanes||43420|-4755|13|14
+Luanco||43615|-5793|13|10
+L'Entregu/El Entrego||43288|-5638|233|7
+#ES|Balearic Islands
+Lloseta||39718|2867|157|5
+#ES|Basque Country
+Lekeitio||43364|-2505|23|7
+Lezo||43321|-1897|13|6
+#ES|Canary Islands
+La Victoria de Acentejo||28432|-16462|481|9
+La Matanza de Acentejo||28452|-16447|515|8
+Lomo de Arico||28167|-16483|401|7
+La Guancha||28373|-16652|497|5
+#ES|Cantabria
+Los Corrales de Buelna||43264|-4073|92|12
+Laredo||43410|-3416|6|11
+#ES|Castille and León
+La Bañeza|La Baneza|42300|-5898|776|11
+Las Navas del Marqués|Las Navas del Marques|40602|-4334|1300|5
+#ES|Castille-La Mancha
+La Puebla de Montalbán|La Puebla de Montalban|39863|-4359|490|8
+Las Pedroñeras|Las Pedroneras|39450|-2674|706|7
+Los Yébenes|Los Yebenes|39582|-3871|823|6
+La Puebla de Almoradiel||39599|-3118|695|6
+#ES|Catalonia
+la Garriga||41683|2283|241|15
+Lliçà d'Amunt|Llica d'Amunt|41617|2233|161|14
+La Llagosta||41514|2193|55|14
+la Salut||41412|2154|122|13
+La Seu d'Urgell||42359|1461|700|12
+la Teixonera||41423|2147|154|11
+la Font de la Guatlla||41370|2145|48|10
+l'Escala||42126|3133|15|10
+la Bisbal d'Empordà|la Bisbal d'Emporda|41950|3050|66|10
+la Trinitat Vella||41452|2193|41|10
+La Roca del Vallès|La Roca del Valles|41583|2333|198|10
+la Font d'en Fargues||41425|2165|109|10
+la Vila Olímpica del Poblenou|la Vila Olimpica del Poblenou|41391|2197|10|9
+la Trinitat Nova||41451|2185|75|7
+L'Ametlla del Vallès|L'Ametlla del Valles|41667|2267|218|7
+Llagostera||41827|2894|136|7
+La Canonja||41121|1181|42|6
+la Vall d'Hebron||41430|2148|126|5
+#ES|Extremadura
+Los Santos de Maimona||38450|-6383|531|8
+Llerena||38233|-6017|650|6
+#ES|Galicia
+Laracha||43254|-8585|163|11
+#ES|La Rioja
+Lardero||42427|-2462|438|6
+#ES|Madrid
+Las Matas||40558|-3892|736|14
+Las Cortes||40416|-3697|661|11
+La Latina||40413|-3709|654|11
+La Poveda||40300|-3467|571|5
+#ES|Murcia
+La Manga del Mar Menor||37641|-717|2|10
+Los Barreros||37628|-998|37|7
+Lorquí|Lorqui|38083|-1251|114|6
+Los Gabatos||37633|-1000|23|6
+Los Dolores||37640|-1005|42|5
+#ES|Valencia
+L'Alcúdia|L'Alcudia|39197|-505|43|12
+l'Alcora||40067|-200|236|10
+L'Olleria||38917|-550|255|8
+La Pobla de Farnals||39566|-284|3|7
+#FI|Kanta-Häme
+Loppi||60717|24450|122|8
+Lammi||61083|25017|129|6
+#FI|North Karelia
+Liperi||62533|29367|80|12
+Lieksa||63317|30017|95|10
+#FI|North Ostrobothnia
+Liminka||64810|25415|8|10
+#FI|North Savo
+Leppävirta|Leppaevirta|62490|27783|114|9
+Lapinlahti||63367|27400|121|9
+#FI|Ostrobothnia
+Laihia||62976|22011|26|8
+Larsmo||63754|22747|12|6
+#FI|Pirkanmaa
+Linnainmaa||61495|23886|115|6
+Lentävänniemi|Lentaevaenniemi|61528|23706|108|5
+#FI|South Ostrobothnia
+Lapua||62969|23009|39|14
+#FI|Southwest Finland
+Laitila||60876|21698|18|8
+#FI|Uusimaa
+Länsisatama|Laensisatama|60155|24915||15
+Lovisa||60457|26225|1|14
+Laaksolahti||60242|24759|39|11
+Lintuvaara||60234|24813|43|11
+Latokartano||60226|25027|8|10
+Linjat||60183|24947|32|10
+Länsi-Herttoniemi|Laensi-Herttoniemi|60207|25040|15|9
+Länsi-Pakila|Laensi-Pakila|60242|24927|38|7
+Länsimäki|Laensimaeki|60246|25118|14|6
+Länsi-Pasila|Laensi-Pasila|60199|24923|30|5
+#FJ|Eastern
+Levuka||-18067|179317|49|8
+#FR|Auvergne-Rhône-Alpes
+La Motte-Servolex||45597|5867|283|13
+Le Chambon-Feugerolles||45391|4321|518|13
+L'Isle-d'Abeau||45620|5225|235|12
+Le Pont-de-Claix||45123|5698|247|12
+La Roche-sur-Foron||46071|6305|571|10
+Le Teil||44545|4682|71|9
+Livron-sur-Drôme|Livron-sur-Drome|44777|4842|108|8
+Lempdes||45771|3194|342|8
+La Ricamarie||45405|4369|579|8
+Le Coteau||46019|4092|278|8
+La Tour-du-Pin||45566|5445|322|7
+La Mulatière|La Mulatiere|45728|4812|221|7
+La Tronche||45205|5746|240|7
+Le Péage-de-Roussillon|Le Peage-de-Roussillon|45374|4797|158|7
+La Talaudière|La Talaudiere|45476|4426|482|7
+La Ravoire||45563|5958|315|7
+Lagnieu||45902|5344|211|6
+L'Arbresle||45836|4617|234|6
+La Verpillière|La Verpilliere|45634|5146|218|6
+Loriol-sur-Drôme|Loriol-sur-Drome|44747|4817|138|6
+La Mure||44901|5789|858|5
+Lezoux||45827|3379|360|5
+La Voulte-sur-Rhône|La Voulte-sur-Rhone|44800|4779|99|5
+Lentilly||45819|4663|326|5
+Le Cendre||45722|3187|346|5
+La Grand-Croix||45504|4559|334|5
+#FR|Bourgogne-Franche-Comté
+Longvic||47288|5063|226|10
+Lure||47683|6497|293|9
+Luxeuil-les-Bains||47817|6365|299|9
+Louhans||46626|5225|182|6
+La Charité-sur-Loire|La Charite-sur-Loire|47183|3017|187|5
+#FR|Brittany
+Lamballe||48468|-2518|55|12
+Le Relecq-Kerhuon||48408|-4397|18|12
+Loudéac|Loudeac|48178|-2756|168|11
+Larmor-Plage||47706|-3383|0|9
+Landivisiau||48509|-4069|84|9
+Lesneven||48572|-4317|63|7
+Liffré|Liffre|48214|-1509|100|7
+Languidic||47834|-3158|69|7
+Langueux||48495|-2718|99|7
+Le Rheu||48102|-1796|35|7
+#FR|Centre-Val de Loire
+La Chapelle-Saint-Mesmin||47886|1835|102|10
+La Riche||47390|671|51|9
+La Ferté-Saint-Aubin|La Ferte-Saint-Aubin|47717|1939|107|7
+Loches||47129|995|78|7
+Luisant||48430|1474|152|7
+Le Blanc||46634|1063|82|7
+Le Poinçonnet|Le Poinconnet|46764|1718|165|5
+Luynes||47384|555|49|5
+#FR|Grand Est
+Longwy||49522|5762|377|15
+La Chapelle-Saint-Luc||48317|4040|107|15
+Langres||47863|5333|472|9
+Ludres||48620|6167|272|7
+Liverdun||48750|6064|204|7
+Lutterbach||47760|7280|250|6
+Longuyon||49442|5605|215|6
+La Wantzenau||48658|7831|133|6
+Ligny-en-Barrois||48689|5325|225|5
+Laneuveville-devant-Nancy||48657|6227|206|5
+La Bresse||48000|6865|617|5
+#FR|Hauts-de-France
+Longuenesse||50734|2235|45|14
+Lys-lez-Lannoy||50667|3217|33|14
+Le Portel||50706|1576|28|11
+Lillers||50563|2480|28|10
+Leers||50682|3244|30|10
+Lamorlaye||49162|2447|60|9
+Libercourt||50483|3016|29|8
+Linselles||50737|3079|49|8
+Louvroil||50264|3963|161|7
+Loos-en-Gohelle||50458|2792|43|7
+Leforest||50439|3065|28|7
+Liancourt||49330|2466|61|7
+Loon-Plage||50996|2218|3|7
+Lallaing||50390|3169|20|7
+Lesquin||50582|3119|56|6
+La Bassée|La Bassee|50534|2806|27|6
+Le Touquet-Paris-Plage||50524|1586|15|6
+Loison-sous-Lens||50438|2853|29|6
+La Gorgue||50638|2715|19|5
+Longueau||49872|2359|39|5
+Leffrinckoucke||51035|2465|2|5
+Lambres-lez-Douai||50360|3065|25|5
+#FR|New Aquitaine
+Lons||43315|-411|167|14
+Lescar||43334|-435|180|10
+Le Passage||44201|603|47|9
+Léognan|Leognan|44729|-601|35|9
+Le Haillan||44872|-677|36|9
+Loudun||47008|83|95|9
+Le Taillan-Médoc|Le Taillan-Medoc|44904|-670|17|9
+La Couronne||45611|99|47|8
+Langon||44553|-250|22|7
+Lagord||46189|-1154|22|7
+Le Palais-sur-Vienne||45864|1323|257|6
+Le Pian-Médoc|Le Pian-Medoc|44955|-670|21|6
+Lanton||44707|-1040|6|6
+Lesparre-Médoc|Lesparre-Medoc|45307|-938|10|5
+La Souterraine||46238|1486|384|5
+Le Teich||44634|-1024|4|5
+#FR|Normandy
+Lillebonne||49520|536|15|10
+Les Andelys||49246|1412|18|10
+La Ferté-Macé|La Ferte-Mace|48590|-358|222|7
+Le Mesnil-Esnard||49413|1145|153|6
+Le Tréport|Le Treport|50060|1376|35|6
+Le Trait||49469|816|22|6
+La Glacerie||49605|-1582|138|5
+#FR|Occitanie
+L'Union||43660|1483|180|12
+Limoux||43055|2222|172|11
+Lavaur||43699|1812|144|10
+Lézignan-Corbières|Lezignan-Corbieres|43201|2757|55|9
+L'Isle-Jourdain||43612|1087|159|9
+Les Angles||43955|4766|74|8
+Le Crès|Le Cres|43648|3939|58|8
+Lodève|Lodeve|43732|3320|175|8
+Lavelanet||42933|1848|527|7
+La Grande-Motte||43561|4085|7|7
+Léguevin|Leguevin|43600|1232|195|7
+Lannemezan||43125|384|594|7
+Le Soler||42682|2793|74|6
+Le Grau-du-Roi||43539|4136|3|6
+La Salvetat-Saint-Gilles||43576|1272|191|6
+Labruguière|Labruguiere|43539|2263|194|6
+Launaguet||43678|1456|137|6
+Laudun-l'Ardoise||44105|4657|77|6
+Luc-la-Primaube||44314|2536|681|5
+Labarthe-sur-Lèze|Labarthe-sur-Leze|43452|1400|172|5
+#FR|Pays de la Loire
+Les Ponts-de-Cé|Les Ponts-de-Ce|47423|-525|24|13
+La Ferté-Bernard|La Ferte-Bernard|48187|652|87|10
+Luçon|Lucon|46455|-1166|11|10
+Les Sorinières|Les Sorinieres|47147|-1530|32|7
+Le Poiré-sur-Vie|Le Poire-sur-Vie|46769|-1509|55|6
+La Montagne||47190|-1684|39|6
+Le Pouliguen||47272|-2433|4|5
+Le Loroux-Bottereau||47238|-1350|51|5
+La Chevrolière|La Chevroliere|47091|-1611|11|5
+#FR|Provence-Alpes-Côte d'Azur
+L'Ariane||43747|7300|80|15
+La Rose||43329|5429|85|14
+La Madeleine||43713|7224|74|13
+Le Pradet||43105|6024|35|12
+L'Archet||43694|7233|54|12
+Le Cabot||43259|5417|64|11
+La Capelette||43281|5406|24|10
+La Trinité|La Trinite|43741|7314|75|10
+La Valbarelle||43285|5454|81|10
+Les Caillols||43302|5448|75|10
+La Conception||43292|5394|38|10
+La Cabucelle||43332|5361|27|9
+La Londe-les-Maures||43138|6234|23|9
+Les Chartreux||43311|5405|62|9
+Le Merlan||43339|5408|113|9
+Lodi||43287|5389|42|9
+La Joliette||43305|5366||9
+Le Beausset||43198|5803|184|9
+Le Muy||43473|6566|39|8
+La Villette||43312|5374|23|8
+Lorgues||43493|6362|217|8
+La Pointe Rouge||43239|5377|35|8
+Lambesc||43654|5262|208|8
+Le Luc||43395|6313|169|8
+Libération|Liberation|43712|7262|33|8
+La Californie||43675|7228|20|8
+Les Grands Carmes||43300|5373|31|8
+La Fourragère|La Fourragere|43304|5431|117|8
+Le Canet||43326|5372|14|7
+Les Baumettes||43226|5416|95|7
+Le Chapitre||43301|5384|40|7
+Le Thor||43929|4995|53|7
+Lançon-Provence|Lancon-Provence|43593|5128|106|7
+La Colle-sur-Loup||43686|7104|88|7
+La Farlède|La Farlede|43169|6043|80|7
+La Viste||43359|5356|140|7
+La Fare-les-Oliviers||43551|5194|57|7
+Les Aygalades||43357|5371|130|7
+La Gaude||43722|7153|271|7
+L'Estaque||43364|5309|40|6
+La Croix-Rouge||43333|5454|115|6
+La Calade||43339|5351|50|6
+La Penne-sur-Huveaune||43282|5516|79|6
+Le Pharo||43291|5358|18|6
+La Delorme||43344|5373|74|6
+Les Arcs||43463|6479|84|6
+Le Lavandou||43137|6366|0|6
+La Panouse||43256|5430|103|6
+La Roque-d'Anthéron|La Roque-d'Antheron|43715|5310|169|5
+Les Arnavaux||43335|5380|44|5
+La Timone||43288|5414|57|5
+La Bouilladisse||43396|5593|242|5
+Les Trois-Lucs||43314|5462|158|5
+Le Puy-Sainte-Réparade|Le Puy-Sainte-Reparade|43664|5435|202|5
+#FR|Île-de-France
+Le Raincy||48899|2523|86|13
+Le Bourget||48934|2436|38|13
+La Queue-en-Brie||48785|2581|90|12
+L'Isle-Adam||49107|2228|56|11
+La Ferté-sous-Jouarre|La Ferte-sous-Jouarre|48951|3127|72|9
+Louvres||49045|2505|108|9
+Lésigny|Lesigny|48744|2615|96|8
+Lisses||48602|2422|82|8
+Louveciennes||48861|2115|130|8
+Le Plessis-Bouchard||49000|2233|63|7
+L'Île-Saint-Denis|L'Ile-Saint-Denis|48937|2339|29|7
+Lieusaint||48635|2548|88|7
+Le Mesnil-Saint-Denis||48745|1956|174|7
+Le Mesnil-le-Roi||48938|2126|60|7
+La Verrière|La Verriere|48752|1946|173|6
+Limours||48646|2077|136|6
+La Ville-du-Bois||48655|2268|95|6
+Les Essarts-le-Roi||48717|1901|175|6
+Le Perray-en-Yvelines||48694|1856|175|6
+Longpont-sur-Orge||48642|2293|59|6
+Linas||48630|2263|74|6
+#GA|Haut-Ogooué
+Lékoni|Lekoni|-1584|14259|502|9
+#GA|Ngouni
+Lébamba|Lebamba|-2212|11470|167|9
+#GA|Ogooué-Lolo
+Lastoursville||-817|12708|251|14
+#GB|England
+Lymington||50759|-1538|1|15
+Lee||51456|5|18|15
+Ladywell||51455|-22|15|15
+Leyton||51560|-8|14|14
+Leicester Forest East||52625|-1218|104|14
+Littleborough||53644|-2096|150|14
+Little Hulton||53533|-2417|112|13
+Lees||53538|-2073|185|13
+Lymm||53381|-2478|29|12
+Lancaster Gate||51513|-185|29|11
+Leominster||52226|-2745|89|11
+Ludlow||52374|-2713|117|11
+Little Venice||51524|-181|31|10
+Little Lever||53563|-2378|85|10
+Lutterworth||52456|-1202|131|10
+London Colney||51725|-296|74|10
+Leverstock Green||51748|-433|138|10
+Liskeard||50455|-4465|129|9
+Launceston||50637|-4360|135|9
+Longdendale||53467|-2000|203|9
+Ledbury||52036|-2426|67|9
+Lydney||51726|-2526|16|9
+Leavesden Green||51695|-407|91|9
+Little Bookham||51281|-391|57|8
+Littleport||52458|306|7|8
+Longridge||53832|-2600|129|8
+Lee-on-the-Solent||50802|-1202|8|7
+Langley Green||51128|-198|63|7
+Larkfield||51301|449|14|7
+Lightwater||51348|-671|55|7
+Leiston||52206|1578|15|6
+Liphook||51077|-803|110|6
+Long Ditton||51384|-320|16|6
+Liss||51043|-892|63|6
+Lambeth||51496|-112|10|6
+Lyneham||51517|-1967|120|5
+Long Ashton||51430|-2661|56|5
+Looe||50358|-4454|40|5
+#GB|Northern Ireland
+Limavady||55050|-6951|20|11
+#GB|Scotland
+Linlithgow||55976|-3604|50|13
+Largs||55796|-4863|13|11
+Larbert||56022|-3829|34|10
+Leven||56200|-3000|13|9
+Lanark||55674|-3782|199|9
+Linwood||55848|-4493|11|9
+Lenzie||55928|-4154|61|9
+Lossiemouth||57721|-3283|22|7
+Lerwick||60153|-1144||7
+Lochgelly||56128|-3310|143|7
+Loanhead||55879|-3159|152|6
+Locharbriggs||55103|-3584|21|6
+#GB|Wales
+Llantrisant||51540|-3374|101|14
+Llantwit Major||51411|-3486|48|14
+Llandaff||51493|-3220|29|9
+Llanharan||51538|-3439|76|6
+Llandrindod Wells||52242|-3379|216|5
+#GE|Guria
+Lanchkhuti||42087|42036|31|6
+#GE|Kakheti
+Lagodekhi||41827|46275|479|6
+#GN|Labé Region
+Lélouma|Lelouma|11424|-12682|955|5
+#GP|Guadeloupe
+Lamentin||16270|-61632|10|15
+#GQ|Bioko Sur
+Luba||3457|8555|72|9
+#GR|Attica
+Limín Mesoyaías|Limin Mesoyaias|37891|24003|21|11
+Lykóvrysi|Lykovrysi|38069|23782|225|10
+Lávrio|Lavrio|37714|24056|9|7
+Leondárion|Leondarion|37987|23855|207|6
+#GR|Central Macedonia
+Litóchoro|Litochoro|40101|22498|350|7
+#GR|Ionian Islands
+Lefkáda|Lefkada|38830|20704|8|9
+Lixoúri|Lixouri|38201|20437|5|7
+Lefkímmi|Lefkimmi|39423|20071|21|6
+#GR|Peloponnese
+Loutráki|Loutraki|37978|22978|11|12
+#GT|Escuintla
+La Democracia||14229|-90948|169|13
+#GT|Huehuetenango
+La Libertad||15514|-91869|1710|6
+#GT|Petén
+La Libertad||16789|-90117|186|9
+#GY|Upper Takutu-Upper Essequibo
+Lethem||3373|-59800|90|4
+#HK|Eastern District
+Lei King Wan||22284|114223||6
+Lai Tak Tsuen||22278|114195|103|6
+#HK|Kowloon City
+Laguna Verde (Estate)||22308|114193||13
+Lok Man Sun Chuen||22316|114186|16|9
+#HK|Sham Shui Po District
+Lei Cheng Uk Estate||22339|114159|12|11
+Lai Tsui Court||22334|114155|1|10
+Lai Kok Estate||22332|114157|1|6
+Liberte||22335|114149|2|6
+#HK|Tsuen Wan
+Luk Yeung||22374|114119|7|14
+#HK|Wong Tai Sin District
+Lok Fu||22337|114187|34|14
+Lok Fu Estate||22337|114187|34|10
+Lung Poon Court||22342|114200|44|7
+#HN|Colón Department
+Limón|Limon|15867|-85500||14
+#HN|Comayagua Department
+Lamaní|Lamani|14196|-87621|735|7
+Lejamaní|Lejamani|14367|-87707|691|6
+#HN|Copán Department
+La Entrada||15064|-88746|508|15
+#HN|El Paraíso Department
+Liure||13536|-87092|223|11
+Las Trojes||14067|-85983|755|6
+#HN|Intibucá Department
+La Esperanza||14302|-88167|1671|5
+#HN|Ocotepeque Department
+La Labor||14486|-89003|1004|10
+Lucerna||14558|-88934|830|6
+#HN|Olancho Department
+La Guata||15083|-86383|934|12
+#HN|Santa Bárbara Department
+Las Vegas, Santa Barbara||14876|-88075|892|7
+#HN|Valle Department
+La Alianza||13512|-87724|26|7
+#HR|Istria
+Labin||45095|14120|214|6
+#HT|Centre
+Lascahobas||18830|-71936|220|8
+#HT|Sud
+Les Anglais||18305|-74220|12|8
+#HU|Budapest
+Lipótváros|Lipotvaros|47502|19049|0|12
+Losoncinegyed||47484|19082|101|8
+Ligettelek||47493|19129|110|7
+Lakatos-lakótelep|Lakatos-lakotelep|47454|19174|122|5
+Laposdűlő|Laposdulo|47492|19115|106|5
+#HU|Bács-Kiskun
+Lajosmizse||47021|19562|132|11
+#HU|Hajdú-Bihar
+Létavértes|Letavertes|47383|21900|113|7
+#HU|Heves County
+Lőrinci|Lorinci|47733|19679|124|6
+#HU|Komárom-Esztergom
+Lábatlan|Labatlan|47747|18496|143|5
+#HU|Zala County
+Lenti||46624|16539|168|8
+#ID|Bali
+Legian||-8704|115170|8|10
+Lovina||-8149|115040|5|10
+#ID|North Maluku
+Labuha||-625|127478|5|7
+#ID|North Sulawesi
+Laikit, Laikit II (Dimembe)||1488|124974|288|8
+#ID|West Nusa Tenggara
+Labuan Lombok||-8500|116667|5|10
+Lembar||-8726|116074|7|10
+#IE|Connacht
+Loughrea||53197|-8567|84|6
+#IE|Leinster
+Longford||53725|-7798|53|11
+Laytown||53682|-6239|7|11
+Little Bray||53204|-6121|11|8
+Lusk||53527|-6164|27|8
+#IL|Southern District
+Laqiyya||31319|34859|402|14
+Lehavim||31373|34816|260|6
+#IM|Laxey
+Laxey||54230|-4400|47|2
+#IM|Lezayre
+Lezayre||54317|-4417|137|0
+#IN|Assam
+Lakhipur||24793|93009|35|13
+Lāla|Lala|24554|92616|34|12
+Lido Town||27294|95742|149|12
+Lakhi Nepali||27833|95224|119|5
+Lido Tikok||27288|95736|166|5
+#IN|Bihar
+Laruāra|Laruara|25454|86121|46|9
+Lāu|Lau|24946|84876|95|6
+#IN|Chhattisgarh
+Lawan||21641|82341|255|9
+Lelanga||22392|83581|497|8
+Lohāra|Lohara|21850|81133|351|7
+Lakhanpur||22988|83036|576|6
+#IN|Delhi
+Lādpur|Ladpur|28738|76995|218|6
+#IN|Gujarat
+Lakhtar||22857|71788|49|15
+Lilia||21537|71364|92|10
+Lavachha||20296|72990|13|9
+#IN|Haryana
+Lohāru|Loharu|28430|75808|275|14
+Ladrāwan|Ladrawan|28787|76937|220|7
+#IN|Jharkhand
+Lāpangā|Lapanga|23633|85377|369|8
+#IN|Karnataka
+Londa||15469|74519|682|6
+#IN|Kerala
+Lālam|Lalam|9717|76700|55|9
+#IN|Madhya Pradesh
+Loniya||22062|78913|678|15
+Lānjī|Lanji|21502|80541|323|14
+Ladhaura||25073|78868|327|13
+Lassodyāmeri|Lassodyameri|22783|75913|547|10
+Lodhīkheda|Lodhikheda|21582|78859|347|10
+Limbodi||22667|75890|570|9
+Loharda||22592|76596|334|9
+#IN|Maharashtra
+Lānja|Lanja|16861|73550|139|14
+Lohogaon||18599|73927|597|14
+#IN|Manipur
+Lamshang||24816|93874|781|11
+#IN|Nagaland
+Longleng||26490|94818|1265|8
+Lakema||25567|93761|1297|5
+#IN|Odisha
+Lathikata||22131|84890|198|7
+Lalsingi||19947|84571|92|7
+Loisinga||20867|83517|155|6
+#IN|Punjab
+Lohiān|Lohian|31162|75210|218|10
+Lāhauran Bara|Lahauran Bara|30397|76156|252|10
+#IN|Rajasthan
+Lāwa Sardārgarh|Lawa Sardargarh|25239|73989|555|7
+#IN|Tamil Nadu
+Lakshmīnārāyanapuram|Lakshminarayanapuram|11791|79555|32|13
+Labbaikkudikkādu|Labbaikkudikkadu|11392|79022|88|12
+Lakkampatti||11446|77412|237|12
+#IN|Telangana
+Laxmidevipally||17570|80622|86|13
+Lakshettipet||18867|79217|141|11
+#IN|Tripura
+Lebachhara||23396|91734|42|5
+#IN|Uttar Pradesh
+Lakhnā|Lakhna|26648|79148|155|11
+#IN|Uttarakhand
+Lansdowne||29842|78680|1701|8
+Lohaghāt|Lohaghat|29404|80090|1701|7
+#IR|Alborz Province
+Lashkarābād|Lashkarabad|35855|50746|1249|7
+#IR|East Azerbaijan
+Leylān|Leylan|37011|46207|1317|6
+Lāhījān|Lahijan|37985|46086|1361|5
+#IR|Fars
+Lapū’ī|Lapu'i|29800|52653|1585|9
+Laţīfī|Latifi|27690|54387|802|7
+#IR|Gilan Province
+Lowshān|Lowshan|36630|49513|366|13
+Lavandevīl|Lavandevil|38310|48872|-27|11
+Lasht-e Neshā|Lasht-e Nesha|37361|49861|-19|11
+Lūlamān|Lulaman|37256|49816|0|7
+#IR|Hamadan Province
+Lālejīn|Lalejin|34975|48476|1717|15
+#IR|Kohgiluyeh and Boyer-Ahmad
+Landeh||30982|50421|776|13
+#IR|Māzandarān
+Lārīm|Larim|36719|52938|-22|5
+#IT|Abruzzo
+Luco dei Marsi||41959|13473|680|6
+#IT|Apulia
+Latiano||40551|17719|97|15
+Laterza||40629|16799|340|14
+Leverano||40289|17997|39|14
+Lizzano||40393|17446|67|10
+Lequile||40306|18140|38|8
+Locorotondo||40757|17324|410|7
+Lizzanello||40305|18223|45|6
+Lesina||41861|15353|5|6
+#IT|Basilicate
+Lavello||41048|15789|313|13
+Lagonegro||40128|15762|666|5
+#IT|Calabria
+Locri||38239|16260|7|10
+#IT|Campania
+Lusciano||40970|14190|44|14
+Lancusi-Penta-Bolano||40761|14785|224|6
+Lanzara||40775|14676|74|6
+Lettere||40705|14545|353|6
+#IT|Emilia-Romagna
+Langhirano||44619|10267|265|6
+Lido Adriano||44417|12306|2|6
+#IT|Friuli Venezia Giulia
+Latisana||45769|13006|7|9
+Lignano Sabbiadoro||45676|13117|2|6
+#IT|Lazio
+Lariano||41718|12829|350|13
+La Massimina-Casal Lumbroso||41873|12357|47|11
+Latina Scalo||41532|12946|18|7
+Lanuvio||41673|12694|324|6
+#IT|Liguria
+Lavagna||44306|9354|6|11
+Loano||44128|8257|4|11
+Lerici||44076|9911|10|9
+#IT|Lombardy
+Luino||46002|8745|202|12
+Lentate sul Seveso||45676|9118|250|11
+Lonate Pozzolo||45592|8752|205|11
+Leno||45369|10217|66|10
+Lurate Caccivio||45767|8999|322|10
+Locate di Triulzi||45357|9225|96|9
+Lonato||45461|10477|188|8
+Laveno||45909|8620|200|8
+Lesmo||45649|9307|241|8
+Lomazzo||45697|9034|296|8
+Lazzate||45672|9084|257|8
+Lacchiarella||45323|9138|98|8
+Lodi Vecchio||45304|9418|82|7
+Lipomo||45793|9120|384|6
+Lavena Ponte Tresa||45967|8857|277|5
+Lovere||45814|10070|248|5
+#IT|Molise
+Larino||41804|14918|341|5
+#IT|Piedmont
+Leini||45183|7714|250|14
+La Loggia||44955|7669|230|8
+#IT|Sardinia
+La Maddalena||41214|9408|19|10
+Li Punti-San Giovanni||40763|8489|89|10
+La Maddalena||39144|9012|2|8
+#IT|Sicily
+Leonforte||37642|14398|603|14
+Lercara Friddi||37747|13604|660|7
+Linguaglossa||37842|15138|550|5
+#IT|The Marches
+Loreto||43436|13612|127|7
+Le Grazie di Ancona||43601|13515|54|6
+Lucrezia||43773|12940|57|6
+#IT|Trentino-Alto Adige
+Laives||46427|11338|255|11
+Lana||46612|11157|310|9
+Lavis||46141|11109|232|6
+Levico Terme||46012|11304|506|6
+#IT|Tuscany
+Lastra a Signa||43770|11113|36|12
+Lamporecchio||43807|10877|56|5
+#IT|Veneto
+Lonigo||45386|11384|31|12
+Lido di Jesolo||45507|12647|6|11
+Lugagnano||45433|10884|91|8
+Lendinara||45083|11603|9|7
+Legnaro||45342|11965|8|7
+Lavagno||45439|11134|60|6
+Limena||45469|11846|22|5
+#JE|St Clement
+Le Hocq||49168|-2062|11|0
+#JM|Clarendon
+Lionel Town||17810|-77241|11|5
+#JM|Hanover
+Lucea||18451|-78174|12|7
+#KE|Busia County
+Luanda||314|34071|1176|10
+#KE|Kericho County
+Litein||-582|35190|1940|13
+#KE|Marsabit County
+Loiyangalani||2744|36715|379|5
+Laisamis||1593|37806|575|5
+#KE|Meru County
+Lare||337|37937|1748|5
+#KE|Narok County
+Lolgorien||-1229|34807|1659|6
+#KE|Turkana County
+Lokichar||2381|35651|763|13
+Lokichokio||4208|34354|641|12
+#KE|Vihiga County
+Luanda||23|34587|1530|13
+#KH|Kampong Cham
+Lvea Leu||12345|105285|57|7
+#KH|Kampong Chhnang
+Longveaek||11869|104754|14|10
+#KH|Kampot
+L’ang|L'ang|10745|104346|39|7
+#KY|
+Lower Valley||19280|-81284|6|10
+#KY|Sister Island
+Little Cayman||19661|-80110|6|0
+#KZ|Pavlodar Region
+Leninskiy||52253|76782|109|9
+#KZ|Zhambyl
+Lugovoy||42942|72761|687|10
+#LA|Loungnamtha
+Luang Namtha||20949|101402|551|3
+#LC|Laborie
+Laborie||13750|-60983|20|7
+#LT|Vilnius
+Lentvaris||54644|25052|166|10
+#LU|Luxembourg
+Limpertsberg||49621|6122|326|12
+#LV|Limbaži Municipality
+Limbaži|Limbazi|57513|24719|78|7
+#LV|Ludza Municipality
+Ludza||56534|27722|148|7
+#LV|Līvāni
+Līvāni|Livani|56354|26176|92|7
+#LV|Ogre
+Lielvārde|Lielvarde|56721|24807|47|6
+#MA|Fes-Meknes
+Lemhaya||33977|-5251|391|6
+#MA|Guelmim-Oued Noun
+Lakhsas||29366|-9751|978|5
+#MA|Marrakesh-Safi
+Loudaya||31633|-8249|382|14
+#MA|Tanger-Tetouan-Al Hoceima
+Laouamra||35069|-6088|37|9
+#MC|Municipality of Monaco
+La Condamine||43734|7420|16|12
+La Rousse||43748|7431||7
+#MD|Leova
+Leova||46482|28253|37|14
+#MH|Lae Atoll
+Lae||8922|166263|8|0
+#MH|Lib Island
+Lib||8312|167377|15|0
+#MH|Likiep Atoll
+Likiep||9825|169311|7|0
+#MH|Namu Atoll
+Loen||7760|168231|13|0
+#MK|Lozovo
+Lozovo||41784|21906|287|3
+#MK|Struga
+Labunista||41269|20596|865|9
+#MM|Sagaing Region
+Longwa||26662|95220|914|7
+#MQ|Martinique
+Le Gros-Morne||14700|-61000|132|11
+Le Lorrain||14833|-61056|13|8
+Le Marin||14472|-60870|28|8
+Le Vauclin||14545|-60838|8|8
+Les Trois-Îlets|Les Trois-Ilets|14539|-61034|19|6
+Le Morne-Rouge||14776|-61136|459|5
+#MR|Gorgol
+Lexeiba Un|LexeibaUn|16225|-13141|26|11
+#MT|L-Iklin
+L-Iklin||35904|14454|62|3
+#MT|Lija
+Lija||35900|14446|69|3
+#MT|Luqa
+Luqa||35860|14489|69|6
+#MU|
+Lallmatie||-20018|57580|10|12
+#MU|Flacq
+Lalmatie||-20190|57661|215|11
+Laventure||-20146|57677|120|6
+#MU|Grand Port
+L’Escalier|L'Escalier|-20470|57612|98|8
+#MU|Pamplemousses
+Long Mountain||-20151|57573|158|8
+#MW|Northern Region
+Likoma||-12067|34733|506|8
+Livingstonia||-10606|34108|1353|6
+#MW|Southern Region
+Luchenza||-16007|35309|682|14
+#MX|Baja California
+Lomas de Santa Anita||32543|-116651|569|7
+#MX|Baja California Sur
+Loreto||26012|-111349|8|15
+Las Palmas||22937|-109942|150|12
+Las Veredas||23150|-109706|79|10
+#MX|Campeche
+Lerma||19804|-90601|8|8
+#MX|Chiapas
+La Trinitaria||16119|-92052|1564|9
+La Concordia||16118|-92691|549|8
+#MX|Chihuahua
+La Junta||28479|-107330|2078|9
+Lázaro Cárdenas|Lazaro Cardenas|28390|-105624|1202|9
+#MX|Guanajuato
+La Aldea||20902|-101479|1760|6
+#MX|Hidalgo
+Los Tuzos||20054|-98756|2347|5
+#MX|Jalisco
+La Tijera||20582|-103441|1615|12
+Lomas de San Agustín|Lomas de San Agustin|20528|-103468|1599|12
+La Resolana||19604|-104434|377|11
+Las Juntas||20700|-105243|7|9
+La Alameda||20495|-103248|1522|9
+La Huerta||19484|-104642|273|8
+La Ribera||20348|-102279|1587|8
+Los Olivos||20439|-103238|1549|8
+Los Ruiseñores|Los Ruisenores|20711|-103691|1396|7
+La Venta del Astillero||20727|-103546|1631|6
+#MX|Michoacán
+La Mira||18037|-102326|94|13
+Lombardía|Lombardia|19158|-102051|654|13
+La Huacana||18962|-101808|477|9
+La Aldea||19743|-101135|1908|6
+#MX|Morelos
+La Joya||18891|-99125|1506|14
+La Joya||18667|-99467|1010|13
+Los Arcos||18887|-99024|1256|5
+#MX|México
+Lomas de San Sebastián|Lomas de San Sebastian|19382|-98933|2308|12
+La Magdalena Chichicaspa||19412|-99326|2592|12
+La Concepción de los Baños|La Concepcion de los Banos|19682|-99861|2555|7
+La Cabecera||19356|-99748|2632|7
+La Constitución Toltepec|La Constitucion Toltepec|19349|-99549|2580|6
+Lomas de Altavista||19361|-98945|2297|6
+La Candelaria Tlapala||19240|-98848|2260|6
+La Pastoría|La Pastoria|19543|-98911|2250|5
+#MX|Nayarit
+Las Varas||21180|-105136|27|14
+La Peñita de Jaltemba|La Penita de Jaltemba|21038|-105250|3|9
+Las Jarretaderas||20693|-105274|8|6
+#MX|Nuevo León
+Loma la Paz||25711|-100135|402|6
+Lampazos de Naranjo||27025|-100504|326|5
+#MX|Puebla
+La Resurrección|La Resurreccion|19103|-98130|2346|9
+La Magdalena Tetela Morelos||19049|-97941|2313|6
+#MX|Querétaro
+La Cañada|La Canada|20606|-100331|1908|11
+La Negreta||20527|-100451|1880|8
+La Pradera||20659|-100342|2037|7
+La Lira||20476|-100163|1951|6
+La Estancia||20422|-100068|1976|6
+La Valla||20496|-100028|1984|6
+La Llave||20466|-99994|1903|5
+#MX|Quintana Roo
+Leona Vicario||20990|-87202|11|6
+#MX|San Luis Potosí
+La Pila||22034|-100868|1868|7
+Los Zacatones||22961|-102056|2051|6
+#MX|Sinaloa
+La Reforma||25082|-108056|8|7
+#MX|Tabasco
+La Venta||18098|-94045|3|9
+La Selva||18023|-92963|11|8
+Luis Gil Pérez|Luis Gil Perez|17876|-93072|20|6
+La Curva||17868|-92488|13|6
+La Lima||17911|-92934|11|6
+#MX|Veracruz
+Las Amapolas||19152|-96198|19|15
+Las Vigas de Ramírez|Las Vigas de Ramirez|19637|-97098|2438|10
+Lomas de Barrillas||18148|-94526|13|9
+Lomas Verdes||19504|-96889|1315|7
+#MX|Zacatecas
+Luis Moya||22432|-102249|1983|6
+#MY|Johor
+Layang Layang||1815|103478|31|13
+#MY|Kedah
+Langgar||6148|100432|6|6
+#MY|Negeri Sembilan
+Lenggeng||2856|101942|64|13
+#MY|Perak
+Lenggong||5106|100968|97|13
+#MY|Sarawak
+Lubok Antu||1042|111834|34|10
+Long Lama||3767|114400|16|6
+#MY|Selangor
+Laman Permai||3174|101542|67|9
+#MZ|Zambezia Province
+Luabo||-18393|36105|8|7
+#NC|South Province
+La Foa||-21711|165828|24|3
+#NE|Dosso Region
+Loga||13613|3236|222|9
+#NG|Bauchi
+Lere||9711|9340|873|15
+Lame||10442|9240|711|7
+#NG|Plateau State
+Langtang||9142|9791|328|13
+#NG|Taraba State
+Lau||9208|11275|132|13
+#NG|Yobe State
+Lajere||11980|11440|366|7
+#NI|Chontales Department
+Los Copeles||12209|-85312|291|5
+#NI|Jinotega Department
+Las Praderas||13348|-85944|425|8
+#NI|León Department
+Larreynaga||12676|-86571|95|8
+#NI|Masaya Department
+La Concepción|La Concepcion|11937|-86190|538|7
+#NL|Friesland
+Lemmer||52846|5709|3|10
+#NL|Gelderland
+Lunteren||52085|5622|17|13
+Lochem||52159|6411|14|12
+Leesten||52128|6232|11|10
+Lent||51862|5867|11|9
+#NL|Limburg
+Lindenheuvel||50985|5817|62|8
+#NL|North Holland
+Laren||52257|5228|8|12
+Landsmeer||52431|4915|2|10
+Loosdrecht||52207|5071|-2|9
+Limmen||52569|4694|3|7
+#NL|South Holland
+Lombardijen||51874|4522|0|14
+Liesveld||51933|4832|2|10
+#NL|Utrecht
+Lopik||51973|4949|1|14
+Lunetten||52062|5135|4|12
+Loenen aan de Vecht||52210|5022|1|8
+Leersum||52012|5428|9|6
+Leusden-Zuid||52118|5406|6|5
+#NO|Agder
+Lillesand||58249|8378|7|8
+#NO|Troms
+Lenvik||69443|18156|75|12
+#NO|Vestland
+Leirvik||59780|5501|8|14
+Luster||61443|7460|8|5
+#NP|Koshi
+Lobuche||27948|86810|4949|9
+#NZ|Auckland
+Lynfield||-36928|174720|55|9
+#NZ|Canterbury
+Lincoln||-43650|172483|8|9
+#PA|Chiriquí Province
+Las Lomas||8429|-82389|59|12
+#PA|Darién
+La Palma||8405|-78140|4|2
+#PA|Herrera Province
+Llano Bonito||7974|-80421|20|10
+La Arena||7969|-80462|35|7
+#PA|Los Santos Province
+Las Tablas||7767|-80278|43|9
+Los Santos||7934|-80412|19|6
+#PA|Ngöbe-Buglé Comarca
+Llano Tugrí|Llano Tugri|8479|-81712|1222|0
+#PA|Panamá Oeste Province
+La Pesa||8854|-79825|95|8
+La Herradura||8852|-79806|84|6
+La Mitra||8843|-79784|90|6
+#PE|Arequipa
+Lluta||-16015|-72014|3023|6
+#PE|Ayacucho
+Las Nazarenas||-13155|-74216|2753|14
+#PE|Ica
+Los Aquijes||-14097|-75691|418|8
+#PE|Lambayeque
+La Pradera||-6779|-79886|25|10
+#PE|Loreto
+Lagunas||-5227|-75675|124|9
+#PE|Piura
+Las Lomas||-4653|-80247|242|9
+La Huaca||-4912|-80960|26|8
+La Legua - San Jacinto||-5236|-80659|28|8
+La Matanza||-5213|-80091|110|6
+#PE|Puno
+La Rinconada Ana Maria (La Rinconada)||-14634|-69447|5016|12
+#PE|San Martín Department
+Lamas||-6417|-76533|814|14
+#PG|Manus Province
+Lorengau||-2034|147272|45|6
+#PH|
+Libertad||8250|124233||5
+#PH|Autonomous Region in Muslim Mindanao
+Lu-uk||5968|121312|39|10
+Languyan||5262|120081|76|9
+Laminusa||5555|120914|3|8
+Lugus||5704|120820|8|7
+Lamitan City||6650|122130|42|6
+Litayan||7336|124035|36|5
+#PH|Bicol Region
+Libog||13235|123778|21|12
+Ligao||13217|123519|60|10
+Lagonoy||13734|123521|15|7
+Liboro||13825|122730|4|6
+#PH|Cagayan Valley
+Lasam||18065|121601|15|6
+#PH|Calabarzon
+Lusacan||13955|121345|52|15
+Lalig||13983|121326|51|15
+Laurel||14055|120919|81|10
+Laiya||13680|121401|31|8
+Lian||14034|120649|11|7
+Lumbangan||14052|120667|21|7
+#PH|Caraga
+Lianga||8634|126095|10|14
+Luna||9737|125498|12|8
+Lingig||8039|126413|8|6
+Libertad||8108|126026|33|6
+Loreto||8187|125853|25|6
+Loreto||10364|125573|56|5
+#PH|Central Luzon
+Lourdes||14967|120683|7|11
+Lupao||15879|120898|146|11
+Lambakin||14750|120867|2|9
+Licab||15544|120763|28|7
+Lucapon||15700|119932|9|6
+Ligaya||15509|121287|113|5
+Llanera||15664|121018|70|5
+#PH|Central Visayas
+Loon||9800|123793|24|9
+Lipayran||11059|123634|5|7
+Lunas||10640|123753|1|6
+La Libertad||10027|123234|9|6
+Langtad||10186|123734|0|6
+#PH|Cordillera
+Loacan||16550|120667|1045|6
+Liwan||17519|121632|64|5
+#PH|Davao Region
+Lasang||7267|125665|8|8
+La Libertad||7480|125647|23|5
+La Union||6704|126088|19|5
+#PH|Eastern Visayas
+Llorente||11412|125546|11|8
+Leyte||11367|124482|1|7
+#PH|Ilocos
+Lepa||15884|120451|21|9
+Loqueb Este||15945|120446|17|6
+Lloren||16333|120433|48|6
+#PH|Mimaropa
+Ligaya||12660|120892|8|8
+Lubang||13858|120124|10|6
+#PH|Northern Mindanao
+Lagonglong||8807|124790|13|9
+Lunao||8850|125056|10|9
+Langcangan||8479|123756|130|9
+Lumbia||8396|124594|154|8
+Lugait||8341|124259|7|7
+Lurugan||8017|124967|862|7
+Linamon||8186|124163|7|7
+Linabo||8054|125155|359|6
+Libona||8339|124735|576|6
+Lantapan||7998|125028|595|5
+#PH|Soccsksargen
+Lutayan||6619|124882|21|13
+Lun Pequeño|Lun Pequeno|6038|125284|13|12
+Lala||7973|123747|8|9
+Lamba||6350|124820|225|6
+Libungan||7241|124520|27|6
+Lopez Jaena||6476|124698|127|5
+#PH|Western Visayas
+Luna||10969|123242|15|11
+Lanot||11519|122757|10|7
+Lopez Jaena||10848|123414|66|6
+Lambunao||11056|122476|177|6
+La Granja||10408|122990|117|5
+Leon||10781|122389|68|5
+#PH|Zamboanga Peninsula
+Labuan||7100|121904|24|13
+Labangan||7865|123512|8|11
+Lapuyan||7638|123194|24|5
+#PK|Punjab
+Liliani||32204|72951|194|12
+#PK|Sindh
+Lakhi||27849|68700|72|14
+#PL|Kujawsko-Pomorskie
+Lipno||52844|19179|90|15
+#PL|Lesser Poland
+Limanowa||49706|20422|408|15
+#PL|Lower Silesia
+Lwówek Śląski|Lwowek Slaski|51111|15586|213|10
+Leśnica-Ratyń-Pustki|Lesnica-Ratyn-Pustki|51142|16848|125|9
+Lubawka||50705|16000|497|6
+Lądek-Zdrój|Ladek-Zdroj|50344|16879|434|6
+#PL|Lublin
+Ludwin||51346|22906|169|5
+#PL|Lubusz
+Lubsko||51785|14972|72|15
+#PL|Mazovia
+Łosice|Losice|52211|22718|150|7
+Łochów|Lochow|52531|21682|97|6
+Lipsko||51160|21649|162|6
+Lesznowola||52091|20935|116|5
+#PL|Opole Voivodeship
+Lewin Brzeski||50749|17617|149|6
+#PL|Pomerania
+Luzino||54566|18109|81|7
+#PL|Silesia
+Łazy|Lazy|50428|19395|341|7
+Łodygowice|Lodygowice|49730|19139|375|7
+Lipnik||49823|19075|382|6
+Leszczyny||49799|19063|407|5
+#PL|Subcarpathia
+Leżajsk|Lezajsk|50263|22419|178|14
+Lubaczów|Lubaczow|50157|23123|216|13
+Lesko||49470|22330|362|6
+#PL|Warmia-Masuria
+Lubawa||53504|19750|142|9
+Lidzbark||53263|19827|134|8
+#PL|West Pomerania
+Łobez|Lobez|53639|15621|63|11
+#PR|Lajas
+Lajas||18050|-67059|48|5
+#PR|Lares
+Lares||18295|-66877|319|7
+#PR|Las Marías
+Las Marías|Las Marias|18252|-66992|291|1
+#PR|Las Piedras
+Las Piedras||18183|-65866|136|7
+#PR|Loíza
+Loíza|Loiza|18431|-65880|3|4
+#PR|Luquillo
+Luquillo||18372|-65717|4|8
+#PT|Aveiro
+Lourosa||40984|-8551|159|10
+Lobão|Lobao|40987|-8486|213|6
+Lamas||40986|-8569|137|6
+#PT|Azores
+Lagoa||37745|-25572|22|14
+#PT|Coimbra
+Lousã|Lousa|40117|-8249|150|11
+#PT|Faro
+Lagoa||37135|-8453|53|6
+#PT|Leiria
+Louriçal|Lourical|40004|-8737|29|5
+#PT|Lisbon
+Lourinhã|Lourinha|39242|-9313|15|9
+#PT|Porto
+Lordelo||41235|-8403|243|10
+Lavra||41259|-8718|15|10
+#PT|Viseu
+Lamego||41097|-7810|502|11
+#PY|San Pedro Department
+Lima||-23885|-56479|136|10
+#RE|Reunion
+L'Étang-Salé|L'Etang-Sale|-21250|55383|304|14
+La Montagne||-20889|55423|431|12
+Les Avirons||-21241|55337|317|11
+Les Trois-Bassins||-21100|55300|801|7
+La Plaine-des-Palmistes||-21134|55628|1025|7
+#RO|Arad County
+Lipova||46091|21696|129|11
+#RO|Arges
+Leordeni||44783|25117|224|6
+#RO|Bacău County
+Livezi-Vale||46417|26733|246|5
+#RO|Bistrița-Năsăud County
+Lechinţa|Lechinta|47017|24350|344|6
+#RO|Constanța County
+Lumina||44283|28567|11|7
+#RO|Călărași County
+Lehliu-Gară|Lehliu-Gara|44433|26850|51|7
+#RO|Dolj
+Leu||44183|24000|163|5
+#RO|Dâmbovița County
+Lucieni||44850|25433|253|6
+Lunguleţu|Lunguletu|44617|25650|138|6
+Ludeşti|Ludesti|44867|25233|290|5
+#RO|Galați County
+Lieşti|Liesti|45617|27517|16|11
+#RO|Harghita County
+Lunca de Jos||46567|25983|899|5
+#RO|Iași County
+Leţcani|Letcani|47183|27417|46|7
+Lespezi||47367|26700|296|6
+Lungani||47183|27150|109|5
+#RO|Satu Mare County
+Livada||47867|23133|132|7
+Lazuri||47850|22867|123|5
+#RO|Suceava
+Liteni||47567|26200|314|10
+#RO|Teleorman County
+Lunca||43833|24767|34|6
+#RO|Timiș County
+Lovrin||45968|20770|92|9
+Lenauheim||45872|20799|86|6
+#RO|Tulcea County
+Luncaviţa|Luncavita|45283|28267|27|7
+#RO|Vaslui County
+Laza||46650|27583|219|7
+#RS|Central Serbia
+Lapovo||44184|21097|110|7
+#RU|Astrakhan Oblast
+Liman||45782|47224|-20|9
+#RU|Bryansk Oblast
+Lokot’|Lokot'|52575|34577|231|12
+Lyubokhna||53503|34388|164|5
+#RU|Chechnya
+Lakkha Nëvre|Lakkha Nevre|43610|45245|80|5
+#RU|Chelyabinsk
+Lokomotivnyy||53045|60616|322|11
+#RU|Dagestan
+Leninkent||42969|47352|112|14
+Levashi||42432|47324|1229|8
+Leninaul||43091|46574|512|8
+#RU|Irkutsk Oblast
+Lesogorsk||56046|99514|265|6
+#RU|Ivanovo Oblast
+Lezhnevo||56775|40892|108|8
+#RU|Jewish Autonomous Oblast
+Leninskoye||47943|132619|55|7
+#RU|Kalmykiya Republic
+Lagan’|Lagan'|45392|47365|-27|14
+#RU|Karelia
+Lakhdenpokh’ya|Lakhdenpokh'ya|61520|30198|14|8
+Loukhi||66075|33049|95|6
+#RU|Kirov Oblast
+Lyangasovo||58518|49447|142|13
+Luza||60626|47264|90|12
+Lesnoy||59781|52128|174|7
+Leninskoye||58316|47088|162|5
+#RU|Krasnodar Krai
+Ladozhskaya||45309|39938|94|15
+Lenina||46067|39783|36|5
+#RU|Kurgan Oblast
+Lebyazh’ye|Lebyazh'ye|55274|66495|145|7
+Lesnikovo||55282|65317|86|6
+#RU|Leningradskaya Oblast'
+Lebyazh’ye|Lebyazh'ye|59962|29415|12|6
+#RU|Lipetsk Oblast
+Lev Tolstoy||53210|39454|211|9
+#RU|Mordoviya Republic
+Lukhovka||54148|45257|139|9
+Lyambir’|Lyambir'|54280|45122|194|8
+#RU|Moscow
+LMS||55314|37185|198|5
+#RU|Moscow Oblast
+Lopatinskiy||55341|38724|122|14
+Lopatino||55528|37647|158|14
+L’vovskiy|L'vovskiy|55319|37523|183|11
+Lesnoy||56067|37917|181|9
+Lotoshino||56234|35644|156|5
+Lesnoy Gorodok||55639|37208|201|5
+#RU|Nizhny Novgorod Oblast
+Lukoyanov||55031|44482|174|13
+Linda||56616|44095|94|5
+#RU|Omsk Oblast
+Lyubinskiy||55158|72693|107|10
+Luzino||54948|73035|105|10
+#RU|Penza Oblast
+Lunino||53592|45227|147|8
+#RU|Primorye
+Livadiya||42868|132673|14|13
+Lipovtsy||44200|131723|160|7
+#RU|Rostov
+Likhovskoy||48152|40179|219|14
+#RU|Ryazan Oblast
+Lesnoy||54213|40471|137|7
+#RU|Saratov Oblast
+Lysyye Gory||51551|44840|139|8
+#RU|St.-Petersburg
+Lakhtinskiy||59995|30147|8|10
+#RU|Stavropol Kray
+Levokumskoye||44822|44661|68|11
+Lysogorskaya||44106|43276|355|10
+Levokumka||44232|43150|297|6
+Ladovskaya Balka||45630|41402|99|5
+#RU|Sverdlovsk Oblast
+Lobva||59185|60518|100|8
+#RU|Tatarstan Republic
+Laishevo||55406|49552|100|8
+#RU|Tula Oblast
+Leninskiy||54287|37457|185|10
+Lipki||54326|37520|238|8
+#RU|Tver Oblast
+Likhoslavl’|Likhoslavl'|57127|35464|167|12
+#RU|Volgograd Oblast
+Linëvo|Linevo|50888|44831|134|5
+#RU|Voronezh Oblast
+Latnaya||51650|38899|143|7
+#RU|Yaroslavl Oblast
+Lyubim||58362|40687|105|6
+#SB|Temotu Province
+Lata||-10725|165797|29|1
+#SC|La Digue and Inner Islands
+La Passe||-4348|55833|10|0
+#SE|Dalarna
+Leksand||60730|15000|163|6
+#SE|Gävleborg
+Ljusdal||61829|16091|132|7
+#SE|Halland
+Laholm||56512|13044|17|7
+#SE|Kalmar
+Lindsdal||56733|16300|18|6
+#SE|Skåne
+Lomma||55672|13068|1|12
+Löddeköpinge|Loeddekoepinge|55767|13017|10|6
+#SE|Västerbotten
+Lycksele||64595|18674|224|9
+#SE|Västra Götaland
+Lindome||57567|12083|11|11
+Landvetter||57687|12212|63|9
+Lysekil||58274|11436|12|8
+Lövgärdet|Loevgaerdet|57816|12039|93|7
+#SE|Örebro
+Lindesberg||59592|15230|74|10
+#SE|Östergötland
+Ljungsbro||58517|15500|68|7
+#SG|
+Lavender||1307|103863|12|10
+Lucky Hills||1326|103953|9|7
+Leedon Park||1317|103794|27|6
+#SI|Ljutomer
+Ljutomer||46518|16198|186|3
+#SI|Logatec
+Logatec||45917|14227|479|9
+#SI|Lukovica
+Lukovica pri Domžalah|Lukovica pri Domzalah|46170|14692|341|0
+#SI|Municipality of Laško
+Laško|Lasko|46155|15236|226|3
+#SI|Municipality of Lenart
+Lenart v Slovenskih Goricah||46577|15832|261|3
+#SI|Municipality of Lendava
+Lendava||46565|16451|164|3
+#SI|Municipality of Litija
+Litija||46060|14822|260|7
+#SI|Municipality of Ljubno
+Ljubno ob Savinji||46344|14834|430|1
+#SI|Municipality of Lovrenc na Pohorju
+Lovrenc na Pohorju||46541|15392|430|2
+#SI|Municipality of Loška Dolina
+Leskova Dolina||45621|14461|834|1
+#SI|Municipality of Luče
+Luče|Luce|46355|14748|591|0
+#SI|Municipality of Piran
+Lucija||45505|13602|2|6
+#SK|Bratislava Region
+Lamač|Lamac|48193|17051|226|8
+#SK|Prešov Region
+Levoča|Levoca|49022|20592|536|14
+Lipany||49154|20964|387|6
+Lendak||49234|20356|744|6
+#SK|Žilina Region
+Liptovský Hrádok|Liptovsky Hradok|49040|19723|640|7
+#SO|Sanaag
+Las Khorey||11160|48197|6|7
+#SR|Paramaribo District
+Livorno||5780|-55181|5|8
+#SX|
+Lower Prince’s Quarter|Lower Prince's Quarter|18050|-63038|40|8
+Little Bay||18026|-63065|10|6
+#TH|Kamphaeng Phet
+Lan Krabue||16600|99849|58|8
+#TH|Phrae
+Long||18074|99831|139|12
+#TH|Uthai Thani
+Lan Sak||15453|99576|112|14
+#TN|Monastir Governorate
+Lemta||35667|10883|22|6
+#TN|Siliana Governorate
+Le Krib||36328|9136|481|8
+#TR|Canakkale
+Lapseki||40344|26686|24|10
+#TR|Samsun
+Ladik||40911|35892|940|10
+#TZ|Arusha
+Longido||-2733|36698|1348|9
+#TZ|Morogoro
+Lupiro||-8383|36667|299|11
+#TZ|Mtwara
+Lulindi||-10817|39133|441|8
+#TZ|Ruvuma
+Liuli||-11083|34633|476|13
+#UA|Cherkasy
+Lysyanka||49250|30828|160|8
+#UA|Chernihiv Oblast
+Ladan||50518|32584|114|7
+#UA|Dnipropetrovsk
+Lozuvatka||48060|33281|90|6
+#UA|Donetsk
+Lazurnyi||48748|37621|151|13
+Lazurnyi||48258|37183|194|9
+Lozivskyi||48019|37720|232|5
+Lidiyivka||47989|37677|211|5
+#UA|Ivano-Frankivsk
+Lanchyn||48552|24749|366|8
+#UA|Kharkiv
+Lymanivka||48938|36277|158|7
+#UA|Kherson
+Lyubymivka||46810|33568|58|6
+#UA|Khmelnytskyi
+Letychiv||49380|27619|274|10
+#UA|Luhansk
+Lyubymivka||48046|39439|241|9
+#UA|Odesa
+Lymanka||46386|30677|46|13
+Luzanivka||46557|30769|6|10
+Lyubashivka||47834|30252|182|9
+Lymanske||46680|29972|11|7
+#UA|Poltava
+Levada||49569|34581|76|14
+Lokhvytsya||50364|33272|106|11
+#UA|Sumy
+Lypova Dolyna||50563|33792|138|5
+#UA|Ternopil
+Lanivtsi||49861|26091|272|8
+#UA|Vinnytsia
+Lypovets||49228|29057|242|8
+Lityn||49327|28087|254|7
+#UA|Volyn
+Liuboml||51225|24032|184|10
+Liubeshiv||51765|25513|149|6
+#US|Alabama
+Leeds||33548|-86544|191|12
+Lake Purdy||33430|-86681|202|8
+Lincoln||33613|-86118|153|7
+Lanett||32869|-85190|180|6
+#US|Alaska
+Lakes||61607|-149309|109|8
+#US|Arizona
+Laveen||33363|-112169|315|6
+Litchfield Park||33493|-112358|314|6
+#US|Arkansas
+Lowell||36255|-94131|409|9
+#US|California
+Los Osos||35311|-120832|40|14
+Livingston||37387|-120724|40|14
+Lindsay||36203|-119088|118|13
+Lake Arrowhead||34248|-117189|1577|12
+Larkspur||37934|-122535|13|12
+Lake Los Angeles||34612|-117828|811|12
+Lakeland Village||33639|-117344|391|12
+Los Alamitos||33803|-118073|7|11
+La Riviera||38567|-121357|16|11
+Larchmont||34080|-118318|74|9
+Larkfield-Wikiup||38513|-122751|98|9
+Live Oak||39276|-121660|24|9
+Los Altos Hills||37380|-122137|89|8
+Lemoore Station||36263|-119905|69|7
+Los Serranos||33973|-117708|204|7
+Loomis||38821|-121193|123|7
+Longwood - Winton Grove||37659|-122109|26|7
+Ladera Heights||33994|-118375|93|6
+Lucas Valley-Marinwood||38040|-122575|193|6
+Las Flores||34037|-118636|11|6
+Las Flores||33588|-117627|218|6
+Lucerne Valley||34444|-116968|900|6
+La Habra Heights||33961|-117951|225|5
+#US|Colorado
+Lone Tree||39552|-104886|1813|13
+Lamar||38087|-102621|1103|8
+La Junta||37985|-103544|1243|7
+Lochbuie||40007|-104716|1530|5
+#US|District of Columbia
+Lincoln Heights||38895|-76929|47|9
+#US|Florida
+Lady Lake||28917|-81923|26|15
+Longwood||28703|-81338|22|14
+Lockhart||28619|-81443|26|13
+Lake City||30190|-82639|59|12
+Lakes by the Bay||25572|-80325|1|11
+Lakewood Park||27543|-80402|6|11
+Lantana||26587|-80052|2|11
+Lighthouse Point||26276|-80087|1|11
+Lakeland Highlands||27960|-81950|68|11
+Lake Lucerne||25965|-80241|1|9
+Lake Park||26800|-80066|4|9
+Laurel||27144|-82462|3|8
+Longboat Key||27413|-82659|1|7
+Lake Lorraine||30442|-86565|8|7
+Live Oak||30295|-82984|32|7
+Lauderdale-by-the-Sea||26192|-80096|3|6
+Lecanto||28852|-82488|14|6
+Lake Forest||25978|-80183|2|6
+Lake Alfred||28092|-81723|53|5
+#US|Georgia
+Lilburn||33890|-84143|291|13
+Loganville||33839|-83901|306|11
+LaFayette||34705|-85282|250|7
+Lovejoy||33436|-84314|291|6
+Locust Grove||33346|-84109|254|6
+#US|Hawaii
+Lahaina||20875|-156680|1|12
+Lihue||21981|-159372|65|6
+Lā‘ie|La'ie|21645|-157922|3|6
+#US|Illinois
+Lindenhurst||42411|-88026|243|14
+Lincoln||40148|-89365|177|14
+La Grange Park||41835|-87862|190|14
+Lincolnwood||42004|-87730|184|13
+Lyons||41813|-87818|189|11
+La Salle||41333|-89092|174|10
+Lynwood||41526|-87539|188|9
+Lake Villa||42417|-88074|241|9
+Long Grove||42178|-87998|223|8
+Lynwood||41684|-88394|197|8
+Lincolnshire||42190|-87908|201|7
+Litchfield||39175|-89654|211|7
+Lakemoor||42329|-88199|232|6
+Lake Bluff||42279|-87834|201|6
+#US|Indiana
+Lake Station||41575|-87239|189|12
+Lowell||41291|-87421|204|9
+Lakes of the Four Seasons||41410|-87213|233|7
+Linton||39035|-87166|162|5
+#US|Iowa
+Le Mars||42794|-96166|376|10
+#US|Kansas
+Lansing||39249|-94900|258|12
+#US|Kentucky
+Lyndon||38257|-85602|177|11
+Lawrenceburg||38037|-84897|240|11
+La Grange||38408|-85379|263|9
+London||37129|-84083|378|8
+Leitchfield||37480|-86294|227|7
+Lebanon||37570|-85253|241|6
+#US|Louisiana
+Luling||29932|-90366|2|12
+Lacombe||30314|-89943|4|9
+Larose||29572|-90382|2|7
+Leesville||31144|-93261|78|6
+#US|Maine
+Lisbon||44031|-70104|55|9
+Lebanon||43395|-70851|85|5
+#US|Maryland
+Lexington Park||38267|-76454|36|12
+Largo||38888|-76836|53|11
+Linthicum||39205|-76653|41|10
+Lanham||38969|-76863|43|10
+Lake Arbor||38908|-76830|50|10
+La Plata||38529|-76975|57|9
+Leisure World||39102|-77069|128|9
+Linganore||39411|-77302|147|9
+Lansdowne||39245|-76661|26|8
+Londontowne||38933|-76549|6|8
+Lutherville||39421|-76626|126|7
+Loch Raven||39361|-76582|91|6
+Layhill||39092|-77044|134|5
+#US|Massachusetts
+Lynnfield||42539|-71048|27|12
+Leicester||42246|-71909|298|11
+Lincoln||42426|-71304|77|8
+Lancaster||42456|-71673|94|8
+Lower Allston||42365|-71126|3|7
+#US|Michigan
+Lambertville||41766|-83628|205|10
+Lapeer||43051|-83319|262|9
+Ludington||43955|-86453|180|8
+Lake Fenton||42846|-83708|268|6
+#US|Minnesota
+Little Canada||45027|-93088|278|10
+Little Falls||45976|-94362|339|9
+Lake Elmo||44996|-92879|278|8
+Litchfield||45127|-94528|344|7
+Lake City||44450|-92268|210|5
+#US|Mississippi
+Louisville||33124|-89055|174|6
+Latimer||30535|-88867|22|6
+#US|Missouri
+Lebanon||37681|-92664|384|15
+Lake Saint Louis||38798|-90786|172|15
+Ladue||38650|-90381|188|9
+#US|Montana
+Livingston||45662|-110561|1372|7
+Laurel||45669|-108772|1006|7
+Lockwood||45819|-108415|943|7
+Lewistown||47062|-109428|1203|6
+#US|Nebraska
+Lexington||40781|-99741|729|10
+#US|Nevada
+Laughlin||35168|-114573|170|7
+Lemmon Valley||39636|-119843|1512|5
+#US|New Hampshire
+Lebanon||43642|-72252|178|14
+Londonderry||42865|-71374|128|11
+Litchfield||42844|-71480|37|8
+#US|New Jersey
+Lumberton||39966|-74805|9|13
+Little Ferry||40853|-74042|3|11
+Little Falls||40869|-74208|110|11
+Lincoln Park||40924|-74302|55|10
+Lake Mohawk||41018|-74660|229|10
+Lake Hiawatha||40883|-74382|77|9
+Leonia||40861|-73988|32|9
+Lake Hopatcong||40948|-74617|307|9
+Linwood||39340|-74575|8|7
+Laurence Harbor||40457|-74247|8|7
+Landing||40905|-74665|281|6
+Lincroft||40331|-74121|23|6
+Little Silver||40337|-74047|9|6
+#US|New Mexico
+Las Vegas||35594|-105224|1958|13
+Los Alamos||35888|-106307|2198|12
+Lovington||32944|-103349|1192|12
+Los Ranchos de Albuquerque||35162|-106643|1520|6
+Lee Acres||35149|-106647|1518|6
+Lee Acres||36699|-108037|1667|6
+Los Chavez||34726|-106757|1470|5
+#US|New York
+Lake Grove||40853|-73115|36|11
+Lancaster||42901|-78670|204|10
+Little Neck||40763|-73732|30|10
+Lake Carmel||41461|-73671|244|8
+Lawrence||40616|-73730|6|7
+Larchmont||40928|-73752|16|6
+Lake Mohegan||41318|-73846|159|6
+Lakeview||42432|-75865|385|6
+Lakeview||40682|-73654|12|6
+#US|North Carolina
+Lewisville||36097|-80419|297|14
+Lincolnton||35474|-81255|254|11
+Long Beach||33910|-78118|2|6
+Lake Norman of Catawba||35587|-80960|248|5
+#US|Ohio
+Lyndhurst||41520|-81489|315|14
+Loveland||39269|-84264|181|13
+Lewis Center||40198|-83010|286|11
+London||39886|-83448|321|10
+Louisville||40837|-81260|348|9
+Lincoln Village||39955|-83131|277|9
+Logan||39540|-82407|226|7
+Landen||39312|-84283|248|7
+#US|Oklahoma
+Lone Grove||34175|-97263|289|5
+#US|Oregon
+La Grande||45325|-118088|846|13
+Lincoln City||44958|-124018|24|9
+#US|Pennsylvania
+Lower Burrell||40553|-79757|229|12
+Landenberg||39777|-75771|57|12
+Logan Square||39956|-75171|11|11
+Lansdowne||39938|-75272|40|11
+Lock Haven||41137|-77447|170|10
+Lititz||40157|-76307|117|9
+Lewistown||40599|-77571|150|8
+Latrobe||40321|-79379|304|8
+Leola||40088|-76185|131|7
+Lower Allen||40226|-76901|117|7
+Linglestown||40334|-76789|165|6
+Lionville||40054|-75660|165|6
+Lewisburg||40965|-76884|144|6
+Lehighton||40834|-75714|174|5
+#US|South Carolina
+Ladson||32986|-80110|15|14
+Laurens||34499|-82014|186|9
+Little River||33873|-78614|11|9
+Lancaster||34720|-80771|173|9
+Lake Wylie||35108|-81043|178|9
+Lugoff||34227|-80689|80|7
+Lake City||33871|-79755|23|7
+Laurel Bay||32450|-80785|11|6
+Lake Murray of Richland||34120|-81264|114|5
+#US|Tennessee
+Lakeland||35231|-89740|121|13
+Lewisburg||35449|-86789|225|11
+Lawrenceburg||35242|-87335|273|11
+Lenoir City||35797|-84256|250|9
+Lexington||35651|-88393|159|8
+LaFollette||36383|-84120|327|7
+Lynchburg||35283|-86374|245|6
+Loudon||35733|-84334|255|6
+#US|Texas
+Lakeway||30364|-97980|251|14
+Levelland||33587|-102378|1073|14
+Lockhart||29885|-97670|157|13
+Lumberton||30266|-94200|18|12
+La Homa||26250|-98364|50|12
+Leon Valley||29495|-98619|252|11
+Lackland Air Force Base||29387|-98618|228|10
+Lamesa||32738|-101951|912|9
+Liberty||30058|-94795|9|9
+Lake Dallas||33119|-97026|175|8
+Lampasas||31064|-98182|313|8
+La Feria||26159|-97824|17|7
+Lucas||33084|-96577|173|7
+Lantana||33091|-97124|190|7
+Lacy-Lakeview||31629|-97103|148|7
+Los Fresnos||26072|-97476|7|7
+Lago Vista||30460|-97988|236|7
+Littlefield||33917|-102325|1085|6
+Luling||29681|-97647|125|6
+Lindale||32516|-95409|168|6
+Livingston||30711|-94933|51|5
+Lakehills||29605|-98943|374|5
+#US|Utah
+Lindon||40343|-111721|1415|11
+Little Cottonwood Creek Valley||40604|-111829|1409|8
+#US|Vermont
+Lyndon||44514|-72011|234|5
+#US|Virginia
+Lakeside||37608|-77477|54|12
+Lowes Island||39060|-77352|57|11
+Lake Monticello||37923|-78335|113|10
+Lake Barcroft||38848|-77156|80|10
+Lexington||37784|-79443|324|7
+Lake of the Woods||38334|-77760|103|7
+Laurel Hill||38717|-77237|72|7
+#US|Washington
+Lynden||48947|-122452|33|14
+Lake Forest Park||47757|-122281|23|13
+Lea Hill||47326|-122182|126|13
+Lakeland North||47333|-122277|140|13
+Lakeland South||47278|-122283|124|12
+Lake Morton-Berrydale||47333|-122103|140|10
+Liberty Lake||47676|-117118|632|9
+Lake Stickney||47877|-122262|142|8
+Lake Shore||45691|-122691|68|7
+#US|Wisconsin
+Little Chute||44280|-88318|223|11
+Lake Geneva||42592|-88433|268|8
+Lake Hallie||44876|-91441|272|7
+Lake Mills||43081|-88912|256|6
+#US|Wyoming
+Lander||42833|-108731|1632|8
+#UY|Rocha Department
+Lascano||-33672|-54206|45|7
+#UY|San José Department
+Libertad||-34635|-56617|40|10
+#VC|Saint Andrew Parish
+Layou||13202|-61270|12|0
+#VE|Barinas
+Libertad||8327|-69631|103|13
+#VE|Falcón
+La Aguada||11277|-67464||7
+#VE|Táchira
+Lobatera||7930|-72247|957|14
+#VN|Bac Ninh
+Lim||21144|106020|12|10
+#VN|Dak Lak
+Liên Sơn|Lien Son|12411|108177|429|5
+#VN|Dong Nai
+Lộc Ninh|Loc Ninh|11845|106591|112|11
+#VN|Hanoi
+Liên Quan|Lien Quan|21057|105579|9|9
+#VN|Lạng Sơn Province
+Lộc Bình|Loc Binh|21759|106923|279|9
+#VN|Quang Tri
+Lao Bảo|Lao Bao|16614|106601|201|13
+#VN|Thừa Thiên Huế Province
+Lăng Cô|Lang Co|16239|108080|7|11
+#VN|Điện Biên Province
+Lay Nưa|Lay Nua|22018|103116|675|5
+#VU|Malampa
+Lakatoro||-16100|167416|10|1
+#VU|Sanma
+Luganville||-15520|167162|8|13
+#WF|Sigave
+Leava||-14293|-178158|7|0
+#WS|A'ana
+Leulumoega||-13823|-171961|11|1
+#WS|Atua
+Lufilufi||-13874|-171599|20|1
+#XK|Pristina
+Lipljan||42522|21126|553|9
+#ZA|Eastern Cape
+Lady Grey||-30711|27216|1647|8
+Lusikisiki||-31362|29573|572|7
+Louterwater||-33800|23664|670|6
+Libode||-31543|29016|792|5
+#ZA|Free State
+Lindley||-27879|27913|1519|14
+#ZA|KwaZulu-Natal
+Lidgetton||-29440|30100|1199|5
+#ZA|Limpopo
+Lenyenye||-23971|30270|607|14
+Lillydale||-24866|31369|458|7
+Ludlow||-24669|31279|488|6
+#ZA|Mpumalanga
+Leeuwfontein-C||-25170|28904|1013|10
+Lothair||-26389|30435|1721|7
+#ZA|North West
+Lehurutshe||-25481|25965|1280|8
+#ZA|Western Cape
+Langebaan||-33098|18032|17|10
+Ladismith||-33493|21268|544|9
+Lamberts Bay||-32097|18309|22|7
+Laingsburg||-33195|20859|654|7
+Lutzville||-31560|18344|22|6
+Languedoc||-33897|18967|251|5
+#ZM|Luapula Province
+Lubwe||-11117|29646|1179|13
+#ZM|Lusaka Province
+Luangwa||-15617|30417|328|9
+#ZM|Southern Province
+Lubombo||-15867|27876|1041|10
+#ZM|Western Province
+Limulunga||-15097|23138|1023|11
+#ZW|Matabeleland North
+Lupane||-18931|27807|1016|2

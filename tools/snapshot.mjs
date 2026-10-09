@@ -10,6 +10,8 @@
 // "commercial": true the EEX auction report and the GitHub-hosted oil dataset are skipped, and the carbon feed
 // is the UK ETS Authority determination published on GOV.UK under the Open Government Licence.
 //
+// It also rebuilds the global forecast grids under data/grid/ (tools/grid.mjs; skip with --no-grid).
+//
 // Environment: SNAPSHOT_PREV_URL — address of the previously published snapshot.json, used as the last-good
 // source when the working copy has none newer. AEROSUITE_COMMERCIAL=1 forces commercial mode.
 
@@ -17,6 +19,7 @@ import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { inflateRawSync } from 'node:zlib';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { CARBON_MARKETS } from './carbon-markets.mjs';
 import { CONNECTORS, config, setConfig, allowed, feedAllowed, loadLicences, ukEtsCarbon, brentSeries, brentFromDataset, usdKgFromUsdGal, usdFromEur, JET_DENSITY_KG_L, L_PER_US_GAL } from '../js/core/live.js';
 
 const root = resolve(fileURLToPath(new URL('..', import.meta.url)));
@@ -124,26 +127,34 @@ export const FEEDS = {
     },
   },
   carbon: {
-    // Default: the UK ETS Authority's published carbon price (Open Government Licence). EEX's site terms require written approval
-    // for reuse, so its auction report is fetched only where the operator holds that approval and lists 'eex-auction' under "accept".
-    get source() { return eexOpen() ? 'European Energy Exchange (EEX) — Emission Spot Primary Market Auction Report (EU ETS allowance auctions held for the EU Member States)' : 'UK ETS Authority — determination of the UK ETS carbon price (GOV.UK)'; },
-    get home() { return eexOpen() ? 'https://www.eex.com/en/markets/environmentals/eu-ets1-eu-ets2-auctions/eu-ets1-auctions' : 'https://www.gov.uk/government/publications/determinations-of-the-uk-ets-carbon-price'; },
-    get terms() { return eexOpen() ? 'Non-commercial deployments only. EEX website terms: contents may not be copied or distributed without the prior written approval of EEX AG. Only the most recent clearing price is quoted, with attribution and a link to the source; the auction dataset itself is not redistributed.' : 'Open Government Licence v3.0: contains public sector information licensed under the Open Government Licence v3.0. A UK ETS figure fixed once a year; not an EU ETS price.'; },
-    get registry() { return [eexOpen() ? 'eex-auction' : 'uk-ets-price']; },
-    async run(get, done) {
-      const fx = done.fx?.data;
-      if (!eexOpen() || !(await allowed('eex-auction'))) {
-        const d = await ukEtsCarbon(get), rate = fx?.rates?.GBP, { registry, ...data } = d;
-        return { ...data, usd_t: Number.isFinite(rate) ? Math.round(usdFromEur(d.price, rate) * 100) / 100 : null, fx_per_usd: rate ?? null, fx_date: fx?.date ?? null };
+    // A panel of official allowance prices, each published under an open licence that allows commercial reuse, one record per
+    // market: EU ETS (European Commission, CC BY 4.0), UK ETS (UK ETS Authority, OGL v3.0), California–Québec (Gouvernement du
+    // Québec, CC BY 4.0). A market that fails keeps its previous record. EEX's site terms require written approval for reuse, so
+    // its auction report is read only where the operator holds that approval and lists 'eex-auction' under "accept".
+    source: 'European Commission (price of CBAM certificates: quarterly average EU ETS auction clearing price); UK ETS Authority (GOV.UK); Gouvernement du Québec (joint California–Québec auctions)', home: 'https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/price-cbam-certificates_en',
+    terms: 'European Commission content: CC BY 4.0 (reuse allowed with credit and changes indicated). GOV.UK: Open Government Licence v3.0. Données Québec: CC BY 4.0. Each record names its market, date, instrument and source.',
+    get registry() { return ['ec-cbam-price', 'uk-ets-price', 'quebec-wci-auction', ...(eexOpen() ? ['eex-auction'] : [])]; },
+    async run(get, done, keep) {
+      const fx = done.fx?.data, markets = {}, errors = {}, old = keep?.data?.markets || {}, day = 86400e3, iso = (t) => new Date(t).toISOString().slice(0, 10);
+      const usd = (m) => { const rate = m.currency === 'USD' ? 1 : fx?.rates?.[m.currency]; return { ...m, usd_t: Number.isFinite(rate) ? Math.round((m.price / rate) * 100) / 100 : null, fx_per_usd: rate ?? null, fx_date: fx?.date ?? null }; };
+      const add = async (id, registry, fn) => { try { if (!(await allowed(registry))) return; markets[id] = usd({ id, ...(await fn()), registry: [registry] }); } catch (e) { errors[id] = String(e.message || e).slice(0, 160); if (old[id] && (await feedAllowed({ data: 1, registry: old[id].registry }))) markets[id] = old[id]; } };
+      for (const [id, reg] of [['eu-ets-cbam', 'ec-cbam-price'], ['wci-joint-auction', 'quebec-wci-auction']]) {
+        const M = CARBON_MARKETS[id];
+        await add(id, reg, async () => { const r = await M.fetch(get); return { ...r, scheme: M.scheme, market: M.market, countries: M.countries, ...(M.subdivisions ? { subnational: true, subdivisions: M.subdivisions } : {}), source: M.publisher, attribution: M.attribution, licence: M.licence,
+          valid_to: iso(Date.parse(r.date) + (r.quarterly === false ? 24 : 110) * day) }; }); // the figure stands until the next one is due: quarterly now, weekly once the Commission publishes weekly prices
+        if (id === 'eu-ets-cbam') await add('uk-ets', 'uk-ets-price', async () => { const { registry, ...d } = await ukEtsCarbon(get); return { ...d, scheme: 'UK ETS', market: 'UK ETS — carbon price determined for the scheme year', countries: ['GB'], licence: 'Open Government Licence v3.0' }; });
       }
-      const y = new Date().getUTCFullYear(), file = (yr) => `https://public.eex-group.com/eex/eua-auction-report/emission-spot-primary-market-auction-report-${yr}-data.xlsx`;
-      let all = [], used = null;
-      for (const yr of [y, y - 1]) { try { const r = await get(file(yr)); if (!r.ok) throw new Error(`HTTP ${r.status}`); const a = parseEexAuctions(readXlsxSheet(Buffer.from(await r.arrayBuffer()))); if (a.length) { all = all.concat(a); used ||= file(yr); if (all.length >= 60) break; } } catch (e) { if (yr === y - 1 && !all.length) throw e; } }
-      const eua = all.filter((a) => /EUA|T3PA/i.test(a.contract) || /CAP3/i.test(a.name) || !a.contract), pool = eua.filter((a) => a.zone === 'EU').length ? eua.filter((a) => a.zone === 'EU') : eua, last = pool[0];
-      if (!last || !(last.eur_t > 1 && last.eur_t < 1000)) throw new Error('no plausible auction price');
-      const rate = fx?.rates?.EUR;
-      return { date: last.date, eur_t: last.eur_t, usd_t: Number.isFinite(rate) ? Math.round(usdFromEur(last.eur_t, rate) * 100) / 100 : null, eur_per_usd: rate ?? null, fx_date: fx?.date ?? null,
-        instrument: 'EU ETS allowance (EUA), phase 4 — clearing price of the primary auction on EEX, EUR per tonne CO₂', auction: last.name, contract: last.contract, zone: last.zone, file: used }; // only the latest clearing price is republished, with attribution — not the auction dataset
+      if (eexOpen()) await add('eu-ets-eex-auction', 'eex-auction', async () => {
+        const y = new Date().getUTCFullYear(), file = (yr) => `https://public.eex-group.com/eex/eua-auction-report/emission-spot-primary-market-auction-report-${yr}-data.xlsx`;
+        let all = [], used = null;
+        for (const yr of [y, y - 1]) { try { const r = await get(file(yr)); if (!r.ok) throw new Error(`HTTP ${r.status}`); const a = parseEexAuctions(readXlsxSheet(Buffer.from(await r.arrayBuffer()))); if (a.length) { all = all.concat(a); used ||= file(yr); if (all.length >= 60) break; } } catch (e) { if (yr === y - 1 && !all.length) throw e; } }
+        const eua = all.filter((a) => /EUA|T3PA/i.test(a.contract) || /CAP3/i.test(a.name) || !a.contract), pool = eua.filter((a) => a.zone === 'EU').length ? eua.filter((a) => a.zone === 'EU') : eua, last = pool[0];
+        if (!last || !(last.eur_t > 1 && last.eur_t < 1000)) throw new Error('no plausible auction price');
+        return { date: last.date, price: last.eur_t, currency: 'EUR', scheme: 'EU ETS', market: 'EU ETS (EUA) — latest primary auction on EEX', countries: CARBON_MARKETS['eu-ets-cbam'].countries, instrument: 'EU ETS allowance (EUA), phase 4 — clearing price of the primary auction on EEX, EUR per tonne CO₂', source: 'EEX (used with the operator\'s licence)', attribution: 'EU allowance auction price: EEX (European Energy Exchange)', auction: last.name, url: used };
+      });
+      const order = ['eu-ets-eex-auction', 'eu-ets-cbam', 'uk-ets', 'wci-joint-auction'].filter((id) => markets[id]);
+      if (!order.length) throw new Error(Object.values(errors)[0] || 'no carbon market could be read');
+      return { markets, order, errors, _meta: { registry: [...new Set(order.flatMap((id) => markets[id].registry))] } };
     },
   },
   rates: {
@@ -177,7 +188,7 @@ export async function buildSnapshot({ only = null, previous = null } = {}) {
     const old = previous?.feeds?.[id], keep = old?.data && (await feedAllowed(old)) ? old : null; // an earlier value from a source this deployment may not use is dropped, not carried over
     if (only && !only.includes(id)) { if (keep) feeds[id] = keep; continue; }
     const urls = [], now = Date.now(), base = { source: f.source, home: f.home, terms: f.terms, registry: f.registry };
-    try { const { _meta, ...data } = await f.run(makeGet(urls), feeds); feeds[id] = { ok: true, ts: now, fetched: new Date(now).toISOString(), ...base, ...(_meta || {}), url: urls[urls.length - 1] || f.home, urls, data }; }
+    try { const { _meta, ...data } = await f.run(makeGet(urls), feeds, keep); feeds[id] = { ok: true, ts: now, fetched: new Date(now).toISOString(), ...base, ...(_meta || {}), url: urls[urls.length - 1] || f.home, urls, data }; }
     catch (e) { feeds[id] = { ok: false, error: String(e.message || e).slice(0, 200), tried: new Date(now).toISOString(), ts: keep ? keep.ts : null, fetched: keep ? keep.fetched : null, ...base, ...(keep ? { source: keep.source, home: keep.home, terms: keep.terms, registry: keep.registry } : {}), url: urls[urls.length - 1] || f.home, urls, data: keep?.data ?? null }; }
   }
   return { schema: 1, generated: new Date().toISOString(), generator: 'tools/snapshot.mjs', interval_h: INTERVAL_H, commercial: config.commercial, feeds };
@@ -196,6 +207,11 @@ if (isMain) {
   await mkdir(dirname(out), { recursive: true });
   await writeFile(out, JSON.stringify(snap, null, 1) + '\n');
   for (const [id, f] of Object.entries(snap.feeds)) console.log(`${f.ok ? 'ok  ' : 'FAIL'} ${id.padEnd(13)} ${f.ok ? '' : f.error + (f.data ? ' — keeping the value fetched ' + f.fetched : ' — no earlier value')}`);
+  // global forecast grids (NOAA GFS weather, DWD sea state, NOAA aerosols) next to the snapshot: see tools/grid.mjs
+  if (!args.includes('--no-grid') && !only && (!arg('--out') || args.includes('--grid'))) {
+    const { buildGrids } = await import('./grid.mjs'), g = await buildGrids({ outDir: join(dirname(out), 'grid'), accept: config.accept });
+    for (const [id, p] of Object.entries(g.products)) console.log(`${p.ok ? 'ok  ' : 'FAIL'} grid:${id.padEnd(8)} ${p.ok ? `${p.cycle.slice(0, 13)}Z, ${p.times.length} valid times, ${(p.bytes / 1e3).toFixed(0)} kB` : p.error + (p.times ? ' — keeping the previous files' : '')}`);
+  }
   console.log(`mode: ${snap.commercial ? 'commercial (EEX report and GitHub-hosted dataset skipped)' : 'non-commercial'}`);
   console.log(`${out}: ${Object.values(snap.feeds).filter((f) => f.ok).length}/${Object.keys(snap.feeds).length} feeds, generated ${snap.generated}`);
 }

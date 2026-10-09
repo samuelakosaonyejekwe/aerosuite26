@@ -1,0 +1,1488 @@
+#AL|Berat County
+Velabisht||40702|19932|60|8
+#AM|Ararat
+Vedi||39913|44721|904|12
+Vosketap||39881|44649|841|5
+#AM|Gegharkunik
+Vardenis||40183|45732|1944|13
+Vardenik||40137|45429|1980|8
+#AM|Vayots Dzor
+Vayk||39690|45469|1284|5
+#AR|Buenos Aires
+Vedia||-34498|-61542|70|10
+Villalonga||-39917|-62619|21|6
+#AR|Chaco
+Villa Berthet||-27286|-60416|79|12
+#AR|Cordoba
+Vicuña Mackenna|Vicuna Mackenna|-33918|-64391|239|9
+Villa de Soto||-30855|-64985|532|7
+Villa del Totoral||-30817|-63717|233|7
+Villa de María|Villa de Maria|-29907|-63723|305|6
+Villa General Belgrano||-31978|-64556|709|6
+Valle Hermoso||-31112|-64481|910|5
+Villa Huidobro||-34838|-64587|219|5
+#AR|Entre Rios
+Villa Elisa||-32163|-58401|57|9
+Viale||-31868|-60008|71|9
+Villa Hernandarias||-31231|-59985|55|5
+#AR|La Pampa
+Veinticinco de Mayo||-37775|-67714|333|10
+Victorica||-36217|-65437|306|7
+#AR|Mendoza
+Villa Tulumaya||-32721|-68596|628|12
+Villa Nueva||-32897|-68787|807|11
+#AR|Misiones
+Veinticinco de Mayo||-27378|-54745|380|5
+#AR|Neuquen
+Villa La Angostura||-40762|-71646|796|8
+#AR|Salta
+Vaqueros||-24696|-65410|1229|7
+#AR|San Juan
+Villa Media Agua||-31983|-68425|561|11
+Villa Borjas||-31812|-68328|573|7
+Villa Santa Rosa||-31745|-68314|572|6
+Villa El Salvador||-31453|-68404|617|6
+Villa San Agustín|Villa San Agustin|-30635|-67468|878|6
+#AR|Santa Fe
+Villa Cañás|Villa Canas|-34004|-61607|76|9
+Villa Minetti||-28622|-61627|71|6
+#AR|Santiago del Estero
+Villa Ojo de Agua||-29503|-63695|510|6
+#AT|Carinthia
+Viktring||46592|14269|458|9
+Villacher Vorstadt||46624|14289|448|8
+Villach-Innere Stadt||46613|13846|506|8
+Völkendorf|Voelkendorf|46608|13832|520|5
+#AT|Lower Austria
+Vösendorf|Voesendorf|48121|16340|192|7
+#AT|Styria
+Voitsberg||47044|15153|391|9
+#AT|Tyrol
+Völs|Voels|47250|11333|605|7
+Vomp||47333|11683|542|5
+#AT|Upper Austria
+Vorchdorf||48004|13921|410|7
+#AU|New South Wales
+Vaucluse||-33855|151278|58|9
+Villawood||-33884|150980|26|6
+Valentine||-33015|151643|46|5
+#AU|Queensland
+Varsity Lakes||-28089|153412|5|15
+Victoria Point||-27583|153312|7|15
+#AU|South Australia
+Valley View||-34840|138661|93|6
+#AU|Victoria
+Vermont South||-37857|145183|114|12
+Vermont||-37836|145194|148|11
+Viewbank||-37740|145093|48|7
+#AU|Western Australia
+Victoria Park||-31976|115905|22|8
+#BA|Federation of B&H
+Vogošća|Vogosca|43902|18344|509|8
+Vitez||44154|17790|410|8
+Vareš|Vares|44164|18328|845|7
+Vrnograč|Vrnograc|45164|15954|162|7
+Varoška Rijeka|Varoska Rijeka|45089|16019|193|7
+#BA|Srpska
+Višegrad|Visegrad|43783|19293|311|6
+#BE|Flanders
+Veurne||51073|2668|3|12
+Vosselaar||51309|4890|22|10
+Vorst||51080|5020|19|7
+Veerle||51070|4988|20|6
+Veldegem||51105|3159|19|5
+Varsenare||51190|3139|10|5
+#BE|Wallonia
+Virton||49568|5533|226|11
+Villers-la-Ville||50580|4534|102|10
+Vottem||50672|5577|183|7
+Vedrin||50503|4876|161|7
+Vielsalm||50284|5915|367|7
+Vaux-sous-Chèvremont|Vaux-sous-Chevremont|50603|5634|72|7
+Villers-le-Bouillet||50577|5259|194|6
+#BG|Montana
+Varshets||43194|23287|394|8
+Valchedram||43693|23445|80|5
+#BG|Ruse
+Vetovo||43700|26267|194|5
+#BG|Shumen
+Veliki Preslav||43167|26817|146|9
+#BO|Santa Cruz Department
+Vallegrande||-18489|-64108|1985|8
+#BR|Amapá
+Vitória do Jari|Vitoria do Jari|-807|-52453|20|11
+#BR|Bahia
+Várzea da Roça|Varzea da Roca|-11607|-40137|458|14
+Várzea Nova|Varzea Nova|-11256|-40947|723|13
+Varzedo||-12972|-39394|238|10
+Várzea do Poço|Varzea do Poco|-11529|-40320|483|8
+Vereda||-17222|-40085|145|6
+#BR|Espírito Santo
+Vila Valério|Vila Valerio|-18998|-40389|104|14
+Vila Pavão|Vila Pavao|-18615|-40611|182|9
+#BR|Federal District
+Varjão|Varjao|-15710|-47877|1067|9
+#BR|Goiás
+Vianópolis|Vianopolis|-16742|-48516|1006|14
+Vicentinópolis|Vicentinopolis|-17735|-49805|637|9
+Vila Propício|Vila Propicio|-15457|-48889|725|6
+#BR|Maranhão
+Vila Nova dos Martírios|Vila Nova dos Martirios|-5184|-48140|99|10
+#BR|Mato Grosso
+Vera||-12306|-55317|368|13
+#BR|Mato Grosso do Sul
+Vicentina||-22409|-54436|362|6
+#BR|Minas Gerais
+Virgem da Lapa||-16804|-42343|437|12
+Virginópolis|Virginopolis|-18823|-42704|751|10
+Virgínia|Virginia|-22333|-45092|943|9
+Verdelândia|Verdelandia|-15589|-43603|482|8
+Varjão de Minas|Varjao de Minas|-18378|-46032|939|7
+Vargem Alegre||-19608|-42298|298|6
+Veredinha||-17399|-42736|817|5
+#BR|Paraná
+Vitorino||-26265|-52781|786|10
+Ventania||-24246|-50243|1006|10
+Vera Cruz do Oeste||-25058|-53877|628|8
+Verê|Vere|-25881|-52908|484|8
+#BR|Pernambuco
+Verdejante||-7926|-38972|492|9
+Vertente do Lério|Vertente do Lerio|-7771|-35850|462|8
+#BR|Piauí
+Várzea Branca|Varzea Branca|-9239|-42964|449|5
+#BR|Rio Grande do Norte
+Vera Cruz||-6044|-35428|90|11
+Várzea|Varzea|-6348|-35376|59|5
+#BR|Rio Grande do Sul
+Vale do Sol||-29608|-52682|134|10
+Vale Real||-29398|-51254|64|6
+#BR|Rio de Janeiro
+Varre-Sai||-20931|-41869|680|11
+#BR|Rondônia
+Vale do Anari||-9857|-62176|200|11
+Vale do Paraíso|Vale do Paraiso|-10448|-62134|171|6
+#BR|Santa Catarina
+Vidal Ramos||-27392|-49356|339|6
+Vitor Meireles||-26882|-49835|463|5
+#BR|São Paulo
+Valentim Gentil||-20422|-50087|508|14
+Vargem||-22889|-46414|842|11
+Vera Cruz||-22220|-49819|633|10
+Vista Alegre do Alto||-21171|-48629|612|8
+#BY|Grodnenskaya
+Vishnyeva||54710|26523|158|7
+Vyalikaya Byerastavitsa||53196|24020|151|6
+Voronovo||54154|25312|180|6
+#BY|Homyel’ Voblasc’
+Vyetka||52554|31181|138|9
+#BY|Minsk
+Volozhin||54089|26527|203|10
+#BY|Vitebsk
+Verkhnedvinsk||55777|27937|126|7
+#CA|Alberta
+Varsity||51092|-114156|1109|12
+Vegreville||53500|-112052|635|6
+Valley Ridge||51097|-114257|1100|5
+#CA|British Columbia
+View Royal||48458|-123453|20|12
+Victoria West||48432|-123382|1|8
+#CA|Ontario
+Victoria Hills||43441|-80521|337|11
+Viscount Alexander Park||45453|-75631|86|5
+#CA|Quebec
+Val-des-Monts||45650|-75666|141|10
+Val-des-Sources||45767|-71932|252|7
+Vieux-Montréal|Vieux-Montreal|45506|-73542|4|6
+Val-David||46033|-74216|325|5
+#CH|Aargau
+Villmergen||47350|8248|422|5
+#CH|Fribourg
+Villars-sur-Glâne|Villars-sur-Glane|46791|7117|656|10
+#CH|Geneva
+Versoix||46284|6162|404|11
+Veyrier||46167|6184|424|10
+#CH|Ticino
+Viganello||46013|8969|301|6
+#CH|Valais
+Visp||46294|7881|653|8
+#CH|Zurich
+Veltheim (Kreis 5)|Veltheim|47514|8717|472|9
+#CI|Goh-Djiboua
+Valoua||5931|-6101|180|5
+#CI|Sassandra-Marahoue
+Vaou||7444|-6992|252|12
+Vaafla||7418|-6649|268|9
+#CL|Maule Region
+Villa Alegre||-35673|-71744|102|15
+#CL|Santiago Metropolitan
+Villa Presidente Frei||-33461|-70580|622|15
+#CO|Antioquia
+Valdivia||7294|-75392|234|12
+Venecia||5963|-75738|1308|10
+Vegachí|Vegachi|6761|-74795|993|10
+Vigía del Fuerte|Vigia del Fuerte|6589|-76896|12|6
+#CO|Bolívar
+Villanueva||10444|-75273|102|13
+#CO|Boyacá
+Villa de Leyva||5634|-73524|2139|5
+#CO|Caldas Department
+Viterbo||5063|-75872|976|12
+#CO|Caquetá
+Valparaíso|Valparaiso|1194|-75707|232|6
+#CO|Cundinamarca
+Viotá|Viota|4437|-74522|568|13
+Villapinzón|Villapinzon|5216|-73595|2728|6
+#CO|Córdoba
+Valencia||8258|-76149|62|11
+#CO|Putumayo Department
+Valle del Guamuez||453|-76919|336|10
+Villagarzón|Villagarzon|1038|-76627|446|7
+#CO|Tolima Department
+Venadillo||4719|-74929|334|11
+#CV|Maio
+Vila do Maio||15138|-23212|22|4
+#CV|São Domingos
+Várzea|Varzea|14917|-23513|5|6
+#CZ|Central Bohemia
+Vlašim|Vlasim|49706|14899|370|11
+#CZ|Hradec Králové Region
+Vrchlabí|Vrchlabi|50627|15609|487|12
+#CZ|Moravian-Silesian Region
+Vratimov||49770|18310|250|7
+Vítkov|Vitkov|49774|17749|470|6
+#CZ|Pardubice Region
+Vysoké Mýto|Vysoke Myto|49953|16162|291|13
+#CZ|Prague
+Vokovice||50099|14345|309|11
+Veleslavín|Veleslavin|50092|14358|342|7
+#CZ|South Bohemian Region
+Vimperk||49059|13783|694|8
+Vodňany|Vodnany|49148|14175|398|7
+Veselí nad Lužnicí|Veseli nad Luznici|49184|14697|430|7
+#CZ|South Moravian
+Vinohrady||49207|16663|289|11
+Veselí nad Moravou|Veseli nad Moravou|48954|17376|176|11
+#CZ|Vysocina
+Velké Meziříčí|Velke Mezirici|49355|16012|426|12
+Velká Bíteš|Velka Bites|49288|16227|476|5
+#CZ|Ústí nad Labem Region
+Varnsdorf||50912|14618|332|15
+#DE|Baden-Wurttemberg
+Vaihingen-Mitte||48732|9112|442|7
+Vogtsburg||48097|7642|302|6
+#DE|Bavaria
+Vöhringen|Vohringen|48278|10082|499|13
+Vilsbiburg||48453|12356|449|11
+Veitshöchheim|Veitshochheim|49833|9882|215|10
+Volkach||49864|10228|203|10
+Viechtach||49080|12886|438|9
+Vohenstrauß|Vohenstrauss|49624|12338|553|8
+Vohburg an der Donau||48770|11618|359|7
+Vilseck||49615|11803|405|7
+Velden||48366|12256|480|6
+Veitsbronn||49512|10888|310|6
+Velburg||49232|11672|505|5
+#DE|Brandenburg
+Velten||52689|13177|32|11
+Vetschau||51786|14079|64|10
+#DE|Hesse
+Villmar||50393|8193|148|7
+Volkmarsen||51409|9118|189|7
+Vöhl|Vohl|51206|8945|303|6
+#DE|Lower Saxony
+Vienenburg||51952|10564|140|11
+Visselhövede|Visselhoevede|52986|9581|65|11
+Vahrenheide||52416|9748|53|10
+Visbek||52836|8311|50|9
+#DE|North Rhine-Westphalia
+Velen||51894|6988|60|13
+Vettweiß|Vettweiss|50733|6600|161|9
+Vorst||51215|6584|41|6
+#DE|Rheinland-Pfalz
+Vallendar||50396|7624|168|9
+#DK|Capital Region
+Værløse|Vaerlose|55783|12369|47|13
+Vigerslev||55663|12484|10|8
+#DK|South Denmark
+Varde||55621|8481|11|14
+Vejen||55481|9138|41|9
+Vojens||55246|9306|42|7
+#DK|Zealand
+Viby||55549|12024|41|5
+#DO|Baoruco Province
+Villa Jaragua||18491|-71484|12|9
+#DO|Barahona Province
+Vicente Noble||18384|-71180|36|11
+#DO|Duarte Province
+Villa Riva||19181|-69913|29|6
+#DO|Espaillat Province
+Veragua Arriba||19583|-70333|108|6
+#DO|Monte Cristi Province
+Villa Vásquez|Villa Vasquez|19741|-71446|32|12
+#DO|San Juan Province
+Vallejuelo||18654|-71334|675|5
+#DO|Santiago Province
+Villa González|Villa Gonzalez|19541|-70789|164|10
+#EC|Esmeraldas
+Valdez||1249|-78983|7|11
+#EE|Valgamaa
+Valga||57778|26047|64|12
+#EE|Võrumaa
+Võru|Voru|57834|27019|76|12
+#ES|Andalusia
+Vera||37243|-1859|75|14
+Valdés|Valdes|36758|-4242|293|14
+Vejer de la Frontera||36252|-5967|185|13
+Valverde del Camino||37575|-6754|286|13
+Villamartín|Villamartin|36860|-5645|149|13
+Villacarrillo||38116|-3085|799|11
+Villanueva de Córdoba|Villanueva de Cordoba|38323|-4629|729|10
+Villanueva del Arzobispo||38168|-3007|683|9
+Villa del Río|Villa del Rio|37981|-4290|168|7
+Valencina de la Concepción|Valencina de la Concepcion|37416|-6074|151|7
+Villaverde del Río|Villaverde del Rio|37589|-5874|19|7
+Velez Rubio||37648|-2077|828|7
+Villanueva del Ariscal||37396|-6141|153|5
+Villanueva del Río y Minas|Villanueva del Rio y Minas|37655|-5714|67|5
+Villanueva del Trabuco||37028|-4339|686|5
+#ES|Asturias
+Villaviciosa||43481|-5436|6|14
+#ES|Basque Country
+Villabona||43185|-2053|59|6
+#ES|Canary Islands
+Vecindario||27846|-15445|97|15
+Valsequillo de Gran Canaria||27986|-15497|601|9
+Vega de San Mateo||28009|-15533|848|8
+#ES|Castille and León
+Villablino||42939|-6319|1002|9
+Venta de Baños|Venta de Banos|41921|-4491|724|6
+Villamuriel de Cerrato||41949|-4516|726|5
+#ES|Castille-La Mancha
+Villarrubia de los Ojos||39221|-3608|629|11
+Villacañas|Villacanas|39624|-3338|677|11
+Villafranca de los Caballeros||39428|-3361|645|5
+#ES|Catalonia
+Vallirana||41387|1932|191|14
+Vilanova del Camí|Vilanova del Cami|41572|1638|310|13
+Verdun||41443|2176|93|12
+Vielha||42702|796|976|5
+#ES|Extremadura
+Villafranca de los Barros||38561|-6338|422|13
+Valencia de Alcántara|Valencia de Alcantara|39411|-7244|465|6
+#ES|Galicia
+Vilalba||43298|-7681|478|14
+Verín|Verin|41941|-7438|387|14
+Vilanova de Arousa||42564|-8828|5|11
+Valdoviño|Valdovino|43600|-8133|161|7
+Valga||42698|-8640|75|6
+Vedra||42778|-8476|192|5
+#ES|Madrid
+Velilla de San Antonio||40365|-3485|554|12
+Valdemorillo||40501|-4067|811|11
+Villalbilla||40430|-3299|778|8
+Villarejo de Salvanés|Villarejo de Salvanes|40167|-3273|755|7
+Villa del Prado||40279|-4305|517|7
+Valdemarín|Valdemarin|40468|-3779|652|7
+Valdetorres de Jarama||40694|-3512|655|5
+#ES|Valencia
+Villanueva de Castellón|Villanueva de Castellon|39077|-512|41|7
+Vilamarxant||39569|-625|114|7
+#FI|Central Finland
+Viitasaari||63067|25867|142|6
+#FI|Kainuu
+Vuokatti||64145|28282|168|6
+#FI|North Ostrobothnia
+Vanhatulli||65008|25469|13|5
+#FI|Ostrobothnia
+Vörå|Voera|63136|22252|30|6
+#FI|Pirkanmaa
+Vuores||61431|23812|116|7
+Virrat||62248|23780|127|6
+Viiala||61210|23767|78|5
+Vilppula||62021|24505|113|5
+#FI|Southwest Finland
+Varissuo||60448|22356|51|9
+VI kaupunginosa||60455|22270|22|7
+#FI|Uusimaa
+Vallila||60195|24957|31|10
+Vanha munkkiniemi||60198|24876||9
+Vattuniemi||60150|24882||9
+Viertola||60291|25010|13|8
+Vesala||60240|25103|20|8
+Vartioharju||60224|25110|5|6
+Viherlaakso||60229|24741|54|5
+#FJ|Western
+Vaileka||-17379|178153|13|6
+Vatukoula||-17501|177850|60|6
+#FR|Auvergne-Rhône-Alpes
+Voreppe||45295|5632|224|10
+Villars||45468|4355|472|9
+Veauche||45563|4292|386|8
+Vizille||45078|5771|279|8
+Villard-Bonnot||45235|5883|234|7
+Ville-la-Grand||46203|6250|443|7
+Vif||45057|5672|308|7
+Vétraz-Monthoux|Vetraz-Monthoux|46174|6259|495|6
+Viriat||46255|5216|227|6
+#FR|Bourgogne-Franche-Comté
+Valfin-lès-Saint-Claude|Valfin-les-Saint-Claude|46438|5855|683|13
+Valentigney||47464|6832|327|13
+Varennes-Vauzelles||47017|3140|220|10
+Villeneuve-sur-Yonne||48082|3297|80|6
+Valdahon||47150|6350|664|5
+Valdoie||47670|6842|375|5
+#FR|Brittany
+Vern-sur-Seiche||48046|-1602|45|8
+#FR|Centre-Val de Loire
+Vernouillet||48721|1370|129|12
+Vineuil||47584|1376|84|7
+Villemandeur||47987|2718|93|6
+Veigné|Veigne|47286|741|73|6
+#FR|Grand Est
+Villerupt||49467|5932|339|10
+Vendenheim||48669|7710|150|6
+Vittel||48201|5948|337|6
+#FR|Hauts-de-France
+Vieux-Condé|Vieux-Conde|50459|3567|24|11
+Villers-Cotterêts|Villers-Cotterets|49253|3090|132|10
+Vendin-le-Vieil||50474|2867|29|7
+Villers-Saint-Paul||49289|2490|37|6
+#FR|Normandy
+Vire||48838|-889|179|15
+Val-de-Reuil||49274|1210|13|14
+Valognes||49509|-1470|33|8
+Verneuil-sur-Avre||48739|927|176|7
+#FR|Occitanie
+Villefranche-de-Rouergue||44352|2037|290|14
+Villeneuve-lès-Avignon|Villeneuve-les-Avignon|43968|4793|23|13
+Vauvert||43694|4276|32|11
+Villeneuve-Tolosane||43523|1341|173|9
+Villeneuve-lès-Maguelone|Villeneuve-les-Maguelone|43532|3860|9|8
+Vendargues||43658|3970|44|6
+Villemur-sur-Tarn||43867|1503|101|6
+Vic-en-Bigorre||43387|55|221|5
+Valence||44108|891|71|5
+#FR|Pays de la Loire
+Vallet||47161|-1267|55|7
+Vigneux-de-Bretagne||47325|-1737|64|5
+#FR|Provence-Alpes-Côte d'Azur
+Villeneuve-Loubet||43658|7122|15|14
+Valbonne||43633|6999|232|13
+Vernier||43707|7259||10
+Valréas|Valreas|44385|4991|245|10
+Vedène|Vedene|43977|4904|36|10
+Verduron||43371|5345|132|9
+Vieille Chapelle||43245|5378|24|8
+Velaux||43528|5257|81|8
+Vidauban||43427|6432|61|8
+Venelles||43599|5480|386|8
+Villefranche-sur-Mer||43704|7311|37|7
+Vieille Ville||43697|7277||6
+Vaison-la-Romaine||44239|5075|212|6
+#FR|Île-de-France
+Voisins-le-Bretonneux||48758|2051|164|13
+Vaires-sur-Marne||48876|2640|48|13
+Villetaneuse||48958|2342|40|12
+Valenton||48745|2465|52|12
+Vaux-le-Pénil|Vaux-le-Penil|48528|2692|69|12
+Ville-d'Avray||48824|2193|115|11
+Villebon-sur-Yvette||48706|2240|65|10
+Vernouillet||48971|1981|52|10
+Villepreux||48828|1998|113|10
+Villecresnes||48720|2539|64|9
+Vaucresson||48841|2157|160|9
+Vert-Saint-Denis||48568|2620|80|8
+Villemoisson-sur-Orge||48666|2337|42|7
+Vaujours||48930|2571|86|6
+Veneux-les-Sablons||48379|2795|78|5
+Villabé|Villabe|48589|2451|84|5
+Villennes-sur-Seine||48941|1991|111|5
+#GB|England
+Verwood||50876|-1870|33|13
+Vincent Square||51493|-132|10|10
+Ventnor||50594|-1207|35|6
+#GD|Saint Mark Parish
+Victoria||12190|-61707|70|2
+#GG|
+Vale Parish||49494|-2518|11|10
+#GP|Guadeloupe
+Vieux-Habitants||16059|-61767|7|8
+#GR|Central Greece
+Vasilikón|Vasilikon|38426|23672|29|7
+Vathí|Vathi|38405|23603|17|5
+#GR|Central Macedonia
+Vasiliká|Vasilika|40480|23137|68|10
+#GR|North Aegean
+Vrontádos|Vrontados|38409|26129|42|5
+#GR|West Greece
+Vartholomió|Vartholomio|37862|21206|13|6
+#GY|Essequibo Islands-West Demerara
+Vreed-en-Hoop||6811|-58194|1|3
+#HK|Eastern District
+Victoria Park||22285|114191||14
+#HN|Francisco Morazán Department
+Villa de San Francisco||14167|-86967|777|11
+#HR|County of Osijek-Baranja
+Valpovo||45661|18419|91|6
+Višnjevac|Visnjevac|45569|18614|86|6
+#HR|Virovitica-Podravina
+Virovitica||45834|17386|117|13
+#HR|Šibenik-Knin
+Vodice||43761|15783|13|7
+#HU|Bekes County
+Vésztő|Veszto|46917|21267|83|7
+#HU|Hajdú-Bihar
+Vámospércs|Vamospercs|47533|21900|130|5
+#HU|Szabolcs-Szatmár-Bereg
+Vásárosnamény|Vasarosnameny|48125|22313|109|9
+#IN|Andhra Pradesh
+vadlamuru||17095|82166|15|10
+Veparāla|Veparala|14857|78348|190|7
+Vaddeswaram||16447|80613|7|6
+#IN|Chhattisgarh
+Visrampuree||20079|81772|633|10
+#IN|Goa
+Vagator||15598|73745|25|15
+Valpoi||15532|74137|31|9
+Verna||15355|73925|18|7
+Varca||15232|73943|15|5
+#IN|Gujarat
+Vanthli||21477|70331|44|15
+Vānsada|Vansada|20758|73364|116|14
+Vavol||23225|72621|79|13
+Vinchia||22210|71380|175|12
+Vāv|Vav|24365|71512|53|12
+Vartej||21739|72066|31|11
+Virpur||23189|73480|107|10
+Vavdi Bujarg||22775|73642|138|9
+Vareli||21177|72951|12|9
+Vijayanagar||23998|73286|312|6
+Vithal Udyognagar INA||22534|72925|38|5
+#IN|Jammu and Kashmir
+Vijaypur||32565|75019|317|8
+#IN|Karnataka
+Vaddu||15187|76631|492|12
+Venkatapura||14032|74533|3|7
+Varamballi||13364|74763|28|7
+#IN|Kerala
+Valayam||11726|75649|28|14
+Vallachira||10438|76227|31|13
+Vadakkumbāgam|Vadakkumbagam|10142|76417|14|12
+Veluthūr|Veluthur|10540|76224|9|12
+Velloorkunnam||10005|76547|24|12
+Vadapādam|Vadapadam|10267|76267|12|12
+Venkidanga||10519|76086|10|11
+Valavilcheleri||11953|75404|26|11
+Vadakkumkara||10304|76219|38|10
+Vayilathūr|Vayilathur|10639|76016|14|10
+Vatakemuri||10418|76154|12|10
+Vanmēnād|Vanmenad|10557|76062|14|8
+Vellookkara||10323|76216|34|8
+Vellanikkara||10547|76258|20|6
+Venginissery||10468|76201|32|6
+#IN|Madhya Pradesh
+Vehicle Factory Area Jabalpur||23227|79977|382|8
+#IN|Maharashtra
+Vāghāpur|Vaghapur|20395|78111|448|13
+Vangani||19092|73297|41|13
+Vengurla||15861|73632|17|12
+Varsoli||18666|72869|12|11
+Vadghar||18983|73104|15|7
+Vilholi||19923|73717|632|7
+Varphalia||21828|74219|356|6
+Vikramgad||19797|73095|55|6
+#IN|Tamil Nadu
+Vennandur||11515|78091|246|15
+Vilavūr|Vilavur|8267|77305|87|14
+Vengavasal||12899|80169|16|14
+Vadugappatti||10104|77573|282|13
+Veillyāchi|Veillyachi|8152|77337|33|13
+Vedasandūr|Vedasandur|10531|77950|218|12
+Vikravāndi|Vikravandi|12037|79546|43|12
+Valangaiman||10890|79393|30|12
+Vedappatti||10999|76896|432|12
+Veeraganur||11477|78735|172|12
+Velankanni||10683|79833|3|11
+Virālimalai|Viralimalai|10602|78547|140|11
+Vīraganūr|Viraganur|11476|78736|171|11
+Vubatalai||11360|76765|1936|11
+Valaiyāmpattu|Valaiyampattu|12693|78635|349|10
+Venkatachalapuram||9375|77910|66|10
+Vaittilingapuram||9475|77610|143|10
+Vegarai||11090|77968|135|9
+Vadakkankulam||8259|77608|59|9
+Vālavandānkottai|Valavandankottai|10761|78837|76|9
+Vilār|Vilar|10731|79155|61|9
+Vavarai||8292|77162|28|8
+Vallālappatti|Vallalappatti|10058|78287|160|8
+Vilavancode||8313|77205|57|8
+Varadarājampettai|Varadarajampettai|11355|79419|64|8
+Velāppākkam|Velappakkam|12853|79296|180|8
+Veppathur||11016|79442|21|8
+Vilāchcheri|Vilachcheri|9894|78060|147|8
+Virinchīpuram|Virinchipuram|12923|79022|239|8
+Vaithīsvarankoil|Vaithisvarankoil|11196|79707|9|8
+Virudampattu||12959|79144|206|8
+Vellavādanparappu|Vellavadanparappu|11185|77842|156|8
+Vālāntaravai|Valantaravai|9339|78887|14|7
+Vengambūr|Vengambur|11105|77878|140|7
+Venkatāpuram|Venkatapuram|12534|78202|508|7
+Vembadithalam||11567|78011|258|7
+Vijayapuri||11245|77501|303|7
+Vanavasi||11750|77880|345|7
+Viraganūr|Viraganur|9904|78155|128|7
+Vanganūr|Vanganur|13183|79455|165|7
+Vellānūr|Vellanur|13158|80106|24|6
+Vīrapāndiyanpattanam|Virapandiyanpattanam|8519|78118|11|6
+Valathoor||12887|78846|282|6
+Vellakkalpatty||11703|78103|312|5
+Vānāpādi|Vanapadi|12962|79328|185|5
+Vellarivalli||11267|77455|310|5
+#IN|Uttarakhand
+Vikāsnagar|Vikasnagar|30469|77773|468|13
+#IR|Bushehr
+Vaḩdattīyeh|Vahdattiyeh|29484|51231|107|11
+#IR|East Azerbaijan
+Varazqān|Varazqan|38675|46112|1532|5
+#IR|Fars
+Vālāshāhr|Valashahr|29287|51943|762|6
+#IR|Isfahan
+Varzaneh||33542|50501|1776|13
+#IT|Abruzzo
+Villa Raspa||42455|14185|23|5
+#IT|Apulia
+Veglie||40335|17962|47|14
+Vieste||41882|16171|43|11
+Vico del Gargano||41897|15957|445|7
+Villa Castelli||40583|17475|251|7
+#IT|Basilicate
+Venosa||40963|15813|415|11
+#IT|Calabria
+Villa San Giovanni||38220|15637|15|14
+#IT|Campania
+Vico Equense||40660|14434|90|13
+Villa Literno||41009|14076|10|10
+Vallo della Lucania||40228|15266|380|7
+Vitulazio||41163|14213|57|7
+Villa di Briano||41000|14161|28|6
+#IT|Emilia-Romagna
+Villa Verucchio||44005|12436|91|7
+Veggia-Villalunga||44561|10756|132|6
+#IT|Friuli Venezia Giulia
+Vigonovo-Fontanafredda||45989|12547|45|8
+#IT|Lazio
+Valmontone||41773|12919|303|13
+Villa Adriana||41955|12772|120|12
+Vetralla||42318|12073|300|11
+Villalba||41954|12729|70|9
+Vitinia||41791|12408|43|6
+#IT|Liguria
+Varazze||44364|8596|10|12
+Vado Ligure||44269|8434|11|8
+Vallecrosia||43787|7639|5|6
+Vado Centro||44269|8432|9|5
+#IT|Lombardy
+Villasanta||45606|9308|173|13
+Varedo||45598|9163|180|13
+Valmadrera-Caserta||45846|9358|231|12
+Villa Carcina||45633|10196|249|11
+Verano Brianza||45689|9225|264|9
+Vignate||45499|9377|121|9
+Vittuone||45488|8951|146|8
+Vaprio d'Adda||45576|9524|161|8
+Verdellino||45601|9608|172|8
+Villa Guardia||45775|9023|350|7
+Villongo||45669|9931|230|7
+Vedano al Lambro||45609|9268|187|7
+Verdello||45604|9629|173|7
+Vanzago||45526|8991|161|7
+Vedano Olona||45776|8888|360|7
+Verolanuova||45328|10079|64|7
+Villa di Serio||45723|9735|275|6
+Venegono Superiore||45752|8897|331|6
+Vill'Albese||45797|9189|403|6
+Villa d'Almè|Villa d'Alme|45748|9617|300|6
+Villa Cortese||45567|8887|190|6
+Venegono Inferiore||45736|8895|320|6
+Vergiate||45722|8695|270|6
+Vobarno||45642|10499|241|5
+Vanzaghello||45580|8782|194|5
+Villanuova sul Clisi||45599|10453|216|5
+#IT|Molise
+Venafro||41483|14048|222|9
+#IT|Piedmont
+Villa La Tesoriera||45078|7638|267|15
+Volpiano||45199|7775|219|14
+Vinovo||44947|7633|232|10
+Vigliano Biellese||45563|8105|312|8
+Villadossola||46071|8267|257|7
+Volvera||44955|7511|251|6
+Varallo||45814|8258|450|5
+#IT|Sardinia
+Villacidro||39457|8741|267|13
+Villasor||39381|8943|25|7
+#IT|Sicily
+Villafranca Tirrena||38240|15439|22|8
+Valguarnera Caropepe||37495|14390|590|7
+Viagrande||37610|15098|410|7
+Valderice||38040|12615|240|7
+Villaseta||37299|13559|92|6
+Vizzini||37162|14757|586|6
+#IT|The Marches
+Villa Pigna||42833|13634|216|5
+#IT|Trentino-Alto Adige
+Valle Aurina - Ahrntal||46996|11980|1062|6
+Vipiteno||46893|11430|948|5
+#IT|Tuscany
+Venturina||43029|10601|11|9
+Vaiano||43968|11124|150|8
+Volterra||43403|10862|531|7
+Vecchiano-Nodica||43783|10384|3|6
+Vicopisano||43693|10584|12|6
+Vernio||44048|11151|303|6
+#IT|Veneto
+Vigonza||45435|11975|10|14
+Valeggio sul Mincio||45353|10736|88|9
+Vigasio||45318|10944|37|7
+Valdobbiadene||45897|11982|253|6
+Vigodarzere||45458|11886|17|6
+Villatora||45388|11967|8|6
+Vazzola||45835|12409|30|5
+Villadose||45072|11899|3|5
+#KE|Kilifi County
+Vipingo||-3815|39813|26|12
+#KH|Kampot
+Voat Angk Khang Tboung||10721|104530|11|5
+Voat Angk Khang Cheung||10743|104518|18|5
+#KH|Phnom Penh
+Veal Sbov||11535|104976|16|14
+#LC|Vieux-Fort
+Vieux Fort||13717|-60950|76|5
+#LT|Alytus
+Varėna|Varena|54215|24575|128|8
+#LT|Marijampolė County
+Vilkaviskis||54652|23032|55|9
+#LV|Valka
+Valka||57775|26010|53|5
+#LV|Varakļāni Municipality
+Varakļāni|Varaklani|56608|26754|100|2
+#MD|Chișinău Municipality
+Vadul lui Vodă|Vadul lui Voda|47090|29076|47|5
+#MD|Gagauzia
+Vulcăneşti|Vulcanesti|45685|28406|31|14
+#MG|Fitovinany Region
+Vohimanitra||-21700|47700|213|6
+#MK|Gostivar
+Vrutok||41769|20839|677|6
+#MK|Struga
+Velesta||41241|20644|716|9
+#MK|Valandovo
+Valandovo||41318|22563|142|4
+#MK|Vasilevo
+Vasilevo||41474|22645|209|12
+#MK|Vevchani
+Vevčani|Vevcani|41240|20593|867|2
+#MK|Vrapchishte
+Vrapčište|Vrapciste|41835|20886|571|9
+#MR|Hodh Ech Chargi
+Vassala||15557|-5516|266|11
+#MT|Il-Birgu
+Vittoriosa||35892|14518||2
+#MT|Victoria
+Victoria||36045|14241|94|7
+#MU|Agalega Islands
+Vingt Cinq||-10388|56618|3|0
+#MV|Gaafu Alif Atoll
+Viligili||759|73433|5|3
+#MV|Thaa Atholhu
+Veymandoo||2188|73096|10|1
+#MX|Baja California
+Villa del Campo||32508|-116738|373|14
+Vicente Guerrero||30731|-115989|63|11
+#MX|Baja California Sur
+Villa Alberto Andrés Alvarado Arámburo|Villa Alberto Andres Alvarado Aramburo|27644|-113385|79|7
+#MX|Chiapas
+Villa Corzo||16185|-93268|592|11
+Villa Comaltitlán|Villa Comaltitlan|15213|-92576|65|7
+Vida Mejor I||14870|-92308|89|6
+Venustiano Carranza||16190|-91927|1516|5
+#MX|Chihuahua
+Valentín Gómez Farías|Valentin Gomez Farias|29358|-107739|2157|5
+#MX|Coahuila
+Villa Unión|Villa Union|28222|-100726|385|5
+Villa Union||28217|-100717|381|5
+#MX|Durango
+Villa Unión|Villa Union|23975|-104045|1906|11
+Villa Juárez|Villa Juarez|25492|-103594|1156|7
+#MX|Guanajuato
+Valtierrilla||20532|-101129|1755|13
+Villas de Irapuato||20687|-101405|1781|5
+#MX|Jalisco
+Villas de la Hacienda [Fraccionamiento]||20531|-103383|1536|11
+Valle Dorado Inn||20524|-103362|1533|10
+Villa Corona||20416|-103664|1359|8
+#MX|Michoacán
+Vista Hermosa de Negrete||20273|-102474|1561|11
+Villa Madero||19392|-101279|2188|7
+#MX|México
+Veintidós de Febrero|Veintidos de Febrero|19611|-99347|2469|13
+Villa Cuauhtémoc|Villa Cuauhtemoc|19417|-99559|2586|11
+Villa Guerrero||18962|-99641|2170|10
+Villa del Carbón|Villa del Carbon|19729|-99464|2600|9
+Villa Luvianos||18920|-100298|1139|8
+Vista Hermosa||19516|-99223|2296|6
+#MX|Nayarit
+Villa Hidalgo||21741|-105231|13|10
+Valle de Banderas||20807|-105248|65|8
+#MX|Nuevo León
+Valle de Lincoln||25793|-100478|617|6
+Villas de Alcalá|Villas de Alcala|25915|-100185|403|5
+#MX|Oaxaca
+Villa de Zaachila||16950|-96749|1518|14
+Vicente Guerrero||16933|-96701|1557|14
+Villa de Etla||17206|-96799|1666|7
+Vicente Camalote||18514|-96528|112|7
+#MX|Puebla
+Villa Lázaro Cárdenas|Villa Lazaro Cardenas|20462|-97700|354|12
+Villa Avila Camacho||20386|-97880|244|9
+Villanueva||19061|-97719|2335|7
+Venustiano Carranza||20507|-97668|132|6
+#MX|Querétaro
+Villa Progreso||20642|-99836|2049|6
+#MX|San Luis Potosí
+Villa de Reyes||21803|-100934|1820|10
+Villa Zaragoza||22037|-100731|1977|10
+Villa de Arista||22643|-100848|1616|8
+Venado||22930|-101095|1799|6
+Villa de Arriaga||21909|-101382|2169|5
+#MX|Sinaloa
+Villa Unión|Villa Union|23190|-106219|21|13
+#MX|Sonora
+Villa Juárez|Villa Juarez|27130|-109837|12|14
+Vicam||27643|-110295|43|9
+#MX|Tabasco
+Vicente Guerrero||18389|-92895|1|8
+#MX|Tlaxcala
+Villa de El Carmen Tequexquitla||19324|-97653|2363|14
+Villa Mariano Matamoros||19327|-98378|2241|7
+Villa Alta||19293|-98401|2250|6
+#MX|Veracruz
+Villa Zempoala||19444|-96408|28|9
+Vega de Alatorre||20028|-96648|27|8
+Villa Azueta||18074|-95712|32|7
+Villa Emilio Carranza||19970|-96612|65|6
+#MX|Zacatecas
+Valparaíso|Valparaiso|22771|-103570|1895|13
+Villanueva||22355|-102884|1899|12
+Villa García|Villa Garcia|22162|-101955|2102|7
+Villa González Ortega|Villa Gonzalez Ortega|22513|-101914|2153|6
+Villa de Cos||23294|-102347|1992|6
+#MZ|Gaza Province
+Vila Eduardo Mondlane||-22079|31679|456|10
+#NC|South Province
+Vallée des Colons|Vallee des Colons|-22277|166458|8|9
+#NG|Plateau State
+Vom||9729|8791|1275|12
+#NI|Chontales Department
+Villa Sandino||12048|-84994|306|8
+#NI|Managua Department
+Villa El Carmen||11980|-86506|107|5
+#NL|Gelderland
+Veldhuizen||52044|5642|18|15
+Vaassen||52286|5967|15|13
+Voorthuizen||52187|5606|15|10
+Varsseveld||51943|6458|19|5
+#NL|Limburg
+Vaals||50771|6018|203|7
+Velden||51412|6168|22|6
+#NL|North Brabant
+Veldhoven||51418|5403|22|5
+Vaartbroek||51480|5498|19|5
+#NL|Overijssel
+Vriezenveen||52408|6622|10|12
+Vroomshoop||52461|6565|10|8
+#NL|South Holland
+Vreewijk||51884|4520|0|14
+Vogelwijk||52076|4248|7|5
+#NL|Utrecht
+Veldhuizen||52075|5012|0|9
+Vleuten||52106|5015|1|7
+#NO|Agder
+Vennesla||58269|7973|53|13
+#NO|Akershus
+Vestby||59605|10752|63|5
+#NO|Finnmark
+Vadsø|Vadso|70073|29749||5
+#NO|Møre og Romsdal
+Volda||62146|6071|33|11
+#NO|Trøndelag
+Verdal||63793|11482|11|8
+#NO|Vestland
+Voss||60629|6415|60|6
+#NZ|Taranaki Region
+Vogeltown||-39078|174080|74|6
+#PA|Chiriquí Province
+Volcán|Volcan|8780|-82639|1411|10
+#PA|Panamá
+Villa Unida||9192|-79624|85|15
+#PA|Panamá Oeste Province
+Vista Alegre||8929|-79700|35|9
+#PE|La Libertad
+Victor Raul||-8405|-78823|62|8
+#PE|Lima region
+Végueta|Vegueta|-11023|-77644|20|6
+#PE|Pasco
+Villa Rica||-10739|-75270|1481|7
+#PE|Piura
+Vice||-5417|-80783|31|13
+#PF|Austral Islands
+Vaitoare||-16676|-151457|45|6
+#PG|Sandaun Province
+Vanimo||-2684|141302|5|11
+#PH|Central Visayas
+Vallehermoso||10335|123326|5|10
+Valencia||10136|123613|152|5
+#PH|Ilocos
+Vintar||18228|120648|29|5
+#PH|Northern Mindanao
+Villanueva||8589|124776|10|7
+#PH|Western Visayas
+Vito||10903|123515|10|6
+#PH|Zamboanga Peninsula
+Vitali||7371|122289|11|10
+#PR|Vega Alta
+Vega Alta||18412|-66331|33|12
+#PR|Villalba
+Villalba||18127|-66492|151|5
+#PT|Aveiro
+Vale de Cambra||40850|-8394|240|8
+Válega|Valega|40836|-8581|41|7
+Valongo||40617|-8450|73|5
+#PT|Azores
+Vila Franca do Campo||37716|-25432|11|5
+#PT|Beja
+Vidigueira||38210|-7800|211|6
+#PT|Braga
+Vila Nova de Famalicão|Vila Nova de Famalicao|41408|-8520|96|9
+#PT|Bragança
+Vinhais||41835|-7005|706|9
+#PT|Faro
+Vila Real de Santo António|Vila Real de Santo Antonio|37195|-7418|9|12
+Vila do Bispo||37083|-8911|81|6
+#PT|Guarda
+Vila Nova de Foz Côa|Vila Nova de Foz Coa|41082|-7141|418|7
+#PT|Leiria
+Vieira de Leiria||39869|-8932|50|6
+#PT|Lisbon
+Venda do Pinheiro||38924|-9232|263|10
+Ventosa||39127|-9084|133|5
+#PT|Portalegre
+Vale da Amoreira||39070|-7698|207|11
+#PT|Porto
+Vilar do Paraíso|Vilar do Paraiso|41090|-8621|67|15
+Valbom||41129|-8562|50|14
+Valadares||41147|-7981|574|9
+Vila Cova||41324|-8157|316|6
+Vila Nova da Telha||41257|-8666|73|6
+Vila da Lixa||41323|-8147|390|6
+Vila Nova da Telha||41072|-8641|41|6
+#PT|Santarém
+Vila Nova da Barquinha||39461|-8436|39|7
+#PT|Viana do Castelo
+Valenza||42024|-8635|48|14
+#PT|Vila Real
+Vilela||41225|-7603|712|6
+Vidago||41640|-7572|352|5
+#PT|Viseu
+Vila Nova de Paiva||40853|-7728|800|5
+#PT|Évora
+Vendas Novas||38677|-8458|148|11
+Vila Viçosa|Vila Vicosa|38778|-7418|403|8
+#RO|Alba County
+Vurpăr|Vurpar|46000|23467|218|5
+#RO|Arad County
+Vladimirescu||46166|21401|109|10
+Vinga||46017|21200|102|6
+#RO|Bihor County
+Valea lui Mihai||47517|22150|128|10
+#RO|Botoșani County
+Vorona Teodoru||47550|26600|253|8
+#RO|Brașov County
+Victoria||45730|24703|551|10
+Vulcan||45633|25417|600|5
+#RO|Brăila County
+Viziru||45017|27700|15|6
+#RO|Buzău County
+Vadu Paşii|Vadu Pasii|45167|26900|100|9
+Verneşti|Vernesti|45217|26733|121|9
+#RO|Cluj County
+Viişoara|Viisoara|46550|23917|340|6
+#RO|Constanța County
+Valu lui Traian||44167|28467|36|9
+#RO|Călărași County
+Vasilaţi|Vasilati|44288|26448|43|8
+#RO|Dolj
+Valea Stanciului||43983|23867|76|6
+#RO|Dâmbovița County
+Văcăreşti|Vacaresti|44850|25483|236|8
+Vişina|Visina|44583|25333|165|7
+Voineşti|Voinesti|45067|25250|396|6
+#RO|Giurgiu County
+Vărăşti|Varasti|44238|26249|51|6
+Vedea||43783|25783|27|6
+#RO|Harghita County
+Vlăhiţa|Vlahita|46345|25527|827|7
+#RO|Iași County
+Voineşti|Voinesti|47067|27417|191|6
+#RO|Ilfov
+Vidra||44261|26170|53|8
+#RO|Maramureş
+Vişeu de Jos|Viseu de Jos|47726|24366|457|5
+#RO|Mehedinți County
+Vânju-Mare|Vanju-Mare|44425|22870|101|7
+#RO|Neamț County
+Vânători-Neamţ|Vanatori-Neamt|47200|26317|445|7
+Viişoara|Viisoara|46933|26233|347|5
+#RO|Prahova
+Vălenii de Munte|Valenii de Munte|45183|26033|353|12
+Valea Călugărească|Valea Calugareasca|44967|26150|199|10
+Vărbilău|Varbilau|45183|25950|394|7
+#RO|Suceava
+Vicovu de Sus||47933|25683|460|14
+Vadu Moldovei||47383|26367|326|7
+Vereşti|Veresti|47600|26433|246|7
+Volovăţ|Volovat|47817|25900|383|7
+Vama||47567|25683|649|6
+Vicovu de Jos||47900|25733|438|6
+Valea Moldovei||47467|26033|487|6
+#RO|Teleorman County
+Videle||44278|25524|104|12
+#RO|Timiș County
+Variaş|Varias|46017|20950|87|6
+#RO|Vaslui County
+Văleni|Valeni|46595|28065|128|7
+#RO|Vrancea
+Vidra||45917|26900|275|7
+Vânători|Vanatori|45733|27250|45|6
+#RS|Central Serbia
+Vrnjačka Banja|Vrnjacka Banja|43627|20896|211|10
+Vrčin|Vrcin|44668|20593|138|9
+Vinča|Vinca|44759|20617|56|7
+#RS|Vojvodina
+Veternik||45254|19759|79|10
+Vladimirovac||45031|20866|137|5
+#RU|Altai Krai
+Volchikha||52020|80361|189|11
+Veseloyarsk||51287|81107|231|5
+#RU|Arkhangelskaya
+Vychegodskiy||61247|46898|76|13
+#RU|Astrakhan Oblast
+Volodarskiy||46404|48539|1|10
+Verkhniy Baskunchak||48226|46722|32|9
+#RU|Bashkortostan Republic
+Verkhneyarkeyevo||55451|54306|89|9
+Verkhniye Kigi||55408|58601|253|7
+Verkhniye Tatyshly||56289|55860|153|6
+#RU|Belgorod Oblast
+Volokonovka||50485|37861|113|12
+Veydelevka||50151|38449|149|7
+#RU|Bryansk Oblast
+Vygonichi||53100|34067|129|5
+#RU|Buryatiya Republic
+Vydrino||51463|104643|469|5
+#RU|Chechnya
+Valerik||43180|45408|220|6
+#RU|Chelyabinsk
+Verkhneural’sk|Verkhneural'sk|53879|59217|410|10
+Varna||53380|60973|252|10
+Vishnëvogorsk|Vishnevogorsk|55991|60658|288|6
+#RU|Chuvash Republic
+Vurnary||55490|46965|171|11
+#RU|Dagestan
+Verkhneye Kazanishche||42735|47138|709|6
+#RU|Ingushetiya Republic
+Verkhniye Achaluki||43347|44698|473|9
+Voznesenskaya||43544|44746|566|7
+#RU|Kaluga Oblast
+Vorotynsk||54428|36046|134|11
+#RU|Khanty-Mansia
+Vysokiy Mys||61227|72137|33|7
+#RU|Kirov Oblast
+Vakhrushi||58685|50026|167|10
+Vostochnyy||58788|52245|229|8
+#RU|Komi
+Vuktyl||63848|57310|118|14
+Vizinga||61073|50078|103|7
+Vodnyy||63505|53409|99|6
+#RU|Kostroma Oblast
+Vetluzhskiy||58390|45465|116|13
+#RU|Krasnodar Krai
+Varenikovskaya||45121|37642|14|14
+Vasyurinskaya||45118|39424|43|13
+Vladimirskaya||44546|40793|316|7
+Voznesenskaya||44553|41032|385|7
+Verkhnebakanskiy||44849|37657|276|7
+Vityazevo||45001|37282|8|6
+Velikovechnoye||44934|39755|70|6
+#RU|Kurgan Oblast
+Vargashi||55356|65847|148|10
+#RU|Kuzbass
+Verkh-Chebula||56031|87620|145|5
+#RU|Leningradskaya Oblast'
+Vaskelovo||60396|30354|79|12
+Volosovo||59445|29489|137|12
+Vyritsa||59408|30348|66|11
+#RU|Moscow
+Vostochnyy||55817|37867|168|13
+Vatutinki||55497|37330|161|10
+#RU|Moscow Oblast
+Vysokovsk||56317|36550|202|11
+Vinogradovo||55947|37538|191|10
+Vniissok||55656|37212|196|8
+Verbilki||56533|37600|129|7
+#RU|Murmansk
+Vidyayevo||69319|32805|1|7
+Vysokiy||68136|33419|204|7
+#RU|Nizhny Novgorod Oblast
+Vorsma||55991|43272|89|12
+Volodarsk||56225|43176|88|11
+Vetluga||57855|45778|113|8
+Vyyezdnoye||55382|43786|119|8
+Vad||55530|44207|113|7
+Vacha||55800|42775|175|7
+Voznesenskoye||54890|42757|113|6
+Vorotynets||56061|45865|90|6
+Voskresenskoye||56838|45432|102|6
+Vetluzhskiy||57174|45123|105|5
+#RU|Novosibirsk Oblast
+Vengerovo||55683|76745|97|7
+Verkh-Tula||54884|82776|125|6
+#RU|Omsk Oblast
+Vkhodnoy||54952|73171|97|8
+#RU|Oryol oblast
+Verkhov’ye|Verkhov'ye|52810|37242|262|8
+#RU|Primorye
+Vozdvizhenka||43895|131945|33|7
+Vol’no-Nadezhdinskoye|Vol'no-Nadezhdinskoye|43375|131996|47|7
+Vladimiro-Aleksandrovskoye||42892|133078|38|5
+#RU|Rostov
+Vëshenskaya|Veshenskaya|49631|41725|74|9
+Vesëlyy|Veselyy|47092|40742|14|9
+#RU|Sakha
+Vilyuysk||63751|121633|118|10
+Verkhnevilyuysk||63446|120308|124|6
+#RU|Samara Oblast
+Volzhskiy||53431|50119|47|7
+#RU|Smolensk Oblast
+Verkhnedneprovskiy||54981|33346|215|14
+Velizh||55604|31199|162|8
+#RU|Stavropol Kray
+Vinsady||44081|42965|600|9
+#RU|Sverdlovsk Oblast
+Verkhniy Tagil||57374|59954|269|12
+Verkhnyaya Sinyachikha||57976|61667|114|11
+Verkhnyaya Tura||58361|59807|212|11
+Volchansk||59938|60081|241|10
+Verkhotur’ye|Verkhotur'ye|58863|60806|101|9
+Verkhniye Sergi||56647|59556|347|7
+Vostochnyy||58800|61814|114|6
+Verkh-Neyvinskiy||57270|60138|303|5
+#RU|Tatarstan Republic
+Vysokaya Gora||55910|49313|136|8
+#RU|Tver Oblast
+Ves’yegonsk|Ves'yegonsk|58668|37264|94|8
+#RU|Tyumen Oblast
+Vinzili||56959|65771|66|11
+Vikulovo||56817|70606|68|7
+#RU|Udmurtiya Republic
+Vavozh||56775|51931|137|6
+#RU|Ulyanovsk
+Veshkayma||54050|47122|293|7
+#RU|Vladimir Oblast
+Vol’ginskiy|Vol'ginskiy|55948|39239|132|6
+#RU|Vologda Oblast
+Vytegra||61006|36448|46|11
+Vokhtoga||58809|41062|140|7
+Vozhega||60472|40221|156|7
+Verkhovazh’ye|Verkhovazh'ye|60747|42047|81|5
+#RU|Voronezh Oblast
+Verkhniy Mamon||50164|40389|75|8
+Verkhnyaya Khava||51842|39938|149|8
+Volya||51770|39536|146|8
+Vorontsovka||50613|40355|91|5
+#RU|Zabaykalskiy (Transbaikal) Kray
+Vershino-Darasunskiy||52366|115530|874|6
+#SB|Honiara
+Vavaea||-9436|159957|30|11
+#SE|Gävleborg
+Valbo||60650|17033|17|7
+#SE|Jönköping
+Vetlanda||57429|15078|187|13
+Vaggeryd||57498|14148|203|5
+#SE|Kalmar
+Vimmerby||57666|15855|124|8
+#SE|Skåne
+Vellinge||55471|13020|13|6
+Viken||56151|12574|9|6
+#SE|Stockholm
+Vårby|Varby|59267|17884|32|10
+#SE|Västernorrland
+Vi||62433|17417|65|6
+#SE|Västra Götaland
+Vårgårda|Vargarda|58037|12809|109|5
+#SE|Östergötland
+Vadstena||58449|14890|97|6
+#SI|Municipality of Dobrepolje
+Videm||45850|14694|439|1
+#SI|Municipality of Sveti Andraž v Slovenskih Goricah
+Vitomarci||46528|15939|254|0
+#SI|Municipality of Velika Polana
+Velika Polana||46572|16347|165|1
+#SI|Municipality of Velike Lašče
+Velike Lašče|Velike Lasce|45834|14636|511|1
+#SI|Municipality of Veržej
+Veržej|Verzej|46583|16164|176|1
+#SI|Municipality of Videm
+Videm pri Ptuju||46369|15906|219|0
+#SI|Municipality of Vipava
+Vipava||45846|13962|408|2
+#SI|Municipality of Vitanje
+Vitanje||46383|15297|503|1
+#SI|Municipality of Vodice
+Vodice||46190|14495|338|2
+#SI|Municipality of Vojnik
+Vojnik||46293|15304|274|2
+#SI|Municipality of Vransko
+Vransko||46244|14951|342|1
+#SI|Municipality of Vrhnika
+Vrhnika||45964|14295|297|8
+#SI|Municipality of Vuzenica
+Vuzenica||46597|15163|407|2
+#SK|Banská Bystrica Region
+Veľký Krtíš|Velky Krtis|48211|19350|218|11
+#SK|Košice Region
+Veľké Kapušany|Velke Kapusany|48552|22080|109|9
+#SK|Nitra Region
+Vráble|Vrable|48244|18308|143|8
+#SK|Prešov Region
+Veľký Šariš|Velky Saris|49041|21199|263|7
+Veľká Lomnica|Velka Lomnica|49113|20360|647|6
+#SK|Trnava Region
+Veľký Meder|Velky Meder|47858|17769|111|8
+Vrbové|Vrbove|48620|17723|183|6
+Veľké Úľany|Velke Ulany|48166|17575|119|5
+#SK|Žilina Region
+Vrútky|Vrutky|49113|18917|386|7
+#SM|Borgo Maggiore
+Valdragone||43940|12456|466|7
+#TJ|Republican Subordination
+Vahdat||39220|71192|1837|6
+#TL|Viqueque
+Viqueque||-8857|126365|55|6
+#TR|Antalya
+Varsak||36990|30716|111|12
+#TR|Kırklareli
+Vize||41576|27767|265|11
+#TR|Tekirdağ
+Velimeşe|Velimese|41254|27878|137|8
+#UA|Chernihiv Oblast
+Varva||50499|32723|111|8
+#UA|Chernivtsi
+Vashkivtsi||48384|25518|206|5
+#UA|Crimea
+Vilino||44846|33672|37|7
+#UA|Dnipropetrovsk
+Vasylkivka||48208|36022|88|12
+Verkhivtseve||48481|34240|165|10
+Vilne||47638|34817|84|5
+#UA|Donetsk
+Vuhledar||47780|37250|189|14
+Vitka||48038|37792|212|12
+Varshava||48840|37606|53|11
+Vuhlehirsk||48315|38272|290|7
+Verstatobud||48764|37591|93|6
+Volodymyrivka||47734|37388|196|6
+Velyka Novosilka||47843|36836|106|5
+#UA|Ivano-Frankivsk
+Verkhovyna||48155|24830|620|6
+#UA|Kharkiv
+Vysokyi||49894|36124|174|11
+Valky||49837|35614|178|10
+Vilshany||50054|35882|151|7
+Vasyshcheve||49835|36331|127|6
+#UA|Kherson
+Velyka Lepetykha||47171|33931|85|8
+Velyka Oleksandrivka||47319|33291|39|7
+Velyki Kopani||46489|32972|1|5
+Verkhniy Rohachyk||47252|34336|35|5
+#UA|Khmelnytskyi
+Vinkivtsi||49034|27231|290|6
+#UA|Kirovohrad
+Vlasivka||49118|33280|73|8
+#UA|Kyiv City
+Verkhnya Telychka||50404|30573|86|15
+Voskresenskyi-2||50480|30600|93|10
+Voskresenskyi-1||50469|30600|88|10
+#UA|Kyiv Oblast
+Velyka Dymerka||50591|30901|102|10
+Volodarka||49525|29910|173|7
+Vorzel||50544|30153|166|7
+#UA|Luhansk
+Velyka Verhunka||48610|39380|40|6
+#UA|Lviv
+Velyki Mosty||50243|24140|198|6
+#UA|Mykolaiv
+Vradiyivka||47864|30589|158|8
+Veselynove||47357|31232|17|6
+#UA|Odesa
+Velykodolynske||46346|30579|19|14
+Vylkove||45403|29587|1|8
+Vypasne||46191|30256|10|8
+Velykyi Dalnyk||46472|30563|45|8
+Velyka Mykhaylivka||47078|29853|47|5
+#UA|Poltava
+Velyka Bahachka||49798|33720|92|5
+#UA|Rivne Oblast
+Volodymyrets||51419|26144|166|9
+#UA|Sumy
+Vorozhba||51173|34227|147|7
+Voronizh||51776|33459|153|7
+Velyka Pysarivka||50423|35483|131|5
+#UA|Ternopil
+Velyka Berezovytsya||49499|25612|305|8
+#UA|Vinnytsia
+Vapnyarka||48531|28747|243|7
+Vinnytski Khutory||49207|28555|298|7
+Voronovytsya||49109|28687|245|7
+#UA|Zakarpattia
+Velyki Luchky||48417|22573|109|10
+Velykyy Bychkiv||47968|24011|307|9
+Vyshkovo||48049|23420|200|8
+Velykyy Bereznyy||48893|22461|210|8
+Velyki Komiaty||48237|22977|131|7
+Velyka Dobron||48420|22389|104|6
+Verkhnye Vodyane||48004|23960|299|5
+Volovets||48711|23185|492|5
+#UA|Zaporizhzhia
+Vasylivka||47442|35282|82|13
+Vesele||47010|34918|77|10
+Velyka Znamianka||47445|34351|17|9
+Velyka Bilozerka||47276|34685|50|6
+Vodiane||47487|34502|42|6
+#US|Alabama
+Valley||32819|-85179|173|9
+#US|Arizona
+Verde Village||34711|-112012|1054|12
+Vail||32048|-110712|986|10
+Valencia West||32132|-111114|759|9
+Village of Oak Creek (Big Park)||34781|-111762|1243|6
+#US|California
+Valle Vista||33748|-116893|541|15
+View Park-Windsor Hills||33996|-118348|104|11
+Valley Center||33218|-117034|400|9
+Vandenberg Village||34708|-120468|113|6
+Villa Park||33814|-117813|104|6
+#US|Colorado
+Vail||39640|-106374|2496|5
+#US|District of Columbia
+Van Ness||38943|-77063|73|11
+#US|Florida
+Villas||26550|-81869|3|12
+Viera East||28262|-80714|7|11
+Venice Gardens||27073|-82408|3|7
+Viera West||28245|-80734|10|7
+Valparaiso||30509|-86503|14|5
+#US|Georgia
+Villa Rica||33732|-84919|347|15
+Vidalia||32218|-82413|91|11
+Vinings||33865|-84464|279|10
+#US|Hawaii
+Village Park||21398|-158030|101|11
+#US|Illinois
+Village of Campton Hills||41937|-88397|245|13
+Vandalia||38961|-89094|158|7
+#US|Iowa
+Vinton||42169|-92024|240|5
+#US|Kansas
+Valley Center||37835|-97373|410|7
+#US|Kentucky
+Versailles||38053|-84730|272|9
+Villa Hills||39063|-84593|259|7
+Vine Grove||37810|-85981|208|6
+#US|Louisiana
+Ville Platte||30688|-92272|22|7
+Village Saint George||30362|-91067|11|7
+#US|Massachusetts
+VA Boston Healthcare System, Brockton Campus||42366|-71059|17|5
+#US|Minnesota
+Vadnais Heights||45057|-93074|276|13
+Victoria||44859|-93662|301|9
+Virginia||47523|-92537|439|9
+#US|Mississippi
+Vancleave||30540|-88688|9|6
+#US|Missouri
+Valley Park||38549|-90493|130|7
+#US|New Jersey
+Verona||40830|-74240|125|14
+Ventnor City||39340|-74477|3|10
+Villas||39029|-74939|3|9
+#US|New York
+Valley Cottage||41118|-73955|54|9
+Viola||41136|-74082|173|7
+Volney||43343|-76358|135|6
+#US|North Dakota
+Valley City||46923|-98003|373|7
+#US|Ohio
+Vermilion-on-the-Lake||41428|-82324|185|11
+Van Wert||40869|-84584|237|11
+Vermilion||41422|-82365|181|10
+#US|Oklahoma
+Vinita||36639|-95154|214|6
+#US|Pennsylvania
+Village Green-Green Ridge||39864|-75425|54|8
+Vandergrift||40603|-79565|268|5
+#US|Rhode Island
+Valley Falls||41907|-71391|32|12
+#US|South Carolina
+Valley Falls||35016|-81975|247|6
+#US|South Dakota
+Vermillion||42779|-96929|374|11
+#US|Texas
+Vidor||30132|-94015|7|11
+Vernon||34155|-99266|361|11
+#US|Utah
+Vernal||40456|-109529|1624|11
+#US|Virginia
+Vinton||37281|-79897|282|8
+#US|Washington
+Vashon||47447|-122460|116|11
+Veradale||47650|-117207|617|10
+#US|West Virginia
+Vienna||39327|-81548|194|11
+#US|Wisconsin
+Verona||42991|-89533|296|13
+#VE|Anzoátegui
+Valle de Guanape||9910|-65674|281|15
+#VN|Hà Tĩnh Province
+Vượng Lộc|Vuong Loc|18481|105734|8|9
+#VN|Phu Tho
+Vụ Bản|Vu Ban|20464|105443|47|9
+Vĩnh Tường|Vinh Tuong|21217|105512|14|6
+#VN|Thai Nguyen
+Vân Tùng|Van Tung|22431|105997|491|8
+#WS|
+Vaitele||-13829|-171806|34|8
+#WS|Palauli
+Vailoa||-13756|-172307|11|1
+#YT|Mamoudzou
+Vahibé|Vahibe|-12790|45177|208|6
+#ZA|Eastern Cape
+Venterstad||-30776|25799|1294|6
+#ZA|Free State
+Ventersburg||-28086|27138|1435|13
+#ZA|Northern Cape
+Victoria West||-31404|23115|1277|8
+#ZA|Western Cape
+Velddrif||-32785|18179|9|13
+Villiersdorp||-33991|19292|353|12
+Vanrhynsdorp||-31609|18740|114|8

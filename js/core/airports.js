@@ -37,6 +37,9 @@ function base() {
   return baseUrl;
 }
 async function readText(name) {
+  // the single-file copy has no data files beside it: it carries a subset inline (large and medium airports; tools/build.mjs)
+  const inline = globalThis.__AEROSUITE_ESSENTIAL__?.files;
+  if (inline && globalThis.__AEROSUITE_STANDALONE__) { const t = inline[`airports/${name}`]; if (typeof t !== 'string') throw new Error(`Airport database file ${name} is not part of the single-file copy`); return t; }
   const url = new URL(name, base());
   if (isNode && url.protocol === 'file:') { const fs = 'node:fs/promises', { readFile } = await import(fs); return readFile(url, 'utf8'); }
   const r = await fetch(url); if (!r.ok) throw new Error(`Airport database file ${name}: HTTP ${r.status}`);

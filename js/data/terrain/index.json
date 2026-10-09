@@ -1,0 +1,26 @@
+{
+ "schema": 1,
+ "source": "ETOPO 2022 Global Relief Model, 60 arc-second surface elevation",
+ "publisher": "NOAA National Centers for Environmental Information",
+ "home": "https://www.ncei.noaa.gov/products/etopo-global-relief-model",
+ "service": "https://www.ngdc.noaa.gov/thredds/dodsC/global/ETOPO2022/60s/60s_surface_elev_netcdf/ETOPO_2022_v1_60s_N90W180_surface.nc",
+ "license": "US Government work, public domain",
+ "attribution": "Terrain: NOAA NCEI ETOPO 2022 (doi:10.25921/fd45-gt74)",
+ "registry": "noaa-etopo",
+ "generated": "2026-10-09T04:04:17.855Z",
+ "method": "Every sixth point of the 60 arc-second grid (0.1° spacing); per 0.5° cell the mean of the 25 samples; sea set to 0. Peaks inside a cell are higher than its mean. A coarse terrain model for route profiles and a last-resort site elevation — not for obstacle clearance.",
+ "grid": {
+  "step_deg": 0.5,
+  "nj": 360,
+  "ni": 720,
+  "lat_north": 90,
+  "lon_west": -180
+ },
+ "type": "int16le",
+ "fields": [
+  "mean_m"
+ ],
+ "file": "etopo-30m.bin",
+ "bytes": 518400,
+ "highest_m": 7110
+}

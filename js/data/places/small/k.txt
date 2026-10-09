@@ -1,0 +1,2793 @@
+#AE|Dubai
+Knowledge Village||25102|55164|-3|15
+#AF|Badakhshan
+Khandūd|Khandud|36951|72318|2807|6
+#AF|Herat
+Kuhsān|Kuhsan|34654|61198|740|12
+#AL|Berat County
+Kutalli||40784|19787|23|10
+Kozarë|Kozare|40831|19901|28|6
+#AL|Dibër County
+Klos||41507|20087|257|8
+#AL|Tirana
+Kamëz|Kamez|41382|19760|55|11
+#AM|Gegharkunik
+Karanlukh||40104|45290|2111|5
+#AM|Kotayk
+Kasakh||40236|44452|1190|7
+#AM|Syunik
+Kajaran||39151|46157|1810|7
+#AT|Lower Austria
+Krems an der Donau||48409|15614|195|14
+Korneuburg||48350|16333|164|13
+Kottingbrunn||47951|16227|252|7
+#AT|Styria
+Knittelfeld||47217|14817|654|12
+Kirchenviertel||47131|15348|376|6
+Kindberg||47500|15450|584|5
+Kalsdorf bei Graz||46965|15480|318|5
+#AT|Tyrol
+Kufstein||47583|12167|483|10
+Kitzbühel|Kitzbuehel|47446|12392|751|8
+Kirchbichl||47517|12096|529|6
+Kirchberg in Tirol||47445|12316|823|5
+#AT|Upper Austria
+Kremsmünster|Kremsmuenster|48053|14129|344|7
+#AU|Australian Capital Territory
+Kambah||-35386|149058|596|15
+Kaleen||-35218|149105|599|7
+#AU|New South Wales
+Kingsgrove||-33939|151099|16|12
+Kingswood Park||-33767|150714|54|12
+Kempsey||-31079|152831|12|11
+Killara||-33766|151162|116|10
+Kellyville Ridge||-33702|150918|82|10
+Kings Langley||-33750|150935|82|9
+Kirrawee||-34038|151069|92|9
+Kelso||-33417|149600|649|9
+Katoomba||-33720|150307|991|8
+Karabar||-35376|149233|616|8
+Kosciuszko National Park||-36264|148482|1670|8
+Kingscliff||-28260|153578|31|8
+Killarney Vale||-33363|151458|23|7
+Kooringal||-35141|147377|216|7
+Kiama||-34668|150852|19|7
+Kariong||-33440|151295|191|6
+Kurri Kurri||-32819|151479|50|6
+Kanahooka||-34492|150808|31|5
+#AU|Northern Territory
+Katherine||-14465|132263|110|6
+#AU|Queensland
+Kingston||-27667|153117|11|11
+Kelso||-19389|146719|29|10
+Kingaroy||-26540|151837|433|10
+Kippa-Ring||-27226|153084|6|10
+Kedron||-27403|153030|31|9
+Kenmore||-27508|152939|47|9
+Kearneys Spring||-27605|151941|672|9
+Kangaroo Point||-27477|153037|22|8
+Kuraby||-27607|153094|52|8
+Kelvin Grove||-27448|153013|53|8
+Keperra||-27414|152947|66|7
+Kewarra Beach||-16782|145685|10|6
+#AU|South Australia
+Klemzig||-34879|138636|52|6
+Kilburn||-34860|138586|11|5
+#AU|Tasmania
+Kingston||-42976|147304|50|10
+#AU|Victoria
+Kilsyth||-37800|145317|113|12
+Kurunjang||-37676|144597|142|11
+Kangaroo Flat||-36800|144250|262|10
+Keilor Downs||-37723|144808|83|10
+Kensington||-37792|144931|15|10
+Kings Park||-37734|144778|80|8
+Kilmore||-37296|144953|354|8
+Knoxfield||-37890|145250|90|8
+Kyabram||-36313|145050|109|7
+Kyneton||-37244|144451|514|7
+Kew East||-37798|145054|46|7
+Kialla||-36447|145414|117|7
+Keilor||-37717|144833|38|6
+Kennington||-36771|144303|262|6
+#AU|Western Australia
+Kingsley||-31810|115801|64|13
+Kelmscott||-32124|116026|48|11
+Karrinyup||-31872|115777|43|9
+Kardinya||-32066|115815|23|9
+Kalamunda||-31974|116058|289|7
+Kewdale||-31979|115952|20|7
+Kinross||-31719|115738|43|7
+Kenwick||-32033|115967|11|6
+Kallaroo||-31791|115753|42|5
+#AZ|Baki
+Kyurdakhany||40548|49922|2|7
+Khojasan||40413|49769|30|5
+#AZ|Kalbajar
+Kalbajar||40110|46044|1555|8
+#AZ|Khojaly
+Khojaly||39914|46792|569|6
+#AZ|Khojavend
+Khojavend||39795|47112|391|4
+#AZ|Xızı
+Khizi||40908|49075|720|2
+#AZ|Şǝmkir
+Kur||40906|46185|190|10
+#BA|Federation of B&H
+Kakanj||44133|18123|399|12
+Kiseljak||43943|18081|471|8
+Ključ|Kljuc|44533|16777|258|7
+Kladanj||44227|18693|572|7
+Kovači|Kovaci|44449|18205|364|6
+Kačuni|Kacuni|44064|17939|442|5
+#BA|Srpska
+Kozarska Dubica||45177|16809|99|10
+Kneževo|Knezevo|44491|17382|846|7
+Kotor Varoš|Kotor Varos|44618|17372|281|5
+#BE|Flanders
+Kruibeke||51170|4314|6|15
+Knokke||51351|3287|13|14
+Kraainem||50862|4469|51|13
+Kuurne||50851|3282|16|13
+Kinrooi||51145|5742|33|12
+Kortemark||51030|3041|11|12
+Kuringen||50944|5299|33|11
+Kapelle-op-den-Bos||51010|4363|12|9
+Koekelare||51090|2978|15|8
+Kruishoutem||50902|3526|45|8
+Kortessem||50859|5390|55|8
+Knesselare||51139|3413|16|8
+Kessel||51139|4630|9|8
+Kortenaken||50909|5060|35|7
+Klemskerke||51242|3024|2|6
+Kaprijke||51217|3615|4|6
+Kalken||51038|3919|5|6
+Kwaadmechelen||51101|5145|32|6
+#BE|Wallonia
+Kain||50639|3397|22|7
+#BG|Dobrich
+Kavarna||43436|28340|129|11
+#BG|Kardzhali
+Krumovgrad||41471|25655|224|5
+#BG|Pleven
+Knezha||43500|24083|116|7
+#BG|Plovdiv
+Krichim||42050|24467|228|9
+#BG|Razgrad
+Kubrat||43797|26501|234|9
+#BG|Sliven
+Kotel||42883|26450|494|6
+#BG|Sofia
+Kostinbrod||42817|23217|534|12
+#BG|Vratsa
+Kozloduy||43777|23730|31|11
+#BI|Bujumbura Rural
+Kanyosha||-3415|29408|1302|7
+#BI|Makamba
+Kayogoro||-4230|29766|1531|5
+#BN|
+Kota Batu||4883|114950|0|13
+Kampong Meragang||4933|114917|9|9
+Kampong Mulaut||4867|114833|7|6
+#BN|Belait
+Kampung Panaga||4608|114296|1|10
+#BN|Brunei-Muara District
+Kampung Tanah Jambu||4992|114998|1|12
+Kampong Ayer||4883|114945|1|10
+Kampong Lambak A||4966|114943|22|7
+Kampung Mata-Mata||4903|114896|1|7
+Kampung Beribi||4883|114895|30|6
+Kampung Lugu||4875|114805|1|6
+Kampung Rimba||4941|114906|1|5
+#BN|Tutong
+Keriam||4816|114694|6|9
+Kiudang||4750|114733|15|5
+#BW|Chobe
+Kasane||-17802|25160|994|9
+#BW|Kgalagadi
+Kang||-23675|22788|1139|7
+#BW|Kweneng
+Kumakwane||-24655|25699|1062|7
+#BW|South-East
+Kopong||-24483|25883|984|14
+#BY|Brest
+Kamenets||52400|23810|141|8
+#BY|Grodnenskaya
+Krasnosel’skiy|Krasnosel'skiy|53265|24424|127|7
+Korelichi||53565|26141|149|6
+#BY|Homyel’ Voblasc’
+Khoyniki||51908|29983|141|13
+Kastsyukowka||52539|30917|138|11
+#BY|Minsk
+Kletsk||53064|26639|184|11
+Kopyl’|Kopyl'|53152|27091|210|10
+Krupki||54318|29137|174|8
+#BY|Mogilev
+Klimovichi||53605|31956|179|15
+Kostyukovichi||53355|32051|181|15
+Kirovsk||53270|29471|147|8
+Krugloye||54253|29796|184|7
+Kličaŭ|Klicau|53492|29336|154|7
+Krasnapollye||53336|31401|165|6
+#CA|Alberta
+Kincora||51159|-114134|1127|7
+Kiniski Gardens||53475|-113401|701|7
+Kilkenny||53608|-113453|680|6
+#CA|British Columbia
+Kerrisdale||49234|-123155|60|14
+Kitimat||54052|-128653|22|9
+Kimberley||49671|-115978|1067|7
+Kingsway-Beresford||49225|-122964|121|7
+#CA|Manitoba
+King Edward||49885|-97213|231|6
+#CA|Newfoundland and Labrador
+Kilbride||47506|-52756|141|6
+#CA|Nova Scotia
+Kentville||45077|-64496|15|13
+#CA|Ontario
+Kanata-Lakes||45321|-75918|107|13
+Keelesdale-Eglinton West||43686|-79471|125|11
+Kingsway South||43654|-79511|124|9
+King City||43929|-79527|306|8
+Kapuskasing||49417|-82433|219|8
+Kirkland Lake||48145|-80038|321|8
+King||43965|-79590|311|7
+Kincardine||44183|-81633|195|7
+Kingscourt||44247|-76504|107|5
+#CA|Quebec
+Kahnawake||45411|-73681|26|8
+#CA|Saskatchewan
+Kensington||52134|-106760|480|6
+#CF|Basse-Kotto
+Kembé|Kembe|4623|21886|499|7
+#CG|Cuvette-Ouest
+Kellé|Kelle|-65|14500|438|9
+#CG|Lékoumou
+Komono||-3277|13226|448|9
+#CG|Pool
+Kinkala||-4359|14765|391|12
+Kindamba||-3727|14521|441|9
+#CH|Aargau
+Küttigen|Kuttigen|47415|8050|417|5
+#CH|Bern
+Kirchberg||47085|7583|509|5
+#CH|Obwalden
+Kerns||46901|8275|564|5
+#CH|Saint Gallen
+Kirchberg||47412|9040|737|8
+#CH|Schwyz
+Küssnacht|Kuessnacht|47086|8442|440|13
+#CH|Zurich
+Küsnacht|Kuesnacht|47318|8584|427|12
+Kilchberg||47324|8545|467|7
+#CI|Bas-Sassandra District
+Konédougou|Konedougou|6040|-6666|200|13
+Kpotè|Kpote|4871|-6534|120|9
+Koziayo II||5924|-6344|182|9
+Kako||4776|-7017|32|9
+Kpada||5780|-6485|161|9
+Kodaya||5995|-6973|292|8
+Karié|Karie|5437|-7339|142|7
+Kagnénako|Kagnenako|5812|-6349|365|7
+Kosso||5050|-5779|11|7
+Koréguhé|Koreguhe|6189|-6659|190|6
+Kangagui||5718|-6810|226|6
+Kokolopozo||5137|-6082|51|6
+Kayo||5810|-6475|116|6
+Koréagui|Koreagui|5543|-6602|103|6
+Kpangban||5582|-6754|174|5
+#CI|Comoé District
+Kétésso|Ketesso|5878|-3174|107|11
+Kacoukro||5296|-3378|63|10
+Kohourou||5480|-3329|49|9
+Kotobi||6696|-4129|163|9
+Kregbé|Kregbe|6972|-3984|199|8
+Krinjabo||5397|-3214|33|8
+Kossonoukro||6011|-3389|95|7
+Kodjina||6735|-3597|176|7
+Kotouagnoa||5216|-2890|75|6
+#CI|Goh-Djiboua
+Kouaméfra|Kouamefra|6592|-5424|185|11
+Kagbé|Kagbe|6166|-5350|194|11
+Kouta||5488|-5232|28|10
+Kadéko|Kadeko|6098|-5584|228|8
+Kazéribéri|Kazeriberi|5639|-5610|208|7
+Kreuzokoué|Kreuzokoue|6072|-5444|198|6
+Kétasso|Ketasso|5759|-5034|47|5
+#CI|Lacs District
+Kokoumbo||6542|-5259|202|10
+Kouassi-Kouassikro||7341|-4677|238|10
+Kpouébo|Kpouebo|6334|-4856|96|7
+#CI|Lagunes District
+Kong||6114|-3648|104|8
+Kodioussou||5771|-3756|98|8
+Koyékro|Koyekro|6153|-4746|58|7
+Kodiébouman|Kodiebouman|6221|-4541|111|7
+Kossandji||5825|-3616|84|5
+Krokroum||5211|-5409|8|5
+#CI|Montagnes
+Kanébly|Kanebly|7481|-7033|227|10
+Kaadé|Kaade|6569|-7714|249|9
+Koulaéoué|Koulaeoue|7044|-7886|294|9
+Koulouan||6953|-7699|260|8
+Kéibly|Keibly|5996|-7473|158|8
+Kouan Houlé|Kouan Houle|7393|-8261|375|6
+Kéiténably|Keitenably|7260|-7337|299|5
+#CI|Sassandra-Marahoue
+Kouétinfla|Kouetinfla|6612|-6060|234|11
+Kétro|Ketro|7183|-6643|255|10
+Kanzra||7323|-6222|261|7
+Koudougou||6935|-5666|171|7
+Koumoudji||6644|-5637|221|6
+Koukoguhé|Koukoguhe|6911|-6566|234|5
+Kouénoufla Don|Kouenoufla Don|7355|-6752|240|5
+#CI|Savanes District
+Kouto||9890|-6409|377|14
+Kanakono||10355|-6236|332|13
+Korokaha||9901|-5628|348|11
+Kasséré|Kassere|9827|-6217|388|10
+Katiali||9823|-5934|353|9
+Kanoroba||9111|-6122|371|9
+Kadioha||8968|-5883|401|6
+Katoro||10150|-6129|355|6
+Komborodougou||9326|-5429|324|6
+Kélégbala|Kelegbala|10032|-6760|434|5
+Kiémou|Kiemou|9061|-5550|347|5
+#CI|Vallée du Bandama District
+Kanangonon||8298|-5056|300|6
+Kanouan||7417|-5452|197|6
+Kananwolo||8783|-5311|401|5
+#CI|Woroba
+Kani||8478|-6605|356|12
+Kounahiri||7791|-5835|301|7
+Koro||8555|-7463|429|6
+Kongaso||7815|-6077|286|6
+Karamokola||8100|-6183|321|5
+#CI|Yamoussoukro
+Kami||6883|-5279|252|10
+#CI|Zanzan District
+Kamala||8434|-2721|311|11
+Kouassi-Datékro|Kouassi-Datekro|7818|-3526|178|8
+Koun-Fao||7488|-3252|196|7
+Kiramissé|Kiramisse|8222|-3447|282|5
+#CM|Adamaoua
+Kontcha||7967|12233|425|8
+#CN|Chongqing
+Keda||29029|109241|522|10
+Kangping||30978|109245|583|8
+#CN|Gansu
+Ka'erqin||34609|103353|2649|10
+Koutouba||32940|104942|860|7
+#CN|Guangdong
+Kaiping||22572|113886|6|9
+Keji yuan||22541|113948|5|8
+#CN|Guizhou
+Koujiang||26043|108863|462|7
+#CN|Xinjiang
+Kalasu||38306|77505|1218|15
+Karaki||36981|81225|1380|14
+Kalayagaqi||44058|81476|907|12
+Kezilexilike||46178|89927|860|11
+Kawake||37660|80080|1248|11
+Ka'erdun||43908|81343|645|10
+Kürti|Kuerti|47200|89305|1003|10
+Kokdala||43783|90941|1355|8
+Katang Ailieke||38153|85518|1253|8
+Kipekyüzi|Kipekyuezi|43950|81390|697|7
+Kashitashi||36304|79915|2810|6
+Kalabulegen||46414|88685|694|5
+Koktokay||47217|89817|1181|5
+Kalaxilike||47729|87459|496|5
+#CY|Larnaka
+Kolossi||34669|32934|54|6
+Kíti|Kiti|34849|33575|26|5
+#CZ|Carlsbad Region
+Kraslice||50324|12517|515|6
+#CZ|Central Bohemia
+Králův Dvůr|Kraluv Dvur|49950|14034|245|11
+#CZ|Hradec Králové Region
+Kostelec nad Orlicí|Kostelec nad Orlici|50123|16213|294|6
+#CZ|Moravian-Silesian Region
+Kravaře|Kravare|49932|18005|242|7
+#CZ|Olomouc Region
+Kojetín|Kojetin|49352|17302|203|6
+#CZ|Prague
+Karlín|Karlin|50093|14447|190|12
+Kunratice||50014|14483|288|10
+Kyje||50097|14548|228|10
+Kbely||50133|14550|272|7
+#CZ|South Bohemian Region
+Kaplice||48739|14494|542|8
+#CZ|South Moravian
+Kuřim|Kurim|49299|16531|266|12
+Kohoutovice||49194|16541|344|12
+Kyjov||49010|17123|192|11
+Komín|Komin|49220|16552|223|7
+#CZ|Zlín
+Kunovice||49045|17470|181|5
+#CZ|Ústí nad Labem Region
+Klášterec nad Ohří|Klasterec nad Ohri|50389|13183|318|14
+Krupka||50684|13858|325|14
+#DE|Baden-Wurttemberg
+Kraichtal||49146|8733|198|14
+Ketsch||49368|8531|101|13
+Korb||48843|9363|289|10
+Königsbach-Stein|Konigsbach-Stein|48966|8606|169|10
+Kirchzarten||47967|7950|376|10
+Köngen|Kongen|48683|9367|284|9
+Karlsdorf-Neuthard||49135|8530|110|9
+Kenzingen||48196|7770|172|9
+Kochendorf||49223|9220|161|9
+Kißlegg|Kisslegg|47789|9884|652|9
+Kusterdingen||48523|9120|409|8
+Kandern||47714|7662|348|8
+Kressbronn am Bodensee||47598|9597|413|8
+Kuppenheim||48828|8254|128|8
+Knittlingen||49025|8756|190|7
+Königsbronn|Konigsbronn|48743|10112|503|7
+Königsfeld im Schwarzwald|Konigsfeld im Schwarzwald|48138|8420|761|6
+Königsbau|Koenigsbau|47680|9185|421|6
+Külsheim|Kulsheim|49669|9524|320|6
+Kuchen||48636|9800|406|6
+Kappelrodeck||48592|8117|215|6
+Kupferzell||49228|9690|333|6
+Kirchardt||49205|8992|227|6
+Kronau||49223|8631|109|6
+Kirchentellinsfurt||48533|9147|367|5
+Kirchheim am Neckar||49045|9142|186|5
+Kippenheim||48296|7825|169|5
+Krauchenwies||48017|9248|585|5
+#DE|Bavaria
+Krumbach||48242|10363|514|13
+Kirchheim bei München|Kirchheim bei Muenchen|48177|11756|511|12
+Kissing||48304|10971|501|11
+Kümmersbruck|Kummersbruck|49419|11888|396|10
+Kaufering||48091|10879|608|10
+Kirchseeon||48071|11889|564|9
+Kleinostheim||50000|9067|113|8
+Küps|Kups|50193|11276|290|8
+Krailling||48100|11400|562|8
+Kötzting|Kotzting|49176|12855|424|7
+Kahl am Main||50070|9006|109|7
+Kiefersfelden||47614|12191|484|7
+Knetzgau||49983|10550|247|7
+Klingenberg am Main||49785|9180|125|6
+Kleinschwabhausen||48402|11357|507|6
+Kleinwallstadt||49875|9169|124|6
+Kolitzheim||49917|10233|227|6
+Kirchdorf am Inn||48248|12985|351|5
+Kemnath||49870|11891|462|5
+Karlshuld||48682|11285|377|5
+#DE|Brandenburg
+Kyritz||52942|12397|45|10
+Kolkwitz||51750|14250|69|10
+Kalawa||51744|13953|93|9
+Kremmen||52762|13025|38|8
+Karstädt|Karstaedt|53162|11742|32|7
+Ketzin||52478|12845|33|7
+#DE|Hamburg
+Kirchwerder||53420|10202|4|10
+#DE|Hesse
+Kelsterbach||50061|8529|107|14
+Kastel||50010|8283|90|13
+Kaufungen||51281|9619|212|13
+Kranichstein||49905|8681|143|12
+Klarenthal||50088|8202|191|11
+Kriftel||50084|8470|118|11
+Königstädten|Koenigstaedten|49963|8450|89|10
+Kelkheim-Mitte||50136|8451|193|9
+#DE|Lower Saxony
+Kleefeld||52374|9791|60|13
+Kirchrode||52360|9830|72|12
+Kirchlinteln||52942|9318|49|10
+Katlenburg-Lindau||51683|10100|137|8
+Kreiensen||51854|9965|106|7
+Kalefeld||51800|10033|129|7
+Klein Schwülper|Klein Schwuelper|52342|10429|66|7
+#DE|North Rhine-Westphalia
+Kalkar||51739|6291|19|15
+Kessenich||50712|7111|63|13
+Kirchhundem||51086|8089|308|13
+Kall||50542|6563|384|12
+Kirchlinde||51526|7367|88|11
+Kaldenkirchen||51320|6198|52|10
+Kornharpen||51490|7265|125|8
+Kurl-Husen||51556|7595|68|7
+Kreuzau||50747|6491|148|5
+Kranenburg||51783|6017|15|5
+#DE|Rheinland-Pfalz
+Kirchen||50808|7886|260|9
+Kirn||49789|7458|201|9
+Kandel||49083|8197|126|8
+Kirchheimbolanden||49662|8015|255|8
+Kastellaun||50069|7442|413|5
+Kusel||49538|7405|231|5
+#DE|Saarland
+Kleinblittersdorf||49158|7037|205|13
+Kirkel||49283|7233|249|10
+#DE|Saxony
+Kleinzschocher||51316|12320|117|11
+Kirchberg||50622|12524|351|9
+Klingenthal||50360|12465|604|9
+Klipphausen||51068|13514|270|6
+Kitzscher||51164|12553|165|6
+#DE|Saxony-Anhalt
+Klötze|Kloetze|52628|11167|62|5
+Könnern|Koennern|51671|11771|97|5
+#DE|Schleswig-Holstein
+Kronshagen||54337|10082|17|12
+Kappeln||54661|9931|12|10
+Kellinghusen||53952|9720|17|8
+Kropp||54412|9508|16|6
+Klausdorf||54309|10214|6|6
+#DE|State of Berlin
+Konradshöhe|Konradshoehe|52585|13228|39|6
+#DE|Thuringia
+Kahla||50807|11585|181|7
+Königsee|Koenigsee|50661|11097|374|7
+Kölleda|Koelleda|51187|11245|146|6
+#DK|Capital Region
+Kongens Lyngby||55770|12504|25|11
+#DK|Central Jutland
+Kolt||56108|10070|75|5
+#DK|North Denmark
+Klarup||57012|10056|16|6
+#DK|South Denmark
+Kerteminde||55449|10658|5|6
+#DK|Zealand
+Korsør|Korsor|55330|11139|2|14
+#DZ|Adrar
+Kasbate El Djena||27020|1045|277|8
+#EE|Harjumaa
+Keila||59304|24413|41|10
+Kuusalu||59444|25441|46|6
+#EE|Hiiumaa
+Kärdla|Kaerdla|58998|22749|9|3
+#EE|Saare
+Kuressaare||58254|22492|3|13
+#ET|Amhara
+Kara K’orē|Kara K'ore|10422|39935|1757|7
+#FI|Central Finland
+Keuruu||62267|24700|118|9
+Korpilahti||62017|25550|109|5
+#FI|Central Ostrobothnia
+Kannus||63900|23900|62|5
+#FI|Kainuu
+Kuhmo||64133|29517|166|7
+#FI|Lapland
+Keminmaa||65802|24545|13|8
+Kemijärvi|Kemijaervi|66713|27431|173|7
+Kittilä|Kittilae|67665|24894|179|7
+#FI|North Karelia
+Kitee||62100|30150|66|9
+#FI|North Ostrobothnia
+Kuusamo||65964|29189|261|15
+Kempele||64913|25503|15|14
+Kalajoki||64250|23950|16|12
+Kiiminki||65131|25797|49|12
+Kaakkuri||64960|25530|14|7
+Kello||65129|25357|13|6
+#FI|North Savo
+Kiuruvesi||63650|26617|103|7
+#FI|Ostrobothnia
+Kronoby||63729|23034|12|6
+Kristinestad||62274|21376|11|6
+#FI|Pirkanmaa
+Kaukajärvi|Kaukajaervi|61468|23885|81|13
+Kaleva||61498|23805|103|5
+#FI|Satakunta
+Kankaanpää|Kankaanpaeae|61800|22417|105|13
+Kokemäki|Kokemaeki|61256|22356|42|7
+#FI|South Ostrobothnia
+Kauhajoki||62433|22183|101|13
+#FI|South Savo
+Kerimäki|Kerimaeki|61911|29282|86|6
+Kangasniemi||61994|26648|102|5
+#FI|Uusimaa
+Kontula||60238|25084|22|14
+Kannelmäki|Kannelmaeki|60242|24886|37|13
+Kamppi||60168|24930|24|12
+Kivistö|Kivistoe|60326|24838|52|11
+Kilo||60217|24782|24|11
+Kauniainen||60212|24728|41|10
+Karis||60072|23662|34|9
+Kivenlahti||60154|24633|25|8
+Karkkila||60534|24210|74|8
+Käpylä|Kaepylae|60213|24948|28|8
+Kotkavuori||60163|24884|1|8
+Korso||60351|25078|46|7
+Kruununhaka||60172|24957|4|7
+Kaitaa||60146|24687|14|7
+Kallahti||60193|25137|1|7
+Konala||60237|24845|27|6
+Kauklahti||60193|24600|32|6
+Kaivoksela||60268|24869|28|6
+Koivukylä|Koivukylae|60322|25059|33|6
+Kalasatama||60185|24979|1|6
+Karakallio||60233|24761|47|6
+Kivikko||60235|25060|33|5
+#FM|Pohnpei State
+Kolonia||6964|158206|0|6
+Kolonia Town||6964|158206|0|6
+#FO|Norðoyar
+Klaksvík|Klaksvik|62227|-6589|88|5
+#FR|Grand Est
+Kingersheim||47791|7326|231|13
+#GA|Estuaire
+Kango||172|10109|10|6
+#GB|England
+Kenley||51326|-101|109|15
+Kensal Green||51531|-225|44|15
+Knaresborough||54009|-1469|77|15
+Knotty Ash||53416|-2896|39|14
+Kidbrooke||51467|27|35|14
+King's Cross||51531|-123|21|14
+Knottingley||53708|-1256|28|14
+Kidlington||51822|-1289|64|14
+Kirk Sandall||53562|-1069|12|14
+Knutsford||53303|-2375|68|13
+Kew||51482|-287|8|11
+Kingsteignton||50550|-3583|55|11
+Kimberley||52983|-1267|93|11
+Knightsbridge and Belgravia||51504|-167|18|11
+Kesgrave||52062|1237|35|11
+Knowle||52383|-1733|124|11
+Kearsley||53533|-2383|100|10
+Kingston upon Thames||51413|-297|12|10
+Kirby Muxloe||52630|-1228|94|10
+Killamarsh||53324|-1317|50|10
+Kiveton Park||53341|-1255|103|9
+Knaphill||51320|-616|57|9
+Kirkham||53782|-2872|24|8
+Kings Langley||51714|-450|93|7
+Kirkleatham||54588|-1082|24|7
+Kingswood||51295|-214|152|7
+Kemsing||51306|229|98|7
+Keyworth||52871|-1090|86|7
+Kingsbridge||50285|-3776|7|6
+Kibworth Harcourt||52544|-995|120|6
+Kilburn||53006|-1439|93|6
+Kelvedon||51840|706|25|5
+#GB|Northern Ireland
+Kilkeel||54062|-6003|16|6
+#GB|Scotland
+Kilsyth||55976|-4059|56|10
+Kilbirnie||55751|-4688|56|8
+Kirkwall||58985|-2959|3|7
+Kelso||55598|-2434|40|7
+Kelty||56134|-3387|157|7
+Kirriemuir||56674|-3003|133|6
+#GE|Imereti
+Khoni||42325|42422|125|8
+#GE|Kakheti
+Kvareli||41955|45817|442|10
+#GE|Kvemo Kartli
+Kazreti||41382|44420|696|6
+#GE|Shida Kartli
+Kaspi||41928|44424|568|12
+Kareli||42022|43896|627|7
+#GH|Eastern
+Kibi||6165|-554|318|9
+#GH|Northern
+Kpandae||8469|-11|183|9
+#GH|Oti
+Kete Krachi||7794|-50|117|11
+#GM|North Bank
+Kerewan||13490|-16089|16|5
+#GM|Upper River
+Koina||13483|-13867|17|7
+Kulari||13400|-14083|21|7
+#GM|Western
+Kerr Serign||13432|-16720|32|12
+Kaimbujae NDing||13285|-16621|22|9
+Kololi||13450|-16717|11|9
+Kartung||13095|-16762|11|5
+#GN|Boké Region
+Kimbo||10400|-13550|262|9
+#GN|Labé Region
+Koubia||11586|-11895|750|10
+#GR|Attica
+Keratéa|Keratea|37806|23977|197|14
+Kalývia Thorikoú|Kalyvia Thorikou|37839|23925|116|14
+Kryonéri|Kryoneri|38137|23831|365|5
+#GR|Central Greece
+Karpenísi|Karpenisi|38912|21798|948|7
+Kými|Kymi|38635|24103|211|7
+Kárystos|Karystos|38013|24416|7|5
+#GR|Central Macedonia
+Koufália|Koufalia|40778|22572|47|8
+Krýa Vrýsi|Krya Vrysi|40687|22305|6|7
+#GR|Epirus
+Katsikás|Katsikas|39623|20888|486|5
+#GR|Mount Athos
+Karyes||40257|24245|364|0
+#GR|North Aegean
+Kalloní|Kalloni|39233|26207|11|8
+#GR|Peloponnese
+Kiáto|Kiato|38013|22748|9|10
+Kyparissía|Kyparissia|37251|21674|44|5
+#GR|South Aegean
+Kálymnos|Kalymnos|36950|26984|2|12
+Karpathos||35507|27213|23|8
+#GR|Thessaly
+Kalampáka|Kalampaka|39704|21627|221|8
+#GR|West Greece
+Káto Achaḯa|Kato Achaia|38150|21550|0|6
+#GR|West Macedonia
+Kastoria||40522|21263|641|13
+#HK|Central and Western
+Kwun Lung Lau||22280|114128|105|6
+#HK|Eastern District
+Kornhill||22282|114216|118|13
+Kornhill Garden||22285|114216||6
+#HK|Kowloon City
+Kai Ching Estate||22333|114203|3|12
+Ka Wai Chuen||22308|114186|2|7
+#HK|Kwai Tsing District
+Kau Wa Keng||22346|114137|15|14
+#HK|Kwun Tong District
+Kowloon Bay||22327|114208|6|13
+#HK|Sha Tin
+Kwong Yuen||22380|114214|51|12
+#HK|Wong Tai Sin District
+Kingsford Terrace||22340|114211|66|6
+#HR|Koprivnica-Križevci
+Križevci|Krizevci|46022|16543|145|11
+#HR|Krapina-Zagorje
+Krapina||46161|15874|247|4
+#HR|Primorje-Gorski Kotar
+Kastav||45375|14349|362|10
+#HR|Sisak-Moslavina
+Kutina||45475|16782|104|12
+#HR|Split-Dalmatia
+Kaštel Stari|Kastel Stari|43550|16350||7
+Kaštel Sućurac|Kastel Sucurac|43550|16426|25|7
+Kaštel Novi|Kastel Novi|43552|16336|1|7
+Kaštel Lukšić|Kastel Luksic|43555|16368|19|5
+Kaštel Kambelovac|Kastel Kambelovac|43550|16383|5|5
+#HR|Šibenik-Knin
+Knin||44041|16197|230|8
+#HU|Bekes County
+Kondoros||46767|20800|84|6
+Körösladány|Korosladany|46967|21083|85|5
+#HU|Bács-Kiskun
+Kiskunmajsa||46490|19740|104|12
+Kecel||46525|19252|102|9
+Kunszentmiklós|Kunszentmiklos|47027|19126|95|9
+Kerekegyháza|Kerekegyhaza|46937|19478|118|6
+#HU|Csongrád
+Kistelek||46473|19980|88|7
+#HU|Győr-Moson-Sopron
+Kapuvár|Kapuvar|47592|17029|124|11
+#HU|Hajdú-Bihar
+Kaba||47350|21283|86|6
+Komádi|Komadi|47000|21500|88|6
+#HU|Jász-Nagykun-Szolnok
+Kisújszállás|Kisujszallas|47217|20767|84|13
+Kunszentmárton|Kunszentmarton|46839|20289|83|10
+Kunhegyes||47367|20633|88|8
+Kunmadaras||47433|20800|90|6
+Kenderes||47250|20683|83|5
+#HU|Komárom-Esztergom
+Kisbér|Kisber|47503|18037|177|6
+#HU|Pest County
+Kistarcsa||47548|19262|207|13
+Kerepes||47560|19283|215|10
+Kiskunlacháza|Kiskunlachaza|47188|19009|97|9
+Kartal||47671|19542|155|6
+#HU|Szabolcs-Szatmár-Bereg
+Kemecse||48075|21806|97|5
+#HU|Vas County
+Körmend|Kormend|47011|16606|192|12
+Kőszeg|Koszeg|47389|16541|277|12
+#ID|East Java
+Klakah||-7996|113253|198|8
+#ID|Highland Papua
+Kobakma||-3664|139065|961|13
+Karubaga||-3699|138458|1781|7
+Kenyam||-4600|138384|139|6
+#ID|Riau
+Kuala Cenaku||-471|102683|3|7
+#ID|South Papua
+Kepi||-6525|139322|12|8
+#IE|Leinster
+Kilquade||53097|-6084|57|15
+Knocklyon||53280|-6331|87|15
+Kildare||53156|-6914|100|9
+Kinsealy-Drinan||53444|-6203|25|6
+Kilcock||53402|-6671|68|6
+Killester||53373|-6204|24|5
+#IE|Munster
+Killarney||52060|-9509|32|15
+Kinsale||51708|-8531|45|5
+#IL|
+Katzrin||32992|35691|325|7
+#IL|Central District
+Kokhav Ya’ir|Kokhav Ya'ir|32226|35001|105|9
+Kfar H̱abad|KfarHabad|31988|34852|43|7
+#IL|Northern District
+Kābūl|Kabul|32869|35212|92|14
+Kfar Yasif||32955|35162|59|10
+Kisra - Sume'a||32973|35299|686|9
+Ka‘abiyya-Tabbash-H̱ajajra|Ka`abiyya-Tabbash-Hajajra|32750|35184|128|6
+Kfar Vradim||32994|35278|629|5
+#IM|Braddan
+Kirk Braddan||54167|-4517|35|0
+#IM|Michael
+Kirkmichael||54286|-4587|32|0
+#IN|Andhra Pradesh
+Kāmalāpuram|Kamalapuram|14598|78669|141|15
+Kankipādu|Kankipadu|16435|80767|22|15
+Kottavalasa||17890|83191|67|14
+Korukollu||16500|81250|6|9
+Kantabamsuguda||18323|82883|918|7
+Kanapaka||18115|83374|71|6
+#IN|Arunachal Pradesh
+Khonsa||27017|95567|946|10
+#IN|Assam
+Kampur Town||26160|92659|44|10
+Khaira Bari||26511|90969|49|10
+Kamalabaria N.C.||26769|94193|100|10
+Kahi Kuchi||26101|91599|54|10
+Kanakpur Part-II||24800|92804|19|10
+Kumar Kaibarta Gaon||26751|94236|114|8
+Kochpara||26089|91532|58|8
+Kanisail Pt I||24855|92370|13|7
+Kanakpur I||24795|92806|19|6
+Katirail T.E.||24909|92580|15|6
+Kharijapikon||26033|90667|44|6
+Kakaya||26364|91343|38|6
+Kālāigaon|Kalaigaon|26574|91976|73|5
+#IN|Bihar
+Kāb|Kab|25389|84789|72|10
+Kargahiā Purab|Kargahia Purab|26789|84530|80|10
+Kurthaur||25562|85122|55|10
+#IN|Chandigarh
+Khuda Alisher||30775|76812|361|7
+#IN|Chhattisgarh
+Kasdol||21619|82425|252|14
+Kunkuri||22742|83951|486|14
+Kurud||20831|81722|311|14
+Kirodimalnagar||21927|83332|237|13
+Keskāl|Keskal|20084|81587|668|11
+Kharod||21744|82579|244|10
+Kharora||21401|81928|308|9
+Koora||21432|81665|269|9
+Kusmi||23284|83908|862|7
+Koni||22122|82134|276|7
+Khamharia||20976|82251|328|7
+Kotba||22439|83740|402|7
+#IN|Dadra and Nagar Haveli and Daman and Diu
+Kadaiya||20465|72854|11|13
+#IN|Delhi
+Kanjhawāla|Kanjhawala|28737|77005|219|10
+Khera Khurd||28776|77100|222|10
+Khera Kalān|Khera Kalan|28774|77117|216|8
+Kotla Mahigiran||28537|77281|210|7
+Khaira||28594|76970|214|7
+Khan Pur Dhani||28710|77283|202|7
+#IN|Goa
+Kānkon|Kankon|15027|74046|31|12
+#IN|Gujarat
+Kānodar|Kanodar|24089|72394|180|12
+Kharaghoda||23187|71727|8|12
+Kakosi||24004|72303|137|10
+Kawānt|Kawant|22093|74051|200|10
+Katpur||21059|71795|9|9
+Karachiya||22379|73133|102|7
+Kevadiya||21886|73702|57|7
+Karvad||20356|72955|22|6
+Kharach||21454|72916|13|5
+#IN|Haryana
+Kanīna Khās|Kanina Khas|28331|76311|255|13
+Kheri Sāmpla|Kheri Sampla|28778|76776|223|11
+Kabri||29428|76940|235|7
+Khori Kalān|Khori Kalan|28215|76881|258|6
+Kachrauli||29458|76949|238|5
+Kānwāla|Kanwala|30348|76794|275|5
+#IN|Himachal Pradesh
+Kyelang||32572|77024|3038|14
+Kangra||32091|76263|697|10
+Kasauli||30899|76966|1858|5
+#IN|Jammu and Kashmir
+Kupwāra|Kupwara|34031|74264|3681|15
+Krālapur|Kralapur|34000|74813|1599|14
+Khreuh||34019|74999|1630|10
+Katra||32992|74932|868|9
+Khore||32823|74511|257|7
+Khaur||32603|74809|280|7
+Kokernag||33578|75318|1948|7
+#IN|Jharkhand
+Kenduadīh|Kenduadih|23736|86374|161|9
+Konrā|Konra|24310|85422|392|8
+Kāndra|Kandra|22852|86052|182|8
+Kurpania||23792|85932|283|8
+Kadmā|Kadma|23987|85345|607|7
+Kharsāwān|Kharsawan|22791|85831|202|7
+Kumārpur|Kumarpur|24681|87841|34|7
+Karmatanr||23823|86524|228|6
+Karma Tanr||23919|86718|152|6
+Karma||24454|85551|400|6
+Kharkhari||23778|86239|209|6
+#IN|Karnataka
+Kākti|Kakti|15932|74526|745|14
+Konaje||12797|75510|199|11
+Kargal||14188|74813|555|11
+Kangarāli-budrukh|Kangarali-budrukh|15905|74511|744|10
+Kamalnagar||18231|77179|565|10
+Kōteshwar|Koteshwar|13589|74696|21|10
+Kumbalgod||12879|77446|766|10
+Konanūr|Konanur|12630|76050|835|10
+Kurgunta||17193|77358|425|9
+Kangarāli-khurd|Kangarali-khurd|15895|74499|741|8
+Kurgahalli||12355|76577|798|7
+Kodiyal||14517|75790|531|7
+Kuvettu||12981|75254|105|7
+Kādiganahalli|Kadiganahalli|13169|77628|911|7
+Kumsi||14055|75400|667|6
+Kadakola||12192|76666|694|6
+Kawlet||14522|75775|542|6
+Kairangala||12797|74947|75|6
+Kodigenahalli||13721|77386|667|6
+Kolambe||12965|74909|24|6
+Kenjāru|Kenjaru|12963|74859|13|5
+Koppa||13530|75363|778|5
+#IN|Kerala
+Kunnumma||9357|76413|7|15
+Kandānisshēri|Kandanissheri|10598|76076|18|15
+Kurumpilavu||10411|76168|22|14
+Kozhukkallur||11515|75708|90|14
+Kannadiparamba||11937|75403|36|14
+Karikād|Karikad|10701|76068|22|14
+Kunjatturu||12747|74888|29|14
+Karuvellūr|Karuvellur|12176|75193|24|13
+Kureekkad||9930|76375|4|13
+Kuttyattur||11970|75488|34|13
+Kaniyārakōd-Kizhakumuri|Kaniyarakod-Kizhakumuri|10744|76434|74|13
+Katavallūr|Katavallur|10717|76070|18|13
+Kuttūr|Kuttur|10559|76200|14|12
+Kozhancheri||9350|76700|30|12
+Kurattissery||9319|76528|4|12
+Kāttakampāla|Kattakampala|10694|76034|11|12
+Kōlazhi|Kolazhi|10572|76219|24|12
+Kūttāli|Kuttali|11585|75767|28|11
+Kizhakkumbāgam|Kizhakkumbagam|10132|76445|28|11
+Keerikkad||9177|76486|12|10
+Kadannappalli||12100|75276|27|10
+Kozhukkully||10521|76278|46|10
+Kīkāna|Kikana|12383|75056|25|10
+Kannavam||11845|75663|42|9
+Koolimuttam||10286|76136|10|9
+Kodannur||10466|76184|30|8
+Kumaranellūr|Kumaranellur|10670|76248|49|8
+Kainoor||10499|76279|13|7
+Kaiparamba||10608|76139|21|7
+Kallettumkara||10344|76268|16|7
+Kottapuram||10680|76194|22|7
+Kariyannūr|Kariyannur|10681|76163|28|6
+Kovalam||8367|76997||6
+Kizhuppillikkara||10397|76141|16|5
+#IN|Lakshadweep
+Kavaratti||10567|72642|14|11
+Kadmat||11225|72775|1|5
+#IN|Madhya Pradesh
+Khargāpur|Khargapur|24823|79144|304|15
+Karmeta||23207|79896|390|14
+Kotwa||25031|81319|148|14
+Kukdeshwar||24483|75268|442|12
+Karnāwad|Karnawad|22736|76244|542|11
+Khujner||23786|76618|442|11
+Khanr||24181|81286|312|11
+Karrāpur|Karrapur|23949|78866|502|11
+Kothri Kalān|Kothri Kalan|23072|76830|487|11
+Kānar|Kanar|23672|76171|423|10
+Kāri|Kari|24837|78867|359|10
+Kāntāphor|Kantaphor|22577|76560|339|10
+Khamaria||23213|80031|407|10
+Keolāri|Keolari|22370|79906|446|10
+Kosmī|Kosmi|21804|80207|311|9
+Kelhauri||23187|81631|466|9
+Kothi||24753|80778|327|9
+Kākarāti|Kakarati|24564|80266|336|8
+Kotār|Kotar|24698|80981|303|8
+Khairī|Khairi|22598|80392|459|6
+Kirnāpur|Kirnapur|21626|80331|302|6
+Khor||24592|74815|454|6
+#IN|Maharashtra
+Kalas||18172|74790|560|15
+Kondalwādi|Kondalwadi|18807|77770|361|15
+Khadkale||18761|73558|631|13
+Karivali||19292|73038|20|13
+Kherdi||17519|73557|12|12
+Khadki Buzurg||20668|77022|291|12
+Kāti|Kati|17961|75889|515|12
+Kudwā|Kudwa|21478|80186|317|12
+Kandri||21243|79239|288|11
+Kondhi||20015|79286|195|10
+Kalombe||16663|74212|594|10
+Kāndri|Kandri|21420|79277|344|8
+Kālundri|Kalundri|18980|73127|8|8
+Kolki||17979|74450|567|8
+Kegaon||18896|72913|18|7
+Kurkhera||20618|80209|247|7
+Khed||18338|73847|756|7
+Khapar||21533|73931|118|7
+Kudus||19534|73101|45|7
+Khamārī|Khamari|21427|80235|317|7
+Kambe||19312|73036|17|7
+Khāndbāra|Khandbara|21306|74044|198|7
+Kuwarbav||16994|73356|109|6
+Katangī|Katangi|21485|80203|314|6
+Korādi|Koradi|21248|79106|307|6
+Khardi||19588|73382|242|6
+Kharbav||19297|72996|11|5
+#IN|Manipur
+Kakching Khunou||24405|93900|781|11
+Kumbi||24433|93813|774|10
+Kwakta||24448|93730|797|9
+Kāngpokpi|Kangpokpi|25153|93972|1075|7
+Kiyamgei||24745|93938|771|5
+#IN|Mizoram
+Khawzawl||23518|93189|1198|11
+Kawnpur||24048|92676|736|8
+#IN|Odisha
+Kodala||19624|84941|38|14
+Khallikot||19609|85086|56|13
+Kansbahal||22216|84663|217|10
+Kiri Buru||22083|85350|466|10
+Kasinagar||18857|83881|56|10
+Kantilo||20362|85192|55|9
+Kumārmunda|Kumarmunda|22300|84783|206|9
+Khandpara||20264|85177|66|9
+Krushnanandapur||20359|86261|21|9
+Kurmūr|Kurmur|18755|82938|915|9
+Kukkudākhandi|Kukkudakhandi|19394|84755|58|7
+Khaliapāli|Khaliapali|21364|83616|187|7
+Koīra|Koira|21905|85242|573|7
+Kandasar||20842|85143|147|7
+Khatiguda||19238|82788|582|6
+Kullāda|Kullada|19969|84633|88|6
+Kandragādia|Kandragadia|21007|85737|92|6
+Kāliapāni|Kaliapani|21052|85777|96|5
+#IN|Punjab
+Kalanaur||32012|75151|259|14
+Khem Karan||31144|74559|213|13
+Kot Īsa Khān|Kot Isa Khan|30947|75138|218|13
+Kathāniān|Kathanian|31637|74757|230|11
+Khamānon Kalān|Khamanon Kalan|30817|76355|275|10
+Kot Fatah||30113|75087|209|7
+Kaurānwāli|Kauranwali|30384|74064|178|6
+Khambra on Nakodar Road||31274|75557|223|5
+Kot||32400|75722|454|5
+Khotran||31201|75801|244|5
+#IN|Rajasthan
+Khānpur|Khanpur|24732|76396|290|15
+Kesrisinghpur||29948|73621|159|14
+Kānor|Kanor|24434|74265|479|13
+Khairābād|Khairabad|24660|75931|359|12
+Kelwa||25152|73843|609|12
+Kānota|Kanota|26871|75948|357|11
+Kushālgarh|Kushalgarh|23199|74451|293|11
+Kishangarh||27819|76730|308|10
+Kolāyat|Kolayat|27838|72960|221|10
+Kawāi|Kawai|24756|76735|316|9
+Kolvi||23942|75599|419|9
+Kānwat|Kanwat|27589|75699|489|8
+Kherwāra|Kherwara|23986|73595|331|8
+Kherlīganj|Kherliganj|24881|76668|287|7
+Kumbhkot||24618|76001|334|7
+#IN|Tamil Nadu
+Kunjānpālaiyam|Kunjanpalaiyam|11586|77801|203|15
+Kottaiyūr|Kottaiyur|10110|78796|103|15
+Kamuthi||9407|78373|33|15
+Kumārapuram|Kumarapuram|8292|77321|73|15
+Kodavasal||10862|79480|20|15
+Karambakkudi||10459|79141|52|15
+Kāveripāk|Kaveripak|12909|79462|134|15
+Kākalūr|Kakalur|13139|79929|43|15
+Karuppur||11717|78092|317|14
+Kumaralingam||10489|77350|323|14
+Killai||11449|79767|8|14
+Kārimangalam|Karimangalam|12309|78203|470|14
+Kumaragiri||8745|78052|12|13
+Kelamangalam||12603|77852|796|13
+Kodumudi||11078|77884|135|13
+Krishnasamudram||10786|78800|71|13
+Kulattūr|Kulattur|11849|77751|258|13
+Kodikkulam||9649|77586|176|13
+Kondūr|Kondur|11754|79704|15|13
+Karunguli||12533|79904|31|12
+Kurumbalūr|Kurumbalur|11236|78801|155|12
+Kambainallur||12207|78317|415|12
+Karukkalvādi|Karukkalvadi|11671|78013|255|12
+Kovilpālaiyampūdur|Kovilpalaiyampudur|11508|77363|234|12
+Kaniyūr|Kaniyur|11093|77156|363|12
+Karumbākkam|Karumbakkam|12702|80091|32|12
+Kuhalur||11434|77496|240|12
+Kīranūr|Kiranur|10570|78787|108|12
+Kallakkudi||10977|78951|82|12
+Kādiyāmpatti|Kadiyampatti|11872|78096|356|11
+Kadattūr|Kadattur|12086|78293|480|11
+Kānjikkovil|Kanjikkovil|11369|77596|234|11
+Kadambuttūr|Kadambuttur|13098|79862|54|11
+Kempanāyakkanpālaiyam|Kempanayakkanpalaiyam|11531|77301|265|11
+Kulattūr|Kulattur|10705|78551|118|11
+Kottāram|Kottaram|8119|77524|26|11
+Kāttupputtūr|Kattupputtur|10994|78219|112|11
+Kālappanāyakkanpatti|Kalappanayakkanpatti|11328|78244|210|11
+Krishnarayapuram||10956|78283|109|11
+Kallupatti||9717|77867|138|11
+Kulattūr|Kulattur|9003|78193|17|11
+Kayattār|Kayattar|8948|77774|63|10
+Kannivādi|Kannivadi|10379|77830|307|10
+Kusavampatti||11219|78181|196|10
+Kondichettippatti||11201|78163|195|10
+Kīrippatti|Kirippatti|11536|78490|301|10
+Kalavai||12770|79420|132|10
+Kolappalūr|Kolappalur|11379|77429|270|10
+Kaniyambādi|Kaniyambadi|12812|79134|257|10
+Kadaparai||10999|78082|141|10
+Kailasagiri||12836|78712|324|9
+Keeramangalam||10286|79099|44|9
+Konganāpuram|Konganapuram|11571|77900|232|9
+Kollankoil||11128|77744|237|9
+Kavundanpālaiyam|Kavundanpalaiyam|11162|77262|332|9
+Kāsipālaiyam|Kasipalaiyam|11456|77331|231|9
+Kodivalasa||13255|79425|198|9
+Kilkunda||11263|76654|1762|9
+Kunnattūr|Kunnattur|11273|77411|320|9
+Kinattukkadavu||10822|77020|332|9
+Kattimancode||8191|77353|14|9
+Kavundaneri||11574|77980|249|8
+Kilvelur||10767|79742|13|8
+Kottaikavundanpatti||11720|78069|293|8
+Kannanūr|Kannanur|8279|77292|109|8
+Kandanūr|Kandanur|10104|78825|81|8
+Kulappuram||8322|77149|23|8
+Kattrivedu||13138|80204|10|8
+Koonimedu||12085|79889|13|8
+Kuruppanāyakkanpālaiyam|Kuruppanayakkanpalaiyam|11464|77694|171|7
+Kandanvilai||8207|77328|51|7
+Kannamangalam||12752|79148|197|7
+Kunnattūr|Kunnattur|12348|78510|362|7
+Karadipatti||9918|78024|162|7
+Kujjanūr|Kujjanur|9874|77375|352|7
+Kīlpuduppākkam|Kilpuduppakkam|12680|79545|106|7
+Kondamanāyakkanpatti|Kondamanayakkanpatti|11710|78177|320|7
+Kīranūr|Kiranur|10594|77503|280|6
+Koradacheri||10770|79492|20|6
+Kilampadi||11204|77843|164|6
+Karugampattur||12926|79105|219|6
+Kila Ambur||8761|77401|76|6
+Karaivalimādappūr|Karaivalimadappur|11068|77159|353|6
+Kadaiyam||8820|77373|112|5
+Kullursandai||9543|77981|88|5
+Kīlvayattanānkuppam|Kilvayattanankuppam|12955|78987|250|5
+Kanadukattan||10172|78779|107|5
+Kūttankuli|Kuttankuli|8217|77781|8|5
+Kalparapatti||11585|78027|274|5
+Kurukkuppatti||11694|77981|262|5
+Kovilpālaiyam|Kovilpalaiyam|10738|77035|291|5
+#IN|Telangana
+Kottapeta||17306|78491|544|13
+Kamalāpuram|Kamalapuram|18268|80489|85|11
+Kotūr|Kotur|17148|78287|594|11
+Kottapalli||18495|79094|294|10
+Kondamallapally||16718|79002|266|10
+Kadipikonda||17964|79510|292|9
+Kismatpur||17334|78392|527|7
+Konta||17805|81387|45|7
+Kiādgira|Kiadgira|17253|77433|430|7
+Kasipet||19027|79438|190|5
+#IN|Tripura
+Kumarghat||24160|92033|36|13
+Kamalpur||24196|91834|40|11
+#IN|Uttar Pradesh
+Khānpur|Khanpur|28534|78065|211|15
+Kota||24446|83131|189|15
+Karārī|Karari|25452|81427|109|14
+Kirākat|Kirakat|25637|82916|87|14
+Kharela||25543|79812|160|14
+Kadaura||25985|79838|137|14
+Khāga|Khaga|25772|81104|115|13
+Khailār|Khailar|25341|78531|271|13
+Kharkhauda||28836|77742|225|13
+Kurāra|Kurara|25980|79990|133|13
+Khudāganj|Khudaganj|28146|79715|166|13
+Kālīnagar|Kalinagar|28620|80082|191|11
+Kishni||27025|79262|157|10
+Khargupur||27376|81988|117|10
+Kampil||27613|79277|161|9
+Kotra||25808|79309|155|9
+Kādīpur|Kadipur|26168|82370|93|7
+Katra||27509|82026|115|7
+Kishanpur||25642|81023|109|6
+#IN|Uttarakhand
+Kālāgarh Project Colony|Kalagarh Project Colony|29478|78784|289|13
+Kālādhūngi|Kaladhungi|29284|79351|408|7
+#IN|West Bengal
+Kharar||22722|87678|17|12
+Kesabpur||22968|88263|13|11
+Karīmpur|Karimpur|23976|88619|23|10
+Krishnapur||22670|88269|13|7
+#IQ|Nineveh
+Kays Qal‘ah|Kays Qal'ah|36630|43304|423|10
+#IR|Bushehr
+Kākī|Kaki|28339|51524|22|12
+Khārk|Khark|29261|50331|9|8
+#IR|Chaharmahal and Bakhtiari
+Kīān|Kian|32284|50892|2050|13
+#IR|East Azerbaijan
+Koshksarāy|Koshksaray|38458|45567|1154|12
+Karkaj||38036|46432|1647|8
+Kolvānaq|Kolvanaq|38100|46989|1559|7
+Kujuvar||38060|46138|1330|6
+#IR|Fars
+Khasht||27235|53435|414|10
+Kārzīn|Karzin|28409|53108|700|9
+Khūr|Khur|27646|54344|809|7
+Khūmeh Zār|Khumeh Zar|30009|51578|1062|6
+Kīānābād|Kianabad|29545|52465|1500|5
+#IR|Gilan Province
+Kīāshahr|Kiashahr|37420|49947|-21|14
+Kalā Chāy|Kala Chay|37080|50396|-22|12
+Khalīlābād|Khalilabad|36809|49415|183|11
+Kūcheşfahān|Kuchesfahan|37278|49772|1|10
+Khoshk Bījār|Khoshk Bijar|37374|49758|-11|7
+Kūmeleh|Kumeleh|37155|50174|-11|6
+#IR|Golestan
+Khān Bebīn|Khan Bebin|37012|54988|38|11
+Khājeh Nafas|Khajeh Nafas|36994|54095|-21|5
+#IR|Isfahan
+Kūshk|Kushk|32642|51500|1606|13
+Kahrīz Sang|Kahriz Sang|32627|51482|1612|10
+Karkevand||32342|51446|1666|7
+Khūr|Khur|33775|55083|831|7
+Kūhpāyeh|Kuhpayeh|32715|52439|1796|6
+Komeshcheh||32905|51810|1580|5
+#IR|Kerman
+Kūhbanān|Kuhbanan|31410|56283|1990|11
+Khātūnābād|Khatunabad|30008|55421|1842|5
+#IR|Kermanshah Province
+Kahrīz|Kahriz|34383|47055|1302|6
+#IR|Khuzestan
+Kūt-e Navāşer|Kut-e Navaser|31223|48660|16|6
+#IR|Lorestan Province
+Kūhnānī|Kuhnani|33403|47327|1011|8
+#IR|Markazi
+Khondāb|Khondab|34393|49184|1695|8
+Komījān|Komijan|34721|49327|1782|7
+Khoshkrūd|Khoshkrud|35399|50334|1368|5
+#IR|Māzandarān
+Kalārdasht|Kalardasht|36511|51173|1144|13
+Khorramābād|Khorramabad|36783|50872|13|12
+Khalīl Shahr|Khalil Shahr|36702|53642|44|11
+Kolāksar|Kolaksar|36496|52344|64|9
+Kīā Kolā|Kia Kola|36686|51314|-20|8
+Kīā Kolā|Kia Kola|36580|52813|-4|8
+Kalleh Bast||36641|52629|-14|8
+Kelārābād|Kelarabad|36700|51256|-18|6
+#IR|North Khorasan
+Khān Laq|Khan Laq|37427|57939|1139|7
+#IR|Qazvin Province
+Khoramdasht||35927|49515|1381|7
+#IR|Razavi Khorasan
+Khalīlābād|Khalilabad|35254|58286|980|13
+Kashaf||36370|59578|997|11
+Kondor||35212|58152|967|6
+#IR|Sistan and Baluchestan
+Komb-e Morādābād|Komb-e Moradabad|25284|60698|45|13
+#IR|South Khorasan Province
+Khūsf|Khusf|32781|58890|1309|6
+#IR|Tehran
+Khāvar Shahr|Khavar Shahr|35556|51559|1043|13
+Kuhsar||35965|50791|1405|11
+Khūrīn|Khurin|35403|51639|972|7
+#JO|Irbid
+Kafr Asad||32598|35713|353|8
+Kafr Sawm||32685|35801|435|7
+Kafr Abīl|Kafr Abil|32418|35663|440|6
+Kharjā|Kharja|32660|35888|449|5
+Kitim||32438|35897|791|5
+#JP|Akita
+Kakunodatemachi||39589|140567|70|14
+#JP|Aomori
+Kanita||41042|140644|4|5
+#JP|Chiba
+Katakai||35533|140450|2|15
+Kemigawa||35650|140067|10|11
+Kawasugaya||35366|140343|14|7
+Kōzaki|Kozaki|35900|140400|9|6
+#JP|Ehime
+Kihoku-chō|Kihoku-cho|33256|132683|121|11
+Kuma||33657|132902|485|7
+Kami-yuge||34267|133217|89|7
+#JP|Fukui
+Kumagawa||35444|135901|84|14
+#JP|Fukuoka
+Kawara||33669|130843|59|11
+Kamiitoda||33656|130782|28|8
+Kotake||33691|130712|9|7
+#JP|Fukushima
+Kasaishi||37242|140336|274|12
+Koori||37833|140517|51|12
+Kitasugama||37220|140453|359|6
+Kitakata||37190|140585|558|6
+#JP|Gunma
+Kusatsu||36617|138600|1151|6
+#JP|Hiroshima
+Kobatake||34706|133250|535|8
+#JP|Hokkaido
+Kuriyama||43055|141784|25|11
+Kami-furano||43456|142469|212|10
+Kamiyūbetsu Tonden Shigaichi|Kamiyubetsu Tonden Shigaichi|44136|143567|35|8
+Kamihonbetsu||43144|143612|71|7
+Kikusuichō|Kikusuicho|43550|141883|27|6
+Kozawa||42971|140679|58|6
+Kamikawa||43840|142771|332|5
+Kaminokuni||41803|140111|5|5
+Koshimizu||43859|144465|19|5
+#JP|Hyōgo
+Kamikawa||35076|134740|329|12
+#JP|Ibaraki
+Kihara||36017|140300|26|15
+#JP|Iwate
+Karumai||40321|141458|197|8
+Kuzumaki||40041|141440|399|6
+#JP|Kagawa
+Kotohira||34183|133817|135|8
+#JP|Kagoshima
+Koseda||30388|130649|46|12
+Kurino||31950|130717|183|9
+Kawahigashi||31373|131008|12|6
+#JP|Kanagawa
+Kikuna||35504|139635|24|14
+Kōzu|Kozu|35282|139209|41|8
+#JP|Kumamoto
+Kinoenishi||32223|130822|120|10
+Kawahara||32807|130897|286|6
+Konoha||32919|130627|34|5
+#JP|Kyoto
+Kyōtamba|Kyotamba|35164|135423|200|13
+#JP|Mie
+Kihoku||34211|136335|5|15
+#JP|Miyagi
+Kawasaki||38173|140637|187|9
+#JP|Nagano
+Kamikatagiri||35616|137902|615|13
+Kiso||35840|137690|755|11
+Kamitakeda||36176|137875|692|8
+Kashiwabara||36802|138192|678|8
+Komaba||35433|137733|797|6
+#JP|Nagasaki
+Kawatana||33067|129867|2|13
+#JP|Nara
+Kamitosa||34445|135801|133|7
+#JP|Okayama
+Katsumada||35033|134117|99|11
+#JP|Okinawa
+Kadena||26365|127759|34|14
+Kin||26452|127918|56|11
+Kumejima||26341|126805|1|7
+#JP|Shiga
+Kōra|Kora|35204|136261|154|6
+#JP|Shimane
+Kyōmendao|Kyomendao|34883|132433|238|10
+#JP|Shizuoka
+Kanbara||35117|138607|11|13
+Kōchi|Kochi|34700|138937|44|7
+Kawazu-ikadaba||34772|138966|122|7
+#JP|Tokushima
+Kawaguchi||33802|134468|110|7
+#JP|Tokyo
+Kosuge||35754|139822|12|12
+Kichijōji-honchō|Kichijoji-honcho|35706|139577|60|12
+Kiba||35671|139807|9|11
+Kuramae||35703|139791|16|7
+Kaminakazato||35745|139750|28|7
+Kaigan||35649|139759|4|6
+Kinshi||35699|139814|8|5
+#JP|Tottori
+Kishimoto||35383|133417|80|11
+#JP|Toyama
+Koshi||36906|137571|94|11
+#JP|Wakayama
+Katsuura||33631|135940|3|14
+#JP|Yamagata
+Komatsu||38003|140041|226|15
+Kuriyazawa||38900|140250|140|7
+Kaneyama||38884|140337|180|5
+#JP|Yamanashi
+Kajikazawa||35550|138450|276|14
+#KE|Bungoma County
+Kapsokwony||852|34702|1971|7
+#KE|Elegeyo-Marakwet
+Kapsowar||979|35559|2296|9
+#KE|Homa Bay County
+Kendu Bay||-362|34653|1154|6
+#KE|Isiolo County
+Kinna||319|38205|694|11
+#KE|Kajiado County
+Kimana||-2799|37537|1272|10
+#KE|Kiambu County
+Kawaida||-1146|36760|1945|14
+#KE|Kilifi County
+Kaloleni||-3814|39631|233|7
+#KE|Kirinyaga County
+Kagio||-625|37256|1237|14
+Kutus||-575|37327|1276|9
+Kimbimbi||-622|37365|1198|7
+#KE|Kisumu County
+Katito||-269|34972|1170|5
+#KE|Kwale County
+Kwale||-4174|39452|403|10
+Kinango||-4137|39315|206|8
+#KE|Machakos County
+Kangundo||-1303|37348|1608|10
+#KE|Makueni County
+Kibwezi||-2409|37966|904|8
+#KE|Murang'A
+Kangema||-686|36965|1810|6
+#KE|Narok County
+Kilgoris||-1008|34878|1772|11
+#KE|Nyamira county
+Keroka||-776|34947|2054|11
+#KE|Tharaka - Nithi
+Kathwana||-331|37869|722|0
+#KE|Turkana County
+Kainuk||1774|35506|825|11
+#KG|Batken
+Kulundu||40106|69641|642|8
+Kyzyl-Bel’|Kyzyl-Bel'|40100|70741|949|7
+Katran||39844|70015|1209|7
+Kyzyl-Jol||40042|70812|1056|6
+Khalmion||40212|71633|756|6
+#KG|Chuy Region
+Kemin||42786|75692|1123|10
+Kaindy||42825|73676|738|10
+#KG|Jalal-Abad Region
+Kerben||41494|71758|1307|14
+Kazarman||41405|74028|1269|11
+Kolkhoz Imeni Kirova||41837|72898|877|6
+#KG|Talas Region
+Kyzyl-Adyr||42620|71589|919|14
+#KH|Banteay Meanchey
+Kuttasat||13587|102763|24|7
+#KH|Battambang
+Khnach Romeas||13264|102950|23|11
+Kantueu Pir||12932|103138|28|5
+#KH|Kampong Cham
+Khŭm Ângkôr Ban|Khum Angkor Ban|11956|105208|17|8
+#KH|Kampong Chhnang
+Kdol||12239|104278|70|6
+#KH|Kampong Speu Province
+Kak||11196|104537|59|7
+#KH|Kampot
+Koun Sat||10601|104280|15|9
+#KH|Kandal
+Kouk Trab||11405|104846|16|5
+Khpob Ateav||11063|105190|9|5
+#KH|Kratie
+Kampong Damrei||12114|106077|29|7
+Kanhchor||12307|106041|24|5
+#KH|Prey Veng
+Kampong Trabaek||11144|105483|6|8
+Khŭm Ânsaông|Khum Ansaong|11129|105544|10|8
+#KH|Siem Reap
+Kampong Thkov||13600|103417|18|6
+#KM|Anjouan
+Koni-Djodjo||-12230|44482|662|8
+#KP|North Hamgyong
+Komusan Il-tong||42110|129699|219|12
+#KP|North Hwanghae
+Koksan-ŭp|Koksan-up|38782|126666|165|13
+#KP|P'yŏngan-bukto
+Kwaksan||39688|125083|14|10
+#KZ|
+Kokpekty||48750|82400|514|5
+#KZ|Abai Region
+Kurchatov||50756|78542|165|11
+Karaaul||48945|79255|622|5
+#KZ|Almaty Region
+Kegen||43015|79226|1862|10
+#KZ|Atyrau Oblisi
+Karaton||46437|53489|-22|9
+#KZ|East Kazakhstan
+Kurchum||48566|83661|427|9
+#KZ|Kyzylorda
+Kazalinsk||45763|62103|57|8
+#KZ|Mangystau
+Kuryk||43180|51681|-11|12
+#KZ|North Kazakhstan
+Kishkenekol’|Kishkenekol'|53636|72341|135|7
+#KZ|Pavlodar Region
+Kalkaman||51953|76027|122|5
+#KZ|Turkistan
+Kazygurt||41756|69384|585|15
+Kantagi||43528|68583|470|10
+#KZ|Zhambyl
+Kulan||42910|72716|727|13
+Korday||43039|74713|624|10
+#LB|Nabatieh
+Kfar Kila||33277|35552|573|6
+#LK|North Western Province
+Kuliyapitiya||7469|80040|33|7
+#LK|Northern Province
+Kilinochchi||9396|80398|24|13
+Keppapularu||9275|80755|20|8
+#LR|Nimba
+Karnplay||7270|-8504|366|8
+#LS|Maseru District
+Kolo||-29689|27688|1986|5
+#LT|Kaunas
+Kaišiadorys|Kaisiadorys|54865|24468|82|10
+#LT|Marijampolė County
+Kazlų Rūda|Kazlu Ruda|54749|23490|69|6
+Kybartai||54639|22763|56|6
+#LT|Panevėžys
+Kupiskis||55840|24980|96|8
+#LT|Siauliai
+Kuršėnai|Kursenai|56003|22937|104|11
+Kelmė|Kelme|55630|22935|131|8
+#LU|Luxembourg
+Kirchberg||49624|6149|333|11
+#LV|Jēkabpils Municipality
+Krustpils||56511|25861|91|7
+#LV|Krāslava Municipality
+Krāslava|Kraslava|55895|27168|114|7
+#LV|Kuldīga Municipality
+Kuldīga|Kuldiga|56974|21957|28|10
+#LV|Liepaja
+Karosta||56551|21013|9|8
+#LV|Ludza Municipality
+Kārsava|Karsava|56784|27688|101|5
+#LV|Ķekava
+Ķekava|Kekava|56827|24230|9|5
+#LY|Al Butnan
+Kambūt|Kambut|31904|24478|114|7
+#LY|Jabal al Gharbi
+Kiklah||32083|12700|683|12
+#LY|Nalut
+Kābāw|Kabaw|31847|11331|642|8
+#MA|Beni Mellal-Khenifra
+Kahf Nssar||32914|-5959|937|8
+#MA|Oriental
+Kariat Arkmane||35107|-2747|3|6
+#MA|Rabat-Salé-Kénitra
+Khenichet-sur Ouerrha||34440|-5679|35|11
+#MA|Tanger-Tetouan-Al Hoceima
+Khemis Sahel||35253|-6080|180|7
+#ME|Kotor
+Kotor||42421|18768|5|5
+#ME|Opština Kolašin
+Kolašin|Kolasin|42822|19517|936|3
+#MG|Androy
+Kopoky||-25200|45200|127|15
+#MH|Kili Island
+Kili||5644|169121|6|1
+#MK|Grad Skopje
+Kondovo||42012|21314|282|12
+#MK|Karbinci
+Karbinci||41818|22233|279|4
+#MK|Konche
+Konče|Konce|41495|22385|525|3
+#MK|Kratovo
+Kratovo||42079|22182|672|10
+#MK|Krivogashtani
+Krivogashtani||41336|21333|607|6
+#MK|Krushevo
+Krusevo||41369|21249|1207|5
+#ML|Kayes
+Kokofata||12883|-9950|295|13
+#ML|Sikasso
+Kolondiéba|Kolondieba|11089|-6893|332|10
+#ML|Ségou
+Kinmparana||12842|-4924|306|6
+#MM|Sagaing Region
+Kalewa||23198|94302|112|9
+#MM|Yangon
+Kalagyisu||16883|96030|9|15
+Kasin||16887|96082|8|13
+Kyo Kone West||16873|96113|11|12
+Kyar Inn West||17174|96138|13|11
+Kyan Khin Su||16895|96142|7|10
+Kanaungto||16764|96097|7|10
+Kan Nar West||16881|96093|10|9
+Kyun Ka Lay||17085|96198|3|9
+Kyaung Kone||17001|96083|13|7
+Kyaik Tha Le||16673|96014|15|6
+Kan Beit||16725|95994|7|6
+Ka Lok||16674|95923|3|5
+#MN|Övörhangay
+Kharkhorin||47192|102813|1476|15
+#MR|Assaba
+Kankossa||15939|-11527|73|8
+#MR|Hodh El Gharbi
+Kobenni||15817|-9365|205|9
+#MT|Il-Kalkara
+Kalkara||35889|14533|34|3
+#MT|Kirkop
+Kirkop||35842|14486|82|2
+#MT|Ta’ Kerċem
+Kerċem|Kercem|36042|14227|111|2
+#MV|Dhaalu Atholhu
+Kudahuvadhoo||2671|72894|9|2
+#MV|Haa Dhaalu Atholhu
+Kulhudhuffushi||6622|73070|6|10
+#MX|Guerrero
+Kilómetro 30|Kilometro 30|16998|-99780|266|6
+#MX|Quintana Roo
+Kantunilkín|Kantunilkin|21102|-87486|15|7
+#MX|Yucatán
+Kinchil||20914|-89950|12|6
+#MY|Johor
+Kelapa Sawit||1670|103533|24|13
+Kampung Bagan||1848|102859|10|9
+Kemajuan Tanah Lok Heng Barat||1723|104091|32|6
+#MY|Kedah
+Kampong Merbok||5717|100417|20|13
+Kepala Batas||6204|100408|12|12
+Kampong Bakai||5533|100733|32|12
+Kampung Jerlun||6214|100266|5|11
+Kampong Tajar||6100|100417|2|9
+Kampung Siong||5789|100909|110|9
+Kampung Sok||5774|100731|56|9
+Kampung Tawar Besar||5557|100812|81|9
+Kuala Nerang||6258|100613|29|8
+Kampung Pering||6376|100336|16|7
+Kampung Batu Lima||5793|100689|40|7
+Kampung Pulai||5658|100892|51|6
+Kangkong||6001|100345|7|6
+Kampung Ayer Puteh||5182|100602|31|6
+Kampung Naga Lilit||5476|100551|18|6
+Kampung Padang Lalang||6164|100310|7|5
+#MY|Kelantan
+Kampung Kuala Balah||5417|101917|210|10
+Kampung Wakaf Stan||6080|102290|1|6
+Kampong Gunong||5717|101750|93|6
+Kampong Tanjong Chat||6150|102250|8|5
+#MY|Kuala Lumpur
+Kampong Datuk Keramat||3167|101733|37|13
+#MY|Melaka
+Kuala Sungai Baru||2359|102035|9|12
+Kampung Tanjung Keling||2227|102172|8|11
+Kampung Umbai||2159|102348|10|9
+#MY|Pahang
+Kuala Pahang||3532|103462|6|13
+Kampung Bukit Tinggi, Bentong||3349|101826|390|12
+Kuala Rompin||2817|103483|6|10
+Karak||3400|102033|118|9
+Kampung Teh||3961|102347|69|8
+Kemajuan Tanah Bukit Goh||3913|103257|43|6
+Kemayan||3136|102362|72|6
+Kemajuan Tanah Rentam||3268|102623|68|5
+#MY|Penang
+Kampung Pondok Upih||5337|100232|20|8
+#MY|Perak
+Keruh||5717|101000|380|15
+Kampung Simpang Pulai||5711|100997|339|8
+Kampung Cangkat Jering||4783|100717|21|7
+#MY|Perlis
+Kampung Chuping||6501|100256|16|14
+Kuala Perlis||6400|100133|6|14
+Kampung Titi Tinggi||6637|100263|42|13
+Kampung Oran||6465|100246|9|5
+#MY|Sabah
+Kampung Kunak||4686|118249|11|14
+Kota Belud||6351|116431|31|13
+Kobang||4442|118693|1|12
+Kampung Kundassang||5982|116571|1229|11
+Kinabatangan||5586|117851|205|10
+#MY|Sarawak
+Kota Samarahan||1460|110488|6|13
+#MY|Selangor
+Kampung Olak Lempit||2836|101595|19|6
+Kampong Sijangkang||2940|101464|8|6
+#MY|Terengganu
+Kemasik||4426|103454|11|10
+Ketengah Jaya||4572|103319|46|10
+#NA|Erongo Region
+Karibib||-21936|15857|1199|7
+#NA|Karas Region
+Karasburg||-28017|18748|1002|6
+#NA|Kunene Region
+Khorixas||-20377|14962|931|12
+#NC|North Province
+Koné|Kone|-21060|164866|13|5
+#NE|Tahoua Region
+Keïta|Keita|14755|5775|395|14
+#NG|Bauchi
+Katagum||12285|10350|362|11
+#NG|Borno State
+Konduga||11653|13418|330|13
+#NG|FCT
+Kwali||8883|7019|197|6
+#NG|Gombe State
+Kaltungo||9820|11309|489|12
+Kafarati||10383|11096|496|12
+#NG|Jigawa State
+Kazaure||12648|8412|444|13
+Kafin Hausa||12239|9911|364|13
+#NG|Kaduna State
+Kajuru||10323|7685|686|14
+Kujama||10458|7638|663|13
+#NG|Kano State
+Kura||11772|8426|477|10
+Kibiya||11528|8661|504|9
+#NG|Katsina State
+Kankara||11931|7411|595|10
+#NG|Kebbi
+Kangiwa||12553|3818|237|12
+Kende||11520|4260|159|7
+#NG|Kogi State
+Koton-Karfe||8088|6799|135|11
+#NG|Niger State
+Konkwesso||10847|4098|265|8
+Kuta||9869|6710|318|8
+Kusheriki||10537|6437|422|7
+#NG|Plateau State
+Kwolla||8904|9291|269|8
+#NG|Zamfara State
+Kwatarkwashi||12141|6822|483|9
+#NL|Drenthe
+Klazienaveen||52724|6990|18|12
+Krakeel||52723|6511|12|5
+#NL|Friesland
+Kollum||53277|6153|2|6
+#NL|Gelderland
+Kerkdriel||51772|5335|7|7
+#NL|North Brabant
+Korvel||51550|5071|15|13
+Klundert||51665|4535|1|5
+#NL|North Holland
+Koog aan de Zaan||52460|4805|1|11
+Kudelstaart||52234|4751|-3|9
+Kortenhoef||52239|5107|1|6
+Kerkelanden||52218|5136|0|6
+#NL|South Holland
+Katwijk aan den Rijn||52194|4422|3|6
+#NL|Zeeland
+Kapelle||51486|3958|3|9
+#NO|Agder
+Kvinesdal||58312|6962|16|6
+#NO|Akershus
+Kløfta|Klofta|60074|11138|160|6
+#NO|Innlandet
+Kongsvinger||60190|11998|157|12
+#NO|Rogaland
+Kopervik||59284|5307|10|12
+Kleppe||58774|5629|44|10
+#NO|Telemark
+Kragerø|Kragero|58869|9415|6|5
+#NO|Vestland
+Knarvik||60545|5282|36|6
+#NP|Bagmati Province
+kankrabari Dovan||27629|85459|1703|10
+#NP|Gandaki Pradesh
+Kusma||28223|83683|880|7
+#NZ|Auckland
+Kumeu||-36767|174567|69|9
+Kelston||-36898|174660|23|6
+#NZ|Bay of Plenty
+Kawerau||-38100|176700|46|8
+Katikati||-37550|175917|9|6
+#NZ|Canterbury
+Kaiapoi||-43378|172640|4|14
+#NZ|Gisborne
+Kaiti||-38668|178030|12|9
+#NZ|Manawatu-Wanganui
+Kelvin Grove||-40329|175645|55|8
+#NZ|Northland
+Kerikeri||-35227|173947|73|8
+#NZ|Wellington Region
+Khandallah||-41245|174794|153|9
+#PG|Chimbu Province
+Kundiawa||-6020|144969|1510|9
+#PG|Eastern Highlands Province
+Kainantu||-6289|145865|1575|9
+#PG|Gulf Province
+Kerema||-7960|145773|22|6
+#PG|Jiwaka Province
+Kurumul||-5855|144631|1515|0
+#PG|New Ireland
+Kavieng||-2573|150795|14|14
+#PG|Oro Province
+Kokoda||-8878|147736|372|6
+#PG|Western Province
+Kiunga||-6122|141291|40|12
+#PH|Autonomous Region in Muslim Mindanao
+Kansipati||6001|121234|21|15
+Karungdong||5884|121263|8|7
+Kulase||5905|120957|39|7
+Kajatian||6031|120992|82|5
+Kauran||6795|124470|36|5
+#PH|Calabarzon
+Kalayaan||14350|121567|391|7
+#PH|Caraga
+Kitcharao||9455|125573|54|7
+#PH|Central Visayas
+Kauit||11186|123946|8|6
+#PH|Cordillera
+Kibungan||16695|120655|1274|8
+#PH|Davao Region
+Kinablangan||7693|126549|13|5
+#PH|Eastern Visayas
+Kananya||11187|124560|40|8
+Kampokpok||11296|124405|6|6
+#PH|Northern Mindanao
+Kalilangan||7745|124748|486|14
+Kapatagan||7900|123769|18|10
+Kisolon||8330|124977|536|8
+Kadingilan||7601|124909|338|7
+Kauswagan||8192|124085|8|7
+Kibangay||8050|124893|1195|7
+Kibawe||7569|124988|365|5
+#PH|Soccsksargen
+Kiamba||5989|124624|12|11
+Katangawan||6172|125221|38|8
+Kipalbig||6411|124926|140|5
+#PH|Zamboanga Peninsula
+Katipunan||7583|122831|79|11
+Kalawit||8067|122517|5|8
+Kumalarang||7748|123145|6|7
+#PK|Azad Kashmir
+Khuiratta||33357|74028|749|8
+#PK|Balochistan
+Kohlu||29903|69231|1158|11
+Khadan Khak||30752|67711|1939|7
+#PK|Khyber Pakhtunkhwa
+Karak||33116|71094|582|14
+Khar||34736|71527|865|10
+#PK|Punjab
+Kalaswala||32201|74649|240|13
+Kot Sultan||30774|70931|145|10
+Kaure Shah Zerin||30842|73108|173|8
+#PK|Sindh
+Khadro||26147|68718|29|10
+Karaundi||26897|68406|50|9
+Kandiari||26916|68522|58|7
+Kadhan||24480|68986|6|7
+Kario Ghanwar||24808|68605|11|6
+#PL|Greater Poland
+Kępno|Kepno|51278|17989|171|15
+Kostrzyn||52398|17228|101|9
+Kórnik|Kornik|52248|17089|68|7
+Kłodawa|Klodawa|52254|18914|106|7
+Koźmin Wielkopolski|Kozmin Wielkopolski|51827|17454|136|7
+Krzyż Wielkopolski|Krzyz Wielkopolski|52881|16011|32|6
+Komorniki||52339|16811|79|5
+#PL|Kujawsko-Pomorskie
+Koronowo||53314|17937|65|11
+Kruszwica||52676|18331|83|9
+#PL|Lesser Poland
+Krynica-Zdrój|Krynica-Zdroj|49422|20959|592|12
+Krzeszowice||50142|19632|271|10
+Klucze||50336|19562|352|6
+#PL|Lower Silesia
+Krzyki||51071|16995|121|13
+Karłowice|Karlowice|51141|17052|114|13
+Kowary||50793|15836|463|11
+Kudowa-Zdrój|Kudowa-Zdroj|50443|16244|385|10
+Kleczków|Kleczkow|51128|17028|116|7
+Księże|Ksieze|51075|17086|119|6
+Kuźniki|Kuzniki|51125|16951|120|6
+Księże Małe-Księże Wielkie|Ksieze Male-Ksieze Wielkie|51073|17089|118|6
+Kąty Wrocławskie|Katy Wroclawskie|51031|16768|136|5
+#PL|Lubusz
+Krosno Odrzańskie|Krosno Odrzanskie|52055|15099|82|12
+Kożuchów|Kozuchow|51746|15595|101|10
+#PL|Mazovia
+Karczew||52077|21250|90|10
+Komorów|Komorow|52146|20816|108|5
+#PL|Opole Voivodeship
+Koźle|Kozle|50336|18143|171|15
+Kietrz||50080|18004|232|6
+#PL|Podlasie
+Kolno||53411|21929|127|11
+#PL|Pomerania
+Kokoszki||54356|18491|132|10
+#PL|Silesia
+Kłobuck|Klobuck|50901|18937|239|13
+Kozy||49848|19149|386|12
+Kalety||50563|18893|271|9
+Karpackie||49803|19029|376|8
+Komorowice Krakowskie||49868|19051|307|8
+Kamienica||49796|19017|375|7
+Koniecpol||50775|19689|229|6
+Kuźnia Raciborska|Kuznia Raciborska|50201|18311|187|5
+#PL|Subcarpathia
+Kolbuszowa||50244|21776|203|10
+Korczyna||49716|21809|292|6
+#PL|West Pomerania
+Kamień Pomorski|Kamien Pomorski|53968|14773|9|9
+Karlino||54035|15877|17|6
+#PL|Łódź Voivodeship
+Koluszki||51739|19820|210|13
+Ksawerów|Ksawerow|51683|19403|184|6
+#PL|Świętokrzyskie
+Kazimierza Wielka||50266|20494|189|6
+#PS|Gaza Strip
+Khuzā‘ah|Khuza'ah|31307|34361|86|9
+#PS|West Bank
+Kokhav Ya‘aqov|Kokhav Ya'aqov|31881|35244|752|8
+Kafr Rā‘ī|Kafr Ra'i|32374|35155|399|7
+Khārās|Kharas|31615|35042|558|7
+Kharbathā al Mişbāḩ|Kharbatha al Misbah|31885|35072|360|5
+#PW|Kayangel
+Kayangel||8082|134717|9|0
+#PW|Koror
+Koror||7340|134473|20|14
+Koror Town||7343|134479|29|13
+#PW|Peleliu
+Kloulklubed||7042|134256|3|1
+#RS|Vojvodina
+Kovin||44748|20976|78|14
+Kać|Kac|45304|19943|78|11
+Kanjiža|Kanjiza|46067|20050|79|10
+Kovačica|Kovacica|45112|20621|78|7
+Kovilj||45234|20023|78|5
+#RU|Adygeya Republic
+Khanskaya||44677|39962|160|11
+Krasnogvardeyskoye||45132|39574|41|9
+Kamennomostskiy||44289|40188|453|8
+Koshekhabl’|Koshekhabl'|44900|40503|148|7
+#RU|Altai
+Kosh-Agach||49993|88676|1750|6
+#RU|Altai Krai
+Klyuchi||52253|79169|143|9
+Krasnogorskoye||52298|86198|261|7
+Khabary||53627|79537|140|6
+Kosikha||53362|84582|183|6
+Krasnoshchekovo||51671|82729|242|5
+#RU|Amur Oblast
+Konstantinovka||49620|127990|107|6
+#RU|Arkhangelskaya
+Konosha||60973|40263|203|12
+Kargopol’|Kargopol'|61504|38949|121|11
+Kuloy||61030|42493|107|7
+#RU|Astrakhan Oblast
+Krasnyy Yar||46532|48345|-17|11
+Kapustin Yar||48582|45745|8|6
+Krasnyye Barrikady||46205|47854|-23|6
+#RU|Bashkortostan Republic
+Kandry||54567|54117|168|12
+Kushnarënkovo|Kushnarenkovo|55105|55351|88|11
+Krasnokholmskiy||55987|55047|106|8
+Karmaskaly||54366|56171|124|8
+Kirgiz-Miyaki||53631|54804|243|8
+Karaidel’|Karaidel'|55842|56898|279|5
+#RU|Belgorod Oblast
+Krasnaya Yaruga||50802|35658|203|8
+Korocha||50811|37196|158|6
+#RU|Bryansk Oblast
+Klimovo||52379|32196|143|14
+Kletnya||53390|33217|184|14
+Komarichi||52421|34798|230|7
+Krasnaya Gora||53000|31602|144|6
+#RU|Buryatiya Republic
+Khorinsk||52162|109780|660|8
+Kizhinga||51849|109907|732|6
+Kamensk||51983|106585|526|6
+Kabansk||52052|106655|483|6
+Kurumkan||54321|110307|517|6
+Kyren||51682|102140|751|5
+#RU|Chechnya
+Katyr-Yurt||43172|45370|234|9
+Kalinovskaya||43574|45521|69|8
+Khankala||43302|45756|127|8
+Kargalinskaya||43744|46478|-1|5
+#RU|Chelyabinsk
+Krasnogorskiy||54603|61231|246|14
+Kunashak||55702|61549|177|6
+Kropachëvo|Kropachevo|55011|57990|397|5
+#RU|Chuvash Republic
+Kozlovka||55843|48249|73|12
+Kugesi||56029|47293|187|12
+#RU|Dagestan
+Karabudakhkent||42709|47563|186|13
+Kasumkent||41677|48152|468|12
+Kayakent||42387|47903|159|12
+Kochubey||44386|46583|-26|7
+Korkmaskala||43025|47290|60|6
+Khadzhalmakhi||42420|47182|929|6
+Kyakhulay||42968|47483|25|6
+#RU|Irkutsk Oblast
+Kirensk||57776|108115|265|13
+Kuytun||54339|101508|521|11
+Kachug||53962|105886|533|7
+Kutulik||53353|102786|531|5
+#RU|Ivanovo Oblast
+Komsomol’sk|Komsomol'sk|57029|40376|152|9
+#RU|Kabardino-Balkariya Republic
+Kenzhe||43499|43554|525|11
+Kakhun||43543|43876|297|7
+Kamennomostskoye||43737|43051|821|6
+Karagach||43805|43775|269|6
+Kyzburun Pervyy||43652|43395|573|6
+Kashkhatau||43317|43608|695|5
+#RU|Kalmykiya Republic
+Komsomol’skiy|Komsomol'skiy|45329|46042|-1|5
+#RU|Kaluga Oblast
+Kondrovo||54806|35931|140|14
+Kremenki||54886|37120|133|12
+#RU|Kamchatka
+Klyuchi||56320|160845|40|10
+#RU|Karachayevo-Cherkesiya Republic
+Kardonikskaya||43866|41714|888|8
+Khabez||44044|41770|688|6
+#RU|Karelia
+Kem’|Kem'|64957|34592|13|14
+Kalevala||65199|31190|106|5
+#RU|Khabarovsk
+Khor||47884|134956|52|12
+Knyaze-Volkonskoye||48465|135455|52|9
+Korfovskiy||48222|135071|91|6
+Khurba||50407|136883|45|6
+#RU|Kirov Oblast
+Kirs||59338|52244|159|11
+Krasnaya Polyana||56242|51144|65|8
+Kil’mez’|Kil'mez'|56945|51064|114|6
+Kiknur||57304|47200|113|5
+Kumëny|Kumeny|58108|49913|173|5
+#RU|Komi
+Krasnozatonskiy||61676|50979|108|7
+#RU|Kostroma Oblast
+Krasnoye-na-Volge||57515|41239|126|8
+#RU|Krasnodar Krai
+Krylovskaya||46321|39970|26|15
+Kalininskaya||45485|38664|1|13
+Kavkazskaya||45444|40667|137|12
+Kazanskaya||45411|40436|119|11
+Konokovo||44862|41327|238|8
+Krasnosel’skiy|Krasnosel'skiy|45392|40608|79|7
+Kabardinka||44652|37937|20|7
+Krylovskaya||46110|39304|12|7
+Kurchanskaya||45222|37572|19|7
+Kalnibolotskaya||46006|40457|47|7
+Kislyakovskaya||46442|39675|17|6
+Kamyshevatskaya||46413|37956|13|5
+#RU|Krasnoyarsk Krai
+Kuragino||53888|92682|283|14
+Karatuzskoye||53604|92871|308|8
+Kozul’ka|Kozul'ka|56165|91391|333|6
+Krasnoturansk||54316|91568|388|6
+Kedrovyy||56282|91538|290|5
+#RU|Kurgan Oblast
+Kargapol’ye|Kargapol'ye|55955|64433|90|8
+Ketovo||55348|65331|98|7
+#RU|Kursk Oblast
+Kshenskiy||51841|37714|170|7
+Korenevo||51411|34900|158|6
+#RU|Kuzbass
+Krasnobrodskiy||54158|86449|314|12
+Krapivinskiy||55003|86800|145|8
+#RU|Leningradskaya Oblast'
+Kuz’molovskiy|Kuz'molovskiy|60109|30491|38|13
+Koltushi||59930|30645|45|10
+Kamenka||60446|29083|49|8
+Kamennogorsk||60955|29134|30|6
+#RU|Lipetsk Oblast
+Khlevnoye||52195|39089|152|6
+#RU|Mariy-El Republic
+Krasnogorskiy||56153|48326|82|7
+Kuzhener||56811|48915|198|6
+#RU|Mordoviya Republic
+Komsomol’skiy|Komsomol'skiy|54445|45831|196|11
+Krasnoslobodsk||54425|43786|163|11
+#RU|Moscow
+Kokoshkino||55599|37171|195|10
+#RU|Moscow Oblast
+Kraskovo||55658|37980|137|12
+Krasnozavodsk||56448|38215|212|12
+Kupavna||55746|38131|143|11
+Konobeyevo||55408|38663|119|10
+Koptëvo|Koptevo|55833|37522|169|10
+Kievskiy||55430|36867|198|10
+Kratovo||55597|38177|144|7
+Korenëvo|Korenevo|55672|38008|132|6
+#RU|Murmansk
+Kola||68881|33018|12|11
+#RU|Nizhny Novgorod Oblast
+Krasnye Baki||57131|45160|101|7
+Kovernino||57128|43815|122|7
+Knyaginino||55822|45035|128|7
+#RU|North Ossetia–Alania
+Kizlyar||43704|44594|157|9
+Kambileyevskoye||43079|44752|632|8
+#RU|Novgorod Oblast
+Kresttsy||58248|32518|45|10
+Khvoynaya||58897|34512|155|7
+#RU|Novosibirsk Oblast
+Kargat||55193|80283|131|11
+Kolyvan’|Kolyvan'|55309|82742|148|11
+Krasnozërskoye|Krasnozerskoye|53986|79240|141|10
+Kol’tsovo|Kol'tsovo|54942|83192|131|10
+Krivodanovka||55088|82655|99|9
+Kyshtovka||56556|76630|82|6
+#RU|Omsk Oblast
+Kormilovka||55003|74103|108|10
+Krutinka||56006|71508|104|8
+Krutaya Gorka||55365|73223|110|7
+Kolosovka||56469|73617|96|6
+Krasnyy Yar||55242|72926|82|5
+#RU|Orenburg Oblast
+Krasnokholm||51598|54157|78|6
+#RU|Oryol oblast
+Kromy||52688|35767|168|7
+Kolpna||52223|37031|155|7
+#RU|Penza Oblast
+Kolyshley||52701|44537|208|8
+#RU|Perm Krai
+Kuyeda||56431|55591|135|10
+Karagay||58266|54933|160|7
+Kondratovo||57980|56107|96|6
+#RU|Primorye
+Kamen’-Rybolov|Kamen'-Rybolov|44740|132042|90|11
+Khorol’|Khorol'|44427|132077|110|11
+Kirovskiy||45092|133501|104|9
+#RU|Republic of Tyva
+Kaa-Khem||51694|94570|616|10
+Kyzyl-Mazhalyk||51147|90583|846|5
+#RU|Rostov
+Kuleshovka||47079|39555|15|15
+Kamenolomni||47668|40205|62|12
+Krivyanskaya||47397|40167|5|10
+Koksovyy||48197|40643|87|8
+Kagal’nitskaya|Kagal'nitskaya|46881|40148|29|7
+Kashary||49040|41004|64|6
+Kirovskaya||46975|40040|87|6
+Kuybyshevo||47814|38912|81|6
+Krasnoyarskaya||47650|42044|25|5
+#RU|Ryazan Oblast
+Korablino||53927|40024|139|14
+Kadom||54559|42468|97|6
+#RU|Sakha
+Khandyga||62653|135566|125|7
+#RU|Samara Oblast
+Koshki||54209|50467|113|8
+Krasnyy Yar||53498|50392|66|8
+Kurumoch||53490|50037|61|6
+Klyavlino||54265|52027|241|6
+Krasnoarmeyskoye||52720|50031|56|5
+Krotovka||53286|51169|41|5
+#RU|Saratov Oblast
+Krasnyy Kut||50950|46969|45|15
+Khvalynsk||52491|48106|39|13
+#RU|Stavropol Kray
+Krasnokumskoye||44178|43502|247|14
+Kurskaya||44043|44455|195|12
+Kursavka||44462|42504|430|11
+Konstantinovskaya||44046|43158|445|7
+Konstantinovskoye||45299|42637|240|6
+#RU|Tatarstan Republic
+Kamskiye Polyany||55431|51417|114|14
+Karabash||54693|52584|144|5
+#RU|Tomsk Oblast
+Kargasok||59056|80857|53|9
+Kozhevnikovo||56262|83968|82|8
+Krivosheino||57343|83924|98|6
+#RU|Tula Oblast
+Kurkino||53426|38656|230|6
+#RU|Tver Oblast
+Kalyazin||57240|37833|139|15
+Kuvshinovo||57029|34179|235|11
+Krasnyy Kholm||58062|37120|158|6
+Krasnomayskiy||57619|34410|164|6
+Kalashnikovo||57284|35229|218|5
+#RU|Tyumen Oblast
+Kazanskoye||55646|69227|73|6
+#RU|Udmurtiya Republic
+Kambarka||56267|54206|78|12
+Kez||57896|53713|207|11
+Kizner||56275|51508|76|10
+Karakulino||56012|53707|112|5
+#RU|Ulyanovsk
+Kuzovatovo||53547|47686|221|9
+Karsun||54198|46977|137|8
+#RU|Vladimir Oblast
+Kameshkovo||56349|40999|108|14
+Krasnyy Oktyabr’|Krasnyy Oktyabr'|56117|38883|139|10
+Kosterevo||55930|39614|120|9
+Krasnaya Gorbatka||55877|41755|120|9
+Kideksha||56424|40521|112|8
+Kurlovo||55433|40485|132|7
+#RU|Volgograd Oblast
+Krasnoslobodsk||48707|44577|-4|14
+Kumylzhenskaya||49882|42586|72|8
+Krasnyy Yar||50697|44728|106|8
+Kletskaya||49314|43063|59|5
+#RU|Vologda Oblast
+Kaduy||59200|37150|116|12
+Kharovsk||59964|40191|153|11
+Krasavino||60962|46483|70|8
+Kirillov||59863|38381|126|7
+Kichmengskiy Gorodok||59982|45785|107|7
+Kadnikov||59502|40338|143|5
+#RU|Voronezh Oblast
+Kantemirovka||49704|39858|125|13
+Kamenka||51322|42768|155|9
+Kamenka||50714|39425|241|9
+Khokhol’skiy|Khokhol'skiy|51570|38771|130|8
+Kolodeznyy||51333|39183|80|6
+Khrenovoye||51118|40290|137|5
+Krasnolesnyy||51883|39577|156|5
+#RU|Yamalo-Nenets
+Kharp||66801|65808|69|7
+Korotchaevo||65910|78209|19|7
+#RU|Yaroslavl Oblast
+Konstantinovskiy||57830|39590|113|6
+#RU|Zabaykalskiy (Transbaikal) Kray
+Karymskoye||51627|114337|603|12
+Khilok||51359|110462|833|11
+Kuanda||56327|116093|545|10
+Kokuy||52208|117553|434|8
+Krasnyy Chikoy||50364|108756|788|7
+#RW|Northern Province
+Kinigi||-1443|29590|2253|15
+#SA|Mecca Region
+King Abdullah City||22446|39125|1|10
+#SA|Najran Region
+Khubāsh|Khubash|17556|44748|1098|7
+#SB|Makira-Ulawa Province
+Kirakira||-10454|161920|13|2
+#SD|Blue Nile
+Kurmuk||10557|34287|642|10
+#SE|Norrbotten
+Kalix||65853|23156||7
+#SE|Skåne
+Kävlinge|Kaevlinge|55792|13110|13|9
+Klippan||56136|13131|36|8
+#SE|Stockholm
+Kista||59403|17945|27|10
+Kungsängen|Kungsaengen|59479|17748|39|10
+#SE|Uppsala
+Knivsta||59726|17788|18|8
+#SE|Värmland
+Kil||59502|13313|101|8
+#SE|Västernorrland
+Kvissleby||62294|17375|1|9
+Kramfors||62932|17776|1|7
+#SE|Västmanland
+Kungsör|Kungsoer|59422|16097|30|6
+#SE|Västra Götaland
+Kållered|Kallered|57610|12051|15|7
+#SE|Östergötland
+Krokek||58672|16367|45|5
+#SG|
+Kampong Ubi||1317|103900|10|12
+Kampong Potong Pasir||1333|103867|18|12
+Kampong Ulu Pandan||1346|103745|29|11
+Kampong Java Teban||1333|103733|13|11
+#SI|Komenda
+Komenda||46205|14538|338|1
+#SI|Municipality of Kamnik
+Kamnik||46226|14612|385|14
+#SI|Municipality of Kanal ob Soči
+Kanal||46087|13635|270|1
+#SI|Municipality of Kidričevo
+Kidričevo|Kidricevo|46403|15799|235|1
+#SI|Municipality of Kobarid
+Kobarid||46248|13579|237|1
+#SI|Municipality of Kobilje
+Kobilje||46685|16394|177|1
+#SI|Municipality of Komen
+Komen||45816|13748|267|1
+#SI|Municipality of Kostanjevica na Krki
+Kostanjevica na Krki||45846|15420|165|1
+#SI|Municipality of Kostel
+Kostel||45508|14909|357|1
+#SI|Municipality of Kozje
+Kozje||46073|15560|351|1
+#SI|Municipality of Kočevje
+Kočevje|Kocevje|45643|14860|473|8
+#SI|Municipality of Kranjska Gora
+Kranjska Gora||46457|13778|1042|1
+#SI|Municipality of Križevci
+Križevci pri Ljutomeru|Krizevci pri Ljutomeru|46568|16139|185|0
+#SI|Municipality of Kuzma
+Kuzma||46835|16081|299|0
+#SI|Urban Municipality of Krško
+Krško|Krsko|45959|15492|165|7
+#SK|Banská Bystrica Region
+Krupina||48355|19065|270|8
+#SK|Košice Region
+Krompachy||48914|20875|380|9
+Kráľovský Chlmec|Kralovsky Chlmec|48423|21979|108|7
+#SK|Nitra Region
+Kolárovo|Kolarovo|47923|17985|109|10
+#SK|Žilina Region
+Kysucké Nové Mesto|Kysucke Nove Mesto|49300|18783|356|14
+Krásno nad Kysucou|Krasno nad Kysucou|49396|18834|388|7
+#SL|Eastern Province
+Kailahun||8279|-10573|309|14
+#SL|Northern Province
+Kambia||9125|-12918|32|12
+Kamakwie||9497|-12241|116|8
+Kukuna||9398|-12665|47|8
+Kassiri||8938|-13115|15|5
+#SN|Fatick
+Karang Poste||13607|-16424|50|15
+#SN|Kaolack
+Keur Madiabel||13847|-16058|47|11
+#SN|Kolda
+Kounkané|Kounkane|12933|-14083|34|11
+#SN|Tambacounda
+Kidira||14457|-12217|40|14
+#SS|Eastern Equatoria
+Kapoeta||4772|33591|668|7
+#SS|Upper Nile
+Kodok||9889|32109|394|8
+#SX|
+Koolbaai||18040|-63084|16|6
+#SY|Daraa
+Kafr Shams||33118|36106|716|12
+#SY|Hama
+Kafr Buhum||35060|36699|339|12
+#SY|Rif-dimashq
+Kanākir|Kanakir|33267|36096|829|14
+#TD|Borkou
+Kirdimi||18152|18539|285|9
+#TD|Logone Occidental
+Krim Krim||8972|15804|412|11
+#TG|Kara
+Kandé|Kande|9958|1045|269|13
+#TG|Plateaux
+Kouniohou||7667|800|559|6
+#TH|Chanthaburi
+Khlung||12455|102222|8|13
+#TH|Khon Kaen
+Kranuan||16707|103079|218|13
+#TH|Krabi
+Ko Lanta||7534|99086|51|6
+#TH|Maha Sarakham
+Kosum Phisai||16249|103067|160|11
+#TH|Nakhon Ratchasima
+Kham Sakae Saeng||15332|102173|189|11
+#TH|Prachin Buri
+Khet Rop Mueang||14062|101361|28|6
+#TH|Sukhothai
+Khiri Mat||16833|99800|53|11
+#TH|Surat Thani
+Ko Pha Ngan||9758|100029|430|12
+#TH|Trang
+Kantang||7405|99516|11|14
+#TH|Trat
+Ko Chang||12045|102300|73|12
+#TJ|Khatlon Province
+Kirov||37819|68859|445|8
+#TJ|Republican Subordination
+Khodzha-Maston||38745|68627|1565|10
+#TJ|Sughd
+Konsoy||40492|69702|891|6
+#TM|Ahal
+Kelejar||38099|58050|213|7
+#TM|Lebap
+Kerkiçi|Kerkici|37851|65243|247|15
+Köýtendag|Koeytendag|37516|66013|261|9
+Karabekaul||38485|64151|213|6
+#TN|Ben Arous Governorate
+Khledia||36646|10193|35|8
+#TN|Kef Governorate
+Kalaat es Senam||35768|8342|656|8
+#TN|Mahdia Governorate
+Kerker||35482|10642|56|7
+#TN|Monastir Governorate
+Ksibet el Mediouni||35686|10843|31|14
+Khunays||35717|10817|5|13
+#TN|Sousse Governorate
+Ksiba||35770|10628|33|11
+#TR|Adana
+Karataş|Karatas|36582|35370|10|9
+Kurttepe||37055|35276|130|7
+Karaisalı|Karaisali|37257|35059|271|7
+Karslı|Karsli|37059|35299|97|5
+#TR|Adıyaman Province
+Karapınar|Karapinar|37761|38257|698|11
+#TR|Ankara
+Kalecik||40097|33408|741|13
+Kızılcaşar|Kizilcasar|39823|32733|1141|9
+Kavaklıdere|Kavaklidere|39912|32858|915|6
+#TR|Antalya
+Kadriye||36887|31006|14|10
+Kaş|Kas|36202|29638|22|8
+Kemerağzı|Kemeragzi|37106|30399|884|6
+Kargıcak|Kargicak|36478|32109|6|6
+#TR|Artvin
+Kemalpaşa|Kemalpasa|41483|41528|11|6
+#TR|Aydın
+Köşk|Koesk|37853|28052|75|10
+Koçarlı|Kocarli|37761|27706|37|9
+Kuyucak||37913|28459|121|7
+Karacasu||37728|28606|547|6
+#TR|Balıkesir
+Kepsut||39689|28152|88|6
+#TR|Batman
+Kayapınar|Kayapinar|37558|41162|1154|5
+#TR|Bingöl
+Karlıova|Karliova|39290|41006|1835|9
+#TR|Denizli
+Kale||37439|28845|1059|7
+#TR|Diyarbakır Province
+Kocaköy|Kocakoey|38289|40498|900|6
+#TR|Elazığ
+Keban||38794|38735|746|6
+#TR|Erzurum
+Karayazı|Karayazi|39696|42143|2260|7
+#TR|Gaziantep
+Karacaören|Karacaoeren|37478|37682|659|10
+#TR|Giresun
+Keşap|Kesap|40910|38501|177|10
+#TR|Gümüşhane Province
+Köse|Koese|40207|39646|1599|9
+#TR|Hatay
+Karayılan|Karayilan|36711|36205|25|9
+Karakise||36850|36217|53|6
+Kastal||36248|36241|94|6
+#TR|Isparta
+Keçiborlu|Keciborlu|37943|30302|994|11
+#TR|Istanbul
+Kumburgaz||41030|28454||12
+#TR|Iğdır
+Karaağaç Mahallesi|Karaagac Mahallesi|39910|44035|862|8
+Konaklı Mahallesi|Konakli Mahallesi|39894|44066|855|7
+#TR|Kocaeli
+Köseköy|Koesekoey|40740|30006|15|9
+Kullar||40724|29989|19|9
+Kocakaymaz||40953|30102|192|6
+#TR|Kırıkkale
+Karakeçili|Karakecili|39594|33378|837|8
+#TR|Malatya
+Kuluncak||38877|37663|1243|8
+Kale||39033|38000|1870|5
+#TR|Mardin
+Kabala||37350|40803|823|9
+Kindirip||37447|41220|975|8
+#TR|Mersin
+Kocahasanlı|Kocahasanli|36584|34274|26|6
+#TR|Muğla
+Konacık|Konacik|37045|27410|72|5
+#TR|Muş
+Korkut||38734|41784|1295|8
+#TR|Ordu
+Kabataş|Kabatas|40750|37450|443|9
+#TR|Rize Province
+Kalkandere||40920|40437|277|9
+#TR|Sakarya
+Kaynarca||41031|30308|51|6
+#TR|Samsun
+Kavak||41078|36043|608|9
+#TR|Siirt
+Kayabağlar|Kayabaglar|37986|41668|839|6
+#TR|Sivas
+Kangal||39234|37391|1532|12
+Koyulhisar||40302|37823|872|5
+#TR|Trabzon
+Köprübaşı|Koepruebasi|40807|40114|469|5
+#TR|Yozgat
+Kadışehri|Kadisehri|39996|35792|1048|6
+#TR|Çankırı
+Kurşunlu|Kursunlu|40841|33260|1131|12
+Korgun||40735|33518|907|8
+#TR|İzmir Province
+Kiraz||38231|28204|305|12
+Kınık|Kinik|39087|27383|84|11
+Körfez|Koerfez|38488|27138|141|6
+#TR|Şanlıurfa
+Konuklu||37126|38849|459|8
+#TR|Şırnak
+Kumçatı|Kumcati|37473|42316|593|5
+#TV|Niutao
+Kulia Village||-6108|177334|10|0
+#TZ|Dodoma
+Kongwa||-6200|36417|1023|12
+Kisasa||-6175|35793|1117|10
+#TZ|Kagera
+Kyaka||-1252|31420|1160|14
+Katoro||-1400|31500|1169|12
+#TZ|Katavi
+Karema||-6821|30439|777|13
+#TZ|Kilimanjaro
+Kihurio||-4467|38067|531|8
+Kwakoa||-3767|37717|775|8
+Kisiwani||-4133|37950|677|7
+#TZ|Manyara
+Kibaya||-5300|36567|1579|5
+#TZ|Mbeya
+Kandete||-9150|33800|1578|10
+#TZ|Morogoro
+Kimamba||-6783|37133|441|11
+Kisanga||-7436|37703|150|11
+#TZ|Mtwara
+Kitangari||-10650|39333|468|11
+#TZ|Pemba North
+Konde||-4950|39750|22|10
+#TZ|Pwani
+Kisarawe||-6900|39067|221|13
+#TZ|Singida
+Kintinku||-5883|35233|848|8
+Kilimatinde||-5850|34950|1085|6
+#TZ|Tabora
+Kaliua||-5061|31794|1087|12
+#TZ|Zanzibar Central/South
+Koani||-6133|39283|44|2
+#UA|Cherkasy
+Kamyanka||49040|32102|127|12
+Khrystynivka||48813|29969|238|10
+Katerynopil||48946|30972|130|6
+#UA|Chernihiv Oblast
+Koryukivka||51775|32247|130|14
+Kozelets||50912|31117|107|8
+Korop||51567|32952|131|5
+#UA|Chernivtsi
+Krasnoyilsk||48019|25560|409|10
+Khotyn||48506|26490|244|9
+Kelmentsi||48466|26833|193|7
+Kamyanka||48028|25900|348|7
+Klishkivtsi||48423|26252|228|6
+Kitsman||48439|25761|232|6
+Kolinkivtsy||48413|26125|217|5
+#UA|Crimea
+Krymskyi||45054|35374|12|13
+Kurman||45503|34301|46|11
+Koreyiz||44431|34084|154|5
+#UA|Dnipropetrovsk
+Karnaukhivka||48475|34736|53|7
+#UA|Donetsk
+Krasnohorivka||48005|37507|159|15
+Kalmiuskyi||47999|37812|140|12
+Kal'mius'ke||47664|38078|93|11
+Krasnohirka||48705|37562|94|6
+#UA|Ivano-Frankivsk
+Kosiv||48321|25091|352|9
+Kosmach||48331|24814|614|6
+#UA|Kharkiv
+Kupyansk-Vuzlovyi||49671|37643|102|8
+Krasnokutsk||50066|35163|122|8
+Krasnopavlivka||49137|36320|147|7
+Kehychivka||49287|35762|163|6
+#UA|Kherson
+Kalanchak||46255|33291|4|9
+Komyshany||46640|32503|23|7
+#UA|Kirovohrad
+Kamyanets||48361|32655|131|6
+#UA|Kyiv City
+Khreshchatyi Yar||50455|30529|86|13
+Kadetskyi Hay||50439|30447|165|8
+Korchuvate||50363|30555|88|8
+Kulykove||50492|30616|88|6
+#UA|Kyiv Oblast
+Kaharlyk||49859|30823|170|13
+Knyazhichi||50463|30784|111|5
+#UA|Luhansk
+Kripenskyi||48077|39058|189|7
+Kypuche||48441|38732|250|7
+Krasnorichenske||49219|38210|75|5
+#UA|Lviv
+Kamyanka-Buzka||50107|24345|215|10
+Khodoriv||49407|24313|233|9
+Krasne||49914|24615|214|6
+#UA|Mykolaiv
+Kryve Ozero||47948|30347|96|8
+Kazanka||47827|32831|89|7
+Kulbakyne||46915|32080|59|5
+#UA|Odesa
+Kodyma||48103|29126|266|9
+Kubey||45791|28745|91|7
+Krasnosilka||46623|30770|32|5
+#UA|Poltava
+Karlivka||49455|35135|151|14
+Khorol||49783|33272|130|13
+Kotelva||50068|34747|102|12
+Kobelyaky||49149|34202|80|10
+#UA|Rivne Oblast
+Kvasyliv||50562|26259|190|8
+Korets||50619|27158|198|7
+#UA|Sevastopol City
+Komyshova Bukhta||44584|33441|26|10
+#UA|Sumy
+Krasnopillya||50774|35256|188|8
+Khutir-Mykhaylivskyi||52048|33945|183|5
+#UA|Ternopil
+Kozova||49432|25145|355|9
+Khorostkiv||49214|25920|320|7
+Kopychyntsi||49103|25912|340|7
+#UA|Vinnytsia
+Kryzhopil||48382|28868|289|9
+#UA|Volyn
+Kivertsi||50835|25456|182|14
+Kamin-Kashyrskyi||51625|24963|166|11
+#UA|Zakarpattia
+Korolevo||48157|23138|178|10
+Kalyny||48144|23874|354|6
+#UA|Zaporizhzhia
+Kamyanka-Dniprovska||47496|34410|15|12
+Kostyantynivka||46818|35424|8|12
+Koloniya||46751|36814|13|10
+Kushuhum||47710|35216|60|8
+Komyshuvakha||47715|35524|29|5
+#UA|Zhytomyr Oblast
+Khoroshiv||50595|28445|209|7
+#UG|Central Region
+Kyotera||-616|31518|1202|8
+#UG|Western Region
+Kebisoni||-921|30037|1546|15
+Kibiito||477|30193|1485|15
+Kiruhura||-197|30844|1344|14
+Kilembe||198|30013|1295|8
+Kigorobya||1616|31309|1094|5
+Kibale||800|31067|1367|5
+#US|Alaska
+Knik-Fairview||61513|-149600|60|15
+Ketchikan||55342|-131648|8|8
+Kalifornsky||60418|-151290|7|8
+Kenai||60554|-151258|22|8
+Kodiak||57789|-152405|15|6
+#US|Arizona
+Kayenta||36728|-110255|1719|5
+#US|California
+Kerman||36724|-120060|67|14
+King City||36213|-121126|102|14
+Kingsburg||36514|-119554|92|12
+Kentfield||37952|-122557|35|6
+Keyes||37557|-120915|28|6
+Kensington||37910|-122280|177|5
+#US|Connecticut
+Kensington||41635|-72769|24|8
+Killingworth||41358|-72564|117|6
+#US|District of Columbia
+Kenilworth||38910|-76939|10|8
+#US|Florida
+Key Biscayne||25694|-80163|1|13
+Kings Point||26445|-80140|5|12
+Key Largo||25087|-80447|2|10
+Kathleen||28121|-82023|44|6
+Kenneth City||27816|-82720|6|5
+#US|Hawaii
+Kailua-Kona||19640|-155999|16|12
+Kapa‘a|Kapa'a|22075|-159319|6|11
+Kakaʻako|Kaka'ako|21302|-157857|35|11
+Kalaoa||19729|-155982|477|10
+Kula||20791|-156327|704|6
+Keolu Hills||21376|-157725|9|6
+Kekaha-Waimea||21972|-159693|42|6
+Kuli‘ou‘ou|Kuli'ou'ou|21288|-157739|3|6
+#US|Illinois
+Kewanee||41246|-89925|259|13
+#US|Indiana
+Kendallville||41441|-85265|301|10
+#US|Iowa
+Keokuk||40397|-91385|174|11
+Knoxville||41321|-93109|277|7
+#US|Kentucky
+Knottsville||37772|-86904|173|6
+#US|Maine
+Kennebunk||43384|-70545|22|5
+#US|Maryland
+Kettering||38885|-76815|42|13
+Kemp Mill||39039|-77019|103|13
+#US|Massachusetts
+Kingston||41995|-70724|18|12
+Kendall Square||42365|-71086|1|10
+#US|Michigan
+Kingsford||45795|-88072|335|5
+#US|Minnesota
+Kasson||44030|-92751|382|6
+#US|Mississippi
+Kosciusko||33058|-89590|147|7
+#US|Missouri
+Kennett||36236|-90056|82|11
+Kearney||39368|-94362|261|9
+#US|New Hampshire
+Kingston||42936|-71053|40|6
+#US|New Jersey
+Kinnelon||41002|-74367|217|10
+Keansburg||40442|-74130|3|10
+Kendall Park||40421|-74561|56|9
+Kenilworth||40676|-74291|34|8
+Keyport||40433|-74200|8|7
+Kingston Estates||39924|-74988|11|6
+#US|New Mexico
+Kirtland||36734|-108360|1581|8
+#US|New York
+Kaser||41121|-74067|165|5
+Kings Point||40820|-73735|8|5
+#US|North Carolina
+Knightdale||35788|-78481|96|14
+Kings Mountain||35245|-81341|307|11
+Kings Grant||34263|-77864|10|8
+King||36281|-80359|341|7
+Kill Devil Hills||36031|-75676|2|7
+#US|Ohio
+Kenton||40647|-83610|302|8
+Kenwood||39211|-84367|244|7
+Kirtland||41629|-81361|202|7
+#US|Oregon
+Kenton||45582|-122681|28|7
+#US|Pennsylvania
+Kingston||41262|-75897|164|13
+Kennedy Township||40478|-80103|349|9
+Kulpsville||40243|-75337|88|8
+Kennett Square||39847|-75712|116|6
+Kensington||39986|-75132|12|6
+Kutztown||40517|-75777|128|5
+#US|Rhode Island
+Kingston||41480|-71523|75|7
+#US|Tennessee
+Kingston||35881|-84509|233|6
+#US|Texas
+Kilgore||32386|-94876|109|15
+Kirby||29463|-98386|209|9
+Kennedale||32647|-97226|192|8
+Kaufman||32589|-96309|140|7
+Kermit||31858|-103093|872|6
+Keene||32397|-97324|272|6
+Kingsland||30658|-98441|255|6
+#US|Virginia
+Kings Park West||38814|-77296|122|13
+#US|Washington
+Kingsgate||47727|-122180|98|13
+Kelso||46147|-122908|23|12
+Klahanie||47571|-122008|138|11
+#US|West Virginia
+Keyser||39441|-78974|246|5
+#US|Wisconsin
+Kronenwetter||44822|-89590|365|8
+Kimberly||44272|-88339|223|7
+Kenosha Streetcar||42587|-87810|176|6
+#UZ|Karakalpakstan
+Kegeyli Shahar||42777|59608|68|12
+#VN|Bac Ninh
+Kép|Kep|21400|106267|17|12
+#VN|Hà Tĩnh Province
+Khánh Vĩnh Yên|Khanh Vinh Yen|18463|105713|18|10
+Kim Song Trường|Kim Song Truong|18463|105687|17|9
+#VN|Quang Tri
+Khe Sanh||16628|106739|410|14
+#XK|Ferizaj
+Kačanik|Kacanik|42232|21259|487|10
+#XK|Gjilan
+Kamenica||42578|21580|477|9
+#XK|Pec
+Klina||42622|20578|404|8
+#YT|Kani-Kéli
+Kani-Kéli|Kani-Keli|-12954|45103|95|5
+#YT|Mamoudzou
+Kavani||-12784|45223|22|10
+#ZA|Eastern Cape
+Kenton||-33667|26650|59|14
+Kirkwood||-33398|25443|113|10
+Komga||-32577|27892|630|10
+Kareedouw||-33953|24291|328|6
+Khaya Mnandi||-33826|25454|117|6
+#ZA|Free State
+Koffiefontein||-29407|25003|1188|12
+Kestell||-28311|28704|1706|10
+#ZA|Gauteng
+Kwamhlanga||-25430|28712|1366|9
+#ZA|KwaZulu-Natal
+Kgwaripe||-28370|32349|31|12
+#ZA|Limpopo
+Ka-Mhinga||-22758|30900|445|13
+#ZA|Mpumalanga
+Khokhamoya||-24954|31321|398|9
+Kamalamule||-24876|31312|448|9
+Kamhlushwa||-25664|31683|287|8
+KwaThandeka||-26654|30678|1251|7
+Kumana||-24750|31221|498|5
+Kgapamadi||-24609|31018|735|5
+#ZA|Northern Cape
+Kakamas||-28773|20615|664|10
+Kathu||-27696|23049|1233|9
+Kuruman||-27464|23436|1301|9
+#ZA|Western Cape
+Klapmuts||-33811|18864|174|9
+Kleinmond||-34339|19034|13|8
+Klawer||-31776|18625|51|7
+Kranshoek||-34088|23283|164|7
+Kylemore||-33915|18950|273|5
+#ZM|Copperbelt
+Kataba||-11883|29783|1163|14
+#ZM|North-Western
+Kalengwa||-13466|25003|1197|8
+#ZM|Southern Province
+Kazungula||-17794|25275|931|12

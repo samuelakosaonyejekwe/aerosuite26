@@ -1,0 +1,1779 @@
+#AE|Dubai
+Dubai Sports City||25039|55217|23|15
+Downtown Dubai||25194|55278|0|13
+Dubai Motor City||25046|55241|30|9
+DAMAC Hills||25029|55253|14|8
+#AF|Jowzjan
+Darzāb|Darzab|35977|65378|1179|10
+#AF|Kunduz
+Dasht-e Archī|Dasht-e Archi|37133|69167|379|8
+#AL|Fier County
+Divjakë|Divjake|40997|19529|-1|7
+#AL|Vlorë County
+Delvinë|Delvine|39951|20098|200|6
+#AO|Bíe
+Dala||-13783|16717|1583|8
+#AO|Lunda Sul
+Dala||-11033|20200|1233|8
+#AO|Uíge
+Damba||-6679|15131|1114|12
+#AR|Buenos Aires
+Daireaux||-36600|-61750|118|14
+Darregueira||-37689|-63161|200|6
+#AR|Cordoba
+Despeñaderos|Despenaderos|-31814|-64295|432|6
+Devoto||-31402|-62306|125|6
+#AR|Misiones
+Dos de Mayo||-27020|-54685|544|15
+#AR|Rio Negro
+Dina Huapi||-41073|-71165|785|5
+#AT|Styria
+Deutschlandsberg||46816|15215|364|8
+Deuchendorf||47466|15322|545|6
+#AU|Australian Capital Territory
+Dunlop||-35194|149020|567|7
+#AU|New South Wales
+Dulwich Hill||-33904|151139|31|14
+Doonside||-33767|150867|46|13
+Darlinghurst||-33879|151219|53|12
+Drummoyne||-33852|151155|27|12
+Dapto||-34504|150794|28|11
+Deniliquin||-35532|144954|93|8
+Dural||-33683|151017|184|7
+Dundas Valley||-33788|151053|76|5
+#AU|Queensland
+Dalby||-27182|151262|343|13
+Douglas||-19324|146752|26|9
+Durack||-27589|152986|18|7
+Daisy Hill||-27630|153158|71|7
+Darling Heights||-27597|151930|691|5
+#AU|South Australia
+Davoren Park||-34691|138669|36|6
+#AU|Victoria
+Donvale||-37789|145175|143|13
+Diamond Creek||-37667|145150|91|13
+Drouin||-38137|145858|143|12
+Dingley Village||-37983|145134|27|10
+Doveton||-37993|145239|45|10
+Delahey||-37720|144777|95|8
+Darley||-37658|144443|118|8
+Derrimut||-37792|144770|51|8
+Dallas||-37671|144935|137|7
+Delacombe||-37589|143815|429|6
+Dromana||-38334|144965|8|6
+#AU|Western Australia
+Dalyellup||-33408|115615|36|9
+Doubleview||-31896|115782|52|8
+Darch||-31813|115846|50|7
+Dudley Park||-32552|115731|0|6
+Dawesville||-32632|115629|7|5
+#AZ|Abşeron
+Digah||40493|49875|39|10
+#AZ|Beyləqan
+Dünyamalılar|Dunyamalilar|39773|47759|27|6
+#AZ|Daşkǝsǝn
+Dashkasan||40524|46082|1601|11
+#AZ|Goranboy District
+Dalimammadli||40694|46574|242|5
+#AZ|Şǝmkir
+Dallar||40863|46035|341|5
+Dollyar-Dzhagir||40882|46037|291|5
+#BA|Federation of B&H
+Donji Vakuf||44144|17400|515|8
+Divičani|Divicani|44367|17327|567|7
+Donja Mahala||45043|18670|84|6
+#BA|Srpska
+Derventa||44978|17908|143|10
+#BE|Flanders
+Drongen||51051|3656|5|13
+De Haan||51273|3034|7|12
+Deerlijk||50853|3354|18|11
+Damme||51251|3281|4|11
+De Pinte||50993|3647|7|10
+De Panne||51098|2594|11|10
+Dilsen||51037|5721|37|6
+Denderhoutem||50872|4018|32|6
+Dworp||50730|4301|48|5
+Desselgem||50886|3360|16|5
+Diegem||50897|4434|19|5
+#BE|Wallonia
+Dison||50610|5853|197|14
+Dinant||50258|4912|96|13
+Durbuy||50353|5456|152|10
+Dottignies||50733|3300|21|8
+Dampremy||50417|4431|118|7
+Dalhem||50713|5728|98|6
+#BG|Gabrovo
+Dryanovo||42979|25479|256|8
+#BG|Pleven
+Dolni Dabnik||43400|24433|109|5
+#BG|Silistra
+Dulovo||43817|27150|226|7
+#BG|Smolyan
+Devin||41743|24400|723|7
+#BG|Varna
+Devnya||43222|27569|70|8
+Dolni Chiflik||42993|27716|27|7
+Dalgopol||43050|27350|34|5
+#BM|Devonshire
+Devonshire Parish||32306|-64757|1|7
+#BO|La Paz Department
+Desaguadero||-16568|-69034|3751|9
+#BR|Alagoas
+Dois Riachos||-9392|-37101|238|10
+#BR|Bahia
+Dom Basílio|Dom Basilio|-13760|-41771|450|12
+Dário Meira|Dario Meira|-14436|-39908|186|11
+#BR|Ceará
+Deputado Irapuan Pinheiro||-5917|-39268|237|9
+#BR|Espírito Santo
+Dores do Rio Preto||-20689|-41845|839|7
+Divino de São Lourenço|Divino de Sao Lourenco|-20620|-41683|747|5
+#BR|Goiás
+Doverlândia|Doverlandia|-16720|-52319|505|7
+#BR|Maranhão
+Davinópolis|Davinopolis|-5526|-47391|129|14
+Duque Bacelar||-4156|-42944|48|10
+#BR|Mato Grosso
+Dom Aquino||-15810|-54921|288|8
+Denise||-14740|-57054|215|7
+#BR|Mato Grosso do Sul
+Deodápolis|Deodapolis|-22276|-54165|405|14
+Dois Irmãos do Buriti|Dois Irmaos do Buriti|-20680|-55296|318|11
+Douradina||-22040|-54613|346|6
+#BR|Minas Gerais
+Dores do Indaiá|Dores do Indaia|-19463|-45602|723|13
+Delta||-19977|-47771|512|10
+Divisópolis|Divisopolis|-15726|-41000|935|10
+Dores de Campos||-21109|-44023|960|10
+Delfinópolis|Delfinopolis|-20344|-46854|684|8
+Delfim Moreira||-22509|-45280|1228|8
+Durandé|Durande|-20203|-41798|685|8
+Desterro de Entre Rios||-20660|-44332|1066|8
+Dionísio|Dionisio|-19841|-42778|328|7
+Divinolândia de Minas|Divinolandia de Minas|-18802|-42615|796|7
+Divisa Alegre||-15721|-41344|927|6
+Dona Euzébia|Dona Euzebia|-21316|-42811|236|6
+Divisa Nova||-21511|-46196|872|6
+Datas||-18446|-43656|1220|5
+Dom Silvério|Dom Silverio|-20160|-42968|537|5
+Dores de Guanhães|Dores de Guanhaes|-19058|-42929|508|5
+#BR|Paraná
+Douradina||-23381|-53292|400|9
+Doutor Camargo||-23556|-52218|381|6
+Doutor Ulysses||-24568|-49420|821|6
+Diamante do Norte||-22656|-52860|352|5
+#BR|Paraíba
+Dona Inês|Dona Ines|-6604|-35627|176|10
+Desterro||-7291|-37094|611|8
+Diamante||-7428|-38264|316|6
+#BR|Piauí
+Dom Inocêncio|Dom Inocencio|-9005|-41975|312|9
+Dirceu Arcoverde||-9343|-42434|456|7
+Dom Expedito Lopes||-6959|-41641|419|6
+#BR|Rio Grande do Norte
+Doutor Severiano||-6094|-38375|372|7
+#BR|Rio de Janeiro
+Duas Barras||-22051|-42522|553|11
+#BR|Santa Catarina
+Descanso||-26826|-53502|541|9
+#BR|São Paulo
+Duartina||-22414|-49404|515|12
+Divinolândia|Divinolandia|-21661|-46739|1057|11
+Dumont||-21236|-47973|603|9
+Dobrada||-21517|-48394|580|9
+Dourado||-22100|-48317|685|8
+#BR|Tocantins
+Divinópolis do Tocantins|Divinopolis do Tocantins|-9800|-49214|267|7
+Dois Irmãos do Tocantins|Dois Irmaos do Tocantins|-9258|-49064|264|6
+Darcinópolis|Darcinopolis|-6707|-47749|200|6
+#BS|Ragged Island
+Duncan Town||22191|-75726|27|0
+#BT|Dagana
+Daga||27075|89877|1558|2
+#BY|Brest
+Drogichin||52187|25160|151|15
+Davyd-Haradok||52057|27216|130|6
+#BY|Grodnenskaya
+Dyatlovo||53462|25408|161|8
+#BY|Minsk
+Druzhny||53624|27898|173|9
+#BY|Vitebsk
+Dubrowna||54572|30691|181|7
+Dokshytsy||54891|27767|204|7
+#BZ|Southern District
+Dangriga||16970|-88233|7|10
+#CA|Alberta
+Douglasdale||50939|-113993|1025|13
+Downtown||53540|-113499|685|12
+Dover||51020|-113993|1052|11
+Dalhousie||51112|-114159|1150|9
+Drumheller||51462|-112710|687|8
+Downtown Commercial Core||51047|-114070|1071|8
+Devon||53367|-113735|695|7
+Dunluce||53623|-113527|679|6
+Drayton Valley||53217|-114985|846|6
+#CA|British Columbia
+Davie Village||49280|-123131|23|14
+Dawson Creek||55760|-120240|665|12
+Douglas-Gilpin||49244|-122982|30|10
+Douglas||49102|-122651|16|8
+Departure Bay||49202|-123976|52|7
+Dundarave||49336|-123188|23|5
+#CA|Manitoba
+Dauphin||51149|-100050|294|8
+#CA|New Brunswick
+Downtown Moncton||46092|-64785|19|8
+Downtown Dieppe||46095|-64744|16|7
+Douglas||45978|-66731|22|6
+Downtown Fredericton||45962|-66640|6|5
+#CA|Newfoundland and Labrador
+Downtown St. John's||47561|-52711|14|9
+Deer Lake||49167|-57432|34|5
+Donovans||47522|-52836|155|5
+#CA|Nova Scotia
+Downtown Dartmouth||44667|-63566|20|6
+#CA|Ontario
+Dufferin Grove||43658|-79428|111|12
+Doon South||43378|-80431|304|12
+Danforth||43684|-79330|117|10
+Dorchester||42983|-81066|260|9
+Dryden||49783|-92750|387|8
+Dunnville||42900|-79616|173|6
+Delhi||42850|-80500|234|5
+#CA|Prince Edward Island
+Downtown Charlottetown||46233|-63127||6
+#CA|Quebec
+Duvernay-Est||45655|-73605|18|14
+Dolbeau-Mistassini||48879|-72231|127|13
+Delson||45367|-73549|27|7
+Donnacona||46680|-71724|60|7
+#CA|Saskatchewan
+Dundonald||52148|-106728|499|6
+#CF|Ombella-M'Poko
+Damara||4961|18704|415|9
+#CG|Likouala
+Dongou||2048|18055|325|10
+#CG|Niari
+Divenié|Divenie|-2677|12086|541|6
+#CH|Fribourg
+Düdingen|Dudingen|46849|7192|600|7
+#CH|Grisons
+Davos||46804|9837|1560|11
+Domat||46835|9451|585|7
+#CH|Jura
+Delémont|Delemont|47365|7345|432|13
+#CH|Saint Gallen
+Diepoldsau||47386|9656|411|5
+#CH|Solothurn
+Dornach||47480|7616|337|6
+Derendingen||47199|7588|439|6
+#CH|Zurich
+Dietlikon / Dietlikon (Dorf)||47418|8619|442|6
+#CI|Bas-Sassandra District
+Dakpadou||5257|-6068|101|15
+Dapéoua|Dapeoua|6138|-6878|170|14
+Dafrahinou Darinsala||6432|-7088|224|13
+Dahiri||5262|-5529|32|11
+Djigbagui||5614|-6874|183|9
+Dahili||5503|-6784|191|7
+#CI|Comoé District
+Damé|Dame|7071|-3149|206|13
+Diby||5658|-2978|121|9
+Duférébo|Duferebo|7090|-3446|192|8
+Diamarakro||6237|-3320|168|7
+Diangobo||6566|-3337|153|7
+#CI|Goh-Djiboua
+Datta||5936|-5325|152|10
+Didoko||6021|-5312|204|9
+Dougodou||5301|-5351|73|8
+Dairo||5661|-5474|214|7
+Drayo||6259|-6040|218|6
+Didizo||5651|-5460|197|6
+Donsohouo||6450|-5696|247|5
+Dioulabougou-Boléko|Dioulabougou-Boleko|5354|-5170|74|5
+Djidji||6154|-5693|256|5
+#CI|Lacs District
+Didiévi|Didievi|7129|-4898|172|10
+Djékanou|Djekanou|6484|-5116|177|5
+#CI|Lagunes District
+Dokpodon||5190|-5451|73|15
+Diangobo||6146|-3642|117|13
+Danguira||5670|-3768|99|11
+Diapé|Diape|6014|-3927|110|8
+Diasson||5972|-3728|91|6
+Djidjikro||5310|-4877|85|6
+#CI|Montagnes
+Douagué|Douague|7479|-7133|250|12
+Diédrou|Diedrou|6991|-7778|280|11
+Dibobli||6740|-7022|226|10
+Doumbiadougou||6603|-7319|268|9
+Doké|Doke|6593|-8112|281|7
+Domobly||6532|-7574|237|7
+Djidoubaye||6086|-7486|196|7
+Diéouzon|Dieouzon|7156|-7322|317|6
+Diboké|Diboke|6444|-8112|274|6
+Douékpé|Douekpe|7136|-7328|304|6
+Dainé II|Daine II|7430|-7605|595|5
+#CI|Sassandra-Marahoue
+Diafla||7421|-6868|275|10
+Dahira||6541|-6321|242|10
+Diassa||6416|-6697|200|9
+Déma|Dema|7308|-6482|255|8
+Dania||7151|-6841|269|8
+Dédifla|Dedifla|7285|-6587|262|8
+Dianoufla||6799|-6014|297|7
+Diacohou-Sud||6788|-5871|228|7
+Dianambroufla||6658|-5623|239|6
+Daouo||7403|-6618|276|5
+Dananon||7611|-6363|309|5
+#CI|Savanes District
+Djélisso|Djelisso|10195|-5391|371|8
+Diangbanasso||9082|-4641|347|7
+Dyougoublé|Dyougouble|9528|-5935|368|6
+#CI|Vallée du Bandama District
+Diabo||7790|-5171|360|11
+Darakokaha||8289|-5159|317|8
+#CI|Woroba
+Dianra-Village||8764|-6244|360|14
+Diarabana||8187|-6609|305|11
+Dialakoro||8192|-5843|333|9
+Djibrosso||8770|-6999|413|5
+#CI|Yamoussoukro
+Duonfla||6843|-5499|162|6
+#CL|Atacama
+Diego de Almagro||-26390|-70046|792|14
+#CL|Los Lagos Region
+Dalcahue||-42378|-73650|19|13
+#CL|O'Higgins Region
+Doñihue|Donihue|-34226|-70965|345|8
+#CM|East
+Dimako||4383|13567|649|8
+Doumé|Doume|4233|13450|630|6
+#CN|Chongqing
+Duping||30931|110104|1141|15
+Dandu||29837|107146|258|14
+Daxi||29094|109148|391|13
+Dazhou||30879|108498|189|12
+Daguan||30555|107806|407|11
+Dayou||28990|107330|931|10
+Dashi||30200|107536|504|9
+Dōngxī Zhèn|Dongxi Zhen|30272|108068|197|9
+Dahe||31503|109621|369|8
+Ditang||29605|108217|716|8
+Daxi||30999|109638|292|7
+Dong’an|Dong'an|31778|109086|1098|7
+Daxi||28802|109168|292|6
+Dibao||30658|108895|315|6
+Delong||28912|107261|1272|5
+Dangyang||31406|109978|784|5
+#CN|Fujian
+Dazuocun||24888|118967|20|10
+Dongdai||26244|119616|13|8
+Dinghaicun||26280|119790|14|8
+Dongyuan||24917|118752|14|6
+#CN|Gansu
+Diancun||33771|105818|1119|15
+Douping||33517|105465|1237|13
+Dongshan||33761|104434|2193|11
+Dabao||33471|105577|1038|10
+Daqiao||33746|105279|1119|10
+Dananyu||33431|105758|957|10
+Dahedian||33653|106050|771|8
+Danbao||32861|104773|898|7
+Dachuan||33716|104436|1273|6
+Douba||33257|105468|1437|6
+Dayu||33831|104040|2112|5
+#CN|Guangdong
+Dalingxia||22543|114004|31|8
+Dongchong||22524|114030|2|6
+#CN|Guizhou
+Diping||25762|109243|257|13
+Deshun||26182|109320|475|11
+Dajia||26367|108850|709|10
+Dingshan||28710|106588|906|8
+Dehua||26470|108740|753|7
+#CN|Tianjin
+Dongditou||39266|117373|7|6
+Dabizhuang||39193|117256|6|6
+Dakoutun||39583|117229|10|6
+Dawangtai||39275|117485|8|5
+#CN|Xinjiang
+Dongmazar||43831|81851|794|12
+Damusi||37756|76612|1832|10
+Dulayti||47766|87083|514|8
+#CN|Yunnan
+Donghe||22924|100069|1790|15
+#CO|Antioquia
+Donmatías|Donmatias|6486|-75395|2157|14
+#CO|La Guajira Department
+Distracción|Distraccion|10898|-72887|205|12
+#CO|Valle del Cauca Department
+Dagua||3657|-76689|882|12
+#CR|Alajuela Province
+Desamparados||9947|-84506|281|14
+#CR|San José
+Daniel Flores||9336|-83670|639|10
+#CY|Ammochostos
+Derýneia|Deryneia|35065|33961|67|6
+#CY|Larnaka
+Dhromolaxia||34876|33587|30|7
+#CY|Nicosia
+Dáli|Dali|35023|33422|222|12
+#CZ|Central Bohemia
+Dobříš|Dobris|49781|14167|382|9
+#CZ|Hradec Králové Region
+Dobruška|Dobruska|50292|16160|297|7
+#CZ|Liberec Region
+Doksy||50565|14656|279|5
+#CZ|Moravian-Silesian Region
+Dolní Lutyně|Dolni Lutyne|49899|18428|202|5
+#CZ|Plzeň Region
+Domažlice|Domazlice|49440|12930|432|11
+Dobřany|Dobrany|49655|13293|327|6
+#CZ|South Bohemian Region
+Dačice|Dacice|49082|15437|477|7
+#CZ|South Moravian
+Dubňany|Dubnany|48917|17090|200|6
+#CZ|Ústí nad Labem Region
+Duchcov||50604|13746|201|9
+Dubí|Dubi|50686|13786|407|8
+#DE|Baden-Wurttemberg
+Denzlingen||48067|7883|232|14
+Durmersheim||48933|8267|107|12
+Dossenheim||49450|8675|133|12
+Donzdorf||48685|9811|409|11
+Denkendorf||48696|9317|316|10
+Dettingen an der Erms||48531|9345|396|9
+Dielheim||49284|8738|151|9
+Dornstadt||48467|9944|594|9
+Dornstetten||48472|8498|641|8
+Dietenheim||48211|10072|513|7
+Deizisau||48712|9386|251|7
+Dornhan||48350|8509|642|6
+Deißlingen|Deisslingen|48112|8607|601|6
+Dunningen||48212|8506|659|6
+Deggingen||48597|9719|490|6
+Dettingen unter Teck||48617|9450|352|6
+Dettenhausen||48608|9100|395|5
+Dusslingen||48454|9056|379|5
+#DE|Bavaria
+Dorfen||48270|12161|443|13
+Dinkelsbühl|Dinkelsbuehl|49069|10320|447|12
+Dießen am Ammersee|Diessen am Ammersee|47951|11103|548|10
+Diedorf||48353|10782|494|10
+Dietmannsried||47808|10289|680|8
+Dittelbrunn||50072|10220|252|8
+Dettelbach||49803|10165|205|7
+Dinkelscherben||48348|10589|465|7
+Durach||47694|10344|718|7
+Dietfurt||49036|11586|365|6
+Dietenhofen||49400|10690|344|6
+Dasing||48385|11047|480|5
+Dietramszell||47849|11595|688|5
+#DE|Brandenburg
+Doberlug-Kirchhain||51626|13562|100|10
+Dallgow-Döberitz|Dallgow-Doeberitz|52543|13058|35|7
+Drebkau||51654|14223|90|6
+Dahme||51870|13427|91|6
+#DE|Hamburg
+Duvenstedt||53708|10104|25|6
+#DE|Hesse
+Driedorf||50633|8183|485|5
+Dornheim||49878|8484|88|5
+#DE|Lower Saxony
+Döhren|Doehren|52338|9763|63|14
+Dinklage||52662|8126|30|13
+Drochtersen||53710|9385|2|12
+Dassel||51802|9689|171|11
+Davenstedt||52366|9672|64|11
+Dörverden|Dorverden|52848|9237|17|10
+Dissen||52116|8200|107|9
+Delligsen||51941|9803|124|9
+Dannenberg||53097|11090|16|8
+Detmerode||52390|10745|93|8
+Diekholzen||52096|9919|122|7
+Dötlingen|Dotlingen|52936|8382|40|6
+#DE|Mecklenburg-Vorpommern
+Demmin||53908|13031|9|12
+Dierkow-Neu||54106|12168|16|11
+#DE|North Rhine-Westphalia
+Dahlhausen||51427|7148|86|13
+Drolshagen||51024|7774|357|12
+Dörentrup|Dorentrup|52041|9003|156|9
+Derne||51571|7520|80|7
+Dingden||51770|6613|23|5
+#DE|Rheinland-Pfalz
+Diez||50374|8007|129|11
+Daun||50197|6829|432|9
+Dannstadt-Schauernheim||49440|8309|97|7
+Dierdorf||50546|7653|244|6
+Dudenhofen||49319|8389|105|6
+#DE|Saxony
+Dippoldiswalde||50896|13669|365|11
+Dohna||50956|13858|164|6
+Dahlen||51365|12999|146|5
+#DE|Thuringia
+Debschwitz||50856|12072|201|11
+#DJ|Djibouti
+Damêrdjôg|Damerdjog|11486|43187|12|5
+#DK|Capital Region
+Dragør|Dragor|55593|12672|4|12
+#DO|Independencia
+Duvergé|Duverge|18378|-71525|9|13
+#DZ|Djanet
+Djanet||24555|9485|1129|0
+#DZ|Medea
+Draâ Esmar|Draa Esmar|36274|2717|880|7
+#EG|South Sinai
+Dahab||28482|34495|13|8
+#ER|Debub
+Dek’emhāre|Dek'emhare|15070|39048|2019|11
+#ES|Andalusia
+Dúrcal|Durcal|36988|-3566|789|7
+Doña Mencía|Dona Mencia|37553|-4356|597|5
+#ES|Basque Country
+Deba||43296|-2352|9|5
+#ES|Catalonia
+Diagonal Mar||41409|2216|0|13
+Deltebre||40719|708|3|12
+Dosrius||41583|2417|323|5
+#ES|Madrid
+Daganzo de Arriba||40543|-3455|662|7
+#ES|Valencia
+Dolores||38140|-771|9|7
+#ET|Amhara
+Dejen||10167|38133|2452|12
+Debre Werk’|Debre Werk'|10667|38167|2513|11
+Debre Sīna|Debre Sina|9848|39760|2703|9
+#ET|Somali
+Duuban||6680|46066|438|15
+#ET|Tigray
+Dedebit||14070|37763|904|6
+#FR|Auvergne-Rhône-Alpes
+Domérat|Domerat|46360|2535|243|9
+Dardilly||45806|4753|329|9
+Domène|Domene|45203|5833|229|7
+Divonne-les-Bains||46357|6135|507|7
+#FR|Bourgogne-Franche-Comté
+Digoin||46481|3979|236|9
+Decize||46829|3462|207|7
+Delle||47508|7000|361|6
+#FR|Brittany
+Dinan||48456|-2050|78|12
+Dinard||48633|-2063|28|12
+Dol-de-Bretagne||48550|-1751|21|5
+#FR|Centre-Val de Loire
+Déols|Deols|46829|1704|149|9
+#FR|Grand Est
+Dombasle-sur-Meurthe||48619|6355|213|9
+#FR|Hauts-de-France
+Douchy-les-Mines||50301|3393|48|10
+Divion||50472|2505|61|7
+Doullens||50157|2340|60|6
+Dourges||50436|2986|28|6
+Dainville||50281|2726|67|6
+Dechy||50350|3117|34|5
+Douvrin||50509|2831|27|5
+Desvres||50669|1835|98|5
+#FR|New Aquitaine
+Dompierre-sur-Mer||46188|-1064|26|5
+#FR|Normandy
+Déville-lès-Rouen|Deville-les-Rouen|49469|1052|38|11
+Darnétal|Darnetal|49445|1151|37|9
+Dives-sur-Mer||49282|-101|4|6
+Douvres-la-Délivrande|Douvres-la-Delivrande|49295|-380|21|5
+#FR|Occitanie
+Decazeville||44560|2251|211|7
+#FR|Pays de la Loire
+Doué-la-Fontaine|Doue-la-Fontaine|47193|-276|74|8
+Donges||47318|-2075|10|7
+#FR|Provence-Alpes-Côte d'Azur
+Don Bosco||43708|7280||7
+#FR|Île-de-France
+Dugny||48954|2417|44|11
+Dourdan||48528|2011|95|10
+Dammartin-en-Goële|Dammartin-en-Goele|49054|2678|171|9
+#GB|
+Dhekelia||34984|33734|8|10
+#GB|England
+Darras Hall||55036|-1764|82|15
+Dursley||51681|-2353|73|15
+Didsbury||53417|-2231|40|14
+Dingle||53379|-2960|32|13
+Driffield||54006|-445|21|13
+Dawlish||50581|-3466|7|11
+Downham Market||52607|384|32|11
+Diss||52377|1109|31|11
+Desborough||52442|-821|126|11
+Darfield||53534|-1376|64|8
+Dalton in Furness||54158|-3180|51|8
+Dorridge||52373|-1753|125|8
+Danbury||51716|582|106|7
+Downside||51310|-412|36|7
+Denton Holme||54885|-2941|18|7
+Denmead||50904|-1067|47|6
+Dodworth||53543|-1528|141|6
+Dunholme||53301|-465|16|6
+Dartmouth||50352|-3579|6|6
+Donington le Heath||52708|-1378|135|5
+#GB|Northern Ireland
+Dundonald||54592|-5798|43|14
+Dungannon||54503|-6767|105|12
+Downpatrick||54328|-5715|11|11
+Donaghadee||54641|-5536|9|7
+Dromore||54414|-6149|77|6
+Dromore||54513|-7459|104|6
+#GB|Scotland
+Dalkeith||55893|-3068|58|13
+Dunbar||56001|-2514|21|10
+Dalgety Bay||56035|-3350|13|10
+Dunblane||56188|-3964|64|9
+Dalmuir||55911|-4429|10|9
+Dunoon||55950|-4927|17|8
+Denny||56024|-3908|49|8
+Duntocher||55924|-4415|57|7
+Dyce||57205|-2177|53|6
+Dalry||55710|-4722|44|6
+Dingwall||57595|-4427|9|5
+#GB|Wales
+Deganwy||53304|-3827|47|9
+Denbigh||53183|-3417|85|9
+Dinas Powys||51435|-3214|15|8
+#GE|Adjara
+Diok’nisi|Diok'nisi|41629|42392|1086|8
+#GE|Kakheti
+Dedoplistsqaro||41466|46104|837|5
+#GE|Mtskheta-Mtianeti
+Dusheti||42086|44695|869|7
+#GE|Tbilisi
+Dighomi||41773|44732|549|7
+#GM|Western
+Djalabango||13281|-16679|32|8
+#GN|Mamou Region
+Dalaba||10692|-12250|1240|10
+#GR|Attica
+Drapetsóna|Drapetsona|37950|23623|33|14
+Drosiá|Drosia|38120|23864|377|8
+Diónysos|Dionysos|38105|23879|482|6
+#GR|Central Greece
+Dhrosiá|Dhrosia|38484|23548|33|5
+#GR|Central Macedonia
+Diavatá|Diavata|40687|22858|15|12
+Díon|Dion|40172|22485|30|9
+#GR|East Macedonia and Thrace
+Didymóteicho|Didymoteicho|41349|26494|33|8
+#GR|Epirus
+Dodóni|Dodoni|39543|20773|743|7
+#GR|West Greece
+Diakoptó|Diakopto|38195|22200|6|6
+#GT|Petén
+Dolores||16512|-89417|428|11
+#HN|Copán Department
+Dolores||14875|-88816|1081|7
+#HR|Bjelovar-Bilogora
+Daruvar||45591|17225|160|7
+#HR|County of Osijek-Baranja
+Donji Miholjac||45761|18167|99|5
+#HR|Karlovac
+Duga Resa||45446|15499|118|5
+#HR|Primorje-Gorski Kotar
+Drenova||45350|14430|278|8
+#HR|Zagreb County
+Dugo Selo||45806|16244|113|11
+#HT|Grand'Anse
+Dame-Marie||18561|-74422|17|6
+#HT|Nord
+Dondon||19527|-72243|427|5
+#HU|Bekes County
+Dévaványa|Devavanya|47033|20967|83|9
+#HU|Hajdú-Bihar
+Derecske||47350|21567|96|9
+#HU|Komárom-Esztergom
+Dorog||47721|18736|129|13
+#HU|Pest County
+Dunavarsány|Dunavarsany|47279|19066|97|8
+Diósd|Diosd|47410|18949|133|6
+Dömsöd|Domsod|47090|19011|97|6
+#HU|Tolna County
+Dunaföldvár|Dunafoldvar|46807|18928|106|9
+#HU|Veszprém
+Devecser||47103|17438|175|5
+#ID|Riau Islands
+Dabo||-493|104563|11|10
+#IE|Leinster
+Dundrum||53291|-6257|60|12
+Donnybrook||53314|-6223|17|11
+Donnycarney||53374|-6210|25|8
+Donabate||53487|-6152|7|7
+Dunboyne||53419|-6474|69|7
+Dalkey||53278|-6100|19|7
+Darndale||53399|-6189|32|6
+Dollymount||53365|-6180|11|5
+#IE|Munster
+Dungarvan||52088|-7625|12|8
+#IL|Northern District
+Deir el Asad||32936|35264|576|13
+Deir Ḥannā|Deir Hanna|32862|35364|289|10
+Dabbūrīya|Dabburiya|32693|35371|180|8
+#IN|Andhra Pradesh
+Dommaranandyāla|Dommaranandyala|14864|78364|188|8
+Dwāraka Tirumala|Dwaraka Tirumala|16954|81256|109|6
+Diguvametta||15395|78829|309|5
+#IN|Arunachal Pradesh
+Daporijo||27991|94230|237|13
+Deomali||27193|95467|170|7
+#IN|Assam
+Dhakuākhanā|Dhakuakhana|27201|94457|91|14
+Doboka||26116|92864|73|13
+Dhemāji|Dhemaji|27483|94583|110|13
+Digboi Oil Town||27389|95619|147|13
+Dispur||26136|91801|60|11
+Dimaruguri||26345|92715|71|10
+Donkamokam||25933|92707|77|9
+Durga Nagar Part-V||24881|92882|24|9
+Dahali||26097|91498|55|8
+Dharapur||26150|91642|56|8
+Digaru Gaon||26156|91987|56|6
+Dokmoka||26210|93052|61|5
+Digheli||26440|91456|42|5
+Dudpatil I||24911|92790|50|5
+#IN|Bihar
+Damodarpur||26140|85351|45|14
+Dumari urf Damodarpur Shahjahan||26105|85358|44|6
+Dharampur||25875|85769|53|5
+#IN|Chandigarh
+Dariya||30699|76818|328|14
+#IN|Chhattisgarh
+Dongargaon||20972|80851|318|15
+Dharamjaigarh||22464|83211|296|14
+Dantewāra|Dantewara|18889|81351|364|14
+Deori||21450|82617|267|12
+Dhamda||21450|81317|280|10
+Dondi||20488|81087|373|8
+Dabra||21780|83082|229|8
+Dornapal||18155|81509|112|7
+Deokar||21567|81317|279|6
+Daundi Lohara||20791|81056|335|6
+Durena||22382|82586|279|6
+#IN|Dadra and Nagar Haveli and Daman and Diu
+Dadra||20325|72966|37|13
+Dunetha||20429|72851|17|12
+#IN|Delhi
+Daryāpur Kalān|Daryapur Kalan|28814|77011|220|6
+#IN|Goa
+Dabolim||15399|73856|47|7
+#IN|Gujarat
+Diyodar||24109|71774|56|15
+Dhasa||21805|71516|95|14
+Dayapar||23634|68902|103|12
+Delvāda|Delvada|20775|71046|21|12
+Dhuwaran||22238|72759|23|11
+Daheli||20270|72879|36|10
+Devsar||20785|72984|14|10
+Dediāpāda|Dediapada|21628|73590|181|9
+Dhola||21881|71773|35|8
+Dehari||20153|72741|1|8
+Digvijaygram||22432|69833|22|6
+Dungarpur||21288|71756|139|6
+Dungarpur||21445|70494|87|5
+#IN|Haryana
+Doha||27678|76936|221|8
+#IN|Himachal Pradesh
+Dalhousie||32552|75947|1697|8
+#IN|Jammu and Kashmir
+Drug Mulla||34485|74287|1591|13
+Dever Inder Bug||34456|74451|1746|11
+Dārapur|Darapur|34512|74414|1734|8
+#IN|Jharkhand
+Dumarkunda||23715|86794|102|11
+Dhanwār|Dhanwar|24411|85982|355|9
+Dāndedih|Dandedih|24163|86327|313|8
+Dumra||23796|86214|223|7
+Dari||23722|85384|380|6
+#IN|Karnataka
+Dommasandra||12878|77753|898|13
+Donimalai Township||15060|76592|608|7
+#IN|Kerala
+Dēsamangalam|Desamangalam|10755|76232|38|8
+#IN|Madhya Pradesh
+Devendranagar||24617|80379|353|13
+Dhāna|Dhana|23747|78862|519|11
+Deodora||22615|80362|450|10
+Deohra||23143|81596|504|10
+Dumar Kachhar||23169|82111|512|9
+Dola||23221|82133|557|9
+Dehri||22668|75520|527|9
+Dahi||22112|74588|284|9
+Dekan||24706|75104|535|8
+Dhodra Mohār|Dhodra Mohar|22274|77886|375|6
+Dighāwāni|Dighawani|22206|78813|738|6
+#IN|Maharashtra
+Deorī|Deori|21068|80367|351|15
+Deolimet||21158|78968|351|15
+Dudhani||17358|76367|445|13
+Devrukh||17067|73615|167|13
+Daulatābād|Daulatabad|19936|75221|597|10
+Dhanegaon||19127|77337|373|10
+Dābhol|Dabhol|17590|73180|20|9
+Dandi||19798|72765|14|9
+Deogiri||20319|77796|375|8
+Dhānal|Dhanal|21151|79542|263|6
+Dehu||18719|73766|585|6
+Dāvrapāda|Davrapada|18796|73078|7|5
+Dhatau||18428|73151|20|5
+#IN|Nagaland
+Diphupar 'A'||25858|93769|164|10
+#IN|Odisha
+Digapahandi||19373|84572|73|13
+Damonojodi||18763|82919|910|9
+Dāringbārhi|Daringbarhi|19907|84124|947|7
+Daspalla||20340|84847|128|7
+Dungamal||19680|85182|54|6
+Dadhapatna||20411|85827|93|5
+#IN|Punjab
+Daulatpur||32267|75633|328|13
+Dhilwan||31514|75346|230|8
+Derā Nānak|Dera Nanak|32037|75028|240|7
+Dhin||31266|75609|223|6
+Dappar||30521|76816|287|6
+#IN|Rajasthan
+Dariāwad|Dariawad|24101|74443|234|11
+Diwākari|Diwakari|27555|76659|259|11
+Desūla|Desula|27532|76679|256|7
+Dhorīmanna|Dhorimanna|25204|71437|75|7
+#IN|Tamil Nadu
+Devipattinam||9478|78896|7|12
+Devikāpuram|Devikapuram|12498|79253|169|10
+Dāsiripuram|Dasiripuram|13124|80030|38|9
+Dalavaipatti||11661|78083|281|8
+Dhali||10510|77188|391|6
+Dāsināyakkanpatti|Dasinayakkanpatti|11609|78144|282|6
+Dūsi|Dusi|12776|79679|88|6
+Dalavaypuram||9392|77498|160|5
+Desūr|Desur|12437|79481|116|5
+Dāmalerimuttūr|Damalerimuttur|12536|78567|399|5
+#IN|Telangana
+Dundigal||17608|78415|611|13
+Dharmaram||18304|79489|232|12
+Devāpur|Devapur|19044|79350|252|10
+#IN|Tripura
+Dharmaragar||24349|92131|44|9
+#IN|Uttar Pradesh
+Dewā|Dewa|27036|81167|128|14
+Dankaur||28351|77555|207|13
+Dūdhi|Dudhi|24214|83241|250|13
+Dostpur||26275|82471|97|13
+Dalmau||26065|81030|108|11
+Dohrighāt|Dohrighat|26272|83509|78|11
+Daurāla|Daurala|29113|77705|232|11
+Dih||26143|81409|115|7
+#IN|Uttarakhand
+Doiwāla|Doiwala|30177|78117|484|8
+Dhārchula|Dharchula|29847|80520|940|7
+#IN|West Bengal
+Debīpur|Debipur|24250|88618|22|10
+Daulatpur||25326|88330|37|8
+#IR|Bushehr
+Deh Qā’ed|Deh Qa'ed|29298|51194|49|8
+Dālakī|Dalaki|29429|51293|106|6
+#IR|Chaharmahal and Bakhtiari
+Dastnā’|Dastna'|32058|50771|2014|5
+#IR|Fars
+Dabīrān|Dabiran|28406|54188|1112|14
+Dārīūn|Dariun|29564|52929|1583|10
+#IR|Hormozgan
+Dargahān|Dargahan|26963|56063|10|15
+#IR|Isfahan
+Dehaq||33104|50959|1949|8
+#IR|Kerman
+Darb-e Behesht||29236|57332|2633|11
+#IR|Kermanshah Province
+Deh Pahn||34346|47138|1306|7
+#IR|Khuzestan
+Darvīsheh|Darvisheh|31244|48666|15|12
+Dārkhovīn|Darkhovin|30745|48423|5|6
+Dehdez||31710|50288|1537|5
+Daghāgheleh|Daghagheleh|31389|48689|21|5
+#IR|Kohgiluyeh and Boyer-Ahmad
+Dīshmūk|Dishmuk|31298|50401|1722|6
+#IR|Markazi
+Dāvūdābād|Davudabad|34294|49856|1683|5
+#IR|Māzandarān
+Dārāb Kolā|Darab Kola|36561|53252|120|5
+#IR|Qazvin Province
+Dānesfahān|Danesfahan|35812|49743|1325|9
+#IR|Razavi Khorasan
+Dehrūd|Dehrud|36350|59657|937|12
+#IR|Semnan
+Dībāj|Dibaj|36427|54224|1823|6
+#IR|Sistan and Baluchestan
+Dūst Moḩammad Khān|Dust Mohammad Khan|31145|61793|483|7
+#IR|Tehran
+Dāvūdābād|Davudabad|35399|51561|935|6
+#IR|West Azerbaijan
+Dīzaj Dīz|Dizaj Diz|38462|45024|1161|8
+#IT|Emilia-Romagna
+Decima||44710|11230|18|5
+#IT|Liguria
+Diano Marina||43911|8080|4|5
+#IT|Lombardy
+Darfo Boario Terme||45892|10189|222|15
+Dairago||45566|8863|194|6
+#IT|Piedmont
+Druento||45133|7575|285|8
+Dronero||44465|7362|622|5
+#IT|Sardinia
+Dolianova||39378|9177|212|9
+Decimomannu||39310|8970|10|7
+Dorgali||40292|9587|390|6
+Domusnovas||39324|8649|152|6
+#IT|Tuscany
+Donoratico||43169|10567|10|5
+#IT|Veneto
+Dueville||45636|11551|57|13
+Dolo||45425|12084|7|8
+Dossobuono||45393|10911|66|6
+Dosson||45636|12254|12|6
+#JM|Saint Ann Parish
+Discovery Bay||18459|-77400|29|8
+#JM|Trelawny Parish
+Duncans||18468|-77536|130|5
+#JO|Irbid
+Dayr Yūsuf|Dayr Yusuf|32487|35796|752|6
+#JP|Fukuoka
+Daigyōji|Daigyoji|33598|130851|50|5
+#JP|Fukushima
+Dake-onsen||37606|140355|519|9
+#JP|Saitama
+Dōjō|Dojo|35856|139613|6|5
+#JP|Tokyo
+Daiba||35628|139773|23|6
+#KE|Garissa County
+Dadaab||52|40309|125|12
+#KE|Nakuru County
+Dundori||-252|36236|2365|5
+#KG|Osh Region
+Daroot-Korgon||39553|72205|2483|6
+#KH|Kampong Thom
+Damrei Choan Khla||12693|104899|14|7
+#KH|Kampot
+Doun Yay||10780|104444|23|6
+#KH|Kratie
+Damrei Phong||12169|106080|35|9
+#KH|Siem Reap
+Damnak Khchas||13496|103410|14|6
+#KM|Anjouan
+Domoni||-12261|44529|1|12
+#KN|Saint John Capesterre
+Dieppe Bay Town||17415|-62814|20|1
+#KR|Gyeongsangbuk-do
+Dodong-ri||37495|130904|620|9
+#KY|
+Driftwood Village||19353|-81246|1|10
+Dog City||19308|-81382|4|6
+#KZ|Aqmola
+Derzhavinsk||51097|66319|227|14
+#KZ|Atyrau Oblisi
+Dossor||47532|52971|-15|10
+#LB|Baalbek-Hermel Governorate
+Deïr el Ahmar|Deir el Ahmar|34125|36131|1032|6
+#LC|Dennery
+Dennery||13914|-60891|19|13
+#LT|Alytus
+Druskininkai||54016|23987|97|12
+#LT|Kaunas
+Domeikava||54968|23916|89|5
+#LU|Diekirch
+Diekirch||49867|6155|209|7
+#LU|Esch-sur-Alzette
+Differdange||49524|5891|304|5
+#LV|Dobele Municipality
+Dobele||56624|23275|37|9
+#LV|Riga
+Daugavgrīva|Daugavgriva|57043|24036|6|10
+Dreiliņi|Dreilini|56944|24243|8|7
+#LY|Banghazi
+Daryānah|Daryanah|32348|20309|8|8
+#LY|Nalut
+Daraj||30165|10458|425|6
+#MA|Beni Mellal-Khenifra
+Dar Ould Zidouh||32312|-6905|375|13
+#MA|Fes-Meknes
+Dhar Souk||34652|-4279|496|6
+#MA|Oriental
+Debdou||33982|-3043|994|5
+#MA|Rabat-Salé-Kénitra
+Douar el Caïd el Gueddari|Douar el Caid el Gueddari|34421|-6091|19|7
+#MD|Donduşeni
+Donduşeni|Donduseni|48243|27610|241|9
+#MD|Hînceşti
+Dancu||46758|28207|24|10
+#MD|Transnistria
+Dnestrovsc||46624|29906|7|10
+#ME|Danilovgrad
+Danilovgrad||42554|19146|49|5
+#ME|Kotor
+Dobrota||42454|18768|69|5
+#MK|Demir Hisar
+Demir Hisar||41220|21204|622|2
+#MK|Demir Kapija
+Demir Kapija||41406|22243|100|4
+#MK|Dolneni
+Dolneni||41425|21455|602|12
+#MK|Gostivar
+Dolna Banjica||41786|20906|540|10
+#MK|Grad Skopje
+Dračevo|Dracevo|41937|21522|239|11
+#MK|Struga
+Delogožda|Delogozda|41257|20722|773|8
+#MK|Tetovo
+Džepčište|Dzepciste|42033|20998|483|8
+#MM|Kayah State
+Dimawso||19550|97156|875|6
+#MM|Mon
+Don Wun||17142|97274|21|8
+#MM|Yangon
+Dar Pein South||17030|96366|4|11
+#MR|Brakna
+Dar el Barka||16683|-14700|8|12
+#MR|Gorgol
+Djowol||16064|-13373|34|8
+#MR|Guidimaka
+Diaguily||14848|-12393|31|6
+Diogountourou||14770|-12251|33|6
+#MR|Hodh Ech Chargi
+Djiguenni||15732|-8666|227|8
+#MT|Dingli
+Dingli||35862|14382|231|4
+#MU|Moka
+Dagotière|Dagotiere|-20245|57562|446|7
+#MV|Haa Alifu Atholhu
+Dhihdhoo||6887|73114|8|3
+#MW|Central Region
+Dowa||-13654|33938|1361|8
+#MX|Baja California
+Doctor Alberto Oviedo Mota||32228|-115168|9|8
+Delta||32355|-115196|11|5
+#MX|Campeche
+Dzitbalché|Dzitbalche|20320|-90057|34|12
+#MX|Guanajuato
+Duarte||21087|-101524|1882|6
+Doctor Mora||21142|-100321|2117|5
+#MX|Hidalgo
+Doxey||20091|-99242|2072|7
+#MX|Jalisco
+Degollado||20467|-102150|1793|11
+#MX|Nuevo León
+Doctor Arroyo||23672|-100182|1730|10
+#MX|Puebla
+Domingo Arenas||19140|-98457|2447|6
+#MX|San Luis Potosí
+Dulce Grande||23002|-102174|1988|6
+#MX|Yucatán
+Dzidzantun||21249|-89042|10|7
+Dzilam González|Dzilam Gonzalez|21281|-88930|6|6
+#MY|Sarawak
+Debak||1567|111417|14|8
+#MY|Selangor
+Dengkil||2860|101681|25|8
+#NE|Dosso Region
+Dioundiou||12617|3544|198|8
+#NE|Zinder Region
+Dungas||13062|9343|375|13
+#NG|Bauchi
+Dindima||10226|10151|470|13
+Dass||10001|9516|617|7
+Disina||11481|9919|415|6
+#NG|Borno State
+Damasak||13105|12509|313|14
+#NG|Gombe State
+Dadiya||9619|11441|502|7
+#NG|Kano State
+Dambatta||12435|8515|460|9
+Dan Gora||11535|8152|576|8
+#NG|Katsina State
+Dutsin-Ma||12454|7497|544|13
+Danja||11377|7561|681|10
+Dankama||13298|7795|414|7
+#NG|Kebbi
+Dakingari||11648|4062|191|13
+Dabai||11477|5206|452|6
+#NG|Kogi State
+Dekina||7690|7044|141|11
+#NG|Niger State
+Duku||11236|4907|279|8
+#NG|Plateau State
+Dengi||9369|9962|384|6
+#NG|Sokoto
+Dange||12853|5346|344|12
+#NG|Yobe State
+Dapchi||12495|11500|341|14
+Dankalwa||11744|12185|397|6
+#NG|Zamfara State
+Dan Sadau||11296|6495|502|8
+#NI|Carazo Department
+Dolores||11856|-86216|579|7
+#NI|Granada Department
+Diriomo||11876|-86052|340|10
+#NL|Friesland
+Dokkum||53322|5997|2|13
+De Greiden||52950|5914|-1|7
+De Drait||53097|6068|1|6
+Damwâld|Damwald|53290|5998|3|6
+De Westereen||53257|6036|2|5
+#NL|Gelderland
+Dieren||52051|6103|12|15
+Doesburg||52013|6139|13|11
+Dinxperlo||51864|6488|20|8
+Druten||51888|5606|8|6
+Doornsteeg||52230|5454|-1|5
+#NL|Limburg
+De Heeg||50825|5723|61|6
+#NL|North Brabant
+De Kruiskamp||51700|5260|3|8
+De Doornakkers||51438|5509|20|6
+De Reit||51560|5049|14|6
+De Blaak||51546|5045|14|6
+Dinteloord||51635|4369|-1|5
+#NL|North Holland
+Dapperbuurt||52362|4928|0|10
+Den Burg||53054|4797|5|6
+#NL|Overijssel
+Dedemsvaart||52600|6458|8|13
+Denekamp||52378|7007|25|9
+Delden||52260|6711|19|7
+#NL|South Holland
+De Lier||51975|4249|0|12
+Delfshaven||51905|4453|7|7
+Driemanspolder||52052|4485|-1|6
+Duindorp||52091|4260|8|6
+#NL|Utrecht
+Doorn||52033|5346|10|10
+De Bilt||52110|5181|4|9
+#NL|Zeeland
+Dauwendaele||51493|3626|1|6
+#NO|Akershus
+Drøbak|Drobak|59662|10628||11
+#NP|Lumbini Province
+Deukhurī|Deukhuri|27830|82729|273|0
+#NZ|Auckland
+Dairy Flat||-36667|174650|63|5
+#NZ|Manawatu-Wanganui
+Dannevirke||-40205|176101|212|6
+#NZ|Northland
+Dargaville||-35933|173883|8|5
+#PE|Puno
+Desaguadero||-16566|-69042|3830|5
+#PH|Autonomous Region in Muslim Mindanao
+Dalican||6967|124400|27|14
+Dalumangcob||7217|124300|3|9
+Datu Piang||7028|124503|9|8
+Digal||6753|124796|14|7
+Dado||7050|124460|1|5
+#PH|Bicol Region
+Daraga||13148|123712|27|7
+Donsol||12906|123595|6|6
+#PH|Cagayan Valley
+Dassun||17745|121711|23|6
+#PH|Calabarzon
+Del Monte||14642|121018|31|11
+Dolores||14023|121410|291|8
+Dinahican||14717|121717|9|7
+Dayap||14180|121333|13|5
+#PH|Caraga
+Dapa||9756|126052||9
+#PH|Central Luzon
+Dingalan||15390|121393|34|7
+#PH|Central Visayas
+Dalaguete||9761|123535|9|8
+#PH|Eastern Visayas
+Dulag||10953|125032|4|10
+Dolores||12037|125483|7|9
+#PH|Ilocos
+Dingras||18103|120697|29|7
+Dumpay||15883|120389|16|5
+Domampot||16000|120650|40|5
+Dorongan Punta||15815|120323|16|5
+#PH|Northern Mindanao
+Dalipuga||8316|124255|41|14
+Damilag||8355|124812|577|11
+Damulog||7484|124943|281|9
+Dagumba-an||8153|124591|541|7
+#PH|Soccsksargen
+Dahay||6391|124715|177|8
+#PH|Western Visayas
+Dao||11394|122686|19|11
+Dancalan||9982|122739|10|10
+Dos Hermanas||10742|123038|53|9
+Dumangas||10825|122713|7|9
+Dulao||10542|122938|27|7
+Dingle||11000|122671|30|6
+Dulangan||11456|122956|14|5
+#PH|Zamboanga Peninsula
+Dumingag||8169|123351|63|7
+#PK|Balochistan
+Dalbandin||28888|64406|851|15
+Duki||30153|68573|1092|6
+#PK|Khyber Pakhtunkhwa
+Doaba||33425|70737|890|9
+#PK|Punjab
+Daira Din Panah||30571|70937|139|15
+Daultala||33193|73141|547|12
+Dinan Bashnoian Wala||29766|73266|155|8
+#PK|Sindh
+Daulatpur||26502|67971|46|15
+Diplo||24467|69581|12|12
+Daromehar||24794|68180|17|11
+Darya Khan Marri||26678|68287|44|9
+#PL|Lesser Poland
+Dąbrowa Tarnowska|Dabrowa Tarnowska|50175|20986|208|11
+Dobczyce||49881|20089|243|6
+#PL|Lubusz
+Drezdenko||52838|15831|30|11
+#PL|Podlasie
+Dąbrowa Białostocka|Dabrowa Bialostocka|53654|23348|144|6
+#PL|Pomerania
+Dzierzgoń|Dzierzgon|53922|19347|14|6
+Debrzno||53538|17236|155|5
+#PL|Subcarpathia
+Dynów|Dynow|49815|22234|255|6
+#PL|Warmia-Masuria
+Dobre Miasto||53987|20397|78|11
+#PL|West Pomerania
+Dębno|Debno|52739|14698|40|14
+Darłowo|Darlowo|54421|16411|7|13
+Dąbie|Dabie|53400|14676|1|13
+Drawsko Pomorskie||53531|15810|116|11
+#PL|Łódź Voivodeship
+Działoszyn|Dzialoszyn|51117|18865|182|6
+#PR|Dorado
+Dorado||18459|-66268|3|13
+#PS|West Bank
+Dayr al Ghuşūn|Dayr al Ghusun|32352|35077|203|9
+Dhannābah|Dhannabah|32313|35041|153|8
+Dayr Dibwān|Dayr Dibwan|31911|35267|772|7
+Dayr Sāmit|Dayr Samit|31521|34974|445|6
+Dayr Abū Ḑa‘īf|Dayr Abu Da'if|32456|35362|217|6
+#PT|Viana do Castelo
+Darque||41682|-8803|91|8
+#PY|Alto Paraná Department
+Doctor Juan León Mallorquín|Doctor Juan Leon Mallorquin|-25431|-55254|247|7
+#QA|Al-Shahaniya
+Dukhān|Dukhan|25425|50782|33|7
+#RO|Bacău County
+Dărmăneşti|Darmanesti|46367|26483|347|14
+Dofteana||46317|26517|333|11
+#RO|Bihor County
+Diosig||47300|22000|103|7
+Dobreşti|Dobresti|46850|22300|273|6
+#RO|Botoșani County
+Darabani||48183|26583|222|12
+Dersca||47983|26200|382|5
+#RO|Călărași County
+Dragalina||44433|27317|39|9
+Dor Mărunt|Dor Marunt|44450|26917|49|7
+#RO|Dolj
+Dăbuleni|Dabuleni|43800|24083|55|14
+Dăneţi|Daneti|43983|24050|110|7
+#RO|Dâmbovița County
+Dragomireşti|Dragomiresti|44917|25333|295|8
+Dărmăneşti|Darmanesti|44917|25783|222|8
+Dragodana||44733|25350|184|7
+#RO|Galați County
+Drăgăneşti|Draganesti|45783|27467|32|6
+Drăguşeni|Draguseni|45967|27750|272|5
+#RO|Gorj County
+Drăguţeşti|Dragutesti|44967|23233|175|5
+#RO|Harghita County
+Ditrău|Ditrau|46817|25517|779|6
+#RO|Ialomița County
+Dridu||44700|26450|70|5
+#RO|Iași County
+Deleni||47467|26883|258|10
+Dancu||47154|27666|56|7
+#RO|Ilfov
+Dobroeşti|Dobroesti|44450|26183|72|7
+Domneşti-Sârbi|Domnesti-Sarbi|44383|25917|82|6
+Domnești|Domnesti|44399|25916|91|5
+#RO|Neamț County
+Doljeşti|Doljesti|47033|26983|208|7
+Dumbrava Roşie|Dumbrava Rosie|46883|26433|299|7
+#RO|Olt
+Drăgăneşti-Olt|Draganesti-Olt|44167|24533|82|12
+#RO|Prahova
+Doftana||45150|25800|517|7
+Drajna de Jos||45217|26050|381|6
+Drăgăneşti|Draganesti|44817|26300|73|5
+#RO|Sibiu County
+Dumbrăveni|Dumbraveni|46233|24567|349|8
+#RO|Suceava
+Dolhasca||47433|26600|231|11
+Dumbrăveni|Dumbraveni|47650|26417|328|8
+Dărmăneşti|Darmanesti|47733|26150|340|6
+#RO|Teleorman County
+Dobroteşti|Dobrotesti|44283|24883|117|5
+#RO|Timiș County
+Deta||45389|21224|91|6
+Dudeştii Vechi|Dudestii Vechi|46050|20483|79|6
+#RO|Vaslui County
+Deleşti|Delesti|46700|27550|216|5
+Duda||46749|28042|147|5
+#RS|Central Serbia
+Dobanovci||44826|20225|78|8
+#RS|Vojvodina
+Debeljača|Debeljaca|45071|20602|78|6
+#RU|Adygeya Republic
+Dondukovskaya||44882|40363|144|7
+#RU|Bryansk Oblast
+Dubrovka||53692|33505|214|8
+#RU|Chechnya
+Dzhalka||43319|45988|84|6
+Duba-Yurt||43035|45730|386|6
+#RU|Chelyabinsk
+Dolgoderevenskoye||55350|61342|227|7
+#RU|Dagestan
+Dylym||43071|46635|671|8
+Dubki||43021|46837|848|6
+Dorgeli||42667|47294|657|5
+#RU|Ingushetiya Republic
+Dalakovo||43238|44590|537|10
+#RU|Kaluga Oblast
+Duminichi||53934|35110|189|8
+#RU|Kirov Oblast
+Darovskoy||58770|47958|143|7
+Dem’yanovo|Dem'yanovo|60351|47084|104|6
+#RU|Krasnodar Krai
+Dvubratskiy||45239|39805|101|10
+Dolzhanskaya||46634|37802|11|7
+Divnomorskoye||44502|38134|7|6
+Dzhubga||44321|38707|36|5
+#RU|Krasnoyarsk Krai
+Dubinino||55619|89091|298|12
+Dzerzhinskoye||56830|95227|191|8
+#RU|Kurgan Oblast
+Dalmatovo||56260|62935|111|15
+#RU|Kursk Oblast
+Dmitriyev||52126|35076|184|6
+#RU|Leningradskaya Oblast'
+Dubrovka||59845|30934|22|8
+#RU|Lipetsk Oblast
+Dobrinka||52165|40473|155|10
+Dolgorukovo||52323|38354|185|6
+Dobroye||52863|39805|117|6
+#RU|Moscow Oblast
+Drezna||55742|38848|125|11
+Davydovo||55609|38861|126|11
+Dedenëvo|Dedenevo|56243|37518|168|6
+Demikhovo||55797|38884|124|5
+#RU|Nizhny Novgorod Oblast
+Diveyevo||55041|43248|171|6
+Doschatoye||55389|42103|110|5
+#RU|North Ossetia–Alania
+Digora||43157|44156|457|12
+#RU|Novgorod Oblast
+Demyansk||57645|32466|46|6
+#RU|Novosibirsk Oblast
+Dovol’noye|Dovol'noye|54495|79668|127|7
+#RU|Orenburg Oblast
+Dombarovskiy||50758|59539|247|10
+#RU|Oryol oblast
+Dmitrovsk||52505|35146|208|5
+#RU|Primorye
+Dunay||42879|132335|17|7
+#RU|Pskov Oblast
+Dno||57829|29969|54|10
+Dedovichi||57552|29947|81|10
+#RU|Rostov
+Donskoy||47414|40257|12|14
+Dubovskoye||47410|42766|74|8
+#RU|Sakhalin Oblast
+Dolinsk||47328|142796|17|12
+#RU|Saratov Oblast
+Dergachi||51235|48766|64|10
+Dukhovnitskoye||52479|48209|45|6
+#RU|Smolensk Oblast
+Dorogobuzh||54915|33299|193|12
+Demidov||55270|31516|159|9
+#RU|Sverdlovsk Oblast
+Dvurechensk||56598|61095|198|5
+#RU|Tambov Oblast
+Dmitriyevka||52881|40790|135|7
+#RU|Tatarstan Republic
+Dzhalil’|Dzhalil'|55024|52736|288|15
+#RU|Tula Oblast
+Dubovka||53952|38063|212|9
+Dubna||54154|36961|177|6
+#RU|Udmurtiya Republic
+Debësy|Debesy|57652|53809|198|6
+#RU|Volgograd Oblast
+Danilovka||50358|44115|111|6
+#RU|Voronezh Oblast
+Davydovka||51158|39429|97|6
+#RU|Zabaykalskiy (Transbaikal) Kray
+Darasun||51659|113974|611|8
+Domna||51894|113152|670|7
+Dul’durga|Dul'durga|50674|113589|748|6
+#SA|Al-Qassim Region
+Dukhnah||25356|43623|840|6
+#SA|Jazan Region
+Dhahabān|Dhahaban|18100|41616|8|9
+#SE|Skåne
+Dalby||55667|13350|76|6
+#SE|Stockholm
+Djursholm||59399|18056|22|9
+#SE|Örebro
+Degerfors||59238|14431|112|7
+#SG|
+Dover||1305|103780|2|11
+Dairy Farm||1366|103774|2|8
+#SI|Destrnik
+Destrnik||46493|15879|348|0
+#SI|Dobrna
+Dobrna||46337|15226|381|1
+#SI|Dol pri Ljubljani
+Dol pri Ljubljani||46089|14601|278|0
+#SI|Dolenjske Toplice
+Dolenjske Toplice||45757|15059|178|1
+#SI|Log–Dragomer
+Dragomer||46016|14384|292|1
+#SI|Municipality of Brda
+Dobrovo||45997|13527|129|0
+#SI|Municipality of Divača
+Divača|Divaca|45685|13971|438|1
+#SI|Municipality of Dobje
+Dobje pri Planini||46137|15394|563|0
+#SI|Municipality of Dobrova–Polhov Gradec
+Dobrova||46046|14392|374|1
+#SI|Municipality of Dobrovnik
+Dobrovnik||46651|16353|174|1
+#SI|Municipality of Domžale
+Domžale|Domzale|46138|14594|301|13
+#SI|Municipality of Dornava
+Dornava||46436|15953|214|1
+#SI|Municipality of Dravograd
+Dravograd||46588|15019|357|3
+#SK|Banská Bystrica Region
+Detva||48561|19420|414|14
+#SK|Bratislava Region
+Dunajská Lužná|Dunajska Luzna|48083|17261|129|8
+#SK|Košice Region
+Dobšiná|Dobsina|48821|20370|456|5
+#SK|Nitra Region
+Dvory nad Žitavou|Dvory nad Zitavou|47989|18267|118|5
+#SL|Eastern Province
+Daru||7990|-10842|190|6
+#SM|Domagnano
+Domagnano||43950|12468|341|3
+#SM|Serravalle
+Dogana||43980|12491|69|7
+#SN|Fatick
+Diofior||14190|-16661|3|11
+#SN|Kolda
+Dabo||12883|-14483|30|6
+#SN|Matam
+Diawara||15022|-12544|29|8
+Dembankané|Dembankane|15089|-12700|25|5
+#SN|Ziguinchor
+Diouloulou||13050|-16600|11|6
+#SO|Galguduud
+Dhuusamarreeb||5536|46387|254|9
+#SY|Rif-dimashq
+Dayr al ‘Aşāfīr|Dayr al 'Asafir|33466|36420|638|6
+#TG|Plateaux
+Danyi-Apéyémé|Danyi-Apeyeme|7204|696|762|6
+#TH|Prachin Buri
+Dong Khilek||14084|101427|11|10
+#TH|Suphan Buri
+Doembang Nangbuat||14833|100100|16|15
+#TH|Surat Thani
+Don Sak||9317|99692|11|12
+#TJ|Khatlon Province
+Dŭstí|Dusti|37348|68664|387|9
+#TM|Ahal
+Duşak|Dusak|37195|60025|255|8
+#TM|Lebap
+Dostluk||37745|65338|251|14
+#TN|Béja Governorate
+Djebel Abiod||36976|9078|38|7
+#TN|Kasserine Governorate
+Dar Ouled Khalifa||35350|8617|714|8
+#TN|Monastir Governorate
+Dar Ali Ben Hassene||35500|10700|89|5
+#TN|Sfax Governorate
+Djebeniana||35035|10908|35|7
+#TN|Tozeur Governorate
+Degache||33976|8208|58|8
+#TN|Zaghouan Governorate
+Djebibina||36117|10100|104|8
+#TR|Adana
+Doğankent|Dogankent|36844|35344|10|5
+#TR|Afyonkarahisar Province
+Dazkırı|Dazkiri|37919|29861|882|6
+#TR|Antalya
+Demre||36244|29985|9|14
+#TR|Aydın
+Davutlar||37734|27293|62|9
+#TR|Bursa Province
+Demirci||39800|29017|850|15
+Demirtaş|Demirtas|40272|29098|113|7
+#TR|Diyarbakır Province
+Dicle||38366|40065|929|13
+#TR|Giresun
+Dereli||40739|38443|550|8
+#TR|Hatay
+Dursunlu||36167|36158|221|5
+#TR|Kastamonu
+Devrekani||41603|33839|1098|7
+Daday||41479|33467|869|5
+#TR|Kocaeli
+Diliskelesi||40776|29527|5|11
+#TR|Konya
+Doğanhisar|Doganhisar|38146|31676|1200|10
+Derbent||38014|32016|1489|8
+Derebucak||37392|31509|1229|5
+#TR|Kütahya
+Domaniç|Domanic|39802|29609|888|5
+#TR|Kırıkkale
+Delice||39954|34026|760|12
+#TR|Malatya
+Doğanşehir|Dogansehir|38086|37871|1248|15
+Dilek||38442|38251|777|7
+Doğanyol|Doganyol|38307|39034|930|6
+#TR|Muğla
+Datça|Datca|36738|27684|31|10
+Düğrek|Duegrek|37206|28410|623|6
+#TR|Nevşehir Province
+Derinkuyu||38375|34734|1354|12
+#TR|Sinop
+Durağan|Duragan|41416|35054|218|12
+#TR|Sivas
+Divriği|Divrigi|39371|38114|1039|13
+#TR|Trabzon
+Düzköy|Duezkoey|40875|39415|713|8
+Dernekpazarı|Dernekpazari|40797|40245|229|7
+#TR|İzmir Province
+Dikili||39071|26890|8|14
+Demirköprü|Demirkoeprue|38468|27099|8|7
+#TW|Taiwan
+Dongshi||23457|120150|4|15
+#TZ|Mbeya
+Dunda||-8117|34250|1124|14
+#UA|Cherkasy
+Drabiv||49959|32150|121|6
+#UA|Chernihiv Oblast
+Desna||50927|30767|114|7
+#UA|Dnipropetrovsk
+Dniprovske||48590|34414|115|6
+#UA|Donetsk
+Donske||47514|37537|171|5
+#UA|Ivano-Frankivsk
+Delyatyn||48525|24626|419|8
+#UA|Kharkiv
+Donets||49508|36566|114|9
+Dokuchayevske||49892|36452|153|7
+#UA|Khmelnytskyi
+Derazhnya||49269|27429|280|10
+#UA|Kirovohrad
+Dobrovelychkivka||48389|31180|199|6
+#UA|Kyiv Oblast
+Dymer||50786|30304|103|6
+#UA|Lviv
+Dubliany||49904|24086|258|10
+Dobrotvir||50205|24384|204|6
+Davydiv||49747|24139|309|5
+#UA|Mykolaiv
+Domanivka||47629|30986|71|6
+#UA|Odesa
+Dachne||46582|30547|76|9
+Dobroslav||46821|30945|80|7
+#UA|Poltava
+Dykanka||49826|34522|155|8
+#UA|Rivne Oblast
+Dubrovytsya||51571|26564|134|9
+#UA|Zakarpattia
+Dubove||48175|23887|411|10
+Dovhe||48367|23281|176|7
+#US|Alabama
+Demopolis||32518|-87836|37|7
+Danville||34415|-87088|186|6
+Daleville||31310|-85713|102|5
+#US|Arkansas
+De Queen||34038|-94341|128|7
+#US|California
+Discovery Bay||37909|-121600|1|13
+Diamond Springs||38695|-120815|546|11
+Delhi||37432|-120779|36|11
+Del Aire||33916|-118370|31|10
+Durham||39646|-121800|49|6
+Dos Palos||36986|-120627|36|5
+#US|Colorado
+Delta||38742|-108069|1511|9
+Derby||39839|-104919|1563|8
+Dove Valley||39578|-104829|1748|5
+#US|Connecticut
+Derby||41321|-73089|31|13
+#US|District of Columbia
+Deanwood||38898|-76929|13|10
+#US|Florida
+Destin||30394|-86496|7|14
+Doctor Phillips||28449|-81492|37|11
+Dade City||28365|-82196|36|7
+DeFuniak Springs||30721|-86115|79|6
+#US|Georgia
+Druid Hills||33780|-84336|278|15
+Dallas||33924|-84841|318|13
+Douglas||31509|-82850|78|12
+Doraville||33898|-84283|327|11
+Dock Junction||31202|-81517|1|8
+Dahlonega||34533|-83985|442|6
+Dacula||33989|-83898|320|5
+#US|Hawaii
+Downtown||21302|-157858|9|12
+Dowsett Highlands||21337|-157834|152|5
+#US|Illinois
+Du Quoin||38011|-89236|142|6
+#US|Indiana
+Danville||39761|-86526|291|10
+Decatur||40831|-84929|244|9
+Dunlap||41638|-85922|237|6
+#US|Iowa
+Denison||42018|-95355|391|8
+Decorah||43303|-91786|268|8
+De Witt||41823|-90538|216|5
+#US|Kansas
+De Soto||38979|-94969|262|6
+#US|Kentucky
+Douglass Hills||38238|-85553|216|6
+Dayton||39113|-84473|157|5
+#US|Louisiana
+Destrehan||29943|-90353|3|12
+DeRidder||30846|-93289|62|11
+Denham Springs||30487|-90958|13|10
+Donaldsonville||30101|-90994|7|8
+#US|Maryland
+Davidsonville||38923|-76628|54|8
+Downtown||39291|-76615|45|7
+Darnestown||39103|-77291|133|7
+District Heights||38858|-76889|81|6
+#US|Massachusetts
+Dudley||42045|-71930|206|11
+Douglas||42054|-71740|178|7
+Dalton||42474|-73166|348|7
+Dighton||41814|-71120|4|6
+#US|Michigan
+Dowagiac||41984|-86109|232|6
+#US|Minnesota
+Detroit Lakes||46817|-95845|418|9
+Delano||45042|-93789|281|6
+Dayton||45244|-93515|268|5
+#US|Mississippi
+D'Iberville||30426|-88891|4|11
+Diamondhead||30395|-89364|20|8
+#US|Missouri
+Dardenne Prairie||38770|-90729|187|13
+Des Peres||38601|-90433|186|9
+Dexter||36796|-89958|113|8
+De Soto||38140|-90555|160|6
+Dellwood||38750|-90286|164|5
+#US|Nevada
+Dayton||39237|-119593|1340|9
+#US|New Hampshire
+Durham||43134|-70926|15|10
+#US|New Jersey
+Dunellen||40589|-74472|14|7
+Dayton||40373|-74510|35|7
+Demarest||40957|-73963|11|5
+#US|New Mexico
+Deming||32269|-107759|1323|15
+#US|New York
+Douglaston||40769|-73747|25|15
+Dunkirk||42480|-79334|188|12
+Dobbs Ferry||41015|-73873|64|11
+Dongan Hills||40588|-74096|8|10
+Delmar||42622|-73833|68|8
+Downtown Brooklyn||40694|-73986|20|7
+#US|North Carolina
+Davidson||35502|-80839|256|12
+Dunn||35306|-78609|63|10
+#US|North Dakota
+Devils Lake||48113|-98865|441|7
+#US|Ohio
+Dover||40521|-81474|268|13
+Dent||39186|-84651|257|10
+Dry Run||39104|-84330|266|7
+Delphos||40843|-84342|236|7
+Deer Park||39205|-84395|265|6
+Delhi Hills||39093|-84613|266|5
+#US|Oregon
+Damascus||45418|-122459|162|11
+Deschutes River Woods||43992|-121358|1195|5
+#US|Pennsylvania
+Dunmore||41420|-75632|295|13
+Darby||39918|-75259|15|11
+Dormont||40396|-80033|363|8
+Doylestown||40310|-75130|129|8
+Downingtown||40007|-75703|71|8
+DuBois||41119|-78760|429|8
+Dickson City||41471|-75608|234|6
+Dresher||40141|-75167|62|6
+Duquesne||40381|-79860|277|6
+#US|South Carolina
+Dentsville||34064|-80958|72|14
+Dillon||34417|-79371|34|7
+Darlington||34300|-79876|46|6
+#US|Tennessee
+Dayton||35494|-85012|212|7
+Dunlap||35371|-85391|217|5
+#US|Texas
+Dalhart||36059|-102513|1214|8
+Dayton||30047|-94885|25|8
+Decatur||33234|-97586|336|7
+Diboll||31187|-94781|64|5
+Doffing||26275|-98386|57|5
+#US|Virginia
+Dranesville||39001|-77346|129|12
+Dunn Loring||38893|-77222|133|9
+Dumbarton||37604|-77491|61|8
+Dumfries||38568|-77328|11|5
+#US|Washington
+Dishman||47660|-117276|605|10
+DuPont||47097|-122631|75|9
+Duvall||47742|-121986|27|8
+#US|West Virginia
+Dunbar||38361|-81737|181|8
+#US|Wisconsin
+DeForest||43248|-89344|289|9
+Delavan||42633|-88644|285|8
+Delafield||43061|-88404|275|7
+#US|Wyoming
+Douglas||42760|-105382|1474|7
+#UZ|Samarqand Region
+Dahbed||39764|66916|642|8
+#VN|An Giang
+Dương Đông|Duong GJong|10217|103959|8|15
+#YT|Bandraboua
+Dzumogne||-12717|45117|48|6
+#YT|Dembeni
+Dembeni||-12844|45184|15|10
+#ZA|Eastern Cape
+Dutywa||-32096|28305|813|13
+Dordrecht||-31372|27049|1620|12
+#ZA|Free State
+Dewetsdorp||-29583|26665|1538|11
+Dealesville||-28675|25767|1255|7
+#ZA|Gauteng
+Devon||-26356|28778|1674|11
+#ZA|KwaZulu-Natal
+Dannhauser||-28015|30057|1359|10
+Darnall||-29267|31358|57|10
+#ZA|Mpumalanga
+Dullstroom||-25417|30106|2013|6
+Doornkop||-25608|29431|1513|6
+#ZA|North West
+Delareyville||-26686|25459|1359|13
+#ZA|Northern Cape
+Daniëlskuil|Danielskuil|-28189|23540|1468|10
+#ZA|Western Cape
+De Doorns||-33477|19666|473|13
+Darling||-33378|18379|128|12

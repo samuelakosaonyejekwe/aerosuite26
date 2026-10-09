@@ -1,0 +1,1082 @@
+#AF|Ghowr
+Fayrōz Kōh|Fayroz Koh|34520|65251|2263|15
+#AF|Takhar
+Farkhār|Farkhar|36573|69858|1153|10
+#AG|Saint Paul Parish
+Falmouth||17027|-61781|25|1
+#AI|The Farrington
+Farrington||18215|-63022|19|0
+#AR|Buenos Aires
+Florentino Ameghino||-34844|-62467|116|9
+#AR|Catamarca
+Fiambalá|Fiambala|-27672|-67619|1534|6
+#AR|Cordoba
+Freyre||-31165|-62096|111|8
+#AR|Entre Rios
+Federación|Federacion|-30991|-57918|29|14
+#AR|Jujuy
+Fraile Pintado||-23941|-64801|453|14
+#AR|Mendoza
+Fray Luis Beltrán|Fray Luis Beltran|-33007|-68657|673|8
+#AR|Rio Negro
+Fray Luis Beltrán|Fray Luis Beltran|-39314|-65760|135|6
+#AR|Santa Fe
+Funes||-32916|-60810|36|15
+Fray Luis A. Beltrán|Fray Luis A. Beltran|-32791|-60728|30|14
+Franck||-31587|-60939|34|6
+#AT|Carinthia
+Finkenstein am Faaker See||46561|13871|569|8
+#AT|Lower Austria
+Fischamend||48118|16612|152|6
+#AT|Styria
+Fürstenfeld|Fuerstenfeld|47050|16083|255|6
+#AT|Upper Austria
+Freistadt||48511|14505|565|8
+#AT|Vorarlberg
+Frastanz||47217|9630|494|6
+#AU|Australian Capital Territory
+Franklin||-35199|149143|611|6
+#AU|New South Wales
+Forster||-32181|152517|7|14
+Frenchs Forest||-33748|151223|152|13
+Figtree||-28456|152892|101|12
+Fairfield West||-33867|150917|33|11
+Figtree||-34436|150858|46|11
+Five Dock||-33867|151129|25|9
+Freshwater||-33779|151286|10|9
+Forbes||-33384|148008|243|8
+Forestville||-33767|151208|110|8
+Fairfield Heights||-33864|150939|36|8
+Fairy Meadow||-34393|150893|13|7
+Flinders||-34583|150855|22|7
+Fairlight||-33796|151273|62|6
+Fairfield East||-33869|150971|17|5
+Fletcher||-32872|151640|34|5
+#AU|Queensland
+Fortitude Valley||-27457|153032|17|10
+Frenchville||-23348|150545|47|9
+Ferny Hills||-27396|152937|80|9
+Flinders View||-27650|152775|56|6
+Ferny Grove||-27401|152935|60|6
+Fitzgibbon||-27340|153029|14|6
+#AU|South Australia
+Flagstaff Hill||-35049|138583|189|10
+Findon||-34900|138533|12|6
+Fulham Gardens||-34915|138513|11|6
+#AU|Victoria
+Fawkner||-37717|144967|77|14
+Fitzroy North||-37789|144979|36|13
+Forest Hill||-37833|145183|123|11
+Fitzroy||-37798|144978|36|10
+Flemington||-37788|144930|20|8
+Fairfield||-37780|145018|39|6
+Frankston North||-38124|145148|17|6
+#AU|Western Australia
+Forrestfield||-31983|116007|44|13
+Fremantle||-32056|115746|7|9
+Floreat||-31939|115792|21|8
+#BA|Federation of B&H
+Fojnica||43960|17903|578|8
+#BA|Srpska
+Foča|Foca|43506|18779|393|15
+#BB|Saint John
+Four Cross Roads||13170|-59522|220|0
+#BE|Wallonia
+Flémalle-Grande|Flemalle-Grande|50609|5477|89|14
+Farciennes||50430|4542|128|11
+Frasnes-lez-Buissenal||50668|3620|38|11
+Florennes||50251|4606|262|11
+Fosses-la-Ville||50395|4696|176|9
+Fontaine-l'Évêque|Fontaine-l'Eveque|50409|4324|145|9
+Floreffe||50435|4760|92|7
+Fayt-lez-Manage||50487|4230|161|6
+Flénu|Flenu|50437|3886|67|6
+Forchies-la-Marche||50437|4321|166|6
+Florenville||49700|5307|342|5
+Forêt|Foret|50584|5700|254|5
+#BR|Alagoas
+Flexeiras||-10332|-36314|3|10
+Flexeiras||-9197|-35781|132|8
+#BR|Amapá
+Ferreira Gomes||858|-51180|7|7
+#BR|Bahia
+Floresta Azul||-14860|-39660|194|11
+Feira da Mata||-14213|-44281|483|6
+#BR|Ceará
+Frecheirinha||-3760|-40816|124|14
+#BR|Federal District
+Fercal||-15591|-47883|1162|10
+#BR|Goiás
+Flores de Goiás|Flores de Goias|-14457|-47040|449|14
+Firminópolis|Firminopolis|-16582|-50305|678|13
+Faina||-15446|-50361|378|7
+Fazenda Nova||-16183|-50780|486|6
+#BR|Maranhão
+Fortaleza dos Nogueiras||-6964|-46177|438|13
+Fernando Falcão|Fernando Falcao|-6151|-44902|200|11
+Feira Nova do Maranhão|Feira Nova do Maranhao|-6960|-46686|329|8
+#BR|Mato Grosso
+Feliz Natal||-12386|-54920|359|11
+#BR|Minas Gerais
+Fronteira||-20268|-49199|453|15
+Felixlândia|Felixlandia|-18758|-44899|619|14
+Fervedouro||-20726|-42279|688|10
+Ferros||-19232|-43023|453|10
+Frei Inocêncio|Frei Inocencio|-18565|-41914|206|8
+Florestal||-19889|-44432|777|8
+Formoso||-14947|-46232|838|8
+Francisco Badaró|Francisco Badaro|-16992|-42352|383|7
+Felisburgo||-16639|-40761|618|6
+Frei Gaspar||-18066|-41429|448|6
+Felício dos Santos|Felicio dos Santos|-18077|-43247|732|5
+Franciscópolis|Franciscopolis|-17960|-42009|357|5
+#BR|Paraná
+Florestópolis|Florestopolis|-22863|-51387|528|10
+Francisco Alves||-24066|-53848|356|8
+Figueira||-23849|-50403|565|8
+Formosa do Oeste||-24293|-53312|430|8
+Floresta||-23611|-52082|324|7
+Fernandes Pinheiro||-25413|-50547|827|6
+#BR|Paraíba
+Fagundes||-7355|-35775|468|11
+#BR|Pará
+Faro||-2171|-56745|20|9
+#BR|Pernambuco
+Frei Miguelinho||-7940|-35912|420|14
+#BR|Piauí
+Fronteiras||-7088|-40616|428|12
+Francisco Santos||-6993|-41138|252|8
+Fartura do Piauí|Fartura do Piaui|-9482|-42790|481|5
+#BR|Rio Grande do Norte
+Florânia|Florania|-6127|-36818|321|11
+Felipe Guerra||-5597|-37698|94|6
+#BR|Rio Grande do Sul
+Feliz||-29451|-51306|53|14
+Fontoura Xavier||-28983|-52346|768|10
+Faxinal do Soturno||-29575|-53445|70|7
+Formigueiro||-30000|-53499|120|6
+#BR|Santa Catarina
+Faxinal dos Guedes||-26853|-52260|991|11
+#BR|Sergipe
+Frei Paulo||-10549|-37534|276|15
+Feira Nova||-10264|-37313|245|6
+#BR|São Paulo
+Flórida Paulista|Florida Paulista|-21615|-51172|342|13
+Fernando Prestes||-21264|-48685|546|6
+#BR|Tocantins
+Filadélfia|Filadelfia|-7336|-47490|164|8
+Figueirópolis|Figueiropolis|-12131|-49174|290|5
+#CA|Alberta
+Fort Saskatchewan||53698|-113214|627|15
+Falconridge||51103|-113942|1094|10
+Forest Lawn||51038|-113972|1060|7
+Forest Heights||51049|-113970|1066|6
+#CA|British Columbia
+Fairfield||48417|-123350|20|12
+Fairfield||49067|-122315|47|11
+Fernwood||48430|-123344|31|10
+Fernie||49500|-115069|996|5
+#CA|Manitoba
+Fort Richmond||49792|-97144|233|12
+Flin Flon||54767|-101874|336|6
+#CA|New Brunswick
+Fundy Albert||45803|-64660|111|6
+Fundy-St. Martins||45408|-65439||5
+Fairvale||45401|-65972|43|5
+#CA|Nova Scotia
+Fall River||44817|-63615|33|12
+Forest Hills||44680|-63488|60|9
+Fairview||44653|-63641|75|9
+#CA|Ontario
+Forest Hill North||43704|-79428|177|13
+Forest Hill South||43695|-79414|163|11
+Fort Frances||48617|-93400|340|8
+Forest Hills||43428|-80509|334|6
+#CA|Quebec
+Farnham||45283|-72982|55|11
+#CA|Saskatchewan
+Forest Grove||52142|-106591|506|6
+Fairhaven||52121|-106728|504|6
+#CH|Basel-Landschaft
+Frenkendorf||47507|7716|330|6
+#CH|Bern
+Frutigen||46587|7649|786|7
+#CH|Saint Gallen
+Flawil||47413|9183|621|10
+#CH|Schwyz
+Freienbach||47205|8758|410|14
+#CH|Valais
+Fully||46139|7115|471|6
+#CI|Comoé District
+Findimanou||6832|-4083|191|5
+#CI|Lagunes District
+Fiassé|Fiasse|6164|-3636|134|9
+#CI|Montagnes
+Floleu||6844|-8126|277|10
+Facobly||7388|-7376|322|6
+#CI|Sassandra-Marahoue
+Fiékon|Fiekon|7100|-6845|282|5
+#CI|Woroba
+Faraba||8655|-6252|338|8
+Fadiadougou||8700|-6621|356|6
+#CL|Atacama
+Freirina||-28509|-71081|103|6
+#CL|Biobio
+Florida||-36824|-72661|249|9
+#CL|Los Lagos Region
+Fresia||-41154|-73421|152|11
+#CL|Los Ríos Region
+Futrono||-40129|-72385|133|14
+#CN|Chongqing
+Fenghuang||31402|109514|239|15
+Fengsheng||29531|106933|539|14
+Fulu||29608|106135|309|14
+Fuguo||29699|106047|332|12
+Fenglai||29400|107297|666|11
+Fengmu||30247|108483|1189|10
+Fushou||29272|107074|882|8
+Fengyan||29297|107152|764|6
+Fuping||30772|107880|355|6
+#CN|Fujian
+Fengzhou||24958|118534|12|7
+#CN|Gansu
+Foya||33438|105273|1340|12
+Fengdie||33810|104245|1446|11
+Fengxiang||32902|105311|1107|11
+Fanba||32728|105115|902|11
+Fengwang||34638|105989|1468|9
+#CN|Guangdong
+Fangda Town||22556|113973|12|12
+Futian||22522|114056|8|11
+Futian Residential District||22525|114065|2|8
+Fuhua||22588|113891|8|7
+Fubao||22519|114048|2|7
+#CN|Tianjin
+Fengtai||39558|117749|5|7
+Fanzhuang||39194|117335|4|6
+#CO|Caldas Department
+Filadelfia||5297|-75562|1371|10
+#CO|Cundinamarca
+Fómeque|Fomeque|4488|-73897|1820|5
+#CO|Quindío Department
+Filandia||4674|-75658|1919|7
+#CO|Tolima Department
+Falan||5124|-74952|974|9
+#CV|São Vicente
+Fonte Inês|Fonte Ines|16891|-24978|49|6
+#CZ|Carlsbad Region
+Františkovy Lázně|Frantiskovy Lazne|50120|12352|448|6
+#CZ|Liberec Region
+Frýdlant|Frydlant|50921|15080|295|7
+#CZ|Moravian-Silesian Region
+Frenštát pod Radhoštěm|Frenstat pod Radhostem|49548|18211|393|10
+Frýdlant nad Ostravicí|Frydlant nad Ostravici|49593|18360|355|10
+Fulnek||49712|17903|290|5
+#DE|Baden-Wurttemberg
+Furtwangen||48052|8207|857|10
+Frickenhausen||48594|9360|322|9
+Forst||49159|8581|112|8
+Flein||49103|9211|191|7
+Forbach||48683|8350|384|5
+Forchtenberg||49289|9560|197|5
+#DE|Bavaria
+Feucht||49376|11214|359|13
+Feuchtwangen||49163|10339|490|12
+Feldkirchen-Westerham||47907|11843|553|10
+Furth im Wald||49310|12842|403|9
+Freystadt||49200|11330|407|9
+Fürstenzell|Furstenzell|48522|13317|363|8
+Freyung||48810|13548|653|7
+Feldkirchen||48148|11731|525|6
+Fischbachau||47720|11951|774|5
+#DE|Brandenburg
+Fehrbellin||52814|12764|39|9
+Falkenberg||51586|13243|88|8
+Fürstenberg|Fuerstenberg|53185|13146|52|7
+#DE|Hamburg
+Fuhlsbüttel|Fuhlsbuettel|53635|10016|21|13
+Finkenwerder||53533|9863|2|12
+#DE|Hesse
+Fritzlar||51132|9276|220|15
+Fuldatal||51383|9567|172|12
+Felsberg||51138|9421|165|11
+Fürth|Furth|49651|8785|198|11
+Florstadt||50317|8867|136|9
+Flieden||50424|9567|299|9
+Frielendorf||50971|9323|233|8
+#DE|Lower Saxony
+Friedland||51419|9918|181|13
+Friedeburg||53454|7831|5|11
+Fürstenau|Fuerstenau|52517|7677|50|10
+Faßberg|Fassberg|52899|10167|67|7
+Freren||52487|7544|41|5
+#DE|Mecklenburg-Vorpommern
+Friedland||53672|13551|13|7
+#DE|North Rhine-Westphalia
+Friesdorf||50696|7129|63|8
+Friedrichsdorf||51938|8487|104|6
+#DE|Saarland
+Friedrichsthal||49328|7096|309|11
+Freisen||49550|7250|460|9
+#DE|Saxony
+Frankenberg||50913|13040|279|14
+Flöha|Floeha|50856|13074|273|11
+Friedrichstadt||51060|13708|110|10
+Falkenstein||50478|12371|567|10
+Frohburg||51057|12557|167|8
+Fraureuth||50700|12350|309|6
+#DE|Saxony-Anhalt
+Friedrichstadt||51888|12669|90|8
+#DE|Schleswig-Holstein
+Fehmarn||54438|11194|10|13
+Faldera||54061|9948|18|9
+Flintbek||54250|10067|10|7
+Fockbek||54305|9599|6|6
+#DE|Thuringia
+Friedrichroda||50858|10565|428|7
+#DK|Capital Region
+Frederiksværk|Frederiksvaerk|55971|12023|10|13
+Fløng|Flong|55662|12187|27|11
+Fredensborg||55976|12403|31|9
+#DK|South Denmark
+Faaborg||55095|10242|7|7
+#DO|Sánchez Ramírez
+Fantino||19121|-70300|56|10
+#ES|Andalusia
+Fuente Palmera||37705|-5100|162|11
+Fernán-Núñez|Fernan-Nunez|37670|-4726|325|9
+Fuentes de Andalucía|Fuentes de Andalucia|37464|-5346|181|7
+Fuente Obejuna||38267|-5417|610|5
+#ES|Aragon
+Fraga||41523|349|134|14
+#ES|Canary Islands
+Firgas||28107|-15563|510|7
+#ES|Castille and León
+Fabero||42768|-6627|700|5
+#ES|Castille-La Mancha
+Fuensalida||40053|-4207|592|11
+#ES|Extremadura
+Fuente del Maestre||38527|-6448|444|7
+#ES|Galicia
+Fene||43450|-8150|274|14
+Foz||43569|-7254|19|10
+Fisterra||42905|-9263|15|5
+#ES|Madrid
+Fuente el Saz||40632|-3511|642|6
+#ES|Murcia
+Fuente-Álamo de Murcia|Fuente-Alamo de Murcia|37724|-1170|127|10
+Fortuna||38181|-1126|205|8
+#ES|Valencia
+Foios||39533|-350|18|6
+#FO|Eysturoy
+Fuglafjørður|Fuglafjordur|62244|-6814|30|2
+#FR|Auvergne-Rhône-Alpes
+Francheville||45736|4764|251|12
+Feyzin||45673|4859|228|10
+Feurs||45733|4228|342|8
+Ferney-Voltaire||46259|6111|425|8
+Fontaines-sur-Saône|Fontaines-sur-Saone|45836|4845|180|7
+Faverges||45751|6292|512|7
+#FR|Bourgogne-Franche-Comté
+Fontaine-lès-Dijon|Fontaine-les-Dijon|47342|5020|293|9
+#FR|Brittany
+Fouesnant||47893|-4012|66|9
+Fouillard||48158|-1579|80|7
+#FR|Centre-Val de Loire
+Fondettes||47404|597|80|10
+#FR|Grand Est
+Freyming-Merlebach||49150|6783|267|15
+Fameck||49299|6109|181|12
+Florange||49324|6121|171|11
+Frouard||48760|6130|211|7
+Farébersviller|Farebersviller|49119|6869|285|7
+Faulquemont||49049|6597|281|6
+Fismes||49308|3686|74|5
+#FR|Hauts-de-France
+Fourmies||50015|4048|190|14
+Fresnes-sur-Escaut||50434|3578|25|8
+Feignies||50298|3915|149|7
+Fouquières-lès-Lens|Fouquieres-les-Lens|50428|2913|31|7
+Ferrière-la-Grande|Ferriere-la-Grande|50255|3993|140|6
+Flers-en-Escrebieux||50398|3060|23|6
+Flines-lez-Raches||50417|3183|18|6
+Fenain||50367|3300|21|5
+#FR|New Aquitaine
+Fumel||44499|967|122|6
+Feytiat||45810|1331|344|5
+Foulayronnes||44240|645|157|5
+#FR|Normandy
+Falaise||48892|-195|142|9
+#FR|Occitanie
+Figeac||44609|2032|199|11
+Foix||42965|1607|392|10
+Fonsorbes||43539|1229|200|8
+Fabrègues|Fabregues|43551|3776|39|7
+Fleurance||43849|663|105|7
+Frouzins||43515|1325|176|6
+#FR|Provence-Alpes-Côte d'Azur
+Fuveau||43456|5561|257|8
+#FR|Île-de-France
+Fontenay-le-Fleury||48813|2049|122|13
+Fosses||49098|2510|117|11
+Fleury-Mérogis|Fleury-Merogis|48637|2364|80|9
+Fontenay-Trésigny|Fontenay-Tresigny|48706|2870|103|5
+#GA|Ngouni
+Fougamou||-1215|10584|93|9
+#GB|England
+Forest Hill||51446|-42|42|15
+Featherstone||52645|-2093|129|14
+Fallowfield||53440|-2216|44|14
+Flitwick||52003|-495|78|13
+Frimley||51317|-745|64|13
+Featherstone||53677|-1356|48|11
+Fair Oak||50964|-1297|35|10
+Ferryhill||54683|-1550|122|10
+Farnborough||51359|69|110|9
+Frodsham||53295|-2727|14|9
+Fakenham||52830|848|42|8
+Fleetville||51752|-312|95|8
+Freckleton||53754|-2865|21|8
+Fetcham||51289|-356|53|8
+Freshwater||50684|-1526|12|8
+Furze Platt||51540|-737|49|8
+Fazeley||52614|-1698|64|8
+Faringdon||51656|-1587|109|7
+Furnace Green||51107|-169|74|7
+Filey||54210|-289|36|7
+Farnham Royal||51542|-616|54|6
+Fordingbridge||50927|-1790|27|6
+Flackwell Heath||51598|-706|109|6
+Frimley Green||51306|-733|65|6
+Four Marks||51107|-1049|179|6
+#GB|Scotland
+Forfar||56644|-2890|63|14
+Fraserburgh||57687|-2018|25|13
+Forres||57610|-3621|11|10
+Faifley||55929|-4385|104|5
+#GB|Wales
+Ferndale||51661|-3447|236|7
+#GG|Forest
+Forest Parish||49430|-2602|102|2
+#GR|Attica
+Filothéi|Filothei|38025|23783|162|7
+#GR|Central Macedonia
+Fíliro|Filiro|40692|23005|395|5
+#GR|East Macedonia and Thrace
+Féres|Feres|40893|26172|30|7
+#GR|Peloponnese
+Filiatrá|Filiatra|37156|21585|67|5
+#GR|South Aegean
+Faliraki||36340|28199|12|6
+#GR|Thessaly
+Fársala|Farsala|39295|22385|145|10
+#GT|Quetzaltenango
+Flores Costa Cuca||14632|-91863|316|12
+#GW|Oio
+Farim||12484|-15222|8|10
+#GY|Mahaica-Berbice
+Fort Wellington||6392|-57596|1|0
+#HK|Eastern District
+Fullview Garden||22263|114252||9
+#HK|Tsuen Wan
+Fuk Loi||22374|114114|1|13
+#HK|Wong Tai Sin District
+Fung Tak Estate||22344|114201|87|12
+Fu Shan Estate||22343|114209|153|6
+#HN|Copán Department
+Florida||15027|-88836|504|5
+#HT|Nord-Est
+Fort Liberté|Fort Liberte|19663|-71835|1|11
+#HU|Bekes County
+Füzesgyarmat|Fuzesgyarmat|47100|21217|86|6
+#HU|Borsod-Abaúj-Zemplén
+Felsőzsolca|Felsozsolca|48100|20867|112|7
+#HU|Budapest
+Felsőrákos|Felsorakos|47496|19160|111|8
+#HU|Heves County
+Füzesabony|Fuzesabony|47750|20417|112|8
+#HU|Jász-Nagykun-Szolnok
+Fegyvernek||47267|20533|84|7
+#HU|Somogy County
+Fonyód|Fonyod|46743|17558|119|5
+#HU|Szabolcs-Szatmár-Bereg
+Fehérgyarmat|Fehergyarmat|47983|22517|111|9
+#IE|Leinster
+Foxrock||53267|-6174|71|13
+Firhouse||53282|-6339|84|7
+#IE|Munster
+Fermoy||52136|-8276|54|7
+#IL|Haifa
+Furaydis||32597|34953|143|13
+#IN|Assam
+Forest Village Lakhipathar||27453|95581|134|6
+#IN|Chhattisgarh
+Fingeshwar||20969|82040|300|10
+#IN|Delhi
+Fateh Pur Beri||28458|77179|252|9
+#IN|Gujarat
+Freelandgunj||22838|74236|300|12
+#IN|Haryana
+Farrukhnagar||28447|76824|222|14
+Farakhpur||30133|77243|262|10
+#IN|Jammu and Kashmir
+Fārward Kahūta|Farward Kahuta|33882|74107|1282|6
+#IN|Maharashtra
+Fulchur||21437|80205|318|5
+#IN|Punjab
+Fateh Nangal||31945|75319|262|8
+#IN|Tripura
+Fulkumari||23523|91505|37|11
+Fatikrāi|Fatikrai|24183|92018|38|5
+#IN|Uttar Pradesh
+Fatehgarh||27364|79631|153|15
+Farīdnagar|Faridnagar|28769|77629|219|11
+Farah||27321|77762|179|9
+Fatehpur Chaurāsi|Fatehpur Chaurasi|26789|80265|130|6
+#IR|Chaharmahal and Bakhtiari
+Farādonbeh|Faradonbeh|32008|51212|2169|13
+#IR|Fars
+Fārūq|Faruq|29964|53045|1659|6
+Fīshvar|Fishvar|27798|53685|672|5
+#IR|Hamadan Province
+Fāmenīn|Famenin|35116|48973|1637|14
+Fīrūzān|Firuzan|34361|48115|1497|5
+#IR|Isfahan
+Fereydūnshahr|Fereydunshahr|32942|50120|2540|14
+#IR|Markazi
+Farmahīn|Farmahin|34504|49684|1782|6
+#IR|North Khorasan
+Fārūj|Faruj|37231|58219|1183|12
+#IR|Razavi Khorasan
+Fīrūzeh|Firuzeh|37598|58791|883|6
+#IR|Sistan and Baluchestan
+Fannūj|Fannuj|26575|59641|717|13
+#IR|Tehran
+Fīrūzābād|Firuzabad|35545|51484|1019|9
+Fasham||35931|51527|1959|7
+Farrokhābād|Farrokhabad|35715|50913|1190|5
+#IR|West Azerbaijan
+Fīrūraq|Firuraq|38580|44836|1279|9
+#IT|Apulia
+Fragagnano||40430|17476|123|5
+#IT|Basilicate
+Ferrandina||40501|16453|497|9
+#IT|Campania
+Frignano||40998|14179|30|8
+#IT|Emilia-Romagna
+Fiorenzuola d'Arda||44924|9913|80|13
+Forlimpopoli||44191|12129|30|9
+Finale Emilia||44834|11294|15|9
+Fusignano||44467|11956|9|6
+Fabbrico||44872|10809|25|6
+#IT|Friuli Venezia Giulia
+Fontanafredda||45976|12568|52|13
+Fiume Veneto||45929|12738|14|9
+#IT|Lazio
+Ferentino||41691|13256|395|13
+Fiano Romano||42155|12595|97|11
+Fiuggi||41798|13224|747|9
+Fregene||41851|12197|3|7
+Formello||42062|12394|225|5
+Fabrica di Roma||42334|12299|296|5
+#IT|Liguria
+Finale Ligure||44170|8344|10|9
+#IT|Lombardy
+Fagnano Olona-Bergoro||45670|8860|263|12
+Fino Mornasco||45743|9050|334|8
+Flero||45483|10177|104|7
+Fara Gera d'Adda||45557|9537|131|7
+Ferno||45615|8757|211|6
+#IT|Piedmont
+Falchera||45117|7700|223|13
+#IT|Sicily
+Francofonte||37225|14875|281|13
+Ficarazzi||38092|13464|23|11
+Fiumefreddo Sicilia||37791|15209|65|9
+#IT|The Marches
+Fermignano||43693|12654|200|7
+Fossombrone||43690|12812|118|7
+Filottrano||43436|13351|270|6
+#IT|Tuscany
+Fucecchio||43733|10797|25|14
+Figline Valdarno||43620|11472|125|13
+Forte dei Marmi||43964|10175|2|8
+Foiano della Chiana||43253|11816|318|6
+Fornacette||43670|10585|13|6
+#IT|Veneto
+Feltre||46021|11900|325|14
+Favaro Veneto||45499|12283|-3|10
+Farra di Soligo||45905|12124|161|8
+Fiesso||45420|12034|6|7
+Fontaniva||45635|11754|44|6
+Frescada||45629|12237|13|6
+Fiesso d'Artico||45421|12029|5|6
+Fossò|Fosso|45386|12046|7|5
+#JM|Trelawny Parish
+Falmouth||18494|-77656|5|8
+#JP|Aomori
+Fujisaki||40653|140500|24|15
+Fukaura||40641|139932|83|8
+#JP|Fukushima
+Fujita||37878|140553|68|9
+#JP|Ibaraki
+Fuyugi||36096|139745|13|8
+#JP|Kochi
+Fudaba||33450|133200|105|5
+#JP|Mie
+Fujisato||35056|136745|-2|6
+#JP|Nagano
+Fujimi||35901|138250|927|14
+#JP|Nagasaki
+Furukawamen||33243|129650|14|14
+#JP|Osaka
+Fuke||34316|135147|10|15
+#JP|Tokyo
+Futaba||35605|139722|23|12
+Funado||35794|139681|7|10
+#JP|Yamagata
+Funagata||38689|140319|75|5
+#KN|Saint John Figtree
+Fig Tree||17126|-62603|115|3
+#KY|
+Further Ground||19341|-81199|11|12
+Frank Sound||19302|-81182|1|11
+#KZ|Kostanay
+Fyodorov||53638|62697|196|8
+#KZ|Mangystau
+Fort-Shevchenko||44507|50264|-17|5
+#LR|River Gee County
+Fish Town||5197|-7876|199|5
+#MA|Beni Mellal-Khenifra
+Foum Jam’a|Foum Jam'a|31962|-6984|816|6
+#MA|Oriental
+Figuig||32109|-1229|898|13
+#MA|Souss-Massa
+Foum Zguid||30088|-6871|715|10
+Fam El Hisn||29019|-8891|480|7
+#MD|Fălești
+Fălești|Falesti|47577|27713|120|14
+#MG|Upper Matsiatra
+Fandrandava||-21517|47250|1173|9
+#MM|Chin State
+Falam||22913|93678|1579|5
+#MR|Brakna
+Fondé Elimane|Fonde Elimane|16317|-13919|17|9
+#MT|Floriana
+Floriana||35896|14508|47|2
+#MT|Il-Fgura
+Fgura||35870|14513|64|13
+#MT|Il-Fontana
+Fontana||36038|14236|71|1
+#MU|Pamplemousses
+Fond du Sac||-20047|57584|46|6
+#MV|Gnyaviyani Atoll
+Fuvahmulah||-299|73424|9|11
+#MV|Laamu
+Fonadhoo||1832|73503|7|2
+#MV|Shaviyani Atholhu
+Funadhoo||6151|73290|9|3
+#MV|Vaavu Atholhu
+Felidhoo||3472|73547|8|1
+#MX|Chiapas
+Frontera Corozal||16815|-90884|117|5
+#MX|Michoacán
+Felipe Carrillo Puerto||19161|-102707|313|10
+Fraccionamiento Misión del Valle|Fraccionamiento Mision del Valle|19766|-101122|1995|9
+Fraccionamiento Galaxia Tarímbaro|Fraccionamiento Galaxia Tarimbaro|19762|-101194|1922|6
+Fraccionamiento Metrópolis II|Fraccionamiento Metropolis II|19756|-101204|1908|6
+#MX|Morelos
+Fraccionamiento Lomas de Ahuatlán|Fraccionamiento Lomas de Ahuatlan|18954|-99257|1745|9
+#MX|México
+Fraccionamiento la Trinidad||19829|-99083|2269|10
+Fraccionamiento Colinas del Sol||19372|-99740|2622|7
+#MX|Nayarit
+Francisco I. Madero||21582|-104824|718|7
+#MX|Sinaloa
+Fraccionamiento los Ángeles|Fraccionamiento los Angeles|23188|-106330|8|6
+#MX|Sonora
+Francisco Javier Mina||27461|-110108|21|6
+#MX|Veracruz
+Filomeno Mata||20200|-97704|705|13
+Fraccionamiento Geovillas los Pinos||19217|-96226|19|13
+Fraccionamiento Arboledas San Ramón|Fraccionamiento Arboledas San Ramon|19094|-96157|8|6
+#MY|Johor
+Felda Gugusan Adela||1479|104177|53|7
+FELDA Maokil||2296|102968|50|6
+#MY|Selangor
+FELDA Soeharto||3680|101393|66|6
+#NE|Dosso Region
+Falmey||12595|2851|181|9
+#NL|Friesland
+Franeker||53185|5541|4|13
+#NL|Overijssel
+Frankhuis||52525|6068|2|6
+#NL|South Holland
+Feijenoord||51912|4506|3|7
+#NO|Agder
+Flekkefjord||58297|6661|7|9
+#NO|Akershus
+Fetsund||59925|11157|128|6
+#NO|Nordland
+Fauske||67259|15392|40|6
+#NO|Vestland
+Førde|Forde|61452|5857|27|10
+Florø|Floro|61600|5033|10|9
+Flaktveit||60465|5360|160|5
+#NZ|Auckland
+Favona||-36933|174800|24|11
+Forrest Hill||-36764|174748|43|11
+#NZ|Hawke's Bay Region
+Flaxmere||-39618|176780|23|11
+#NZ|Waikato Region
+Frankton Junction||-37800|175267|48|9
+#PE|Ica
+Fonavi||-14033|-75737|431|7
+#PK|Azad Kashmir
+Fatehpur||33492|74106|1440|6
+#PR|Florida
+Florida||18362|-66561|192|6
+#PT|Aveiro
+Fiães|Fiaes|40994|-8525|198|9
+#PT|Braga
+Ferreiros||41350|-8550|39|8
+#PT|Castelo Branco
+Fundão|Fundao|40140|-7501|482|10
+#PT|Faro
+Fuzeta||37054|-7747|13|9
+Ferreiras||37129|-8238|80|7
+#PT|Lisbon
+Famões|Famoes|38788|-9210|125|9
+Fontanelas||38848|-9439|129|6
+#PT|Porto
+Foz do Douro||41151|-8671|23|11
+Francos||41168|-8638|80|10
+Freamunde||41288|-8335|360|8
+Foz do Sousa||41097|-8502|48|6
+#PT|Santarém
+Fátima|Fatima|39621|-8652|358|12
+Fazendas de Almeirim||39176|-8569|77|7
+#PY|Alto Paraguay
+Fuerte Olimpo||-21042|-57874|84|2
+#QA|Baladiyat ad Dawhah
+Farīq al Hitmī|Fariq al Hitmi|25286|51533|10|8
+#RO|Arad County
+Fântânele|Fantanele|46124|21384|125|6
+Felnac||46117|21150|113|5
+#RO|Bacău County
+Faraoaní|Faraoani|46433|26900|206|5
+#RO|Bistrița-Năsăud County
+Feldru||47283|24600|393|7
+#RO|Botoșani County
+Frumuşica|Frumusica|47533|26900|139|6
+#RO|Brașov County
+Feldioara||45817|25600|487|6
+#RO|Cluj County
+Floreşti|Floresti|46746|23494|366|7
+#RO|Călărași County
+Fundulea||44467|26517|64|7
+Fundeni||44383|26350|54|5
+Frumuşani|Frumusani|44296|26326|50|5
+#RO|Dâmbovița County
+Fieni||45133|25417|486|8
+#RO|Galați County
+Frumuşiţa|Frumusita|45667|28067|19|5
+#RO|Giurgiu County
+Frăteşti|Fratesti|43967|25967|23|6
+#RO|Ialomița County
+Făcăeni|Facaeni|44567|27900|9|6
+#RO|Iași County
+Focuri||47350|27217|98|6
+#RO|Olt
+Fărcaşele|Farcasele|44150|24433|88|5
+#RO|Prahova
+Filipeştii de Pădure|Filipestii de Padure|45000|25750|301|10
+Filipeştii de Târg|Filipestii de Targ|44983|25783|278|8
+Floreşti|Floresti|45050|25783|333|8
+#RO|Suceava
+Frasin||47533|25800|505|7
+Frătăuţii Noi|Fratautii Noi|47943|25845|408|6
+#RO|Timiș County
+Făget|Faget|45850|22183|150|7
+#RO|Vaslui County
+Fălciu|Falciu|46296|28141|27|6
+#RS|Central Serbia
+Filmski Grad||44757|20438|211|6
+#RU|Kirov Oblast
+Falyonki||58361|51595|157|5
+#RU|Krasnodar Krai
+Fastovetskaya||45919|40159|52|9
+#RU|Kursk Oblast
+Fatezh||52090|35859|184|6
+#RU|Moscow Oblast
+Fryanovo||56133|38450|164|11
+#SA|Jazan Region
+Farasān|Farasan|16702|42118|22|11
+#SE|Kalmar
+Färjestaden|Faerjestaden|56650|16469|3|6
+#SE|Stockholm
+Fisksätra|Fisksaetra|59292|18255|30|8
+Fittja||59249|17860|31|8
+#SE|Södermanland
+Flen||59058|16588|37|7
+#SE|Uppsala
+Flogsta||59849|17597|20|7
+#SE|Värmland
+Forshaga||59525|13481|63|6
+Filipstad||59712|14168|137|6
+#SE|Västmanland
+Fagersta||60004|15793|110|12
+#SE|Västra Götaland
+Fristad||57825|13011|152|5
+#SE|Östergötland
+Finspång|Finspang|58706|15767|46|13
+#SG|
+Faber Hills||1321|103760|23|5
+#SK|Banská Bystrica Region
+Fiľakovo|Filakovo|48268|19825|191|10
+#SL|Southern Province
+Foindu||7409|-11543|58|6
+#SM|Faetano
+Faetano||43928|12498|254|1
+#SM|Fiorentino
+Fiorentino||43910|12457|468|3
+#SN|Fatick
+Foundiougne||14123|-16469|10|7
+#ST|São Tomé Island
+Folha Fede||284|6684|283|7
+#TH|Chiang Mai
+Fang||19917|99215|471|8
+#TK|Fakaofo
+Fale old settlement||-9385|-171247|7|0
+#TM|Lebap
+Farap||39170|63612|191|15
+#TR|Antalya
+Finike||36295|30141|48|9
+#TR|Kayseri
+Felahiye||39091|35567|1304|6
+#UA|Odesa
+Fontanka||46569|30859|40|6
+#US|Alabama
+Fort Payne||34444|-85720|275|14
+Fairfield||33486|-86912|171|11
+Forestdale||33570|-86896|197|10
+Fultondale||33605|-86794|186|9
+#US|Arkansas
+Forrest City||35008|-90790|77|15
+Farmington||36042|-94247|362|7
+#US|California
+Fortuna||40598|-124157|20|12
+Foothill Ranch||33686|-117661|270|12
+Farmersville||36298|-119207|109|11
+Fairview||37679|-122046|183|10
+Fort Irwin||35263|-116685|758|9
+Firebaugh||36859|-120456|46|8
+Fairfax||37987|-122589|35|8
+Fort Bragg||39446|-123805|26|7
+Fowler||36631|-119678|94|6
+Fruitridge Pocket||38533|-121456|11|6
+#US|Colorado
+Fort Carson||38737|-104789|1780|14
+Fruita||39159|-108729|1376|13
+Federal Heights||39851|-104999|1613|12
+Firestone||40112|-104937|1515|12
+Frederick||40099|-104937|1519|11
+Fort Morgan||40250|-103800|1319|11
+Fort Lupton||40085|-104813|1496|8
+Fruitvale||39082|-108497|1423|8
+#US|District of Columbia
+Fort Lincoln||38922|-76956|42|6
+#US|Florida
+Fish Hawk||27851|-82211|19|14
+Forest City||28667|-81443|33|14
+Fruitville||27330|-82458|9|13
+Florida City||25448|-80479|1|13
+Fernandina Beach||30670|-81463|3|12
+Fairview Shores||28591|-81394|27|10
+Fuller Heights||27909|-81998|34|9
+Fern Park||28649|-81351|29|8
+Fort Myers Beach||26453|-81950|1|7
+Fort Pierce North||27474|-80359|6|6
+Fort Meade||27752|-81802|42|6
+Fussels Corner||28054|-81861|35|6
+Fellsmere||27768|-80601|7|6
+Fort Myers Shores||26709|-81746|3|5
+Floral City||28750|-82297|19|5
+Fort Pierce South||27410|-80355|3|5
+#US|Georgia
+Fairburn||33567|-84581|313|14
+Fort Oglethorpe||34949|-85257|223|10
+Fitzgerald||31715|-83253|110|9
+Fort Valley||32554|-83887|159|9
+Fair Oaks||33916|-84545|336|8
+Fairview||34946|-85284|259|7
+Flowery Branch||34185|-83925|342|7
+Folkston||30831|-82011|24|5
+#US|Hawaii
+Ford Island||21350|-157959|3|8
+Farrington||21332|-157871|38|5
+#US|Idaho
+Fruitland||44008|-116917|679|5
+#US|Illinois
+Forest Park||41879|-87814|190|14
+Fox Lake||42397|-88184|228|11
+Flossmoor||41543|-87685|206|9
+Frankfort Square||41519|-87803|216|9
+Fairfield||42219|-88061|261|5
+Fairfield||38379|-88360|134|5
+#US|Iowa
+Fort Madison||40630|-91315|161|11
+Fairfield||41009|-91963|236|10
+#US|Kansas
+Fort Scott||37840|-94708|258|8
+Fort Riley North||39111|-96814|406|8
+#US|Kentucky
+Fort Campbell North||36654|-87461|168|14
+Fort Knox||37891|-85964|225|10
+Franklin||36722|-86577|216|9
+Fort Mitchell||39060|-84547|260|8
+Fairdale||38105|-85759|145|8
+Francisville||39105|-84724|248|8
+Flatwoods||38523|-82717|208|7
+Fort Wright||39052|-84534|258|6
+#US|Louisiana
+Fort Polk South||31051|-93216|88|9
+Franklin||29796|-91501|3|7
+#US|Maryland
+Forestville||38845|-76875|85|12
+Fort George G Mead Junction||39126|-76789|57|10
+Fort Meade||39108|-76743|53|9
+Friendly||38752|-76979|71|9
+Fallston||39515|-76411|142|9
+Frostburg||39658|-78928|631|9
+Four Corners||39020|-77013|103|8
+Forest Glen||39015|-77055|96|7
+Fountainhead-Orchard Hills||39686|-77719|195|6
+Fruitland||38322|-75620|11|5
+Fells Point||39283|-76593|2|5
+Fairwood||38957|-76778|54|5
+#US|Massachusetts
+Freetown||41767|-71033|50|8
+Fairmount||42251|-71115|46|6
+Foxborough||42065|-71248|88|6
+#US|Michigan
+Fraser||42539|-82949|186|15
+Fenton||42798|-83705|275|11
+Farmington||42464|-83376|229|11
+Flat Rock||42096|-83292|183|10
+Flushing||43063|-83851|213|8
+Fair Plain||42087|-86456|192|8
+Freeland||43525|-84123|189|7
+Frankenmuth||43332|-83738|193|5
+#US|Minnesota
+Fergus Falls||46283|-96078|360|13
+Fairmont||43652|-94461|361|10
+Falcon Heights||44992|-93166|291|6
+#US|Mississippi
+Flowood||32310|-90139|82|9
+Forest||32365|-89474|145|6
+#US|Missouri
+Fulton||38847|-91948|233|13
+Festus||38221|-90396|132|12
+Flat River||37850|-90517|219|5
+#US|Nevada
+Fallon||39474|-118777|1207|8
+#US|New Hampshire
+Franklin||43444|-71647|94|8
+#US|New Jersey
+Fairview||40813|-73999|72|14
+Franklin Park||40439|-74535|40|13
+Freehold||40260|-74274|51|12
+Florham Park||40788|-74388|67|12
+Franklin Lakes||41017|-74206|124|11
+Fort Dix||40030|-74618|43|8
+Fanwood||40641|-74383|49|8
+Fairfield||40884|-74306|53|7
+Fair Haven||40361|-74038|9|6
+Finderne||40563|-74578|27|6
+Forked River||39840|-74190|4|5
+#US|New York
+Fort Drum||44058|-75762|158|13
+Fallsburg||41732|-74601|368|13
+Fulton||43323|-76417|110|12
+Fredonia||42440|-79332|220|11
+Fairmount||43047|-76239|150|10
+Fort Salonga||40913|-73301|10|10
+Farmingdale||40733|-73445|21|9
+Fairview||41724|-73920|66|6
+Fairport||43099|-77442|150|5
+#US|North Carolina
+Fletcher||35431|-82501|645|8
+Forest City||35334|-81865|309|7
+#US|Ohio
+Fostoria||41157|-83417|238|13
+Finneytown||39200|-84520|271|13
+Franklin||39559|-84304|207|12
+Forestville||39075|-84345|250|11
+Fairlawn||41128|-81610|308|7
+#US|Oregon
+Fairview||45538|-122434|41|9
+Florence||43983|-124100|14|9
+#US|Pennsylvania
+Fullerton||40632|-75473|113|15
+Franklin Park||40583|-80088|375|14
+Fernway||40695|-80131|316|12
+Fairmount||39972|-75181|25|9
+Fairless Hills||40180|-74855|33|8
+Folsom||39890|-75325|31|8
+Folcroft||39891|-75284|22|7
+Forest Hills||40420|-79850|293|6
+Franklin||41398|-79831|307|6
+Fort Washington||40142|-75209|71|5
+Fox Chapel||40513|-79880|299|5
+#US|South Carolina
+Five Forks||34805|-82230|267|14
+Fort Mill||35007|-80945|190|14
+Forest Acres||34019|-80990|75|11
+Fountain Inn||34689|-82196|264|8
+#US|Tennessee
+Fairview||35982|-87121|251|8
+Fayetteville||35152|-86571|215|7
+Fairfield Glade||36000|-84886|636|7
+Forest Hills||36068|-86844|200|5
+#US|Texas
+Forest Hill||32672|-97269|208|13
+Four Corners||29669|-95658|28|12
+Freeport||28954|-95360|1|12
+Fredericksburg||30275|-98872|516|11
+Fairview||33158|-96632|192|10
+Fate||32942|-96381|179|10
+Fort Stockton||30894|-102879|906|9
+Fort Bliss||31814|-106412|1186|9
+Fabens||31502|-106159|1102|8
+Fair Oaks Ranch||29746|-98643|387|7
+Floresville||29134|-98156|119|7
+Fulshear||29690|-95900|40|6
+#US|Utah
+Farr West||41297|-112028|1300|7
+Fruit Heights||41032|-111902|1432|6
+#US|Virginia
+Falls Church||38882|-77171|100|14
+Fairfax Station||38801|-77326|122|12
+Fort Lee||37247|-77334|30|10
+Forest||37364|-79290|269|9
+Franklin||36678|-76922|5|8
+Floris||38937|-77413|108|8
+Farmville||37302|-78392|94|8
+Fort Lee||37496|-77335|50|8
+Fishersville||38099|-78969|406|7
+Fort Belvoir||38712|-77146|42|7
+#US|Washington
+Ferndale||48847|-122591|11|13
+Fife||47239|-122357|7|10
+Fairwood||47767|-117417|553|8
+Felida||45710|-122707|65|7
+Fircrest||47240|-122516|85|7
+Finley||46154|-119034|108|6
+#US|Wisconsin
+Fort Atkinson||42929|-88837|239|12
+Fox Point||43158|-87902|210|7
+#ZA|Eastern Cape
+Flagstaff||-31080|29495|907|12
+#ZA|Western Cape
+Fisantekraal||-33785|18714|72|15

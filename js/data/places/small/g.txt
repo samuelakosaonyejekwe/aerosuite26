@@ -1,0 +1,1970 @@
+#AI|George Hill
+George Hill||18199|-63066|30|0
+#AL|Elbasan County
+Gramsh||40870|20184|200|12
+#AL|Fier County
+Golem||40968|19685|32|7
+#AM|Gegharkunik
+Geghhovit||40105|45286|2060|6
+#AM|Kotayk
+Garni||40119|44734|1413|8
+#AM|Lori
+Gugark||40805|44540|1320|6
+#AR|Buenos Aires
+General La Madrid||-37247|-61263|172|9
+General Alvear||-36022|-60014|60|9
+General Daniel Cerri||-38719|-62395|5|8
+#AR|Chubut
+Gaiman||-43291|-65498|32|6
+#AR|Cordoba
+General Cabrera||-32810|-63872|300|10
+General Levalle||-34007|-63923|179|5
+#AR|Entre Rios
+General Ramírez|General Ramirez|-32177|-60202|101|9
+#AR|La Pampa
+Guatraché|Guatrache|-37671|-63536|172|5
+#AR|Misiones
+Garuhapé|Garuhape|-26821|-54958|185|8
+Gobernador Roca||-27191|-55469|169|6
+#AR|Rio Negro
+General Fernández Oro|General Fernandez Oro|-38953|-67925|258|15
+General Conesa||-40104|-64456|62|6
+#AR|Santa Cruz
+Gobernador Gregores||-48751|-70247|289|5
+#AR|Tucuman
+Graneros||-27649|-65440|288|5
+#AT|Burgenland
+Gfangen||47382|16101|424|6
+#AT|Lower Austria
+Gänserndorf|Gaenserndorf|48339|16720|164|11
+Gerasdorf bei Wien||48294|16468|158|9
+Guntramsdorf||48047|16314|188|9
+Groß-Enzersdorf|Gross-Enzersdorf|48203|16551|156|7
+#AT|Styria
+Gösting|Goesting|47098|15398|376|11
+Gratkorn||47133|15350|386|7
+Gleisdorf||47106|15710|362|6
+#AT|Upper Austria
+Gmunden||47918|13799|434|13
+Gallneukirchen||48354|14416|339|6
+#AT|Vorarlberg
+Götzis|Goetzis|47333|9633|427|11
+#AU|Australian Capital Territory
+Gordon||-35457|149085|578|7
+Gungahlin||-35187|149136|627|6
+#AU|New South Wales
+Goonellabah||-28817|153317|171|13
+Green Valley||-33903|150867|72|12
+Gladesville||-33833|151133|28|12
+Glebe||-33879|151184|29|12
+Gunnedah||-30981|150258|273|10
+Glenfield||-33967|150900|19|10
+Georges Hall||-33909|150989|21|9
+Gorokan||-33258|151510|11|8
+Gordon||-33755|151151|121|8
+Gymea||-34036|151085|70|7
+Gymea Bay||-34052|151088|66|7
+Green Point||-33444|151368|7|6
+Glenhaven||-33700|151000|137|6
+Glen Innes||-29735|151739|1071|6
+Greenwich||-33840|151183|32|6
+Girraween||-33799|150943|54|6
+Glendenning||-33748|150854|36|5
+Glenfield Park||-35137|147333|205|5
+Greenfield Park||-33875|150892|59|5
+#AU|Queensland
+Gracemere||-23438|150457|30|12
+Goodna||-27610|152899|22|10
+Greenslopes||-27508|153050|20|9
+Greenbank||-27717|152983|68|8
+Gatton||-27559|152276|110|7
+Gordonvale||-17100|145780|21|7
+Griffin||-27271|153039|3|7
+Goondiwindi||-28547|150305|220|7
+Glenvale||-27568|151893|595|6
+Golden Beach||-26822|153120|7|6
+#AU|South Australia
+Golden Grove||-34783|138733|229|10
+Greenwith||-34766|138714|205|9
+Glenelg North||-34968|138518|10|6
+Grange||-34902|138490|11|6
+Gawler East||-34599|138763|108|5
+Glengowrie||-34987|138537|18|5
+#AU|Tasmania
+Glenorchy||-42833|147276|22|11
+#AU|Victoria
+Grovedale||-38200|144350|10|15
+Gisborne||-37489|144594|421|9
+Golden Square||-36773|144253|235|9
+Gladstone Park||-37687|144887|113|8
+Geelong West||-38139|144348|26|7
+Geelong city centre||-38150|144362|24|6
+#AU|Western Australia
+Greenfields||-32524|115763|6|10
+Greenwood||-31827|115802|32|9
+Girrawheen||-31841|115840|68|9
+#AZ|Gadabay District
+Gadabay||40571|45812|1460|15
+#AZ|Goranboy District
+Goranboy||40610|46790|156|9
+Gizilhajili||40577|46858|129|8
+#AZ|Jalilabad
+Geytepe||39120|48594|4|13
+#AZ|Nakhchivan
+Givrag||39399|45115|915|7
+#AZ|Qobustan
+Gobustan||40534|48928|771|10
+#AZ|Samux
+Garayeri||40787|46314|258|6
+#BA|Federation of B&H
+Gornji Vakuf||43938|17588|671|7
+Gromiljak||43967|18055|481|6
+Gostovići|Gostovici|44411|18170|338|6
+#BA|Srpska
+Gradiška|Gradiska|45145|17255|91|13
+#BB|Saint Andrew
+Greenland||13258|-59578|32|1
+#BD|Dhaka Division
+Green Model Town||23728|90452|5|10
+#BE|Flanders
+Gavere||50929|3662|25|12
+Gistel||51156|2964|7|11
+Grobbendonk||51190|4736|10|11
+Gooik||50794|4114|39|9
+Gullegem||50843|3205|19|9
+Groot-Bijgaarden||50872|4250|54|8
+Galmaarden||50754|3971|32|8
+Gingelom||50748|5134|83|8
+Grembergen||51054|4105|2|7
+Geluwe||50810|3077|22|7
+Geetbets||50894|5112|30|6
+Glabbeek||50873|4956|51|5
+#BE|Wallonia
+Genappe||50612|4452|112|14
+Grez-Doiceau||50739|4698|46|12
+Gosselies||50469|4433|172|11
+Grâce-Berleur|Grace-Berleur|50640|5503|166|11
+Ghlin||50473|3903|32|8
+Genval||50722|4494|101|8
+Gesves||50401|5075|246|6
+#BF|Centre-Ouest
+Goulouré|Gouloure|12235|-1934|336|7
+#BF|Sahel
+Gorom-Gorom||14443|-235|274|10
+#BG|Dobrich
+General Toshevo||43701|28038|228|8
+#BG|Sofia
+Godech||43017|23049|699|5
+#BG|Stara Zagora
+Gŭlŭbovo|Gulubovo|42133|25850|144|8
+#BJ|Alibori
+Gogounou||10840|2832|328|14
+#BJ|Atakora
+Guilmaro||10566|1724|472|7
+#BJ|Mono
+Grand-Popo||6280|1823|4|10
+#BR|Amazonas
+Guajará|Guajara|-2967|-57667|5|10
+#BR|Bahia
+Gentio do Ouro||-11429|-42503|1070|11
+Guajeru||-14547|-41940|608|8
+Gongogi||-14325|-39468|92|6
+#BR|Ceará
+Graça|Graca|-4046|-40753|195|14
+Groaíras|Groairas|-3913|-40383|92|11
+General Sampaio||-4053|-39454|140|7
+Guaramiranga||-4263|-38933|869|6
+#BR|Espírito Santo
+Governador Lindenberg||-19253|-40460|167|11
+#BR|Goiás
+Guapó|Guapo|-16831|-49532|710|14
+Goianápolis|Goianapolis|-16511|-49024|975|11
+#BR|Maranhão
+Governador Eugênio Barros|Governador Eugenio Barros|-5323|-44247|138|14
+Guimarães|Guimaraes|-2133|-44601|30|12
+Governador Newton Bello||-3426|-45676|45|11
+Governador Archer||-5022|-44271|140|10
+Godofredo Viana||-1415|-45772|2|10
+Governador Luiz Rocha||-5469|-44074|134|7
+#BR|Mato Grosso
+Guiratinga||-16345|-53762|508|11
+Gaúcha do Norte|Gaucha do Norte|-13242|-53080|409|9
+General Carneiro||-15711|-52755|338|6
+#BR|Mato Grosso do Sul
+Guia Lopes da Laguna||-21458|-56114|246|10
+#BR|Minas Gerais
+Grão Mogol|Grao Mogol|-16566|-42893|847|14
+Guapé|Guape|-20762|-45917|820|14
+Gouveia||-18454|-43741|1127|11
+Guaraciaba||-20571|-43007|563|10
+Guimarânia|Guimarania|-18844|-46793|909|8
+Guiricema||-21008|-42718|324|8
+Guarani||-21352|-43047|434|8
+Guidoval||-21152|-42797|304|7
+Guarda-Mor||-17771|-47098|623|7
+Galiléia|Galileia|-18999|-41537|143|6
+Gonzaga||-18822|-42479|741|5
+Gurinhatã|Gurinhata|-19213|-49786|533|5
+Guaraciama||-17014|-43673|772|5
+#BR|Paraná
+General Carneiro||-26427|-51316|894|14
+Guaraniaçu|Guaraniacu|-25101|-52878|819|12
+Guamiranga||-25191|-50805|791|8
+Guaraqueçaba|Guaraquecaba|-25307|-48329|38|7
+Guairaçá|Guairaca|-22934|-52686|484|7
+Goioxim||-25195|-51992|873|7
+Grandes Rios||-24146|-51506|621|6
+#BR|Paraíba
+Gurinhém|Gurinhem|-7124|-35424|98|14
+Gado Bravo||-7583|-35791|350|8
+#BR|Pernambuco
+Granito||-7716|-39615|450|7
+#BR|Piauí
+Gilbués|Gilbues|-9832|-45344|481|11
+Geminiano||-7158|-41361|240|5
+#BR|Rio Grande do Norte
+Governador Dix-Sept Rosado||-5459|-37521|35|12
+Grossos||-4980|-37155|11|10
+#BR|Rio Grande do Sul
+Glorinha||-29881|-50783|50|8
+General Câmara|General Camara|-29905|-51760|29|8
+Guarani das Missões|Guarani das Missoes|-28141|-54558|272|7
+Gaurama||-27584|-52094|750|6
+#BR|Rio de Janeiro
+Gamboa||-22898|-43193|16|11
+#BR|Rondônia
+Governador Jorge Teixeira||-10525|-62644|161|8
+#BR|Santa Catarina
+Gravatal||-28331|-49035|26|12
+Guaraciaba||-26599|-53518|687|11
+Guatambú|Guatambu|-27132|-52787|525|8
+Grão-Pará|Grao-Para|-28185|-49215|115|6
+#BR|Sergipe
+Gararu||-9967|-37083|17|12
+Gracho Cardoso||-10227|-37198|245|6
+#BR|São Paulo
+Guaiçara|Guaicara|-21622|-49799|454|11
+Guaraci||-20499|-48945|482|10
+General Salgado||-20648|-50361|512|10
+Getulina||-21799|-49929|484|10
+Guaraçaí|Guaracai|-21028|-51207|437|7
+Guatapará|Guatapara|-21496|-48035|563|7
+Guarantã|Guaranta|-21895|-49590|502|6
+Gália|Galia|-22291|-49553|562|6
+Guaimbê|Guaimbe|-21910|-49897|481|6
+#BR|Tocantins
+Goiatins||-7710|-47314|187|13
+#BS|Central Eleuthera
+Governor’s Harbour|Governor's Harbour|25167|-76233||0
+#BS|Exuma
+George Town||23516|-75787|15|7
+#BT|Gasa
+Gasa||27904|89727|2761|1
+#BT|Sarpang District
+Geylegphug||26868|90488|221|10
+#BW|Central
+Gweta||-20183|25233|929|6
+#BW|Ngwaketsi
+Good Hope||-25467|25439|1270|6
+#BW|North-West
+Gumare||-19369|22162|966|12
+#BY|Mogilev
+Glusk||52902|28683|120|8
+#BY|Vitebsk
+Gorodok||55462|29985|190|11
+#CA|Alberta
+Garneau||53521|-113512|672|9
+Grand Centre||54416|-110213|534|7
+Glenbrook||51030|-114146|1135|7
+Glamorgan||51018|-114147|1130|7
+Glastonbury||53503|-113670|694|6
+#CA|British Columbia
+Glenwood||49273|-122780|25|11
+Gastown||49285|-123112|22|10
+Garden Village||49233|-123000|110|10
+Gibsons||49395|-123506|16|7
+Glenrosa||49850|-119667|579|6
+Ganges||48853|-123500|6|6
+Garden City||49167|-123122|4|6
+#CA|New Brunswick
+Gunningsville||46074|-64773|28|9
+Glen Cairn||46117|-64850|48|9
+Grand Lake||46113|-65957|14|6
+Grand Falls||47046|-67742|157|5
+Grand Bay-Westfield||45362|-66242|13|5
+#CA|Newfoundland and Labrador
+Grand Falls-Windsor||48933|-55665|67|14
+Gander||48956|-54616|136|12
+#CA|Nova Scotia
+Greenwood||44974|-64932|28|5
+#CA|Ontario
+Greenwood-Coxwell||43680|-79327|115|14
+Greenway-Chaplin||43384|-80311|309|14
+Gravenhurst||44917|-79366|260|12
+Glen Cairn||45293|-75880|104|12
+Guildwood||43753|-79195|129|10
+Grand River South||43450|-80404|304|10
+Greely||45261|-75561|100|9
+Goderich||43742|-81713|222|8
+Gardiners/Meadowbrook||44246|-76562|96|7
+Greenwood/St. Lawrence South||44267|-76445|94|7
+Gananoque||44333|-76166|84|5
+#CA|Quebec
+Gaspé|Gaspe|48833|-64482|15|15
+#CF|Mambéré-Kadéï
+Gamboula||4118|15139|589|13
+#CF|Ouaka
+Grimari||5739|20056|427|15
+#CH|Aargau
+Gränichen|Graenichen|47359|8102|411|7
+#CH|Basel-Landschaft
+Gelterkinden||47465|7852|397|6
+#CH|Bern
+Gstaad||46472|7287|1055|9
+#CH|Glarus
+Glarus||47041|9068|476|12
+#CH|Saint Gallen
+Goldach||47474|9467|448|9
+Grabs||47182|9444|465|6
+#CH|Schwyz
+Goldau||47048|8546|517|5
+#CH|Ticino
+Giubiasco||46172|9008|244|8
+#CH|Vaud
+Gland||46421|6270|416|11
+#CH|Zurich
+Greifensee||47367|8681|444|5
+#CI|Bas-Sassandra District
+Gbliglo||6135|-7026|219|13
+Goménébéri|Gomeneberi|5379|-5518|72|13
+Gnato||4433|-7540|8|13
+Gnouboyo||5878|-6401|144|13
+Goh||5232|-6636|131|12
+Grand Berebi||4651|-6924|7|12
+Grabo||4920|-7496|50|12
+Gblétia|Gbletia|5634|-6630|155|11
+Grébouo|Grebouo|5667|-6333|114|11
+Gnititoigui||5344|-6482|125|10
+Gnagboya||6079|-6931|225|9
+Gnipi||5669|-6644|181|7
+Gbalébouo|Gbalebouo|5737|-6346|360|7
+Gribouo||6195|-6913|172|7
+Gaouroubré|Gaouroubre|5281|-6246|40|7
+Gnanké|Gnanke|5299|-6529|128|6
+Gobroko||5406|-5905|143|6
+Gbily||6230|-6969|183|5
+#CI|Comoé District
+Gaoussoukro||5248|-2971|23|5
+#CI|Denguélé District
+Gbeya||10311|-6935|385|8
+Gbonkaha||9117|-6897|406|5
+#CI|Goh-Djiboua
+Guitry||5520|-5240|41|15
+Goudi||6124|-5104|134|12
+Godélilié|Godelilie|6046|-5843|280|8
+Goudouko||5737|-5616|219|8
+Goulikao||6507|-5524|199|6
+Gogobro||6155|-5321|362|6
+Gbeugréhoa|Gbeugrehoa|6205|-6338|238|5
+Gouéda|Goueda|6214|-5691|295|5
+Gazahio||6244|-6355|227|5
+#CI|Lagunes District
+Gomon||5724|-4441|108|13
+Grand Morié|Grand Morie|5983|-4135|84|8
+Grand Alépé|Grand Alepe|5475|-3764|33|7
+Guéssiguié Un|Guessiguie Un|5739|-4235|40|6
+Grand Yapo||5826|-4155|85|6
+Groguida||5133|-5086|8|5
+#CI|Montagnes
+Guézon-Tahouaké|Guezon-Tahouake|7076|-7187|603|11
+Gourané|Gourane|7612|-7299|455|10
+Guitrozon||6750|-7371|243|9
+Gloplou||7113|-7352|310|8
+Gonié-Tahouaké|Gonie-Tahouake|7132|-7300|305|8
+Guinkin||6567|-7723|256|8
+Gangbapleu||7749|-7893|538|7
+Gan||7066|-7894|299|7
+Glanié|Glanie|7759|-8081|565|7
+Gloleu||7129|-7769|318|7
+Guéhiébli|Guehiebli|6895|-7431|260|7
+Gunglo Zia||6821|-7244|263|6
+Gotongouiné|Gotongouine|7174|-7750|305|6
+Gohouo-Zarabaon||7004|-7750|298|6
+Gloubli||6898|-7778|278|6
+Guéoulé|Gueoule|7599|-7901|638|5
+Gréikro|Greikro|6817|-7059|205|5
+#CI|Sassandra-Marahoue
+Gohitafla||7491|-5880|301|13
+Gbabo||7121|-6764|288|10
+Garango||6963|-5809|172|9
+Grégbeu|Gregbeu|6807|-6717|220|8
+Gbéhigbly|Gbehigbly|7256|-7060|206|7
+Gouriniani||7204|-6184|386|6
+Gouriela||7531|-6514|282|6
+Gouabafla||7321|-6561|283|6
+Godoua||6519|-6303|252|6
+Gaboua||7063|-6468|250|6
+Goazra||6944|-5969|225|5
+#CI|Savanes District
+Gbon||9832|-6447|391|12
+Guiembé|Guiembe|9233|-5713|347|7
+#CI|Woroba
+Gbétogo|Gbetogo|8126|-6944|335|12
+Guintéguéla|Guinteguela|8290|-7309|378|6
+Gbimanan||8234|-6800|318|5
+#CI|Zanzan District
+Gouméré|Goumere|7896|-2980|264|7
+#CL|Araucania
+Gorbea||-39102|-72676|96|14
+Galvarino||-38414|-72782|52|12
+#CN|
+Guanglu||39175|122378|32|12
+#CN|Chongqing
+Guanyang||31342|109905|1281|15
+Gaosheng||29718|105578|387|14
+Gaotian||28490|108841|406|14
+Gaoping||29841|105667|488|14
+Guansheng||29578|105438|347|13
+Gaoyan||31936|108620|805|12
+Ganxi||28981|108960|369|12
+Guoliang||29766|105922|282|11
+Guangxing||29056|106555|228|11
+Guanqing||28619|108687|391|8
+Gaoguan||31849|108891|857|7
+Guhua||28890|107336|657|7
+Guanmian||31552|108670|639|7
+Guanzhou||28416|109018|370|7
+Gulong||29705|106004|401|6
+Gaolou||30048|105979|233|6
+Ganfeng||29417|107007|912|5
+Gaonan||32133|108515|925|5
+#CN|Fujian
+Gufeng||26908|118982|831|9
+Guantou||26136|119562|13|6
+#CN|Gansu
+Guohe||33351|105149|1588|13
+Gucheng||34481|105165|1954|11
+Guanting||33817|104532|1428|10
+Ganquan||33442|105160|1657|9
+Guoye||33647|104436|1757|9
+Gupo||34625|105279|1765|9
+Ganjia||35401|102516|2954|7
+Ganjiangtou||33927|104522|1674|7
+Gaoqiao||34095|105949|1341|6
+Gongba||33485|104529|1745|6
+Gahai||34259|102368|3546|5
+#CN|Guangdong
+Gushu||22594|113839|8|12
+Guangming||22562|113905|9|10
+Gaoxin||22548|113941|13|9
+Gold tai||22578|113896|11|9
+Gao Fa Cheng Chi Yuan||22523|114058|8|9
+Gangsha||22536|114066|2|8
+#CO|Antioquia
+Guarne||6280|-75444|2141|14
+Granada||6144|-75185|2081|9
+Gómez Plata|Gomez Plata|6682|-75219|1815|8
+Guatapé|Guatape|6234|-75163|1889|5
+#CO|Boyacá
+Garagoa||5082|-73363|1685|11
+Guateque||5006|-73473|1801|7
+#CO|Cauca Department
+Guapí|Guapi|2571|-77885|3|14
+#CO|Cesar Department
+Gamarra||8323|-73742|42|12
+González|Gonzalez|8390|-73380|1368|6
+#CO|Cundinamarca
+Gachancipá|Gachancipa|4991|-73872|2565|11
+#CO|Meta Department
+Guamal||3880|-73766|522|14
+#CO|Nariño
+Guaitarilla||1131|-77548|2627|6
+#CO|Quindío Department
+Génova|Genova|4317|-75767|1228|7
+#CO|Tolima Department
+Gaitania||3150|-75817|2618|11
+Guayabal||5031|-74887|280|5
+#CO|Valle del Cauca Department
+Ginebra||3725|-76267|1036|6
+#CR|Limón Province
+Guácimo|Guacimo|10213|-83688|120|7
+#CR|Puntarenas Province
+Golfito||8603|-83113|39|7
+#CR|San José
+Granadilla||9932|-84020|1294|13
+#CU|Havana
+Guanabo||23168|-82137|8|5
+#CU|Sancti Spíritus Province
+Guayos||22049|-79461|107|15
+#CY|Nicosia
+Géri|Geri|35106|33420|159|10
+#CY|Pafos
+Geroskipou||34761|32448|35|8
+#DE|Baden-Wurttemberg
+Gernsbach||48770|8343|161|15
+Grenzach-Wyhlen||47550|7683|269|14
+Gaildorf||49000|9770|337|13
+Gerstetten||48623|10020|632|12
+Gärtringen|Gartringen|48642|8901|471|12
+Graben-Neudorf||49167|8492|109|12
+Gundelfingen||48042|7866|235|12
+Gengenbach||48405|8014|182|11
+Gottmadingen||47735|8777|428|10
+Gomaringen||48453|9096|430|8
+Großbottwar|Grossbottwar|49001|9293|222|8
+Gundelsheim||49283|9160|155|8
+Gammertingen||48252|9223|704|7
+Grafenau||48714|8912|435|6
+Güglingen|Guglingen|49066|9002|207|6
+Geisingen||47925|8650|680|6
+Geislingen||48288|8812|564|6
+Gschwend||48933|9744|473|5
+#DE|Bavaria
+Grafing bei München|Grafing bei Muenchen|48046|11968|519|14
+Gräfelfing|Grafelfing|48119|11429|543|13
+Gemünden am Main|Gemuenden am Main|50049|9706|179|11
+Gaimersheim||48807|11368|384|11
+Grünwald|Grunwald|48039|11523|595|11
+Goldbach||50000|9184|144|10
+Geisenfeld||48684|11612|390|10
+Grafenau||48858|13397|604|9
+Garching an der Alz||48135|12582|459|9
+Gundelfingen||48553|10372|439|8
+Greding||49047|11357|393|7
+Geiselhöring|Geiselhoring|48825|12396|356|7
+Großkarolinenfeld|Grosskarolinenfeld|47891|12081|468|7
+Grafenwöhr|Grafenwohr|49717|11906|415|7
+Gerolzhofen||49900|10348|241|7
+Gangkofen||48437|12564|444|7
+Georgensgmünd|Georgensgmund|49190|11017|359|7
+Gochsheim||50017|10283|236|6
+Geisenhausen||48476|12258|461|6
+Grassau||47781|12454|537|6
+Gerbrunn||49775|9994|236|6
+Gmund am Tegernsee||47751|11738|739|6
+Grasbrunn||48079|11744|555|6
+Geltendorf||48117|11032|598|5
+Großheubach|Grossheubach|49728|9223|133|5
+#DE|Brandenburg
+Großräschen|Grossraeschen|51588|14011|117|12
+Glienicke||52634|13326|53|9
+Groß Kreutz|Gross Kreutz|52403|12779|32|8
+Grünheide|Gruenheide|52423|13813|36|8
+Großbeeren|Grossbeeren|52359|13310|42|7
+Gransee||53007|13158|55|7
+#DE|Hamburg
+Groß Flottbek|Gross Flottbek|53565|9878|27|11
+Groß Borstel|Gross Borstel|53614|9983|15|10
+#DE|Hesse
+Grünberg|Gruenberg|50594|8959|269|14
+Groß-Zimmern|Gross-Zimmern|49874|8829|153|14
+Großauheim|Grossauheim|50103|8948|109|13
+Gladenbach||50768|8581|267|12
+Geisenheim||49985|7968|95|12
+Gernsheim||49753|8489|93|11
+Gudensberg||51177|9367|246|9
+Großenlüder|Grossenluder|50593|9542|257|9
+Gedern||50425|9198|317|8
+Greifenstein||50617|8300|351|8
+Großalmerode|Grossalmerode|51259|9785|374|7
+Großkrotzenburg|Grosskrotzenburg|50083|8983|109|7
+Goddelau||49834|8498|89|7
+Gersfeld||50451|9914|486|6
+Grebenstein||51446|9413|199|6
+Gräfenhausen|Graefenhausen|49929|8604|107|6
+Guxhagen||51200|9483|172|5
+Glashütten|Glashutten|50217|8400|489|5
+Grävenwiesbach|Gravenwiesbach|50390|8457|296|5
+Grebenhain||50489|9339|435|5
+#DE|Lower Saxony
+Gehrden||52314|9600|78|15
+Großenkneten|Grossenkneten|52944|8253|35|14
+Garrel||52955|8026|21|12
+Geeste||52600|7267|23|11
+Gemeinde Friedland||51417|9933|255|11
+Giesen||52197|9899|81|10
+Gnarrenburg||53386|9005|13|10
+Goldenstedt||52788|8432|36|9
+Grasberg||53183|8983|6|8
+Garbsen-Mitte||52427|9604|52|8
+Glandorf||52085|7999|72|7
+Gronau||52085|9777|81|5
+#DE|Mecklenburg-Vorpommern
+Grevesmühlen|Grevesmuehlen|53861|11191|39|11
+Grimmen||54112|13041|8|11
+Grabow||53279|11564|30|6
+Gadebusch||53702|11117|35|6
+#DE|North Rhine-Westphalia
+Gangelt||50992|5998|77|11
+Glessen||50967|6749|93|6
+Grafenwald||51570|6912|45|5
+Gruiten||51218|7011|156|5
+#DE|Rheinland-Pfalz
+Grünstadt|Gruenstadt|49563|8163|177|14
+Gerolstein||50222|6660|363|8
+Gau-Algesheim||49957|8016|107|7
+#DE|Saarland
+Großrosseln|Grossrosseln|49203|6841|218|9
+Gersheim||49150|7200|255|7
+#DE|Saxony
+Großzschocher|Grosszschocher|51301|12323|124|9
+Groitzsch||51155|12283|140|8
+Großröhrsdorf|Grossroehrsdorf|51145|14019|271|7
+Großschönau|Grossschonau|50900|14683|322|7
+Geithain||51055|12697|229|6
+Gesundbrunnen||51190|14443|190|6
+Großschirma|Grossschirma|50966|13286|369|6
+Großpösna|Grossposna|51267|12500|150|6
+Geringswalde||51077|12907|252|5
+#DE|Saxony-Anhalt
+Genthin||52407|12159|40|13
+Gardelegen||52525|11395|49|12
+Gräfenhainichen|Graefenhainichen|51729|12457|92|11
+Gommern||52074|11823|56|6
+#DE|Schleswig-Holstein
+Glückstadt|Glueckstadt|53788|9424|2|12
+Großhansdorf|Grosshansdorf|53665|10286|50|9
+Grömitz|Gromitz|54151|10960|5|8
+Gettorf||54407|9978|25|6
+Glücksburg|Gluecksburg|54835|9552|31|6
+Gadeland||54056|10025|24|6
+Gartenstadt||54093|9970|25|5
+#DE|State of Berlin
+Grunewald||52483|13266|47|12
+Grünau|Gruenau|52416|13580|35|7
+#DE|Thuringia
+Georgenthal||50832|10663|383|8
+#DK|Capital Region
+Gammel Virum||55790|12470|35|15
+Gilleleje||56122|12311|14|7
+#DK|Central Jutland
+Grenaa||56416|10878|5|14
+Gjellerup||56157|10130|60|11
+#DK|South Denmark
+Grindsted||55757|8928|42|10
+Give||55845|9238|88|5
+#DO|Baoruco Province
+Galván|Galvan|18502|-71343|42|6
+#DO|Espaillat Province
+Gaspar Hernández|Gaspar Hernandez|19627|-70278|13|7
+#DO|La Romana
+Guaymate||18588|-68979|88|6
+#EC|Chimborazo Province
+Guano||-1607|-78637|2763|13
+#ES|Andalusia
+Gines||37386|-6077|119|13
+Gibraleón|Gibraleon|37376|-6969|34|12
+Guillena||37543|-6056|25|11
+Gelves||37335|-6026|8|8
+Garrucha||37181|-1823|16|7
+Gerena||37530|-6155|87|6
+Gójar|Gojar|37105|-3606|794|5
+#ES|Asturias
+Grado||43388|-6074|84|10
+#ES|Basque Country
+Güeñes|Gueenes|43213|-3095|80|7
+#ES|Canary Islands
+Guia||28140|-15633|181|14
+Garachico||28778|-17765|295|6
+Garachico||28374|-16763|19|6
+#ES|Castille and León
+Guardo||42790|-4848|1094|8
+Guijuelo||40558|-5671|1009|5
+#ES|Catalonia
+Guissona||41783|1300|517|7
+Gelida||41433|1867|252|6
+#ES|Extremadura
+Guareña|Guarena|38860|-6100|281|7
+#ES|Galicia
+Gondomar||42112|-8750|52|14
+Guitiriz||43182|-7897|454|6
+#ES|Madrid
+Guadarrama||40673|-4089|966|15
+Griñón|Grinon|40212|-3855|676|7
+Guadalix de la Sierra||40785|-3693|842|7
+#ES|Valencia
+Godella||39533|-417|40|13
+Guadassuar||39187|-479|34|6
+Gata de Gorgos||38774|85|84|5
+#ET|Oromiya
+Gorē|Gore|8150|35533|2046|13
+#ET|Āfar
+Gawanē|Gawane|10167|40647|620|11
+#FR|Auvergne-Rhône-Alpes
+Genas||45731|5002|234|13
+Gaillard||46185|6207|421|12
+Guilherand-Granges||44933|4874|112|11
+Gerzat||45826|3145|327|9
+Gex||46333|6058|616|9
+Gleizé|Gleize|45989|4697|236|9
+Grigny-sur-Rhône|Grigny-sur-Rhone|45608|4790|185|8
+Gières|Gieres|45180|5789|230|6
+Gannat||46100|3198|345|6
+#FR|Bourgogne-Franche-Comté
+Gueugnon||46604|4063|243|8
+Gray||47446|5592|223|7
+Genlis||47242|5224|198|5
+Grand-Charmont||47527|6826|335|5
+#FR|Brittany
+Guipavas||48434|-4402|85|14
+Guidel-Plage||47768|-3522|17|10
+Guingamp||48563|-3153|73|9
+Guilers||48427|-4560|93|7
+Guichen||47968|-1796|74|7
+Gouesnou||48453|-4465|82|6
+Guer||47904|-2120|43|6
+Gourin||48140|-3608|160|5
+#FR|Grand Est
+Guebwiller||47917|7200|324|13
+Gérardmer|Gerardmer|48073|6878|663|10
+Golbey||48198|6440|317|9
+Givet||50138|4825|104|7
+Geispolsheim||48516|7648|150|7
+Guénange|Guenange|49299|6205|175|7
+#FR|Hauts-de-France
+Gravelines||50987|2128|7|13
+Gouvieux||49187|2414|32|10
+Grenay||50450|2752|67|6
+Grand-Fort-Philippe||51000|2108|4|6
+Guise||49901|3628|98|6
+Gauchy||49828|3274|76|6
+Guînes|Guines|50867|1870|13|5
+#FR|New Aquitaine
+Gond-Pontouvre||45683|167|68|6
+Gan||43229|-387|201|5
+#FR|Normandy
+Granville||48838|-1597|12|14
+Gisors||49282|1780|52|12
+Grand-Couronne||49356|1006|17|10
+Gaillon||49161|1340|17|7
+Gournay-en-Bray||49483|1725|99|6
+#FR|Occitanie
+Graulhet||43767|1989|159|13
+Gaillac||43902|1897|148|13
+Grenade||43771|1293|119|6
+Grabels||43648|3801|66|6
+Gourdon||44736|1381|251|5
+Gignac||43652|3551|80|5
+#FR|Provence-Alpes-Côte d'Azur
+Gignac-la-Nerthe||43393|5236|56|9
+Gairaut||43739|7262|258|8
+Gorbella||43723|7255|52|7
+Gambetta||43698|7252||7
+Gémenos|Gemenos|43298|5628|152|6
+Garéoult|Gareoult|43328|6046|311|5
+#FR|Île-de-France
+Groslay||48986|2347|69|8
+Gretz-Armainvilliers||48741|2731|107|8
+Gargenville||48988|1812|57|7
+Gournay-sur-Marne||48862|2585|40|6
+#GA|Ogooué-Maritime
+Gamba||-2650|10000|43|13
+#GB|England
+Garforth||53792|-1381|77|15
+Gipsy Hill||51427|-92|58|14
+Goodmayes||51563|111|15|13
+Great Harwood||53785|-2409|125|11
+Great Bookham||51279|-374|68|11
+Glenfield||52647|-1195|98|10
+Greasby||53373|-3123|36|10
+Garstang||53901|-2774|19|10
+Grappenhall||53372|-2547|36|9
+Greenhill||51583|-339|64|9
+Glastonbury||51147|-2721|13|9
+Gillingham||51038|-2276|73|9
+Grove||51610|-1422|76|8
+Great Dunmow||51872|363|74|8
+Grange Hill||51612|86|70|8
+Glusburn||53900|-2000|116|7
+Garston||51689|-395|76|7
+Great Missenden||51704|-708|132|7
+Gedling||52976|-1079|69|7
+Groby||52659|-1224|93|7
+Greenhithe||51450|285|27|7
+Godmanchester||52319|-175|12|7
+Garswood||53489|-2672|76|6
+Gossops Green||51111|-217|83|6
+Gorleston-on-Sea||52573|1731|4|6
+Great Gonerby||52935|-667|106|6
+Great Torrington||50953|-4144|99|6
+Great Wakering||51552|804|8|5
+#GB|Northern Ireland
+Greenisland||54701|-5875|53|5
+#GB|Scotland
+Giffnock||55804|-4295|45|12
+Gourock||55962|-4818|10|10
+Galashiels||55615|-2807|119|10
+Girvan||55243|-4856|12|7
+Gorebridge||55846|-3046|187|6
+#GB|Wales
+Glyn-neath||51748|-3618|62|5
+Gresford||53085|-2971|76|5
+#GD|Saint Andrew Parish
+Grenville||12123|-61625|15|2
+#GD|Saint John Parish
+Gouyave||12165|-61730|19|3
+#GE|Abkhazia
+Gagra||43279|40271|11|12
+Gudauta||43102|40622|31|9
+Gali||42627|41736|79|7
+Gantiadi||43381|40079|6|5
+#GE|Kakheti
+Gurjaani||41744|45802|375|7
+#GE|Kvemo Kartli
+Gardabani||41460|45090|321|12
+#GE|Mtskheta-Mtianeti
+Gudauri||42478|44476|2223|10
+#GF|Guyane
+Grand-Santi||4273|-54381|52|10
+#GM|Upper River
+Gambissar||13317|-13950|25|13
+Garawol||13417|-13950|15|11
+#GN|Boké Region
+Gaoual||11750|-13200|79|7
+#GP|Guadeloupe
+Gourbeyre||15995|-61692|339|9
+Grand-Bourg||15884|-61315|7|6
+#GR|Central Macedonia
+Gouménissa|Goumenissa|40946|22450|234|5
+#GR|Crete
+Gázi|Gazi|35325|25067|52|13
+#GR|Peloponnese
+Gargaliánoi|Gargalianoi|37065|21638|279|7
+#GR|Thessaly
+Giánnouli|Giannouli|39667|22396|75|12
+#GR|West Greece
+Gastoúni|Gastouni|37850|21250|4|8
+#GR|West Macedonia
+Grevená|Grevena|40085|21427|534|11
+#HK|Eastern District
+Greenwood Terrace||22267|114235||6
+#HK|Wong Tai Sin District
+Grand View Garden||22341|114208|9|7
+Galaxia||22341|114202|9|6
+#HN|Bay Islands
+Guanaja||16442|-85887||6
+#HN|El Paraíso Department
+Güinope|Gueinope|13883|-86933|1310|9
+#HN|Francisco Morazán Department
+Guaimaca||14533|-86817|884|13
+#HN|La Paz Department
+Guajiquiro||14117|-87833|1867|15
+#HN|Lempira Department
+Gualcince||14117|-88550|916|12
+Guarita||14183|-88817|815|9
+Gracias||14591|-88586|805|8
+#HN|Olancho Department
+Guayape||14717|-86833|925|13
+#HN|Valle Department
+Goascorán|Goascoran|13583|-87617|103|14
+#HR|Koprivnica-Križevci
+Đurđevac|GJurgevac|46041|17070|119|6
+#HR|Lika-Senj
+Gospić|Gospic|44546|15375|563|6
+#HT|Artibonite
+Gros Morne||19671|-72678|219|7
+#HT|Nord
+Grande Rivière du Nord|Grande Riviere du Nord|19577|-72169|69|9
+#HU|Budapest
+Gubacsipuszta||47431|19141|107|10
+Gyárdűlő|Gyardulo|47476|19120|109|7
+Gellérthegy|Gellerthegy|47483|19050|130|7
+Gloriett-telep||47432|19193|123|7
+#HU|Fejér
+Gárdony|Gardony|47209|18636|110|8
+#HU|Pest County
+Gyömrő|Gyomro|47427|19401|168|14
+#ID|North Maluku
+Galela||1823|127789|56|9
+#IE|Leinster
+Gorey||52675|-6292|46|10
+Greenhills||53335|-6303|23|7
+#IE|Munster
+Glanmire||51916|-8400|47|9
+#IN|Andaman and Nicobar
+Garacharma||11614|92704|66|14
+#IN|Andhra Pradesh
+Guntupalle||16568|80548|26|11
+Gudlavalleru||16350|81050|11|11
+Gavaravaram||16716|81083|23|10
+Gajapatinagaram||18279|83336|73|6
+#IN|Assam
+Goshaingaon||26439|89963|51|14
+Gohpur||26882|93616|84|12
+Gobindapur||26163|90593|41|12
+Gerimari Chapori||26428|92025|34|11
+Gutlong Gaon||26653|92816|54|11
+Golaghatia Basti||25993|92864|60|10
+Golakganj||26102|89823|31|8
+#IN|Bihar
+Ghāzīpur|Ghazipur|25098|86660|57|11
+#IN|Chhattisgarh
+Gandai||21667|81100|327|13
+Gariāband|Gariaband|20633|82062|348|11
+Gharghoda||22174|83352|294|9
+Gundardehi||20946|81289|303|9
+Gīdam|Gidam|18974|81399|396|7
+#IN|Delhi
+Ghitorni||28495|77144|259|15
+Gheora||28694|77002|215|7
+#IN|Goa
+Guirim||15576|73807|8|7
+Goa Velha||15444|73886|10|6
+#IN|Gujarat
+Gamdi||22572|72968|38|15
+Galpadar||23097|70125|32|13
+Ghogha||21688|72276|10|12
+Ghanteshvar||22336|70753|115|6
+#IN|Haryana
+Gorakhpur||29448|75672|218|13
+Garhi Harsāru|Garhi Harsaru|28445|76939|217|8
+Ghatal Mahaniawas||28221|76841|258|6
+#IN|Himachal Pradesh
+Ghumārwīn|Ghumarwin|31442|76715|644|8
+#IN|Jharkhand
+Gidi||23691|85364|373|13
+Gua||22214|85388|392|13
+Gobindpur||23836|86519|212|11
+Ghāghrā|Ghaghra|23267|84553|645|9
+Gamhāria|Gamharia|22809|86103|178|8
+Gunghasa||23862|86178|261|7
+Gopināthpur|Gopinathpur|22663|86075|184|5
+#IN|Karnataka
+Gūdūr|Gudur|15939|75914|564|12
+Gudibanda||13671|77704|832|9
+Gonikoppal||12183|75929|840|8
+Gokak Falls||16188|74778|634|8
+Gogipeth||16735|76744|445|8
+Gorūr|Gorur|12823|76065|878|6
+Gargeswari||12239|76895|654|5
+#IN|Madhya Pradesh
+Gurh||24503|81500|333|15
+Gautampura||22987|75519|502|15
+Garhi||25045|79688|255|14
+Ghaura||24506|79078|356|13
+Ghogaon||21916|75747|217|11
+Govindgarh||24378|81296|334|11
+Ghoradongri||22124|78000|414|10
+Gamharia||23860|78814|541|8
+Gogāpur|Gogapur|23557|75517|491|8
+Gandhīsāgar Colony|Gandhisagar Colony|24690|75567|418|7
+Ghansor||22660|79950|566|7
+Garrā|Garra|21809|80141|315|6
+Golkhera||22438|75660|616|5
+#IN|Maharashtra
+Gandhinagar||16707|74300|545|13
+Gokunda||19607|78201|321|12
+Ganeshpur||21150|79644|243|9
+Gokul Shirgaon||16643|74274|592|9
+Gond Pīpri|Gond Pipri|19715|79686|197|8
+Goregaon||18155|73291|14|7
+#IN|Odisha
+Ganjām|Ganjam|19387|85051|11|12
+Gotamara||20858|85203|112|7
+Gopālpur|Gopalpur|19259|84905|23|7
+Gudāri|Gudari|19348|83781|127|7
+Godiputamatiapara||20139|85703|22|6
+#IN|Punjab
+Ghagga||30020|76104|236|10
+Garhdiwāla|Garhdiwala|31741|75756|290|8
+Ghanaur||30331|76612|265|7
+Ghoh||32330|75675|387|7
+#IN|Rajasthan
+Govindgarh||27504|76999|219|12
+Gajsinghpur||29660|73440|165|10
+Gogūnda|Gogunda|24758|73530|840|9
+Galiākot|Galiakot|23520|74020|136|7
+Guhāla|Guhala|27691|75636|428|6
+Goyali||24899|72830|284|6
+Garhi||23590|74148|146|5
+#IN|Tamil Nadu
+Gangavalli||11498|78650|209|12
+Ganguvārpatti|Ganguvarpatti|10169|77697|262|12
+Gangaikondān|Gangaikondan|8858|77780|47|11
+Gopālasamudram|Gopalasamudram|8675|77638|54|11
+Gāndhī Nagar|Gandhi Nagar|13006|80254|10|10
+Gandhinagar||12955|79141|210|9
+Gangaikondān|Gangaikondan|11539|79477|39|6
+Gandipuram||8180|77445|20|6
+#IN|Telangana
+Guntur||17996|79644|277|13
+Gorrakunta||17976|79645|280|13
+Ghanpur||17850|79367|337|13
+Garimellapadu||17539|80622|88|6
+Gūdūr|Gudur|17492|78823|440|6
+Gunpuram||18611|78194|417|5
+#IN|Tripura
+Gandhigram||23892|91282|23|15
+Gakulnagar||23712|91257|27|11
+#IN|Uttar Pradesh
+Ghiror||27189|78793|162|14
+Gopāmau|Gopamau|27535|80285|147|14
+Garhi Pūkhta|Garhi Pukhta|29550|77309|252|13
+Goshāinganj|Goshainganj|26571|82381|99|13
+Gola Bāzār|Gola Bazar|26345|83353|82|11
+Ganj Murādābād|Ganj Muradabad|26957|80184|137|10
+Goshāīnganj|Goshainganj|26768|81108|121|10
+Garautha||25572|79298|155|9
+Gawān|Gawan|28420|78352|191|9
+Ghorāwal|Ghorawal|24755|82780|300|7
+Gohānd|Gohand|25699|79546|153|7
+Got||28851|78836|195|7
+#IN|West Bengal
+Gobindapur||22593|88091|10|12
+Gangadharpur||22760|88220|14|8
+Gopālpur|Gopalpur|22618|88751|14|7
+#IR|Ardabil Province
+Gīvī|Givi|37686|48342|1360|7
+#IR|Chaharmahal and Bakhtiari
+Gandomān|Gandoman|31866|51154|2237|6
+Gahrū|Gahru|32003|50885|2105|6
+Gūjān|Gujan|32246|50542|2048|6
+#IR|East Azerbaijan
+Gūgān|Gugan|37783|45904|1292|12
+#IR|Fars
+Galehdār|Galehdar|27660|52658|468|13
+Gūyom|Guyom|29823|52395|1814|7
+#IR|Golestan
+Gadamābād|Gadamabad|37259|55146|38|8
+#IR|Isfahan
+Golshahr||33507|50463|1781|10
+Gorgāb|Gorgab|32866|51597|1591|10
+Gūged|Guged|33476|50352|1793|6
+#IR|Kerman
+Golbāf|Golbaf|29885|57731|1756|9
+#IR|Khuzestan
+Gāvmīshābād|Gavmishabad|32014|48848|44|6
+#IR|Markazi
+Gharqābād|Gharqabad|35109|49832|1533|5
+#IR|Māzandarān
+Gatāb|Gatab|36433|52659|30|7
+Galūgāh|Galugah|36310|52626|195|7
+#IR|Razavi Khorasan
+Golmakān|Golmakan|36481|59159|1435|8
+#IR|Sistan and Baluchestan
+Galmūrtī|Galmurti|27482|59447|388|10
+#IR|Tehran
+Golsār|Golsar|35910|50775|1321|14
+Gol Tappeh Kabīr|Gol Tappeh Kabir|35487|51565|986|11
+Golzār-e Bālā|Golzar-e Bala|35452|51711|1052|6
+#IS|Capital Region
+Garðabær|Gardabaer|64089|-21923|41|11
+#IT|Apulia
+Galatone||40147|18069|60|14
+Grumo Appula||41011|16708|181|13
+Gagliano del Capo||39843|18370|144|5
+#IT|Basilicate
+Genzano di Lucania||40846|16031|587|6
+Grassano||40635|16278|576|5
+#IT|Calabria
+Girifalco||38826|16427|456|6
+Gioiosa Ionica||38327|16304|120|6
+#IT|Campania
+Giffoni Valle Piana||40718|14942|205|11
+Gricignano di Aversa||40980|14231|28|11
+Grazzanise||41090|14099|12|5
+Grottaminarda||41070|15059|405|5
+#IT|Emilia-Romagna
+Guastalla||44912|10662|25|12
+Gambettola||44117|12337|31|10
+Granarolo dell'Emilia e Viadagola||44553|11443|26|6
+Gatteo-Sant'Angelo||44112|12391|15|6
+#IT|Friuli Venezia Giulia
+Gemona||46274|13122|272|11
+Grado||45678|13403|2|7
+Gradisca d'Isonzo||45893|13502|32|6
+#IT|Lombardy
+Gussago||45584|10157|157|15
+Gardone Val Trompia||45691|10186|332|10
+Gerenzano||45640|9001|226|10
+Gavirate||45837|8726|261|9
+Garlasco||45195|8923|93|9
+Gonzaga||44952|10819|22|9
+Gessate||45548|9438|144|8
+Gorla Minore||45641|8903|237|8
+Gavardo-Sopraponte||45589|10443|204|8
+Gambolò|Gambolo|45262|8858|106|8
+Gaggiano||45405|9035|117|7
+Gorle||45701|9714|268|6
+Grumello del Monte||45635|9875|208|6
+Grassobbio||45657|9726|225|6
+Ghisalba||45594|9758|170|6
+Guanzate||45728|9020|342|6
+Gandino||45811|9898|552|6
+Goito||45251|10661|33|6
+Gorla Maggiore||45664|8895|258|5
+#IT|Piedmont
+Giaveno||45044|7347|506|12
+Gassino Torinese||45129|7829|230|8
+Gattinara||45613|8365|263|8
+Gravellona Toce||45929|8432|211|7
+Gerbole||45001|7507|284|6
+#IT|Sardinia
+Guspini||39540|8635|130|12
+Gonnosfanadiga||39494|8662|180|6
+#IT|Sicily
+Grammichele||37213|14633|520|13
+Giardini-Naxos||37828|15267|5|7
+Gangi||37796|14204|1011|6
+Grotte||37403|13699|516|6
+#IT|The Marches
+Grottammare||42982|13868|4|15
+#IT|Umbria
+Gubbio||43350|12573|522|14
+Gualdo Tadino||43229|12779|536|10
+#IT|Veneto
+Galliera Veneta||45668|11822|49|7
+Giudecca||45425|12329|2|6
+#JM|Westmoreland
+Grange Hill||18311|-78184|23|10
+#JP|Akita
+Gojōnome|Gojonome|39933|140117|14|9
+#JP|Okinawa
+Ginoza||26483|127978|40|6
+#JP|Saitama
+Gamō|Gamo|35865|139802|7|9
+#JP|Tokyo
+Gōtokuji|Gotokuji|35650|139647|38|7
+#KE|Kiambu County
+Gatundu||-1050|36900|1631|8
+Githiga A||-1087|36734|2102|6
+#KE|Kilifi County
+Gongoni||-3037|40137|12|11
+#KE|Kwale County
+Gazi||-4424|39506|15|5
+#KE|Tana River County
+Garsen||-2266|40110|15|7
+#KE|Wajir County
+Giriftu||2000|39752|310|8
+#KG|Osh Region
+Gul’cha|Gul'cha|40314|73444|1546|14
+#KY|
+Gun Bay||19311|-81092|1|6
+#KZ|East Kazakhstan
+Glubokoye||50139|82311|277|11
+#LI|Gamprin
+Gamprin||47220|9509|470|2
+#LK|Western Province
+Gampaha||7090|79993|21|9
+#LR|Nimba
+Ganta||7302|-8531|408|14
+#LT|Kaunas
+Garliava||54821|23871|72|10
+#LT|Vilnius
+Grigiškės|Grigiskes|54683|25083|85|12
+#LU|Grevenmacher
+Grevenmacher||49678|6440|143|5
+#LU|Luxembourg
+Gare||49602|6130|286|11
+Gasperich||49586|6123|287|10
+#LV|Gulbene Municipality
+Gulbene||57178|26753|120|7
+#LY|Ghat
+Ghat||24963|10180|673|15
+#LY|Nalut
+Ghadames||30134|9501|339|12
+#MA|Drâa-Tafilalet
+Gourrama||32340|-4073|1357|6
+#MA|Fes-Meknes
+Ghafsaï|Ghafsai|34628|-4913|368|7
+#MA|Laayoune-Sakia El Hamra
+Gueltat Zemmour||25143|-12372|419|7
+#MD|Glodeni
+Glodeni||47775|27518|120|10
+#ME|Gusinje Municipality
+Gusinje||42562|19834|924|2
+#ME|Zeta
+Golubovci||42335|19231|12|3
+#MF|
+Grand-Case||18105|-63054|6|6
+#MK|Gradsko
+Gradsko||41579|21943|109|4
+#MR|Gorgol
+Ganki Un||16214|-13240|29|11
+#MT|Ghajnsielem
+Għajnsielem|Ghajnsielem|36026|14286|48|3
+#MT|Il-Gudja
+Gudja||35851|14506|34|3
+#MT|Il-Gżira
+Gżira|Gzira|35906|14488|31|12
+#MT|L-Għarb
+Għarb|Gharb|36060|14209|121|1
+#MT|Ħal Għaxaq
+Għaxaq|Ghaxaq|35849|14517|73|5
+#MU|Rivière du Rempart
+Grand Baie||-20018|57580|10|12
+Grand Gaube||-20006|57661|10|8
+#MU|Savanne
+Grand Bois||-20419|57544|407|8
+#MX|Baja California Sur
+Guerrero Negro||27960|-114056|5|13
+#MX|Chihuahua
+Guachochi||26820|-107071|2422|15
+Guadalupe y Calvo||26094|-106964|2390|6
+#MX|Jalisco
+Galaxia Bonito Jalisco||20505|-103205|1521|9
+Galaxia la Noria||20457|-103419|1565|6
+#MX|México
+Granjas Ampliación Santa Rosa|Granjas Ampliacion Santa Rosa|19593|-98967|2238|6
+#MX|Nuevo León
+General Zuazua||25896|-100108|358|10
+Galeana||24825|-100076|1631|7
+#MX|Puebla
+Grajales||19228|-97803|2385|10
+Guadalupe Victoria||19291|-97343|2445|10
+#MX|Sinaloa
+General Ángel Flores (La Palma)|General Angel Flores (La Palma)|24819|-107657|17|10
+#MX|Tamaulipas
+González|Gonzalez|22828|-98427|91|11
+Guillermo Zúñiga|Guillermo Zuniga|24020|-99193|222|7
+#MX|Veracruz
+General Miguel Alemán|General Miguel Aleman|18892|-96797|500|14
+Gutiérrez Zamora|Gutierrez Zamora|20453|-97086|12|14
+Guadalupe Victoria||19555|-96961|1457|6
+#MY|Kedah
+Guar Chempedak||5858|100459|17|14
+Gunong||6190|100341|6|9
+#MY|Negeri Sembilan
+Gemencheh||2533|102399|65|12
+#MY|Selangor
+Glenmarie Estate||3083|101583|25|7
+Gedangsa||3733|101400|69|6
+#NE|Diffa
+Goudoumaria||13711|11189|348|6
+#NE|Tillabéri Region
+Gothèye|Gotheye|13856|1567|201|10
+#NG|Bauchi
+Gamawa||12134|10538|364|14
+Gabarin||11109|10444|478|10
+Gwaram||10233|10286|447|7
+#NG|Cross River State
+Gakem||6770|8991|162|6
+#NG|Jigawa State
+Gagarawa||12408|9529|374|11
+#NG|Katsina State
+Gora||11913|7665|593|6
+#NG|Kebbi
+Gwandu||12502|4643|249|10
+Gulma||12642|4355|214|7
+#NG|Kwara State
+Gwasoro||9487|3508|373|7
+#NG|Sokoto
+Gandi||12964|5743|278|14
+Goronyo||13442|5672|279|10
+#NG|Taraba State
+Gassol||8535|10446|132|14
+#NG|Yobe State
+Gorgoram||12640|10704|348|12
+Goniri||11485|12313|405|12
+Gujba||11500|11934|420|11
+Gwio Kura||12675|11067|342|7
+#NL|Friesland
+Gorredijk||53007|6064|1|7
+Grou||53095|5837|2|6
+#NL|Gelderland
+Groenlo||52042|6611|24|10
+Gendt||51878|5971|12|6
+Gaanderen||51929|6346|16|6
+#NL|North Brabant
+Grave||51759|5739|13|13
+Groenewoud||51539|5090|14|8
+Gilze||51544|4940|18|6
+Generalenbuurt||51462|5481|15|6
+Grasrijk||51439|5415|17|5
+Ginneken||51566|4793|6|5
+#NL|North Holland
+Grachtengordel West||52376|4888|-1|7
+#NL|Overijssel
+Goor||52233|6586|13|11
+Genemuiden||52623|6040|4|10
+#NL|South Holland
+Goedereede||51818|3981|2|12
+Giessendam||51833|4836|-2|5
+Groenswaard||52052|4645|-3|5
+#NZ|Auckland
+Grey Lynn||-36865|174737|53|12
+Glen Innes||-36868|174860|37|10
+Glendowie||-36858|174870|32|9
+Greenhithe||-36771|174687|47|9
+Glendene||-36888|174640|56|8
+Green Bay||-36931|174675|42|5
+#NZ|Southland
+Gore||-46103|168944|75|13
+#NZ|West Coast
+Greymouth||-42467|171200|11|9
+#PA|Panamá
+Gonzalillo||9098|-79513|76|8
+#PA|Panamá Oeste Province
+Guadalupe||8861|-79812|82|7
+#PH|Cagayan Valley
+Gonzaga||18259|121995|26|7
+Gamu||17050|121836|48|6
+#PH|Calabarzon
+General Luna||13687|122171|6|9
+Gulod||14345|121218|14|6
+Guisguis||13874|121519|20|6
+#PH|Central Luzon
+Guagua||14965|120633|8|10
+Gabaldon||15452|121339|137|7
+#PH|Central Visayas
+Guadalupe||10117|123607|224|11
+#PH|Davao Region
+Guihing Proper||6684|125353|13|12
+Gupitan||7776|125641|47|8
+#PH|Eastern Visayas
+Guiuan||11031|125723|5|11
+Gamay||12385|125298|8|9
+Giporlos||11120|125449|5|5
+#PH|Mimaropa
+Gloria||12983|121467|14|6
+#PH|Soccsksargen
+Glad||7148|124518|12|6
+Gansing||6719|124653|50|5
+#PH|Western Visayas
+Guiljungan||9981|122674|13|15
+Guadalupe||10454|123373|6|11
+Guinticgan||11564|123124|5|7
+Guimbal||10663|122323|14|7
+Gibong||11863|122039|0|7
+#PK|Azad Kashmir
+Garhi Dupatta||34226|73615|819|8
+#PK|Gilgit-Baltistan
+Gahkuch||36177|73764|1892|10
+#PK|Sindh
+Garhiyasin||27906|68512|60|15
+Goth Phulji||26881|67682|45|8
+Goth Garelo||27435|68076|58|7
+Goth Shams Pir||24844|66922|9|5
+#PL|Greater Poland
+Grodzisk Wielkopolski||52228|16365|86|14
+#PL|Kujawsko-Pomorskie
+Golub-Dobrzyń|Golub-Dobrzyn|53111|19054|62|13
+Gniewkowo||52895|18408|79|7
+#PL|Lesser Poland
+Grybów|Grybow|49624|20948|329|6
+#PL|Lower Silesia
+Grabiszyn-Grabiszynek||51094|16982|124|13
+Góra|Gora|51666|16535|90|13
+Grabiszynek||51087|16986|123|11
+Gądów Mały|Gadow Maly|51119|16986|116|7
+Głuszyca|Gluszyca|50687|16372|448|7
+Gryfów Śląski|Gryfow Slaski|51031|15420|322|7
+#PL|Mazovia
+Grójec|Grojec|51863|20868|153|15
+Góra Kalwaria|Gora Kalwaria|51977|21215|113|11
+#PL|Opole Voivodeship
+Głubczyce|Glubczyce|50201|17829|273|14
+Grodków|Grodkow|50698|17384|172|9
+Gogolin||50492|18020|172|6
+Głogówek|Glogowek|50354|17864|208|6
+#PL|Podlasie
+Grudki||53095|23668|144|6
+#PL|Pomerania
+Gniew||53836|18823|35|7
+Gościcino|Goscicino|54605|18155|47|5
+#PL|Silesia
+Goczałkowice Zdrój|Goczalkowice Zdroj|49945|18969|250|6
+Górne Przedmieście|Gorne Przedmiescie|49820|19030|361|6
+#PL|Subcarpathia
+Gorzyce||50667|21840|141|8
+Głogów Małopolski|Glogow Malopolski|50151|21963|232|5
+#PL|Warmia-Masuria
+Gołdap|Goldap|54306|22304|169|14
+#PR|Guayanilla
+Guayanilla||18019|-66792|10|5
+#PR|Gurabo
+Gurabo||18254|-65973|61|9
+#PR|Guánica
+Guánica|Guanica|17972|-66908|3|9
+#PS|West Bank
+Givat Zeev||31861|35169|770|12
+Geva Binyamin||31850|35274|644|6
+#PT|Aveiro
+Gafanha||40636|-8713|7|15
+#PT|Braga
+Gondizalves||41542|-8456|109|9
+Gualtar||41565|-8385|205|7
+Galegos||41563|-8572|85|5
+#PT|Lisbon
+Graça|Graca|38718|-9129|83|14
+#PT|Porto
+Gueifães|Gueifaes|41217|-8600|63|12
+Grijó|Grijo|41028|-8580|130|11
+Gulpilhares||41076|-8637|65|11
+Guifões|Guifoes|41197|-8669|66|9
+Gandra||41201|-8434|177|6
+Gemunde||41268|-8645|92|5
+#PT|Setúbal
+Grândola|Grandola|38177|-8567|102|11
+#PY|Central Department
+Guarambaré|Guarambare|-25491|-57456|123|9
+#RO|Bacău County
+Gura Văii|Gura Vaii|46333|26733|246|6
+Ghimeş-Făget|Ghimes-Faget|46583|26067|804|5
+#RO|Cluj County
+Gilău|Gilau|46732|23362|424|8
+#RO|Călărași County
+Grădiştea|Gradistea|44233|27217|10|5
+#RO|Dâmbovița County
+Gura Şuţii|Gura Sutii|44750|25517|192|5
+#RO|Galați County
+Ghidigeni||46050|27500|102|6
+#RO|Giurgiu County
+Găiseni|Gaiseni|44515|25645|125|5
+#RO|Hunedoara County
+Geoagiu||45917|23200|213|6
+#RO|Ialomița County
+Griviţa|Grivita|44733|27283|42|7
+#RO|Ilfov
+Glina||44383|26250|67|7
+Gruiu||44733|26233|82|7
+#RO|Mehedinți County
+Gogoşu|Gogosu|44374|22593|76|5
+Gârla-Mare|Garla-Mare|44209|22775|83|5
+#RO|Mureș County
+Gurghiu||46767|24850|417|6
+Gorneşti|Gornesti|46671|24648|338|6
+#RO|Neamț County
+Girov||46950|26517|347|7
+Gherăeşti|Gheraesti|47017|26817|210|6
+Grumăzeşti|Grumazesti|47133|26367|387|5
+#RO|Prahova
+Gura Viţioarei|Gura Vitioarei|45150|26033|302|6
+Gorgota||44783|26083|110|5
+#RO|Suceava
+Gălăneşti|Galanesti|47917|25800|405|6
+#RO|Timiș County
+Gătaia|Gataia|45431|21430|109|8
+Giarmata||45838|21311|110|5
+#RO|Tulcea County
+Greci||45183|28233|25|5
+#RO|Vaslui County
+Griviţa|Grivita|46150|27650|183|5
+#RO|Vrancea
+Gugeşti|Gugesti|45567|27133|81|6
+#RU|Belgorod Oblast
+Grayvoron||50479|35681|136|6
+Golovchino||50535|35806|142|5
+#RU|Chechnya
+Goyty||43164|45623|213|13
+Gekhi||43164|45472|227|10
+Germenchuk||43186|45921|188|9
+Goy-Chu||43056|45607|308|6
+Grebenskaya||43531|46372|12|5
+#RU|Chelyabinsk
+Gornyak||55134|61683|204|14
+#RU|Dagestan
+Gubden||42568|47566|589|8
+Gedzhukh||42128|48065|85|7
+Gergebil’|Gergebil'|42505|47066|729|5
+#RU|Ingushetiya Republic
+Galashki||43117|44991|551|7
+#RU|Ivanovo Oblast
+Gavrilov Posad||56559|40120|123|7
+#RU|Kabardino-Balkariya Republic
+Gundelen||43598|43172|860|6
+#RU|Kaliningrad Oblast
+Gvardeysk||54648|21065|10|13
+Gur’yevsk|Gur'yevsk|54773|20605|29|11
+#RU|Kalmykiya Republic
+Gorodoviki||46135|41966|76|11
+Gorodovikovsk||46088|41933|66|10
+#RU|Khanty-Mansia
+Gornopravdinsk||60050|69900|43|5
+#RU|Krasnodar Krai
+Gostagayevskaya||45023|37505|69|9
+Gayduk||44785|37701|100|7
+Girey||45401|40659|77|7
+Grivenskaya||45647|38176|-1|5
+#RU|Kursk Oblast
+Gorshechnoye||51524|38038|247|7
+Glushkovo||51341|34639|141|6
+#RU|Kuzbass
+Gramoteino||54537|86384|219|14
+#RU|Leningradskaya Oblast'
+Gorbunki||59813|29985|26|8
+#RU|Moscow
+Golovinskiy||55854|37496|155|10
+#RU|Moscow Oblast
+Gzhel’|Gzhel'|55610|38394|133|7
+#RU|Murmansk
+Gadzhiyevo||69255|33336|34|14
+#RU|Nizhny Novgorod Oblast
+Gidrotorf||56476|43538|76|7
+Gremyachevo||55392|43027|115|5
+#RU|North Ossetia–Alania
+Gizel’|Gizel'|43040|44571|642|7
+#RU|Novosibirsk Oblast
+Gornyy||55115|83906|245|10
+#RU|Oryol oblast
+Glazunovka||52501|36320|247|7
+#RU|Penza Oblast
+Gorodishche||53278|45702|202|8
+Grabovo||53388|45064|171|7
+#RU|Perm Krai
+Gornozavodsk||58373|58326|268|13
+Gremyachinsk||58560|57851|352|12
+#RU|Primorye
+Gornyye Klyuchi||45245|133500|79|5
+#RU|Pskov Oblast
+Gdov||58744|27820|43|6
+#RU|Rostov
+Glubokiy||48527|40331|70|11
+Gigant||46507|41342|71|10
+Gornyatskiy||48296|40924|116|9
+Gundorovskiy||46780|41897|68|5
+#RU|Sakhalin Oblast
+Gornozavodsk||46561|141842|1|6
+#RU|Saratov Oblast
+Gornyy||51757|48537|40|7
+#RU|Stavropol Kray
+Grigoropolisskaya||45297|41057|137|9
+Georgiyevskaya||44111|43492|294|6
+Gofitskoye||45079|43046|218|5
+#RU|Tula Oblast
+Gorelki||54256|37611|195|8
+Gritsovskiy||54138|38160|215|7
+#RU|Tyumen Oblast
+Golyshmanovo||56399|68376|123|13
+#RU|Vladimir Oblast
+Gorokhovets||56200|42689|100|14
+#RU|Volgograd Oblast
+Gumrak||48783|44382|146|5
+#RU|Zabaykalskiy (Transbaikal) Kray
+Gornyi||51548|113039|762|7
+#RW|Eastern Province
+Gahini||-1841|30482|1536|8
+#SB|Western Province
+Gizo||-8103|156842|6|7
+#SD|Red Sea
+Gebeit||21067|36317|622|11
+#SE|Jönköping
+Gislaved||57304|13541|167|10
+#SE|Norrbotten
+Gällivare|Gaellivare|67134|20653|363|10
+#SE|Södermanland
+Gnesta||59048|17312|19|6
+#SE|Värmland
+Grums||59351|13111|64|5
+#SE|Västra Götaland
+Gårdsten|Gardsten|57805|12029|103|8
+Gråbo|Grabo|57836|12300|73|6
+Götene|Goetene|58528|13495|79|5
+#SG|
+Ghim Moh||1311|103788|26|13
+#SH|Ascension
+Georgetown||-7929|-14412|20|5
+#SI|Grad
+Grad||46798|16098|324|1
+#SI|Municipality of Gorenja Vas–Poljane
+Gorenja Vas||46107|14148|403|1
+#SI|Municipality of Gorišnica
+Gorišnica|Gorisnica|46415|16014|210|1
+#SI|Municipality of Gornja Radgona
+Gornja Radgona||46673|15992|214|3
+#SI|Municipality of Gornji Grad
+Gornji Grad||46295|14808|434|1
+#SI|Municipality of Gornji Petrovci
+Gornji Petrovci||46804|16219|293|0
+#SI|Municipality of Grosuplje
+Grosuplje||45956|14659|344|7
+#SK|Košice Region
+Gelnica||48856|20937|363|6
+#SK|Trnava Region
+Gabčíkovo|Gabcikovo|47892|17579|114|5
+#SL|Southern Province
+Gandorhun||7555|-11693|58|12
+Gandorhun||7494|-11831|33|12
+#SN|Louga
+Guéoul|Gueoul|15483|-16350|41|8
+#SN|Saint-Louis
+Gaé|Gae|16567|-15450|9|7
+Goléré|Golere|16256|-14102|18|6
+Guédé|Guede|16538|-14804|9|6
+Galoya Toucouleur||16074|-13859|19|5
+#SN|Tambacounda
+Goudiry||14181|-12718|62|7
+#SO|Gedo
+Garbahaarrey||3329|42221|222|13
+#SO|Sanaag
+Garadag||9488|46867|782|10
+#SR|Saramacca District
+Groningen||5800|-55467|12|3
+#SV|Morazan
+Guatajiagua||13667|-88200|288|5
+#SV|San Salvador Department
+Guazapa||13877|-89173|434|11
+#TD|Mandoul
+Goundi||9363|17366|377|11
+#TD|Wadi Fira
+Guéréda|Guereda|14517|22083|996|7
+#TG|Kara
+Guérin-Kouka|Guerin-Kouka|9691|611|203|10
+#TJ|Khatlon Province
+Gharavŭtí|Gharavuti|37567|68447|393|8
+#TL|Ermera
+Gleno||-8724|125436|709|8
+#TM|
+Garaşsyzlyk|Garassyzlyk|37392|60435|184|9
+#TM|Ahal
+Gökdepe|Goekdepe|38235|57970|148|9
+#TM|Balkan
+Garadepe||38032|54034|15|9
+Garabogaz||41540|52573|-23|8
+#TM|Dasoguz
+Gökçäge|Goekcaege|42017|59855|92|8
+#TM|Lebap
+Galkynyş|Galkynys|39263|63184|182|8
+#TM|Mary
+Gökdepe|Goekdepe|37515|62023|221|7
+#TN|Siliana Governorate
+Gafour||36320|9324|268|10
+#TN|Tataouine
+Ghomrassen||33059|10337|274|10
+#TR|Amasya
+Gümüşhacıköy|Guemueshacikoey|40873|35215|822|15
+#TR|Ankara
+Güdül|Gueduel|40211|32246|738|6
+#TR|Antalya
+Göynük|Goeynuek|36660|30550|53|8
+Gündoğmuş|Guendogmus|36811|32000|1128|6
+#TR|Ardahan
+Göle|Goele|40787|42606|2026|12
+#TR|Aydın
+Germencik||37871|27603|58|11
+Güzelçamlı|Guezelcamli|37713|27228|29|8
+#TR|Batman
+Gercüş|Gercues|37562|41378|1047|9
+#TR|Bilecik
+Gölpazarı|Goelpazari|40285|30317|561|7
+#TR|Bolu
+Göynük|Goeynuek|40400|30788|745|6
+#TR|Burdur
+Gölhisar|Goelhisar|37146|29509|1003|13
+#TR|Canakkale
+Gökçeada|Gokceada|40201|25909|63|8
+#TR|Diyarbakır Province
+Gürbüz|Guerbuez|38379|40362|875|6
+#TR|Isparta
+Gönen|Goenen|37956|30511|1040|14
+Gelendost||38121|31015|951|7
+#TR|Karabük Province
+Gözyeri|Goezyeri|40866|32542|1250|8
+#TR|Manisa
+Gölmarmara|Goelmarmara|38714|27914|105|13
+Gördes|Goerdes|38933|28289|671|11
+#TR|Mardin
+Gelinkaya||37417|41270|949|6
+#TR|Mersin
+Gülnar|Guelnar|36341|33399|977|12
+#TR|Nevşehir Province
+Gülşehir|Guelsehir|38746|34625|913|10
+Göreme|Goereme|38643|34829|1082|6
+#TR|Rize Province
+Güneysu|Gueneysu|40981|40605|305|6
+#TR|Sinop
+Gerze||41804|35201|32|11
+#TR|Sivas
+Gürün|Gueruen|38722|37271|1335|13
+#TR|Van
+Gevaş|Gevas|38292|43102|1722|12
+#TR|Zonguldak Province
+Gökçebey|Goekcebey|41306|32142|64|9
+#TR|İzmir Province
+Guzeltepe||38503|27073|117|6
+#TT|Couva-Tabaquite-Talparo
+Gasparillo||10317|-61426|13|10
+#TW|Taiwan
+Guanshan||23048|121163|227|8
+#UA|Kyiv City
+Galagany||50455|30402|173|9
+#US|Alabama
+Gardendale||33660|-86813|207|14
+Gulf Shores||30246|-87701|2|11
+Guntersville||34358|-86294|194|8
+Greenville||31830|-86618|134|8
+Grayson Valley||33648|-86639|287|6
+Glencoe||33957|-85932|172|5
+#US|Alaska
+Gateway||61573|-149241|63|6
+#US|Arizona
+Gold Camp||33294|-111304|604|10
+Gold Canyon||33371|-111437|580|10
+Golden Valley||35223|-114223|856|8
+Globe||33394|-110786|1070|7
+Guadalupe||33371|-111963|376|6
+#US|Arkansas
+Greenwood||35216|-94256|160|9
+Greenbrier||35234|-92388|110|5
+#US|California
+Grover Beach||35122|-120621|18|14
+Grass Valley||39219|-121061|735|13
+Grand Terrace||34034|-117314|324|12
+Garden Acres||37964|-121229|10|11
+Good Hope||33765|-117267|473|9
+Golden Hills||35142|-118490|1194|9
+Gonzales||36507|-121444|41|8
+Gold River||38626|-121247|36|8
+Garnet||33927|-116477|217|8
+Guadalupe||34972|-120572|26|7
+Gridley||39364|-121694|29|7
+Gustine||37258|-120999|30|6
+Greenacres||35383|-119110|116|6
+#US|Colorado
+Glenwood Springs||39551|-107325|1756|10
+Gunbarrel||40063|-105171|1610|9
+Gypsum||39647|-106952|1924|7
+Gleneagle||39045|-104824|2111|7
+Gunnison||38546|-106925|2348|6
+Glendale||39705|-104934|1631|5
+#US|Connecticut
+Greenwich||41026|-73628|28|13
+Groton||41350|-72078|24|9
+Glastonbury Center||41701|-72600|21|7
+#US|Delaware
+Glasgow||39605|-75745|22|14
+Georgetown||38690|-75385|16|7
+#US|District of Columbia
+Georgetown||38905|-77062|19|12
+Glover Park||38921|-77077|88|8
+Georgia Avenue / Walter Reed||38983|-77026|95|8
+#US|Florida
+Gibsonton||27854|-82383|2|14
+Gonzalez||30582|-87291|46|13
+Gulfport||27748|-82703|5|12
+Goldenrod||28610|-81289|26|12
+Gladeview||25839|-80236|3|12
+Groveland||28558|-81851|31|12
+Goulds||25563|-80382|3|11
+Gulf Gate Estates||27252|-82515|4|11
+Gifford||27675|-80409|4|10
+Gateway||26578|-81750|7|8
+Green Cove Springs||29992|-81678|5|7
+Gulf Breeze||30357|-87164|5|6
+#US|Georgia
+Grovetown||33450|-82198|146|13
+Georgetown||31983|-81227|4|12
+Garden City||32114|-81154|5|9
+Gresham Park||33703|-84314|275|7
+Glennville||31937|-81928|52|5
+#US|Idaho
+Garden City||43622|-116238|815|12
+#US|Illinois
+Glen Carbon||38748|-89983|142|13
+Gages Lake||42352|-87983|234|10
+Glenwood||41543|-87602|189|9
+Glencoe||42135|-87758|205|9
+Gilberts||42103|-88373|274|8
+Greenville||38892|-89413|188|7
+Geneseo||41448|-90154|198|7
+Grandwood Park||42393|-87987|227|5
+Genoa||42097|-88693|254|5
+#US|Indiana
+Greensburg||39337|-85484|292|12
+Greencastle||39644|-86865|257|10
+Garrett||41349|-85136|268|6
+Gas City||40487|-85613|261|6
+Grissom Air Force Base||40658|-86148|242|6
+#US|Iowa
+Grimes||41688|-93791|291|11
+Grinnell||41743|-92722|309|9
+Glenwood||41047|-95743|310|5
+#US|Kentucky
+Glasgow||36996|-85912|230|14
+#US|Louisiana
+Grand Bayou Mobile Home Park||29908|-90777|1|14
+Gonzales||30239|-90920|3|11
+Gardere||30346|-91140|7|11
+Galliano||29442|-90299|1|8
+Gray||29698|-90786|3|6
+Grambling||32528|-92714|93|5
+#US|Maine
+Gorham||43680|-70444|73|7
+Gardiner||44230|-69775|7|6
+#US|Maryland
+Glenmont||39058|-77050|135|14
+Glenn Dale||38988|-76821|35|13
+Green Valley||39309|-77297|121|12
+Garrison||39406|-76761|135|9
+Glen||39356|-76691|142|8
+Glenarden||38929|-76862|31|6
+Goddard||38990|-76853|56|6
+Glenham-Belhar||39350|-76549|83|6
+#US|Massachusetts
+Great Barrington||42196|-73362|215|7
+Groveland||42760|-71031|14|6
+Grove Hall||42311|-71074|26|5
+#US|Michigan
+Grosse Ile||42129|-83144|182|11
+Grosse Pointe Park||42376|-82937|177|11
+Grand Haven||43063|-86228|184|11
+Grosse Pointe Farms||42409|-82892|186|9
+Greenville||43178|-85253|255|8
+Grand Blanc||42928|-83630|256|8
+Grand Ledge||42753|-84746|255|8
+Grosse Pointe||42386|-82912|179|5
+#US|Minnesota
+Grand Rapids||47237|-93530|392|11
+Glencoe||44769|-94152|304|6
+#US|Mississippi
+Grenada||33769|-89808|66|13
+Gulf Hills||30430|-88842|4|7
+Gulf Park Estates||30392|-88761|5|6
+#US|Missouri
+Grain Valley||39015|-94199|242|13
+Glendale||38596|-90377|179|6
+Greenwood||38852|-94344|290|6
+Glasgow Village||38754|-90198|152|5
+#US|Montana
+Glendive||47105|-104712|629|5
+#US|Nebraska
+Gering||41826|-103660|1192|8
+Gretna||41141|-96240|387|5
+#US|Nevada
+Gardnerville Ranchos||38888|-119741|1481|11
+Gardnerville||38941|-119750|1448|6
+#US|New Hampshire
+Gilford||43548|-71407|225|8
+#US|New Jersey
+Glen Rock||40963|-74133|26|12
+Guttenberg||40792|-74004|61|12
+Greentree||39897|-74956|31|11
+Gloucester City||39893|-75120|6|11
+Glen Ridge||40805|-74204|66|8
+Green Knoll||40600|-74612|45|6
+#US|New Mexico
+Grants||35148|-107853|1969|9
+#US|New York
+Greece||43210|-77693|131|15
+Glens Falls||43310|-73644|105|14
+Greenlawn||40869|-73365|69|14
+Geneva||42869|-76978|135|13
+Great Neck||40801|-73728|33|10
+Glens Falls North||43335|-73683|142|8
+Geneseo||42796|-77817|235|8
+Garden City Park||40741|-73663|32|8
+Greenville||40993|-73820|76|7
+Great Neck Plaza||40787|-73727|28|7
+Glen Oaks||40747|-73712|36|7
+Goshen||41402|-74324|133|5
+#US|North Carolina
+Graham||36069|-79401|194|15
+Gibsonville||36106|-79542|219|7
+#US|Ohio
+Greenville||40103|-84633|318|13
+Goshen||39233|-84161|255|12
+Galion||40734|-82790|357|10
+Girard||41154|-80701|276|10
+Grandview Heights||39980|-83041|236|7
+Groesbeck||39223|-84587|264|7
+Geneva||39662|-82433|305|6
+Grafton||41273|-82055|245|6
+Geneva||41805|-80948|205|6
+Granville||40068|-82520|293|6
+Groveport||39878|-82884|226|6
+Germantown||39626|-84369|220|6
+#US|Oklahoma
+Glenpool||35955|-96009|215|13
+Guymon||36683|-101482|952|12
+Guthrie||35879|-97425|299|11
+Grove||36594|-94769|236|7
+#US|Oregon
+Gladstone||45381|-122595|19|12
+Green||43160|-123368|157|8
+Garden Home-Whitford||45464|-122759|77|7
+#US|Pennsylvania
+Grays Ferry||39935|-75192|11|15
+Greensburg||40301|-79539|313|14
+Girard Estate||39923|-75185|9|11
+Germantown||40043|-75180|89|11
+Glenshaw||40533|-79968|333|9
+Glenside||40102|-75152|80|8
+Grove City||41158|-80089|387|8
+Gettysburg||39831|-77231|162|8
+Glenolden||39900|-75289|28|7
+Greenville||41405|-80391|288|6
+Glen Willow||40035|-75226|82|5
+#US|Rhode Island
+Greenville||41871|-71552|87|9
+#US|South Carolina
+Gantt||34800|-82424|299|14
+Gaffney||35072|-81650|239|13
+Garden City||33593|-79009|6|9
+Georgetown||33377|-79294|4|9
+#US|Tennessee
+Greenbrier||36428|-86805|260|7
+Green Hill||36223|-86549|197|7
+#US|Texas
+Glenn Heights||32549|-96857|206|12
+Greatwood||29554|-95676|21|12
+Galena Park||29734|-95230|3|11
+Granbury||32442|-97794|224|9
+Graham||33107|-98589|319|9
+Gonzales||29502|-97452|87|8
+Gladewater||32537|-94943|111|6
+Gun Barrel City||32335|-96151|107|6
+Gilmer||32729|-94942|112|5
+Granite Shoals||30589|-98384|268|5
+Giddings||30183|-96936|154|5
+#US|Utah
+Grantsville||40600|-112464|1312|10
+#US|Virginia
+Glen Allen||37666|-77506|61|15
+Groveton||38767|-77085|60|15
+Gainesville||38796|-77614|108|11
+Gloucester Point||37254|-76497|10|9
+Greenbriar||38873|-77401|112|8
+Galax||36661|-80924|723|7
+#US|Washington
+Greenwood||47694|-122355|95|12
+Grandview||46251|-119902|245|11
+Gig Harbor||47329|-122580|9|9
+#US|West Virginia
+Grafton||39341|-80019|312|5
+#US|Wisconsin
+Greendale||42941|-87996|225|14
+Glendale||43135|-87936|199|13
+Grafton||43320|-87953|231|12
+#US|Wyoming
+Green River||41529|-109466|1864|12
+#UY|Paysandú Department
+Guichón|Guichon|-32358|-57198|94|5
+#UZ|Bukhara
+Galaosiyo Shahri||39857|64446|228|13
+Gazli||40131|63457|187|8
+#UZ|Jizzakh Region
+G’oliblar Qishlog’i|G'oliblar Qishlog'i|40495|67876|266|12
+#UZ|Navoiy Region
+G‘ozg‘on|G'ozg'on|40591|65495|490|9
+#VC|Charlotte Parish
+Georgetown||13281|-61118|13|2
+#VN|Da Nang City
+Đại Nghĩa|GJai Nghia|15879|108089|40|11
+Đại Quang|GJai Quang|15867|108050|8|11
+Đại Đồng|GJai GJong|15874|108021|19|11
+Đại Cường|GJai Cuong|15850|108083|15|8
+Đại Tân|GJai Tan|15833|108050|13|6
+#VN|Hanoi
+Đường Lâm|GJuong Lam|21153|105471|21|8
+#VN|Hà Tĩnh Province
+Đức Thọ|GJuc Tho|18540|105583|8|12
+Đồng Lộc|GJong Loc|18376|105717|27|6
+Gia Hanh||18424|105687|27|6
+#VN|Ninh Binh
+Gôi|Goi|20333|106078|4|6
+#VN|Quang Tri
+Gio Linh||16925|107084|7|7
+#ZA|Gauteng
+Glenharvie||-26390|27616|1683|12
+#ZA|Limpopo
+Ga-Kgapane||-23644|30223|709|13
+GaSekhaolelo||-23955|28983|1271|5
+#ZA|Mpumalanga
+Gemsbokspruit||-25403|28879|1399|8
+Glenmore||-26265|30844|1598|7
+Grootvlei||-26762|28484|1576|6
+Godide||-24729|31237|447|6
+#ZA|Western Cape
+Genadendal||-34038|19562|273|7
+#ZW|Mashonaland Central
+Glendale||-17355|31067|1143|10

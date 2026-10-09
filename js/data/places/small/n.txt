@@ -1,0 +1,1968 @@
+#AE|Dubai
+Nadd al Ḩumr|Nadd al Humr|25201|55384|10|14
+#AI|North Hill
+North Hill Village||18205|-63078|36|0
+#AI|North Side
+North Side||18229|-63044|37|0
+#AL|Durrës County
+Nikël|Nikel|41444|19748|59|10
+#AL|Tirana
+Ndroq||41264|19656|65|5
+#AL|Vlorë County
+Novoselë|Novosele|40625|19467|6|8
+#AM|Ararat
+Nor Kharberd||40092|44481|918|9
+#AM|Gegharkunik
+Nerkin Getashen||40142|45271|1960|9
+Noratus||40378|45180|1926|6
+#AM|Kotayk
+Nor Hachn||40303|44583|1305|10
+Nor Geghi||40317|44578|1300|7
+#AM|Yerevan
+Nork-Marash||40174|44541|1225|14
+Nubarashen||40091|44552|1153|11
+#AR|Buenos Aires
+Norberto de la Riestra||-35273|-59776|44|5
+#AR|Corrientes
+Nuestra Señora del Rosario de Caá Catí|Nuestra Senora del Rosario de Caa Cati|-27752|-57622|63|8
+#AR|San Juan
+Nueve de Julio||-31669|-68390|578|5
+#AT|Burgenland
+Neusiedl am See||47949|16842|125|8
+#AT|Lower Austria
+Neunkirchen||47721|16081|372|11
+Neu-Guntramsdorf||48064|16316|192|9
+#AT|Upper Austria
+Neuhofen an der Krems||48139|14228|302|6
+Neuzeug||48050|14333|334|5
+#AU|Australian Capital Territory
+Ngunnawal||-35173|149111|637|11
+Nicholls||-35187|149096|626|7
+Narrabundah||-35336|149149|583|6
+#AU|New South Wales
+Newtown||-33898|151178|37|15
+North Parramatta||-33794|151001|22|13
+Northmead||-33784|150999|38|11
+North Ryde||-33797|151124|79|11
+Neutral Bay||-33838|151218|43|10
+New Lambton||-32928|151709|32|10
+Nowra||-34884|150600|30|10
+Newport||-33656|151314|19|9
+North Bondi||-33888|151281|20|9
+North Sydney||-33839|151207|84|8
+Narrabeen||-33713|151297|6|8
+North Rocks||-33772|151017|86|8
+Narrabri||-30325|149783|214|8
+Narara||-33396|151335|12|8
+Narellan Vale||-34050|150744|95|7
+Nambucca Heads||-30643|153009|49|7
+Narraweena||-33755|151277|79|6
+Northbridge||-33813|151217|81|6
+Nambucca||-30633|152983|28|6
+Nelson Bay||-32720|152144|13|6
+North Albury||-36057|146930|177|6
+North Narrabeen||-33709|151296|5|6
+Naremburn||-33817|151201|70|6
+Newington||-33835|151057|20|6
+Narwee||-33947|151069|43|6
+North Nowra||-34858|150575|70|6
+North Tamworth||-31079|150922|391|5
+Normanhurst||-33724|151096|180|5
+#AU|Queensland
+New Farm||-27468|153048|4|12
+Nundah||-27403|153062|10|12
+Nambour||-26626|152959|19|11
+Norman Gardens||-23330|150527|36|10
+Noosaville||-26400|153067|6|10
+Newtown||-27556|151933|636|9
+Noosa Heads||-26394|153090|47|7
+Norman Park||-27479|153063|23|6
+North Mackay||-21120|149179|6|6
+North Ward||-19250|146815|9|6
+#AU|South Australia
+North Adelaide||-34907|138591|50|8
+Nuriootpa||-34468|138998|278|6
+Northgate||-34858|138629|73|6
+Naracoorte||-36958|140738|57|6
+Norwood||-34927|138628|63|6
+North Haven||-34788|138492|8|5
+#AU|Tasmania
+Newnham||-41390|147114|32|6
+New Town||-42858|147309|44|6
+New Norfolk||-42783|147059|40|5
+#AU|Victoria
+Newport||-37844|144885|17|14
+Nunawading||-37820|145173|123|12
+Newtown||-38154|144335|57|10
+Norlane||-38101|144354|14|8
+Narre Warren North||-37983|145317|62|8
+Noble Park North||-37950|145193|58|7
+Newborough||-38172|146293|76|7
+Niddrie||-37737|144892|70|6
+#AU|Western Australia
+Nollamara||-31880|115845|71|13
+Newman||-23356|119736|543|12
+Nedlands||-31982|115807|34|11
+North Perth||-31927|115853|23|9
+Noranda||-31873|115899|36|8
+Northam||-31649|116674|155|7
+#AZ|Baki
+Nardaran||40556|50006|28|8
+#AZ|Naftalan
+Naftalan||40508|46820|251|9
+#BA|Federation of B&H
+Novi Travnik||44171|17658|507|10
+#BA|Srpska
+Novi Grad||45046|16378|127|9
+Nevesinje||43259|18113|891|7
+#BD|Dhaka Division
+Nawāb Char|Nawab Char|23715|90367|8|12
+#BD|Khulna Division
+Nachnapāra|Nachnapara|22172|89969|10|12
+Nalua||22493|90412|1|9
+#BE|Flanders
+Nevele||51035|3546|7|11
+Nazareth||50957|3594|12|11
+Nieuwpoort||51130|2751|9|11
+Neeroeteren||51092|5699|38|10
+Niel||51111|4334|8|9
+Negenmanneke||50805|4285|26|7
+Nieuwerkerken||50864|5195|44|6
+Nieuwerkerken||50924|4004|26|6
+Nieuwkerken-Waas||51194|4178|13|6
+Noorderwijk||51141|4841|19|5
+#BE|Wallonia
+Neufchâteau|Neufchateau|49841|5435|424|6
+Nalinnes||50324|4446|202|6
+Nassogne||50128|5343|385|5
+#BF|Centre-Ouest
+Nanoro||12687|-2194|312|11
+#BG|Burgas
+Nesebar||42659|27736|17|13
+#BG|Shumen
+Novi Pazar||43350|27200|135|13
+#BG|Smolyan
+Nedelino||41456|25080|497|5
+#BR|Alagoas
+Novo Lino||-8915|-35647|187|10
+#BR|Bahia
+Nilo Peçanha|Nilo Pecanha|-13599|-39107|8|14
+Nova Canaã|Nova Canaa|-14794|-40142|423|14
+Nordestina||-10822|-39427|344|13
+Novo Horizonte||-12808|-42168|816|13
+Novo Triunfo||-10335|-38420|468|11
+Nova Fátima|Nova Fatima|-11608|-39630|455|8
+Nova Itarana||-13027|-40069|561|8
+Nova Redenção|Nova Redencao|-12817|-41071|309|8
+Nova Ibiá|Nova Ibia|-13810|-39626|249|7
+#BR|Goiás
+Nova Crixás|Nova Crixas|-14099|-50327|303|13
+Nova Veneza||-16371|-49323|783|9
+Nova Glória|Nova Gloria|-15143|-49571|591|8
+Nazário|Nazario|-16582|-49882|639|8
+#BR|Maranhão
+Nova Olinda do Maranhão|Nova Olinda do Maranhao|-2810|-45703|35|14
+Nina Rodrigues||-3466|-43905|26|14
+Nova Colinas||-7120|-46262|344|5
+#BR|Mato Grosso
+Nova Bandeirantes||-9850|-57811|232|14
+Nova Ubiratã|Nova Ubirata|-13033|-55255|400|12
+Nova Canaã do Norte|Nova Canaa do Norte|-10638|-55709|320|12
+Nossa Senhora do Livramento||-15775|-56346|223|12
+Nova Monte Verde||-9982|-57535|261|8
+Novo São Joaquim|Novo Sao Joaquim|-14906|-53018|361|7
+Nova Lacerda||-14476|-59609|236|7
+Novo Mundo||-9950|-55198|285|6
+Nortelândia|Nortelandia|-14455|-56803|230|6
+Nova Maringá|Nova Maringa|-13026|-57074|333|6
+#BR|Mato Grosso do Sul
+Nioaque||-21135|-55830|214|13
+#BR|Minas Gerais
+Nova Ponte||-19152|-47675|931|15
+Ninheira||-15321|-41754|904|11
+Novo Oriente de Minas||-17415|-41215|264|10
+Nazareno||-21216|-44611|920|8
+Nova Porteirinha||-15802|-43301|536|7
+Naque||-19230|-42328|216|6
+Nova União|Nova Uniao|-19688|-43583|914|6
+#BR|Paraná
+Nova Aurora||-24525|-53257|454|14
+Nova Londrina||-22766|-52985|336|13
+Nova Prata do Iguaçu|Nova Prata do Iguacu|-25632|-53347|482|13
+Nova Laranjeiras||-25307|-52541|702|12
+Nova Santa Rosa||-24467|-53954|352|8
+Nova Fátima|Nova Fatima|-23432|-50564|665|7
+Nova Tebas||-24438|-51945|644|7
+Nova Cantu||-24673|-52569|497|7
+Nova Olímpia|Nova Olimpia|-23472|-53089|436|6
+Nova Esperança do Sudoeste|Nova Esperanca do Sudoeste|-25907|-53262|612|6
+#BR|Paraíba
+Nova Floresta||-6455|-36203|670|10
+Natuba||-7641|-35550|343|9
+Nazarezinho||-6916|-38325|275|7
+Nova Olinda||-7480|-38042|318|6
+#BR|Piauí
+Nazária|Nazaria|-5349|-42820|92|10
+Nossa Senhora dos Remédios|Nossa Senhora dos Remedios|-3979|-42621|53|9
+Nazaré do Piauí|Nazare do Piaui|-6973|-42672|140|7
+Novo Oriente do Piauí|Novo Oriente do Piaui|-6450|-41929|266|6
+Nossa Senhora de Nazaré|Nossa Senhora de Nazare|-4633|-42172|104|5
+#BR|Rio Grande do Sul
+Nonoai||-27362|-52771|578|14
+Nova Bassano||-28724|-51705|567|10
+Nova Palma||-29472|-53469|112|6
+#BR|Rondônia
+Novo Horizonte do Oeste||-11710|-62000|239|8
+Nova União|Nova Uniao|-10904|-62561|227|6
+#BR|Roraima
+Normandia||3881|-59623|101|14
+#BR|Santa Catarina
+Nova Trento||-27286|-48930|39|14
+Nova Veneza||-28637|-49498|72|14
+Nova Erechim||-26902|-52906|474|5
+#BR|Sergipe
+Nossa Senhora Aparecida||-10442|-37489|261|9
+Nossa Senhora de Lourdes||-10079|-37058|224|6
+#BR|São Paulo
+Nhandeara||-20690|-50041|514|10
+Neves Paulista||-20846|-49630|554|10
+Nova Europa||-21778|-48561|491|9
+Nova Campina||-24121|-48904|834|8
+Nuporanga||-20731|-47752|784|7
+Natividade da Serra||-23376|-45442|732|7
+Nova Aliança|Nova Alianca|-21016|-49496|452|7
+Narandiba||-22407|-51524|431|6
+#BR|Tocantins
+Nova Olinda||-7632|-48422|254|12
+#BW|Central
+Nata||-20217|26183|912|8
+#BY|Homyel’ Voblasc’
+Narovlya||51797|29498|112|8
+#BY|Vitebsk
+Novolukoml’|Novolukoml'|54662|29150|175|12
+#CA|Alberta
+New Brighton||50920|-113945|1023|13
+Nolan Hill||51176|-114166|1195|9
+#CA|British Columbia
+North Saanich||48666|-123419|11|11
+North Kamloops||50700|-120369|350|11
+Nelson||49500|-117286|541|11
+New Horizons||49281|-122779|30|8
+Nanoose Bay||49272|-124193|44|7
+#CA|Manitoba
+Norway House||53982|-97833|217|6
+#CA|New Brunswick
+Nashwaaksis||45980|-66658|11|10
+North End||45270|-66081|1|5
+#CA|Nova Scotia
+New Waterford||46250|-60082|19|7
+North Sydney||46208|-60255|7|6
+#CA|Ontario
+Northwood||48389|-89275|194|14
+New Hamburg||43383|-80700|348|14
+North Perth||43725|-80967|380|13
+North Riverdale||43672|-79351|101|12
+New Toronto||43600|-79505|84|11
+Napanee||44250|-76949|92|7
+#CA|Quebec
+Notre-Dame-de-l'Île-Perrot|Notre-Dame-de-l'Ile-Perrot|45367|-73932|41|10
+Notre-Dame-des-Prairies||46050|-73432|62|8
+Nicolet||46231|-72613|24|6
+#CA|Saskatchewan
+North Central||50457|-104628|573|9
+Northeast Regina||50477|-104607|579|7
+Nutana||52119|-106656|503|6
+#CG|Cuvette
+Ntokou-Raymondville||0|16391|304|6
+#CG|Kouilou
+Nzassi||-4981|12040|10|9
+#CG|Plateaux
+Ngo||-2487|15756|633|15
+#CH|Aargau
+Neuenhof||47450|8327|398|8
+#CH|Bern
+Nidau||47125|7240|437|7
+#CH|Lucerne
+Neuenkirch||47100|8204|550|6
+#CH|Schaffhausen
+Neuhausen||47686|8615|410|10
+#CH|Valais
+Naters||46325|7989|720|8
+#CI|Abidjan Autonomous District
+Ndjemin||5270|-4239|7|7
+#CI|Bas-Sassandra District
+Négbatchi|Negbatchi|4900|-7468|137|8
+Néro|Nero|4508|-7521|85|8
+Niorouhio||5768|-6120|158|7
+Nonouan||5023|-6372|119|7
+#CI|Comoé District
+Noé|Noe|5294|-2785|18|12
+Nguinou||6751|-4161|206|10
+Nougoua||5342|-2777|15|7
+Nguessankro||6635|-4303|173|6
+#CI|Goh-Djiboua
+Niakoblonyoa||5718|-5967|197|11
+Nékédé|Nekede|6464|-5998|231|10
+Nagadoukou||6426|-5781|227|9
+Nambézaria|Nambezaria|5650|-5750|170|8
+#CI|Lagunes District
+Nzodji||5594|-3851|48|7
+Nouvel-Ousrou||5411|-4513|90|7
+Nandibo Un||5284|-4921|42|6
+#CI|Montagnes
+Nanandy||6743|-7170|254|10
+Nidrou||6902|-7181|219|7
+Nané|Nane|7688|-7187|337|5
+#CI|Sassandra-Marahoue
+Namane||6422|-6682|207|8
+N'Douffoukankro||6862|-5821|204|8
+Noumousséria I|Noumousseria I|6710|-6663|235|6
+#CI|Savanes District
+N’deou|N'deou|9970|-6618|399|8
+Napié|Napie|9289|-5583|367|8
+Nafoungolo||10314|-5448|307|7
+Néguépié|Neguepie|10348|-6517|351|5
+Nanbonkaha||9741|-5159|315|5
+#CI|Woroba
+Nakara||8258|-5637|339|9
+#CI|Zanzan District
+Nassian||8453|-3472|353|6
+#CL|Biobio
+Negrete||-37587|-72528|80|9
+#CL|O'Higgins Region
+Nancagua||-34652|-71197|220|9
+#CL|Valparaiso
+Nogales||-32717|-71233|231|9
+#CL|Ñuble
+Ninhue||-36394|-72399|99|5
+#CM|Centre
+Ndikiniméki|Ndikinimeki|4767|10833|803|8
+Ntui||4450|11633|526|6
+#CM|East
+Ndelele||4041|14925|605|5
+#CM|Littoral
+Ngambé|Ngambe|4233|10615|575|6
+Ndom||4498|9563|123|5
+#CM|North-West
+Njinikom||6233|10283|1315|8
+#CM|South-West
+Nguti||5330|9419|228|5
+#CM|West
+Ngou||5197|10386|1441|8
+#CN|
+Nanyou, Shenzhen||22500|113923|10|9
+#CN|Chongqing
+Nanyaojie||28400|108645|670|12
+Nantianhu||29701|107921|1131|12
+Nanzhushan||29238|107183|710|8
+Ningchang||31482|109640|253|5
+#CN|Gansu
+Niyang||33819|105821|1087|13
+Nanyang||33957|104643|1803|12
+Nianba||33306|105469|1346|9
+Nalang||34515|103701|2489|7
+Nawu||34954|102913|2940|7
+Nanhe||34095|104247|1976|7
+Niba||34458|103085|2939|5
+#CN|Guangdong
+Nanshan||22538|113939|8|11
+Nanyuan Residential||22541|114095|2|9
+Nandong||22718|113834|7|8
+Nanshan Residential||22533|113930|33|7
+Niuwan||22581|113854|5|7
+Nanchang, Shenzhen||22598|113842|6|5
+#CN|Ningxia
+Nanliang Nongchang||38667|106200|1110|8
+#CN|Tianjin
+Ningchegu||39159|117663|5|6
+#CO|Antioquia
+Necoclí|Necocli|8426|-76789|4|11
+#CO|Caldas Department
+Norcasia||5575|-74888|722|6
+#CO|Cundinamarca
+Nilo||4306|-74621|333|11
+Nemocón|Nemocon|5068|-73878|2581|5
+#CR|Alajuela Province
+Naranjo||10099|-84378|1044|12
+#CU|Guantánamo Province
+Naval Station Guantanamo Bay||19916|-75144|17|6
+#CV|Brava
+Nova Sintra||14871|-24696|496|2
+#CZ|Carlsbad Region
+Nejdek||50322|12729|557|9
+#CZ|Central Bohemia
+Nové Strašecí|Nove Straseci|50153|13900|481|6
+#CZ|Hradec Králové Region
+Nové Město nad Metují|Nove Mesto nad Metuji|50345|16151|334|10
+Nová Paka|Nova Paka|50494|15515|427|9
+Nový Bydžov|Novy Bydzov|50242|15491|235|7
+#CZ|Liberec Region
+Nový Bor|Novy Bor|50758|14556|365|11
+#CZ|Plzeň Region
+Nýřany|Nyrany|49711|13212|335|7
+Nýrsko|Nyrsko|49294|13144|455|5
+#CZ|South Moravian
+Nový Lískovec|Novy Liskovec|49183|16561|288|10
+#CZ|Vysocina
+Nové Město na Moravě|Nove Mesto na Morave|49561|16074|594|10
+#CZ|Zlín
+Napajedla||49172|17512|200|7
+#DE|Baden-Wurttemberg
+Neckargemünd|Neckargemund|49389|8796|122|14
+Niefern-Öschelbronn|Niefern-Oschelbronn|48917|8783|241|12
+Neuenburg am Rhein||47814|7560|228|12
+Neuhausen auf den Fildern||48683|9283|321|11
+Nußloch|Nussloch|49324|8696|149|11
+Neuenstadt am Kocher||49235|9332|178|9
+Neresheim||48755|10330|502|8
+Neuenbürg|Neuenburg|48845|8596|326|8
+Nordheim||49109|9128|181|7
+Neulußheim|Neulussheim|49293|8522|99|6
+Nattheim||48700|10242|561|6
+Neuffen||48555|9376|404|6
+Neckartenzlingen||48590|9235|294|6
+Neuenstein||49205|9580|286|6
+Niedereschach||48133|8533|659|6
+Neubulach||48661|8696|584|6
+Niederstetten||49400|9919|311|5
+Neuhausen||48793|8776|491|5
+Nufringen||48623|8890|458|5
+Neudenau||49292|9270|182|5
+#DE|Bavaria
+Neustadt bei Coburg||50330|11121|340|15
+Neustadt an der Donau||48807|11770|354|15
+Neubiberg||48077|11658|548|13
+Neutraubling||48987|12201|332|13
+Neustadt an der Aisch||49580|10611|309|12
+Nittendorf||49025|11961|413|9
+Nersingen||48428|10124|462|9
+Neuötting|Neuotting|48241|12690|389|9
+Nittenau||49194|12267|353|8
+Naila||50330|11705|515|8
+Neunkirchen am Brand||49612|11130|317|8
+Neunburg vorm Wald||49348|12386|390|8
+Niederwerrn||50061|10183|246|8
+Neuendettelsau||49283|10783|441|8
+Neunkirchen am Main||49923|11648|386|8
+Neuried||48093|11466|558|7
+Neumarkt-Sankt Veit||48361|12507|444|6
+Neustadt an der Waldnaab||49733|12178|428|6
+Nabburg||49453|12180|391|6
+Nandlstadt||48536|11807|471|5
+#DE|Brandenburg
+Niedergörsdorf|Niedergorsdorf|51979|12985|87|7
+#DE|Hamburg
+Neustadt||53552|9986|10|13
+Nienstedten||53556|9845|19|7
+#DE|Hesse
+Niedernhausen||50163|8313|271|14
+Neuhof||50453|9618|275|11
+Nauheim||49951|8463|86|11
+Neustadt (Hessen)||50850|9117|243|9
+Nordenstadt||50065|8343|176|8
+Neukirchen||50869|9347|263|8
+Niedenstein||51233|9310|314|6
+Naumburg||51248|9166|286|6
+Niederaula||50800|9600|213|6
+#DE|Lower Saxony
+Nordstemmen||52162|9784|76|13
+Neuenhaus||52497|6967|17|11
+Nörten-Hardenberg|Noerten-Hardenberg|51629|9936|135|9
+Nordholz||53784|8614|15|8
+Norderney||53708|7157|4|6
+Neuenkirchen||53033|9706|68|6
+#DE|Mecklenburg-Vorpommern
+Neustadt-Glewe||53378|11593|35|7
+#DE|North Rhine-Westphalia
+Niederzier||50883|6467|105|14
+Neunkirchen||50800|8000|373|14
+Neuenkirchen||52245|7372|64|14
+Neuenrade||51283|7783|327|13
+Nörvenich|Norvenich|50806|6640|119|11
+Nideggen||50693|6484|301|11
+Nordkirchen||51738|7522|63|10
+Nordwalde||52083|7483|48|9
+Nettersheim||50494|6629|452|8
+Nieheim||51805|9113|201|7
+Nachrodt-Wiblingwerde||51317|7617|419|7
+Neue Kolonie Westhausen||51550|7367|87|7
+Nette||51561|7390|74|6
+Neersen||51254|6477|38|6
+Nienberge||51996|7555|82|5
+Niederwenigern||51404|7139|99|5
+#DE|Rheinland-Pfalz
+Nieder-Olm||49912|8205|136|9
+Nierstein||49870|8336|101|8
+Neuhofen||49428|8425|97|7
+Nackenheim||49915|8339|112|5
+Niederfischbach||50850|7867|296|5
+Nassau||50315|7800|102|5
+#DE|Saarland
+Nohfelden||49587|7143|351|11
+Nalbach||49383|6783|238|10
+Nonnweiler||49608|6970|397|9
+Namborn||49522|7141|340|8
+#DE|Saxony
+Neustadt in Sachsen||51028|14218|327|12
+Niesky||51292|14821|183|11
+Naunhof||51278|12588|133|9
+Nossen||51058|13297|255|8
+Neukirchen||50780|12868|354|8
+Nünchritz|Nunchritz|51300|13386|100|7
+Neugersdorf||50977|14609|419|6
+Neukirch/Lausitz||51097|14308|322|6
+Niederwiesa||50867|13017|303|5
+#DE|Schleswig-Holstein
+Niebüll|Niebuell|54787|8829|4|9
+Nortorf||54167|9854|30|6
+#DE|State of Berlin
+Niederschöneweide|Niederschoeneweide|52456|13516|36|13
+Nikolassee||52423|13185|45|12
+#DE|Thuringia
+Neustadt an der Orla||50736|11746|300|7
+Neuhaus am Rennweg||50510|11138|800|6
+Neuhaus||50683|10933|480|6
+#DK|Capital Region
+Nivå|Niva|55934|12505|8|8
+#DK|North Denmark
+Nykøbing Mors|Nykobing Mors|56793|8853|5|9
+Nibe||56982|9639|10|6
+#DK|South Denmark
+Nordborg||55057|9741|15|6
+Neder Holluf||55365|10448|17|6
+#DK|Zealand
+Nakskov||54830|11136|5|12
+Nykøbing Sjælland|Nykobing Sjaelland|55925|11671|15|5
+#DO|Peravia
+Nizao||18247|-70211|29|7
+#DZ|Naama
+Naama||33267|-317|1169|15
+#ES|Andalusia
+Nerva||37696|-6550|336|6
+Nueva-Carteya||37586|-4468|437|6
+Navas de San Juan||38184|-3316|657|5
+#ES|Asturias
+Navia||43535|-6719|38|9
+#ES|Canary Islands
+Nazaret||29038|-13564|207|10
+#ES|Catalonia
+Navàs|Navas|41900|1878|376|6
+Navarcles||41752|1904|256|6
+#ES|Galicia
+Negreira||42904|-8743|178|7
+#ES|La Rioja
+Nájera|Najera|42418|-2729|496|8
+#ES|Madrid
+Nuevo Baztán|Nuevo Baztan|40367|-3241|831|7
+#ES|Valencia
+Nules||39854|-156|21|13
+#FI|North Karelia
+Nurmes||63542|29140|91|9
+#FI|North Ostrobothnia
+Nivala||63917|24967|91|10
+#FI|North Savo
+Nilsiä|Nilsiae|63207|28082|110|6
+#FI|Ostrobothnia
+Närpes|Naerpes|62473|21337|14|10
+Nykarleby||63523|22531|20|7
+#FI|Paijat-Hame
+Nastola||60948|25929|112|15
+#FI|Satakunta
+Noormarkku||61593|21868|44|6
+#FI|Southwest Finland
+Nummi||60458|22313|34|7
+#FI|Uusimaa
+Nöykkiö|Noeykkioe|60161|24668|36|11
+Niittykumpu||60171|24764|9|9
+Nurmijärven kirkonkylä|Nurmijaerven kirkonkylae|60460|24806|78|8
+#FJ|Central
+Navua||-18223|178170|6|6
+#FR|Auvergne-Rhône-Alpes
+Neuville-sur-Saône|Neuville-sur-Saone|45876|4841|178|7
+Nyons||44361|5141|275|7
+#FR|Bourgogne-Franche-Comté
+Nuits-Saint-Georges||47137|4949|242|5
+#FR|Centre-Val de Loire
+Nogent-le-Rotrou||48322|822|120|13
+#FR|Grand Est
+Neufchâteau|Neufchateau|48356|5696|296|8
+Neuves-Maisons||48618|6105|228|7
+Nouzonville||49814|4747|153|7
+Nogent-sur-Seine||48494|3503|72|6
+Nilvange||49342|6050|233|5
+#FR|Hauts-de-France
+Nœux-les-Mines|Noeux-les-Mines|50483|2667|28|12
+Neuville-en-Ferrain||50748|3157|41|9
+Nieppe||50704|2835|19|8
+Noyelles-sous-Lens||50431|2872|26|7
+Noyelles-Godault||50418|2993|32|6
+#FR|New Aquitaine
+Nérac|Nerac|44136|338|67|8
+Nieul-sur-Mer||46204|-1168|13|6
+Naintré|Naintre|46763|483|63|6
+Nueil-les-Aubiers||46933|-583|108|5
+#FR|Normandy
+Notre-Dame-de-Gravenchon||49489|572|22|9
+Notre-Dame-de-Bondeville||49483|1050|26|8
+Neufchâtel-en-Bray|Neufchatel-en-Bray|49733|1440|88|5
+#FR|Pays de la Loire
+Nort-sur-Erdre||47440|-1499|12|6
+#FR|Provence-Alpes-Côte d'Azur
+Notre-Dame Limite||43382|5363|175|12
+Notre-Dame du Mont||43293|5382|36|7
+#FR|Île-de-France
+Nemours||48275|2691|57|14
+Nangis||48555|3013|129|8
+Noisy-le-Roi||48844|2063|148|8
+Nandy||48583|2563|82|7
+Nanteuil-lès-Meaux|Nanteuil-les-Meaux|48929|2896|93|5
+#GA|Moyen-Ogooué
+Ndjolé|Ndjole|-178|10765|53|8
+#GA|Ngouni
+Ndendé|Ndende|-2401|11358|130|7
+#GB|England
+Northumberland Park||51604|-60|12|14
+New Barnet||51650|-175|74|14
+North Walsham||52821|1387|39|13
+Newhaven||50797|55|2|13
+Newport||52767|-2377|75|13
+Northwood Hills||51599|-410|73|12
+Northwood||51612|-425|79|11
+Norbiton||51412|-284|18|10
+New Romney||50986|941|6|10
+New Mill||53575|-1750|179|9
+Newbury Park||51578|93|40|9
+New Basford||52973|-1166|76|8
+Netherley||53391|-2839|16|8
+Northam||51033|-4217|62|8
+Norton Canes||52671|-1963|151|7
+North Ferriby||53721|-505|20|7
+Norton||54133|-785|20|7
+North Baddesley||50977|-1445|43|7
+North Anston||53355|-1223|106|7
+Netley||50875|-1355||6
+Narborough||52578|-1210|76|6
+Newbiggin-by-the-Sea||55185|-1515|11|6
+New Alresford||51086|-1170|85|5
+Nailsworth||51694|-2220|67|5
+New Ferry||53360|-2994|24|5
+#GB|Northern Ireland
+Newcastle||54218|-5890|5|7
+#GB|Scotland
+Nairn||57581|-3880|20|10
+North Berwick||56058|-2723|8|8
+Newarthill||55815|-3937|155|6
+Newmains||55785|-3875|156|6
+New Stevenston||55817|-3974|93|5
+Neilston||55786|-4426|136|5
+#GB|Wales
+Nelson||51653|-3284|149|13
+Newtown||52517|-3300|111|11
+Newbridge||51667|-3133|164|7
+#GN|Kankan Region
+Nongoa||9983|-10150|496|15
+#GR|Attica
+Néo Psychikó|Neo Psychiko|38006|23784|195|11
+Néa Chalkidóna|Nea Chalkidona|38027|23731|82|10
+Néa Péramos|Nea Peramos|38006|23423|14|7
+Néa Pentéli|Nea Penteli|38061|23859|432|7
+#GR|Central Greece
+Néa Artáki|Nea Artaki|38520|23633|19|10
+#GR|Central Macedonia
+Néa Michanióna|Nea Michaniona|40464|22862|26|11
+Néa Kallikráteia|Nea Kallikrateia|40313|23063|9|10
+Néa Moudhaniá|Nea Moudhania|40244|23285|3|10
+Néoi Epivátes|Neoi Epivates|40499|22912|45|6
+#GR|Crete
+Néa Alikarnassós|Nea Alikarnassos|35339|25160|25|15
+Nerokoúros|Nerokouros|35476|24040|66|6
+#GR|North Aegean
+Néon Karlovásion|Neon Karlovasion|37792|26705|24|10
+#GR|Peloponnese
+Náfplio|Nafplio|37569|22807|5|15
+Neápoli|Neapoli|36511|23060|10|7
+#GR|South Aegean
+Náxos|Naxos|37106|25376|32|7
+#GR|Thessaly
+Néa Anchiálos|Nea Anchialos|39280|22818|25|6
+#GR|West Greece
+Náfpaktos|Nafpaktos|38392|21828|3|13
+#GT|Escuintla
+Nueva Concepción|Nueva Concepcion|14200|-91300|58|11
+#GT|Huehuetenango
+Nuevo León|Nuevo Leon|15794|-91092|200|10
+#GT|San Marcos
+Nuevo Progreso||14792|-91919|667|8
+#GT|Santa Rosa Department
+Nueva Santa Rosa||14381|-90276|1001|10
+#HK|Eastern District
+Nam Fung Sun Chuen||22282|114215|118|7
+#HK|Islands
+Ngong Ping||22256|113904|435|5
+#HK|Sha Tin
+Nai Chung||22431|114258|9|5
+#HK|Sham Shui Po District
+Nam Shan Estate||22335|114172|27|6
+#HN|Ocotepeque Department
+Nueva Ocotepeque||14434|-89183|808|9
+#HN|Santa Bárbara Department
+Nuevo Celilac||14983|-88333|506|8
+#HN|Valle Department
+Nacaome||13539|-87489|37|14
+#HR|Brod-Posavina
+Nova Gradiška|Nova Gradiska|45255|17383|123|10
+#HR|County of Osijek-Baranja
+Našice|Nasice|45489|18088|153|7
+#HR|Dubrovnik-Neretva
+Nova Mokošica|Nova Mokosica|42674|18116|12|6
+#HR|Sisak-Moslavina
+Novska||45341|16977|123|6
+#HU|Bekes County
+Nagyszénás|Nagyszenas|46683|20667|83|6
+#HU|Budapest
+Népszínháznegyed|Nepszinhaznegyed|47496|19079|100|6
+#HU|Hajdú-Bihar
+Nádudvar|Nadudvar|47417|21167|85|9
+Nyíradony|Nyiradony|47697|21919|152|8
+#HU|Komárom-Esztergom
+Nyergesújfalu|Nyergesujfalu|47760|18557|108|8
+#HU|Pest County
+Nagykáta|Nagykata|47415|19744|112|13
+Nagytétény|Nagyteteny|47395|18986|96|12
+Nagykovácsi|Nagykovacsi|47581|18885|352|9
+#HU|Somogy County
+Nagyatád|Nagyatad|46230|17358|133|10
+#HU|Szabolcs-Szatmár-Bereg
+Nyírbátor|Nyirbator|47833|22133|152|13
+Nagykálló|Nagykallo|47875|21841|123|11
+Nyírtelek|Nyirtelek|48017|21633|101|7
+Nagyecsed||47865|22392|115|7
+Nagyhalász|Nagyhalasz|48133|21761|97|6
+#ID|North Sumatra
+Nainggolan||2436|98885|916|12
+#IE|Leinster
+New Ross||52397|-6937|53|8
+Newtown Trim||53556|-6770|53|7
+#IE|Munster
+Nenagh||52863|-8200|71|10
+Nenagh Bridge||52882|-8196|52|7
+Newcastle West||52449|-9061|59|7
+#IL|Northern District
+Naḥf|Nahf|32933|35318|278|13
+#IN|Andhra Pradesh
+Nārāyanapuram|Narayanapuram|14704|77578|345|14
+Nāgireddipalli|Nagireddipalli|14270|79101|150|12
+Nārāyanavanam|Narayanavanam|13426|79589|128|11
+Narasingāpuram|Narasingapuram|13608|79317|206|11
+Nakkāpalle|Nakkapalle|17408|82717|22|8
+#IN|Arunachal Pradesh
+Namsai||27669|95864|149|14
+#IN|Assam
+New Bongaigaon Railway Colony||26477|90536|57|15
+Nāzirā|Nazira|26916|94736|101|14
+Nahira||26109|91470|55|12
+Nidanpur Pt-II||26023|90304|46|8
+Numāligarh|Numaligarh|26622|93722|99|7
+Naryanpur||26950|93858|87|6
+Niz - Mankata||27464|94921|92|6
+Niz Katigorah Pt III||24877|92570|17|6
+No.2 Goreswar||26531|91725|49|6
+Niz-Bahjani||26381|91416|41|5
+Naubaisa Goan||26796|94216|98|5
+#IN|Bihar
+Nurpur||25424|86044|49|7
+#IN|Chhattisgarh
+Nagri||20346|81960|454|13
+Nawagarh||21901|81613|277|11
+Naya Baradwar||22010|82818|253|9
+Narharpur||20449|81620|402|7
+Nai-Ledri||23177|82199|456|5
+#IN|Goa
+Navelim||15533|73983|18|12
+Navelim||15259|73966|16|12
+Nuvem||15317|73939|15|9
+Nerul||15510|73781|9|5
+#IN|Gujarat
+Nandelav||21720|72996|10|14
+Naliya||23261|68827|26|11
+Nanakwada||20603|72922|23|10
+Nari||21773|72073|16|9
+Nandej||22896|72679|32|9
+Nandesari INA||22406|73095|26|8
+Nasvadi||22045|73732|76|8
+Naroda||23070|72657|57|5
+#IN|Haryana
+Nagīna|Nagina|27917|76982|200|11
+Nāngal Chaudhri|Nangal Chaudhri|27893|76112|334|9
+Nanhera||30319|76848|273|6
+#IN|Himachal Pradesh
+Nālāgarh|Nalagarh|31042|76723|400|11
+Nūrpur|Nurpur|32301|75885|583|10
+Nagrota||32057|76091|457|6
+Nagrota Bagwān|Nagrota Bagwan|32107|76377|861|6
+#IN|Jammu and Kashmir
+Nawānshahr|Nawanshahr|32765|74528|247|15
+Nagrota||32801|74913|363|14
+Nāushahra|Naushahra|33157|74240|589|10
+Norīa|Noria|32521|74798|275|10
+Nagam||33926|74792|1664|7
+Nowangabra||34362|73845|1797|6
+#IN|Jharkhand
+Nirsā|Nirsa|23784|86707|142|15
+Nagri Kalan||23816|86344|211|9
+Narra||23782|86101|286|5
+#IN|Karnataka
+Nadisāl|Nadisal|13133|74778|23|12
+Nyāmti|Nyamti|14149|75576|605|10
+Nandgad||15577|74569|702|9
+Narikombu||12885|75054|26|8
+Narasimharājapura|Narasimharajapura|13611|75512|698|8
+Nīramārgar|Niramargar|12886|74915|49|6
+Navoor||12891|75085|34|5
+#IN|Kerala
+Narath||11960|75389|4|13
+Nedumpura||10733|76264|36|12
+Natathara||10509|76259|26|12
+Nelluvāyi|Nelluvayi|10681|76182|28|6
+#IN|Madhya Pradesh
+Naīgarhi|Naigarhi|24787|81779|325|10
+Nārāyangarh|Narayangarh|24271|75050|445|10
+Namli||23461|75060|494|10
+Niwas||23046|80445|666|8
+Nagri||23848|75144|465|7
+Naurhiya||24207|82565|388|7
+Nānpur|Nanpur|22270|74527|231|6
+#IN|Maharashtra
+Nāgothana|Nagothana|18542|73135|15|13
+Nālvādi|Nalvadi|20757|78622|273|12
+Nagapur||19159|74701|671|12
+Nachane||16984|73339|99|12
+Nānda|Nanda|19772|79131|217|9
+Nizāmpur|Nizampur|21113|74331|455|8
+Nimbhora Budrukh||21049|75842|220|8
+Naoghar||18892|72986|3|7
+Navkawada||19920|79108|197|6
+#IN|Manipur
+Ningthoukhong||24572|93764|778|13
+#IN|Meghalaya
+Nongumlong||25564|91831|1569|7
+#IN|Nagaland
+Naginimora||26815|94811|118|8
+#IN|Odisha
+Nuapatna||20446|85469|119|8
+Nūāhatā|Nuahata|20836|85234|97|6
+#IN|Punjab
+Nūrmahal|Nurmahal|31097|75594|245|15
+Nohan||31034|76571|276|9
+Nūrpur Kalān|Nurpur Kalan|31167|76483|299|9
+Nāg|Nag|31730|74942|236|9
+Narot Mehra||32267|75565|298|9
+Nīlpur|Nilpur|30469|76580|270|8
+#IN|Rajasthan
+Neemrana||27992|76385|323|7
+Nūa|Nua|28044|75272|341|6
+#IN|Sikkim
+Namchi||27165|88364|1427|12
+#IN|Tamil Nadu
+Nilaiyūr|Nilaiyur|9857|78060|140|15
+Neyyūr|Neyyur|8198|77304|72|13
+Nannilam||10879|79611|16|13
+Neykkārappatti|Neykkarappatti|11623|78106|260|12
+Neykkārappatti|Neykkarappatti|10449|77463|328|12
+Naduvattam||11481|76544|1855|12
+Naranapuram||9451|77835|100|12
+Nasiyanūr|Nasiyanur|11338|77641|225|11
+Nangavalli||11762|77891|352|11
+Nemili||12978|79617|100|11
+Nāttarampalli|Nattarampalli|12592|78512|438|10
+Nāgojanahalli|Nagojanahalli|12357|78289|444|10
+Needamangalam||10774|79419|21|9
+Nathampannai||10409|78792|122|9
+Nadaikavu||8292|77148|22|9
+Nazarathpettai||13047|80080|28|9
+Nandambakkam||12978|80068|24|9
+Nīlambūr|Nilambur|11059|77084|380|8
+Nambutalai||9728|79007|6|8
+Nallūr|Nallur|8871|77517|119|8
+Nallakavundanpālaiyam|Nallakavundanpalaiyam|11592|78014|271|8
+Nattalam||8280|77235|77|8
+Nāvalūr|Navalur|12845|80226|9|8
+Nachiyar Koil||10920|79446|27|8
+Neykuppai||10221|78536|133|7
+Nanguneri||8493|77658|97|7
+Nerinjippettai||11654|77759|192|7
+Narasingam||9966|78183|151|6
+Nāttarasankottai|Nattarasankottai|9869|78553|88|6
+Nāgamangalam|Nagamangalam|10706|78619|96|6
+Nallippālaiyam|Nallippalaiyam|11239|78149|206|5
+#IN|Telangana
+Nārsingi|Narsingi|17390|78357|538|9
+Narsāpuram|Narsapuram|18100|78880|472|7
+Nārsingi|Narsingi|18045|78425|551|6
+#IN|Tripura
+Narsingarh||23910|91251|25|7
+#IN|Uttar Pradesh
+Nizāmābād|Nizamabad|26053|83058|86|14
+Nawābganj|Nawabganj|26497|80309|132|11
+Nandgaon||27711|77387|198|10
+Niwāri|Niwari|28876|77538|225|10
+Nagrām|Nagram|26619|81140|127|10
+Nadīgaon|Nadigaon|26108|79023|147|8
+#IR|Ardabil Province
+Namīn|Namin|38427|48484|1429|14
+Nīr|Nir|38035|47999|1623|6
+#IR|Chaharmahal and Bakhtiari
+Naqneh||31932|51329|2292|10
+#IR|Golestan
+Now Kandeh||36737|53909|5|7
+#IR|Isfahan
+Nūshābād|Nushabad|34080|51437|898|12
+Naşrābād|Nasrabad|32280|52063|1611|6
+#IR|Kerman
+Nowdezh||27527|57457|468|6
+#IR|Kermanshah Province
+Nūkān|Nukan|34361|47171|1324|10
+#IR|Lorestan Province
+Nāşer od Dīn|Naser od Din|33502|49084|1462|9
+#IR|Markazi
+Nīmvar|Nimvar|33887|50573|1529|8
+#IR|Māzandarān
+Nashtārūd|Nashtarud|36751|51024|-24|6
+#IR|Qazvin Province
+Noşratābād|Nosratabad|36163|50101|0|13
+Narjeh||35991|49625|1299|6
+#IR|Razavi Khorasan
+Neqāb|Neqab|36708|57421|1073|15
+Naşrābād|Nasrabad|35418|60316|1088|7
+#IR|Sistan and Baluchestan
+Negūr|Negur|25389|61138|29|6
+Nūkābād|Nukabad|28540|60760|1647|5
+#IR|West Azerbaijan
+Nūshīn|Nushin|37735|45051|1313|8
+#IT|Apulia
+Novoli||40377|18048|37|8
+Neviano||40107|18115|108|5
+#IT|Emilia-Romagna
+Nonantola||44678|11038|24|11
+Novellara||44845|10727|24|10
+Noceto||44810|10177|76|8
+Novi di Modena||44890|10900|21|6
+#IT|Lazio
+Nepi||42242|12344|227|6
+#IT|Liguria
+Nervi||44383|9033|14|10
+#IT|Lombardy
+Nave||45585|10279|236|11
+Nembro||45744|9761|309|10
+#IT|Piedmont
+Nizza Monferrato||44774|8358|181|9
+None||44936|7540|246|8
+Nole||45242|7570|372|5
+#IT|Sicily
+Nicosia||37747|14392|724|10
+Naro||37292|13793|500|8
+Nicolosi||37621|15028|700|7
+#IT|Umbria
+Narni||42520|12528|240|5
+Narni Scalo||42536|12517|93|5
+#IT|Veneto
+Noale||45546|12064|18|11
+Noventa||45414|11951|13|9
+Noventa Vicentina||45294|11548|16|8
+Nogara||45181|11060|18|7
+Negrar||45529|10939|190|6
+Noventa di Piave||45660|12533|3|5
+#JM|Westmoreland
+Negril||18268|-78348|73|14
+#JP|Akita
+Nishimonai||39195|140405|78|14
+#JP|Aomori
+Nobeji||40867|141126|19|12
+Nakasato||40969|140439|19|10
+#JP|Chiba
+Nagadomi||35429|140231|19|7
+#JP|Fukushima
+Nozawa||37587|139647|161|6
+#JP|Gifu
+Naka-kawabe||35483|137067|100|10
+#JP|Gunma
+Naganohara||36550|138633|631|5
+#JP|Hokkaido
+Naganuma||43006|141690|10|10
+Niikappu||42350|142317||6
+Naie||43418|141888|33|6
+Niseko||42809|140686|103|5
+#JP|Ibaraki
+Nagasao||35883|140283|6|8
+#JP|Ishikawa
+Nakajima||36464|136587|63|6
+#JP|Iwate
+Numakunai||39967|141217|257|12
+#JP|Kagoshima
+Nōkan|Nokan|30573|130956|40|8
+Nejime-kawaminan||31211|130778|6|6
+Nakanokami||30415|130906|153|5
+#JP|Kumamoto
+Nakamatsu||32835|131045|420|10
+Nagaoda||33000|130603|18|9
+#JP|Miyagi
+Nagano||38091|140655|103|11
+#JP|Nagano
+Nakazawa||35983|138217|1008|8
+Nakayama||36687|138368|566|7
+Nagawa||36284|138248|682|6
+#JP|Okayama
+Nishiya||35167|133883|322|12
+Nagi||35123|134177|239|6
+#JP|Okinawa
+Nakijin||26676|127972|40|9
+#JP|Osaka
+Nagata||34682|135557|3|7
+#JP|Saitama
+Nagatoro||36103|139110|145|7
+Nishitokorozawa||35789|139459|82|6
+#JP|Shimane
+Nishida||36200|133305|6|13
+#JP|Shizuoka
+Nishina||34775|138775|38|7
+#JP|Tokyo
+Nakameguro||35639|139701|17|15
+Numabukuro||35722|139666|42|14
+Noshio||35777|139503|52|8
+Nakazato||35742|139752|26|7
+Nezu||35719|139765|10|7
+Nishimagome||35589|139704|20|6
+#JP|Wakayama
+Nishino||34169|135353|94|8
+#JP|Yamagata
+Nagasaki||38326|140276|87|11
+Nakami||38797|140510|259|8
+#JP|Yamanashi
+Nambu||35283|138450|145|7
+#KE|Kisii County
+Nyambunwa||-678|34707|1616|13
+#KE|Marsabit County
+North Horr||3322|37070|382|5
+#KE|Meru County
+Nkubu||-69|37666|1491|8
+#KE|Nandi
+Nandi Hills||104|35184|2028|8
+#KE|Nyamira county
+Nyansiongo||-760|35015|2098|6
+#KE|Nyeri County
+Naro Moru||-164|37018|1974|9
+#KG|Chuy Region
+Nizhnyaya Ala-Archa||42922|74567|697|11
+#KM|Grande Comore
+Nkourani||-11390|43288|48|10
+#KN|Christ Church Nichola Town
+Nicola Town||17380|-62753|47|2
+#KN|Saint James Windwa
+Newcastle||17200|-62583|27|0
+#KY|
+North Sound Estates||19293|-81302|1|11
+North Ward||19284|-81271|5|10
+Newlands||19285|-81302|2|9
+#KY|North Side
+North Side||19351|-81209|1|2
+#KZ|Almaty Region
+Narynkol||42726|80175|1817|8
+#KZ|East Kazakhstan
+Novaya Bukhtarma||49629|83521|406|6
+#KZ|Karaganda
+Nura||50262|71548|397|7
+Novodolinskiy||49707|72708|484|5
+#KZ|North Kazakhstan
+Novoishimskiy||53198|66769|184|6
+#LS|Maseru District
+Nako||-29617|27767|1818|13
+#LT|Siauliai
+Naujoji Akmene||56317|22900|79|12
+#LT|Vilnius
+Nemenčinė|Nemencine|54848|25470|116|5
+#LU|Luxembourg
+Neudorf-Weimershof||49626|6169|322|7
+#MD|Nisporeni
+Nisporeni||47080|28171|83|12
+#MH|Namdrik Atoll
+Namdrik||5599|168103|9|1
+#MK|Novaci
+Novaci||41042|21459|581|2
+#MK|Novo Selo
+Novo Selo||41415|22883|239|12
+#ML|Sikasso
+Ntossoni||12530|-5770|325|9
+#ML|Tombouctou
+Niafunké|Niafunke|15932|-3991|269|7
+#MM|Rakhine
+Ngapali||18437|94322|2|11
+#MM|Shan State
+Namtu||23077|97403|642|13
+#MM|Yangon
+Nwe Khway||17023|96146|15|14
+Nant Thar Kone||16893|96111|7|12
+Nyaung Waing||16667|96323|8|8
+Nat Sin Kone||16597|96051|11|6
+#MR|Trarza
+Ndiago||16168|-16510|5|8
+#MT|In-Nadur
+Nadur||36038|14294|161|4
+#MT|In-Naxxar
+Naxxar||35914|14444|121|15
+#MU|Grand Port
+New Grove||-20409|57614|241|11
+Nouvelle France||-20371|57561|461|7
+#MV|Faadhippolhu Atoll
+Naifaru||5444|73366|6|5
+#MV|Faafu Atholhu
+Nilandhoo||3057|72890||0
+#MW|Central Region
+Ntchisi||-13528|33915|1545|8
+#MW|Southern Region
+Ngabu||-16494|34911|110|8
+#MX|Campeche
+Nunkiní|Nunkini|20401|-90149|8|6
+#MX|Chiapas
+Nueva Palestina||16817|-91260|537|11
+#MX|Durango
+Nuevo Ideal||24888|-105075|1992|11
+Nazareno||25399|-103420|1166|8
+Nombre de Dios||23849|-104247|1731|5
+#MX|Michoacán
+Nuevo San Juan Parangaricutiro||19418|-102131|1892|15
+Nahuatzen||19654|-101917|2415|10
+#MX|Puebla
+Nealtican||19050|-98427|2236|12
+Necaxa||20213|-98012|1353|8
+Nuevo Necaxa||20210|-98007|1354|8
+Nopalucán|Nopalucan|19218|-97823|2460|7
+#MX|Sonora
+Nacozari Viejo||30400|-109650|1352|12
+Nacozari de García|Nacozari de Garcia|30375|-109688|1106|11
+Naco||31326|-109946|1423|6
+#MX|Tabasco
+Nacajuca||18170|-93018|7|11
+#MX|Tamaulipas
+Nuevo Progreso||26054|-97951|22|10
+Nueva Villa de Padilla||24048|-98901|156|6
+#MX|Veracruz
+Naolinco de Victoria||19655|-96873|1555|9
+#MX|Zacatecas
+Nieves||23995|-103020|1940|6
+#MY|Johor
+Niyor||2095|103281|43|6
+#MY|Sarawak
+Nanga Medamit||4467|114917|17|7
+#MZ|Maputo Province
+Namaacha||-25975|32019|505|15
+#MZ|Tete
+Nhamayabué|Nhamayabue|-17421|35066|62|10
+#NA|Kavango West
+Nkurenkuru||-17642|18620|1094|1
+#NG|Adamawa
+Ngurore||9289|12240|179|8
+#NG|Borno State
+Ngala||12341|14187|294|14
+#NG|Niger State
+New Shagunnu||10340|4469|153|7
+#NI|Masaya Department
+Niquinohomo||11905|-86094|468|8
+Nindirí|Nindiri|12003|-86121|222|7
+Nandasmo||11924|-86121|425|7
+#NL|Gelderland
+Neede||52134|6614|20|8
+#NL|Limburg
+Nederweert||51286|5749|36|7
+Nieuw-Bergen||51603|6054|17|5
+#NL|North Brabant
+Nistelrode||51704|5563|13|6
+#NL|North Holland
+Nieuwmarkt/Lastage||52371|4904|-1|10
+Nieuw-Loosdrecht||52199|5139|3|6
+Noord-Scharwoude||52698|4811|3|6
+#NL|South Holland
+Noordwijkerhout||52262|4493|4|12
+Nieuwerkerk aan den IJssel||51968|4610|-3|10
+Nieuw-Lekkerland||51889|4687|0|10
+Noord-Hofland||52141|4459|2|5
+Neder-Hardinxveld||51829|4855|0|5
+#NO|Akershus
+Nesoddtangen||59862|10663|60|11
+#NO|Nordland
+Narvik||68438|17427|100|14
+#NO|Rogaland
+Nærbø|Naerbo|58665|5638|35|7
+#NO|Telemark
+Notodden||59559|9259|38|12
+#NO|Trøndelag
+Namsos||64466|11496||8
+#NZ|Auckland
+New Windsor||-36898|174700|47|9
+#NZ|Bay of Plenty
+Ngongotaha||-38083|176200|292|5
+#NZ|Canterbury
+New Brighton||-43517|172733|6|6
+#NZ|Otago
+North East Valley||-45850|170533|61|10
+#NZ|Waikato Region
+Ngaruawahia||-37667|175156|18|9
+#NZ|Wellington Region
+Newtown||-41311|174779|25|10
+Naenae||-41198|174940|14|10
+Newlands||-41224|174822|191|9
+Ngaio||-41250|174774|101|6
+#PA|Coclé
+Natá|Nata|8336|-80521|18|5
+#PA|Panamá
+Nueva Esperanza||9105|-79333|39|9
+#PA|Panamá Oeste Province
+Nuevo Arraiján|Nuevo Arraijan|8926|-79720|14|15
+#PE|Loreto
+Nauta||-4506|-73580|117|15
+#PE|Piura
+Nuevo Sullana||-4921|-80727|69|5
+#PH|Autonomous Region in Muslim Mindanao
+New Batu Batu||5067|119883|5|9
+#PH|Bicol Region
+Nato||13611|123536|7|6
+#PH|Cagayan Valley
+Nattapian||17675|121703|25|12
+Naguilian||17023|121837|50|9
+Nagtipunan||16217|121600|204|6
+#PH|Caraga
+Nasipit||8969|125295|146|9
+#PH|Central Luzon
+Nieves||15328|120949|27|9
+Nampicuan||15731|120625|22|6
+#PH|Central Visayas
+Nangka||9402|122824|13|10
+Nalundan||9750|123067|166|10
+Nangka||10550|123967|404|7
+Novallas||9512|123123|15|6
+Nailong||11054|124039|15|5
+Nagbalaye||9249|122876|24|5
+#PH|Davao Region
+New Visayas||7523|125623|43|15
+#PH|Eastern Visayas
+Naval||11561|124398|9|12
+#PH|Ilocos
+Nibaliw Central||16128|120403|5|14
+Nilombot||16031|120437|11|8
+Nagsaing||15981|120338|10|7
+Natividad||16044|120799|94|6
+Nagbukel||17447|120525|22|5
+#PH|National Capital Region
+Namayan||14578|121023|9|8
+#PH|Western Visayas
+Nabulao||9662|122458|12|7
+New Washington||11651|122432|9|6
+Napoles||10504|122898|23|5
+#PH|Zamboanga Peninsula
+Naga||7770|122751|22|8
+#PK|Punjab
+Nazir Town||33306|73483|495|7
+Narwanwala||31392|73579|191|6
+#PK|Sindh
+Nabisar||25067|69643|16|6
+#PL|Kujawsko-Pomorskie
+Nowe||53649|18727|74|6
+#PL|Lesser Poland
+Niepołomice|Niepolomice|50041|20223|190|9
+#PL|Lower Silesia
+Nowy Dwór|Nowy Dwor|51115|16956|118|15
+#PL|Lubusz
+Nowogród Bobrzański|Nowogrod Bobrzanski|51799|15235|81|5
+#PL|Mazovia
+Nadarzyn||52094|20808|111|10
+Nasielsk||52589|20806|108|7
+#PL|Opole Voivodeship
+Niemodlin||50642|17619|161|6
+#PL|Pomerania
+Nowy Dwór Gdański|Nowy Dwor Gdanski|54213|19118|2|10
+Nowy Port||54402|18668|2|8
+#PL|Silesia
+Niedobczyce||50065|18495|239|11
+#PL|Subcarpathia
+Nowa Dęba|Nowa Deba|50430|21751|162|11
+Nowa Sarzyna||50321|22345|174|6
+#PL|Warmia-Masuria
+Nidzica||53361|20427|175|15
+Nowe Miasto Lubawskie||53421|19595|84|11
+#PR|Naguabo
+Naguabo||18212|-65735|17|5
+#PR|Naranjito
+Naranjito||18301|-66245|108|2
+#PS|West Bank
+Naḩḩālīn|Nahhalin|31686|35121|683|6
+#PT|Aveiro
+Nogueira da Regedoura||41005|-8592|109|5
+#PT|Braga
+Nine||41459|-8546|86|5
+#PT|Leiria
+Nazaré|Nazare|39603|-9068|46|9
+#PT|Madeira
+Nossa Senhora do Monte||32667|-16900|350|7
+#PT|Portalegre
+Nisa||39515|-7649|307|7
+#PT|Porto
+Negrelos||41349|-8401|164|7
+Noeda||41150|-8583|63|6
+Nogueira||41242|-8587|77|5
+Nevogilde||41165|-8679|29|5
+#PW|Aimeliik
+Ngchemiangel||7446|134477|10|0
+#PW|Airai
+Ngetkib||7365|134515|23|0
+#PW|Ngardmau
+Ngardmau||7610|134574|6|0
+#PW|Ngatpang
+Ngereklmadel||7488|134486|15|0
+#PW|Ngchesar
+Ngchesar Hamlet||7469|134610|7|0
+#PW|Ngiwal
+Ngerkeai||7555|134636|3|0
+#PY|Canindeyú
+Nueva Esperanza||-24508|-54855|368|13
+#PY|Presidente Hayes
+Nanawa||-25279|-57703|64|6
+#RO|Arad County
+Nădlac|Nadlac|46167|20750|89|8
+#RO|Bacău County
+Nicolae Bălcescu|Nicolae Balcescu|46467|26917|162|10
+#RO|Bistrița-Năsăud County
+Năsăud|Nasaud|47283|24400|317|10
+Nimigea de Sus||47283|24317|332|5
+#RO|Buzău County
+Nehoiu||45417|26300|392|11
+#RO|Constanța County
+Negru Vodă|Negru Voda|43817|28200|151|6
+#RO|Galați County
+Nicoreşti|Nicoresti|45932|27309|131|6
+#RO|Giurgiu County
+Novaci||44301|25986|79|5
+#RO|Satu Mare County
+Negreşti-Oaş|Negresti-Oas|47867|23433|253|13
+#RO|Sălaj County
+Nuşfalău|Nusfalau|47200|22733|291|5
+#RO|Vaslui County
+Negreşti|Negresti|46833|27433|119|10
+#RS|Vojvodina
+Novi Kneževac|Novi Knezevac|46050|20100|76|8
+Novo Miloševo|Novo Milosevo|45719|20304|78|8
+#RU|Altai Krai
+Nagornyy||52796|83550|151|6
+#RU|Amur Oblast
+Novobureyskiy||49800|129878|108|9
+#RU|Astrakhan Oblast
+Narimanov||46693|47851|-22|12
+#RU|Bashkortostan Republic
+Nikolo-Berëzovka|Nikolo-Berezovka|56124|54156|70|6
+Novobelokatay||55707|58957|262|6
+#RU|Belgorod Oblast
+Novaya Tavolzhanka||50351|36830|111|5
+#RU|Bryansk Oblast
+Navlya||52825|34500|174|14
+#RU|Buryatiya Republic
+Nizhneangarsk||55793|109580|477|5
+#RU|Chechnya
+Novyye Atagi||43135|45773|249|9
+Naurskaya||43650|45311|81|9
+Nadterechnoje||43623|45340|86|8
+Nozhay-Yurt||43094|46376|482|5
+Nogamerzin-Yurt||43654|44889|151|5
+#RU|Chelyabinsk
+Novosineglazovskiy||55039|61377|252|15
+Nyazepetrovsk||56037|59599|312|13
+Novogornyy||55630|60792|265|8
+#RU|Chuvash Republic
+Novyye Lapsary||56069|47214|193|8
+#RU|Dagestan
+Nizhneye Kazanishche||42764|47160|575|12
+Novyy Khushet||42899|47560|4|8
+Novyy Chirkey||43162|47056|20|8
+Nizhniy Dzhengutay||42700|47245|626|7
+Novokayakent||42387|47988|-6|6
+Novyy Sulak||43210|46823|44|5
+#RU|Ingushetiya Republic
+Nizhniye Achaluki||43403|44759|381|5
+#RU|Irkutsk Oblast
+Novaya Igirma||57133|103911|312|11
+#RU|Ivanovo Oblast
+Navoloki||57466|41963|122|11
+Novo-Talitsy||57004|40859|124|9
+#RU|Jewish Autonomous Oblast
+Nikolayevka||48557|134784|36|6
+#RU|Kabardino-Balkariya Republic
+Nartan||43511|43699|386|13
+#RU|Kaliningrad Oblast
+Neman||55031|22026|33|13
+Nesterov||54631|22571|68|5
+#RU|Karelia
+Nadvoitsy||63889|34258|96|11
+#RU|Khabarovsk
+Nekrasovka||48351|135239|65|9
+Novyy Urgal||51071|132602|317|7
+#RU|Khanty-Mansia
+Novoagansk||61945|76663|74|10
+#RU|Kirov Oblast
+Nolinsk||57559|49933|92|10
+#RU|Komi
+Nizhniy Odes||63645|54856|170|11
+#RU|Kostroma Oblast
+Neya||58297|43868|116|11
+#RU|Krasnodar Krai
+Novominskaya||46316|38959|22|12
+Novomikhaylovskiy||44263|38859|10|10
+Novomyshastovskaya||45199|38583|11|10
+Novovelichkovskaya||45276|38842|17|9
+Natukhayevskaya||44911|37571|63|7
+Novoleushkovskaya||45996|39992|42|7
+Novorozhdestvenskaya||45861|39950|43|7
+Novoderevyankovskaya||46324|38747|12|7
+Novoshcherbinovskaya||46477|38648|25|6
+Novoukrainskoye||45378|40530|72|6
+Novomalorossiyskaya||45635|39895|41|6
+Novodzhereliyevskaya||45774|38672|11|5
+Novodmitriyevskaya||44833|38878|37|5
+Novokorsunskaya||45641|39146|15|5
+#RU|Krasnoyarsk Krai
+Nizhnyaya Poyma||56164|97207|264|10
+Nizhniy Ingash||56200|96537|258|8
+#RU|Kuzbass
+Novyy Gorodok||54307|86293|229|15
+#RU|Leningradskaya Oblast'
+Novoye Devyatkino||60064|30483|21|11
+Novaya Ladoga||60102|32302|13|10
+Novosel’ye|Novosel'ye|59808|30073|23|9
+#RU|Mariy-El Republic
+Novyy Toryal||57004|48734|132|6
+#RU|Mordoviya Republic
+Nikolayevka||54145|45144|147|5
+#RU|Moscow
+Nekrasovka||55697|37943|120|8
+#RU|Moscow Oblast
+Nekrasovskiy||56087|37498|191|12
+Novopodrezkovo||55940|37344|190|10
+Noginsk-9||56067|38500|164|10
+Novosin’kovo|Novosin'kovo|56377|37329|163|8
+Nikolina Gora||55734|37044|175|7
+Novoivanovskoye||55704|37365|182|6
+Novopetrovskoye||55993|36472|262|5
+#RU|Nizhny Novgorod Oblast
+Navashino||55543|42193|85|15
+Neklyudovo||56414|43977|76|9
+Novosmolinskiy||56284|43051|119|5
+#RU|North Ossetia–Alania
+Nogir||43082|44637|623|11
+#RU|Omsk Oblast
+Nazyvayevsk||55569|71357|128|12
+Novovarshavka||54169|74698|86|6
+Nizhnyaya Omka||55434|74940|111|5
+#RU|Orenburg Oblast
+Novosergiyevka||52087|53646|139|13
+Novoorsk||51381|58985|216|11
+Nezhinka||51768|55369|100|5
+#RU|Oryol oblast
+Naryshkino||52968|35727|209|10
+#RU|Penza Oblast
+Neverkino||52785|46742|228|5
+#RU|Perm Krai
+Novyye Lyady||58055|56610|175|9
+Nyrob||60733|56720|147|7
+#RU|Primorye
+Novoshakhtinskiy||44027|132166|87|8
+Novyy||43365|132024|8|6
+#RU|Pskov Oblast
+Novosokol’niki|Novosokol'niki|56348|30157|128|9
+#RU|Rostov
+Novobataysk||46898|39782|13|5
+#RU|Sakha
+Nyurba||63284|118350|122|10
+Namtsy||62724|129666|78|8
+Nizhniy Kuranakh||58824|125523|370|7
+#RU|Sakhalin Oblast
+Nogliki||51797|143136|9|10
+#RU|Samara Oblast
+Novosemeykino||53371|50354|166|10
+#RU|Saratov Oblast
+Novyye Burasy||52130|46076|245|6
+#RU|Stavropol Kray
+Novoselitskoye||44751|43437|176|9
+Nadezhda||44100|44600|158|8
+Novotroitskaya||45327|41525|142|8
+Novozavedennoye||44263|43638|222|5
+#RU|Sverdlovsk Oblast
+Novaya Lyalya||59052|60593|93|14
+Nizhniye Sergi||56661|59300|308|12
+Novoutkinsk||56993|59557|276|6
+#RU|Tatarstan Republic
+Nizhnyaya Maktama||54864|52428|110|11
+Nizhniye Vyazovyye||55799|48525|61|8
+#RU|Tver Oblast
+Novozavidovskiy||56550|36433|145|8
+#RU|Tyumen Oblast
+Nizhnyaya Tavda||57669|66178|62|7
+#RU|Ulyanovsk
+Novospasskoye||53151|47748|96|11
+Novaya Mayna||54150|49750|61|6
+Nikolayevka||53131|47212|148|6
+#RU|Vladimir Oblast
+Nikologory||56141|41992|121|6
+Novovyazniki||56198|42171|133|6
+#RU|Volgograd Oblast
+Novonikolayevskiy||50974|42360|153|10
+Novyy Rogachik||48677|44061|59|8
+#RU|Vologda Oblast
+Nikol’sk|Nikol'sk|59535|45457|137|8
+#RU|Voronezh Oblast
+Novokhopërsk|Novokhopersk|51097|41625|138|7
+Nizhnedevitsk||51544|38364|153|6
+#RU|Yaroslavl Oblast
+Nekrasovskoye||57680|40365|114|6
+#RU|Zabaykalskiy (Transbaikal) Kray
+Novokruchininskiy||51771|113800|624|9
+#SB|Western Province
+Noro||-8223|157200|11|7
+#SE|Kalmar
+Nybro||56745|15907|85|13
+#SE|Stockholm
+Nynäshamn|Nynaeshamn|58903|17948|21|15
+Nykvarn||59177|17432|46|7
+Nykvarn||59800|18300|33|6
+#SE|Örebro
+Nora||59519|15040|104|7
+#SG|
+Newton||1309|103838|29|8
+#SI|Municipality of Bloke
+Nova Vas||45773|14507|711|0
+#SI|Municipality of Naklo
+Naklo||46273|14317|408|2
+#SI|Municipality of Nazarje
+Nazarje||46319|14950|462|1
+#SI|Urban Municipality of Nova Gorica
+Nova Gorica||45956|13648|103|13
+#SK|Banská Bystrica Region
+Nová Baňa|Nova Bana|48423|18640|231|7
+#SK|Nitra Region
+Nesvady||47928|18127|111|5
+#SK|Trenčín Region
+Nová Dubnica|Nova Dubnica|48935|18146|239|10
+Nemšová|Nemsova|48967|18119|226|6
+#SK|Žilina Region
+Námestovo|Namestovo|49408|19480|629|8
+#SN|Kaffrine
+Nganda||13833|-15417|41|14
+#SN|Kaolack
+Ndofane||13917|-15933|22|13
+#SN|Louga
+Ndiagne||15409|-16071|54|7
+#SN|Matam
+Nguidjlone||15941|-13351|19|10
+#SN|Sédhiou
+Ndiamakouta||13317|-15633|34|7
+#SN|Thies
+Ngaparou||14464|-17056|12|10
+#SR|Commewijne District
+Nieuw Amsterdam||5886|-55089|3|5
+#SR|Nickerie District
+Nieuw Nickerie||5926|-56973|2|13
+#ST|São Tomé Island
+Neves||357|6549|21|8
+#SV|Chalatenango Department
+Nueva Concepción|Nueva Concepcion|14133|-89300|346|10
+#SV|La Libertad Department
+Nuevo Cuscatlán|Nuevo Cuscatlan|13649|-89265|906|6
+#SV|San Miguel Department
+Nueva Guadalupe||13533|-88350|495|6
+#SV|Sonsonate Department
+Nahuizalco||13778|-89737|544|7
+#SZ|Shiselweni
+Nhlangano||-27112|31198|1051|9
+#TD|Chari-Baguirmi
+Ngama||11783|17167|326|12
+#TD|Hadjer-Lamis
+Ngama||11787|17159|327|13
+#TD|Kanem
+Nokou||14579|14779|360|9
+#TD|Logone Occidental
+Ngouri||8514|16007|404|10
+#TH|Buriram
+Nong Ki||14687|102538|219|14
+#TH|Krabi
+Nuea Khlong||8071|98999|10|12
+#TH|Nakhon Phanom
+Na Wa||17490|104101|160|13
+#TH|Nakhon Ratchasima
+Non Thai||15196|102071|177|12
+#TH|Nakhon Sawan
+Nong Bua||15865|100586|43|14
+#TH|Nong Bua Lamphu
+Non Sang||16869|102566|186|12
+#TH|Pattani
+Nong Chik||6844|101178|6|11
+#TH|Phitsanulok
+Nakhon Thai||17101|100837|211|12
+#TH|Songkhla
+Na Mom||6959|100557|38|8
+#TH|Udon Thani
+Nong Wua So||17163|102573|239|8
+#TJ|Republican Subordination
+Novobod||39011|70151|1276|5
+#TJ|Sughd
+Nov||40152|69371|379|14
+Nijoní|Nijoni|39959|68924|810|10
+#TK|Nukunonu
+Nukunonu||-9200|-171848|10|1
+#TM|
+Nyyazow||41839|60132|89|7
+#TN|Gabès Governorate
+Nouvelle Matmata||33630|10060|139|8
+#TN|Kairouan
+Nasrallah||35356|9831|153|5
+#TO|Vavau
+Neiafu||-18651|-173984|1|4
+#TR|Denizli
+Nikfer||37405|29137|1040|5
+#TR|Erzurum
+Narman||40344|41861|1672|10
+#TR|Gaziantep
+Nurdağı|Nurdagi|37168|36736|486|13
+#TR|Kahramanmaraş
+Nurhak||37964|37440|1384|9
+Narlı|Narli|37391|37136|588|7
+#TW|Fukien
+Nangan||26150|119933|74|8
+#TZ|Arusha
+Namanga||-2551|36784|1311|15
+Nkoaranga||-3334|36849|1275|15
+Ngorongoro||-3240|35487|2377|11
+#TZ|Kagera
+Nyakahanga||-1603|31141|1662|15
+#TZ|Kilimanjaro
+Ndungu||-4367|38050|535|15
+#TZ|Manyara
+Naberera||-4200|36933|1430|13
+#TZ|Mara
+Nakatunguru||-2117|33067|1151|6
+#TZ|Mtwara
+Nanhyanga||-10800|39550|338|14
+Namikupa||-10833|39600|276|12
+Namalenga||-10950|39100|280|11
+#TZ|Mwanza
+Nyanguge||-2550|33200|1177|11
+#TZ|Rukwa
+Nkove||-7950|30850|813|5
+#TZ|Singida
+Ndago||-4600|34350|1443|13
+#UA|Chernihiv Oblast
+Nosivka||50938|31580|119|13
+#UA|Chernivtsi
+Novodnistrovsk||48583|27437|225|11
+Novoselytsya||48218|26268|139|8
+#UA|Crimea
+Nizhnegorskiy||45448|34738|22|9
+Novoozerne||45384|33117|20|7
+Novofedorovka||45095|33572|7|6
+#UA|Dnipropetrovsk
+Novi Kodaky||48487|34956|72|15
+#UA|Donetsk
+Nyzhnya Krynka||48114|38160|173|14
+Novohrodivka||48201|37339|212|14
+Novoazovs'k||47114|38086|24|11
+Nyu-York||48330|37841|106|10
+Novyi Svit||47807|38021|121|9
+Nikol's’ke|Nikol's'ke|47205|37321|131|8
+Novyi Svit||48718|37577|144|8
+Novodonetske||48635|36983|163|6
+#UA|Kharkiv
+Nova Vodolaha||49719|35860|122|10
+Nemyshlya||49966|36339|159|8
+#UA|Kherson
+Novotroyitske||46351|34332|22|11
+Novooleksiyivka||46230|34646|22|10
+Nova Zburivka||46455|32453|12|7
+Nova Mayachka||46599|33224|14|7
+Novovorontsovka||47505|33923|80|6
+Novofedorivka||46175|32318|7|6
+#UA|Kirovohrad
+Novomyrhorod||48793|31649|140|11
+Nove||48527|32122|180|9
+Nova Praha||48569|32904|115|7
+Novoarkhanhelsk||48662|30807|134|6
+#UA|Kyiv Oblast
+Novi Petrivtsi||50627|30443|161|8
+Nemishayeve||50559|30087|160|6
+Novosilky||50312|30075|183|5
+#UA|Luhansk
+Novoaidar||48963|39004|65|8
+Novodruzhesk||48964|38352|183|7
+#UA|Mykolaiv
+Novyi Buh||47691|32512|100|15
+Nova Odesa||47313|31770|26|14
+#UA|Odesa
+Nerubayske||46544|30629|40|9
+#UA|Poltava
+Novi Sanzhary||49334|34315|77|8
+#UA|Sumy
+Novi Basy||50863|34880|134|7
+Nedryhailiv||50836|33878|131|5
+#UA|Vinnytsia
+Nemyriv||48970|28838|272|12
+#UA|Zakarpattia
+Nyzhnia Apsha||48004|23833|252|7
+#UA|Zaporizhzhia
+Novyi Melitopol||46850|35328|37|12
+Novomykolayivka||47974|35898|100|5
+#UA|Zhytomyr Oblast
+Nova Borova||50691|28632|182|5
+Novohuivynske||50207|28692|210|5
+#UG|Central Region
+Nakasongola||1309|32456|1091|7
+#UG|Eastern Region
+Nagongera||762|34026|1126|14
+#UG|Western Region
+Nkoma||300|30617|1286|14
+#US|Arizona
+New River||33916|-112136|614|15
+New Kingman-Butler||35265|-114032|1047|12
+#US|Arkansas
+Newport||35605|-91282|68|8
+#US|California
+North Fair Oaks||37474|-122197|8|15
+North Auburn||38931|-121082|448|13
+Newman||37314|-121021|27|11
+Nuevo||33801|-117146|454|6
+#US|Connecticut
+North Branford||41328|-72767|33|14
+New Fairfield||41466|-73486|182|14
+New Milford||41577|-73408|73|7
+#US|Delaware
+North Star||39761|-75719|106|8
+New Castle||39659|-75564|3|5
+#US|Florida
+Niceville||30517|-86482|11|15
+Naranja||25518|-80423|2|14
+North Palm Beach||26818|-80082|3|12
+North Andrews Gardens||26191|-80144|2|10
+New Port Richey East||28260|-82693|6|10
+North Weeki Wachee||28550|-82559|6|9
+North Bay Village||25846|-80154|0|8
+Neptune Beach||30312|-81396|3|7
+North Sarasota||27374|-82518|11|7
+Naples Park||26262|-81809|4|6
+Newberry||29646|-82606|23|6
+Naples Manor||26089|-81726|1|6
+Nassau Village-Ratliff||30511|-81809|6|5
+#US|Hawaii
+Nānākuli|Nanakuli|21394|-158154|3|13
+Napili-Honokowai||20975|-156678|66|7
+#US|Illinois
+Norridge||41963|-87827|195|15
+Northlake||41917|-87896|197|12
+North Riverside||41843|-87823|188|7
+Northfield||42100|-87781|193|5
+#US|Indiana
+North Madison||38768|-85397|274|12
+Nappanee||41443|-86001|267|7
+North Vernon||39006|-85624|219|7
+Notre Dame||41700|-86238|227|6
+North Manchester||41001|-85769|236|6
+New Whiteland||39558|-86095|246|6
+#US|Iowa
+Norwalk||41476|-93679|288|10
+Nevada||42023|-93452|305|7
+#US|Maine
+North Bath||43935|-69816|8|9
+New Gloucester||43963|-70283|102|5
+#US|Maryland
+New Carrollton||38970|-76880|23|13
+North Kensington||39039|-77071|97|10
+North Harford Road||39366|-76546|100|5
+#US|Massachusetts
+North Reading||42575|-71079|30|14
+Northbridge||42151|-71650|83|14
+North Adams||42701|-73109|220|13
+Newtonville||42350|-71204|15|11
+Norwell||42162|-70794|24|11
+Norfolk||42120|-71325|63|10
+North End||42365|-71054|7|10
+Newton Highlands||42321|-71199|39|10
+Nonantum||42363|-71202|11|10
+Newton Upper Falls||42314|-71219|59|8
+Nantucket||41283|-70099|13|7
+North Amherst||42410|-72531|57|7
+North Brighton||42358|-71138|8|7
+Northborough||42320|-71641|91|6
+North Scituate||42219|-70786|4|5
+Newton Corner||42361|-71195|9|5
+#US|Michigan
+Northview||43046|-85601|227|15
+New Baltimore||42681|-82737|179|12
+Niles||41830|-86254|209|11
+Northville||42431|-83483|252|6
+New Haven||43094|-84153|212|5
+#US|Minnesota
+North Mankato||44173|-94034|305|14
+New Ulm||44312|-94461|274|13
+North Saint Paul||45012|-92992|297|11
+North Branch||45511|-92980|274|10
+New Prague||44543|-93576|301|8
+#US|Mississippi
+New Albany||34494|-89008|110|9
+#US|Missouri
+Neosho||36869|-94368|316|12
+Nevada||37839|-94355|266|8
+#US|Nebraska
+Nebraska City||40677|-95859|322|7
+#US|New Hampshire
+Newmarket||43083|-70935|12|5
+New Ipswich||42748|-71854|323|5
+Northfield||43433|-71592|132|5
+#US|New Jersey
+New Providence||40698|-74402|67|12
+North Haledon||40955|-74186|74|9
+Northfield||39370|-74550|8|9
+Northfield||40774|-74325|80|8
+Newton||41058|-74753|196|8
+North Caldwell||40865|-74258|143|7
+Norwood||40998|-73962|29|6
+#US|New Mexico
+North Valley||35173|-106623|1522|11
+#US|New York
+North New Hyde Park||40743|-73693|35|15
+New Cassel||40759|-73570|37|14
+Nesconset||40852|-73154|36|13
+North Castle||41140|-73684|182|12
+North Merrick||40691|-73563|14|12
+North Wantagh||40693|-73508|10|12
+North Lindenhurst||40714|-73382|13|12
+North Bellport||40774|-72943|14|12
+New Hyde Park||40735|-73688|32|10
+North Gates||43176|-77701|160|10
+New Windsor||41477|-74024|49|9
+Newark||43047|-77095|135|9
+North Elba||44243|-73954|599|8
+New Square||41140|-74029|150|8
+Northport||40901|-73343|18|7
+New Dorp||40574|-74116|13|7
+North Patchogue||40787|-73009|15|7
+New Paltz||41748|-74087|73|7
+Nyack||41091|-73918|22|7
+Norwich||42531|-75524|309|7
+North Syracuse||43135|-76130|128|7
+New Dorp Beach||40565|-74103|3|6
+North Hills||40781|-73677|66|5
+New Hempstead||41150|-74034|177|5
+Northumberland||43127|-73588|34|5
+#US|North Carolina
+Newton||35670|-81221|305|13
+Nashville||35975|-77966|57|5
+#US|Ohio
+New Franklin||40942|-81542|333|14
+Norton||41029|-81638|325|12
+Northbrook||39246|-84584|253|11
+New Albany||40081|-82809|312|10
+North College Hill||39218|-84551|251|9
+Napoleon||41392|-84125|207|9
+North Madison||41825|-81056|205|9
+Northridge||39808|-84197|244|8
+Northridge||39992|-83779|330|8
+Northgate||39253|-84592|269|7
+New Carlisle||39936|-84025|274|6
+Northwood||40473|-83732|350|5
+Northwood||41607|-83469|186|5
+Nelsonville||39459|-82232|207|5
+New Burlington||39260|-84557|250|5
+#US|Oklahoma
+Newcastle||35247|-97600|364|9
+Noble||35139|-97395|364|7
+#US|Oregon
+Newport||44637|-124053|42|10
+North Bend||43407|-124224|14|10
+North Portland||45610|-122703|5|7
+#US|Pennsylvania
+New Kensington||40570|-79765|239|13
+Natrona Heights||40623|-79730|300|11
+North Versailles||40380|-79809|357|11
+Nanticoke||41205|-76005|173|10
+Northampton||40686|-75497|99|10
+Northwest Harborcreek||42149|-79995|220|9
+New Cumberland||40232|-76885|119|7
+Northern Liberties||39966|-75146|9|6
+Norwood||39892|-75300|27|6
+New Brighton||40730|-80310|225|6
+Nazareth||40740|-75310|150|6
+New Holland||40102|-76085|150|5
+#US|Rhode Island
+Newport East||41516|-71288|34|12
+North Smithfield||41967|-71550|111|11
+North Scituate||41832|-71587|93|11
+#US|South Carolina
+Newberry||34275|-81619|151|10
+#US|Tennessee
+Nolensville||35952|-86669|190|7
+Newport||35967|-83188|321|7
+#US|Texas
+Navasota||30388|-96088|66|7
+Nurillo||26267|-98121|29|6
+#US|Utah
+North Logan||41769|-111805|1430|10
+Nibley||41674|-111833|1388|6
+Nephi||39710|-111836|1563|6
+#US|Virginia
+Newington||38738|-77185|35|13
+New Baltimore||38767|-77728|151|8
+North Springfield||38804|-77205|92|7
+#US|Washington
+Newcastle||47539|-122156|172|11
+North Bend||47496|-121787|135|7
+Normandy Park||47436|-122341|89|7
+#US|West Virginia
+Nitro||38415|-81844|181|7
+New Martinsville||39645|-80858|190|5
+#US|Wisconsin
+New Richmond||45123|-92537|299|9
+New London||44393|-88740|234|7
+North Fond du Lac||43811|-88483|234|5
+#UY|Colonia
+Nueva Helvecia||-34300|-57233|52|10
+Nueva Palmira||-33870|-58412|8|10
+#UZ|Qashqadaryo
+Nishon Tumani||38694|65675|349|11
+#VN|An Giang
+Nhà Bàng|Nha Bang|10618|105003|40|12
+#VN|Bac Ninh
+Nhã Nam|Nha Nam|21450|106100|35|8
+#VN|Hanoi
+Ngọc Hồi|Ngoc Hoi|20922|105852|8|13
+Nguyễn Du|Nguyen Du|21017|105850|18|10
+#VN|Lao Cai
+Nông Trường Trần Phú|Nong Truong Tran Phu|21482|104729|206|5
+#VN|Nghệ An Province
+Nghĩa Đàn|Nghia GJan|19300|105433|51|5
+#VN|Điện Biên Province
+Na Lay||22035|103153|217|7
+Nà Tấu|Na Tau|21506|103118|839|6
+#XK|Pristina
+Novo Brdo||42616|21434|1029|7
+#ZA|Eastern Cape
+Nomathamasanqa||-33523|25710|63|13
+Ngcobo||-31675|27997|923|12
+#ZA|KwaZulu-Natal
+Nongoma||-27910|31648|794|9
+Nondweni||-28192|30820|1035|7
+Nqutu||-28212|30675|1340|7
+#ZA|Limpopo
+Namakgale||-23934|31031|417|15
+Nthabalala||-23220|29993|1077|6
+#ZA|Mpumalanga
+Nthrowane||-26748|28750|1567|8
+Ngema Tribal Trust||-27073|30542|1370|6
+#ZA|Northern Cape
+Nuwerus NC||-28474|21270|805|9
+Nababeep||-29592|17786|813|5
+#ZA|Western Cape
+Newlands||-33978|18448|70|5
+Napier||-34475|19898|152|5
+#ZM|Southern Province
+Nakambala||-15832|27780|1023|10

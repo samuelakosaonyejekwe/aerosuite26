@@ -60,6 +60,7 @@ export async function render(root, [suiteId, analysisId, tabId], { setCrumb }) {
   await describe();
   an = desc.analyses.find((a) => a.id === analysisId) || desc.analyses.find((a) => a.applicable === true) || desc.analyses[0];
   const i = SUITES.findIndex((s) => s.id === suiteId), prev = SUITES[i - 1], next = SUITES[i + 1];
+  const refData = h('p', { class: 'muted small attribution', style: { marginTop: '14px' } });
   const chips = h('div', { class: 'chips', role: 'tablist', 'aria-label': 'Analyses' }), tabs = h('div', { class: 'tabs', role: 'tablist' });
 
   root.append(
@@ -69,7 +70,9 @@ export async function render(root, [suiteId, analysisId, tabId], { setCrumb }) {
         h('button', { class: 'arrow', disabled: !prev, title: prev ? `Previous suite: ${prev.short}` : '', 'aria-label': 'Previous suite', onclick: () => (location.hash = `#/suite/${prev.id}`) }, icon('back', 20)),
         h('button', { class: 'arrow', disabled: !next, title: next ? `Next suite: ${next.short}` : '', 'aria-label': 'Next suite', onclick: () => (location.hash = `#/suite/${next.id}`) }, icon('fwd', 20)),
         btn(t('Run whole suite'), () => runAll(), { ic: 'play', title: 'Run every applicable analysis in this suite in order' }))),
-    chips, tabs, body);
+    chips, tabs, body, refData);
+  // acknowledgement of the bundled reference datasets this suite reads (their licences ask for the source to be named next to the data)
+  loadSources().then((reg) => { const ds = (reg.datasets || []).filter((d) => (d.usedBy || []).some((u) => new RegExp(`^s\\d+-${suiteId}\\b`).test(u))); if (ds.length) add(refData, [h('b', null, 'Reference data in this suite: '), ds.map((d, k) => [k ? ' · ' : '', h('a', { href: d.url, target: '_blank', rel: 'noopener noreferrer' }, `${d.title}${d.version ? ` (${d.version.split(';')[0]})` : ''}`), ` — ${d.org}. ${d.licence.replace(/\s*\(https?:[^)]*\)\s*$/, '')}`])]); });
 
   const select = (a) => { an = a; replaceHash(`#/suite/${suiteId}/${an.id}/${tab}`); paintChips(); paintBody(); };
   function paintChips() {
@@ -251,11 +254,11 @@ export async function render(root, [suiteId, analysisId, tabId], { setCrumb }) {
     let sort = 'recent';
     const stamp = (r) => h('p', { class: 'muted small' }, r.error ? `Showing saved results (${r.error.toLowerCase()}). ` : '', r.ts ? `Updated ${ago(r.ts)}.` : '');
     const loadLit = async (force) => { clear(lit); lit.append(h('div', { class: 'row muted' }, h('i', { class: 'spin' }), 'Searching…')); const r = await live('literature', { q: qLit, sort }, { force }); clear(lit); if (!r.data) { lit.append(h('div', { class: 'note warn' }, icon('info'), h('div', null, `No connection to the literature index (${r.error}). Results appear here when you are online; they are then kept for offline use.`))); return; } lit.append(stamp(r), ...r.data.items.map((w) => h('div', null, h('a', { href: w.url, target: '_blank', rel: 'noopener noreferrer' }, w.title), ' ', w.oa ? badge('Open access', 'ok') : null, h('div', { class: 'muted small' }, [w.authors, w.venue, w.date, `${w.cited} citations`].filter(Boolean).join(' · '))))); };
-    const loadCode = async (force) => { clear(code); code.append(h('div', { class: 'row muted' }, h('i', { class: 'spin' }), 'Searching…')); const r = await live('opensource', { q: qCode }, { force }); clear(code); if (!r.data) { code.append(h('div', { class: 'note warn' }, icon('info'), h('div', null, `No connection to the repository index (${r.error}).`))); return; } code.append(stamp(r), ...r.data.items.map((x) => h('div', null, h('a', { href: x.url, target: '_blank', rel: 'noopener noreferrer' }, x.name), ' ', badge(`★ ${num(x.stars)}`), x.lang ? badge(x.lang) : null, x.license && x.license !== 'NOASSERTION' ? badge(x.license) : null, h('div', { class: 'muted small' }, x.desc, x.pushed ? ` · updated ${x.pushed.slice(0, 10)}` : '')))); };
+    const loadCode = async (force) => { clear(code); code.append(h('div', { class: 'row muted' }, h('i', { class: 'spin' }), 'Searching…')); const r = await live('opensource', { q: qCode, suite: suiteId }, { force }); clear(code); if (!r.data) { code.append(h('div', { class: 'note warn' }, icon('info'), h('div', null, `The tool list is unavailable (${r.error}).`))); return; } code.append(stamp(r), ...r.data.items.map((x) => h('div', null, h('a', { href: x.url, target: '_blank', rel: 'noopener noreferrer' }, x.name), ' ', x.curated ? badge('Curated', 'accent') : null, x.stars != null ? badge(`★ ${num(x.stars)}`) : null, x.lang ? badge(x.lang) : null, x.license && x.license !== 'NOASSERTION' ? badge(x.license) : null, h('div', { class: 'muted small' }, x.desc, x.pushed ? ` · updated ${x.pushed.slice(0, 10)}` : '')))); };
     body.append(h('div', { class: 'grid g2' },
       card('Research literature', lit, { actions: h('span', { class: 'row' }, h('select', { class: 'inp', style: { width: 'auto' }, 'aria-label': 'Sort', onchange: (e) => { sort = e.target.value; loadLit(); } }, h('option', { value: 'recent' }, 'Newest'), h('option', { value: 'cited' }, 'Most cited')), btn('', () => loadLit(true), { ic: 'refresh', kind: 'sm ghost', title: 'Refresh now' })) }),
       card('Open-source solvers and tools', code, { actions: btn('', () => loadCode(true), { ic: 'refresh', kind: 'sm ghost', title: 'Refresh now' }) })),
-      h('p', { class: 'muted small', style: { marginTop: '10px' } }, 'Fetched directly by your browser from OpenAlex and GitHub, refreshed daily and whenever you press refresh, and kept on this device for offline reading. Listings are search results, not endorsements: check each source before relying on it.'));
+      h('p', { class: 'muted small', style: { marginTop: '10px' } }, 'Literature: OpenAlex (CC0), fetched by your browser, refreshed daily and kept on this device for offline reading. Tools: a curated list stored in the app (name, purpose, licence and project page as checked when the list was compiled); where this deployment allows it, a live repository search adds further projects. Listings are pointers, not endorsements: check each source and its licence before relying on it.'));
     loadLit(); loadCode();
   }
 

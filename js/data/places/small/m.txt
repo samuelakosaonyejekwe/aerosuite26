@@ -1,0 +1,3563 @@
+#AE|Abu Dhabi
+Masdar City||24432|54616|1|15
+Muzayri‘|Muzayri'|23144|53788|123|10
+#AE|Ajman
+Maşfūţ|Masfut|24811|56107|460|9
+Mushayrif||25410|55471|5|7
+#AF|Helmand
+Markaz-e Ḩukūmat-e Darwēshān|Markaz-e Hukumat-e Darweshan|31132|64193|714|9
+#AF|Kabul
+Mīr Bachah Kōṯ|Mir Bachah Kot|34750|69119|1673|5
+#AF|Maidan Wardak Province
+Markaz-e Sayyidābād|Markaz-e Sayyidabad|34000|68713|2113|7
+Maydanshakhr||34396|68866|2206|2
+#AF|Nangarhar
+Muhmand Dara||34247|70872|464|7
+#AF|Nimroz
+Mīrābād|Mirabad|30436|61838|514|14
+#AL|Durrës County
+Manzë|Manze|41429|19593|49|7
+#AL|Lezhë County
+Mamurras||41578|19692|25|8
+#AM|Ararat
+Mkhchyan||40022|44492|850|5
+#AM|Armavir
+Metsamor||40145|44115|864|9
+Mrgashat||40123|44066|860|6
+#AM|Gegharkunik
+Martuni||40140|45302|1925|12
+#AM|Lori
+Metsavan||41202|44229|1576|6
+#AM|Shirak
+Maralik||40576|43871|1703|5
+#AO|Bengo
+Muxima||-9520|13958|18|8
+#AO|Cuando Province
+Mavinga||-15793|20364|1160|10
+#AO|Lunda Sul
+Muconda||-10592|21318|1097|8
+#AR|Buenos Aires
+Máximo Paz|Maximo Paz|-34937|-58619|25|14
+Monte Hermoso||-38982|-61295|13|8
+Mayor Buratovich||-39261|-62615|12|6
+Médanos|Medanos|-38829|-62693|38|6
+Manuel J. Cobo||-35875|-57897|16|6
+#AR|Chaco
+Margarita Belén|Margarita Belen|-27259|-58972|59|6
+#AR|Cordoba
+Montecristo||-31341|-63945|338|13
+Malagueño|Malagueno|-31467|-64359|571|9
+Malvinas Argentinas||-31382|-64055|389|9
+Monte Maíz|Monte Maiz|-33204|-62601|119|7
+Mina Clavero||-31729|-65005|915|7
+Monte Buey||-32916|-62456|113|5
+#AR|Corrientes
+Mburucuyá|Mburucuya|-28045|-58228|79|9
+Mocoretá|Mocoreta|-30618|-57967|22|6
+#AR|Entre Rios
+María Grande|Maria Grande|-31665|-59900|89|7
+Maciá|Macia|-32173|-59401|72|6
+#AR|La Pampa
+Macachín|Macachin|-37137|-63667|137|5
+#AR|San Luis
+Merlo||-32343|-65014|863|11
+#AR|Santa Fe
+Malabrigo||-29348|-59969|44|7
+Monte Vera||-31518|-60678|17|7
+#AT|Burgenland
+Mattersburg||47733|16400|267|7
+#AT|Lower Austria
+Maria Enzersdorf||48100|16283|223|9
+Mistelbach||48570|16577|228|6
+#AT|Styria
+Mariatrost||47096|15465|413|10
+Mürzzuschlag|Muerzzuschlag|47607|15672|680|6
+#AT|Tyrol
+Mühlau|Muehlau|47283|11400|698|5
+#AT|Upper Austria
+Marchtrenk||48190|14109|299|8
+Mattighofen||48107|13151|445|7
+Micheldorf in Oberösterreich|Micheldorf in Oberoesterreich|47878|14134|465|6
+#AU|Australian Capital Territory
+Macgregor||-35210|149011|558|7
+Monash||-35416|149091|590|5
+#AU|New South Wales
+Macquarie Fields||-33992|150893|34|14
+Marsfield||-33778|151106|91|13
+Minto||-34033|150850|74|12
+Mount Annan||-34053|150760|95|12
+Mudgee||-32594|149587|459|11
+Mona Vale||-33678|151303|11|11
+Merewether||-32948|151743|61|11
+Mortdale||-33969|151072|34|10
+Menai||-34017|151017|122|10
+Mount Pritchard||-33903|150905|32|10
+Moree||-29463|149842|212|10
+Matraville||-33963|151232|16|10
+Moorebank||-33944|150957|20|10
+Medowie||-32742|151868|24|9
+Mayfield||-32898|151736|10|9
+Macquarie Park||-33781|151128|58|9
+Moss Vale||-34554|150371|678|8
+Marayong||-33748|150893|35|8
+Maryland||-32879|151661|5|8
+Murwillumbah||-28327|153393|6|7
+Mount Colah||-33683|151117|164|7
+Merrylands West||-33833|150969|42|7
+Moama||-36104|144761|98|6
+Manly Vale||-33785|151262|59|6
+Mittagong||-34450|150446|635|6
+Minchinbury||-33787|150830|73|6
+Malabar||-33962|151248|28|5
+Middleton Grange||-33917|150842|64|5
+#AU|Queensland
+Marsden||-27673|153097|16|14
+Mudgeeraba||-28083|153367|1|13
+Moranbah||-22002|148047|257|12
+Mermaid Waters||-28049|153431|4|12
+Manly West||-27474|153166|29|12
+Mount Gravatt East||-27540|153082|46|12
+Mountain Creek||-26703|153101|5|11
+Murrumba Downs||-27267|153011|25|10
+Morningside||-27462|153075|13|10
+Moorooka||-27534|153025|48|10
+Mooloolaba||-26682|153119|7|10
+Mount Louisa||-19274|146751|10|9
+Mansfield||-27539|153099|40|9
+Mareeba||-16991|145423|408|9
+Mitchelton||-27417|152967|69|8
+Mango Hill||-27243|153024|34|8
+Mount Sheridan||-16986|145732|68|8
+Mermaid Beach||-28044|153435|7|7
+Margate||-27248|153098|16|7
+Miami||-28072|153442|4|7
+McDowall||-27383|152992|61|7
+Mooroobool||-16935|145731|24|7
+Merrimac||-28051|153373|3|7
+Middle Ridge||-27607|151967|698|7
+Mount Cotton||-27633|153233|61|7
+Molendinar||-27974|153361|33|6
+Manoora||-16917|145737|10|6
+Macgregor||-27565|153067|69|6
+Mount Warren Park||-27731|153205|23|6
+Main Beach||-27979|153427|0|6
+Manunda||-16917|145749|15|6
+Maudsland||-27950|153267|23|5
+#AU|South Australia
+Murray Bridge||-35120|139273|36|14
+Mawson Lakes||-34816|138608|15|13
+Magill||-34909|138675|120|9
+Modbury Heights||-34810|138685|179|7
+Munno Para West||-34657|138671|45|6
+Modbury North||-34828|138674|132|5
+Mitchell Park||-35010|138563|35|5
+Modbury||-34833|138683|109|5
+#AU|Tasmania
+Moonah||-42846|147302|32|5
+#AU|Victoria
+Meadow Heights||-37651|144919|137|15
+Morwell||-38235|146395|85|14
+Mentone||-37983|145067|24|13
+Maribyrnong||-37772|144884|45|13
+Melton South||-37708|144575|119|11
+Malvern||-37863|145028|60|10
+Macleod||-37723|145073|139|10
+Murrumbeena||-37900|145067|49|10
+Mount Evelyn||-37783|145383|238|9
+Maidstone||-37780|144874|38|9
+Moe||-38178|146261|76|9
+Montmorency||-37717|145117|53|9
+Melton West||-37679|144569|140|9
+Mooroopna||-36400|145350|113|8
+Mordialloc||-38000|145083|13|8
+Melton||-37683|144585|138|8
+Maryborough||-37046|143739|241|8
+McKinnon||-37911|145038|68|7
+Montrose||-37817|145350|233|7
+Moorabbin||-37941|145058|44|6
+Mont Albert North||-37800|145108|87|5
+Maffra||-37971|146984|29|5
+#AU|Western Australia
+Maylands||-31931|115895|21|13
+Maddington||-32050|115983|12|12
+Mount Lawley||-31934|115872|28|11
+Marangaroo||-31827|115838|66|10
+Mosman Park||-32005|115764|24|9
+Mirrabooka||-31860|115866|64|8
+Meadow Springs||-32497|115753|7|8
+Mandurah city centre||-32526|115734|5|8
+Margaret River||-33955|115076|98|8
+Mount Hawthorn||-31920|115835|39|7
+Mindarie||-31689|115707|25|7
+Mount Pleasant||-32040|115850|18|7
+Midland||-31889|116011|19|6
+Madeley||-31811|115828|59|6
+Mullaloo||-31779|115737|16|6
+Melville||-32040|115801|49|6
+Merriwa||-31665|115713|20|5
+#AW|
+Malmok||12601|-70051|9|6
+#AZ|Masally
+Masally||39035|48665|5|10
+#AZ|Zangilan District
+Mincivan||39030|46723|316|6
+#BA|Federation of B&H
+Mionica||44866|18466|193|9
+Maglaj||44548|18100|177|7
+Mala Kladuša|Mala Kladusa|45134|15852|161|6
+Mahala||44012|18255|485|5
+#BA|Srpska
+Mrkonjić Grad|Mrkonjic Grad|44417|17083|575|15
+Modriča|Modrica|44958|18302|106|9
+Milići|Milici|44170|19092|426|8
+Mejdan - Obilićevo|Mejdan - Obilicevo|44763|17190|161|5
+#BE|Flanders
+Merchtem||50951|4232|25|15
+Machelen||50911|4442|30|12
+Meulebeke||50951|3288|19|11
+Melsele||51223|4282|6|11
+Moorslede||50892|3061|43|11
+Melle||51002|3805|8|11
+Meerhout||51132|5078|30|9
+Merksplas||51359|4865|26|8
+Marke||50807|3233|23|8
+Moorsele||50841|3160|20|6
+Meerbeke||50824|4037|18|6
+Moerbeke||51174|3930|1|6
+Meeuwen||51099|5521|67|6
+Muizen||51011|4514|13|5
+Mere||50923|3971|27|5
+Moorsel||50947|4098|31|5
+#BE|Wallonia
+Mont-sur-Marchienne||50390|4407|154|13
+Malmédy|Malmedy|50427|6028|344|13
+Mettet||50321|4662|241|12
+Montegnée|Montegnee|50646|5514|184|11
+Monceau-sur-Sambre||50417|4377|138|10
+Montigny-le-Tilleul||50381|4376|156|9
+Messancy||49592|5819|277|7
+Mont-Saint-Guibert||50634|4611|85|7
+Malonne||50440|4796|91|5
+Momignies||50027|4165|262|5
+Maurage||50457|4097|48|5
+Marchin||50467|5243|264|5
+#BF|Cascades Region
+Mangodara||9902|-4358|283|9
+#BG|Smolyan
+Madan||41499|24940|682|6
+#BG|Vratsa
+Mezdra||43145|23714|207|12
+#BI|Gitega
+Muramvya||-3268|29616|1944|8
+#BI|Makamba
+Makamba||-4135|29804|1476|15
+Mabanda||-4274|29775|1529|5
+#BI|Muyinga
+Muyinga||-2845|30341|1757|15
+#BO|Chuquisaca Department
+Monteagudo||-19800|-63956|1135|8
+#BO|La Paz Department
+Mecapaca||-16668|-68018|2870|13
+#BO|Santa Cruz Department
+Mineros||-17119|-63232|254|14
+#BR|Acre
+Manoel Urbano||-8839|-69260|165|10
+#BR|Alagoas
+Maribondo||-9577|-36305|160|14
+Maravilha||-9236|-37350|378|10
+Monteirópolis|Monteiropolis|-9603|-37248|231|7
+#BR|Amazonas
+Manaquiri||-3317|-60350|27|10
+#BR|Bahia
+Mansidão|Mansidao|-10716|-44034|518|14
+Mascote||-15563|-39302|56|14
+Manoel Vitorino||-14148|-40241|325|13
+Mucugê|Mucuge|-13008|-41372|991|12
+Mortugaba||-15023|-42368|842|12
+Milagres||-12870|-39859|413|11
+Mulungu do Morro||-11966|-41639|844|11
+Macajuba||-12136|-40360|349|10
+Muquém do São Francisco|Muquem do Sao Francisco|-12066|-43549|495|10
+Matina||-13909|-42849|523|10
+Mirante||-14242|-40778|352|10
+Marcionílio Souza|Marcionilio Souza|-13003|-40531|295|9
+Maiquinique||-15621|-40266|312|9
+Malhada de Pedras||-14388|-41879|495|9
+Morpará|Morpara|-11559|-43281|428|8
+Macururé|Macurure|-9167|-39057|356|7
+Muniz Ferreira||-13003|-39110|78|7
+Maetinga||-14663|-41492|608|7
+#BR|Ceará
+Milhã|Milha|-5675|-39194|213|14
+Miraíma|Miraima|-3569|-39970|73|14
+Mucambo||-3909|-40747|171|14
+Martinópole|Martinopole|-3226|-40697|82|11
+Mulungu||-4306|-38996|780|11
+Moraújo|Moraujo|-3467|-40681|67|8
+#BR|Espírito Santo
+Muqui||-20952|-41346|248|14
+Mantenópolis|Mantenopolis|-18862|-41123|413|13
+Marilândia|Marilandia|-19413|-40542|88|12
+Mucurici||-18093|-40516|223|5
+#BR|Goiás
+Montividiu||-17444|-51175|807|14
+Mara Rosa||-14016|-49177|524|11
+Maurilândia|Maurilandia|-17971|-50339|463|10
+Montes Claros de Goiás|Montes Claros de Goias|-16008|-51397|407|9
+Mambaí|Mambai|-14488|-46113|720|8
+Monte Alegre de Goiás|Monte Alegre de Goias|-13260|-46888|450|7
+Mundo Novo||-13776|-50281|260|6
+#BR|Maranhão
+Mirinzal||-2065|-44784|17|14
+Magalhães de Almeida|Magalhaes de Almeida|-3396|-42204|25|14
+Montes Altos||-5833|-47067|242|9
+Milagres do Maranhão|Milagres do Maranhao|-3581|-42609|44|9
+Marajá do Sena|Maraja do Sena|-4624|-45452|84|7
+#BR|Mato Grosso
+Marcelândia|Marcelandia|-11089|-54451|296|11
+#BR|Minas Gerais
+Maria da Fé|Maria da Fe|-22308|-45375|1282|14
+Matias Barbosa||-21869|-43319|481|14
+Montalvânia|Montalvania|-14423|-44366|511|14
+Martinho Campos||-19332|-45237|679|14
+Mirabela||-16263|-44164|801|14
+Miraí|Mirai|-21195|-42614|343|14
+Monte Belo||-21326|-46367|912|13
+Mar de Espanha||-21867|-43010|484|13
+Mato Verde||-15397|-42866|543|12
+Mercês|Merces|-21194|-43341|528|10
+Mata Verde||-15686|-40741|870|9
+Morada Nova de Minas||-18604|-45357|593|9
+Miradouro||-20891|-42342|390|9
+Matias Cardoso||-14855|-43922|461|9
+Martins Soares||-20257|-41877|703|8
+Monsenhor Paulo||-21757|-45541|898|8
+Moema||-19843|-45411|673|8
+Munhoz||-22613|-46361|1217|7
+Maravilhas||-19516|-44676|793|7
+Montezuma||-15172|-42497|914|7
+Machacalis||-17077|-40716|267|6
+Mamonas||-15050|-42949|640|6
+Mendes Pimentel||-18661|-41405|298|6
+Madre de Deus de Minas||-21482|-44330|991|5
+Moeda||-20333|-44053|801|5
+Mesquita||-19222|-42607|350|5
+#BR|Paraná
+Marmeleiro||-26149|-53026|658|14
+Manoel Ribas||-24516|-51668|892|14
+Mallet||-25878|-50821|855|14
+Mamborê|Mambore|-24319|-52530|757|13
+Moreira Sales||-24050|-53010|410|12
+Missal||-25092|-54247|316|11
+Mariluz||-24002|-53146|445|10
+Mauá da Serra|Maua da Serra|-23901|-51229|1006|9
+Marilândia do Sul|Marilandia do Sul|-23745|-51308|762|9
+Marilena||-22736|-53040|394|7
+Maripá|Maripa|-24418|-53830|410|7
+Mariópolis|Mariopolis|-26355|-52559|840|6
+Mercedes||-24454|-54162|398|6
+Maria Helena||-23616|-53205|363|6
+#BR|Paraíba
+Massaranduba||-7200|-35789|371|14
+Mogeiro||-7299|-35479|119|13
+Manaíra|Manaira|-7706|-38154|758|10
+Marcação|Marcacao|-6770|-35015|98|9
+Mulungu||-7024|-35462|89|9
+Mataraca||-6601|-35051|16|8
+Marizópolis|Marizopolis|-6842|-38347|296|7
+Maturéia|Matureia|-7267|-37351|820|6
+Malta||-6904|-37522|266|6
+Montadas||-7089|-35956|682|6
+#BR|Pará
+Magalhães Barata|Magalhaes Barata|-794|-47599|21|8
+#BR|Pernambuco
+Mirandiba||-8120|-38729|451|15
+Machados||-7682|-35523|413|11
+Moreilândia|Moreilandia|-7627|-39551|726|11
+Maraial||-8782|-35809|252|9
+#BR|Piauí
+Matias Olímpio|Matias Olimpio|-3716|-42556|71|11
+Monte Alegre do Piauí|Monte Alegre do Piaui|-9754|-45304|447|11
+Monsenhor Gil||-5564|-42608|129|10
+Marcolândia|Marcolandia|-7442|-40661|785|9
+Madeiro||-3483|-42504|23|8
+Monsenhor Hipólito|Monsenhor Hipolito|-6996|-41030|273|8
+Milton Brandão|Milton Brandao|-4703|-41449|305|7
+Massapê do Piauí|Massape do Piaui|-7462|-41126|296|5
+Manoel Emídio|Manoel Emidio|-8013|-43872|232|5
+#BR|Rio Grande do Norte
+Montanhas||-6486|-35287|87|11
+Maxaranguape||-5517|-35256|5|10
+Martins||-6088|-37911|710|8
+Marcelino Vieira||-6294|-38167|230|8
+Monte Alegre||-5890|-36301|422|7
+#BR|Rio Grande do Sul
+Mostardas||-31107|-50917|15|13
+Minas do Leão|Minas do Leao|-30140|-52045|122|8
+Maquiné|Maquine|-29675|-50207|13|7
+Manoel Viana||-29589|-55483|103|7
+Morro Redondo||-31588|-52632|252|6
+Morro Reuter||-29538|-51081|485|6
+Machadinho||-27567|-51668|758|6
+#BR|Rio de Janeiro
+Moneró|Monero|-22797|-43199|16|6
+Macuco||-21984|-42253|273|6
+#BR|Rondônia
+Mirante da Serra||-11030|-62675|237|9
+Ministro Andreazza||-11074|-61517|401|6
+#BR|Santa Catarina
+Mondaí|Mondai|-27103|-53402|221|10
+Monte-Carlo||-27223|-50980|962|9
+Maracajá|Maracaja|-28846|-49463|11|8
+Monte Castelo||-26462|-50231|817|8
+Major Vieira||-26368|-50328|786|7
+Meleiro||-28829|-49636|31|7
+#BR|Sergipe
+Monte Alegre de Sergipe||-10027|-37562|262|14
+Malhador||-10658|-37305|263|13
+Moita Bonita||-10577|-37343|228|11
+Muribeca||-10427|-36959|117|8
+Macambira||-10666|-37541|235|7
+#BR|São Paulo
+Morungaba||-22879|-46796|794|14
+Maracaí|Maracai|-22611|-50667|392|13
+Mineiros do Tietê|Mineiros do Tiete|-22409|-48451|675|11
+Manduri||-23003|-49322|709|10
+Monte Alegre do Sul||-22682|-46681|756|9
+Macaubal||-20806|-49964|511|7
+Mendonça|Mendonca|-21185|-49580|459|6
+#BR|Tocantins
+Miranorte||-9529|-48590|225|13
+Monte do Carmo||-10763|-48109|307|6
+#BS|Acklins
+Masons Bay||22544|-73878|6|0
+#BS|Central Abaco
+Marsh Harbour||26541|-77064|4|5
+#BS|Inagua
+Matthew Town||20950|-73673|11|0
+#BT|Mongar
+Mongar||27275|91240|1648|3
+#BW|Central
+Mmadinare||-21876|27752|836|13
+Mathangwane||-21000|27333|1045|6
+#BW|Kweneng
+Metsemotlhaba||-24551|25803|996|12
+Mmankgodi||-24726|25650|1124|7
+#BW|Ngwaketsi
+Mmathete||-25322|25269|1213|5
+#BW|North-East
+Masunga||-20625|27449|1199|6
+Maitengwe||-20129|27210|1078|6
+#BY|Brest
+Malorita||51795|24075|159|13
+Mikashevichy||52217|27476|128|12
+#BY|Grodnenskaya
+Mosty||53412|24539|118|14
+#BY|Minsk
+Machulishchy||53779|27595|215|11
+Myadzyel||54879|26936|164|7
+#BY|Mogilev
+Mscislau||54019|31722|203|10
+#BY|Vitebsk
+Miory||55622|27628|152|8
+#CA|Alberta
+Martindale||51118|-113956|1095|15
+Mahogany||50896|-113925|1032|14
+McKenzie Lake||50908|-113981|1037|13
+Monterey Park||51082|-113929|1076|10
+Morinville||53800|-113652|701|10
+Marlborough||51059|-113968|1073|9
+Marlborough Park||51058|-113944|1062|8
+Millrise||50917|-114085|1081|7
+Midnapore||50915|-114059|1045|6
+Mount Pleasant||51073|-114077|1091|6
+Mayland Heights||51061|-114011|1081|6
+MacEwan||53428|-113527|684|6
+#CA|British Columbia
+Marlborough||49229|-122990|82|14
+Murrayville||49083|-122617|58|11
+Marshall-McCallum||49037|-122302|55|10
+McMillan||49045|-122267|82|9
+Mill Bay||48650|-123550|2|7
+Marpole South||49206|-123132|6|7
+Merritt||50112|-120794|605|7
+Metchosin||48383|-123536|49|5
+#CA|Manitoba
+Morden||49192|-98101|306|9
+Montcalm||49812|-97153|233|6
+#CA|New Brunswick
+Maple Hills||46213|-64869|99|10
+Millidgeville||45302|-66103|8|7
+Memramcook||46004|-64552|23|5
+#CA|Newfoundland and Labrador
+Mundy Pond||47549|-52746|105|6
+Mount Cashel||47589|-52710|55|6
+Marystown||47167|-55148|17|5
+#CA|Nova Scotia
+Millview||44709|-63670|30|9
+Membertou||46115|-60189|60|8
+Manor Park||44672|-63549|60|8
+#CA|Ontario
+Mississippi Mills||45233|-76199|139|15
+Mount Dennis||43687|-79489|124|14
+Markland Wood||43633|-79576|133|11
+Maple Leaf||43716|-79481|169|10
+Mount Forest||43979|-80722|409|5
+Mount Hope Huron Park||43459|-80496|335|5
+#CA|Quebec
+Matane||48829|-67522|74|15
+Mont-Laurier||46550|-75499|226|13
+Montmagny||46980|-70555|15|12
+Milton-Parc||45510|-73575|49|11
+Mercier||45311|-73740|46|10
+Mont-Tremblant||46213|-74584|257|9
+Mont-Joli||48584|-68192|81|7
+McMasterville||45550|-73266|12|6
+Marieville||45433|-73166|34|6
+Montréal-Ouest|Montreal-Ouest|45453|-73649|48|5
+#CA|Saskatchewan
+Martensville||52283|-106668|513|10
+Melfort||52867|-104618|457|6
+Mount Royal||52136|-106701|500|5
+Meadow Lake||54133|-108435|480|5
+#CF|Basse-Kotto
+Mobaye||4319|21179|388|7
+#CF|Lobaye
+Mongoumba||3642|18594|356|10
+#CF|Nana-Grébizi
+Mbrés|Mbres|6668|19803|615|10
+#CG|Bouenza
+Madingou||-4154|13550|216|1
+#CG|Niari
+Makabana||-3463|12606|168|13
+Mbinda||-2108|12871|643|6
+#CG|Sangha
+Mokéko|Mokeko|1563|15941|435|6
+#CH|Aargau
+Möhlin|Mohlin|47559|7843|310|9
+Muri||47274|8339|478|6
+Menziken||47240|8190|549|5
+#CH|Basel-Landschaft
+Münchenstein|Munchenstein|47518|7610|287|12
+#CH|Bern
+Muri||46931|7487|558|13
+Münsingen|Munsingen|46873|7561|539|11
+Münchenbuchsee|Munchenbuchsee|47022|7450|556|10
+#CH|Fribourg
+Marly||46776|7165|627|8
+Murten/Morat||46928|7117|435|6
+#CH|Jura
+Moutier||47278|7370|535|8
+#CH|Lucerne
+Meggen||47047|8375|476|7
+Malters||47036|8182|504|6
+#CH|Thurgau
+Münchwilen|Muenchwilen|47477|8997|514|6
+#CH|Ticino
+Mendrisio||45870|8982|338|15
+Minusio||46178|8815|243|7
+Massagno||46013|8944|375|6
+#CH|Zurich
+Meilen||47272|8646|464|14
+Mattenbach (Kreis 7)||47487|8747|446|11
+Männedorf|Maennedorf|47257|8699|460|8
+Mattenbach (Kreis 7) / Deutweg||47494|8739|447|6
+#CI|Bas-Sassandra District
+Moussayo||5990|-6437|226|8
+Magnéry|Magnery|4940|-6922|237|8
+Mayakoffikro||6275|-6996|166|8
+Mahino||5113|-7415|77|6
+#CI|Comoé District
+Manzanoua||6843|-3286|190|13
+Mbaoussiéssou|Mbaoussiessou|6581|-4271|200|6
+Monga||5476|-3661|15|6
+#CI|Denguélé District
+Minignan||9997|-7836|408|9
+Madinani||9611|-6942|514|9
+#CI|Goh-Djiboua
+Mabouo||5934|-6024|190|6
+#CI|Lacs District
+Moronou||6320|-4971|106|6
+#CI|Lagunes District
+Moapé|Moape|6189|-3804|142|9
+Memni||5511|-3740|77|8
+Mborou||5595|-4363|46|7
+Montézo|Montezo|5486|-3740|92|7
+Morokro||6078|-4703|60|6
+#CI|Montagnes
+Mantongouiné|Mantongouine|7288|-8038|353|6
+#CI|Sassandra-Marahoue
+Monoko Zohi Deux||7070|-6845|291|13
+Manfla||7411|-5911|245|12
+Madogé|Madoge|7029|-6473|278|11
+Manoufla||6620|-5627|223|8
+Maminigui||7402|-5841|282|7
+Minfla||7523|-6044|215|6
+#CI|Savanes District
+Momiraso||9707|-5169|330|10
+Mahra||8679|-5976|382|7
+Mougnini||10014|-6671|456|7
+Mahalé|Mahale|10129|-6578|380|6
+Mibrigué|Mibrigue|10285|-5795|359|5
+#CI|Vallée du Bandama District
+Mborla-Dioulasso||8469|-4481|321|5
+#CI|Zanzan District
+Marahui||8615|-2751|303|15
+#CL|Antofagasta
+Mejillones||-23100|-70447|13|14
+María Elena|Maria Elena|-22344|-69662|1258|8
+#CL|Coquimbo Region
+Monte Patria||-30695|-70958|429|14
+#CL|Maule Region
+Maule||-35522|-71689|122|7
+#CM|Far North
+Mindif||10398|14436|396|11
+Makary||12575|14455|295|7
+#CM|North-West
+Mbengwi||6017|10000|1222|10
+Mme-Bafumen||6333|10233|1403|6
+#CM|South-West
+Mundemba||4948|8872|111|12
+#CN|Chongqing
+Mixin||30380|105768|266|14
+Mingyu||29307|107118|493|12
+Mala||29283|108850|798|12
+Miaoxi||29050|108459|558|11
+Miaoba||31936|108518|660|10
+Manyue||31619|108564|966|10
+Meiziya||29161|108519|722|10
+Miaoya||29446|107320|780|9
+Mawu||29787|108345|603|9
+Maoba||29105|108900|1055|8
+Minzhu||29363|107167|742|7
+Miaoquan||28640|109004|292|7
+Muliang||29216|107022|891|7
+Mingtong||31773|108541|666|6
+Muye||29256|108988|918|5
+#CN|Gansu
+Mayuan||34054|105523|1529|13
+Malu||34911|106455|1906|12
+Mawu||34426|104915|2058|11
+Ma’ai|Ma'ai|34594|102478|3118|11
+Mahe||34336|105397|1787|10
+Mu’er|Mu'er|34566|103585|2512|9
+Mayanhe||34073|105737|1368|8
+Maima||33641|102069|3495|7
+Mu’er|Mu'er|34257|104342|2334|6
+Madang||35324|102785|2390|6
+Moba||33229|105018|1826|5
+Miba||33543|105782|1017|5
+#CN|Guangdong
+Ma’anshan|Ma'anshan|22721|113811|10|15
+Minzhu||22721|113777|-2|7
+#CN|Guangxi
+Malu||21650|107950|141|13
+#CN|Guizhou
+Maogong||26146|108861|810|12
+Mengyan||26317|108883|557|11
+#CN|Hubei
+Muyu||31472|110387|1242|9
+#CN|Qinghai
+Mole||37690|100726|3458|7
+#CN|Xinjiang
+Mazha||43853|81937|880|12
+#CN|Yunnan
+Mengka||22750|99483|1164|14
+Mengwang||22450|101383|1503|13
+#CO|Antioquia
+Mutatá|Mutata|7244|-76436|132|13
+#CO|Bolívar
+Montecristo||8297|-74473|84|13
+Margarita||9156|-74266|24|10
+#CO|Boyacá
+Miraflores||5196|-73145|1518|8
+Muzo||5535|-74108|770|8
+#CO|Caldas Department
+Marquetalia||5297|-75055|1554|12
+#CO|Caquetá
+Milán|Milan|1290|-75508|221|8
+#CO|Casanare Department
+Monterrey||4878|-72896|447|15
+Maní|Mani|4816|-72279|178|13
+Municipio Hato Corozal||6157|-71764|256|11
+#CO|Cauca Department
+Mercaderes||1802|-77170|1132|15
+#CO|Cesar Department
+Manaure Balcón del Cesar|Manaure Balcon del Cesar|10393|-73032|726|9
+#CO|Cundinamarca
+Medina||4510|-73350|536|7
+#CO|Córdoba
+Moñitos|Monitos|8250|-76050|44|5
+#CO|Guaviare Department
+Miraflores||1337|-71951|209|5
+#CO|La Guajira Department
+Manaure||11775|-72444|3|10
+#CO|Meta Department
+Mesetas||3385|-74044|550|10
+Mapiripán|Mapiripan|2891|-72133|181|6
+#CO|Nariño
+Mosquera||2509|-78451|7|10
+#CO|Risaralda Department
+Mistrató|Mistrato|5296|-75884|1537|6
+#CO|Santander Department
+Mogotes||6476|-72970|1681|10
+#CO|Sucre Department
+Majagual||8541|-74629|21|11
+#CR|Puntarenas Province
+Miramar||10093|-84730|339|7
+#CR|San José
+Mercedes||9274|-83580|598|5
+#CU|Las Tunas Province
+Manatí|Manati|21311|-76935|14|13
+#CU|Matanzas Province
+Martí|Marti|22947|-80919|15|13
+#CU|Pinar del Río
+Mantua||22292|-84283|22|11
+#CZ|Carlsbad Region
+Mariánské Lázně|Marianske Lazne|49965|12701|578|14
+#CZ|Central Bohemia
+Milovice||50226|14889|190|15
+Mnichovo Hradiště|Mnichovo Hradiste|50527|14971|241|9
+Mníšek pod Brdy|Mnisek pod Brdy|49867|14262|385|6
+#CZ|Liberec Region
+Mimoň|Mimon|50659|14725|281|6
+#CZ|Olomouc Region
+Mohelnice||49777|16919|278|10
+#CZ|Pardubice Region
+Moravská Třebová|Moravska Trebova|49758|16664|364|9
+#CZ|Prague
+Malešice|Malesice|50085|14509|233|11
+Malá Strana|Mala Strana|50088|14404|209|6
+#CZ|South Bohemian Region
+Milevsko||49451|14360|457|9
+#CZ|South Moravian
+Mikulov||48806|16638|242|8
+Modřice|Modrice|49119|16604|204|6
+Moravský Krumlov|Moravsky Krumlov|49049|16312|255|6
+Maloměřice|Malomerice|49222|16658|262|6
+Medlánky|Medlanky|49240|16571|267|5
+#CZ|Vysocina
+Moravské Budějovice|Moravske Budejovice|49052|15809|465|7
+#DE|Baden-Wurttemberg
+Münsingen|Munsingen|48411|9497|714|14
+Markgröningen|Markgroningen|48905|9081|286|14
+Murrhardt||48982|9570|286|14
+Malsch||48883|8333|127|14
+Meckenbeuren||47700|9567|415|13
+Markdorf||47719|9390|441|12
+Meßstetten|Messstetten|48183|8966|925|11
+Möglingen|Moglingen|48887|9127|291|10
+Mengen||48050|9330|561|10
+Magstadt||48745|8967|427|9
+Meßkirch|Messkirch|47995|9115|603|9
+Möckmühl|Mockmuhl|49325|9358|180|8
+Mühlhausen|Muhlhausen|49249|8727|143|8
+Murg||47555|8022|308|7
+Maulbronn||49000|8803|247|7
+Mutlangen||48826|9797|452|6
+Muggensturm||48867|8283|116|6
+Murr||48962|9259|207|6
+Mittelschöntal|Mittelschontal|48946|9395|282|6
+Mainhardt||49076|9556|492|6
+Meersburg||47694|9271|426|6
+Meckesheim||49322|8819|144|5
+Münstertal/Schwarzwald|Muenstertal/Schwarzwald|47855|7784|381|5
+Munderkingen||48236|9644|518|5
+Mudau||49534|9204|452|5
+#DE|Bavaria
+Mindelheim||48046|10492|604|14
+Mainburg||48642|11781|423|14
+Mering||48266|10985|511|13
+Maisach||48217|11267|513|13
+Mömbris|Mombris|50069|9164|171|12
+Murnau am Staffelsee||47681|11201|698|12
+Münchberg|Munchberg|50190|11788|536|12
+Miesbach||47789|11834|700|11
+Manching||48717|11494|368|11
+Meitingen||48546|10852|432|11
+Marktheidenfeld||49845|9604|162|11
+Markt Schwaben||48189|11869|512|11
+Maxhütte-Haidhof|Maxhutte-Haidhof|49200|12092|421|11
+Miltenberg||49705|9267|145|10
+Markt Indersdorf||48361|11378|469|9
+Memmelsdorf||49930|10959|285|9
+Mainaschaff||49982|9090|119|8
+Mittenwald||47442|11262|915|8
+Münnerstadt|Munnerstadt|50246|10202|248|8
+Mitterteich||49951|12242|522|7
+Michelau||50162|11112|270|7
+Mainleus||50100|11377|300|7
+Mallersdorf-Pfaffenberg||48766|12231|383|7
+Mellrichstadt||50428|10303|280|6
+Markt Erlbach||49494|10653|388|6
+Mengkofen||48719|12440|399|6
+Moosinning||48277|11844|476|5
+Mömlingen|Momlingen|49860|9083|148|5
+#DE|Brandenburg
+Mahlow||52360|13410|50|14
+Michendorf||52314|13030|47|11
+Mittenwalde||52260|13539|38|9
+Müncheberg|Muencheberg|52507|14137|60|7
+#DE|Hesse
+Münster|Munster|49923|8868|139|14
+Melsungen||51130|9552|179|14
+Mörlenbach|Morlenbach|49599|8735|164|11
+Mengerskirchen||50564|8156|412|6
+Münzenberg|Muenzenberg|50453|8774|189|6
+Mittenaar||50700|8383|324|5
+#DE|Lower Saxony
+Mittegroßefehn|Mittegrossefehn|53390|7561|3|13
+Mitte||52375|9738|63|11
+Meinersen||52474|10352|54|8
+Molbergen||52858|7925|36|8
+Moringen||51699|9871|179|8
+Mühlenberg|Muehlenberg|52343|9691|72|7
+Moordorf||53473|7400|2|6
+Müden|Muden|52528|10360|48|6
+#DE|Mecklenburg-Vorpommern
+Malchin||53738|12769|5|8
+Malchow||53475|12422|77|7
+#DE|North Rhine-Westphalia
+Marienheide||51083|7531|356|14
+Monschau||50555|6240|418|13
+Mettingen||52317|7783|71|13
+Mengede||51572|7384|65|12
+Morsbach||50867|7728|218|12
+Möhnesee|Mohnesee|51500|8133|253|12
+Mengenich||50979|6867|52|10
+Marten||51513|7377|72|10
+Medebach||51197|8706|410|8
+Metelen||52144|7213|59|6
+Milse||52060|8617|80|6
+Mehrhoog||51738|6512|21|5
+#DE|Rheinland-Pfalz
+Mutterstadt||49441|8356|99|12
+Montabaur||50436|7823|256|12
+Morbach||49808|7127|474|11
+Mülheim-Kärlich|Muelheim-Kaerlich|50385|7499|92|10
+Mendig||50367|7283|195|9
+Maxdorf||49488|8292|95|7
+Mudersbach||50825|7943|248|6
+#DE|Saarland
+Marpingen||49452|7058|285|11
+Merchweiler||49350|7050|357|11
+#DE|Saxony
+Mickten||51083|13709|115|13
+Markranstädt|Markranstaedt|51301|12220|126|13
+Mülsen|Mulsen|50750|12567|318|12
+Moritzburg||51159|13680|180|8
+Markneukirchen||50311|12330|500|7
+Machern||51367|12633|154|7
+Mockrehna||51508|12814|104|6
+#DE|Saxony-Anhalt
+Mücheln|Muecheln|51297|11808|180|6
+Möckern|Moeckern|52141|11952|63|6
+#DE|Schleswig-Holstein
+Malente||54172|10560|32|11
+Meldorf||54092|9069|4|8
+Molfsee||54264|10066|26|5
+#DE|State of Berlin
+Müggelheim|Muggelheim|52411|13664|36|6
+#DE|Thuringia
+Meuselwitz||51043|12299|176|10
+#DK|Capital Region
+Mørkhøj|Morkhoj|55726|12470|26|10
+Måløv|Malov|55755|12323|36|9
+#DK|Central Jutland
+Malling||56036|10196|57|6
+Mårslet|Marslet|56067|10161|49|5
+#DK|South Denmark
+Munkebo||55456|10554|5|6
+#DK|Zealand
+Maribo||54777|11500|13|6
+#DO|El Seíbo
+Miches||18984|-69048|6|9
+#DO|Santiago Rodríguez
+Monción|Moncion|19411|-71153|372|7
+#EC|El Oro
+Marcabelí|Marcabeli|-3784|-79912|609|5
+#EC|Esmeraldas
+Muisne||610|-80019|4|13
+#EC|Loja
+Macará|Macara|-4382|-79945|549|13
+#EE|Harjumaa
+Männiku|Maenniku|59375|24718|48|6
+#EG|Red Sea
+Marsa Alam||25063|34890|18|10
+#EH|
+Meharrize||26148|-11069|400|12
+#ES|Andalusia
+Manilva||36376|-5250|132|14
+Medina Sidonia||36457|-5927|268|12
+Mancha Real||37786|-3612|756|11
+Mengibar||37970|-3809|304|10
+Montoro||38024|-4383|195|9
+Marmolejo||38045|-4170|248|8
+Montellano||36995|-5571|262|7
+Montefrío|Montefrio|37323|-4009|796|7
+Macael||37333|-2301|589|6
+Monachil||37133|-3537|868|6
+Mojacar||37140|-1851|162|5
+#ES|Balearic Islands
+Muro||39737|3056|72|7
+Magaluf||39511|2535|7|5
+#ES|Canary Islands
+Moya||28111|-15583|487|7
+#ES|Castille and León
+Medina de Pomar||42929|-3488|591|6
+Medina de Ríoseco|Medina de Rioseco|41883|-5044|752|5
+#ES|Castille-La Mancha
+Madridejos||39468|-3532|693|11
+Mora||39685|-3774|722|11
+Malagón|Malagon|39167|-3854|638|8
+Membrilla||38972|-3343|671|6
+Mota del Cuervo||39502|-2870|710|6
+Motilla del Palancar||39567|-1883|846|6
+Moral de Calatrava||38830|-3578|674|5
+Miguel Esteban||39524|-3076|681|5
+#ES|Catalonia
+Mollerussa||41633|900|250|14
+Mont-roig del Camp||41087|959|112|13
+Montgat||41469|2280|53|10
+Montmeló|Montmelo|41550|2242|78|9
+Matadepera||41599|2026|432|8
+Masquefa||41504|1811|257|7
+Montblanc||41376|1162|350|7
+Móra d'Ebre|Mora d'Ebre|41083|633|51|6
+Montbau||41435|2138|250|5
+Moià|Moia|41811|2098|709|5
+#ES|Extremadura
+Miajadas||39151|-5908|298|10
+Moraleja||40067|-6660|262|8
+Montehermoso||40088|-6350|399|6
+#ES|Galicia
+Mos||43161|-7543|398|15
+Muros||42776|-9060|14|10
+Malpica||43323|-8811|24|7
+Mazaricos||42940|-8972|363|6
+Mugardos||43460|-8255|27|6
+Meaño|Meano|42447|-8781|119|6
+Mondariz||42231|-8458|101|5
+Miño|Mino|43350|-8200|40|5
+#ES|Madrid
+Meco||40553|-3329|664|12
+Moralzarzal||40678|-3971|975|12
+Miraflores de la Sierra||40816|-3762|1143|7
+Manzanares el Real||40726|-3863|911|6
+Morata de Tajuña|Morata de Tajuna|40227|-3433|550|6
+Moraleja de Enmedio||40261|-3860|692|6
+#ES|Murcia
+Moratalla||38189|-1892|641|9
+#ES|Valencia
+Monóvar|Monovar|38438|-841|406|12
+Meliana||39533|-333|7|10
+Muro del Alcoy||38781|-436|399|8
+Monserrat||39367|-600|197|8
+Moncofa||39809|-147|9|6
+Monforte del Cid||38380|-728|227|6
+#ET|Oromiya
+Mēga|Mega|4050|38300|1819|7
+#FI|Central Finland
+Muurame||62133|25667|81|11
+#FI|North Ostrobothnia
+Muhos||64808|25993|30|8
+#FI|Ostrobothnia
+Malax||62942|21573|25|6
+#FI|Pirkanmaa
+Mänttä|Maenttae|62030|24628|104|6
+#FI|South Savo
+Mäntyharju|Maentyharju|61417|26883|86|7
+#FI|Southwest Finland
+Masku||60571|22099|27|10
+Mynämäki|Mynaemaeki|60679|21993|19|6
+#FI|Uusimaa
+Martinlaakso||60274|24851|36|14
+Myllypuro||60222|25067|18|13
+Mellunmäki|Mellunmaeki|60238|25116|19|9
+Malminkartano||60247|24862|21|8
+Mankkaa||60194|24770|16|8
+Maunula||60229|24931|42|8
+Metsola||60348|25090|46|6
+Meri-Rastila||60200|25119|1|5
+Meilahti||60190|24897|17|5
+Munkkivuori||60206|24876|16|5
+#FO|Vágar
+Miðvágur|Midvagur|62051|-7194|105|1
+#FR|Auvergne-Rhône-Alpes
+Mions||45663|4953|221|11
+Miribel||45826|4954|187|9
+Meythet||45918|6094|451|9
+Monistrol-sur-Loire||45293|4172|602|8
+Moirans||45331|5554|243|8
+Mably||46065|4060|295|8
+Meximieux||45908|5199|264|7
+Montluel||45852|5058|205|7
+Marignier||46090|6500|473|6
+Megève|Megeve|45857|6618|1105|5
+Mornant||45619|4672|367|5
+#FR|Bourgogne-Franche-Comté
+Migennes||47965|3518|86|9
+Morez||46525|6026|778|6
+Morteau||47058|6607|769|6
+Montbard||47623|4337|226|6
+Montchanin||46750|4471|323|6
+Mandeure||47449|6808|330|5
+Monéteau|Moneteau|47849|3582|107|5
+Marsannay-la-Côte|Marsannay-la-Cote|47271|4989|276|5
+#FR|Brittany
+Moëlan-sur-Mer|Moelan-sur-Mer|47814|-3629|56|7
+Mordelles||48075|-1846|39|6
+Montfort-sur-Meu||48138|-1956|43|6
+Melesse||48218|-1697|85|6
+#FR|Centre-Val de Loire
+Mainvilliers||48450|1456|161|11
+Montlouis-sur-Loire||47388|832|80|10
+Mehun-sur-Yèvre|Mehun-sur-Yevre|47138|2211|123|7
+Monts||47277|625|57|7
+Meung-sur-Loire||47831|1696|93|7
+Malesherbes||48296|2409|111|6
+Mer||47706|1506|95|6
+#FR|Grand Est
+Marly||49064|6154|167|11
+Molsheim||48540|7492|182|10
+Maizières-lès-Metz|Maizieres-les-Metz|49213|6160|165|10
+Maxéville|Maxeville|48713|6167|209|9
+Moyeuvre-Grande||49253|6045|176|9
+Mont-Saint-Martin||49544|5783|292|9
+Malzéville|Malzeville|48712|6185|208|8
+Mirecourt||48301|6133|282|7
+Mutzig||48540|7456|195|6
+Mourmelon-le-Grand||49133|4364|119|6
+Mondelange||49261|6165|162|6
+Marange-Silvange||49208|6104|222|6
+Mundolsheim||48642|7714|143|6
+Munster||48040|7139|380|5
+#FR|Hauts-de-France
+Méru|Meru|49233|2133|99|14
+Mouvaux||50699|3134|51|13
+Montataire||49259|2438|75|12
+Marly||50346|3550|42|12
+Méricourt|Mericourt|50401|2862|52|12
+Marquette-lez-Lille||50676|3066|20|11
+Montigny-en-Gohelle||50425|2939|32|11
+Marck||50949|1943|4|9
+Merville||50643|2641|18|9
+Mazingarbe||50471|2715|38|8
+Margny-lès-Compiègne|Margny-les-Compiegne|49426|2818|33|7
+Montdidier||49648|2570|98|7
+Marles-les-Mines||50505|2509|46|6
+Mouy||49315|2320|44|6
+#FR|New Aquitaine
+Mourenx||43370|-630|128|8
+Montmorillon||46426|870|94|8
+Malemort-sur-Corrèze|Malemort-sur-Correze|45171|1564|117|7
+Martignas-sur-Jalle||44845|-783|39|7
+Mimizan||44201|-1229|14|7
+Migné|Migne|46628|315|100|6
+Montpon-Ménestérol|Montpon-Menesterol|45010|159|45|6
+Marennes||45823|-1105|12|5
+Mios||44606|-937|13|5
+#FR|Normandy
+Maromme||49479|1024|126|12
+Mondeville||49175|-322|8|12
+Malaunay||49527|1043|40|6
+#FR|Occitanie
+Mende||44522|3500|720|15
+Moissac||44105|1085|79|14
+Mazamet||43493|2374|255|11
+Marguerittes||43860|4445|53|9
+Mèze|Meze|43427|3605|13|9
+Marseillan||43357|3528|9|7
+Manduel||43819|4472|57|6
+Marvejols||44554|3290|661|6
+Marsillargues||43665|4177|10|6
+Milhaud||43790|4307|32|5
+#FR|Pays de la Loire
+Montoir-de-Bretagne||47328|-2149|10|7
+Mamers||48350|369|132|7
+Mortagne-sur-Sèvre|Mortagne-sur-Sevre|46992|-953|117|6
+Machecoul||46993|-1823|5|6
+Mûrs-Erigné|Murs-Erigne|47396|-553|33|5
+Montaigu||46975|-1311|37|5
+#FR|Provence-Alpes-Côte d'Azur
+Montfavet||43933|4873|34|14
+Mont-Alban||43701|7300||13
+Montolivet||43317|5424|131|12
+Malpassé|Malpasse|43322|5416|70|11
+Monteux||44036|4996|46|11
+Marseille Vauban||43284|5375|76|10
+Mouans-Sartoux||43621|6971|127|9
+Morières-lès-Avignon|Morieres-les-Avignon|43940|4901|29|7
+Marseille Saint-Victor||43290|5368|54|7
+Magnan Beaumettes||43696|7241|20|7
+Mazan||44057|5127|151|5
+Mallemort||43732|5179|132|5
+Marseille Endoume||43283|5352|36|5
+#FR|Île-de-France
+Montmagny||48973|2347|50|15
+Mennecy||48569|2444|82|15
+Morangis||48704|2339|82|11
+Méry-sur-Oise|Mery-sur-Oise|49059|2191|67|9
+Magny-les-Hameaux||48743|2062|154|9
+Meulan-en-Yvelines||49008|1906|28|9
+Marcoussis||48640|2239|78|8
+Montlhéry|Montlhery|48640|2275|83|6
+Maule||48911|1853|34|6
+Marly-la-Ville||49082|2503|133|6
+Magnanville||48968|1678|140|6
+Magny-en-Vexin||49155|1787|82|5
+Menucourt||49028|1980|102|5
+#GA|Haut-Ogooué
+Mounana||-1408|13159|459|9
+#GA|Ngouni
+Mbigou||-1900|11906|667|7
+#GA|Nyanga
+Mayumba||-3432|10655|17|6
+#GA|Ogooué-Ivindo
+Mékambo|Mekambo|1007|13959|505|8
+#GA|Woleu-Ntem
+Mitzic||782|11549|583|11
+#GB|England
+Matlock||53138|-1556|97|15
+Morpeth||55169|-1689|33|14
+Mildenhall||52344|511|11|14
+Middlewich||53193|-2444|30|14
+Market Deeping||52677|-316|10|14
+Midsomer Norton||51286|-2486|95|13
+Marple||53395|-2063|147|13
+Mablethorpe||53341|261|2|13
+Marylebone||51525|-168|36|12
+Mossley Hill||53377|-2913|35|12
+Market Drayton||52905|-2490|105|12
+Minehead||51205|-3483|29|12
+Maida Hill||51527|-190|33|12
+Mortlake||51469|-267|11|11
+Monkhams||51615|27|71|10
+Mottingham||51453|39|29|10
+Mossley||53515|-2035|144|10
+Maryport||54714|-3495|11|10
+Milnrow||53611|-2113|148|9
+Market Warsop||53205|-1153|61|9
+Meltham Mills||53594|-1840|171|9
+Marshalswick||51765|-309|78|9
+Marlborough||51420|-1729|130|8
+Marske-by-the-Sea||54591|-1020|22|8
+Merstham||51260|-157|94|8
+Meriden||51683|-381|73|8
+Maidenbower||51108|-153|72|8
+Merrow||51246|-531|79|8
+Meltham||53593|-1849|177|8
+Mill End||51639|-501|61|8
+Murton||54818|-1390|133|7
+Midhurst||50986|-740|33|7
+Market Weighton||53863|-665|26|6
+Malmesbury||51582|-2097|82|6
+Milford||51173|-650|57|6
+Marchwood||50890|-1454|10|6
+Millom||54211|-3272|12|6
+Moor Park||51630|-434|65|6
+Manningtree||51945|1061|8|6
+Manston||50950|-2267|51|5
+Measham||52706|-1506|105|5
+Malton||54137|-800|37|5
+#GB|Northern Ireland
+Magherafelt||54754|-6607|76|9
+#GB|Scotland
+Mayfield||55872|-3039|156|14
+Mossend||55817|-4000|78|13
+Milngavie||55941|-4323|66|13
+Montrose||56717|-2467|11|12
+Methil||56185|-3022|26|11
+Monifieth||56482|-2817|16|8
+Moodiesburn||55915|-4083|81|7
+#GB|Wales
+Milford Haven||51713|-5034|33|14
+Mountain Ash||51684|-3380|116|11
+Monmouth||51813|-2714|27|10
+Mold||53167|-3141|115|10
+Magor||51579|-2831|10|6
+#GE|Kvemo Kartli
+Mart’q’opi|Mart'q'opi|41787|45023|815|7
+#GE|Mtskheta-Mtianeti
+Mtskheta||41845|44719|476|7
+#GF|Guyane
+Macouria||4912|-52374|14|9
+Maripasoula||3642|-54032|106|8
+Mana||5669|-53779|5|6
+#GH|Central
+Mumford||5262|-759|33|14
+#GH|Eastern
+Mpraeso||6593|-735|477|9
+#GM|Central River
+Madiana||13517|-14533|32|6
+#GM|Lower River
+Mansa Konko||13443|-15536|19|2
+#GM|Western
+Mandinari||13373|-16603|18|10
+#GN|Labé Region
+Mali||12079|-12298|1440|6
+#GQ|Kié-Ntem
+Mikomeseng||2136|10613|542|6
+#GQ|Wele-Nzas
+Mongomo||1627|11313|630|6
+#GR|Attica
+Mándra|Mandra|38067|23500|79|11
+Markópoulo|Markopoulo|37883|23933|95|10
+Marathónas|Marathonas|38153|23963|40|7
+#GR|Central Greece
+Makrakómi|Makrakomi|38942|22115|143|14
+#GR|Central Macedonia
+Meneméni|Menemeni|40658|22897|7|14
+Melíki|Meliki|40517|22396|34|6
+#GR|Crete
+Moíres|Moires|35051|24873|84|6
+Mourniés|Mournies|35482|24013|51|5
+#GR|North Aegean
+Mýrina|Myrina|39875|25064|7|5
+#GR|Peloponnese
+Messíni|Messini|37051|22008|21|7
+Megalópoli|Megalopoli|37401|22142|429|5
+#GR|South Aegean
+Mykonos||37445|25329|9|11
+#GR|West Greece
+Mesolóngi|Mesolongi|38371|21432|3|13
+#GT|Jalapa
+Monjas||14503|-89872|965|14
+Mataquescuintla||14529|-90184|1641|8
+#GT|Jutiapa
+Moyuta||14039|-90081|1285|8
+#GT|Petén
+Melchor de Mencos||17066|-89152|113|11
+#GT|Sacatepéquez
+Magdalena Milpas Altas||14548|-90675|2044|12
+#GU|Merizo
+Merizo Village||13266|144669|75|2
+#GU|Mongmong-Toto-Maite
+Mongmong-Toto-Maite Village||13469|144782|43|7
+#GW|Gabú
+Madina do Boé|Madina do Boe|11748|-14211|67|12
+#GW|Oio
+Mansôa|Mansoa|12073|-15319|14|9
+Mansabá|Mansaba|12292|-15183|41|6
+#GY|Barima-Waini
+Mabaruma||8204|-59781|14|6
+#GY|Potaro-Siparuni
+Mahdia||5285|-59150|381|4
+#HK|Eastern District
+Mount Parker||22266|114218|346|12
+Ming Wah Dai Ha||22278|114231||5
+#HK|Islands
+Ma Wan||22352|114060||14
+Mui Wo Kau Tsuen||22269|113986|39|5
+#HK|Kowloon City
+Ma Tau Kok||22322|114191|22|14
+#HK|Yau Tsim Mong District
+Metro Harbour||22324|114160|1|8
+#HN|Atlántida Department
+Mezapa||15583|-87650|154|6
+#HN|Choluteca Department
+Monjarás|Monjaras|13201|-87374|14|7
+Morolica||13567|-86900|189|5
+#HN|Comayagua Department
+Minas de Oro||14796|-87347|975|13
+Meámbar|Meambar|14783|-87767|416|13
+#HN|Francisco Morazán Department
+Maraita||13884|-87040|968|7
+#HN|La Paz Department
+Marcala||14157|-88035|1239|10
+#HN|Olancho Department
+Manto||14917|-86383|658|12
+#HN|Yoro Department
+Morazán|Morazan|15317|-87600|211|11
+#HR|Dubrovnik-Neretva
+Metković|Metkovic|43054|17648|5|14
+#HR|Primorje-Gorski Kotar
+Mali Lošinj|Mali Losinj|44531|14469|14|6
+#HR|Split-Dalmatia
+Makarska||43297|17018|3|13
+#HT|Centre
+Mirebalais||18835|-72105|121|9
+Mayisad||19176|-72140|282|5
+#HT|Nord
+Milot||19608|-72213|102|6
+#HU|Bekes County
+Mezőberény|Mezobereny|46817|21033|81|11
+Mezőkovácsháza|Mezokovacshaza|46400|20917|97|7
+Mezőhegyes|Mezohegyes|46317|20817|96|6
+#HU|Borsod-Abaúj-Zemplén
+Mezőcsát|Mezocsat|47817|20917|91|7
+Martin Kertváros|Martin Kertvaros|48092|20814|111|6
+#HU|Budapest
+Magdolnanegyed||47493|19083|100|10
+Miklóstelep|Miklostelep|47447|19195|123|5
+#HU|Bács-Kiskun
+Mélykút|Melykut|46215|19381|133|6
+#HU|Csongrád
+Mindszent||46524|20190|80|7
+Mórahalom|Morahalom|46218|19885|92|5
+#HU|Fejér
+Mór|Mor|47378|18204|177|15
+Martonvásár|Martonvasar|47316|18790|109|5
+#HU|Pest County
+Maglód|Maglod|47443|19364|182|10
+#HU|Somogy County
+Marcali||46585|17412|130|11
+#ID|
+Muarajawa||-633|117300|1|13
+#ID|Bali
+Munduk||-8269|115079|1163|6
+#ID|North Maluku
+Maba||701|128292|10|13
+#ID|West Sulawesi
+Mamuju||-2681|118886|8|15
+#IE|Leinster
+Marino||53370|-6236|12|11
+Mount Merrion||53300|-6215|44|8
+Monkstown||53293|-6153|15|6
+#IE|Munster
+Mallow||52133|-8633|58|13
+Midleton||51915|-8181|10|12
+#IE|Ulster
+Monaghan||54246|-6971|72|8
+#IL|Central District
+Mazkeret Batya||31854|34846|75|15
+#IL|Northern District
+Maale Iron||32554|35184|138|15
+#IL|Southern District
+Meitar||31327|34939|420|8
+Mitzpe Ramon||30609|34801|858|5
+#IM|Maughold
+Maughold||54299|-4318|70|0
+#IN|Andhra Pradesh
+Mādugula|Madugula|17916|82816|97|15
+Modameedipalle||14736|78561|141|11
+Muddanūru|Muddanuru|14687|78393|196|10
+Mandasa||18868|84463|44|9
+Mangasamudram||13229|79091|311|8
+Mūlaguntapādu|Mulaguntapadu|15264|80020|23|7
+Moragudi||14863|78379|188|7
+Murakambattu||13246|79119|292|7
+Malicherla||18071|83400|57|5
+Mangampeta||14016|79314|195|5
+#IN|Arunachal Pradesh
+Miāo|Miao|27493|96181|233|6
+#IN|Assam
+Morongial||26333|92684|57|10
+Moran Town||27187|94915|99|8
+Maibong||25301|93138|295|8
+Majgaon||26652|92791|55|8
+Mairabari Town||26454|92423|62|7
+Mahur||25183|93113|599|7
+Morānha|Moranha|27187|94916|104|7
+Mohmaiki||26636|93629|77|6
+Mosli Pt I||24860|92477|13|5
+#IN|Bihar
+Mohiuddinnagar||25574|85669|55|15
+Mālhīpur|Malhipur|25407|86023|49|12
+Mathurāpur|Mathurapur|25871|85788|54|8
+Majhauli Khetal||26110|85366|45|7
+Mohanpur||26605|85518|56|6
+Mansur Chak||25623|85921|51|5
+#IN|Chandigarh
+Mauli Jagran||30692|76826|317|11
+#IN|Chhattisgarh
+Mandir Hasaud||21224|81768|302|13
+Mana-Camp||21194|81717|299|12
+Malhār|Malhar|21893|82283|253|9
+Mehmand||22037|82196|266|8
+Māro|Maro|21867|81859|265|7
+Magarlor||20749|81852|317|6
+#IN|Dadra and Nagar Haveli and Daman and Diu
+Mashāt|Mashat|20245|73008|46|12
+Marwad||20438|72832|17|7
+#IN|Delhi
+Mubārakpur Dobās|Mubarakpur Dobas|28710|77039|215|12
+Maidan Garhi||28500|77206|243|11
+Mitrāon|Mitraon|28606|76946|218|7
+#IN|Goa
+Mandrem||15653|73723|12|8
+Murda||15480|73854|14|8
+Morjim||15631|73739|4|7
+Madkai||15414|73940|17|6
+#IN|Gujarat
+Mora||21178|72659|16|14
+Māndal|Mandal|23289|71919|35|13
+Mahendranagar||22840|70860|53|13
+Mānkuwa|Mankuwa|23210|69568|129|12
+Meghraj||23498|73514|168|11
+Mahuver||21027|72887|10|11
+Maktampur||21705|73012|11|11
+Mithapur||22414|69009|12|11
+Mirjhapar||23219|69634|132|7
+Mālpur|Malpur|23360|73466|145|7
+Mota Natava||23174|74045|248|6
+#IN|Haryana
+Maheshari||28215|76822|249|9
+Mustafābād|Mustafabad|30202|77149|284|9
+Māyar|Mayar|29105|75864|218|6
+Manethi||28158|76389|292|5
+#IN|Himachal Pradesh
+Mehatpur Basdehra||31407|76342|364|9
+Manāli|Manali|32257|77175|2108|8
+#IN|Jammu and Kashmir
+Mehmood Pora||33687|74995|1735|11
+Mattan||33763|75209|1654|9
+Māgām|Magam|34093|74590|1591|5
+Majhiāri|Majhiari|33597|74225|1135|5
+#IN|Jharkhand
+Manoharpur||22375|85192|228|13
+Malkera||23782|86288|186|13
+Mahāgama|Mahagama|25034|87319|80|11
+Marāi Kalān|Marai Kalan|24021|85351|622|10
+Māndu|Mandu|23795|85469|445|10
+Meru||24010|85467|592|8
+Maheshlundi||24176|86266|289|7
+Mera||23756|86794|134|7
+Mahlidih||23808|86354|206|6
+Muraidih||23810|86239|223|6
+Masrātu|Masratu|23983|85324|621|6
+Meghahatuburu||22072|85269|812|6
+Matigara||23781|86178|202|6
+Marār|Marar|23671|85508|362|5
+Mahuda||23725|86277|170|5
+#IN|Karnataka
+Madanayakahalli||13059|77462|856|13
+Manjanādi|Manjanadi|12783|74898|27|10
+Mudgere||13134|75642|963|10
+Munnūru|Munnuru|12862|75019|29|9
+Maragondahalli||12834|77656|915|9
+Munirābād|Munirabad|15309|76338|473|9
+Mūdashedde|Mudashedde|12934|74892|32|8
+Mallār|Mallar|13214|74761|18|8
+Mutge||15866|74592|745|8
+Māyakonda|Mayakonda|14289|76083|648|6
+Mathadahatti||14239|76379|721|6
+Muduperar||12973|74938|78|6
+Mulur||12940|74928|39|5
+Mūdabettu|Mudabettu|13268|74748|14|5
+Manipura||13296|74793|53|5
+#IN|Kerala
+Mānantheri|Manantheri|11841|75609|52|15
+Madayikonam||10372|76225|31|14
+Meppāyyūr|Meppayyur|11539|75735|47|14
+Mangalapādi|Mangalapadi|12669|74910|27|13
+Madhūru|Madhuru|12540|75010|33|13
+Maniyur||11953|75448|22|13
+Mayyīl|Mayyil|11985|75438|43|12
+Mavitāyi|Mavitayi|11841|75477|30|12
+Mullasshēri|Mullassheri|10533|76086|10|12
+Manjēshvar|Manjeshvar|12713|74889|11|9
+Mogrāl|Mogral|12573|74958|21|9
+Mundathikōd|Mundathikod|10645|76195|29|8
+Manavalassery||10361|76172|18|7
+Manakkody||10486|76170|31|7
+Minalur||10625|76221|37|6
+#IN|Lakshadweep
+Minicoy||8289|73062|7|10
+#IN|Madhya Pradesh
+Mangawān|Mangawan|24668|81546|310|14
+Majholi||23501|79924|394|13
+Meghnagar||22907|74542|309|13
+Mundi||22067|76493|304|13
+Mānegaon|Manegaon|23206|80012|406|13
+Māndleshwar|Mandleshwar|22176|75660|165|12
+Majhauli||24120|81630|382|12
+Makron||23507|76075|502|12
+Māndu|Mandu|22341|75401|576|11
+Mohgaon||21639|78736|371|10
+Mānglya|Manglya|22815|75926|536|10
+Māchalpur|Machalpur|24128|76317|407|9
+Malhārgarh|Malhargarh|24283|74990|463|8
+Majhgawān|Majhgawan|24921|80808|352|8
+Mānpur|Manpur|22432|75621|577|8
+Mālanpur|Malanpur|26357|78287|179|7
+Mandai||23219|79985|405|7
+Mahrāgaon|Mahragaon|22606|77756|323|6
+Madhogarh||24564|80911|302|5
+#IN|Maharashtra
+Mauda||21146|79398|271|15
+Mahābaleshwar|Mahabaleshwar|17560|73400|280|14
+Mahabaleshwar||17923|73659|1377|13
+Malkāpur|Malkapur|16920|73935|576|13
+Murud||18328|72962|14|13
+Medankarwadi||18748|73869|633|13
+Maindargi||17457|76293|449|12
+Māldhe|Maldhe|20522|74553|413|12
+Murgūd|Murgud|16396|74191|569|11
+Manor||19724|72910|19|10
+Mākhjan|Makhjan|17270|73500|23|10
+Mohpada||18900|73182|24|10
+Mhasla||18133|73112|25|10
+Mowād|Mowad|21465|78451|407|9
+Mhāsāl|Mhasal|20750|78636|266|9
+Mahindāle|Mahindale|20905|74748|268|8
+Māngvādi|Mangvadi|18431|73860|680|8
+Mānda|Manda|19568|72797|12|8
+Murmāri|Murmari|21073|79828|265|8
+Maan||18581|73704|615|8
+Morewadi||16662|74254|595|7
+Mohpa||21310|78830|361|7
+Mansar||21396|79264|330|7
+Mahapoli||19406|73086|15|6
+Mātherān|Matheran|18983|73265|740|5
+#IN|Meghalaya
+Mairang||25562|91636|1682|14
+Mawpat||25599|91925|1482|6
+#IN|Mizoram
+Mamit||23927|92490|870|8
+#IN|Nagaland
+Medziphema||25758|93865|430|9
+#IN|Odisha
+Mukhiguda||19440|82851|265|6
+Majhihara||20175|86000|11|6
+Mohana||19443|84261|474|5
+#IN|Punjab
+Makhu||31103|74996|213|15
+Majītha|Majitha|31757|74959|241|15
+Malsiān|Malsian|31130|75350|226|13
+Mahalpur||31362|76038|294|11
+Mudki||30780|74881|207|10
+Malaudh||30633|75936|259|8
+Manwāl|Manwal|32303|75676|366|6
+Mulānpur|Mulanpur|30800|76744|356|6
+Mīrpur|Mirpur|30612|76853|306|6
+Mubārikpur|Mubarikpur|30615|76856|308|5
+#IN|Rajasthan
+Meethari Marwar||27576|74687|322|15
+Malsīsar|Malsisar|28354|75297|287|14
+Marwar Junction||25725|73603|263|12
+Manohar Thāna|Manohar Thana|24240|76802|337|11
+Mandāwar|Mandawar|27864|76550|312|11
+Mahu Khurd||26469|76733|270|11
+Morak||24727|75956|343|9
+Maoli||24783|73984|500|9
+Māndavla|Mandavla|25426|72519|144|7
+#IN|Tamil Nadu
+Mukkūdal|Mukkudal|8743|77523|62|15
+Mudukulathur||9342|78514|28|15
+Manjathala||11362|76779|1810|14
+Mohanūr|Mohanur|11059|78140|122|14
+Mukāsi Pidāriyūr|Mukasi Pidariyur|11196|77603|281|14
+Manapakkam||13016|80176|16|13
+Mandākād|Mandakad|8161|77279|11|13
+Muttūr|Muttur|11046|77736|203|13
+Mallānkinar|Mallankinar|9598|78056|101|13
+Malaimāchchampatti|Malaimachchampatti|10906|77005|379|13
+Mallāpuram|Mallapuram|11982|78248|428|13
+Mārāndahalli|Marandahalli|12388|78003|585|12
+Mangalam||9765|78640|52|11
+Manimutharu||8658|77414|114|11
+Marungūr|Marungur|8172|77504|32|11
+Mūlaikkaraippatti|Mulaikkaraippatti|8545|77768|63|11
+Manavālakurichi|Manavalakurichi|8148|77306|22|11
+Marudūr|Marudur|10916|78451|90|11
+Moparipālaiyam|Moparipalaiyam|11133|77147|364|11
+Māllūr|Mallur|11544|78141|279|11
+Muttukavundanpudūr|Muttukavundanpudur|11050|77115|367|10
+Mayilādi|Mayiladi|8155|77506|30|10
+Modakkurichchi||11233|77779|180|10
+Masinigudi||11568|76641|946|10
+Mettuppālaiyam|Mettuppalaiyam|11168|78449|160|10
+Mangalam||11637|79281|69|9
+Mettuppālaiyam|Mettuppalaiyam|11450|77568|188|9
+Māsināyakkanpatti|Masinayakkanpatti|11667|78228|320|9
+Minnampalli||11001|78118|130|9
+Manamodu||11197|79595|16|9
+Molasūr|Molasur|12939|79884|71|9
+Manappakkam||13011|80169|9|9
+Midalam||8222|77262|33|9
+Manalūrpettai|Manalurpettai|12008|79092|122|9
+Mel Seval||8672|77615|56|8
+Mākkināyakkinpatti|Makkinayakkinpatti|10645|77029|313|8
+Milattūr|Milattur|10858|79239|41|8
+Muzhucode||8362|77228|64|8
+Mīnākshipuram|Minakshipuram|9991|77371|338|8
+Malayadi||8361|77179|76|8
+Mel Pattāmbākkam|Mel Pattambakkam|11788|79628|24|7
+Manjalumoodu||8375|77222|60|7
+Mānikkāpuram|Manikkapuram|11025|77275|360|6
+Mīnākshināyakkanpatti|Minakshinayakkanpatti|10376|77957|264|6
+Mārkkayankottai|Markkayankottai|9853|77360|360|6
+Morattuppālaiyam|Morattuppalaiyam|11161|77409|302|6
+Melpedu||13156|80041|30|6
+Māttūr|Mattur|11321|79202|59|6
+Mettamalai||9396|77895|72|5
+Manjakollai||10756|79820|1|5
+#IN|Telangana
+Mailāram|Mailaram|17501|78124|589|12
+Medpalli||17406|78604|488|11
+Muttargi||17541|78227|531|9
+Mamnūr|Mamnur|17909|79593|291|6
+#IN|Tripura
+Manoharpur||23722|91213|28|14
+Manu||23999|91989|47|9
+Matarbari||23507|91497|26|7
+#IN|Uttar Pradesh
+Maurānwān|Mauranwan|26429|80880|128|15
+Mehnagar||25879|83116|84|15
+Mohān|Mohan|26780|80675|126|15
+Mānikpur|Manikpur|25061|81100|243|14
+Mailāni|Mailani|28291|80344|169|14
+Moth||25726|78950|179|14
+Mursān|Mursan|27578|77941|180|12
+Mundāli|Mundali|28870|77827|224|12
+Mādhogarh|Madhogarh|26275|79186|149|11
+Mādhoganj|Madhoganj|27118|80141|142|10
+Mankāpur|Mankapur|27052|82230|102|10
+Mahāban|Mahaban|27433|77743|179|10
+Mahroni||24586|78728|374|9
+Mataundh||25436|80157|145|9
+Musāfir-Khāna|Musafir-Khana|26378|81796|107|8
+Mahārājganj|Maharajganj|26381|81274|123|6
+Mohanpur||28253|80245|171|6
+#IN|West Bengal
+Madanpur||23006|88492|16|13
+Muri||23371|85862|262|13
+Masila||22581|88233|9|11
+Māyāpur|Mayapur|22417|88117|6|11
+Muragācha|Muragacha|23536|88394|19|10
+Mirik||26888|88190|1642|10
+#IR|East Azerbaijan
+Mehrabān|Mehraban|38081|47132|1600|13
+Mamqān|Mamqan|37843|45976|1367|12
+#IR|Fars
+Meymand||28869|52750|1538|10
+Mohr||27552|52882|434|8
+Miyanshahr||28718|53858|1170|6
+Morghān|Morghan|29562|52650|1468|6
+#IR|Gilan Province
+Marjaghal||37280|49373|-3|7
+#IR|Hamadan Province
+Maryānaj|Maryanaj|34831|48459|1799|11
+Mohājerān|Mohajeran|35076|48616|1669|7
+#IR|Ilam Province
+Mehrān|Mehran|33122|46165|150|12
+#IR|Isfahan
+Majlesī|Majlesi|32199|51500|1804|9
+Manz̧arīyeh|Manzariyeh|31945|51872|1884|7
+Mūsáābād|Musaabad|31934|51752|2016|5
+Mashkat||34177|51265|867|5
+#IR|Khuzestan
+Mīānrūd|Mianrud|32154|48440|65|10
+Manşūrīyeh|Mansuriyeh|30629|50305|340|5
+#IR|Kohgiluyeh and Boyer-Ahmad
+Maḩalleh-ye Najafābād|Mahalleh-ye Najafabad|30632|51598|1780|11
+Mehrīān|Mehrian|30699|51564|1773|9
+#IR|Lorestan Province
+Ma‘mūlān|Ma'mulan|33379|47960|897|8
+#IR|Markazi
+Mīlājerd|Milajerd|34622|49208|1651|9
+#IR|Māzandarān
+Marzanābād|Marzanabad|36452|51300|507|7
+#IR|Razavi Khorasan
+Mashhad Rīzeh|Mashhad Rizeh|34792|60505|1116|10
+#IR|Sistan and Baluchestan
+Mehrestān|Mehrestan|27131|61674|1274|12
+Mohammadān|Mohammadan|27200|60560|536|10
+Mīrjāveh|Mirjaveh|29015|61450|852|9
+#IR|Tehran
+Mehrābād|Mehrabad|35705|51913|1745|5
+#IR|West Azerbaijan
+Moḩammad Yār|Mohammad Yar|36986|45517|1292|9
+Maḩmūdābād|Mahmudabad|36720|46515|1352|7
+Mīrābād|Mirabad|36405|45372|0|6
+#IR|Yazd Province
+Marvast||30478|54212|1540|9
+#IR|Zanjan
+Māhneshān|Mahneshan|36744|47673|1300|5
+#IS|Capital Region
+Mosfellsbær|Mosfellsbaer|64167|-21700|22|14
+#IT|Abruzzo
+Martinsicuro||42880|13913|2|10
+Montorio al Vomano||42581|13637|263|5
+#IT|Apulia
+Maglie||40121|18298|81|14
+Monteroni di Lecce||40319|18092|35|13
+Mottola||40639|17034|387|13
+Monte Sant'Angelo||41705|15961|796|12
+Margherita di Savoia||41372|16153|1|11
+Matino||40031|18136|75|11
+Martano||40202|18302|91|9
+Minervino Murge||41083|16079|429|9
+Melissano||39973|18121|59|7
+Melendugno||40273|18338|36|6
+Mattinata||41711|16051|75|6
+Monteiasi||40500|17383|47|5
+#IT|Basilicate
+Melfi||40996|15656|538|13
+Montescaglioso||40550|16665|352|9
+Marconia||40364|16688|106|9
+Montalbano Jonico||40286|16570|288|7
+#IT|Calabria
+Melito di Porto Salvo||37926|15750|28|10
+Mirto||39601|16774|21|9
+Marina di Schiavonea||39650|16533|2|8
+Mesoraca||39079|16788|415|6
+Marina di Gioiosa Ionica||38302|16331|10|6
+#IT|Campania
+Monte di Procida||40798|14050|63|13
+Mercato San Severino||40785|14754|260|11
+Macerata Campania||41063|14278|34|11
+Montesarchio||41062|14641|300|11
+Massa Lubrense||40609|14372|121|10
+Mercato||40845|14272|3|9
+Monteforte Irpino||40902|14744|502|9
+Mercato||40716|14940|200|8
+Montoro Superiore||40817|14798|265|8
+Montecorvino Rovella||40692|14979|295|8
+Montecorvino Pugliano||40679|14945|363|8
+Meta||40641|14416|111|8
+Mercogliano||40922|14745|550|7
+Montella||40844|15018|560|7
+Mariglianella||40930|14437|28|7
+Massa di Somma||40846|14375|166|6
+Mugnano del Cardinale||40942|14636|250|5
+Maiori||40648|14641|5|5
+#IT|Emilia-Romagna
+Molinella||44618|11667|8|9
+Massa Lombarda||44447|11821|13|9
+Maranello||44531|10869|137|9
+Medicina-Buda||44479|11638|27|9
+Montecchio Emilia||44699|10452|99|8
+Meldola||44128|12063|58|7
+Morciano di Romagna||43914|12651|83|6
+#IT|Friuli Venezia Giulia
+Muggia||45604|13768|3|11
+Maniago||46166|12706|283|10
+Majano||46188|13062|169|6
+Manzano||45988|13377|71|5
+Martignacco||46093|13140|141|5
+#IT|Lazio
+Monti||41895|12499|67|12
+Montefiascone||42543|12032|400|11
+Marina di Cerveteri||41980|12053|12|8
+Marco Simone||41955|12648|75|7
+Monte Porzio Catone||41816|12714|451|7
+Morlupo||42150|12503|207|6
+Marcellina||42024|12804|285|6
+Manziana||42130|12125|369|6
+Monte Compatri||41809|12738|573|6
+#IT|Liguria
+Marina di Andora||43954|8155|10|5
+#IT|Lombardy
+Mortara||45249|8733|108|14
+Merate||45689|9421|292|13
+Manerbio||45354|10138|64|12
+Morbegno||46137|9574|262|10
+Mandello del Lario||45922|9320|214|10
+Martinengo||45572|9768|149|9
+Magnago||45579|8802|197|9
+Molinetto||45494|10359|147|8
+Mozzate||45675|8956|255|8
+Mottella||45164|10844|27|8
+Motta Visconti||45288|8993|100|8
+Mozzo||45699|9609|252|7
+Marnate||45629|8909|227|7
+Macherio||45640|9274|215|7
+Mede||45097|8737|93|7
+Milano Due||45500|9266|124|6
+Missaglia||45707|9335|326|6
+Monte Olimpino||45826|9049|323|5
+Marmirolo||45219|10756|29|5
+#IT|Molise
+Montenero di Bisaccia||41964|14781|273|6
+#IT|Piedmont
+Mappano||45148|7708|235|7
+Montanaro||45233|7855|209|5
+#IT|Sardinia
+Macomer||40262|8767|563|10
+Maracalagonis||39286|9229|86|6
+#IT|Sicily
+Menfi||37604|12969|119|12
+Mazzarino||37302|14210|553|12
+Mussomeli||37581|13752|726|10
+Mascali||37758|15197|28|9
+Motta Sant'Anastasia||37512|14966|275|9
+Militello in Val di Catania||37276|14793|413|8
+Melilli||37178|15130|310|7
+Marineo||37952|13418|531|6
+Mirabella Imbaccari||37327|14446|518|5
+#IT|The Marches
+Montegranaro||43231|13630|279|11
+Matelica||43258|13008|354|9
+Monte Urano||43190|13662|247|7
+Marotta||43764|13148|4|6
+Monte San Giusto||43236|13593|236|6
+#IT|Trentino-Alto Adige
+Mori||45852|10981|204|8
+Mezzolombardo||46208|11096|227|7
+Mattarello||46009|11130|198|5
+#IT|Tuscany
+Monsummano Terme||43867|10813|20|13
+Monte Argentario||42435|11120|28|12
+Montelupo Fiorentino||43730|11010|35|11
+Montignoso||44024|10173|328|10
+Margine Coperta-Traversagna||43880|10757|22|7
+Montale||43935|11017|85|6
+Massa Marittima||43048|10893|380|6
+#IT|Umbria
+Marsciano||42921|12351|184|10
+Magione||43142|12212|299|6
+#IT|Veneto
+Malo||45659|11416|91|13
+Marcon-Gaggio-Colmello||45564|12299|4|13
+Mejaniga||45458|11906|11|11
+Montegrotto Terme||45331|11786|11|10
+Marostica||45745|11662|103|9
+Marano Vicentino||45696|11432|136|9
+Montagnana||45232|11465|16|8
+Musile di Piave||45621|12542|4|8
+Mestrino||45441|11759|20|8
+Mareno di Piave||45846|12337|36|7
+Monticello Conte Otto||45598|11572|42|7
+Motta di Livenza||45776|12604|9|7
+Martellago||45544|12164|12|7
+Maerne||45523|12155|8|7
+Mandriola-Sant'Agostino||45369|11851|9|6
+Maserà di Padova|Masera di Padova|45318|11865|9|5
+Montorio||45458|11066|59|5
+Monteforte d'Alpone||45420|11284|38|5
+Montebello Vicentino||45459|11383|53|5
+#JM|Saint Andrew Parish
+Mountain View Gardens||17986|-76767|52|10
+#JM|Saint Thomas Parish
+Morant Bay||17881|-76409|22|9
+#JO|Irbid
+Malkā|Malka|32676|35749|420|7
+#JP|Akita
+Minehama-menagata||40317|140041|31|7
+#JP|Chiba
+Myōden|Myoden|35694|139929|11|15
+Motona||35148|139836|22|7
+Mabashi||35812|139921|10|7
+#JP|Fukushima
+Mizunashi||37182|139801|606|14
+#JP|Gifu
+Masuda||35550|137250|390|7
+#JP|Gunma
+Morishita||36613|139050|337|7
+#JP|Hokkaido
+Monbetsu-honchō|Monbetsu-honcho|42479|142072|6|11
+Mikasa||43256|141888|90|8
+Mukawa||42572|141926|7|8
+Matsumae||41427|140103|8|6
+#JP|Iwate
+Minamida||40215|141418|287|5
+#JP|Kagoshima
+Maeda||31332|130937|47|14
+Miyanoura||30427|130572|8|7
+#JP|Kanagawa
+Matsuda-sōryō|Matsuda-soryo|35351|139139|127|11
+Minatomirai||35460|139630|3|9
+Manazuru||35153|139139|43|7
+#JP|Kumamoto
+Mendahigashi||32242|130897|145|15
+Miyahara||33123|131070|474|7
+#JP|Mie
+Minamiise||34350|136699|8|11
+#JP|Miyagi
+Marumori||37917|140767|22|13
+Minamisanriku||38678|141443|4|12
+#JP|Miyazaki
+Mitai||32700|131300|280|12
+#JP|Nagano
+Mure||36751|138240|523|10
+Miyada||35767|137950|618|9
+#JP|Okinawa
+Motobu||26659|127907|9|13
+#JP|Saga
+Moroura||33474|129872|53|6
+#JP|Saitama
+Minano||36074|139100|168|9
+#JP|Shimane
+Minari||35200|133000|231|12
+#JP|Shizuoka
+Minato||34638|138892|7|8
+Matsuzaki||34753|138776|6|7
+#JP|Tochigi
+Motegi||36517|140183|105|12
+#JP|Tokushima
+Matsushige||34134|134581|2|15
+#JP|Tokyo
+Mejiro||35724|139704|39|14
+Mizue||35694|139895|2|11
+Minamino||35626|139320|162|10
+#JP|Tottori
+Misasa||35410|133895|67|6
+#JP|Wakayama
+Minabe||33769|135318|5|13
+#JP|Yamagata
+Matsubara||38028|139991|244|7
+Miyajuku||38301|140141|162|6
+#KE|Baringo
+Mogotio||-22|35961|1582|13
+Marigat||471|35986|1025|9
+Maji Mazuri||-20|35691|2350|5
+#KE|Garissa County
+Mado Gashi||731|39174|260|12
+#KE|Homa Bay County
+Mbita||-425|34207|1154|15
+#KE|Isiolo County
+Merti||1067|38666|302|11
+#KE|Kajiado County
+Magadi||-1901|36287|617|15
+#KE|Kakamega County
+Malava||447|34854|1640|5
+#KE|Kilifi County
+Marereni||-2860|40151|11|7
+#KE|Kisumu County
+Maseno||-7|34600|1527|7
+#KE|Kwale County
+Msambweni||-4462|39483|19|15
+#KE|Lamu
+Mpeketoni||-2389|40698|10|6
+#KE|Machakos County
+Makutano||-1412|37471|1312|12
+Matuu||-1145|37547|1254|12
+#KE|Makueni County
+Mtito Andei||-2690|38167|754|6
+#KE|Murang'A
+Maragua||-796|37133|1362|9
+#KE|Nakuru County
+Mau Narok||-607|36008|2652|12
+#KE|Nyeri County
+Mukurwe-ini||-561|37048|1759|7
+#KE|Taita Taveta
+Mwatate||-3505|38377|860|10
+#KE|Uasin Gishu County
+Matunda||844|35137|1884|11
+#KE|Vihiga County
+Majengo||49|34725|1620|12
+#KG|Chuy Region
+Mayevka||42909|74569|708|11
+#KM|Anjouan
+Mirontsi||-12160|44410|213|12
+Moya||-12310|44437|51|8
+Mrémani|Mremani|-12308|44499|652|5
+Mramani||-12346|44529|83|5
+#KM|Grande Comore
+Mbéni|Mbeni|-11501|43378|480|5
+#KN|Middle Island
+Middle Island||17326|-62811|14|2
+#KN|Saint George Gingerland
+Market Shop||17132|-62573|220|3
+#KN|Saint Peter Basseterre
+Monkey Hill||17323|-62729|148|1
+#KW|Al Jahra Governorate
+Mazāri‘ al ‘Abdalī|Mazari' al 'Abdali|30042|47722|20|7
+#KW|Mubārak al Kabīr
+Mubārak al Kabīr|Mubarak al Kabir|29190|48087|37|0
+#KY|
+Midland Acres||19299|-81221|1|12
+#KZ|Aktobe
+Martuk||50747|56506|176|8
+#KZ|Atyrau Oblisi
+Maqat||47650|53343|-21|14
+Makhambet||47671|51586|-20|9
+Maloye Ganyushkino||46600|49267|-24|8
+Miyaly||48885|53792|29|6
+#KZ|Pavlodar Region
+Mayqayyng||51460|75802|260|8
+#KZ|Turkistan
+Myrzakent||40663|68545|269|10
+#KZ|Zhambyl
+Moyynkum||44283|72944|338|11
+#LA|Champasak Province
+Muang Không|Muang Khong|14118|105855|95|15
+#LA|Vientiane
+Muang Phôn-Hông|Muang Phon-Hong|18495|102415|184|10
+#LA|Xiagnabouli
+Muang Hôngsa|Muang Hongsa|19703|101340|569|6
+#LC|Micoud
+Micoud||13817|-60900|11|3
+#LI|Mauren
+Mauren||47218|9544|452|4
+#LK|Uva Province
+Monaragala||6871|81349|151|10
+#LK|Western Province
+Minuwangoda||7166|79953|18|8
+#LS|
+Mantsebo||-29483|27517|1661|9
+Mamathes||-29126|27834|1760|8
+#LS|Berea
+Mapoteng||-29110|27974|1719|14
+#LS|Maseru District
+Mazenod||-29419|27569|1581|13
+Morija||-29630|27514|1726|5
+#LS|Mokhotlong District
+Mokhotlong||-29289|29068|2201|14
+#LS|Quthing
+Mount Moorosi||-30273|27871|1622|7
+#LS|Thaba-Tseka
+Mantsonyane||-29533|28270|2207|6
+#LT|Utena
+Molėtai|Moletai|55225|25417|164|7
+#LU|Capellen
+Mamer||49628|6023|294|5
+#LU|Luxembourg
+Merl||49603|6096|274|7
+#LU|Mersch
+Mersch||49751|6106|220|3
+#LV|Madonas novads
+Madona||56853|26217|149|7
+#LV|Riga
+Mežciems|Mezciems|56969|24234|7|14
+#LY|Al Jabal al Akhdar
+Massah||32752|21628|510|8
+#LY|Darnah
+Martūbah|Martubah|32574|22764|299|9
+#MA|Beni Mellal-Khenifra
+Moulay Bou ’azza|Moulay Bou 'azza|33226|-6198|952|6
+#MA|Casablanca-Settat
+Moulay Abdallah||33197|-8588|19|14
+#MA|Drâa-Tafilalet
+Mhamid||29820|-5720|550|10
+#MA|Fes-Meknes
+Moulay Driss Zerhoun||34056|-5521|553|13
+Moulay Yacoub||34088|-5182|254|5
+#MA|Guelmim-Oued Noun
+Mirleft||29578|-10032|66|5
+#MA|Oriental
+Melqa el Ouidane||34560|-3023|249|8
+#MA|Rabat-Salé-Kénitra
+Moulay Bousselham||34882|-6295|45|8
+#MD|Teleneşti
+Mîndreşti|Mindresti|47505|28277|85|9
+#ME|Mojkovac
+Mojkovac||42960|19583|826|4
+#MG|Analamanga
+Miadanandriana||-19033|47783|1358|10
+Mantasoa||-19017|47833|1377|10
+Merikanjaka||-19133|47850|1560|8
+#MG|Atsimo-Atsinanana
+Manato||-22400|47483|147|7
+#MG|Atsinanana
+Mahavelona||-17685|49509|11|8
+#MG|Itasy
+Miarinarivo||-18959|46906|1325|14
+#MG|Melaky
+Mahabe||-17083|45333|293|10
+#MG|Sofia
+Marovantaza||-15383|47667|44|11
+Marovatolena||-15183|47650|197|9
+#MH|Mejit Island
+Mejit||10275|170865|13|0
+#MH|Mili Atoll
+Mili||6082|171735|10|1
+#MK|Makedonska Kamenica
+Makedonska Kamenica||42021|22590|590|8
+#MK|Makedonski Brod
+Makedonski Brod||41513|21216|543|6
+#MK|Mogila
+Mogila||41108|21379|588|4
+#ML|Ménaka
+Ménaka|Menaka|15920|2396|303|14
+#MM|Tanintharyi Region
+Me Taw||11717|98630|5|12
+#MM|Yangon
+Min Kone||17352|96210|18|12
+Myo Thit Ga||16865|96099|5|8
+Mee Pya||16545|96321|4|6
+Min Ga Lun||16578|96462|11|5
+#MN|Middle Govĭ
+Mandalgovi||45763|106271|1424|12
+#MR|Gorgol
+Maghama||15510|-12851|22|14
+Mboutt||16023|-12579|29|7
+#MR|Trarza
+Mederdra||16923|-15656|31|7
+#MT|Il-Marsa
+Marsa||35879|14495|8|5
+#MT|Il-Mellieħa
+Mellieħa|Mellieha|35957|14363|121|11
+#MT|Il-Munxar
+Munxar||36030|14235|114|2
+#MT|L-Imqabba
+Mqabba||35848|14468|95|3
+#MT|Marsaskala
+Marsaskala||35862|14567|30|10
+#MT|Marsaxlokk
+Marsaxlokk||35842|14543|17|4
+#MU|
+Montagne Blanche||-20285|57659|291|9
+#MU|Moka
+Moka||-20219|57511|359|9
+#MU|Pamplemousses
+Morcellement Saint André|Morcellement Saint Andre|-20072|57568|63|6
+#MV|Meemu Atholhu
+Muli||2922|73581||1
+#MV|Noonu Atoll
+Manadhoo||5767|73414|8|2
+#MV|Southern Ari Atoll
+Mahibadhoo||3757|72969|9|2
+#MX|Baja California
+Maclovio Rojas||32473|-116803|187|7
+#MX|Chiapas
+Mazatán|Mazatan|14863|-92449|22|7
+#MX|Chihuahua
+Miguel Ahumada||30619|-106512|1197|9
+#MX|Coahuila
+Minas de Barroterán|Minas de Barroteran|27652|-101284|433|8
+Morelos||28407|-100889|374|7
+#MX|Durango
+Mapimí|Mapimi|25834|-103848|1296|6
+#MX|Guanajuato
+Misión de Chichimecas|Mision de Chichimecas|21290|-100492|2042|7
+Mexicanos||20530|-101071|1737|6
+#MX|Guerrero
+Marquelia||16583|-98817|13|7
+Mazatlán|Mazatlan|17436|-99464|1282|5
+Mochitlán|Mochitlan|17472|-99370|1010|5
+#MX|Hidalgo
+Mineral del Monte||20139|-98675|2718|11
+#MX|Jalisco
+Mascota||20525|-104785|1266|9
+Mazamitla||19916|-103020|2253|8
+Mezcala||20336|-103018|1536|5
+#MX|Michoacán
+Morelos||19649|-101239|1950|14
+#MX|Morelos
+Miacatlán|Miacatlan|18765|-99359|1005|7
+#MX|México
+Miraflores||19222|-98807|2326|10
+Mexicaltzingo||19211|-99585|2605|10
+Malinalco||18948|-99496|1748|8
+Montecillo||19457|-98908|2245|7
+#MX|Nuevo León
+Misión San Pablo|Mision San Pablo|25740|-100144|399|8
+Monte Kristal||25626|-100157|457|6
+#MX|Puebla
+Miahuatlán|Miahuatlan|18550|-97440|1784|14
+Magdalena Cuayucatepec||18550|-97485|1741|9
+Miahuatlán|Miahuatlan|18292|-97288|1121|8
+#MX|Sinaloa
+Mochicahui||25951|-108930|23|6
+Mocorito||25482|-107921|92|5
+#MX|Sonora
+Marte R. Gómez (Tobarito)|Marte R. Gomez (Tobarito)|27368|-109886|49|9
+#MX|Tabasco
+Medellín y Madero Segunda Sección|Medellin y Madero Segunda Seccion|18114|-92854|9|8
+Macultepec||18143|-92860|10|6
+Miguel Hidalgo||18255|-93306|10|5
+#MX|Tlaxcala
+Mazatecochco||19179|-98187|2323|10
+#MX|Veracruz
+Maltrata||18811|-97275|1720|12
+Moralillo||22226|-97913|7|10
+Mundo Nuevo||18088|-94389|16|8
+Monte Blanco||18966|-97017|1254|7
+Mecayapan||18220|-94838|347|6
+Manlio Fabio Altamirano||19094|-96334|55|5
+Mecatlán|Mecatlan|20211|-97682|855|5
+#MX|Yucatán
+Maxcanú|Maxcanu|20586|-90002|38|13
+Muna||20488|-89714|25|11
+#MX|Zacatecas
+Miguel Auza||24294|-103451|1965|14
+Morelos||22862|-102610|2309|7
+#MY|Kelantan
+Melor||5966|102294|19|6
+#MY|Kuala Lumpur
+Mutiara Damansara||3157|101608|71|10
+#MY|Melaka
+Machap||2386|102291|55|6
+#MY|Pahang
+Muadzam Shah||3063|103089|36|15
+#MY|Perak
+Mambang Di Awan||4267|101150|29|13
+#MY|Sarawak
+Matu||2683|111533|12|13
+Maludam||1650|111033|4|5
+#MY|Selangor
+Meru||3136|101439|147|7
+#MZ|Gaza Province
+Manjacaze||-24724|33856|76|12
+#MZ|Inhambane Province
+Morrumbene||-23658|35345|48|13
+#MZ|Maputo Province
+Moamba||-25603|32246|110|15
+Marracuene||-25737|32676|26|13
+Magude||-25023|32648|44|12
+#MZ|Nampula
+Meconta||-14992|39847|228|11
+#MZ|Niassa Province
+Metangula||-12695|34816|479|15
+Marrupa||-13189|37505|828|10
+#NA|Hardap Region
+Mariental||-24627|17965|1106|15
+#NC|South Province
+Magenta||-22269|166471|13|7
+#NE|Tahoua Region
+Malbaza||13927|5520|290|13
+#NG|Adamawa
+Madagali||10889|13628|503|13
+Mayo-Belwa||9054|12058|269|6
+#NG|Bauchi
+Misau||11314|10467|436|14
+Madara||11780|10448|392|10
+#NG|Borno State
+Miringa||10731|12146|659|12
+#NG|Enugu State
+Mberubu||6173|7630|82|9
+#NG|FCT
+Madala||9104|7213|416|12
+#NG|Jigawa State
+Mallammaduri||12564|9957|357|11
+#NG|Kaduna State
+Mando||10717|6567|435|8
+#NG|Katsina State
+Musawa||12129|7670|578|9
+Mashi||12980|7947|494|8
+#NG|Kebbi
+Maiyama||12082|4369|256|10
+Mahuta||11553|4981|271|9
+#NG|Taraba State
+Mutum Biyu||8641|10774|146|12
+#NG|Yobe State
+Machina||13136|10049|366|12
+#NG|Zamfara State
+Maru||12334|6404|381|11
+#NI|Matagalpa Department
+Matiguás|Matiguas|12837|-85462|300|11
+#NL|Drenthe
+Marsdijk||53018|6585|10|12
+#NL|Gelderland
+Matenveld||52188|5999|11|6
+Matendonk||52198|6011|11|5
+#NL|Groningen
+Musselkanaal||52933|7015|8|7
+Marum||53144|6263|4|5
+#NL|Limburg
+Maasbracht||51139|5886|27|6
+Meerssen||50888|5750|60|6
+Malberg||50862|5654|65|5
+Meijel||51344|5885|37|5
+Maasbree||51358|6049|31|5
+#NL|North Brabant
+Made||51677|4793|3|12
+Mierlo||51440|5619|22|9
+Meerhoven||51443|5411|19|7
+Mill||51688|5779|16|6
+#NL|North Holland
+Muiden||52330|5069|3|6
+#NL|South Holland
+Monster||52026|4175|3|12
+#NL|Utrecht
+Montfoort||52046|4953|2|6
+#NO|Agder
+Mandal||58027|7453|11|11
+#NO|Nordland
+Mosjøen|Mosjoen|65836|13191||10
+#NO|Trøndelag
+Malvik||63433|10683|84|6
+Melhus||63286|10278|40|6
+#NO|Østfold
+Mysen||59554|11326|114|6
+#NZ|Auckland
+Meadowbank||-36868|174820|34|6
+Milford||-36772|174766|18|5
+#NZ|Bay of Plenty
+Mount Maunganui||-37642|176186|8|7
+#NZ|Canterbury
+Mairehau||-43498|172640|7|7
+Merivale||-43508|172610|15|5
+#NZ|Gisborne
+Mangapapa||-38638|178010|17|5
+#NZ|Hawke's Bay Region
+Mahora||-39618|176840|10|9
+#NZ|Manawatu-Wanganui
+Milson||-40328|175610|37|7
+Marton||-40069|175378|153|6
+#NZ|Otago
+Mosgiel||-45875|170347|20|15
+#NZ|Tasman District
+Motueka||-41133|173017|3|7
+#NZ|Waikato Region
+Morrinsville||-37648|175520|44|10
+Matamata||-37811|175762|67|6
+#NZ|Wellington Region
+Mount Cook||-41302|174775|43|8
+#OM|Musandam Governorate
+Mīnā’ Dabā|Mina' Daba|25651|56265|4|10
+#PA|Herrera Province
+Monagrillo||7983|-80433|26|11
+#PE|Junin
+Morococha||-11588|-76063|3986|8
+Mazamari||-11326|-74531|665|7
+#PE|La Libertad
+Miramar||-8179|-78994|26|10
+#PE|Lambayeque
+Motupe||-6152|-79714|135|14
+Mochumí|Mochumi|-6544|-79862|40|7
+Mórrope|Morrope|-6535|-80011|19|7
+#PE|Loreto
+Monte Israel||-3884|-71442|80|6
+#PE|Piura
+Morropón|Morropon|-5187|-79971|130|12
+Máncora|Mancora|-4108|-81047|11|9
+#PE|Puno
+Macusani||-14083|-70433|4360|11
+#PF|Îles du Vent
+Mahina||-17506|-149489|12|14
+#PH|Bicol Region
+Milaor||13596|123177|5|9
+Matnog||12588|124088|5|7
+Mambulo||13717|123050|2|6
+Milagros||12218|123510|0|6
+#PH|Cagayan Valley
+Magapit, Aguiguican||18108|121677|12|14
+Magapit||18137|121669|9|11
+Maddela||16341|121685|157|10
+Minante Segundo||16902|121762|53|7
+Masaya Sur||16500|121747|111|6
+Muñoz East|Munoz East|17158|121614|65|5
+#PH|Calabarzon
+Manggahan||14292|120901|119|14
+Mabitac||14426|121429|6|12
+Mariana||14617|121036|28|12
+Malaya||14397|121339|18|11
+Masalukot Uno||13955|121419|113|11
+Mulanay||13522|122404|6|8
+Masaya||14152|121282|21|8
+Malinao Ilaya||13996|121836|27|8
+Mamala||14017|121517|616|7
+Malabag||14155|120965|493|7
+Maulawin||14267|121433|9|7
+Malicboy||13982|121789|12|6
+Macalelon||13747|122139|12|6
+Maguyam||14263|121005|233|5
+#PH|Caraga
+Magallanes||9020|125517|6|7
+Mainit||9535|125523|42|6
+#PH|Central Luzon
+Minalin||14968|120683|7|14
+Mabini||15600|120983|48|8
+Maria Aurora||15797|121474|37|7
+Mayantoc||15620|120377|56|6
+Mapalacsiao||15428|120653|40|5
+Murcia||15404|120609|53|5
+#PH|Central Visayas
+Medellin||11129|123962|10|12
+Manalongon||9221|122886|16|9
+Maya||11274|124055|13|8
+Malaiba||10333|123317|163|7
+Moalboal||9943|123399|24|7
+Mayabon||9096|123174|14|7
+Madridejos||9791|123346|1|6
+Maninihon||9371|122841|12|6
+Mantalongon||9811|123462|779|6
+Mabini||9865|124522|14|6
+Mabinay||9727|122902|169|6
+Maloh||9056|122985|30|5
+#PH|Cordillera
+Monamon||16883|120883|1957|5
+#PH|Davao Region
+Montevista||7693|125989|73|10
+Magnaga||7169|125893|13|8
+Matanao||6679|125255|42|7
+Malalag||6596|125399|13|6
+Manat||7533|126017|126|6
+Magatos||7556|125727|20|6
+#PH|Eastern Visayas
+Matlang||10890|124455|8|6
+Maydolong||11500|125498|6|5
+Mondragon||12516|124752|6|5
+#PH|Ilocos
+Mangatarem||15787|120292|24|12
+Mapandan||16025|120455|15|11
+Minien East||15977|120481|19|6
+Magtaking||15985|120183|9|6
+Macalong||16014|120659|48|6
+#PH|Mimaropa
+Magsaysay||9386|118513|9|13
+Magsaysay||12333|121150|17|9
+#PH|Northern Mindanao
+Maranding||7925|123772|17|14
+Mambajao||9250|124716|9|10
+Medina||8912|125024|8|9
+Molugan||8538|124562|5|8
+Manticao||8404|124287|9|8
+Mamungan||8117|124219|373|8
+Maigo||8161|123958|7|7
+Managok||8029|125189|346|6
+Maria Cristina||8166|124204|256|6
+Mailag||7970|125138|321|5
+Moog||8601|124466|70|5
+#PH|Soccsksargen
+Makilala||6952|125097|289|14
+Malandag||6310|125248|194|13
+Matalam||7086|124901|42|10
+Maitum||6039|124499|7|8
+Malasila||6944|125129|364|6
+Maasim||5858|125006|5|6
+Magpet||7100|125115|285|5
+#PH|Western Visayas
+Miagao||10644|122235|22|9
+Miranda||10305|122878|9|8
+Minuyan||10514|123105|346|8
+Mabini||10796|123485|27|7
+Minapasoc||10699|123349|0|7
+Manoc-Manoc||11942|121943|0|6
+Mambusao||11434|122598|21|6
+Manlucahoc||9740|122498|22|5
+#PH|Zamboanga Peninsula
+Margosatubig||7578|123166|8|15
+Manukan||8533|123100||12
+Mercedes||6959|122148|23|9
+Malangas||7630|123032|26|8
+Manicahan||7019|122201|8|8
+#PK|Punjab
+Mankera||31388|71440|163|14
+Muhammad Pur||30710|73018|162|14
+Mirdad Muafi||30677|72929|157|10
+#PK|Sindh
+Madeji||27753|68452|61|15
+Mirwah Gorchani||25310|69050|18|12
+Miro Khan||27760|68092|55|11
+Mirpur Bhtoro||24729|68260|12|9
+Mirpur Sakro||24547|67628|8|8
+#PL|Greater Poland
+Mosina||52245|16847|65|12
+Międzychód|Miedzychod|52599|15897|37|11
+Murowana Goślina|Murowana Goslina|52575|17009|78|10
+#PL|Kujawsko-Pomorskie
+Mogilno||52658|17956|93|12
+#PL|Lesser Poland
+Miechów|Miechow|50356|20028|298|12
+Mszana Dolna||49674|20080|395|8
+Maków Podhalański|Makow Podhalanski|49730|19677|361|6
+Muszyna||49357|20897|450|5
+#PL|Lower Silesia
+Muchobór Wielki|Muchobor Wielki|51097|16945|117|13
+Maślice|Maslice|51158|16927|112|13
+Milicz||51528|17271|106|11
+Muchobór Mały|Muchobor Maly|51109|16969|118|8
+Maślice Małe|Maslice Male|51149|16942|112|7
+Mysłakowice|Myslakowice|50841|15779|382|5
+#PL|Mazovia
+Maków Mazowiecki|Makow Mazowiecki|52865|21101|99|10
+Mszczonów|Mszczonow|51974|20521|165|6
+Małkinia Górna|Malkinia Gorna|52692|22028|101|5
+#PL|Podlasie
+Mońki|Monki|53405|22798|172|11
+#PL|Pomerania
+Miastko||54003|16983|125|11
+Matarnia||54386|18473|137|6
+#PL|Silesia
+Mikuszowice||49781|19053|403|7
+Miasteczko Śląskie|Miasteczko Slaskie|50503|18939|301|7
+Murcki||50200|19044|320|6
+Markłowice|Marklowice|50017|18521|253|5
+#PL|Warmia-Masuria
+Morąg|Morag|53917|19926|117|15
+#PL|West Pomerania
+Myślibórz|Mysliborz|52924|14868|65|12
+Mierzyn||53430|14465|25|8
+Międzyzdroje|Miedzyzdroje|53929|14451|6|6
+#PM|Miquelon-Langlade
+Miquelon||47098|-56381|4|1
+#PR|Maricao
+Maricao||18181|-66980|432|1
+#PR|Maunabo
+Maunabo||18007|-65899|10|2
+#PR|Moca
+Moca||18395|-67113|40|5
+#PR|Morovis
+Morovis||18326|-66407|216|2
+#PS|West Bank
+Maythalūn|Maythalun|32348|35274|381|7
+#PT|Aveiro
+Murtosa||40737|-8638|8|8
+Macieira de Cambra||40859|-8373|362|5
+Marco da Oliveirinha||40615|-8619|51|5
+#PT|Azores
+Madalena||38536|-28527|8|6
+#PT|Beja
+Moura||38140|-7449|190|9
+Mértola|Mertola|37643|-7661|57|7
+#PT|Braga
+Marinhas||41559|-8783|15|6
+Moreira de Conegos||41387|-8339|151|6
+Merelim||41586|-8466|49|5
+#PT|Bragança
+Mirandela||41487|-7187|215|13
+Miranda do Douro||41497|-6273|674|7
+Macedo de Cavaleiros||41538|-6961|558|7
+#PT|Coimbra
+Miranda do Corvo||40093|-8333|102|8
+Mira||40429|-8737|32|8
+#PT|Faro
+Moncarapacho||37084|-7788|50|9
+Monchique||37318|-8555|439|5
+#PT|Guarda
+Mêda|Meda|40966|-7262|713|5
+#PT|Leiria
+Maceira||39689|-8894|164|10
+Monte Real||39852|-8863|20|6
+#PT|Lisbon
+Mafra||38938|-9328|300|12
+Malveira||38932|-9258|253|10
+Mem Martins||38794|-9343|167|9
+Milharado||38947|-9199|211|6
+#PT|Madeira
+Machico||32716|-16768|39|13
+#PT|Porto
+Moreira||41248|-8648|82|13
+Moreira||41056|-8389|75|11
+Margaride||41365|-8200|312|11
+Madalena||41102|-8648|31|11
+Melres||41070|-8401|44|10
+Madalena||41216|-8335|165|10
+Marco de Canavezes||41184|-8149|206|9
+Massarelos||41148|-8633|17|7
+Miramar||41068|-8650|14|5
+#PT|Santarém
+Marinhais||39047|-8702|34|6
+#PT|Viana do Castelo
+Meadela||41707|-8796|6|10
+Mozelos||41868|-8398|108|7
+#PT|Vila Real
+Mondim de Basto||41412|-7954|201|7
+#PT|Viseu
+Moimenta da Beira||40984|-7618|696|10
+Mangualde||40604|-7761|543|9
+#PT|Évora
+Montemor-o-Novo||38648|-8215|247|13
+#PW|Melekeok
+Melekeok Village||7496|134637|3|0
+#PW|Ngarchelong
+Mengellang||7696|134631|53|0
+#QA|Al Wakrah
+Musay‘īd|Musay`id|24992|51551|7|6
+#QA|Madinat ash Shamal
+Madīnat ash Shamāl|Madinat ash Shamal|26129|51201|9|5
+#RO|Arad County
+Macea||46383|21300|100|6
+#RO|Arges
+Mihăeşti|Mihaesti|45117|25000|410|6
+#RO|Bacău County
+Mărgineni-Munteni|Margineni-Munteni|46600|26900|164|8
+#RO|Bihor County
+Marghita||47350|22333|140|14
+#RO|Bistrița-Năsăud County
+Măieru|Maieru|47400|24750|496|7
+#RO|Botoșani County
+Mihăileni|Mihaileni|47967|26150|332|5
+#RO|Buzău County
+Merei||45133|26683|136|7
+Mărăcineni|Maracineni|45200|26800|125|7
+#RO|Caraș-Severin County
+Moldova Nouă|Moldova Noua|44738|21667|170|13
+#RO|Cluj County
+Mihai Viteazu||46533|23750|330|6
+#RO|Constanța County
+Murfatlar||44183|28417|41|11
+Mihail Kogălniceanu|Mihail Kogalniceanu|44368|28460|76|10
+Mircea Vodă|Mircea Voda|44283|28167|45|7
+#RO|Călărași County
+Modelu||44196|27387|19|10
+Mânăstirea|Manastirea|44217|26900|17|6
+#RO|Dolj
+Moţăţei|Motatei|44083|23200|69|8
+Maglavit||44033|23100|73|6
+#RO|Dâmbovița County
+Mătăsaru|Matasaru|44717|25417|173|6
+Moroeni||45217|25433|569|5
+#RO|Galați County
+Matca||45850|27533|58|12
+Munteni||45933|27433|43|10
+Măstăcani|Mastacani|45783|28033|35|5
+#RO|Giurgiu County
+Mihăileşti|Mihailesti|44327|25908|87|8
+#RO|Gorj County
+Mătăsari|Matasari|44850|23083|242|5
+#RO|Harghita County
+Mugeni||46250|25217|448|6
+#RO|Ialomița County
+Mihail Kogălniceanu|Mihail Kogalniceanu|44683|27733|16|6
+#RO|Iași County
+Miroslava||47150|27517|128|8
+Mirceşti|Mircesti|47083|26833|229|7
+Moţca|Motca|47250|26617|360|5
+#RO|Ilfov
+Măgurele|Magurele|44350|26033|76|9
+Mogoşoaia|Mogosoaia|44529|26000|95|5
+#RO|Maramureş
+Moisei||47656|24540|565|9
+Mireşu Mare|Miresu Mare|47500|23333|166|5
+#RO|Mureș County
+Miercurea Nirajului||46533|24800|347|6
+#RO|Prahova
+Măneşti|Manesti|44867|25850|184|7
+Măgureni|Magureni|45067|25733|364|7
+Moceşti|Mocesti|45050|26250|212|5
+#RO|Satu Mare County
+Medieşu Aurit|Mediesu Aurit|47783|23150|132|7
+#RO|Suceava
+Marginea||47817|25817|437|9
+Milişăuţi|Milisauti|47783|26000|334|8
+Mălini|Malini|47467|26083|403|7
+#RO|Teleorman County
+Mavrodin||44033|25250|66|6
+#RO|Tulcea County
+Măcin|Macin|45244|28136|36|10
+#RO|Vaslui County
+Murgeni||46204|28020|35|8
+#RO|Vrancea
+Mărășești|Marasesti|45883|27233|58|9
+Milcovul||45650|27250|35|9
+Măicăneşti|Maicanesti|45500|27500|14|5
+#RO|Vâlcea County
+Mihăeşti|Mihaesti|45033|24250|234|6
+#RS|Central Serbia
+Majdanpek||44428|21946|504|10
+#RS|Vojvodina
+Mol||45765|20133|81|8
+Melenci||45517|20320|78|8
+Mokrin||45934|20412|77|7
+#RU|Altai Krai
+Mikhaylovskoye||51822|79721|172|11
+Mamontovo||52709|81624|202|9
+#RU|Amur Oblast
+Magdagachi||53452|125807|363|12
+#RU|Bashkortostan Republic
+Mesyagutovo||55532|58246|212|10
+Mrakovo||52716|56621|235|8
+Mishkino||54000|59106|425|6
+#RU|Belgorod Oblast
+Mayskiy||50522|36467|169|8
+Maslova Pristan’|Maslova Pristan'|50457|36736|124|6
+#RU|Bryansk Oblast
+Mglin||53060|32848|190|8
+#RU|Buryatiya Republic
+Mukhorshibir’|Mukhorshibir'|51050|107830|742|6
+#RU|Chechnya
+Mesker-Yurt||43251|45907|135|11
+Mayrtup||43203|46132|189|11
+Martan-Chu||43064|45562|324|5
+#RU|Chelyabinsk
+Miasskoye||55282|61893|156|10
+Min’yar|Min'yar|55073|57555|179|8
+Mezhozërnyy|Mezhozernyy|54146|59374|513|7
+Magnitka||55348|59696|386|6
+Mezhevoy||55171|58781|373|5
+#RU|Chuvash Republic
+Mariinskiy Posad||56115|47718|85|10
+#RU|Dagestan
+Mamedkala||42168|48117|31|9
+Manas||42727|47678|56|7
+Magaramkent||41615|48346|347|7
+Mutsalaul||43275|46731|48|6
+Madzhalis||42122|47833|408|6
+#RU|Ingushetiya Republic
+Magas||43223|44773|529|9
+#RU|Irkutsk Oblast
+Meget||52415|104049|433|8
+Magistral’nyy|Magistral'nyy|56171|107442|428|8
+Mishelevka||52858|103172|416|8
+Mikhaylovka||52959|103285|533|7
+Markovo||57321|107088|315|6
+#RU|Kabardino-Balkariya Republic
+Malka||43804|43324|570|7
+#RU|Kaliningrad Oblast
+Mamonovo||54464|19938|10|7
+#RU|Kalmykiya Republic
+Malyye Derbety||47955|44681|6|6
+#RU|Kaluga Oblast
+Medyn||54969|35859|201|8
+#RU|Kamchatka
+Mil’kovo|Mil'kovo|54695|158619|153|8
+#RU|Khakasiya Republic
+Mayna||53006|91484|317|5
+#RU|Khanty-Mansia
+Mezhdurechenskiy||59600|65933|38|11
+#RU|Kirov Oblast
+Malmyzh||56520|50681|76|9
+Murygino||58738|49458|110|8
+Murashi||59398|48964|241|7
+#RU|Komi
+Mikun’|Mikun'|62355|50077|126|12
+#RU|Kostroma Oblast
+Makar’yev|Makar'yev|57885|43806|123|8
+#RU|Krasnodar Krai
+Mar’yanskaya|Mar'yanskaya|45103|38640|14|12
+Mikhaylovskaya||44995|40596|144|8
+Myskhako||44661|37764|33|8
+#RU|Krasnoyarsk Krai
+Motygino||58184|94693|123|7
+#RU|Kurgan Oblast
+Makushino||55205|67251|140|10
+Mishkino||55338|63915|151|9
+#RU|Kuzbass
+Malinovka||53417|87278|226|9
+Mundybash||53211|87298|288|6
+#RU|Leningradskaya Oblast'
+Mga||59750|31067|30|10
+Murino||60048|30452|15|7
+Mariyenburg||59571|30065|93|6
+#RU|Mariy-El Republic
+Morki||56432|48999|133|10
+Mari-Turek||56790|49622|130|6
+#RU|Moscow
+Mosrentgen||55618|37466|219|5
+#RU|Moscow Oblast
+Mikhnëvo|Mikhnevo|55127|37955|173|11
+Mamontovka||55981|37820|160|9
+Mendeleyevo||56033|37217|214|8
+Muranovo||56183|37900|225|7
+#RU|Murmansk
+Murmashi||68815|32811|36|14
+Molochnyy||68854|33020|11|5
+#RU|Nizhny Novgorod Oblast
+Mulino||56289|42920|98|12
+#RU|North Ossetia–Alania
+Mikhaylovskoye||43100|44632|605|10
+#RU|Novgorod Oblast
+Malaya Vishera||58845|32222|68|14
+#RU|Novosibirsk Oblast
+Maslyanino||54343|84212|182|13
+Moshkovo||55305|83613|216|11
+#RU|Omsk Oblast
+Muromtsevo||56369|75250|73|11
+Moskalënki|Moskalenki|54938|71936|118|9
+Mar’yanovka|Mar'yanovka|54962|72645|110|9
+#RU|Penza Oblast
+Mokshan||53437|44613|200|12
+Makhalino||53085|46221|223|5
+#RU|Primorye
+Mikhaylovka||43934|132009|40|9
+#RU|Rostov
+Matveyev Kurgan||47567|38869|63|14
+Mayskiy||47696|40103|129|12
+Masalovka||48404|40261|30|9
+Mechetinskaya||46771|40456|57|7
+#RU|Ryazan Oblast
+Mikhaylov||54232|39029|124|13
+#RU|Sakha
+Markha||62115|129744|99|12
+Mokhsogollokh||61396|128938|172|7
+Mayya||61738|130282|148|7
+#RU|Sakhalin Oblast
+Makarov||48626|142779|24|7
+#RU|Samara Oblast
+Mirnyy||53506|50277|41|7
+#RU|Saratov Oblast
+Mokrous||51238|47514|104|7
+#RU|Stavropol Kray
+Moskovskoye||45284|41910|236|5
+#RU|Sverdlovsk Oblast
+Mikhaylovsk||56436|59120|257|10
+Malysheva||57119|61403|239|10
+Monetnyy||57047|60879|275|6
+#RU|Tambov Oblast
+Muchkapskiy||51851|42476|130|8
+Mordovo||52087|40773|149|7
+#RU|Tatarstan Republic
+Mamadysh||55703|51404|46|14
+Muslyumovo||55307|53189|77|7
+#RU|Tomsk Oblast
+Mel’nikovo|Mel'nikovo|56557|84081|88|10
+Molchanovo||57581|83761|101|6
+#RU|Tula Oblast
+Mendeleyevskiy||54137|37587|244|9
+#RU|Tver Oblast
+Maksatikha||57797|35883|141|9
+#RU|Udmurtiya Republic
+Malaya Purga||56557|53004|114|7
+#RU|Ulyanovsk
+Mayna||54116|47621|286|8
+Mullovka||54200|49400|80|6
+#RU|Vladimir Oblast
+Melekhovo||56277|41293|97|7
+Mstera||56379|41920|105|5
+#RU|Vologda Oblast
+Molochnoye||59292|39679|145|8
+#RU|Voronezh Oblast
+Maslovka||51550|39245|112|8
+Mitrofanovka||49971|39694|199|6
+#RU|Yaroslavl Oblast
+Myshkin||57790|38454|121|6
+#RU|Zabaykalskiy (Transbaikal) Kray
+Mogocha||53740|119769|604|13
+Mogoytuy||51288|114932|674|8
+#RW|Western Province
+Mabanza||-2052|29409|1636|13
+#SA|Eastern Province
+Mulayjah||27271|48424|72|5
+#SA|Jazan Region
+Mislīyah|Misliyah|17460|42557|127|6
+Mizhirah||16826|42733|21|6
+#SA|Riyadh Region
+Marāt|Marat|25071|45458|711|9
+#SB|Guadalcanal Province
+Malango||-9695|159717|28|11
+#SB|Honiara
+Mbumburu||-9433|159933|60|6
+Mataniko||-9440|159963|35|6
+#SD|Northern State
+Merowe||18470|31811|255|10
+#SD|White Nile
+Marabba||12350|32183|401|12
+#SE|Dalarna
+Mora||61007|14543|162|13
+#SE|Jönköping
+Mullsjö|Mullsjoe|57917|13878|256|6
+#SE|Norrbotten
+Malmberget||67175|20655|418|6
+#SE|Skåne
+Mariastaden||56085|12694|33|7
+#SE|Östergötland
+Mjölby|Mjoelby|58326|15124|121|13
+Malmslätt|Malmslaett|58411|15516|88|5
+#SI|Municipality of Majšperk
+Majšperk|Majsperk|46350|15734|316|1
+#SI|Municipality of Makole
+Makole||46316|15666|293|0
+#SI|Municipality of Markovci
+Markovci||46396|15928|222|0
+#SI|Municipality of Medvode
+Medvode||46142|14411|318|5
+#SI|Municipality of Mengeš
+Mengeš|Menges|46169|14574|314|6
+#SI|Municipality of Metlika
+Metlika||45650|15313|151|3
+#SI|Municipality of Mežica
+Mežica|Mezica|46520|14853|555|3
+#SI|Municipality of Miklavž na Dravskem Polju
+Miklavž na Dravskem Polju|Miklavz na Dravskem Polju|46506|15697|259|4
+#SI|Municipality of Miren–Kostanjevica
+Miren||45895|13608|52|1
+#SI|Municipality of Mirna
+Mirna||45952|15062|247|1
+#SI|Municipality of Mirna Peč
+Mirna Peč|Mirna Pec|45859|15083|236|1
+#SI|Municipality of Mislinja
+Mislinja||46441|15200|617|2
+#SI|Municipality of Mokronog–Trebelno
+Mokronog||45939|15139|341|1
+#SI|Municipality of Moravske Toplice
+Moravske Toplice||46683|16221|203|1
+#SI|Municipality of Moravče
+Moravče|Moravce|46137|14745|383|1
+#SI|Municipality of Mozirje
+Mozirje||46338|14965|325|2
+#SI|Municipality of Muta
+Muta||46612|15166|334|2
+#SI|Urban Municipality of Murska Sobota
+Murska Sobota||46663|16166|192|11
+#SK|Bratislava Region
+Modra||48334|17307|173|9
+Miloslavov||48106|17300|128|7
+#SK|Košice Region
+Moldava nad Bodvou||48614|21000|209|10
+#SK|Prešov Region
+Medzilaborce||49272|21901|326|6
+#SK|Trenčín Region
+Myjava||48759|17569|332|11
+#SL|Eastern Province
+Motema||8614|-11013|405|5
+#SL|Northern Province
+Magburaka||8723|-11949|99|15
+Mambolo||8919|-13037|18|7
+Masingbi||8782|-11952|109|6
+#SL|Southern Province
+Mattru Jong||7600|-12167|36|8
+Moyamba||8159|-12432|58|7
+Mamboma||8087|-11688|105|5
+#SM|Montegiardino
+Monte Giardino||43909|12482|372|1
+#SN|Dakar
+Mermoz Boabab||14706|-17476|0|15
+#SN|Kaffrine
+Malèm Hodar|MalemHodar|14089|-15292|41|8
+#SN|Kolda
+Marsassoum||12828|-15981|19|10
+#SN|Sédhiou
+Madina Wandifa||13058|-15643|48|12
+#SO|Middle Shabele
+Mahaddayweyne||2973|45535|114|8
+#SR|Commewijne District
+Meerzorg||5808|-55141|2|12
+#SR|Marowijne District
+Moengo||5614|-54401|9|11
+#SS|Western Equatoria
+Maridi||4917|29469|727|14
+#SY|Hama
+Mūrak|Murak|35376|36690|374|14
+#SY|Homs
+Mukharram al Fawqānī|Mukharram al Fawqani|34815|37087|609|9
+#SY|Quneitra
+Majdal Shams||33270|35772|1168|11
+#SZ|Lubombo Region
+Mhlume||-26026|31814|308|9
+#SZ|Manzini Region
+Malkerns||-26529|31192|807|10
+#TD|Chari-Baguirmi
+Massenya||11403|16170|326|5
+#TD|Guéra
+Melfi||11060|17936|399|13
+#TG|Savanes
+Mandouri||10850|817|145|5
+#TH|Bangkok
+Muban Thep Thani||13699|100694|4|8
+#TH|Lamphun
+Mae Tha||18465|99140|406|10
+#TH|Mae Hong Son
+Mae Hong Son||19300|97969|258|9
+#TH|Phayao
+Mae Chai||19346|99814|407|5
+#TH|Prachin Buri
+Mai Khet||14109|101327|31|11
+#TH|Roi Et
+Moeiwadi||16389|104157|176|6
+#TJ|Gorno-Badakhshan
+Murghob||38170|73967|3607|11
+#TJ|Khatlon Province
+Mŭ’minobod|Mu'minobod|38107|70032|1247|12
+#TL|Manatuto
+Manatutu||-8511|126013|8|2
+#TM|Ahal
+Magtymguly||37883|58516|247|9
+#TM|Mary
+Murgap||37497|61971|228|15
+#TN|Béja Governorate
+Maagoula||36709|9212|183|8
+#TN|Gafsa
+M’dhilla|M'dhilla|34251|8747|334|13
+#TN|Mahdia Governorate
+Melloulèche|Mellouleche|35166|11035|2|7
+#TN|Monastir Governorate
+Menzel Hayet||35542|10574|102|13
+Menzel Ennour||35669|10781|40|12
+Menzel Kamel||35625|10667|48|8
+#TN|Nabeul Governorate
+Menzel Heurr||36728|10958|15|5
+#TN|Sidi Bouzid Governorate
+Mezzouna||34578|9842|155|7
+Menzel Bouzaiane||34573|9426|302|7
+#TN|Siliana Governorate
+Maktar||35858|9201|924|14
+#TN|Sousse Governorate
+Messadine||35764|10597|35|14
+#TR|Adıyaman Province
+Malazgirt||37772|38272|698|6
+#TR|Antalya
+Mavikent||36317|30350|12|7
+#TR|Balıkesir
+Manyas||40046|27970|55|5
+#TR|Bitlis
+Mutki||38406|41920|1567|6
+#TR|Bolu
+Mudurnu||40473|31208|834|6
+#TR|Eskişehir
+Mihalgazi||40026|30577|211|10
+#TR|Hatay
+Mahmutlar||36949|36192|163|6
+#TR|Istanbul
+Maslak||41108|29018|132|12
+#TR|Mardin
+Mazıdağı|Mazidagi|37478|40482|1067|13
+#TR|Ordu
+Mesudiye||40454|37774|1313|7
+#TR|Tekirdağ
+Marmara Ereğlisi|Marmara Ereglisi|40969|27955|9|11
+Marmaracık|Marmaracik|41207|27754|153|6
+#TR|Trabzon
+Maçka|Macka|40811|39605|401|13
+#TR|Çorum
+Mecitözü|Mecitoezue|40520|35295|814|6
+#TR|İzmir Province
+Mavişehir|Mavisehir|38470|27077|6|14
+Mordoğan|Mordogan|38516|26625|8|5
+#TZ|Arusha
+Monduli||-3300|36450|1534|6
+#TZ|Dodoma
+Msanga||-6050|36033|1012|6
+#TZ|Iringa
+Makungu||-8733|35283|1251|10
+Malangali||-8567|34850|1388|7
+#TZ|Kagera
+Muleba||-1840|31654|1270|12
+#TZ|Kigoma
+Mabamba||-3598|30502|1297|14
+#TZ|Kilimanjaro
+Makanya||-4367|37833|681|10
+Mwembe||-4150|37850|1009|9
+#TZ|Lindi
+Mtama||-10300|39367|136|12
+Mbekenyera||-10000|38983|339|12
+Mingoyo||-10105|39619|43|10
+#TZ|Mara
+Mugango||-1683|33700|1134|11
+#TZ|Mbeya
+Masoko||-9333|33750|887|13
+Mwaya||-9550|33950|479|8
+#TZ|Morogoro
+Mtimbira||-8783|36350|302|11
+Mahenge||-8683|36717|1039|8
+#TZ|Mtwara
+Mahuta||-10867|39450|478|14
+Madimba||-10400|40333|22|13
+Masuguru||-11367|38417|172|8
+#TZ|Mwanza
+Misasi||-3000|33083|1151|14
+Malya||-2983|33517|1245|13
+#TZ|Njombe
+Matamba||-8983|33967|2088|11
+Manda||-10467|34583|476|8
+#TZ|Pemba North
+Micheweni||-4967|39833|0|10
+#TZ|Pemba South
+Mtambile||-5383|39700|23|7
+#TZ|Pwani
+Maneromango||-7199|38785|383|9
+#TZ|Ruvuma
+Mbamba Bay||-11283|34767|476|9
+#TZ|Simiyu
+Matonga||-2383|34083|1281|12
+#TZ|Tanga
+Mwanga||-4800|38200|414|13
+Majengo||-5150|38983|95|10
+Magomeni||-5233|38117|560|9
+#TZ|Zanzibar Central/South
+Mahonda||-6450|39467|5|6
+#TZ|Zanzibar North
+Mkokotoni||-5875|39255|5|3
+#UA|Cherkasy
+Monastyryshche||48995|29810|242|9
+Mankivka||48964|30336|218|8
+#UA|Chernihiv Oblast
+Mena||51522|32214|122|11
+#UA|Chernivtsi
+Mahala||48294|26043|152|9
+Mamayvtsi||48347|25828|174|6
+Marshyntsi||48212|26299|132|5
+#UA|Crimea
+Mirnoye||44983|34062|221|9
+Molodyozhnoye||45004|34056|216|8
+Masandra||44515|34184|140|7
+#UA|Dnipropetrovsk
+Myrnyi||48389|35003|121|11
+Mezhova||48254|36732|180|7
+Mahdalynivka||48912|34914|97|6
+#UA|Donetsk
+Mykolaivka||48862|37768|85|14
+Mospyne||47890|38064|140|10
+Mar'yinka||47945|37505|139|9
+Manhush||47056|37312|50|8
+#UA|Ivano-Frankivsk
+Mykulychyn||48409|24609|621|5
+#UA|Kharkiv
+Malynivka||49799|36720|104|8
+Mala Danylivka||50062|36168|133|7
+#UA|Khmelnytskyi
+Makiv||48795|26681|265|6
+#UA|Kirovohrad
+Mala Vyska||48647|31632|190|10
+#UA|Kyiv Oblast
+Myronivka||49660|30982|122|11
+Makariv||50457|29815|139|10
+#UA|Luhansk
+Markivka||49525|39570|114|7
+Mala Verhunka||48584|39384|65|6
+Milove||49376|40136|195|5
+#UA|Lviv
+Mykolayiv||49526|23978|289|14
+Morshyn||49155|23871|334|6
+#UA|Mykolaiv
+Mishkovo-Pohorilove||46995|32110|31|5
+#UA|Odesa
+Mayaky||46413|30267|16|6
+#UA|Rivne Oblast
+Mlyniv||50510|25617|197|8
+#UA|Sevastopol City
+Mekenziyevi Hory||44653|33591|115|6
+#UA|Ternopil
+Monastyryska||49091|25171|312|6
+#UA|Vinnytsia
+Murovani Kurylivtsi||48718|27531|266|6
+#UA|Volyn
+Manevychi||51294|25531|190|12
+#UA|Zakarpattia
+Mizhhirya||48524|23501|450|10
+#UA|Zaporizhzhia
+Mykhaylivka||47269|35222|87|12
+Molochansk||47204|35598|32|6
+Mala Bilozerka||47244|34931|105|6
+#UG|Western Region
+Masindi Port||1696|32086|1039|8
+#US|Alabama
+Muscle Shoals||34745|-87668|152|14
+Moody||33591|-86491|211|13
+Meadowbrook||33402|-86697|191|9
+Montevallo||33101|-86864|125|7
+Monroeville||31528|-87325|126|6
+Meridianville||34851|-86572|241|6
+Moores Mill||34844|-86518|210|6
+Midfield||33462|-86909|156|5
+#US|Alaska
+Meadow Lakes||61625|-149601|116|8
+#US|Arkansas
+Mountain Home||36335|-92385|249|12
+Marion||35215|-90196|69|12
+Magnolia||33267|-93239|103|12
+Malvern||34362|-92813|96|11
+Monticello||33629|-91791|89|10
+Morrilton||35151|-92744|117|7
+Mena||34586|-94240|357|6
+#US|California
+Mill Valley||37906|-122545|24|14
+McFarland||35678|-119229|108|14
+Malibu||34026|-118780|32|13
+Marysville||39146|-121591|19|12
+Mendota||36754|-120382|53|11
+Magalia||39812|-121578|711|11
+Muscoy||34154|-117344|423|11
+Morro Bay||35366|-120850|19|11
+Mountain House||37783|-121543|18|10
+Madera Acres||37019|-120067|89|9
+Montecito||34437|-119632|55|9
+Marina del Rey||33982|-118454|5|9
+Mentone||34070|-117134|503|9
+Mecca||33572|-116078|-57|9
+Midway City||33745|-117989|12|8
+Mammoth Lakes||37649|-118972|2402|8
+Mira Monte||34434|-119285|196|7
+Mayflower Village||34115|-118010|112|6
+#US|Colorado
+Monument||39092|-104873|2126|6
+Milliken||40329|-104855|1448|6
+Manitou Springs||38860|-104917|1938|5
+#US|Connecticut
+Middlebury||41528|-73128|212|7
+#US|Delaware
+Milford||38913|-75428|3|10
+#US|Florida
+Marco||25973|-81729|0|15
+Miami Springs||25822|-80289|1|14
+Mount Dora||28802|-81645|44|14
+Middleburg||30069|-81860|10|13
+Mango||27980|-82306|16|11
+Miami Shores||25863|-80193|2|11
+Minneola||28574|-81746|30|11
+Milton||30632|-87040|10|10
+Marianna||30774|-85227|51|9
+Micco||27881|-80500|0|9
+Medulla||27968|-81973|49|9
+Marathon||24714|-81090|1|9
+Memphis||27536|-82561|6|8
+Melrose Park||26113|-80193|2|7
+McGregor||26561|-81915|0|7
+Mims||28665|-80845|10|7
+Macclenny||30282|-82122|40|6
+Miramar Beach||30374|-86359|6|6
+Mascotte||28578|-81887|41|5
+#US|Georgia
+Moultrie||31180|-83789|99|14
+Monroe||33795|-83713|278|14
+Mountain Park||33844|-84129|312|12
+Morrow||33583|-84339|281|7
+McRae||32068|-82901|75|6
+#US|Hawaii
+Marine Corps Base Hawaii - MCBH||21443|-157750|2|10
+Mā‘ili|Ma'ili|21416|-158175|3|9
+Moanalua||21368|-157891|43|9
+Mākaha-Kaʻena|Makaha-Ka'ena|21484|-158230|28|9
+Mākaha|Makaha|21466|-158210|7|8
+Makawao||20857|-156313|481|7
+Moanalua Valley||21353|-157887|66|7
+#US|Idaho
+Mountain Home||43133|-115691|959|14
+Middleton||43707|-116620|731|7
+#US|Illinois
+Midlothian||41625|-87718|187|15
+Morris||41357|-88421|157|14
+Markham||41594|-87695|189|13
+Minooka||41455|-88262|186|11
+Monmouth||40911|-90647|232|9
+Manteno||41251|-87831|209|9
+Mahomet||40195|-88404|223|8
+Mascoutah||38490|-89793|131|8
+Maryville||38724|-89956|176|8
+Murphysboro||37765|-89335|128|8
+Marengo||42249|-88608|254|8
+Manhattan||41423|-87986|208|7
+Mendota||41547|-89118|226|7
+Mount Carmel||38411|-87761|137|7
+Metropolis||37151|-88732|110|6
+Mount Zion||39771|-88874|211|6
+Monticello||40028|-88573|201|6
+Milan||41453|-90572|171|5
+Monee||41420|-87742|243|5
+#US|Indiana
+Madison||38736|-85380|149|12
+Martinsville||39428|-86428|184|12
+Mooresville||39613|-86374|219|10
+Mount Vernon||40669|-85824|248|7
+Mount Vernon||37932|-87895|122|7
+McCordsville||39908|-85923|259|6
+Monticello||40745|-86765|206|5
+#US|Iowa
+Mount Pleasant||40964|-91558|218|8
+Maquoketa||42069|-90666|214|6
+Manchester||42484|-91455|287|5
+#US|Kansas
+McPherson||38371|-97664|456|13
+Merriam||39024|-94694|277|11
+Mission||39028|-94656|310|9
+Mulvane||37474|-97244|376|6
+#US|Kentucky
+Mount Washington||38050|-85546|215|14
+Middlesboro||36608|-83717|348|11
+Mayfield||36742|-88637|145|10
+Maysville||38641|-83744|165|9
+Middletown||38245|-85539|221|8
+Morehead||37271|-87176|153|8
+Mount Sterling||38056|-83943|297|7
+Morehead||38184|-83433|225|7
+Monticello||36830|-84849|281|6
+#US|Louisiana
+Minden||32615|-93287|78|13
+Mandeville||30358|-90066|2|12
+Morgan City||29699|-91207|2|12
+Moss Bluff||30303|-93191|7|12
+Merrydale||30501|-91108|16|10
+Meraux||29930|-89916|2|6
+Marksville||31128|-92066|25|6
+Monticello||30489|-91049|15|5
+#US|Maryland
+Mays Chapel||39433|-76649|140|11
+Mitchellville||38920|-76808|32|11
+Marlboro Village||38831|-76770|19|9
+Mount Airy||39376|-77155|238|9
+Marlton||38774|-76790|61|9
+Mount Rainier||38942|-76965|23|8
+Mayo||38888|-76512|4|8
+Marlow Heights||38833|-76952|79|6
+Mount Vernon||39298|-76616|25|5
+Manchester||39661|-76885|302|5
+#US|Massachusetts
+Mashpee||41648|-70481|22|15
+Millbury||42194|-71760|123|14
+Medway||42142|-71397|59|13
+Mid-Cambridge||42372|-71106|9|13
+Maynard||42433|-71450|50|10
+Middleton||42595|-71016|31|10
+Montague||42536|-72535|69|9
+Monson||42104|-72319|131|9
+Millis||42168|-71358|53|8
+Marstons Mills||41656|-70416|13|8
+Mansfield Center||42023|-71218|45|7
+Middleborough Center||41895|-70926|28|7
+Milton Upper Mills||42261|-71095|15|7
+Medfield||42188|-71306|57|6
+Mattapoisett||41658|-70816|1|6
+Merrimac||42831|-71002|31|6
+Milton Center||42254|-71080|34|6
+Mendon||42106|-71552|111|5
+Manchester-by-the-Sea||42578|-70769|4|5
+Marion||41700|-70763|9|5
+Milton Village||42267|-71072|14|5
+#US|Michigan
+Muskegon Heights||43201|-86239|191|11
+Melvindale||42283|-83175|179|10
+Marysville||42913|-82487|187|10
+Mason||42579|-84444|280|8
+Menominee||45108|-87614|181|8
+Marshall||42272|-84963|280|7
+Milford||42594|-83599|294|6
+Manistee||44244|-86324|200|6
+Milan||42085|-83682|214|6
+#US|Minnesota
+Marshall||44447|-95788|354|14
+Monticello||45306|-93794|282|13
+Mounds View||45105|-93209|278|13
+Mendota Heights||44884|-93138|278|11
+Mound||44937|-93666|287|9
+Mahtomedi||45070|-92952|303|8
+Minnetrista||44938|-93718|288|7
+Medina||45035|-93582|323|6
+Morris||45586|-95914|345|5
+Montevideo||44948|-95717|284|5
+#US|Mississippi
+Moss Point||30412|-88534|5|14
+McComb||31244|-90453|129|13
+#US|Missouri
+Moberly||39418|-92438|265|14
+Marshall||39123|-93197|233|13
+Maryville||40346|-94872|351|12
+Mexico||39170|-91883|244|12
+Monett||36929|-93928|413|9
+Murphy||38490|-90487|175|9
+Maplewood||38613|-90325|154|8
+Marshfield||37339|-92907|455|7
+Macon||39742|-92473|265|5
+#US|Montana
+Miles City||46408|-105841|722|9
+#US|Nebraska
+McCook||40202|-100626|784|8
+#US|Nevada
+Moapa Valley||36581|-114470|407|7
+#US|New Hampshire
+Milford||42835|-71649|81|9
+Moultonborough||43755|-71397|186|5
+#US|New Jersey
+Moorestown-Lenola||39966|-74964|19|14
+Middlesex||40573|-74493|15|14
+Metuchen||40543|-74363|28|14
+Mercerville||40237|-74687|27|13
+Martinsville||40601|-74559|107|12
+Mount Holly||39993|-74788|3|11
+Manville||40541|-74588|18|10
+Marlton||39891|-74922|31|10
+Maywood||40903|-74062|30|10
+Matawan||40415|-74230|15|9
+Mystic Island||39544|-74382|1|8
+Montvale||41047|-74023|96|8
+Midland Park||40989|-74141|79|7
+Madison Park||40452|-74308|39|7
+Milltown||40456|-74443|25|7
+Mountainside||40672|-74357|46|7
+Margate City||39328|-74503|2|6
+Manasquan||40126|-74049|6|6
+Morris Plains||40822|-74481|119|6
+Mount Arlington||40926|-74635|309|5
+Morganville||40377|-74244|48|5
+Mendham||40776|-74601|187|5
+#US|New York
+Mastic Beach||40767|-72852|2|15
+Manorville||40874|-72808|16|14
+Miller Place||40960|-72996|40|12
+Mount Sinai||40947|-73030|10|12
+Mount Kisco||41204|-73727|93|11
+Massena||44928|-74892|70|11
+Middle Island||40884|-72937|25|10
+Morris Park||40852|-73853|24|10
+Monroe||41331|-74187|196|9
+Malverne||40679|-73674|11|9
+Mahopac||41372|-73733|203|8
+Manhasset||40798|-73700|29|8
+Midland Beach||40573|-74095|2|7
+Mount Ivy||41187|-74035|140|7
+Mechanicstown||41443|-74388|162|7
+Myers Corner||41606|-73873|66|7
+Manorhaven||40843|-73715|5|7
+Monticello||41656|-74689|461|7
+Mattydale||43098|-76145|123|6
+Medina||43220|-78387|162|6
+Malone||44849|-74295|217|6
+Marbletown||41883|-74113|68|6
+Mechanicville||42903|-73687|27|5
+#US|North Carolina
+Masonboro||34179|-77847|8|15
+Murraysville||34296|-77847|11|14
+Mount Holly||35298|-81016|187|14
+Mebane||36096|-79267|206|14
+Mount Airy||36499|-80607|335|10
+Morehead City||34723|-76726|5|9
+Myrtle Grove||34135|-77882|8|9
+Marion||35684|-82009|428|8
+Mills River||35388|-82567|639|7
+Marvin||34992|-80815|208|6
+Mocksville||35894|-80561|262|5
+#US|North Dakota
+Minot Air Force Base||48421|-101339|494|6
+#US|Ohio
+Maumee||41563|-83654|193|14
+Marietta||39415|-81455|187|14
+Monroe||39440|-84362|254|13
+Monfort Heights||39188|-84595|273|12
+Macedonia||41314|-81508|301|12
+Mack||39158|-84650|276|12
+Montgomery||39228|-84354|244|11
+Madeira||39191|-84364|231|9
+Mentor-on-the-Lake||41705|-81360|189|7
+Milford||39175|-84294|167|7
+Martins Ferry||40096|-80725|216|7
+Moraine||39706|-84219|225|6
+Mount Healthy||39234|-84546|255|6
+Montrose-Ghent||41154|-81644|313|5
+Munroe Falls||41145|-81440|314|5
+#US|Oklahoma
+Miami||36875|-94877|242|14
+#US|Oregon
+Monmouth||44848|-123234|62|10
+Molalla||45147|-122577|115|9
+Milton-Freewater||45933|-118388|318|7
+Madras||44633|-121129|683|7
+#US|Pennsylvania
+Meadville||41641|-80151|335|13
+Montgomeryville||40247|-75244|139|13
+Munhall||40392|-79900|318|11
+Mountain Top||41170|-75877|478|11
+Modena Park||40078|-74988|32|11
+Morrell Park||40073|-74988|20|10
+Middletown||40200|-76731|110|9
+Mechanicsburg||40214|-77009|132|9
+Morrisville||40212|-74788|31|9
+Millersville||39998|-76354|99|8
+Mill Creek||39966|-75215|25|8
+Mount Joy||40110|-76503|116|8
+Maple Glen||40016|-79977|238|8
+Monessen||40148|-79888|344|7
+Middletown||40644|-75332|84|7
+Milton||41012|-76848|152|7
+Mantua||39963|-75191|31|7
+Maple Glen||40179|-75180|114|7
+Morton||40042|-75183|86|6
+McKees Rocks||40466|-80066|223|6
+Moosic||41353|-75738|195|6
+Mount Carmel||40797|-76412|336|6
+Monaca||40687|-80271|225|6
+Media||39917|-75388|87|5
+Mount Pleasant||40060|-75183|94|5
+#US|South Carolina
+Moncks Corner||33196|-80014|16|10
+Murrells Inlet||33551|-79041|1|8
+Marion||34178|-79401|22|7
+#US|South Dakota
+Madison||44006|-97114|511|7
+#US|Tennessee
+McMinnville||35683|-85770|295|14
+Middle Valley||35196|-85185|213|13
+Millington||35341|-89897|80|11
+Martin||36343|-88850|124|11
+Manchester||35482|-86089|323|11
+Milan||35920|-88759|128|8
+Millersville||36371|-86710|154|7
+Munford||35449|-89815|136|6
+Mount Carmel||36545|-82661|416|5
+Mount Carmel||35498|-88008|125|5
+McKenzie||36133|-88519|150|5
+#US|Texas
+Mineral Wells||32808|-98113|269|15
+Manvel||29463|-95358|16|8
+Monahans||31594|-102893|799|8
+Manor||30341|-97557|162|8
+Melissa||33286|-96573|207|7
+Mexia||31680|-96482|159|7
+Murillo Colonia||26256|-98113|29|7
+Marble Falls||30578|-98275|251|6
+Mila Doce||26226|-97959|18|6
+Marlin||31306|-96898|119|6
+Mont Belvieu||29848|-94891|21|5
+Muleshoe||34226|-102724|1156|5
+McGregor||31444|-97409|211|5
+Mathis||28094|-97828|49|5
+#US|Utah
+Mapleton||40130|-111579|1442|9
+Mount Olympus||40686|-111789|1560|7
+Moab||38573|-109550|1227|5
+#US|Vermont
+Montpelier||44260|-72575|160|8
+Middlebury (village)||44016|-73169|123|7
+Morristown||44557|-72624|232|6
+#US|Virginia
+Martinsville||36692|-79873|310|14
+Mount Vernon||38714|-77101|10|12
+Madison Heights||37431|-79123|233|11
+Montrose||37521|-77378|49|8
+Mantua||38854|-77259|113|7
+Marion||36835|-81515|662|6
+#US|Washington
+Maltby||47805|-122113|122|11
+Minnehaha||45659|-122627|79|10
+Midland||47167|-122405|132|9
+Milton||47248|-122313|93|9
+Mill Plain||45643|-122494|84|8
+Mount Vista||45734|-122633|75|8
+Mead||47767|-117355|581|7
+Manchester||47556|-122545|9|5
+Maplewood||47402|-122557|82|5
+#US|West Virginia
+Moundsville||39920|-80743|212|9
+#US|Wisconsin
+Marinette||45100|-87631|181|11
+Monroe||42601|-89638|322|11
+Merrill||45181|-89683|386|9
+McFarland||43013|-89290|265|8
+Monona||43062|-89334|268|8
+Mukwonago||42867|-88333|255|8
+Mount Horeb||43009|-89738|380|7
+Milton||42776|-88944|271|6
+#UZ|Andijan Region
+Marhamat||40480|72314|627|15
+Marhamat||40502|72326|607|12
+#UZ|Karakalpakstan
+Mŭynoq|Muynoq|43768|59021|50|14
+#VE|Mérida
+Mucuchíes|Mucuchies|8749|-70920|2960|9
+#VN|Hà Tĩnh Province
+Mỹ Lộc|My Loc|18365|105753|5|7
+#VN|Quang Ngai
+Măng Đen|Mang GJen|14601|108291|1193|7
+#VN|Điện Biên Province
+Mường Chà|Muong Cha|21762|103098|523|14
+Mường Nhé|Muong Nhe|22192|102458|545|12
+#WS|Aiga-i-le-Tai
+Mulifanua||-13832|-172036|13|5
+#XK|Prizren
+Mamuša|Mamusa|42331|20727|333|6
+#YT|Koungou
+Majikavo Koropa||-12747|45221|45|12
+#YT|M'Tsangamouji
+M'Tsangamouji||-12759|45084|57|5
+#YT|Mtsamboro
+Mtsamboro||-12700|45069|26|8
+#ZA|Eastern Cape
+Molteno||-31397|26362|1595|14
+Maclear||-31071|28352|1262|13
+Mount Frere||-30902|28992|1153|12
+Maluti||-30262|28792|1483|9
+Mount Ayliff||-30808|29366|1039|6
+#ZA|Free State
+Memel||-27682|29567|1729|9
+#ZA|Gauteng
+Magaliesburg||-25994|27556|1448|8
+#ZA|KwaZulu-Natal
+Matatiele||-30344|28812|1489|15
+Melmoth||-28587|31398|745|9
+Magabeni||-30172|30766|95|6
+Manguzi||-26991|32751|37|6
+#ZA|Limpopo
+Mankoeng||-23900|29817|1389|12
+Mathibela||-24312|29312|1038|7
+Merry Pebble Stream||-24766|31219|513|7
+#ZA|Mpumalanga
+Maboke||-24725|31018|685|13
+Machadodorp||-25669|30250|1566|11
+Motetema||-25095|29462|1059|10
+Mmametlhake||-25112|28553|1039|9
+Mhlambanyatsi||-25662|31516|291|9
+Morgenzon||-26737|29618|1623|9
+Marite||-24972|31112|612|9
+Magogeni||-25788|31608|324|7
+Madyembeni||-24770|31028|680|7
+Maviljan A||-24848|31088|820|7
+Madras A||-24991|31148|684|7
+Matsavana||-24822|31260|488|5
+#ZA|North West
+Mogwase||-25185|27267|1177|13
+Maile||-25442|27282|1066|10
+Monnakato||-25351|27274|1031|10
+Mooinooi||-25749|27556|1201|6
+#ZA|Western Cape
+Melkbosstrand||-33726|18443|5|14
+Mamre||-33513|18474|191|11
+Murraysburg||-31960|23762|1185|6
+#ZM|Luapula Province
+Mununga||-9049|29043|948|9
+#ZM|North-Western
+Mufumbwe||-13683|24800|1143|6
+#ZM|Northern Province
+Mungwi||-10173|31369|1382|13
+#ZW|Mashonaland Central
+Mazowe||-17504|30974|1249|10
+Mount Darwin||-16773|31584|955|6
+#ZW|Mashonaland East Province
+Mutoko||-17397|32227|1285|12
+Murewa||-17643|31784|1365|12
+#ZW|Mashonaland West
+Mhangura||-16894|30168|1182|7
+#ZW|Masvingo Province
+Mashava||-20037|30482|1046|13

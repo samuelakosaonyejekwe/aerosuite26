@@ -1,0 +1,664 @@
+{
+ "schema": 2,
+ "generated": "2026-10-09T11:19:53.815Z",
+ "generator": "tools/grid.mjs",
+ "about": "Global forecast grids interpolated by the app (js/core/gridwx.js). Rows run from 90°N southwards, columns from 0°E eastwards; int16 values are little-endian. Files marked enc \"delta-gzip\" hold, gzipped, each field as differences from the left neighbour (from the value above at the start of a row), 16-bit differences as a low-byte plane followed by a high-byte plane. A valid time may carry its own grids.",
+ "products": {
+  "wx": {
+   "ok": true,
+   "source": "NOAA/NCEP Global Forecast System (GFS), 1° output",
+   "publisher": "US National Weather Service, National Centers for Environmental Prediction",
+   "home": "https://nomads.ncep.noaa.gov/",
+   "registry": "noaa-gfs",
+   "attribution": "Forecast grid: NOAA/NWS/NCEP Global Forecast System (public domain)",
+   "cycle": "2026-10-09T06:00:00.000Z",
+   "resolution": "surface fields 1°, pressure levels 2.5° for the first 3 valid times; 2.5° and 5° for the later ones",
+   "levels_hPa": [
+    1000,
+    925,
+    850,
+    700,
+    600,
+    500,
+    400,
+    300,
+    250,
+    200,
+    150
+   ],
+   "grids": {
+    "s": {
+     "step": 2.5,
+     "nj": 73,
+     "ni": 144
+    },
+    "a": {
+     "step": 5,
+     "nj": 37,
+     "ni": 72
+    },
+    "w": {
+     "step": 2,
+     "nj": 91,
+     "ni": 180
+    }
+   },
+   "fields": [
+    {
+     "id": "t2m_C",
+     "grid": "s",
+     "type": "i16",
+     "scale": 0.01
+    },
+    {
+     "id": "rh_pct",
+     "grid": "s",
+     "type": "u8",
+     "scale": 1
+    },
+    {
+     "id": "qnh_hPa",
+     "grid": "s",
+     "type": "i16",
+     "scale": 0.1,
+     "offset": 1000
+    },
+    {
+     "id": "u10_ms",
+     "grid": "s",
+     "type": "i8",
+     "scale": 0.5
+    },
+    {
+     "id": "v10_ms",
+     "grid": "s",
+     "type": "i8",
+     "scale": 0.5
+    },
+    {
+     "id": "gust_ms",
+     "grid": "s",
+     "type": "u8",
+     "scale": 0.5
+    },
+    {
+     "id": "vis_m",
+     "grid": "s",
+     "type": "u8",
+     "scale": 100
+    },
+    {
+     "id": "cloud_pct",
+     "grid": "s",
+     "type": "u8",
+     "scale": 1
+    },
+    {
+     "id": "precip_mm_h",
+     "grid": "s",
+     "type": "u8",
+     "scale": 0.05,
+     "sq": true
+    },
+    {
+     "id": "fz_m",
+     "grid": "s",
+     "type": "i16",
+     "scale": 1
+    },
+    {
+     "id": "u_1000",
+     "grid": "a",
+     "type": "i8",
+     "scale": 1
+    },
+    {
+     "id": "v_1000",
+     "grid": "a",
+     "type": "i8",
+     "scale": 1
+    },
+    {
+     "id": "T_1000",
+     "grid": "a",
+     "type": "u8",
+     "scale": 0.5,
+     "offset": -93.15
+    },
+    {
+     "id": "z_1000",
+     "grid": "a",
+     "type": "i16",
+     "scale": 1
+    },
+    {
+     "id": "u_925",
+     "grid": "a",
+     "type": "i8",
+     "scale": 1
+    },
+    {
+     "id": "v_925",
+     "grid": "a",
+     "type": "i8",
+     "scale": 1
+    },
+    {
+     "id": "T_925",
+     "grid": "a",
+     "type": "u8",
+     "scale": 0.5,
+     "offset": -93.15
+    },
+    {
+     "id": "z_925",
+     "grid": "a",
+     "type": "i16",
+     "scale": 1
+    },
+    {
+     "id": "u_850",
+     "grid": "a",
+     "type": "i8",
+     "scale": 1
+    },
+    {
+     "id": "v_850",
+     "grid": "a",
+     "type": "i8",
+     "scale": 1
+    },
+    {
+     "id": "T_850",
+     "grid": "a",
+     "type": "u8",
+     "scale": 0.5,
+     "offset": -93.15
+    },
+    {
+     "id": "z_850",
+     "grid": "a",
+     "type": "i16",
+     "scale": 1
+    },
+    {
+     "id": "u_700",
+     "grid": "a",
+     "type": "i8",
+     "scale": 1
+    },
+    {
+     "id": "v_700",
+     "grid": "a",
+     "type": "i8",
+     "scale": 1
+    },
+    {
+     "id": "T_700",
+     "grid": "a",
+     "type": "u8",
+     "scale": 0.5,
+     "offset": -93.15
+    },
+    {
+     "id": "z_700",
+     "grid": "a",
+     "type": "i16",
+     "scale": 1
+    },
+    {
+     "id": "u_600",
+     "grid": "a",
+     "type": "i8",
+     "scale": 1
+    },
+    {
+     "id": "v_600",
+     "grid": "a",
+     "type": "i8",
+     "scale": 1
+    },
+    {
+     "id": "T_600",
+     "grid": "a",
+     "type": "u8",
+     "scale": 0.5,
+     "offset": -93.15
+    },
+    {
+     "id": "z_600",
+     "grid": "a",
+     "type": "i16",
+     "scale": 1
+    },
+    {
+     "id": "u_500",
+     "grid": "a",
+     "type": "i8",
+     "scale": 1
+    },
+    {
+     "id": "v_500",
+     "grid": "a",
+     "type": "i8",
+     "scale": 1
+    },
+    {
+     "id": "T_500",
+     "grid": "a",
+     "type": "u8",
+     "scale": 0.5,
+     "offset": -93.15
+    },
+    {
+     "id": "z_500",
+     "grid": "a",
+     "type": "i16",
+     "scale": 1
+    },
+    {
+     "id": "u_400",
+     "grid": "a",
+     "type": "i8",
+     "scale": 1
+    },
+    {
+     "id": "v_400",
+     "grid": "a",
+     "type": "i8",
+     "scale": 1
+    },
+    {
+     "id": "T_400",
+     "grid": "a",
+     "type": "u8",
+     "scale": 0.5,
+     "offset": -93.15
+    },
+    {
+     "id": "z_400",
+     "grid": "a",
+     "type": "i16",
+     "scale": 1
+    },
+    {
+     "id": "u_300",
+     "grid": "a",
+     "type": "i8",
+     "scale": 1
+    },
+    {
+     "id": "v_300",
+     "grid": "a",
+     "type": "i8",
+     "scale": 1
+    },
+    {
+     "id": "T_300",
+     "grid": "a",
+     "type": "u8",
+     "scale": 0.5,
+     "offset": -93.15
+    },
+    {
+     "id": "z_300",
+     "grid": "a",
+     "type": "i16",
+     "scale": 1
+    },
+    {
+     "id": "u_250",
+     "grid": "a",
+     "type": "i8",
+     "scale": 1
+    },
+    {
+     "id": "v_250",
+     "grid": "a",
+     "type": "i8",
+     "scale": 1
+    },
+    {
+     "id": "T_250",
+     "grid": "a",
+     "type": "u8",
+     "scale": 0.5,
+     "offset": -93.15
+    },
+    {
+     "id": "z_250",
+     "grid": "a",
+     "type": "i16",
+     "scale": 1
+    },
+    {
+     "id": "u_200",
+     "grid": "a",
+     "type": "i8",
+     "scale": 1
+    },
+    {
+     "id": "v_200",
+     "grid": "a",
+     "type": "i8",
+     "scale": 1
+    },
+    {
+     "id": "T_200",
+     "grid": "a",
+     "type": "u8",
+     "scale": 0.5,
+     "offset": -93.15
+    },
+    {
+     "id": "z_200",
+     "grid": "a",
+     "type": "i16",
+     "scale": 1
+    },
+    {
+     "id": "u_150",
+     "grid": "a",
+     "type": "i8",
+     "scale": 1
+    },
+    {
+     "id": "v_150",
+     "grid": "a",
+     "type": "i8",
+     "scale": 1
+    },
+    {
+     "id": "T_150",
+     "grid": "a",
+     "type": "u8",
+     "scale": 0.5,
+     "offset": -93.15
+    },
+    {
+     "id": "z_150",
+     "grid": "a",
+     "type": "i16",
+     "scale": 1
+    }
+   ],
+   "times": [
+    {
+     "valid": "2026-10-09T09:00:00.000Z",
+     "forecast_h": 3,
+     "file": "wx_0.bin.gz",
+     "enc": "delta-gzip",
+     "grids": {
+      "s": {
+       "step": 1,
+       "nj": 181,
+       "ni": 360
+      },
+      "a": {
+       "step": 2.5,
+       "nj": 73,
+       "ni": 144
+      }
+     },
+     "resolution": "surface 1°, pressure levels 2.5°"
+    },
+    {
+     "valid": "2026-10-09T15:00:00.000Z",
+     "forecast_h": 9,
+     "file": "wx_1.bin.gz",
+     "enc": "delta-gzip",
+     "grids": {
+      "s": {
+       "step": 1,
+       "nj": 181,
+       "ni": 360
+      },
+      "a": {
+       "step": 2.5,
+       "nj": 73,
+       "ni": 144
+      }
+     },
+     "resolution": "surface 1°, pressure levels 2.5°"
+    },
+    {
+     "valid": "2026-10-09T21:00:00.000Z",
+     "forecast_h": 15,
+     "file": "wx_2.bin.gz",
+     "enc": "delta-gzip",
+     "grids": {
+      "s": {
+       "step": 1,
+       "nj": 181,
+       "ni": 360
+      },
+      "a": {
+       "step": 2.5,
+       "nj": 73,
+       "ni": 144
+      }
+     },
+     "resolution": "surface 1°, pressure levels 2.5°"
+    },
+    {
+     "valid": "2026-10-10T03:00:00.000Z",
+     "forecast_h": 21,
+     "file": "wx_3.bin.gz",
+     "enc": "delta-gzip",
+     "grids": {
+      "s": {
+       "step": 2.5,
+       "nj": 73,
+       "ni": 144
+      },
+      "a": {
+       "step": 5,
+       "nj": 37,
+       "ni": 72
+      }
+     },
+     "resolution": "surface 2.5°, pressure levels 5°"
+    },
+    {
+     "valid": "2026-10-10T09:00:00.000Z",
+     "forecast_h": 27,
+     "file": "wx_4.bin.gz",
+     "enc": "delta-gzip",
+     "grids": {
+      "s": {
+       "step": 2.5,
+       "nj": 73,
+       "ni": 144
+      },
+      "a": {
+       "step": 5,
+       "nj": 37,
+       "ni": 72
+      }
+     },
+     "resolution": "surface 2.5°, pressure levels 5°"
+    }
+   ],
+   "static": {
+    "orog": {
+     "file": "orog.bin.gz",
+     "enc": "delta-gzip",
+     "grids": {
+      "s": {
+       "step": 1,
+       "nj": 181,
+       "ni": 360
+      }
+     },
+     "grid": "s",
+     "type": "i16",
+     "scale": 1
+    }
+   },
+   "bytes": 2234448
+  },
+  "sea": {
+   "ok": true,
+   "source": "DWD global wave model GWAM, 0.25° output",
+   "publisher": "Deutscher Wetterdienst (DWD), open data server",
+   "home": "https://opendata.dwd.de/weather/maritime/wave_models/gwam/",
+   "registry": "dwd-gwam",
+   "attribution": "Sea state: Deutscher Wetterdienst (DWD), global wave model GWAM, CC BY 4.0 — averaged to 2° cells",
+   "cycle": "2026-10-09T00:00:00.000Z",
+   "resolution": "2° cells: mean over the sea points of the 0.25° model grid",
+   "grids": {
+    "s": {
+     "step": 2.5,
+     "nj": 73,
+     "ni": 144
+    },
+    "a": {
+     "step": 5,
+     "nj": 37,
+     "ni": 72
+    },
+    "w": {
+     "step": 2,
+     "nj": 91,
+     "ni": 180
+    }
+   },
+   "fields": [
+    {
+     "id": "hs_m",
+     "grid": "w",
+     "type": "u8",
+     "scale": 0.1,
+     "miss": 255
+    },
+    {
+     "id": "period_s",
+     "grid": "w",
+     "type": "u8",
+     "scale": 0.1,
+     "miss": 255
+    },
+    {
+     "id": "dir_deg",
+     "grid": "w",
+     "type": "u8",
+     "scale": 2,
+     "miss": 255
+    }
+   ],
+   "times": [
+    {
+     "valid": "2026-10-09T09:00:00.000Z",
+     "forecast_h": 9,
+     "file": "sea_0.bin.gz",
+     "enc": "delta-gzip"
+    },
+    {
+     "valid": "2026-10-09T15:00:00.000Z",
+     "forecast_h": 15,
+     "file": "sea_1.bin.gz",
+     "enc": "delta-gzip"
+    },
+    {
+     "valid": "2026-10-09T21:00:00.000Z",
+     "forecast_h": 21,
+     "file": "sea_2.bin.gz",
+     "enc": "delta-gzip"
+    },
+    {
+     "valid": "2026-10-10T03:00:00.000Z",
+     "forecast_h": 27,
+     "file": "sea_3.bin.gz",
+     "enc": "delta-gzip"
+    },
+    {
+     "valid": "2026-10-10T09:00:00.000Z",
+     "forecast_h": 33,
+     "file": "sea_4.bin.gz",
+     "enc": "delta-gzip"
+    }
+   ],
+   "bytes": 97783
+  },
+  "air": {
+   "ok": true,
+   "source": "NOAA GEFS-Aerosols (GEFS chemistry member), 0.25° output",
+   "publisher": "US National Weather Service, National Centers for Environmental Prediction; NOAA Open Data Dissemination",
+   "home": "https://registry.opendata.aws/noaa-gefs/",
+   "registry": "noaa-gefs-aerosols",
+   "attribution": "Aerosol forecast: NOAA/NWS/NCEP GEFS-Aerosols (public domain)",
+   "cycle": "2026-10-09T00:00:00.000Z",
+   "resolution": "2.5° (sampled from the 0.25° output)",
+   "units": {
+    "pm2_5": "µg/m³",
+    "pm10": "µg/m³",
+    "dust": "µg/m³ (dust up to 10 µm)",
+    "aod": "aerosol optical depth at 550 nm"
+   },
+   "grids": {
+    "s": {
+     "step": 2.5,
+     "nj": 73,
+     "ni": 144
+    },
+    "a": {
+     "step": 5,
+     "nj": 37,
+     "ni": 72
+    },
+    "w": {
+     "step": 2,
+     "nj": 91,
+     "ni": 180
+    }
+   },
+   "fields": [
+    {
+     "id": "pm2_5",
+     "grid": "s",
+     "type": "i16",
+     "scale": 0.1
+    },
+    {
+     "id": "pm10",
+     "grid": "s",
+     "type": "i16",
+     "scale": 0.1
+    },
+    {
+     "id": "dust",
+     "grid": "s",
+     "type": "i16",
+     "scale": 0.1
+    },
+    {
+     "id": "aod",
+     "grid": "s",
+     "type": "u8",
+     "scale": 0.02
+    }
+   ],
+   "times": [
+    {
+     "valid": "2026-10-09T09:00:00.000Z",
+     "forecast_h": 9,
+     "file": "air_0.bin.gz",
+     "enc": "delta-gzip"
+    },
+    {
+     "valid": "2026-10-09T21:00:00.000Z",
+     "forecast_h": 21,
+     "file": "air_1.bin.gz",
+     "enc": "delta-gzip"
+    },
+    {
+     "valid": "2026-10-10T09:00:00.000Z",
+     "forecast_h": 33,
+     "file": "air_2.bin.gz",
+     "enc": "delta-gzip"
+    }
+   ],
+   "bytes": 89440
+  }
+ }
+}

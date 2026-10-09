@@ -1,7 +1,7 @@
 {
  "schema": 1,
  "retrieved": "2026-10-09",
- "about": "Audited registry of every external data source, dataset and third-party component used by AeroSuite 26. Each conclusion rests on a page or licence file that was downloaded on the retrieval date; \"url\" is the page and \"quote\" is copied from it. This is a compliance aid, not legal advice: a lawyer can check each line against its URL. The app reads this file: in commercial mode (config.json, \"commercial\": true) a source is contacted only if its class is \"commercial-ok\", or the operator supplied the key/URL it needs, or the operator listed its id under \"accept\".",
+ "about": "Audited registry of every external data source, dataset and third-party component used by AeroSuite 26. Each conclusion rests on a page or licence file that was downloaded on the retrieval date; \"url\" is the page and \"quote\" is copied from it. This is a compliance aid, not legal advice: a lawyer can check each line against its URL. The app reads this file: in commercial mode (config.json, \"commercial\": true) a source is contacted only if its class is \"commercial-ok\" and its entry does not set \"usedInCommercial\": false, or the operator supplied the key/URL it needs, or the operator listed its id under \"accept\".",
  "classes": {
   "commercial-ok": "The licence or terms explicitly allow commercial use; the listed obligations apply.",
   "commercial-with-key": "Commercial use is allowed only with a paid plan/key, the operator's own infrastructure, or a source the operator has licensed and configured.",
@@ -10,387 +10,1190 @@
  },
  "sources": [
   {
-   "id": "open-meteo-free", "kind": "api", "name": "Open-Meteo free / open-access API",
-   "usedFor": "Weather and winds aloft, reanalysis design temperatures, air quality, sea state, place-name search, terrain elevation (non-commercial deployments only).",
+   "id": "open-meteo-free",
+   "kind": "api",
+   "name": "Open-Meteo free / open-access API",
+   "usedFor": "Refinement in non-commercial deployments: finer weather and winds aloft, the site's own reanalysis year, gases in air quality, sea state, smaller places in the search, point elevation. Every one of these has a keyless, commercially usable foundation that the app falls back to.",
    "licence": "Open-Meteo Terms of Use (free API: non-commercial only); API data CC BY 4.0",
    "url": "https://open-meteo.com/en/terms",
    "quote": "You may only use the free API services for non-commercial purposes.",
    "quote2": "the following examples are considered commercial use: Operating websites or apps that have subscriptions or display advertisements. Integrating our service into commercial products or promotional activities.",
-   "retrieved": "2026-10-09", "class": "not-allowed",
-   "obligations": ["Non-commercial use only", "Fewer than 10,000 calls per day", "Attribution with a link next to the data (CC BY 4.0)"],
-   "attribution": "Weather data by Open-Meteo.com (CC BY 4.0)", "attributionUrl": "https://open-meteo.com/",
-   "usedInCommercial": false, "replacement": "open-meteo-customer (with openMeteoApiKey), otherwise met-norway / nws; place search from the bundled airport database; elevation from met-norway or the airport database",
-   "hosts": ["api.open-meteo.com", "archive-api.open-meteo.com", "air-quality-api.open-meteo.com", "marine-api.open-meteo.com", "geocoding-api.open-meteo.com"]
+   "retrieved": "2026-10-09",
+   "class": "not-allowed",
+   "obligations": [
+    "Non-commercial use only",
+    "Fewer than 10,000 calls per day",
+    "Attribution with a link next to the data (CC BY 4.0)"
+   ],
+   "attribution": "Weather data by Open-Meteo.com (CC BY 4.0)",
+   "attributionUrl": "https://open-meteo.com/",
+   "usedInCommercial": false,
+   "replacement": "open-meteo-customer (with openMeteoApiKey); otherwise MET Norway / NWS completed from the NOAA GFS grid (noaa-gfs), DWD wave grid (dwd-gwam), NOAA aerosol grid (noaa-gefs-aerosols), bundled reanalysis statistics (noaa-reanalysis2), bundled GeoNames places and ETOPO terrain",
+   "hosts": [
+    "api.open-meteo.com",
+    "archive-api.open-meteo.com",
+    "air-quality-api.open-meteo.com",
+    "marine-api.open-meteo.com",
+    "geocoding-api.open-meteo.com"
+   ],
+   "shownAt": "weather, climate, air, sea cards (Live data); location page under the conditions"
   },
   {
-   "id": "open-meteo-customer", "kind": "api", "name": "Open-Meteo customer API (paid subscription)",
+   "id": "open-meteo-customer",
+   "kind": "api",
+   "name": "Open-Meteo customer API (paid subscription)",
    "usedFor": "The same feeds as the free API, in commercial mode, when config.json holds openMeteoApiKey.",
    "licence": "Open-Meteo API subscription (commercial use licence); API data CC BY 4.0",
    "url": "https://open-meteo.com/en/pricing",
    "quote": "A subscription grants a commercial use licence and an API key for the dedicated customer endpoint at customer-api.open-meteo.com . The API syntax is identical to the free tier — only the domain and key parameter differ.",
    "quote2": "Historical, climate, ensemble, and satellite radiation APIs require the Professional API Plan or higher.",
-   "retrieved": "2026-10-09", "class": "commercial-with-key",
-   "obligations": ["Paid subscription; the key is sent as the apikey query parameter from each user's browser, so it is visible to users: agree this with Open-Meteo or route through your own proxy", "The historical (reanalysis) feed needs the Professional plan or higher", "Attribution with a link next to the data (CC BY 4.0). Underlying data: national weather services, Copernicus (ERA5, CAMS), GeoNames (CC BY) — see https://open-meteo.com/en/licence"],
-   "attribution": "Weather data by Open-Meteo.com (CC BY 4.0)", "attributionUrl": "https://open-meteo.com/",
-   "usedInCommercial": "with openMeteoApiKey", "replacement": "met-norway / nws when no key is configured",
-   "hosts": ["customer-api.open-meteo.com", "customer-archive-api.open-meteo.com", "customer-air-quality-api.open-meteo.com", "customer-marine-api.open-meteo.com", "customer-geocoding-api.open-meteo.com"]
+   "retrieved": "2026-10-09",
+   "class": "commercial-with-key",
+   "obligations": [
+    "Paid subscription; the key is sent as the apikey query parameter from each user's browser, so it is visible to users: agree this with Open-Meteo or route through your own proxy",
+    "The historical (reanalysis) feed needs the Professional plan or higher",
+    "Attribution with a link next to the data (CC BY 4.0). Underlying data: national weather services, Copernicus (ERA5, CAMS), GeoNames (CC BY) — see https://open-meteo.com/en/licence"
+   ],
+   "attribution": "Weather data by Open-Meteo.com (CC BY 4.0)",
+   "attributionUrl": "https://open-meteo.com/",
+   "usedInCommercial": "with openMeteoApiKey",
+   "replacement": "met-norway / nws when no key is configured",
+   "hosts": [
+    "customer-api.open-meteo.com",
+    "customer-archive-api.open-meteo.com",
+    "customer-air-quality-api.open-meteo.com",
+    "customer-marine-api.open-meteo.com",
+    "customer-geocoding-api.open-meteo.com"
+   ],
+   "shownAt": "same places as the free API"
   },
   {
-   "id": "met-norway", "kind": "api", "name": "MET Norway Weather API — Locationforecast 2.0",
-   "usedFor": "Surface weather (temperature, humidity, sea-level pressure, wind, cloud, precipitation) and model terrain height, worldwide; the default weather source in commercial mode without an Open-Meteo key.",
+   "id": "met-norway",
+   "kind": "api",
+   "name": "MET Norway Weather API — Locationforecast 2.0",
+   "usedFor": "Surface weather at the site (temperature, humidity, sea-level pressure, wind, cloud, precipitation), worldwide; first choice in commercial mode without an Open-Meteo key, completed from the NOAA GFS grid.",
    "licence": "Norwegian Licence for Open Government Data (NLOD) 2.0 and CC BY 4.0",
    "url": "https://api.met.no/doc/License",
    "quote": "Unless specified otherwise, all data and products are licensed under the Norwegian Licence for Open Government Data (NLOD) 2.0 and Creative Commons 4.0 BY International licences.",
    "quote2": "Low-volume websites and mobile apps may use simple cross-origin Javascript requests and direct image links, provided the sites identifies itself as described above. If you start generating a lot of traffic against the API, you must set up a caching proxy gateway and route all traffic through this. (https://api.met.no/doc/TermsOfService)",
-   "retrieved": "2026-10-09", "class": "commercial-ok",
-   "obligations": ["Credit MET Norway as the source and link the licence (CC BY 4.0)", "Requests must identify the site: a browser request carries the site's Origin header (so the single-file copy opened from disk does not use this source)", "Coordinates truncated to at most 4 decimals; honour the Expires header; no polling while the app is not in use", "More than low volume (limit 20 requests/second per application in total): route through the operator's own caching proxy", "Do not use the name or logo of Yr, NRK or the Norwegian Meteorological Institute for the service", "The terms note that the conditions for CORS use are still under review: re-check before each release"],
-   "attribution": "Weather: based on data from MET Norway (NLOD 2.0 / CC BY 4.0)", "attributionUrl": "https://api.met.no/doc/License",
-   "usedInCommercial": true, "replacement": null,
-   "hosts": ["api.met.no"]
+   "retrieved": "2026-10-09",
+   "class": "commercial-ok",
+   "obligations": [
+    "Credit MET Norway as the source and link the licence (CC BY 4.0)",
+    "Requests must identify the site: a browser request carries the site's Origin header (so the single-file copy opened from disk does not use this source)",
+    "Coordinates truncated to at most 4 decimals; honour the Expires header; no polling while the app is not in use",
+    "More than low volume (limit 20 requests/second per application in total): route through the operator's own caching proxy",
+    "Do not use the name or logo of Yr, NRK or the Norwegian Meteorological Institute for the service",
+    "The terms note that the conditions for CORS use are still under review. The app does not depend on this source: if it cannot be reached from browsers, the NOAA GFS grid supplies the same fields"
+   ],
+   "attribution": "Weather: based on data from MET Norway (NLOD 2.0 / CC BY 4.0)",
+   "attributionUrl": "https://api.met.no/doc/License",
+   "usedInCommercial": true,
+   "replacement": null,
+   "hosts": [
+    "api.met.no"
+   ],
+   "shownAt": "weather card (Live data); location page under the conditions"
   },
   {
-   "id": "nws", "kind": "api", "name": "US National Weather Service API (api.weather.gov)",
+   "id": "nws",
+   "kind": "api",
+   "name": "US National Weather Service API (api.weather.gov)",
    "usedFor": "Latest surface observation at the nearest station (United States and territories only); fall-back weather source in commercial mode.",
    "licence": "US Government work, public domain",
    "url": "https://www.weather.gov/documentation/services-web-api",
    "quote": "All of the information presented via the API is intended to be open data, free to use for any purpose.",
    "quote2": "The information on National Weather Service (NWS) Web pages are in the public domain, unless specifically noted otherwise, and may be used without charge for any lawful purpose so long as you do not: 1) claim it is your own (e.g., by claiming copyright for NWS information -- see below), 2) use it in a manner that implies an endorsement or affiliation with NOAA/NWS, or 3) modify its content and then present it as official government material. (https://www.weather.gov/disclaimer)",
-   "retrieved": "2026-10-09", "class": "commercial-ok",
-   "obligations": ["Do not claim the data as your own, imply NOAA/NWS endorsement, or present modified content as official", "Reasonable rate limits apply"],
-   "attribution": "Weather observation: US National Weather Service (NOAA), public domain", "attributionUrl": "https://www.weather.gov/disclaimer",
-   "usedInCommercial": true, "replacement": null,
-   "hosts": ["api.weather.gov"]
+   "retrieved": "2026-10-09",
+   "class": "commercial-ok",
+   "obligations": [
+    "Do not claim the data as your own, imply NOAA/NWS endorsement, or present modified content as official",
+    "Reasonable rate limits apply"
+   ],
+   "attribution": "Weather observation: US National Weather Service (NOAA), public domain",
+   "attributionUrl": "https://www.weather.gov/disclaimer",
+   "usedInCommercial": true,
+   "replacement": null,
+   "hosts": [
+    "api.weather.gov"
+   ],
+   "shownAt": "weather card (Live data); location page"
   },
   {
-   "id": "nasa-power", "kind": "api", "name": "NASA POWER daily meteorology (MERRA-2 / GEOS)",
-   "usedFor": "Twelve months of daily maximum and minimum temperature and maximum wind for site design temperatures, when the Open-Meteo reanalysis feed is not available.",
+   "id": "noaa-gfs",
+   "kind": "web-data",
+   "name": "NOAA/NCEP Global Forecast System (GFS) — NOMADS grib filter",
+   "usedFor": "The global forecast grid published with the cloud snapshot (data/grid/wx_*.bin.gz; 1° surface and 2.5° aloft for the nearest valid times, 2.5° / 5° for the later ones): wind, temperature and height at eleven pressure levels, freezing level, gusts, visibility, cloud, precipitation, 2 m temperature and humidity, sea-level pressure, 10 m wind. It completes MET Norway and NWS replies in every mode and is the weather source when no point provider answers, also offline.",
+   "licence": "US Government work, public domain (NOAA/NWS)",
+   "url": "https://www.weather.gov/disclaimer",
+   "quote": "The information on National Weather Service (NWS) Web pages are in the public domain, unless specifically noted otherwise, and may be used without charge for any lawful purpose so long as you do not: 1) claim it is your own (e.g., by claiming copyright for NWS information -- see below), 2) use it in a manner that implies an endorsement or affiliation with NOAA/NWS, or 3) modify its content and then present it as official government material.",
+   "quote2": "NOAA data disseminated through NODD are open to the public and can be used as desired. (https://registry.opendata.aws/noaa-gefs/)",
+   "class": "commercial-ok",
+   "obligations": [
+    "Do not claim the data as your own, imply NOAA/NWS endorsement, or present the reduced grid as official material: the app labels it as interpolated from a 2.5°/5° grid",
+    "NOMADS is fetched only by the scheduled job (a handful of requests per run), never by users' browsers"
+   ],
+   "attribution": "Forecast grid: NOAA/NWS/NCEP Global Forecast System (public domain), reduced to a 1°–2.5° surface and 2.5°–5° upper-air grid",
+   "attributionUrl": "https://nomads.ncep.noaa.gov/",
+   "usedInCommercial": true,
+   "hosts": [
+    "nomads.ncep.noaa.gov"
+   ],
+   "route": "snapshot",
+   "retrieved": "2026-10-09",
+   "replacement": null,
+   "shownAt": "weather card (Live data); location page under the conditions"
+  },
+  {
+   "id": "noaa-gefs-aerosols",
+   "kind": "web-data",
+   "name": "NOAA GEFS-Aerosols (NOAA Open Data Dissemination bucket on AWS)",
+   "usedFor": "The aerosol grid published with the cloud snapshot (data/grid/air_*.bin): PM2.5, PM10, dust and aerosol optical depth at 550 nm. Air-quality source where Open-Meteo may not be used, and fall-back elsewhere. Nitrogen dioxide and ozone are not in this product.",
+   "licence": "NOAA Open Data Dissemination (open, no restriction on use); US Government work",
+   "url": "https://registry.opendata.aws/noaa-gefs/",
+   "quote": "NOAA data disseminated through NODD are open to the public and can be used as desired.",
+   "quote2": "NOAA requests attribution for the use or dissemination of unaltered NOAA data. However, it is not permissible to state or imply endorsement by or affiliation with NOAA. If you modify NOAA data, you may not state or imply that it is original, unaltered NOAA data.",
+   "class": "commercial-ok",
+   "obligations": [
+    "Attribution requested; no implied NOAA endorsement; the reduced grid is labelled as derived, not original NOAA data"
+   ],
+   "attribution": "Aerosol forecast: NOAA/NWS/NCEP GEFS-Aerosols (public domain), reduced to a 2.5° grid",
+   "attributionUrl": "https://registry.opendata.aws/noaa-gefs/",
+   "usedInCommercial": true,
+   "hosts": [
+    "noaa-gefs-pds.s3.amazonaws.com"
+   ],
+   "route": "snapshot",
+   "retrieved": "2026-10-09",
+   "replacement": null,
+   "shownAt": "air-quality card (Live data)"
+  },
+  {
+   "id": "nasa-geos-cf",
+   "kind": "web-data",
+   "name": "NASA GMAO GEOS Composition Forecast (GEOS-CF v2), OPeNDAP",
+   "usedFor": "Surface nitrogen dioxide and ozone on a 2.5° grid (data/grid/gas_*.bin.gz). Off in every mode by default: built by the snapshot job and shown by the app only where the operator lists \"nasa-geos-cf\" under \"accept\".",
+   "licence": "No explicit reuse grant found for this product. NASA's general data-use guidance (CC0 for data from NASA-led missions) does not name it, and NASA describes GEOS forecasts as experimental",
+   "url": "https://gmao.gsfc.nasa.gov/gmao-products/geos-near-real-time-data-products/",
+   "quote": "Forecasts using the GEOS system are experimental and are produced for research purposes only. Use of these forecasts for purposes other than research is not recommended.",
+   "quote2": "Unless the content is marked with a use restriction or license, data provided from a NASA-led mission are licensed as Creative Commons Zero (CC0). (https://www.earthdata.nasa.gov/engage/open-data-services-software-policies/data-use-guidance)",
+   "retrieved": "2026-10-09",
+   "class": "unclear",
+   "obligations": [
+    "Not used unless the operator accepts it after its own review",
+    "If used: reference GMAO as the source and cite the GEOS-CF description papers; do not imply NASA endorsement; treat the values as an experimental forecast"
+   ],
+   "attribution": "NO₂ and ozone: NASA GMAO GEOS Composition Forecast (GEOS-CF), experimental forecast",
+   "attributionUrl": "https://gmao.gsfc.nasa.gov/gmao-products/geos-cf/",
+   "usedInCommercial": false,
+   "replacement": "Open-Meteo / CAMS with openMeteoApiKey (or the free tier in a non-commercial deployment). No other keyless global source of NO₂ and ozone with an explicit commercial-reuse grant was found: Copernicus CAMS needs an account key, NOAA's global aerosol model carries no gases, NOAA's air-quality model covers the United States only",
+   "hosts": [
+    "opendap.nccs.nasa.gov"
+   ],
+   "route": "snapshot",
+   "shownAt": "air-quality card (only when accepted)"
+  },
+  {
+   "id": "dwd-gwam",
+   "kind": "web-data",
+   "name": "Deutscher Wetterdienst (DWD) open data — global wave model GWAM",
+   "usedFor": "The sea-state grid published with the cloud snapshot (data/grid/sea_*.bin): significant wave height, mean period and mean direction, averaged to 2° cells. Sea-state source where Open-Meteo may not be used, and fall-back elsewhere. (NOAA's own wave model output is published only in JPEG 2000-packed GRIB, which the dependency-free job cannot read.)",
+   "licence": "Creative Commons Attribution 4.0 (CC BY 4.0)",
+   "url": "https://www.dwd.de/EN/service/legal_notice/legal_notice.html",
+   "quote": "All open spatial data and spatial data services of the DWD as well as all DWD services that are defined as high-value datasets ( HVD ) may be re-used under the Creative Commons licence conditions CC BY 4.0 providing the source is acknowledged.",
+   "quote2": "medium or format for any purpose, even commercially. (https://creativecommons.org/licenses/by/4.0/deed.en)",
+   "class": "commercial-ok",
+   "obligations": [
+    "Acknowledge the source: Deutscher Wetterdienst",
+    "Indicate changes: the app states that the model output is averaged to 2° cells"
+   ],
+   "attribution": "Sea state: Deutscher Wetterdienst (DWD), global wave model GWAM, CC BY 4.0 — averaged to 2° cells",
+   "attributionUrl": "https://opendata.dwd.de/weather/maritime/wave_models/gwam/",
+   "usedInCommercial": true,
+   "hosts": [
+    "opendata.dwd.de"
+   ],
+   "route": "snapshot",
+   "retrieved": "2026-10-09",
+   "replacement": null,
+   "shownAt": "sea-state card (Live data); location page"
+  },
+  {
+   "id": "noaa-reanalysis2",
+   "kind": "bundled-dataset",
+   "name": "NCEP-DOE Reanalysis 2 (NOAA Physical Sciences Laboratory)",
+   "usedFor": "Bundled design-temperature statistics js/data/climate/ (hot day, cold day, strong wind on a 2.5° grid, 2015–2024; a land set in which coastal sea cells take nearby land values, and the unmodified set for sites at sea), built once by tools/fetch-climate.mjs. The climate source in every mode; Open-Meteo's ERA5 archive refines it where that service may be used.",
+   "licence": "US Government product, public domain; acknowledgement requested",
+   "url": "https://psl.noaa.gov/disclaimer/",
+   "quote": "The information on government servers are in the public domain, unless specifically annotated otherwise, and may be used freely by the public so long as you do not 1) claim it is your own (e.g. by claiming copyright for NOAA information -- see below), 2) use it in a manner that implies an endorsement or affiliation with NOAA, or 3) modify it in content and then present it as official government material.",
+   "quote2": "We ask that you acknowledge the use of images/data/forecast on these webpages as:",
+   "class": "commercial-ok",
+   "obligations": [
+    "Acknowledge: NCEP-DOE Reanalysis 2 data provided by the NOAA PSL, Boulder, Colorado, USA, from their website at https://psl.noaa.gov",
+    "The statistics are the app's own calculation from the reanalysis and are labelled as such (method in js/data/climate/index.json)",
+    "The dataset page (https://psl.noaa.gov/data/gridded/data.ncep.reanalysis2.html) could not be downloaded on the retrieval date; the conclusion rests on the PSL disclaimer page"
+   ],
+   "attribution": "Design temperatures: NCEP-DOE Reanalysis 2 data provided by the NOAA PSL, Boulder, Colorado, USA (psl.noaa.gov); statistics computed by this app",
+   "attributionUrl": "https://psl.noaa.gov/data/gridded/data.ncep.reanalysis2.html",
+   "usedInCommercial": true,
+   "buildHosts": [
+    "psl.noaa.gov"
+   ],
+   "retrieved": "2026-10-09",
+   "replacement": null,
+   "hosts": [],
+   "shownAt": "design-temperature card (Live data); location page"
+  },
+  {
+   "id": "nasa-power",
+   "kind": "api",
+   "name": "NASA POWER daily meteorology (MERRA-2 / GEOS)",
+   "usedFor": "Formerly a fall-back for site design temperatures. Removed: the bundled NCEP-DOE Reanalysis 2 statistics now serve every mode, so no deployment relies on a source without an explicit reuse grant.",
    "licence": "NASA Earth science data policy (full and open sharing); no licence text with an explicit commercial-reuse grant was found on the POWER site",
    "url": "https://www.earthdata.nasa.gov/engage/open-data-services-software-policies/data-information-guidance",
    "quote": "NASA promotes the full and open sharing of data with the research and applications communities, private industry, academia, and the general public.",
    "quote2": "To assist the POWER Project in providing the best service to the scientific community, the Project requests notification if POWER data is transmitted to other researchers. (https://power.larc.nasa.gov/docs/referencing/)",
-   "retrieved": "2026-10-09", "class": "unclear",
-   "obligations": ["Acknowledge the NASA Langley Research Center POWER project, with service name, version and access date", "The project requests notification when POWER data are passed on"],
-   "attribution": "Site climate statistics: NASA Langley Research Center POWER project (funded through the NASA Earth Science Division)", "attributionUrl": "https://power.larc.nasa.gov/docs/referencing/",
-   "usedInCommercial": false, "replacement": "open-meteo-customer historical API (Professional plan); otherwise the hot-day design temperature stays a case input. An operator who has cleared this source can add \"nasa-power\" to \"accept\" in config.json.",
-   "hosts": ["power.larc.nasa.gov"]
+   "retrieved": "2026-10-09",
+   "class": "unclear",
+   "obligations": [
+    "Acknowledge the NASA Langley Research Center POWER project, with service name, version and access date",
+    "The project requests notification when POWER data are passed on"
+   ],
+   "attribution": "Site climate statistics: NASA Langley Research Center POWER project (funded through the NASA Earth Science Division)",
+   "attributionUrl": "https://power.larc.nasa.gov/docs/referencing/",
+   "usedInCommercial": false,
+   "replacement": "noaa-reanalysis2 (bundled), refined by the Open-Meteo archive where that may be used",
+   "hosts": [
+    "power.larc.nasa.gov"
+   ],
+   "used": false,
+   "shownAt": "not used"
   },
   {
-   "id": "ourairports", "kind": "bundled-dataset", "name": "OurAirports airports and runways",
+   "id": "ourairports",
+   "kind": "bundled-dataset",
+   "name": "OurAirports airports and runways",
    "usedFor": "Bundled world airport and runway database (js/data/airports): nearby aerodromes, runway data, airport search, field elevation.",
    "licence": "Public domain",
    "url": "https://ourairports.com/data/",
    "quote": "All data is released to the Public Domain, and comes with no guarantee of accuracy or fitness for use.",
-   "retrieved": "2026-10-09", "class": "commercial-ok",
-   "obligations": ["None; the source is credited as a courtesy and the no-guarantee statement is passed on"],
-   "attribution": "Airports and runways: OurAirports (public domain)", "attributionUrl": "https://ourairports.com/data/",
-   "usedInCommercial": true, "replacement": null, "hosts": []
+   "retrieved": "2026-10-09",
+   "class": "commercial-ok",
+   "obligations": [
+    "None; the source is credited as a courtesy and the no-guarantee statement is passed on"
+   ],
+   "attribution": "Airports and runways: OurAirports (public domain)",
+   "attributionUrl": "https://ourairports.com/data/",
+   "usedInCommercial": true,
+   "replacement": null,
+   "hosts": [],
+   "shownAt": "location page under the aerodrome list; aerodromes card"
   },
   {
-   "id": "osm-data", "kind": "data-licence", "name": "OpenStreetMap data",
+   "id": "geonames",
+   "kind": "bundled-dataset",
+   "name": "GeoNames — cities15000 and cities5000",
+   "usedFor": "Bundled place-name database js/data/places/ (cities above 15 000 inhabitants; a second tier of places of 5 000 to 15 000 inhabitants read on demand): name, country, first-order division, position, elevation, population. Built by tools/fetch-data.mjs --places. Place search and nearest-city elevation in every mode, offline.",
+   "licence": "Creative Commons Attribution 4.0 (CC BY 4.0)",
+   "url": "https://download.geonames.org/export/dump/readme.txt",
+   "quote": "This work is licensed under a Creative Commons Attribution 4.0 License,",
+   "quote2": "material for any purpose, even commercially. (https://creativecommons.org/licenses/by/4.0/deed.en)",
+   "class": "commercial-ok",
+   "obligations": [
+    "Give credit to GeoNames with a link",
+    "Indicate changes: the bundled file is a reduced extract (stated in js/data/places/index.json and here)",
+    "Provided “as is” without warranty"
+   ],
+   "attribution": "Place names: GeoNames (geonames.org), CC BY 4.0 — reduced extract",
+   "attributionUrl": "https://www.geonames.org/",
+   "usedInCommercial": true,
+   "buildHosts": [
+    "download.geonames.org"
+   ],
+   "retrieved": "2026-10-09",
+   "replacement": null,
+   "hosts": [],
+   "shownAt": "location page (place search results are from this list); registry table"
+  },
+  {
+   "id": "noaa-etopo",
+   "kind": "bundled-dataset",
+   "name": "NOAA NCEI ETOPO 2022 Global Relief Model",
+   "usedFor": "Bundled coarse terrain grid js/data/terrain/ (mean elevation of 0.5° cells), built by tools/fetch-data.mjs --terrain. Last-resort site elevation and route terrain profiles in every mode, offline.",
+   "licence": "CC0 1.0 (NOAA waives copyright worldwide)",
+   "url": "https://www.ncei.noaa.gov/access/metadata/landing-page/bin/iso?id=gov.noaa.ngdc.mgg.dem:etopo_2022",
+   "quote": "These data were produced by NOAA and are not subject to copyright protection in the United States. NOAA waives any potential copyright and related rights in these data worldwide through the Creative Commons Zero 1.0 Universal Public Domain Dedication (CC0-1.0).",
+   "quote2": "Not to be used for navigation.",
+   "class": "commercial-ok",
+   "obligations": [
+    "None on reuse; citation requested (doi:10.25921/fd45-gt74)",
+    "Not for navigation: the app labels the grid as coarse means, not for obstacle clearance"
+   ],
+   "attribution": "Terrain: NOAA National Centers for Environmental Information, ETOPO 2022 (doi:10.25921/fd45-gt74), CC0 — 0.5° means",
+   "attributionUrl": "https://doi.org/10.25921/fd45-gt74",
+   "usedInCommercial": true,
+   "buildHosts": [
+    "www.ngdc.noaa.gov"
+   ],
+   "retrieved": "2026-10-09",
+   "replacement": null,
+   "hosts": [],
+   "shownAt": "registry table (About, Live data)"
+  },
+  {
+   "id": "osm-data",
+   "kind": "data-licence",
+   "name": "OpenStreetMap data",
    "usedFor": "Optional extra aerodrome and runway detail (heliports, small strips, surface, width) requested by the user on the location page.",
    "licence": "Open Database License (ODbL) 1.0",
    "url": "https://www.openstreetmap.org/copyright",
    "quote": "You are free to copy, distribute, transmit and adapt our data, as long as you credit OpenStreetMap and its contributors. If you alter or build upon our data, you may distribute the result only under the same license.",
    "quote2": "The historical forms of attribution “© OpenStreetMap contributors” or “© OpenStreetMap” are acceptable. (https://osmfoundation.org/wiki/Licence/Attribution_Guidelines)",
-   "retrieved": "2026-10-09", "class": "commercial-ok",
-   "obligations": ["Show “© OpenStreetMap contributors” with a link to openstreetmap.org/copyright wherever the data is shown, without requiring interaction", "Share-alike: a database derived from OSM data that is distributed must be offered under ODbL. The app shows OSM detail merged with the airport database on screen and keeps it only in the user's own browser cache; it does not publish a merged database. Legal review should confirm that this is a produced work and not a publicly used derivative database"],
-   "attribution": "© OpenStreetMap contributors (ODbL)", "attributionUrl": "https://www.openstreetmap.org/copyright",
-   "usedInCommercial": "only through an Overpass server configured by the operator (overpassUrl)", "replacement": null, "hosts": []
+   "retrieved": "2026-10-09",
+   "class": "commercial-ok",
+   "obligations": [
+    "Show “© OpenStreetMap contributors” with a link to openstreetmap.org/copyright wherever the data is shown, without requiring interaction",
+    "Share-alike: a database derived from OSM data that is distributed must be offered under ODbL. The app shows OSM detail merged with the airport database on screen and keeps it only in the user's own browser cache; it does not publish a merged database. Legal review should confirm that this is a produced work and not a publicly used derivative database",
+    "Nothing is lost when this is off: runways, surfaces and thresholds come from the bundled OurAirports database"
+   ],
+   "attribution": "© OpenStreetMap contributors (ODbL)",
+   "attributionUrl": "https://www.openstreetmap.org/copyright",
+   "usedInCommercial": "only through an Overpass server configured by the operator (overpassUrl)",
+   "replacement": null,
+   "hosts": [],
+   "shownAt": "location page under the aerodrome list when OSM detail is shown"
   },
   {
-   "id": "overpass-public", "kind": "api", "name": "Public Overpass API servers (overpass-api.de, overpass.private.coffee, maps.mail.ru)",
+   "id": "overpass-public",
+   "kind": "api",
+   "name": "Public Overpass API servers (overpass-api.de, overpass.private.coffee, maps.mail.ru)",
    "usedFor": "Transport for the OpenStreetMap query above (non-commercial deployments only).",
    "licence": "Usage policies of the volunteer-run public instances",
    "url": "https://wiki.openstreetmap.org/wiki/Overpass_API",
    "quote": "Commercial use should use self-hosted or paid Overpass servers",
    "quote2": "If you set something up that uses the Overpass API regularly, then divide those numbers by 100 (making less than 100 queries fetching less 10 MB of data per day fine). If you have an app or website, then the usage counts towards the sum of requests made by all your users",
-   "retrieved": "2026-10-09", "class": "commercial-with-key",
-   "obligations": ["Commercial deployments: run or rent an Overpass server and set overpassUrl in config.json", "Non-commercial: stay within the fair-use limits; the app queries only when the user asks for extra detail and caches the answer for 30 days"],
-   "attribution": "© OpenStreetMap contributors (ODbL)", "attributionUrl": "https://www.openstreetmap.org/copyright",
-   "usedInCommercial": "only with overpassUrl (operator's own or paid server)", "replacement": "Bundled OurAirports database; operator's Overpass server",
-   "hosts": ["overpass-api.de", "overpass.private.coffee", "maps.mail.ru"]
+   "retrieved": "2026-10-09",
+   "class": "commercial-with-key",
+   "obligations": [
+    "Commercial deployments: run or rent an Overpass server and set overpassUrl in config.json",
+    "Non-commercial: stay within the fair-use limits; the app queries only when the user asks for extra detail and caches the answer for 30 days"
+   ],
+   "attribution": "© OpenStreetMap contributors (ODbL)",
+   "attributionUrl": "https://www.openstreetmap.org/copyright",
+   "usedInCommercial": "only with overpassUrl (operator's own or paid server)",
+   "replacement": "Bundled OurAirports database (already supplies runway data in every mode); operator's Overpass server for the optional extra detail",
+   "hosts": [
+    "overpass-api.de",
+    "overpass.private.coffee",
+    "maps.mail.ru"
+   ],
+   "shownAt": "as OpenStreetMap"
   },
   {
-   "id": "noaa-swpc", "kind": "api", "name": "NOAA Space Weather Prediction Center — planetary K index",
+   "id": "noaa-swpc",
+   "kind": "api",
+   "name": "NOAA Space Weather Prediction Center — planetary K index",
    "usedFor": "Geomagnetic activity (Kp) for GNSS, HF and radiation notes.",
    "licence": "US Government work, public domain (NOAA/NWS disclaimer, linked from the SWPC site)",
    "url": "https://www.weather.gov/disclaimer",
    "quote": "The information on National Weather Service (NWS) Web pages are in the public domain, unless specifically noted otherwise, and may be used without charge for any lawful purpose so long as you do not: 1) claim it is your own (e.g., by claiming copyright for NWS information -- see below), 2) use it in a manner that implies an endorsement or affiliation with NOAA/NWS, or 3) modify its content and then present it as official government material.",
-   "retrieved": "2026-10-09", "class": "commercial-ok",
-   "obligations": ["Do not claim the data as your own, imply endorsement, or present modified content as official", "The SWPC site (www.swpc.noaa.gov) carries no separate licence page; its footer links to this NWS disclaimer"],
-   "attribution": "Space weather: NOAA Space Weather Prediction Center (public domain)", "attributionUrl": "https://www.swpc.noaa.gov",
-   "usedInCommercial": true, "replacement": null, "hosts": ["services.swpc.noaa.gov"]
+   "retrieved": "2026-10-09",
+   "class": "commercial-ok",
+   "obligations": [
+    "Do not claim the data as your own, imply endorsement, or present modified content as official",
+    "The SWPC site (www.swpc.noaa.gov) carries no separate licence page; its footer links to this NWS disclaimer"
+   ],
+   "attribution": "Space weather: NOAA Space Weather Prediction Center (public domain)",
+   "attributionUrl": "https://www.swpc.noaa.gov",
+   "usedInCommercial": true,
+   "replacement": null,
+   "hosts": [
+    "services.swpc.noaa.gov"
+   ],
+   "shownAt": "space-weather card; location page"
   },
   {
-   "id": "ecb-statistics", "kind": "api", "name": "European Central Bank statistics (ECB Data Portal API)",
+   "id": "ecb-statistics",
+   "kind": "api",
+   "name": "European Central Bank statistics (ECB Data Portal API)",
    "usedFor": "Euro foreign-exchange reference rates (browser and snapshot) and the deposit facility rate (snapshot).",
    "licence": "Policy regarding the reuse of ESCB statistics",
    "url": "https://www.ecb.europa.eu/stats/ecb_statistics/governance_and_quality_framework/html/usage_policy.en.html",
    "quote": "All publicly available ESCB statistics may be reused free of charge on the condition that the source is quoted (e.g. “Source: ECB statistics.”) and that the statistics (including metadata) are not modified.",
    "quote2": "The ESCB is committed to providing its statistics free of charge as a public good of high quality irrespective of any subsequent commercial or non-commercial use.",
-   "retrieved": "2026-10-09", "class": "commercial-ok",
-   "obligations": ["Quote the source: “Source: ECB statistics.”", "Do not modify the statistics: the published euro reference rates are stored unchanged (per 1 EUR); rates per US dollar shown in the app are labelled as the app's own calculation from them"],
-   "attribution": "Source: ECB statistics (euro foreign exchange reference rates). Rates per USD are own calculations from the ECB rates.", "attributionUrl": "https://data.ecb.europa.eu",
-   "usedInCommercial": true, "replacement": null, "hosts": ["data-api.ecb.europa.eu"]
+   "retrieved": "2026-10-09",
+   "class": "commercial-ok",
+   "obligations": [
+    "Quote the source: “Source: ECB statistics.”",
+    "Do not modify the statistics: the published euro reference rates are stored unchanged (per 1 EUR); rates per US dollar shown in the app are labelled as the app's own calculation from them"
+   ],
+   "attribution": "Source: ECB statistics (euro foreign exchange reference rates). Rates per USD are own calculations from the ECB rates.",
+   "attributionUrl": "https://data.ecb.europa.eu",
+   "usedInCommercial": true,
+   "replacement": null,
+   "hosts": [
+    "data-api.ecb.europa.eu"
+   ],
+   "shownAt": "exchange-rate and policy-rate cards"
   },
   {
-   "id": "frankfurter", "kind": "api", "name": "Frankfurter exchange-rate API",
+   "id": "frankfurter",
+   "kind": "api",
+   "name": "Frankfurter exchange-rate API",
    "usedFor": "Fall-back for exchange rates when the ECB Data Portal does not answer.",
    "licence": "Free public API; rates under each provider's terms (ECB reference rates: see ecb-statistics)",
    "url": "https://frankfurter.dev/",
    "quote": "Is the API free for commercial use? Yes. The rates themselves fall under each provider's terms .",
-   "retrieved": "2026-10-09", "class": "commercial-ok",
-   "obligations": ["ECB obligations apply to the rates (source quoted)", "Rate-limited; cache responses"],
-   "attribution": "Source: ECB statistics, served by the Frankfurter API", "attributionUrl": "https://frankfurter.dev",
-   "usedInCommercial": true, "replacement": null, "hosts": ["api.frankfurter.dev"]
+   "retrieved": "2026-10-09",
+   "class": "commercial-ok",
+   "obligations": [
+    "ECB obligations apply to the rates (source quoted)",
+    "Rate-limited; cache responses"
+   ],
+   "attribution": "Source: ECB statistics, served by the Frankfurter API",
+   "attributionUrl": "https://frankfurter.dev",
+   "usedInCommercial": true,
+   "replacement": null,
+   "hosts": [
+    "api.frankfurter.dev"
+   ],
+   "shownAt": "exchange-rate card"
   },
   {
-   "id": "world-bank", "kind": "api", "name": "World Bank Open Data — World Development Indicators",
+   "id": "world-bank",
+   "kind": "api",
+   "name": "World Bank Open Data — World Development Indicators",
    "usedFor": "Inflation (FP.CPI.TOTL.ZG), lending rate (FR.INR.LEND) and GDP growth (NY.GDP.MKTP.KD.ZG) by country.",
    "licence": "CC BY 4.0 (World Bank dataset terms)",
    "url": "https://datacatalog.worldbank.org/public-licenses",
    "quote": "The Creative Commons Attribution 4.0 International license allows users to copy, modify and distribute data in any format for any purpose, including commercial use. Users are only obligated to give appropriate credit (attribution) and indicate if they have made any changes, including translations. CC-BY 4.0, with the additional terms below, is the default license for all Datasets produced by the World Bank itself and distributed as open data .",
-   "retrieved": "2026-10-09", "class": "commercial-ok",
-   "obligations": ["Attribution and indication of changes (CC BY 4.0)", "Do not imply World Bank endorsement", "The general website terms (non-commercial) do not govern the datasets: the dataset licence above does; a few indicators are third-party data under other licences — the three used here are World Bank / IMF-sourced WDI series, to be re-confirmed on the indicator pages"],
-   "attribution": "Source: World Bank, World Development Indicators (CC BY 4.0)", "attributionUrl": "https://datacatalog.worldbank.org/public-licenses",
-   "usedInCommercial": true, "replacement": null, "hosts": ["api.worldbank.org"]
+   "retrieved": "2026-10-09",
+   "class": "commercial-ok",
+   "obligations": [
+    "Attribution and indication of changes (CC BY 4.0)",
+    "Do not imply World Bank endorsement",
+    "The general website terms (non-commercial) do not govern the datasets: the dataset licence above does; a few indicators are third-party data under other licences — the three used here are World Bank / IMF-sourced WDI series, to be re-confirmed on the indicator pages"
+   ],
+   "attribution": "Source: World Bank, World Development Indicators (CC BY 4.0)",
+   "attributionUrl": "https://datacatalog.worldbank.org/public-licenses",
+   "usedInCommercial": true,
+   "replacement": null,
+   "hosts": [
+    "api.worldbank.org"
+   ],
+   "shownAt": "inflation card"
   },
   {
-   "id": "eia", "kind": "web-data", "name": "US Energy Information Administration — petroleum spot prices",
+   "id": "eia",
+   "kind": "web-data",
+   "name": "US Energy Information Administration — petroleum spot prices",
    "usedFor": "U.S. Gulf Coast kerosene-type jet fuel spot price (EER_EPJK_PF4_RGC_DPG) and Europe Brent spot price (RBRTE), read by the snapshot job from the EIA history pages.",
    "licence": "US Government work, public domain",
    "url": "https://www.eia.gov/about/copyrights_reuse.php",
    "quote": "U.S. government publications are in the public domain and are not subject to copyright protection. You may use and/or distribute any of our data, files, databases, reports, graphs, charts, and other information products that are on our website or that you receive through our email distribution service. However, if you use or reproduce any of our information products, you should use an acknowledgment, which includes the publication date, such as: \"Source: U.S. Energy Information Administration (Oct 2008).\"",
-   "retrieved": "2026-10-09", "class": "commercial-ok",
-   "obligations": ["Acknowledge: “Source: U.S. Energy Information Administration (month year)”"],
-   "attribution": "Source: U.S. Energy Information Administration", "attributionUrl": "https://www.eia.gov/dnav/pet/pet_pri_spt_s1_d.htm",
-   "usedInCommercial": true, "replacement": null, "hosts": ["www.eia.gov"]
+   "retrieved": "2026-10-09",
+   "class": "commercial-ok",
+   "obligations": [
+    "Acknowledge: “Source: U.S. Energy Information Administration (month year)”"
+   ],
+   "attribution": "Source: U.S. Energy Information Administration",
+   "attributionUrl": "https://www.eia.gov/dnav/pet/pet_pri_spt_s1_d.htm",
+   "usedInCommercial": true,
+   "replacement": null,
+   "hosts": [
+    "www.eia.gov"
+   ],
+   "shownAt": "oil and jet-fuel cards; fuel source text in the case"
   },
   {
-   "id": "oil-prices-dataset", "kind": "web-data", "name": "datasets/oil-prices on GitHub (EIA Brent daily series, repackaged)",
+   "id": "oil-prices-dataset",
+   "kind": "web-data",
+   "name": "datasets/oil-prices on GitHub (EIA Brent daily series, repackaged)",
    "usedFor": "Brent series read directly by the browser in non-commercial deployments; fall-back for the snapshot job in non-commercial deployments.",
    "licence": "Data: EIA public domain; packaging: ODC Public Domain Dedication and License 1.0. Delivery is from raw.githubusercontent.com, which is governed by the GitHub terms (see github-api)",
    "url": "https://github.com/datasets/oil-prices",
    "quote": "All the additional work made to build this Data Package is made available under the Public Domain Dedication and License v1.0",
-   "retrieved": "2026-10-09", "class": "unclear",
-   "obligations": ["Acknowledge EIA as the source", "The dataset licence allows any use, but no explicit grant was found for a commercial application fetching files from GitHub's raw-content host on behalf of its users"],
-   "attribution": "Source: U.S. Energy Information Administration, via the datasets/oil-prices package (PDDL 1.0)", "attributionUrl": "https://github.com/datasets/oil-prices",
-   "usedInCommercial": false, "replacement": "eia (primary source, through the cloud snapshot)", "hosts": ["raw.githubusercontent.com"]
+   "retrieved": "2026-10-09",
+   "class": "unclear",
+   "obligations": [
+    "Acknowledge EIA as the source",
+    "The dataset licence allows any use, but no explicit grant was found for a commercial application fetching files from GitHub's raw-content host on behalf of its users"
+   ],
+   "attribution": "Source: U.S. Energy Information Administration, via the datasets/oil-prices package (PDDL 1.0)",
+   "attributionUrl": "https://github.com/datasets/oil-prices",
+   "usedInCommercial": false,
+   "replacement": "eia (primary source, through the cloud snapshot)",
+   "hosts": [
+    "raw.githubusercontent.com"
+   ],
+   "shownAt": "oil card (non-commercial)"
   },
   {
-   "id": "fred", "kind": "web-data", "name": "FRED (Federal Reserve Bank of St. Louis) graph CSV export",
+   "id": "fred",
+   "kind": "web-data",
+   "name": "FRED (Federal Reserve Bank of St. Louis) graph CSV export",
    "usedFor": "Formerly an intermediary for the EIA jet-fuel series and the federal funds rate. Removed: the app and the snapshot job no longer contact FRED in any mode.",
    "licence": "FRED Terms of Use",
    "url": "https://fred.stlouisfed.org/legal/",
    "quote": "Except as expressly authorized in the FRED® Terms of Service, use the FRED® Services for any commercial use without the prior written consent of the Bank.",
    "quote2": "FRED provides data and data services to the public for non-commercial, educational, and personal uses subject to a few prohibitions.",
-   "retrieved": "2026-10-09", "class": "not-allowed",
-   "obligations": ["Listed as a prohibition; storing, caching or archiving FRED content is also prohibited by the full terms"],
-   "attribution": null, "usedInCommercial": false, "used": false,
-   "replacement": "eia (jet fuel, Brent) and frb-h15 / nyfed-markets (federal funds rate): the primary publishers", "hosts": ["fred.stlouisfed.org"]
+   "retrieved": "2026-10-09",
+   "class": "not-allowed",
+   "obligations": [
+    "Listed as a prohibition; storing, caching or archiving FRED content is also prohibited by the full terms"
+   ],
+   "attribution": null,
+   "usedInCommercial": false,
+   "used": false,
+   "replacement": "eia (jet fuel, Brent) and frb-h15 / nyfed-markets (federal funds rate): the primary publishers",
+   "hosts": [
+    "fred.stlouisfed.org"
+   ],
+   "shownAt": "not used"
   },
   {
-   "id": "frb-h15", "kind": "web-data", "name": "Board of Governors of the Federal Reserve System — H.15 Selected Interest Rates (Data Download Program)",
+   "id": "frb-h15",
+   "kind": "web-data",
+   "name": "Board of Governors of the Federal Reserve System — H.15 Selected Interest Rates (Data Download Program)",
    "usedFor": "Effective federal funds rate (series RIFSPFF_N.D), read by the snapshot job.",
    "licence": "Public domain (Board website notice)",
    "url": "https://www.federalreserve.gov/disclaimer.htm",
    "quote": "Unless otherwise indicated, information on Board's website is in the public domain and may be copied and distributed without permission. Please cite to the Board as the source of the information.",
-   "retrieved": "2026-10-09", "class": "commercial-ok",
-   "obligations": ["Cite the Board as the source", "Do not use the Board's seals or names to suggest affiliation"],
-   "attribution": "Source: Board of Governors of the Federal Reserve System, H.15", "attributionUrl": "https://www.federalreserve.gov/releases/h15/",
-   "usedInCommercial": true, "replacement": null, "hosts": ["www.federalreserve.gov"]
+   "retrieved": "2026-10-09",
+   "class": "commercial-ok",
+   "obligations": [
+    "Cite the Board as the source",
+    "Do not use the Board's seals or names to suggest affiliation"
+   ],
+   "attribution": "Source: Board of Governors of the Federal Reserve System, H.15",
+   "attributionUrl": "https://www.federalreserve.gov/releases/h15/",
+   "usedInCommercial": true,
+   "replacement": null,
+   "hosts": [
+    "www.federalreserve.gov"
+   ],
+   "shownAt": "policy-rate card"
   },
   {
-   "id": "nyfed-markets", "kind": "web-data", "name": "Federal Reserve Bank of New York — Markets Data API (EFFR)",
+   "id": "nyfed-markets",
+   "kind": "web-data",
+   "name": "Federal Reserve Bank of New York — Markets Data API (EFFR)",
    "usedFor": "Fall-back for the effective federal funds rate when the Board's download does not answer (snapshot job).",
    "licence": "New York Fed Terms of Use",
    "url": "https://www.newyorkfed.org/privacy/termsofuse.html",
    "quote": "The New York Fed grants you a non-exclusive license, subject to the Terms, to use, copy, and distribute Content for your personal or business purposes.",
    "quote2": "You must not state or imply that the New York Fed endorses your use, reproduction, or distribution of the Content or any product, service, financial instrument, or material you create or derive using the Content or any excerpt of the Content.",
-   "retrieved": "2026-10-09", "class": "commercial-ok",
-   "obligations": ["Keep source identifiers; label any modification; pass the content on under the same terms, not more restrictive ones", "No statement or implication of New York Fed endorsement; its name may not be used in advertising", "The terms carry further conditions for using reference rates in financial instruments — not relevant to displaying the rate for information"],
-   "attribution": "Source: Federal Reserve Bank of New York (effective federal funds rate)", "attributionUrl": "https://www.newyorkfed.org/markets/reference-rates/effr",
-   "usedInCommercial": true, "replacement": null, "hosts": ["markets.newyorkfed.org"]
+   "retrieved": "2026-10-09",
+   "class": "commercial-ok",
+   "obligations": [
+    "Keep source identifiers; label any modification; pass the content on under the same terms, not more restrictive ones",
+    "No statement or implication of New York Fed endorsement; its name may not be used in advertising",
+    "The terms carry further conditions for using reference rates in financial instruments — not relevant to displaying the rate for information"
+   ],
+   "attribution": "Source: Federal Reserve Bank of New York (effective federal funds rate)",
+   "attributionUrl": "https://www.newyorkfed.org/markets/reference-rates/effr",
+   "usedInCommercial": true,
+   "replacement": null,
+   "hosts": [
+    "markets.newyorkfed.org"
+   ],
+   "shownAt": "policy-rate card"
   },
   {
-   "id": "eex-auction", "kind": "web-data", "name": "EEX — Emission Spot Primary Market Auction Report (EU allowance auctions)",
-   "usedFor": "Latest EU ETS allowance (EUA) auction clearing price, in non-commercial deployments only (single latest price, with attribution).",
+   "id": "eex-auction",
+   "kind": "web-data",
+   "name": "EEX — Emission Spot Primary Market Auction Report (EU allowance auctions)",
+   "usedFor": "Not used by default in any mode. Read only where the operator holds EEX's written approval and lists \"eex-auction\" under \"accept\"; it then appears as an extra EU market in the carbon panel.",
    "licence": "EEX website terms (copyright notice); no open licence",
    "url": "https://www.eex.com/en/disclaimer",
    "quote": "Neither this website nor the contents made available therein (including; graphic representations, audio and video clips, html code, buttons and text) may be copied, reprinted, published, transmitted, transferred, disseminated or distributed in any manner without the prior written approval of EEX AG.",
-   "retrieved": "2026-10-09", "class": "not-allowed",
-   "obligations": ["Written approval of EEX AG, or an EEX market-data licence, is needed to reuse or republish the figures", "The report file is published openly and the Commission states that auction results are made available daily on the platform's page, but no reuse licence accompanies it"],
-   "attribution": "EU allowance auction price: EEX (European Energy Exchange), public auction report", "attributionUrl": "https://www.eex.com/en/markets/environmentals/eu-ets1-eu-ets2-auctions/eu-ets1-auctions",
-   "usedInCommercial": false, "replacement": "operator-carbon (carbonPriceUrl, a source the operator has licensed), otherwise uk-ets-price; the snapshot job skips the EEX report when commercial is true",
-   "hosts": ["public.eex-group.com"]
+   "retrieved": "2026-10-09",
+   "class": "not-allowed",
+   "obligations": [
+    "Written approval of EEX AG, or an EEX market-data licence, is needed to reuse or republish the figures",
+    "The report file is published openly and the Commission states that auction results are made available daily on the platform's page, but no reuse licence accompanies it"
+   ],
+   "attribution": "EU allowance auction price: EEX (European Energy Exchange), public auction report",
+   "attributionUrl": "https://www.eex.com/en/markets/environmentals/eu-ets1-eu-ets2-auctions/eu-ets1-auctions",
+   "usedInCommercial": false,
+   "replacement": "ec-cbam-price (European Commission, CC BY 4.0) for the EU ETS; operator-carbon for a contracted market price",
+   "hosts": [
+    "public.eex-group.com"
+   ],
+   "shownAt": "carbon card (only with the operator's licence)"
   },
   {
-   "id": "uk-ets-price", "kind": "api", "name": "UK ETS Authority — determination of the UK ETS carbon price (GOV.UK)",
-   "usedFor": "Carbon price in commercial mode when the operator supplies none: the UK Emissions Trading Scheme carbon price determined for the scheme year (GBP per tonne CO2e). It is a UK ETS figure fixed once a year, not an EU ETS market price.",
+   "id": "ec-cbam-price",
+   "kind": "web-data",
+   "name": "European Commission — price of CBAM certificates (average EU ETS auction clearing price)",
+   "usedFor": "The EU ETS carbon price in every mode: the Commission's published price of CBAM certificates, which it calculates as the weighted average of the auction clearing prices of EU ETS allowances for the period (quarterly in 2026; the Commission announces weekly prices from 2027). A published average with a lag, labelled with its period — not a daily quotation.",
+   "licence": "Creative Commons Attribution 4.0 (European Commission reuse policy)",
+   "url": "https://commission.europa.eu/legal-notice_en",
+   "quote": "This means that reuse is allowed, provided appropriate credit is given and changes are indicated.",
+   "quote2": "material for any purpose, even commercially. (https://creativecommons.org/licenses/by/4.0/deed.en)",
+   "class": "commercial-ok",
+   "obligations": [
+    "Credit the European Commission and indicate changes (the value is shown unchanged, with its period; the USD figure is the app's conversion)",
+    "The legal notice applies “unless otherwise indicated”: the price page carries no other notice",
+    "Data page: https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/price-cbam-certificates_en — re-check the page layout when weekly prices start in 2027"
+   ],
+   "attribution": "EU ETS price: European Commission, “Price of CBAM certificates” (© European Union, CC BY 4.0)",
+   "attributionUrl": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/price-cbam-certificates_en",
+   "usedInCommercial": true,
+   "hosts": [
+    "taxation-customs.ec.europa.eu"
+   ],
+   "route": "snapshot",
+   "retrieved": "2026-10-09",
+   "replacement": null,
+   "shownAt": "carbon card (table, publisher link); carbon source text in the case"
+  },
+  {
+   "id": "uk-ets-price",
+   "kind": "api",
+   "name": "UK ETS Authority — determination of the UK ETS carbon price (GOV.UK)",
+   "usedFor": "UK ETS market in the carbon panel, every mode: the carbon price determined by the UK ETS Authority for the scheme year (GBP per tonne CO2e). An annual statutory figure, labelled as such.",
    "licence": "Open Government Licence v3.0",
    "url": "https://www.gov.uk/government/publications/determinations-of-the-uk-ets-carbon-price",
    "quote": "This publication is licensed under the terms of the Open Government Licence v3.0 except where otherwise stated.",
    "quote2": "exploit the Information commercially and non-commercially for example, by combining it with other Information, or by including it in your own product or application. (https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/)",
-   "retrieved": "2026-10-09", "class": "commercial-ok",
-   "obligations": ["Acknowledge the source and link the licence: “Contains public sector information licensed under the Open Government Licence v3.0.”", "Do not suggest official status or endorsement"],
-   "attribution": "UK ETS carbon price: UK ETS Authority, GOV.UK. Contains public sector information licensed under the Open Government Licence v3.0.", "attributionUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
-   "usedInCommercial": true, "replacement": null, "hosts": ["www.gov.uk"]
+   "retrieved": "2026-10-09",
+   "class": "commercial-ok",
+   "obligations": [
+    "Acknowledge the source and link the licence: “Contains public sector information licensed under the Open Government Licence v3.0.”",
+    "Do not suggest official status or endorsement"
+   ],
+   "attribution": "UK ETS carbon price: UK ETS Authority, GOV.UK. Contains public sector information licensed under the Open Government Licence v3.0.",
+   "attributionUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+   "usedInCommercial": true,
+   "replacement": null,
+   "hosts": [
+    "www.gov.uk"
+   ],
+   "shownAt": "carbon card; carbon source text in the case"
   },
   {
-   "id": "operator-carbon", "kind": "operator", "name": "Operator-supplied carbon price (carbonPriceUrl)",
+   "id": "quebec-wci-auction",
+   "kind": "web-data",
+   "name": "Gouvernement du Québec (MELCCFP) — joint California–Québec allowance auction results, Données Québec",
+   "usedFor": "Carbon price of the California–Québec (WCI) market in every mode: settlement price of current-vintage allowances at the latest joint auction, in USD. A sub-national market: selectable by the user, never applied automatically to the whole of the United States or Canada.",
+   "licence": "Creative Commons Attribution 4.0 (CC BY 4.0)",
+   "url": "https://www.donneesquebec.ca/licence/",
+   "quote": "de distribuer, remixer, arranger et adapter votre œuvre, même à des fins commerciales",
+   "class": "commercial-ok",
+   "obligations": [
+    "Credit the Gouvernement du Québec as the source (dataset metadata: Attribution (CC-BY 4.0))",
+    "Published after each quarterly auction"
+   ],
+   "attribution": "California–Québec auction price: Gouvernement du Québec (MELCCFP), Données Québec, CC BY 4.0",
+   "attributionUrl": "https://www.donneesquebec.ca/recherche/dataset/resultats-et-statistiques-des-ventes-aux-encheres-d-unites-d-emission",
+   "usedInCommercial": true,
+   "hosts": [
+    "www.donneesquebec.ca"
+   ],
+   "route": "snapshot",
+   "retrieved": "2026-10-09",
+   "replacement": null,
+   "shownAt": "carbon card; carbon source text in the case"
+  },
+  {
+   "id": "operator-carbon",
+   "kind": "operator",
+   "name": "Operator-supplied carbon price (carbonPriceUrl)",
    "usedFor": "Carbon price from a JSON document the operator publishes from a source it is licensed to use (for example a contracted market-data feed).",
    "licence": "The operator's own agreement with its data vendor",
-   "url": null, "quote": null, "retrieved": "2026-10-09", "class": "commercial-with-key",
-   "obligations": ["The operator is responsible for holding redistribution rights for the value and for the attribution text placed in the JSON"],
-   "attribution": "As stated in the operator's JSON (\"attribution\")", "usedInCommercial": "with carbonPriceUrl", "replacement": null, "hosts": []
+   "url": null,
+   "quote": null,
+   "retrieved": "2026-10-09",
+   "class": "commercial-with-key",
+   "obligations": [
+    "The operator is responsible for holding redistribution rights for the value and for the attribution text placed in the JSON"
+   ],
+   "attribution": "As stated in the operator's JSON (\"attribution\")",
+   "usedInCommercial": "with carbonPriceUrl",
+   "replacement": null,
+   "hosts": [],
+   "shownAt": "carbon card (operator's attribution text)"
   },
   {
-   "id": "gb-carbon-intensity", "kind": "api", "name": "NESO Carbon Intensity API (Great Britain)",
-   "usedFor": "Grid carbon intensity for battery-charging emissions.",
+   "id": "gb-carbon-intensity",
+   "kind": "api",
+   "name": "NESO Carbon Intensity API (Great Britain)",
+   "usedFor": "Current half-hourly grid intensity for Great Britain, as a refinement of the bundled national factor in non-commercial deployments only.",
    "licence": "CC BY 4.0 with the Carbon Intensity API Terms of Use",
    "url": "https://github.com/carbon-intensity/terms",
    "quote": "License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)",
    "quote2": "Here are things you cannot do: * Sell, lease, or sublicense the Carbon Intensity API or access to it. * Use the Carbon Intensity API for any application that substantially replaces the core user experience of National Energy System Operator's websites, apps, or the Carbon Intensity API.",
-   "retrieved": "2026-10-09", "class": "commercial-ok",
-   "obligations": ["Attribution (CC BY 4.0)", "Do not sell or sublicense access to the API itself, replace NESO's own service, or imply endorsement; the NESO word mark or logo needs written approval", "The terms include an indemnity in favour of NESO: legal review advised"],
-   "attribution": "Carbon intensity: National Energy System Operator (NESO) Carbon Intensity API (CC BY 4.0)", "attributionUrl": "https://carbonintensity.org.uk",
-   "usedInCommercial": true, "replacement": null, "hosts": ["api.carbonintensity.org.uk"]
+   "retrieved": "2026-10-09",
+   "class": "commercial-ok",
+   "obligations": [
+    "Attribution (CC BY 4.0)",
+    "Do not sell or sublicense access to the API itself, replace NESO's own service, or imply endorsement; the NESO word mark or logo needs written approval",
+    "The terms include an indemnity in favour of NESO: for that reason the live value is left out of commercial deployments, which use the bundled national factors"
+   ],
+   "attribution": "Carbon intensity: National Energy System Operator (NESO) Carbon Intensity API (CC BY 4.0)",
+   "attributionUrl": "https://carbonintensity.org.uk",
+   "usedInCommercial": false,
+   "replacement": "grid-factors (bundled national averages for every country). The API's terms include an indemnity in favour of NESO; an operator who accepts them can list \"gb-carbon-intensity\" under \"accept\".",
+   "hosts": [
+    "api.carbonintensity.org.uk"
+   ],
+   "shownAt": "grid card"
   },
   {
-   "id": "openalex", "kind": "api", "name": "OpenAlex scholarly index",
+   "id": "grid-factors",
+   "kind": "bundled-dataset",
+   "name": "Ember — Yearly Electricity Data (emissions intensity of generation)",
+   "usedFor": "Bundled national grid emission factors js/data/grid-factors.json (latest year per country, 208 economies and the world), built by tools/fetch-grid-factors.mjs. Charging-emissions factor for every country in every mode, offline.",
+   "licence": "Creative Commons Attribution 4.0 (CC BY 4.0)",
+   "url": "https://ember-energy.org/creative-commons/",
+   "quote": "Ember content is released under a Creative Commons Attribution Licence (CC-BY-4.0)",
+   "quote2": "material for any purpose, even commercially. (https://creativecommons.org/licenses/by/4.0/deed.en)",
+   "class": "commercial-ok",
+   "obligations": [
+    "Credit Ember; indicate changes (values rounded, latest year per country)",
+    "Ember's logo is not used"
+   ],
+   "attribution": "Grid emission factors: Ember, Yearly Electricity Data (ember-energy.org), CC BY 4.0 — rounded, latest year per country",
+   "attributionUrl": "https://ember-energy.org/data/yearly-electricity-data/",
+   "usedInCommercial": true,
+   "buildHosts": [
+    "files.ember-energy.org"
+   ],
+   "retrieved": "2026-10-09",
+   "replacement": null,
+   "hosts": [],
+   "shownAt": "grid card"
+  },
+  {
+   "id": "openalex",
+   "kind": "api",
+   "name": "OpenAlex scholarly index",
    "usedFor": "Per-suite literature lists (title, authors, venue, date, citation count, link).",
    "licence": "CC0 (data); the API is a metered service with a free allowance",
    "url": "https://help.openalex.org/access/pricing/",
    "quote": "the data is a public good, released under a CC0 public-domain license with no “personal use only” carve-out and no permission to ask.",
    "quote2": "The OpenAlex data is free — but serving it is not, so usage is what costs money.",
-   "retrieved": "2026-10-09", "class": "commercial-ok",
-   "obligations": ["None on the data (CC0); OpenAlex is credited", "The keyless API allowance is small and per caller: for dependable service create an OpenAlex account and set openAlexApiKey (the key is visible to users of a static site)"],
-   "attribution": "Literature index: OpenAlex (CC0)", "attributionUrl": "https://openalex.org",
-   "usedInCommercial": true, "replacement": null, "hosts": ["api.openalex.org"]
+   "retrieved": "2026-10-09",
+   "class": "commercial-ok",
+   "obligations": [
+    "None on the data (CC0); OpenAlex is credited",
+    "The keyless API allowance is small and per caller: for dependable service create an OpenAlex account and set openAlexApiKey (the key is visible to users of a static site)"
+   ],
+   "attribution": "Literature index: OpenAlex (CC0)",
+   "attributionUrl": "https://openalex.org",
+   "usedInCommercial": true,
+   "replacement": null,
+   "hosts": [
+    "api.openalex.org"
+   ],
+   "shownAt": "suite pages, Live resources tab"
   },
   {
-   "id": "github-api", "kind": "api", "name": "GitHub REST API — repository search",
-   "usedFor": "Per-suite list of open-source tools (non-commercial deployments only).",
+   "id": "github-api",
+   "kind": "api",
+   "name": "GitHub REST API — repository search",
+   "usedFor": "Extra results below the curated tool list, in non-commercial deployments only.",
    "licence": "GitHub Terms of Service (section H, API Terms) and Acceptable Use Policies",
    "url": "https://docs.github.com/en/site-policy/acceptable-use-policies/github-acceptable-use-policies",
    "quote": "You will not reproduce, duplicate, copy, sell, resell or exploit any portion of the Service, use of the Service, or access to the Service without our express written permission.",
    "quote2": "Abuse or excessively frequent requests to GitHub via the API may result in the temporary or permanent suspension of your Account's access to the API. (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service)",
-   "retrieved": "2026-10-09", "class": "unclear",
-   "obligations": ["No explicit grant was found for embedding unauthenticated search results in a commercial product; the listed permitted uses of information from the Service are research and archiving"],
-   "attribution": "Repository listing: GitHub", "attributionUrl": "https://github.com",
-   "usedInCommercial": false, "replacement": "In commercial mode the suite page shows a plain link that opens the search on github.com; no API request is made", "hosts": ["api.github.com"]
+   "retrieved": "2026-10-09",
+   "class": "unclear",
+   "obligations": [
+    "No explicit grant was found for embedding unauthenticated search results in a commercial product; the listed permitted uses of information from the Service are research and archiving"
+   ],
+   "attribution": "Repository listing: GitHub",
+   "attributionUrl": "https://github.com",
+   "usedInCommercial": false,
+   "replacement": "tools-list (curated list bundled with the app, shown in every mode)",
+   "hosts": [
+    "api.github.com"
+   ],
+   "shownAt": "suite pages, Live resources tab"
   },
   {
-   "id": "github-user-bridge", "kind": "user-service", "name": "GitHub REST API with the user's own token (solver bridge)",
+   "id": "tools-list",
+   "kind": "bundled-dataset",
+   "name": "Curated list of open-source tools (js/data/tools.json)",
+   "usedFor": "Per-suite list of open-source solvers and tools in every mode: project name, one-sentence description written for this app, licence identifier and project address. No text or data is copied from the projects.",
+   "licence": "Own compilation of facts (names, licence identifiers, links); no third-party licence applies",
+   "url": null,
+   "quote": null,
+   "class": "commercial-ok",
+   "obligations": [
+    "Each entry's address and licence were checked when the list was compiled (date in the file); the projects' names remain their owners' marks and are used only to refer to them",
+    "The listed licences govern use of those tools, not of this app"
+   ],
+   "attribution": "Tool list compiled for this app; each project is linked",
+   "usedInCommercial": true,
+   "retrieved": "2026-10-09",
+   "replacement": null,
+   "hosts": [],
+   "shownAt": "suite pages, Live resources tab"
+  },
+  {
+   "id": "github-user-bridge",
+   "kind": "user-service",
+   "name": "GitHub REST API with the user's own token (solver bridge)",
    "usedFor": "The optional solver bridge (js/core/bridge): a user who enters a personal access token can start and read solver runs in their own GitHub repository. Not a data source of the product; nothing is fetched unless the user supplies a token.",
    "licence": "The user's own agreement with GitHub (Terms of Service, section H API Terms)",
    "url": "https://docs.github.com/en/site-policy/github-terms/github-terms-of-service",
    "quote": "Abuse or excessively frequent requests to GitHub via the API may result in the temporary or permanent suspension of your Account's access to the API.",
-   "retrieved": "2026-10-09", "class": "commercial-with-key",
-   "obligations": ["Each user acts under their own GitHub account and token; the token is sent only to api.github.com", "Whether a commercial product may offer this client function is governed by GitHub's terms: legal review advised"],
-   "attribution": null, "usedInCommercial": "only with the user's own token", "needsLegalDecision": true, "replacement": null,
-   "hosts": ["api.github.com"]
+   "retrieved": "2026-10-09",
+   "class": "commercial-with-key",
+   "obligations": [
+    "Each user acts under their own GitHub account and token; the token is sent only to api.github.com",
+    "Whether a commercial product may offer this client function is governed by GitHub's terms: legal review advised"
+   ],
+   "attribution": null,
+   "usedInCommercial": "only with the user's own token",
+   "needsLegalDecision": true,
+   "replacement": null,
+   "hosts": [
+    "api.github.com"
+   ],
+   "question": "May a commercial product offer a client function in which each user connects to GitHub with their own account and token (GitHub Terms of Service, section H)?",
+   "shownAt": "solver bridge page"
   },
   {
-   "id": "icao-edb", "kind": "bundled-dataset", "name": "ICAO Aircraft Engine Emissions Databank, as published by EASA (issue 32)",
+   "id": "icao-edb",
+   "kind": "bundled-dataset",
+   "name": "ICAO Aircraft Engine Emissions Databank, as published by EASA (issue 32)",
    "usedFor": "Bundled reduced extract js/data/ref/engine-emissions.json: certified LTO emission indices and fuel flows.",
    "licence": "EASA copyright notice (general permission to reproduce with acknowledgement)",
    "url": "https://www.easa.europa.eu/en/copyright-disclaimer",
    "quote": "Reproduction is authorised, provided the source is acknowledged, save where otherwise stated.",
-   "retrieved": "2026-10-09", "class": "commercial-ok",
-   "obligations": ["Acknowledge the source: ICAO Aircraft Engine Emissions Databank, hosted by EASA, with the issue number", "The permission does not mention commercial reuse in terms, and the data originate from engine manufacturers through ICAO: the databank page and the workbook (checked) state no further restriction — legal review advised"],
-   "attribution": "ICAO Aircraft Engine Emissions Databank (issue 32), published by EASA. © European Union Aviation Safety Agency. Reproduction is authorised, provided the source is acknowledged.", "attributionUrl": "https://www.easa.europa.eu/en/domains/environment/icao-aircraft-engine-emissions-databank",
-   "usedInCommercial": true, "replacement": null, "hosts": []
+   "retrieved": "2026-10-09",
+   "class": "commercial-ok",
+   "obligations": [
+    "Acknowledge the source: ICAO Aircraft Engine Emissions Databank, hosted by EASA, with the issue number",
+    "EASA's notice authorises reproduction on the sole condition that the source is acknowledged and does not exclude commercial reuse; the acknowledgement is shown on every suite page that uses the data, on the About page and in THIRD_PARTY_NOTICES.md",
+    "The databank page and the workbook state no further restriction (both checked)"
+   ],
+   "attribution": "ICAO Aircraft Engine Emissions Databank (issue 32), published by EASA. © European Union Aviation Safety Agency. Reproduction is authorised, provided the source is acknowledged.",
+   "attributionUrl": "https://www.easa.europa.eu/en/domains/environment/icao-aircraft-engine-emissions-databank",
+   "usedInCommercial": true,
+   "replacement": null,
+   "hosts": [],
+   "shownAt": "foot of the propulsion, acoustics and economics suite pages; About"
   },
   {
-   "id": "easa-noise", "kind": "bundled-dataset", "name": "EASA certification noise levels (TCDSN databases)",
+   "id": "easa-noise",
+   "kind": "bundled-dataset",
+   "name": "EASA certification noise levels (TCDSN databases)",
    "usedFor": "Bundled reduced extract js/data/ref/cert-noise.json: approved noise levels and limits.",
    "licence": "EASA copyright notice (general permission to reproduce with acknowledgement)",
    "url": "https://www.easa.europa.eu/en/copyright-disclaimer",
    "quote": "Reproduction is authorised, provided the source is acknowledged, save where otherwise stated.",
-   "retrieved": "2026-10-09", "class": "commercial-ok",
-   "obligations": ["Acknowledge EASA as the source, with the database issue", "The permission does not mention commercial reuse in terms — legal review advised"],
-   "attribution": "EASA certification noise levels. © European Union Aviation Safety Agency. Reproduction is authorised, provided the source is acknowledged.", "attributionUrl": "https://www.easa.europa.eu/en/domains/environment/easa-certification-noise-levels",
-   "usedInCommercial": true, "replacement": null, "hosts": []
+   "retrieved": "2026-10-09",
+   "class": "commercial-ok",
+   "obligations": [
+    "Acknowledge EASA as the source, with the database issue",
+    "EASA's notice authorises reproduction on the sole condition that the source is acknowledged and does not exclude commercial reuse; the acknowledgement is shown on every suite page that uses the data, on the About page and in THIRD_PARTY_NOTICES.md"
+   ],
+   "attribution": "EASA certification noise levels. © European Union Aviation Safety Agency. Reproduction is authorised, provided the source is acknowledged.",
+   "attributionUrl": "https://www.easa.europa.eu/en/domains/environment/easa-certification-noise-levels",
+   "usedInCommercial": true,
+   "replacement": null,
+   "hosts": [],
+   "shownAt": "foot of the acoustics suite page; About"
   },
   {
-   "id": "faa-acdb", "kind": "bundled-dataset", "name": "FAA Aircraft Characteristics Database",
-   "usedFor": "Bundled extract js/data/ref/aircraft-characteristics.json: dimensions, approach speeds and design groups by ICAO type.",
-   "licence": "Work of the United States Government (17 U.S.C. § 105)",
-   "url": "https://www.govinfo.gov/about/policies",
-   "quote": "Title 17, Section 105 , United States Code, provides that: Copyright protection under this title is not available for any work of the United States Government",
-   "retrieved": "2026-10-09", "class": "commercial-ok",
-   "obligations": ["Acknowledge the FAA as the source; do not imply FAA endorsement", "The FAA page for the database (https://www.faa.gov/airports/engineering/aircraft_char_database) carries no licence statement of its own; the conclusion rests on the statute, which applies within the United States"],
-   "attribution": "Source: U.S. Federal Aviation Administration, Aircraft Characteristics Database", "attributionUrl": "https://www.faa.gov/airports/engineering/aircraft_char_database",
-   "usedInCommercial": true, "replacement": null, "hosts": []
-  },
-  {
-   "id": "us-gov-citations", "kind": "citations", "name": "Quotations from US Government documents (eCFR / 14 CFR, FAA Advisory Circulars, NASA technical reports, MIL-HDBK)",
+   "id": "us-gov-citations",
+   "kind": "citations",
+   "name": "Quotations from US Government documents (eCFR / 14 CFR, FAA Advisory Circulars, NASA technical reports, MIL-HDBK)",
    "usedFor": "Short verbatim quotations with locators in js/data/sources.json, cited as the source of default parameter values.",
    "licence": "Works of the United States Government (17 U.S.C. § 105)",
    "url": "https://www.govinfo.gov/about/policies",
    "quote": "By virtue of the foregoing, public documents can generally be reprinted without legal restriction. However, Government publications may contain copyrighted material which was used with permission of the copyright owner.",
    "quote2": "Documents available from this Web site are not protected by copyright unless noted. If not copyrighted, documents may be reproduced and distributed, without further permission from NASA. (https://sti.nasa.gov/disclaimers/)",
-   "retrieved": "2026-10-09", "class": "commercial-ok",
-   "obligations": ["Cite the document; the eCFR states that it “is not an official legal edition of the CFR”", "NASA reports written by contractors or grantees, and MIL handbooks obtained from a third-party host (everyspec.com), may carry third-party rights: only short quotations are used"],
-   "attribution": "Cited per entry in the sources registry (document, section, URL)", "usedInCommercial": true, "replacement": null, "hosts": []
+   "retrieved": "2026-10-09",
+   "class": "commercial-ok",
+   "obligations": [
+    "Cite the document; the eCFR states that it “is not an official legal edition of the CFR”",
+    "NASA reports written by contractors or grantees, and MIL handbooks obtained from a third-party host (everyspec.com), may carry third-party rights: only short quotations are used"
+   ],
+   "attribution": "Cited per entry in the sources registry (document, section, URL)",
+   "usedInCommercial": true,
+   "replacement": null,
+   "hosts": [],
+   "shownAt": "source link beside each cited input"
   },
   {
-   "id": "third-party-citations", "kind": "citations", "name": "Short quotations from other publishers in js/data/sources.json (EASA and EUROCONTROL documents, journal papers, manufacturer datasheets, reference websites)",
-   "usedFor": "A one-sentence quotation with locator and link for each cited default value whose source is not a US Government work.",
-   "licence": "Various; each publisher's own copyright. No licence was audited per item",
-   "url": null, "quote": null, "retrieved": "2026-10-09", "class": "unclear",
-   "obligations": ["Reliance is on the quotation / fair-dealing exceptions (short extract, source named, for citation). This is a legal judgement that differs by country and has not been made here"],
-   "attribution": "Cited per entry in the sources registry", "usedInCommercial": true, "needsLegalDecision": true,
-   "replacement": "Remove the \"quote\" field of those entries (keeping title, locator and link) if counsel prefers", "hosts": []
-  }
+   "id": "third-party-citations",
+   "kind": "citations",
+   "name": "References to other publishers in js/data/sources.json (title, organisation, locator, link)",
+   "usedFor": "Bibliographic references for cited default values whose source is not a US Government work. Verbatim quotations from these publishers were removed, with one exception found on the retrieval date: a short extract from a Panasonic cell datasheet (hosted at e2e.ti.com).",
+   "licence": "None needed: bibliographic facts and links; no protected text is reproduced",
+   "url": null,
+   "quote": null,
+   "retrieved": "2026-10-09",
+   "class": "commercial-ok",
+   "obligations": [
+    "Keep the references accurate; do not reintroduce verbatim extracts without the publisher's licence"
+   ],
+   "attribution": "Cited per entry in the sources registry",
+   "usedInCommercial": true,
+   "replacement": null,
+   "hosts": [],
+   "shownAt": "source link beside each cited input"
+  },
+   {
+    "id": "mil-hdbk-5j-materials",
+    "kind": "bundled-dataset",
+    "name": "MIL-HDBK-5J design properties of metals (materials catalogue)",
+    "usedFor": "Design mechanical and physical properties (Ftu, Fty, E, G, Poisson ratio, density and, where tabulated, specific heat, conductivity and expansion) and plane-strain fracture-toughness averages of 265 alloy, temper and product-form entries in js/data/materials-catalogue.json; individual table values converted to SI, each with its table, page and column.",
+    "licence": "Work of the United States Government (17 U.S.C. § 105); Distribution Statement A",
+    "url": "https://everyspec.com/MIL-HDBK/MIL-HDBK-0001-0099/MIL_HDBK_5J_139/",
+    "quote": "DISTRIBUTION STATEMENT A. Approved for public release; distribution is unlimited.",
+    "retrieved": "2026-10-09",
+    "class": "commercial-ok",
+    "obligations": [
+     "Name the handbook, table and basis with each value (done in the catalogue)",
+     "State that MIL-HDBK-5J (2003) is superseded by MMPDS and that the values are not certified allowables for a programme",
+     "The copy was obtained from a third-party host (everyspec.com); only table values are used, not its page furniture"
+    ],
+    "attribution": "Material design values: MIL-HDBK-5J, U.S. Department of Defense, 31 January 2003 (public release)",
+    "usedInCommercial": true,
+    "replacement": null,
+    "hosts": [],
+    "shownAt": "materials library: source and locator beside each catalogue value (js/data/materials-catalogue.json)"
+   },
+   {
+    "id": "mil-hdbk-17-2f-materials",
+    "kind": "bundled-dataset",
+    "name": "MIL-HDBK-17-2F lamina properties (materials catalogue)",
+    "usedFor": "Room-temperature lamina means (moduli, Poisson ratio, strengths, ply thickness, density) and printed B-values of 21 polymer-matrix composite systems in js/data/materials-catalogue.json, each with its table and page.",
+    "licence": "Work of the United States Government (17 U.S.C. § 105); Distribution Statement A",
+    "url": "https://everyspec.com/MIL-HDBK/MIL-HDBK-0001-0099/MIL_HDBK_17_2F_250/",
+    "quote": "DISTRIBUTION STATEMENT A. Approved for public release; distribution is unlimited.",
+    "retrieved": "2026-10-09",
+    "class": "commercial-ok",
+    "obligations": [
+     "Name the handbook and table with each value (done in the catalogue)",
+     "Keep the data class beside the values: screening and interim data are not design allowables",
+     "State that MIL-HDBK-17 is superseded by CMH-17"
+    ],
+    "attribution": "Composite lamina data: MIL-HDBK-17-2F, U.S. Department of Defense, 17 June 2002 (public release)",
+    "usedInCommercial": true,
+    "replacement": null,
+    "hosts": [],
+    "shownAt": "materials library: source and locator beside each catalogue value (js/data/materials-catalogue.json)"
+   },
+   {
+    "id": "mil-c-7438g-cores",
+    "kind": "bundled-dataset",
+    "name": "MIL-C-7438G aluminium honeycomb core properties (materials catalogue)",
+    "usedFor": "Room-temperature stabilised compressive strength and plate shear strengths of 25 aluminium 5052 and 5056 honeycomb cores (Tables IV and V) in js/data/materials-catalogue.json.",
+    "licence": "Work of the United States Government (17 U.S.C. § 105); Distribution Statement A",
+    "url": "https://everyspec.com/MIL-SPECS/MIL-SPECS-MIL-C/MIL-C-7438G_3941/",
+    "quote": "DISTRIBUTION STATEMENT A, Approved for public release; distribution is unlimited.",
+    "retrieved": "2026-10-09",
+    "class": "commercial-ok",
+    "obligations": [
+     "Name the specification and table with each value (done in the catalogue)",
+     "Repeat the specification’s own caution that the values are for test purposes only and are not design allowables (done in each item’s note)",
+     "The specification is cancelled; SAE AMS-C-7438 is its suggested replacement and is not reproduced"
+    ],
+    "attribution": "Honeycomb core values: MIL-C-7438G, U.S. Department of Defense, 19 June 1985 (public release)",
+    "usedInCommercial": true,
+    "replacement": null,
+    "hosts": [],
+    "shownAt": "materials library: source and locator beside each catalogue value (js/data/materials-catalogue.json)"
+   },
+   {
+    "id": "faa-ar-05-15-crack-growth",
+    "kind": "bundled-dataset",
+    "name": "DOT/FAA/AR-05/15 fatigue crack growth constants (materials catalogue)",
+    "usedFor": "Walker-equation constants C and n (used at R = 0 as Paris constants) of eleven aluminium entries and the K1c parameter of five NASGRO fits in js/data/materials-catalogue.json, each with its figure and page.",
+    "licence": "FAA technical report, available to the U.S. public through NTIS; individual values recorded as cited facts",
+    "url": "https://everyspec.com/DOT/DOT-FAA-AR-05_15__AUG2005_37908/",
+    "quote": "This document is available to the public through the National Technical Information Service (NTIS) Springfield, Virginia 22161.",
+    "retrieved": "2026-10-09",
+    "class": "commercial-ok",
+    "obligations": [
+     "Cite the report, figure and page with each value (done in the catalogue)",
+     "The report was prepared under contract and draws on third-party test data: only individual fitted constants are recorded, no text, tables or plots are reproduced",
+     "Keep the fitting range in mind: the Walker fits cover the linear region only"
+    ],
+    "attribution": "Crack-growth constants: DOT/FAA/AR-05/15, Federal Aviation Administration, August 2005",
+    "usedInCommercial": true,
+    "replacement": null,
+    "hosts": [],
+    "shownAt": "materials library: source and locator beside each catalogue value (js/data/materials-catalogue.json)"
+   },
+   {
+    "id": "nasa-reports-materials",
+    "kind": "bundled-dataset",
+    "name": "NASA technical reports used in the materials catalogue (NASA/TM-2011-217059, NASA/TM-2010-216838, NTRS 20120016494)",
+    "usedFor": "Measured density, heat of combustion and flash point of five test fuels (AAFEX), and the mode I and mode II interlaminar fracture energies of IM7/8552, in js/data/materials-catalogue.json, each with its table and page.",
+    "licence": "NASA scientific and technical information: not protected by copyright unless noted",
+    "url": "https://sti.nasa.gov/disclaimers/",
+    "quote": "Documents available from this Web site are not protected by copyright unless noted.",
+    "quote2": "If not copyrighted, documents may be reproduced and distributed, without further permission from NASA.",
+    "retrieved": "2026-10-09",
+    "class": "commercial-ok",
+    "obligations": [
+     "Cite the report and table with each value (done in the catalogue)",
+     "NASA must not be shown as endorsing the product",
+     "One of the three documents is a conference paper: only individual measured values are recorded, no text is reproduced"
+    ],
+    "attribution": "Fuel and delamination data: NASA Langley Research Center technical reports (NASA Technical Reports Server)",
+    "usedInCommercial": true,
+    "replacement": null,
+    "hosts": [],
+    "shownAt": "materials library: source and locator beside each catalogue value (js/data/materials-catalogue.json)"
+   },
+   {
+    "id": "materials-catalogue-citations",
+    "kind": "citations",
+    "name": "References to other publishers in the materials catalogue (NCAMP report NCP-RP-2009-028, LLNL report UCRL-ID-134691, Molicel INR-21700-P42A datasheet)",
+    "usedFor": "Bibliographic references for individual values in js/data/materials-catalogue.json whose publisher is not the US Government: IM7/8552 lamina means (NCAMP), Johnson–Cook constants of Ti-6Al-4V and 2024-T3 (Lawrence Livermore National Laboratory, for the FAA) and one battery cell (manufacturer datasheet). Values are recorded as facts with a locator; no text is reproduced.",
+    "licence": "None needed: individual facts with citation and link; the quoted sentence is the release statement printed on the NCAMP report at the address given",
+    "url": "https://www.wichita.edu/industry_and_defense/NIAR/Documents/NCP-RP-2009-028-Rev-B-HEXCEL-8552-IM7-Uni-SAR-4-16-2019.pdf",
+    "quote": "Distribution Statement A. Approved for public release; distribution is unlimited.",
+    "retrieved": "2026-10-09",
+    "class": "commercial-ok",
+    "obligations": [
+     "Keep the references accurate and do not copy text, tables or figures from these publishers",
+     "NCAMP values are means of a qualification programme, not allowables for another programme; the datasheet states that its figures are for reference only"
+    ],
+    "attribution": "Cited per value in the materials catalogue (document, table, link)",
+    "usedInCommercial": true,
+    "replacement": null,
+    "hosts": [],
+    "shownAt": "materials library: source and locator beside each catalogue value (js/data/materials-catalogue.json)"
+   }
  ],
  "components": [
   {
-   "id": "occt-import-js", "name": "occt-import-js", "version": "0.0.23", "licence": "LGPL-2.1",
-   "files": ["js/vendor/occt/occt-import-js.js", "js/vendor/occt/occt-import-js.wasm"], "licenceFile": "js/vendor/occt/LICENSE.occt-import-js.txt",
-   "source": "https://github.com/kovacsv/occt-import-js/tree/0.0.23", "shipped": true,
-   "url": "https://github.com/kovacsv/occt-import-js/blob/0.0.23/LICENSE.md", "quote": "GNU LESSER GENERAL PUBLIC LICENSE Version 2.1, February 1999", "retrieved": "2026-10-09", "class": "commercial-ok",
+   "id": "occt-import-js",
+   "name": "occt-import-js",
+   "version": "0.0.23",
+   "licence": "LGPL-2.1",
+   "files": [
+    "js/vendor/occt/occt-import-js.js",
+    "js/vendor/occt/occt-import-js.wasm"
+   ],
+   "licenceFile": "js/vendor/occt/LICENSE.occt-import-js.txt",
+   "source": "https://github.com/kovacsv/occt-import-js/tree/0.0.23",
+   "shipped": true,
+   "url": "https://github.com/kovacsv/occt-import-js/blob/0.0.23/LICENSE.md",
+   "quote": "GNU LESSER GENERAL PUBLIC LICENSE Version 2.1, February 1999",
+   "retrieved": "2026-10-09",
+   "class": "commercial-ok",
    "modifications": "occt-import-js.js only: a module-scope `var process;` shadow and a default export (`export default occtimportjs`) were added so the file loads as an ES module; the .wasm binary is the unmodified upstream build.",
-   "obligations": ["Ship the licence text and keep the notices (done: licence files are deployed with the site)", "State prominently that the library is used and is under the LGPL (THIRD_PARTY_NOTICES.md, About page)", "Offer the complete corresponding source of the library as distributed, including the two-line modification (LGPL-2.1 sections 2 and 4): the modified .js file is itself source; for the .wasm the operator must host the upstream source at tag 0.0.23 with its OpenCASCADE submodule, or give a written offer valid three years", "Modified files must carry a notice of the change and its date (section 2a): the header of occt-import-js.js states the change; the date is recorded in THIRD_PARTY_NOTICES.md", "Allow recipients to replace the library and to reverse-engineer the application for debugging such replacements (section 6): the kernel is two separate files loaded at run time, and the LICENSE file grants this"]
+   "obligations": [
+    "Ship the licence text and keep the notices (done: licence files are deployed with the site)",
+    "State prominently that the library is used and is under the LGPL (THIRD_PARTY_NOTICES.md, About page)",
+    "Offer the complete corresponding source of the library as distributed, including the two-line modification (LGPL-2.1 sections 2 and 4): the modified .js file is itself source; for the .wasm the operator must host the upstream source at tag 0.0.23 with its OpenCASCADE submodule, or give a written offer valid three years",
+    "Modified files must carry a notice of the change and its date (section 2a): the header of occt-import-js.js states the change; the date is recorded in THIRD_PARTY_NOTICES.md",
+    "Allow recipients to replace the library and to reverse-engineer the application for debugging such replacements (section 6): the kernel is two separate files loaded at run time, and the LICENSE file grants this"
+   ]
   },
   {
-   "id": "opencascade", "name": "Open CASCADE Technology (compiled into occt-import-js.wasm)", "version": "git submodule commit d2abb6d844231cb8f29be6894440874a4700e4a5 of occt-import-js 0.0.23", "licence": "LGPL-2.1 with the Open CASCADE exception 1.0",
-   "files": ["js/vendor/occt/occt-import-js.wasm"], "licenceFile": "js/vendor/occt/LICENSE.occt.txt",
-   "source": "https://git.dev.opencascade.org/repos/occt.git", "shipped": true,
-   "url": "https://github.com/Open-Cascade-SAS/OCCT/blob/master/OCCT_LGPL_EXCEPTION.txt", "quote": "As a special exception to the GNU Lesser General Public License version 2.1, you may distribute such object code incorporating material from header files provided with the Open CASCADE Technology libraries (including code of CDL generic classes) under terms of your choice, provided that you give prominent notice in supporting documentation to this code that it makes use of or is based on facilities provided by the Open CASCADE Technology software.",
-   "retrieved": "2026-10-09", "class": "commercial-ok",
+   "id": "opencascade",
+   "name": "Open CASCADE Technology (compiled into occt-import-js.wasm)",
+   "version": "git submodule commit d2abb6d844231cb8f29be6894440874a4700e4a5 of occt-import-js 0.0.23",
+   "licence": "LGPL-2.1 with the Open CASCADE exception 1.0",
+   "files": [
+    "js/vendor/occt/occt-import-js.wasm"
+   ],
+   "licenceFile": "js/vendor/occt/LICENSE.occt.txt",
+   "source": "https://git.dev.opencascade.org/repos/occt.git",
+   "shipped": true,
+   "url": "https://github.com/Open-Cascade-SAS/OCCT/blob/master/OCCT_LGPL_EXCEPTION.txt",
+   "quote": "As a special exception to the GNU Lesser General Public License version 2.1, you may distribute such object code incorporating material from header files provided with the Open CASCADE Technology libraries (including code of CDL generic classes) under terms of your choice, provided that you give prominent notice in supporting documentation to this code that it makes use of or is based on facilities provided by the Open CASCADE Technology software.",
+   "retrieved": "2026-10-09",
+   "class": "commercial-ok",
    "modifications": "None.",
-   "obligations": ["As for occt-import-js: the library itself stays under LGPL-2.1 (licence text shipped, source offered, replaceable)", "The exception concerns only header material incorporated in object code of a work that uses the library; the application contains none (it calls the kernel through three exported functions), but the required notice is given anyway"]
+   "obligations": [
+    "As for occt-import-js: the library itself stays under LGPL-2.1 (licence text shipped, source offered, replaceable)",
+    "The exception concerns only header material incorporated in object code of a work that uses the library; the application contains none (it calls the kernel through three exported functions), but the required notice is given anyway"
+   ]
   },
   {
-   "id": "h5wasm", "name": "h5wasm (NIST) with the HDF5 library (The HDF Group)", "version": "as vendored 2026-10-09; version not recorded in the files", "licence": "NIST software statement (public domain in the US, notice to be kept) and the HDF5 BSD-style licence",
-   "files": ["js/vendor/h5wasm/hdf5_hl.js", "js/vendor/h5wasm/hdf5_util.js"], "licenceFile": "js/vendor/h5wasm/LICENSE.txt",
-   "source": "https://github.com/usnistgov/h5wasm", "shipped": true,
-   "url": "js/vendor/h5wasm/LICENSE.txt", "quote": "Redistribution and use in source and binary forms, with or without modification, are permitted for any purpose (including commercial purposes) provided that the following conditions are met:",
-   "retrieved": "2026-10-09", "class": "commercial-ok",
+   "id": "h5wasm",
+   "name": "h5wasm (NIST) with the HDF5 library (The HDF Group)",
+   "version": "as vendored 2026-10-09; version not recorded in the files",
+   "licence": "NIST software statement (public domain in the US, notice to be kept) and the HDF5 BSD-style licence",
+   "files": [
+    "js/vendor/h5wasm/hdf5_hl.js",
+    "js/vendor/h5wasm/hdf5_util.js"
+   ],
+   "licenceFile": "js/vendor/h5wasm/LICENSE.txt",
+   "source": "https://github.com/usnistgov/h5wasm",
+   "shipped": true,
+   "url": "js/vendor/h5wasm/LICENSE.txt",
+   "quote": "Redistribution and use in source and binary forms, with or without modification, are permitted for any purpose (including commercial purposes) provided that the following conditions are met:",
+   "retrieved": "2026-10-09",
+   "class": "commercial-ok",
    "modifications": "None recorded.",
-   "obligations": ["Keep the entire NIST notice and the HDF5 copyright notice, conditions and disclaimer with the distribution (the licence file is deployed)", "Acknowledge NIST as the source of h5wasm", "Record the exact upstream version at the next update"]
+   "obligations": [
+    "Keep the entire NIST notice and the HDF5 copyright notice, conditions and disclaimer with the distribution (the licence file is deployed)",
+    "Acknowledge NIST as the source of h5wasm",
+    "Record the exact upstream version at the next update"
+   ]
   },
   {
-   "id": "laz-perf", "name": "laz-perf", "version": "0.0.7", "licence": "Apache-2.0",
-   "files": ["js/vendor/lazperf/laz-perf.js", "js/vendor/lazperf/laz-perf.wasm"], "licenceFile": "js/vendor/lazperf/LICENSE.txt",
-   "source": "https://github.com/hobuinc/laz-perf", "shipped": true,
-   "url": "js/vendor/lazperf/LICENSE.txt", "quote": "Apache License Version 2.0, January 2004", "retrieved": "2026-10-09", "class": "commercial-ok",
+   "id": "laz-perf",
+   "name": "laz-perf",
+   "version": "0.0.7",
+   "licence": "Apache-2.0",
+   "files": [
+    "js/vendor/lazperf/laz-perf.js",
+    "js/vendor/lazperf/laz-perf.wasm"
+   ],
+   "licenceFile": "js/vendor/lazperf/LICENSE.txt",
+   "source": "https://github.com/hobuinc/laz-perf",
+   "shipped": true,
+   "url": "js/vendor/lazperf/LICENSE.txt",
+   "quote": "Apache License Version 2.0, January 2004",
+   "retrieved": "2026-10-09",
+   "class": "commercial-ok",
    "modifications": "laz-perf.js only: a default export was added so the file loads as an ES module; the .wasm binary is unmodified.",
-   "obligations": ["Ship the licence text (done)", "Modified files carry a notice of the change (the header of laz-perf.js states it)", "Keep any NOTICE file content: the vendored copy has none"]
+   "obligations": [
+    "Ship the licence text (done)",
+    "Modified files carry a notice of the change (the header of laz-perf.js states it)",
+    "Keep any NOTICE file content: the vendored copy has none"
+   ]
   },
   {
-   "id": "esbuild", "name": "esbuild", "version": "0.28.x", "licence": "MIT",
-   "files": [], "licenceFile": "node_modules/esbuild/LICENSE.md", "source": "https://github.com/evanw/esbuild", "shipped": false,
-   "url": "node_modules/esbuild/LICENSE.md", "quote": "MIT License", "retrieved": "2026-10-09", "class": "commercial-ok",
-   "modifications": "None.", "obligations": ["Development tool only (builds standalone.html); not distributed with the site, so no notice is required in the product"]
+   "id": "esbuild",
+   "name": "esbuild",
+   "version": "0.28.x",
+   "licence": "MIT",
+   "files": [],
+   "licenceFile": "node_modules/esbuild/LICENSE.md",
+   "source": "https://github.com/evanw/esbuild",
+   "shipped": false,
+   "url": "node_modules/esbuild/LICENSE.md",
+   "quote": "MIT License",
+   "retrieved": "2026-10-09",
+   "class": "commercial-ok",
+   "modifications": "None.",
+   "obligations": [
+    "Development tool only (builds standalone.html); not distributed with the site, so no notice is required in the product"
+   ]
   },
   {
-   "id": "playwright-core", "name": "playwright-core", "version": "1.49.1", "licence": "Apache-2.0",
-   "files": [], "licenceFile": "node_modules/playwright-core/LICENSE", "source": "https://github.com/microsoft/playwright", "shipped": false,
-   "url": "node_modules/playwright-core/LICENSE", "quote": "Apache License Version 2.0, January 2004", "retrieved": "2026-10-09", "class": "commercial-ok",
-   "modifications": "None.", "obligations": ["Development tool only (UI tests); not distributed with the site"]
+   "id": "playwright-core",
+   "name": "playwright-core",
+   "version": "1.49.1",
+   "licence": "Apache-2.0",
+   "files": [],
+   "licenceFile": "node_modules/playwright-core/LICENSE",
+   "source": "https://github.com/microsoft/playwright",
+   "shipped": false,
+   "url": "node_modules/playwright-core/LICENSE",
+   "quote": "Apache License Version 2.0, January 2004",
+   "retrieved": "2026-10-09",
+   "class": "commercial-ok",
+   "modifications": "None.",
+   "obligations": [
+    "Development tool only (UI tests); not distributed with the site"
+   ]
   }
  ]
 }

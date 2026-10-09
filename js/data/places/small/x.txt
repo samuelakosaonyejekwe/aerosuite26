@@ -1,0 +1,108 @@
+#AL|Durrës County
+Xhafzotaj||41344|19548|19|12
+#AZ|Xaçmaz
+Xudat||41631|48682|45|14
+#BR|Paraná
+Xambrê|Xambre|-23736|-53490|385|6
+#BR|Pernambuco
+Xexéu|Xexeu|-8802|-35627|151|12
+#BR|Tocantins
+Xambioá|Xambioa|-6411|-48536|144|12
+#CN|Chongqing
+Xiabao||31575|109521|511|14
+Xiuqi||31877|108782|815|14
+Xinsheng||29105|106633|322|14
+Xiannüshan|Xiannueshan|29422|107761|1236|14
+Xujia||31645|109671|411|13
+Xikou||28601|108919|355|13
+Xihe||29574|105923|365|13
+Xinglong||29258|109037|670|12
+Xumingsi||30162|107582|506|11
+Xiaohe||28659|108637|351|11
+Xiaoxi||28380|108911|400|9
+Xiaozhou||30910|108513|324|9
+Xianyi||31689|108654|797|7
+Xinhua||29324|108604|722|7
+Xiaochang||29343|108512|1254|7
+Xiaolin||29788|105852|288|7
+Xinxiang||30500|108273|218|7
+Xiaonanhai||29661|108763|594|7
+Xikou||30610|108339|346|6
+#CN|Fujian
+Xiabaishi||26815|119679|43|8
+Xindian||24610|118241|27|8
+Xiahu||26611|119948|26|5
+Xibing||26981|119725|16|5
+#CN|Gansu
+Xinzhai||33644|104684|1588|11
+Xincheng||34856|106221|1597|10
+Xinghua||34080|104584|2138|10
+Xiaoliang||33759|105086|1585|7
+Xinchengzi||34017|104442|1883|7
+Xipo||33848|106430|1027|5
+#CN|Guangdong
+Xinwucun||22570|113967|54|7
+Xiasha||22654|113817|7|6
+#CN|Qinghai
+Xihai||36875|100961|3062|13
+Xihai Town||36955|100900|3085|7
+#CN|Tianjin
+Xitangtuo||39322|117488|8|6
+Xiditou||39254|117348|6|5
+Xinzhuang||39025|117344|4|5
+Xiaodian||39254|117227|6|5
+#CN|Yunnan
+Xuelin||23023|99558|1666|14
+#CY|Larnaka
+Xylofágou|Xylofagou|34977|33849|53|6
+#ES|Galicia
+Xinzo de Limia||42064|-7725|625|10
+#ES|Valencia
+Xixona||38541|-503|450|7
+#GR|Peloponnese
+Xylókastro|Xylokastro|38078|22632|8|6
+#IN|Goa
+Xeldem||15250|74083|16|7
+#MT|Ix-Xagħra
+Xagħra|Xaghra|36050|14264|144|4
+#MT|Ix-Xewkija
+Xewkija||36034|14256|93|3
+#MT|Ix-Xgħajra
+Xgħajra|Xghajra|35886|14548|31|2
+#MX|Guerrero
+Xaltianguis||17099|-99713|545|7
+#MX|México
+Xochimanca||19491|-98824|2428|5
+Xocotlán|Xocotlan|19516|-98846|2284|5
+#MX|Puebla
+Xaltepec||18882|-97608|2176|9
+Xochitlan Todos Santos||18704|-97776|1908|5
+#MX|San Luis Potosí
+Xilitla||21387|-98990|654|7
+#MX|Tamaulipas
+Xicoténcatl|Xicotencatl|22998|-98941|95|10
+#MX|Tlaxcala
+Xicohtzinco||19174|-98234|2202|12
+Xaloztoc||19408|-98046|2517|10
+#MX|Veracruz
+Xocotla||19015|-97101|2013|7
+#MX|Yucatán
+X-Cán|X-Can|20857|-87669|22|5
+#MZ|Maputo Province
+Xinavane||-25160|32800|33|12
+#SO|Bakool
+Xuddur||4121|43889|493|13
+#VN|Ho Chi Minh City (HCMC)
+Xuyên Mộc|Xuyen Moc|10567|107417|50|10
+Xã Bình Giả|Xa Binh Gia|10650|107267|128|10
+Xã An Ngãi|Xa An Ngai|10483|107233|5|6
+#VN|Hà Tĩnh Province
+Xuân Lộc|Xuan Loc|18419|105758|11|7
+#VN|Phu Tho
+Xuân Trùng|Xuan Trung|21058|105284|33|12
+#VN|Quang Tri
+Xuân Sơn|Xuan Son|17617|106317|-1|6
+#VN|Tay Ninh
+Xóm Bến Củi|Xom Ben Cui|11267|106350|4|5
+#ZA|Mpumalanga
+Xikhusese||-24602|31135|617|13

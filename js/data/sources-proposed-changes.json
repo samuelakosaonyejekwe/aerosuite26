@@ -3,7 +3,7 @@
  "about": "Defaults that a reviewer should change or re-label because a verified source (js/data/sources.json, sourceId) gives a different value. kind: \"default\" = change the input default; \"code\" = hard-coded constant or logic; \"data\" = js/data/materials.js entry; \"label\" = keep the value, fix help text / label; \"review\" = evidence conflicts or is incomplete, decide before changing. \"to\": null means no replacement value is proposed. confidence reflects how directly the source applies to the default, not the quality of the source.",
  "changes": [
   {
-   "suite": "s26-economics",
+   "suite": "economics",
    "analysis": "",
    "inputKey": "crew_usd_fh",
    "kind": "default",
@@ -14,7 +14,7 @@
    "confidence": "high"
   },
   {
-   "suite": "s26-economics",
+   "suite": "economics",
    "analysis": "",
    "inputKey": "maint_usd_fh",
    "kind": "default",
@@ -25,7 +25,7 @@
    "confidence": "high"
   },
   {
-   "suite": "s26-economics",
+   "suite": "economics",
    "analysis": "",
    "inputKey": "fuel_usd_kg",
    "kind": "default",
@@ -36,7 +36,7 @@
    "confidence": "medium"
   },
   {
-   "suite": "s26-economics",
+   "suite": "economics",
    "analysis": "",
    "inputKey": "saf_price_ratio",
    "kind": "default",
@@ -47,7 +47,7 @@
    "confidence": "high"
   },
   {
-   "suite": "s26-economics",
+   "suite": "economics",
    "analysis": "sustain",
    "inputKey": "grid_g_kWh",
    "kind": "default",
@@ -58,7 +58,7 @@
    "confidence": "medium"
   },
   {
-   "suite": "s26-economics",
+   "suite": "economics",
    "analysis": "",
    "inputKey": "landing_usd_t",
    "kind": "label",
@@ -69,7 +69,7 @@
    "confidence": "low"
   },
   {
-   "suite": "s26-economics",
+   "suite": "economics",
    "analysis": "",
    "inputKey": "batt_usd_kWh",
    "kind": "label",
@@ -80,7 +80,7 @@
    "confidence": "low"
   },
   {
-   "suite": "s22-safety",
+   "suite": "safety",
    "analysis": "fta",
    "inputKey": "beta",
    "kind": "default",
@@ -91,7 +91,7 @@
    "confidence": "medium"
   },
   {
-   "suite": "s22-safety",
+   "suite": "safety",
    "analysis": "fta",
    "inputKey": "t_latent",
    "kind": "default",
@@ -102,7 +102,7 @@
    "confidence": "medium"
   },
   {
-   "suite": "s09-fatigue",
+   "suite": "fatigue",
    "analysis": "sn",
    "inputKey": "scatter",
    "kind": "default",
@@ -117,7 +117,7 @@
    ]
   },
   {
-   "suite": "s03-aeroelastic",
+   "suite": "aeroelastic",
    "analysis": "gust",
    "inputKey": "U_ds",
    "kind": "default",
@@ -128,7 +128,7 @@
    "confidence": "medium"
   },
   {
-   "suite": "s05-performance",
+   "suite": "performance",
    "analysis": "field",
    "inputKey": "",
    "kind": "code",
@@ -144,7 +144,7 @@
    "locator": "js/suites/s05-performance.js line ~210 (gradOEI >= 0.024)"
   },
   {
-   "suite": "s15-crash",
+   "suite": "crash",
    "analysis": "pulse",
    "inputKey": "v0",
    "kind": "default",
@@ -155,7 +155,7 @@
    "confidence": "medium"
   },
   {
-   "suite": "s15-crash",
+   "suite": "crash",
    "analysis": "emergency",
    "inputKey": "g_side",
    "kind": "label",
@@ -166,7 +166,7 @@
    "confidence": "high"
   },
   {
-   "suite": "s13-icing",
+   "suite": "icing",
    "analysis": "impingement",
    "inputKey": "mvd",
    "kind": "label",
@@ -177,7 +177,7 @@
    "confidence": "high"
   },
   {
-   "suite": "s13-icing",
+   "suite": "icing",
    "analysis": "accretion",
    "inputKey": "rho_ice",
    "kind": "default",
@@ -193,7 +193,7 @@
    ]
   },
   {
-   "suite": "s11-acoustics",
+   "suite": "acoustics",
    "analysis": "spectrum",
    "inputKey": "K_af",
    "kind": "review",
@@ -202,10 +202,11 @@
    "reason": "The hard-coded clean-airframe constant 101.3 dB (with V/100 kt) could not be verified. The only source opened (NASA RP-1258 vol. 1, ch. 7, eq. 20, \"for jet aircraft\") prints OASPL = 50 log U + 10 log(δb/h²) + 7.5 dB with U in knots, i.e. 107.5 dB in the V/100 kt form — 6.2 dB higher. Review against Fink FAA-RD-77-29 (DTIC was unavailable) before changing; until then mark the constant unverified in the UI.",
    "sourceId": "airframe-noise-fink-clean-oaspl",
    "confidence": "low",
-   "locator": "js/suites/s11-acoustics.js line ~174 (+ 101.3)"
+   "locator": "js/suites/s11-acoustics.js line ~174 (+ 101.3)",
+   "superseded": "fink-faa-rd-77-29-clean-airframe-constant"
   },
   {
-   "suite": "s07-propulsion",
+   "suite": "propulsion",
    "analysis": "combustor",
    "inputKey": "nox_a",
    "kind": "code",
@@ -274,6 +275,175 @@
    "sourceId": "molicel-p45b-cell-spec",
    "confidence": "medium",
    "dataKey": "BATTERIES[*]"
+  },
+  {
+   "suite": "safety",
+   "analysis": "",
+   "inputKey": "lam_engine",
+   "kind": "default",
+   "from": 0.0001,
+   "to": 0.00012,
+   "reason": "Piston default (class default in archDefaults): ATSB AR-2013-107 gives 1.27 (Lycoming) and 1.21 (Continental) engine failures or malfunctions per 10,000 hours flown in light aeroplanes, 2009–2014.",
+   "sourceId": "atsb-ar-2013-107-piston-engine-rate",
+   "confidence": "medium",
+   "applied": true
+  },
+  {
+   "suite": "safety",
+   "analysis": "",
+   "inputKey": "lam_engine",
+   "kind": "default",
+   "from": 2e-05,
+   "to": 4e-05,
+   "reason": "Electric-motor default (class default in archDefaults): NSWC-11 brushless DC base rate 1.75 plus default winding rate 40 per million hours = 4.2e-5 /h before multiplying factors; controller and bearings not included.",
+   "sourceId": "nswc11-electric-motor-base-rate",
+   "confidence": "medium",
+   "applied": true
+  },
+  {
+   "suite": "safety",
+   "analysis": "",
+   "inputKey": "lam_fcc",
+   "kind": "default",
+   "from": 0.0001,
+   "to": 0.0002,
+   "reason": "NASA CR-159275 Table 3: B-747 flight-control computers failed at 202–438 per million hours in 1977 airline service; default set to the lowest of the three axis computers. Analogue-era data — modern channels should be better.",
+   "sourceId": "nasa-cr-159275-flight-control-computer-rates",
+   "confidence": "medium",
+   "applied": true
+  },
+  {
+   "suite": "safety",
+   "analysis": "markov",
+   "inputKey": "nogo_per_100dep",
+   "kind": "default",
+   "from": 0.8,
+   "to": 0.7,
+   "reason": "Boeing stated 99.3 % gate dispatch reliability for the 737 fleet (2002 news release): 0.7 technical no-go events per 100 departures. Manufacturer statement, one type.",
+   "sourceId": "boeing-737-gate-dispatch-reliability-2002",
+   "confidence": "low",
+   "applied": true
+  },
+  {
+   "suite": "safety",
+   "analysis": "eventtree",
+   "inputKey": "f_init",
+   "kind": "label",
+   "from": 1e-06,
+   "to": 1e-06,
+   "reason": "Value kept; now sourced for turbine transports: about 3.6 engine detector events per million engine flights of which about 30 % genuine (DOT/FAA/TC-16/49), and in-flight engine bottle discharges about 3e-7 per flight hour (HAAPS 2019). Help text and group label updated; piston and electric class values stay illustrative.",
+   "sourceId": "faa-tc-16-49-engine-detector-event-rate",
+   "confidence": "medium",
+   "applied": true
+  },
+  {
+   "suite": "safety",
+   "analysis": "markov",
+   "inputKey": "mel_interval_h",
+   "kind": "label",
+   "from": 72,
+   "to": 72,
+   "reason": "Value kept; now sourced: 72 h is the CS-MMEL category B rectification interval (3 calendar days); C = 10 days, D = 120 days. Help text updated.",
+   "sourceId": "easa-cs-mmel-rectification-intervals",
+   "confidence": "high",
+   "applied": true
+  },
+  {
+   "suite": "safety",
+   "analysis": "",
+   "inputKey": "lam_batt",
+   "kind": "review",
+   "from": 2e-05,
+   "to": null,
+   "reason": "Not changed: the only verified figure is cross-industry (stationary station batteries, 4.05e-7 /h mean); no aircraft or lithium-ion pack source. Stays illustrative.",
+   "sourceId": "inl-2020-battery-fails-to-operate",
+   "confidence": "low",
+   "applied": false
+  },
+  {
+   "suite": "safety",
+   "analysis": "",
+   "inputKey": "lam_gen",
+   "kind": "review",
+   "from": 0.0002,
+   "to": null,
+   "reason": "Not changed: only cross-industry standby-generator rates were verified (diesel generator fails to run 1.18e-3 /h); not comparable with a shaft-driven aircraft generator. Stays illustrative.",
+   "sourceId": "inl-2020-generator-and-pump-rates",
+   "confidence": "low",
+   "applied": false
+  },
+  {
+   "suite": "safety",
+   "analysis": "",
+   "inputKey": "lam_hyd",
+   "kind": "review",
+   "from": 0.0001,
+   "to": null,
+   "reason": "Not changed: NSWC-11 gives component base rates (piston pump fluid driver about 1.1, dynamic seal 22.8 per million hours) that are consistent in order of magnitude with 1e-4 /FH for a whole system but do not establish it. Stays illustrative.",
+   "sourceId": "nswc11-pump-and-seal-base-rates",
+   "confidence": "low",
+   "applied": false
+  },
+  {
+   "suite": "acoustics",
+   "analysis": "spectrum",
+   "inputKey": "K_af",
+   "kind": "code",
+   "from": 101.3,
+   "to": 101.5,
+   "reason": "Hard-coded clean-airframe constant: Fink FAA-RD-77-29 eq. (6) prints 101.5 dB (clean sailplanes). Use offset +6 dB for clean jet aircraft and +8 dB for conventional low-speed aircraft; help and assumptions text updated.",
+   "sourceId": "fink-faa-rd-77-29-clean-airframe-constant",
+   "confidence": "high",
+   "applied": true,
+   "locator": "js/suites/s11-acoustics.js line ~178"
+  },
+  {
+   "suite": "crash",
+   "analysis": "bird",
+   "inputKey": "k_h",
+   "kind": "label",
+   "from": 2.0,
+   "to": 2.0,
+   "reason": "Value kept; now sourced (Wilbeck AFML-TR-77-134: k = 2.0, c0 = 1482.9 m/s, bird density 950 kg/m³). Help text updated for k_h, c0 and rho_bird.",
+   "sourceId": "wilbeck-water-hugoniot",
+   "confidence": "high",
+   "applied": true
+  },
+  {
+   "suite": "crash",
+   "analysis": "pulse",
+   "inputKey": "F_ea",
+   "kind": "label",
+   "from": 12700,
+   "to": 12700,
+   "reason": "Value kept; now sourced: 14.5 g energy-absorber limit-load factor (Aircraft Crash Survival Design Guide Vol. II, Figure 25) on the default 89 kg moving mass. Help text updated.",
+   "sourceId": "csdg-vol2-energy-absorber-limit-load",
+   "confidence": "medium",
+   "applied": true
+  },
+  {
+   "suite": "gear",
+   "analysis": "brake",
+   "inputKey": "mu_peak",
+   "kind": "label",
+   "from": 0.7,
+   "to": null,
+   "reason": "Help text now cites the 14 CFR 25.109(c)(1) wet-runway friction curve. Suggested follow-up (not applied, needs a model change): offer the speed-dependent regulatory curve as a surface option instead of a constant wet peak coefficient.",
+   "sourceId": "cfr-25-109-wet-runway-friction-polynomial",
+   "confidence": "high",
+   "applied": true
+  },
+  {
+   "suite": "safety",
+   "analysis": "fta",
+   "inputKey": "p_forced",
+   "kind": "label",
+   "from": 0.02,
+   "to": 0.02,
+   "reason": "Light single-engine aeroplane class value kept; help text now cites ATSB AR-2013-107 (4 of 322 engine failures or malfunctions fatal). Other class values stay illustrative.",
+   "sourceId": "atsb-ar-2013-107-engine-failure-outcomes",
+   "confidence": "low",
+   "applied": true
   }
  ]
 }

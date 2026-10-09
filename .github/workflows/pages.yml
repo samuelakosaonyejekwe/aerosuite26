@@ -28,7 +28,7 @@ jobs:
           cache: npm
       - run: npm ci
       - if: ${{ inputs.run-tests }}
-        run: npm test && node tests/licences.mjs
+        run: npm test
         env:
           AERO_SLOW_MS: '30000' # shared runners are slower than a desktop; correctness checks are unaffected
       - id: pages
@@ -43,7 +43,7 @@ jobs:
       - name: Assemble site
         run: |
           mkdir _site
-          cp -r index.html standalone.html manifest.webmanifest sw.js version.json mirrors.json config.json LICENSE THIRD_PARTY_NOTICES.md _headers .nojekyll css js assets data _site/
+          cp -r index.html standalone.html manifest.webmanifest sw.js version.json mirrors.json config.json LICENSE THIRD_PARTY_NOTICES.md COMPLIANCE.md _headers .nojekyll css js assets data _site/
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site

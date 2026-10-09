@@ -7,7 +7,7 @@ import { startLive, status as liveStatus } from './core/live.js';
 import { t, LANGS, lang, applyLang } from './ui/i18n.js';
 import { unitSystem } from './ui/units.js';
 import { pageGuide, toggleGuide } from './ui/guide.js';
-import { registerCustom, customMaterials } from './core/matlib.js';
+import { registerCustom, customMaterials, loadCatalogue } from './core/matlib.js';
 
 const VIEWS = {
   home: () => import('./ui/views/home.js'), case: () => import('./ui/views/case.js'), geometry: () => import('./ui/views/geometry.js'),
@@ -230,6 +230,7 @@ window.addEventListener('keydown', (e) => {
   if (e.altKey && e.key === 'ArrowRight') history.forward();
 });
 registerCustom(customMaterials());
+loadCatalogue();                                             // the sourced materials catalogue, loaded in the background
 applyLang();
 buildShell();
 window.addEventListener('hashchange', route);

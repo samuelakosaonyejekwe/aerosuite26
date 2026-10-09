@@ -102,7 +102,7 @@ export async function render(root, [focus], { setCrumb }) {
     drawSearch = draw;
     const search = () => {
       const text = (qText = q.value).trim(); if (!text) return;
-      // airports come from the database stored in the app (instant, works offline); places from the online geocoder
+      // airports and cities come from the databases stored in the app (instant, work offline); an online geocoder adds smaller places where the deployment may use it
       const cur = (sr = { text, airs: null, places: null, geoErr: null }), upd = () => { if (sr === cur) drawSearch(); };
       upd();
       searchAirports(text).catch(() => []).then((a) => { cur.airs = a; upd(); });
@@ -130,7 +130,7 @@ export async function render(root, [focus], { setCrumb }) {
     // what the weather provider could not supply, and the attribution its licence asks for, next to the data
     if (s.wx_note && s.lat != null) wxHost.append(h('div', { class: 'note wx-note' }, icon('info'), h('div', null, s.wx_note)));
     const credit = h('p', { class: 'muted small attribution' }); wxHost.append(credit);
-    loadConfig().then(async () => { if (!config.attribution || s.lat == null) return; const used = { 'open-meteo': CONNECTORS.weather.reg().filter((x) => /^open-meteo/.test(x)), 'met-norway': ['met-norway'], nws: ['nws'] }[s.wx_provider] || [], a = await attributions([...used, ...CONNECTORS.climate.reg(), 'noaa-swpc']); if (a.length) add(credit, ['Data: ', ...a.map((x, i) => [i ? ' · ' : '', x.url ? h('a', { href: x.url, target: '_blank', rel: 'noopener noreferrer' }, x.text) : x.text])]); });
+    loadConfig().then(async () => { if (!config.attribution || s.lat == null) return; const used = { 'open-meteo': CONNECTORS.weather.reg().filter((x) => /^open-meteo/.test(x)), 'met-norway': ['met-norway', 'noaa-gfs'], nws: ['nws', 'noaa-gfs'], 'noaa-grid': ['noaa-gfs'] }[s.wx_provider] || [], a = await attributions([...used, ...CONNECTORS.climate.reg(), ...CONNECTORS.marine.reg(), 'noaa-swpc']); if (a.length) add(credit, ['Data: ', ...a.map((x, i) => [i ? ' · ' : '', x.url ? h('a', { href: x.url, target: '_blank', rel: 'noopener noreferrer' }, x.text) : x.text])]); });
     if (s.winds_aloft?.length) wxHost.append(h('details', null, h('summary', { class: 'small', style: { cursor: 'pointer' } }, 'Winds and temperatures aloft'), h('div', { class: 'table-wrap', style: { marginTop: '8px' } }, h('table', { class: 'data' }, h('thead', null, h('tr', null, ['Pressure [hPa]', 'Height [m]', 'Temperature [°C]', 'ISA deviation [K]', 'Wind [m/s]', 'From [°]'].map((x) => h('th', { class: 'num' }, x)))), h('tbody', null, s.winds_aloft.map((a) => h('tr', null, [a.hPa, a.alt_m, a.T_C, a.T_C + 273.15 - isa(a.alt_m).T, a.speed_ms, a.dir_deg].map((v) => h('td', { class: 'num' }, num(v, 4))))))))));
 
     const applyRunway = (f, rw) => {

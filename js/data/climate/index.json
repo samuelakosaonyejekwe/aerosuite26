@@ -1,0 +1,92 @@
+{
+ "schema": 1,
+ "source": "NCEP-DOE Reanalysis 2",
+ "publisher": "NOAA Physical Sciences Laboratory (data: NOAA/NCEP and US Department of Energy)",
+ "home": "https://psl.noaa.gov/data/gridded/data.ncep.reanalysis2.html",
+ "service": "https://psl.noaa.gov/thredds/dodsC/Datasets",
+ "license": "US Government product, public domain; acknowledgement requested",
+ "attribution": "NCEP-DOE Reanalysis 2 data provided by the NOAA PSL, Boulder, Colorado, USA, from their website at https://psl.noaa.gov",
+ "generated": "2026-10-09T11:35:43.664Z",
+ "registry": "noaa-reanalysis2",
+ "period": {
+  "temperature": [
+   2015,
+   2024
+  ],
+  "wind": [
+   2022,
+   2024
+  ]
+ },
+ "method": "Per reanalysis cell (T62 Gaussian grid, about 1.9°): 99th percentile and median of the daily maximum 2 m temperature, 1st percentile of the daily minimum 2 m temperature, 99th percentile of the daily maximum of the four 6-hourly 10 m wind speeds; then bilinear interpolation to 2.5°. Strong wind is stored twice: wind99_ms for land sites, in which sea cells of the reanalysis first take the distance-weighted mean of the land cells within three cells (a coastal cell is partly sea and far windier than the land beside it), and wind99_sea_ms, unmodified, for sites at sea; land_pct is the reanalysis land share. The reanalysis 10 m wind runs high over mid-latitude land compared with finer reanalyses: treat the strong-wind value as a conservative regional figure. Regional values: the app corrects temperature to the site elevation with 6.5 K/km from the model terrain height.",
+ "grid": {
+  "step_deg": 2.5,
+  "nj": 73,
+  "ni": 144,
+  "lat0": 90,
+  "lon0": 0
+ },
+ "type": "int16le",
+ "fields": [
+  {
+   "id": "hot99_C",
+   "scale": 0.01
+  },
+  {
+   "id": "hot50_C",
+   "scale": 0.01
+  },
+  {
+   "id": "cold01_C",
+   "scale": 0.01
+  },
+  {
+   "id": "wind99_ms",
+   "scale": 0.01
+  },
+  {
+   "id": "orog_m",
+   "scale": 1
+  },
+  {
+   "id": "wind99_sea_ms",
+   "scale": 0.01
+  },
+  {
+   "id": "land_pct",
+   "scale": 1
+  }
+ ],
+ "range": {
+  "hot99_C": [
+   -23.23,
+   50.11
+  ],
+  "hot50_C": [
+   -49.25,
+   37
+  ],
+  "cold01_C": [
+   -86.62,
+   26.68
+  ],
+  "wind99_ms": [
+   2.73,
+   32.34
+  ],
+  "orog_m": [
+   -302,
+   5603
+  ],
+  "wind99_sea_ms": [
+   2.73,
+   32.42
+  ],
+  "land_pct": [
+   0,
+   100
+  ]
+ },
+ "file": "grid.bin",
+ "bytes": 147168
+}

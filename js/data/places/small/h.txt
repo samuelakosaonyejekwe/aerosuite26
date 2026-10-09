@@ -1,0 +1,1646 @@
+#AF|Logar
+Ḩukūmatī Azrah|Hukumati Azrah|34174|69646|2330|13
+#AL|Elbasan County
+Hotolisht||41157|20397|656|6
+#AR|Buenos Aires
+Henderson||-36298|-61719|108|10
+#AR|Chaco
+Hermoso Campo||-27610|-61344|64|7
+#AR|Cordoba
+Hernando||-32428|-63733|268|10
+Huinca Renancó|Huinca Renanco|-34841|-64375|179|9
+Huerta Grande||-31075|-64491|997|6
+#AR|Jujuy
+Humahuaca||-23206|-65347|3013|11
+#AR|Salta
+Hipólito Yrigoyen|Hipolito Yrigoyen|-23246|-64276|321|12
+#AT|Lower Austria
+Hollabrunn||48550|16083|257|7
+Hainburg an der Donau||48146|16945|170|7
+Horn||48663|15657|307|5
+Himberg||48083|16433|168|5
+#AT|Salzburg
+Hallein||47683|13100|447|7
+#AT|Styria
+Hafendorf||47457|15318|525|7
+#AT|Tyrol
+Hall in Tirol||47283|11517|587|13
+Hopfgarten im Brixental||47450|12157|610|6
+#AT|Upper Austria
+Haid||48205|14251|277|7
+Hart||48265|14257|285|6
+Haag||48271|14269|280|5
+#AT|Vorarlberg
+Hard||47483|9683|396|13
+Höchst|Hoechst|47459|9641|402|8
+Hörbranz|Hoerbranz|47550|9750|416|6
+#AU|Australian Capital Territory
+Harrison||-35199|149156|619|8
+#AU|New South Wales
+Hinchinbrook||-33919|150863|40|11
+Harrington Park||-34024|150735|80|11
+Haymarket||-33879|151205|24|10
+Hunters Hill||-33834|151146|37|9
+Homebush West||-33863|151067|23|9
+Horsley||-34488|150778|26|8
+Homebush||-33867|151083|15|7
+Haberfield||-33883|151144|6|6
+Hamlyn Terrace||-33251|151476|24|6
+Helensburgh||-34178|150995|167|6
+Hornsby Heights||-33671|151094|185|6
+Hillvue||-31128|150907|417|6
+Heathcote||-34084|151013|194|6
+Holsworthy||-33983|150967|59|6
+Harris Park||-33823|151008|21|6
+Hebersham||-33746|150824|61|6
+Hillsdale||-33952|151228|22|5
+#AU|Northern Territory
+Howard Springs||-12496|131044|41|7
+#AU|Queensland
+Hope Island||-27870|153352|4|11
+Harristown||-27583|151933|669|8
+Holland Park||-27517|153067|55|8
+Highfields||-27463|151954|650|8
+Hamilton||-27439|153063|11|7
+Highland Park||-28014|153333|59|6
+Holland Park West||-27526|153060|39|6
+Highgate Hill||-27489|153019|52|6
+Hillcrest||-27669|153026|56|6
+#AU|South Australia
+Hallett Cove||-35079|138515|121|13
+Happy Valley||-35083|138533|120|11
+Hope Valley||-34833|138700|132|8
+Highbury||-34853|138698|133|6
+Henley Beach||-34920|138494|12|6
+#AU|Tasmania
+Howrah||-42887|147406|8|8
+#AU|Victoria
+Hawthorn East||-37825|145046|49|15
+Hampton||-37950|145000|3|14
+Highett||-37950|145050|48|12
+Hallam||-38017|145267|23|11
+Hamilton||-37744|142022|189|10
+Heathmont||-37833|145250|114|10
+Hastings||-38300|145183|12|9
+Hughesdale||-37900|145083|59|8
+Healesville||-37654|145517|97|7
+Heidelberg||-37750|145067|39|7
+Hamlyn Heights||-38121|144328|42|6
+Heidelberg Heights||-37743|145057|85|6
+Hadfield||-37707|144942|85|6
+Heidelberg West||-37739|145040|72|5
+Hampton East||-37937|145029|37|5
+#AU|Western Australia
+Halls Head||-32543|115697|6|14
+High Wycombe||-31944|116003|36|12
+Hamilton Hill||-32085|115779|22|11
+Hillarys||-31807|115740|15|11
+Harrisdale||-32111|115936|26|9
+Huntingdale||-32083|115966|21|9
+Heathridge||-31762|115759|49|7
+Hocking||-31770|115818|72|6
+#AZ|Ağcabǝdi
+Hindarkh||40068|47206|106|10
+#AZ|Fuzuli District
+Horadiz||39450|47335|160|8
+#BA|Federation of B&H
+Hadžići|Hadzici|43822|18207|555|7
+#BB|Saint James
+Holetown||13187|-59638|-1|1
+#BE|Flanders
+Herselt||51052|4882|18|13
+Heist||51339|3239|5|13
+Heule||50838|3238|16|12
+Herk-de-Stad||50940|5166|31|12
+Hoeilaart||50767|4468|84|10
+Hooglede||50983|3083|41|10
+Hemiksem||51145|4339|18|10
+Hoeselt||50847|5488|77|9
+Huldenberg||50789|4583|48|9
+Holsbeek||50921|4757|21|9
+Hamont||51253|5547|36|9
+Houthulst||50978|2951|18|9
+Heusden||51028|3804|9|9
+Halen||50948|5111|24|9
+Hoevenen||51306|4402|3|8
+Hove||51154|4471|22|8
+Halle||51241|4643|11|7
+Heers||50754|5302|75|7
+Hechtel||51125|5368|64|7
+Herne||50724|4035|43|6
+Hever||50995|4551|7|6
+Hofstade||50961|4027|8|6
+Hekelgem||50906|4108|49|5
+Hingene||51103|4269|6|5
+#BE|Wallonia
+Hollogne-aux-Pierres||50641|5472|157|15
+Houdeng-Goegnies||50490|4175|132|14
+Hannut||50671|5079|140|14
+Herseaux||50717|3217|23|9
+Hornu||50433|3827|30|9
+Habay-la-Vieille||49723|5620|370|8
+Haine-Saint-Pierre||50457|4207|104|8
+Houdeng-Aimeries||50481|4145|96|8
+Haine-Saint-Paul||50455|4189|82|7
+Hamois||50340|5156|250|7
+Hensies||50433|3684|19|6
+Havré|Havre|50464|4047|50|6
+Heinsch||49700|5747|406|5
+Hastière-Lavaux|Hastiere-Lavaux|50218|4824|129|5
+#BG|Plovdiv
+Hisarya||42500|24700|364|8
+#BJ|Atlantique
+Hévié|Hevie|6417|2250|18|13
+#BM|Hamilton
+Hamilton Parish||32342|-64730|1|6
+#BR|Bahia
+Heliópolis|Heliopolis|-10683|-38286|318|12
+#BR|Minas Gerais
+Heliodora||-22067|-45542|878|6
+#BR|Rio Grande do Sul
+Herval||-32024|-53396|283|6
+Hulha Negra||-31404|-53869|196|6
+Harmonia||-29548|-51426|42|5
+#BR|São Paulo
+Herculândia|Herculandia|-22004|-50385|514|9
+#BS|East Grand Bahama
+High Rock||26627|-78282|4|4
+#BS|Moore’s Island
+Hard Bargain||26317|-77567|7|0
+#BT|Haa
+Ha||27387|89281|2718|1
+#BW|Kgalagadi
+Hukuntsi||-23999|21780|1141|5
+#BY|Brest
+Hantsavichy||52759|26431|160|13
+#BY|Minsk
+Hatava||53783|27641|193|8
+#CA|Alberta
+High River||50583|-113869|1034|14
+Huntington Hills||51117|-114067|1080|13
+Hidden Valley||51149|-114114|1121|12
+Hinton||53400|-117586|1022|10
+Hawkwood||51131|-114174|1238|9
+Harvest Hills||51148|-114051|1069|8
+Hamptons||51144|-114148|1242|7
+Haysboro||50967|-114083|1069|7
+Hillhurst||51054|-114094|1051|5
+Hollick-Kenyon||53622|-113425|686|5
+#CA|British Columbia
+Hammond||49219|-122653|14|13
+Hockaday||49297|-122770|56|10
+Hanceville||51919|-123045|691|10
+Historic Downtown||49051|-122293|32|10
+Hillside-Quadra||48445|-123356|50|8
+Hope||49383|-121441|45|7
+Hamilton||49174|-122974|1|6
+Highway 11||49036|-122284|38|6
+#CA|New Brunswick
+Humphrey||46120|-64778|29|8
+Hautes-Terres||47629|-65093|15|6
+Heron Bay||48022|-66396|1|6
+Hildegarde||46123|-64854|42|5
+Hanwell||45883|-66769|96|5
+#CA|Newfoundland and Labrador
+Happy Valley-Goose Bay||53304|-60326|12|8
+#CA|Nova Scotia
+Halifax North End||44666|-63609|60|15
+Harbourview||44677|-63585|45|7
+Hammonds Plains||44734|-63776|122|6
+#CA|Ontario
+Humewood-Cedarvale||43691|-79428|164|14
+Highland West||43432|-80544|365|13
+Highland Creek||43791|-79176|125|12
+Humber Summit||43758|-79575|154|12
+Humber Heights-Westmount||43692|-79522|146|11
+Hawkesbury||45600|-74616|53|10
+Huron East||43617|-81300|338|9
+Hintonburg||45404|-75728|62|8
+Hanover||44150|-81033|277|8
+Heritage Park||43456|-80444|332|7
+Huron Park||43402|-80479|335|7
+#CA|Quebec
+Hauterive||49196|-68258|48|12
+Hampstead||45481|-73647|55|7
+Hudson||45450|-74149|47|5
+#CA|Saskatchewan
+Harbour Landing||50407|-104652|569|14
+Hampton Village||52154|-106718|478|9
+Holmwood||52123|-106539|509|8
+Hillsdale||50420|-104609|579|7
+#CH|Bern
+Herzogenbuchsee||47188|7706|474|6
+Heimberg||46795|7604|564|6
+#CH|Lucerne
+Horw||47017|8310|441|12
+Hochdorf||47168|8292|491|8
+#CH|Nidwalden
+Hergiswil||46984|8309|452|5
+#CH|Zug
+Hünenberg|Hunenberg|47175|8425|449|9
+#CH|Zurich
+Hinwil||47294|8844|573|11
+Hombrechtikon||47253|8772|496|9
+Hegnau||47392|8670|451|8
+Horgen / Horgen (Dorfkern)||47256|8602|449|6
+Herrliberg||47291|8615|519|5
+#CI|Bas-Sassandra District
+Hannié|Hannie|5194|-7353|188|10
+#CI|Sassandra-Marahoue
+Huafla||6564|-5800|248|7
+Hallanikro||6853|-5640|178|5
+#CL|Atacama
+Huasco||-28466|-71223|29|9
+#CL|Biobio
+Huepil||-37239|-71942|308|9
+#CL|Maule Region
+Hualañe|Hualane|-34975|-71803|48|6
+#CL|Valparaiso
+Hijuelas||-32798|-71146|258|10
+Hanga Roa||-27153|-109424|41|7
+#CN|Chongqing
+Heixi||29621|108541|378|15
+Hongtu||31125|109097|548|14
+Huangsha||30264|107376|479|14
+Henghe||30531|108754|1214|14
+Huangshui||30245|108390|1548|14
+Huilong||29729|105863|293|13
+Heyou||30083|107352|515|12
+Huangjia||29124|108057|585|12
+Heshun||29412|107424|1166|12
+Houxi||28893|109127|298|11
+Hengshan||29114|106672|617|11
+Huangbai||30913|108582|202|11
+Hefeng||30929|109541|259|11
+Huangxi||29768|108600|646|10
+Huaxing||29600|106070|277|9
+Houping||28696|108398|784|9
+Heishan||28917|107001|1076|9
+Huangying||29214|107685|470|8
+Hezui||30512|108399|650|7
+Hexi||28831|107313|673|7
+Huatian||28954|108705|728|6
+Huayan||30257|105642|333|6
+Haokou||29093|107831|748|5
+Haiyang||28736|109124|346|5
+Hetu||29309|107029|703|5
+Huatai||31305|109652|182|5
+#CN|Fujian
+Huotong||26850|119418|43|8
+Houyu||26060|119535|10|5
+#CN|Gansu
+Huchuan||34926|106147|1609|15
+Huangmen||34845|106177|1505|12
+Honghe||34410|105390|1689|12
+Hanyuan||33955|104689|1723|11
+Hanlin||33475|104902|1388|11
+Huangchen||33583|105602|1306|11
+Hongchuan||33751|105891|999|10
+Haolin||33768|105213|1114|10
+Huangzhu||33968|105683|1179|9
+Huangping||33322|105332|1680|9
+Haoti||33974|104762|2128|6
+Hejiabao||34037|104316|1928|5
+#CN|Guangdong
+Hongfa Centre||22555|113889|1|10
+Huangtian||22629|113839|6|8
+Hedong||22574|113883|6|7
+Happy Harbour||22547|113887||6
+Heyi||22714|113785|3|5
+Huanggang||22518|114058|8|5
+#CN|Heilongjiang
+Heitai||45414|131634|138|12
+Hanjiayuan||52063|125731|293|5
+#CN|Liaoning
+Haiyang||39059|123170|45|6
+#CN|Qinghai
+Ha’ergai Dadui|Ha'ergai Dadui|37252|100421|3282|11
+#CN|Tianjin
+Hanjiashu||39188|117073|7|8
+Huantuo||39226|117324|4|7
+#CN|Xinjiang
+Hanbin||43938|81261|637|10
+#CN|Yunnan
+Heshun||25017|98467|1603|7
+#CO|Norte de Santander Department
+Hacarí|Hacari|8321|-73146|898|10
+#CO|Tolima Department
+Herveo||5080|-75176|2320|8
+#CZ|Carlsbad Region
+Horní Slavkov|Horni Slavkov|50139|12808|567|6
+Habartov||50183|12551|504|5
+#CZ|Central Bohemia
+Hostivice||50082|14259|341|9
+Hořovice|Horovice|49836|13903|377|8
+Horoměřice|Horomerice|50132|14339|308|6
+#CZ|Hradec Králové Region
+Hořice|Horice|50366|15632|311|8
+Hronov||50480|16182|372|7
+#CZ|Liberec Region
+Hrádek nad Nisou|Hradek nad Nisou|50853|14845|253|8
+#CZ|Moravian-Silesian Region
+Hlučín|Hlucin|49898|18192|247|13
+Hradec nad Moravicí|Hradec nad Moravici|49870|17878|264|5
+#CZ|Pardubice Region
+Hlinsko||49762|15908|561|10
+Holice||50066|15986|253|6
+#CZ|Plzeň Region
+Horažďovice|Horazgovice|49321|13701|433|6
+#CZ|Prague
+Horní Počernice|Horni Pocernice|50112|14610|286|14
+Hloubětín|Hloubetin|50106|14537|216|14
+#CZ|South Bohemian Region
+Hluboká nad Vltavou|Hluboka nad Vltavou|49052|14434|394|6
+#CZ|South Moravian
+Hustopeče|Hustopece|48941|16738|215|6
+#CZ|Vysocina
+Humpolec||49542|15359|530|11
+#CZ|Zlín
+Holešov|Holesov|49333|17578|231|12
+Hulín|Hulin|49317|17464|191|6
+#DE|Baden-Wurttemberg
+Herbrechtingen||48622|10176|469|13
+Hemsbach||49591|8648|101|12
+Holzgerlingen||48640|9011|478|12
+Heddesheim||49506|8604|102|12
+Haigerloch||48366|8804|443|11
+Heubach||48793|9934|452|10
+Heumaden||48747|9235|423|10
+Herbolzheim||48219|7777|178|10
+Hirschberg an der Bergstraße|Hirschberg an der Bergstrasse|49507|8657|125|9
+Hilzingen||47767|8783|468|8
+Hohberg||48323|7900|343|8
+Hüfingen|Hufingen|47925|8488|687|8
+Hemmingen||48867|9033|323|8
+Hardheim||49612|9472|294|8
+Haslach im Kinzigtal||48278|8089|221|7
+Haslach||48565|8057|178|7
+Haiterbach||48521|8644|562|6
+Hausach||48284|8176|239|6
+Heitersheim||47875|7657|236|6
+Hüttlingen|Huttlingen|48893|10101|407|6
+Heiningen||48662|9650|387|6
+Hambrücken|Hambrucken|49190|8541|107|5
+Heerstraße|Heerstrasse|48735|9100|463|5
+Heimsheim||48807|8867|406|5
+#DE|Bavaria
+Höchstadt an der Aisch|Hoechstadt an der Aisch|49706|10813|274|14
+Haßfurt|Hassfurt|50035|10516|233|14
+Hösbach|Hosbach|50006|9208|160|13
+Hilpoltstein||49190|11191|377|13
+Hauzenberg||48650|13626|526|13
+Hersbruck||49511|11432|340|12
+Hammelburg||50116|9891|193|12
+Hirschaid||49818|10989|252|12
+Herrsching am Ammersee||47999|11177|551|10
+Helmbrechts||50236|11716|621|9
+Höhenkirchen-Siegertsbrunn|Hohenkirchen-Siegertsbrunn|48019|11719|587|9
+Heilsbronn||49336|10787|417|9
+Höchberg|Hochberg|49784|9882|265|9
+Hemau||49054|11782|510|9
+Haibach||49964|9207|279|9
+Hohenbrunn||48048|11702|571|9
+Hallstadt||49929|10875|242|8
+Hausham||47747|11841|771|8
+Hallbergmoos||48327|11751|456|8
+Herrieden||49238|10504|428|8
+Hengersberg||48773|13055|322|8
+Heroldsberg||49532|11156|369|7
+Höchstädt an der Donau|Hochstadt an der Donau|48611|10568|418|7
+Hirschau||49544|11946|414|6
+Haag in Oberbayern||48162|12179|540|6
+Hutthurm||48673|13471|460|6
+Harburg||48787|10689|411|6
+Hemhofen||49683|10933|317|5
+Hahnbach||49534|11803|387|5
+Hollfeld||49938|11292|405|5
+Hofheim in Unterfranken||50137|10523|266|5
+Hebertshausen||48290|11465|480|5
+Heroldsbach||49693|10999|283|5
+Heideck||49134|11127|406|5
+#DE|Brandenburg
+Herzberg||51687|13220|82|11
+#DE|Hamburg
+Hoheluft-West||53581|9967|14|13
+HafenCity||53542|9993|3|6
+Hammerbrook||53545|10030|5|5
+#DE|Hesse
+Homberg||51030|9403|233|15
+Hessisch Lichtenau||51200|9719|378|13
+Hadamar||50446|8043|134|12
+Höchst im Odenwald|Hoechst im Odenwald|49800|8999|156|10
+Homberg||50731|8996|243|8
+Heuchelheim||50583|8633|161|8
+Heringen||50888|10007|229|7
+Hofbieber||50586|9835|380|6
+Helsa||51260|9689|303|6
+Herbstein||50561|9346|457|5
+#DE|Lower Saxony
+Hatten||53050|8383|29|13
+Hagen||52196|7980|109|13
+Herzberg am Harz||51655|10339|240|13
+Haselünne|Haseluenne|52673|7487|19|13
+Harsefeld||53454|9504|33|12
+Harsum||52210|9965|81|12
+Hasbergen||52238|7961|87|11
+Hambühren|Hambuhren|52630|9972|37|10
+Hilter||52136|8147|124|10
+Hohenhameln||52258|10064|104|10
+Hemmoor||53688|9152|13|9
+Hermannsburg||52833|10090|55|9
+Hardegsen||51652|9831|184|9
+Herrenhausen||52392|9697|53|8
+Heidberg||52227|10531|79|8
+Hainholz||52404|9711|59|8
+Holle||52087|10160|111|7
+Hinte||53407|7199|1|7
+Holdorf||52581|8127|43|7
+Hänigsen|Haenigsen|52485|10085|55|6
+Hage||53603|7284|5|6
+Horneburg||53507|9575|16|6
+Hambergen||53308|8825|23|5
+Hitzacker||53153|11044|28|5
+#DE|Mecklenburg-Vorpommern
+Hagenow||53432|11192|26|12
+#DE|North Rhine-Westphalia
+Hüllhorst|Huellhorst|52275|8669|95|14
+Hünxe|Huenxe|51634|6697|25|14
+Höhenberg|Hoehenberg|50941|7027|50|12
+Havixbeck||51983|7417|78|12
+Hombruch||51473|7441|114|12
+Holzen||51445|7526|142|9
+Hellenthal||50483|6433|416|9
+Heek||52117|7100|52|8
+Heiden||51828|6933|72|8
+Herscheid||51179|7744|428|8
+Horn||51872|8945|220|7
+Horstmar||52081|7305|104|7
+Hilgen - Dünweg|Hilgen - Duenweg|51102|7152|234|5
+#DE|Rheinland-Pfalz
+Herxheim am Berg||49509|8179|203|10
+Höhr-Grenzhausen|Hoehr-Grenzhausen|50435|7669|256|10
+Herdorf||50777|7954|262|7
+Heidesheim||49582|8195|143|7
+Hermeskeil||49655|6944|526|6
+Hachenburg||50660|7823|369|6
+Hagenbach||49017|8250|108|5
+#DE|Saxony
+Hainichen||50970|13123|311|10
+Hartha||51099|12974|262|7
+Hellerau||51117|13750|212|6
+Hartenstein||50662|12670|365|5
+#DE|Saxony-Anhalt
+Hohenmölsen|Hohenmoelsen|51158|12100|184|10
+Havelberg||52831|12076|44|7
+#DE|Schleswig-Holstein
+Harrislee||54800|9383|48|12
+Heiligenhafen||54370|10976|6|9
+Heikendorf||54367|10200|3|8
+Hohenlockstedt||53968|9620|18|6
+Handewitt||54767|9333|40|6
+Horst||53810|9625|10|5
+Hohenwestedt||54089|9654|61|5
+#DE|State of Berlin
+Halensee||52498|13292|50|13
+Heinersdorf||52572|13438|50|8
+Hansaviertel||52519|13342|38|6
+#DE|Thuringia
+Hildburghausen||50426|10732|387|12
+Hermsdorf||50897|11855|330|8
+#DK|Capital Region
+Humlebæk|Humlebaek|55962|12534|15|9
+Helsinge||56023|12198|31|9
+Hundested||55964|11850|5|9
+Hellebæk|Hellebaek|56068|12558|13|6
+#DK|Central Jutland
+Hinnerup||56735|9059|15|9
+Hørning|Horning|56087|10037|68|9
+Hørning|Horning|56412|10200|36|8
+Hadsten||56328|10049|30|8
+Hinnerup||56266|10063|30|8
+Hasselager||56106|10100|83|7
+Hammel||56258|9863|66|7
+Hornslet||56316|10320|28|6
+#DK|North Denmark
+Hobro||56643|9790|12|12
+Hirtshals||57588|9959|16|5
+Hadsund||56715|10117|3|5
+#DK|Zealand
+Haslev||55323|11964|51|12
+#DZ|Aïn Defla
+Hammam Righa||36380|2399|495|8
+#EE|Harjumaa
+Haabneeme||59514|24822|13|7
+#EE|Lääne
+Haapsalu||58939|23541|6|10
+#ES|Andalusia
+Huércal de Almería|Huercal de Almeria|36885|-2438|73|15
+Huétor Vega|Huetor Vega|37145|-3570|746|11
+Huétor-Tájar|Huetor-Tajar|37198|-4047|484|9
+Hinojosa del Duque||38501|-5147|551|8
+Huéscar|Huescar|37811|-2541|958|7
+Herrera||37364|-4850|249|6
+Huelma||37648|-3460|1004|6
+#ES|Castille-La Mancha
+Herencia||39366|-3357|650|8
+#ES|La Rioja
+Haro||42576|-2848|478|12
+#ES|Madrid
+Hellín|Hellin|40431|-3617|688|10
+Hoyo de Manzanares||40623|-3907|1005|7
+Horcajo||40409|-3627|692|6
+#ET|Sidama Region
+Hāgere Selam|Hagere Selam|6483|38517|2746|5
+#FI|Kanta-Häme
+Hausjärvi|Hausjaervi|60783|24933|105|8
+#FI|North Ostrobothnia
+Haapajärvi|Haapajaervi|63750|25333|102|6
+Haapavesi||64133|25367|84|6
+#FI|Pirkanmaa
+Hervanta luode||61451|23835|151|11
+Hämeenkyrö|Haemeenkyroe|61639|23195|65|10
+Hervanta lounas||61440|23845|138|7
+#FI|Satakunta
+Huittinen||61183|22700|52|10
+Harjavalta||61317|22133|37|7
+#FI|Southwest Finland
+Halikko||60400|23083|13|9
+#FI|Uusimaa
+Hakunila||60278|25103|27|12
+Hanko||59833|22950|14|10
+Herttoniemenranta||60191|25037|3|9
+Havukoski||60322|25072|31|9
+Hämeenkylä|Haemeenkylae|60271|24800|42|8
+Henttaa||60190|24727|14|8
+Hermanni||60194|24970|1|7
+Haukilahti||60159|24771|11|6
+Hiekkaharju||60304|25044|23|5
+#FR|Bourgogne-Franche-Comté
+Héricourt|Hericourt|47573|6761|329|11
+#FR|Brittany
+Hennebont||47805|-3278|15|14
+#FR|Grand Est
+Hœnheim||48622|7755|144|11
+Hombourg-Haut||49128|6771|243|10
+Hagondange||49249|6164|162|9
+Homécourt|Homecourt|49221|5992|189|7
+Hettange-Grande||49407|6152|179|7
+Huningue||47605|7578|242|6
+Heillecourt||48650|6195|224|6
+Horbourg-Wihr||48081|7394|188|5
+#FR|Hauts-de-France
+Harnes||50446|2905|35|14
+Hirson||49923|4083|173|11
+Houplines||50695|2915|17|8
+Houdain||50450|2538|57|8
+Hersin-Coupigny||50448|2649|74|7
+Ham||49747|3073|67|6
+Haillicourt||50475|2575|65|5
+#FR|New Aquitaine
+Hendaye||43358|-1774|28|14
+Hasparren||43384|-1305|88|6
+#FR|Normandy
+Harfleur||49507|198|4|8
+Honfleur||49420|233|6|8
+#FR|Pays de la Loire
+Haute-Goulaine||47199|-1430|20|5
+#GB|England
+Headstone||51593|-345|56|15
+Hadley||52700|-2483|107|15
+Hythe||51072|1084|8|15
+Hetton-Le-Hole||54817|-1450|91|14
+Harrow Weald||51611|-337|96|14
+Hockley||52500|-1917|131|14
+Holborn||51518|-120|37|13
+Hurstpierpoint||50934|-180|49|13
+Hornsey||51588|-122|33|13
+Hartshill||52548|-1522|127|12
+Harold Wood||51595|233|34|12
+Hillingdon||51533|-453|54|12
+Henlow||52030|-286|43|12
+Hollinwood||53517|-2133|127|12
+Honiton||50800|-3189|113|12
+Halstead||51945|639|53|12
+Haxby||54014|-1071|18|12
+Helston||50103|-5270|60|12
+Henley-on-Thames||51533|-900|34|11
+Hexham||54970|-2104|61|11
+Harrow Road||51527|-199|31|11
+Highams Park||51608|-6|30|11
+Highgate||51566|-159|78|11
+Harrow on the Hill||51571|-334|72|11
+Hedon||53740|-197|4|10
+Hyde Park||51516|-173|36|10
+Horbury||53661|-1560|77|10
+Hampton Wick||51420|-315|25|10
+Holywell||51647|-425|66|10
+Hatch End||51608|-374|61|10
+Hale Barns||53369|-2313|57|10
+Hunstanton||52950|500|24|9
+Hemsworth||53613|-1354|62|9
+Haughton Green||53441|-2098|113|9
+Hulme||53466|-2249|36|9
+Hornsea||53910|-168|7|8
+Humberston||53530|-25|11|8
+Hayle||50184|-5421|6|8
+Hadleigh||52045|953|22|8
+Hawkinge||51113|1162|155|8
+Holbeach||52804|14|6|8
+Hardingstone||52214|-886|106|8
+Highworth||51631|-1711|135|8
+Histon||52252|106|14|8
+Hook||51284|-960|82|7
+Hainault||51608|107|44|7
+High Barnet||51656|-208|133|7
+Hassocks||50928|-166|55|7
+Horncastle||53208|-117|33|7
+Harefield||51603|-485|87|7
+Heighington||53212|-459|16|6
+Higham Ferrers||52306|-593|74|6
+Haworth||53829|-1948|177|6
+Hindhead||51114|-734|252|6
+Hagley||52426|-2128|133|6
+Hoylake||53390|-3181|12|6
+Holmes Chapel||53201|-2357|62|6
+Halesworth||52346|1503|22|6
+Hemsby||52697|1692|9|6
+Hethersett||52598|1174|52|6
+Holbeck||53784|-1568|20|6
+Hoo||51421|563|16|5
+Helsby||53274|-2769|19|5
+Hungerford||51415|-1516|103|5
+#GB|Northern Ireland
+Holywood||54639|-5825|44|13
+#GB|Scotland
+Hawick||55423|-2787|116|14
+Helensburgh||56006|-4726|27|13
+Haddington||55956|-2783|55|9
+Houston||55869|-4552|41|6
+Holytown||55820|-3973|102|5
+#GB|Wales
+Haverfordwest||51802|-4969|17|15
+Holyhead||53306|-4632|8|11
+Hirwaun||51739|-3510|189|7
+Holywell||53275|-3229|140|7
+Hengoed||51651|-3232|205|5
+#GD|Carriacou and Petite Martinique
+Hillsborough||12483|-61456|8|1
+#GT|Quetzaltenango
+Huitán|Huitan|15049|-91639|2615|10
+#HK|Eastern District
+Hing Wah Estate (I & II)||22263|114235||14
+Harmony Garden||22266|114249||7
+Hing Tung Estate||22282|114219||6
+Hing Man Estate||22267|114233|204|6
+Healthy Village||22291|114206|141|5
+#HK|Kowloon City
+Hung Hom||22307|114185|12|14
+Ho Man Tin Estate||22315|114183|33|12
+Hung Hom Estate||22308|114189|2|7
+Harbour Place||22303|114186|2|7
+#HK|Sham Shui Po District
+Hoi Lok Court||22328|114149|1|7
+#HK|Wan Chai
+Happy Valley||22269|114186|49|13
+#HK|Yau Tsim Mong District
+Hoi Fu Court||22316|114165|1|10
+#HK|Yuen Long
+Hung Shui Kiu||22432|113988|10|12
+#HU|Budapest
+Havanna-lakótelep|Havanna-lakotelep|47440|19167|131|13
+#HU|Hajdú-Bihar
+Hajdúhadház|Hajduhadhaz|47683|21667|148|13
+Hajdúsámson|Hajdusamson|47600|21767|133|11
+Hajdúdorog|Hajdudorog|47817|21500|109|10
+Hosszúpályi|Hosszupalyi|47393|21733|107|5
+#HU|Heves County
+Heves||47600|20283|96|11
+#HU|Pest County
+Halásztelek|Halasztelek|47362|18981|99|7
+#IE|Leinster
+Howth||53388|-6065|171|8
+Hartstown||53393|-6427|61|6
+#IL|Haifa
+H̱arish|Harish|32462|35046|140|8
+#IL|Northern District
+H̱atsor HaGlilit|Hatsor HaGlilit|32982|35545|379|9
+Ḥurfeish|Hurfeish|33018|35348|657|6
+#IL|Tel Aviv
+Herzliya Pituah||32174|34803|23|10
+#IN|Andhra Pradesh
+Hiramandalam||18671|83951|44|7
+#IN|Assam
+Hamren||25847|92574|425|9
+Howraghat||26109|93033|67|5
+#IN|Bihar
+Habibpur||25238|86947|50|12
+Hānspura|Hanspura|25057|84549|90|8
+Hathwa||26355|84298|74|7
+Hāt Saraiyā|Hat Saraiya|26795|84485|81|7
+#IN|Chhattisgarh
+Hirmi||21539|81940|290|5
+#IN|Gujarat
+Hadgood||22528|72979|40|14
+Hansot||21585|72808|16|13
+Hajira INA||21113|72650|15|6
+#IN|Haryana
+Hattīn|Hattin|28042|77240|197|14
+Hasanpur||27969|77495|194|12
+Hāt|Hat|29332|76615|237|7
+#IN|Jammu and Kashmir
+Handwāra|Handwara|34397|74281|1606|14
+Hājan|Hajan|34299|74617|1582|13
+Hirānagar|Hiranagar|32455|75272|321|9
+#IN|Jharkhand
+Hasir||23773|85814|240|11
+Haludpukhur||22601|86138|201|10
+Hariharpur||23889|86131|225|7
+Hesla||24063|85879|370|6
+#IN|Karnataka
+Heggadadevankote||12088|76330|702|14
+Huliyār|Huliyar|13584|76542|710|14
+Hindalgi||15875|74472|747|14
+Hunasamaranahalli||13144|77617|925|13
+Hosakote||14276|77168|628|12
+Hanūr|Hanur|12087|77302|648|11
+Hampi||15335|76460|428|10
+Harēkala|Harekala|12843|74915|28|7
+Hosanagara||13914|75065|589|6
+#IN|Kerala
+Hēsabettu|Hesabettu|12719|74887|24|5
+#IN|Madhya Pradesh
+Hatwāns|Hatwans|22768|78346|336|12
+Harrai||22614|79222|598|11
+Hātod|Hatod|22794|75739|540|10
+Hirdepur||23827|79424|363|8
+Harduli||22928|79903|421|8
+Hirāpur|Hirapur|21842|80240|308|6
+#IN|Maharashtra
+Hinjawadi||18593|73730|591|11
+Hajarmachi||17314|74231|645|9
+Harnai||17813|73097|9|7
+Hīrāpur Hamesha|Hirapur Hamesha|21555|79786|299|6
+#IN|Manipur
+Heingang||24857|93947|785|6
+#IN|Mizoram
+Hnahthial||22966|92930|737|7
+#IN|Punjab
+Hadiāya|Hadiaya|30328|75502|230|13
+Halwāra|Halwara|30725|75643|245|10
+Hariāna|Hariana|31635|75839|310|9
+Hājipur|Hajipur|31977|75754|307|6
+#IN|Rajasthan
+Hamīrgarh|Hamirgarh|25188|74631|419|12
+Harji||25292|72860|205|11
+#IN|Tamil Nadu
+Hulikal||11321|76773|1847|13
+Hanumantanpatti||9786|77317|394|11
+#IN|Uttar Pradesh
+Harduāganj|Harduaganj|27944|78158|189|12
+Hātā|Hata|26741|83745|83|12
+Haraiya||26795|82464|94|9
+#IN|Uttarakhand
+Harbatpur||30439|77741|448|9
+#IN|West Bengal
+Haldībāri|Haldibari|26339|88782|76|14
+Haringhāta|Haringhata|22965|88575|16|10
+Haripur||22936|88232|17|7
+#IR|Alborz Province
+Hīv|Hiv|36032|50647|1462|9
+#IR|Ardabil Province
+Hashatjīn|Hashatjin|37369|48322|1482|6
+#IR|East Azerbaijan
+Herīs|Heris|38248|47117|1904|11
+#IR|Hormozgan
+Hormoz||27095|56453|8|6
+Halor||26967|56083|10|6
+#IR|Isfahan
+Ḩabībābād|Habibabad|32831|51776|1560|9
+#IR|Khuzestan
+Ḩorr|Horr|32145|48391|73|9
+#IR|Māzandarān
+Hachīrūd|Hachirud|36685|51344|-19|10
+#IR|Razavi Khorasan
+Ḩoseynābād-e Qorqī|Hoseynabad-e Qorqi|36400|59677|991|14
+#IR|Tehran
+Hamadānak|Hamadanak|35543|51140|1067|11
+#IR|West Azerbaijan
+Haftvān|Haftvan|38168|44756|1383|8
+#IR|Yazd Province
+Herāt|Herat|30054|54373|1595|13
+#IR|Zanjan
+Hīdaj|Hidaj|36256|49133|1628|14
+#JM|Clarendon
+Hayes||17876|-77237|38|10
+#JO|Ajloun
+Ḩalāwah|Halawah|32384|35662|407|5
+#JO|Amman
+Ḩayy al Bunayyāt|Hayy al Bunayyat|31896|35885|925|6
+#JO|Irbid
+Ḩakamā|Hakama|32594|35883|550|7
+Ḩātim|Hatim|32645|35778|420|6
+#JP|Akita
+Hachirougata||39933|140083|5|6
+#JP|Aomori
+Hiranai||40920|140956|19|11
+#JP|Chiba
+Hongō|Hongo|35418|140353|3|14
+Higashiemi||35064|140062|51|7
+#JP|Fukui
+Hongō|Hongo|35482|135619|2|8
+#JP|Fukuoka
+Hatchō-muta|Hatcho-muta|33211|130434|0|14
+Harai||33524|131165|54|7
+#JP|Fukushima
+Hanawa||36947|140416|221|8
+Higashidate||36867|140433|216|5
+#JP|Gunma
+Hirobaba||36423|138970|295|14
+Higashiagatsuma||36573|138826|363|13
+#JP|Hokkaido
+Higashimorichō|Higashimoricho|42110|140599|3|14
+Honmachi||43911|144667|5|12
+Higashikagura||43697|142451|175|10
+Higashikawa||43699|142510|221|8
+Haboro||44358|141702|17|7
+Horomui||43067|141650|9|7
+Hiroo||42282|143298|60|7
+Hamanaka-sakuraminami||43153|145103|76|6
+Honchō|Honcho|42811|143653|19|5
+Honchō|Honcho|43704|144021|84|5
+#JP|Hyōgo
+Hamasaka||35617|134450|51|13
+#JP|Ishikawa
+Hōdatsushimizu|Hodatsushimizu|36863|136798|43|12
+#JP|Kagawa
+Horikoshi||34458|134301|11|14
+#JP|Kanagawa
+Hara-machida||35533|139450|78|14
+Hakone||35189|139026|734|11
+#JP|Nagano
+Hirao||36747|138419|611|11
+Hakuba||36698|137862|702|9
+#JP|Nara
+Higashiando||34609|135757|41|7
+#JP|Oita
+Hikiji||33229|131180|421|9
+#JP|Okayama
+Hayashima||34604|133829|4|13
+#JP|Saitama
+Hatoyama||35981|139334|49|14
+#JP|Tokushima
+Hara||34043|133927|74|14
+Hiwasaura||33733|134537|6|6
+#JP|Tokyo
+Haneda||35549|139746|5|15
+Heiwadai||35758|139660|37|14
+Hikawadai||35755|139668|36|13
+Hibarigaoka||35745|139536|69|9
+Hatsudai||35677|139686|42|9
+Hachijō|Hachijo|33103|139779|23|7
+Higashi-nihombashi||35693|139786|13|6
+HIgashifushimi||35725|139560|57|5
+#JP|Wakayama
+Hamanose||33883|135150|2|7
+Higashinaka||34019|135185|11|7
+#JP|Yamaguchi
+Hirao||33938|132072|-2|12
+#KH|Kampong Speu Province
+Haong Samnam||11571|104234|69|5
+#KH|Kratie
+Han Chey||12258|105948|27|6
+#KP|North Hamgyong
+Hau-ri||41201|129470|124|14
+Hoemul-li||41434|129670|3|12
+#KY|
+Hutland||19349|-81213|4|10
+Half Moon Bay||19297|-81151||6
+Half Way Pond||19287|-81372|5|6
+High Rock Estates||19299|-81147||6
+High Rock||19295|-81132|3|6
+#LB|Akkar
+Halba||34543|36080|157|5
+#LB|Mount Lebanon
+Hrajel||34017|35792|1325|8
+#LK|Western Province
+Horana South||6716|80063|23|9
+Horawala Junction||6481|80127|100|8
+#LU|Luxembourg
+Hollerich||49603|6114|276|8
+Howald||49584|6143|296|6
+#MA|Beni Mellal-Khenifra
+Hattane||32841|-6800|767|12
+#MA|Fes-Meknes
+Haj Kaddour||33825|-5425|645|7
+Had Oulad Zbair||34289|-4320|430|6
+#MA|Rabat-Salé-Kénitra
+Had Kourt||34616|-5740|138|9
+#MD|Transnistria
+Hryhoriopol||47154|29300|21|9
+#MM|Shan State
+Hsenwi||23303|97966|618|9
+#MM|Yangon
+Hlaw Kar||17000|96070|10|14
+Hpaung Gyi East||17335|96175|11|13
+Htantabin||17133|95917|8|11
+Haing Ku||17277|96190|11|9
+Htauk Kyant Toe Cheit||17032|96140|17|9
+Hledan||16826|96130|24|9
+Hpaung Gyi West||17328|96173|9|7
+Hpa Yar Gyi Su||16740|96059|7|6
+Hpa Yar Gyi||16656|96019|8|6
+Htein Hnit Pin||16967|95991|12|5
+#MN|Darhan Uul
+Hongor||49230|105897|747|6
+#MR|Guidimaka
+Hassi Chegar|HassiChegar|15366|-12087|89|7
+#MT|Il-Ħamrun
+Ħamrun|Hamrun|35885|14485|44|10
+#MT|Ħal Għargħur
+Hal Gharghur||35924|14451|132|3
+#MT|Ħaż-Żebbuġ
+Haz-Zebbug||35872|14441|100|11
+#MV|Seenu
+Hithadhoo||-600|73083|6|10
+#MX|Campeche
+Hecelchakán|Hecelchakan|20177|-90134|36|10
+Hopelchén|Hopelchen|19747|-89844|88|7
+#MX|Chiapas
+Huehuetán|Huehuetan|15019|-92383|64|8
+#MX|Guanajuato
+Huanímaro|Huanimaro|20368|-101499|1719|6
+#MX|Guerrero
+Huamuxtitlán|Huamuxtitlan|17802|-98564|894|6
+#MX|Hidalgo
+Huichapan||20376|-99649|2107|9
+Huitel||20165|-99274|2020|5
+Huitzila||19812|-98956|2300|5
+#MX|Michoacán
+Huandacareo||19989|-101276|1879|7
+#MX|México
+Huehuetoca||19828|-99204|2256|12
+Huixquilucan de Degollado||19360|-99350|2712|10
+#MX|Nuevo León
+Héctor Caballero|Hector Caballero|25636|-100127|429|6
+Hualahuises||24885|-99674|403|6
+#MX|Oaxaca
+Heroica Villa de San Blas Atempa||16326|-95227|100|12
+Heroica Ciudad de Ejutla de Crespo||16565|-96732|1460|10
+Hacienda Blanca||17140|-96776|1592|8
+#MX|Puebla
+Huixcolotla||18921|-97772|2044|12
+Huautla de Jiménez|Huautla de Jimenez|18132|-96841|1696|11
+Hueyapán|Hueyapan|19883|-97445|1688|6
+Hueytamalco||19940|-97288|922|5
+Hueyotlipan||18891|-97866|2040|5
+#MX|Sinaloa
+Higuera de Zaragoza||25969|-109302|24|10
+#MX|Tabasco
+Huapinol||17923|-92911|15|6
+#MX|Veracruz
+Huayacocotla||20537|-98481|2169|5
+#MX|Yucatán
+Halachó|Halacho|20479|-90082|15|9
+Homun||20739|-89285|15|6
+#MZ|Inhambane Province
+Homoíne|Homoine|-23884|35151|114|8
+#NA|Erongo Region
+Henties Bay||-22116|14284|26|6
+#NG|Adamawa
+Holma||9899|13055|570|9
+#NG|Gombe State
+Hinna||10304|11499|221|8
+#NG|Kaduna State
+Hunkuyi||11267|7649|653|8
+#NL|Friesland
+Huizum||53192|5811|2|9
+#NL|Gelderland
+Hattem||52475|6064|5|12
+Hatert||51806|5831|13|10
+Hoevelaken||52175|5458|6|10
+Heerde||52387|6040|8|9
+Hengstdal||51833|5883|44|7
+#NL|Groningen
+Hoogkerk||53211|6501|0|11
+Haren||53172|6609|5|9
+Helpman||53198|6580|7|6
+#NL|Limburg
+Horst||51454|6051|27|13
+Haelen||51236|5957|26|10
+Heer||50838|5730|58|8
+Heythuysen||51250|5899|31|6
+Helden||51319|6000|36|6
+#NL|North Brabant
+Heesch||51734|5527|9|13
+Heeze||51383|5571|24|10
+Halsteren||51528|4268|9|10
+Heeswijk-Dinther||51651|5475|9|8
+Hilvarenbeek||51486|5138|18|8
+Hoogerheide||51424|4325|24|6
+Heusdenhout||51588|4819|6|5
+#NL|North Holland
+Haarlemmerbuurt||52383|4890|-1|9
+#NL|Overijssel
+Hasselt||52593|6095|2|7
+Heino||52437|6233|3|6
+#NL|South Holland
+Hoek van Holland||51978|4133|4|9
+Honselersdijk||52007|4224|1|7
+Hoge Mors||52156|4460|1|5
+#NL|Utrecht
+Hoogland||52183|5374|3|11
+Harmelen||52090|4961|2|8
+#NO|Buskerud
+Hønefoss|Honefoss|60168|10256|70|14
+#NO|Finnmark
+Hammerfest||70663|23681|40|11
+#NO|Møre og Romsdal
+Haram||62658|6241|20|9
+#NO|Rogaland
+Hommersåk|Hommersak|58926|5851|19|6
+#NO|Trøndelag
+Hommelvik||63411|10794|12|5
+#NO|Vestfold
+Holmestrand||59488|10318|14|6
+#NO|Vestland
+Hermansverk||61185|6850|60|2
+#NZ|Auckland
+Homai||-37017|174883|37|14
+Hillsborough||-36918|174750|75|13
+Howick||-36894|174932|52|13
+Hillcrest||-36788|174730|50|11
+Half Moon Bay||-36878|174890||8
+#NZ|Canterbury
+Halswell||-43583|172567|18|14
+Hoon Hay||-43564|172608|15|10
+Hornby||-43550|172533|26|9
+#NZ|Hawke's Bay Region
+Havelock North||-39667|176883|21|15
+#NZ|Manawatu-Wanganui
+Hokowhitu||-40363|175634|35|12
+#NZ|Taranaki Region
+Hawera||-39592|174283|110|11
+#NZ|Waikato Region
+Huntly||-37558|175160|18|9
+#NZ|Wellington Region
+Homedale||-41268|174950|94|6
+Hataitai||-41304|174794|34|6
+#OM|Al Wusta Governorate
+Haymā’|Hayma'|19959|56276|135|1
+#PE|Arequipa
+Horacio Zeballos Gamez||-16492|-71507|2369|8
+#PE|Junin
+Huayucachi||-12138|-75223|3112|6
+Huasahuasi||-11265|-75647|2737|5
+#PE|La Libertad
+Huanchaquito Alto||-8088|-79097|34|7
+#PE|Lambayeque
+Hacienda Pucala||-6779|-79603|85|6
+#PE|Piura
+Huancabamba||-5239|-79451|1939|9
+#PE|Puno
+Hacienda Huancane||-15822|-70886|4524|8
+Huancané|Huancane|-15201|-69763|3843|8
+#PE|San Martín Department
+Huicungo||-7319|-76776|301|7
+#PH|Calabarzon
+Halayhay||14374|120813|7|11
+#PH|Central Visayas
+Hibaiyo||10273|123321|8|5
+#PH|Cordillera
+Hungduan||16836|121005|1121|9
+#PH|Davao Region
+Hagonoy||6683|125326|16|7
+#PH|Eastern Visayas
+Hilongos||10374|124750|5|7
+#PH|Northern Mindanao
+Halapitan||7918|125330|385|11
+#PK|Azad Kashmir
+Hattiān Bāla|Hattian Bala|34170|73734|948|12
+#PK|Balochistan
+Harnai||30101|67938|903|14
+#PL|Silesia
+Hałcnów|Halcnow|49850|19100|331|9
+#PR|Hatillo
+Hatillo||18486|-66825|7|6
+#PR|Hormigueros
+Hormigueros||18140|-67127|25|12
+#PS|West Bank
+Ḩablah|Hablah|32165|34977|90|6
+Ḩizmā|Hizma|31833|35263|601|6
+Ḩuwwārah|Huwwarah|32152|35257|522|6
+Huwara||32152|35257|522|6
+Ḩūsān|Husan|31709|35135|809|6
+#PT|Azores
+Horta||38537|-28626|12|7
+#PY|Concepción
+Horqueta||-23343|-57052|158|11
+#PY|Itapúa
+Hohenau||-27073|-55642|202|5
+#RO|Bacău County
+Helegiu||46350|26750|255|7
+#RO|Botoșani County
+Hudeşti|Hudesti|48150|26500|191|6
+Havârna|Havarna|48067|26650|131|5
+#RO|Brașov County
+Hălchiu|Halchiu|45767|25550|505|6
+#RO|Cluj County
+Huedin||46867|23050|595|9
+#RO|Constanța County
+Hârşova|Harsova|44686|27950|17|10
+#RO|Giurgiu County
+Hotarele||44173|26370|42|9
+#RO|Hunedoara County
+Haţeg|Hateg|45617|22950|339|11
+#RO|Iași County
+Holboca||47150|27700|52|12
+Hârlău|Harlau|47433|26900|153|11
+Hălăuceşti|Halaucesti|47100|26800|256|6
+#RO|Satu Mare County
+Halmeu||47967|23017|123|7
+#RO|Suceava
+Horodnic de Sus||47840|25824|423|5
+#RO|Vrancea
+Homocea||46133|27233|88|10
+#RO|Vâlcea County
+Horezu||45150|24017|468|7
+#SA|Najran Region
+Ḩabūnā|Habuna|17847|44021|1260|13
+#SE|Dalarna
+Hedemora||60280|15989|101|7
+#SE|Gävleborg
+Hofors||60546|16287|114|6
+#SE|Jönköping
+Habo||57912|14074|182|8
+#SE|Kalmar
+Hultsfred||57488|15844|104|6
+#SE|Norrbotten
+Haparanda||65835|24137|5|7
+#SE|Skåne
+Höllviken|Hoellviken|55410|12956|4|15
+Höganäs|Hoeganaes|56200|12558|6|15
+Höör|Hoeoer|55934|13539|81|12
+Hörby|Hoerby|55852|13661|81|7
+#SE|Stockholm
+Handen||59168|18138|66|12
+#SE|Västerbotten
+Holmsund||63706|20364|12|6
+#SE|Västmanland
+Hallstahammar||59614|16228|35|11
+#SE|Västra Götaland
+Hammarkullen||57780|12036|91|8
+Hjo||58301|14288|98|6
+Hönö|Hoenoe|57690|11650|5|5
+#SE|Örebro
+Hallsberg||59065|15110|55|8
+#SG|
+Henderson Estate||1289|103823|8|13
+Holland Drive||1310|103793|1|12
+Holland Village||1312|103793|34|11
+Hillcrest Park||1335|103809|34|9
+#SI|Municipality of Hodoš
+Hodoš|Hodos|46822|16326|238|0
+#SI|Municipality of Horjul
+Horjul||46023|14297|322|1
+#SI|Municipality of Hrastnik
+Hrastnik||46147|15085|419|6
+#SI|Municipality of Hrpelje–Kozina
+Hrpelje||45607|13943|492|1
+#SI|Municipality of Loški Potok
+Hrib-Loški Potok|Hrib-Loski Potok|45707|14617|797|0
+#SK|Banská Bystrica Region
+Hriňová|Hrinova|48578|19526|476|7
+Hnúšťa|Hnusta|48573|19954|301|7
+#SK|Nitra Region
+Hurbanovo||47870|18192|111|7
+#SK|Trnava Region
+Holíč|Holic|48811|17162|180|11
+#SL|Eastern Province
+Hangha||7940|-11141|176|5
+#SL|Western Area
+Hastings||8380|-13137|50|5
+#SN|Saint-Louis
+Haïré Lao|Haire Lao|16397|-14322|13|9
+#SO|Mudug
+Hobyo||5351|48527|5|13
+#SZ|Shiselweni
+Hluti||-27221|31587|656|7
+#TD|Salamat
+Haraze||9940|20905|419|9
+#TH|Kalasin
+Huai Mek||16590|103235|181|12
+#TH|Nakhon Si Thammarat
+Hua Sai||8044|100306|5|11
+#TH|Uthai Thani
+Huai Khot||15291|99617|106|6
+#TL|Ainaro
+Hatoudo||-9119|125592|441|10
+#TM|Ahal
+Hurmantgökje|Hurmantgoekje|38073|58017|255|9
+#TM|Balkan
+Hazar||39404|53126|-20|15
+#TM|Lebap
+Hojambaz||38116|65003|234|13
+#TN|Kairouan
+Hajeb el Aïoun|Hajeb el Aioun|35396|9544|353|11
+Haffouz||35632|9676|284|8
+#TN|Nabeul Governorate
+Hammam el Rhezez||36875|11108|19|9
+#TN|Sfax Governorate
+Hencha||35122|10742|53|8
+#TN|Sousse Governorate
+Harqalah||36030|10509|21|7
+#TO|Niuas
+Hihifo||-15954|-173796|6|0
+#TR|Ankara
+Haymana||39432|32497|1210|12
+#TR|Antalya
+Hasyurt||36324|30223|6|6
+#TR|Ardahan
+Hanak||41233|42840|1807|5
+#TR|Balıkesir
+Havran||39558|27098|42|11
+#TR|Denizli
+Honaz||37757|29270|559|8
+#TR|Diyarbakır Province
+Hani||38407|40386|886|11
+Hazro||38249|40771|980|6
+#TR|Edirne
+Havsa||41549|26822|80|8
+#TR|Hatay
+Hassa||36799|36518|431|10
+#TR|Konya
+Hüyük|Hueyuek|37954|31596|1249|12
+#TR|Malatya
+Hekimhan||38816|37929|1107|14
+Hanımçiftliği|Hanimciftligi|38378|38335|905|13
+#TR|Nevşehir Province
+Hacıbektaş|Hacibektas|38941|34558|1284|7
+#TR|Osmaniye
+Hasanbeyli||37128|36546|723|6
+#TR|Trabzon
+Hayrat||40885|40365|229|8
+#TR|Tunceli
+Hozat||39100|39208|1524|8
+#TR|Şanlıurfa
+Harran||36860|39031|369|14
+#UA|Cherkasy
+Horodyshche||49291|31440|124|14
+#UA|Chernihiv Oblast
+Horodnia||51891|31596|137|12
+#UA|Chernivtsi
+Hlyboka||48088|25928|345|9
+#UA|Crimea
+Hvardiyske||45117|34022|146|13
+Haspra||44436|34113|68|10
+Hresivskyi||45008|34027|224|10
+Hurzuf||44551|34291|62|9
+#UA|Dnipropetrovsk
+Hubynykha||48808|35258|127|5
+#UA|Donetsk
+Hirnyk||48057|37372|202|10
+Holmivskyi||48404|38082|188|7
+#UA|Ivano-Frankivsk
+Horodenka||48669|25503|280|10
+Halych||49124|24727|213|6
+#UA|Kherson
+Hola Prystan||46530|32524|3|14
+Hornostayivka||47012|33730|82|7
+#UA|Kirovohrad
+Hayvoron||48343|29866|159|15
+Holovanivsk||48387|30459|166|6
+#UA|Kyiv City
+Hrushky||50453|30427|171|7
+#UA|Kyiv Oblast
+Hatne||50354|30375|152|13
+Hlevakha||50274|30325|188|9
+Hnidyn||50326|30715|98|5
+Horenka||50557|30332|123|5
+#UA|Luhansk
+Hirske||48740|38496|189|9
+Heorhiivka||48423|39253|78|6
+#UA|Odesa
+Horodnye||45892|28849|80|5
+#UA|Poltava
+Hrebinka||50120|32430|113|11
+Hlobyne||49379|33276|97|9
+Hradyzk||49239|33139|89|6
+#UA|Rivne Oblast
+Hoshcha||50602|26681|200|5
+#UA|Ternopil
+Husiatyn||49071|26205|300|7
+#UA|Vinnytsia
+Hnivan||49094|28338|245|12
+Horodkivka||48379|28693|229|5
+#UA|Volyn
+Horokhiv||50502|24757|219|8
+#UA|Zakarpattia
+Hrushovo||48007|23774|267|9
+Hlybokyi Potik||48058|23896|330|6
+#UA|Zaporizhzhia
+Hulyaypole||47667|36256|109|13
+#UA|Zhytomyr Oblast
+Horodnytsia||50807|27314|185|5
+#UG|Western Region
+Hima||349|30162|1291|15
+#US|Alabama
+Hartselle||34443|-86935|205|14
+Hamilton||34142|-87989|149|7
+Harvest||34856|-86751|254|5
+#US|Alaska
+Homer||59643|-151549|33|6
+#US|Arizona
+Holbrook||34902|-110158|1549|5
+#US|Arkansas
+Harrison||36230|-93108|320|13
+Hot Springs Village||34672|-92999|239|13
+Helena-West Helena||34529|-90590|60|11
+Hope||33667|-93592|107|10
+Heber Springs||35491|-92031|104|7
+Helena||34530|-90592|60|6
+#US|California
+Hawaiian Gardens||33831|-118073|10|15
+Half Moon Bay||37464|-122429|22|13
+Healdsburg||38610|-122869|32|12
+Home Gardens||33878|-117521|204|12
+Hillsborough||37574|-122379|98|11
+Hughson||37597|-120866|38|7
+Huron||36203|-120103|114|7
+Holtville||32811|-115380|-3|6
+Homeland||33743|-117109|489|6
+Hidden Valley Lake||38808|-122558|363|6
+Hilmar-Irwin||37405|-120850|29|5
+#US|Connecticut
+Hebron||41658|-72366|168|9
+#US|Delaware
+Hockessin||39788|-75697|78|14
+#US|District of Columbia
+Hillcrest||38862|-76958|87|10
+#US|Florida
+Hunters Creek||28361|-81422|27|14
+Horizon West||28434|-81623|49|14
+Homosassa Springs||28804|-82576|2|14
+Hudson||28364|-82693|3|12
+Holly Hill||29244|-81038|3|12
+Hobe Sound||27060|-80136|6|12
+Highland City||27965|-81878|36|11
+Hernando||28900|-82375|17|9
+Heathrow||28763|-81372|19|6
+High Springs||29827|-82597|20|6
+Hutchinson Island South||27299|-80220|0|5
+#US|Georgia
+Holly Springs||34174|-84501|339|11
+Hampton||33387|-84283|269|7
+Hapeville||33660|-84410|305|7
+Hawkinsville||32284|-83472|78|5
+#US|Hawaii
+Hālawa|Halawa|21379|-157922|54|14
+Hālawa Heights|Halawa Heights|21378|-157914|72|13
+Hawaiian Paradise Park||19593|-154973|45|11
+Haiku-Pauwela||20922|-156305|154|9
+Haʻikū|Ha'iku|20915|-156322|148|9
+Hōlualoa|Holualoa|19620|-155948|423|9
+Hickam Field||21340|-157960|4|7
+#US|Idaho
+Hayden||47766|-116787|697|14
+Hailey||43520|-114315|1621|8
+#US|Illinois
+Hickory Hills||41726|-87825|207|14
+Hazel Crest||41572|-87694|197|14
+Herrin||37803|-89028|128|13
+Highland||38739|-89671|161|10
+Harvard||42422|-88614|292|9
+Harrisburg||37738|-88541|121|9
+Harwood Heights||41967|-87808|198|9
+Hillside||41878|-87903|200|8
+Hawthorn Woods||42217|-88050|244|8
+Hampshire||42098|-88530|274|6
+Hillsboro||39161|-89495|193|6
+Highwood||42200|-87809|206|5
+Hoopeston||40467|-87668|221|5
+#US|Indiana
+Huntingburg||38299|-86955|149|6
+Hartford City||40451|-85370|280|6
+Hidden Valley||39162|-84843|167|5
+Huntertown||41228|-85172|255|5
+#US|Iowa
+Hiawatha||42036|-91682|258|7
+Harlan||41653|-95326|382|5
+#US|Kansas
+Haysville||37564|-97352|384|11
+#US|Kentucky
+Harrodsburg||37762|-84843|259|8
+Hillview||38070|-85686|165|8
+Highland Heights||39033|-84452|260|7
+Hebron||39066|-84701|268|6
+Hazard||37250|-83193|283|5
+#US|Louisiana
+Harahan||29940|-90203|2|9
+#US|Maine
+Harpswell Center||43802|-69984|39|5
+Houlton||46126|-67840|110|5
+#US|Maryland
+Havre de Grace||39549|-76092|17|14
+Halfway||39621|-77759|184|11
+Hamilton Hills||39363|-76565|93|10
+Hampden||39331|-76635|75|7
+Hampstead||39605|-76850|283|6
+Hillandale||39027|-76974|80|6
+Howard Park||39331|-76695|128|5
+Hampton||39423|-76585|103|5
+#US|Massachusetts
+Hudson||42392|-71566|66|15
+Head of Westport||41621|-71062|7|15
+Hyannis||41653|-70283|9|14
+Holliston||42200|-71424|59|14
+Harwich||41686|-70076|17|13
+Holbrook||42155|-71009|63|11
+Hull||42302|-70908|17|10
+Hanson||42075|-70880|30|10
+Hamilton Worcester||42256|-71768|148|8
+Halifax||41991|-70862|25|8
+Harvard||42500|-71583|127|6
+Hingham||42242|-70890|5|6
+Hampden||42064|-72413|95|5
+Highland||42285|-71157|49|5
+#US|Michigan
+Harper Woods||42433|-82924|179|14
+Highland Park||42406|-83097|194|11
+Howell||42607|-83929|284|10
+Hillsdale||41920|-84631|341|8
+Houghton||47122|-88569|196|8
+Hudsonville||42871|-85865|193|7
+Hastings||42646|-85291|247|7
+Huntington Woods||42481|-83167|202|6
+Holly||42792|-83628|283|6
+#US|Minnesota
+Hugo||45160|-92993|284|14
+Hutchinson||44888|-94370|323|14
+Hermantown||46807|-92238|415|10
+#US|Mississippi
+Holly Springs||31316|-89978|93|8
+Holly Springs||34768|-89449|183|8
+#US|Missouri
+Harrisonville||38653|-94349|292|10
+#US|Montana
+Havre||48550|-109684|771|10
+Helena Valley Southeast||46615|-111922|1158|8
+Helena Valley West Central||46663|-112060|1281|8
+#US|Nebraska
+Hillsborough||41300|-96129|343|7
+Holdrege||40440|-99370|710|6
+#US|New Hampshire
+Hampton||42938|-70839|12|10
+Hampstead||42875|-71181|100|9
+Hanover||43702|-72290|162|9
+Hollis||42743|-71592|123|8
+Hudson||42765|-71440|46|7
+Hopkinton||43191|-71675|154|6
+#US|New Jersey
+Hammonton||39637|-74802|29|15
+Hopatcong||40933|-74659|310|15
+Highland Park||40496|-74424|30|14
+Hanover||40805|-74367|60|13
+Holiday City-Berkeley||39964|-74278|15|13
+Hamilton Square||40227|-74653|31|13
+Hasbrouck Heights||40858|-74081|41|12
+Haddonfield||39892|-75038|25|11
+Hillsdale||41003|-74040|18|11
+Hackettstown||40854|-74829|174|10
+Haledon||40936|-74186|51|8
+Haddon Heights||39877|-75065|23|8
+Heathcote||40389|-74576|52|6
+Hightstown||40270|-74523|31|6
+#US|New York
+Hampton Bays||40869|-72518|10|14
+Haverstraw||41198|-73965|9|12
+Huguenot||40537|-74195|35|10
+Hamburg||42716|-78829|250|10
+Hornell||42328|-77661|354|8
+Hastings-on-Hudson||40995|-73879|38|8
+Hillcrest||41128|-74041|156|8
+Herkimer||43026|-74986|117|8
+Hudson Falls||43301|-73586|90|7
+Hewlett||40643|-73696|6|7
+Horseheads||42167|-76821|273|7
+Hudson||42253|-73791|25|6
+Hilton||43288|-77793|85|6
+Highland||41721|-73960|53|6
+Hamlin||43303|-77921|95|6
+Harris Hill||42965|-78678|222|6
+Hartsdale||41019|-73798|56|5
+#US|North Carolina
+Harrisburg||35324|-80658|196|15
+Hendersonville||35319|-82461|658|14
+Half Moon||34826|-77459|9|8
+Hamlet||34885|-79694|91|6
+Hillsborough||36075|-79100|166|6
+#US|Ohio
+Heath||40023|-82445|262|10
+Harrison||39262|-84820|159|10
+Highland Heights||41552|-81478|286|8
+Hubbard||41156|-80569|300|8
+Huron||41395|-82555|178|7
+Hillsboro||39202|-83612|342|7
+Howland Center||41251|-80745|272|6
+#US|Oklahoma
+Harrah||35490|-97164|337|6
+Henryetta||35440|-95982|209|6
+Holdenville||35080|-96399|264|6
+Hugo||34011|-95510|166|5
+#US|Oregon
+Hood River||45705|-121521|126|8
+#US|Pennsylvania
+Horsham||40178|-75129|76|15
+Hershey||40286|-76650|129|14
+Harleysville||40280|-75387|79|9
+Hatboro||40174|-75107|69|7
+Huntingdon||40485|-78010|193|7
+Homeacre-Lyndora||40872|-79921|356|7
+Hellertown||40580|-75341|88|6
+Hollidaysburg||40427|-78389|289|6
+#US|Rhode Island
+Hopkinton||41461|-71778|51|8
+#US|South Carolina
+Hartsville||34374|-80073|66|8
+Homeland Park||34471|-82671|239|6
+Hardeeville||32287|-81081|8|5
+#US|South Dakota
+Huron||44363|-98214|390|13
+Harrisburg||43431|-96697|435|5
+#US|Tennessee
+Humboldt||35820|-88916|111|8
+Harrison||35114|-85138|234|8
+Henderson||35439|-88641|136|7
+Harriman||35934|-84552|244|6
+#US|Texas
+Hewitt||31462|-97196|197|14
+Hidalgo||26100|-98263|31|14
+Henderson||32153|-94799|156|14
+Highland Park||32833|-96792|161|9
+Hondo||29347|-99141|272|9
+Helotes||29578|-98690|316|9
+Hillsboro||32011|-97130|193|8
+Heath||32837|-96475|153|8
+Hitchcock||29348|-95016|5|8
+Highlands||29819|-95056|11|8
+Homestead Meadows South||31811|-106164|1241|7
+Hempstead||30097|-96078|74|7
+Hornsby Bend||30247|-97583|135|7
+Hutchins||32649|-96713|142|6
+Homestead Meadows North||31850|-106173|1242|5
+#US|Utah
+Heber City||40507|-111413|1707|9
+Hooper||41164|-112122|1293|8
+Hyrum||41634|-111852|1432|8
+Harrisville||41281|-111988|1308|6
+#US|Vermont
+Hartford||43661|-72338|120|10
+#US|Virginia
+Hollins||37341|-79943|339|15
+Huntington||38792|-77071|20|11
+Hollymead||38117|-78442|152|8
+#US|Washington
+Hoquiam||46981|-123889|7|8
+Hobart||47422|-121973|173|6
+#US|West Virginia
+Hurricane||38433|-82020|214|6
+#US|Wisconsin
+Hartford||43318|-88379|299|14
+Hudson||44975|-92757|216|14
+Holmen||43963|-91256|215|10
+Hartland||43105|-88342|285|9
+Hobart||44499|-88150|218|8
+Hales Corners||42938|-88049|238|8
+Harrison||44228|-88336|245|7
+#UZ|Fergana
+Hamza||40428|71505|443|13
+#UZ|Namangan
+Hazratishoh||41395|71789|999|6
+#VN|Da Nang City
+Hiệp Đức|Hiep GJuc|15582|108114|40|15
+#VN|Hà Tĩnh Province
+Hương Khê|Huong Khe|18177|105700|17|11
+#VN|Phu Tho
+Hàng Trạm|Hang Tram|20395|105622|49|12
+#VN|Quang Tri
+Hồ Xá|Ho Xa|17068|107005|11|13
+#XK|Ferizaj
+Hani i Elezit||42150|21297|373|9
+#YE|Soqatra
+Hadibu||12649|54019|13|9
+#ZA|Eastern Cape
+Hankey||-33833|24884|41|14
+#ZA|Free State
+Hertzogville||-28128|25504|1280|11
+#ZA|KwaZulu-Natal
+Hopewell||-29792|30396|794|13
+Harding||-30576|29884|851|11
+Hazelmere||-29597|31044|183|11
+#ZA|Limpopo
+Hluvukani||-24645|31341|474|10
+#ZA|Mpumalanga
+Hazyview||-25044|31128|529|5
+#ZA|Western Cape
+Heidelberg||-34091|20957|84|10
+Hopefield||-33063|18349|36|7

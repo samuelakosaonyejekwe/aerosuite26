@@ -1,0 +1,8 @@
+#AZ|Abşeron
+28 May||40458|49644|116|7
+#RO|Ilfov
+1 Decembrie||44291|26058|64|8
+#TJ|Khatlon Province
+20-solagii Istiḳlolijati Toçikiston|20-solagii Istiklolijati Tocikiston|37547|68461|361|8
+#TR|Iğdır
+14 Kasım Mahallesi|14 Kasim Mahallesi|39930|44053|859|9

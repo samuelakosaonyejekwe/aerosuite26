@@ -56,16 +56,76 @@ function persist(c) { try { globalThis.localStorage?.setItem(KEY, JSON.stringify
 /** Put user materials into the shared tables (called at start-up, after every change, and inside each solver job). */
 export function registerCustom(custom) {
   if (!custom || typeof custom !== 'object') return;
+  if (custom.__catalogue) setCatalogue(custom.__catalogue);           // solver jobs carry the catalogue with them
   for (const cls of Object.keys(TABLES)) {
-    for (const name of Object.keys(TABLES[cls])) if (!isBuiltin(cls, name) && !(custom[cls] && name in custom[cls])) delete TABLES[cls][name];
+    for (const name of Object.keys(TABLES[cls])) if (!isBuiltin(cls, name) && !(custom[cls] && name in custom[cls]) && !(CATALOGUE[cls] && name in CATALOGUE[cls])) delete TABLES[cls][name];
+    for (const [name, m] of Object.entries(CATALOGUE[cls] || {})) if (!isBuiltin(cls, name)) TABLES[cls][name] = m;
     for (const [name, m] of Object.entries(custom[cls] || {})) if (!isBuiltin(cls, name) && m && typeof m === 'object') TABLES[cls][name] = m;
   }
+}
+
+// ---- sourced catalogue (js/data/materials-catalogue.json) ------------------------------------------
+// Catalogue entries hold only what their cited documents give. So that every one of them can be used in every
+// analysis, properties a source does not give are completed from a reference material of the same family and
+// listed in `est` (estimated); strength-linked constants are scaled with the entry's own strength.
+const CATALOGUE = { metals: {}, plies: {}, fluids: {}, batteries: {} };
+export let catalogueInfo = { sources: [], generated: null, extra: [] };
+const FAMILY_BASE = [
+  [/7\d\d\d|7xxx/i, 'metals', 'Al 7075-T6'], [/alumin|^al\b/i, 'metals', 'Al 2024-T3'], [/titan/i, 'metals', 'Ti-6Al-4V'], [/nickel|cobalt|heat-resist|superalloy/i, 'metals', 'Inconel 718'],
+  [/magnes/i, 'metals', 'Mg AZ31B'], [/steel|stainless|maraging|iron/i, 'metals', 'Steel 4340 (QT)'],
+  [/glass/i, 'plies', 'E-glass/epoxy'], [/aramid|kevlar/i, 'plies', 'Kevlar 49/epoxy'], [/./, 'plies', 'IM7/8552 carbon-epoxy'],
+  [/hydraulic/i, 'fluids', 'MIL-PRF-5606 hydraulic'], [/lubric|oil/i, 'fluids', 'MIL-PRF-23699 oil'], [/./, 'fluids', 'Jet A-1'], [/./, 'batteries', 'Li-ion NMC (cell)'],
+];
+/** Fill the gaps of a catalogue entry from its family's reference material. Returns the usable material. */
+export function completeEntry(item) {
+  const cls = item.class, T = TABLES[cls]; if (!T) return null;
+  let baseName = (FAMILY_BASE.find(([re, c]) => c === cls && re.test(`${item.name} ${item.family || ''}`)) || [])[2];
+  if (cls === 'metals' && !/alumin|titan|nickel|cobalt|magnes|steel|stainless|maraging|iron|heat-resist/i.test(`${item.family || ''}`) && Number.isFinite(item.rho)) // other metals: nearest density
+    baseName = builtinNames('metals').sort((a, b) => Math.abs(Math.log(T[a].rho / item.rho)) - Math.abs(Math.log(T[b].rho / item.rho)))[0];
+  const base = T[baseName]; if (!base) return null;
+  const m = { catalogue: true, family: item.family || '', form: item.form || '', src: item.src || {}, locator: item.locator || {}, est: [], base: baseName };
+  if (item.note) m.note = String(item.note).slice(0, 400);
+  if (typeof item.allow_ref === 'string') m.allow_ref = item.allow_ref;
+  for (const f of FIELDS[cls]) {
+    if (Number.isFinite(item[f.key])) m[f.key] = item[f.key];
+    else if (f.req && Number.isFinite(base[f.key])) { m[f.key] = base[f.key]; m.est.push(f.key); }
+  }
+  if (cls === 'metals') {
+    if (!Number.isFinite(item.G) && Number.isFinite(item.E) && Number.isFinite(m.nu)) m.G = m.E / (2 * (1 + m.nu));                      // isotropic relation
+    if (!Number.isFinite(item.Sy) && Number.isFinite(item.Sy_A)) { m.Sy = item.Sy_A; m.est = m.est.filter((k) => k !== 'Sy'); }
+    if (!Number.isFinite(item.Su) && Number.isFinite(item.Su_A)) { m.Su = item.Su_A; m.est = m.est.filter((k) => k !== 'Su'); }
+    const rs = m.Su / base.Su, ry = m.Sy / base.Sy;
+    if (m.est.includes('sf') && rs > 0) m.sf = base.sf * rs;                                                                                // Basquin coefficient scales with ultimate strength
+    if (item.JC && typeof item.JC === 'object') m.JC = item.JC; else if (base.JC && ry > 0) { m.JC = { ...base.JC, A: base.JC.A * ry, B: base.JC.B * ry }; m.est.push('JC'); }
+    if (m.Sy > m.Su) m.Sy = m.Su;
+  }
+  return m;
+}
+export function setCatalogue(byClass) { for (const cls of Object.keys(CATALOGUE)) CATALOGUE[cls] = (byClass && byClass[cls]) || {}; }
+export const isCatalogue = (cls, name) => !!(CATALOGUE[cls] && name in CATALOGUE[cls]);
+export const catalogueTables = () => CATALOGUE;
+let catP = null;
+/** Load and register the catalogue once (browser, worker or Node). Resolves to the number of usable entries. */
+export function loadCatalogue() {
+  return (catP ||= (async () => {
+    try {
+      let data = globalThis.__AEROSUITE_MATCAT__;
+      if (!data) { const url = new URL('../data/materials-catalogue.json', import.meta.url); data = url.protocol === 'file:' ? JSON.parse(await (await import('node:fs/promises')).readFile(url, 'utf8')) : await fetch(url).then((r) => (r.ok ? r.json() : null)); }
+      if (!data?.items) return 0;
+      const by = { metals: {}, plies: {}, fluids: {}, batteries: {} }, extra = []; let n = 0;
+      for (const it of data.items) { if (!by[it.class]) { extra.push(it); continue; } if (isBuiltin(it.class, it.name)) continue; const m = completeEntry(it); if (m) { by[it.class][it.name] = m; n++; } }
+      catalogueInfo = { sources: data.sources || [], generated: data.generated || null, extra };
+      setCatalogue(by); registerCustom(customMaterials());
+      return n;
+    } catch { return 0; }
+  })());
 }
 /** Check a material before it is saved. Returns { errors: [], warnings: [] }. */
 export function validate(cls, name, m, { editing = null } = {}) {
   const errors = [], warnings = [];
   if (!name || !String(name).trim()) errors.push('Give the material a name.');
   else if (isBuiltin(cls, name)) errors.push('That name belongs to a built-in material. Choose a different name.');
+  else if (isCatalogue(cls, name)) errors.push('That name belongs to a catalogue material. Choose a different name.');
   else if (name !== editing && name in TABLES[cls]) errors.push('You already have a material with that name.');
   for (const f of FIELDS[cls]) {
     const v = m[f.key];

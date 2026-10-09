@@ -175,7 +175,7 @@ function sources(i, r, th) {
   }
   if (i.S_wing > 0 && i.V_flight > 10) {
     // Fink-type clean-airframe trailing-edge noise (empirical; formula in knots and feet, overhead)
-    const cbar = i.S_wing / i.b_wing, dl = 0.37 * cbar * ((i.V_flight * cbar) / a.nu) ** -0.2, L = 50 * Math.log10(i.V_flight / 51.444) + 10 * Math.log10((dl * i.b_wing) / (r * r)) + 101.3 + i.K_af;
+    const cbar = i.S_wing / i.b_wing, dl = 0.37 * cbar * ((i.V_flight * cbar) / a.nu) ** -0.2, L = 50 * Math.log10(i.V_flight / 51.444) + 10 * Math.log10((dl * i.b_wing) / (r * r)) + 101.5 + i.K_af;
     out.push({ name: 'Airframe trailing edge (empirical)', L: hump((0.1 * i.V_flight) / dl).map((w) => L + 10 * Math.log10(w)) });
   }
   return { out, a };
@@ -197,7 +197,7 @@ const SRC_INPUTS = [...ROTOR,
   { key: 'b_wing', label: 'Wing span', unit: 'm', default: 10, min: 0.1, group: 'Airframe' },
   { key: 'V_flight', label: 'Flight speed', unit: 'm/s', default: 60, min: 0, max: 300, group: 'Airframe' },
   { key: 'K_bb', label: 'Rotor broadband calibration offset', unit: 'dB', default: 0, min: -15, max: 15, group: 'Calibration' },
-  { key: 'K_af', label: 'Airframe noise calibration offset', unit: 'dB', default: 0, min: -15, max: 15, group: 'Calibration', help: '0 = aerodynamically clean; about +8 dB for conventional transports with gear and flaps retracted' },
+  { key: 'K_af', label: 'Airframe noise calibration offset', unit: 'dB', default: 0, min: -15, max: 15, group: 'Calibration', help: '0 = aerodynamically clean sailplane (Fink, FAA-RD-77-29, eq. 6: OASPL = 50·log(V/100 kt) + 10·log(δ·b/h²) + 101.5 dB). The same report puts jet aircraft in the clean configuration roughly 6 dB above that line and conventional low-speed aircraft 8 dB above it' },
   ...SITE,
   { key: 'absorb', label: 'Apply atmospheric absorption', type: 'bool', default: true, group: 'Atmosphere' },
   { key: 'ground', label: 'Add 3 dB for ground reflection', type: 'bool', default: true, group: 'Atmosphere', help: 'Energy doubling at a microphone near hard ground' },
@@ -240,7 +240,7 @@ const spectrum = {
       warnings,
       models: ['Harmonic rotor noise (see the tonal analysis)', 'Schlegel–King–Mull rotor vortex-noise correlation (empirical)', 'Lighthill U⁸ jet mixing noise with convective-amplification directivity and a relative-velocity flight effect', 'Fink-type trailing-edge airframe noise scaling, V⁵ (empirical)', 'ISO 9613-1 atmospheric absorption; A-weighting; one-third-octave energy summation'],
       assumptions: ['Sources are uncorrelated and add on an energy basis', 'Generic single-hump broadband spectra; tones assigned to the band containing them', 'Homogeneous still atmosphere: no refraction by wind or temperature gradients, no shielding', 'Fan, core, combustion and turbine noise of turbofans, tail-rotor noise and blade–vortex interaction are not modelled, so turbofan and helicopter totals are lower bounds',
-        'Unverified constants (illustrative until calibrated): jet acoustic efficiency 10⁻⁴·M⁵, flight-effect exponent 5, jet peak Strouhal number 0.25, and the clean-airframe constant 101.3 dB (one opened reference prints a form equivalent to 107.5 dB for jet aircraft, 6.2 dB higher). The class estimate of jet velocity 1000/(1 + BPR)^0.6 m/s is a rough default',
+        'Unverified constants (illustrative until calibrated): jet acoustic efficiency 10⁻⁴·M⁵, flight-effect exponent 5, jet peak Strouhal number 0.25, The clean-airframe constant 101.5 dB is Fink\'s value for aerodynamically clean sailplanes (FAA-RD-77-29, eq. 6); jet aircraft average about 6 dB higher (the 107.5 dB form printed in NASA RP-1258) and conventional low-speed aircraft 8 dB higher — set the airframe offset accordingly. The class estimate of jet velocity 1000/(1 + BPR)^0.6 m/s is a rough default',
         'Sourced constants: rotor vortex-noise law and Strouhal number 0.28 (Schlegel, King & Mull as reproduced in JPL TR 32-1462), jet convection factor 0.62 and airframe peak Strouhal number 0.1 (NASA RP-1258), +8 dB from clean to conventional airframes (NASA TM-83199)'],
     };
   },

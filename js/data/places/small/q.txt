@@ -1,0 +1,321 @@
+#AF|Badghis
+Qala i Naw||34987|63129|887|9
+#AF|Balkh
+Qarchī Gak|Qarchi Gak|37040|66789|306|9
+#AF|Herat
+Qarah Bāgh|Qarah Bagh|34940|61776|952|12
+#AF|Sar-e Pol Province
+Qal‘ah-ye Shahr|Qal'ah-ye Shahr|35547|65568|2136|8
+#AF|Zabul
+Qalāt|Qalat|32106|66908|1568|12
+#AO|Bengo
+Quixico||-7986|14420|827|15
+Quicunzo||-8182|14451|685|14
+Quicabo||-8309|13832|215|11
+Quibaxe||-8501|14586|867|8
+Quiage||-8507|14950|830|6
+#AO|Kwanza Sul
+Quilenda||-11467|14133|249|14
+#AR|Santiago del Estero
+Quimilí|Quimili|-27646|-62417|139|11
+#AU|New South Wales
+Queanbeyan||-35355|149232|581|6
+#AU|Western Australia
+Quinns Rocks||-31674|115704|45|8
+Queens Park||-32003|115946|13|7
+#AZ|Baki
+Qobustan||40082|49412|-16|13
+#AZ|Qabala District
+Qabala||40981|47846|783|12
+#AZ|Qax
+Qax||41418|46920|590|12
+#AZ|Qubadlı
+Qubadlı|Qubadli|39344|46582|482|7
+#AZ|Sabirabad District
+Qalaqayın|Qalaqayin|39984|48484|-13|8
+#BE|Wallonia
+Quévy-le-Petit|Quevy-le-Petit|50369|3936|98|8
+Quiévrain|Quievrain|50407|3684|35|7
+#BR|Alagoas
+Quebrangulo||-9319|-36471|370|11
+#BR|Bahia
+Quixabeira||-11412|-40128|430|9
+#BR|Paraná
+Querência do Norte|Querencia do Norte|-23084|-53484|320|12
+Quatiguá|Quatigua|-23567|-49914|676|8
+Quinta do Sol||-23852|-52130|389|5
+#BR|Pará
+Quatipuru||-897|-47005|13|14
+#BR|Pernambuco
+Quixabá|Quixaba|-7720|-37848|554|7
+#BR|Piauí
+Queimada Nova||-8579|-41419|426|9
+#BR|Rio de Janeiro
+Quatis||-22407|-44258|403|14
+#BR|Santa Catarina
+Quilombo||-26726|-52721|417|11
+#BR|São Paulo
+Quatá|Quata|-22247|-50698|553|13
+Queluz||-22539|-44774|430|9
+Quintana||-22072|-50307|597|7
+#CA|Alberta
+Queen Mary Park||53555|-113517|663|7
+#CA|British Columbia
+Queensborough||49183|-122933|5|11
+Quesnel||52978|-122493|479|10
+Qualicum Beach||49348|-124442|60|9
+Quilchena||49243|-123151|40|6
+#CA|Nova Scotia
+Quinpool District||44643|-63598|46|7
+#CA|Ontario
+Queenswood Heights||45471|-75506|86|12
+#CL|O'Higgins Region
+Quinta de Tilcoco||-34355|-70965|285|8
+#CL|Ñuble
+Quirihue||-36280|-72541|262|8
+#CN|Chongqing
+Qukou||31138|108479|196|14
+Qingsheng||29318|105511|333|14
+Quchi||31036|109749|190|13
+Qunli||30301|105838|296|11
+Qushui||30683|108021|295|10
+Qingjiang||29283|105473|310|10
+Qinglong||30167|107785|565|9
+Qingliu||29591|105327|336|9
+Qinglong||29778|106137|275|9
+Qiaozi||29412|108391|613|9
+Qixing||30680|107482|474|8
+Qiaotou||30109|108258|1072|8
+Qingyuan||28950|107357|724|7
+Qilong||29355|107221|760|6
+Qingquan||28799|108386|303|5
+#CN|Fujian
+Qidu||26765|119547|14|8
+#CN|Gansu
+Qishan||34233|105395|1446|15
+Qinting||34733|106354|1648|13
+Qiaotou||34139|105032|1545|13
+Qugaona||33433|104627|1479|12
+Qiushan||34355|104898|1975|10
+Qihama||33381|101986|3460|6
+#CN|Guangdong
+Qianhai Bay Area||22536|113887||14
+Qiaotou Community||22687|113805|12|6
+#CN|Guangxi
+Quzhang||21850|109567|29|12
+#CN|Hunan
+Qiancheng||27185|109765|214|9
+#CN|Tianjin
+Qingguang||39199|117033|8|7
+#CN|Xinjiang
+Qia'erbage||38342|77305|1225|13
+Qongkur||48122|87113|674|12
+Qulukay||43956|81662|849|10
+Qiongkulecun||38093|85538|1268|5
+#CN|Yunnan
+Qingshui||24939|98460|1694|15
+#CR|Puntarenas Province
+Quepos||9431|-84162|7|8
+#CU|Mayabeque
+Quivicán|Quivican|22823|-82356|51|13
+#CU|Villa Clara Province
+Quemado de Güines|Quemado de Gueines|22788|-80253|85|13
+#DE|Lower Saxony
+Quakenbrück|Quakenbrueck|52674|7949|25|13
+#DE|Saarland
+Quierschied||49317|7050|256|15
+#DE|Saxony-Anhalt
+Querfurt||51381|11600|167|9
+#ES|Andalusia
+Quesada||37843|-3066|656|6
+#ES|Castille-La Mancha
+Quintanar de la Orden||39594|-3042|692|13
+Quintanar del Rey||39333|-1933|723|8
+#ES|Extremadura
+Quintana de la Serena||38746|-5672|411|5
+#FR|Bourgogne-Franche-Comté
+Quetigny||47317|5117|222|10
+#FR|Brittany
+Quimperlé|Quimperle|47872|-3550|39|12
+Quéven|Queven|47789|-3416|51|9
+Questembert||47661|-2453|102|6
+Quiberon||47484|-3120|19|5
+#FR|Hauts-de-France
+Quesnoy-sur-Deûle|Quesnoy-sur-Deule|50714|3000|21|6
+Quiévrechain|Quievrechain|50392|3668|36|6
+#FR|Normandy
+Querqueville||49663|-1691|5|6
+#FR|Provence-Alpes-Côte d'Azur
+Quartier du Port||43700|7285|66|14
+#FR|Île-de-France
+Quincy-sous-Sénart|Quincy-sous-Senart|48673|2534|85|8
+Quincy-Voisins||48901|2876|130|5
+#GB|England
+Queen's Park||51529|-209|35|13
+Queensbury||53767|-1849|347|9
+Quorndon||52745|-1173|51|5
+#GB|Scotland
+Queensferry||55991|-3398|9|9
+#GL|Kujalleq
+Qaqortoq||60718|-46036||3
+#GW|Biombo
+Quinhámel|Quinhamel|11887|-15856|21|7
+#GW|Tombali
+Quebo||11333|-14933|22|7
+#HK|Eastern District
+Quarry Bay||22288|114214|92|11
+#IL|Central District
+Qiryat ‘Eqron|Qiryat 'Eqron|31861|34823|58|11
+#IL|Jerusalem
+Qiryat Ye‘arim|Qiryat Ye'arim|31803|35102|754|6
+#IN|Goa
+Quepem||15213|74077|20|15
+Queula||15390|73986|37|7
+#IN|Jammu and Kashmir
+Quimoh||33722|75086|1601|13
+Qāzigund|Qazigund|33638|75143|1666|10
+#IR|Fars
+Qāderābād|Qaderabad|30278|53266|1903|15
+Qoţbābād|Qotbabad|28641|53638|1033|7
+#IR|Golestan
+Qoroq||36890|54713|136|7
+#IR|Hamadan Province
+Qorveh-ye Dargazīn|Qorveh-ye Dargazin|35310|49100|1784|10
+#IR|Isfahan
+Qahjāvarestān|Qahjavarestan|32702|51839|1555|10
+#IR|Māzandarān
+Qoroq||36591|53055|19|11
+#IR|Qom Province
+Qanavāt|Qanavat|34613|51026|890|12
+#IR|Razavi Khorasan
+Qorqī-ye Soflá|Qorqi-ye Sofla|36393|59673|981|12
+#IR|Tehran
+Qeshlāq-e Jītū|Qeshlaq-e Jitu|35448|51607|979|8
+Qeshlāq-e Pā’īn|Qeshlaq-e Pa'in|35397|51579|942|6
+Qal‘eh Now Khāleseh|Qal'eh Now Khaleseh|35513|51515|1002|5
+Qeshlāq|Qeshlaq|35643|50978|1142|5
+#IT|Campania
+Quadrivio||40625|15104|138|6
+#IT|Lombardy
+Quinzano d'Oglio||45314|10008|65|6
+#IT|Piedmont
+Quadrilatero||45076|7672|257|15
+#IT|Sardinia
+Quartucciu||39253|9178|16|11
+#IT|Tuscany
+Quarrata||43848|10979|48|10
+#IT|Veneto
+Quinto di Treviso||45644|12165|17|7
+Quarto d'Altino||45579|12373|4|6
+#JO|Irbid
+Qumaym||32572|35735|383|5
+#KZ|Karaganda
+Qarqaraly||49412|75472|849|8
+#KZ|Kostanay
+Qashar||53368|62868|197|10
+Qarabalyq||53750|62058|190|10
+Qusmuryn||52451|64617|109|8
+#KZ|Turkistan
+Qabilanbek||41494|69276|480|6
+#KZ|Ulytau Region
+Qarazhal||48011|70801|469|14
+#LB|South Governorate
+Qâna|Qana|33209|35299|315|10
+#LY|Al Jabal al Akhdar
+Qaryat ‘Umar al Mukhtār|Qaryat 'Umar al Mukhtar|32630|21677|761|8
+Qandūlah|Qandulah|32538|21575|616|8
+Qaşr Lībiyā|Qasr Libiya|32633|21417|436|6
+#LY|Al Marj
+Qaryat al Bayyāḑah|Qaryat al Bayyadah|32565|21254|370|6
+#LY|Banghazi
+Qamīnis|Qaminis|31658|20017|20|9
+#LY|Wadi ash Shati'
+Qīrah|Qirah|27586|14354|381|7
+#MT|Il-Qrendi
+Qrendi||35834|14458|110|3
+#MU|Flacq
+Quatre Cocos||-20202|57774|8|6
+#MU|Moka
+Quartier Militaire||-20248|57597|418|6
+#MX|Baja California
+Quinta del Cedro||32438|-117066|206|6
+#MX|Colima
+Quesería|Queseria|19386|-103574|1226|9
+#MX|Guerrero
+Quechultenango||17415|-99242|841|6
+#MX|Michoacán
+Quiroga||19665|-101523|2083|15
+Queréndaro|Querendaro|19810|-100885|1892|9
+#MX|México
+Quinto Barrio (Ejido Cahuacán)|Quinto Barrio (Ejido Cahuacan)|19622|-99418|2798|6
+#MX|Puebla
+Quecholac||18955|-97659|2173|10
+#MX|Sinaloa
+Quilá|Quila|24423|-107221|42|6
+#MX|Tabasco
+Quintín Arauz|Quintin Arauz|18367|-93214|3|5
+#MZ|Inhambane Province
+Quissico||-24720|34743|119|12
+#NI|Nueva Segovia Department
+Quilalí|Quilali|13567|-86026|412|14
+#NZ|Otago
+Queenstown||-45030|168663|328|10
+#PE|La Libertad
+Quiruvilca||-7967|-78200|4130|9
+#PE|Lima region
+Quilmaná|Quilmana|-12949|-76381|162|6
+#PH|Cagayan Valley
+Quezon||17313|121607|116|9
+Quezon||16500|121267|270|5
+#PH|Calabarzon
+Quisao||14435|121334|10|11
+Quilo-quilo||13864|121221|158|7
+Quezon||14006|122184|8|7
+#PH|Mimaropa
+Quezon||9241|118031|30|8
+#PH|Western Visayas
+Quezon||10436|123260|529|12
+#PR|Quebradillas
+Quebradillas||18474|-66939|112|6
+#PS|West Bank
+Qaffīn|Qaffin|32433|35083|126|8
+Qarne Shomeron||32167|35083|331|8
+Qaţanah|Qatanah|31834|35119|725|7
+Qabalān|Qabalan|32102|35289|620|7
+#PT|Aveiro
+Quinta do Gato||40630|-8621|35|8
+#PT|Lisbon
+Queijas||38719|-9263|94|9
+#PT|Setúbal
+Quinta do Anjo||38568|-8942|94|9
+Quinta de Santo António|Quinta de Santo Antonio|38653|-9235|9|5
+#PY|Paraguarí
+Quiindy||-25976|-57234|195|5
+#SA|Al-Qassim Region
+Qibah||27403|44328|516|12
+#SY|Aleppo
+Qabbāsīn|Qabbasin|36308|38156|325|12
+#SY|Suwayda
+Qanawāt|Qanawat|32754|36614|1235|8
+#US|California
+Quartz Hill||34645|-118218|761|11
+Quail Hill||33651|-117776|120|8
+#US|Florida
+Quincy||30587|-84583|63|8
+#US|Pennsylvania
+Quakertown||40442|-75342|152|9
+Queen Village||39934|-75149|6|6
+#US|Washington
+Quincy||47234|-119853|397|7
+#UZ|Bukhara
+Qorovulbozor||39501|64794|251|9
+#UZ|Navoiy Region
+Qiziltepa||40033|64850|265|12
+#VN|Hanoi
+Quỳnh Lôi|Quynh Loi|20983|105867|8|15
+#VN|Hà Tĩnh Province
+Quang Lộc|Quang Loc|18404|105769|12|6
+#VN|Nghệ An Province
+Quán Hành|Quan Hanh|18779|105646|11|5
+#ZA|Eastern Cape
+Qumbu||-31163|28871|992|6

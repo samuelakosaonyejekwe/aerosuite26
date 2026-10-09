@@ -2,9 +2,9 @@
 // single-file standalone build opened from disk). Supports progress reporting and cancellation.
 
 import { execute } from './jobs.js';
-import { customMaterials } from './matlib.js';
+import { customMaterials, catalogueTables } from './matlib.js';
 
-const withMaterials = (job) => (job.materials ? job : { ...job, materials: customMaterials() });
+const withMaterials = (job) => (job.materials ? job : { ...job, materials: { ...customMaterials(), __catalogue: catalogueTables() } });
 
 let worker = null, seq = 0, workerBroken = typeof Worker === 'undefined' || globalThis.__AEROSUITE_STANDALONE__ === true;
 const pending = new Map();

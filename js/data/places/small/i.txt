@@ -1,0 +1,967 @@
+#AF|Kunduz
+Imām Şāḩib|Imam Sahib|37189|68936|358|10
+#AI|Island Harbour
+Island Harbour||18256|-63010|11|0
+#AL|Durrës County
+Ishëm|Ishem|41545|19600|27|5
+#AR|Corrientes
+Itatí|Itati|-27269|-58242|68|8
+#AR|Formosa
+Ingeniero Guillermo N. Juárez|Ingeniero Guillermo N. Juarez|-23899|-61855|156|10
+Ibarreta||-25214|-59858|107|9
+#AR|La Pampa
+Intendente Alvear||-35235|-63592|129|8
+#AR|Rio Negro
+Ingeniero Jacobacci||-41329|-69550|872|8
+Ingeniero Luis A. Huergo||-39071|-67238|214|6
+#AT|Tyrol
+Imst||47245|10740|823|11
+#AU|New South Wales
+Ingleburn||-34000|150867|36|15
+Inverell||-29774|151112|588|12
+Illawong||-34000|151033|100|7
+#AU|Queensland
+Inala||-27597|152974|40|15
+Indooroopilly||-27503|152975|26|12
+#AU|South Australia
+Ingle Farm||-34833|138633|62|9
+#AU|Victoria
+Ivanhoe||-37769|145043|56|12
+Irymple||-34235|142171|50|8
+Inverloch||-38627|145723|21|5
+#AU|Western Australia
+Innaloo||-31893|115795|8|8
+Inglewood||-31917|115880|27|6
+Iluka||-31736|115731|20|5
+#BA|Federation of B&H
+Ilijaš|Ilijas|43951|18271|463|6
+#BE|Flanders
+Ichtegem||51096|3015|16|14
+Ingelmunster||50921|3256|15|11
+Itegem||51103|4729|9|6
+#BE|Wallonia
+Ittre||50644|4265|111|6
+Ivoz-Ramet||50588|5466|79|6
+#BG|Razgrad
+Isperih||43717|26833|279|10
+#BG|Sofia
+Ihtiman||42438|23816|651|14
+#BI|Bujumbura Rural
+Isale||-3349|29484|1728|8
+#BO|La Paz Department
+Ixiamas||-13768|-68128|372|6
+#BR|Alagoas
+Ibateguara||-8972|-35939|440|14
+#BR|Amapá
+Itaubal||712|-50800|6|6
+#BR|Amazonas
+Itapiranga||-2749|-58022|25|9
+Itamarati||-6425|-68253|111|8
+#BR|Bahia
+Ibipitanga||-12882|-42486|503|15
+Ibirataia||-14067|-39641|151|15
+Itatim||-12712|-39698|240|15
+Itagibá|Itagiba|-14284|-39843|192|14
+Ipecaetá|Ipecaeta|-12316|-39307|202|14
+Igrapiúna|Igrapiuna|-13826|-39142|27|13
+Itiruçu|Itirucu|-13532|-40150|824|13
+Itaguaçu da Bahia|Itaguacu da Bahia|-11013|-42399|452|12
+Itagi||-14163|-40006|220|12
+Iuiu||-14414|-43554|504|11
+Itapitanga||-14423|-39565|143|10
+Ipupiara||-11820|-42614|730|10
+Itapebi||-15969|-39533|191|9
+Ibiassucê|Ibiassuce|-14259|-42257|557|9
+Ibirapuã|Ibirapua|-17688|-40109|169|9
+Itapé|Itape|-14898|-39421|91|9
+Iramaia||-13286|-40951|611|8
+Itaquara||-13451|-39941|575|8
+Itamari||-13778|-39684|251|7
+Itagimirim||-16088|-39616|172|6
+Ichu||-11749|-39192|275|6
+Irajuba||-13251|-40084|548|6
+Itaju do Colônia|Itaju do Colonia|-15142|-39724|166|6
+Itanagra||-12263|-38042|53|6
+#BR|Ceará
+Iracema||-5812|-38306|131|14
+Ibaretama||-4821|-38823|157|13
+Ibicuitinga||-4974|-38639|193|13
+Ipaumirim||-6790|-38719|275|12
+Ipaporanga||-4900|-40759|300|12
+Itaiçaba|Itaicaba|-4674|-37822|10|8
+#BR|Espírito Santo
+Irupi||-20345|-41641|747|14
+Itaguaçu|Itaguacu|-19802|-40856|134|14
+Iconha||-20793|-40811|29|12
+Ibiraçu|Ibiracu|-19832|-40370|58|12
+Itarana||-19874|-40875|193|11
+Ibitirama||-20541|-41667|770|10
+#BR|Goiás
+Iaciara||-14096|-46632|579|14
+Itapirapuã|Itapirapua|-15823|-50613|351|8
+Itauçu|Itaucu|-16201|-49608|844|8
+Itarumã|Itaruma|-18769|-51348|487|6
+Inaciolândia|Inaciolandia|-18488|-49987|453|6
+#BR|Maranhão
+Igarapé do Meio|Igarape do Meio|-3639|-45189|16|14
+Igarapé Grande|Igarape Grande|-4663|-44856|109|10
+#BR|Mato Grosso
+Itiquira||-17209|-54150|507|13
+Ipiranga do Norte||-12241|-56152|403|8
+Itaúba|Itauba|-11008|-55242|398|5
+#BR|Mato Grosso do Sul
+Iguatemi||-23680|-54561|342|14
+Inocência|Inocencia|-19726|-51930|501|8
+#BR|Minas Gerais
+Itamonte||-22284|-44870|907|15
+Itaú de Minas|Itau de Minas|-20739|-46752|717|14
+Itaguara||-20392|-44487|842|14
+Itinga||-16613|-41765|268|14
+Itapagipe||-19909|-49381|501|14
+Itatiaiuçu|Itatiaiucu|-20197|-44421|871|13
+Ilicínea|Ilicinea|-20936|-45833|853|13
+Itapeva||-22768|-46221|946|13
+Iapu||-19437|-42218|420|12
+Itanhomi||-19172|-41865|253|11
+Ibiraci||-20462|-47122|1067|11
+Igaratinga||-19955|-44709|808|11
+Itamogi||-21078|-47048|1010|11
+Icaraí de Minas|Icarai de Minas|-16218|-44903|611|11
+Itaipé|Itaipe|-17402|-41669|670|10
+Itabirinha||-18566|-41233|346|10
+Ipuiúna|Ipuiuna|-22099|-46190|1150|9
+Inimutaba||-18729|-44361|604|7
+Inconfidentes||-22317|-46328|867|7
+Iraí de Minas|Irai de Minas|-18984|-47461|972|7
+Ijaci||-21170|-44925|830|7
+Imbé de Minas|Imbe de Minas|-19598|-41970|611|7
+Iguatama||-20174|-45711|663|7
+Itumirim||-21317|-44871|869|7
+Indaiabira||-15492|-42197|849|6
+Ibiaí|Ibiai|-16861|-44914|484|6
+Inhaúma|Inhauma|-19491|-44390|748|6
+Indianópolis|Indianopolis|-19039|-47917|826|6
+Itueta||-19396|-41226|267|6
+Itaverava||-20678|-43610|742|6
+Ibertioga||-21430|-43963|1030|5
+Ibiracatu||-15664|-44164|765|5
+#BR|Paraná
+Imbaú|Imbau|-24445|-50761|904|14
+Ipiranga||-25024|-50584|795|14
+Ivaí|Ivai|-25011|-50859|779|14
+Itapejara d'Oeste||-25966|-52816|525|12
+Itaipulândia|Itaipulandia|-25137|-54302|263|11
+Iretama||-24424|-52106|571|10
+Inácio Martins|Inacio Martins|-25571|-51079|1213|10
+Icaraíma|Icaraima|-23396|-53614|334|9
+Ivaté|Ivate|-23409|-53369|408|7
+Ibema||-25119|-53007|628|6
+Itambé|Itambe|-23661|-51990|411|6
+Itambaracá|Itambaraca|-23018|-50406|403|6
+Iguaraçu|Iguaracu|-23197|-51827|567|5
+#BR|Paraíba
+Imaculada||-7390|-37509|763|12
+Itatuba||-7375|-35628|115|10
+Igaracy||-7181|-38149|310|6
+Ibiara||-7501|-38405|346|6
+#BR|Pará
+Inhangapi||-1430|-47920|5|12
+#BR|Pernambuco
+Itapetim||-7378|-37190|645|14
+Iguaraci||-7835|-37515|573|11
+Ibirajuba||-8581|-36179|613|7
+#BR|Piauí
+Itainópolis|Itainopolis|-7447|-41478|195|12
+Itaueira||-7603|-43026|264|11
+Ipiranga do Piauí|Ipiranga do Piaui|-6828|-41741|424|9
+Ilha Grande||-2852|-41817|1|9
+Isaías Coelho|Isaias Coelho|-7738|-41676|239|8
+#BR|Rio Grande do Norte
+Ipanguaçu|Ipanguacu|-5508|-36859|40|14
+Ielmo Marinho||-5824|-35553|67|12
+Itajá|Itaja|-5644|-36871|47|7
+Itaú|Itau|-5840|-37993|146|5
+#BR|Rio Grande do Sul
+Iraí|Irai|-27194|-53251|214|7
+Ibiraiaras||-28370|-51636|782|7
+Independência|Independencia|-27833|-54188|340|6
+Itaara||-29610|-53765|432|6
+Ipê|Ipe|-28820|-51279|756|5
+#BR|Rio de Janeiro
+Italva||-21421|-41691|39|15
+#BR|Rondônia
+Itapuã do Oeste|Itapua do Oeste|-9186|-63185|87|9
+#BR|Roraima
+Iracema||2182|-61041|78|10
+#BR|Santa Catarina
+Itacorubi||-27583|-48495|10|12
+Imaruí|Imarui|-28341|-48820|26|12
+Irineópolis|Irineopolis|-26239|-50800|758|10
+Irani||-27025|-51902|1049|10
+Ipumirim||-27077|-52136|566|8
+Ipuaçu|Ipuacu|-26631|-52455|685|8
+Itá|Ita|-27278|-52327|512|7
+Imbuia||-27493|-49424|721|6
+#BR|Sergipe
+Ilha das Flores||-10436|-36540|4|8
+#BR|São Paulo
+Ipuã|Ipua|-20438|-48012|551|14
+Itaporanga||-23708|-49490|580|14
+Ipaussu||-23057|-49626|575|14
+Itapuí|Itapui|-22233|-48719|462|14
+Ilha Comprida||-24741|-47540|7|13
+Ibirá|Ibira|-21080|-49241|453|12
+Igaratá|Igarata|-23204|-46156|744|11
+Iacanga||-21890|-49025|437|10
+Itobi||-21737|-46975|686|8
+Iaras||-22871|-49163|635|8
+Icém|Icem|-20342|-49195|449|8
+Iepê|Iepe|-22661|-51076|418|8
+Irapuru||-21571|-51345|439|7
+Irapuã|Irapua|-21279|-49409|436|7
+Ipeúna|Ipeuna|-22436|-47719|636|7
+Ipiguá|Ipigua|-20657|-49387|513|7
+Ibirarema||-22817|-50072|482|6
+Iacri||-21858|-50689|502|6
+Itirapuã|Itirapua|-20641|-47219|868|6
+Indiana||-22174|-51252|483|5
+#BR|Tocantins
+Itacajá|Itacaja|-8392|-47768|198|7
+Itaguatins||-5769|-47483|126|5
+#BY|Grodnenskaya
+Iwye||53932|25776|144|7
+#CA|Alberta
+Innisfail||52027|-113951|946|8
+Inglewood||53562|-113536|667|6
+#CA|British Columbia
+Inlet Centre||49276|-122845|9|7
+Ironwood||49126|-123095|2|6
+#CA|New Brunswick
+Île-de-Lamèque|Ile-de-Lameque|47847|-64596|9|6
+#CA|Nova Scotia
+Imperoyal||44636|-63527|15|5
+#CA|Nunavut
+Iqaluit||63747|-68517|14|7
+#CA|Ontario
+Ingersoll||43033|-80883|293|14
+Ionview||43737|-79273|168|14
+Inner Harbour||44238|-76484|86|8
+Idlewood||43450|-80428|335|6
+#CD|Kasai
+Isamba||-4033|21983|507|9
+#CH|Bern
+Ittigen||46974|7483|500|12
+Interlaken||46684|7866|570|5
+#CH|Grisons
+Igis||46945|9572|563|7
+#CH|Schwyz
+Ingenbohl||46999|8615|438|8
+#CI|Bas-Sassandra District
+Ipouagui||5519|-6836|185|10
+Inahiri||5140|-6214|26|6
+#CI|Lagunes District
+Irobo||5294|-4796|144|6
+Ira||5354|-4659|74|6
+#CI|Sassandra-Marahoue
+Iboguhé|Iboguhe|6548|-6844|248|7
+#CL|Santiago Metropolitan
+Isla de Maipo||-33747|-70898|340|13
+#CO|Chocó
+Istmina||5160|-76686|79|14
+#CO|Guainía Department
+Inírida|Inirida|3865|-67924|98|7
+#CO|Huila Department
+Íquira|Iquira|2649|-75635|1106|9
+#CO|Tolima Department
+Icononzo||4177|-74533|1308|11
+#CV|Mosteiros
+Igreja||15033|-24333|193|4
+#CZ|South Moravian
+Ivančice|Ivancice|49101|16378|210|10
+#DE|Baden-Wurttemberg
+Isny||47693|10039|707|14
+Ilsfeld||49055|9246|243|8
+Ilvesheim||49474|8567|100|8
+Illingen||48956|8925|231|7
+Ilshofen||49170|9918|443|6
+Ispringen||48917|8667|268|6
+Immenstaad am Bodensee||47667|9367|408|6
+Immendingen||47933|8733|660|6
+Ingelfingen||49300|9653|213|6
+Ihringen||48043|7648|198|6
+Igersheim||49494|9817|220|6
+#DE|Bavaria
+Ismaning||48233|11683|488|15
+Immenstadt im Allgäu|Immenstadt im Allgau|47560|10214|733|14
+Ichenhausen||48371|10307|492|8
+Isen||48212|12057|486|5
+#DE|Hesse
+Immenhausen||51428|9480|252|7
+Ihringshausen||51352|9527|182|6
+#DE|Lower Saxony
+Ilsede||52263|10199|74|12
+Isenbüttel|Isenbuttel|52435|10579|62|6
+#DE|North Rhine-Westphalia
+Isselburg||51832|6464|20|11
+Inden||50843|6360|107|8
+Issum||51533|6433|25|6
+#DE|Saxony-Anhalt
+Ilsenburg||51867|10678|246|6
+#DK|Central Jutland
+Ikast||56139|9158|81|15
+#DO|Puerto Plata
+Imbert||19754|-70829|121|8
+#DZ|Illizi
+Illizi||26483|8467|556|13
+#DZ|In Guezzam
+In Guezzam||19574|5768|399|7
+#ES|Andalusia
+Illora||37288|-3881|764|10
+Iznalloz||37393|-3528|818|7
+#ES|Castille and León
+Iscar||41361|-4533|755|7
+#ES|Castille-La Mancha
+Infantes||38737|-3012|885|6
+#ES|Galicia
+Illa de Arousa||42564|-8873|0|5
+#ET|Oromiya
+Ījajī|Ijaji|9000|37317|1716|13
+#FI|Lapland
+Inari||68906|27029|122|7
+#FI|North Ostrobothnia
+Ii||65317|25373|12|10
+#FI|Paijat-Hame
+Iitti||60895|26339|80|6
+#FI|Pirkanmaa
+Ikaalinen||61770|23066|101|7
+#FI|South Ostrobothnia
+Ilmajoki||62733|22567|41|12
+#FI|Southwest Finland
+I kaupunginosa||60452|22283|30|8
+#FI|Uusimaa
+Ingå|Inga|60046|24005|1|5
+#FR|Auvergne-Rhône-Alpes
+Irigny||45673|4822|238|9
+#FR|Centre-Val de Loire
+Issoudun||46948|1994|146|14
+Ingré|Ingre|47920|1828|119|8
+#FR|Hauts-de-France
+Isbergues||50623|2459|20|10
+#FR|New Aquitaine
+Isle||45805|1226|278|8
+#FR|Normandy
+Ifs||49140|-349|32|10
+#FR|Occitanie
+Ille-sur-Têt|Ille-sur-Tet|42671|2621|156|5
+#FR|Île-de-France
+Igny||48744|2224|93|10
+Itteville||48515|2344|73|6
+#GB|England
+Ilkley||53924|-1823|102|15
+Ingleby Greenhow||54450|-1107|128|15
+Ickenham||51564|-444|44|14
+Ivybridge||50390|-3919|63|12
+Ince-in-Makerfield||53533|-2617|41|11
+Ilfracombe||51209|-4113|14|11
+Immingham||53614|-216|6|11
+Iver Heath||51536|-518|53|8
+Irthlingborough||52327|-611|61|8
+Iver||51500|-500|25|7
+Ilminster||50927|-2910|47|6
+Ibstock||52686|-1400|134|6
+Ingatestone||51670|384|64|6
+#GB|Scotland
+Inverurie||57284|-2377|63|15
+Isle of Bute||55837|-5056|8|7
+Inverkeithing||56033|-3396|20|5
+Isle of Arran||55581|-5212|287|5
+#GE|Abkhazia
+Ipnari||43228|40333|44|5
+#GL|Avannaata
+Ilulissat||69220|-51099|11|4
+#GR|Central Greece
+Itéa|Itea|38432|22424|7|6
+#GR|Crete
+Ierápetra|Ierapetra|35012|25742|9|12
+#GR|Epirus
+Igoumenítsa|Igoumenitsa|39503|20267|29|9
+#GR|South Aegean
+Ialysós|Ialysos|36414|28155|16|13
+#GT|Chiquimula
+Ipala||14620|-89619|822|5
+#GU|Inarajan
+Inarajan Village||13274|144748|3|3
+#GW|Cacheu
+Ingoré|Ingore|12405|-15797|27|9
+#HK|Eastern District
+Island Resort||22267|114251||9
+#HK|Yau Tsim Mong District
+Island Harbourview||22318|114157||6
+#HN|Intibucá Department
+Intibucá|Intibuca|14312|-88176|1688|14
+#HR|Vukovar-Srijem
+Ivankovo||45289|18684|86|5
+#HR|Zagreb County
+Ivanić-Grad|Ivanic-Grad|45708|16397|103|8
+#HU|Budapest
+Istvánmező|Istvanmezo|47505|19096|103|12
+#HU|Bács-Kiskun
+Izsák|Izsak|46805|19352|101|6
+#HU|Pest County
+Isaszeg||47530|19402|182|11
+#HU|Szabolcs-Szatmár-Bereg
+Ibrány|Ibrany|48123|21710|100|7
+#IL|Haifa
+‘Isfiyā|'Isfiya|32718|35065|506|13
+#IL|Northern District
+Iksāl|Iksal|32682|35324|160|15
+I‘billīn|I'billin|32822|35193|148|13
+‘Ilūṭ|'Ilut|32718|35260|273|8
+#IN|Assam
+Irongmara||24689|92742|43|8
+#IN|Delhi
+Ibrāhīmpur|Ibrahimpur|28776|77178|212|11
+#IN|Gujarat
+Ichchhapor||21193|72737|12|12
+#IN|Haryana
+Ismāilābād|Ismailabad|30117|76669|258|14
+Inda Chhoi||29640|75790|231|7
+#IN|Jharkhand
+Isri||23987|86029|284|10
+Irbā|Irba|23455|85440|615|5
+#IN|Kerala
+Irikkūr|Irikkur|11987|75550|19|14
+Iringappuram||10610|76053|10|12
+Idukki||9850|76967|610|11
+#IN|Madhya Pradesh
+Isāgarh|Isagarh|24839|77883|491|13
+Iklehra||23147|76390|459|9
+Iāwar|Iawar|23009|76501|496|8
+#IN|Maharashtra
+Īsāpur|Isapur|19884|79326|186|9
+#IN|Odisha
+Itāmāti|Itamati|20138|85152|78|10
+#IN|Rajasthan
+Islāmpur|Islampur|28150|75540|338|10
+Indargarh||25728|76190|252|7
+#IN|Tamil Nadu
+Iluppūr|Iluppur|10513|78624|146|14
+Ilampillai||11607|78007|275|12
+Ilanji||8960|77280|147|10
+Idigarai||11118|76969|427|9
+Iduvāy|Iduvay|11079|77285|335|8
+#IN|Telangana
+Ichora||19430|78453|449|12
+Ibrāhīmpatan|Ibrahimpatan|17196|78651|553|12
+Isnapuram||17542|78199|543|8
+#IN|Uttar Pradesh
+Ikauna||27531|81969|118|14
+Iglās|Iglas|27711|77940|183|14
+Itaunja||27083|80897|129|7
+#IR|Fars
+Īj|Ij|29021|54246|1467|6
+Īzad Khvāst|Izad Khvast|31520|52128|2187|6
+#IR|Isfahan
+Imanshahr||32474|51477|1618|15
+#IR|Māzandarān
+Īzad Shahr|Izad Shahr|36599|52127|-20|7
+#IS|Westfjords
+Ísafjörður|Isafjoerdur|66075|-23135|1|3
+#IT|Calabria
+Isola di Capo Rizzuto||38958|17092|90|11
+#IT|Lazio
+Isola del Liri||41687|13597|217|11
+Itri||41290|13530|170|8
+#IT|Lombardy
+Induno Olona||45846|8841|394|10
+Inverigo||45738|9218|346|8
+Inzago||45540|9483|137|8
+Inveruno||45514|8850|161|7
+Iseo||45659|10050|198|5
+#IT|Sardinia
+Ittiri||40592|8570|400|9
+#IT|Sicily
+Ispica||36786|14905|170|14
+Isola delle Femmine||38191|13247|6|7
+#IT|Veneto
+Isola della Scala||45269|11008|31|8
+Iesolo||45533|12645|3|8
+#JP|Aomori
+Itayanagi||40695|140455|18|13
+Inakadate||40631|140555|27|8
+#JP|Chiba
+Inba||35775|140202|25|14
+Ichinomiya||35372|140380|1|12
+#JP|Ehime
+Ikatagoshi||33502|132342|112|8
+#JP|Fukushima
+Inawashiro||37567|140117|532|14
+Izumizaki||37159|140297|301|6
+Iizakamachi||37833|140450|110|6
+#JP|Gunma
+Itakura||36223|139610|15|14
+#JP|Hokkaido
+Iwanai||42974|140509|6|13
+Ikeda||42921|143452|17|7
+Imagane||42423|140009|18|5
+#JP|Iwate
+Ichinohe||40220|141290|243|12
+Iwaizumi||39850|141800|111|9
+#JP|Kagoshima
+Isen||27676|128937|77|7
+#JP|Kochi
+Irino||33017|133000|7|10
+#JP|Kumamoto
+Iwashita||32653|130812|33|10
+#JP|Kyoto
+Ide||34800|135812|63|8
+#JP|Nagano
+Ikeda||36417|137883|594|10
+Iijima||35667|137933|639|9
+Ichiba||35550|137900|463|6
+#JP|Shizuoka
+Inatori||34776|139041|49|11
+#JP|Tochigi
+Ichikai||36543|140102|100|11
+#JP|Tokyo
+Iriya||35721|139787|10|6
+#JP|Tottori
+Iwai||35555|134363|24|11
+#JP|Wakayama
+Inami||33809|135221|6|8
+#JP|Yamanashi
+Ichikawadaimon||35567|138500|248|15
+Iitomi||35433|138433|227|11
+#KE|Garissa County
+Ijara||-1595|40514|63|12
+#KE|Kajiado County
+Isinya||-1679|36851|1639|14
+Il||-2098|36792|1636|8
+#KM|Grande Comore
+Ikoni||-11745|43237|52|5
+#KZ|Atyrau Oblisi
+Inderbor||48550|51783|22|13
+#KZ|Pavlodar Region
+Irtyshsk||53334|75458|91|9
+#LT|Utena
+Ignalina||55341|26160|166|5
+#LV|Ogre
+Ikšķile|Ikskile|56834|24497|33|7
+#LY|Wadi ash Shati'
+Idrī|Idri|27447|13052|378|5
+#MA|Beni Mellal-Khenifra
+Ifrane||31702|-6349|2019|13
+Ighram Laalam||32524|-6150|598|9
+Itzer||32878|-5051|1658|6
+#MD|Cantemir
+Iargara||46425|28427|125|6
+#MD|Ialoveni
+Ialoveni||46944|28782|97|15
+#MG|Atsimo-Atsinanana
+Ivato||-22417|47267|240|8
+#MG|Fitovinany Region
+Ifatsy||-22400|47750|8|15
+#ML|Ménaka
+Inékar|Inekar|15959|3141|310|9
+#MM|Sagaing Region
+Indaw||24221|96142|123|11
+#MM|Shan State
+Inbawhkon||20446|96896|890|12
+#MM|Yangon
+Inn Taing||17115|96323|11|11
+#MT|L-Imdina
+Imdina||35886|14403|198|0
+#MT|L-Imsida
+Imsida||35893|14483|39|14
+#MT|L-Imġarr
+Imġarr|Imgarr|35921|14365|138|4
+#MT|Mtarfa
+Imtarfa||35892|14398|107|3
+#MX|Campeche
+Isla Aguada||18787|-91490||6
+#MX|Chiapas
+Ixtapa||16803|-92905|1116|6
+#MX|Guanajuato
+Irámuco|Iramuco|19962|-100924|1866|6
+#MX|Guerrero
+Ixtapa||17668|-101642|10|9
+#MX|Jalisco
+Ixtlahuacán del Río|Ixtlahuacan del Rio|20864|-103239|1641|6
+Ixtlahuacán de los Membrillos|Ixtlahuacan de los Membrillos|20349|-103192|1634|6
+#MX|Michoacán
+Indaparapeo||19790|-100969|1904|7
+#MX|Morelos
+Independencia||18877|-99122|1446|7
+#MX|México
+Ixtlahuaca de Rayón|Ixtlahuaca de Rayon|19569|-99767|2543|7
+#MX|Oaxaca
+Isla Soyaltepec||18201|-96483|208|8
+#MX|Quintana Roo
+Isla Mujeres||21231|-86731|1|13
+#MX|Sinaloa
+Isla del Bosque||22733|-105846|6|6
+#MX|Sonora
+Imuris||30790|-110846|867|7
+#MX|Tlaxcala
+Ignacio Zaragoza||19292|-97921|2531|7
+Ixtenco||19251|-97894|2507|7
+#MX|Veracruz
+Ixhuatlán del Sureste|Ixhuatlan del Sureste|18021|-94389|60|10
+Ixhuatlán del Café|Ixhuatlan del Cafe|19051|-96984|1355|7
+#MZ|Cabo Delgado Province
+Ibo||-12343|40586|8|6
+#MZ|Inhambane Province
+Inhassoro||-21535|35202|15|13
+Inharrime||-24477|35030|36|9
+#MZ|Niassa Province
+Insaca||-15198|35871|655|7
+#MZ|Sofala
+Inhaminga||-18415|35023|308|12
+#NE|Agadez
+I-n-Gall||16788|6934|488|11
+#NG|Cross River State
+Ikang||4790|8532|9|13
+#NG|Edo State
+Igarra||7294|6104|296|15
+Illushi||6670|6629|32|7
+#NG|Ekiti State
+Ifaki||7789|5249|571|9
+#NG|Enugu State
+Ikem||6780|7715|146|7
+#NG|Imo State
+Iho||5582|7099|149|8
+#NG|Kaduna State
+Igabi||10806|7714|673|9
+#NG|Kogi State
+Icheu||7707|6772|47|15
+#NG|Lagos
+Imota||6664|3669|32|5
+#NG|Ogun State
+Imeko||7449|2843|204|9
+Isara||6989|3682|122|8
+Idiroko||6632|2747|49|7
+Ijebu-Ife||6778|4034|55|6
+Igbessa||6527|3134|19|6
+#NG|Ondo State
+Ilare||7351|5113|348|8
+Ifon||6930|5774|184|8
+#NL|Overijssel
+IJsselmuiden||52565|5929|2|13
+#NO|Vestland
+Indre Arna||60418|5471|234|7
+#NR|Ijuw District
+Ijuw||-521|166958|3|0
+#NZ|Canterbury
+Ilam||-43518|172570|20|10
+#NZ|Wellington Region
+Island Bay||-41336|174774|9|7
+#PE|Tacna
+Ilabaya||-17421|-70513|1386|9
+#PG|Southern Highlands Province
+Ialibu||-6282|143994|2061|7
+#PH|Calabarzon
+Ibaan||13818|121133|122|9
+Infanta||14745|121650|9|5
+Ibabang Tayuman||13404|122517|19|5
+#PH|Central Visayas
+Inayagan||10235|123769|0|7
+#PH|Davao Region
+Inawayan||6961|125473|30|5
+#PH|Eastern Visayas
+Isabel||10927|124434|4|9
+#PH|Mimaropa
+Ipilan||8843|117903|13|5
+#PH|Northern Mindanao
+Initao||8500|124304|0|10
+Igpit||8511|124587|4|6
+Imelda||7647|122953|85|6
+#PH|Western Visayas
+Inayauan||9901|122434|9|10
+Ilog||10027|122768|12|7
+Ivisan||11522|122691|9|5
+#PK|Khyber Pakhtunkhwa
+Inzari||34669|71389|988|10
+#PK|Sindh
+Islamkot||24699|70180|59|12
+#PL|Mazovia
+Iłża|Ilza|51163|21240|182|5
+#PL|Silesia
+Imielin||50145|19186|256|8
+#PR|Isabela
+Isabela||18501|-67024|71|13
+#PR|Toa Baja
+Ingenio||18442|-66226|3|6
+#PR|Vieques
+Isabel Segunda||18149|-65443|12|9
+#PS|West Bank
+‘Illār|'Illar|32370|35107|226|7
+#PT|Lisbon
+Intendente||38722|-9135|40|5
+#PW|Ngeremlengui
+Imeong Hamlet||7531|134527|3|0
+#RO|Alba County
+Ighiu||46150|23517|282|6
+#RO|Arad County
+Ineu||46434|21840|107|10
+#RO|Brăila County
+Ianca||45133|27450|31|11
+Însurăţei|Insuratei|44917|27600|25|7
+#RO|Covasna County
+Întorsura Buzăului|Intorsura Buzaului|45683|26033|763|9
+#RO|Dâmbovița County
+Izvoarele||45033|25267|363|7
+#RO|Galați County
+Iveşti|Ivesti|45683|27517|21|10
+#RO|Mureș County
+Iernut||46450|24250|275|9
+#RO|Olt
+Izbiceni||43822|24663|26|5
+#RO|Teleorman County
+Islaz||43720|24764|33|6
+#RO|Tulcea County
+Isaccea||45267|28467|8|5
+#RU|Astrakhan Oblast
+Ikryanoye||46093|47730|-23|10
+Il’inka|Il'inka|46238|47901|-23|6
+#RU|Bashkortostan Republic
+Iglino||54827|56412|124|14
+Isyangulovo||52189|56587|200|7
+#RU|Belgorod Oblast
+Ivnya||51058|36148|200|8
+#RU|Bryansk Oblast
+Ivot||53675|34189|179|6
+#RU|Buryatiya Republic
+Ivolginsk||51745|107284|562|7
+#RU|Chuvash Republic
+Ibresi||55301|47038|191|9
+#RU|Kabardino-Balkariya Republic
+Islamey||43676|43455|528|11
+#RU|Khanty-Mansia
+Igrim||63191|64416|9|10
+#RU|Krasnodar Krai
+Ivanovskaya||45276|38464|8|10
+#RU|Krasnoyarsk Krai
+Igarka||67466|86603|30|7
+Idrinskoye||54370|92136|274|5
+#RU|Kurgan Oblast
+Ikovka||55609|64938|135|5
+#RU|Kursk Oblast
+Imeni Karla Libknekhta||51620|35476|156|8
+#RU|Kuzbass
+Inskoy||54430|86440|220|13
+Izhmorskiy||56192|86642|240|6
+#RU|Leningradskaya Oblast'
+Ivangorod||59372|28216|34|11
+Imeni Morozova||59976|31038|20|11
+Imeni Sverdlova||59796|30666|16|9
+#RU|Mordoviya Republic
+Insar||53867|44369|152|9
+#RU|Moscow Oblast
+Il’inskiy|Il'inskiy|55619|38118|134|8
+Imeni Vorovskogo||55732|38324|137|5
+#RU|Nenets
+Iskateley||67680|53151|10|7
+#RU|Nizhny Novgorod Oblast
+Ilyinogorsk||56228|42954|83|7
+#RU|Orenburg Oblast
+Ilek||51527|53382|64|10
+#RU|Penza Oblast
+Issa||53870|44858|174|6
+#RU|Pskov Oblast
+Idritsa||56332|28893|132|6
+#RU|Saratov Oblast
+Ivanteyevka||52268|49105|57|6
+#RU|Stavropol Kray
+Ivanovskoye||44580|41876|359|7
+#RU|Sverdlovsk Oblast
+Istok||56791|60779|245|6
+#RU|Tambov Oblast
+Inzhavino||52320|42492|117|10
+#RU|Tyumen Oblast
+Isetskoye||56483|65316|71|7
+#RU|Ulyanovsk
+Isheyevka||54426|48270|164|10
+#RU|Volgograd Oblast
+Ilovlya||49300|43984|42|12
+#SI|Municipality of Idrija
+Idrija||46003|14028|441|6
+#SI|Municipality of Ig
+Ig||45959|14528|274|2
+#SI|Municipality of Ilirska Bistrica
+Ilirska Bistrica||45568|14246|418|5
+#SI|Municipality of Ivančna Gorica
+Ivančna Gorica|Ivancna Gorica|45937|14805|322|2
+#SI|Municipality of Izola
+Izola||45537|13660|25|11
+#SK|Bratislava Region
+Ivanka pri Dunaji||48187|17255|132|7
+#SK|Trenčín Region
+Ilava||48998|18235|258|5
+#SO|Bari
+Iskushuban||10284|50230|278|6
+#SY|Daraa
+Izra‘|Izra`|32867|36251|576|14
+#TH|Sing Buri
+In Buri||15007|100325|17|9
+#TR|Afyonkarahisar Province
+İscehisar|Iscehisar|38862|30750|1076|12
+Işıklar|Isiklar|38671|30741|1012|7
+İhsaniye|Ihsaniye|39029|30416|1101|6
+#TR|Ankara
+İncek|Incek|39807|32698|1158|6
+#TR|Antalya
+İbradı|Ibradi|37097|31599|1031|9
+#TR|Balıkesir
+İvrindi|Ivrindi|39584|27486|259|6
+#TR|Edirne
+İpsala|Ipsala|40921|26383|15|8
+#TR|Erzincan
+İliç|Ilic|39457|38565|1183|5
+#TR|Erzurum
+Ilıca|Ilica|39947|41095|1768|13
+İspir|Ispir|40480|40994|1163|13
+#TR|Istanbul
+İmrahor|Imrahor|41217|28744|80|12
+#TR|Karaman
+İnönü|Inoenue|37317|33767|1256|6
+#TR|Kastamonu
+İnebolu|Inebolu|41979|33760|1|10
+#TR|Kocaeli
+İhsaniye|Ihsaniye|40691|29835|71|9
+#TR|Muğla
+İçmeler|Icmeler|36799|28226|7|10
+#TR|Ordu
+İkizce|Ikizce|41058|37080|132|11
+#TR|Rize Province
+İyidere|Iyidere|41012|40362|13|5
+#TR|Sivas
+İmranlı|Imranli|39875|38114|1604|7
+#TR|Çankırı
+Ilgaz||40925|33626|934|13
+#TR|İzmir Province
+Inonu||38533|27056|77|8
+İzkent|Izkent|38512|27065|186|6
+#TZ|Katavi
+Inyonga||-6717|32067|1177|12
+#TZ|Mara
+Issenye||-2000|34333|1258|8
+#TZ|Songwe
+Itumba||-9400|33183|1372|13
+#TZ|Tabora
+Igurubi||-4000|33700|1087|10
+#UA|Chernihiv Oblast
+Ichnia||50859|32391|156|10
+#UA|Chernivtsi
+Ispas||48299|25269|325|6
+#UA|Crimea
+Ichki||45343|34925|20|10
+Islyam-Terek||45230|35200|30|7
+#UA|Kyiv Oblast
+Ivankiv||50940|29902|92|10
+#UA|Luhansk
+Irmino||48599|38588|189|9
+Ivanivka||48243|38945|311|7
+#UA|Lviv
+Ivano-Frankove||49922|23725|296|6
+#UA|Sevastopol City
+Inkerman||44614|33610|50|10
+#UA|Vinnytsia
+Illintsi||49105|29206|212|11
+#UA|Zakarpattia
+Irshava||48312|23041|131|9
+Ilnytsia||48357|23076|229|9
+Iza||48215|23329|182|5
+#UA|Zhytomyr Oblast
+Irshansk||50753|28721|158|6
+#US|Alabama
+Irondale||33538|-86707|226|12
+#US|California
+Irvine Health and Science Complex||33658|-117765|68|9
+Interlaken||36951|-121734|39|7
+Ione||38353|-120933|91|7
+Indian Wells||33718|-116343|27|5
+#US|District of Columbia
+Ivy City||38911|-76985|23|5
+#US|Florida
+Isle of Normandy||25853|-80135|1|9
+Indian Harbour Beach||28149|-80588|3|8
+Inverness||28836|-82330|15|7
+Islamorada||24924|-80628|3|7
+Inverness Highlands South||28801|-82337|17|7
+Inwood||28037|-81765|44|6
+Indian River Estates||27364|-80310|4|6
+Indiantown||27027|-80486|10|6
+#US|Georgia
+Irondale||33481|-84359|256|7
+#US|Illinois
+Itasca||41975|-88007|214|9
+Island Lake||42276|-88192|238|8
+Inverness||42118|-88096|257|8
+#US|Iowa
+Independence||42469|-91889|285|6
+Iowa Falls||42522|-93251|337|5
+#US|Kansas
+Independence||37224|-95708|245|9
+Iola||37924|-95400|296|5
+#US|Louisiana
+Inniswold||30405|-91083|9|6
+#US|Michigan
+Ionia||42987|-85071|219|11
+Iron Mountain||45820|-88066|347|8
+Ishpeming||46489|-87668|429|6
+Ironwood||46455|-90171|459|5
+#US|Minnesota
+International Falls||48601|-93411|342|6
+Isanti||45490|-93248|285|5
+#US|Mississippi
+Indianola||33451|-90655|37|10
+#US|Nevada
+Incline Village||39251|-119973|1952|9
+Indian Hills||39086|-119784|1452|6
+#US|New York
+Inwood||40866|-73927|9|10
+Inwood||40622|-73747|3|10
+Ilion||43015|-75035|124|8
+Irvington||41039|-73868|38|7
+Islip Terrace||40743|-73193|7|5
+#US|Ohio
+Ironton||38537|-82683|168|11
+Independence||41369|-81638|262|7
+#US|Oklahoma
+Idabel||33896|-94826|144|7
+#US|Oregon
+Independence||44851|-123187|51|9
+#US|Pennsylvania
+Indiana||40621|-79153|399|14
+#US|South Carolina
+Irmo||34086|-81183|108|12
+#US|Texas
+Ingleside||27878|-97212|4|10
+Iowa Park||33951|-98669|316|6
+#US|Utah
+Ivins||37169|-113679|939|8
+#US|Virginia
+Independent Hill||38636|-77438|125|7
+#UZ|Andijan Region
+Izboskan||41038|72337|632|7
+#UZ|Samarqand Region
+Ishtixon Shahri||39966|66486|516|13
+#VN|Hà Tĩnh Province
+Ich Hau||18450|105850|5|8
+#VU|Tafea
+Isangel||-19542|169282|106|1
+#XK|Gjakova
+Isniq||42558|20303|586|6
+#ZA|Eastern Cape
+Ilinge||-31977|27043|1107|13
+Ilitha||-32892|27531|436|10
+Indwe||-31467|27333|1271|10
+#ZA|KwaZulu-Natal
+Ixopo||-30150|30083|986|15
+Inanda||-29614|30928|550|10
+#ZA|North West
+Itekeng||-26359|25907|1388|7
+#ZM|Copperbelt
+Ibenga||-13367|28433|1198|14
+#ZW|Matabeleland North
+Inyati||-19676|28847|1333|8

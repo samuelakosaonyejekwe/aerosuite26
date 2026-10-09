@@ -1,0 +1,2472 @@
+#AF|Herat
+Tīr Pul|Tir Pul|34594|61269|751|7
+#AF|Kapisa
+Tagāb|Tagab|34855|69649|1335|6
+#AF|Oruzgan
+Tarinkot||32630|65878|1325|10
+#AF|Sar-e Pol Province
+Tukzār|Tukzar|35948|66421|1210|12
+Tagāw-Bāy|Tagaw-Bay|35699|66062|1666|9
+#AI|The Quarter
+The Quarter||18208|-63042|40|0
+#AL|Durrës County
+Thumanë|Thumane|41548|19678|14|11
+#AL|Gjirokastër County
+Tepelenë|Tepelene|40296|20019|212|12
+#AM|Lori
+Tashir||41119|44286|1523|8
+#AO|Bengo
+Tabi||-8180|13357|13|13
+#AR|Buenos Aires
+Tapalqué|Tapalque|-36356|-60025|96|9
+Tres Lomas||-36459|-62862|116|8
+Tornquist||-38101|-62223|294|8
+#AR|Catamarca
+Tinogasta||-28066|-67564|1209|14
+#AR|Chaco
+Taco Pozo||-25616|-63267|259|8
+#AR|Chubut
+Trevelin||-43086|-71464|380|6
+#AR|Cordoba
+Tancacha||-32238|-63980|354|5
+#AR|Jujuy
+Tilcara||-23578|-65395|2486|6
+#AR|San Luis
+Tilisarao||-32731|-65291|741|5
+#AR|Santa Fe
+Totoras||-32585|-61168|56|10
+#AR|Tucuman
+Trancas||-26231|-65281|778|7
+#AS|Manu'a
+Ta`ū|Ta`u|-14234|-169514|6|1
+#AS|Swains Island
+Taulaga||-11055|-171088|8|0
+#AS|Western District
+Tāfuna|Tafuna|-14336|-170720|12|8
+#AT|Lower Austria
+Tulln||48328|16059|175|12
+Ternitz||47716|16036|395|7
+Traiskirchen||48015|16293|204|7
+#AT|Styria
+Trofaiach||47425|15007|660|8
+#AU|New South Wales
+Toongabbie||-33783|150950|37|14
+Turramurra||-33733|151128|183|12
+The Ponds||-33702|150911|60|12
+Toongabbie West||-33783|150933|47|12
+Terrigal||-33448|151447|11|11
+Tweed Heads||-28177|153545|11|9
+Thornleigh||-33732|151079|171|8
+Thurgoona||-36036|146996|190|8
+Tweed Heads South||-28195|153540|7|8
+Thornton||-32783|151633|22|8
+Tuncurry||-32174|152499|4|6
+Tweed Heads West||-28187|153523|3|6
+Toormina||-30354|153088|16|6
+Tumut||-35306|148218|316|6
+Thirroul||-34316|150921|13|6
+Toronto||-33014|151594|18|6
+Telopea||-33793|151039|59|5
+Tahmoor||-34222|150595|280|5
+#AU|Queensland
+Thornlands||-27558|153265|23|14
+Tewantin||-26391|153034|15|11
+Tarragindi||-27527|153046|60|11
+Toowong||-27483|152983|41|11
+Taringa||-27491|152979|36|8
+Tingalpa||-27474|153127|14|8
+Tamborine Mountain||-27970|153199|525|8
+Torquay||-25285|152879|4|7
+Tugun||-28150|153500|5|7
+Taigum||-27343|153044|21|6
+Trinity Beach||-16789|145697|17|6
+The Range||-23392|150496|56|6
+Tinana||-25552|152666|19|5
+Tannum Sands||-23947|151367|23|5
+Teneriffe||-27456|153047|20|5
+#AU|Victoria
+Templestowe Lower||-37767|145117|74|14
+Toorak||-37842|145014|55|13
+Tullamarine||-37701|144881|96|7
+#AU|Western Australia
+Tapping||-31719|115796|58|9
+Tuart Hill||-31898|115835|47|7
+#AZ|Baki
+Türkan|Turkan|40365|50221|-17|10
+#AZ|Tovuz District
+Tovuz||40992|45628|421|13
+#BA|Federation of B&H
+Todorovo||45088|15931|331|10
+Tomislavgrad||43718|17225|904|8
+Tešanj|Tesanj|44612|17986|232|8
+Tržačka Raštela|Trzacka Rastela|44976|15785|272|7
+Tojšići|Tojsici|44482|18788|335|7
+Tešanjka|Tesanjka|44672|18011|157|6
+#BA|Srpska
+Trn||44858|17236|135|8
+Teslić|Teslic|44606|17860|202|6
+#BE|Flanders
+Ternat||50867|4167|21|15
+Tremelo||50992|4708|10|14
+Tielt-Winge||50917|4884|80|11
+Tongerlo||51106|4916|18|7
+Tielt||50942|4905|28|5
+#BE|Wallonia
+Thuin||50339|4286|156|15
+Theux||50533|5812|168|12
+Trooz||50570|5695|98|8
+Tamines||50434|4607|111|8
+Trazegnies||50464|4333|161|7
+Tilff||50564|5576|80|5
+#BG|Burgas
+Tsarevo||42170|27845|36|6
+#BG|Dobrich
+Tervel||43748|27409|237|7
+#BG|Gabrovo
+Tryavna||42867|25500|488|14
+#BG|Haskovo
+Topolovgrad||42083|26333|328|6
+#BG|Lovech
+Teteven||42917|24267|419|11
+#BG|Silistra
+Tutrakan||44049|26612|56|9
+#BG|Sliven
+Tvarditsa||42700|25900|350|7
+#BJ|Atlantique
+Tori-Bossito||6503|2144|41|15
+#BN|Tutong
+Telisai||4736|114563|7|13
+Telamba||4730|114567|16|13
+#BO|Cochabamba
+Tarata||-17609|-66021|2760|8
+#BQ|Saba
+The Bottom||17627|-63250|222|0
+#BR|Alagoas
+Tanque d'Arca||-9532|-36433|207|6
+#BR|Bahia
+Tabocas do Brejo Velho||-12704|-44010|536|12
+Terra Nova||-12367|-40667|604|11
+Terra Nova||-12392|-38625|119|11
+Tanquinho||-11979|-39104|252|8
+Teodoro Sampaio||-12304|-38641|135|7
+#BR|Ceará
+Tarrafas||-6684|-39761|279|8
+#BR|Goiás
+Terezópolis de Goias|Terezopolis de Goias|-16481|-49092|797|8
+#BR|Maranhão
+Tasso Fragoso||-8475|-45743|243|9
+Tufilândia|Tufilandia|-3673|-45635|40|6
+#BR|Mato Grosso
+Terra Nova do Norte||-10517|-55231|317|11
+Tabaporã|Tabapora|-11308|-56819|299|10
+#BR|Mato Grosso do Sul
+Tacuru||-23632|-55016|368|11
+#BR|Minas Gerais
+Tarumirim||-19281|-42007|289|15
+Teixeiras||-20651|-42857|651|12
+Tombos||-20905|-42023|300|9
+Tiros||-19004|-45964|1026|8
+Tiradentes||-21110|-44178|930|8
+Toledo||-22743|-46372|1104|7
+Tumiritinga||-18979|-41645|141|6
+#BR|Paraná
+Turvo||-25043|-51530|1063|14
+Três Barras do Paraná|Tres Barras do Parana|-25422|-53183|543|11
+Terra Roxa||-23856|-50031|688|11
+Teixeira Soares||-25368|-50461|899|10
+Tomazina||-23778|-49950|548|8
+Tupãssi|Tupassi|-24588|-53512|558|8
+Tuneiras do Oeste||-23871|-52876|504|8
+Tunas do Paraná|Tunas do Parana|-24974|-49086|840|6
+Tapira||-23323|-53068|400|6
+#BR|Paraíba
+Teixeira||-7223|-37254|780|15
+Tavares||-7636|-37878|718|14
+Taperoá|Taperoa|-7207|-36827|533|14
+Triunfo||-6567|-38600|340|10
+Tacima||-6488|-35637|171|8
+#BR|Pará
+Terra Alta||-1041|-47907|27|10
+#BR|Pernambuco
+Tracunhaém|Tracunhaem|-7805|-35240|113|14
+Tacaimbó|Tacaimbo|-8316|-36293|586|14
+Terra Nova||-8230|-39376|364|9
+Tuparetama||-7602|-37311|570|8
+Terezinha||-9056|-36623|738|7
+#BR|Rio Grande do Norte
+Tangará|Tangara|-6199|-35802|188|13
+Taipu||-5622|-35597|42|11
+Tenente Ananias||-6468|-38179|382|11
+Tenente Laurentino Cruz||-6148|-36719|740|6
+Tibau||-4837|-37252|34|5
+#BR|Rio Grande do Sul
+Tapes||-30673|-51396|9|15
+Tenente Portela||-27371|-53758|495|14
+Terra de Areia||-29585|-50071|15|11
+Três Cachoeiras|Tres Cachoeiras|-29456|-49924|16|11
+Tapera||-28626|-52870|415|11
+Tuparendi||-27756|-54482|328|8
+Tucunduva||-27657|-54440|228|6
+Tavares||-31287|-51094|14|5
+Tiradentes do Sul||-27394|-54087|390|5
+Tupandi||-29476|-51421|87|5
+#BR|Rio de Janeiro
+Trajano de Morais||-22063|-42066|673|11
+#BR|Rondônia
+Theobroma||-10239|-62358|165|8
+#BR|Santa Catarina
+Turvo||-28926|-49679|28|13
+Treze Tílias|Treze Tilias|-27002|-51406|789|9
+Tangará|Tangara|-27105|-51247|633|8
+Treze de Maio||-28559|-49148|193|7
+Timbó Grande|Timbo Grande|-26615|-50674|953|7
+Trombudo Central||-27299|-49790|353|7
+Timbé do Sul|Timbe do Sul|-28832|-49846|152|5
+#BR|Sergipe
+Tomar do Geru||-11373|-37841|194|12
+#BR|São Paulo
+Tarumã|Taruma|-22747|-50577|452|15
+Tabatinga||-21737|-48686|494|15
+Taguaí|Taguai|-23452|-49409|563|13
+Tapiratiba||-21468|-46749|791|12
+Tabapuã|Tabapua|-20964|-49032|533|11
+Torrinha||-22426|-48169|808|9
+Tapiraí|Tapirai|-23964|-47507|861|8
+Terra Roxa||-20789|-48330|505|8
+Taquarivaí|Taquarivai|-23924|-48693|668|7
+Três Fronteiras|Tres Fronteiras|-20235|-50890|404|7
+Tuiuti||-22816|-46694|817|7
+Tremembé|Tremembe|-23459|-46627|765|7
+Taiúva|Taiuva|-21124|-48452|631|7
+Tarabai||-22302|-51559|452|7
+Taciba||-22390|-51285|399|6
+Taiaçu|Taiacu|-21144|-48512|565|6
+#BR|Tocantins
+Taguatinga||-12404|-46436|599|14
+Tocantínia|Tocantinia|-9564|-48377|199|8
+#BT|Chukha
+Tsimasham||27099|89536|2245|3
+#BT|Tongsa
+Trongsa||27503|90507|2108|3
+#BT|Trashi Yangste
+Trashi Yangtse||27612|91498|1788|3
+#BT|Trashigang District
+Trashigang||27333|91554|1174|1
+#BW|Central
+Tsetsebjwe||-22416|28398|806|5
+#BW|Kgalagadi
+Tshabong||-26050|22450|976|12
+#BW|North-East
+Tati Siding||-21273|27490|1006|12
+#BY|Vitebsk
+Tolochin||54410|29693|195|10
+#BZ|Orange Walk District
+Trial Farm||18101|-88566|14|6
+#CA|Alberta
+Temple||51088|-113947|1082|11
+The Hamptons||53488|-113676|696|9
+Thorncliffe||51103|-114067|1085|9
+Taber||49787|-112146|813|8
+Terwillegar Towne||53450|-113578|695|7
+Twin Brooks||53443|-113530|677|6
+Tuxedo Park||51075|-114060|1075|5
+#CA|British Columbia
+Thompson||49167|-123167|4|15
+Tillicum||48450|-123400|18|10
+Trail||49100|-117702|435|8
+Terra Nova||49170|-123189|1|5
+#CA|Manitoba
+Thompson||55744|-97856|205|14
+The Pas||53822|-101245|270|6
+#CA|New Brunswick
+Tantramar||45934|-64400|69|15
+Town Plat||45961|-66650|9|6
+#CA|Newfoundland and Labrador
+Torbay||47667|-52731|69|8
+#CA|Nova Scotia
+Truro||45367|-63265|17|13
+Timberlea||44662|-63746|76|6
+#CA|Ontario
+The Glebe||45404|-75690|70|13
+Temiskaming Shores||47494|-79715|248|10
+Thistletown-Beaumond Heights||43738|-79563|150|10
+The Blue Mountains||44558|-80458|199|9
+Tottenham||44024|-79806|261|5
+#CA|Prince Edward Island
+Three Rivers||46185|-62568|12|8
+#CA|Saskatchewan
+Twin Lakes||50501|-104675|578|7
+#CH|Appenzell Ausserrhoden
+Teufen||47391|9386|842|6
+#CH|Basel-Landschaft
+Therwil||47499|7557|308|10
+#CH|Geneva
+Thônex|Thonex|46188|6199|408|13
+#CH|Saint Gallen
+Thal||47467|9566|420|6
+#CH|Solothurn
+Trimbach||47366|7887|438|6
+#CH|Zurich
+Thalwil||47292|8564|468|13
+Töss (Kreis 4)|Toss|47479|8702|470|9
+Thalwil / Dorfkern||47290|8566|470|7
+#CI|Bas-Sassandra District
+Tchétaly|Tchetaly|6179|-7071|178|12
+Trahé|Trahe|4716|-7176|54|10
+Takoréagui|Takoreagui|5757|-6791|213|9
+Trawaininkro||6063|-6881|192|8
+Tayo||5667|-6350|99|7
+#CI|Comoé District
+Tiémélékro|Tiemelekro|6492|-4620|81|11
+Tongouolan||7165|-3306|219|9
+Toumanguié|Toumanguie|5327|-3324|56|7
+Tiapoum||5136|-3023|14|6
+#CI|Denguélé District
+Tiéme|Tieme|9545|-7318|456|8
+#CI|Goh-Djiboua
+Téiri|Teiri|6398|-5985|246|12
+Tiégba|Tiegba|6233|-5653|263|11
+Tonla||6354|-5644|245|9
+#CI|Lacs District
+Tiékou-Carrefour|Tiekou-Carrefour|6359|-4286|99|8
+#CI|Lagunes District
+Tiébiéssou|Tiebiessou|5353|-4891|13|10
+Tabo||6236|-5137|130|8
+Toupah||5319|-4566|52|5
+#CI|Montagnes
+Toulépleu Gueré|Toulepleu Guere|6574|-8426|269|14
+Tobly Bangolo||6743|-7189|263|11
+Tacourably||7255|-7179|283|10
+Tieupleu||7041|-8153|287|10
+Taobly||7414|-7186|303|10
+Troya||6252|-7495|245|9
+Toulépleu|Toulepleu|6580|-8411|263|9
+Tié-Iné|Tie-Ine|6901|-7598|249|8
+Taï|Tai|5874|-7455|166|8
+Tyonlé|Tyonle|7056|-7666|270|7
+Tinhou||6438|-8156|260|7
+Toazéo|Toazeo|6799|-7330|252|7
+Tahably Glodé|Tahably Glode|6744|-7242|235|6
+#CI|Sassandra-Marahoue
+Tézié|Tezie|6388|-6302|234|8
+#CI|Savanes District
+Toumoukro||10386|-5751|346|11
+Talléré|Tallere|9201|-6148|377|7
+Tawara||9657|-5653|359|6
+Tourvré|Tourvre|9903|-6502|421|5
+Tonho||9902|-5728|360|5
+#CI|Woroba
+Tomono||8326|-6104|351|10
+Tiéningboué|Tieningboue|8178|-5721|310|10
+#CI|Yamoussoukro
+Tombokro||6927|-5500|165|9
+#CI|Zanzan District
+Tankéssi|Tankessi|7349|-3203|205|7
+Tagadi||8632|-2625|296|7
+Tanbi||8233|-2574|344|7
+Tabagné|Tabagne|7991|-3069|292|6
+Taoudi||8137|-3435|251|6
+Transua||7550|-3014|195|5
+#CL|Antofagasta
+Taltal||-25407|-70486|15|11
+#CL|Atacama
+Tierra Amarilla||-27466|-70263|501|13
+#CL|Biobio
+Tucapel||-37291|-71949|342|13
+#CL|Maule Region
+Teno||-34871|-71162|297|7
+#CL|Santiago Metropolitan
+Tiltil||-33083|-70929|588|6
+#CN|Chongqing
+Tianhe||31288|108193|419|15
+Tushi||28917|108867|834|15
+Tailong||30898|108524|315|14
+Tanghe||28957|106051|296|14
+Tuqiao||29770|106013|273|13
+Tongcheng||31397|109735|941|12
+Tonggu||29606|105467|365|11
+Tongqiao||29522|105767|386|10
+Taipingchang||29449|106974|481|10
+Taihe||30642|109262|1349|10
+Tianba||31401|108863|316|10
+Tongzi||29559|107951|1094|9
+Tianguan||28839|108460|712|9
+Tianxingsi||29352|106761|631|8
+Taiji||29329|108662|527|8
+Tukan||29375|107684|351|8
+Tiefeng||30968|108395|619|8
+Taiyuan||29694|108280|761|8
+Toudu||28938|107182|821|7
+Tucheng||31634|109226|674|6
+Tianyuan||31588|109206|895|6
+Tudi||29505|107900|787|5
+Tiemen||30502|107711|735|5
+#CN|Fujian
+Tuzhai||24983|118832|29|6
+Tingjiang||26074|119506|12|5
+#CN|Gansu
+Tumen||34766|105878|1619|13
+Taopingxiang||34161|104953|1702|13
+Tanping||33811|104975|1671|11
+Taobin||34552|103690|2472|9
+Tielou||32907|104464|1571|8
+Tianchi||33224|104752|1367|6
+Taishihe||33706|105181|1150|5
+Taoyan||34770|103790|2180|5
+#CN|Guangdong
+Taoyuan||22580|113961|133|10
+Tiegang||22604|113882|13|7
+Taoyuan Ju||22619|113860|27|6
+Tangwei||22704|113804|18|6
+Taohuayuan||22611|113882|45|6
+#CN|Heilongjiang
+Tieganlike||39029|88190|891|5
+#CN|Xinjiang
+Tuogerigaizi||36848|81471|1421|15
+Turgun||46979|89843|1352|14
+Turpanyüzi|Turpanyuezi|43999|81479|792|14
+Tashqorghan||37778|75225|3103|9
+#CO|Antioquia
+Titiribí|Titiribi|6063|-75794|1540|8
+Támesis|Tamesis|5665|-75713|1610|6
+#CO|Atlántico
+Tubará|Tubara|10876|-74979|252|8
+#CO|Bolívar
+Turbaná|Turbana|10272|-75442|86|10
+Talaigua Viejo||9312|-74585|20|6
+#CO|Casanare Department
+Trinidad||5408|-71662|168|12
+#CO|Cundinamarca
+Tocaima||4458|-74634|401|14
+#CO|Huila Department
+Tello||3067|-75138|581|10
+Timaná|Timana|1971|-75931|1030|8
+#CO|Norte de Santander Department
+Tibú|Tibu|8639|-72736|68|14
+Toledo||7310|-72483|1638|6
+#CO|Valle del Cauca Department
+Toro||4610|-76078|1089|14
+Trujillo||4213|-76319|1553|6
+#CR|Cartago Province
+Tres Ríos|Tres Rios|9907|-83988|1332|10
+#CR|Guanacaste Province
+Tilarán|Tilaran|10467|-84968|545|7
+Tamarindo||10299|-85841|11|6
+#CU|Sancti Spíritus Province
+Topes de Collantes||21914|-80015|554|10
+#CV|Praia
+Terra Branca||14921|-23523|9|7
+#CV|Tarrafal
+Tarrafal||15279|-23752|17|13
+#CV|Tarrafal de São Nicolau
+Tarrafal de São Nicolau|Tarrafal de Sao Nicolau|16566|-24358|4|4
+#CY|Nicosia
+Tséri|Tseri|35073|33323|271|5
+#CZ|Central Bohemia
+Týnec nad Sázavou|Tynec nad Sazavou|49833|14590|281|6
+#CZ|Hradec Králové Region
+Týniště nad Orlicí|Tyniste nad Orlici|50151|16078|254|6
+Třebechovice pod Orebem|Trebechovice pod Orebem|50201|15992|243|6
+#CZ|Liberec Region
+Turnov||50584|15152|255|15
+Tanvald||50737|15306|479|7
+#CZ|Plzeň Region
+Tachov||49795|12634|483|14
+Třemošná|Tremosna|49816|13395|348|5
+#CZ|Prague
+Troja||50117|14425|184|14
+#CZ|South Bohemian Region
+Týn nad Vltavou|Tyn nad Vltavou|49223|14421|368|8
+Třeboň|Trebon|49004|14771|438|8
+#CZ|South Moravian
+Tišnov|Tisnov|49349|16424|256|9
+Tuřany|Turany|49148|16668|230|5
+#CZ|Vysocina
+Třešť|Trest|49291|15482|550|6
+Telč|Telc|49184|15453|522|5
+#DE|Baden-Wurttemberg
+Tauberbischofsheim||49625|9663|176|13
+Tamm||48920|9116|256|12
+Titisee-Neustadt||47921|8191|841|12
+Teningen||48130|7812|190|12
+Trochtelfingen||48308|9245|695|7
+Tiefenbronn||48824|8801|438|6
+Triberg||48132|8233|664|5
+Todtnau||47829|7944|642|5
+#DE|Bavaria
+Treuchtlingen||48955|10908|420|13
+Trostberg an der Alz||48028|12558|482|12
+Tutzing||47909|11280|595|10
+Tirschenreuth||49883|12331|509|9
+Töging am Inn|Toging am Inn|48260|12585|401|9
+Teisendorf||47849|12819|498|9
+Taufkirchen||48350|12132|490|9
+Teublitz||49223|12087|355|7
+Tuntenhausen||47935|12015|503|7
+Türkheim|Turkheim|48064|10642|599|7
+Thannhausen||48283|10469|504|6
+Tittmoning||48062|12768|386|6
+Tacherting||48078|12570|475|6
+Thalmässing|Thalmassing|49088|11222|415|5
+Triftern||48395|13006|392|5
+#DE|Brandenburg
+Trebbin||52217|13225|41|9
+Treuenbrietzen||52098|12873|62|9
+#DE|Hesse
+Trebur||49926|8407|89|13
+Trendelburg||51574|9421|160|6
+#DE|Lower Saxony
+Tostedt||53274|9719|61|13
+Twistringen||52800|8639|50|13
+Twist||52638|7066|18|10
+#DE|Mecklenburg-Vorpommern
+Torgelow||53634|14012|10|11
+Teterow||53774|12576|15|10
+#DE|North Rhine-Westphalia
+Tecklenburg||52220|7814|172|10
+Titz||51006|6425|102|8
+#DE|Rheinland-Pfalz
+Traben-Trarbach||49951|7116|111|6
+#DE|Saarland
+Tholey||49484|7037|389|13
+#DE|Saxony
+Taucha||51383|12483|127|15
+Treuen||50542|12303|465|9
+Thalheim||50701|12850|443|6
+Thum||50671|12951|509|6
+Tharandt||50985|13580|231|6
+#DE|Saxony-Anhalt
+Thale||51749|11041|174|13
+Tangermünde|Tangermuende|52545|11976|43|10
+Teutschenthal||51450|11800|119|7
+Tangerhütte|Tangerhuette|52435|11807|39|6
+#DE|Schleswig-Holstein
+Travemünde|Travemuende|53963|10871|5|14
+Tornesch||53699|9717|13|13
+Tungendorf||54099|9997|28|10
+Timmendorfer Strand||53995|10777|3|9
+Trittau||53610|10406|32|8
+Tangstedt||53733|10087|31|6
+Tarp||54667|9400|27|6
+Trappenkamp||54040|10215|50|5
+Tönning|Toenning|54317|8941|1|5
+#DE|State of Berlin
+Tiergarten||52517|13367|36|15
+#DE|Thuringia
+Treffurt||51137|10234|183|6
+#DK|Capital Region
+Tårnby|Tarnby|55630|12600|2|10
+Trørød|Trorod|55839|12544|21|9
+#DK|Central Jutland
+Tranbjerg||56095|10136|74|7
+#DK|North Denmark
+Thisted||56955|8695|4|13
+#DK|South Denmark
+Tranekær|Tranekaer|54998|10844|19|12
+#DK|Zealand
+Tune||55593|12170|54|6
+#DO|Baoruco Province
+Tamayo||18395|-71203|32|6
+#DO|Hermanas Mirabal
+Tenares||19374|-70351|173|7
+#DZ|Adrar
+Tilouline||27039|-94|206|6
+#DZ|Batna
+Timgad||35493|6470|1025|12
+#DZ|Timimoun
+Tinerkouk||29716|711|356|6
+#EC|Guayas
+Tres Postes||-1987|-79605|9|7
+#EC|Manabí
+Tosagua||-786|-80235|63|15
+#EE|Järvamaa
+Türi|Tueri|58809|25433|67|5
+#EE|Lääne-Virumaa
+Tapa||59261|25959|103|5
+#EE|Pärnumaa
+Tori||58479|24824|21|12
+#EH|
+Tichla||21584|-14972|177|6
+#ES|Andalusia
+Torre del Campo||37771|-3897|645|15
+Torredonjimeno||37767|-3958|596|14
+Tocina||37609|-5734|29|9
+Trigueros||37386|-6827|75|7
+Trebujena||36871|-6176|73|7
+Torreperogil||38035|-3290|756|7
+#ES|Aragon
+Tarazona||41905|-1727|493|11
+Tauste||41918|-1253|272|7
+#ES|Asturias
+Tineo||43338|-6415|704|11
+#ES|Canary Islands
+Tuineje||28324|-14047|185|14
+Tamaraceite||28099|-15472|224|14
+Teror||28061|-15549|634|12
+Tegueste||28522|-16341|424|11
+Tazacorte||28642|-17934|111|6
+Tinajo||29063|-13676|217|5
+#ES|Castille and León
+Toro||41524|-5395|733|10
+Tordesillas||41502|-5001|705|8
+Tudela de Duero||41585|-4581|706|6
+#ES|Castille-La Mancha
+Torrijos||39982|-4283|531|13
+Tobarra||38592|-1692|650|8
+Tarazona de la Mancha||39250|-1917|722|7
+#ES|Catalonia
+Torelló|Torello|42046|2267|537|14
+Torroella de Montgrí|Torroella de Montgri|42043|3127|29|12
+Tiana||41482|2267|115|7
+Tona||41848|2228|601|7
+Torrelles de Llobregat||41350|1983|162|6
+Teià|Teia|41498|2322|128|6
+Tremp||42167|895|475|6
+Taradell||41875|2287|636|6
+Tossa de Mar||41717|2933|25|5
+#ES|Extremadura
+Trujillo||39458|-5882|520|9
+Talayuela||39987|-5610|290|7
+Talavera La Real||38878|-6769|188|5
+#ES|Galicia
+Tomiño|Tomino|41988|-8755|17|13
+#ES|Madrid
+Timón|Timon|40484|-3597|634|12
+Torres de la Alameda||40403|-3358|672|8
+Torrejón de la Calzada|Torrejon de la Calzada|40199|-3797|629|5
+#ES|Navarre
+Tafalla||42527|-1674|424|11
+#ES|Valencia
+Teulada||38729|104|186|15
+Tavernes Blanques||39500|-367|9|9
+Torreblanca||40220|197|30|6
+Turís|Turis|39383|-700|252|5
+#FI|Kanta-Häme
+Tammela||60810|23768|119|6
+#FI|North Ostrobothnia
+Tuira||65026|25471|20|8
+Toppila||65038|25443|16|8
+Tyrnävä|Tyrnaevae|64765|25652|20|7
+#FI|Pirkanmaa
+Toijala||61168|23838|103|8
+Tammela||61502|23780|116|6
+Tampella||61504|23766|113|6
+#FI|Uusimaa
+Tapaninkylä|Tapaninkylae|60264|24996|14|14
+Tapiola||60176|24809|22|14
+Tikkurila||60293|25038|18|9
+Toukola||60206|24971|1|9
+Tapulikaupunki||60275|25022|16|9
+Tuomarinkylä|Tuomarinkylae|60257|24967|26|9
+Tapaninvainio||60260|24982|26|8
+Tapanila||60265|25022|13|6
+#FJ|Western
+Tavua||-17442|177862|10|9
+#FM|Kosrae
+Tofol||5325|163008|5|10
+#FO|Suðuroy
+Tvøroyri|Tvoroyri|61556|-6811|46|1
+#FR|Auvergne-Rhône-Alpes
+Thiers||45857|3548|432|14
+Tarare||45896|4433|390|11
+Tournon-sur-Rhône|Tournon-sur-Rhone|45067|4833|130|11
+Tullins||45302|5491|205|8
+Trévoux|Trevoux|45943|4771|208|7
+Thônes|Thones|45881|6326|627|6
+Tain-l'Hermitage||45067|4856|122|6
+Thyez||46082|6538|477|5
+Tignieu||45752|5189|208|5
+#FR|Bourgogne-Franche-Comté
+Talant||47337|5009|311|12
+Tournus||46568|4906|193|6
+Tonnerre||47856|3974|145|5
+#FR|Brittany
+Trégunc|Tregunc|47856|-3853|42|7
+Theix||47629|-2651|22|5
+#FR|Grand Est
+Tinqueux||49250|3983|90|10
+Thann||47808|7103|343|8
+Talange||49236|6172|160|8
+Thaon-les-Vosges||48250|6417|302|8
+Tomblaine||48684|6216|207|8
+Terville||49347|6133|160|7
+#FR|Hauts-de-France
+Téteghem|Teteghem|51019|2445|2|7
+Trith-Saint-Léger|Trith-Saint-Leger|50317|3483|24|6
+Templeuve-en-Pévèle|Templeuve-en-Pevele|50523|3178|43|6
+Thourotte||49476|2882|35|6
+#FR|New Aquitaine
+Tarnos||43542|-1463|47|12
+Thouars||46982|-212|96|12
+Tonneins||44395|310|42|10
+Tonnay-Charente||45944|-892|7|7
+Trélissac|Trelissac|45196|783|95|7
+Terrasson-Lavilledieu||45130|1301|87|6
+#FR|Normandy
+Trouville-sur-Mer||49366|80|5|6
+#FR|Occitanie
+Thuir||42632|2756|106|8
+Trèbes|Trebes|43210|2442|91|6
+Toulouges||42671|2832|57|6
+#FR|Pays de la Loire
+Trélazé|Trelaze|47446|-467|19|12
+Thouaré-sur-Loire|Thouare-sur-Loire|47270|-1444|20|7
+Trignac||47318|-2189|6|7
+Treillières|Treillieres|47331|-1627|57|7
+#FR|Provence-Alpes-Côte d'Azur
+Tarascon||43806|4660|16|15
+Trets||43448|5683|247|10
+Thiers||43701|7260||9
+Thiers||43297|5382|27|5
+Trans-en-Provence||43503|6486|151|5
+#FR|Île-de-France
+Triel-sur-Seine||48978|2007|51|13
+Thorigny-sur-Marne||48887|2718|72|10
+Tournan-en-Brie||48741|2772|100|8
+Trilport||48957|2951|57|5
+#GA|Nyanga
+Tsogni||-2804|10161|40|14
+#GB|England
+Teignmouth||50546|-3497|5|15
+Thornton Heath||51399|-99|53|15
+Tilbury||51462|359|2|14
+The Boldons||54943|-1453|53|14
+Tavistock||50549|-4144|85|13
+Tidworth||51231|-1663|110|12
+Tring||51795|-658|134|12
+Todmorden||53714|-2097|129|12
+Thornbury||51609|-2520|42|12
+Thame||51748|-976|72|11
+Timperley||53400|-2333|30|11
+Thirsk||54233|-1344|37|10
+Tolworth||51380|-281|26|10
+Teddington||51422|-331|12|10
+Tiptree||51812|745|56|9
+Towcester||52134|-991|94|9
+Tarleton||53680|-2830|19|9
+Totnes||50431|-3684|6|8
+Thorpe Hamlet||52628|1312|19|8
+Toton||52908|-1258|34|8
+Torpoint||50375|-4196|14|8
+Tottington||53613|-2341|150|8
+Twyford||51475|-860|51|8
+Titchfield||50851|-1237|15|7
+Tenterden||51068|688|61|7
+Thrapston||52397|-539|35|7
+Tadworth||51292|-236|171|7
+Tadcaster||53883|-1263|14|6
+Thames Ditton||51390|-339|12|6
+Tunstall||53058|-2211|168|6
+Thornton||53790|-1852|240|6
+Townsend||51762|-337|78|6
+Tetbury||51639|-2162|118|5
+Thorpe||51406|-536|16|5
+#GB|Scotland
+Troon||55544|-4663|5|15
+Tranent||55944|-2954|90|12
+Tullibody||56134|-3838|33|9
+Thurso||58593|-3526|22|7
+Tillicoultry||56153|-3740|21|5
+Turriff||57538|-2459|55|5
+#GB|Wales
+Tredegar||51773|-3247|321|15
+Treharris||51665|-3307|159|12
+Tonyrefail||51584|-3430|143|9
+Treorchy||51660|-3506|161|8
+Thornhill||51542|-3193|120|7
+#GE|Abkhazia
+Tqvarch'eli||42840|41680|227|5
+#GE|Imereti
+Tqibuli||42348|42998|553|8
+Tsqaltubo||42329|42598|113|7
+#GE|Kvemo Kartli
+Tsqnet’i|Tsqnet'i|41695|44699|947|7
+Tetritsqaro||41544|44462|1174|5
+#GG|Torteval
+Torteval||49433|-2650|50|0
+#GM|Western
+Tujering||13319|-16785|16|9
+#GN|Kankan Region
+Tomba-kanssa||11723|-10189|457|14
+Tokonou||9650|-9783|562|7
+#GN|Kindia
+Tondon||10367|-13350|113|12
+#GN|Mamou Region
+Timbo||10633|-11833|704|13
+#GP|Guadeloupe
+Trois-Rivières|Trois-Rivieres|15976|-61645|110|9
+#GR|Attica
+Távros|Tavros|37971|23690|23|15
+Thrakomakedónes|Thrakomakedones|38130|23758|370|7
+#GR|Central Macedonia
+Thérmi|Thermi|40547|23020|54|14
+Triandría|Triandria|40622|22970|78|10
+Trílofos|Trilofos|40469|22972|143|7
+#GR|Crete
+Tympáki|Tympaki|35073|24769|25|5
+#GR|Thessaly
+Týrnavos|Tyrnavos|39738|22289|94|11
+#GT|Alta Verapaz
+Tactic||15322|-90354|1456|9
+#GT|San Marcos
+Tacaná|Tacana|15241|-92067|2427|6
+#GT|Santa Rosa Department
+Taxisco||14067|-90468|180|7
+#GT|Zacapa
+Teculután|Teculutan|14989|-89719|253|6
+#GU|Talofofo
+Talofofo Village||13355|144758|90|3
+#GY|Essequibo Islands-West Demerara
+Tuschen||6877|-58343|1|8
+#HK|Central and Western
+The Belcher's||22285|114133||7
+#HK|Eastern District
+Tin Hau||22281|114192|103|14
+Tai Hang||22279|114192|43|11
+Tsui Wan Estate||22268|114240||6
+Tung Hei Court||22280|114219||6
+Tung Yuk Court||22282|114227||5
+#HK|Sai Kung District
+Tai Mong Tsai||22400|114302|50|12
+#HK|Sham Shui Po District
+Tai Hang Estate (East & West)||22332|114171|11|7
+The Pacifica||22334|114150|2|6
+#HK|Southern District
+Tin Wan Estate||22251|114149|139|8
+#HK|Tai Po
+Tai Yuen Estate||22456|114170|8|14
+Tai Wo||22452|114161|37|13
+#HK|Wong Tai Sin District
+Tsui Chuk Garden||22346|114188|79|10
+Tsz Hong Estate||22347|114203|87|7
+Tin Ma Court||22343|114187|79|6
+Tsz Man Estate||22348|114203|87|6
+Tung Wui Estate||22332|114194|4|5
+#HK|Yuen Long
+Tung Tau Tsuen||22453|114029||14
+#HN|Colón Department
+Trujillo||15917|-85953|1|10
+#HN|Copán Department
+Trinidad de Copán|Trinidad de Copan|14946|-88742|861|7
+#HN|Francisco Morazán Department
+Talanga||14400|-87083|810|13
+#HN|Lempira Department
+Talgua||14700|-88700|561|11
+Tomalá|Tomala|14226|-88784|1135|6
+#HR|County of Osijek-Baranja
+Tenja||45498|18747|89|6
+#HR|Split-Dalmatia
+Trogir||43513|16252|20|10
+#HT|Nord-Est
+Trou du Nord||19617|-72024|40|11
+#HU|Bekes County
+Tótkomlós|Totkomlos|46417|20733|91|6
+#HU|Borsod-Abaúj-Zemplén
+Tiszalúc|Tiszaluc|48038|21073|106|6
+#HU|Bács-Kiskun
+Tiszakécske|Tiszakecske|46933|20103|85|12
+Tiszaalpár|Tiszaalpar|46813|19998|87|5
+#HU|Hajdú-Bihar
+Téglás|Teglas|47717|21683|135|6
+#HU|Jász-Nagykun-Szolnok
+Tiszaföldvár|Tiszafoldvar|46983|20250|86|12
+Tiszafüred|Tiszafuered|47617|20767|86|11
+Túrkeve|Turkeve|47100|20750|80|10
+#HU|Komárom-Esztergom
+Tát|Tat|47741|18648|106|6
+#HU|Pest County
+Törökbálint|Toeroekbalint|47429|18914|160|12
+Tököl|Toekoel|47322|18962|100|10
+Tura||47609|19603|115|8
+Tárnok|Tarnok|47373|18846|113|8
+Tápiószecső|Tapioszecso|47450|19609|137|7
+Tápiószele|Tapioszele|47336|19877|98|6
+Taksony||47330|19067|105|6
+Tápiószentmárton|Tapioszentmarton|47340|19746|108|6
+#HU|Szabolcs-Szatmár-Bereg
+Tiszavasvári|Tiszavasvari|47967|21350|93|14
+Tiszalök|Tiszalok|48017|21383|93|6
+#HU|Tolna County
+Tolna||46427|18782|100|12
+Tamási|Tamasi|46633|18283|126|10
+#ID|Maluku
+Tiakur||-8150|127795|21|5
+#ID|North Sumatra
+Tomok Bolon||2652|98861|922|10
+#ID|Riau Islands
+Tobong||3291|106291|13|6
+#ID|West Sumatra
+Tuapejat||-2028|99589|22|6
+#IE|Connacht
+Tuam||53517|-8850|38|10
+#IE|Leinster
+Trim||53555|-6792|56|10
+Terenure||53310|-6285|44|8
+#IE|Munster
+Trá Mhór|Tra Mhor|52162|-7152|43|10
+Thurles||52682|-7802|102|8
+#IL|Central District
+Tel Mond||32253|34918|75|13
+Tsur Itshak||32240|34998|121|6
+#IL|Northern District
+Tūbā Zangarīya|Tuba Zangariya|32966|35593|283|7
+#IN|Andhra Pradesh
+Thummalamenta||15028|78023|318|12
+Tangellamūdi|Tangellamudi|16721|81105|22|8
+Tada Khandrika||13589|80034|13|6
+#IN|Arunachal Pradesh
+Tawang Town||27574|91795|2304|11
+Taipi Duidam||27291|96044|276|7
+#IN|Assam
+Teok||26832|94417|94|9
+Tarapur Pt VI||24852|92767|15|9
+Titābar|Titabar|26601|94204|102|8
+Tarapur VII||24813|92782|16|7
+Takhlibilar Pathar||26500|90935|50|7
+Thekashu Pt.-II||25982|90788|46|6
+Tegheria||26129|92219|209|6
+#IN|Bihar
+Tola Rāmpurwā Motalke Kurwa Mathiā|Tola Rampurwa Motalke Kurwa Mathia|26866|84528|79|14
+Talkhapur Dumra||26562|85507|56|8
+Tārāpur|Tarapur|25091|86662|57|7
+Tola Mansārāut|Tola Mansaraut|26801|84539|79|6
+Tār|Tar|25396|84343|80|6
+Tola Chain||24741|86407|144|6
+Tola Pairamatihana||24676|86347|154|6
+Tola Baliadih||24737|86433|159|5
+#IN|Chhattisgarh
+Than-Khamharia||21800|81338|302|8
+Tundra||21677|82609|244|8
+Tumgaon||21191|82123|284|7
+#IN|Delhi
+Tīkri Khurd|Tikri Khurd|28835|77120|213|14
+Tilang Pur Kotla||28650|77027|207|14
+Tukhmir Pur||28719|77260|202|6
+#IN|Gujarat
+Tankāra|Tankara|22656|70749|64|10
+#IN|Haryana
+Tūndla|Tundla|30380|76857|282|6
+#IN|Himachal Pradesh
+Tīra Sujānpur|Tira Sujanpur|31834|76505|565|8
+#IN|Jammu and Kashmir
+Tsrār Sharīf|Tsrar Sharif|33863|74765|1953|12
+Tangdhār|Tangdhar|34398|73860|1849|10
+Thanna Mandi||33542|74381|1572|5
+Talwara||33105|74793|363|5
+#IN|Jharkhand
+Telo||23818|86121|256|14
+Tāti|Tati|23377|85438|616|13
+Tundhul||23325|85245|702|11
+Torpa||22936|85089|522|9
+Tanr Balidih||23669|86050|295|8
+Tilodih||24212|86247|337|7
+Topchānchi|Topchanchi|23904|86198|302|6
+Tinpahār|Tinpahar|24983|87733|34|5
+Toto||23133|84528|647|5
+Termi||23770|86062|268|5
+Taping||23837|85495|429|5
+Topa||23736|85473|433|5
+#IN|Karnataka
+Turuvekere||13164|76666|808|14
+Tirumakūdal Narsipur|Tirumakudal Narsipur|12212|76902|654|10
+Talpādi|Talpadi|12766|74889|20|10
+Tonse East||13396|74722|18|8
+Tokūru|Tokuru|12964|74838|12|7
+Tālipādi|Talipadi|13066|74854|79|7
+Tumbe||12868|74988|28|6
+Tenkanidiyūr|Tenkanidiyur|13369|74710|17|6
+#IN|Kerala
+Thazhakara||9250|76567|24|15
+Thurayur||11528|75671|38|14
+Trikūr|Trikur|10461|76273|23|13
+Thirumittacode-II||10732|76161|89|13
+Tekkumbāgam|Tekkumbagam|10123|76417|15|11
+Thanniyam||10417|76133|15|10
+Thaikattussery||10460|76244|33|8
+Tholur||10572|76129|41|7
+Tayikkād|Tayikkad|10592|76061|12|7
+#IN|Madhya Pradesh
+Tāl|Tal|23720|75385|455|15
+Tendūkheda|Tendukheda|23396|79539|398|14
+Tekanpur||25994|78283|233|14
+Talen||23569|76728|436|11
+Tirodi||21685|79719|332|9
+Tonk Khurd||23098|76216|531|8
+Tarīchar Kalān|Tarichar Kalan|25412|78890|238|8
+#IN|Maharashtra
+Taloje||19086|73098|10|14
+Tikādi|Tikadi|21258|79226|286|14
+Trimbak||19933|73529|724|12
+Tākalghāt|Takalghat|20915|78947|273|11
+Tākli|Takli|20471|75024|337|11
+Tārāpur|Tarapur|19865|72684|7|7
+Talni||19882|76473|495|6
+Tamgaon||16648|74299|585|5
+#IN|Manipur
+Thongju||24758|93937|776|11
+Torban||24768|93947|780|5
+#IN|Mizoram
+Thenzawl||23317|92750|831|7
+#IN|Nagaland
+Tuli||26664|94642|152|8
+Tseminyu||25925|94216|1396|6
+#IN|Odisha
+Tikarapāra|Tikarapara|19624|83495|352|8
+Tarabha||20733|83674|134|8
+#IN|Puducherry
+Tirumalarājanpatnam|Tirumalarajanpatnam|10872|79830|5|11
+#IN|Punjab
+Tharīke|Tharike|30867|75782|248|12
+Tibri||32003|75451|270|12
+Thariāl|Tharial|32354|75607|360|5
+#IN|Rajasthan
+Tapukrāh|Tapukrah|28111|76833|285|9
+Tālera|Talera|25316|75733|247|7
+Todi||25112|74261|498|7
+#IN|Tamil Nadu
+Thottiyam||10990|78334|99|15
+Thiruvidaimaruthur||10999|79452|29|15
+Tengampudūr|Tengampudur|8116|77458|18|15
+Tanakkangulam||9888|78040|145|14
+Tikkanbankad||8222|77273|60|14
+Tenambākkam|Tenambakkam|12810|79734|79|14
+Takkolam||13016|79733|77|14
+Tirupporūr|Tirupporur|12726|80190|15|14
+Tingalāchi|Tingalachi|8201|77304|76|14
+Tirumullaivāsal|Tirumullaivasal|11240|79837|11|13
+Tāttayyangārpettai|Tattayyangarpettai|11124|78449|145|13
+Thirukattupalli||10844|78956|50|13
+Talaināyar Agrahāram|Talainayar Agraharam|10561|79772|5|13
+Temanūr|Temanur|8333|77252|33|13
+Tāmaraikkulam|Tamaraikkulam|10109|77555|292|12
+Tirumalaiyampālaiyam|Tirumalaiyampalaiyam|10879|76930|296|12
+Tamarakutamkudiyiruppu||8101|77494|19|12
+Tirurāgeswaram|Tirurageswaram|13009|80148|17|12
+Talaiyūr|Talaiyur|11010|76849|480|12
+Thondamuthur||10991|76842|450|11
+Tirupananthal||11092|79453|26|11
+Tottakkurichchi||11071|78031|128|11
+Tiruvennanallūr|Tiruvennanallur|11859|79366|69|10
+Tirukurangudi||8436|77566|115|9
+Tittachcheri||10867|79789|9|9
+Tiruvalam||12982|79266|195|9
+Tittangulam||9171|77898|96|9
+Tiruppūndurutti|Tiruppundurutti|10862|79081|52|9
+Tāzhakudi|Tazhakudi|8235|77453|32|9
+Tiruppālaikudi|Tiruppalaikudi|9546|78917|8|9
+Thevūr|Thevur|11524|77754|186|9
+Tiruvengadam||9259|77675|108|8
+Tidāvūr|Tidavur|11494|78697|190|8
+Tajpura||12893|79319|173|8
+Terūr|Terur|8173|77465|17|8
+Tadikārakonam|Tadikarakonam|8330|77415|61|6
+Terku Kallikulam||8353|77664|68|6
+Tālakkudi|Talakkudi|10874|78718|69|6
+Tolūr|Tolur|13131|79958|38|6
+Toramangalam||11693|77903|271|5
+#IN|Telangana
+Timmāpur|Timmapur|19048|78641|253|13
+Teegalpahad||18859|79489|148|13
+Tarlapalli||18834|79491|148|10
+Tangapur||16396|78627|474|8
+#IN|Uttar Pradesh
+Tālbahat|Talbahat|25044|78434|307|14
+Tīkri|Tikri|29229|77355|239|14
+Titron||29668|77324|259|12
+Tālgrām|Talgram|27048|79648|151|11
+Tindwāri|Tindwari|25617|80527|121|10
+Tori-Fatehpur||25455|79114|182|10
+Tikaitnagar||26946|81566|118|9
+#IN|West Bengal
+Tasti Tea Garden||26648|89147|159|6
+#IR|Chaharmahal and Bakhtiari
+Ţāqānak|Taqanak|32224|50839|2047|6
+#IR|East Azerbaijan
+Tasūj|Tasuj|38316|45360|1374|8
+Torkamān|Torkaman|37585|47390|1620|7
+#IR|Fars
+Tafīhān|Tafihan|29421|52664|1535|6
+#IR|Hormozgan
+Ţūlā|Tula|26979|56211|7|6
+#IR|Khuzestan
+Torkālakī|Torkalaki|32244|48847|66|6
+#IR|Māzandarān
+Tāzehābād|Tazehabad|36632|51485|7|5
+#IR|Sistan and Baluchestan
+Ţīs|Tis|25357|60621|10|6
+#IR|West Azerbaijan
+Tāzeh Shahr|Tazeh Shahr|38176|44692|1442|9
+#IT|Abruzzo
+Tortoreto Lido||42800|13942|4|6
+Trasacco||41957|13533|685|6
+#IT|Apulia
+Trepuzzi||40405|18076|55|14
+Trinitapoli||41357|16089|5|14
+Tricase||39930|18354|98|14
+Turi||40917|17020|250|12
+Taviano||39982|18082|58|12
+Taurisano||39957|18215|110|11
+Torre Santa Susanna||40468|17739|72|10
+Toritto||40998|16679|233|8
+Troia||41364|15317|439|7
+Torchiarolo||40483|18051|28|5
+Tuglie||40073|18099|74|5
+Torre a Mare||41083|17000|13|5
+#IT|Calabria
+Taurianova||38355|16013|210|12
+Trebisacce||39871|16534|73|8
+Tropea||38674|15895|61|6
+#IT|Campania
+Teverola||40996|14208|25|12
+Trescine||41023|14620|284|10
+Trecase||40769|14438|99|8
+Teano||41251|14067|168|5
+Telese Terme||41218|14527|55|5
+#IT|Emilia-Romagna
+Traversetolo||44642|10380|176|5
+#IT|Friuli Venezia Giulia
+Tavagnacco||46110|13223|155|12
+Tolmezzo||46400|13021|323|8
+Tarcento||46213|13215|230|6
+Tricesimo||46161|13216|199|6
+#IT|Lazio
+Trastevere||41883|12467|48|13
+Tarquinia||42254|11757|133|12
+Tor Tre Teste||41882|12585|46|11
+Testaccio||41868|12482|15|8
+Tuscania||42419|11868|165|7
+Tecchiena||41688|13345|258|5
+#IT|Liguria
+Taggia||43846|7852|39|13
+#IT|Lombardy
+Travagliato||45524|10080|129|13
+Trezzo sull'Adda||45605|9514|187|12
+Treviolo||45674|9612|225|9
+Turate||45657|9004|240|9
+Trescore Balneario||45694|9842|305|8
+Tirano||46215|10163|441|8
+Torre Boldone||45717|9708|280|8
+Terno d'Isola||45685|9531|229|8
+Turbigo||45531|8737|146|7
+Toscolano Maderno||45640|10608|86|7
+Torbole Casaglia||45513|10117|112|6
+Tavernerio||45801|9141|460|6
+Trenzano||45477|10011|108|5
+Tavazzano||45328|9405|82|5
+#IT|Piedmont
+Trofarello||44982|7747|276|11
+Trino||45195|8296|130|7
+#IT|Sardinia
+Tempio Pausania||40901|9105|566|13
+Terralba||39721|8635|9|10
+Tortolì|Tortoli|39926|9656|13|8
+#IT|Sicily
+Tremestieri Etneo||37565|15079|400|14
+Trecastagni||37615|15078|586|10
+Terrasini||38146|13083|33|10
+Trabia||38004|13634|50|9
+Troina / Draginai||37784|14596|1121|9
+Torregrotta||38203|15350|44|7
+Taormina||37854|15289|204|6
+Terme||38136|15157|12|5
+#IT|Tuscany
+Torre del Lago Puccini||43829|10289|3|11
+Tavarnelle Val di Pesa||43562|11172|366|7
+Tirrenia||43627|10292|2|7
+Terranuova Bracciolini||43551|11581|156|6
+Torrita di Siena||43172|11784|325|5
+#IT|Veneto
+Taglio||45022|12211|-1|14
+Torri di Quartesolo||45519|11625|30|9
+Trebaseleghe||45593|12044|22|8
+Tombolo||45639|11824|42|8
+Taglio di Po||45002|12214|0|7
+Tencarola||45395|11809|18|6
+Trissino||45560|11377|125|6
+Torreglia||45336|11736|16|5
+#JM|Saint Andrew Parish
+Tower Hill||18013|-76651|924|12
+Torrington Park||17989|-76794|45|12
+#JO|Irbid
+Tibnah||32475|35731|569|5
+#JP|Aomori
+Tashiro||40390|141536|208|13
+Tsuruta||40752|140432|13|13
+#JP|Chiba
+Tako||35733|140467|10|14
+Tennodai||35872|140040|27|7
+#JP|Fukui
+Takahama||35490|135550|4|10
+#JP|Fukuoka
+Toi||33585|130676|29|13
+#JP|Fukushima
+Tanagura||37030|140383|263|14
+Tamanoi||37533|140367|265|9
+#JP|Gifu
+Tomika||35485|136980|85|6
+#JP|Hiroshima
+Togōchi|Togochi|34567|132233|446|6
+#JP|Hokkaido
+Tōyako-onsemmachi|Toyako-onsemmachi|42567|140817|80|8
+Teshikaga||43480|144496|143|8
+Takasu||43843|142354|118|7
+Tōma|Toma|43821|142518|149|6
+Taiki||42502|143272|85|5
+#JP|Iwate
+Tateishi||38983|141117|22|7
+#JP|Kagawa
+Tonoshō|Tonosho|34480|134170|49|13
+#JP|Kagoshima
+Tokuwase||27756|129030|41|10
+Takanosu||32200|130183|88|10
+Tatsugō|Tatsugo|28450|129600|45|6
+#JP|Kochi
+Tosashimizu||32784|132963|66|12
+#JP|Kumamoto
+Taragi||32267|130933|155|9
+Tomioka||32519|130036|1|7
+Takamori||32820|131127|552|6
+#JP|Kyoto
+Tachikawa||34851|135878|157|9
+#JP|Miyazaki
+Tsunō|Tsuno|32250|131567|22|10
+Takaharu||31917|131017|165|9
+#JP|Nagano
+Takanomachi||36165|138483|741|10
+#JP|Nara
+Tomondo||34573|135771|41|6
+#JP|Niigata
+Tagami||37711|139072|7|11
+Tsugawa||37681|139458|61|10
+#JP|Osaka
+Taishi||34520|135636|58|14
+Tajiri||34427|135246|0|9
+Tsuruhashi||34665|135530|7|6
+#JP|Saga
+Tara||33024|130178|5|9
+#JP|Saitama
+Takasaka||36000|139400|33|15
+#JP|Shiga
+Taga||35226|136286|122|7
+Toyosato||35200|136230|115|7
+#JP|Shimane
+Tsuwano||34467|131767|285|7
+#JP|Shizuoka
+Tanokuchi||35055|138097|248|6
+Toi||34902|138800|155|5
+#JP|Tokushima
+Tomoura||33590|134360|6|8
+#JP|Tokyo
+Takanodai||35746|139614|45|15
+Tabata||35736|139758|21|14
+Tokiwadai||35762|139687|29|12
+Tamagawa||35616|139624|18|12
+Tatsumi||35647|139813|8|10
+Tsukiji||35665|139770|13|8
+#JP|Tottori
+Tenman||35376|133365|59|10
+#JP|Wakayama
+Tōkōji|Tokoji|33933|135133|133|8
+#JP|Yamaguchi
+Tabuse||33950|132067|47|14
+#KE|Kiambu County
+Tinganga||-1130|36814|1810|6
+#KE|Kilifi County
+Takaungu||-3683|39857|16|11
+#KE|Machakos County
+Tala||-1268|37322|1524|11
+#KE|Meru County
+Timau||84|37239|2202|11
+#KG|Issyk-Kul
+Tyup||42728|78365|1629|12
+#KH|Kampong Chhnang
+Trapeang Chan||12472|104410|26|6
+#KH|Kampong Thom
+Tăng Krâsăng|Tang Krasang|12567|105046|18|13
+#KH|Phnom Penh
+Tœ̆k L’ák|Toek L'ak|11567|104905|16|9
+Tuŏl Tumpung|Tuol Tumpung|11551|104906|13|8
+#KH|Preah Vihear
+Tuek Kraham||14215|104947|83|8
+#KM|Anjouan
+Tsimbeo||-12206|44465|433|13
+#KN|Trinity Palmetto Point
+Trinity||17300|-62776|41|2
+#KP|Pyongyang
+Twimoraet’ŏ|Twimoraet'o|38996|125690|10|13
+#KY|
+The Mountain||19331|-81199|11|12
+Tropical Gardens||19291|-81349|2|8
+#KZ|Almaty Region
+Turgen||43401|77593|971|13
+#KZ|Baikonur
+Tyuratam||45650|63312|106|10
+#KZ|East Kazakhstan
+Tughyl||47725|84206|403|7
+#KZ|Kostanay
+Tobol||52694|62591|207|7
+Torghay||49631|63490|102|5
+#KZ|Kyzylorda
+Terenozek||45050|64983|123|10
+#KZ|North Kazakhstan
+Taiynsha||53848|69768|155|13
+#KZ|Pavlodar Region
+Terengköl|Terengkol|53066|76105|97|9
+#KZ|Turkistan
+Temirlanovka||42600|69258|291|12
+Tyul’kubas|Tyul'kubas|42486|70296|823|11
+#KZ|West Kazakhstan
+Tasqala||51111|50295|69|7
+Terekti||51222|51957|73|5
+#LI|Triesen
+Triesen||47108|9528|500|5
+#LI|Triesenberg
+Triesenberg||47118|9542|854|3
+#LK|Southern Province
+Tangalle||6023|80797|22|10
+#LS|
+Thabana Morena||-29960|27420|1710|6
+#LT|Vilnius
+Trakai||54638|24934|152|6
+#LV|Talsu novads
+Talsi||57246|22581|76|9
+#LY|Al Kufrah
+Tāzirbū|Tazirbu|25673|21073|305|8
+#LY|Al Marj
+Tūkrah|Tukrah|32534|20579|16|13
+#LY|Murzuq District
+Tarāghin|Taraghin|25923|14421|422|8
+#LY|Nalut
+Tījī|Tiji|32015|11355|188|7
+#LY|Wadi ash Shati'
+Tamzāwah|Tamzawah|27572|14202|373|7
+#MA|Beni Mellal-Khenifra
+Tirhassaline||32782|-5653|917|10
+#MA|Drâa-Tafilalet
+Tinajdad||31508|-5033|1005|10
+Tounfit||32469|-5245|1921|9
+Taznakht||30578|-7203|1405|8
+#MA|Fes-Meknes
+Tissa||34288|-4664|214|12
+#MA|Guelmim-Oued Noun
+Tarhjicht||29058|-9429|575|7
+#MA|Laayoune-Sakia El Hamra
+Tarfaya||27939|-12926|5|6
+#MA|Marrakesh-Safi
+Tahannout||31352|-7950|942|13
+Tamanar||31001|-9678|320|12
+Tameslouht||31495|-8098|563|10
+Talat-n-Ya’qoub|Talat-n-Ya'qoub|30989|-8189|1208|8
+Tlet El Hanchane||31522|-9436|303|5
+#MA|Oriental
+Talsint||32536|-3441|1332|10
+Tendrara||33050|-2000|1442|9
+Tiztoutine||34972|-3153|198|5
+#MA|Souss-Massa
+Tassila||29971|-9642|18|11
+Taliouine||30529|-7913|1007|7
+Tafraout||29724|-8975|993|7
+Taghazout||30544|-9707|1|5
+#MA|Tanger-Tetouan-Al Hoceima
+Targuist||34938|-4319|1029|15
+#MD|Taraclia
+Taraclia||45903|28666|62|14
+Tvardița|Tvardita|46148|28965|104|6
+#MD|Teleneşti
+Teleneşti|Telenesti|47502|28365|69|7
+#ME|Tivat
+Tivat||42436|18694|2|6
+#ME|Tuzi Municipality
+Tuzi||42366|19330|56|4
+#MG|Androy
+Tranovaho||-25300|44967|189|13
+#MH|Maloelap Atoll
+Taroa||8706|171228|10|0
+#ML|Gao
+Tessit||15217|-300|293|14
+#ML|Mopti
+Ténenkou|Tenenkou|14457|-4917|273|7
+#ML|Taoudénit
+Taoudenni||22677|-3979|295|3
+#MM|Chin State
+Tedim||23376|93654|1673|13
+#MM|Tanintharyi Region
+Taw Pyar||12216|98454|1|9
+Tanintharyi||12090|99012|15|6
+#MM|Yangon
+Taukkyan||17044|96136|21|11
+Tha Pyay Kone||16733|96141|10|8
+Tha Wun Taw||16761|95936|13|7
+Ta Dar Chaung||16739|96173|5|7
+Taw Taik||16958|96115|5|5
+#MN|Dzabkhan
+Tosontsengel||48757|98284|1717|10
+#MN|Khövsgöl Province
+Tsengel||49478|100889|1287|8
+#MR|Tagant
+Tidjikja||18556|-11427|398|13
+#MT|Tarxien
+Ta’ Xbiex|Ta' Xbiex|35899|14495|21|2
+#MT|Ta’ Xbiex
+Tarxien||35866|14515|62|9
+#MU|Black River
+Tamarin||-20326|57371||4
+#MU|Pamplemousses
+Trou aux Biches||-20033|57550|8|15
+Terre Rouge||-20128|57531|44|11
+#MV|Gaafu Dhaalu Atoll
+Thinadhoo||531|73000|7|6
+#MW|Southern Region
+Thyolo||-16068|35140|912|9
+#MX|Baja California
+Tecolotes||32567|-114983|22|5
+#MX|Baja California Sur
+Todos Santos||23447|-110223|38|5
+#MX|Campeche
+Tenabo||20040|-90226|10|8
+#MX|Chiapas
+Tapilula||17249|-93017|785|7
+Tila||17300|-92426|1074|7
+Tuxtla Chico||14940|-92167|321|7
+Tzimol||16179|-92185|1386|5
+#MX|Durango
+Tlahualilo de Zaragoza||26107|-103443|1085|10
+Tayoltita||24103|-105931|536|5
+#MX|Guanajuato
+Tarimoro||20287|-100756|1796|12
+Tarandacuao||20001|-100518|1945|6
+#MX|Guerrero
+Tierra Colorada||17165|-99526|266|12
+Tlapehuala||18240|-100539|266|9
+Tlacotepec||17789|-99978|1550|7
+Tepecoacuilco de Trujano||18287|-99465|871|6
+Tlamacazapa||18497|-99501|1938|6
+Tres Palos||16830|-99778|13|5
+#MX|Hidalgo
+Tlaxcoapan||20092|-99222|2068|14
+Tepatepec||20245|-99091|1985|11
+Tetepango||20103|-99156|2094|9
+Tlahuelilpan||20131|-99230|2064|8
+Tlanalapa||19818|-98603|2425|8
+Tolcayuca||19958|-98922|2382|7
+Tecozautla||20534|-99635|1708|6
+Tezontepec||19881|-98819|2331|5
+Tlanchinol||20990|-98659|1583|5
+#MX|Jalisco
+Tizapán el Alto|Tizapan el Alto|20159|-103045|1562|15
+Tototlán|Tototlan|20542|-102791|1547|13
+Tecalitlán|Tecalitlan|19472|-103307|1132|12
+Tecolotlán|Tecolotlan|20201|-104048|1207|9
+Tomatlán|Tomatlan|19937|-105250|47|9
+Talpa de Allende||20381|-104822|1159|9
+Tapalpa||19946|-103759|2062|6
+#MX|Michoacán
+Tanhuato de Guerrero||20285|-102328|1577|10
+Tuxpan||19568|-100464|1734|9
+Tarecuato||19844|-102465|1976|9
+Tingambato||19502|-101853|1978|8
+Tingüindín|Tingueindin|19739|-102482|1693|7
+Tancítaro|Tancitaro|19337|-102363|2075|7
+Taretan||19334|-101918|1145|6
+Tarímbaro|Tarimbaro|19796|-101178|1877|6
+#MX|Morelos
+Tepoztlán|Tepoztlan|18986|-99102|1740|14
+Tepalcingo||18595|-98844|1158|12
+Tlaltizapán|Tlaltizapan|18684|-99120|970|11
+Tetela del Volcán|Tetela del Volcan|18893|-98730|2222|10
+Tenextepango||18729|-98958|1158|8
+Tlayacapan||18956|-98981|1637|8
+Tehuixtla||18560|-99270|882|6
+Totolapan||18985|-98921|1902|6
+Tres Marías|Tres Marias|19054|-99244|2839|6
+Temoac||18772|-98777|1588|6
+Tlatenchi||18596|-99186|908|6
+Tlacotepec||18814|-98751|1729|5
+#MX|México
+Tlalmanalco||19205|-98801|2404|15
+Tenancingo de Degollado||18961|-99590|2033|14
+Tepetlixpa||19029|-98821|2336|13
+Temascalcingo||19916|-100004|2400|13
+Tequisistlán Primero|Tequisistlan Primero|19600|-98957|2238|10
+Tecamachalco||19360|-98960|2243|7
+Tonanitla||19688|-99053|2249|7
+Tequisistlán|Tequisistlan|19596|-98941|2246|7
+Tlapanaloya||19936|-99097|2282|6
+Temascalapa||19828|-98902|2355|6
+Tepetlaoxtoc de Hidalgo||19574|-98818|2302|6
+Tenango del Aire||19158|-98857|2384|6
+Temamatla||19203|-98869|2278|6
+Tequexquináhuac|Tequexquinahuac|19478|-98825|2461|5
+#MX|Nayarit
+Tecuala||22398|-105457|14|15
+#MX|Oaxaca
+Tlacolula de Matamoros||16955|-96478|1615|14
+Tlalixtac de Cabrera||17071|-96647|1583|9
+Teotitlán de Flores Magón|Teotitlan de Flores Magon|18131|-97069|1031|8
+Temascal||18242|-96403|49|7
+Tamazulapam Villa del Progreso||17677|-97573|2017|5
+#MX|Puebla
+Tlaixpan||18912|-97738|2058|11
+Tlatlauquitepec||19848|-97497|1929|10
+Tlacotepec||18682|-97656|1944|9
+Tlachichuca||19115|-97419|2616|8
+Tenango de las Flores||20206|-97988|1305|7
+Tochtepec||18839|-97823|1980|7
+Teotlaltzingo||19231|-98501|2430|6
+Tlaltenango||19172|-98341|2210|6
+Teontepec||18492|-97530|1817|6
+Tehuitzingo||18332|-98276|1074|5
+Tulcingo de Valle||18044|-98441|1102|5
+Tianguismanalco||18976|-98449|2168|5
+Tecali||18901|-97971|2187|5
+#MX|San Luis Potosí
+Tanquián de Escobedo|Tanquian de Escobedo|21606|-98663|59|10
+Tierra Nueva||21669|-100573|1788|5
+#MX|Sinaloa
+Topolobampo||25601|-109050|2|6
+#MX|Sonora
+Tobarito||27371|-109896|49|9
+#MX|Tabasco
+Tecolutilla||18283|-93334|8|11
+Tamulté de las Sabanas|Tamulte de las Sabanas|18160|-92784|8|9
+Tacotalpa||17596|-92826|24|8
+#MX|Tlaxcala
+Tlaxco||19614|-98120|2550|15
+Tenancingo||19147|-98201|2267|12
+Tetlanohcán|Tetlanohcan|19260|-98164|2431|10
+Tepetitla||19265|-98376|2234|8
+Totolac||19326|-98258|2252|7
+Texcalac||19423|-98087|2425|6
+Tocatlán|Tocatlan|19389|-98027|2634|6
+#MX|Veracruz
+Tihuatlan||20714|-97533|98|14
+Tempoal de Sánchez|Tempoal de Sanchez|21520|-98388|64|13
+Teocelo||19386|-96974|1189|10
+Texistepec||17895|-94817|49|10
+Tatahuicapan||18246|-94761|120|8
+Totolapa||20556|-97476|72|8
+Tlacotalpan||18613|-95659|9|8
+Tuzamapan||19404|-96863|860|8
+Tesechoacan||18137|-95658|18|7
+Tezonapa||18607|-96684|235|5
+Tepetzintla||21164|-97852|279|5
+Tamiahua||21279|-97446|4|5
+Tamalín|Tamalin|21339|-97812|147|5
+#MX|Yucatán
+Tixkokob||21001|-89395|11|11
+Tzucacab||20072|-89050|37|10
+Tekit||20536|-89334|22|10
+Tekoh||20744|-89474|18|9
+Temozon||20804|-88202|23|7
+Temax||21151|-88939|12|6
+Teabo||20400|-89283|25|6
+#MX|Zacatecas
+Trancoso||22736|-102366|2190|14
+Tacoaleche||22820|-102403|2133|9
+Tabasco||21863|-102911|1520|7
+#MY|Johor
+Tongkang Pechah||1920|102956|9|13
+#MY|Kedah
+Tikam Batu||5587|100440|8|8
+Tebengau||6046|100331|6|5
+#MY|Kelantan
+Tumpat||6198|102171|7|12
+#MY|Kuala Lumpur
+Taman Ikan Emas||3116|101720|71|10
+#MY|Melaka
+Teluk Mas||2165|102322|9|10
+#MY|Negeri Sembilan
+Titi||2998|102077|132|6
+#MY|Pahang
+Tanah Rata||4464|101376|1488|7
+Teras||3742|101811|205|6
+#MY|Penang
+Tanjung Bungah||5465|100282|18|14
+Tanjung Tokong||5461|100307|10|13
+Telaga Batu||5467|100233||10
+#MY|Perak
+Tanjung Piandang||5072|100381|3|8
+#MY|Sabah
+Taman Rajawali||5895|118046|4|10
+Tenom||5119|115937|201|5
+#MY|Selangor
+Templer Bestari||3291|101638|85|6
+#NC|Loyalty Islands
+Tadine||-21548|167880|15|7
+#NE|Agadez
+Tchirozérine|Tchirozerine|17221|7761|507|13
+#NE|Dosso Region
+Tibiri||13106|3998|212|9
+#NE|Zinder Region
+Takiéta|Takieta|13681|8529|442|12
+#NG|Adamawa
+Toungo||8117|12046|503|12
+#NG|Bayelsa State
+Twon-Brass||4312|6241|3|11
+#NG|Borno State
+Tokombere||11221|13488|360|7
+#NG|Kano State
+Takai||11576|9109|458|11
+#NG|Zamfara State
+Tsafe||11958|6921|565|9
+#NI|León Department
+Telica||12522|-86859|131|9
+#NI|Managua Department
+Ticuantepe||12023|-86205|302|13
+#NI|Masaya Department
+Tisma||12082|-86017|53|5
+#NL|Gelderland
+Twello||52237|6103|7|14
+t Harde||52416|5879|8|7
+#NL|North Brabant
+Teteringen||51609|4821|6|7
+Terheijden||51643|4754|2|6
+#NL|South Holland
+Ter Aar||52166|4707|0|10
+#NL|Zeeland
+Tholen||51532|4221|4|7
+#NO|Agder
+Tvedestrand||58622|8931|10|6
+#NO|Buskerud
+Tranby||59809|10261|201|5
+#NO|Rogaland
+Tananger||58936|5574|19|6
+#NZ|Auckland
+Takapuna||-36792|174776|22|12
+Tamaki||-36888|174860|28|5
+#NZ|Bay of Plenty
+Te Puke||-37778|176330|15|11
+#NZ|Gisborne
+Te Hapara||-38648|177990|9|9
+#NZ|Hawke's Bay Region
+Taradale||-39533|176850|7|13
+#NZ|Manawatu-Wanganui
+Terrace End||-40348|175630|40|7
+Takaro||-40358|175590|30|6
+#NZ|Northland
+Tikipunga||-35688|174320|94|8
+#NZ|Waikato Region
+Tokoroa||-38233|175867|346|15
+Te Awamutu||-38008|175330|50|14
+Thames||-37138|175540|6|7
+Tuakau||-37270|174944|25|6
+#NZ|Wellington Region
+Te Aro||-41294|174777|14|15
+Tawa||-41170|174826|30|10
+Taita||-41178|174950|19|7
+Titahi Bay||-41100|174833|12|7
+#OM|Dhofar
+Thamarīt|Thamarit|17670|54033|454|11
+#PE|Apurímac Department
+Talavera||-13653|-73429|2826|7
+#PE|Ayacucho
+Tambo||-14798|-73924|4133|5
+#PE|Ica
+Tupac Amaru||-13711|-76150|82|11
+#PE|Lambayeque
+Túcume|Tucume|-6506|-79857|46|7
+#PE|Moquegua Department
+Torata||-17077|-70843|2213|7
+#PE|Pasco
+Tinyahuarco||-10768|-76275|4253|5
+#PE|San Martín Department
+Tabalosos||-6350|-76683|1162|15
+Tabaloslos||-6386|-76633|554|7
+#PF|Marquesas Islands
+Taiohae||-8911|-140100|23|1
+#PG|Hela Province
+Tari||-5845|142947|1676|8
+#PG|Western Province
+Tabubil||-5274|141229|502|10
+#PH|Autonomous Region in Muslim Mindanao
+Tampakan||4923|119794|5|8
+Tuburan||6644|122274|3|8
+Tongouson||5021|120133||6
+Talipaw||5910|121094|20|6
+#PH|Bicol Region
+Tigaon||13633|123497|63|13
+Tinambac||13816|123326|12|10
+Talisay||14134|122923|12|8
+Tulay na Lupa||14093|122786|196|6
+#PH|Calabarzon
+Tuy||14018|120730|78|9
+Tagkawayan Sabang||13991|122530|119|8
+Taysan||13870|121097|222|5
+Talisay||13181|122624|35|5
+Tiaong||13964|121321|47|5
+#PH|Caraga
+Tungao||8778|125568|20|9
+Tubay||9167|125524|12|8
+Taligaman||8904|125656|199|7
+Tago||9021|126232|9|6
+#PH|Central Luzon
+Talugtug||15778|120811|91|6
+Taltal||15588|119946|20|5
+Tartaro||15167|121017|36|5
+#PH|Central Visayas
+Tibigan||9952|123962|3|11
+Talibon||10149|124325|11|11
+Tutay||10246|123581|14|8
+Tayud||10380|124005|12|8
+Tapilon||11277|124031|7|8
+Tinaan||11267|123750|9|6
+Tajao||10315|123584|3|5
+Tabuan||9516|122851|107|5
+Tapon||10063|123445|8|5
+#PH|Cordillera
+Tuding||16411|120642|1286|7
+#PH|Davao Region
+Tamugan||7231|125376|364|8
+Talagutong||6264|125668|6|8
+Tubod||7372|125645|13|8
+Tibanbang||6632|126105|42|8
+Taytayan||7734|126502|27|7
+Tamayong||7133|125380|698|6
+Tuban||6823|125387|19|5
+#PH|Eastern Visayas
+Tabango||11308|124373|8|6
+#PH|Ilocos
+Tayug||16027|120743|62|12
+Tamayo||15877|120285|14|6
+#PH|Mimaropa
+Taytay||10818|119499|22|8
+Tayaman||13230|120573|9|5
+#PH|Northern Mindanao
+Talakag||8234|124600|403|8
+#PH|Soccsksargen
+Tantangan||6615|124749|38|10
+Tulunan||6834|124877|20|10
+Tampakan||6490|125083|1197|9
+Tamnag||6573|124880|27|6
+Tamontaka||7181|124226|8|5
+#PH|Western Visayas
+Toboso||10714|123516|9|13
+Tigbauan||10675|122378|8|13
+Trapiche||10684|122432|3|12
+Tuyum||9977|122558|11|11
+Tortosa||10933|123090|9|7
+Tiglauigan||10953|123358|8|7
+Tabu||9892|122710|311|6
+Talaban||10125|122867|11|6
+Tabuc Pontevedra||11483|122817|4|5
+Tumcon Ilawod||10917|122667|13|5
+#PH|Zamboanga Peninsula
+Tucuran||7852|123574|7|13
+Titay||7813|122534|139|11
+Tambulig||8070|123535|25|7
+Taluksangay||6954|122184|5|7
+Talusan||7427|122810|19|6
+Tigpalay||7495|122345|10|5
+Talisayan||6987|121927|15|5
+Tabina||7467|123408|1|5
+#PK|Punjab
+Tibbi Jay Singh||30877|73216|162|10
+Thamewali||32784|71781|468|7
+#PK|Sindh
+Tangwani||28279|68998|68|9
+#PL|Greater Poland
+Trzemeszno||52561|17823|107|8
+#PL|Kujawsko-Pomorskie
+Tuchola||53588|17859|109|14
+#PL|Lesser Poland
+Tuchów|Tuchow|49895|21054|231|7
+#PL|Lower Silesia
+Trzebnica||51311|17063|181|12
+Tarnogaj||51082|17063|122|9
+Twardogóra|Twardogora|51365|17469|181|7
+#PL|Lublin
+Terespol||52076|23616|131|6
+#PL|Mazovia
+Tłuszcz|Tluszcz|52431|21436|101|7
+#PL|West Pomerania
+Trzebiatów|Trzebiatow|54061|15265|18|10
+#PL|Łódź Voivodeship
+Tuszyn||51609|19530|209|7
+#PR|Toa Alta
+Toa Alta||18388|-66248|25|4
+#PR|Toa Baja
+Toa Baja||18444|-66260|7|2
+#PS|West Bank
+Tarqūmyā|Tarqumya|31576|35012|510|14
+Ţammūn|Tammun|32283|35384|356|10
+Taffūḩ|Taffuh|31539|35050|806|9
+#PT|Braga
+Taipas||41485|-8348|131|6
+#PT|Bragança
+Torre de Moncorvo||41175|-7054|397|9
+#PT|Coimbra
+Tábua|Tabua|40362|-8029|239|12
+Tavarede||40167|-8846|18|9
+#PT|Faro
+Tunes||37166|-8259|64|7
+#PT|Setúbal
+Trafaria||38672|-9233|12|6
+#PT|Viseu
+Tondela||40517|-8081|305|9
+Tabuaço|Tabuaco|41116|-7568|542|6
+#PW|Hatohobei
+Tobi Village||3005|131122|21|0
+#PY|Cordillera Department
+Tobatí|Tobati|-25261|-57083|125|10
+#PY|Itapúa
+Tomás Romero Pereira|Tomas Romero Pereira|-26531|-55260|345|6
+#RO|Alba County
+Teiuş|Teius|46200|23683|238|7
+#RO|Arad County
+Târnova|Tarnova|46317|21800|124|6
+#RO|Arges
+Topoloveni||44817|25083|243|11
+#RO|Bacău County
+Târgu Ocna|Targu Ocna|46279|26613|261|13
+Tamaşi|Tamasi|46483|26983|141|6
+Târgu Trotuş|Targu Trotus|46267|26667|242|5
+#RO|Bihor County
+Tileagd||47067|22200|172|7
+#RO|Bistrița-Năsăud County
+Teaca||46917|24517|384|6
+Telciu||47433|24400|393|5
+#RO|Botoșani County
+Truşeşti|Trusesti|47767|27017|106|6
+Tudora||47517|26633|286|5
+#RO|Brașov County
+Tărlungeni|Tarlungeni|45633|25750|632|7
+#RO|Brăila County
+Tufeşti|Tufesti|45050|27817|12|6
+Tudor Vladimirescu||45217|27800|12|5
+#RO|Cluj County
+Tritenii de Jos||46583|24000|342|5
+#RO|Constanța County
+Techirghiol||44050|28600|18|7
+Tuzla||44000|28633|15|6
+Topraisar||44017|28450|84|5
+#RO|Dâmbovița County
+Titu||44650|25533|155|10
+Tătărani|Tatarani|45000|25267|408|5
+Tărtăşeşti|Tartasesti|44577|25813|119|5
+#RO|Galați County
+Tuluceşti|Tulucesti|45567|28033|71|8
+Tudor Vladimirescu||45567|27650|20|5
+#RO|Gorj County
+Târgu Cărbuneşti|Targu Carbunesti|44950|23517|195|9
+Turceni||44683|23367|127|8
+Tismana||45050|22967|212|8
+Ţicleni|Ticleni|44883|23400|179|5
+#RO|Harghita County
+Topliţa|Toplita|46924|25352|658|13
+#RO|Ialomița County
+Ţăndărei|Tandarei|44641|27656|7|13
+#RO|Iași County
+Târgu Frumos|Targu Frumos|47200|27000|104|14
+Tomeşti|Tomesti|47117|27683|152|12
+Ţibăneşti|Tibanesti|46917|27333|150|8
+Ţibana|Tibana|46983|27333|162|7
+Todireşti|Todiresti|47317|26833|371|7
+Tătăruşi|Tatarusi|47350|26600|338|6
+Trifeşti|Trifesti|47450|27517|44|5
+#RO|Neamț County
+Tămăşeni|Tamaseni|46983|26933|186|8
+Trifeşti|Trifesti|46917|26817|235|5
+#RO|Prahova
+Târgşoru Vechi|Targsoru Vechi|44867|25917|162|8
+Telega||45133|25783|436|6
+#RO|Satu Mare County
+Tăşnad|Tasnad|47483|22583|177|9
+Turţ|Turt|47983|23217|204|7
+#RO|Sibiu County
+Tălmaciu|Talmaciu|45667|24265|382|6
+#RO|Suceava
+Todireşti|Todiresti|47700|26033|365|6
+#RO|Teleorman County
+Ţigăneşti|Tiganesti|43900|25367|38|5
+#RO|Vaslui County
+Tanacu||46683|27817|211|6
+Tutova||46117|27550|54|6
+Todireşti|Todiresti|46850|27367|183|5
+#RO|Vrancea
+Tulnici||45917|26667|546|6
+Ţifeşti|Tifesti|45850|27100|150|5
+#RS|Vojvodina
+Titel||45206|20294|90|6
+#RU|Adygeya Republic
+Takhtamukay||44922|38995|34|5
+#RU|Altai
+Turochak||52260|87123|325|6
+#RU|Altai Krai
+Troitskoye||52983|84680|217|11
+Topchikha||52822|83121|201|9
+Tselinnoye||53076|85659|241|6
+Tyumentsevo||53324|81502|158|6
+#RU|Amur Oblast
+Tambovka||50100|128058|174|8
+Tsiolkovskiy||51769|128120|238|7
+Talakan||50264|130268|269|6
+#RU|Bashkortostan Republic
+Tolbazy||54011|55887|238|10
+Tirlyanskiy||54211|58581|536|6
+#RU|Belgorod Oblast
+Tomarovka||50683|36234|151|8
+Troitskiy||51359|37525|241|6
+#RU|Buryatiya Republic
+Taksimo||56345|114894|541|10
+Turuntayevo||52202|107643|524|6
+#RU|Chechnya
+Tolstoy-Yurt||43444|45779|112|8
+Tsentoroy||43007|46222|854|6
+#RU|Chuvash Republic
+Tsivil’sk|Tsivil'sk|55870|47479|67|13
+#RU|Dagestan
+Tarki||42944|47495|142|11
+Terekli-Mekteb||44166|45872|23|8
+Tyube||43049|47307|19|6
+Tarumovka||44076|46536|-14|5
+#RU|Irkutsk Oblast
+Tayturka||52869|103461|410|5
+#RU|Ivanovo Oblast
+Talitsy||56528|42332|102|6
+#RU|Kalmykiya Republic
+Troitskoye||46413|44258|104|10
+Tsagan Aman||47563|46720|-24|6
+#RU|Kaluga Oblast
+Tovarkovo||54676|35939|160|14
+Tarusa||54725|37172|165|10
+#RU|Karachayevo-Cherkesiya Republic
+Tereze||43936|42443|1036|6
+#RU|Khakasiya Republic
+Tashtyp||52799|89894|441|6
+#RU|Kirov Oblast
+Tuzha||57606|47935|110|5
+#RU|Komi
+Troitsko-Pechorsk||62719|56172|145|8
+#RU|Krasnodar Krai
+Taman||45212|36716|16|9
+Trudobelikovskiy||45269|38154|6|9
+Temirgoyevskaya||45114|40280|93|9
+Ternevskaya||45851|40413|79|7
+Troitskaya||45135|38125|6|6
+Temizhbekskaya||45446|40845|121|6
+#RU|Krasnoyarsk Krai
+Taseyevo||57217|94894|157|8
+Teya||60372|92630|220|7
+Tura||64278|100218|214|5
+Tyukhtet||56542|89316|200|5
+#RU|Kurgan Oblast
+Tselinnoye||54504|63676|150|6
+#RU|Kuzbass
+Tyazhinskiy||56110|88519|224|14
+Tisul’|Tisul'|55757|88311|209|9
+Tayzhina||53668|87436|337|5
+#RU|Leningradskaya Oblast'
+Toksovo||60153|30516|74|6
+#RU|Lipetsk Oblast
+Terbuny||52145|38281|233|7
+#RU|Mordoviya Republic
+Torbeyevo||54077|43250|204|9
+Temnikov||54631|43219|142|8
+Turgenevo||54846|46330|97|5
+#RU|Moscow Oblast
+Taldom||56731|37528|144|13
+#RU|Nizhny Novgorod Oblast
+Tumbotino||55999|43024|84|7
+Tonkino||57371|46458|117|5
+#RU|Omsk Oblast
+Tavricheskoye||54587|73637|98|13
+Tyukalinsk||55872|72198|105|12
+Tevriz||57512|72398|51|7
+#RU|Orenburg Oblast
+Tyul’gan|Tyul'gan|52341|56162|322|10
+Totskoye||52528|52746|80|7
+Tashla||51772|52741|65|7
+#RU|Penza Oblast
+Tamala||52541|43251|207|8
+#RU|Primorye
+Tavrichanka||43326|131863|31|8
+#RU|Republic of Tyva
+Turan||52146|93917|871|6
+#RU|Rostov
+Tatsinskaya||48194|41280|80|11
+Tselina||46534|41032|128|11
+Tarasovskiy||48730|40364|85|9
+Talovyy||47808|40109|163|6
+#RU|Ryazan Oblast
+Tuma||55148|40554|125|6
+#RU|Sakha
+Tommot||58957|126292|283|9
+Tiksi||71691|128865|71|6
+#RU|Sakhalin Oblast
+Tymovskoye||50848|142663|111|8
+#RU|Saratov Oblast
+Tatishchevo||51673|45592|202|7
+Turki||51987|43275|144|7
+#RU|St.-Petersburg
+Tarkhovka||60067|29974|7|7
+#RU|Stavropol Kray
+Trunovskoye||45488|42136|179|6
+Tatarka||44959|41952|459|6
+#RU|Sverdlovsk Oblast
+Troitskiy||57060|63748|78|11
+Tugulym||57059|64647|90|6
+Turinskaya Sloboda||57621|64383|66|6
+Tsementnyy||57469|60154|257|6
+#RU|Tambov Oblast
+Tokaryovka||52000|41150|176|6
+#RU|Tatarstan Republic
+Tetyushi||54938|48833|164|12
+#RU|Tomsk Oblast
+Togur||58363|82827|65|8
+Timiryazevskoye||56490|84878|98|6
+#RU|Tula Oblast
+Tovarkovskiy||53682|38209|223|8
+Tëploye|Teploye|53617|37589|244|5
+#RU|Tver Oblast
+Toropets||56500|31639|180|14
+#RU|Tyumen Oblast
+Turtas||58939|69134|61|5
+#RU|Ulyanovsk
+Teren’ga|Teren'ga|53716|48369|114|5
+#RU|Vologda Oblast
+Tot’ma|Tot'ma|59974|42765|127|11
+Tarnogskiy Gorodok||60500|43576|101|5
+#RU|Voronezh Oblast
+Talovaya||51120|40725|123|13
+#RU|Yamalo-Nenets
+Tazovsky||67472|78716|29|6
+#SA|'Asir Region
+Tabālah|Tabalah|19950|42400|1233|5
+#SA|Al-Qassim Region
+Tanūmah|Tanumah|27100|44133|587|14
+#SA|Riyadh Region
+Tumayr||25703|45868|656|8
+#SB|Central Province
+Tulagi||-9103|160151|0|2
+#SB|Choiseul Province
+Taro||-6711|156397|0|1
+#SC|Takamaka
+Takamaka||-4767|55500|272|3
+#SD|Southern Kordofan
+Talodi||10632|30380|485|13
+#SE|Jönköping
+Tranås|Tranas|58037|14978|164|15
+#SE|Skåne
+Tomelilla||55543|13955|65|7
+#SE|Södermanland
+Torshälla|Torshaella|59417|16467|13|9
+Trosa||58896|17548|8|6
+#SE|Uppsala
+Tierp||60343|17518|19|6
+#SE|Västernorrland
+Timrå|Timra|62487|17326|1|10
+#SE|Västra Götaland
+Torslanda||57724|11770|26|10
+Tibro||58425|14162|117|8
+Tidaholm||58180|13958|148|8
+#SG|
+Tai Seng||1336|103904|17|14
+Tanglin Halt||1301|103798|11|11
+#SI|Municipality of Tabor
+Tabor||46235|15017|348|0
+#SI|Municipality of Tišina
+Tišina|Tisina|46654|16094|201|0
+#SI|Municipality of Tolmin
+Tolmin||46183|13733|201|4
+#SI|Municipality of Trnovska Vas
+Trnovska Vas||46520|15887|247|0
+#SI|Municipality of Trzin
+Trzin||46136|14562|289|4
+#SI|Municipality of Tržič
+Tržič|Trzic|46364|14310|519|4
+#SI|Municipality of Turnišče
+Turnišče|Turnisce|46626|16314|176|2
+#SI|Trebnje
+Trebnje||45904|15022|281|3
+#SK|Banská Bystrica Region
+Tornaľa|Tornala|48419|20326|183|7
+#SK|Nitra Region
+Tvrdošovce|Tvrdosovce|48095|18067|118|5
+#SK|Žilina Region
+Tvrdošín|Tvrdosin|49337|19556|585|9
+Turzovka||49404|18623|472|7
+Trstená|Trstena|49361|19612|607|7
+Turčianske Teplice|Turcianske Teplice|48862|18860|509|6
+#SL|Eastern Province
+Tombodu||8135|-10620|275|6
+#SL|Northern Province
+Tintafor||8627|-13215|33|5
+#SN|Matam
+Tilogne Tokossel||15967|-13600|22|10
+#SN|Ziguinchor
+Tionk Essil||12786|-16522|18|8
+#SR|Commewijne District
+Tamanredjo||5786|-55025|6|7
+#SR|Coronie District
+Totness||5876|-56326|16|2
+#SS|Western Equatoria
+Tambura||5600|27467|630|10
+#SV|Ahuachapan
+Turín|Turin|13966|-89766|628|12
+Tacuba||13901|-89930|681|5
+#SV|San Salvador Department
+Tonacatepeque||13781|-89119|611|6
+#SY|Hama
+Tremseh||35272|36504|195|7
+#TG|Plateaux
+Tohoun||7033|1617|143|7
+#TH|Nakhon Phanom
+That Phanom||16936|104710|147|14
+#TH|Nakhon Si Thammarat
+Tham Phannara||8420|99395|54|7
+#TH|Surat Thani
+Tha Khanon||9030|98953|22|7
+#TJ|Republican Subordination
+Tavildara||38695|70484|1618|6
+#TL|Cova Lima
+Tilomar||-9340|125113|531|8
+#TM|Ahal
+Türkmenistan|Tuerkmenistan|38199|57950|172|8
+Täzedurmuş|Taezedurmus|37933|58585|203|7
+Täze eýýam|Taeze eyyam|38172|58047|173|5
+#TM|Balkan
+Türkmenbaşy|Tuerkmenbasy|40009|53112|-10|7
+#TM|Mary
+Tagtabazar||35955|62917|335|13
+#TN|Béja Governorate
+Testour||36551|9443|93|13
+#TN|Kasserine Governorate
+Thelepte||34978|8593|793|7
+#TN|Monastir Governorate
+Touza||35635|10827|35|7
+#TN|Nabeul Governorate
+Tazarka||36554|10839|13|9
+#TR|Adana
+Tufanbeyli||38263|36221|1427|5
+#TR|Adıyaman Province
+Tut||37795|37916|1054|8
+#TR|Antalya
+Tosmur||36532|32053|19|12
+Turunçova|Turuncova|36369|30138|48|8
+Türkler|Tuerkler|36602|31821|6|7
+#TR|Ağrı
+Taşlıçay|Taslicay|39630|43369|1736|5
+#TR|Burdur
+Tefenni||37310|29775|1162|5
+#TR|Denizli
+Tavas||37574|29071|948|12
+#TR|Erzincan
+Tercan||39777|40378|1412|12
+#TR|Erzurum
+Tortum||40289|41541|1819|9
+Tekman||39641|41505|1905|8
+#TR|Iğdır
+Topçular Mahallesi|Topcular Mahallesi|39925|44035|864|12
+Tuzluca||40039|43652|1123|10
+#TR|Kayseri
+Tomarza||38447|35799|1394|12
+#TR|Konya
+Taşkent|Taskent|36924|32491|1542|12
+Tuzlukçu|Tuzlukcu|38478|31626|993|6
+#TR|Osmaniye
+Toprakkale||37069|36147|70|9
+#TR|Sinop
+Türkeli|Tuerkeli|41948|34339|14|8
+#TR|Trabzon
+Tonya||40884|39285|809|15
+#TV|Nanumanga
+Toga Village||-6288|176315|11|0
+#TV|Nui
+Tanrake Village||-7246|177145|4|0
+#UA|Cherkasy
+Talne||48889|30697|130|13
+#UA|Chernihiv Oblast
+Talalaivka||50843|33142|186|5
+Talalaivka||50958|31921|128|5
+#UA|Chernivtsi
+Tarasivtsi||48206|26364|127|5
+#UA|Dnipropetrovsk
+Taromske||48443|34789|169|13
+Tsarychanka||48942|34486|69|7
+Tomakivka||47811|34743|33|7
+#UA|Ivano-Frankivsk
+Tysmenytsia||48904|24847|248|9
+Tlumach||48865|25004|225|9
+#UA|Kharkiv
+Tsyrkuny||50084|36387|140|6
+#UA|Kherson
+Tavriysk||46754|33417|26|10
+#UA|Khmelnytskyi
+Teofipol||49839|26420|252|7
+#UA|Kyiv City
+Teremky-I||50367|30459|178|13
+#UA|Kyiv Oblast
+Tetiiv||49370|29669|183|14
+Tarashcha||49557|30496|154|13
+Trebukhiv||50484|30903|114|6
+#UA|Luhansk
+Troitske||49912|38284|90|7
+Teple||48312|39563|184|5
+#UA|Lviv
+Turka||49154|23029|577|7
+#UA|Odesa
+Tatarbunary||45839|29611|14|11
+Teplodar||46502|30323|37|10
+Troyitske||46542|30023|13|5
+#UA|Ternopil
+Terebovlia||49300|25689|262|13
+#UA|Vinnytsia
+Trostyanets||48509|29227|192|8
+Teplyk||48665|29745|193|6
+Turbiv||49341|28718|240|6
+Tomashpil||48537|28513|243|5
+#UA|Volyn
+Turiisk||51087|24526|169|6
+#UA|Zakarpattia
+Tyachiv||48011|23572|213|9
+Teresva||47998|23699|242|8
+#US|Alabama
+Tuskegee||32424|-85691|141|9
+Tuscumbia||34731|-87703|142|8
+Tarrant||33583|-86773|166|6
+Theodore||30548|-88175|18|6
+#US|Alaska
+Tanaina||61627|-149428|152|8
+#US|Arizona
+Tucson Estates||32188|-111091|807|12
+Tuba City||36135|-111240|1512|9
+Tolleson||33450|-112259|309|7
+Three Points||32077|-111314|775|6
+#US|Arkansas
+Trumann||35674|-90507|69|7
+#US|California
+Tehachapi||35132|-118449|1210|13
+Turtle Rock||33643|-117810|80|12
+Tamalpais-Homestead Valley||37878|-122536|7|11
+Taft||35142|-119457|291|9
+Tiburon||37874|-122457|4|9
+Topanga||34094|-118601|256|8
+Thousand Palms||33820|-116390|75|8
+Templeton||35550|-120706|246|8
+Tamalpais Valley||37880|-122546|33|7
+Thermalito||39511|-121587|68|7
+Tierra Buena||39149|-121667|18|6
+Tara Hills||37994|-122316|28|5
+#US|Colorado
+The Pinery||39455|-104734|1904|11
+Trinidad||37169|-104501|1839|8
+Twin Lakes||39825|-105005|1599|6
+#US|Connecticut
+Tolland||41871|-72369|200|15
+Thompson||41959|-71863|181|9
+Thompsonville||41997|-72599|35|9
+Terryville||41678|-73011|190|5
+#US|District of Columbia
+The Wharf||38879|-77025|2|11
+The Parks At Walter Reed||38974|-77030|81|8
+Tenleytown||38947|-77080|97|6
+#US|Florida
+Thonotosassa||28061|-82302|10|13
+Trinity||28181|-82682|6|11
+Treasure Island||27769|-82769|1|7
+Tequesta||26959|-80088|3|6
+Timber Pines||28470|-82603|4|5
+#US|Georgia
+Thomaston||32888|-84327|230|9
+Toccoa||34577|-83332|303|8
+Tyrone||33471|-84597|299|7
+Thomson||33471|-82505|162|7
+#US|Illinois
+Taylorville||39549|-89295|192|11
+Troy||38729|-89883|171|10
+#US|Indiana
+Tell City||37951|-86768|128|7
+Tipton||40282|-86041|265|5
+#US|Kansas
+Tonganoxie||39110|-95088|271|5
+#US|Kentucky
+Taylor Mill||38998|-84496|263|7
+#US|Louisiana
+Thibodaux||29796|-90823|4|15
+Timberlane||29877|-90032|-1|10
+Tallulah||32408|-91187|26|7
+#US|Maine
+Topsham||43928|-69976|40|6
+Turner||44256|-70256|97|5
+#US|Maryland
+Travilah||39069|-77263|107|12
+Timonium||39437|-76620|124|10
+Temple Hills||38814|-76946|82|8
+Taneytown||39658|-77174|154|7
+Thurmont||39624|-77411|158|6
+#US|Massachusetts
+Tyngsboro||42677|-71425|42|11
+Ten Hills||42397|-71087|12|7
+Templeton||42556|-72068|347|7
+Tufts University||42407|-71119|16|7
+#US|Michigan
+Temperance||41779|-83569|190|9
+Tecumseh||42004|-83945|245|8
+Three Rivers||41944|-85632|245|8
+#US|Minnesota
+Thief River Falls||48119|-96181|345|9
+#US|Missouri
+Troy||38979|-90981|165|12
+Town and Country||38612|-90463|178|11
+Trenton||40079|-93617|256|6
+#US|New Jersey
+Tenafly||40925|-73963|15|15
+Totowa||40905|-74210|58|11
+Twin Rivers||40264|-74491|34|7
+#US|New Mexico
+Truth or Consequences||33128|-107253|1294|6
+Taos||36407|-105573|2124|6
+Tucumcari||35172|-103727|1247|5
+#US|New York
+Tonawanda||43020|-78880|175|15
+Terryville||40909|-73065|46|12
+Tarrytown||41076|-73859|37|12
+Tompkinsville||40638|-74078|34|8
+Tribeca||40715|-74009|6|8
+Tuckahoe||40950|-73827|34|7
+Tappan||41022|-73947|14|7
+Thiells||41211|-74018|84|5
+#US|North Carolina
+Tarboro||35897|-77536|13|11
+Trinity||35895|-79991|245|7
+#US|Ohio
+Trenton||39481|-84458|198|12
+Tipp City||39958|-84172|252|10
+The Village of Indian Hill||39179|-84335|171|6
+Turpin Hills||39110|-84380|198|5
+#US|Oklahoma
+The Village||35561|-97551|372|9
+Tuttle||35291|-97812|402|7
+Tecumseh||35258|-96937|330|7
+#US|Oregon
+Talent||42246|-122789|496|6
+#US|Pennsylvania
+Torresdale||40055|-75004|24|11
+Tulpehocken||40038|-75195|84|7
+Tamaqua||40797|-75969|247|7
+Taylor||41395|-75707|218|6
+Trooper||40150|-75402|115|6
+Titusville||41627|-79674|365|5
+Tyrone||40671|-78239|272|5
+Turtle Creek||40406|-79825|225|5
+#US|Rhode Island
+Tiverton||41626|-71213|3|8
+#US|South Carolina
+Tega Cay||35024|-81028|192|10
+#US|Tennessee
+Tellico Village||35683|-84255|268|6
+#US|Texas
+Timberwood Park||29694|-98497|376|13
+Trophy Club||32998|-97184|185|12
+Tomball||30097|-95616|57|12
+Terrell Hills||29475|-98451|244|5
+#US|Utah
+Tremonton||41712|-112166|1318|8
+#US|Virginia
+Timberlake||37321|-79258|279|12
+Triangle||38547|-77337|30|8
+#US|Washington
+Tulalip||48068|-122292|30|9
+Toppenish||46377|-120309|231|9
+Terrace Heights||46606|-120440|364|7
+Tanglewilde-Thompson Place||47051|-122781|62|6
+Tanglewilde||47052|-122782|62|6
+Tracyton||47609|-122655|28|5
+#US|West Virginia
+Teays Valley||38450|-81929|203|13
+#US|Wisconsin
+Two Rivers||44154|-87569|184|11
+Tomah||43979|-90504|296|9
+Twin Lakes||42531|-88248|244|6
+Tichigan||42829|-88198|242|5
+#US|Wyoming
+Torrington||42062|-104184|1251|7
+#UY|Colonia
+Tarariras||-34266|-57619|92|7
+#UY|Rivera Department
+Tranqueras||-31200|-55750|187|7
+#UZ|Fergana
+Tinchlik||40476|71551|434|13
+#VE|Falcón
+Tocuyo de La Costa||11036|-68374|6|10
+#VI|Saint Thomas Island
+Tutu||18339|-64887|60|6
+#VN|Cao Bằng Province
+Thị Trấn Đông Khê|Thi Tran GJong Khe|22429|106432|435|9
+Thị Trấn Nguyên Bình|Thi Tran Nguyen Binh|22650|105960|471|7
+Thị Trấn Tĩnh Túc|Thi Tran Tinh Tuc|22654|105885|732|6
+#VN|Da Nang City
+Tra Que Vegetable Village||15902|108339|9|10
+Trà My|Tra My|15340|108221|110|7
+#VN|Dong Thap
+Tân Ninh|Tan Ninh|10334|106445|4|8
+#VN|Hanoi
+Thụy Phương|Thuy Phuong|21083|105783|9|14
+Tây Đằng|Tay GJang|21198|105422|19|13
+Triều Khúc|Trieu Khuc|20981|105802|13|12
+Trại Khoai|Trai Khoai|21132|105345|45|12
+#VN|Hà Tĩnh Province
+Thạch Hà|Thach Ha|18368|105861|10|14
+Trường Sơn|Truong Son|18383|105733|29|9
+Tùng Lộc|Tung Loc|18458|105815|17|8
+Thuần Thiện|Thuan Thien|18474|105787|6|8
+Thiên Lộc|Thien Loc|18504|105769|16|7
+#VN|Lai Châu Province
+Thị Trấn Sìn Hồ|Thi Tran Sin Ho|22366|103234|1592|6
+Than Uyên|Than Uyen|21959|103880|587|5
+#VN|Lao Cai
+Thị Trấn Yên Bình|Thi Tran Yen Binh|21726|104963|64|12
+Thị Trấn Mường Khương|Thi Tran Muong Khuong|22761|104122|771|10
+Thị Trấn Phố Ràng|Thi Tran Pho Rang|22234|104476|87|9
+Thị Trấn Khánh Yên|Thi Tran Khanh Yen|22089|104251|202|7
+#VN|Lạng Sơn Province
+Thị Trấn Na Sầm|Thi Tran Na Sam|22056|106615|179|14
+Thị Trấn Đồng Đăng|Thi Tran GJong GJang|21951|106698|254|9
+Thị Trấn Cao Lộc|Thi Tran Cao Loc|21867|106768|280|9
+#VN|Ninh Binh
+Thị Trấn Bình Minh|Thi Tran Binh Minh|19991|106063|3|9
+Thanh Nguyên|Thanh Nguyen|20415|105926|9|6
+#VN|Phu Tho
+Thổ Tăng|Tho Tang|21255|105489|19|14
+Tú Trưng|Tu Trung|21199|105533|15|8
+Thị Trấn Thanh Hà|Thi Tran Thanh Ha|20595|105679|23|7
+#VN|Quảng Ninh
+Thị Trấn Bình Liêu|Thi Tran Binh Lieu|21524|107398|149|13
+Thị Trấn Cái Rồng|Thi Tran Cai Rong|21071|107421|15|7
+#VN|Thai Nguyen
+Thị Trấn Ba Hàng|Thi Tran Ba Hang|21415|105873|26|13
+#VN|Tuyen Quang
+Thị Trấn Na Hang|Thi Tran Na Hang|22349|105382|64|11
+Thị Trấn Tân Yên|Thi Tran Tan Yen|22066|105035|45|9
+Thị Trấn Yên Minh|Thi Tran Yen Minh|23118|105142|434|8
+Thị Trấn Đồng Văn|Thi Tran GJong Van|23278|105363|1068|8
+Thị Trấn Mèo Vạc|Thi Tran Meo Vac|23164|105410|989|7
+Thị Trấn Vĩnh Tuy|Thi Tran Vinh Tuy|22274|104891|53|6
+#VN|Vinh Long
+Thạnh Phú|Thanh Phu|9948|106516|4|10
+#VN|Điện Biên Province
+Tuần Giáo|Tuan Giao|21583|103417|563|9
+#YT|Mamoudzou
+Tsoundzou 1||-12806|45202|50|6
+#YT|Tsingoni
+Tsingoni||-12787|45103|56|8
+#ZA|Eastern Cape
+Tarkastad||-32009|26259|1300|7
+Tsolo||-31308|28755|917|7
+#ZA|Free State
+Tweeling||-27555|28516|1612|8
+Tweespruit||-29185|27032|1595|7
+Trompsburg||-30034|25780|1418|6
+#ZA|KwaZulu-Natal
+Trust Feed||-29400|30543|786|7
+#ZA|Limpopo
+Tukakgomo||-24743|30108|1028|13
+Tshandama||-22746|30509|679|6
+#ZA|Mpumalanga
+Thulamahashe||-24725|31212|434|13
+Tjakastad||-25989|30823|911|13
+Tsakani||-24619|31051|660|9
+Thabakgolo||-24800|31032|619|6
+#ZA|Western Cape
+Tulbagh||-33286|19141|166|11
+Touwsrivier||-33338|20031|775|10

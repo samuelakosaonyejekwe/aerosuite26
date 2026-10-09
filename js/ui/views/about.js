@@ -46,7 +46,7 @@ export async function render(root, _p, { setCrumb }) {
         h('p', null, h('b', null, 'Licence. '), 'AeroSuite 26 is proprietary software: Copyright © 2026 Samuel Akosa Onyejekwe. All rights reserved (', h('a', { href: 'LICENSE', target: '_blank', rel: 'noopener' }, 'LICENSE'), '). It includes third-party components under their own licences, among them the OpenCASCADE geometry kernel under the GNU LGPL 2.1 (', h('a', { href: 'THIRD_PARTY_NOTICES.md', target: '_blank', rel: 'noopener' }, 'THIRD_PARTY_NOTICES.md'), ').'),
         h('p', null, h('b', null, 'Shortcuts: '), h('span', { class: 'mono' }, 'Ctrl/⌘ K'), ' or ', h('span', { class: 'mono' }, '/'), ' search · ', h('span', { class: 'mono' }, 'Alt ←'), ' back · ', h('span', { class: 'mono' }, 'Alt →'), ' forward.')))),
     h('div', { class: 'gap' }), licHost);
-  licenceSection().then((el) => licHost.append(el)).catch(() => {});
+  licenceSection({ pack: true }).then((el) => licHost.append(el)).catch(() => {});
 
   async function paintOffline() {
     const reg = await navigator.serviceWorker?.getRegistration().catch(() => null); let files = 0, bytes = null;

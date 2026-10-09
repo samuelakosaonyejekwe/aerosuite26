@@ -16,6 +16,8 @@
 import { idb, state, patchCaseMany, emit, ls } from './store.js';
 import { isa } from './atmosphere.js';
 import * as airports from './airports.js';
+import { gridWeather, gridMarine, gridAir } from './gridwx.js';
+import { searchPlaces, nearestPlace, terrain, climateAt } from './places.js';
 
 // ---- unit conversions shared with tools/snapshot.mjs --------------------------------------------
 export const JET_DENSITY_KG_L = 0.804, L_PER_BBL = 158.987, L_PER_US_GAL = 3.785411784; // Jet A-1 at 15 °C, mid-specification
@@ -49,7 +51,7 @@ export function cleanConfig(o) {
   const c = { ...CONFIG_DEFAULTS, accept: [] }; if (!o || typeof o !== 'object') return c;
   if (typeof o.commercial === 'boolean') c.commercial = o.commercial;
   for (const k of ['openMeteoApiKey', 'openAlexApiKey']) if (typeof o[k] === 'string') c[k] = o[k].trim();
-  if (['auto', 'open-meteo', 'met-norway', 'nws', 'none'].includes(o.weatherProvider)) c.weatherProvider = o.weatherProvider;
+  if (['auto', 'open-meteo', 'met-norway', 'nws', 'noaa-grid', 'none'].includes(o.weatherProvider)) c.weatherProvider = o.weatherProvider;
   if (typeof o.carbonPriceUrl === 'string' && o.carbonPriceUrl.trim()) { // an https address, or a path on this site
     const b = pageBase(); try { const u = new URL(o.carbonPriceUrl.trim(), b || undefined); c.carbonPriceUrl = httpsUrl(u.href) || (b && u.origin === new URL(b).origin ? u.href : ''); } catch { /* not an address */ }
   }
@@ -102,6 +104,7 @@ export async function allowed(id, cfg = config) {
   if (cfg.accept.includes(id)) return true;
   let reg; try { reg = await loadLicences(); } catch { return false; }
   const s = reg.sources.find((x) => x.id === id); if (!s) return false;
+  if (s.usedInCommercial === false) return false; // cleared licence, but the deployment policy keeps it out of commercial mode (see the registry entry)
   if (s.class === 'commercial-ok') return true;
   if (id === 'open-meteo-customer') return !!cfg.openMeteoApiKey;
   if (id === 'operator-carbon') return !!cfg.carbonPriceUrl;
@@ -182,17 +185,45 @@ export const WEATHER = {
     },
   },
 };
+WEATHER['noaa-grid'] = {
+  label: 'NOAA GFS forecast grid', reg: () => 'noaa-gfs',
+  note: 'Interpolated from the NOAA GFS forecast grid (1° at the surface, 2.5° aloft): regional model values, not a station observation.',
+  async load(p) { return gridWeather(p.lat, p.lon, { elev_m: Number.isFinite(p.elev_m) ? p.elev_m : await bundledElevation(p) }); },
+};
+/** Site elevation from the data bundled with the app: an airport within 10 km, else a city within 15 km, else the 0.5° terrain grid. */
+export async function bundledElevation(p) {
+  const a = (await airports.nearest(p.lat, p.lon, 10, 1).catch(() => []))[0]; if (Number.isFinite(a?.elev_m)) return a.elev_m;
+  const c = await nearestPlace(p.lat, p.lon, 15).catch(() => null); if (Number.isFinite(c?.elev_m)) return c.elev_m;
+  return (await terrain([p]).catch(() => [null]))[0];
+}
+/**
+ * Complete a provider's reply from the NOAA GFS grid: whatever it left empty (gusts, visibility, freezing level,
+ * winds and temperatures aloft, …) is taken from the grid, so no deployment loses a field because of its provider.
+ */
+async function gridFill(w, p) {
+  const gaps = ['gust_ms', 'visibility_m', 'freezing_level_m', 'rh', 'wind_ms', 'cloud_pct', 'qnh_hPa'].some((k) => !Number.isFinite(w[k])) || !w.aloft?.length;
+  if (!gaps || !(await allowed('noaa-gfs'))) return w;
+  let g; try { g = await gridWeather(p.lat, p.lon, { elev_m: Number.isFinite(p.elev_m) ? p.elev_m : Number.isFinite(w.elev_m) ? w.elev_m : null }); } catch { return w; }
+  const out = { ...w }, filled = [];
+  for (const [k, label] of [['gust_ms', 'gusts'], ['visibility_m', 'visibility'], ['freezing_level_m', 'freezing level'], ['rh', 'humidity'], ['wind_ms', 'wind'], ['cloud_pct', 'cloud cover'], ['qnh_hPa', 'pressure']]) if (!Number.isFinite(out[k]) && Number.isFinite(g[k])) { out[k] = g[k]; if (k === 'wind_ms') out.wind_dir_deg = g.wind_dir_deg; filled.push(label); }
+  if (filled.includes('gusts') && Number.isFinite(out.wind_ms)) out.gust_ms = Math.max(out.gust_ms, out.wind_ms);
+  if (!out.aloft?.length && g.aloft.length) { out.aloft = g.aloft; filled.push('winds and temperatures aloft'); }
+  if (out.code == null) out.code = g.code;
+  return filled.length ? { ...out, filled, fill_cycle: g.cycle } : w;
+}
 /** Providers to try, in order, under the current configuration. */
 export function weatherPlan(cfg = config) {
   const w = cfg.weatherProvider, om = !cfg.commercial || !!cfg.openMeteoApiKey || cfg.accept.includes('open-meteo-free');
   if (w === 'none') return [];
-  const auto = cfg.commercial ? [...(om ? ['open-meteo'] : []), 'met-norway', 'nws'] : ['open-meteo', 'met-norway'];
+  // Open-Meteo (finest) where its terms allow; then a point forecast or observation completed from the NOAA grid; the grid alone
+  // is the last step and also works from the offline copy.
+  const auto = cfg.commercial ? [...(om ? ['open-meteo'] : []), 'met-norway', 'nws', 'noaa-grid'] : ['open-meteo', 'met-norway', 'noaa-grid'];
   if (w === 'auto' || !WEATHER[w] || (w === 'open-meteo' && !om)) return auto;
   return [w, ...auto.filter((x) => x !== w)];
 }
 /** Fill the documented stand-ins for fields a provider cannot supply and say so. */
 export function finishWeather(w, id) {
-  const P = WEATHER[id], missing = [], notes = [], out = { ...w, provider: id, provider_label: P.label + (w.station ? ` (station ${w.station})` : '') };
+  const P = WEATHER[id], missing = [], notes = [], out = { ...w, provider: id, provider_label: P.label + (w.station ? ` (station ${w.station})` : '') + (w.filled?.length ? ' + NOAA GFS grid' : '') };
   if (!Number.isFinite(out.T_C)) throw new Error('no temperature in the reply');
   if (!Number.isFinite(out.elev_m)) out.elev_m = null;
   if (!Number.isFinite(out.qnh_hPa) && !Number.isFinite(out.p_hPa)) { missing.push('pressure'); out.qnh_hPa = 1013.25; notes.push('no pressure reported: standard sea-level pressure (1013.25 hPa) assumed'); }
@@ -203,7 +234,9 @@ export function finishWeather(w, id) {
   if (!Number.isFinite(out.visibility_m)) { missing.push('visibility'); out.visibility_m = null; }
   if (!Number.isFinite(out.freezing_level_m)) { missing.push('freezing level'); out.freezing_level_m = Math.round((out.elev_m || 0) + Math.max(0, out.T_C) / 0.0065); out.freezing_level_estimated = true; notes.push('freezing level estimated from the surface temperature with the standard lapse rate (6.5 K/km)'); }
   if (!out.aloft?.length) { missing.push('winds aloft'); out.aloft = []; notes.push('no winds or temperatures aloft: mission analyses use still air and the standard atmosphere (ISA)'); }
-  out.missing = missing; out.note = notes.length ? `${P.label} does not supply ${missing.join(', ')}. ${notes.map((n) => n[0].toUpperCase() + n.slice(1)).join('. ')}.` : '';
+  out.missing = missing;
+  out.note = [w.filled?.length ? `${w.filled.join(', ').replace(/^./, (c) => c.toUpperCase())}: NOAA GFS forecast grid (1° at the surface, 2.5° aloft), which ${P.label} does not supply.` : '', P.note || '',
+    notes.length ? `${missing.length ? `${P.label} does not supply ${missing.join(', ')}. ` : ''}${notes.map((n) => n[0].toUpperCase() + n.slice(1)).join('. ')}.` : ''].filter(Boolean).join(' ');
   return out;
 }
 
@@ -328,7 +361,9 @@ export async function loadSnapshot({ force = false } = {}) {
     for (const m of mirrors) try { const u = new URL(SNAPSHOT_PATH, String(m).replace(/\/?$/, '/')).href; if (!urls.includes(u)) urls.push(u); } catch { /* malformed address */ }
     const when = (x) => Date.parse(x?.generated) || 0;
     const got = (await Promise.all(urls.map((u) => get(u).then(J).then((d) => (d && d.feeds && when(d) ? { ...d, from: u } : null)).catch(() => null)))).filter(Boolean).sort((a, b) => when(b) - when(a));
-    const saved = await idb.get('snapshot'), best = got[0] && when(got[0]) >= when(saved) ? got[0] : saved || null;
+    let saved = await idb.get('snapshot'); const carried = globalThis.__AEROSUITE_ESSENTIAL__?.snapshot; // the single-file copy carries the snapshot of its build
+    if (carried?.feeds && when(carried) > when(saved)) saved = { ...carried, from: null, carried: true };
+    const best = got[0] && when(got[0]) >= when(saved) ? got[0] : saved || null;
     if (best && best === got[0] && when(best) > when(saved)) idb.set('snapshot', best);
     snap = best || false; snapAt = Date.now();
     emit('live', { id: 'snapshot' });
@@ -360,7 +395,7 @@ export async function seedFromSnapshot(opt) {
   let n = 0;
   for (const [id, f] of Object.entries(s.feeds)) {
     const c = CONNECTORS[id]; if (!c || !f?.data || !Number.isFinite(f.ts) || !(await feedAllowed(f))) continue;
-    if (id === 'carbon' && (config.carbonPriceUrl || (f.registry || ['eex-auction']).includes('eex-auction') !== (carbonMode() === 'eua'))) continue; // the operator's own price, or a snapshot built for the other mode
+    if (id === 'carbon') continue; // the carbon panel is filtered market by market in its own loader
     const params = SNAPSHOT_PARAMS[id] || {}, key = c.key(params), ck = `live.${id}.${key}`, cur = await idb.get(ck);
     if (cur && cur.ts >= f.ts) continue;
     const data = c.cloud || id === 'oil' ? { ...f.data, _ts: f.ts, _source: f.source, _url: f.url, _error: f.ok ? null : f.error || 'last fetch failed' } : f.data;
@@ -372,54 +407,66 @@ export async function seedFromSnapshot(opt) {
 /** Connector catalogue. `key(p)` identifies a cache entry; `load(p)` fetches and normalises. */
 export const CONNECTORS = {
   weather: {
-    get title() { return weatherPlan()[0] === 'open-meteo' ? 'Surface weather and winds aloft' : 'Surface weather'; },
-    get provider() { const pl = weatherPlan(); return pl.length ? pl.map((id) => WEATHER[id].label).join(', then ') : 'Switched off (weatherProvider: none)'; },
-    get home() { return { 'open-meteo': 'https://open-meteo.com', 'met-norway': 'https://api.met.no', nws: 'https://www.weather.gov/documentation/services-web-api' }[weatherPlan()[0]] || 'https://open-meteo.com'; },
+    title: 'Surface weather and winds aloft',
+    get provider() { const pl = weatherPlan(); return pl.length ? pl.map((id) => WEATHER[id].label + (id === 'met-norway' || id === 'nws' ? ' (completed from the NOAA GFS grid)' : '')).join(', then ') : 'Switched off (weatherProvider: none)'; },
+    get home() { return { 'open-meteo': 'https://open-meteo.com', 'met-norway': 'https://api.met.no', nws: 'https://www.weather.gov/documentation/services-web-api', 'noaa-grid': 'https://nomads.ncep.noaa.gov/' }[weatherPlan()[0]] || 'https://nomads.ncep.noaa.gov/'; },
     get ttl() { return weatherPlan()[0] === 'met-norway' ? 30 * MIN : 15 * MIN; }, // MET Norway asks clients not to re-request before the reply expires (about half an hour)
-    needs: 'site', reg: () => weatherPlan().map((id) => WEATHER[id].reg()).filter(Boolean),
-    use: 'Site temperature, pressure, humidity, wind and gusts for field performance, icing, thermal and ECS loads; winds and temperatures aloft for mission fuel (where the provider supplies them).',
+    needs: 'site', reg: () => { const ids = weatherPlan().map((id) => WEATHER[id].reg()).filter(Boolean); return ids.length && !ids.includes('noaa-gfs') ? [...ids, 'noaa-gfs'] : ids; },
+    use: 'Site temperature, pressure, humidity, wind and gusts for field performance, icing, thermal and ECS loads; winds and temperatures aloft for mission fuel.',
     key: (p) => `${modeKey()}${r3(p.lat)},${r3(p.lon)}`,
     async load(p, get) {
       const errs = [];
       for (const id of weatherPlan()) {
         const P = WEATHER[id], reg = P.reg();
         if (!reg || !(await allowed(reg))) { errs.push(`${P.label}: not licensed for this deployment`); continue; }
-        try { return finishWeather(await P.load(p, get), id); } catch (e) { errs.push(`${P.label}: ${e.message || 'request failed'}`); }
+        try { const w = await P.load(p, get); return finishWeather(id === 'open-meteo' || id === 'noaa-grid' ? w : await gridFill(w, p), id); } catch (e) { errs.push(`${P.label}: ${e.message || 'request failed'}`); }
       }
       throw errs.length ? new Error(errs.length === 1 ? errs[0].replace(/^[^:]+: /, '') : errs.join('; ')) : policy('The weather feed is switched off in this deployment');
     },
   },
   climate: {
-    title: 'Site design temperatures (last 12 months)',
-    get provider() { return omId() ? 'Open-Meteo historical reanalysis (ERA5)' : open('nasa-power') ? 'NASA POWER (MERRA-2)' : 'Needs an Open-Meteo key in this deployment'; },
-    home: 'https://open-meteo.com/en/docs/historical-weather-api', ttl: 14 * DAY, needs: 'site', reg: () => [omId(), open('nasa-power') ? 'nasa-power' : null].filter(Boolean),
-    use: 'Hot-day and cold-day temperatures for hot-and-high take-off limits, cooling margins and cold-soak.',
+    title: 'Site design temperatures',
+    get provider() { return omId() ? 'Open-Meteo historical reanalysis (ERA5, last 12 months); NCEP-DOE Reanalysis 2 statistics bundled with the app as fall-back' : 'NCEP-DOE Reanalysis 2 statistics (NOAA PSL), bundled with the app'; },
+    get home() { return omId() ? 'https://open-meteo.com/en/docs/historical-weather-api' : 'https://psl.noaa.gov/data/gridded/data.ncep.reanalysis2.html'; }, ttl: 14 * DAY, needs: 'site', reg: () => [omId(), 'noaa-reanalysis2'].filter(Boolean),
+    use: 'Hot-day and cold-day temperatures for hot-and-high take-off limits, cooling margins and cold-soak. Works without a connection.',
     key: (p) => `${modeKey()}${r3(p.lat)},${r3(p.lon)}`,
     async load(p, get) {
-      const end = new Date(Date.now() - 6 * DAY), start = new Date(end.getTime() - 365 * DAY), f = (x) => x.toISOString().slice(0, 10);
-      const q = (a, f2) => { const s = a.filter((v) => v != null && v > -900).sort((x, y) => x - y); return s.length ? s[Math.min(s.length - 1, Math.floor(f2 * s.length))] : null; };
-      let first = null;
-      try {
+      // refinement where Open-Meteo may be used: the site's own last twelve months from the ERA5 archive
+      if (omId()) try {
+        const end = new Date(Date.now() - 6 * DAY), start = new Date(end.getTime() - 365 * DAY), f = (x) => x.toISOString().slice(0, 10);
+        const q = (a, f2) => { const s = a.filter((v) => v != null).sort((x, y) => x - y); return s.length ? s[Math.min(s.length - 1, Math.floor(f2 * s.length))] : null; };
         const d = await get(await omUrl('archive-', '/v1/archive', `latitude=${p.lat}&longitude=${p.lon}&start_date=${f(start)}&end_date=${f(end)}&daily=temperature_2m_max,temperature_2m_min,wind_speed_10m_max&wind_speed_unit=ms&timezone=UTC`)).then(J);
-        return { from: f(start), to: f(end), hot99_C: q(d.daily.temperature_2m_max, 0.99), hot_mean_C: q(d.daily.temperature_2m_max, 0.5), cold01_C: q(d.daily.temperature_2m_min, 0.01), wind99_ms: q(d.daily.wind_speed_10m_max, 0.99), provider: 'open-meteo' };
-      } catch (e) { first = e; }
-      if (!(await allowed('nasa-power'))) throw first; // NASA POWER carries no explicit commercial-reuse grant: used only where the registry or the operator allows it
-      const ymd = (x) => f(x).replace(/-/g, ''), d = await get(`https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX,T2M_MIN,WS10M_MAX&community=RE&longitude=${lat4(p.lon)}&latitude=${lat4(p.lat)}&start=${ymd(start)}&end=${ymd(end)}&format=JSON`).then(J);
-      const P = d.properties?.parameter || {}, col = (k) => Object.values(P[k] || {}); if (!col('T2M_MAX').some((v) => v > -900)) throw new Error('no data for this place');
-      return { from: f(start), to: f(end), hot99_C: q(col('T2M_MAX'), 0.99), hot_mean_C: q(col('T2M_MAX'), 0.5), cold01_C: q(col('T2M_MIN'), 0.01), wind99_ms: q(col('WS10M_MAX'), 0.99), provider: 'nasa-power' };
+        const out = { from: f(start), to: f(end), hot99_C: q(d.daily.temperature_2m_max, 0.99), hot_mean_C: q(d.daily.temperature_2m_max, 0.5), cold01_C: q(d.daily.temperature_2m_min, 0.01), wind99_ms: q(d.daily.wind_speed_10m_max, 0.99), provider: 'open-meteo', basis: 'ERA5 reanalysis at the site, last 12 months' };
+        if (out.hot99_C != null) return out;
+      } catch { /* fall back to the bundled statistics */ }
+      // foundation in every mode: multi-year reanalysis statistics bundled with the app (no network)
+      if (!(await allowed('noaa-reanalysis2'))) throw policy('No climate source is licensed for this deployment');
+      const c = await climateAt(p.lat, p.lon, Number.isFinite(p.elev_m) ? p.elev_m : await bundledElevation(p));
+      return { ...c, provider: 'noaa-reanalysis2', basis: `NCEP-DOE Reanalysis 2, ${c.from}–${c.to} (wind ${c.wind_period}), regional values on a 2.5° grid (the strong-wind figure is conservative: the reanalysis is windier than finer ones over mid-latitude land)${c.elevation_correction_K ? `, moved ${c.elevation_correction_K > 0 ? '+' : ''}${c.elevation_correction_K} K to the site elevation` : ''}` };
     },
   },
   airquality: {
-    title: 'Air quality and dust', get provider() { return omId() ? 'Open-Meteo / Copernicus CAMS' : 'Needs an Open-Meteo key in this deployment'; }, home: 'https://open-meteo.com/en/docs/air-quality-api', ttl: HOUR, needs: 'site', reg: () => [omId()].filter(Boolean),
+    title: 'Air quality and dust', get provider() { return omId() ? 'Open-Meteo / Copernicus CAMS; NOAA GEFS-Aerosols grid as fall-back' : 'NOAA GEFS-Aerosols forecast grid (via the cloud snapshot)'; },
+    get home() { return omId() ? 'https://open-meteo.com/en/docs/air-quality-api' : 'https://registry.opendata.aws/noaa-gefs/'; }, ttl: HOUR, needs: 'site', reg: () => [omId(), 'noaa-gefs-aerosols', ...(config.accept.includes('nasa-geos-cf') ? ['nasa-geos-cf'] : [])].filter(Boolean),
     use: 'Dust and particulates for engine erosion, filter loading and visibility; a local air-quality baseline for emissions assessment.',
     key: (p) => `${modeKey()}${r3(p.lat)},${r3(p.lon)}`,
-    async load(p, get) { const d = await get(await omUrl('air-quality-', '/v1/air-quality', `latitude=${p.lat}&longitude=${p.lon}&current=pm10,pm2_5,dust,aerosol_optical_depth,nitrogen_dioxide,ozone&timezone=UTC`)).then(J); return { time: d.current.time, pm10: d.current.pm10, pm2_5: d.current.pm2_5, dust: d.current.dust, aod: d.current.aerosol_optical_depth, no2: d.current.nitrogen_dioxide, o3: d.current.ozone }; },
+    async load(p, get) {
+      if (omId()) try { const d = await get(await omUrl('air-quality-', '/v1/air-quality', `latitude=${p.lat}&longitude=${p.lon}&current=pm10,pm2_5,dust,aerosol_optical_depth,nitrogen_dioxide,ozone&timezone=UTC`)).then(J); return { time: d.current.time, pm10: d.current.pm10, pm2_5: d.current.pm2_5, dust: d.current.dust, aod: d.current.aerosol_optical_depth, no2: d.current.nitrogen_dioxide, o3: d.current.ozone, provider: 'open-meteo' }; } catch { /* fall back to the grid */ }
+      if (!(await allowed('noaa-gefs-aerosols'))) throw policy('No air-quality source is licensed for this deployment');
+      const g = await gridAir(p.lat, p.lon), gasOk = g.gases === 'nasa-geos-cf' && config.accept.includes('nasa-geos-cf'); if (!gasOk) { g.no2 = null; g.o3 = null; }
+      return { ...g, provider: 'noaa-gefs-aerosols', note: `Particulates, dust and aerosol optical depth: NOAA GEFS-Aerosols forecast (2.5° grid). ${gasOk ? 'Nitrogen dioxide and ozone: NASA GEOS-CF forecast (2.5° grid), accepted by the operator of this site.' : 'Nitrogen dioxide and ozone are not shown: no keyless source with an explicit licence for commercial reuse publishes them worldwide. They appear with an Open-Meteo key, or once the operator accepts the NASA GEOS-CF source ("accept": ["nasa-geos-cf"]).'}` };
+    },
   },
   marine: {
-    title: 'Sea state', get provider() { return omId() ? 'Open-Meteo marine models' : 'Needs an Open-Meteo key in this deployment'; }, home: 'https://open-meteo.com/en/docs/marine-weather-api', ttl: HOUR, needs: 'site', reg: () => [omId()].filter(Boolean),
+    title: 'Sea state', get provider() { return omId() ? 'Open-Meteo marine models; DWD wave model grid as fall-back' : 'DWD global wave model GWAM grid (via the cloud snapshot)'; },
+    get home() { return omId() ? 'https://open-meteo.com/en/docs/marine-weather-api' : 'https://opendata.dwd.de/weather/maritime/wave_models/gwam/'; }, ttl: HOUR, needs: 'site', reg: () => [omId(), 'dwd-gwam'].filter(Boolean),
     use: 'Wave height for offshore helicopter operations, ditching and flotation assessments.',
     key: (p) => `${modeKey()}${r3(p.lat)},${r3(p.lon)}`,
-    async load(p, get) { const d = await get(await omUrl('marine-', '/v1/marine', `latitude=${p.lat}&longitude=${p.lon}&current=wave_height,wave_period,wave_direction&timezone=UTC`)).then(J); return { time: d.current.time, wave_height_m: d.current.wave_height, wave_period_s: d.current.wave_period, wave_dir_deg: d.current.wave_direction }; },
+    async load(p, get) {
+      if (omId()) try { const d = await get(await omUrl('marine-', '/v1/marine', `latitude=${p.lat}&longitude=${p.lon}&current=wave_height,wave_period,wave_direction&timezone=UTC`)).then(J); return { time: d.current.time, wave_height_m: d.current.wave_height, wave_period_s: d.current.wave_period, wave_dir_deg: d.current.wave_direction, provider: 'open-meteo' }; } catch { /* fall back to the grid */ }
+      if (!(await allowed('dwd-gwam'))) throw policy('No sea-state source is licensed for this deployment');
+      return { ...(await gridMarine(p.lat, p.lon)), provider: 'dwd-gwam' };
+    },
   },
   aerodromes: {
     title: 'Nearby aerodromes and runways', get provider() { return `OurAirports (public domain), bundled with the app${osmAvailable() ? '; optional OpenStreetMap enrichment' : ''}`; }, home: 'https://ourairports.com/data/', ttl: 30 * DAY, needs: 'site', bundled: true,
@@ -464,21 +511,21 @@ export const CONNECTORS = {
     key: () => 'usgc', load: fromSnapshot('jetfuel'),
   },
   carbon: {
-    get title() { return { eua: 'Carbon price (EU ETS allowance)', ukets: 'Carbon price (UK ETS, annual determination)', operator: 'Carbon price (supplied by the operator)' }[carbonMode()]; },
-    get provider() { return { eua: 'EEX primary auctions of EU allowances, the EU common auction platform (via the cloud snapshot)', ukets: 'UK ETS Authority determination of the UK ETS carbon price, GOV.UK (Open Government Licence v3.0)', operator: 'Supplied by the operator of this site' }[carbonMode()]; },
-    get home() { return { eua: 'https://www.eex.com/en/markets/environmentals/eu-ets1-eu-ets2-auctions/eu-ets1-auctions', ukets: GOVUK + UK_ETS_PAGE, operator: config.carbonPriceUrl }[carbonMode()]; },
-    ttl: 6 * HOUR, cloud: true, reg: () => [{ eua: 'eex-auction', ukets: 'uk-ets-price', operator: 'operator-carbon' }[carbonMode()]],
-    get use() { return { eua: 'Carbon cost in the economics suite: the clearing price of the latest EU allowance (EUA) auction in EUR per tonne of CO₂, converted to USD with the exchange-rate feed. Applies to flights covered by the EU ETS; other schemes price carbon differently.', ukets: 'Carbon cost in the economics suite: the UK Emissions Trading Scheme carbon price fixed by the UK ETS Authority for the scheme year, in GBP per tonne of CO₂e, converted to USD with the exchange-rate feed. It is a UK figure set once a year, not an EU ETS market price: enter your own value, or have the operator supply a licensed market price, for other schemes.', operator: 'Carbon cost in the economics suite, from a price the operator of this site is licensed to publish, converted to USD with the exchange-rate feed.' }[carbonMode()]; },
+    title: 'Carbon prices (official, by market)',
+    get provider() { return `${config.carbonPriceUrl ? 'Operator of this site; ' : ''}European Commission (EU ETS), UK ETS Authority, Gouvernement du Québec (California–Québec market) — via the cloud snapshot`; },
+    home: 'https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/price-cbam-certificates_en', ttl: 6 * HOUR, cloud: true,
+    reg: () => [...(config.carbonPriceUrl ? ['operator-carbon'] : []), 'ec-cbam-price', 'uk-ets-price', 'quebec-wci-auction', ...(config.accept.includes('eex-auction') ? ['eex-auction'] : [])],
+    use: 'Carbon cost in the economics suite. Official allowance prices published under open licences, one per market: the case takes the market of the site\'s country (the EU ETS price where the country has no listed market) unless you choose another; converted to USD with the exchange-rate feed. Each is a published reference price with its own date — not a live quotation.',
     key: () => carbonMode(),
     async load(p, get) {
-      const mode = carbonMode();
-      if (mode === 'operator') { if (!(await allowed('operator-carbon'))) throw policy('No carbon price address is configured'); const d = await operatorCarbon(get); return { ...d, _ts: Date.now(), _source: d.source, _url: config.carbonPriceUrl, _error: null, _direct: true }; }
-      if (mode === 'eua') { if (!(await allowed('eex-auction'))) throw policy('The EEX auction price is not licensed for this deployment'); return fromSnapshot('carbon')(); }
-      // commercial without an operator price: the UK ETS determination, from the snapshot when it carries it, else straight from GOV.UK
-      const s = await loadSnapshot().catch(() => null), f = s?.feeds?.carbon;
-      if (f?.data && f.registry?.length === 1 && f.registry[0] === 'uk-ets-price' && (await feedAllowed(f))) return { ...f.data, _ts: f.ts, _source: f.source, _url: f.url, _error: f.ok ? null : f.error || 'last fetch failed' };
-      if (!(await allowed('uk-ets-price'))) throw policy('No carbon price source is licensed for this deployment');
-      const d = await ukEtsCarbon(get); return { ...d, _ts: Date.now(), _source: d.source, _url: d.url, _error: null, _direct: true };
+      const markets = {}, errors = {}; let ts = 0, src = null, url = null, err = null, direct = false;
+      const s = await loadSnapshot({ force: true }).catch(() => null), f = s?.feeds?.carbon;
+      if (f?.data?.markets) for (const [id, m] of Object.entries(f.data.markets)) { if (!Array.isArray(m?.registry) || !m.registry.length) continue; let ok = true; for (const r of m.registry) if (!(await allowed(r)) || (r === 'eex-auction' && !config.accept.includes('eex-auction'))) ok = false; if (ok) markets[id] = m; }
+      if (Object.keys(markets).length) { ts = f.ts; src = f.source; url = f.url; err = f.ok ? null : f.error || 'last fetch failed'; }
+      else if (await allowed('uk-ets-price')) try { const d = await ukEtsCarbon(get); markets['uk-ets'] = d; ts = Date.now(); src = d.source; url = d.url; direct = true; } catch (e) { errors['uk-ets'] = e.message; } // no snapshot: the one market a browser can read directly
+      if (config.carbonPriceUrl && (await allowed('operator-carbon'))) try { markets.operator = { ...(await operatorCarbon(get)), id: 'operator', scheme: 'Operator', countries: [] }; ts = Date.now(); direct = true; } catch (e) { errors.operator = e.message; }
+      if (!Object.keys(markets).length) throw new Error(!s ? 'Cloud snapshot not reachable yet' : Object.values(errors)[0] || 'No carbon price in the cloud snapshot');
+      return { markets, order: Object.keys(markets), errors, _ts: ts, _source: src, _url: url, _error: err, ...(direct ? { _direct: true } : {}) };
     },
   },
   rates: {
@@ -498,10 +545,16 @@ export const CONNECTORS = {
     },
   },
   grid: {
-    title: 'Electricity grid carbon intensity (Great Britain)', provider: 'National Energy System Operator Carbon Intensity API', home: 'https://carbonintensity.org.uk', ttl: 30 * MIN, reg: () => ['gb-carbon-intensity'],
-    use: 'Well-to-wake CO₂ of battery charging for electric aircraft. Regional indicator: enter your own grid factor for other regions.',
-    key: () => 'gb',
-    async load(p, get) { const d = await get('https://api.carbonintensity.org.uk/intensity').then(J); const x = d.data[0]; return { from: x.from, gCO2_kWh: x.intensity.actual ?? x.intensity.forecast, index: x.intensity.index }; },
+    title: 'Electricity grid carbon intensity', get provider() { return `Ember yearly electricity data (national averages, bundled with the app)${gbLive() ? '; NESO Carbon Intensity API for the current value in Great Britain' : ''}`; },
+    home: 'https://ember-energy.org/data/yearly-electricity-data/', ttl: 30 * MIN, bundledNote: true, reg: () => ['grid-factors', ...(gbLive() ? ['gb-carbon-intensity'] : [])],
+    use: 'Well-to-wake CO₂ of battery charging for electric aircraft: the national average of the site\'s country for the latest year published (world average where the country is not listed). Enter your own factor for a specific supplier or hour.',
+    key: (p) => `cc:${p?.country || 'WLD'}`,
+    async load(p, get) {
+      const t = await gridFactors(), cc = String(p?.country || '').toUpperCase(), rec = t.countries?.[cc] || null, base = rec || t.world;
+      const out = { country: rec ? cc : 'World', gCO2_kWh: base.g, year: base.year, basis: `${rec ? 'national' : 'world'} average ${base.year}`, national_g: base.g, source: t.source, method: t.method };
+      if (cc === 'GB' && gbLive() && (await allowed('gb-carbon-intensity'))) try { const d = await get('https://api.carbonintensity.org.uk/intensity').then(J), x = d.data[0], v = x.intensity.actual ?? x.intensity.forecast; if (Number.isFinite(v)) Object.assign(out, { gCO2_kWh: v, index: x.intensity.index, from: x.from, basis: 'current half-hour, Great Britain (NESO)' }); } catch { /* keep the national average */ }
+      return out;
+    },
   },
   literature: {
     title: 'Latest research literature', provider: 'OpenAlex scholarly index', home: 'https://openalex.org', ttl: DAY, reg: () => ['openalex'],
@@ -514,37 +567,74 @@ export const CONNECTORS = {
     },
   },
   opensource: {
-    title: 'Open-source solvers and tools', get provider() { return open('github-api') ? 'GitHub repository search' : 'Link to GitHub search (no data is fetched in this deployment)'; }, home: 'https://github.com', ttl: DAY, reg: () => (open('github-api') ? ['github-api'] : []),
-    use: 'Actively maintained open-source codes for the higher-fidelity models each suite hands off, and reference implementations to cross-check against.',
-    key: (p) => modeKey() + p.q,
+    title: 'Open-source solvers and tools', get provider() { return `Curated list bundled with the app${open('github-api') ? '; GitHub repository search for further projects' : ''}`; }, home: 'https://github.com', ttl: DAY, reg: () => (open('github-api') ? ['tools-list', 'github-api'] : ['tools-list']),
+    use: 'Maintained open-source codes for the higher-fidelity models each suite hands off, and reference implementations to cross-check against. Works without a connection.',
+    key: (p) => modeKey() + (p.suite || '') + '|' + p.q,
     async load(p, get) {
-      // GitHub's terms carry no explicit grant for embedding search results in a commercial product: there, offer a plain link instead of calling the API
-      if (!(await allowed('github-api'))) return { total: null, linkOnly: true, items: [{ name: `Search GitHub for “${p.q}”`, desc: 'Opens the repository search on github.com in a new tab. The list is not embedded in this deployment', stars: null, pushed: '', url: `https://github.com/search?q=${encodeURIComponent(p.q)}&type=repositories&s=stars&o=desc`, lang: '', license: '' }] };
-      const d = await get(`https://api.github.com/search/repositories?q=${encodeURIComponent(p.q)}&sort=stars&order=desc&per_page=10`, { headers: { Accept: 'application/vnd.github+json' } }).then(J); return { total: d.total_count, items: (d.items || []).map((r) => ({ name: r.full_name, desc: r.description || '', stars: r.stargazers_count, pushed: r.pushed_at, url: r.html_url, lang: r.language || '', license: r.license?.spdx_id || '' })) };
+      // foundation in every mode: the curated list shipped with the app (js/data/tools.json)
+      const t = await toolsList().catch(() => null), curated = (t?.suites?.[p.suite] || []).map((x) => ({ name: x.name, desc: x.what, stars: null, pushed: '', url: x.url, lang: '', license: x.licence, curated: true }));
+      // extra, non-commercial deployments only: a live repository search (GitHub's terms carry no explicit grant for embedding it in a commercial product)
+      let extra = [], total = null;
+      if (p.q && (await allowed('github-api')) && open('github-api')) try { const d = await get(`https://api.github.com/search/repositories?q=${encodeURIComponent(p.q)}&sort=stars&order=desc&per_page=10`, { headers: { Accept: 'application/vnd.github+json' } }).then(J); total = d.total_count; extra = (d.items || []).map((r) => ({ name: r.full_name, desc: r.description || '', stars: r.stargazers_count, pushed: r.pushed_at, url: r.html_url, lang: r.language || '', license: r.license?.spdx_id || '' })); } catch (e) { if (!curated.length) throw e; }
+      if (!curated.length && !extra.length) throw new Error('No tool list for this suite');
+      const seen = new Set(curated.map((x) => x.url.replace(/\/$/, '').toLowerCase()));
+      return { total, curated: curated.length, items: [...curated, ...extra.filter((x) => !seen.has(x.url.toLowerCase()))] };
     },
   },
 };
 
-/** Which carbon price this deployment shows: the operator's own, the EU allowance auction (non-commercial), or the UK ETS determination. */
-// The EEX auction price is used only where the operator holds EEX's written approval (listed under "accept"); otherwise the UK ETS figure.
-export const carbonMode = () => (config.carbonPriceUrl ? 'operator' : config.accept.includes('eex-auction') ? 'eua' : 'ukets');
-/** Is place-name search (an online geocoder) available here? Airport search and coordinates always are. */
-export const placeSearchAvailable = () => !!omId();
-/** Geocoding (not cached as a connector row: it is an interactive search). Open-Meteo / GeoNames; in a commercial deployment only with the operator's key. */
+/** Bundled JSON next to the app (licence registry style): read once, from the module's own location, the page or the single-file copy. */
+const bundledJson = (file, globalName) => { let pr = null; return () => (pr ||= (async () => {
+  if (globalThis[globalName]) return globalThis[globalName];
+  let url = null; try { if (import.meta.url) url = new URL(`../data/${file}`, import.meta.url); } catch { /* bundled copy */ }
+  if (!url && pageBase()) url = new URL(`js/data/${file}`, pageBase());
+  if (!url) throw new Error(`${file} is not available in this copy of the app`);
+  if (isNode && url.protocol === 'file:') { const fs = 'node:fs/promises', { readFile } = await import(fs); return JSON.parse(await readFile(url, 'utf8')); }
+  return fetch(url).then(J);
+})().catch((e) => { pr = null; throw e; })); };
+/** National grid emission factors (js/data/grid-factors.json). */
+export const gridFactors = bundledJson('grid-factors.json', '__AEROSUITE_GRID_FACTORS__');
+/** Curated open-source tools per suite (js/data/tools.json). */
+export const toolsList = bundledJson('tools.json', '__AEROSUITE_TOOLS__');
+/** The live GB grid value is a refinement for non-commercial deployments (its API terms carry an indemnity an operator must accept first). */
+const gbLive = () => open('gb-carbon-intensity');
+
+/** Cache key of the carbon feed: the official panel, with or without the operator's own price. */
+export const carbonMode = () => (config.carbonPriceUrl ? 'panel+operator' : 'panel');
+/**
+ * The carbon market the case uses. `choice` is a market id or 'auto': the operator's price if there is one, else the
+ * market whose scheme covers the whole of the site's country, else the EU ETS price (the largest market) as reference.
+ * Accepts the panel ({ markets }) or a single record (returned as it is).
+ */
+export function carbonChoice(data, country = '', choice = 'auto') {
+  if (!data) return null; if (!data.markets) return data;
+  const ms = data.markets, ids = data.order?.filter((id) => ms[id]) || Object.keys(ms), cc = String(country || '').toUpperCase();
+  if (choice && choice !== 'auto' && ms[choice]) return ms[choice];
+  if (ms.operator) return ms.operator;
+  const home = ids.find((id) => !ms[id].subnational && (ms[id].countries || []).includes(cc));
+  return ms[home] || ms[ids.find((id) => ms[id].scheme === 'EU ETS')] || ms[ids[0]] || null;
+}
+/** Place-name search is always available: cities and airports are bundled with the app. */
+export const placeSearchAvailable = () => true;
+/**
+ * Place search (interactive, not cached as a connector row). Cities come from the GeoNames database bundled with the
+ * app, so the search works offline in every deployment; where Open-Meteo may be used its geocoder adds smaller places.
+ */
 export async function geocode(name) {
   await loadConfig();
-  let url; try { url = await omUrl('geocoding-', '/v1/search', `name=${encodeURIComponent(name)}&count=8&language=en&format=json`); } catch { throw policy('Place-name search is not part of this deployment. Search by airport name, ICAO or IATA code, or enter coordinates'); }
-  const d = await get(url).then(J);
-  return (d.results || []).map((r) => ({ name: r.name, admin: [r.admin1, r.country].filter(Boolean).join(', '), lat: r.latitude, lon: r.longitude, elev_m: r.elevation, country: r.country_code, tz: r.timezone }));
+  const local = await searchPlaces(name, 8).catch(() => []); let online = [];
+  if (omId() && globalThis.navigator?.onLine !== false) try { const d = await get(await omUrl('geocoding-', '/v1/search', `name=${encodeURIComponent(name)}&count=8&language=en&format=json`)).then(J); online = (d.results || []).map((r) => ({ name: r.name, admin: [r.admin1, r.country].filter(Boolean).join(', '), lat: r.latitude, lon: r.longitude, elev_m: r.elevation, country: r.country_code, tz: r.timezone, source: 'Open-Meteo' })); } catch { /* the bundled list answers */ }
+  const out = [...local]; for (const o of online) if (!out.some((x) => x.country === o.country && Math.abs(x.lat - o.lat) < 0.08 && Math.abs(x.lon - o.lon) < 0.08)) out.push(o);
+  return out.slice(0, 12);
 }
-/** Terrain elevation for points [{ lat, lon }]: Open-Meteo where licensed, else the elevation of an airport within 10 km (bundled database), else null. */
+/** Terrain elevation for points [{ lat, lon }]: Open-Meteo where it may be used; otherwise the bundled data (airport within 10 km, city within 15 km, else the 0.5° ETOPO terrain grid). */
 export async function elevations(points) {
   await loadConfig();
-  const out = [];
-  try { for (let i = 0; i < points.length; i += 100) { const ch = points.slice(i, i + 100); const d = await get(await omUrl('', '/v1/elevation', `latitude=${ch.map((p) => p.lat.toFixed(4)).join(',')}&longitude=${ch.map((p) => p.lon.toFixed(4)).join(',')}`)).then(J); out.push(...d.elevation); } return out; }
-  catch (e) { if (!e.policy) throw e; }
-  return Promise.all(points.map(async (p) => (await airports.nearest(p.lat, p.lon, 10, 1).catch(() => []))[0]?.elev_m ?? null));
+  if (omId()) try { const out = []; for (let i = 0; i < points.length; i += 100) { const ch = points.slice(i, i + 100); const d = await get(await omUrl('', '/v1/elevation', `latitude=${ch.map((p) => p.lat.toFixed(4)).join(',')}&longitude=${ch.map((p) => p.lon.toFixed(4)).join(',')}`)).then(J); out.push(...d.elevation); } return out; } catch { /* bundled data below */ }
+  return Promise.all(points.map((p) => bundledElevation(p)));
 }
+/** Coarse terrain profile along points, from the bundled ETOPO grid only (no network): mean height of 0.5° cells. */
+export const terrainProfile = (points) => terrain(points);
 /** Attribution lines (text + link) for registry ids, from the licence registry. */
 export async function attributions(ids) {
   const reg = await loadLicences().catch(() => null); if (!reg) return [];
@@ -608,7 +698,7 @@ export function carbonPrice(carbon, fx) {
   if (carbon.valid_to ? Date.now() > Date.parse(carbon.valid_to) + MAX_QUOTE_AGE : !recent(carbon.date)) return null;
   const live = Number.isFinite(fx?.rates?.[cur]), rate = cur === 'USD' ? 1 : live ? fx.rates[cur] : cur === 'EUR' ? carbon.eur_per_usd : carbon.fx_per_usd, fxDate = live ? fx.date : carbon.fx_date;
   if (!Number.isFinite(rate) || rate <= 0) return null;
-  const what = carbon.operator ? `${carbon.market} ${carbon.date}: ${price} ${cur}/t (${carbon.source})` : carbon.scheme_year ? `UK ETS carbon price for scheme year ${carbon.scheme_year}: ${price} GBP/t (UK ETS Authority determination, Open Government Licence v3.0)` : `EU ETS allowance (EUA) auction ${carbon.date}: ${price} EUR/t (EEX)`;
+  const what = carbon.scheme_year ? `UK ETS carbon price for scheme year ${carbon.scheme_year}: ${price} GBP/t (UK ETS Authority determination, Open Government Licence v3.0)` : carbon.operator || carbon.market ? `${carbon.market} ${carbon.period || carbon.date}: ${price} ${cur}/t (${carbon.source})` : `EU ETS allowance (EUA) auction ${carbon.date}: ${price} EUR/t (EEX)`;
   return { usd_t: usdFromEur(price, rate), source: cur === 'USD' ? what : `${what}, ${Math.round(rate * 1e4) / 1e4} ${cur} per USD on ${fxDate}` };
 }
 
@@ -617,6 +707,7 @@ export async function refreshSite({ force = false } = {}) {
   await loadConfig();
   const s = state.case.site; if (s.lat == null || s.lon == null) return null;
   const p = { lat: s.lat, lon: s.lon }, [w, cl, mar] = await Promise.all([live('weather', p, { force }), live('climate', p, { force }), live('marine', p, { force })]);
+  live('airquality', p, { force }).catch(() => {}); // shown on the Live data page; not written into the case
   const patch = {};
   // a field the provider does not supply keeps the value already in the case (see finishWeather for the stand-ins)
   if (w.data) Object.assign(patch, { T_C: w.data.T_C, p_hPa: w.data.p_hPa, rh: w.data.rh ?? s.rh, wind_ms: w.data.wind_ms ?? s.wind_ms, wind_dir_deg: w.data.wind_dir_deg ?? s.wind_dir_deg, gust_ms: w.data.gust_ms ?? w.data.wind_ms ?? s.gust_ms, precip_mm_h: w.data.precip_mm_h ?? 0, cloud_pct: w.data.cloud_pct ?? s.cloud_pct,
@@ -631,12 +722,13 @@ export async function refreshSite({ force = false } = {}) {
 export async function refreshGlobal({ force = false } = {}) {
   await loadConfig();
   const [fx, oil, kp, macro, jet, carbon, rates] = await Promise.all([live('fx', {}, { force }), live('oil', {}, { force }), live('spaceweather', {}, { force }), live('macro', { country: state.case.site.country || 'WLD' }, { force }), live('jetfuel', {}, { force }), live('carbon', {}, { force }), live('rates', {}, { force })]);
+  live('grid', { country: state.case.site.country || '' }, { force }).catch(() => {}); // national grid factor for the site's country (shown on the Live data page)
   if (state.settings.autoApplyLive) {
     if (kp.data) patchCaseMany('site', { kp_index: kp.data.kp }, true);
     const e = {};
     const fp = fuelPrice(jet.data, oil.data, state.settings.fuelCrack);
     if (fp && state.case.prop.fuel !== 'Liquid hydrogen' && state.case.prop.type !== 'electric') { const k = state.case.prop.fuel === 'Avgas 100LL' ? 2.2 : state.case.prop.fuel?.startsWith('SAF') ? 2.84 : 1; e.fuel_usd_kg = Math.round(fp.usd_kg * k * 1000) / 1000; e.fuel_source = fp.source + (k !== 1 ? ` × ${k} for ${state.case.prop.fuel} (indicative ratio)` : ''); const vol = fp.quoted && Number.isFinite(jet.data.vol_annual) ? jet.data.vol_annual : oil.data?.vol_annual; if (Number.isFinite(vol)) e.fuel_vol = Math.round(vol * 1000) / 1000; }
-    const cp = carbonPrice(carbon.data, fx.data);
+    const cp = carbonPrice(carbonChoice(carbon.data, state.case.site.country, state.settings.carbonMarket), fx.data);
     if (cp) { e.carbon_usd_t = Math.round(cp.usd_t * 100) / 100; e.carbon_source = cp.source; }
     if (macro.data?.inflation_pct != null && macro.data.inflation_pct > -5 && macro.data.inflation_pct < 60) { e.inflation = Math.round(macro.data.inflation_pct * 10) / 1000; e.inflation_source = `${macro.data.country} ${macro.data.inflation_year}`; }
     if (fx.data) { e.fx_rates = fx.data.rates; e.fx_date = fx.data.date; }

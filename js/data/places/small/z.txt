@@ -1,0 +1,697 @@
+#AE|Dubai
+Za'abeel||25225|55305|10|5
+#AF|Herat
+Zindah Jān|Zindah Jan|34343|61747|834|10
+#AF|Paktika
+Zarghūn Shahr|Zarghun Shahr|32847|68446|2120|14
+Zaṟah Sharan|Zarah Sharan|33146|68792|2154|7
+#AL|Fier County
+Zharrëz|Zharrez|40709|19650|34|5
+#AL|Tirana
+Zall-Herr||41389|19828|132|9
+#AM|Gegharkunik
+Zolakar||40125|45381|1985|7
+#AM|Kotayk
+Zovuni||40233|44511|1128|7
+#AO|Bengo
+Zala||-7838|14060|670|12
+#AT|Salzburg
+Zell am See||47323|12798|764|8
+#AT|Tyrol
+Zirl||47274|11240|622|8
+#AU|New South Wales
+Zetland||-33907|151209|23|13
+#AU|Queensland
+Zillmere||-27356|153045|26|9
+#AZ|Baki
+Zyrya||40366|50292|-14|10
+#AZ|Zangilan District
+Zangilan||39084|46660|413|7
+#AZ|Zardab
+Zardob||40218|47712|-3|11
+#AZ|Şǝmkir
+Zayam||40903|45886|357|8
+#BA|Federation of B&H
+Zavidovići|Zavidovici|44446|18150|208|14
+Živinice|Zivinice|44449|18650|216|14
+Žepče|Zepce|44427|18038|231|9
+Željezno Polje|Zeljezno Polje|44399|17941|528|6
+#BA|Srpska
+Zvornik||44386|19102|163|8
+#BE|Flanders
+Zulte||50920|3449|11|15
+Zandhoven||51215|4662|11|12
+Zelzate||51190|3808|7|12
+Zonnebeke||50873|2987|54|12
+Zellik||50884|4273|59|11
+Zoersel||51268|4713|17|10
+Zomergem||51120|3565|9|8
+Zoutleeuw||50833|5104|30|8
+Zwijnaarde||51001|3707|6|7
+Zutendaal||50933|5575|84|7
+Zingem||50904|3653|16|7
+Zichem||51002|4983|18|6
+Zwevezele||51037|3212|38|6
+#BG|Smolyan
+Zlatograd||41380|25096|435|7
+#BG|Sofia
+Zlatitsa||42717|24133|692|6
+#BG|Varna
+Zlatni Pyasatsi||43285|28042|24|10
+#BJ|Ouémé
+Zounké|Zounke|6616|2528|15|8
+#BY|Brest
+Zhabinka||52199|24011|140|14
+#BY|Grodnenskaya
+Zel’va|Zel'va|53149|24812|129|6
+#CG|Lékoumou
+Zanaga||-2850|13826|574|6
+#CH|Aargau
+Zofingen||47288|7946|441|12
+#CH|Bern
+Zollikofen||46999|7458|558|9
+#CH|Solothurn
+Zuchwil||47202|7566|434|9
+#CH|Valais
+Zermatt||46020|7749|1608|7
+#CH|Zurich
+Zürich (Kreis 3) / Alt-Wiedikon|Zuerich (Kreis 3) / Alt-Wiedikon|47362|8515|431|15
+Zürich (Kreis 4) / Hard|Zuerich (Kreis 4) / Hard|47383|8509|410|13
+Zürich (Kreis 5)|Zuerich (Kreis 5)|47388|8522|405|12
+Zürich (Kreis 12) / Hirzenbach|Zuerich (Kreis 12) / Hirzenbach|47402|8586|432|11
+Zürich (Kreis 12) / Schwamendingen-Mitte|Zuerich (Kreis 12) / Schwamendingen-Mitte|47406|8572|431|10
+Zürich (Kreis 4) / Langstrasse|Zuerich (Kreis 4) / Langstrasse|47378|8529|412|10
+Zürich (Kreis 7) / Hottingen|Zuerich (Kreis 7) / Hottingen|47370|8563|477|10
+Zürich (Kreis 3) / Friesenberg|Zuerich (Kreis 3) / Friesenberg|47364|8504|465|10
+Zürich (Kreis 6) / Oberstrass|Zuerich (Kreis 6) / Oberstrass|47389|8550|527|10
+Zürich (Kreis 5) / Gewerbeschule|Zuerich (Kreis 5) / Gewerbeschule|47385|8530|419|10
+Zürich (Kreis 7) / Witikon|Zuerich (Kreis 7) / Witikon|47358|8591|599|9
+Zürich (Kreis 2) / Enge|Zuerich (Kreis 2) / Enge|47361|8531|421|8
+Zürich (Kreis 7) / Fluntern|Zuerich (Kreis 7) / Fluntern|47380|8561|561|7
+Zürich (Kreis 7) / Hirslanden|Zuerich (Kreis 7) / Hirslanden|47362|8568|469|7
+Zürich (Kreis 1)|Zuerich (Kreis 1)|47371|8542|418|6
+Zollikon||47340|8574|469|6
+Zürich (Kreis 8) / Mühlebach|Zuerich (Kreis 8) / Muehlebach|47357|8557|425|6
+Zürich (Kreis 12) / Saatlen|Zuerich (Kreis 12) / Saatlen|47411|8565|430|5
+#CI|Bas-Sassandra District
+Zegban||5164|-5589|15|14
+Zoroyo||5895|-6651|184|10
+Zabré|Zabre|5310|-6275|45|8
+Ziéagui|Zieagui|5564|-6907|176|7
+Zougouzoa||6212|-6592|200|7
+Zéribéri|Zeriberi|5384|-5444|37|6
+Zakuéoua|Zakueoua|6249|-6507|232|6
+Zakarékro|Zakarekro|5110|-5602|9|6
+Zogbodoua||5733|-6313|365|5
+#CI|Comoé District
+Zaranou||6427|-3362|149|12
+Zouhounou||6612|-3292|166|7
+Zanfouénou|Zanfouenou|6705|-4106|157|7
+#CI|Goh-Djiboua
+Zangué|Zangue|6431|-5356|168|10
+Zaadi||6333|-5737|271|9
+Ziplignan||6449|-5840|228|9
+Zohoa||6324|-6158|203|9
+Zikisso||6064|-5702|235|7
+#CI|Lacs District
+Zékrézinssou|Zekrezinssou|7072|-4280|127|8
+#CI|Montagnes
+Zouan||6545|-7599|221|13
+Zérégbo|Zeregbo|7071|-7910|285|12
+Zaodrou||7158|-7185|263|7
+Zonlé I|Zonle I|7365|-7769|344|7
+Zéalé|Zeale|6988|-8161|267|6
+#CI|Sassandra-Marahoue
+Zagoréta|Zagoreta|6676|-6153|278|13
+Zaguiéta|Zaguieta|6788|-6063|288|13
+Zéga|Zega|6501|-6421|230|10
+Zoukouboué|Zoukouboue|7111|-6781|252|10
+Zépréguhé|Zepreguhe|6906|-6370|241|7
+Zahirogbeu||6762|-6884|247|6
+Zadioa||6432|-6398|241|6
+Zraluo||7572|-5889|302|6
+Zahia||6917|-6578|234|5
+Zokoguhé-Didéguhé|Zokoguhe-Dideguhe|7068|-6459|300|5
+#CI|Savanes District
+Zaguinasso||10049|-6360|350|6
+#CI|Yamoussoukro
+Zata||6879|-5404|193|11
+Zambakro||6733|-5411|166|10
+#CN|Chongqing
+Zhonggang||31524|108869|491|15
+Zhengyang||29459|108787|543|13
+Zhisheng||29374|105653|416|13
+Zouma||29425|108463|838|13
+Zhongfeng||28900|106440|571|12
+Zhongtang||29611|108825|532|11
+Zhufo||29222|108497|550|11
+Zizhao||30533|107938|649|9
+Zhanpu||29844|107637|178|8
+Zhongqiao||29328|107304|757|8
+Zhongping||28416|109129|418|6
+Zhushan||30718|107575|628|6
+Zhongyi||30094|108331|852|5
+#CN|Fujian
+Zhangwan||26711|119592|19|7
+#CN|Gansu
+Zhongmiao||32767|105355|612|12
+Zhifang||33726|105484|1254|12
+Zhangmianyi||35147|106231|1989|9
+Zangbawa||34877|103862|2216|8
+Zhagulu||34653|103185|2690|6
+Zuogaimanma||34997|103049|3127|6
+Zhuyuan||33885|104703|1651|6
+#CN|Guangdong
+Zaoxia||22688|113801|4|9
+Zhuyuan||22538|114015|2|6
+Zhongshan||22547|113918|11|6
+Zhongxing||22577|113939|56|6
+#CN|Liaoning
+Zhangzi||39030|122729|48|14
+#CN|Tianjin
+Zaojiacheng||39277|117436|7|7
+#CN|Xinjiang
+Zangguy||37283|78767|1487|13
+Zirefuxiati||38216|77034|1310|11
+#CO|Bolívar
+Zambrano||9747|-74816|13|10
+#CO|Santander Department
+Zapatoca||6815|-73268|1696|6
+#CU|Sancti Spíritus Province
+Zaza del Medio||21997|-79367|55|9
+#CZ|Liberec Region
+Železný Brod|Zelezny Brod|50643|15254|282|6
+#CZ|Olomouc Region
+Zábřeh|Zabreh|49883|16872|285|13
+#CZ|Pardubice Region
+Žamberk|Zamberk|50086|16467|425|6
+#CZ|Prague
+Zbraslav||49976|14393|207|10
+Zlíčín|Zlicin|50062|14290|370|9
+#CZ|South Moravian
+Žebětín|Zebetin|49207|16488|312|6
+#CZ|Zlín
+Zubří|Zubri|49466|18092|358|6
+#DE|Baden-Wurttemberg
+Zell||48692|8063|130|8
+Zell im Wiesental||47706|7852|431|6
+Zimmern ob Rottweil||48167|8594|663|6
+#DE|Bavaria
+Zwiesel||49017|13238|629|10
+Zorneding||48084|11824|563|9
+Zusmarshausen||48400|10599|465|6
+Zellingen||49897|9817|171|6
+Zeil||50010|10595|235|6
+Zeitlarn||49078|12112|334|6
+Zapfendorf||50018|10932|249|5
+#DE|Brandenburg
+Zehdenick||52979|13332|52|15
+Zeuthen||52348|13622|39|10
+#DE|Hesse
+Zwingenberg||49724|8611|99|7
+Zierenberg||51369|9302|276|7
+#DE|Lower Saxony
+Zeven||53296|9276|23|13
+Zetel||53416|7968|6|12
+#DE|North Rhine-Westphalia
+Zündorf|Zuendorf|50868|7047|51|12
+Zons||51124|6845|40|5
+#DE|Saxony
+Zschopau||50748|13077|355|12
+Zwönitz|Zwoenitz|50630|12810|521|12
+Zwenkau||51219|12330|137|9
+Zschorlau||50567|12650|501|6
+Zeithain||51334|13338|98|6
+#DE|Thuringia
+Zeulenroda||50653|11984|411|14
+Zella-Mehlis||50656|10660|485|12
+#DO|Nacional
+Zona Colonial||18470|-69886|16|8
+#DZ|Jijel
+Ziama Mansouria||36673|5481|24|13
+#DZ|Timimoun
+Zaouiet ed Debarh||29699|713|351|6
+#EC|El Oro
+Zaruma||-3692|-79613|1056|13
+#ES|Aragon
+Zuera||41868|-790|283|6
+#ES|Basque Country
+Zumarraga||43089|-2314|364|10
+Zierbena||43350|-3083|46|9
+Zumaia||43295|-2253|2|9
+Zalla||43233|-3133|500|8
+#ES|Madrid
+Zofío|Zofio|40379|-3715|614|14
+#ES|Murcia
+Zarandona||38010|-1111|33|7
+#ES|Navarre
+Zizur Mayor||42788|-1691|459|13
+#GE|Mtskheta-Mtianeti
+Zahesi||41825|44754|487|5
+#GR|Attica
+Zefyri||38066|23717|148|10
+#GR|Ionian Islands
+Zakynthos||37780|20896|8|12
+#GR|West Greece
+Zacháro|Zacharo|37483|21650|17|6
+#GT|Quetzaltenango
+Zunil||14785|-91483|2086|14
+#GT|Quiché
+Zacualpa||15027|-90878|1502|9
+#HR|Vukovar-Srijem
+Županja|Zupanja|45078|18698|81|9
+#HU|Pest County
+Zsámbék|Zsambek|47548|18720|168|5
+#HU|Veszprém
+Zirc||47264|17874|395|7
+#HU|Zala County
+Zalaszentgrót|Zalaszentgrot|46945|17079|124|8
+#IL|Central District
+Zemer||32365|35038|99|7
+#IL|Northern District
+Zarzir||32728|35214|178|8
+#IN|Arunachal Pradesh
+Ziro||27595|93839|1579|14
+#IN|Uttar Pradesh
+Zafarābād|Zafarabad|25699|82734|86|9
+#IR|East Azerbaijan
+Zarnaq||38091|47083|1594|5
+#IR|Fars
+Zāhed Shahr|Zahed Shahr|28750|53802|1193|10
+#IR|Isfahan
+Zibashahr||32382|51568|1666|10
+Zāzerān|Zazeran|32604|51498|1604|8
+#IR|Kerman
+Zeydābād|Zeydabad|29600|55537|1724|9
+Zangīābād|Zangiabad|30410|56917|1733|9
+Zehkalūt|Zehkalut|27792|58588|386|7
+#IR|Khuzestan
+Zargān-e Karāneh|Zargan-e Karaneh|31366|48760|22|8
+#IR|Markazi
+Zāviyeh|Zaviyeh|35381|50568|1249|6
+#IR|Māzandarān
+Zāgh Marz|Zagh Marz|36805|53303|-19|6
+#IR|Qazvin Province
+Ẕīā’ābād|Zia'abad|35993|49446|1400|8
+#IR|Sistan and Baluchestan
+Zehak||30894|61680|496|14
+#IR|Yazd Province
+Zārach|Zarach|31991|54232|1181|12
+#IT|Campania
+Zona Industriale||40848|14284|7|6
+Zuni||41217|14131|118|6
+#IT|Lazio
+Zagarolo||41842|12815|303|12
+#IT|Lombardy
+Zanica||45641|9686|208|7
+Zelo Buon Persico||45412|9432|95|6
+Zogno||45794|9660|334|6
+#IT|Sicily
+Zafferana Etnea||37679|15104|574|9
+#IT|Veneto
+Zevio||45372|11129|29|12
+Zanè|Zane|45722|11449|183|7
+Zero Branco||45600|12164|18|6
+Zelarino||45515|12208|2|5
+#JP|Tokyo
+Zōshigaya|Zoshigaya|35719|139718|28|9
+#KZ|
+Zhumysker||49333|49400|-1|7
+#KZ|Abai Region
+Zhezkent||50931|81362|283|9
+#KZ|Aqmola
+Zholymbet||51743|71710|307|7
+Zavodskoy||52470|72015|264|6
+Zhaksy||51911|67317|392|5
+#KZ|Kyzylorda
+Zhalagash||45080|64682|116|14
+#KZ|Mangystau
+Zhetybay||43589|52103|142|12
+#KZ|Pavlodar Region
+Zhelezinka||53539|75313|92|5
+#KZ|Turkistan
+Zhibek Zholy||41476|69365|533|8
+#KZ|Ulytau Region
+Zhangaarqa||48687|71645|487|13
+#KZ|West Kazakhstan
+Zhanibek||49423|46846|28|8
+Zhympity||50256|52597|17|6
+Zhangaqala||49215|50290|10|6
+#LR|Lofa County
+Zorzor||7779|-9430|461|8
+#LT|Utena
+Zarasai||55732|26251|154|6
+#LY|Al Jufrah
+Zillah||28551|17544|210|10
+#LY|An Nuqat al Khams
+Zalţan|Zaltan|32947|11867|4|14
+#MA|Beni Mellal-Khenifra
+Zaouïa Aït Ishak|Zaouia Ait Ishak|32762|-5725|812|13
+#MA|Casablanca-Settat
+Zemamra||32623|-8702|165|15
+#MA|Drâa-Tafilalet
+Zayda||32819|-4961|1458|8
+#MA|Fes-Meknes
+Zoualet||33937|-5465|515|11
+#MA|Guelmim-Oued Noun
+Zag||28022|-9294|410|14
+#MA|Rabat-Salé-Kénitra
+Zirara||34241|-5742|44|9
+#ME|Opština Žabljak
+Žabljak|Zabljak|43154|19123|1448|2
+#MK|Kichevo
+Zajas||41607|20938|748|12
+#MK|Zelenikovo
+Zelenikovo||41884|21590|213|4
+#MK|Zrnovci
+Zrnovci||41855|22445|483|3
+#MM|Yangon
+Za Yat Kwin||17152|96313|9|10
+Zay Kone East||16884|96110|6|9
+Zi Byu Gon||16737|95917|8|5
+#MN|East Gobi Aymag
+Zamiin Uud||43719|111908|967|12
+#MT|Iż-Żebbuġ
+Żebbuġ|Zebbug|36072|14237|145|2
+#MT|Iż-Żejtun
+Żejtun|Zejtun|35855|14533|56|12
+#MT|Iż-Żurrieq
+Żurrieq|Zurrieq|35830|14476|132|11
+#MX|Coahuila
+Zaragoza||28493|-100922|362|10
+#MX|Guerrero
+Zitlala||17690|-99185|1368|6
+#MX|Hidalgo
+Zimapán|Zimapan|20738|-99383|1765|13
+Zempoala||19915|-98669|2469|7
+#MX|México
+Zacamulpa||19356|-99331|2773|7
+Zaragoza||19148|-99644|2861|5
+#MX|Oaxaca
+Zimatlán de Álvarez|Zimatlan de Alvarez|16867|-96785|1509|11
+#MX|Puebla
+Zacatepec||19266|-97533|2368|10
+Zacapoaxtla||19873|-97589|1826|8
+Zacapechpan||19054|-98351|2175|7
+#MX|Tlaxcala
+Zimatepec||19421|-98165|2448|7
+Zitlaltépec|Zitlaltepec|19204|-97907|2564|6
+#MX|Veracruz
+Zaragoza||17958|-94642|25|10
+Zongolica||18667|-96997|1219|7
+#NG|Bauchi
+Zalanga||10614|10176|554|12
+Zadawa||11450|10367|435|7
+#NG|Benue State
+Zaki Biam||7507|9610|204|10
+#NG|Katsina State
+Zango||13053|8486|484|12
+#NL|Friesland
+Zuiderburen||53173|5843|-4|6
+#NL|Gelderland
+Zelhem||52007|6349|19|6
+#NL|Groningen
+Zuidhorn||53247|6403|4|7
+#NL|North Brabant
+Zundert||51472|4656|11|7
+Zandberg||51573|4785|5|5
+Zeelst||51424|5416|21|5
+#NL|North Holland
+Zaandijk||52475|4807|-1|9
+Zwanenburg||52380|4746|-3|8
+Zuid-Scharwoude||52687|4808|2|6
+#NL|South Holland
+Zuidwijk||51875|4485|0|12
+#NL|Zeeland
+Zierikzee||51650|3919|7|10
+#PE|Tumbes
+Zorritos||-3680|-80678|7|12
+#PH|Central Visayas
+Zamboanguita||9103|123200|11|6
+#PH|Ilocos
+Zaragoza||16387|119944|27|7
+#PL|Greater Poland
+Zbąszyń|Zbaszyn|52251|15925|59|7
+#PL|Kujawsko-Pomorskie
+Żnin|Znin|52850|17720|82|14
+#PL|Lesser Poland
+Zawoja||49644|19542|573|6
+#PL|Lower Silesia
+Zgorzelisko||51138|17134|120|12
+Zakrzów|Zakrzow|51166|17137|120|11
+Ziębice|Ziebice|50601|17041|220|9
+Żarów|Zarow|50941|16495|205|7
+Żmigród|Zmigrod|51467|16906|90|7
+Złotniki|Zlotniki|51138|16889|116|5
+#PL|Lubusz
+Zbąszynek|Zbaszynek|52243|15817|77|5
+#PL|Mazovia
+Żuromin|Zuromin|53066|19909|137|9
+Zwoleń|Zwolen|51355|21588|153|8
+#PL|Opole Voivodeship
+Zdzieszowice||50425|18123|185|13
+Zawadzkie||50605|18485|212|8
+#PL|Pomerania
+Żabianka-Wejhera-Jelitkowo-Tysiąclecia|Zabianka-Wejhera-Jelitkowo-Tysiaclecia|54423|18574|12|15
+Zaspa-Rozstaje||54397|18613|1|12
+Zaspa-Młyniec|Zaspa-Mlyniec|54391|18598|14|12
+Żukowo|Zukowo|54342|18365|132|6
+#PL|Silesia
+Zlote Lany||49814|19072|342|13
+Zebrzydowice||49878|18611|226|5
+#PL|Subcarpathia
+Żołynia|Zolynia|50162|22308|210|5
+Zagórz|Zagorz|49515|22267|303|5
+#PL|West Pomerania
+Złocieniec|Zlocieniec|53533|16011|127|13
+#PL|Łódź Voivodeship
+Żychlin|Zychlin|52244|19626|100|9
+Zelów|Zelow|51465|19220|189|8
+#PS|West Bank
+Za‘tarah|Za'tarah|31674|35257|570|6
+#RO|Alba County
+Zlatna||46106|23232|407|8
+#RO|Bacău County
+Zemeş|Zemes|46583|26417|853|5
+#RO|Buzău County
+Zărneşti|Zarnesti|45300|26867|245|5
+#RO|Covasna County
+Zagon||45767|26117|592|5
+#RO|Harghita County
+Zetea||46383|25367|526|6
+#RO|Neamț County
+Zăneşti|Zanesti|46817|26550|261|6
+#RO|Suceava
+Zvoriştea|Zvoristea|47833|26283|279|6
+#RO|Vaslui County
+Zorleni||46267|27717|70|10
+#RS|Central Serbia
+Zvečka|Zvecka|44640|20164|76|5
+#RS|Vojvodina
+Žabalj|Zabalj|45372|20064|84|9
+#RU|Altai Krai
+Zmeinogorsk||51158|82194|398|12
+Zav’yalovo|Zav'yalovo|52838|80919|156|10
+Zalesovo||53993|84744|195|8
+#RU|Amur Oblast
+Zavitinsk||50111|129440|228|13
+#RU|Bashkortostan Republic
+Zilair||52233|57442|489|6
+#RU|Bryansk Oblast
+Zlynka||52427|31739|154|5
+#RU|Buryatiya Republic
+Zakamensk||50376|103287|1104|12
+Zarechnyy||51849|107521|497|10
+Zaigrayevo||51831|108259|605|6
+#RU|Chechnya
+Znamenskoye||43677|45128|95|10
+#RU|Chelyabinsk
+Zheleznodorozhnyy||55102|61549|223|7
+Zaural’skiy|Zaural'skiy|54786|61242|261|7
+#RU|Irkutsk Oblast
+Zalari||53559|102509|467|10
+Zheleznodorozhnyy||57905|102778|348|8
+Zhigalovo||54810|105159|412|5
+#RU|Ivanovo Oblast
+Zavolzhsk||57482|42138|129|13
+#RU|Kabardino-Balkariya Republic
+Zayukovo||43616|43334|709|11
+Zalukokoazhe||43901|43214|608|10
+#RU|Kaluga Oblast
+Zhukov||55024|36742|150|12
+Zhizdra||53746|34740|185|6
+#RU|Khabarovsk
+Zavety Il’icha|Zavety Il'icha|49035|140259|59|9
+#RU|Kirov Oblast
+Zuyevka||58402|51132|128|12
+#RU|Komi
+Zheshart||62073|49573|102|10
+#RU|Krasnoyarsk Krai
+Zaozyornyy||55962|94707|206|10
+Zykovo||55955|93161|187|5
+#RU|Kuzbass
+Zelenogorskiy||55033|87000|211|5
+#RU|Lipetsk Oblast
+Zadonsk||52390|38926|127|10
+#RU|Mariy-El Republic
+Zvenigovo||55975|48018|88|12
+#RU|Mordoviya Republic
+Zubova Polyana||54078|42836|129|10
+#RU|Moscow Oblast
+Zaprudnya||56567|37433|134|13
+Zagoryanskiy||55933|37958|143|8
+Zarech’ye|Zarech'ye|55687|37392|168|6
+Zvëzdnyy Gorodok|Zvezdnyy Gorodok|55878|38113|160|6
+#RU|Murmansk
+Zaozërsk|Zaozersk|69401|32448|53|13
+Zelenoborskiy||66845|32362|72|7
+#RU|North Ossetia–Alania
+Zmeyskaya||43336|44157|318|7
+#RU|Novosibirsk Oblast
+Zdvinsk||54705|78670|116|6
+#RU|Omsk Oblast
+Znamenskoye||57127|73826|69|13
+#RU|Oryol oblast
+Znamenka||52898|35977|157|12
+Zmiyëvka|Zmiyevka|52666|36377|236|6
+Zalegoshch’|Zalegoshch'|52899|36890|210|6
+#RU|Penza Oblast
+Zemetchino||53497|42616|130|12
+#RU|Perm Krai
+Zvëzdnyy|Zvezdnyy|57733|56315|220|10
+#RU|Primorye
+Zavodskoy||43459|132284|51|15
+#RU|Rostov
+Zavetnoye||47119|43889|71|7
+Zhirnov||48171|41126|65|6
+#RU|Sakha
+Zhatay||62163|129834|113|8
+#RU|St.-Petersburg
+Zelenogorsk||60200|29702|30|15
+#RU|Stavropol Kray
+Zaterechnyy||44793|45210|32|8
+#RU|Tambov Oblast
+Znamenka||52418|41432|120|9
+Zavoronezhskoye||52880|40553|125|6
+#RU|Tomsk Oblast
+Zyryanskoye||56832|86629|110|6
+#RU|Tula Oblast
+Zaokskiy||54730|37397|237|6
+#RU|Tver Oblast
+Zapadnaya Dvina||56259|32075|190|10
+Zavidovo||56533|36533|131|7
+Zubtsov||56175|34589|157|7
+#RU|Zabaykalskiy (Transbaikal) Kray
+Zabaykal’sk|Zabaykal'sk|49651|117327|701|11
+#SI|Gorje
+Zgornje Gorje||46380|14069|609|1
+#SI|Hajdina
+Zgornja Hajdina||46406|15838|232|1
+#SI|Municipality of Jezersko
+Zgornje Jezersko||46394|14507|985|1
+#SI|Municipality of Kungota
+Zgornja Kungota||46639|15615|273|1
+#SI|Municipality of Zagorje ob Savi
+Zagorje ob Savi||46132|14997|244|6
+#SI|Municipality of Zavrč
+Zavrč|Zavrc|46390|16050|161|0
+#SI|Municipality of Zreče
+Zreče|Zrece|46382|15379|423|3
+#SI|Municipality of Žalec
+Žalec|Zalec|46252|15165|260|5
+#SI|Municipality of Železniki
+Železniki|Zelezniki|46225|14172|446|3
+#SI|Municipality of Žetale
+Žetale|Zetale|46274|15827|312|0
+#SI|Municipality of Žiri
+Žiri|Ziri|46044|14107|486|4
+#SI|Municipality of Žužemberk
+Žužemberk|Zuzemberk|45834|14928|233|1
+#SK|Banská Bystrica Region
+Žarnovica|Zarnovica|48481|18716|230|6
+#SK|Nitra Region
+Zlaté Moravce|Zlate Moravce|48386|18401|197|12
+Želiezovce|Zeliezovce|48051|18654|135|7
+#SK|Žilina Region
+Zákamenné|Zakamenne|49389|19293|703|6
+#SV|La Libertad Department
+Zaragoza||13589|-89289|612|12
+#TN|Béja Governorate
+Zaouiet Medien||36768|9089|434|5
+#TN|Gabès Governorate
+Zarat||33667|10349|30|6
+#TN|Monastir Governorate
+Zaouiet Kountech||35633|10767|26|7
+#TN|Nabeul Governorate
+Zaouiat Djedidi||36644|10574|45|8
+Zaouiet Azmour||36924|11008|55|5
+#TN|Zaghouan Governorate
+Zriba-Village||36343|10249|112|12
+#TR|Sivas
+Zara||39898|37758|1342|13
+#TW|Taiwan
+Zhongliao||24114|120539|20|10
+#UA|Cherkasy
+Zhashkiv||49246|30099|229|13
+#UA|Chernivtsi
+Zastavna||48521|25843|239|8
+#UA|Crimea
+Zuya||45054|34322|257|6
+#UA|Dnipropetrovsk
+Zelenodolsk||47555|33659|95|13
+Zarichne||48733|35309|65|6
+#UA|Donetsk
+Zhdanivka||48153|38257|231|12
+Zhovtneve||48727|37522|73|9
+Zuhres-2||48020|38298|206|8
+#UA|Kharkiv
+Zmiyiv||49697|36362|98|14
+Zolochiv||50273|35978|147|8
+#UA|Kherson
+Zelenivka||46717|32657|41|6
+#UA|Kirovohrad
+Zlatopil||48822|31654|188|5
+Znamyanka Druha||48712|32597|216|5
+#UA|Kyiv City
+Zhulyany||50394|30441|167|6
+#UA|Luhansk
+Zolote||48695|38515|167|13
+Zymohirya||48585|38938|53|10
+Zorynsk||48412|38624|265|7
+#UA|Lviv
+Zhovkva||50058|23973|223|14
+Zymna Voda||49826|23882|306|11
+Zhydachiv||49383|24139|260|10
+#UA|Odesa
+Zorya||45991|29692|18|6
+Zakharivka||47331|29754|57|5
+#UA|Poltava
+Zinkiv||50210|34360|121|10
+Zavodske||50401|33401|111|8
+#UA|Rivne Oblast
+Zarichne||51814|26131|132|7
+#UA|Ternopil
+Zbarazh||49662|25779|317|14
+Zalishchyky||48641|25732|160|9
+Zboriv||49665|25140|340|7
+#UA|Zaporizhzhia
+Zaporizhzhya-Live||47869|35211|97|8
+#US|Florida
+Zephyrhills||28234|-82181|29|15
+Zephyrhills West||28231|-82206|26|6
+Zephyrhills South||28215|-82189|25|5
+#US|Michigan
+Zeeland||42813|-86019|196|6
+#US|Minnesota
+Zimmerman||45443|-93590|303|5
+#US|New Mexico
+Zuni Pueblo||35073|-108851|1918|6
+#US|Texas
+Zapata||26907|-99271|121|5
+#VE|Mérida
+Zea||8377|-71784|889|9
+#XK|Mitrovica
+Zubin Potok||42914|20690|580|15
+Zhabari i Ultë|Zhabari i Ulte|42871|20841|525|6
+#ZA|Western Cape
+Zoar||-33496|21444|504|6

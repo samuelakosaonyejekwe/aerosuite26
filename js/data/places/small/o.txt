@@ -1,0 +1,1226 @@
+#AD|Ordino
+Ordino||42556|1533|1296|3
+#AE|Dubai
+Oud Metha||25237|55314|3|8
+#AL|Berat County
+Otllak||40744|19935|42|9
+#AM|Aragatsotn
+Oshakan||40264|44317|1051|5
+#AR|Buenos Aires
+Open Door||-34491|-59075|39|5
+#AR|Cordoba
+Oncativo||-31913|-63682|283|15
+Oliva||-32038|-63571|245|13
+#AT|Burgenland
+Oberwart||47290|16206|316|7
+#AT|Salzburg
+Oberndorf bei Salzburg||47939|12951|405|6
+#AT|Upper Austria
+Oberhaid||48176|14015|322|5
+#AU|Australian Capital Territory
+O'Connor||-35256|149112|621|5
+#AU|New South Wales
+Oatley||-33980|151072|42|10
+Oakhurst||-33739|150838|44|7
+Oak Flats||-34562|150822|18|6
+Oatlands||-33796|151027|56|6
+Oyster Bay||-34004|151076|69|5
+Ocean Shores||-28509|153538|6|5
+#AU|Queensland
+Ormeau||-27768|153243|12|14
+Oxenford||-27890|153313|8|12
+Oxley||-27550|152983|10|8
+Ormiston||-27517|153250|13|6
+#AU|Victoria
+Ocean Grove||-38258|144519|34|14
+Oakleigh South||-37924|145091|62|10
+Oakleigh||-37898|145088|65|8
+Ormond||-37904|145039|80|8
+Oakleigh East||-37900|145117|91|6
+Oak Park||-37718|144919|65|6
+#AU|Western Australia
+Ocean Reef||-31759|115736|35|8
+#AZ|Nakhchivan
+Ordubad||38910|46023|892|11
+#AZ|Oğuz
+Oğuz|Oguz|41071|47465|652|7
+#BA|Federation of B&H
+Odžak|Odzak|45025|18321|98|12
+Otoka||44960|16179|141|7
+Orahovica Donja||44653|18370|195|6
+Ostrožac|Ostrozac|44909|15940|385|5
+#BA|Srpska
+Omarska||44892|16898|163|6
+#BB|Christ Church
+Oistins||13071|-59546|37|2
+#BE|Flanders
+Overpelt||51210|5416|44|13
+Oosterzele||50953|3798|45|13
+Oud-Turnhout||51320|4984|25|12
+Opwijk||50967|4184|22|12
+Oud-Heverlee||50835|4664|56|11
+Opglabbeek||51043|5583|72|9
+Oudenburg||51185|3000|3|9
+Oostduinkerke||51116|2682|5|9
+Oostakker||51101|3769|6|8
+Oostrozebeke||50921|3338|14|7
+Oostmalle||51300|4733|23|7
+Oedelem||51170|3338|17|6
+Onze-Lieve-Vrouw-Waver||51063|4579|21|6
+Oostham||51104|5179|41|5
+#BE|Wallonia
+Ougrée|Ougree|50601|5544|89|12
+Ottignies||50665|4567|65|10
+Ohain||50699|4470|109|6
+#BF|Centre-Est
+Ouargaye||11502|59|292|13
+#BG|Targovishte
+Omurtag||43100|26417|559|9
+#BG|Vratsa
+Oryahovo||43738|23959|56|5
+#BO|Santa Cruz Department
+Okinawa Uno||-17219|-62895|250|12
+#BQ|Sint Eustatius
+Oranjestad||17483|-62986|43|1
+#BR|Alagoas
+Olivença|Olivenca|-9519|-37191|226|12
+Ouro Branco||-9167|-37357|379|12
+Olho d'Água do Casado|Olho d'Agua do Casado|-9502|-37834|241|9
+#BR|Bahia
+Ouriçangas|Ouricangas|-12012|-38628|303|8
+#BR|Goiás
+Ouvidor||-18234|-47839|827|7
+#BR|Maranhão
+Olinda Nova do Maranhão|Olinda Nova do Maranhao|-2998|-44997|19|14
+#BR|Minas Gerais
+Orizânia|Orizania|-20506|-42210|794|8
+Ouro Verde de Minas||-18071|-41270|403|6
+Olhos d'Água|Olhos d'Agua|-17397|-43573|733|5
+#BR|Paraná
+Ouro Verde do Oeste||-24773|-53904|620|7
+#BR|Paraíba
+Olho d'Água|Olho d'Agua|-7228|-37751|269|6
+#BR|Pernambuco
+Orocó|Oroco|-8616|-39600|363|14
+#BR|Santa Catarina
+Ouro||-27341|-51618|482|7
+#BR|São Paulo
+Ouroeste||-20001|-50372|498|10
+Ouro Verde||-21489|-51700|361|8
+Oriente||-22153|-50091|608|6
+Orindiúva|Orindiuva|-20182|-49351|454|6
+#BW|Central
+Orapa||-21311|25376|965|9
+#BW|South-East
+Oodi||-24573|26034|982|10
+Otse||-25017|25733|1361|7
+#CA|Alberta
+Olds||51783|-114102|1039|9
+Ogden||50993|-114014|1041|8
+Ottewell||53528|-113430|664|6
+Oakridge||50968|-114129|1108|6
+Ormsby Place||53499|-113642|684|5
+#CA|British Columbia
+Oakridge||49233|-123117|91|13
+Olympic Village||49270|-123112|2|9
+Oaklands||48444|-123341|44|8
+Oxford Heights||49281|-122760|35|6
+Osoyoos||49032|-119468|304|6
+Oliver||49183|-119552|310|5
+#CA|New Brunswick
+Oromocto||45835|-66479|27|9
+#CA|Ontario
+Oakridge||43697|-79280|137|14
+Overbrook||45427|-75652|61|10
+Old East York||43697|-79335|129|9
+#CA|Quebec
+Otterburn Park||45533|-73216|13|8
+#CF|Haut-Mbomou
+Obo||5396|26492|639|14
+#CF|Haute-Kotto
+Ouadda||8078|22401|710|5
+#CG|Plateaux
+Olombo||-1265|15900|331|8
+#CH|Aargau
+Oftringen||47314|7925|416|10
+Obersiggenthal||47488|8297|392|8
+Oberentfelden||47356|8046|413|8
+#CH|Basel-Landschaft
+Oberwil||47514|7558|299|10
+#CH|Saint Gallen
+Oberriet||47321|9568|419|8
+Oberuzwil||47431|9127|563|6
+#CH|Vaud
+Ollon||46295|6993|452|7
+Orbe||46725|6531|477|5
+#CH|Zurich
+Urdorf|Ober Urdorf|47385|8426|424|9
+Oberengstringen||47408|8465|417|6
+Oberwinterthur (Kreis 2) / Guggenbühl|Oberwinterthur (Kreis 2) / Guggenbuehl|47513|8760|457|5
+Oberwinterthur (Kreis 2) / Talacker||47506|8752|475|5
+#CI|Bas-Sassandra District
+Ottawa||5718|-6275|270|11
+Ouréyo|Oureyo|6020|-6598|190|6
+Olodio||4716|-7467|47|6
+#CI|Comoé District
+Ono Salci||5381|-3565|9|7
+#CI|Denguélé District
+Ouellé|Ouelle|10356|-6809|351|6
+#CI|Goh-Djiboua
+Ouragahio||6311|-5935|251|15
+#CI|Lacs District
+Ouellé|Ouelle|7296|-4014|221|8
+#CI|Lagunes District
+Offumpo||5952|-4457|67|11
+Oress-Krobou||5732|-4395|53|8
+Offa||5922|-4347|70|6
+#CI|Montagnes
+Ouattaradougou||6592|-7196|229|13
+Ouyabli||7327|-7208|274|9
+#CI|Sassandra-Marahoue
+Ourouta||7142|-6314|282|5
+#CI|Savanes District
+Ouamélhoro|Ouamelhoro|10332|-5621|348|11
+Odia||9374|-6169|375|6
+Ouolo||9548|-5425|335|5
+#CI|Vallée du Bandama District
+Ouandérama-Dioulasso|Ouanderama-Dioulasso|8650|-4400|268|7
+#CI|Woroba
+Ouaninou||8238|-7866|541|9
+#CI|Zanzan District
+Ondéfidouo|Ondefidouo|9044|-3083|345|6
+#CL|Valparaiso
+Olmué|Olmue|-32996|-71191|151|12
+#CM|Centre
+Okola||4017|11383|652|5
+#CM|North-West
+Oshie||6127|9868|1429|11
+#CM|South
+Olamzé|Olamze|2217|11083|579|9
+#CN|Gansu
+Oula||34077|101722|3402|5
+#CN|Guangdong
+Ouzhou chengshi||22556|113965|9|7
+#CO|Boyacá
+Otanche||5657|-74182|1075|7
+#CO|Huila Department
+Oporapa||2024|-75996|1385|11
+#CO|Nariño
+Olaya Herrera||1248|-77491|1666|10
+#CO|Sucre Department
+Ovejas||9527|-75229|260|13
+#CO|Tolima Department
+Ortega||3934|-75220|541|7
+#CO|Valle del Cauca Department
+Obando||4575|-75974|914|11
+#CR|Alajuela Province
+Orotina||9912|-84523|237|6
+#CZ|Central Bohemia
+Odolena Voda||50233|14411|248|7
+#CZ|Moravian-Silesian Region
+Odry||49663|17831|305|7
+#DE|Baden-Wurttemberg
+Oberndorf||48291|8572|510|15
+Östringen|Ostringen|49219|8712|163|13
+Oberderdingen||49066|8803|185|11
+Oftersheim||49365|8583|103|10
+Oberhausen-Rheinhausen||49274|8472|96|9
+Ochsenhausen||48070|9950|579|9
+Oberkochen||48784|10105|495|8
+Oberstenfeld||49026|9321|231|8
+Ostrach||47950|9383|610|7
+Ottersweier||48670|8113|140|6
+Osterburken||49430|9423|250|6
+Oedheim||49240|9253|160|6
+Oberboihingen||48650|9367|271|5
+Obrigheim||49352|9091|150|5
+#DE|Bavaria
+Oberhaching||48025|11597|581|12
+Osterhofen||48700|13022|319|12
+Ochsenfurt||49664|10062|190|11
+Oberschleißheim|Oberschleissheim|48250|11567|488|11
+Oberstdorf||47407|10279|819|9
+Obernburg am Main||49836|9131|181|9
+Ottobeuren||47941|10300|655|8
+Ortenburg||48546|13223|347|7
+Oberstaufen||47556|10022|790|7
+Obertraubling||48967|12167|339|7
+Obergünzburg|Obergunzburg|47845|10418|737|6
+Oberkotzau||50262|11935|490|6
+Oerlenbach||50150|10133|325|5
+Oberammergau||47598|11067|840|5
+Oettingen in Bayern||48953|10605|420|5
+Oberthulba||50199|9959|271|5
+Oberding||48317|11850|463|5
+Oberviechtach||49458|12417|506|5
+#DE|Hamburg
+Ohlsdorf||53626|10031|11|15
+#DE|Hesse
+Oberzent||49568|8974|415|10
+Ortenberg||50356|9056|150|9
+Ober-Mörlen|Ober-Morlen|50374|8691|175|6
+#DE|Lower Saxony
+Oststadt||52382|9749|60|14
+Ottersberg||53109|9146|14|12
+Ostrhauderfehn||53139|7619|1|11
+Oberricklingen||52339|9709|62|11
+Obernkirchen||52272|9129|121|10
+Ostercappeln||52350|8233|124|10
+Otterndorf||53812|8902|1|7
+Ovelgönne|Ovelgonne|53342|8422|3|6
+#DE|Mecklenburg-Vorpommern
+Ostseebad Kühlungsborn|Ostseebad Kuehlungsborn|54148|11743|11|7
+Ostseebad Binz||54400|13611|5|6
+#DE|North Rhine-Westphalia
+Oppum||51322|6615|34|13
+Olfen||51708|7379|51|12
+Ostheim||50931|7044|53|12
+Ostbevern||52040|7842|54|11
+Ossendorf||50971|6906|49|11
+Oberkassel||50714|7166|62|7
+Obernbeck||52202|8704|57|7
+Oestrich||51564|7371|70|6
+#DE|Rheinland-Pfalz
+Osthofen||49704|8324|99|9
+Ober-Saulheim||49864|8135|157|7
+Oppenheim||49855|8360|88|7
+Offenbach an der Queich||49195|8198|129|6
+Otterberg||49503|7770|263|5
+Ochtendung||50350|7383|182|5
+#DE|Saarland
+Ottweiler||49401|7164|254|14
+Oberthal||49513|7084|318|7
+#DE|Saxony
+Oelsnitz||50415|12170|397|13
+Oelsnitz||50726|12701|379|12
+Olbernhau||50659|13343|454|11
+Ottendorf-Okrilla||51183|13833|176|10
+Oederan||50861|13172|374|7
+Oberlungwitz||50782|12708|300|7
+Olbersdorf||50873|14770|280|6
+#DE|Saxony-Anhalt
+Osternienburger Land||51800|12017|64|9
+Oebisfelde||52434|10989|63|7
+Osterburg||52787|11754|25|7
+#DE|Schleswig-Holstein
+Oldenburg in Holstein||54295|10890|9|10
+Oststeinbek||53543|10169|21|8
+Osterrönfeld|Osterronfeld|54290|9699|5|5
+#DK|Capital Region
+Ølstykke|Olstykke|55796|12155|22|5
+#DK|Central Jutland
+Odder||55973|10153|11|12
+#DK|South Denmark
+Otterup||55515|10398|9|5
+#DO|La Altagracia Province
+Otra Banda||18650|-68663|113|6
+#DZ|Biskra
+Oumache||34693|5681|54|10
+#DZ|El Oued
+Oued el Alennda||33229|6757|88|7
+#DZ|Medea
+Ouzera||36254|2847|916|13
+#EC|Pichincha
+Oyambarillo||-195|-78332|2555|8
+#ES|Andalusia
+Ogíjares|Ogijares|37119|-3608|723|13
+Olivares||37418|-6156|175|9
+Olvera||36934|-5267|590|9
+Olula del Río|Olula del Rio|37354|-2298|488|6
+Órgiva|Orgiva|36903|-3424|468|6
+Otura||37088|-3633|803|5
+#ES|Basque Country
+Oñati|Onate|43033|-2410|248|11
+Ondarroa||43317|-2417|180|10
+Ortuella||43311|-3056|80|8
+#ES|Castille-La Mancha
+Ocaña|Ocana|39958|-3498|741|7
+Olías del Rey|Olias del Rey|39944|-3987|593|5
+#ES|Extremadura
+Olivenza||38683|-7100|262|12
+Oliva de la Frontera||38276|-6919|376|6
+#ES|Galicia
+O Carballiño|O Carballino|42432|-8079|402|14
+O Barco de Valdeorras||42416|-6990|323|13
+Ordes||43077|-8409|277|13
+O Grove||42494|-8865|13|11
+Outes||42851|-8926|120|8
+Oroso||42983|-8433|274|6
+O Rosal||41935|-8837|25|6
+Outeiro de Rei||43102|-7615|413|5
+#ES|Madrid
+Orcasur||40372|-3698|593|14
+#ES|Valencia
+Oropesa del Mar||40091|141|4|9
+Onil||38626|-673|676|7
+Ondara||38828|17|37|6
+#FI|North Karelia
+Outokumpu||62727|29016|116|6
+#FI|North Ostrobothnia
+Oulunsalo||64935|25411|8|10
+Oulainen||64267|24800|72|7
+#FI|Pirkanmaa
+Orivesi||61678|24357|118|9
+#FR|Grand Est
+Obernai||48463|7481|191|12
+Ostwald||48544|7711|142|11
+#FR|Hauts-de-France
+Oignies||50463|2994|29|11
+Onnaing||50386|3600|29|9
+Orchies||50467|3233|38|8
+Oye-Plage||50977|2043|4|6
+Ostricourt||50451|3034|29|6
+#FR|New Aquitaine
+Oloron-Sainte-Marie||43194|-611|221|13
+Orthez||43488|-773|78|12
+#FR|Normandy
+Oissel-sur-Seine||49333|1094|4|11
+Ouistreham||49276|-259|12|9
+#FR|Pays de la Loire
+Olonne-sur-Mer||46535|-1773|24|11
+#FR|Provence-Alpes-Côte d'Azur
+Ollioules||43140|5848|61|14
+#FR|Île-de-France
+Ormesson-sur-Marne||48786|2545|97|10
+Othis||49074|2675|111|7
+Orgeval||48922|1978|100|5
+#GA|Haut-Ogooué
+Okondja||-655|13675|347|13
+#GB|England
+Otley||53906|-1694|65|15
+Oxted||51257|-6|108|13
+Oakwood||52943|-1431|78|13
+Osterley||51480|-354|29|13
+Oakham||52667|-733|111|11
+Oldbury||52500|-2017|145|11
+Oakwood||51648|-132|86|9
+Oakengates||52695|-2450|120|9
+Okehampton||50738|-4002|156|8
+Old Windsor||51458|-587|19|7
+Otford||51313|190|70|7
+Old Harlow||51784|134|62|7
+Olney||52153|-702|53|6
+Oundle||52481|-467|35|6
+#GB|Scotland
+Oban||56415|-5472|17|8
+#GE|Abkhazia
+Ochamchire||42712|41469|5|5
+#GE|Guria
+Ozurgeti||41923|42005|82|14
+#GM|Banjul
+Old Jeswang||13459|-16663|9|9
+#GM|Western
+Old Yundum||13363|-16686|28|12
+#GR|Central Greece
+Orchomenós|Orchomenos|38493|22980|104|9
+#GR|West Greece
+Ovriá|Ovria|38189|21729|61|6
+#GT|Santa Rosa Department
+Oratorio||14228|-90176|1034|10
+#HK|Eastern District
+Oi Tung Estate||22282|114228||9
+#HN|El Paraíso Department
+Oropolí|Oropoli|13817|-86817|472|6
+#HN|La Paz Department
+Opatoro||14083|-87900|1506|8
+#HR|Karlovac
+Ogulin||45266|15229|323|7
+#HR|Primorje-Gorski Kotar
+Opatija||45337|14308|32|6
+#HR|Split-Dalmatia
+Omiš|Omis|43445|16689|0|6
+#HT|Nord-Est
+Ouanaminthe||19549|-71725|39|10
+#HU|Budapest
+Országút|Orszagut|47511|19027|119|12
+Orczynegyed||47485|19088|107|9
+Orbánhegy|Orbanhegy|47495|19006|169|6
+#HU|Pest County
+Ócsa|Ocsa|47300|19231|111|9
+Őrbottyán|Orbottyan|47687|19282|187|5
+Örkény|Orkeny|47130|19433|123|5
+#IE|Leinster
+Oldbawn||53276|-6367|104|10
+#IL|Southern District
+‘Omer|'Omer|31265|34848|322|8
+#IM|Onchan
+Onchan||54173|-4453|58|0
+#IN|Bihar
+Obra||24891|84374|102|15
+#IN|Delhi
+Outabgarh||28801|76962|221|8
+#IN|Goa
+Onda||15556|74058|62|6
+#IN|Gujarat
+Olpād|Olpad|21336|72752|10|14
+Orvad||20453|72920|13|5
+#IN|Jharkhand
+Okni||24000|85355|623|11
+Orla||23723|85489|436|6
+#IN|Kerala
+Orumanayūr|Orumanayur|10570|76029|6|14
+#IN|Madhya Pradesh
+Orchha||25352|78640|218|12
+Omkareshwar||22242|76150|0|10
+Ordnance Factory Itarsi||22573|77865|347|8
+#IN|Manipur
+Oinām|Oinam|24689|93813|773|7
+#IN|Odisha
+Odagaon||20016|84987|137|5
+#IN|Tamil Nadu
+Odaipatti||9832|77443|382|14
+Odaiyakulam||10568|76910|296|13
+Orīkkai|Orikkai|12802|79711|85|13
+Ottaikkālmantapam|Ottaikkalmantapam|10883|76994|350|12
+Orathanadu||10623|79255|40|10
+Olagadam||11566|77643|217|10
+Ottappārai|Ottapparai|11178|77581|290|9
+Ottappatti||9896|78090|138|9
+Odugattūr|Odugattur|12768|78883|333|9
+Ovari Paravarnattam||8277|77891|9|6
+#IN|Telangana
+Osmania University||17413|78526|502|7
+#IN|Uttar Pradesh
+Oran||25369|80742|133|6
+#IN|West Bengal
+Odlābāri|Odlabari|26836|88629|147|12
+#IR|Kerman
+Orzū’īyeh|Orzu'iyeh|28453|56360|1027|7
+#IR|Lorestan Province
+Oshtorīnān|Oshtorinan|34017|48643|1811|6
+#IT|Abruzzo
+Ortona||42351|14403|72|13
+#IT|Apulia
+Oria||40500|17643|154|15
+#IT|Campania
+Olevano sul Tusciano||40657|15023|191|6
+#IT|Emilia-Romagna
+Ozzano dell'Emilia||44444|11476|66|9
+#IT|Friuli Venezia Giulia
+Opicina||45688|13789|320|8
+#IT|Lazio
+Olevano Romano||41859|13036|571|6
+#IT|Lombardy
+Ospitaletto||45552|10076|154|13
+Olgiate Olona||45637|8881|239|12
+Opera||45374|9211|101|11
+Osio Sotto||45616|9589|182|11
+Olgiate Comasco||45784|8968|415|11
+Orzinuovi||45402|9923|88|10
+Oggiono||45791|9348|268|8
+Origgio||45597|9016|194|7
+Olginate||45791|9419|206|7
+Olgiate Molgora||45730|9403|292|6
+Offanengo||45379|9742|83|6
+Ostiglia||45070|11135|13|6
+#IT|Piedmont
+Omegna||45880|8407|295|15
+Oleggio||45597|8642|233|13
+Ovada||44637|8642|186|10
+#IT|Sardinia
+Ozieri||40586|9003|390|8
+Oliena||40276|9402|379|7
+Orosei||40378|9692|19|6
+Ossi||40675|8593|335|6
+#IT|Tuscany
+Orbetello||42442|11221|3|6
+#IT|Umbria
+Orvieto||42719|12112|325|5
+#IT|Veneto
+Ospedaletto Euganeo||45218|11603|12|5
+#JM|Saint Catherine Parish
+Old Harbour Bay||17909|-77097|5|8
+#JP|Aomori
+Obuchi||40967|141373|10|10
+Ōwani|Owani|40520|140569|76|9
+Ōma|Oma|41527|140911|10|5
+#JP|Chiba
+Ōtaki|Otaki|35288|140244|28|9
+#JP|Fukushima
+Ono-niimachi||37287|140633|472|9
+Ōyauchi|Oyauchi|37200|140983|30|5
+#JP|Gunma
+Obata||36233|138917|176|12
+Ō-zanuki|O-zanuki|36200|139517|21|11
+#JP|Hokkaido
+Ozora||43913|144169|6|7
+Oshamambe||42509|140377|4|6
+#JP|Iwate
+Ōtsuchi|Otsuchi|39367|141900|5|12
+Ōta|Ota|39432|140751|296|5
+#JP|Kagoshima
+Ōsaki|Osaki|31425|131022|11|13
+#JP|Kochi
+Ochi||33533|133250|67|5
+#JP|Mie
+Ōka|Oka|34500|136550|42|14
+Ōdai|Odai|34396|136407|95|9
+#JP|Miyagi
+Onagawa Chō|Onagawa Cho|38447|141448|4|6
+Ōuchi|Ouchi|37878|140823|31|6
+Ōhira|Ohira|38471|140872|25|6
+#JP|Nagano
+Obuse||36696|138314|361|11
+#JP|Niigata
+Ōwarino|Owarino|37012|138655|249|9
+#JP|Okinawa
+Onna||26495|127851|14|11
+#JP|Osaka
+Ōzato|Ozato|34969|135411|207|9
+#JP|Saga
+Ōmachi|Omachi|33219|130120|27|6
+#JP|Saitama
+Ogose||35959|139290|172|11
+Ogano||36022|139003|258|11
+#JP|Shimane
+Okugano||34417|131833|461|6
+#JP|Tochigi
+Ōmiya|Omiya|36733|139867|218|10
+#JP|Tokushima
+Okuno||34122|134493|4|13
+#JP|Tokyo
+Ōmorinaka|Omorinaka|35567|139733|7|11
+Oshiage||35711|139817|4|11
+Ōshima|Oshima|34748|139362|70|7
+Ōyama-higashichō|Oyama-higashicho|35750|139706|40|6
+Ōyama-kanaichō|Oyama-kanaicho|35747|139704|34|6
+#JP|Yamagata
+Ogunimachi||38062|139748|138|7
+Ōishida|Oishida|38597|140374|79|7
+#JP|Yamaguchi
+Ōshima|Oshima|33940|132191|3|15
+#JP|Yamanashi
+Oshino||35459|138859|945|10
+#KE|Kajiado County
+Oloitokitok||-2927|37510|1769|11
+#KE|Narok County
+Olulung’a|Olulung'a|-1003|35663|1950|6
+#KE|Nyandarua County
+Ol Kalau South Settlement||-274|36340|2565|13
+#KE|Nyeri County
+Othaya||-547|36932|1873|7
+#KE|Siaya County
+Ogunja||190|34299|1263|7
+#KH|Battambang
+Ou Char||13107|103187|14|14
+#KH|Kampong Thom
+Ŏdŏngk|Odongk|11823|104744|19|8
+#KH|Kep
+Ou Krasar||10555|104288|5|7
+#KH|Kratie
+Ou Ruessei||12498|106038|33|13
+#KH|Takeo
+Otdam Souriya||11064|104706|17|11
+#KH|Ŏtâr Méanchey
+Ou Smach||14425|103696|231|10
+Ou Svay||14327|104320|87|9
+#KM|Anjouan
+Ouani||-12136|44425|18|10
+#KM|Grande Comore
+Ouellah||-11390|43332|140|5
+#KY|
+Old Man Bay||19344|-81177|4|10
+Omega Gardens||19292|-81327|1|9
+#KZ|Aktobe
+Oyyl||49073|54663|74|6
+#KZ|Karaganda
+Osakarovka||50563|72573|493|7
+#KZ|Zhambyl
+Oytal||42906|73270|675|10
+#LV|Olaine
+Olaine||56796|23937|7|10
+#MA|Beni Mellal-Khenifra
+Oulad Embarek||32272|-6450|491|12
+Oulad Yaïch|Oulad Yaich|32435|-6324|512|11
+Ouaouizeght||32159|-6354|896|10
+#MA|Casablanca-Settat
+Oulad Frej||32960|-8227|127|14
+Oulad M'Rah||32913|-7264|627|9
+Oualidia||32734|-9031|51|8
+Oulad El Rhadabne||33175|-8606|17|7
+#MA|Fes-Meknes
+Oued Amlil||34200|-4280|301|11
+#MA|Tanger-Tetouan-Al Hoceima
+Oued Laou||35448|-5096|20|11
+#MD|Raionul Ocniţa
+Ocniţa|Ocnita|48382|27439|220|9
+Otaci||48440|27790|65|8
+#MR|Guidimaka
+Ould Yenjé|Ould Yenje|15540|-11715|69|5
+#MR|Hodh Ech Chargi
+Oualata||17298|-7023|304|12
+#MR|Trarza
+Ouad Naga||17966|-15518|17|5
+#MX|Aguascalientes
+Ojocaliente||21877|-102675|1690|7
+#MX|Chiapas
+Oxchuc||16787|-92344|1967|7
+#MX|Guanajuato
+Ocampo||21648|-101479|2258|6
+#MX|Guerrero
+Ocotito||17247|-99514|734|7
+Olinalá|Olinala|17778|-98739|1339|6
+#MX|Jalisco
+Ojuelos de Jalisco||21864|-101593|2235|12
+#MX|Michoacán
+Opopeo||19412|-101607|2255|10
+#MX|Morelos
+Oaxtepec||18909|-98972|1404|7
+#MX|México
+Otumba||19700|-98756|2367|10
+#MX|Puebla
+Oriental||19376|-97621|2354|10
+#MX|Tamaulipas
+Ocampo||22846|-99336|335|5
+#MX|Veracruz
+Oteapan||18002|-94666|52|15
+Oluta||17930|-94897|81|13
+#MY|Sarawak
+Oya||2867|111883|3|6
+#NA|Erongo Region
+Omaruru||-21424|15946|1211|12
+Otjimbingwe||-22355|16129|854|8
+#NA|Karas Region
+Oranjemund||-28552|16427|25|8
+#NA|Kunene Region
+Outjo||-20107|16154|1258|10
+Opuwo||-18061|13840|1151|9
+#NA|Omusati Region
+Outapi||-17504|14984|1115|8
+Okahao||-17888|15067|1104|7
+#NA|Oshikoto Region
+Ondangwa East||-17930|16017|1076|6
+Omuthiya||-18365|16581|1098|5
+#NA|Otjozondjupa Region
+Otavi||-19638|17340|1411|6
+Osire||-21074|17366|1356|6
+Okakarara||-20588|17459|1327|6
+#NE|Tillabéri Region
+Ouallam||14316|2086|235|14
+#NG|Benue State
+Ochobo||7180|7982|127|9
+#NG|Cross River State
+Obubra||6077|8332|91|13
+#NG|Delta
+Obiaruku||5847|6153|35|12
+Orerokpe||5637|5890|14|6
+#NG|Ekiti State
+Omuo-Ekiti||7758|5722|546|6
+#NG|Enugu State
+Opi||6782|7433|496|11
+Obolo-Eke (1)||6883|7633|251|6
+#NG|Imo State
+Orlu||5796|7035|173|9
+Orodo||5617|7033|138|9
+#NG|Kogi State
+Ogurugu||6786|6950|54|9
+#NG|Kwara State
+Omu-Aran||8134|5100|483|14
+#NG|Ogun State
+Owode||6949|3506|134|9
+#NG|Ondo State
+Ore||6747|4876|76|14
+#NG|Oyo State
+Okeho||8035|3348|417|13
+#NG|Rivers State
+Omoku||5344|6657|18|12
+#NL|Friesland
+Oosterwolde||52992|6291|8|9
+#NL|Gelderland
+Oosterbeek||51986|5846|44|11
+Orden||52201|5934|25|6
+Opheusden||51932|5632|9|5
+#NL|Groningen
+Oosterpark||53224|6585|2|11
+Oude Pekela||53104|7010|0|8
+#NL|North Brabant
+Oudenbosch||51588|4535|4|13
+Oirschot||51505|5314|17|10
+Oud Gastel||51587|4460|6|5
+#NL|North Holland
+Opmeer||52707|4944|1|11
+Oostzaan||52439|4876|2|10
+Ouderkerk aan de Amstel||52295|4907|0|8
+Oosteinde||52279|4796|-4|8
+Obdam||52676|4907|1|6
+#NL|Overijssel
+Ommen||52521|6421|7|12
+#NL|South Holland
+Overschie||51939|4428|1|7
+Ouddorp||51812|3935|2|6
+#NL|Utrecht
+Oudewater||52025|4868|1|10
+Odijk||52053|5236|3|5
+#NO|Møre og Romsdal
+Ørsta|Orsta|62200|6129|13|6
+#NO|Rogaland
+Orstad||58785|5704|47|7
+#NO|Trøndelag
+Orkanger||63307|9850|100|8
+#NZ|Auckland
+Onehunga||-36918|174780|59|13
+Orewa||-36581|174679|57|13
+Owairaka||-36888|174710|48|6
+Oteha Valley||-36720|174718|45|6
+#NZ|Bay of Plenty
+Otumoetai||-37672|176139|53|9
+Omokoroa||-37648|176035|26|6
+#NZ|Hawke's Bay Region
+Onekawa||-39509|176890|4|7
+#NZ|Northland
+Onerahi||-35767|174367|38|7
+#NZ|Otago
+Oamaru||-45098|170971|12|13
+#NZ|Wellington Region
+Otaki||-40758|175150|15|6
+#PE|Arequipa
+Orcopampa||-15266|-72342|3790|6
+#PE|La Libertad
+Otuzco||-7900|-78583|3006|10
+#PE|Lambayeque
+Olmos||-5985|-79745|175|10
+Oyotún|Oyotun|-6844|-79301|207|6
+#PE|Lima region
+Oyón|Oyon|-10668|-76772|3617|6
+#PE|Pasco
+Oxapampa||-10577|-75402|1817|12
+#PH|Central Visayas
+Ocaña|Ocana|10066|123624|29|14
+Obong||9741|123510|26|6
+#PH|Eastern Visayas
+Oras||12141|125440|8|9
+#PH|Mimaropa
+Odiongan||12402|121992|12|6
+#PH|Western Visayas
+Oton||10693|122474|4|14
+Orong||9937|122829|20|7
+#PH|Zamboanga Peninsula
+Olingan||8538|123322|10|8
+Olutanga||7311|122846|19|7
+#PK|Balochistan
+Ormara||25210|64636|6|13
+#PL|Greater Poland
+Ostrzeszów|Ostrzeszow|51426|17934|201|14
+Opalenica||52309|16413|80|9
+#PL|Lesser Poland
+Osiek||49951|19264|259|8
+#PL|Lower Silesia
+Oborniki Śląskie|Oborniki Slaskie|51301|16915|171|8
+Ołtaszyn|Oltaszyn|51062|17029|128|7
+Osiedle Henrykowskie||51090|17053|120|5
+#PL|Lublin
+Opole Lubelskie||51148|21969|150|9
+#PL|Mazovia
+Ożarów Mazowiecki|Ozarow Mazowiecki|52210|20797|98|8
+#PL|Opole Voivodeship
+Olesno||50877|18421|239|10
+Ozimek||50679|18214|183|10
+Otmuchów|Otmuchow|50466|17173|208|5
+#PL|Pomerania
+Oliwa||54407|18554|38|15
+Orunia-Św. Wojciech-Lipce|Orunia-Sw. Wojciech-Lipce|54315|18637|0|14
+#PL|Silesia
+Ornontowice||50194|18754|252|5
+#PL|Subcarpathia
+Oleszyce||50168|23035|216|5
+#PL|Warmia-Masuria
+Orneta||54115|20133|59|9
+Olsztynek||53584|20285|169|8
+Orzysz||53810|21948|126|6
+#PL|Świętokrzyskie
+Opatów|Opatow|50801|21425|227|7
+#PR|Orocovis
+Orocovis||18227|-66391|513|1
+#PS|West Bank
+Oranit||32132|34991|140|9
+#PT|Aveiro
+Oliveira de Azemeis||40841|-8476|221|12
+Oiã|Oia|40543|-8539|63|7
+Oliveira do Bairro||40515|-8494|74|6
+#PT|Beja
+Odemira||37598|-8640|52|6
+#PT|Braga
+Oliveira||41478|-8470|184|6
+#PT|Castelo Branco
+Oleiros||39919|-7914|510|6
+#PT|Faro
+Olhos de Água|Olhos de Agua|37090|-8192|20|13
+#PT|Leiria
+Óbidos|Obidos|39361|-9157|48|11
+#PT|Lisbon
+Olival Basto||38791|-9166|22|6
+#PT|Porto
+Olival||41050|-8544|184|6
+#PT|Santarém
+Ourém|Ourem|39642|-8592|315|13
+#PY|Itapúa
+Obligado||-27055|-55627|177|6
+#RO|Bacău County
+Oituz||46200|26617|306|10
+#RO|Bucharest
+Odăi|Odai|44393|26035|73|5
+#RO|Caraș-Severin County
+Oraviţa|Oravita|45033|21689|213|12
+Oţelu Roşu|Otelu Rosu|45533|22367|327|11
+#RO|Constanța County
+Ovidiu||44258|28561|22|13
+Ostrov||44117|27367|9|6
+#RO|Dolj
+Ostroveni||43800|23900|31|6
+#RO|Dâmbovița County
+Odobeşti|Odobesti|44617|25567|146|5
+#RO|Ilfov
+Otopeni||44550|26067|94|10
+#RO|Mehedinți County
+Orşova|Orsova|44723|22396|79|12
+#RO|Olt
+Osica de Sus||44250|24317|101|5
+#RO|Satu Mare County
+Oraşu Nou|Orasu Nou|47833|23283|186|7
+#RO|Teleorman County
+Orbeasca de Sus||44150|25317|70|8
+#RO|Vrancea
+Odobeşti|Odobesti|45767|27050|223|8
+#RU|Altai
+Onguday||50750|86134|828|5
+#RU|Arkhangelskaya
+Oktyabr’skiy|Oktyabr'skiy|61089|43172|73|9
+#RU|Belgorod Oblast
+Oktyabr’skiy|Oktyabr'skiy|50445|36361|172|8
+#RU|Buryatiya Republic
+Onokhoy||51926|108060|536|10
+#RU|Chechnya
+Oyskhara||43264|46248|123|13
+#RU|Jewish Autonomous Oblast
+Obluch’ye|Obluch'ye|49016|131054|253|8
+#RU|Kaliningrad Oblast
+Ozërsk|Ozersk|54411|22012|82|6
+#RU|Karelia
+Olonets||60981|32973|25|10
+#RU|Khabarovsk
+Oktyabr’skiy|Oktyabr'skiy|49057|140255|53|6
+Okhotsk||59362|143215|9|6
+#RU|Kirov Oblast
+Orlov||58539|48892|116|8
+Orichi||58401|49060|142|8
+#RU|Kostroma Oblast
+Ostrovskoye||57806|42243|136|5
+#RU|Kursk Oblast
+Oboyan’|Oboyan'|51212|36279|218|14
+#RU|Leningradskaya Oblast'
+Ol’gino|Ol'gino|59837|29923|28|8
+#RU|Magadan Oblast
+Ola||59580|151299|14|6
+#RU|Mariy-El Republic
+Orshanka||56917|47896|107|7
+#RU|Moscow Oblast
+Oktyabr’skiy|Oktyabr'skiy|55608|37977|125|11
+Ozherel’ye|Ozherel'ye|54792|38266|220|11
+Obukhovo||55833|38273|134|11
+Obolensk||54977|37224|179|5
+Opalikha||55826|37253|188|5
+#RU|Novgorod Oblast
+Okulovka||58408|33289|152|14
+#RU|Novosibirsk Oblast
+Ordynskoye||54362|81887|127|10
+#RU|Omsk Oblast
+Odesskoye||54215|72965|121|6
+Okoneshnikovo||54840|75077|111|6
+#RU|Perm Krai
+Oktyabr’skiy|Oktyabr'skiy|56517|57205|325|9
+Okhansk||57715|55391|117|8
+Orda||57192|56905|128|5
+#RU|Pskov Oblast
+Opochka||56714|28663|97|14
+#RU|Rostov
+Oblivskaya||48536|42501|59|10
+Ol’ginskaya|Ol'ginskaya|47187|39952|11|5
+#RU|Ryazan Oblast
+Oktyabr’skiy|Oktyabr'skiy|54227|38894|187|6
+#RU|Sakha
+Olyokminsk||60374|120420|156|9
+#RU|Samara Oblast
+Obsharovka||53125|48853|47|6
+#RU|Smolensk Oblast
+Ozërnyy|Ozernyy|55580|32413|201|6
+#RU|Tatarstan Republic
+Osinovo||55881|48881|111|8
+#RU|Tula Oblast
+Odoyev||53936|36688|211|6
+#RU|Tver Oblast
+Ozerniy||57867|33664|191|10
+Olenino||56209|33489|252|5
+#RU|Tyumen Oblast
+Omutinskoye||56468|67642|101|10
+#RU|Zabaykalskiy (Transbaikal) Kray
+Olovyannaya||50946|115576|585|8
+#SE|Blekinge
+Olofström|Olofstroem|56277|14534|44|8
+#SE|Dalarna
+Orsa||61120|14616|169|5
+#SE|Halland
+Onsala||57425|12029|34|12
+#SE|Skåne
+Oxie||55540|13096|36|13
+Osby||56382|13994|85|8
+Ödåkra|OEdakra|56104|12748|29|5
+Örkelljunga|OErkelljunga|56283|13278|72|5
+#SE|Stockholm
+Or||59375|17977|17|7
+#SE|Södermanland
+Oxelösund|Oxeloesund|58671|17102|11|11
+#SI|Municipality of Odranci
+Odranci||46586|16280|175|2
+#SI|Municipality of Oplotnica
+Oplotnica||46387|15446|377|1
+#SI|Municipality of Ormož
+Ormož|Ormoz|46412|16152|228|2
+#SI|Municipality of Osilnica
+Osilnica||45529|14698|298|0
+#SJ|Jan Mayen
+Olonkinbyen||70922|-8719|1|0
+#SK|Žilina Region
+Oščadnica|Oscadnica|49436|18882|456|6
+#SN|Matam
+Odobéré|Odobere|15561|-13099|22|6
+#SO|Togdheer
+Oodweyne||9409|45064|1055|5
+#SR|Para District
+Onverwacht||5590|-55195|7|2
+#SV|La Paz Department
+Olocuilta||13570|-89117|485|6
+#TD|Ennedi-Ouest
+Ounianga Kébir|Ounianga Kebir|19053|20489|386|10
+#TH|Nakhon Nayok
+Ongkharak||14120|101001|21|13
+#TJ|Khatlon Province
+Orzu||37558|68820|415|6
+#TJ|Republican Subordination
+Obigarm||38717|69709|1358|7
+#TM|Mary
+Oguzhan||37318|61086|195|6
+#TN|Kairouan
+Ousseltia||35848|9589|480|9
+#TO|ʻEua
+'Ohonua||-21341|-174957|20|1
+#TR|Balıkesir
+Ömerli|OEmerli|40313|28048|64|5
+#TR|Bursa Province
+Orhaneli||39903|28991|515|9
+#TR|Gaziantep
+Oğuzeli|Oguzeli|36966|37513|688|12
+#TR|Hatay
+Özerli|OEzerli|36819|36225|87|12
+#TR|Iğdır
+Özgür Mahallesi|OEzguer Mahallesi|39906|44049|856|11
+#TR|Mardin
+Ortaköy|Ortakoey|37223|40784|561|7
+Ömerli|OEmerli|37399|40954|1093|7
+#TR|Tunceli
+Ovacık|Ovacik|39353|39209|1233|6
+#TR|Van
+Özalp|OEzalp|38655|43989|1985|8
+#TR|Çankırı
+Orta||40624|33109|1257|6
+#TR|İzmir Province
+Özdere|OEzdere|38016|27128|74|14
+#UA|Chernihiv Oblast
+Oster||50950|30877|110|6
+#UA|Chernivtsi
+Oprysheny||48053|26027|353|9
+#UA|Dnipropetrovsk
+Obukhivka||48549|34854|54|9
+#UA|Donetsk
+Oleksiyevo-Druzhkivka||48579|37609|84|8
+Oleksandrivka||48707|36913|115|6
+Oleksandrivka||47921|37579|171|6
+#UA|Ivano-Frankivsk
+Otyniia||48738|24861|263|5
+#UA|Kirovohrad
+Oleksandrivka||48968|32240|126|8
+#UA|Luhansk
+Oleksandrivsk||48586|39189|54|6
+#UA|Mykolaiv
+Ochakiv||46615|31545|37|14
+Oleksandrivka||47690|31278|29|5
+#UA|Odesa
+Ovidiopol||46247|30437|16|12
+Oleksandrivka||46329|30636|30|8
+Ozerne||45406|28669|36|5
+Okny||47543|29456|71|5
+#UA|Poltava
+Opishnya||49959|34606|208|5
+Obolon||49604|32874|86|5
+#UA|Rivne Oblast
+Ostroh||50329|26521|176|15
+#UA|Zaporizhzhia
+Orikhiv||47576|35783|61|14
+Obytichne||46735|36393|20|5
+#UA|Zhytomyr Oblast
+Olevsk||51225|27652|180|10
+Ozerne||50178|28734|220|6
+#US|Alabama
+Ozark||31459|-85640|127|15
+Opp||31283|-86256|103|7
+Oneonta||33948|-86473|262|7
+Orange Beach||30294|-87574|4|6
+#US|Arkansas
+Osceola||35705|-89970|75|7
+#US|California
+Oak Park||34179|-118763|337|14
+Olivehurst||39095|-121552|20|14
+Oak Creek||33674|-117771|55|10
+Orange Cove||36624|-119314|129|10
+Oak Hills||34383|-117381|1134|9
+Orosi||36545|-119287|114|9
+Oroville East||39511|-121475|295|8
+Ojai||34448|-119243|227|8
+Orland||39747|-122196|79|8
+Oceano||35099|-120612|9|7
+Oasis||33466|-116099|-44|7
+Old Fig Garden||36799|-119805|100|5
+#US|Colorado
+Orchard Mesa||39048|-108529|1417|7
+#US|Connecticut
+Orange||41278|-73026|68|14
+Oxford||41434|-73117|108|11
+Old Saybrook||41292|-72376|9|11
+Oakville||41593|-73085|168|9
+Old Greenwich||41023|-73565|8|7
+#US|Florida
+Oldsmar||28034|-82665|2|14
+Olympia Heights||25727|-80355|2|13
+On Top of the World||29115|-82291|23|13
+Orange City||28949|-81299|9|11
+Orange Park||30166|-81706|4|9
+Ormond-by-the-Sea||29349|-81066|4|7
+Odessa||28194|-82592|17|7
+Orlovista||28538|-81460|34|6
+Osprey||27196|-82490|3|6
+Okeechobee||27244|-80830|8|6
+Ocean City||30441|-86614|3|6
+#US|Hawaii
+Ocean Pointe||21311|-158036|7|8
+#US|Illinois
+Olney||38731|-88085|146|9
+Oak Brook||41833|-87929|202|8
+Orland Hills||41585|-87843|214|7
+#US|Indiana
+Otis||41599|-86906|229|10
+Oak Park||38306|-85696|140|5
+#US|Iowa
+Oskaloosa||41296|-92644|256|12
+Orange City||43007|-96058|440|6
+Oelwein||42673|-91913|319|6
+#US|Kansas
+Ottawa||38616|-95268|275|12
+#US|Kentucky
+Oakbrook||39000|-84685|265|9
+Oak Grove||37344|-86755|162|8
+Oak Grove||36665|-87443|165|7
+#US|Louisiana
+Oak Hills Place||30360|-91088|11|8
+Oakdale||30816|-92660|36|8
+Old Jefferson||30383|-91017|9|7
+#US|Maine
+Orono||44883|-68672|38|9
+Old Orchard Beach||43517|-70378|13|9
+Old Town||44934|-68645|33|8
+#US|Maryland
+Overlea||39363|-76521|69|12
+Ocean Pines||38395|-75156|2|12
+Ocean City||38337|-75085|1|7
+#US|Massachusetts
+Oak Hill Park||42295|-71186|35|7
+Oxford||42117|-71865|154|6
+#US|Michigan
+Owosso||42998|-84177|222|15
+#US|Minnesota
+Oak Grove||45341|-93327|273|8
+Orono||44971|-93604|296|8
+#US|Missouri
+Oak Grove||39005|-94129|268|8
+Olivette||38665|-90376|202|8
+Odessa||38999|-93954|285|5
+#US|Montana
+Orchard Homes||46863|-114048|961|5
+#US|New Jersey
+Oakland||41013|-74264|68|13
+Ocean City||39278|-74575|3|11
+Oradell||40959|-74037|27|8
+Old Tappan||41011|-73991|24|6
+Oceanport||40318|-74015|6|6
+#US|New York
+Olean||42078|-78430|441|14
+Oneonta||42453|-75064|339|14
+Oakwood||40564|-74116|5|11
+Oneida||43093|-75651|131|11
+Ogdensburg||44694|-75486|90|11
+Oakdale||42251|-73780|33|8
+Oakdale||40744|-73139|3|8
+Orange Lake||41540|-74098|150|7
+Oyster Bay||40866|-73532|14|7
+Old Bethpage||40763|-73453|53|6
+#US|North Carolina
+Oxford||36311|-78591|147|9
+Oak Island||33917|-78161|3|8
+Ogden||34272|-77819|14|7
+Oak Ridge||36173|-79989|286|7
+#US|Ohio
+Oakwood||39725|-84174|301|9
+Olmsted Falls||41375|-81908|234|9
+Orrville||40844|-81764|323|8
+Oberlin||41294|-82217|248|8
+Ontario||40760|-82590|414|6
+#US|Oklahoma
+Okmulgee||35623|-95961|207|12
+#US|Oregon
+Oatfield||45414|-122600|42|13
+Oak Hills||45541|-122841|71|11
+Ontario||44027|-116963|656|11
+#US|Pennsylvania
+Ogontz||40052|-75151|75|15
+Oil City||41434|-79706|312|10
+Old Forge||41371|-75735|225|8
+Oakmont||40522|-79842|236|6
+Old City||39947|-75147|6|6
+Oreland||40118|-75178|79|6
+Oxford||39785|-75979|171|5
+Olyphant||41468|-75603|239|5
+#US|South Carolina
+Orangeburg||33492|-80856|74|13
+Oak Grove||33981|-81143|111|10
+Oak Grove||33778|-80967|104|8
+#US|Tennessee
+Oakland||35229|-89515|116|7
+#US|Utah
+Oquirrh||40631|-112034|1500|12
+#US|Washington
+Othello||46826|-119175|323|8
+Orting||47098|-122204|58|7
+Otis Orchards-East Farms||47710|-117080|632|6
+Ocean Shores||46974|-124156|7|6
+#US|West Virginia
+Oak Hill||37972|-81149|614|8
+#US|Wisconsin
+Oregon||42926|-89385|288|10
+#UZ|Bukhara
+Olot Shahri||39415|63803|197|13
+#UZ|Tashkent Region
+Oqqo‘rg‘on|Oqqo'rg'on|40878|69046|306|12
+#VN|Ca Mau
+Ông Yến|Ong Yen|9483|105346|4|14
+Ông Do|Ong Do|8824|105009|3|9
+#XK|Pristina
+Obiliq||42687|21070|537|12
+#YT|Ouangani
+Ouangani||-12846|45136|100|7
+#ZA|Free State
+Oranjeville||-26994|28210|1507|6
+#ZA|Gauteng
+Orange Farm||-26483|27867|1572|10
+#ZA|Mpumalanga
+Oakley||-24927|31229|552|12
+Orinoco A||-24763|31065|617|6
+#ZA|Northern Cape
+Oakglen||-31051|24433|1402|6

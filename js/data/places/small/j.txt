@@ -1,0 +1,797 @@
+#AM|Kotayk
+Jrvezh||40189|44624|1540|7
+#AO|Cuando Province
+Jamba||-17500|22667|1005|12
+#AR|Cordoba
+Justiniano Posse||-32883|-62680|115|7
+#AR|Mendoza
+Junín|Junin|-33147|-68487|660|10
+#AR|Neuquen
+Junín de los Andes|Junin de los Andes|-39949|-71075|905|11
+#AR|San Luis
+Justo Daract||-33861|-65182|414|10
+#AT|Styria
+Judenburg||47167|14667|754|8
+Judendorf||47400|15100|693|5
+#AT|Tyrol
+Jenbach||47392|11772|564|7
+#AU|New South Wales
+Jerrabomberra||-35384|149202|618|9
+Jindabyne||-36417|148623|940|7
+Jannali||-34016|151061|92|6
+Jamisontown||-33768|150677|31|5
+Jordan Springs||-33721|150729|45|5
+#AU|Queensland
+Jimboomba||-27831|153027|43|13
+Jindalee||-27534|152938|43|5
+#AU|Western Australia
+Joondalup||-31744|115768|49|9
+#AZ|Abşeron
+Jeyranbatan||40542|49661|22|10
+#AZ|Jabrayil
+Jabrayil||39399|47028|607|10
+#AZ|Nakhchivan
+Julfa||38954|45630|714|14
+Jahri||39348|45416|1074|11
+#BA|Federation of B&H
+Jajce||44342|17271|388|10
+Jablanica||43660|17762|199|6
+Jelah||44654|17959|184|5
+#BA|Srpska
+Janja||44666|19247|105|6
+#BE|Flanders
+Jabbeke||51182|3089|7|13
+#BE|Wallonia
+Jodoigne||50724|4869|74|12
+Jemeppe-sur-Meuse||50617|5498|65|11
+Jemappes||50449|3891|31|11
+Jupille-sur-Meuse||50646|5633|73|11
+Jurbise||50531|3909|70|9
+Juprelle||50708|5531|147|8
+Jalhay||50559|5968|386|8
+Jemeppe-sur-Sambre||50465|4666|95|6
+#BR|Acre
+Jordão|Jordao|-9434|-71884|307|9
+#BR|Alagoas
+Jequiá da Praia|Jequia da Praia|-10011|-36025|1|10
+Japaratinga||-9088|-35258|10|9
+Jacuípe|Jacuipe|-8842|-35460|82|5
+Jacaré dos Homens|Jacare dos Homens|-9636|-37205|137|5
+Jaramataia||-9659|-37002|172|5
+#BR|Amazonas
+Japurá|Japura|-1826|-66599|53|9
+Jutaí|Jutai|-5183|-68900|92|6
+#BR|Bahia
+Jacaraci||-14850|-42433|856|15
+Jiquiriça|Jiquirica|-13257|-39572|289|14
+Jitaúna|Jitauna|-14013|-39898|170|11
+Jucuruçu|Jucurucu|-16843|-40159|195|10
+Jandaíra|Jandaira|-11564|-37784|147|9
+Jaborandi||-13620|-44470|580|9
+Jussiape||-13517|-41592|514|7
+Jussari||-15191|-39495|188|6
+#BR|Ceará
+Jaguaribara||-5460|-38463|83|11
+Jati||-7689|-39006|420|8
+Jardim||-3464|-39057|31|7
+Juá dos Vieiras|Jua dos Vieiras|-3533|-41300|554|6
+#BR|Espírito Santo
+João Neiva|Joao Neiva|-19757|-40386|57|14
+Jerônimo Monteiro|Jeronimo Monteiro|-20789|-41395|118|12
+Jetibá|Jetiba|-20021|-40681|678|6
+#BR|Goiás
+Joviânia|Joviania|-17806|-49613|805|7
+Jandaia||-17049|-50146|598|6
+#BR|Maranhão
+Joselândia|Joselandia|-4988|-44695|74|15
+Jatobá|Jatoba|-5817|-44223|200|7
+Junco do Maranhão|Junco do Maranhao|-1879|-46072|33|5
+#BR|Mato Grosso
+Juscimeira||-16051|-54884|248|12
+Juruena||-10318|-58359|205|10
+Jauru||-15342|-58866|386|8
+Jangada||-15236|-56489|210|7
+#BR|Mato Grosso do Sul
+Japorã|Japora|-23891|-54404|358|8
+Jaraguari||-20142|-54399|604|7
+Juti||-22861|-54603|376|7
+#BR|Minas Gerais
+Joaíma|Joaima|-16654|-41031|270|14
+Jequeri||-20456|-42666|419|12
+Juruaia||-21253|-46577|873|11
+Jacinto||-16144|-40293|181|11
+Jordânia|Jordania|-15900|-40178|185|10
+Japonvar||-15995|-44270|859|8
+Jacuí|Jacui|-21017|-46741|1011|7
+Jequitaí|Jequitai|-17236|-44446|507|6
+Jeceaba||-20534|-43992|949|6
+Jenipapo de Minas||-17083|-42258|374|6
+Jequitibá|Jequitiba|-19236|-44028|613|6
+Juvenília|Juvenilia|-14262|-44160|451|6
+Jesuânia|Jesuania|-21998|-45291|892|5
+#BR|Paraná
+Jaguapitã|Jaguapita|-23113|-51532|588|14
+Joaquim Távora|Joaquim Tavora|-23499|-49926|611|12
+Jataizinho||-23254|-50980|355|12
+Jardim Alegre||-24179|-51692|671|11
+Japurá|Japura|-23470|-52553|469|9
+Jesuítas|Jesuitas|-24385|-53387|495|8
+Juranda||-24420|-52843|541|8
+Jussara||-23621|-52469|399|7
+Janiópolis|Janiopolis|-24143|-52778|584|6
+Jaboti||-23743|-50076|554|5
+#BR|Paraíba
+Jacaraú|Jacarau|-6612|-35293|173|14
+Juripiranga||-7373|-35238|117|11
+Juru||-7537|-37819|588|9
+Juarez Távora|Juarez Tavora|-7172|-35583|187|8
+Jericó|Jerico|-6554|-37809|235|8
+Junco do Seridó|Junco do Serido|-6997|-36713|591|7
+#BR|Pernambuco
+Jatobá|Jatoba|-9183|-38269|286|14
+Jurema||-8718|-36136|732|14
+Joaquim Nabuco||-8624|-35533|151|13
+Jucati||-8706|-36489|820|12
+Jaqueira||-8727|-35793|179|10
+#BR|Piauí
+Joaquim Pires||-3508|-42198|21|14
+Joca Marques||-3498|-42433|13|5
+Júlio Borges|Julio Borges|-10327|-44239|426|5
+Juazeiro do Piauí|Juazeiro do Piaui|-5174|-41708|157|5
+#BR|Rio Grande do Norte
+Jardim de Piranhas||-6379|-37352|143|14
+Jardim do Seridó|Jardim do Serido|-6584|-36774|223|12
+Jaçanã|Jacana|-6426|-36205|663|8
+Jandaíra|Jandaira|-5356|-36128|115|7
+José da Penha|Jose da Penha|-6317|-38281|263|6
+Japi||-6465|-35947|283|5
+#BR|Rio Grande do Sul
+Jaguari||-29497|-54690|126|11
+Jóia|Joia|-28647|-54122|321|7
+#BR|Santa Catarina
+Jacinto Machado||-28997|-49764|41|11
+José Boiteux|Jose Boiteux|-26958|-49628|273|6
+#BR|Sergipe
+Japoatã|Japoata|-10347|-36801|88|13
+#BR|São Paulo
+Joanópolis|Joanopolis|-22930|-46276|911|13
+Jaci||-20882|-49570|554|8
+Jambeiro||-23254|-45688|702|6
+Jaborandi||-20688|-48412|509|6
+#BT|Bumthang District
+Jakar||27549|90753|2587|6
+#CA|British Columbia
+James Bay||48417|-123383|10|13
+Jubilee||48430|-123328|23|5
+#CA|Ontario
+Junction Area||43668|-79471|118|14
+#CI|Bas-Sassandra District
+Johin||5805|-6784|184|11
+#CI|Lagunes District
+Jacqueville||5205|-4415|12|14
+#CM|North-West
+Jakiri||6100|10650|1609|5
+#CN|Chongqing
+Jinqiao||29048|106885|723|14
+Jindaoxia||30005|106652|323|14
+Jinfeng||31194|108561|184|13
+Jiangchi||29914|108027|542|12
+Jindai||30602|107698|455|12
+Jinshan||29666|105882|311|11
+Jijia||29632|105535|396|11
+Jinshan||28931|107104|727|11
+Jianping||31045|109925|842|10
+Jinxi||29392|108687|592|9
+Jilong||29723|108005|653|8
+Jindong||29203|108847|654|7
+#CN|Fujian
+Jinjing||24575|118597|14|7
+Jianjiang||26550|119755|8|6
+#CN|Gansu
+Jinji||34650|105900|1586|13
+Jiachuan||34702|105930|1328|11
+Jialing||33699|106196|807|10
+Jiangkou||34058|105100|1371|8
+Jiahe||34092|104380|2197|8
+Jiangtai||34089|104407|2014|7
+Jiegan||33289|105096|968|7
+Jindong||33906|106309|963|5
+Jiangpan||33779|104365|1549|5
+#CN|Guangdong
+Jiajinlong||22547|113906|6|9
+Jiazhou||22571|113895|9|7
+Jiushixia||22518|114055|8|6
+Jiuxiangling||22588|113951|18|5
+#CN|Tibet
+Jiangzi||28920|89600|4036|10
+#CN|Yunnan
+Jiujing||22447|99975|1425|14
+#CO|Antioquia
+Jericó|Jerico|5792|-75786|1987|8
+Jardín|Jardin|5599|-75820|1768|8
+#CO|Tolima Department
+Junín|Junin|4783|-75017|1235|11
+#CU|Mayabeque
+Jamaica||22976|-82169|137|15
+#CV|São Lourenço dos Órgãos
+João Teves|Joao Teves|15067|-23589|207|1
+#CZ|Central Bohemia
+Jesenice||49968|14514|358|11
+Jílové u Prahy|Jilove u Prahy|49895|14493|394|5
+#CZ|Hradec Králové Region
+Jaroměř|Jaromer|50356|15921|258|12
+#CZ|Liberec Region
+Jilemnice||50609|15507|462|6
+#CZ|Moravian-Silesian Region
+Jablunkov||49577|18765|387|5
+#CZ|Olomouc Region
+Jeseník|Jesenik|50229|17205|432|10
+#CZ|Prague
+Jinonice||50050|14378|331|8
+#CZ|Ústí nad Labem Region
+Jílové|Jilove|50761|14104|265|5
+#DE|Baden-Wurttemberg
+Jöhlingen|Joehlingen|49032|8574|160|5
+Jestetten||47650|8567|429|5
+#DE|Bavaria
+Jettingen-Scheppach||48390|10438|472|7
+#DE|Brandenburg
+Jüterbog|Jueterbog|51996|13080|72|13
+#DE|Lower Saxony
+Jever||53573|7900|2|14
+Jork||53532|9681|3|12
+Jesteburg||53310|9953|50|7
+Jade||53332|8200|-1|6
+#DE|Rheinland-Pfalz
+Jockgrim||49093|8275|114|7
+#DE|Saxony
+Jahnsdorf||50745|12854|395|6
+Johanngeorgenstadt||50433|12711|831|6
+#DE|Saxony-Anhalt
+Jessen||51793|12958|78|11
+#DK|Zealand
+Jyllinge||55753|12103|14|11
+#DO|Independencia
+Jimaní|Jimani|18488|-71851|50|7
+#DO|La Vega
+Jima Abajo||19133|-70376|69|6
+#DO|San Juan Province
+Juan de Herrera||18874|-71238|477|6
+#EC|Manabí
+Junín|Junin|-928|-80206|49|9
+#EE|Ida-Virumaa
+Jõhvi|Johvi|59359|27421|61|10
+#EE|Jõgevamaa
+Jõgeva|Jogeva|58747|26394|79|6
+#ES|Andalusia
+Jódar|Jodar|37841|-3353|648|12
+Jimena de la Frontera||36435|-5454|149|7
+#ES|Aragon
+Jaca||42569|-550|827|13
+#ES|Extremadura
+Jerez de los Caballeros||38321|-6773|486|10
+Jaraíz de la Vera|Jaraiz de la Vera|40060|-5754|549|7
+#ES|Madrid
+Jerónimos|Jeronimos|40414|-3685|666|7
+#FI|Central Finland
+Jämsänkoski|Jaemsaenkoski|61919|25170|97|7
+#FI|North Ostrobothnia
+Jääli|Jaeaeli|65093|25685|42|5
+#FI|North Savo
+Juankoski||63065|28329|85|6
+#FI|South Karelia
+Joutseno||61118|28508|80|11
+#FI|South Ostrobothnia
+Jalasjärvi|Jalasjaervi|62490|22759|91|9
+#FI|South Savo
+Juva||61900|27850|98|6
+#FI|Uusimaa
+Jätkäsaari|Jaetkaesaari|60159|24917|24|15
+Jokela||60554|24963|77|7
+Jokiniemi||60567|26458|2|6
+Jakomäki|Jakomaeki|60259|25078|31|6
+#FR|Auvergne-Rhône-Alpes
+Jassans-Riottier||45981|4761|209|6
+Jonage||45796|5047|218|6
+#FR|Bourgogne-Franche-Comté
+Joigny||47983|3401|107|12
+#FR|Brittany
+Janzé|Janze|47960|-1499|85|6
+#FR|Grand Est
+Jarville-la-Malgrange||48667|6203|211|10
+Jarny||49159|5876|205|9
+Jœuf|Joeuf|49233|6017|195|7
+#FR|Hauts-de-France
+Jeumont||50297|4101|132|11
+#FR|New Aquitaine
+Jurançon|Jurancon|43288|-387|178|7
+Jaunay-Clan||46685|372|74|6
+#FR|Occitanie
+Juvignac||43614|3811|35|13
+Jacou||43661|3912|64|5
+#FR|Pays de la Loire
+Jumelles||47435|-104|37|7
+Juigné|Juigne|47719|-394|34|7
+#FR|Provence-Alpes-Côte d'Azur
+Jean-Médecin|Jean-Medecin|43700|7267||7
+#FR|Île-de-France
+Juvisy-sur-Orge||48683|2383|38|12
+Jouy-en-Josas||48759|2170|147|8
+Jouars-Pontchartrain||48789|1899|100|5
+#GB|Northern Ireland
+Jordanstown||54683|-5900|29|5
+#GM|Central River
+Janjanbureh||13540|-14764|7|5
+#GM|Western
+Jamisa||13417|-16717|24|10
+Jambanjali||13280|-16729|23|6
+#GT|Chiquimula
+Jocotán|Jocotan|14821|-89390|461|8
+#GT|Quiché
+Joyabaj||14993|-90802|1432|13
+#GW|
+Jabicunda||12317|-14550|49|12
+#HK|Sha Tin
+Jat Min Chuen||22376|114191|1|9
+#HK|Wan Chai
+Jardine's Lookout||22269|114193|164|14
+#HN|Intibucá Department
+Jesús de Otoro|Jesus de Otoro|14488|-87982|620|7
+#HN|Yoro Department
+Jocón|Jocon|15283|-86967|973|10
+#HR|Zagreb County
+Jastrebarsko||45668|15649|142|5
+#HT|Nord-Ouest
+Jean-Rabel||19854|-73191|68|5
+#HU|Budapest
+József Attila-lakótelep|Jozsef Attila-lakotelep|47464|19117|103|12
+#HU|Bács-Kiskun
+Jánoshalma|Janoshalma|46299|19326|136|10
+#HU|Győr-Moson-Sopron
+Jánossomorja|Janossomorja|47786|17136|120|6
+#HU|Jász-Nagykun-Szolnok
+Jászapáti|Jaszapati|47517|20150|95|10
+Jászárokszállás|Jaszarokszallas|47642|19980|101|8
+Jászladány|Jaszladany|47367|20167|86|6
+Jászkisér|Jaszkiser|47450|20217|85|6
+#ID|Yogyakarta
+Jimbaran||-7950|110767|537|7
+#IE|Leinster
+Jobstown||53279|-6408|116|11
+#IL|Central District
+Jaljūlya|Jaljulya|32152|34955|38|10
+#IL|Haifa
+Jisr ez Zarqā|Jisr ez Zarqa|32537|34913|28|15
+Jatt||32398|35038|145|12
+#IL|Northern District
+Jūlis|Julis|32943|35183|105|6
+#IM|Jurby
+Jurby||54359|-4522|26|0
+#IN|Andhra Pradesh
+Jarjapupeta||18181|83440|66|6
+#IN|Assam
+Jhagra Pt.III||26040|89959|25|9
+Jamunāmukh|Jamunamukh|26101|92743|64|7
+Jalah||26238|91720|41|6
+#IN|Bihar
+Jānpur|Janpur|25296|84879|68|11
+#IN|Chhattisgarh
+Jaijepur||21831|82816|257|8
+Jhagrakhand||23194|82198|475|8
+Jarhi||23359|83045|549|7
+#IN|Delhi
+Jona Pur||28466|77154|259|11
+Jāfarpur Kalān|Jafarpur Kalan|28590|76920|214|7
+#IN|Goa
+Jua||15531|73950|4|5
+#IN|Gujarat
+Jetalsar||21709|70577|103|15
+Jetpur||22345|73841|106|8
+Jhulasan||23329|72473|11|8
+Jarod||22439|73335|58|7
+#IN|Haryana
+Jāndli|Jandli|30357|76796|275|14
+Jhakal Mandi||29808|75825|219|8
+Jākhal|Jakhal|29796|75824|226|7
+#IN|Himachal Pradesh
+Jawāla Mukhi|Jawala Mukhi|31875|76320|520|5
+Jogindarnagar||31987|76789|1175|5
+#IN|Jharkhand
+Jhinkpani||22422|85746|295|13
+Jena||23676|86018|305|8
+Jangalpur||23827|86579|180|8
+Jagannāthpur|Jagannathpur|22221|85639|433|7
+Jainagar||23657|85320|360|5
+#IN|Karnataka
+Jāli|Jali|13990|74531|15|11
+#IN|Madhya Pradesh
+Jobat||22416|74568|305|12
+Jīran|Jiran|24309|74891|485|12
+Jhundpura||26347|77501|196|10
+Jaitwāri|Jaitwari|24724|80861|305|10
+Jiraūn Kasba|Jiraun Kasba|25121|78656|299|9
+Jaithari||23041|81798|526|8
+Jaithāri|Jaithari|23209|78615|394|8
+Jaisinghnagar||23686|81391|444|8
+Jabera||23558|79678|371|7
+#IN|Maharashtra
+Jejūri|Jejuri|18277|74160|729|15
+Jawhār|Jawhar|19912|73227|462|12
+Jasai||18932|73019|16|8
+Jalgaon||17740|73191|177|6
+#IN|Manipur
+Jiribam||24804|93121|36|7
+#IN|Nagaland
+Jalukie||25647|93661|327|9
+#IN|Odisha
+Jājang|Jajang|21938|85442|481|7
+Jhompra||21825|85568|426|6
+Joshipur||21963|86075|412|5
+#IN|Rajasthan
+Jobner||26973|75388|399|11
+Jasrāsar|Jasrasar|27707|73813|231|8
+Jamwa Rāmgarh|Jamwa Ramgarh|27020|76011|400|8
+Jhagarwas||26915|74314|320|6
+Jaswantpura||24804|72460|274|5
+#IN|Sikkim
+Jorethang||27107|88323|290|9
+#IN|Tamil Nadu
+Jaffrabad||12691|78608|373|8
+Jagadāpatnam|Jagadapatnam|9968|79190|6|6
+#IN|Telangana
+Jallaram||18724|79571|140|9
+Jām|Jam|19193|78279|360|6
+Jainur||19373|78908|530|6
+#IN|Uttar Pradesh
+Jahānābād|Jahanabad|28630|79718|186|14
+Jainpur||26154|83335|78|12
+Jahāngīrpur|Jahangirpur|28179|77705|199|10
+Jagnair||26864|77602|186|10
+Jasrāna|Jasrana|27236|78652|168|10
+#IN|Uttarakhand
+Joshīmath|Joshimath|30555|79564|1821|14
+#IN|West Bengal
+Joka||22453|88302|4|9
+#IR|Ardabil Province
+Ja‘farābād|Ja'farabad|39435|48094|183|7
+#IR|Chaharmahal and Bakhtiari
+Jūnqān|Junqan|32151|50688|2031|14
+#IR|East Azerbaijan
+Julfa||38938|45633|704|9
+#IR|Fars
+Jannat Shahr||28654|54685|1156|14
+Jūyom|Juyom|28255|53981|861|8
+#IR|Golestan
+Jelīn|Jelin|36854|54538|142|7
+#IR|Hamadan Province
+Jūraqān|Juraqan|34885|48554|1729|9
+#IR|Hormozgan
+Jenāḩ|Jenah|27020|54284|318|7
+#IR|Isfahan
+Jowzdān|Jowzdan|32556|51373|1628|7
+Jūjīl|Jujil|32566|51485|1611|6
+#IR|Khuzestan
+Jannat Makān|Jannat Makan|32185|48815|62|5
+#IR|Māzandarān
+Jām Khāneh|Jam Khaneh|36589|53256|111|5
+#IR|Qom Province
+Ja‘farīyeh|Ja'fariyeh|34775|50517|976|9
+Jamkarān|Jamkaran|34586|50907|916|8
+#IR|Razavi Khorasan
+Joghtāy|Joghtay|36636|57073|1360|9
+#JO|Amman
+Jāwā|Jawa|31852|35939|889|11
+#JP|Tokyo
+Jiyūgaoka|Jiyugaoka|35611|139668|38|8
+Jūjō-nakahara|Jujo-nakahara|35768|139719|21|6
+#KE|Nyamira county
+Jebilat||-694|35071|1795|5
+#KZ|Almaty Region
+Jıbek joly|Jibek joly|43375|76624|701|14
+#LT|Siauliai
+Joniškis|Joniskis|56239|23615|50|11
+#LT|Tauragė County
+Jurbarkas||55076|22764|18|10
+#LY|Al Marj
+Jardas al ‘Abīd|Jardas al 'Abid|32303|20986|627|7
+#LY|Al Wahat
+Jālū|Jalu|29033|21550|41|13
+#LY|Jabal al Gharbi
+Jādū|Jadu|31955|12029|693|13
+#MA|Casablanca-Settat
+Jem’at Oulad ’Abbou|Jem'at Oulad 'Abbou|33115|-7934|220|12
+#MA|Drâa-Tafilalet
+Jorf||31494|-4406|824|13
+#MA|Marrakesh-Safi
+Jamaat Shaim||32347|-8842|167|12
+#MC|Municipality of Monaco
+Jardin Exotique||43730|7414||5
+#MH|Jabat Island
+Jabat||7750|168975|16|0
+#MH|Jaluit Atoll
+Jabor||5921|169643|5|1
+#MK|Jegunovce
+Jegunovce||42072|21123|393|7
+#MN|Bayan-Ölgii Province
+Jargalant||46927|91088|1929|5
+#MX|Aguascalientes
+Jesús Gómez Portugal (Margaritas)|Jesus Gomez Portugal (Margaritas)|21999|-102291|1891|12
+Jesús Gómez Portugal|Jesus Gomez Portugal|21999|-102291|1882|9
+#MX|Chiapas
+Jaltenango de la Paz||15873|-92725|641|10
+Jiquipilas||16668|-93647|531|10
+Juárez|Juarez|17607|-93193|152|7
+Jesús María Garza|Jesus Maria Garza|16397|-93294|630|7
+#MX|Guanajuato
+Jerécuaro|Jerecuaro|20151|-100511|1973|8
+#MX|Hidalgo
+Jaltepec||20115|-98418|2186|6
+Jaltocán|Jaltocan|21134|-98539|207|6
+Javier Rojo Gómez|Javier Rojo Gomez|20070|-98418|2208|6
+#MX|Jalisco
+Juanacatlán|Juanacatlan|20509|-103168|1509|9
+Jesús María|Jesus Maria|20607|-102220|2096|8
+#MX|Michoacán
+Jungapeo de Juárez|Jungapeo de Juarez|19459|-100494|1314|5
+#MX|Morelos
+Juan Morales||18811|-98922|1367|13
+Jonacatepec de Leandro Valle||18681|-98804|1343|8
+#MX|México
+Jilotepec de Molina Enríquez|Jilotepec de Molina Enriquez|19952|-99533|2451|12
+Jaltenco||19753|-99094|2253|11
+Jorge Jiménez Cantú|Jorge Jimenez Cantu|19310|-98847|2309|9
+Jilotzingo||19869|-99062|2328|9
+Jocotitlán|Jocotitlan|19710|-99789|2666|8
+Jicaltepec Autopan||19372|-99641|2599|5
+Jaltepec||19730|-98635|2539|5
+#MX|Nayarit
+Jala||21105|-104438|1070|6
+#MX|Puebla
+Jolalpan||18325|-98845|883|7
+#MX|Querétaro
+Juriquilla||20711|-100457|1912|13
+Jalpan de Serra||21217|-99472|744|11
+#MX|Quintana Roo
+José María Morelos|Jose Maria Morelos|19749|-88709|23|12
+#MX|Tabasco
+Jonuta||18090|-92138|8|7
+#MX|Tamaulipas
+Jaumave||23406|-99376|731|6
+#MX|Veracruz
+Juan Rodríguez Clara|Juan Rodriguez Clara|17993|-95401|143|15
+Jalacingo||19803|-97308|1889|13
+Jacarandas||19496|-96853|1198|8
+Jalapilla||18826|-97089|1188|8
+Juan Díaz Covarrubias|Juan Diaz Covarrubias|18160|-95187|38|6
+#MX|Zacatecas
+Jalpa||21632|-102979|1388|14
+Juchipila||21411|-103117|1232|6
+#MY|Kuala Lumpur
+Jinjang||3209|101656|66|13
+#MY|Penang
+Juru||5312|100442|10|12
+#MY|Terengganu
+Jertih||5734|102490|16|14
+#NG|Katsina State
+Jibia||13094|7226|409|14
+Jikamshi||12173|7774|565|7
+#NL|Friesland
+Joure||52966|5803|1|13
+#NO|Akershus
+Jessheim||60142|11175|212|12
+#NO|Rogaland
+Jørpeland|Jorpeland|59023|6041|24|7
+#NP|Karnali Pradesh
+Jumla||29275|82184|2354|9
+#NZ|Wellington Region
+Johnsonville||-41221|174803|151|12
+#PE|Lambayeque
+Jayanca||-6391|-79822|64|6
+#PE|Puno
+Juli||-16217|-69450|3980|9
+#PE|San Martín Department
+Jepelacio||-6117|-76950|1137|7
+#PH|Cagayan Valley
+Jones||16557|121703|102|5
+#PH|Calabarzon
+Janopol||14086|121095|144|5
+Janagdong||13903|121513|51|5
+#PH|Central Visayas
+Jaclupan||10301|123817|55|10
+#PH|Eastern Visayas
+Jaro||11184|124783|107|8
+#PH|Northern Mindanao
+Jimenez||8337|123838|26|7
+#PH|Western Visayas
+Janiuay||10949|122506|66|13
+Jordan||10658|122596|54|8
+#PK|Punjab
+Jandiala Sher Khan||31821|73918|214|11
+Jamgah||33896|72290|297|10
+#PK|Sindh
+Jati||24355|68267|11|9
+Jām Sāhib|Jam Sahib|26296|68629|30|7
+#PL|Greater Poland
+Jastrowie||53420|16818|97|8
+#PL|Kujawsko-Pomorskie
+Janikowo||52753|18113|92|9
+Janowiec Wielkopolski||52756|17490|97|5
+#PL|Lesser Poland
+Jordanów|Jordanow|49649|19830|497|5
+#PL|Lower Silesia
+Jagodno||51052|17059|124|9
+Jaworzyna Śląska|Jaworzyna Slaska|50913|16432|232|5
+Jedlina-Zdrój|Jedlina-Zdroj|50720|16346|448|5
+#PL|Lublin
+Janów Lubelski|Janow Lubelski|50707|22410|215|12
+#PL|Mazovia
+Jabłonna|Jablonna|52379|20917|76|7
+#PL|Silesia
+Jaworze||49794|18948|381|7
+#PL|Subcarpathia
+Jedlicze||49717|21649|263|6
+Jeżowe|Jezowe|50375|22127|175|5
+#PR|Jayuya
+Jayuya||18219|-66592|431|4
+#PR|Juana Díaz
+Juana Díaz|Juana Diaz|18052|-66507|49|9
+#PR|Juncos
+Juncos||18227|-65921|65|9
+#PS|West Bank
+Jaba‘|Jaba'|32324|35221|419|8
+Jammā‘īn|Jamma'in|32132|35204|531|6
+Jannātah|Jannatah|31670|35220|599|5
+#PT|Braga
+Joane||41439|-8408|139|8
+#PT|Porto
+Jovim||41111|-8519|87|7
+#RO|Bistrița-Năsăud County
+Josenii Bârgăului|Josenii Bargaului|47217|24683|467|5
+#RO|Giurgiu County
+Joiţa|Joita|44494|25854|104|9
+#RO|Harghita County
+Joseni||46700|25500|741|6
+#RO|Ilfov
+Jilava||44333|26078|73|12
+#RO|Sălaj County
+Jibou||47259|23257|191|11
+#RO|Timiș County
+Jimbolia||45791|20717|83|11
+Jebel||45556|21214|83|5
+#RO|Tulcea County
+Jijila||45300|28150|28|6
+Jurilovca||44767|28867|45|5
+#SA|Eastern Province
+Julayjilah||25500|49600|139|5
+#SD|Sennar
+Jalqani||12449|34219|454|9
+#SE|Stockholm
+Jordbro||59150|18117|52|11
+Järna|Jaerna|59092|17566|42|6
+#SI|Municipality of Jesenice
+Jesenice||46432|14062|551|13
+#SI|Municipality of Juršinci
+Juršinci|Jursinci|46486|15968|262|0
+#SI|Municipality of Sveti Jurij v Slovenskih Goricah
+Jurovski Dol||46607|15785|265|0
+#SK|Prešov Region
+Jarovnice||49058|21058|424|7
+#SO|Hiiraan
+Jalalaqsi||3377|45600|129|10
+#SR|Saramacca District
+Jarikaba||5808|-55327|10|6
+#SV|Sonsonate Department
+Juayúa|Juayua|13841|-89746|1037|10
+#SV|Usulutan
+Jucuapa||13517|-88383|476|11
+Jiquilisco||13317|-88583|27|9
+#SY|Aleppo
+Jindayris||36395|36689|237|14
+#SY|Quneitra
+Jabā|Jaba|33163|35926|986|5
+#TJ|Khatlon Province
+Jilikŭl|Jilikul|37492|68531|353|5
+#TN|Kebili Governorate
+Jemna||33578|9015|42|7
+#TN|Kef Governorate
+Jerissa||35845|8630|634|10
+#TN|Sidi Bouzid Governorate
+Jilma||35273|9424|364|6
+#TW|Fukien
+Jieshoucun||26155|119952|80|8
+#US|Alabama
+Jasper||33831|-87278|100|14
+Jacksonville||33814|-85761|216|12
+#US|California
+Joshua Tree||34135|-116313|834|7
+Jamul||32717|-116876|304|6
+#US|Colorado
+Johnstown||40337|-104912|1479|15
+#US|Florida
+Jensen Beach||27254|-80230|2|12
+Jan-Phyl Village||28015|-81772|47|6
+#US|Georgia
+Jefferson||34117|-83572|227|10
+Jesup||31608|-81886|29|10
+#US|Idaho
+Jerome||42724|-114519|1147|11
+#US|Illinois
+Justice||41744|-87838|188|13
+Jerseyville||39120|-90328|201|8
+Johnsburg||42380|-88242|229|6
+#US|Louisiana
+Jefferson||29966|-90153|1|11
+Jennings||30222|-92657|8|10
+Jeanerette||29911|-91663|5|6
+#US|Maryland
+Joppatowne||39414|-76358|74|13
+Jessup||39149|-76775|63|7
+#US|Massachusetts
+Jeffries Point||42365|-71033|15|9
+#US|Minnesota
+Jordan||44667|-93627|235|6
+#US|Missouri
+Jackson||37382|-89666|141|15
+Jennings||38719|-90260|158|15
+#US|Nevada
+Johnson Lane||39048|-119722|1469|6
+#US|New Jersey
+Jamesburg||40353|-74440|22|6
+#US|New York
+Johnson City||42116|-75959|266|15
+Jefferson Valley-Yorktown||41318|-73801|198|14
+Jericho||40792|-73540|60|14
+Johnstown||43007|-74368|205|8
+#US|North Carolina
+James City||35089|-77035|4|6
+#US|Ohio
+Jackson||39052|-82637|211|6
+#US|Oregon
+Jennings Lodge||45391|-122613|29|7
+Junction City||44219|-123206|100|6
+#US|Pennsylvania
+Jefferson Hills||40291|-79932|315|11
+Jeannette||40328|-79615|313|9
+#US|Rhode Island
+Jamestown||41497|-71367|1|6
+#US|South Carolina
+James Island||32724|-79963|4|6
+#US|Tennessee
+Jefferson City||36122|-83492|366|9
+Jonesborough||36294|-82473|516|5
+#US|Texas
+Jacksonville||31964|-95270|159|15
+Jacinto City||29767|-95234|9|11
+Jersey Village||29888|-95563|32|8
+Jasper||30920|-93997|62|8
+Joshua||32462|-97388|283|6
+#US|Washington
+Joint Base Lewis McChord||47108|-122577|84|11
+#US|Wisconsin
+Jefferson||43006|-88807|244|8
+Jackson||43324|-88167|272|7
+#US|Wyoming
+Jackson||43480|-110762|1901|11
+#UY|Canelones
+Joaquín Suárez|Joaquin Suarez|-34735|-56035|58|7
+#UY|Colonia
+Juan L. Lacaze||-34419|-57453|15|13
+#UY|Lavalleja
+José Pedro Varela|Jose Pedro Varela|-33455|-54536|72|5
+#UZ|Samarqand Region
+Jomboy Shahri||39699|67093|708|14
+#YE|Abyan Governorate
+Jawf al Maqbābah|Jawf al Maqbabah|13838|45835|919|14
+#YE|Amanat Alasimah
+Jadder Cemetery||15467|44178|1750|10
+#ZA|Eastern Cape
+Joubertina||-33825|23856|555|7
+Jansenville||-32943|24672|420|7
+James Calata||-31121|26807|1611|6
+#ZA|Free State
+Jacobsdal||-29128|24774|1139|10
+Jagersfontein||-29761|25427|1421|7
+#ZA|Limpopo
+Justicia||-24880|31413|437|6
+#ZA|North West
+Jan Kempdorp||-27922|24831|1159|13

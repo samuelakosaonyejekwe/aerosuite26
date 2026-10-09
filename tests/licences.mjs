@@ -12,6 +12,13 @@ import { readFileSync, existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { CONNECTORS, WEATHER, CONFIG_DEFAULTS, config, setConfig, cleanConfig, allowed, feedAllowed, attributions, weatherPlan, finishWeather, carbonMode, carbonPrice, ukEtsCarbon, operatorCarbon, fxFromEcb, geocode, elevations, osmAvailable, placeSearchAvailable, loadLicences } from '../js/core/live.js';
 import { FEEDS, buildSnapshot } from '../tools/snapshot.mjs';
+import { setGridClock, gridIndex } from '../js/core/gridwx.js';
+import { carbonChoice, gridFactors, toolsList, bundledElevation } from '../js/core/live.js';
+import { searchPlaces, climateAt, terrain } from '../js/core/places.js';
+import { complianceRows, complianceQuestions } from '../js/core/compliance.js';
+
+// the stored forecast grids are read at a time inside their validity, whatever today's date is
+{ const g = await gridIndex(); setGridClock(() => Date.parse(g.products.wx.times[0].valid) + 3600e3); }
 
 const root = fileURLToPath(new URL('..', import.meta.url)), text = (f) => readFileSync(root + f, 'utf8');
 let fail = 0, n = 0;
@@ -29,7 +36,7 @@ ok(reg.retrieved === '2026-10-09' && reg.sources.length >= 25 && reg.components.
 ok(new Set(reg.sources.map((s) => s.id)).size === reg.sources.length, 'source ids are unique');
 for (const s of reg.sources) {
   ok(typeof s.name === 'string' && typeof s.usedFor === 'string' && s.usedFor.length > 20 && typeof s.licence === 'string' && CLASSES.includes(s.class) && s.retrieved === '2026-10-09' && Array.isArray(s.obligations) && s.obligations.length > 0 && Array.isArray(s.hosts) && 'usedInCommercial' in s && 'replacement' in s && 'attribution' in s, `${s.id}: id, name, use, licence, class, retrieval date, obligations, hosts, commercial use, replacement, attribution`);
-  if (!['operator-carbon', 'third-party-citations'].includes(s.id)) ok(/^https:\/\//.test(s.url || '') && typeof s.quote === 'string' && s.quote.length >= 30, `${s.id}: terms address and a quoted sentence`);
+  if (!['operator-carbon', 'third-party-citations', 'tools-list'].includes(s.id)) ok(/^https:\/\//.test(s.url || '') && typeof s.quote === 'string' && s.quote.length >= 30, `${s.id}: terms address and a quoted sentence`);
   if (s.class !== 'commercial-ok') ok(s.usedInCommercial !== true || s.needsLegalDecision === true, `${s.id}: a source that is not commercial-ok is not used unconditionally in commercial mode`);
   if (s.class === 'not-allowed' || s.class === 'unclear') ok(typeof s.replacement === 'string' && s.replacement.length > 10, `${s.id}: names its replacement`);
   if (s.class === 'commercial-ok' && s.kind !== 'citations') ok(typeof s.attribution === 'string' && s.attribution.length > 10, `${s.id}: carries an attribution text`);
@@ -86,7 +93,7 @@ async function hostsAsked(cfg, { snapshot = false } = {}) {
   setConfig(cfg);
   const seen = new Set(), rec = async (url) => { seen.add(new URL(String(url)).hostname); return new Response('', { status: 503 }); };
   globalThis.fetch = rec;
-  const site = { lat: 51.4706, lon: -0.4619 }, params = { weather: site, climate: site, airquality: site, marine: site, aerodromes: { ...site, osm: true }, macro: { country: 'GB' }, literature: { q: 'aircraft icing', sort: 'recent' }, opensource: { q: 'aircraft icing' } };
+  const site = { lat: 51.4706, lon: -0.4619 }, params = { weather: site, climate: site, airquality: site, marine: site, aerodromes: { ...site, osm: true }, macro: { country: 'GB' }, literature: { q: 'aircraft icing', sort: 'recent' }, opensource: { q: 'aircraft icing', suite: 'icing' }, grid: { country: 'GB' } };
   try {
     for (const [id, c] of Object.entries(CONNECTORS)) await c.load(params[id] || {}, rec).catch(() => null);
     await geocode('London').catch(() => null); await elevations([site]).catch(() => null);
@@ -95,35 +102,38 @@ async function hostsAsked(cfg, { snapshot = false } = {}) {
   return seen;
 }
 const classOf = (h) => hostOwner.get(h)?.class;
+let nonHosts = null; const non_power = () => !!nonHosts?.has('power.larc.nasa.gov');
 const com = await hostsAsked(COM, { snapshot: true });
 ok(com.size >= 8, `commercial mode still reaches its providers (${[...com].join(', ')})`);
 for (const h of com) ok(classOf(h) === 'commercial-ok', `commercial mode asked ${h} (${hostOwner.get(h)?.id || 'not in the registry'}: ${classOf(h)})`);
 for (const h of ['api.open-meteo.com', 'archive-api.open-meteo.com', 'air-quality-api.open-meteo.com', 'marine-api.open-meteo.com', 'geocoding-api.open-meteo.com', 'customer-api.open-meteo.com', 'overpass-api.de', 'overpass.private.coffee', 'maps.mail.ru', 'api.github.com', 'raw.githubusercontent.com', 'public.eex-group.com', 'fred.stlouisfed.org', 'power.larc.nasa.gov']) ok(!com.has(h), `commercial mode does not contact ${h}`);
-for (const h of ['api.met.no', 'api.weather.gov', 'www.gov.uk', 'www.eia.gov', 'www.federalreserve.gov', 'markets.newyorkfed.org', 'data-api.ecb.europa.eu', 'api.frankfurter.dev']) ok(com.has(h), `commercial mode uses ${h}`);
-ok(com.snapshot.commercial === true && com.snapshot.feeds.carbon.data === null && com.snapshot.feeds.carbon.registry.join() === 'uk-ets-price', 'commercial snapshot does not carry over an EEX value left by an earlier non-commercial run');
+for (const h of ['api.met.no', 'api.weather.gov', 'www.gov.uk', 'www.eia.gov', 'www.federalreserve.gov', 'markets.newyorkfed.org', 'data-api.ecb.europa.eu', 'api.frankfurter.dev', 'taxation-customs.ec.europa.eu', 'www.donneesquebec.ca']) ok(com.has(h), `commercial mode uses ${h}`);
+ok(com.snapshot.commercial === true && com.snapshot.feeds.carbon.data === null && !com.snapshot.feeds.carbon.registry.includes('eex-auction'), 'commercial snapshot does not carry over an EEX value left by an earlier run');
 
 const keyed = await hostsAsked(KEYED, { snapshot: true });
 for (const h of keyed) ok(classOf(h) === 'commercial-ok' || /^customer-[a-z-]*api\.open-meteo\.com$/.test(h) || h === 'prices.operator.example' || h === 'overpass.operator.example', `commercial mode with keys asked ${h}`);
 for (const h of ['customer-api.open-meteo.com', 'customer-archive-api.open-meteo.com', 'customer-air-quality-api.open-meteo.com', 'customer-marine-api.open-meteo.com', 'customer-geocoding-api.open-meteo.com', 'prices.operator.example', 'overpass.operator.example']) ok(keyed.has(h), `with the operator's key or address, ${h} is used`);
 ok(!keyed.has('api.open-meteo.com') && !keyed.has('overpass-api.de') && !keyed.has('public.eex-group.com') && !keyed.has('api.github.com'), 'keys do not unlock the free or unlicensed hosts');
 
-const accepted = await hostsAsked({ commercial: true, accept: ['nasa-power'] });
-ok(accepted.has('power.larc.nasa.gov') && !accepted.has('api.open-meteo.com'), 'a source the operator accepts ("accept") is used; nothing else changes');
+const accepted = await hostsAsked({ commercial: true, accept: ['gb-carbon-intensity'] });
+ok(accepted.has('api.carbonintensity.org.uk') && !com.has('api.carbonintensity.org.uk') && !accepted.has('api.open-meteo.com'), 'a source the operator accepts ("accept") is used; nothing else changes');
+ok(!com.has('power.larc.nasa.gov') && !non_power(), 'NASA POWER is not contacted in any mode');
 
-const non = await hostsAsked(NC, { snapshot: true });
+const non = await hostsAsked(NC, { snapshot: true }); nonHosts = non;
+ok(!non.has('power.larc.nasa.gov'), 'control: NASA POWER is not contacted by the non-commercial configuration either');
 for (const h of ['api.open-meteo.com', 'archive-api.open-meteo.com', 'geocoding-api.open-meteo.com', 'overpass-api.de', 'api.github.com', 'raw.githubusercontent.com']) ok(non.has(h), `control: the non-commercial configuration does contact ${h}`);
 ok(!non.has('public.eex-group.com'), 'the EEX auction report is not contacted in any default configuration (its terms require written approval)');
 ok(!non.has('fred.stlouisfed.org'), 'FRED is not contacted in any mode');
 for (const h of non) ok(hostOwner.has(h), `non-commercial mode: ${h} has a registry entry`);
 
 setConfig(COM);
-ok(carbonMode() === 'ukets' && !osmAvailable() && !placeSearchAvailable() && weatherPlan().join() === 'met-norway,nws', 'commercial defaults: UK ETS carbon price, no public Overpass, no online geocoder, MET Norway then NWS');
-ok((await geocode('London').then(() => 'ok', (e) => (e.policy ? 'policy' : 'other'))) === 'policy', 'place-name search is refused by policy, not by a network error');
-{ const e = await elevations([{ lat: 51.4706, lon: -0.4619 }, { lat: 0, lon: -30 }]); ok(near(e[0], 25, 15) && e[1] === null, `terrain elevation falls back to the bundled airport database (${e})`); }
-{ const o = await CONNECTORS.opensource.load({ q: 'aircraft icing' }, async () => { throw new Error('no network'); }); ok(o.linkOnly && /^https:\/\/github\.com\/search\?q=/.test(o.items[0].url), 'open-source tools: a link to GitHub search instead of an API call'); }
+ok(carbonMode() === 'panel' && !osmAvailable() && placeSearchAvailable() && weatherPlan().join() === 'met-norway,nws,noaa-grid', 'commercial defaults: official carbon panel, no public Overpass, bundled place search, MET Norway then NWS then the NOAA grid');
+{ const g = await geocode('London'); ok(g.length > 0 && g[0].name === 'London' && g[0].country === 'GB' && g[0].source === 'GeoNames', 'place-name search answers from the bundled GeoNames list without the network'); }
+{ const e = await elevations([{ lat: 51.4706, lon: -0.4619 }, { lat: 0, lon: -30 }, { lat: 46.0, lon: 8.0 }]); ok(near(e[0], 25, 15) && e[1] === 0 && e[2] > 1000, `terrain elevation from the bundled data: airport, open sea, Alps (${e})`); }
+{ const o = await CONNECTORS.opensource.load({ q: 'topic:cfd', suite: 'cfd' }, async () => { throw new Error('no network'); }); ok(o.items.length >= 3 && o.items.every((x) => x.curated && /^https:\/\//.test(x.url) && x.license) && o.items.some((x) => x.name === 'SU2'), 'open-source tools: the curated list, no API call'); }
 { const a = await CONNECTORS.aerodromes.load({ lat: 6.5774, lon: 3.3212, osm: true }, async () => { throw new Error('no network'); }); ok(a.source === 'OurAirports' && a.osm === false && a.fields[0].icao === 'DNMM', 'aerodromes: bundled database only'); }
 ok(!(await feedAllowed({ data: {}, registry: ['eex-auction'] })) && !(await feedAllowed({ data: {} })) && (await feedAllowed({ data: {}, registry: ['eia'] })) && !(await allowed('no-such-source')), 'snapshot feeds from unlicensed or undeclared sources are refused');
-ok(weatherPlan({ ...CONFIG_DEFAULTS, commercial: true, weatherProvider: 'open-meteo' }).join() === 'met-norway,nws' && weatherPlan({ ...CONFIG_DEFAULTS, commercial: true, openMeteoApiKey: 'k' })[0] === 'open-meteo' && weatherPlan({ ...CONFIG_DEFAULTS, weatherProvider: 'none' }).length === 0 && weatherPlan({ ...CONFIG_DEFAULTS })[0] === 'open-meteo' && weatherPlan({ ...CONFIG_DEFAULTS, commercial: true, weatherProvider: 'nws' })[0] === 'nws', 'weather provider order follows the configuration');
+ok(weatherPlan({ ...CONFIG_DEFAULTS, commercial: true, weatherProvider: 'open-meteo' }).join() === 'met-norway,nws,noaa-grid' && weatherPlan({ ...CONFIG_DEFAULTS, commercial: true, openMeteoApiKey: 'k' })[0] === 'open-meteo' && weatherPlan({ ...CONFIG_DEFAULTS, weatherProvider: 'none' }).length === 0 && weatherPlan({ ...CONFIG_DEFAULTS }).join() === 'open-meteo,met-norway,noaa-grid' && weatherPlan({ ...CONFIG_DEFAULTS, commercial: true, weatherProvider: 'nws' })[0] === 'nws' && weatherPlan({ ...CONFIG_DEFAULTS, commercial: true, weatherProvider: 'noaa-grid' })[0] === 'noaa-grid', 'weather provider order follows the configuration');
 ok(CONNECTORS.weather.key({ lat: 1, lon: 2 }) !== (setConfig(NC), CONNECTORS.weather.key({ lat: 1, lon: 2 })), 'values cached under non-commercial terms are not reused by a commercial deployment');
 
 // ---- provider normalisation ----------------------------------------------------------------------
@@ -163,6 +173,81 @@ ok(op.price === 85.07 && op.currency === 'EUR' && op.operator === true && op.reg
 { const cp = carbonPrice({ ...op, date: new Date().toISOString().slice(0, 10) }, { rates: { EUR: 0.9 }, date: '2026-10-08' }); ok(near(cp.usd_t, 85.07 / 0.9, 1e-9) && /EU ETS \(EUA Dec-26\)/.test(cp.source) && /licensed from Vendor X/.test(cp.source), 'operator price converts and keeps its market and source labels'); }
 ok((await operatorCarbon(json({ price: 'x' }), 'https://prices.operator.example/c.json').then(() => 'ok', () => 'refused')) === 'refused', 'a malformed operator file is refused');
 
+// ---- feature parity: no mode loses a feature ------------------------------------------------------
+section('Feature parity between modes (no keys, no network beyond the stored data)');
+{
+  const SITES = [['Lagos', 6.5774, 3.3212, 'NG', true], ['London', 51.4706, -0.4619, 'GB', true], ['Denver', 39.8561, -104.6737, 'US', false], ['Sydney', -33.9461, 151.1772, 'AU', true]];
+  const down = async () => new Response('', { status: 503 }); // every online provider is unreachable: only stored and bundled data answer
+  const WX = ['time', 'elev_m', 'T_C', 'rh', 'p_hPa', 'qnh_hPa', 'wind_ms', 'wind_dir_deg', 'gust_ms', 'precip_mm_h', 'cloud_pct', 'code', 'visibility_m', 'freezing_level_m'];
+  globalThis.fetch = down;
+  try {
+    for (const [name, lat, lon, cc, coastal] of SITES) {
+      const site = {};
+      for (const [mode, cfg] of [['commercial', COM], ['non-commercial', NC]]) {
+        setConfig(cfg);
+        const w = await CONNECTORS.weather.load({ lat, lon }, down).catch((e) => ({ error: e.message })), cl = await CONNECTORS.climate.load({ lat, lon }, down).catch((e) => ({ error: e.message })), sea = await CONNECTORS.marine.load({ lat, lon }, down).catch((e) => ({ error: e.message })), air = await CONNECTORS.airquality.load({ lat, lon }, down).catch((e) => ({ error: e.message })), gr = await CONNECTORS.grid.load({ country: cc }, down).catch((e) => ({ error: e.message }));
+        ok(!w.error && WX.every((k) => Number.isFinite(w[k]) || (k === 'time' && typeof w[k] === 'string')) && w.missing.length === 0, `${name}, ${mode}: every weather field is supplied (${w.error || w.missing?.join(', ') || WX.filter((k) => k !== 'time' && !Number.isFinite(w[k])).join(', ')})`);
+        ok(!w.error && w.aloft.length >= 8 && w.aloft.every((a) => Number.isFinite(a.alt_m) && Number.isFinite(a.T_C) && Number.isFinite(a.speed_ms) && Number.isFinite(a.dir_deg)) && w.aloft.some((a) => a.hPa === 250), `${name}, ${mode}: winds and temperatures aloft (${w.aloft?.length} levels)`);
+        ok(!w.error && w.T_C > -60 && w.T_C < 55 && w.p_hPa > 500 && w.p_hPa < 1080 && w.freezing_level_m >= 0 && w.freezing_level_m < 7000 && w.gust_ms >= w.wind_ms && w.visibility_m > 0, `${name}, ${mode}: weather values are plausible`);
+        ok(!cl.error && [cl.hot99_C, cl.hot_mean_C, cl.cold01_C, cl.wind99_ms].every(Number.isFinite) && cl.hot99_C > cl.hot_mean_C && cl.hot_mean_C > cl.cold01_C && cl.wind99_ms > 2, `${name}, ${mode}: design temperatures (${cl.error || `${cl.cold01_C} / ${cl.hot99_C} °C`})`);
+        ok(!sea.error && (coastal ? sea.wave_height_m > 0 && sea.wave_period_s > 1 : sea.wave_height_m === null), `${name}, ${mode}: sea state ${coastal ? 'near the coast' : 'is empty inland'} (${sea.error || sea.wave_height_m})`);
+        ok(!air.error && [air.pm10, air.pm2_5, air.dust, air.aod].every((v) => Number.isFinite(v) && v >= 0), `${name}, ${mode}: particulates, dust and aerosol optical depth (${air.error || ''})`);
+        ok(!gr.error && gr.gCO2_kWh > 5 && gr.gCO2_kWh < 1300 && gr.country === cc && gr.year >= 2022, `${name}, ${mode}: national grid emission factor (${gr.error || gr.gCO2_kWh})`);
+        const places = await geocode(name), air2 = await (await import('../js/core/live.js')).searchAirports(name);
+        ok(places.some((p) => p.country === cc && Math.abs(p.lat - lat) < 0.6) && air2.length > 0, `${name}, ${mode}: the place search finds the city and its airports offline`);
+        const el = (await elevations([{ lat, lon }]))[0]; ok(Number.isFinite(el) && Math.abs(el - w.elev_m) < 400, `${name}, ${mode}: site elevation from the bundled data (${el} m)`);
+        site[mode] = { w, cl, sea, air };
+      }
+      const keys = (o) => Object.keys(o).filter((k) => o[k] != null && !/^(provider|note|station|filled|fill_cycle|basis|cycle|grid|model_elev_m|elevation_correction_K|wind_period|source|from|to|missing|provider_label|freezing_level_estimated)$/.test(k)).sort().join();
+      ok(keys(site.commercial.w) === keys(site['non-commercial'].w) && keys(site.commercial.sea) === keys(site['non-commercial'].sea) && keys(site.commercial.air) === keys(site['non-commercial'].air) && keys(site.commercial.cl) === keys(site['non-commercial'].cl), `${name}: the commercial result has every field the non-commercial one has`);
+    }
+    // online in a commercial deployment: MET Norway answers, the NOAA grid completes it
+    setConfig(COM);
+    const soon2 = new Date(Date.now() + 20 * 60e3).toISOString(), w = await CONNECTORS.weather.load({ lat: 6.5774, lon: 3.3212 }, async (u) => (/api\.met\.no/.test(u) ? new Response(JSON.stringify({ geometry: { coordinates: [3.3212, 6.5774, 40] }, properties: { timeseries: [{ time: new Date(Date.now() - 40 * 60e3).toISOString(), data: { instant: { details: { air_pressure_at_sea_level: 1013.2, air_temperature: 24, cloud_area_fraction: 79.7, relative_humidity: 95, wind_from_direction: 299.1, wind_speed: 0.9 } }, next_1_hours: { details: { precipitation_amount: 0 } } } }, { time: soon2, data: { instant: { details: { air_temperature: 25 } } } }] } })) : new Response('', { status: 503 })));
+    ok(w.provider === 'met-norway' && w.T_C === 24 && w.missing.length === 0 && w.aloft.length >= 8 && Number.isFinite(w.gust_ms) && Number.isFinite(w.visibility_m) && !w.freezing_level_estimated && /NOAA GFS/.test(w.note) && /\+ NOAA GFS grid/.test(w.provider_label) && ['gusts', 'visibility', 'freezing level', 'winds and temperatures aloft'].every((f) => w.filled.includes(f)), 'commercial online: MET Norway surface values, completed from the NOAA grid — nothing missing');
+    // carbon: a market with a label in both modes, from the stored snapshot
+    for (const [mode, cfg] of [['commercial', COM], ['non-commercial', NC]]) {
+      setConfig(cfg);
+      const snap = JSON.parse(text('data/snapshot.json')).feeds.carbon, panel = { markets: snap.data.markets, order: snap.data.order };
+      ok(snap.registry.every((r) => byId.get(r)?.class === 'commercial-ok') && !snap.registry.includes('eex-auction'), `${mode}: the stored carbon panel comes only from openly licensed sources`);
+      for (const [cc, scheme] of [['DE', 'EU ETS'], ['GB', 'UK ETS'], ['NG', 'EU ETS'], ['US', 'EU ETS']]) { const m = carbonChoice(panel, cc, 'auto'), cp = m && carbonPrice({ ...m, valid_to: '2999-01-01' }, { rates: { EUR: 0.9, GBP: 0.75 }, date: '2026-10-08' }); ok(m?.scheme === scheme && cp?.usd_t > 1 && cp.source.includes(m.scheme_year ? 'UK ETS' : m.market), `${mode}: carbon price for a site in ${cc} — ${m?.market} (${cp?.usd_t?.toFixed(2)} USD/t)`); }
+      ok(carbonChoice(panel, 'DE', 'wci-joint-auction')?.scheme.startsWith('WCI') && carbonChoice(panel, 'US', 'auto').scheme !== 'WCI (California–Québec)', `${mode}: the user can choose another market; a sub-national market is never chosen automatically`);
+    }
+  } finally { globalThis.fetch = realFetch; }
+  const eu = JSON.parse(text('data/snapshot.json')).feeds.carbon.data.markets;
+  ok(eu['eu-ets-cbam']?.price > 5 && eu['eu-ets-cbam'].currency === 'EUR' && /^\d{4}-\d{2}-\d{2}$/.test(eu['eu-ets-cbam'].date) && eu['uk-ets']?.currency === 'GBP' && eu['wci-joint-auction']?.currency === 'USD' && eu['wci-joint-auction'].subnational === true, 'stored carbon panel: EU ETS, UK ETS and California–Québec, each with price, currency and date');
+}
+
+section('Bundled foundations');
+{
+  // round 3: smaller places on demand, land values for coastal sites, finer grids, gases only with the operator's acceptance, single-file data
+  const sm = await searchPlaces('Zermatt'), bt = await searchPlaces('Bad Tolz'); ok(sm[0]?.country === 'CH' && sm[0].population < 15000 && bt[0]?.name === 'Bad Tölz' && (await searchPlaces('Lagos'))[0].population > 1e7, 'place search: towns of 5 000 to 15 000 inhabitants from the on-demand tier; large cities still first');
+  const lag = await climateAt(6.5774, 3.3212, 41), syd = await climateAt(-33.9461, 151.1772, 6), sea = await climateAt(-36, 158, 0), m = await (await import('../js/core/places.js')).climateMeta(); ok(syd.surface === 'land' && syd.wind99_ms < 13 && lag.wind99_ms < 7 && sea.surface === 'sea' && sea.wind99_ms > syd.wind99_ms + 2 && m.fields.some((f) => f.id === 'land_pct') && /conservative/.test(m.method), `bundled climate: coastal land sites take the land wind value (Sydney ${syd.wind99_ms} m/s, Lagos ${lag.wind99_ms} m/s; Tasman Sea ${sea.wind99_ms} m/s)`);
+  const gi = await gridIndex(); ok(gi.schema === 2 && gi.products.wx.times.length >= 4 && gi.products.wx.times[0].enc === 'delta-gzip' && gi.products.wx.times[0].grids.s.step === 1 && gi.products.wx.times[0].grids.a.step === 2.5 && gi.products.wx.times.every((t) => /^wx_\d\.bin\.gz$/.test(t.file)) && !gi.products.gas, 'forecast grids: 1° surface / 2.5° aloft for the nearest valid times, difference-coded and gzipped; no gas grid without the operator\'s acceptance');
+  const { encodeSlice, packSlice, FIELDS: GF, GRIDS: GG, geosCfField, gradsTime } = await import('../tools/grid.mjs'), { gunzipSync } = await import('node:zlib');
+  { const n = GG.s.nj * GG.s.ni, f = (fn) => Float32Array.from({ length: n }, (_, k) => fn(k % GG.s.ni, Math.floor(k / GG.s.ni))), data = { pm2_5: f((i, j) => 5 + i * 0.3 + j), pm10: f((i, j) => 300 - i - j), dust: f(() => 0), aod: f((i) => (i % 50) * 0.02) }, raw = packSlice('air', data), enc = encodeSlice(raw, GF.air), d = gunzipSync(enc);
+    let o = 0, same = true; for (const fd of GF.air) { const wide = fd.type === 'i16'; for (let k = 0; k < n; k++) { const i = k % GG.s.ni, p = i ? (wide ? raw.readInt16LE(o + 2 * (k - 1)) : raw[o + k - 1]) : k ? (wide ? raw.readInt16LE(o + 2 * (k - GG.s.ni)) : raw[o + k - GG.s.ni]) : 0, v = wide ? raw.readInt16LE(o + 2 * k) : raw[o + k], dd = wide ? d[o + k] | (d[o + n + k] << 8) : d[o + k]; if (((dd + p) & (wide ? 0xffff : 255)) !== (v & (wide ? 0xffff : 255))) same = false; } o += (wide ? 2 : 1) * n; }
+    ok(same && enc.length < raw.length / 2, 'grid encoding: differences plus gzip reproduce the packed values and at least halve the file'); }
+  { const row = (v) => Array.from({ length: 144 }, () => v).join(', '), txt = `no2, [1][1][73][144]\n${Array.from({ length: 73 }, (_, r) => `[0][0][${r}], ${row(r === 72 ? 2e-9 : 1e-9)}`).join('\n')}\n\ntime, [1]\n1.0\n`, g = geosCfField(txt, 'no2');
+    ok(near(g[0], 2 * 46.01 / 24.45, 1e-3) && near(g[g.length - 1], 46.01 / 24.45, 1e-3) && gradsTime('09:30z08oct2026') === Date.UTC(2026, 9, 8, 9, 30), 'GEOS-CF reader: rows are turned north-up, mole fractions become µg/m³, the start time is read'); }
+  setConfig(COM); { const a = await CONNECTORS.airquality.load({ lat: 51.47, lon: -0.46 }, async () => new Response('', { status: 503 })); ok(a.no2 === null && a.o3 === null && /not shown/.test(a.note) && /nasa-geos-cf/.test(a.note) && !CONNECTORS.airquality.reg().includes('nasa-geos-cf') && byId.get('nasa-geos-cf').class === 'unclear' && byId.get('nasa-geos-cf').usedInCommercial === false, 'NO₂ and ozone: absent and explained on the card unless the operator accepts the NASA source'); }
+  const sa = text('standalone.html'), carries = /"carries":\{"airports":(\d+),"cities":(\d+),"climate":true/.exec(sa); ok(!!carries && Number(carries[1]) > 3000 && Number(carries[2]) > 3000 && /__AEROSUITE_ESSENTIAL__=/.test(sa) && /"airports\/codes\.txt"/.test(sa) && /"climate\/grid\.bin":\{"b64"/.test(sa) && /"eu-ets-cbam"/.test(sa), `single-file copy carries its essential data (${carries?.[1]} airports, ${carries?.[2]} cities, climate grid, snapshot)`);
+
+  const t = await toolsList(), suites = ['cfd', 'fea', 'aeroelastic', 'flightdyn', 'performance', 'rotorcraft', 'propulsion', 'propeller', 'fatigue', 'vibration', 'acoustics', 'thermal', 'icing', 'gear', 'crash', 'control', 'avionics', 'hydmech', 'electrical', 'fuelecs', 'composites', 'safety', 'mdao', 'mission', 'vvuq', 'economics'];
+  ok(suites.every((s) => (t.suites[s] || []).length >= 3 && t.suites[s].every((x) => x.name && x.what && x.licence && /^https:\/\//.test(x.url))), 'tools.json: at least three entries per suite, each with name, description, licence and address');
+  const g = await gridFactors(); ok(Object.keys(g.countries).length >= 150 && g.world.g > 100 && g.licence === 'CC BY 4.0' && Object.values(g.countries).every((c) => c.g >= 0 && c.g <= 1300 && c.year >= 2015), 'grid-factors.json: national factors for at least 150 economies');
+  const p = await searchPlaces('sao paulo'); ok(p[0]?.country === 'BR' && p[0].population > 5e6 && (await searchPlaces('Nairobi'))[0]?.country === 'KE' && (await searchPlaces('x')).length === 0, 'bundled place search: by name, accents ignored, largest first');
+  const c = await climateAt(25.25, 55.36, 10), cold = await climateAt(64.8, -147.9, 130); ok(c.hot99_C > 38 && c.hot99_C < 52 && cold.cold01_C < -30 && c.wind99_ms > 3 && c.from === '2015' && c.to === '2024', `bundled climate: Dubai hot day ${c.hot99_C} °C, Fairbanks cold day ${cold.cold01_C} °C`);
+  const z = await terrain([{ lat: 27.99, lon: 86.93 }, { lat: 0, lon: -30 }, { lat: 39.86, lon: -104.67 }]); ok(z[0] > 4000 && z[1] === 0 && near(z[2], 1650, 350), `bundled terrain: Himalaya ${z[0]} m, ocean ${z[1]} m, Denver ${z[2]} m`);
+  ok(near(await bundledElevation({ lat: 39.8561, lon: -104.6737 }), 1655, 30), 'bundled elevation prefers the airport record');
+  const sizes = { 'data/grid': 2.8e6, 'js/data/places': 1.5e6, 'js/data/places/small': 1.5e6, 'js/data/terrain': 0.6e6, 'js/data/climate': 0.3e6 };
+  const { readdirSync, statSync } = await import('node:fs');
+  for (const [dir, max] of Object.entries(sizes)) { const n = readdirSync(root + dir).reduce((a, f) => a + (statSync(`${root}${dir}/${f}`).isFile() ? statSync(`${root}${dir}/${f}`).size : 0), 0); ok(n > 1e4 && n <= max, `${dir} is ${(n / 1e6).toFixed(2)} MB (budget ${(max / 1e6).toFixed(1)} MB)`); }
+  const rowsC = complianceRows(reg, 'commercial'), rowsN = complianceRows(reg, 'nonCommercial'), md = text('COMPLIANCE.md');
+  ok(rowsC.every((r) => byId.get(r.id).class === 'commercial-ok' || byId.get(r.id).kind === 'user-service') && rowsN.length > rowsC.length && rowsC.every((r) => md.includes(r.name)) && complianceQuestions(reg).every((q) => /\?/.test(q.question) && md.includes(q.question)), 'compliance pack: commercial rows are all cleared sources; COMPLIANCE.md is current');
+  ok(!reg.sources.some((s) => s.class === 'unclear' && s.usedInCommercial !== false) && !reg.sources.some((s) => s.needsLegalDecision && s.class !== 'commercial-ok' && s.kind !== 'user-service'), 'nothing used in commercial mode rests on an unclear licence');
+}
+
 // ---- attribution and notices ---------------------------------------------------------------------
 section('Attribution and notices');
 const attr = (id) => byId.get(id).attribution || '';
@@ -174,12 +259,12 @@ ok(/Reproduction is authorised, provided the source is acknowledged/.test(attr('
 ok(/Contains public sector information licensed under the Open Government Licence v3\.0\./.test(attr('uk-ets-price')), 'Open Government Licence statement');
 ok(/Open-Meteo\.com/.test(attr('open-meteo-customer')) && /U\.S\. Energy Information Administration/.test(attr('eia')) && /Federal Reserve/.test(attr('frb-h15')) && /OpenAlex/.test(attr('openalex')) && /OurAirports/.test(attr('ourairports')), 'Open-Meteo, EIA, Federal Reserve, OpenAlex and OurAirports credits');
 setConfig(COM);
-{ const a = await attributions(CONNECTORS.weather.reg()); ok(a.length === 2 && a.some((x) => /MET Norway/.test(x.text) && /^https:/.test(x.url)), 'attribution lines resolve for the connectors in use'); }
+{ const a = await attributions(CONNECTORS.weather.reg()); ok(a.length === 3 && a.some((x) => /NOAA/.test(x.text)) && a.some((x) => /MET Norway/.test(x.text) && /^https:/.test(x.url)), 'attribution lines resolve for the connectors in use'); }
 const notices = text('THIRD_PARTY_NOTICES.md'), licence = text('LICENSE'), views = text('js/ui/views/livehub.js') + text('js/ui/views/about.js'), caseView = text('js/ui/views/case.js');
 ok(/Copyright \(c\) 2026 Samuel Akosa Onyejekwe\. All rights reserved\./.test(licence) && /proprietary/.test(licence) && /THIRD_PARTY_NOTICES\.md/.test(licence) && /Lesser General Public License/.test(licence) && !/Permission is hereby granted/.test(licence), 'LICENSE: proprietary, no open-source grant, third-party components under their own licences');
 for (const c of reg.components) ok(notices.includes(c.name.split(' (')[0].split(',')[0]) && (!c.shipped || notices.includes(c.licenceFile)), `THIRD_PARTY_NOTICES.md lists ${c.id}${c.shipped ? ' and where its licence text is' : ''}`);
 ok(/0\.0\.23/.test(notices) && /0\.0\.7/.test(notices) && /var process;/.test(notices) && /export default occtimportjs;/.test(notices) && /export default createLazPerf;/.test(notices) && /Replacing the library/.test(notices) && /Open CASCADE exception/.test(notices) && /written offer/.test(notices), 'THIRD_PARTY_NOTICES.md: versions, modifications, the Open CASCADE exception, source offer and how to replace the LGPL kernel');
-ok(/^\/\/ occt-import-js 0\.0\.23 \(LGPL-2\.1/.test(text('js/vendor/occt/occt-import-js.js')) && /Modified from/.test(text('js/vendor/occt/occt-import-js.js').slice(0, 400)) && /Modified from/.test(text('js/vendor/lazperf/laz-perf.js').slice(0, 300)), 'modified vendored files state the change in their header');
+ok(/^\/\/ occt-import-js 0\.0\.23 \(LGPL-2\.1/.test(text('js/vendor/occt/occt-import-js.js')) && /Modified (on \d{4}-\d{2}-\d{2} )?from/.test(text('js/vendor/occt/occt-import-js.js').slice(0, 400)) && /Modified from/.test(text('js/vendor/lazperf/laz-perf.js').slice(0, 300)), 'modified vendored files state the change in their header');
 for (const t of ['© OpenStreetMap contributors', 'World Bank, World Development Indicators (CC BY 4.0)', 'MET Norway', 'ECB statistics', 'Reproduction is authorised, provided the source is acknowledged', 'Open Government Licence v3.0']) ok(notices.includes(t), `THIRD_PARTY_NOTICES.md carries “${t}”`);
 ok(/licenceSection/.test(text('js/ui/views/about.js')) && /export async function licenceSection/.test(views) && /Data sources and licences/.test(views) && /dataTable\(/.test(views) && /attributionLine\(/.test(views), 'the Live data and About pages show the registry tables and attribution lines');
 ok(/© OpenStreetMap contributors/.test(caseView) && /openstreetmap\.org\/copyright/.test(caseView) && /OurAirports \(public domain\)/.test(caseView) && /attributions\(/.test(caseView) && /wx_note/.test(caseView), 'the location page credits its data where it is shown and notes what the weather provider lacks');

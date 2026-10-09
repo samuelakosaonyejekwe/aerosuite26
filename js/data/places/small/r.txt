@@ -1,0 +1,1645 @@
+#AF|Nimroz
+Rūdbār|Rudbar|30150|62600|556|11
+#AL|Elbasan County
+Rajcë|Rajce|41090|20576|690|8
+#AL|Fier County
+Roskovec||40738|19702|18|7
+#AL|Lezhë County
+Rrëshen|Rreshen|41768|19876|94|7
+#AL|Tirana
+Rrogozhinë|Rrogozhine|41076|19665|22|7
+#AR|Buenos Aires
+Rauch||-36774|-59088|91|15
+Roque Pérez|Roque Perez|-35401|-59335|29|12
+#AR|Catamarca
+Recreo||-29282|-65061|216|14
+#AR|Chubut
+Rada Tilly||-45925|-67554|10|6
+#AR|Cordoba
+Río Primero|Rio Primero|-31334|-63619|246|12
+#AR|Entre Rios
+Rosario del Tala||-32301|-59139|41|14
+#AR|La Pampa
+Realicó|Realico|-35038|-64246|147|8
+#AR|Santa Cruz
+Río Turbio|Rio Turbio|-51536|-72337|324|7
+#AR|Santa Fe
+Recreo||-31491|-60733|23|13
+Roldán|Roldan|-32898|-60907|43|12
+#AT|Styria
+Ries||47083|15485|447|6
+#AT|Tyrol
+Rum||47283|11450|623|9
+Reutte||47483|10717|856|7
+#AT|Upper Austria
+Ried im Innkreis||48211|13489|435|12
+#AT|Vorarlberg
+Rankweil||47271|9643|471|12
+#AU|New South Wales
+Rooty Hill||-33767|150833|65|15
+Revesby||-33950|151017|12|14
+Redfern||-33893|151204|39|13
+Raymond Terrace||-32760|151751|5|13
+Riverwood||-33947|151050|23|12
+Rutherford||-32717|151533|38|12
+Roselands||-33933|151073|51|12
+Rhodes||-33827|151088|22|11
+Rose Bay||-33869|151271|15|10
+Roseville||-33783|151183|88|10
+Rozelle||-33861|151171|46|9
+Rouse Hill||-33682|150915|53|8
+Rosemeadow||-34104|150793|152|8
+Riverstone||-33683|150867|26|7
+Rydalmere||-33815|151038|12|7
+Ropes Crossing||-33733|150791|47|6
+Raby||-34018|150818|53|6
+Ruse||-34070|150842|122|6
+Richmond||-33600|150751|24|5
+#AU|Queensland
+Redland Bay||-27611|153300|12|15
+Runcorn||-27598|153077|59|14
+Regents Park||-27677|153042|35|11
+Redlynch||-16925|145696|15|10
+Raceview||-27635|152775|44|10
+Runaway Bay||-27914|153398|2|9
+Rangeville||-27583|151980|657|8
+Roma||-26567|148788|301|7
+Rothwell||-27214|153047|9|7
+Reedy Creek||-28112|153396|47|7
+Red Hill||-20317|148500|32|5
+Red Hill||-27452|153002|27|5
+#AU|South Australia
+Rostrevor||-34894|138692|137|8
+Redwood Park||-34812|138707|164|5
+#AU|Tasmania
+Riverside||-41421|147051|139|6
+#AU|Victoria
+Rosebud||-38355|144907|9|14
+Ringwood East||-37817|145250|154|11
+Ringwood North||-37800|145233|164|10
+Rye||-38385|144812|37|9
+Rosanna||-37739|145067|46|9
+Red Cliffs||-34309|142190|74|5
+#AU|Western Australia
+Rockingham city centre||-32284|115735|5|14
+Rivervale||-31955|115913|16|11
+Roleystone||-32115|116071|220|6
+Riverton||-32035|115899|13|6
+#AZ|Baki
+Ramana||40442|49981|19|9
+#BA|Federation of B&H
+Rodoč|Rodoc|43315|17803|57|5
+#BE|Flanders
+Rumst||51082|4422|6|15
+Rumbeke||50932|3167|14|14
+Ravels||51373|4992|32|14
+Rijkevorsel||51348|4761|24|11
+Retie||51267|5082|24|8
+Ruisbroek||50790|4298|25|7
+Reet||51102|4413|25|7
+Ruddervoorde||51096|3207|14|6
+Rijmenam||51002|4584|5|6
+Rillaar||50974|4892|22|6
+Ruiselede||51040|3394|15|5
+#BE|Wallonia
+Rochefort||50163|5222|170|12
+Rebecq-Rognon||50651|4107|65|10
+Raeren||50667|6115|318|10
+Roux||50441|4392|118|9
+Ransart||50462|4476|181|9
+Rocourt||50676|5546|174|7
+Ramillies||50634|4901|150|6
+Remicourt||50681|5328|126|5
+#BG|Blagoevgrad
+Razlog||41886|23467|829|12
+#BG|Pazardzhik
+Rakitovo||41990|24087|815|8
+#BG|Pernik
+Radomir||42546|22966|680|14
+#BG|Stara Zagora
+Radnevo||42300|25933|116|15
+#BI|Rutana
+Rutana||-3928|29992|1792|9
+#BI|Ruyigi
+Ruyigi||-3476|30249|1596|11
+#BO|Beni Department
+Rurrenabaque||-14441|-67528|210|12
+Reyes||-14295|-67336|189|7
+#BO|Santa Cruz Department
+Roboré|Robore|-18335|-59761|258|10
+#BR|Acre
+Rodrigues Alves||-7736|-72651|196|15
+#BR|Alagoas
+Roteiro||-9833|-35978|12|7
+#BR|Amapá
+Ressaca do Muca||9|-51080|4|12
+Ressaca Pacoval||54|-51062|7|12
+Ressaca Beirol||12|-51067|4|7
+#BR|Bahia
+Ribeira do Amparo||-11047|-38433|177|15
+Retirolândia|Retirolandia|-11495|-39426|327|14
+Rio de Contas||-13585|-41816|994|13
+Rio do Pires||-13128|-42292|550|12
+Ribeirão do Largo|Ribeirao do Largo|-15459|-40741|651|10
+Rodelas||-8846|-38767|326|9
+#BR|Espírito Santo
+Rio Novo do Sul||-20862|-40936|68|11
+#BR|Goiás
+Rialma||-15315|-49584|574|12
+#BR|Maranhão
+Raposa||-6517|-44183|387|12
+Ribamar Fiquene||-5930|-47384|158|7
+#BR|Mato Grosso
+Ribeirão Cascalheira|Ribeirao Cascalheira|-12942|-51824|386|10
+#BR|Mato Grosso do Sul
+Rochedo||-19953|-54892|260|5
+#BR|Minas Gerais
+Rio Piracicaba||-19929|-43174|634|15
+Rio Paranaíba|Rio Paranaiba|-19194|-46247|1070|15
+Rio Casca||-20226|-42651|336|13
+Rio Vermelho||-18294|-43009|682|13
+Resende Costa||-20922|-44237|1131|11
+Recreio||-21525|-42469|180|11
+Rubim||-16375|-40537|247|10
+Rio Acima||-20087|-43789|741|10
+Riacho dos Machados||-16006|-43049|823|9
+Rodeiro||-21200|-42865|349|9
+Rio Novo||-21477|-43126|412|9
+Reduto||-20219|-41982|658|8
+Riachinho||-16230|-45992|548|7
+Rubelita||-16407|-42262|422|6
+Rio Manso||-20265|-44308|887|6
+Rio Espera||-20855|-43474|714|5
+Rio Preto||-22089|-43828|433|5
+#BR|Paraná
+Rebouças|Reboucas|-25621|-50693|782|15
+Rio Bonito do Iguaçu|Rio Bonito do Iguacu|-25491|-52526|617|14
+Ribeirão do Pinhal|Ribeirao do Pinhal|-23407|-50357|607|13
+Roncador||-24596|-52274|614|11
+Ribeirão Claro|Ribeirao Claro|-23194|-49758|626|11
+Rondon||-23411|-52761|415|9
+Renascença|Renascenca|-26158|-52969|684|7
+Reserva do Iguaçu|Reserva do Iguacu|-25837|-52027|931|7
+Rosário do Ivaí|Rosario do Ivai|-24256|-51249|575|5
+#BR|Paraíba
+Riacho dos Cavalos||-6438|-37651|204|8
+#BR|Piauí
+Redenção do Gurguéia|Redencao do Gurgueia|-9489|-44582|289|8
+Ribeiro Gonçalves|Ribeiro Goncalves|-7558|-45242|209|6
+Rio Grande do Piauí|Rio Grande do Piaui|-7776|-43135|299|6
+#BR|Rio Grande do Norte
+Rio do Fogo||-5273|-35383|11|11
+Riachuelo||-5815|-35825|118|7
+Rafael Fernandes||-6195|-38226|224|5
+#BR|Rio Grande do Sul
+Restinga Sêca|Restinga Seca|-29813|-53375|47|15
+Roca Sales||-29284|-51867|57|10
+Ronda Alta||-27767|-52802|627|10
+Redentora||-27664|-53638|543|10
+Rodeio Bonito||-27471|-53169|359|7
+Roque Gonzales||-28131|-55026|154|7
+#BR|Rio de Janeiro
+Rio das Flores||-22167|-43586|518|9
+#BR|Santa Catarina
+Rio dos Cedros||-26738|-49274|73|11
+Residencia Moacir PU5BHV||-26910|-49365|88|10
+Rio do Oeste||-27192|-49797|341|8
+Rio do Campo||-26949|-50141|600|6
+Rio das Antas||-26899|-51074|807|6
+#BR|Sergipe
+Rosário do Catete|Rosario do Catete|-10696|-37031|18|9
+Riachuelo||-10728|-37187|19|9
+#BR|São Paulo
+Ribeirão Bonito|Ribeirao Bonito|-22067|-48176|580|11
+Roseira||-22898|-45305|554|11
+Riolândia|Riolandia|-19981|-49682|443|11
+Rinópolis|Rinopolis|-21726|-50722|431|9
+Rincão|Rincao|-21587|-48071|536|9
+Rafard||-23012|-47527|517|9
+Reginópolis|Reginopolis|-21888|-49225|418|8
+Ribeirão Grande|Ribeirao Grande|-24099|-48365|690|7
+Restinga||-20603|-47483|910|6
+Riversul||-23829|-49433|610|6
+#BW|Kgatleng
+Rasesa||-24373|26073|985|6
+#BW|South-East
+Ramotswa Station/Taung||-24978|25678|1095|6
+#BY|Grodnenskaya
+Ross’|Ross'|53284|24407|132|6
+#BY|Minsk
+Rakaw||53967|27056|212|6
+Radaškovičy|Radaskovicy|54155|27241|196|6
+#BY|Vitebsk
+Rossony||55906|28813|150|5
+#CA|Alberta
+Royal Oak||51143|-114222|1244|12
+Rundle||51074|-113971|1081|11
+Riverbend||50975|-114014|1022|9
+Redstone||51170|-113958|1098|9
+Rutherford||53418|-113530|691|8
+Rocky Ridge||51145|-114245|1262|8
+Ranchlands||51117|-114183|1156|7
+Renfrew||51063|-114039|1076|7
+Rocky Mountain House||52367|-114919|982|7
+Redcliff||50083|-110785|740|6
+Richmond||51031|-114114|1111|5
+#CA|British Columbia
+Riverwood||49256|-122736|8|9
+Royal Oak||48483|-123383|30|9
+Ranch Park||49260|-122809|83|8
+Revelstoke||50997|-118195|459|8
+Rosedale||49183|-121800|17|6
+Rural Saanich||48497|-123429|66|5
+#CA|Manitoba
+Richmond West||49783|-97166|234|8
+#CA|New Brunswick
+Rothesay||45380|-65967|52|12
+#CA|Newfoundland and Labrador
+Rabbittown||47568|-52723|55|5
+#CA|Nova Scotia
+Rockingham||44673|-63645|9|10
+#CA|Ontario
+Roncesvalles||43649|-79450|105|15
+Rayside-Balfour||46609|-81208|280|15
+Regent Park||43660|-79361|88|11
+Rexdale-Kipling||43724|-79566|152|11
+Runnymede-Bloor West Village||43659|-79486|119|10
+Rustic||43712|-79498|132|10
+Renfrew||45467|-76683|128|8
+Rideau Heights||44258|-76486|96|7
+Russell||45250|-75366|72|6
+Rosemount||43457|-80464|327|6
+#CA|Quebec
+Rosemère|Rosemere|45633|-73799|29|14
+Roberval||48517|-72232|113|10
+Roxboro||45508|-73808|21|6
+Richelieu||45443|-73246|29|5
+Rawdon||46050|-73716|176|5
+#CA|Saskatchewan
+Rosemont-Mount Royal||50463|-104665|569|9
+Rosewood||52093|-106554|505|8
+#CH|Aargau
+Rheinfelden||47554|7794|277|11
+Reinach||47257|8181|523|8
+Rothrist||47305|7892|410|7
+#CH|Fribourg
+Romont||46697|6919|763|5
+#CH|Lucerne
+Ruswil||47084|8126|642|6
+#CH|Saint Gallen
+Rorschach||47478|9490|404|9
+#CH|Thurgau
+Romanshorn||47566|9379|401|9
+#CH|Zug
+Rotkreuz||47143|8431|430|10
+#CH|Zurich
+Richterswil||47206|8697|482|10
+Rüti|Rueti|47256|8856|470|10
+Regensdorf||47434|8469|440|8
+Rümlang|Rumlang|47450|8530|448|5
+#CI|Lacs District
+Raviart||7404|-4887|216|8
+#CL|Araucania
+Renaico||-37671|-72584|80|7
+#CL|Maule Region
+Rauco||-34925|-71317|195|10
+Romeral||-34961|-71123|306|8
+Retiro||-36052|-71758|173|6
+#CL|O'Higgins Region
+Requínoa|Requinoa|-34286|-70817|422|11
+#CL|Valparaiso
+Rinconada de Los Andes||-32833|-70688|724|9
+#CM|North
+Rey Bouba||8672|14179|235|11
+#CN|Chongqing
+Rangdu||30593|108306|210|12
+Runxi||29080|107918|775|9
+#CN|Fujian
+Rong’an|Rong'an|26122|119127|16|6
+#CN|Xinjiang
+Ruoqiang||39020|88166|876|10
+#CO|Antioquia
+Remedios||7028|-74694|727|6
+#CO|Bolívar
+Río Viejo|Rio Viejo|8589|-73840|20|8
+Regidor||8666|-73822|20|5
+#CO|Boyacá
+Ramiriquí|Ramiriqui|5400|-73335|2308|5
+#CO|Caldas Department
+Risaralda||5164|-75767|1622|5
+#CO|Cauca Department
+Rosas||2261|-76740|1717|9
+#CO|Cesar Department
+Río de Oro|Rio de Oro|8292|-73385|1164|14
+#CO|Chocó
+Riosucio||7443|-77120|2|7
+#CO|Cundinamarca
+Ricaurte||4281|-74765|283|11
+#CO|Magdalena Department
+Remolino||10702|-74716|8|8
+#CO|Tolima Department
+Roncesvalles||4011|-75605|2597|6
+#CO|Valle del Cauca Department
+Restrepo||3822|-76523|1406|10
+Riofrío|Riofrio|4158|-76288|942|9
+#CR|Alajuela Province
+Río Segundo|Rio Segundo|10240|-84317|1699|10
+#CV|Ribeira Brava
+Ribeira Brava||16616|-24298|108|3
+#CV|São Vicente
+Ribeirinha||16888|-24976|28|8
+#CY|Ammochostos
+Rizokárpaso|Rizokarpaso|35597|34379|133|5
+#CZ|Central Bohemia
+Roztoky||50158|14398|237|9
+Rudná|Rudna|50035|14234|378|6
+#CZ|Hradec Králové Region
+Rychnov nad Kněžnou|Rychnov nad Kneznou|50163|16275|325|12
+#CZ|Moravian-Silesian Region
+Rychvald||49866|18376|220|8
+Rýmařov|Rymarov|49932|17272|555|8
+#CZ|Plzeň Region
+Rokycany||49743|13595|362|14
+#CZ|Prague
+Radotín|Radotin|49990|14366|232|8
+Ruzyně|Ruzyne|50090|14313|340|8
+#CZ|South Moravian
+Řečkovice|Reckovice|49252|16581|281|13
+Rosice||49182|16388|326|7
+Rousínov|Rousinov|49201|16882|240|6
+#CZ|Ústí nad Labem Region
+Roudnice nad Labem||50425|14262|180|13
+Rumburk||50952|14557|387|11
+#DE|Baden-Wurttemberg
+Rielasingen-Worblingen||47735|8840|421|12
+Rudersberg||48885|9529|280|12
+Rheinau||48666|7937|131|11
+Rheinau||48872|8191|113|11
+Riedlingen||48155|9476|540|10
+Rutesheim||48808|8945|440|10
+Rohr||48719|9092|513|8
+Reichenbach an der Fils||48710|9464|261|8
+Rauenberg||49269|8703|131|7
+Reilingen||49295|8569|103|7
+Renchen||48589|8013|147|7
+Rot||49264|8634|108|7
+Rosenfeld||48286|8724|630|6
+Riedenberg||48737|9214|430|6
+Rechberghausen||48731|9644|330|6
+Rangendingen||48382|8889|418|5
+Rot am See||49250|10017|422|5
+Reichenau||47689|9064|409|5
+#DE|Bavaria
+Regenstauf||49120|12130|353|15
+Rödental|Rodental|50295|11041|340|14
+Regen||48972|13128|544|12
+Röthenbach an der Pegnitz|Rothenbach an der Pegnitz|49483|11241|331|12
+Roding||49194|12520|380|11
+Raubling||47791|12111|460|11
+Rothenburg ob der Tauber||49379|10187|434|11
+Rehau||50249|12034|521|10
+Roßtal|Rosstal|49396|10888|367|10
+Reinhausen||49031|12113|339|9
+Rain||48690|10916|410|8
+Rimpar||49857|9957|234|8
+Rottenburg an der Laaber||48702|12027|446|8
+Reisbach||48570|12628|406|8
+Reichertshofen||48658|11466|383|7
+Ruhstorf||48540|12683|444|7
+Rednitzhembach||49301|11080|326|7
+Ruhpolding||47767|12650|648|6
+Röhrmoos|Rohrmoos|48330|11447|494|6
+Rohrbach||48617|11567|426|6
+Riedenburg||48964|11689|373|6
+Rohrbach||48289|12556|412|6
+Rohrdorf||47797|12170|476|5
+Riedering||47839|12208|489|5
+Rottendorf||49792|10026|251|5
+Rotthalmünster|Rotthalmunster|48358|13202|370|5
+Rottach-Egern||47690|11771|738|5
+Rennertshofen||48759|11045|401|5
+#DE|Brandenburg
+Rangsdorf||52291|13419|42|9
+Rheinsberg||53100|12899|61|9
+#DE|Hamburg
+Rothenburgsort||53535|10041|5|9
+#DE|Hesse
+Raunheim||50013|8453|91|14
+Rotenburg an der Fulda||50996|9728|188|13
+Roßdorf|Rossdorf|49860|8762|186|12
+Rosbach vor der Höhe|Rosbach vor der Hoehe|50303|8690|184|12
+Rodenbach||50150|9033|127|11
+Reiskirchen||50600|8833|228|11
+Rüdesheim am Rhein|Ruedesheim am Rhein|49979|7924|94|10
+Runkel||50406|8155|126|10
+Reichelsheim||49712|8839|214|9
+Rimbach||49625|8763|191|9
+Reichelsheim||50356|8874|128|7
+Rabenau||50678|8864|250|5
+Ranstadt||50357|8984|137|5
+#DE|Lower Saxony
+Ritterhude||53183|8736|28|14
+Ricklingen||52346|9726|57|13
+Rosdorf||51500|9900|168|12
+Rehburg-Loccum||52470|9200|38|11
+Rothenburg||52244|10478|83|10
+Reppenstedt||53248|10353|37|7
+Rodenberg||52312|9356|71|6
+#DE|Mecklenburg-Vorpommern
+Röbel|Roebel|53376|12604|67|6
+#DE|North Rhine-Westphalia
+Recke||52369|7721|51|12
+Rüthen|Ruethen|51491|8436|380|11
+Raesfeld||51767|6850|62|11
+Riehl||50967|6976|49|11
+Rath||50924|7093|55|11
+Ruppichteroth||50844|7484|169|11
+Rödinghausen|Rodinghausen|52250|8483|135|10
+Roxel||51952|7537|75|9
+Roetgen||50650|6200|400|8
+Rahm||51524|7387|80|7
+Rheurdt||51467|6467|42|7
+Rombergpark-Lücklemberg|Rombergpark-Luecklemberg|51463|7470|118|6
+Rhade||51752|6936|55|5
+Röttgen|Roettgen|50678|7071|171|5
+Reken||51830|7045|98|5
+Rommerskirchen||51033|6683|74|5
+#DE|Rheinland-Pfalz
+Ramstein-Miesenbach||49445|7555|242|8
+Rülzheim|Ruelzheim|49153|8293|109|8
+Rodalben||49239|7640|267|8
+Ransbach-Baumbach||50465|7728|305|7
+Rockenhausen||49630|7821|204|6
+#DE|Saxony
+Reinsdorf||50698|12556|325|9
+Radeburg||51215|13728|150|8
+Rodewisch||50531|12413|434|8
+Roßwein|Rosswein|51066|13183|208|8
+Rochlitz||51050|12798|167|7
+Rothenburg||51334|14969|163|6
+#DE|Saxony-Anhalt
+Roßlau|Rosslau|51887|12242|71|12
+#DE|Schleswig-Holstein
+Rellingen||53651|9829|7|14
+Ratzeburg||53700|10773|13|14
+Reinfeld||53831|10492|34|8
+Raisdorf||54281|10249|25|8
+#DE|State of Berlin
+Rosenthal||52600|13378|47|10
+Rahnsdorf||52441|13687|36|9
+#DE|Thuringia
+Ruhla||50893|10366|418|7
+Roßleben|Rossleben|51299|11434|131|6
+Ronneburg||50863|12187|284|5
+#DK|Capital Region
+Rønne|Ronne|55101|14707|22|14
+#DK|Central Jutland
+Ringkøbing|Ringkobing|56090|8244|8|10
+Ry||56090|9765|38|7
+#DK|South Denmark
+Ribe||55331|8770|5|8
+Ringe||55238|10479|75|6
+Rødekro|Rodekro|55071|9335|43|6
+#DM|Saint David Parish
+Rosalie||15367|-61267|75|1
+#DO|La Vega
+Rincón|Rincon|19119|-70406|88|6
+#DO|María Trinidad Sánchez
+Río San Juan|Rio San Juan|19644|-70076|6|9
+#EC|Manabí
+Rocafuerte||-924|-80450|84|10
+#EE|Harjumaa
+Raasiku||59366|25183|48|5
+#EE|Lääne-Virumaa
+Rakvere||59348|26358|83|15
+#EE|Raplamaa
+Rapla||59008|24794|67|5
+#EG|Dakahlia
+Râs el-Barr|Ras el-Barr|31510|31829|6|10
+#ES|Andalusia
+Rute||37327|-4368|658|11
+#ES|Asturias
+Ribadesella||43461|-5060|20|6
+Riañu|Rianu|43328|-5718|206|6
+#ES|Cantabria
+Reinosa||43000|-4138|852|10
+Reocín|Reocin|43339|-4094|105|7
+Renedo||43353|-3950|38|5
+#ES|Catalonia
+Ripoll||42201|2190|697|11
+Riudoms||41133|1050|117|6
+#ES|Galicia
+Rianxo||42650|-8818|23|12
+Ribadeo||43537|-7041|45|9
+Ribadumia||42517|-8750|45|5
+Ribadavia||42288|-8144|96|5
+#ES|Valencia
+Redován|Redovan|38116|-910|26|7
+Rocafort||39533|-400|27|6
+#FI|South Savo
+Ristiina||61506|27246|68|5
+#FI|Southwest Finland
+Runosmäki|Runosmaeki|60489|22252|33|10
+Rusko||60533|22217|28|6
+#FI|Uusimaa
+Roihuvuori||60202|25060|10|8
+Ruskeasuo||60201|24905|29|7
+#FR|Auvergne-Rhône-Alpes
+Rive-de-Gier||45528|4616|249|15
+Rumilly||45861|5945|350|13
+Riorges||46044|4043|306|11
+Roche-la-Molière|Roche-la-Moliere|45431|4328|554|10
+Romagnat||45730|3101|475|9
+Roussillon||45374|4815|217|8
+Rives||45353|5501|395|6
+Reignier-Ésery|Reignier-Esery|46133|6267|484|6
+#FR|Brittany
+Redon||47652|-2084|11|9
+Rosporden||47961|-3835|117|7
+#FR|Grand Est
+Romilly-sur-Seine||48511|3726|74|15
+Rixheim||47750|7402|237|14
+Riedisheim||47748|7367|250|13
+Rombas||49249|6094|178|11
+Remiremont||48018|6588|402|9
+Rethel||49510|4367|88|9
+Revin||49940|4635|146|8
+Raon-l'Étape|Raon-l'Etape|48404|6839|288|6
+Rambervillers||48342|6636|284|6
+Reichshoffen||48933|7666|175|6
+Reichstett||48649|7755|140|5
+#FR|Hauts-de-France
+Raismes||50383|3483|33|14
+Roncq||50753|3121|44|13
+Rouvroy||50392|2904|56|9
+Roye||49700|2790|87|7
+Roost-Warendin||50419|3104|19|6
+#FR|New Aquitaine
+Ruelle-sur-Touvre||45680|229|44|8
+#FR|Occitanie
+Ramonville-Saint-Agne||43546|1475|163|13
+Rivesaltes||42769|2874|29|9
+Revel||43459|2004|220|9
+Rochefort-du-Gard||43975|4690|115|6
+Roques||43501|1371|157|5
+Roquemaure||44052|4778|31|5
+#FR|Provence-Alpes-Côte d'Azur
+Roquebrune-sur-Argens||43443|6638|34|12
+Rognac||43488|5234|37|12
+Rouet||43278|5392|19|12
+Roquebrune-Cap-Martin||43764|7482|19|12
+Riquier||43705|7287|21|12
+Roquevaire||43350|5604|160|8
+Rimiez||43741|7274|276|7
+Rue de France||43695|7254||5
+#FR|Île-de-France
+Rungis||48746|2353|86|6
+#GB|England
+Ringwood||50845|-1789|16|14
+Ryhope||54871|-1370|49|14
+Rotherhithe||51500|-50|5|14
+Rustington||50810|-507|6|13
+Rainham||51517|194|7|12
+Regent's Park||51530|-162|34|12
+Rastrick||53692|-1788|96|11
+Royal Wootton Bassett||51542|-1904|129|11
+Ruislip Manor||51570|-410|52|11
+Rainhill||53416|-2766|66|11
+Ross on Wye||51917|-2567|39|11
+Royston||53600|-1450|69|10
+Rye||50951|734|19|9
+Raunds||52344|-537|54|9
+Richmond||54404|-1734|110|8
+Radlett||51686|-319|74|8
+Ramsey||52451|-109|5|8
+Rothwell||52417|-800|101|8
+Rainworth||53119|-1119|99|8
+Radcliffe on Trent||52948|-1039|30|8
+Rishton||53768|-2414|137|7
+Ruddington||52893|-1150|41|6
+Rainham||51363|609|41|6
+Rainford||53502|-2788|44|6
+Rowlands Gill||54919|-1745|58|6
+Ravenshead||53087|-1160|137|6
+Ruskington||53045|-387|14|6
+Radstock||51292|-2445|72|5
+Ryhill||53622|-1411|99|5
+Redbourn||51799|-396|102|5
+#GB|Northern Ireland
+Randalstown||54750|-6300|40|5
+#GB|Scotland
+Rosyth||56037|-3438|32|14
+#GB|Wales
+Rhiwbina||51528|-3214|53|11
+Rhymney||51760|-3286|283|9
+Rhoose||51388|-3354|46|6
+Ruthin||53114|-3318|60|5
+#GI|
+Reclamation Areas||36144|-5357||14
+#GQ|Bioko Norte
+Rebola||3717|8833|394|8
+#GR|Attica
+Rafína|Rafina|38018|24006|11|12
+#GR|West Greece
+Río|Rio|38296|21785|33|14
+#GT|Suchitepeque
+Río Bravo|Rio Bravo|14400|-91317|161|8
+#GT|Zacapa
+Río Hondo|Rio Hondo|15045|-89585|192|6
+#GY|East Berbice-Corentyne
+Rose Hall||6256|-57355|6|8
+#GY|Mahaica-Berbice
+Rosignol||6271|-57537|3|6
+#HK|Southern District
+Residence Bel-air||22255|114133|1|9
+#HK|Wong Tai Sin District
+Rhythm Garden||22336|114203|9|9
+#HR|Istria
+Rovinj||45083|13635|10|12
+#HU|Budapest
+Rákoscsaba|Rakoscsaba|47488|19298|156|15
+Rákoshegy|Rakoshegy|47463|19239|147|14
+Rákoskert|Rakoskert|47465|19298|180|10
+#HU|Győr-Moson-Sopron
+Rajka||47996|17198|128|5
+#HU|Jász-Nagykun-Szolnok
+Rákóczifalva|Rakoczifalva|47083|20233|85|5
+#HU|Pest County
+Rómaifürdő|Romaifuerdo|47574|19057|88|13
+Rákoscsaba-Újtelep|Rakoscsaba-Ujtelep|47501|19286|149|11
+Ráckeve|Rackeve|47161|18945|100|9
+#HU|Szabolcs-Szatmár-Bereg
+Rakamaz||48124|21464|102|5
+#ID|Riau Islands
+Ranai Kota||3940|108378|1|9
+#IE|Connacht
+Roscommon||53633|-8183|51|7
+#IE|Leinster
+Rathmines||53320|-6263|27|11
+Ratoath||53508|-6462|92|9
+Rathgar||53315|-6275|39|8
+Ringsend||53342|-6226|4|8
+Raheny||53387|-6181|28|7
+#IE|Munster
+Roscrea||52951|-7802|113|5
+#IL|Haifa
+Rekhasim||32750|35101|105|13
+#IL|Northern District
+Ramat Yishay||32701|35164|71|8
+Rama||32939|35366|426|8
+#IM|Ramsey
+Ramsey||54323|-4385|7|8
+#IN|Andhra Pradesh
+Rāzole|Razole|16476|81839|13|14
+Rāmāpuram|Ramapuram|15138|78116|244|7
+Rāmāpuram|Ramapuram|15287|77867|462|6
+#IN|Arunachal Pradesh
+Roing||28143|95845|403|11
+#IN|Assam
+Rahā|Raha|26233|92517|64|11
+Rengte||24481|92759|136|11
+Rupahi Town||26420|92746|60|8
+Rangapahār|Rangapahar|25856|93705|171|7
+#IN|Bihar
+Rajopatti urf Kota Bazar||26584|85505|57|15
+Rāmgarh|Ramgarh|25289|83654|75|9
+Raghunāthpur|Raghunathpur|25645|87918|38|6
+#IN|Chhattisgarh
+Rājim|Rajim|20964|81880|292|14
+Rāmānuj Ganj|Ramanuj Ganj|23806|83700|436|12
+Rajgamar||22382|82833|318|12
+Rāhud|Rahud|21813|82506|254|6
+Raighar||19888|82072|660|6
+Rawān|Rawan|21684|82087|267|5
+#IN|Dadra and Nagar Haveli and Daman and Diu
+Rakholi||20217|73033|46|8
+#IN|Delhi
+Raj Pur Khurd||28494|77191|253|11
+#IN|Goa
+Raia||15305|73971|18|11
+Reis Magos||15508|73810||8
+#IN|Gujarat
+Reliance Complex||22344|69859|52|13
+Ravapara||22796|70826|59|12
+Ranoli||22401|73135|101|12
+Roha||23196|69271|175|9
+Ran||22179|69333|34|9
+#IN|Haryana
+Radaur||30027|77152|270|14
+Rāipur Rāni|Raipur Rani|30586|77022|340|9
+Rāmpura|Rampura|28190|76602|247|6
+#IN|Himachal Pradesh
+Rohru||31203|77755|1537|8
+Rāmpur|Rampur|31449|77631|992|6
+#IN|Jammu and Kashmir
+Rāmnagar|Ramnagar|32807|75311|829|8
+Riāsi|Riasi|33081|74832|521|8
+Rakh Gadi Garh||32669|74839|285|8
+Rehambal||32898|75068|632|7
+Rāmban|Ramban|33243|75235|724|7
+Rathian||32895|75131|686|6
+Rāmgarh|Ramgarh|32508|74964|304|6
+Ratnu Chak||32667|74927|390|5
+#IN|Jharkhand
+Rermā|Rerma|24037|84082|243|12
+Rājābhita|Rajabhita|23867|86333|232|9
+Rasikpur||24285|87254|143|8
+Religāra|Religara|23713|85361|387|8
+Rāy|Ray|23684|85055|431|7
+#IN|Kerala
+Rāmamangalam|Ramamangalam|9933|76500|32|10
+#IN|Madhya Pradesh
+Rājnagar|Rajnagar|24889|79912|228|14
+Rāmpur|Rampur|24502|81055|313|14
+Rānāpur|Ranapur|22647|74521|377|12
+Rāmpur|Rampur|24340|81475|306|12
+Rehti||22738|77434|308|12
+Rāmgarh|Ramgarh|25891|78329|206|8
+Ratangarh||24817|75117|441|8
+Rosera||22942|79215|350|7
+#IN|Maharashtra
+Rājur|Rajur|20111|78893|221|12
+Rahanal||19270|73027|19|11
+Rājāpur|Rajapur|16657|73517|74|11
+Revadanda||18554|72926|10|10
+Rees||18895|73200|35|9
+Risāmā|Risama|21365|80371|312|7
+#IN|Odisha
+Rambha||19517|85100|1|12
+Rengāli|Rengali|21646|84053|216|11
+Rāja Ranapur|Raja Ranapur|20062|85344|67|10
+Rāmpur|Rampur|20198|83520|211|8
+Rengāli|Rengali|21254|85033|106|6
+#IN|Punjab
+Rāya|Raya|31542|75236|234|15
+Rāja Sānsi|Raja Sansi|31720|74801|233|14
+Rurki||30370|76474|262|11
+Rail||30999|76468|250|8
+Rurka Kalān|Rurka Kalan|31123|75700|246|7
+Rām Dās|Ram Das|31967|74909|238|6
+#IN|Rajasthan
+Rāni|Rani|25350|73309|281|14
+Ratannagar||28213|74955|300|13
+Rās|Ras|26306|74195|381|10
+Rūn|Run|26843|73793|346|9
+Rakhabh Dev||24076|73693|310|9
+Rāmsīn|Ramsin|25005|72547|218|8
+Reodhar||24620|72526|262|8
+#IN|Sikkim
+Rangpo||27177|88534|307|10
+Rhenok||27178|88647|1028|6
+#IN|Tamil Nadu
+Rājāsingamangalam|Rajasingamangalam|9636|78846|17|15
+Rāyagiri|Rayagiri|9304|77448|167|11
+Rudrāvati|Rudravati|10874|77410|335|7
+Rangāpuram|Rangapuram|13145|79398|168|5
+#IN|Telangana
+Rāmanapeta|Ramanapeta|17289|79094|316|10
+Rekurti||18469|79112|279|8
+#IN|Tripura
+Radhakishorenagar||23868|91343|37|14
+Rānīr Bāzār|Ranir Bazar|23835|91366|23|13
+Rādhākishorepur|Radhakishorepur|23537|91492|28|9
+#IN|Uttar Pradesh
+Rājāpur|Rajapur|25389|81145|72|14
+Rāmkola|Ramkola|26902|83838|90|14
+Rabūpura|Rabupura|28252|77603|200|14
+Rāmnagar|Ramnagar|27085|81406|119|13
+Rāmpura|Rampura|26350|79182|149|11
+Rasūlābād|Rasulabad|26745|80490|131|8
+Rādhākund|Radhakund|27524|77491|190|6
+#IN|Uttarakhand
+Rāīwāla Bara|Raiwala Bara|30019|78229|320|5
+#IN|West Bengal
+Raghudebbati||22526|88196|12|13
+Raghunandanpur||24651|87973|30|8
+Rāmnagar|Ramnagar|22778|88246|10|5
+#IQ|Anbar
+Rāwah|Rawah|34482|41919|186|13
+#IR|Fars
+Rūnīz|Runiz|29192|53769|1587|6
+#IR|Gilan Province
+Rostamābād|Rostamabad|36902|49497|147|14
+Raḩīmābād|Rahimabad|37032|50326|51|11
+#IR|Hamadan Province
+Razan||35386|49033|1845|14
+#IR|Kerman
+Rābor|Rabor|29291|56913|2331|13
+Rāyen|Rayen|29598|57439|2193|10
+#IR|Māzandarān
+Rostam Kolā|Rostam Kola|36678|53429|25|12
+Rūyān|Ruyan|36569|51963|-21|8
+#IR|Razavi Khorasan
+Roshtkhvār|Roshtkhvar|34975|59625|1149|8
+#IR|Sistan and Baluchestan
+Rāsak|Rasak|26237|61399|405|10
+#IR|Tehran
+Razkān|Razkan|35626|51101|1116|5
+#IR|West Azerbaijan
+Reyḩānābād|Reyhanabad|37582|45117|1301|11
+#IT|Apulia
+Racale||39961|18092|55|10
+Ruffano||39982|18250|127|9
+#IT|Basilicate
+Rionero in Vulture||40923|15671|656|13
+#IT|Calabria
+Rosarno||38487|15980|67|13
+Roccella Ionica||38321|16397|16|6
+Roggiano Gravina||39618|16162|260|6
+Rossano||39576|16634|270|5
+#IT|Campania
+Recale||41057|14303|43|8
+Roccarainola||40973|14543|102|7
+Roccapiemonte||40760|14691|86|6
+#IT|Emilia-Romagna
+Rubiera||44652|10779|53|12
+Reggiolo||44918|10810|20|7
+Russi||44376|12033|13|7
+Rastignano-Carteria di Sesto||44436|11357|97|5
+Rio Saliceto||44811|10804|24|5
+#IT|Friuli Venezia Giulia
+Rosa||45931|12871|35|13
+Ronchi dei Legionari||45827|13504|11|12
+Roveredo in Piano||46008|12619|99|5
+#IT|Lazio
+Rocca Priora||41766|12766|768|9
+Ronciglione||42289|12215|441|7
+Rignano Flaminio||42206|12481|250|7
+Riano||42093|12515|125|7
+#IT|Liguria
+Recco||44362|9144|5|10
+#IT|Lombardy
+Rescaldina||45620|8949|220|14
+Rezzato||45512|10317|147|13
+Rovato||45563|10002|192|12
+Roncadelle||45527|10154|118|9
+Rovellasca||45667|9049|244|8
+Rodengo-Saiano||45600|10107|180|8
+Rivolta d'Adda||45470|9513|101|7
+Rovello Porro||45652|9039|240|6
+Robbio||45289|8593|122|6
+Robbiate||45688|9437|265|6
+Ranica||45723|9713|293|6
+Rudiano||45490|9886|117|5
+Rosate||45350|9017|107|5
+#IT|Piedmont
+Rivarolo Canavese||45328|7721|304|11
+Rivalta di Torino||45033|7520|294|10
+Racconigi||44766|7679|260|9
+Regio Parco||45098|7709|225|9
+Romentino||45463|8718|146|5
+#IT|Sicily
+Ravanusa||37267|13968|320|12
+Raffadali||37402|13532|420|12
+Riposto||37732|15206|8|12
+Riesi||37281|14083|330|12
+Ramacca||37386|14692|270|10
+Randazzo||37877|14950|765|10
+Racalmuto||37405|13730|445|7
+Regalbuto||37652|14639|520|7
+#IT|The Marches
+Recanati||43404|13554|293|14
+#IT|Trentino-Alto Adige
+Renon||46542|11457|1148|7
+#IT|Tuscany
+Ripa-Pozzi-Querceta-Ponterosso||43978|10204|22|10
+#IT|Veneto
+Romano d'Ezzelino||45779|11767|166|13
+Rosà|Rosa|45702|11761|96|13
+Rossano Veneto||45703|11804|78|8
+Roncade||45622|12376|8|7
+Rosolina||45077|12230|1|5
+#JM|Saint Ann Parish
+Runaway Bay||18460|-77336|13|12
+#JO|Jerash
+Raymūn|Raymun|32282|35828|822|6
+#JO|Mafraq
+Rehab||32323|36091|900|10
+Ruwaished||32504|38201|689|10
+#JP|Gunma
+Ryūmaichō|Ryumaicho|36283|139417|39|9
+#JP|Hokkaido
+Rausu||44018|145192|6|5
+#JP|Kanagawa
+Rinkan||35498|139449|81|6
+#JP|Shiga
+Ryūō|Ryuo|35061|136125|137|12
+#JP|Tokyo
+Roppongi||35663|139732|46|13
+Rokuchō|Rokucho|35783|139820|4|7
+#KE|Homa Bay County
+Rodi||-625|34503|1327|8
+#KE|Kiambu County
+Rironi||-1151|36636|2257|6
+#KE|Laikipia
+Rumuruti||273|36538|1846|13
+#KH|Kratie
+Roka Kandal||12461|106028|28|5
+#KH|Preah Sihanouk
+Ream||10585|103647|36|10
+#KH|Tboung Khmum
+Rung||11735|106214|65|10
+Roka Khnaor||12246|105761|29|9
+#KP|Nampo
+Ryonggang-ŭp|Ryonggang-up|38856|125424|23|13
+#KY|
+Red Bay Estate||19287|-81341|2|8
+Rock Hole||19300|-81378|4|7
+#LI|Ruggell
+Ruggell||47238|9525|434|2
+#LR|Grand Cape Mount County
+Robertsport||6753|-11367|25|5
+#LR|River Cess County
+River Cess||5457|-9582|5|4
+#LR|River Gee County
+River Gbeh||5212|-7668|102|7
+#LS|Maseru District
+Roma||-29447|27708|1665|14
+#LT|Kaunas
+Raseiniai||55380|23124|93|10
+#LT|Panevėžys
+Rokiškis|Rokiskis|55959|25595|137|12
+#LT|Vilnius
+Rasos||54679|25312|102|11
+#LU|Esch-sur-Alzette
+Rodange||49546|5841|300|8
+#LU|Redange
+Redange-sur-Attert||49764|5890|283|1
+#MA|Oriental
+Ras Kebdana||35141|-2425|5|8
+#MD|Rezina
+Rezina||47749|28968|15|10
+#MD|Rîşcani
+Rîşcani|Riscani|47948|27567|136|13
+#ME|Rožaje Municipality
+Rožaje|Rozaje|42833|20167|1081|9
+#MG|Ihorombe
+Ranohira||-22483|45400|723|6
+#MH|Rongelap Atoll
+Rongelap||11164|166894|11|0
+#MK|Grad Skopje
+Radishani||42061|21448|400|9
+#MK|Mavrovo and Rostuša
+Rostusa||41610|20600|789|9
+#MK|Rankovce
+Rankovce||42170|22116|472|4
+#MK|Rosoman
+Rosoman||41517|21946|143|4
+#MQ|Martinique
+Rivière-Pilote|Riviere-Pilote|14487|-60903|19|13
+#MR|Trarza
+R'kiz||16915|-15237|6|11
+#MT|Ir-Rabat
+Rabat||35882|14399|205|12
+#MU|Black River
+Richelieu||-20193|57460|77|9
+#MU|Grand Port
+Rose Belle||-20400|57597|286|13
+#MU|Pamplemousses
+Rouge Terre||-20043|57568|40|11
+#MU|Rivière du Rempart
+Rivière du Rempart|Riviere du Rempart|-20103|57685|53|11
+Roches Noire||-20111|57712|23|6
+#MU|Savanne
+Rivière des Anguilles|Riviere des Anguilles|-20493|57563|151|10
+#MX|Chiapas
+Revolución Mexicana|Revolucion Mexicana|16172|-93077|550|8
+Raudales Malpaso||17188|-93606|146|7
+Rayón|Rayon|17201|-93011|1345|6
+Rincón Chamula|Rincon Chamula|17208|-92939|1803|6
+#MX|Guanajuato
+Rincón de Tamayo|Rincon de Tamayo|20423|-100756|1800|10
+#MX|Jalisco
+Real del Valle (El Paraíso) [Fraccionamiento]|Real del Valle (El Paraiso) [Fraccionamiento]|20546|-103370|1533|14
+Rancho Alegre [Fraccionamiento]||20474|-103258|1537|8
+#MX|Michoacán
+Rincón de Nicolás Romero (Cedros Tercera Manzana)|Rincon de Nicolas Romero (Cedros Tercera Manzana)|19414|-100297|2325|6
+#MX|México
+Río Frío de Juárez|Rio Frio de Juarez|19353|-98671|2980|6
+#MX|Nayarit
+Ruiz||21951|-105145|29|14
+#MX|Nuevo León
+Real del Sol||25938|-100181|409|6
+#MX|Oaxaca
+Río Grande|Rio Grande|16011|-97436|26|13
+#MX|San Luis Potosí
+Rayón|Rayon|21843|-99643|973|6
+#MX|Tabasco
+Río Viejo Primera Sección|Rio Viejo Primera Seccion|17939|-92980|12|7
+#MX|Veracruz
+Rafael Delgado||18810|-97072|1171|10
+Rinconada||19357|-96568|228|8
+#MY|Johor
+Rengit||1681|103148|6|12
+#MY|Melaka
+Rembia||2328|102210|19|6
+#MY|Pahang
+Ringlet||4416|101384|1127|8
+#MY|Sarawak
+Roban||1917|111333|17|7
+#NA|Karas Region
+Rosh Pinah||-27966|16761|377|7
+#NC|South Province
+Rivière-Salée|Riviere-Salee|-22231|166464|8|7
+#NG|Jigawa State
+Ringim||12151|9162|392|14
+#NG|Katsina State
+Runka||12448|7309|489|13
+Ruma||12863|7235|502|9
+#NG|Sokoto
+Rabah||13123|5508|265|9
+#NG|Taraba State
+Riti||7908|9617|127|7
+#NL|Drenthe
+Roden||53138|6421|5|7
+#NL|Gelderland
+Renkum||51977|5733|22|9
+Rheden||52005|6029|17|7
+Ruurlo||52088|6450|18|6
+#NL|Limburg
+Reuver||51284|6078|27|6
+#NL|North Brabant
+Reusel||51363|5165|33|7
+Raamsdonksveer||51697|4874|2|7
+#NL|South Holland
+Reeuwijk||52047|4725|-1|13
+Rozenburg||51904|4249|1|12
+Rijnsburg||52190|4442|2|8
+#NL|Utrecht
+Randenbroek||52149|5401|6|7
+#NO|Akershus
+Råholt|Raholt|60275|11179|174|9
+#NO|Innlandet
+Raufoss||60726|10613|324|8
+#NO|Trøndelag
+Røros|Roros|62575|11384|640|6
+#NZ|Auckland
+Royal Oak||-36908|174770|64|6
+#NZ|Canterbury
+Riccarton||-43528|172590|14|12
+Redwood||-43468|172610|15|9
+#NZ|Hawke's Bay Region
+Raureka||-39638|176820|16|6
+#NZ|Marlborough
+Redwoodtown||-41528|173950|13|11
+#NZ|Northland
+Raumanga||-35745|174306|38|6
+#NZ|Southland
+Rosedale||-46388|168360|5|8
+#NZ|Wellington Region
+Raumati Beach||-40917|174983|11|5
+#PA|Coclé
+Río Hato|Rio Hato|8379|-80166|37|6
+#PE|Lambayeque
+Reque||-6866|-79818|25|10
+#PE|Loreto
+Ramón Castilla|Ramon Castilla|-4261|-69957|68|5
+#PG|East New Britain Province
+Rabaul||-4200|152163|12|8
+#PH|Bicol Region
+Ragay||13818|122792|11|9
+Rizal||12977|123914|9|8
+#PH|Cagayan Valley
+Reina Mercedes||16985|121827|52|6
+#PH|Calabarzon
+Real||14664|121604|6|9
+Rosario||13864|122273|15|6
+#PH|Central Luzon
+Rajal Norte||15445|120863|27|10
+#PH|Ilocos
+Rimus||16876|120397|8|7
+#PH|Mimaropa
+Roxas||12584|121518|9|14
+Rio Tuba||8506|117432|0|9
+#PH|Soccsksargen
+Rogongon||8233|124333|235|6
+#PH|Zamboanga Peninsula
+Rancheria Payau||7854|123160|336|7
+#PK|Punjab
+Rojhan||28687|69954|88|14
+Rasulnagar||32328|73780|220|14
+#PK|Sindh
+Rustam||27967|68804|70|9
+Rajo Khanani||24984|68854|18|8
+#PL|Greater Poland
+Rogoźno|Rogozno|52752|16990|72|11
+#PL|Kujawsko-Pomorskie
+Radziejów|Radziejow|52625|18528|114|6
+#PL|Lesser Poland
+Rabka-Zdrój|Rabka-Zdroj|49609|19967|494|13
+#PL|Lower Silesia
+Rejon ulicy Mieleckiej||51091|17002|123|7
+Rejon ulicy Klęczkowskiej|Rejon ulicy Kleczkowskiej|51130|17034|115|6
+#PL|Lublin
+Ryki||51626|21933|149|10
+#PL|Lubusz
+Rzepin||52346|14832|59|6
+#PL|Mazovia
+Radzymin||52416|21184|90|9
+Raszyn||52156|20923|102|7
+#PL|Subcarpathia
+Rakszawa||50161|22239|215|7
+Rudnik nad Sanem||50442|22249|166|7
+Radymno||49947|22824|197|5
+#PL|Warmia-Masuria
+Reszel||54050|21146|110|5
+#PR|Rincón
+Rincón|Rincon|18340|-67250|11|1
+#PR|Río Grande
+Río Grande|Rio Grande|18380|-65831|13|13
+#PT|Azores
+Rosto de Cão|Rosto de Cao|37744|-25640|1|8
+Rabo de Peixe||37810|-25583|52|8
+Ribeira Grande||38517|-28700||5
+#PT|Braga
+Real||41558|-8443|78|12
+Ribeirão|Ribeirao|41361|-8568|71|9
+Refojos de Basto||41513|-7995|313|5
+#PT|Lisbon
+Restelo||38700|-9214|16|7
+#PT|Madeira
+Ribeira Brava||32675|-17063|25|6
+#PT|Porto
+Rebordosa||41224|-8407|218|11
+Ramalde do Meio||41176|-8640|71|7
+#PT|Santarém
+Rio Maior||39337|-8939|82|12
+Riachos||39445|-8514|42|5
+#PT|Vila Real
+Ribeira de Pena||41521|-7802|432|6
+#PT|Viseu
+Rio de Loba||40666|-7878|489|10
+#PT|Évora
+Reguengos de Monsaraz||38425|-7535|218|7
+Redondo||38649|-7547|298|6
+#PY|Caaguazú Department
+Repatriación|Repatriacion|-25535|-55992|288|7
+#RO|Arges
+Rucăr|Rucar|45400|25167|774|6
+#RO|Bacău County
+Răcăciuni|Racaciuni|46333|26983|216|8
+Răchitoasa|Rachitoasa|46433|27367|337|5
+#RO|Bistrița-Năsăud County
+Rodna||47417|24817|525|6
+#RO|Brașov County
+Rupea||46033|25217|458|6
+#RO|Călărași County
+Roseţi|Roseti|44215|27448|18|6
+Radovanu||44200|26517|28|5
+#RO|Dâmbovița County
+Răzvad|Razvad|44933|25533|260|8
+Răcari|Racari|44633|25733|133|7
+#RO|Giurgiu County
+Roata de Jos||44411|25543|107|8
+#RO|Gorj County
+Rovinari||44917|23183|166|12
+Runcu||45117|23133|282|6
+#RO|Harghita County
+Remetea||46783|25450|724|6
+#RO|Iași County
+Răducăneni|Raducaneni|46950|27933|242|8
+Rediu||47217|27500|142|7
+Ruginoasa||47250|26850|293|6
+#RO|Maramureş
+Rozavlea||47733|24217|360|6
+Recea||47633|23517|190|5
+Ruscova||47793|24285|419|5
+#RO|Neamț County
+Roznov||46833|26517|269|9
+Răuceşti|Raucesti|47250|26417|326|8
+Rediu||46756|26563|276|5
+#RO|Prahova
+Râfov|Rafov|44867|26133|102|5
+#RO|Sibiu County
+Răşinari|Rasinari|45700|24067|580|5
+#RO|Timiș County
+Recaş|Recas|45799|21501|104|9
+#RS|Central Serbia
+Ripanj||44639|20521|239|11
+#RU|Altai Krai
+Rodino||52498|80203|162|10
+Rebrikha||53079|82339|219|9
+Romanovo||52618|81228|224|6
+#RU|Belgorod Oblast
+Roven’ki|Roven'ki|49918|38907|89|11
+Rakitnoye||50841|35852|222|11
+#RU|Bryansk Oblast
+Rzhanitsa||53428|33923|157|5
+#RU|Buryatiya Republic
+Rechka-Vydrino||51487|104848|460|5
+#RU|Chelyabinsk
+Roza||54916|61459|232|14
+Roshchino||55310|61264|239|5
+#RU|Kirov Oblast
+Raduzhnyy||58499|49643|157|11
+Rudnichnyy||59617|52470|183|6
+#RU|Komi
+Raduzhnyy||59483|49650|182|10
+#RU|Krasnodar Krai
+Rodnikovskaya||44764|40666|214|9
+Rayevskaya||44836|37556|126|9
+Rogovskaya||45731|38740|9|8
+Ryazanskaya||44955|39589|65|5
+#RU|Leningradskaya Oblast'
+Roshchino||60252|29609|50|9
+Romanovka||60044|30714|41|6
+#RU|Mordoviya Republic
+Romodanovo||54420|45340|118|10
+#RU|Moscow Oblast
+Ruza||55702|36193|211|13
+Razvilka||55592|37741|175|9
+Rumyantsevo||55973|36534|212|7
+#RU|Murmansk
+Revda||67937|34561|252|10
+Roslyakovo||69043|33199|1|9
+#RU|Nizhny Novgorod Oblast
+Reshetikha||56216|43288|99|7
+#RU|Omsk Oblast
+Russkaya Polyana||53780|73884|126|6
+Rostovka||55384|71889|119|5
+#RU|Penza Oblast
+Russkiy Kameshkir||52860|46089|215|5
+#RU|Primorye
+Razdol’noye|Razdol'noye|43540|131897|16|8
+Russkiy||43022|131860|49|5
+#RU|Rostov
+Remontnoye||46561|43649|102|7
+Romanovskaya||47543|42022|40|7
+Rodionovo-Nesvetaiskoye||47600|39700|67|6
+Rodionovo-Nesvetayskaya||47609|39712|50|6
+#RU|Samara Oblast
+Roschinskiy||53051|50497|126|11
+Rozhdestveno||53237|50060|39|5
+#RU|Saratov Oblast
+Romanovka||51743|42753|115|8
+Rovnoye||50776|46049|61|5
+#RU|Smolensk Oblast
+Rudnya||54947|31092|188|10
+#RU|Stavropol Kray
+Ryzdvyanyy||45266|41839|384|8
+Rasshevatskaya||45575|41035|85|6
+#RU|Tambov Oblast
+Rzhaksa||52139|42028|192|6
+#RU|Tatarstan Republic
+Rybnaya Sloboda||55462|50144|119|7
+#RU|Tula Oblast
+Rozhdestvenskiy||54296|37570|211|6
+#RU|Tver Oblast
+Redkino||56648|36297|132|12
+#RU|Volgograd Oblast
+Rudnya||50806|44556|118|8
+#RU|Voronezh Oblast
+Ramon’|Ramon'|51914|39337|128|8
+#RW|Eastern Province
+Ruhuha||-2304|30051|1497|6
+#SE|Blekinge
+Ronneby||56210|15276|5|13
+#SE|Dalarna
+Rättvik|Raettvik|60886|15118|166|5
+#SE|Skåne
+Rydebäck|Rydebaeck|55967|12767|6|6
+#SG|
+Rochor||1304|103852|1|13
+River Valley||1296|103836|38|10
+#SI|Municipality of Radenci
+Radenci||46642|16038|205|2
+#SI|Municipality of Radeče
+Radeče|Radece|46066|15182|205|2
+#SI|Municipality of Radlje ob Dravi
+Radlje ob Dravi||46615|15225|356|3
+#SI|Municipality of Ravne na Koroškem
+Ravne na Koroškem|Ravne na Koroskem|46543|14971|442|7
+#SI|Municipality of Razkrižje
+Razkrižje|Razkrizje|46522|16279|196|0
+#SI|Municipality of Rače–Fram
+Rače|Race|46452|15681|262|3
+#SI|Municipality of Rečica ob Savinji
+Rečica ob Savinji|Recica ob Savinji|46317|14917|360|1
+#SI|Municipality of Ribnica
+Ribnica||45739|14728|495|4
+#SI|Municipality of Ribnica na Pohorju
+Ribnica na Pohorju||46535|15273|669|0
+#SI|Municipality of Rogatec
+Rogatec||46228|15699|287|2
+#SI|Municipality of Rogaška Slatina
+Rogaška Slatina|Rogaska Slatina|46237|15639|237|5
+#SI|Municipality of Rogašovci
+Rogašovci|Rogasovci|46798|16036|260|0
+#SI|Municipality of Ruše
+Ruše|Ruse|46540|15518|407|5
+#SI|Radovljica
+Radovljica||46343|14175|491|6
+#SK|Banská Bystrica Region
+Revúca|Revuca|48683|20117|318|11
+#SK|Bratislava Region
+Rovinka||48098|17236|130|7
+#SK|Žilina Region
+Rajec||49089|18640|448|6
+Raková|Rakova|49445|18738|427|6
+Rabča|Rabca|49486|19476|664|5
+#SL|Northern Province
+Rokupr||8671|-12385|83|13
+#SN|Saint-Louis
+Ross-Bétio|Ross-Betio|16273|-16138|5|12
+Rosso||16420|-15798|5|10
+#SV|San Salvador Department
+Rosario de Mora||13575|-89209|500|5
+#TH|Phrae
+Rong Kwang||18339|100317|212|12
+#TH|Phuket
+Rawai||7780|98325|12|14
+#TJ|Republican Subordination
+Rasht||39029|70374|1371|11
+Roghun||38783|69871|1251|8
+#TN|Bizerte Governorate
+Rhar el Melah||37169|10191|10|11
+Rafrāf|Rafraf|37190|10184|136|10
+#TN|Mahdia Governorate
+Rejiche||35467|11038|6|11
+#TN|Tataouine
+Remada||32317|10396|301|6
+#TR|Erzincan
+Refahiye||39893|38766|1598|6
+#UA|Cherkasy
+Ruska Poliana||49417|31920|116|8
+#UA|Chernihiv Oblast
+Ripky||51802|31086|131|7
+#UA|Chernivtsi
+Romankivtsi||48484|27214|257|5
+#UA|Crimea
+Rozdolne||45770|33491|30|7
+#UA|Donetsk
+Rodynske||48354|37206|195|10
+#UA|Ivano-Frankivsk
+Rohatyn||49410|24611|258|8
+Rozhniv||48365|25228|269|5
+#UA|Kharkiv
+Ruska Lozova||50142|36286|158|5
+#UA|Kirovohrad
+Rivne||48243|31758|156|5
+#UA|Kyiv City
+Rembaza||50420|30696|108|9
+#UA|Kyiv Oblast
+Rzhyshchiv||49969|31042|91|8
+#UA|Luhansk
+Rozkishne||48490|39279|55|6
+Rodakove||48559|39025|106|6
+#UA|Lviv
+Radekhiv||50281|24638|234|10
+Rava-Ruska||50232|23622|241|8
+Rudne||49833|23900|311|7
+Rudky||49653|23487|265|5
+#UA|Poltava
+Rozsoshentsi||49541|34506|156|9
+Reshetylivka||49563|34079|88|9
+#UA|Rivne Oblast
+Radyvyliv||50130|25252|218|10
+Rokytne||51279|27217|166|7
+#UA|Volyn
+Rozhyshche||50916|25271|166|13
+Ratne||51669|24526|150|10
+#UA|Zakarpattia
+Ruske Pole||48057|23535|221|6
+#UA|Zaporizhzhia
+Rayon AKZ||46786|36735|40|8
+Rayon RTS||46795|36740|46|6
+Rayon Azmol||46768|36769|53|5
+#UA|Zhytomyr Oblast
+Romaniv||50147|27931|239|7
+#UG|Western Region
+Rubaare||-1084|30202|1428|15
+Rubirizi||-299|30134|1338|9
+#US|Alabama
+Russellville||34508|-87729|232|10
+Rainbow City||33955|-86042|170|10
+Roanoke||33151|-85372|258|6
+Robertsdale||30554|-87712|45|6
+Rainsville||34494|-85848|391|5
+#US|California
+Red Bluff||40178|-122236|93|14
+Rosedale||35384|-119145|111|14
+Redwood Shores||37532|-122248|2|11
+Rossmoor||33786|-118085|4|10
+Rio Del Mar||36968|-121900|44|9
+Rodeo||38033|-122267|5|9
+Rio Vista||38164|-121696|14|8
+Rolling Hills Estates||33788|-118358|143|8
+Roseland||38422|-122728|41|6
+Rancho Murieta||38502|-121095|51|5
+#US|Colorado
+Rifle||39535|-107783|1630|10
+Roxborough Park||39474|-105085|1753|9
+Redlands||39079|-108636|1419|9
+#US|Connecticut
+Riverside||41034|-73578|25|8
+Ridgefield||41281|-73498|223|8
+Rockville||41867|-72450|121|7
+#US|District of Columbia
+Riggs Park||38954|-76994|47|9
+#US|Florida
+Rotonda West||26884|-82290|3|9
+Richmond Heights||25631|-80369|3|9
+River Park||27314|-80347|4|5
+#US|Georgia
+Richmond Hill||31938|-81303|6|12
+Rincon||32296|-81235|22|10
+#US|Hawaii
+Royal Kunia||21394|-158027|80|15
+Robinson Heights||21383|-158029|28|5
+#US|Idaho
+Rathdrum||47812|-116897|674|8
+Rupert||42619|-113677|1267|6
+#US|Illinois
+Richton Park||41484|-87703|221|14
+Riverdale||41633|-87633|183|14
+Rantoul||40308|-88156|227|13
+River Forest||41898|-87814|192|11
+Roscoe||42413|-89009|225|11
+River Grove||41926|-87836|191|10
+Rochelle||41924|-89069|251|9
+Rock Falls||41780|-89689|197|9
+Riverside||41835|-87823|188|9
+Robinson||39005|-87739|162|8
+Rockton||42453|-89072|225|8
+Round Lake Park||42357|-88077|241|7
+Robbins||41644|-87704|183|5
+#US|Indiana
+Rushville||39609|-85446|292|6
+Rochester||41065|-86216|238|6
+Rensselaer||40937|-87151|202|6
+#US|Iowa
+Red Oak||41010|-95226|320|5
+#US|Kansas
+Roeland Park||39038|-94632|302|7
+#US|Kentucky
+Russellville||36845|-86887|181|7
+#US|Louisiana
+River Ridge||29960|-90216|1|13
+Raceland||29727|-90599|4|10
+Reserve||30054|-90552|4|10
+Rayne||30235|-92268|10|8
+Red Chute||32556|-93613|65|6
+#US|Maine
+Rockland||44104|-69109|7|7
+#US|Maryland
+Riviera Beach||39167|-76508|3|13
+Rosaryville||38757|-76810|68|11
+Rossmoor||39104|-77071|133|8
+Riverdale Park||38963|-76932|12|7
+Robinwood||39637|-77657|171|7
+Riverside||39273|-76607|20|7
+Riverside||39173|-76885|98|7
+Riverside||39474|-76241|24|6
+Reservoir Hill||39314|-76633|67|5
+Robinwood||38954|-76515|11|5
+#US|Massachusetts
+Raynham||41949|-71073|24|13
+Rehoboth||41840|-71249|13|11
+Reservoir||42335|-71148|38|6
+Readville||42240|-71137|22|5
+#US|Michigan
+Rochester||42681|-83134|229|13
+Riverview||42174|-83179|183|12
+River Rouge||42273|-83134|178|8
+Rockford||43120|-85560|214|6
+Richmond||42809|-82756|223|6
+#US|Minnesota
+Robbinsdale||45032|-93339|266|14
+Rogers||45189|-93553|293|13
+Redwood Falls||44539|-95117|317|5
+#US|Mississippi
+Richland||32239|-90158|81|7
+Ripley||34730|-88951|152|5
+#US|Missouri
+Richmond Heights||38629|-90320|161|8
+Richmond||39279|-93977|251|6
+#US|Nebraska
+Ralston||41205|-96043|349|6
+#US|New Hampshire
+Rindge||42751|-72010|397|6
+Rye||43013|-70771|23|5
+#US|New Jersey
+Roselle Park||40665|-74264|23|14
+Ridgefield Park||40857|-74022|26|13
+Ringwood||41113|-74245|144|12
+Red Bank||40347|-74064|14|12
+River Edge||40929|-74040|17|12
+Ridgefield||40834|-74009|13|11
+Robertsville||40346|-74288|41|11
+River Vale||40995|-74012|17|9
+Runnemede||39852|-75068|35|8
+Raritan||40570|-74633|21|8
+Rumson||40372|-73999|9|7
+Rockaway||40901|-74514|173|6
+Ramtown||40121|-74144|25|6
+Ramblewood||39929|-74944|9|6
+Roseland||40821|-74294|105|6
+Rochelle Park||40907|-74075|17|6
+#US|New Mexico
+Ruidoso||33332|-105673|2051|8
+Raton||36903|-104439|2036|6
+#US|New York
+Rocky Point||40953|-72925|59|14
+Ridge||40894|-72896|28|13
+Riverhead||40917|-72662|4|13
+Roosevelt Island||40764|-73948|10|12
+Roessleville||42695|-73807|74|11
+Rye Brook||41019|-73683|76|10
+Rensselaer||42643|-73743|5|9
+Riverdale||40901|-73906|55|9
+Roslyn Heights||40789|-73647|53|7
+Richland||43570|-76048|166|6
+#US|North Carolina
+Reidsville||36355|-79664|245|14
+Rockingham||34939|-79774|86|9
+Roxboro||36394|-78983|218|8
+Rolesville||35923|-78457|135|6
+#US|Ohio
+Ravenna||41158|-81242|345|12
+Richmond Heights||41553|-81510|265|10
+Reading||39224|-84442|171|10
+Rittman||40978|-81782|299|7
+Rossford||41610|-83564|188|7
+#US|Oregon
+Rockcreek||45550|-122877|55|9
+Roseburg North||43269|-123351|317|6
+Raleigh Hills||45481|-122762|86|6
+#US|Pennsylvania
+Roxborough||40038|-75222|91|14
+Ryers||40064|-75087|43|8
+Ridley Park||39881|-75324|28|7
+Richboro||40215|-75011|80|7
+Red Lion||39901|-76606|280|6
+Red Lion||40481|-75616|226|6
+#US|South Carolina
+Red Hill||34000|-79258|20|13
+Red Hill||33821|-79019|10|13
+Red Bank||33932|-81238|104|10
+#US|South Dakota
+Rapid Valley||44062|-103146|962|8
+#US|Tennessee
+Red Bank||35112|-85294|220|12
+Ripley||35745|-89530|136|8
+Rockwood||35866|-84685|272|5
+#US|Texas
+Rio Grande City||26380|-98820|53|14
+Rendon||32576|-97241|224|13
+Richmond||29582|-95761|28|12
+Red Oak||32518|-96804|185|12
+Robstown||27790|-97669|22|12
+Robinson||31468|-97115|151|11
+Royse City||32975|-96332|169|11
+Raymondville||26481|-97783|9|11
+Rockport||28021|-97056|2|10
+Roma||26405|-99016|66|10
+Roma-Los Saenz||26405|-99016|65|10
+Richland Hills||32816|-97228|173|8
+River Oaks||32777|-97394|183|8
+Roanoke||33004|-97226|193|7
+Rusk||31796|-95150|158|6
+Rockdale||30655|-97001|142|6
+#US|Utah
+Riverdale||41177|-112004|1332|9
+Richfield||38772|-112084|1632|8
+Roosevelt||40299|-109989|1553|7
+#US|Vermont
+Rockingham||43188|-72489|149|5
+#US|Virginia
+Rosslyn||38897|-77072|26|10
+Richlands||37093|-81794|589|6
+#US|Washington
+Ridgefield||45815|-122743|34|6
+Riverton||47484|-122295|103|6
+#US|Wisconsin
+Richfield||43256|-88194|298|12
+Reedsburg||43532|-90003|275|10
+Rice Lake||45506|-91738|350|8
+Ripon||43842|-88836|284|8
+Rhinelander||45637|-89412|472|8
+Rib Mountain||44913|-89675|399|6
+Rothschild||44887|-89620|363|5
+Richland Center||43335|-90387|222|5
+#US|Wyoming
+Riverton||43025|-108380|1509|11
+Rawlins||41791|-107239|2072|9
+Ranchettes||41219|-104790|1890|6
+#UY|Cerro Largo
+Río Branco|Rio Branco|-32598|-53386|9|15
+#UY|Colonia
+Rosario||-34317|-57350|26|10
+#UZ|Bukhara
+Romitan Shahri||39929|64379|228|13
+#VN|Ca Mau
+Rạch Gốc|Rach Goc|8612|105005|0|13
+#ZA|Free State
+Rouxville||-30418|26837|1504|9
+Reddersburg||-29653|26168|1419|6
+#ZA|Gauteng
+Rethabiseng||-25723|28717|1460|13
+#ZA|Northern Cape
+Ritchie||-29038|24603|1115|10
+#ZA|Western Cape
+Rosebank||-33956|18474|11|10
+Riviersonderend||-34150|19914|163|6
+Riebeek-Kasteel||-33384|18900|126|6
+Riebeek West||-33350|18870|198|5

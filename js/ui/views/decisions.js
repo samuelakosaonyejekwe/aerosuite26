@@ -36,7 +36,7 @@ export async function render(root, _p, { setCrumb }) {
     // sustainability from coupled outputs
     const co2 = up.mission?.co2_kg, blockFuel = up.mission?.block_fuel_kg, energy = up.mission?.mission_energy_kWh, pax = c.mission.pax || c.econ.seats || 0, dist = c.mission.range_km || 0;
     const perPkm = co2 != null && pax && dist ? (1000 * co2) / (pax * (c.econ.load_factor || 1) * dist) : null;
-    const grid = (await idb.get('live.grid.gb'))?.data?.gCO2_kWh;
+    const grid = (await idb.get(`live.grid.cc:${c.site.country || 'WLD'}`))?.data?.gCO2_kWh;
     const saf = FLUIDS['SAF (HEFA-SPK)'], scen = blockFuel ? [['Current fuel', co2 ?? blockFuel * fuel.co2_per_kg], ['30% sustainable aviation fuel blend', blockFuel * (0.7 * fuel.co2_per_kg + 0.3 * saf.co2_per_kg * saf.lifecycle_factor)], ['100% sustainable aviation fuel', blockFuel * saf.co2_per_kg * saf.lifecycle_factor], ['1% drag reduction', (co2 ?? blockFuel * fuel.co2_per_kg) * 0.99], ['3% lighter empty mass', (co2 ?? blockFuel * fuel.co2_per_kg) * (1 - 0.03 * 0.6 * (c.mass.oew_kg / c.mass.mtow_kg))]] : null;
     const scoreRows = SCORE.filter(([s, k]) => typeof up[s]?.[k] === 'number').map(([s, k, label, unit]) => [`${suiteMeta(s).d}. ${suiteMeta(s).short}`, label, up[s][k], unit]);
 

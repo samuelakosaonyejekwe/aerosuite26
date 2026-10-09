@@ -1,0 +1,3357 @@
+#AD|Canillo
+Canillo||42568|1598|1561|3
+#AF|Herat
+Chahār Burj|Chahar Burj|34245|62192|943|12
+#AF|Kunduz
+Chīchkah|Chichkah|37070|69298|441|9
+#AF|Sar-e Pol Province
+Chīras|Chiras|35417|65982|2691|13
+#AG|Barbuda
+Codrington||17639|-61824|1|1
+#AL|Elbasan County
+Cërrik|Cerrik|41032|19976|77|14
+#AM|Gegharkunik
+Chambarak||40597|45355|1848|5
+#AO|Benguela
+Caimbambo||-13022|14003|744|15
+Camboio||-12927|14099|739|15
+Chongoroi||-13574|13941|822|12
+#AO|Bíe
+Calucinga||-11323|16196|1757|15
+Cunhinga||-12233|16783|1772|12
+Chissamba||-12167|17333|1404|8
+#AO|Cabinda
+Cacongo||-5239|12144|1|15
+#AO|Cubango
+Cuchi||-14650|16899|1353|15
+Calai||-17889|19771|1069|9
+#AO|Huambo
+Chela||-12303|15434|1716|6
+#AO|Huíla
+Caconda||-13736|15062|1653|15
+Calonamba||-13774|15091|1547|15
+Chipindo||-13814|15790|1592|10
+Chibia||-15183|13699|1469|10
+Chicomba||-14133|14917|1406|9
+#AO|Icolo e Bengo Province
+Catete||-9106|13688|91|0
+#AO|Lunda Sul
+Cacolo||-10145|19266|1356|13
+#AO|Malanje
+Calandula||-9090|15954|1141|9
+#AO|Moxico
+Cameia||-11691|20839|1131|14
+Camanongue||-11436|20165|1264|13
+Calandula||-13467|19617|1328|9
+#AO|Uíge
+Cuango Calumbo||-7677|15107|843|10
+#AR|Buenos Aires
+Capitán Sarmiento|Capitan Sarmiento|-34171|-59791|56|15
+Canning||-34864|-58502|18|14
+Coronel Dorrego||-38719|-61288|114|12
+Capilla del Señor|Capilla del Senor|-34292|-59101|24|11
+Castelli||-36091|-57807|6|8
+Coronel Vidal||-37447|-57729|26|8
+Comandante Nicanor Otamendi||-38111|-57841|68|7
+Costa del Este||-36611|-56693|11|7
+Carlos Tejedor||-35392|-62420|85|7
+#AR|Catamarca
+Capayán|Capayan|-28774|-66047|420|6
+Chumbicha||-28853|-66238|404|6
+#AR|Chaco
+Campo Largo||-26800|-60839|105|11
+Corzuela||-26951|-60970|96|10
+Coronel Du Graty||-27682|-60904|76|9
+Concepción del Bermejo|Concepcion del Bermejo|-26600|-60946|106|6
+#AR|Cordoba
+Corral de Bustos||-33284|-62186|109|10
+Capilla del Monte||-30861|-64525|984|9
+Canals||-33562|-62885|116|8
+Coronel Moldes||-33622|-64597|365|8
+Cruz Alta||-33008|-61808|69|7
+#AR|Formosa
+Clorinda||-25286|-57722|60|15
+Comandante Fontana||-25335|-59682|86|6
+#AR|Jujuy
+Caimancito||-23741|-64593|375|5
+Calilegua||-23774|-64770|468|5
+#AR|La Rioja
+Chamical||-30359|-66314|473|13
+#AR|Mendoza
+Colonia Segovia||-32848|-68714|729|9
+Costa de Araujo||-32758|-68401|613|5
+#AR|Misiones
+Candelaria||-27462|-55745|104|11
+Campo Ramón|Campo Ramon|-27455|-55021|333|10
+Campo Grande||-27208|-54980|454|9
+Campo Viera||-27333|-55057|339|9
+Colonia Aurora||-27474|-54524|180|8
+Concepción de la Sierra|Concepcion de la Sierra|-27982|-55521|163|7
+Capioví|Capiovi|-26929|-55058|183|6
+Cerro Azul||-27634|-55497|287|5
+#AR|Neuquen
+Chos Malal||-37378|-70271|858|12
+#AR|Rio Negro
+Choele Choel||-39289|-65661|138|13
+Cervantes||-39054|-67394|224|5
+#AR|Salta
+Campo Quijano||-24909|-65640|1679|13
+Coronel Juan Solá|Coronel Juan Sola|-23467|-62883|223|6
+Chicoana||-25105|-65535|1250|5
+Coronel Moldes||-25280|-65478|1127|5
+#AR|Santa Cruz
+Comandante Luis Piedrabuena||-49985|-68915|12|9
+#AR|Santa Fe
+Ceres||-29881|-61945|90|13
+Calchaquí|Calchaqui|-29888|-60284|51|10
+Chañar Ladeado|Chanar Ladeado|-33325|-62037|108|6
+#AR|Santiago del Estero
+Clodomira||-27577|-64132|166|9
+Campo Gallo||-26584|-62847|175|5
+#AU|Australian Capital Territory
+Casey||-35167|149095|656|6
+Calwell||-35440|149107|687|6
+Canberra City||-35281|149129|578|5
+Curtin||-35325|149078|581|5
+Campbell||-35289|149154|589|5
+Chisholm||-35412|149128|636|5
+#AU|New South Wales
+Concord||-33847|151104|20|14
+Campbelltown||-34067|150817|84|13
+Chester Hill||-33879|150999|46|13
+Caringbah South||-34057|151121|64|12
+Caringbah||-34035|151125|18|12
+Charlestown||-32968|151693|110|12
+Condell Park||-33925|151011|41|12
+Camperdown||-33890|151176|24|11
+Cremorne||-33827|151226|75|11
+Canley Heights||-33883|150924|28|11
+Casino||-28858|153047|25|11
+Carlton||-33971|151121|34|11
+Croydon||-33883|151117|22|11
+Canley Vale||-33887|150948|12|10
+Cowra||-33836|148697|302|10
+Chipping Norton||-33918|150959|11|9
+Colyton||-33783|150797|52|8
+Cameron Park||-32907|151605|55|8
+Chippendale||-33887|151197|21|8
+Collaroy||-33732|151301|9|8
+Cromer||-33731|151268|34|8
+Canterbury||-33912|151119|13|7
+Cabramatta West||-33893|150912|39|7
+Cecil Hills||-33889|150851|63|7
+Cammeray||-33821|151216|74|7
+Cambridge Park||-33748|150722|55|7
+Cootamundra||-34641|148028|332|7
+Cooma||-36235|149124|796|7
+Corrimal||-34379|150904|12|6
+Concord West||-33848|151086|16|6
+Cooranbong||-33076|151454|17|5
+Corowa||-35997|146386|154|5
+Currans Hill||-34043|150773|100|5
+Corlette||-32720|152108|16|5
+#AU|Queensland
+Cleveland||-27527|153265|12|15
+Coomera||-27843|153339|26|13
+Crestmead||-27688|153084|41|12
+Carrara||-28022|153366|1|12
+Camp Hill||-27494|153076|49|11
+Clayfield||-27419|153058|25|10
+Coombabah||-27911|153371|6|10
+Chermside||-27385|153031|25|10
+Chapel Hill||-27503|152950|49|10
+Carseldine||-27348|153023|25|9
+Coolum Beach||-26528|153088|8|9
+Currumbin Waters||-28154|153473|4|9
+Coolangatta||-28169|153535|11|8
+Clontarf||-27253|153078|11|8
+Charters Towers||-20077|146264|319|8
+Chinchilla||-26738|150630|304|7
+Cairns North||-16904|145757|7|7
+Camira||-27635|152921|55|7
+Cornubia||-27667|153217|17|7
+Collingwood Park||-27613|152860|31|7
+Cairns City||-16921|145774|8|7
+Carina Heights||-27507|153091|52|7
+Currimundi||-26769|153122|7|7
+Chermside West||-27384|153016|44|6
+Caloundra West||-26806|153109|6|6
+Cannonvale||-20277|148698|12|6
+Centenary Heights||-27587|151962|673|6
+Cranbrook||-19306|146753|15|6
+Clinton||-23875|151218|32|6
+Condon||-19330|146717|19|6
+Coopers Plains||-27565|153041|23|6
+Cannon Hill||-27472|153095|17|5
+Caboolture South||-27094|152949|14|5
+Calliope||-24007|151200|36|5
+#AU|South Australia
+Craigmore||-34701|138710|108|11
+Campbelltown||-34883|138667|75|8
+Christies Beach||-35139|138472|17|5
+Christie Downs||-35130|138496|63|5
+#AU|Tasmania
+Claremont||-42783|147250|17|8
+#AU|Victoria
+Clayton South||-37933|145117|55|13
+Caulfield South||-37896|145026|28|12
+Clyde||-38133|145333|37|11
+Colac||-38339|143585|139|11
+Cairnlea||-37759|144788|59|10
+Chirnside Park||-37739|145314|98|10
+Chadstone||-37888|145095|60|10
+Collingwood||-37803|144989|25|9
+Chelsea||-38050|145117|9|8
+Clyde North||-38117|145333|44|8
+Canterbury||-37825|145085|83|8
+Croydon North||-37767|145291|82|8
+Coburg North||-37729|144961|66|8
+Castlemaine||-37067|144217|281|8
+Clarinda||-37941|145102|40|7
+Clifton Springs||-38157|144555|23|7
+Clifton Hill||-37792|144995|127|7
+Carlton North||-37788|144970|39|6
+Cobram||-35921|145641|114|6
+Caulfield||-37883|145023|36|6
+Chelsea Heights||-38033|145133|7|5
+Capel Sound||-38367|144879|7|5
+#AU|Western Australia
+Como||-31991|115863|27|15
+Clarkson||-31683|115725|28|14
+Cable Beach||-17961|122213|24|9
+Claremont||-31980|115782|20|8
+Cloverdale||-31963|115944|21|8
+Collie||-33362|116156|190|7
+Cottesloe||-31994|115758|32|7
+Carramar||-31690|115772|56|7
+Currambine||-31733|115748|57|7
+Cooloongup||-32295|115780|47|7
+City Beach||-31934|115762|37|6
+Carine||-31852|115783|21|6
+Carlisle||-31979|115918|25|6
+Cannington||-32016|115936|13|6
+Craigie||-31787|115770|40|6
+Coolbellup||-32081|115806|52|5
+Caversham||-31883|115967|4|5
+Carey Park||-33349|115649|10|5
+#AZ|Qax
+Çinarlı|Cinarli|41470|46916|795|7
+#AZ|Şǝmkir
+Chinarli||40775|46113|430|7
+#BA|Federation of B&H
+Čapljina|Capljina|43121|17684|38|8
+Crnići|Crnici|43132|17865|239|6
+Čitluk|Citluk|43229|17701|225|6
+Ćoralići|Coralici|45007|15872|286|5
+#BA|Srpska
+Čelinac|Celinac|44725|17324|194|7
+#BB|Saint Lucy
+Checker Hall||13284|-59642|52|0
+#BB|Saint Philip
+Crane||13105|-59449|24|1
+#BE|Wallonia
+Ciney||50294|5100|261|15
+Chapelle-lez-Herlaimont||50471|4282|165|14
+Couvin||50053|4495|185|14
+Couillet||50391|4459|111|11
+Chaumont-Gistoux||50678|4721|121|11
+Cuesmes||50436|3923|32|10
+Chimay||50049|4317|240|10
+Court-Saint-Étienne|Court-Saint-Etienne|50634|4569|85|9
+Chênée|Chenee|50612|5614|69|9
+Carnières|Carnieres|50444|4255|110|8
+Comines||50775|3001|20|8
+Chastre-Villeroux-Blanmont||50609|4642|133|6
+Chièvres|Chievres|50588|3807|52|6
+Céroux-Mousty|Ceroux-Mousty|50661|4521|133|5
+Comblain-au-Pont||50475|5577|103|5
+Champion||50495|4904|196|5
+#BG|Pleven
+Cherven Bryag||43279|24083|116|13
+#BG|Smolyan
+Chepelare||41733|24683|1162|5
+#BI|Cankuzo
+Cankuzo||-3219|30553|1616|6
+#BO|Cochabamba
+Cliza||-17588|-65933|2726|9
+Capinota||-17711|-66261|2395|5
+Chimoré|Chimore|-16994|-65153|243|5
+#BO|La Paz Department
+Copacabana||-16170|-69079|3877|6
+#BO|Oruro
+Challapata||-18902|-66770|3732|8
+#BO|Potosí Department
+Ckochas||-19907|-64865|3378|14
+Colchani||-20300|-66933|3668|12
+#BO|Santa Cruz Department
+Concepción|Concepcion|-16433|-60900|478|7
+#BR|Acre
+Capixaba||-10573|-67676|212|12
+#BR|Alagoas
+Coité do Nóia|Coite do Noia|-9632|-36579|288|11
+Cacimbinhas||-9400|-36990|262|10
+Carneiros||-9482|-37377|338|9
+Campo Grande||-10233|-36500|55|8
+Campestre||-8846|-35568|102|7
+Chã Preta|Cha Preta|-9255|-36296|441|6
+Coqueiro Seco||-9638|-35803|89|6
+#BR|Amapá
+Calçoene|Calcoene|2498|-50949|13|11
+#BR|Amazonas
+Caapiranga||-3327|-61209|21|13
+#BR|Bahia
+Caetanos||-14337|-40909|422|15
+Candiba||-14411|-42867|590|14
+Coribe||-13829|-44454|673|14
+Cristópolis|Cristopolis|-12236|-44416|748|14
+Caldeirão Grande|Caldeirao Grande|-11020|-40303|466|13
+Cotegipe||-12028|-44258|480|13
+Capela do Alto Alegre||-11668|-39838|397|12
+Chorrochó|Chorrocho|-8980|-39096|335|11
+Canápolis|Canapolis|-13071|-44202|629|10
+Caraíbas|Caraibas|-14726|-41259|423|10
+Caém|Caem|-11092|-40435|538|9
+Caturama||-13329|-42291|572|9
+Cardeal da Silva||-11942|-37949|64|8
+Candeal||-11808|-39119|252|8
+Cordeiros||-15039|-41935|719|8
+Caatiba||-14977|-40407|341|6
+#BR|Ceará
+Chaval||-3034|-41244|8|13
+Choró|Choro|-4843|-39141|246|12
+Catunda||-4648|-40201|272|10
+Cruz||-2921|-40176|24|9
+#BR|Espírito Santo
+Conceição do Castelo|Conceicao do Castelo|-20368|-41244|722|12
+#BR|Federal District
+Candangolândia|Candangolandia|-15852|-47947|1067|14
+#BR|Goiás
+Caçu|Cacu|-18557|-51131|482|14
+Chapadão do Céu|Chapadao do Ceu|-18390|-52673|720|13
+Campinorte||-14311|-49151|539|13
+Cachoeira Alta||-18763|-50942|488|12
+Corumbá de Goiás|Corumba de Goias|-15924|-48809|954|11
+Carmo do Rio Verde||-15354|-49707|611|10
+Cavalcante||-13797|-47458|810|10
+Corumbaíba|Corumbaiba|-18142|-48561|628|9
+Cezarina||-16972|-49776|595|8
+Campo Limpo de Goiás|Campo Limpo de Goias|-16293|-49091|905|8
+Cachoeira Dourada||-18492|-49475|449|8
+Cabeceiras||-15801|-46927|920|8
+Campo Alegre de Goiás|Campo Alegre de Goias|-17633|-47778|904|7
+Caturaí|Caturai|-16447|-49494|764|5
+#BR|Maranhão
+Conceição do Lago-Açu|Conceicao do Lago-Acu|-3834|-44893|8|15
+Cidelândia|Cidelandia|-5174|-47782|169|15
+Centro do Guilherme||-2451|-46039|65|12
+Campestre do Maranhão|Campestre do Maranhao|-6172|-47364|170|12
+Capinzal do Norte||-4728|-44327|122|11
+Cajapió|Cajapio|-2881|-44675|14|11
+Cedral||-2000|-44536|27|11
+Central do Maranhão|Central do Maranhao|-2199|-44826|31|7
+#BR|Mato Grosso
+Cotriguaçu|Cotriguacu|-9902|-58568|261|10
+Carlinda||-9958|-55832|286|10
+Campos de Júlio|Campos de Julio|-13899|-59147|619|10
+Cláudia|Claudia|-11515|-54891|362|9
+Castanheira||-11132|-58602|315|7
+Cocalinho||-14397|-50996|244|6
+#BR|Mato Grosso do Sul
+Camapuã|Camapua|-19531|-54044|410|14
+Costa Rica||-23417|-54650|394|13
+Caracol||-22014|-57024|233|5
+#BR|Minas Gerais
+Capinópolis|Capinopolis|-18682|-49570|536|15
+Caldas||-21924|-46386|1131|14
+Capitão Enéas|Capitao Eneas|-16324|-43711|593|14
+Candeias||-20767|-45276|979|14
+Carmo de Minas||-22122|-45129|942|14
+Campos Altos||-19696|-46171|1042|13
+Conceição do Rio Verde|Conceicao do Rio Verde|-21881|-45085|884|13
+Chapada Gaúcha|Chapada Gaucha|-15306|-45618|867|12
+Cambuquira||-21852|-45296|951|12
+Cristais||-20876|-45519|877|12
+Cachoeira de Minas||-22355|-45779|853|12
+Carmo da Cachoeira||-21461|-45224|941|12
+Caetanópolis|Caetanopolis|-19295|-44419|716|11
+Cabo Verde||-21472|-46396|883|11
+Campo do Meio||-21107|-45830|777|11
+Congonhal||-22153|-46039|845|11
+Carmo da Mata||-20558|-44871|839|11
+Coroaci||-18622|-42286|471|11
+Conceição dos Ouros|Conceicao dos Ouros|-22413|-45798|860|11
+Capim Branco||-19549|-44117|797|11
+Canápolis|Canapolis|-18725|-49204|662|11
+Capitólio|Capitolio|-20615|-46050|773|10
+Cristina||-22212|-45264|1017|10
+Conceição da Aparecida|Conceicao da Aparecida|-21094|-46204|973|10
+Chapada do Norte||-17093|-42541|607|10
+Centralina||-18584|-49199|518|10
+Carneirinho||-19697|-50688|425|9
+Cachoeira de Pajeú|Cachoeira de Pajeu|-15967|-41496|755|9
+Coqueiral||-21189|-45441|854|9
+Caputira||-20172|-42271|590|9
+Carbonita||-17527|-43016|721|9
+Campo Florido||-19761|-48572|631|8
+Coronel Murta||-16619|-42182|302|8
+Coluna||-18234|-42840|643|8
+Cordisburgo||-19125|-44321|717|8
+Curral de Dentro||-15937|-41844|925|7
+Confins||-19632|-43983|747|7
+Cônego Marinho|Conego Marinho|-15294|-44418|638|7
+Claro dos Poções|Claro dos Pocoes|-17080|-44209|658|7
+Coimbra||-20857|-42803|723|7
+Catuji||-17299|-41517|630|7
+Careaçu|Careacu|-22043|-45699|816|7
+Conquista||-19937|-47542|689|7
+Comercinho||-16296|-41793|596|7
+Cabeceira Grande||-16030|-47091|930|7
+Capetinga||-20616|-47054|749|7
+Central de Minas||-18762|-41306|265|6
+Córrego Fundo|Corrego Fundo|-20449|-45555|840|6
+Chalé|Chale|-20044|-41688|390|6
+Cipotânea|Cipotanea|-20905|-43366|665|6
+Catas Altas||-20075|-43407|762|5
+Crucilândia|Crucilandia|-20384|-44337|929|5
+Conceição do Pará|Conceicao do Para|-19753|-44897|644|5
+Caiana||-20696|-41925|747|5
+Cana Verde||-21021|-45182|857|5
+Crisólita|Crisolita|-17237|-40912|229|5
+Cristália|Cristalia|-16718|-42866|831|5
+Caparaó|Caparao|-20523|-41904|851|5
+#BR|Paraná
+Candói|Candoi|-25571|-52051|914|15
+Cândido de Abreu|Candido de Abreu|-24567|-51333|541|15
+Capitão Leônidas Marques|Capitao Leonidas Marques|-25479|-53614|313|15
+Carlópolis|Carlopolis|-23425|-49721|496|14
+Campina da Lagoa||-24592|-52799|599|14
+Curiúva|Curiuva|-24032|-50458|739|14
+Cantagalo||-25374|-52126|838|13
+Cidade Gaúcha|Cidade Gaucha|-23380|-52945|401|13
+Céu Azul|Ceu Azul|-25147|-53849|655|12
+Centenário do Sul|Centenario do Sul|-22821|-51595|491|11
+Catanduvas||-25203|-53157|718|10
+Cambira||-23601|-51580|616|9
+Califórnia|California|-23667|-51356|628|9
+Congonhinhas||-23551|-50554|769|8
+Campo do Tenente||-25978|-49683|803|7
+Coronel Domingos Soares||-26228|-52032|1085|6
+#BR|Paraíba
+Cachoeira dos Índios|Cachoeira dos Indios|-6927|-38674|323|9
+Cubati||-6866|-36351|475|8
+Cacimbas||-7211|-37057|632|7
+Capim||-6916|-35172|100|7
+Casserengue||-6782|-35818|335|7
+Cuitegi||-6893|-35523|99|7
+Caiçara|Caicara|-6615|-35469|126|7
+Cuité de Mamanguape|Cuite de Mamanguape|-6915|-35252|72|6
+Camalaú|Camalau|-7889|-36823|515|6
+Caldas Brandão|Caldas Brandao|-7102|-35326|80|6
+Cabaceiras||-7489|-36287|385|5
+Caturité|Caturite|-7420|-36027|402|5
+Curral de Cima||-6717|-35269|62|5
+#BR|Pará
+Curuá|Curua|-1888|-55117|24|14
+Colares||-937|-48282|14|13
+Castelo dos Sonhos||-8317|-55100|384|12
+#BR|Pernambuco
+Casinhas||-7741|-35721|430|13
+Chã de Alegria|Cha de Alegria|-8001|-35213|154|13
+Carnaubeira da Penha||-8319|-38744|457|13
+Calçado|Calcado|-8742|-36334|652|11
+Cedro||-7722|-39239|550|11
+Cortês|Cortes|-8470|-35541|380|11
+Camutanga||-7407|-35274|112|8
+Carnaíba|Carnaiba|-8700|-37667|379|6
+Calumbi||-7941|-38150|441|5
+#BR|Piauí
+Curimatá|Curimata|-10036|-44306|334|11
+Capitão de Campos|Capitao de Campos|-4457|-41942|143|11
+Cristino Castro||-8818|-44224|237|11
+Caracol||-9279|-43330|514|10
+Cabeceiras do Piauí|Cabeceiras do Piaui|-4476|-42309|101|10
+Cajueiro da Praia||-2931|-41336|1|8
+Campo Largo do Piauí|Campo Largo do Piaui|-3811|-42629|49|7
+Cristalândia do Piauí|Cristalandia do Piaui|-10651|-45186|489|7
+Cocal dos Alves||-3601|-41443|147|6
+Colônia do Gurguéia|Colonia do Gurgueia|-8182|-43792|238|6
+Campo Grande do Piauí|Campo Grande do Piaui|-7134|-41038|442|6
+Caraúbas do Piauí|Caraubas do Piaui|-3476|-41843|35|6
+Caldeirão Grande do Piauí|Caldeirao Grande do Piaui|-7332|-40639|610|6
+Caxingó|Caxingo|-3417|-41896|13|5
+#BR|Rio Grande do Norte
+Cerro Corá|Cerro Cora|-6046|-36346|573|11
+Campo Redondo||-6241|-36182|459|10
+Campo Grande||-5864|-37310|103|10
+Carnaubais||-5338|-36834|31|10
+Cruzeta||-6412|-36790|235|8
+Carnaúba dos Dantas|Carnauba dos Dantas|-6556|-36595|312|8
+Caiçara do Norte|Caicara do Norte|-5063|-36050|1|6
+Coronel Ezequiel||-6382|-36215|583|5
+#BR|Rio Grande do Sul
+Cerro Largo||-28149|-54738|200|14
+Crissiumal||-27500|-54101|400|13
+Capela de Santana||-29700|-51325|66|12
+Cruzeiro do Sul||-29513|-51985|25|12
+Cacequi||-29884|-54825|112|11
+Constantina||-27735|-52992|486|10
+Candiota||-31558|-53672|221|10
+Chapada||-28055|-53068|438|10
+Casca||-28561|-51978|598|9
+Cerro Grande do Sul||-30597|-51751|123|9
+Catuípe|Catuipe|-28250|-54012|320|9
+Caraá|Caraa|-29790|-50435|42|7
+Cristal||-31000|-52048|51|7
+Chuí|Chui|-33691|-53457|20|7
+Condor||-28208|-53487|490|6
+Cambará do Sul|Cambara do Sul|-29048|-50143|1054|6
+Cândido Godói|Candido Godoi|-27952|-54752|318|6
+Coronel Bicaco||-27716|-53701|476|6
+Campina das Missões|Campina das Missoes|-27991|-54841|164|6
+Cerrito||-31856|-52813|29|6
+Campinas do Sul||-27716|-52627|572|5
+#BR|Rio de Janeiro
+Carapebus||-22187|-41661|8|14
+Cardoso Moreira||-21488|-41616|25|13
+Cacuia||-22810|-43191|36|11
+Comendador Levy Gasparian||-22029|-43205|305|9
+#BR|Rondônia
+Cujubim||-9363|-62585|118|15
+Costa Marques||-12445|-64227|138|13
+Chupinguaia||-12552|-60900|349|9
+Campo Novo de Rondônia|Campo Novo de Rondonia|-10597|-63612|276|9
+Corumbiara||-12962|-60887|250|8
+Cabixi||-13498|-60554|221|5
+#BR|Roraima
+Caroebe||884|-59696|135|11
+#BR|Santa Catarina
+Canelinha||-27265|-48768|11|13
+Campo Alegre||-26192|-49266|879|13
+Cunha Porã|Cunha Pora|-26894|-53168|533|11
+Catanduvas||-27071|-51662|947|11
+Coronel Freitas||-26909|-52703|362|10
+Campo Erê|Campo Ere|-26394|-53078|911|10
+Costeira do Pirajubae||-27636|-48521|10|9
+Campo Belo do Sul||-27899|-50761|1002|7
+Caibi||-27072|-53248|351|6
+#BR|Sergipe
+Cedro de São João|Cedro de Sao Joao|-10252|-36884|9|5
+#BR|São Paulo
+Cedral||-20903|-49268|582|13
+Cananéia|Cananeia|-25015|-47927|9|12
+Chavantes||-23039|-49709|553|12
+Cardoso||-20082|-49914|429|11
+Cristais Paulista||-20405|-47418|915|9
+Cajobi||-20880|-48809|546|9
+Cosmorama||-20478|-49778|517|9
+Catiguá|Catigua|-21049|-49058|508|7
+Clementina||-21560|-50449|466|7
+Colômbia|Colombia|-20176|-48689|489|7
+Canitar||-23006|-49783|511|6
+Campina do Monte Alegre||-23592|-48477|613|6
+Caiuá|Caiua|-21832|-51998|338|5
+Coroados||-21352|-50281|417|5
+#BR|Tocantins
+Colméia|Colmeia|-8729|-48765|376|9
+Campos Lindos||-7994|-46868|340|9
+Cristalândia|Cristalandia|-10600|-49193|304|6
+Couto Magalhães|Couto Magalhaes|-8361|-49178|155|6
+Caseara||-9278|-49956|188|5
+#BS|Crooked Island and Long Cay
+Colonel Hill||22755|-74204|5|0
+#BS|Long Island
+Clarence Town||23100|-74983|20|2
+#BS|North Abaco
+Cooper’s Town|Cooper's Town|26871|-77511|3|8
+#BS|San Salvador
+Cockburn Town||24052|-74531|10|1
+#BW|Central
+Chadibe||-21065|27348|1037|5
+#BW|Ghanzi
+Charles Hill||-22276|20093|1248|5
+#BY|Homyel’ Voblasc’
+Chachersk||52916|30918|146|9
+#BY|Minsk
+Červień|Cervien|53706|28431|167|11
+Chyst’|Chyst'|54270|27107|187|5
+#BY|Mogilev
+Chausy||53807|30966|175|10
+Cherikov||53569|31385|135|8
+#BY|Vitebsk
+Chashniki||54851|29166|152|8
+#BZ|Corozal District
+Corozal||18394|-88388|5|10
+#CA|Alberta
+Copperfield||50915|-113927|1022|14
+Canmore||51083|-115352|1375|14
+Chaparral||50886|-114033|1046|13
+Cold Lake||54465|-110182|548|12
+Citadel||51145|-114181|1254|10
+Coaldale||49717|-112619|865|8
+Canyon Meadows||50943|-114081|1080|7
+Cougar Ridge||51071|-114208|1235|7
+Cumberland||53611|-113553|679|6
+Crescent Heights||51063|-114068|1082|6
+Castleridge||51106|-113956|1093|6
+Cedarbrae||50956|-114130|1123|6
+Coral Springs||51101|-113931|1090|6
+Callingwood South||53500|-113625|676|6
+#CA|British Columbia
+Comox||49683|-124936|60|15
+Cape Horn||49227|-122837|30|13
+Champlain Heights||49209|-123026|47|12
+Cameron||49256|-122907|56|12
+Clayburn||49069|-122262|33|12
+Coldstream||50216|-119202|467|11
+Coal Harbour||49290|-123123|7|10
+Clinton-Glenwood||49212|-122980|73|8
+Castlegar||49323|-117658|495|8
+Cordova Bay||48517|-123367|18|8
+Cedar Valley||49162|-122310|146|8
+Canyon Springs||49291|-122795|54|8
+Cascade Heights||49250|-123017|103|7
+College Park||49282|-122879|54|7
+Capitol Hill||49283|-122983|203|6
+Cedar Cove||49286|-123061|6|6
+Creston||49100|-116502|647|6
+#CA|New Brunswick
+Carleton North||46499|-67558|122|9
+Cap-Acadie||46201|-64324|23|9
+Central Moncton||46097|-64796|27|8
+Centennial Place||46083|-64817|23|8
+Central York||46005|-66908|146|7
+Campbellton||48008|-66673|9|7
+Chartersville||46085|-64733|9|6
+Champdoré|Champdore|46386|-64782|48|5
+#CA|Newfoundland and Labrador
+Clarenville||48167|-53965|58|7
+Churchill Park||47577|-52721|33|5
+#CA|Nova Scotia
+Convoy Place||44668|-63614|70|6
+Clayton Park||44660|-63647|88|5
+#CA|Ontario
+Corso Italia-Davenport||43678|-79447|149|14
+Columbia||43485|-80533|336|14
+Centennial Scarborough||43782|-79151|100|13
+Central||43465|-80522|327|13
+Carleton Place||45133|-76149|144|12
+Cabbagetown-South St.James Town||43668|-79366|108|12
+Casa Loma||43683|-79412|160|11
+Centreville Chicopee||43436|-80428|335|10
+Caledonia-Fairbank||43689|-79455|141|10
+Cataraqui Westbrook||44267|-76598|92|10
+Crystal Beach||42864|-79059|180|10
+Concord||43800|-79483|188|8
+Colonial Acres||43501|-80518|335|8
+Camlachie||43036|-82162|200|8
+Columbia Hills||43470|-80601|365|7
+Country Hills West||43411|-80487|350|7
+Clair Hills||43456|-80582|374|6
+Chippawa||43057|-79047|175|6
+Corunna||42883|-82433|192|6
+Cataraqui North||44265|-76554|103|6
+College Heights||48441|-89235|242|5
+Cochrane||49067|-81033|275|5
+#CA|Prince Edward Island
+Cornwall||46227|-63218|15|7
+#CA|Quebec
+Cap-aux-Meules||47382|-61860|2|12
+Cowansville||45200|-72749|117|11
+Cantley||45567|-75783|162|10
+Chelsea||45500|-75783|108|8
+Chandler||48349|-64679|17|8
+Chibougamau||49917|-74366|407|8
+Ct 0014||45558|-73543|25|8
+Carignan||45450|-73299|10|7
+Coteau-du-Lac||45300|-74183|46|7
+Coaticook||45133|-71799|289|7
+Ct 0012||45579|-73538|30|7
+Ct 0003||45606|-73527|27|7
+Ct 0011||45584|-73535|34|6
+Ct 0013||45569|-73544|26|6
+Ct 0007||45595|-73529|31|6
+Charlemagne||45717|-73482|7|6
+Chisasibi||53783|-78900|12|5
+Cookshire-Eaton||45417|-71632|239|5
+#CA|Saskatchewan
+Central Business District||52130|-106662|483|12
+Confederation Park||52140|-106737|499|8
+Cathedral||50445|-104631|571|7
+Coronation Park||50476|-104623|578|7
+College Park||52121|-106595|512|6
+#CH|Fribourg
+Châtel-Saint-Denis|Chatel-Saint-Denis|46527|6901|809|5
+#CH|Geneva
+Chêne-Bougeries|Chene-Bougeries|46198|6186|423|10
+Chêne-Bourg|Chene-Bourg|46195|6194|422|8
+#CH|Ticino
+Chiasso||45832|9031|237|8
+#CH|Valais
+Crans-Montana||46313|7479|1547|10
+Conthey||46224|7303|491|9
+Collombey||46274|6948|389|6
+#CH|Vaud
+Crissier||46546|6576|434|7
+Chavannes||46530|6571|399|5
+#CI|Goh-Djiboua
+Cfi-Baroko||5721|-5172|75|8
+Chiépo|Chiepo|5695|-5063|59|7
+#CI|Lagunes District
+Cosrou||5319|-4659|72|6
+#CI|Sassandra-Marahoue
+Complexe||7603|-6144|222|10
+#CL|Araucania
+Curacautín|Curacautin|-38441|-71889|537|13
+Curarrehue||-39360|-71587|399|7
+#CL|Biobio
+Contulmo||-38016|-73230|39|6
+#CL|Coquimbo Region
+Combarbalá|Combarbala|-31179|-71003|888|14
+Canela||-31583|-70850|1737|9
+#CL|Los Lagos Region
+Chonchi||-42624|-73775|44|13
+#CL|Los Ríos Region
+Corral||-39887|-73431|0|5
+#CL|Maule Region
+Chanco||-35737|-72533|39|9
+#CL|O'Higgins Region
+Codegua||-34036|-70669|547|7
+Chépica|Chepica|-34727|-71273|202|6
+Coltauco||-34288|-71084|267|6
+#CL|Santiago Metropolitan
+Calera de Tango||-33622|-70799|473|7
+#CL|Valparaiso
+Calle Larga||-32855|-70626|789|13
+Catemu||-32633|-71033|1918|13
+#CL|Ñuble
+Cobquecura||-36133|-72794|14|5
+#CN|Chongqing
+Changtan||29347|108220|354|14
+Chengbei||30721|107785|453|14
+Chaoyang||31406|109051|781|14
+Chongxing||29995|107509|271|13
+Cangling||29002|108600|776|13
+Chang’an|Chang'an|30831|109558|519|12
+Changping||30443|108248|228|9
+Canggou||29447|107970|267|8
+Changsheng||29355|108324|730|8
+Cenxi||28338|109109|456|6
+Cizhu||30660|108505|1029|5
+#CN|Gansu
+Chuanwang||35093|106158|1705|13
+Changba||33428|105435|1280|12
+Chela||34069|104462|2150|11
+Changchuan||34715|103430|2946|10
+Chenyuan||33764|105676|1035|10
+Caochuanpu||34649|106066|1832|9
+Caoping||33680|104808|2399|8
+Cairima||33361|102097|3451|5
+Chiba||33647|104782|2546|5
+#CN|Guangdong
+Chaguangcun||22566|113952|8|10
+Caowei||22623|113840|7|9
+Changlingpi||22601|114007|37|8
+Chentian||22593|113873|7|7
+Chiwan||22482|113885|5|6
+Chentian Village||22591|113878|5|5
+#CN|Hebei
+Ceyu||37792|114086|411|13
+#CN|Jilin
+Chang’an|Chang'an|43027|129669|140|14
+#CN|Tianjin
+Chitu||39203|117403|1|9
+#CO|Antioquia
+Cocorná|Cocorna|6057|-75185|1304|15
+Cañasgordas|Canasgordas|6750|-76025|1291|14
+Cisneros||6538|-75089|1042|8
+#CO|Bolívar
+Clemencia||10566|-75325|67|14
+Calamar||10253|-74916|8|9
+Cicuco||9278|-74643|16|8
+Cantagallo||7379|-73915|59|7
+Córdoba|Cordoba|9586|-74827|18|7
+#CO|Caquetá
+Curillo||1033|-75919|230|10
+Cartagena del Chairá|Cartagena del Chaira|1335|-74843|221|8
+#CO|Cauca Department
+Caloto||3036|-76408|1095|6
+#CO|Chocó
+Condoto||5092|-76650|112|10
+#CO|Cundinamarca
+Caparrapí|Caparrapi|5346|-74491|1265|10
+Cáqueza|Caqueza|4406|-73947|1696|8
+Chocontá|Choconta|5145|-73686|2656|8
+#CO|Córdoba
+Canalete||8676|-76204|103|15
+Chimá|Chima|9149|-75628|8|13
+#CO|Huila Department
+Colombia||3376|-74801|781|7
+#CO|Magdalena Department
+Cerro de San Antonio||10326|-74869|11|7
+Concordia||9835|-74455|138|7
+#CO|Meta Department
+Cumaral||4271|-73487|412|11
+#CO|Nariño
+Cumbal||909|-77791|3127|8
+Cumbitara||1648|-77578|1702|5
+#CO|Norte de Santander Department
+Chinácota|Chinacota|7607|-72601|1232|10
+#CO|Santander Department
+Curití|Curiti|6605|-73068|1490|12
+#CO|Tolima Department
+Chicoral||4215|-74982|409|15
+Coello||4403|-75294|1303|10
+Cunday||4060|-74692|457|10
+Cajamarca||4442|-75429|1818|9
+Casabianca||5080|-75121|2036|7
+Carmen de Apicalá|Carmen de Apicala|4147|-74720|315|6
+#CR|Cartago Province
+Concepción|Concepcion|9927|-84001|1377|14
+Cot||9895|-83874|1842|7
+#CR|Puntarenas Province
+Corredor||8640|-82946|36|7
+#CR|San José
+Colón|Colon|9915|-84242|801|10
+#CU|Artemisa
+Candelaria||22739|-82960|51|13
+Cabañas|Cabanas|22979|-82922|7|6
+#CU|Matanzas Province
+Campo Florido||22812|-81002|30|8
+#CU|Villa Clara Province
+Calabazar de Sagua||22646|-79896|49|10
+#CV|Ribeira Grande de Santiago
+Cidade Velha||14915|-23605|5|3
+#CV|Santa Catarina do Fogo
+Cova Figueira||14891|-24293|480|1
+#CV|São Miguel
+Calheta de São Miguel|Calheta de Sao Miguel|15186|-23592|7|6
+#CV|São Vicente
+Chã de Alecrim|Cha de Alecrim|16899|-24987|21|6
+#CY|Pafos
+Chlórakas|Chlorakas|34798|32407|89|6
+#CZ|Carlsbad Region
+Chodov||50240|12746|418|13
+#CZ|Central Bohemia
+Čelákovice|Celakovice|50160|14750|184|12
+Čáslav|Caslav|49911|15390|231|10
+Černošice|Cernosice|49960|14320|215|8
+Český Brod|Cesky Brod|50074|14861|219|7
+Chýně|Chyne|50061|14227|370|5
+#CZ|Hradec Králové Region
+Červený Kostelec|Cerveny Kostelec|50476|16093|419|8
+Chlumec nad Cidlinou||50154|15460|222|6
+Česká Skalice|Ceska Skalice|50395|16043|291|5
+#CZ|Liberec Region
+Chrastava||50817|14969|297|6
+#CZ|Pardubice Region
+Česká Třebová|Ceska Trebova|49904|16444|375|15
+Choceň|Chocen|50002|16223|290|9
+#CZ|Prague
+Čakovice|Cakovice|50151|14524|256|12
+Čimice|Cimice|50138|14433|297|7
+#CZ|South Bohemian Region
+Český Krumlov|Cesky Krumlov|48811|14315|492|13
+#CZ|South Moravian
+Černovice|Cernovice|49182|16637|200|7
+#CZ|Vysocina
+Chotěboř|Chotebor|49721|15670|520|9
+#CZ|Zlín
+Chropyně|Chropyne|49356|17365|197|5
+#CZ|Ústí nad Labem Region
+Česká Kamenice|Ceska Kamenice|50798|14418|313|5
+#DE|Bavaria
+Cadolzburg||49457|10853|381|10
+#DE|Hesse
+Calden||51409|9402|238|8
+Cölbe|Coelbe|50851|8781|213|7
+#DE|Lower Saxony
+Cremlingen||52248|10655|120|13
+Coppenbrügge|Coppenbruegge|52119|9549|136|8
+Calenberger Neustadt||52371|9729|57|7
+Cappeln||52810|8114|47|6
+#DE|Rheinland-Pfalz
+Cochem||50145|7164|110|5
+Contwig||49250|7433|256|5
+#DE|Saxony
+Colditz||51128|12803|148|8
+Callenberg||50850|12633|328|6
+Cunewalde||51100|14517|290|6
+#DE|Saxony-Anhalt
+Calbe||51907|11775|58|11
+Coswig||51886|12450|78|8
+#DK|Capital Region
+Christianshavn||55674|12595|7|10
+#DM|Saint Peter Parish
+Colihaut||15485|-61462|11|1
+#DO|Barahona Province
+Cabral||18250|-71217|21|12
+#DO|Duarte Province
+Castillo||19208|-70027|80|6
+#DO|Elías Piña
+Comendador||18878|-71703|394|12
+#DO|San Cristóbal
+Cambita Garabitos||18455|-70199|184|13
+#DO|San Juan Province
+Cercado Abajo||18727|-71517|740|5
+#EC|Canar
+Cañar|Canar|-2559|-78938|3185|10
+#EC|Guayas
+Colimes||-1546|-80012|25|9
+Coronel Marcelino Maridueña|Coronel Marcelino Mariduena|-2210|-79437|183|7
+#EC|Imbabura
+Cotacachi||299|-78266|2385|8
+#EC|Loja
+Catacocha||-4050|-79650|1874|11
+Celica||-4103|-79956|2003|5
+#EC|Los Ríos
+Catarama||-1571|-79473|242|10
+#ES|Andalusia
+Cuevas del Almanzora||37297|-1882|102|13
+Churriana de la Vega||37145|-3646|663|12
+Cantillana||37610|-5825|32|11
+Castro del Río|Castro del Rio|37691|-4481|231|8
+Cazorla||37915|-3003|809|8
+Campillos||37048|-4863|470|8
+Carboneras||36997|-1897|9|7
+Constantina||37867|-5617|537|7
+Cenes de la Vega||37160|-3535|751|6
+Cúllar-Vega|Cullar-Vega|37154|-3671|643|5
+Casariche||37294|-4760|305|5
+Castillo de Locubín|Castillo de Locubin|37529|-3942|727|5
+#ES|Aragon
+Caspe||41234|-39|171|8
+#ES|Asturias
+Cangas del Narcea||43183|-6550|368|15
+Candás|Candas|43589|-5767|35|7
+Cangas de Onís|Cangas de Onis|43351|-5129|60|7
+Cudillero||43562|-6146|27|5
+#ES|Balearic Islands
+Capdepera||39702|3435|94|12
+Coll d'en Rabassa||39551|2695|12|10
+Campos||39431|3019|25|10
+Can Picafort||39766|3155|6|7
+Cala Rajada||39712|3463|7|6
+Can Pastilla||39536|2718|8|5
+Cala Millor||39605|3387|12|5
+#ES|Canary Islands
+Corralejo||28731|-13867|14|14
+Costa Teguise||28998|-13499|28|8
+Costa Calma||28162|-14227|26|6
+#ES|Cantabria
+Cabezón de la Sal|Cabezon de la Sal|43308|-4236|130|8
+Colindres||43397|-3454|7|7
+#ES|Castille and León
+Ciudad Rodrigo||40600|-6533|650|14
+Cuéllar|Cuellar|41402|-4315|872|10
+Cistérniga|Cisterniga|41613|-4687|743|6
+Cacabelos||42600|-6724|486|5
+Candeleda||40155|-5240|431|5
+#ES|Castille-La Mancha
+Consuegra||39462|-3608|708|11
+Caudete||38707|-987|556|10
+Cabanillas del Campo||40634|-3229|673|7
+Corral de Almaguer||39760|-3165|706|6
+#ES|Catalonia
+Canet de Mar||41591|2581|31|14
+Corbera de Llobregat||41417|1920|327|14
+Cubelles||41208|1673|44|14
+Cunit||41198|1636|12|12
+Castelló d'Empúries|Castello d'Empuries|42257|3074|15|12
+Castellbisbal||41475|1982|153|12
+Calonge||41859|3079|15|11
+Castell-Platja d'Aro||41818|3067|8|10
+Ciutat Meridiana||41461|2175|98|10
+Can Baró|Can Baro|41417|2162|155|9
+Cervera||41670|1272|550|9
+Cassà de la Selva|Cassa de la Selva|41888|2875|157|9
+Castellet||41263|1634|114|8
+Centelles||41797|2219|466|7
+Cabrils||41528|2370|179|7
+Cervelló|Cervello|41396|1959|119|7
+Canyelles||41445|2163|168|7
+Constantí|Constanti|41154|1213|86|6
+Cardona||41914|1679|513|5
+Capellades||41530|1687|324|5
+#ES|Extremadura
+Coria||39984|-6536|192|13
+Calamonte||38889|-6388|237|6
+Castuera||38732|-5544|470|6
+Cabeza del Buey||38722|-5219|531|6
+Campanario||38864|-5617|397|6
+#ES|Galicia
+Cambados||42512|-8813|14|14
+Caldas de Reis||42605|-8642|28|10
+Chantada||42609|-7771|491|9
+Coristanco||43200|-8750|134|8
+Cee||42955|-9188|15|8
+Cedeira||43660|-8057|21|7
+Camariñas|Camarinas|43131|-9182|15|6
+Castro||42767|-7583|667|6
+Castro de Rei||43209|-7400|435|6
+Celanova||42153|-7955|515|6
+Carral||43229|-8355|144|6
+Cuntis||42634|-8563|164|5
+Carnota||42823|-9089|18|5
+#ES|Madrid
+Casa de Campo||40424|-3753|656|13
+Cobeña|Cobena|40567|-3500|682|8
+Corralejos||40464|-3607|667|8
+Collado Mediano||40693|-4023|1020|7
+Casco Histórico de Barajas|Casco Historico de Barajas|40475|-3579|627|7
+Colmenarejo||40561|-4017|871|7
+Colmenar de Oreja||40107|-3385|763|7
+Cubas||40189|-3835|645|7
+Cercedilla||40741|-4056|1194|7
+Campo Real||40333|-3383|780|7
+Colina||40458|-3660|709|7
+Cuatro Vientos||40371|-3774|685|6
+Chinchón|Chinchon|40140|-3423|742|6
+Camarma de Esteruelas||40550|-3373|644|5
+Cerceda||40699|-3934|948|5
+#ES|Murcia
+Calasparra||38230|-1700|355|10
+Ceuti||38079|-1275|95|10
+#ES|Navarre
+Corella||42115|-1786|380|8
+Cintruénigo|Cintruenigo|42079|-1805|400|7
+#ES|Valencia
+Chiva||39467|-717|337|14
+Canals||38963|-584|166|14
+Ciudad Quesada||38065|-717|62|12
+Cocentaina||38740|-440|458|11
+Castalla||38597|-672|700|10
+Cheste||39483|-683|209|7
+Cox||38142|-887|22|6
+Catral||38161|-802|11|6
+#FM|Yap State
+Colonia||9516|138122|10|7
+#FR|Auvergne-Rhône-Alpes
+Cusset||46135|3456|276|15
+Chamonix-Mont-Blanc||45924|6869|1060|11
+Corbas||45668|4902|196|10
+Chassieu||45746|4971|236|9
+Crolles||45277|5878|248|9
+Crest||44726|5015|184|9
+Charvieu-Chavagneux||45750|5150|226|9
+Craponne||45745|4723|283|8
+Chaponost||45710|4742|312|8
+Claix||45120|5673|286|8
+Cébazat|Cebazat|45831|3100|352|8
+Commentry||46289|2742|385|7
+Cognin||45560|5891|301|7
+Chabeuil||44898|5014|205|6
+Ceyrat||45733|3063|568|6
+Châtel-Guyon|Chatel-Guyon|45923|3064|432|6
+Champagne-au-Mont-d'Or||45795|4791|277|6
+Chasse-sur-Rhône|Chasse-sur-Rhone|45579|4810|182|5
+#FR|Bourgogne-Franche-Comté
+Cosne-Cours-sur-Loire||47411|2925|149|12
+Chevigny-Saint-Sauveur||47299|5134|211|11
+Champagnole||46745|5914|540|9
+Charnay-lès-Mâcon|Charnay-les-Macon|46308|4785|257|7
+Châtillon-sur-Seine|Chatillon-sur-Seine|47859|4574|220|7
+Châtenoy-le-Royal|Chatenoy-le-Royal|46798|4812|191|6
+Chagny||46910|4752|210|6
+#FR|Brittany
+Carhaix-Plouguer||48276|-3573|145|8
+Crozon||48246|-4490|82|8
+Chantepie||48088|-1617|52|8
+Caudan||47810|-3343|50|7
+Chartres-de-Bretagne||48040|-1705|35|7
+Châteaugiron|Chateaugiron|48048|-1504|56|6
+Châtillon-sur-Seiche|Chatillon-sur-Seiche|48034|-1671|23|6
+Cancale||48677|-1852|10|6
+Châteaulin|Chateaulin|48195|-4094|13|5
+Combourg||48409|-1751|53|5
+Châteaubourg|Chateaubourg|48111|-1403|59|5
+#FR|Centre-Val de Loire
+Châlette-sur-Loing|Chalette-sur-Loing|48013|2736|85|14
+Chambray-lès-Tours|Chambray-les-Tours|47335|703|89|11
+Chinon||47167|243|40|9
+Chécy|Checy|47894|2023|105|8
+Châteauneuf-sur-Loire|Chateauneuf-sur-Loire|47866|2219|122|7
+Château-Renault|Chateau-Renault|47592|911|94|6
+#FR|Corsica
+Corte||42310|9149|433|7
+Calvi||42566|8757|4|5
+#FR|Grand Est
+Creutzwald||49205|6697|213|14
+Cernay||47810|7177|297|11
+Commercy||48761|5591|235|7
+Champigneulles||48734|6162|215|7
+Cormontreuil||49217|4050|91|6
+#FR|Hauts-de-France
+Caudry||50125|3412|115|14
+Chauny||49615|3219|49|13
+Comines||50762|3011|18|13
+Chantilly||49195|2471|53|11
+Clermont||49379|2413|73|11
+Courrières|Courrieres|50457|2947|29|10
+Condé-sur-l'Escaut|Conde-sur-l'Escaut|50454|3589|26|10
+Chambly||49167|2250|37|10
+Cappelle-la-Grande||51000|2358|5|8
+Cuincy||50379|3053|29|7
+Corbie||49907|2507|32|6
+Courcelles-lès-Lens|Courcelles-les-Lens|50417|3017|29|6
+Calonne-Ricouart||50485|2473|53|6
+Coulogne||50925|1881|8|6
+Cucq||50477|1620|5|5
+#FR|New Aquitaine
+Coulounieix-Chamiers||45158|688|214|9
+Coutras||45041|-129|20|8
+Chauvigny||46570|643|67|8
+Capbreton||43642|-1431|8|7
+Couzeix||45876|1238|374|7
+Ciboure||43385|-1668|14|7
+Carbon-Blanc||44895|-502|25|7
+Châtelaillon-Plage|Chatelaillon-Plage|46073|-1088|4|6
+Canéjan|Canejan|44763|-654|41|6
+Casteljaloux||44315|88|72|5
+#FR|Normandy
+Caudebec-lès-Elbeuf|Caudebec-les-Elbeuf|49281|1022|12|10
+Coutances||49045|-1445|69|10
+Carentan||49303|-1248|8|7
+Colombelles||49205|-296|42|6
+Condé-sur-Noireau|Conde-sur-Noireau|48849|-552|83|6
+Cléon|Cleon|49312|1030|13|6
+#FR|Occitanie
+Castelsarrasin||44040|1107|87|13
+Castelnaudary||43318|1953|184|12
+Castanet-Tolosan||43516|1499|167|12
+Canet-en-Roussillon||42700|3017|2|11
+Carmaux||44050|2158|246|10
+Cabestany||42681|2941|41|9
+Castelginest||43694|1434|131|9
+Ceret||42485|2748|181|8
+Condom||43958|372|91|8
+Caussade||44161|1537|120|6
+Castries||43680|3982|72|6
+Cournonterral||43559|3720|49|6
+Coursan||43234|3057|12|6
+Cornebarrieu||43650|1326|147|5
+Clapiers||43658|3889|82|5
+#FR|Pays de la Loire
+Château-d'Olonne|Chateau-d'Olonne|46504|-1741|25|13
+Châteaubriant|Chateaubriant|47717|-1376|64|13
+Château-Gontier|Chateau-Gontier|47827|-705|52|12
+Chantonnay||46687|-1051|61|8
+Coulaines||48024|204|55|8
+Chemillé-Melay|Chemille-Melay|47215|-725|86|7
+Clisson||47087|-1283|39|6
+Chalonnes-sur-Loire||47351|-764|29|6
+Château-du-Loir|Chateau-du-Loir|47694|418|59|6
+Changé|Change|47987|283|61|6
+Changé|Change|48099|-790|54|5
+Craon||47848|-950|49|5
+#FR|Provence-Alpes-Côte d'Azur
+Châteaurenard|Chateaurenard|43882|4855|42|14
+Cinq Avenues||43304|5398|62|14
+Cimiez||43720|7279|118|12
+Châteauneuf-les-Martigues|Chateauneuf-les-Martigues|43384|5164|37|11
+Carros||43792|7187|390|11
+Carabacel||43708|7279|39|10
+Cogolin||43253|6530|46|10
+Chutes-Lavie||43310|5395|66|9
+Carqueiranne||43095|6073|19|9
+Cuers||43238|6072|145|9
+Cassis||43216|5539|17|8
+Cabriès|Cabries|43441|5379|203|8
+Castellane||43286|5383|35|7
+Carnoux-en-Provence||43256|5564|180|7
+Contes||43813|7314|256|7
+Carry-le-Rouet||43331|5152|10|6
+Courthézon|Courthezon|44088|4884|51|6
+Cavalaire-sur-Mer||43173|6530|11|6
+Cessole||43713|7255|27|6
+#FR|Île-de-France
+Courcouronnes||48614|2408|80|15
+Carrières-sur-Seine|Carrieres-sur-Seine|48907|2179|41|13
+Claye-Souilly||48945|2686|52|11
+Croissy-sur-Seine||48879|2138|32|11
+Chanteloup-les-Vignes||48976|2033|76|10
+Crosne||48719|2457|39|9
+Cesson||48562|2608|82|8
+Courtry||48919|2604|80|7
+Champagne-sur-Seine||48398|2798|52|7
+Courdimanche||49035|2001|156|6
+Chevreuse||48707|2033|92|6
+Chambourcy||48907|2041|91|5
+Chêne Feuillu|Chene Feuillu|48950|2068|32|5
+#GB|England
+Cleveleys||53878|-3040|7|15
+Crofton Park||51451|-34|26|15
+Clitheroe||53867|-2400|76|15
+Clayton-le-Woods||53697|-2668|63|15
+Chelsfield||51358|128|127|15
+Croxteth||53451|-2904|24|14
+Canford Heath||50751|-1969|13|14
+Charlton||51485|40|34|14
+Chard||50873|-2966|118|14
+Childwall||53397|-2897|55|14
+Croxley Green||51633|-450|61|14
+Chafford Hundred||51489|294|16|13
+Chaddesden||52930|-1434|61|13
+Corsham||51434|-2184|96|13
+Churchdown||51877|-2171|51|13
+Chelmsley Wood||52478|-1738|93|13
+Cinderford||51824|-2499|210|13
+Chilwell||52912|-1236|30|13
+Cheetham Hill||53499|-2238|58|13
+Cranford||51477|-413|25|12
+Crystal Palace||51419|-79|110|12
+Chigwell||51620|76|36|12
+Canonbury||51543|-91|24|12
+Chorleywood||51655|-514|113|12
+Cudworth||53571|-1416|68|12
+Codsall||52630|-2201|125|12
+Catterick Garrison||54377|-1722|147|12
+Cross Hills||53906|-1985|93|12
+Charlton Kings||51884|-2042|95|12
+Church Street||51524|-170|39|12
+Cheadle||52983|-1983|159|11
+Crumpsall||53518|-2244|80|11
+Cheam||51362|-220|55|11
+Cranleigh||51142|-484|60|11
+Codicote||51851|-237|106|11
+Cockfosters||51649|-148|98|10
+Chatteris||52456|52|11|10
+Cosham||50847|-1063|14|10
+Collier Row||51599|166|37|10
+Crouch End||51580|-124|49|10
+Cockington||50463|-3557|48|10
+Castle Vale||52519|-1797|87|10
+Chadwell St Mary||51481|363|28|10
+Chadwell Heath||51571|133|20|10
+Crook||54713|-1750|152|9
+Coleford||51795|-2614|184|9
+Cockermouth||54662|-3361|55|9
+Calcot||51441|-1051|53|9
+Coppull||53625|-2659|75|9
+Chasetown||52672|-1925|156|9
+Clapham Junction||51464|-168|14|9
+Caister-on-Sea||52648|1726|2|9
+Cromer||52931|1299|22|9
+Cowplain||50894|-1018|60|9
+Carcroft||53583|-1176|37|9
+Clayton le Moors||53767|-2383|133|8
+Cambourne||52221|-70|69|8
+Clayton West||53595|-1611|127|8
+City of London||51513|-92|27|8
+Cunningham||51743|-313|77|8
+Chalfont St Giles||51632|-570|75|8
+Carnforth||54132|-2769|16|8
+Crediton||50783|-3650|43|8
+Crewkerne||50883|-2796|74|8
+Cullompton||50855|-3393|59|8
+Clowne||53274|-1264|134|8
+Cotgrave||52909|-1038|47|7
+Carpenders Park||51629|-383|76|7
+Cleator Moor||54521|-3516|92|7
+Calverton||53037|-1083|54|7
+Chalford||51726|-2151|160|7
+Culcheth||53451|-2521|32|7
+Chiswell Green||51728|-360|99|7
+Chapel en le Frith||53324|-1913|225|7
+Cove||51295|-791|66|7
+Castle Donington||52843|-1342|69|6
+Countesthorpe||52554|-1145|95|6
+Cottenham||52287|125|13|6
+Callington||50501|-4313|161|6
+Chipping Norton||51941|-1545|205|6
+Colnbrook||51484|-521|20|6
+Chipping Sodbury||51538|-2394|99|6
+Chinnor||51702|-912|120|5
+Cookham||51559|-708|29|5
+Creswell||53263|-1220|92|5
+Cranfield||52069|-609|112|5
+Crofton||53656|-1430|64|5
+Cheddar||51275|-2777|12|5
+Cradley Heath||52472|-2082|109|5
+#GB|Northern Ireland
+Cookstown||54643|-6746|78|11
+Comber||54549|-5744|8|9
+Carryduff||54518|-5887|118|8
+Coalisland||54542|-6702|34|6
+Crumlin||54621|-6214|73|5
+#GB|Scotland
+Carluke||55736|-3830|210|14
+Cowdenbeath||56112|-3344|128|12
+Carnoustie||56503|-2705|15|11
+Clarkston||55786|-4277|95|9
+Cupar||56319|-3012|28|9
+Cumnock||55454|-4266|115|9
+Colinton||55907|-3256|112|8
+Crieff||56373|-3839|84|7
+Cove||57100|-2083|76|7
+Chapelhall||55843|-3949|139|7
+Currie||55896|-3308|146|7
+Cockenzie||55968|-2966|7|6
+#GB|Wales
+Chepstow||51641|-2677|45|12
+Caldicot||51587|-2757|11|10
+Caernarfon||53141|-4270|33|10
+Caerleon||51610|-2954|19|8
+Crumlin||51678|-3135|215|6
+Coedpoeth||53054|-3062|205|6
+Cwmafan||51617|-3762|50|5
+Cardigan||52084|-4662|10|5
+#GE|Adjara
+Chakvi||41725|41733|19|7
+#GE|Imereti
+Chiatura||42298|43299|495|12
+#GG|Castel
+Castel||49468|-2600|5|0
+#GR|Central Macedonia
+Chalástra|Chalastra|40626|22733|5|9
+#GR|East Macedonia and Thrace
+Chrysoúpolis|Chrysoupolis|40986|24694|19|9
+#GT|Alta Verapaz
+Chahal||15791|-89605|178|7
+#GT|Baja Verapaz
+Cubulco||15105|-90629|1000|11
+#GT|Guatemala
+Chuarrancho||14818|-90516|1377|7
+#GT|Huehuetenango
+Concepción Huista|Concepcion Huista|15624|-91665|2238|9
+Chiantla||15355|-91458|1995|8
+#GT|Quetzaltenango
+Concepción Chiquirichapa|Concepcion Chiquirichapa|14855|-91624|2563|8
+#GT|Quiché
+Chajul||15485|-91035|1987|12
+Cunén|Cunen|15336|-91028|1824|8
+#GT|Retalhuleu
+Champerico||14292|-91913|1|10
+#GT|San Marcos
+Ciudad Tecún Umán|Ciudad Tecun Uman|14677|-92140|29|11
+Concepción Tutuapa|Concepcion Tutuapa|15239|-91845|2922|6
+#GT|Santa Rosa Department
+Chiquimulilla||14084|-90385|285|13
+Casillas||14419|-90243|1079|8
+#GT|Suchitepeque
+Cuyotenango||14540|-91572|341|11
+#GU|Chalan Pago-Ordot
+Chalan Pago-Ordot Village||13447|144759|38|7
+#GW|Bissau
+CIM||11861|-15578||15
+#GW|Cacheu
+Canchungo||12433|-16083|4|14
+Cacheu||12274|-16165|18|10
+Canchungo||12067|-16033|21|7
+#GW|Tombali
+Catió|Catio|11283|-15255|15|10
+#GY|East Berbice-Corentyne
+Corriverton||5933|-57149|1|11
+#HK|Central and Western
+Central||22283|114158|29|11
+#HK|Eastern District
+Causeway Bay||22282|114185|43|13
+Cheerful Garden||22263|114251||5
+#HK|Kowloon City
+Chong Chien Court - Wyler Gardens||22318|114192|3|7
+#HK|Sham Shui Po District
+Cheung Sha Wan||22334|114156|1|15
+Cullinan West||22327|114154|1|5
+#HK|Southern District
+Chi Fu Fa Yuen||22256|114139|51|10
+#HK|Tai Po
+Che Ha||22430|114263|13|15
+#HK|Wong Tai Sin District
+Choi Hung||22335|114206|13|15
+Chuk Yuen South Estate||22345|114193|44|14
+#HK|Yau Tsim Mong District
+Charming Garden||22314|114165|1|11
+Cosmopolitan Estate||22322|114162|1|5
+#HN|Bay Islands
+Coxen Hole||16316|-86540||8
+#HN|Copán Department
+Copán Ruinas|Copan Ruinas|14839|-89156|612|6
+#HN|Cortés Department
+Cuyamel||15665|-88195|17|5
+#HN|Intibucá Department
+Camasca||13997|-88380|828|7
+#HN|La Paz Department
+Chinacla||14167|-88000|1257|8
+#HN|Olancho Department
+Campamento||14550|-86650|713|7
+#HN|Santa Bárbara Department
+Concepción del Norte|Concepcion del Norte|15167|-88133|204|9
+#HR|County of Osijek-Baranja
+Čepin|Cepin|45524|18578|106|8
+#HR|Primorje-Gorski Kotar
+Crikvenica||45177|14693|53|6
+#HT|Ouest
+Cornillon||18675|-71953|944|8
+#HU|Bekes County
+Csorvás|Csorvas|46633|20833|89|6
+#HU|Budapest
+Csillaghegy||47587|19057|92|11
+Csepel-Belváros|Csepel-Belvaros|47430|19068|99|10
+Csepel-Erdősor|Csepel-Erdosor|47407|19076|93|10
+Csarnoknegyed||47494|19074|96|10
+Corvinnegyed||47490|19071|96|9
+Csepel-Szabótelep|Csepel-Szabotelep|47435|19076|93|7
+Cinkota||47522|19230|164|7
+Csepel-Kertváros|Csepel-Kertvaros|47420|19085|93|6
+#HU|Fejér
+Csákvár|Csakvar|47392|18465|143|5
+#HU|Győr-Moson-Sopron
+Csorna||47612|17250|118|11
+#HU|Pest County
+Csömör|Csomor|47550|19233|197|8
+#HU|Somogy County
+Csurgó|Csurgo|46253|17101|151|6
+#HU|Szabolcs-Szatmár-Bereg
+Csenger||47836|22681|120|5
+#HU|Vas County
+Celldömölk|Celldomolk|47257|17150|136|11
+#IE|Connacht
+Castlebar||53850|-9300|48|13
+#IE|Leinster
+Clondalkin||53324|-6397|60|15
+Crumlin||53322|-6314|44|11
+Cabinteely||53270|-6161|41|10
+Castleknock||53375|-6363|61|8
+Cherry Orchard||53336|-6378|54|8
+Clane||53291|-6689|68|7
+Cherryville||53157|-6967|99|6
+Confey||53379|-6491|60|5
+Chapelizod||53348|-6343|11|5
+#IE|Munster
+Castletroy||52673|-8553|19|15
+Cobh||51850|-8295|20|14
+Carrick-on-Suir||52349|-7413|7|6
+Carrigtwohill||51908|-8263|8|5
+#IE|Ulster
+Cavan||53991|-7361|65|12
+Carrickmacross||53973|-6719|40|5
+#IL|Haifa
+Caesarea||32519|34905|16|5
+#IM|Castletown
+Castletown||54074|-4654|13|3
+#IM|Marown
+Crosby||54183|-4567|47|0
+#IN|Andaman and Nicobar
+Campbell Bay||7008|93894|73|6
+#IN|Andhra Pradesh
+Chintapalle||17871|82351|797|8
+Chennamukkapalle||14060|78770|359|7
+Chidiga||16963|82212|6|6
+Cherlopalle||13614|79365|180|6
+Chintalavalasa||18067|83409|58|6
+#IN|Arunachal Pradesh
+Changlang||27132|95735|371|6
+#IN|Assam
+Chapra||24870|92558|17|11
+Chapakhowa Town||27915|95766|139|10
+Chekonidhara||26735|94211|120|9
+Chābua|Chabua|27483|95175|119|9
+Chatibor Gaon||26518|90523|64|8
+Chota Haibor||26331|92694|63|6
+Chalantapara Pt IV||26262|90585|30|6
+Chāngsāri|Changsari|26264|91684|57|5
+Chandrapur Baghicha||26238|91929|52|5
+Charingia Gaon||26733|94146|114|5
+#IN|Bihar
+Chākāi|Chakai|24549|86398|315|12
+Chanāri|Chanari|24916|83797|110|7
+#IN|Chhattisgarh
+Charāma|Charama|20493|81367|364|10
+Chhurikala||22481|82613|309|8
+Chandrapur||21708|83235|190|8
+Chhuīkhadān|Chhuikhadan|21523|80998|338|7
+Chikhlākasa|Chikhlakasa|20600|81078|403|6
+Chhura||20811|82209|331|6
+#IN|Delhi
+Chhāwāla|Chhawala|28563|77003|220|15
+Chilla Saroda Khadar||28588|77304|196|12
+Chandan Hola||28469|77183|251|7
+#IN|Goa
+Calapor||15465|73847|49|14
+Curtorim||15276|74022|45|13
+Colva||15280|73923|18|12
+Cavelossim||15173|73942|7|12
+Candolim||15518|73763|2|9
+Cortalim||15402|73909|45|9
+Chicalim||15398|73842|20|8
+Chinchinim||15214|73976|14|7
+Corlim||15496|73934|17|7
+Colovale||15635|73824|25|6
+Carapur||15566|73987|37|6
+Candola||15521|73964|20|5
+#IN|Gujarat
+Chhatral INA||23287|72438|63|10
+Chhapra||20925|72929|11|10
+Chiloda||23103|72662|64|10
+Chandrapur||22604|70959|80|9
+Chhāpi|Chhapi|24032|72401|171|8
+Chikhli||20758|73063|29|7
+#IN|Haryana
+Chhachhrauli||30245|77360|298|11
+Chandīman|Chandiman|30732|76899|380|9
+#IN|Jammu and Kashmir
+Chadoora||33945|74797|1633|6
+#IN|Jharkhand
+Chandwā|Chandwa|23676|84740|527|12
+Chainpur||24012|84047|243|8
+Charhi||23854|85445|441|7
+Chaupāran|Chauparan|24387|85253|407|5
+Cherra||24012|85750|439|5
+#IN|Karnataka
+Chik Bānavar|Chik Banavar|13082|77502|870|14
+Canacona||14996|74051|59|12
+Chikkabidarakallu||13052|77488|868|12
+Chikjājūr|Chikjajur|14127|76141|681|6
+Chelūr|Chelur|13708|78099|686|6
+#IN|Kerala
+Chingoli||9250|76452|5|15
+Chowwara||10127|76387|7|15
+Chammanād|Chammanad|12480|75007|17|14
+Cheruthuruthi||10746|76274|37|14
+Chūndal|Chundal|10624|76092|22|13
+Chennithala||9281|76518|2|12
+Chiramanangād|Chiramanangad|10690|76118|25|11
+Chiranellūr|Chiranellur|10632|76141|32|10
+Chottanikkara||9936|76381|25|9
+Chēlakara|Chelakara|10693|76344|44|9
+Cherpu||10431|76199|28|8
+Chittilapilli||10566|76153|12|7
+Chittanda||10677|76211|34|6
+Chulisshēri|Chulissheri|10591|76190|9|5
+#IN|Ladakh
+Choglamsar||34112|77588|3234|11
+#IN|Madhya Pradesh
+Churhat||24427|81669|291|15
+Chaurai||22055|79252|649|13
+Chandla||25071|80193|181|13
+Chakghat||25043|81728|101|11
+Chichli||22834|78826|346|10
+Chikhli Kalān|Chikhli Kalan|22215|78743|744|10
+Chicholi||22012|77671|622|9
+Chhapera||23895|76454|439|9
+#IN|Maharashtra
+Chinchani||19875|72685|13|14
+Chandkapur||21281|79104|286|12
+Chitegaon||19758|75290|514|12
+Chandrapada||19362|72882|12|8
+Chikhaldara||21400|77319|1117|5
+#IN|Meghalaya
+Cherrapunjee||25301|91696|1505|12
+#IN|Nagaland
+Chantongia||26546|94686|931|8
+#IN|Odisha
+Chittapāri|Chittapari|18243|82050|188|12
+Chikiti||19202|84615|52|12
+Chāmpua|Champua|22067|85665|396|10
+Chāndbāli|Chandbali|20775|86741|8|10
+Chittarkonda||18125|82109|414|7
+Chāndpur|Chandpur|19943|85407|25|6
+#IN|Punjab
+Chāmkor|Chamkor|30897|76415|272|14
+Chiman||30094|75688|228|12
+Chīma|Chima|30685|76086|264|10
+Chuhal||31595|75968|369|7
+Chugānwān|Chuganwan|31706|74663|224|5
+#IN|Rajasthan
+Chechat||24767|75883|333|12
+Chāndarun|Chandarun|26927|74336|346|11
+Chītalwāna|Chitalwana|24909|71661|39|8
+Chenar Village||27202|73760|306|6
+#IN|Tamil Nadu
+Chandāpuram|Chandapuram|8158|77365|38|15
+Chittayankottai||10269|77833|308|14
+Chinnasekkadu||13161|80257|9|12
+Chinnakkāmpālaiyam|Chinnakkampalaiyam|10706|77458|296|12
+Cheyyur||12349|80003|14|11
+Chittanūr|Chittanur|11672|78088|288|10
+Chinnamudalippatti||11244|78177|189|9
+Chinnāmpālaiyam|Chinnampalaiyam|10660|77025|299|9
+Chittode||11395|77659|193|9
+Chinnatadāgam|Chinnatadagam|11082|76867|526|8
+Chinniyampālaiyam|Chinniyampalaiyam|11056|77064|387|8
+Covelong||12787|80251|10|8
+Chennasamudram||11059|77900|156|8
+Chatrapatti||9345|77921|57|7
+Chinnamanali||11394|78084|215|7
+Choozhal||8310|77128|17|7
+Cholapuram||11054|79413|28|7
+Chengappalli||11199|77423|299|7
+Cholapuram||9352|77568|127|7
+Chakkārappalli|Chakkarappalli|10900|79199|41|6
+Chathirareddipatti||9625|77967|106|5
+Chennagiri||11536|78068|243|5
+Chinna Kalaiyamputtūr|Chinna Kalaiyamputtur|10471|77466|314|5
+Chembagarāmanpudūr|Chembagaramanpudur|8246|77491|58|5
+#IN|Telangana
+Chityāl|Chityal|17232|79128|318|14
+Chandūr|Chandur|17875|78100|503|11
+Chandūr|Chandur|16981|79059|261|11
+Chegunta||17971|78459|547|6
+Chinnachintakunta||16447|77806|320|6
+Chitkul||17559|78223|529|6
+#IN|Tripura
+Chandigarh||23502|91337|18|6
+#IN|Uttar Pradesh
+Chakia||25049|83222|96|15
+Chirgaon||25572|78814|199|14
+Chopan||24520|83023|198|14
+Captainganj||26926|83713|94|12
+Chhutmalpur||30032|77753|298|11
+Chail||25427|81632|105|8
+#IR|Chaharmahal and Bakhtiari
+Chāleshtar|Chaleshtar|32379|50787|2079|7
+#IR|Gilan Province
+Chamkhāleh|Chamkhaleh|37232|50251|-22|9
+Chāboksar|Chaboksar|36974|50570|-10|8
+Chūbar|Chubar|38180|48893|-18|6
+#IR|Ilam Province
+Chavār|Chavar|33695|46298|1037|6
+#IR|Isfahan
+Charmahīn|Charmahin|32339|51195|1798|14
+Chādegān|Chadegan|32768|50629|2113|10
+#IR|Kerman
+Chatrūd|Chatrud|30604|56910|1834|6
+#IR|Khuzestan
+Chū’ebdeh-ye Yek|Chu'ebdeh-ye Yek|30204|48554|0|8
+Cham Golak||32445|48442|157|5
+#IR|Māzandarān
+Chamestān|Chamestan|36478|52118|139|11
+Chamāz Kotī|Chamaz Koti|36488|52871|26|5
+#IR|Qazvin Province
+Chūbīn Dar|Chubin Dar|36228|49950|1263|8
+#IR|Sistan and Baluchestan
+Chāh-e Jamāl|Chah-e Jamal|27240|60694|602|8
+#IR|West Azerbaijan
+Chahār Borj|Chahar Borj|37125|45978|1282|9
+#IT|Abruzzo
+Celano||42081|13517|800|10
+Castel di Sangro||41784|14107|793|6
+Casalbordino-Miracoli||42154|14599|152|5
+#IT|Apulia
+Castellana||40886|17165|297|14
+Castellaneta||40628|16933|245|14
+Carovigno||40706|17658|161|14
+Capurso||41046|16922|74|14
+Crispiano||40604|17233|243|12
+Cassano delle Murge||40891|16765|341|12
+Campi Salentina||40397|18021|33|11
+Carmiano||40344|18042|31|9
+Cutrofiano||40126|18203|85|8
+Cavallino||40310|18202|36|8
+Cagnano Varano||41828|15772|165|7
+Calimera||40249|18280|54|7
+Carosino||40465|17399|72|7
+Cellino San Marco||40471|17964|58|7
+Carapelle||41364|15694|62|7
+Collepasso||40071|18162|119|6
+Cisternino||40743|17426|393|6
+Corsano||39889|18367|121|6
+Corigliano d'Otranto||40159|18256|97|5
+Cellamare||41020|16927|110|5
+Ceglie del Campo||41050|16867|76|5
+#IT|Calabria
+Cirò Marina|Ciro Marina|39369|17125|5|15
+Cassano All'Ionio||39781|16327|164|12
+Cittanova||38354|16079|400|9
+Cariati||39496|16955|50|8
+Cutro||39035|16987|220|8
+Cinquefrondi||38416|16084|235|6
+Corigliano Calabro||39596|16519|210|5
+Cotronei||39159|16777|502|5
+#IT|Campania
+Casagiove||41071|14312|55|14
+Casandrino||40928|14247|59|13
+Cicciano||40964|14535|50|13
+Crispano||40953|14286|37|12
+Calvizzano||40908|14186|135|11
+Cervinara||41020|14614|290|10
+Casaluce||40998|14197|25|10
+Capodrise||41043|14306|34|10
+Cesa||40963|14231|40|8
+Casapulla||41077|14289|46|8
+Casamicciola Terme||40747|13912|43|8
+Castello di Cisterna||40916|14411|34|7
+Cimitile||40942|14526|40|7
+Curti||41076|14280|40|7
+Castel San Giorgio||40782|14701|90|7
+Carinaro||40983|14220|29|7
+Capri||40551|14243|142|7
+Casapesenna||40992|14136|25|6
+Cellole||41203|13853|19|6
+Calvi Risorta||41216|14131|110|5
+Camposano||40952|14530|43|5
+#IT|Emilia-Romagna
+Castel San Giovanni||45060|9438|74|11
+Castel San Pietro Terme||44399|11585|75|11
+Castelnovo ne'Monti||44436|10403|711|10
+Castellarano||44518|10737|149|9
+Crevalcore||44720|11148|20|9
+Castenaso||44514|11468|42|9
+Cavriago||44695|10526|78|9
+Copparo||44893|11823|3|9
+Comacchio||44695|12182|0|8
+Castelnuovo Rangone||44549|10934|76|8
+Collecchio||44752|10215|112|8
+Castel Bolognese||44320|11799|42|8
+Casalgrande||44585|10736|97|7
+Castelnovo di Sotto||44813|10567|27|7
+Colorno||44926|10374|29|7
+Codigoro||44831|12111|3|7
+Calderara di Reno||44563|11271|30|6
+Campogalliano||44689|10847|43|6
+Cadelbosco di Sopra||44766|10599|33|6
+Castrocaro Terme e Terra del Sole||44187|11961|61|6
+Cavezzo||44835|11029|24|5
+#IT|Friuli Venezia Giulia
+Codroipo||45965|12980|43|13
+Cervignano del Friuli||45821|13339|2|12
+Cividale del Friuli||46090|13429|135|9
+Casarsa della Delizia||45951|12843|44|8
+Caneva||45971|12453|57|6
+Cormons||45955|13467|56|6
+#IT|Lazio
+Ceccano||41572|13329|200|15
+Civita Castellana||42293|12409|145|12
+Cecchina||41702|12650|220|9
+Cave||41817|12941|399|8
+Campagnano di Roma||42136|12374|270|7
+Cesano||42074|12337|240|7
+Cori||41644|12911|384|6
+Castel Madama||41974|12868|428|6
+Corcolle||41904|12737|47|6
+Ceprano||41546|13515|105|6
+Capena||42142|12545|160|6
+Campo Marzio||41911|12474|32|6
+Capranica||42258|12173|370|5
+Castro Pretorio||41907|12504|72|5
+#IT|Liguria
+Cairo Montenotte||44398|8278|338|9
+Colombiera-Molicciara||44088|10010|24|7
+Casano-Dogana-Isola||44076|10034|40|7
+Cogoleto||44390|8647|4|6
+Ceparana-Carpena||44167|9883|30|6
+Carcare||44355|8290|365|6
+Casarza Ligure||44272|9447|34|5
+Ceriale||44091|8229|10|5
+#IT|Lombardy
+Concorezzo||45589|9334|171|15
+Codogno||45162|9702|57|15
+Castellanza||45611|8896|216|14
+Cardano al Campo||45649|8769|240|14
+Corbetta||45467|8919|140|14
+Calolziocorte||45795|9438|241|14
+Cesate||45596|9076|194|14
+Caravaggio||45496|9642|111|13
+Casalpusterlengo||45179|9648|60|13
+Canegrate||45568|8927|193|12
+Cerro Maggiore||45594|8954|205|12
+Carpenedolo||45362|10431|78|12
+Concesio||45605|10217|216|11
+Cologno al Serio||45576|9709|156|11
+Cassina de' Pecchi||45516|9360|130|11
+Castel Mella||45499|10146|106|11
+Castano Primo||45552|8776|182|10
+Casalmaggiore||44990|10421|26|10
+Castel Goffredo||45294|10473|53|10
+Castelli Calepio||45613|9885|230|9
+Cislago||45659|8973|237|9
+Cermenate||45702|9084|297|9
+Cornate d'Adda||45628|9474|236|9
+Capriolo||45633|9932|216|9
+Costa Volpino||45828|10101|248|9
+Calcinato||45457|10409|171|8
+Cogliate||45646|9079|236|8
+Casorate Primo||45311|9017|103|8
+Castenedolo||45474|10291|152|8
+Castelleone||45296|9761|66|8
+Calusco d'Adda||45688|9471|273|8
+Coccaglio||45564|9972|162|8
+Clusone||45887|9946|648|8
+Cuggiono||45507|8816|157|8
+Capriate San Gervasio||45613|9530|190|8
+Castegnato||45561|10114|143|8
+Curno||45689|9609|244|8
+Cabiate||45674|9174|237|7
+Cerese||45118|10789|22|7
+Chiavenna||46321|9398|333|7
+Colico Piano||46132|9377|218|7
+Carnate||45648|9378|237|7
+Castiglione Olona||45753|8873|307|7
+Cologne||45579|9942|187|7
+Cavenago di Brianza||45583|9413|176|7
+Cernobbio||45843|9072|201|7
+Cassolnovo||45361|8812|120|7
+Casatenovo||45695|9313|340|7
+Castrezzato||45511|9981|125|6
+Casteggio||45014|9125|90|6
+Corte Franca||45630|9988|225|6
+Castelcovati||45502|9946|121|6
+Cadorago-Caslino al Piano||45727|9038|315|6
+Casorate Sempione||45671|8745|282|6
+Ciserano||45588|9601|159|6
+Cavaria Con Premezzo||45692|8803|271|6
+Cilavegna||45311|8745|115|6
+Carugo||45708|9197|270|5
+Chiuduno||45651|9849|218|5
+Carnago||45722|8834|354|5
+Cambiago||45580|9435|158|5
+Capiago-Intimiano-Olmeda||45769|9128|416|5
+Casorezzo||45523|8902|166|5
+Calcinate||45620|9798|186|5
+Ceriano Laghetto||45629|9080|216|5
+Cosio Valtellino||46135|9552|227|5
+Canzo||45849|9271|402|5
+Caponago||45566|9376|158|5
+#IT|Piedmont
+Cossato||45570|8185|253|14
+Cit Turin||45074|7659|261|13
+Caselle Torinese||45175|7643|277|12
+Cameri||45502|8662|161|10
+Castelletto Sopra Ticino||45720|8634|209|9
+Canelli||44721|8293|157|9
+Cuorgnè|Cuorgne|45393|7650|414|9
+Candelo||45541|8107|340|8
+Carignano||44906|7673|235|7
+Castellamonte||45383|7709|375|7
+Cerano||45409|8784|127|6
+Crescentino||45199|8086|154|6
+Cambiano||44971|7774|253|6
+Cumiana||44976|7378|377|5
+Candiolo||44959|7598|237|5
+Caluso||45305|7891|303|5
+Castiglione Torinese||45119|7807|216|5
+#IT|Sardinia
+Capoterra||39175|8972|54|11
+Cabras||39929|8532|6|8
+Castelsardo||40913|8715|114|6
+Carloforte||39141|8304|10|6
+#IT|Sicily
+Carlentini||37281|15010|200|15
+Castellammare del Golfo||38027|12882|26|13
+Capo d'Orlando||38143|14733|8|12
+Cinisi||38161|13101|75|12
+Cefalù|Cefalu|38039|14023|16|12
+Corleone||37813|13302|550|10
+Casteldaccia||38051|13530|79|10
+Campobello di Licata||37258|13918|316|10
+Campobello di Mazara||37635|12749|110|10
+Capaci||38171|13239|51|10
+Castelbuono||37925|14087|423|7
+Casteltermini||37539|13646|554|7
+Canalicchio||37541|15096|147|7
+Caccamo||37934|13668|521|7
+Canicattini Bagni||37032|15064|362|7
+Ciaculli||38075|13407|54|6
+Campofelice di Roccella||37993|13876|2|6
+Cammarata||37634|13627|682|6
+Cerda||37906|13815|274|5
+#IT|The Marches
+Castelfidardo||43459|13550|199|15
+Chiaravalle||43601|13325|22|13
+Corridonia||43247|13507|255|9
+Centobuchi||42895|13848|17|8
+Castel di Lama||42864|13719|81|7
+Camerano||43528|13553|231|5
+Calcinelli||43754|12920|66|5
+Cagli||43548|12652|276|5
+#IT|Trentino-Alto Adige
+Caldaro sulla Strada del Vino||46413|11246|429|6
+Cles||46363|11033|658|6
+#IT|Tuscany
+Certaldo||43548|11039|67|13
+Castelfiorentino||43610|10968|50|13
+Calenzano||43854|11166|68|13
+Castiglion Fiorentino||43343|11920|345|8
+Castelfranco di Sotto||43704|10746|16|8
+Capanne-Prato-Cinquale||43997|10156|6|8
+Cantagrillo-Casalguidi||43869|10914|76|7
+Chianciano Terme||43042|11812|475|6
+Camucia-Monsigliolo||43259|11971|251|6
+Capraia e Limite||43745|10983|28|6
+#IT|Umbria
+Chiugiana-La Commenda||43098|12308|247|11
+Castiglione del Lago||43125|12040|304|5
+#IT|Veneto
+Cittadella||45645|11785|48|14
+Cerea||45189|11217|18|13
+Campodarsego||45498|11922|17|12
+Chiampo||45547|11283|175|11
+Camponogara||45380|12086|4|11
+Caldogno-Rettorgole-Cresole||45608|11503|49|10
+Creazzo||45532|11478|99|10
+Cavarzere||45135|12085|4|9
+Conselve||45232|11875|7|9
+Camposampiero||45564|11935|24|9
+Concordia Sagittaria||45761|12824|2|9
+Col San Martino||45900|12116|163|8
+Camisano Vicentino||45522|11708|24|8
+Carrara San Giorgio||45293|11818|8|8
+Casale sul Sile||45596|12327|6|8
+Cornedo Vicentino||45616|11332|200|8
+Caorle||45597|12876|1|8
+Caerano di San Marco||45782|11999|124|7
+Carmignano di Brenta||45626|11706|46|6
+Caldiero||45414|11177|44|6
+Caselle||45411|11817|14|6
+Ca' Savio||45454|12457|2|6
+Crocetta del Montello||45837|12034|152|6
+Cornuda||45832|12006|163|6
+Ceggia||45687|12642|2|5
+Cortina d'Ampezzo||46537|12139|1211|5
+Castelnuovo del Garda||45439|10760|130|5
+#JM|Saint Andrew Parish
+Constant Spring||18051|-76794|155|13
+#JP|Chiba
+Chōnan|Chonan|35397|140235|41|8
+#JP|Kagoshima
+China||27333|128567|43|6
+Chabana||27049|128418|22|5
+#JP|Tottori
+Chizu||35267|134233|176|7
+#KE|Bungoma County
+Chwele||762|34549|1699|10
+#KE|Nyeri County
+Chaka||-360|37000|1760|6
+#KE|Tharaka - Nithi
+Chogoria||-230|37627|1548|8
+#KE|Vihiga County
+Chavakali||118|34733|1610|13
+#KG|Issyk-Kul
+Cholpon-Ata||42649|77082|1630|14
+#KH|Kampong Cham
+Chealea||11910|104930|15|7
+#KH|Kampong Chhnang
+Chhnok Tru||12515|104451|13|6
+#KH|Kratie
+Chhloung||12256|105970|29|7
+#KH|Ŏtâr Méanchey
+Chŏng Kal|Chong Kal|13955|103574|32|5
+#KM|Anjouan
+Chandra||-12195|44465|469|6
+#KN|Saint Mary Cayon
+Cayon||17350|-62733|109|1
+#KN|Saint Paul Charlestown
+Charlestown||17133|-62617|46|2
+#KN|Saint Thomas Lowland
+Cotton Ground||17167|-62617|83|0
+#KP|Chagang
+Chasŏng|Chasong|41461|126641|328|13
+#KY|
+Channel Land||19344|-81218|6|13
+Cayman Palms||19278|-81270|5|9
+#KZ|West Kazakhstan
+Chapayev||50189|51170|28|6
+#LA|Champasak Province
+Champasak||14892|105878|101|13
+#LB|Baalbek-Hermel Governorate
+Chaat||34142|36231|1015|6
+#LC|Choiseul
+Choiseul||13773|-61049|21|6
+#LU|Luxembourg
+Cents||49617|6164|324|7
+Cessange||49589|6107|278|5
+#LV|Riga
+Čiekurkalns|Ciekurkalns|56984|24173|9|8
+#MA|Tanger-Tetouan-Al Hoceima
+Cap Negro II||35660|-5285|7|10
+#MD|Cantemir
+Cantemir||46277|28201|51|4
+#MD|Chișinău Municipality
+Cricova||47138|28862|134|7
+Ciorescu||47130|28889|105|7
+#MD|Cimişlia
+Cimişlia|Cimislia|46526|28765|115|12
+#MD|Criuleni
+Criuleni||47213|29158|31|7
+#MD|Călăraşi
+Călăraşi|Calarasi|47255|28310|135|14
+#MD|Căuşeni
+Chiţcani|Chitcani|46783|29617|11|9
+#MD|Dubăsari District
+Cocieri||47302|29118|89|4
+#MD|Gagauzia
+Congaz||46107|28593|54|13
+#MD|Transnistria
+Camenca||48032|28699|36|11
+#MF|
+Concordia||18065|-63078|23|6
+#MK|Chashka
+Čaška|Caska|41651|21662|344|3
+#MK|Chucher Sandevo
+Chucher-Sandevo||42104|21382|447|9
+#MK|Gostivar
+Cegrane||41839|20976|488|13
+#MM|Yangon
+Chit Tee Kone||16932|96159|3|12
+#MN|Govĭ-Sumber
+Choyr||46361|108361|1286|10
+Choyr||46133|108650|1206|10
+#MT|Bormla
+Cospicua||35886|14528|39|6
+#MU|Cargados Carajos
+Cargados Carajos||-16603|59659||0
+#MU|Rivière du Rempart
+Calodyne||-20002|57642|8|6
+#MU|Savanne
+Chemin Grenier||-20493|57469|133|12
+Camp Diable||-20463|57579|198|5
+#MW|Central Region
+Chipeni||-13402|33909|1424|11
+Chipoka||-13993|34516|483|7
+#MW|Southern Region
+Chikwawa||-16034|34801|106|7
+#MX|Baja California
+Camalú|Camalu|30844|-116062|48|9
+Ciudad Coahuila||32194|-115000|12|8
+Colonia Venustiano Carranza||32230|-115168|7|6
+Ciudad Coahuila (Kilómetro Cincuenta y Siete)|Ciudad Coahuila (Kilometro Cincuenta y Siete)|32196|-115002|11|6
+#MX|Baja California Sur
+Ciudad Insurgentes||25263|-111774|38|9
+#MX|Campeche
+Calkiní|Calkini|20371|-90051|14|15
+Candelaria||18187|-91040|35|10
+Chiná|China|19769|-90495|20|5
+#MX|Chiapas
+Ciudad Hidalgo||14680|-92152|24|15
+Copoya||16712|-93121|852|8
+Chilón|Chilon|17106|-92273|883|7
+Chanal||16658|-92257|2084|7
+Copainalá|Copainala|17093|-93211|430|7
+Chicomuselo||15742|-92286|574|6
+Chanal||16717|-92400|1963|6
+Chilón|Chilon|17233|-92417|720|5
+#MX|Chihuahua
+Colonia Anáhuac|Colonia Anahuac|28484|-106745|1995|10
+Colonia Emiliano Zapata||28371|-105612|1197|8
+Ciudad Guerrero||28549|-107484|2004|8
+Casas Grandes||30378|-107952|1483|5
+Creel||27753|-107635|2390|5
+#MX|Coahuila
+Cuatro Ciénegas de Carranza|Cuatro Cienegas de Carranza|26985|-102064|739|10
+Concordia||25780|-103116|1102|8
+#MX|Colima
+Coquimatlán|Coquimatlan|19204|-103811|350|13
+Comala||19324|-103761|593|9
+Cuauhtémoc|Cuauhtemoc|19329|-103602|946|9
+Cerro de Ortega||18750|-103719|26|8
+Cofradía|Cofradia|19433|-103550|1394|6
+Cofradía de Juárez|Cofradia de Juarez|18961|-103956|21|6
+#MX|Durango
+Canatlán|Canatlan|24527|-104774|1978|11
+Cuencamé de Ceniceros|Cuencame de Ceniceros|24871|-103697|1587|10
+#MX|Guanajuato
+Ciudad Manuel Doblado||20728|-101953|1781|14
+Cuerámaro|Cueramaro|20626|-101672|1727|14
+Cerano||20108|-101387|1882|7
+Cerro Gordo||20593|-101127|1723|5
+#MX|Guerrero
+Coyuca de Benítez|Coyuca de Benitez|17008|-100088|46|14
+Cruz Grande||16723|-99123|77|12
+Chichihualco||17660|-99677|1117|11
+Cuajinicuilapa||16471|-98414|53|10
+Ciudad Apaxtla de Castrejón|Ciudad Apaxtla de Castrejon|18130|-99932|1248|7
+Copalillo||18033|-99042|914|7
+Coyuca de Catalán|Coyuca de Catalan|18325|-100699|246|7
+Copala||16608|-98978|49|7
+#MX|Hidalgo
+Cardonal||20061|-99232|2088|9
+Campestre Villas del Álamo|Campestre Villas del Alamo|20102|-98707|2429|6
+#MX|Jalisco
+Capilla de Guadalupe||20827|-102591|2058|13
+Colotlán|Colotlan|22113|-103267|1666|13
+Centro de Readaptación Social|Centro de Readaptacion Social|20554|-103194|1564|13
+Capulín|Capulin|20478|-103269|1543|9
+Colinas del Roble||20504|-103398|1560|6
+Cuitzeo (La Estancia)||20343|-102784|1537|6
+Cajititlán|Cajititlan|20431|-103309|1585|5
+#MX|Mexico City
+Col. Bosques de las Lomas||19379|-99266|2570|15
+#MX|Michoacán
+Cherán|Cheran|19686|-101954|2350|14
+Cotija de la Paz||19810|-102702|1642|14
+Conjunto Habitacional Villas del Pedregal||19684|-101304|1949|11
+Cuitzeo del Porvenir||19969|-101141|1872|10
+Chilchota||19847|-102118|1792|8
+Capácuaro|Capacuaro|19547|-102052|2252|7
+Coahuayana de Hidalgo||18704|-103663|27|7
+Cojumatlán de Régules|Cojumatlan de Regules|20118|-102851|1577|7
+Carapan||19860|-102038|1964|6
+Chavinda||20007|-102460|1572|6
+Charo||19748|-101046|1906|5
+Caltzontzin||19429|-102006|1633|5
+Capula||19674|-101392|2098|5
+#MX|Morelos
+Cocoyoc||18884|-98982|1327|10
+Coatetelco||18730|-99326|989|9
+Chiconcuac||18783|-99207|1153|7
+Ciudad Ayala||18767|-98982|1231|7
+Calera Chica||18858|-99182|1316|5
+#MX|México
+Cacalomacan||19253|-99706|2772|12
+Calimaya||19163|-99618|2698|11
+Chiautla||19549|-98882|2258|10
+Cocotitlán|Cocotitlan|19233|-98866|2313|9
+Calixtlahuaca||19337|-99689|2645|9
+Coatepec||19385|-98845|2420|9
+Coatepec||19137|-99429|2756|8
+Coatepec Harinas||18895|-99722|2446|7
+Conjunto Urbano la Loma I||19326|-99732|2731|6
+Chapultepec||19202|-99562|2597|6
+Concepción Jolalpan|Concepcion Jolalpan|19584|-98846|2287|6
+Colorines||19178|-100218|1625|6
+#MX|Nuevo León
+Carmen||25937|-100364|505|10
+China||25700|-99235|140|9
+Ciudad Cerralvo||26086|-99616|277|7
+Ciudad General Terán|Ciudad General Teran|25259|-99683|309|6
+#MX|Oaxaca
+Cuilápam de Guerrero|Cuilapam de Guerrero|16996|-96780|1578|12
+Chahuites||16288|-94195|25|11
+Chahuite||16300|-94183|25|10
+Colonia Rincón Viejo|Colonia Rincon Viejo|16887|-95047|202|9
+Cosolapa||18601|-96684|201|8
+#MX|Puebla
+Coronango||19121|-98306|2189|15
+Chiautla de Tapia||18301|-98603|1022|12
+Chinautla||19820|-97389|1984|11
+Ciudad de Chiautla de Tapia||18300|-98604|1019|10
+Ciudad de Tlatlauquitepec||19853|-97495|1904|9
+Cuacnopalan||18818|-97511|2227|9
+Cuapiaxtla de Madero||18915|-97824|2061|7
+Chautla||18966|-98153|2155|7
+Coxcatlán|Coxcatlan|18267|-97151|1163|6
+Ciudad de Cuetzalan||20019|-97521|960|6
+Cuetzalan||20018|-97523|979|6
+Cuanalá|Cuanala|19109|-98328|2189|6
+Chietla||18520|-98579|1132|6
+Chapulco||18626|-97405|2013|5
+Chalchihuapan||18972|-98337|2217|5
+#MX|Querétaro
+Cadereyta de Montes||20695|-99815|2076|13
+Colón|Colon|20783|-100050|1931|7
+#MX|Quintana Roo
+Calderitas||18556|-88255|13|5
+#MX|San Luis Potosí
+Cerritos||22428|-100285|1145|15
+Charcas||23129|-101113|2017|13
+Cedral||23821|-100725|1705|11
+Ciudad del Maíz|Ciudad del Maiz|22402|-99605|1243|10
+#MX|Sinaloa
+Choix||26709|-108325|240|9
+Concordia||23287|-106064|115|8
+Cosalá|Cosala|24411|-106692|386|7
+Constancia||25966|-108903|31|7
+#MX|Sonora
+Cócorit|Cocorit|27577|-109959|40|8
+#MX|Tabasco
+Chontalpa||17665|-93481|54|7
+Chichicapa||18261|-93182|7|7
+#MX|Tamaulipas
+Ciudad Gustavo Díaz Ordaz|Ciudad Gustavo Diaz Ordaz|26232|-98596|45|12
+Ciudad Tula||22997|-99712|1176|10
+Ciudad Camargo||26315|-98833|54|8
+Cuauhtémoc|Cuauhtemoc|22545|-98151|14|6
+#MX|Tlaxcala
+Ciudad de Nanacamilpa||19493|-98537|2723|12
+Cuapiaxtla||19296|-97769|2471|8
+#MX|Veracruz
+Cuitláhuac|Cuitlahuac|18814|-96723|378|14
+Córdoba (Santa Leticia)|Cordoba (Santa Leticia)|18909|-96979|1010|12
+Chocamán|Chocaman|19012|-97033|1358|11
+Ciudad Cuauhtémoc|Ciudad Cuauhtemoc|22184|-97835|9|10
+Colonia Santa Bárbara|Colonia Santa Barbara|19502|-96878|1277|9
+Coyutla||20247|-97658|161|8
+Cuichapa||17939|-94280|34|8
+Cuautlapán|Cuautlapan|18877|-97023|998|8
+Chinameca||18022|-94679|50|8
+Coacotla||17936|-94664|29|7
+Coacoatzintla||19652|-96940|1451|7
+Cabezas||19372|-96383|29|6
+Chinampa de Gorostiza||21360|-97735|106|5
+Comoapan||18407|-95175|212|5
+Citlaltépec|Citlaltepec|21329|-97879|231|5
+#MX|Yucatán
+Chemax||20656|-87937|21|15
+Conkal||21075|-89519|5|7
+Caucel||21016|-89707|7|7
+Celestún|Celestun|20860|-90397|1|7
+Cacalchen||20984|-89227|14|7
+Chicxulub Puerto||21296|-89599|1|6
+Cholul||21043|-89558|6|6
+Chichimila||20632|-88217|26|6
+#MX|Zacatecas
+Concepción del Oro|Concepcion del Oro|24613|-101420|2099|7
+Cañitas de Felipe Pescador|Canitas de Felipe Pescador|23607|-102726|2013|6
+#MY|Johor
+Chaah||2249|103048|24|12
+Chaah Bahru||2099|103022|17|6
+#MY|Kelantan
+Cherang Ruku||5871|102495|3|15
+#MZ|Gaza Province
+Caniçado|Canicado|-24417|32943|27|7
+#NI|Estelí Department
+Condega||13365|-86398|559|11
+#NI|Matagalpa Department
+Ciudad Darío|Ciudad Dario|12731|-86124|456|13
+#NL|Drenthe
+Coevorden||52661|6740|14|15
+#NL|Friesland
+Camminghaburen||53210|5843|-2|12
+#NL|North Brabant
+Coevering||51417|5575|22|5
+#NL|South Holland
+Carnisse||51889|4478|2|11
+#NP|Bagmati Province
+Chapali̇̄ Bhaḍrakāli̇̄|Chapali Bhadrakali|27782|85374|1609|11
+#NZ|Canterbury
+Cashmere||-43568|172628|15|7
+Casebrook||-43478|172590|18|5
+#NZ|Otago
+Cromwell||-45038|169200|212|5
+#NZ|Waikato Region
+Claudelands||-37783|175283|39|7
+#NZ|Wellington Region
+Carterton||-41018|175530|84|10
+Cannons Creek||-41140|174867|57|9
+Churton Park||-41207|174807|120|8
+#PA|Herrera Province
+Chitré|Chitre|7960|-80429|25|9
+#PA|Panamá
+Chepo||9170|-79101|19|13
+#PA|Veraguas Province
+Canto del Llano||8123|-80964|108|8
+#PE|Amazonas
+Cajaruro||-5736|-78426|465|7
+#PE|Ancash
+Caraz||-9048|-77810|2441|11
+Carhuaz||-9282|-77645|2650|5
+#PE|Arequipa
+Cono Norte||-16301|-71616|2705|15
+Cocachacra||-17088|-71757|82|9
+#PE|Ayacucho
+Coracora||-15033|-73783|3219|7
+#PE|Cajamarca Department
+Celendín|Celendin|-6865|-78146|2629|15
+Chota||-6550|-78650|2390|14
+Cajabamba||-7617|-78050|2636|13
+#PE|Cuzco Department
+Calca||-13333|-71950|2924|9
+#PE|Huánuco Department
+Castillo Grande||-9278|-76009|675|12
+#PE|Junin
+Concepción|Concepcion|-11918|-75314|3287|11
+Chupaca||-12067|-75283|3254|10
+Carhuamayo||-10917|-76033|4263|9
+#PE|La Libertad
+Chicama||-7845|-79147|131|15
+#PE|Lima region
+Chilca||-12521|-76737|11|13
+Caleta de Carquín|Caleta de Carquin|-11092|-77627|13|6
+#PE|Loreto
+Caballococha||-3906|-70516|75|11
+#PE|Puno
+Crucero||-14361|-70024|4587|7
+#PE|San Martín Department
+Chazuta||-6571|-76138|214|8
+#PE|Ucayali
+Campo Verde||-8476|-74806|198|9
+#PH|Bicol Region
+Casiguran||12874|124008|4|9
+Cataingan||12003|123992|54|8
+Caranan||13517|123016|8|7
+Calatagan||13589|124207|41|7
+Claveria||12904|123246|11|6
+Camaligan||13622|123167|5|6
+Cumadcad||12981|123789|72|5
+Calolbon||13596|124099|6|5
+#PH|Cagayan Valley
+Claveria||18607|121083|11|11
+Cabaritan East||18418|121489|7|9
+Cabarroguis||16511|121521|163|7
+#PH|Calabarzon
+Cagsiay||14217|121750|26|10
+Cavinti||14245|121508|219|10
+Castañas|Castanas|13874|121553|4|9
+Cambuga||13617|122450|95|6
+Camp Flora||13351|122664|72|6
+Cawayan||13367|122509|11|6
+Calubcub Dos||13739|121422|22|5
+#PH|Caraga
+Cantilan||9334|125978|7|9
+Claver||9573|125733|8|6
+#PH|Central Luzon
+Carranglan||15961|121064|247|11
+Cuyapo||15782|120665|34|9
+Culianin||14915|120898|15|8
+Camias||15167|120974|23|7
+Cut-cut Primero||15483|120586|52|7
+Cauayan||15151|120672|40|6
+Cabcaben||14454|120591|9|6
+Calibutbut||15115|120598|79|5
+#PH|Central Visayas
+Carmen||9822|124196|221|8
+Catmon||10717|124000|85|8
+Can-asujan||10130|123657|54|7
+Cayang||11067|123983|11|6
+#PH|Davao Region
+Caburan||5918|125641|92|13
+Cambanugoy||7541|125755|19|12
+Cabinuangan||7683|126033|67|11
+Carmen||7361|125706|5|10
+Corocotan||7400|125773|11|9
+Coronon||6879|125449|20|7
+Cateel||7791|126453|14|7
+Cuambog||7309|125848|12|6
+#PH|Eastern Visayas
+Capoocan||11293|124642|7|8
+Caibiran||11572|124582|6|6
+Culaba||11658|124543|1|6
+Can-Avid||11995|125447|8|6
+#PH|Ilocos
+Candon||17195|120452|10|11
+Carmen||15886|120600|32|10
+Carusucan||15966|120636|41|7
+Cabugao||17793|120458|20|7
+Caramutan||15921|120610|31|7
+Catablan||15976|120495|22|5
+#PH|Mimaropa
+Calintaan||12567|120933|1|11
+Caminauit||12331|121083|6|11
+Canubing No 2||13350|121133|13|10
+Coron||11999|120204|10|9
+Cuyo||10853|121009|5|8
+Cagayancillo||9577|121207|35|7
+Conduaga||8862|117489|8|5
+#PH|Northern Mindanao
+Casisang||8138|125125|592|14
+Claveria||8610|124895|655|8
+Clarin||8202|123858|11|7
+Calamba||8559|123643|115|7
+Calabugao||8456|125159|833|6
+Cabanglasan||8121|125328|479|5
+#PH|Soccsksargen
+Carmen||7204|124792|43|9
+Conel||6202|125187|100|9
+Columbio||6696|124937|52|6
+Cebuano||6388|124968|247|5
+Carpenter Hill||6444|124881|101|5
+#PH|Western Visayas
+Codcod||10463|123250|587|13
+Calatrava||10595|123484|8|9
+Concepcion||10692|123061|166|9
+Cauayan||9972|122625|13|9
+Camingawan||9896|122863|102|8
+Colipapa||9473|122562|11|8
+Carabalan||10096|122946|123|8
+Cabacungan||10324|123133|203|7
+Concepcion||11216|123107|8|7
+Candoni||9817|122604|181|6
+Cabatuan||10879|122486|60|6
+Cabano||10587|122700|10|6
+Calinog||11117|122567|51|6
+Canturay||9794|122454|22|5
+Camindangan||9918|122630|217|5
+#PH|Zamboanga Peninsula
+Curuan||7205|122233|15|7
+Culianan||6980|122147|35|6
+#PK|Azad Kashmir
+Charhoi||33302|73955|848|8
+#PK|Punjab
+Chak One Hundred Thirty-eight Nine Left||30560|72967|167|13
+Chak Ninety-eight -Nine Left||30595|73113|171|10
+Chak One Hundred Twelve -Nine Left||30536|73139|163|9
+Chak Sixty-five A Gugera Distributary||30819|73227|175|9
+Chak One Hundred Ninety Nine A Left||30626|72925|160|8
+Chak Ninety-nine -Nine Left||30617|73122|171|8
+Chak One Hundred Eighty-six Nine Left||30587|72953|168|8
+Chak One Hundred Eighty-five A Nine Left||30564|72929|167|8
+Chak One Hundred Eighty-seven Nine Left||30606|72957|168|7
+Chak One Hundred Twenty-nine -Nine Left||30568|73013|167|7
+Chak One Hundred Eight -Nine Left||30560|73093|166|7
+Chak One Hundred Three Seven Right||30617|72845|167|7
+Chak One Hundred Forty-two Nine Left||30552|72948|167|6
+Chak One Hundred Thirty-nine Nine Left||30530|72989|165|6
+Chak One Hundred Eighteen Nine Left||30478|73056|160|6
+Chak One Hundred -Nine Left||30594|73090|169|6
+Chak One Hundred Ten -Nine Left||30564|73139|165|6
+Chak One Hundred Forty Nine Left||30498|72985|161|6
+Chak Three Ten Left||30582|72881|166|6
+Chak Sixty-eight-Four Right||30752|73203|178|6
+Chak Fifty-six -Four Right||30740|73093|170|5
+Chak Hundred One||30644|72926|168|5
+Chak One Hundred Four -Nine Left||30595|73030|168|5
+Chak One Hundred Twenty-one Nine Left||30429|73008|158|5
+Chak One Hundred Fifty-three -Nine Left||30445|72992|159|5
+Chak Eighty-eight -Six Right||30717|73082|167|5
+Chak One Hundred Seventeen Nine Left||30498|73080|162|5
+Chak One Hundred Forty-three Nine Left||30530|72940|166|5
+Chak One Hundred Thirty-two -Nine Left||30623|73013|170|5
+Chak One Hundred Eighty-eight Nine A Left||30622|72960|168|5
+Chak One Hundred Forty-one Nine Left||30516|72964|166|5
+Chak Ninety-nine -Six Right||30636|73002|168|5
+Chak One Hundred Six -Nine Left||30569|73051|169|5
+#PK|Sindh
+Chamber||25294|68812|20|13
+#PL|Greater Poland
+Czarnków|Czarnkow|52902|16564|54|12
+Czerwonak||52465|16982|61|5
+Czempiń|Czempin|52144|16764|69|5
+#PL|Kujawsko-Pomorskie
+Ciechocinek||52879|18795|46|11
+#PL|Lesser Poland
+Chełmek|Chelmek|50102|19248|249|9
+Chocznia||49874|19454|288|6
+#PL|Lower Silesia
+Cieplice Śląskie Zdrój|Cieplice Slaskie Zdroj|50865|15684|341|15
+Chojnów|Chojnow|51274|15937|153|14
+Chocianów|Chocianow|51419|15902|148|8
+#PL|Podlasie
+Czarna Białostocka|Czarna Bialostocka|53305|23281|157|10
+Choroszcz||53143|22989|125|5
+#PL|Pomerania
+Człuchów|Czluchow|53667|17359|164|13
+Czersk||53796|17976|130|9
+Czarne||53684|16938|128|6
+#PL|Silesia
+Chełm Śląski|Chelm Slaski|50108|19196|243|6
+Czaniec||49851|19254|320|6
+#PL|West Pomerania
+Chojna||52964|14428|20|7
+Czaplinek||53558|16233|145|7
+#PR|Cabo Rojo
+Cabo Rojo||18087|-67146|20|11
+#PR|Camuy
+Camuy||18484|-66845|11|4
+#PR|Canóvanas
+Canovanas||18375|-65899|7|8
+#PR|Ceiba
+Ceiba||18264|-65648|23|6
+#PR|Ciales
+Ciales||18336|-66469|92|3
+#PR|Cidra
+Cidra||18176|-66161|423|5
+#PR|Coamo
+Coamo||18080|-66358|125|12
+#PR|Comerío
+Comerío|Comerio|18218|-66226|196|5
+#PR|Corozal
+Corozal||18341|-66317|92|11
+#PR|Culebra
+Culebra||18303|-65301|3|1
+#PR|Salinas
+Coco||18007|-66259|40|6
+#PR|Toa Baja
+Campanilla||18421|-66237|7|8
+Candelaria Arenas||18417|-66217|33|6
+#PR|Vega Alta
+Ceiba||18446|-66351|10|7
+#PT|Aveiro
+Cucujães|Cucujaes|40874|-8507|236|11
+Cacia||40684|-8598|16|7
+#PT|Braga
+Calendário|Calendario|41404|-8530|103|11
+Caldas de Vizela||41382|-8309|174|10
+Caldelas||41671|-8381|78|6
+#PT|Bragança
+Carrazeda de Anciães|Carrazeda de Anciaes|41242|-7307|766|6
+#PT|Coimbra
+Castelo Viegas||40163|-8407|98|12
+Cantanhede||40347|-8594|63|7
+#PT|Faro
+Carvoeiro||37097|-8468|42|10
+Castro Marim||37221|-7443|6|5
+#PT|Leiria
+Caranguejeira||39746|-8707|129|5
+#PT|Lisbon
+Campolide||38729|-9165|93|15
+Cadaval||39243|-9103|105|14
+Caneças|Canecas|38813|-9227|234|11
+Charneca||38784|-9143|134|11
+Carregado||39024|-8977|21|10
+Caxias||38703|-9277|32|9
+Campo Pequeno||38743|-9144|89|9
+Chelas||38741|-9120|35|8
+Colares||38799|-9447|43|8
+Castanheira do Ribatejo||38993|-8973|22|8
+Cova da Moura||39056|-9348|67|6
+Cabo Ruivo||38756|-9097|13|5
+#PT|Madeira
+Camacha||32679|-16845|703|8
+Corujeira de Dentro||32667|-16917|294|6
+Camacha||33087|-16343|143|5
+#PT|Portalegre
+Campo Maior||39018|-7065|292|8
+#PT|Porto
+Canelas||41083|-8600|128|14
+Contumil||41166|-8580|105|14
+Campo||41185|-8465|127|9
+Coronado||41285|-8563|146|9
+Castelões de Cepeda|Casteloes de Cepeda|41203|-8335|154|8
+Cruz||41167|-8583|120|5
+#PT|Santarém
+Cartaxo||39160|-8787|59|11
+Coruche||38960|-8525|21|9
+#PT|Setúbal
+Costa de Caparica||38645|-9236|11|14
+Costa da Caparica||38641|-9232|12|14
+Cacilhas||38686|-9149|20|6
+#PT|Viseu
+Carregal do Sal||40433|-8000|307|6
+#PY|Amambay Department
+Capitán Bado|Capitan Bado|-23267|-55539|513|9
+#PY|Boquerón Department
+Colonia Menno||-22367|-59817|128|6
+#PY|Caaguazú Department
+Colonia General Alfredo Stroessner||-25364|-55707|308|12
+#PY|Paraguarí
+Carapeguá|Carapegua|-25763|-57247|116|6
+#RE|Reunion
+Cilaos||-21136|55472|1217|6
+#RO|Alba County
+Câmpeni|Campeni|46367|23050|559|8
+#RO|Arad County
+Curtici||46350|21300|100|10
+Chişineu-Criş|Chisineu-Cris|46525|21518|94|8
+#RO|Arges
+Costeşti|Costesti|44667|24883|231|11
+Călineşti|Calinesti|44817|25050|240|10
+Corbeni||45300|24650|620|6
+Coşeşti|Cosesti|45067|24867|366|5
+#RO|Bacău County
+Cleja||46417|26900|249|7
+Căiuţi-Sat|Caiuti-Sat|46183|26933|166|5
+Corbasca||46283|27167|255|5
+#RO|Bihor County
+Cefa||46917|21733|101|6
+#RO|Bistrița-Năsăud County
+Cormaia||47367|24683|456|10
+Căianu Mic|Caianu Mic|47233|24150|276|5
+#RO|Botoșani County
+Copălău|Copalau|47617|26833|104|7
+Corni||47650|26583|276|7
+Coţuşca|Cotusca|48133|26850|189|5
+#RO|Brăila County
+Chiscani||45183|27933|10|5
+#RO|Buzău County
+Cochirleanca||45217|27033|85|6
+#RO|Constanța County
+Cumpăna|Cumpana|44117|28567|50|10
+Cobadin||44083|28217|129|9
+Castelu||44259|28337|6|8
+Cogealac||44550|28567|94|7
+Corbu||44383|28650|4|5
+#RO|Covasna County
+Covasna||45850|26183|584|11
+#RO|Călărași County
+Chirnogi||44117|26567|27|8
+Călăraşi|Calarasi|44205|27314|18|7
+Curcani||44200|26583|31|5
+#RO|Dolj
+Călăraşi|Calarasi|43793|24044|53|7
+Ciupercenii Noi||43910|22948|40|6
+Cetate||44100|23050|41|6
+Celaru||44050|24133|136|5
+Coşoveni|Cosoveni|44250|23933|171|5
+#RO|Dâmbovița County
+Corbii Mari||44550|25500|142|8
+Corneşti|Cornesti|44783|25867|141|8
+Cojasca||44717|25850|133|7
+Crevedia||44600|25933|110|7
+Comişani|Comisani|44883|25583|226|5
+Ciocăneşti|Ciocanesti|44600|25850|116|5
+#RO|Galați County
+Cudalbi||45783|27700|97|8
+Corod||45900|27617|96|8
+Cosmeşti|Cosmesti|45870|27311|81|7
+#RO|Giurgiu County
+Comana||44171|26145|52|8
+Călugăreni|Calugareni|44172|25996|49|6
+#RO|Gorj County
+Crasna||45167|23500|445|5
+#RO|Harghita County
+Cristuru Secuiesc||46283|25033|387|10
+Corund||46467|25183|589|6
+Cârţa|Carta|46533|25750|735|5
+#RO|Hunedoara County
+Călan|Calan|45733|22983|245|13
+#RO|Ialomița County
+Coşereni|Cosereni|44683|26567|55|7
+#RO|Iași County
+Ciurea||47050|27567|92|10
+Cotnari||47350|26983|107|8
+#RO|Ilfov
+Chitila||44508|25982|93|13
+Cernica||44417|26283|60|10
+Chiajna||44460|25973|94|8
+Cornetu||44342|25941|78|5
+#RO|Maramureş
+Copalnic Mănăştur|Copalnic Manastur|47500|23683|321|6
+Cavnic||47648|23822|680|5
+#RO|Mehedinți County
+Corcova||44700|23050|212|6
+#RO|Mureș County
+Cristeşti|Cristesti|46500|24483|298|6
+#RO|Neamț County
+Cordun||46950|26867|189|7
+#RO|Prahova
+Comarnic||45250|25633|641|13
+Cioranii de Jos||44817|26417|76|7
+Colceag||44950|26350|107|5
+Ceptura de Sus||45017|26317|222|5
+Ceraşu|Cerasu|45317|26033|564|5
+#RO|Satu Mare County
+Certeze||47900|23467|272|5
+#RO|Sibiu County
+Copşa Mică|Copsa Mica|46117|24250|281|5
+#RO|Suceava
+Cornu Luncii||47467|26150|385|7
+Cajvana||47700|25967|389|7
+Ciprian Porumbescu||47567|26067|426|6
+Calafindeşti|Calafindesti|47850|26117|422|6
+#RO|Sălaj County
+Crasna||47167|22900|302|6
+#RO|Timiș County
+Ciacova||45508|21129|79|7
+Cărpiniş|Carpinis|45787|20904|83|7
+#RO|Vâlcea County
+Călimăneşti|Calimanesti|45233|24333|366|8
+#RS|Vojvodina
+Čurug|Curug|45472|20069|79|9
+Crvenka||45661|19454|83|9
+Čoka|Coka|45943|20143|79|5
+Crepaja||45010|20637|78|5
+Čelarevo|Celarevo|45270|19525|79|5
+#RU|Astrakhan Oblast
+Chyorny Yar||48062|46109|1|8
+#RU|Bashkortostan Republic
+Chekmagush||55142|54643|162|11
+Chad||56218|56319|137|5
+#RU|Chechnya
+Chechen-Aul||43200|45789|201|7
+Chiri-Yurt||43089|45743|317|5
+#RU|Chelyabinsk
+Chesma||53809|60649|316|6
+#RU|Dagestan
+Chontaul||43305|46860|6|8
+Chirkey||42961|46979|381|8
+#RU|Kabardino-Balkariya Republic
+Chegem Vtoroy||43596|43599|450|11
+#RU|Khabarovsk
+Chegdomyn||51131|133002|404|15
+#RU|Khakasiya Republic
+Cherëmushki|Cheremushki|52856|91417|381|9
+#RU|Kostroma Oblast
+Chukhloma||58753|42686|198|5
+Chistyye Bory||58369|41650|106|5
+#RU|Krasnodar Krai
+Chernomorskiy||44851|38494|77|8
+Chelbasskaya||45979|39372|30|7
+#RU|Lipetsk Oblast
+Chaplygin||53234|39961|122|13
+#RU|Mordoviya Republic
+Chamzinka||54405|45788|215|10
+#RU|Nizhny Novgorod Oblast
+Chkalovsk||56765|43247|101|14
+#RU|North Ossetia–Alania
+Chermen||43152|44712|570|9
+Chikola||43195|43920|667|7
+#RU|Novosibirsk Oblast
+Chulym||55090|80970|132|12
+Chany||55312|76760|110|9
+Chistoozërnoye|Chistoozernoye|54711|76582|116|5
+Chik||54993|82431|127|5
+#RU|Omsk Oblast
+Cherlak||54154|74809|103|12
+#RU|Penza Oblast
+Chaadayevka||53143|45912|165|7
+Chemodanovka||53232|45247|178|5
+#RU|Perm Krai
+Cherdyn’|Cherdyn'|60401|56480|137|6
+#RU|Primorye
+Chernigovka||44342|132569|82|14
+Chuguyevka||44163|133866|255|13
+#RU|Republic of Tyva
+Chadan||51289|91573|817|9
+#RU|Rostov
+Chaltyr||47285|39482|56|15
+Chertkovo||49384|40152|163|11
+#RU|Sakha
+Chul’man|Chul'man|56847|124908|716|10
+Churapcha||62000|132433|167|7
+Chernyshevskiy||63016|112469|378|5
+#RU|Samara Oblast
+Chelno-Vershiny||54415|51086|145|6
+#RU|Stavropol Kray
+Chernolesskoye||44716|43713|129|5
+#RU|Sverdlovsk Oblast
+Cherëmukhovo|Cheremukhovo|60348|59985|191|7
+#RU|Tatarstan Republic
+Cheremshan||54661|51511|171|6
+#RU|Tula Oblast
+Chern’|Chern'|53452|36912|246|7
+#RU|Ulyanovsk
+Cherdakly||54355|48845|80|12
+#RU|Volgograd Oblast
+Chernyshkovskiy||48424|42229|81|5
+#RU|Vologda Oblast
+Chagoda||59164|35329|136|7
+#RU|Zabaykalskiy (Transbaikal) Kray
+Chernyshevsk||52522|117017|536|12
+#SC|Cascade
+Cascade||-4669|55500|42|7
+#SI|Municipality of Cankova
+Cankova||46720|16022|215|0
+#SI|Municipality of Cerklje na Gorenjskem
+Cerklje na Gorenjskem||46250|14486|386|2
+#SI|Municipality of Cerknica
+Cerknica||45797|14363|630|4
+#SI|Municipality of Cerkno
+Cerkno||46125|13983|318|2
+#SI|Municipality of Cerkvenjak
+Cerkvenjak||46568|15944|285|0
+#SI|Municipality of Cirkulane
+Cirkulane||46344|15995|240|0
+#SI|Municipality of Črenšovci
+Črenšovci|Crensovci|46558|16304|173|1
+#SI|Municipality of Črna na Koroškem
+Črna na Koroškem|Crna na Koroskem|46470|14850|574|2
+#SI|Municipality of Črnomelj
+Črnomelj|Crnomelj|45573|15192|167|5
+#SK|Bratislava Region
+Chorvátsky Grob|Chorvatsky Grob|48228|17291|141|8
+Chorvátsky Grob - Čierna Voda|Chorvatsky Grob - Cierna Voda|48225|17232|131|8
+#SK|Košice Region
+Čaňa|Cana|48610|21326|174|6
+#SO|Bari
+Caluula||11966|50757|4|6
+#SO|Galguduud
+Ceelbuur||4685|46618|153|9
+#SO|Middle Shabele
+Cadale||2760|46322|7|5
+#SV|Ahuachapan
+Concepción de Ataco|Concepcion de Ataco|13870|-89849|1255|8
+#SV|La Libertad Department
+Ciudad Arce||13840|-89447|554|10
+#SV|San Miguel Department
+Chinameca||13500|-88350|718|9
+Ciudad Barrios||13767|-88267|847|8
+Chirilagua||13220|-88139|228|6
+#SV|Santa Ana Department
+Candelaria de La Frontera||14117|-89650|712|6
+Coatepeque||13929|-89504|756|6
+#SX|
+Cul de Sac||18049|-63065|24|8
+#TH|Ang Thong
+Chaiyo||14676|100469|14|13
+#TH|Chiang Mai
+Chom Thong||18417|98674|287|12
+#TH|Chiang Rai
+Chiang Khong||20261|100405|358|15
+Chiang Saen||20275|100087|373|11
+#TH|Nakhon Si Thammarat
+Chawang||8426|99505|33|11
+#TH|Nan
+Chiang Klang||19294|100862|266|13
+#TH|Phayao
+Chiang Kham||19523|100300|396|14
+#TH|Roi Et
+Chai Wari||16328|103770|162|14
+#TH|Surat Thani
+Chaiya||9386|99199|11|12
+Chai Buri||8462|99076|46|6
+#TJ|Sughd
+Chorbogh||39426|67760|1110|6
+#TM|Ahal
+Çaçe|Cace|36756|60472|319|5
+#TN|Mahdia Governorate
+Chorbane||35286|10386|110|6
+Chehimet Nord||35434|10394|44|5
+#TN|Zaghouan Governorate
+Cheylus||36557|10060|77|5
+#TR|Adıyaman Province
+Çelikhan|Celikhan|38026|38237|1394|13
+#TR|Ankara
+Çamlıdere|Camlidere|40490|32475|1254|12
+Çayırhan|Cayirhan|40098|31673|493|8
+Çayyolu|Cayyolu|39881|32710|998|7
+#TR|Antalya
+Çıplaklı|Ciplakli|36563|32052|71|9
+Çolaklı|Colakli|36837|31318|31|7
+Çamyuva|Camyuva|36554|30560|10|6
+#TR|Aydın
+Çeştepe|Cestepe|37825|27852|50|6
+#TR|Denizli
+Çivril|Civril|38301|29739|828|14
+#TR|Diyarbakır Province
+Çüngüş|Cuengues|38208|39286|985|5
+#TR|Düzce
+Cumayeri||40874|30951|130|11
+#TR|Eskişehir
+Çifteler|Cifteler|39383|31039|876|10
+#TR|Hakkâri
+Çey|Cey|37262|44041|1600|13
+Çukurca|Cukurca|37248|43614|1294|9
+#TR|Istanbul
+Çengelköy|Cengelkoey|41051|29055|16|14
+Celâliye|Celaliye|41052|28420|98|8
+Çanta|Canta|41079|28083|88|5
+#TR|Iğdır
+Cumhuriyet Mahallesi||39918|44049|863|8
+#TR|Kastamonu
+Cide||41892|33004|15|12
+#TR|Konya
+Cihanbeyli||38661|32924|977|14
+Çeltik|Celtik|39024|31791|852|9
+#TR|Mardin
+Çavuşlu|Cavuslu|37500|41251|941|9
+#TR|Mersin
+Çeşmeli|Cesmeli|36686|34422|28|6
+#TR|Ordu
+Çamaş|Camas|40902|37528|580|11
+#TR|Trabzon
+Çaykara|Caykara|40743|40232|601|14
+#TR|Yalova
+Çınarcık|Cinarcik|40645|29125|23|8
+Çiftlikköy|Ciftlikkoey|40660|29324|25|6
+#TR|Yozgat
+Çayıralan|Cayiralan|39303|35644|1350|15
+Çekerek|Cekerek|40073|35495|955|11
+#TR|İzmir Province
+Cumhuriyet||38479|27099|44|7
+Çağdaş|Cagdas|38505|27062|100|6
+#TT|Couva-Tabaquite-Talparo
+Claxton Bay||10366|-61460|14|6
+Couva||10422|-61467|15|5
+#TW|Taiwan
+Chishang||23125|121217|273|8
+#TZ|Mtwara
+Chiungutwa||-10883|38983|268|13
+#UA|Cherkasy
+Chyhyryn||49080|32661|82|9
+Chornobay||49671|32324|121|7
+#UA|Chernivtsi
+Cherepkivtsi||48016|25964|314|9
+Chahor||48243|25994|186|9
+Chudei||48051|25622|387|5
+#UA|Crimea
+Chornomorske||45507|32698|20|11
+Chisten’koye|Chisten'koye|44882|34047|301|5
+#UA|Dnipropetrovsk
+Chervonohryhorivka||47619|34538|39|6
+#UA|Donetsk
+Chasiv Yar||48588|37834|236|12
+#UA|Kherson
+Chaplynka||46365|33541|20|10
+Chornobaivka||46696|32545|13|9
+#UA|Khmelnytskyi
+Chemerivtsi||49009|26340|278|5
+#UA|Kyiv City
+Cherepanova Hora||50435|30521|163|6
+#UA|Kyiv Oblast
+Chaiky||50430|30284|162|12
+Chabany||50341|30429|177|5
+#UA|Luhansk
+Chornukhyne||48323|38517|297|6
+#UA|Odesa
+Chornomorske||46584|30931|36|7
+#UA|Poltava
+Chutove||49714|35157|104|6
+#UA|Zakarpattia
+Chop||48432|22204|102|9
+Chynadiyovo||48487|22834|148|7
+#UA|Zaporizhzhia
+Chernihivka||47195|36216|117|6
+#UA|Zhytomyr Oblast
+Cherniakhiv||50454|28667|225|9
+Chudniv||50053|28121|232|5
+#US|Alabama
+Calera||33103|-86754|154|13
+Chelsea||33340|-86630|156|12
+Clay||33703|-86600|285|10
+Clanton||32839|-86629|183|9
+Chickasaw||30764|-88075|10|6
+Cahaba Heights||33464|-86732|196|5
+Childersburg||33278|-86355|128|5
+#US|Alaska
+College||64857|-147803|137|13
+#US|Arizona
+Coolidge||32978|-111518|435|12
+Cottonwood||34739|-112010|1014|12
+Camp Verde||34564|-111854|961|11
+Chino Valley||34758|-112454|1435|11
+Catalina||32506|-110921|962|8
+Corona de Tucson||31965|-110776|1000|6
+Cave Creek||33833|-111951|648|5
+#US|Arkansas
+Centerton||36360|-94285|382|12
+Camden||33585|-92834|63|11
+Clarksville||35471|-93467|113|9
+Crossett||33128|-91961|50|5
+#US|California
+Coto De Caza||33604|-117587|216|15
+Cherryland||37679|-122103|20|15
+Carpinteria||34399|-119518|10|14
+California City||35126|-117986|733|13
+Commerce||34001|-118160|43|13
+Clayton||37941|-121936|120|12
+Communications Hill||37289|-121855|134|11
+Canyon Lake||33685|-117273|422|11
+Citrus||34115|-117892|178|11
+Crestline||34242|-117286|1406|11
+Camp Pendleton South||33228|-117379|49|11
+Capitola||36975|-121953|4|10
+Corte Madera||37925|-122527|12|10
+Cypress Village||33688|-117759|54|10
+Country Club||37969|-121341|4|9
+Charter Oak||34103|-117846|232|9
+Cloverdale||38805|-123017|102|9
+Calimesa||34004|-117062|729|9
+Corning||39928|-122179|84|8
+Cotati||38327|-122707|33|7
+Calipatria||33126|-115514|-55|7
+Crescent City||41756|-124202|13|7
+Castroville||36766|-121758|7|6
+Cherry Valley||33973|-116977|860|6
+Cambria||35564|-121081|13|6
+Colusa||39214|-122009|15|6
+Century City||34056|-118418|76|6
+Contra Costa Centre||37928|-122058|27|5
+Calistoga||38579|-122580|106|5
+Camp Pendleton North||33315|-117316|115|5
+#US|Colorado
+Cherry Creek||39611|-104861|1720|11
+Castle Pines North||39472|-104895|1949|10
+Craig||40515|-107546|1889|9
+Cortez||37349|-108586|1887|9
+Carbondale||39402|-107211|1881|7
+Cherry Hills Village||39642|-104959|1654|7
+#US|Connecticut
+Cromwell||41595|-72645|4|14
+Conning Towers-Nautilus Park||41385|-72069|58|9
+Cos Cob||41033|-73600|15|7
+Cheshire Village||41503|-72900|76|6
+#US|Delaware
+Claymont||39801|-75460|22|8
+#US|District of Columbia
+Colorado Triangle||38956|-77033|64|12
+Central 14th Street / WMATA Northern Bus Barn||38945|-77033|59|11
+Cleveland Park||38936|-77066|97|10
+Chevy Chase||38981|-77083|101|10
+Congress Heights||38843|-77000|52|8
+Capitol Gateway||38891|-76919|45|7
+#US|Florida
+Callaway||30153|-85570|10|14
+Conway||28503|-81331|33|13
+Citrus Ridge||28334|-81642|44|13
+Cypress Lake||26538|-81899|1|12
+Cocoa Beach||28321|-80609|0|12
+Cheval||28149|-82515|18|11
+Cape Canaveral||28406|-80605|3|10
+Cypress Gardens||27994|-81690|51|9
+Citrus Springs||28997|-82471|29|9
+Clewiston||26754|-80934|5|8
+Citrus Hills||28888|-82433|35|7
+Celebration||28325|-81533|25|7
+Cocoa West||28359|-80771|4|6
+Citra||29412|-82110|24|6
+Combee Settlement||28058|-81905|41|6
+Crystal Lake||28036|-81908|45|6
+#US|Georgia
+College Park||33653|-84449|320|15
+Covington||33597|-83860|226|14
+Clarkston||33810|-84240|311|12
+Cusseta||32305|-84773|162|11
+Cordele||31964|-83782|96|11
+Cairo||30878|-84202|74|10
+Cedartown||34011|-85256|256|10
+Country Club Estates||31213|-81464|1|9
+Centerville||32630|-83690|137|8
+Country Club Estates||33989|-83410|224|8
+Commerce||34204|-83457|278|7
+Conley||33645|-84326|260|6
+Cumming||34207|-84140|371|6
+Camilla||31231|-84210|54|5
+#US|Hawaii
+Camp H.M. Smith||21385|-157910|148|7
+#US|Idaho
+Chubbuck||42921|-112466|1363|14
+#US|Illinois
+Cahokia||38571|-90190|124|14
+Chicago Ridge||41701|-87779|181|14
+Canton||40558|-90035|197|14
+Centralia||38525|-89133|150|13
+Channahon||41429|-88229|162|13
+Chatham||39676|-89705|184|12
+Crestwood||41645|-87742|182|11
+Columbia||38444|-90201|153|10
+Clarendon Hills||41798|-87955|222|9
+Chester||37914|-89822|204|9
+Crete||41444|-87631|222|8
+Calumet Park||41663|-87661|184|8
+Clinton||40154|-88965|223|7
+Chillicothe||40922|-89486|153|6
+Countryside||41783|-87878|202|6
+Carterville||37760|-89077|138|6
+Carlinville||39280|-89882|191|6
+Coal City||41288|-88286|172|5
+Creve Coeur||40647|-89591|209|5
+Carmi||38091|-88159|120|5
+Colona||41484|-90353|184|5
+Centreville||38583|-90125|126|5
+#US|Indiana
+Chesterton||41611|-87064|195|13
+Connersville||39641|-85141|251|13
+Cedar Lake||41365|-87441|216|12
+Columbia City||41157|-85488|262|9
+Charlestown||38453|-85670|180|8
+Cumberland||39776|-85957|260|5
+#US|Iowa
+Carroll||42066|-94867|387|10
+Creston||41059|-94361|400|8
+Clear Lake||43138|-93379|377|8
+Charles City||43066|-92672|307|7
+Centerville||42093|-93936|279|6
+Clarinda||40740|-95038|318|5
+Centerville||40734|-92874|307|5
+Cherokee||42749|-95552|364|5
+#US|Kansas
+Coffeyville||37037|-95616|225|10
+Chanute||37679|-95457|292|9
+Colby||39396|-101052|963|5
+Concordia||39571|-97663|423|5
+#US|Kentucky
+Campbellsville||37343|-85342|248|11
+Corbin||36949|-84097|329|7
+Cynthiana||38390|-84294|224|6
+Cold Spring||39022|-84440|264|6
+Central City||37294|-87123|133|6
+#US|Louisiana
+Crowley||30214|-92375|6|13
+Claiborne||32516|-92192|48|12
+Covington||30475|-90100|8|10
+Carencro||30317|-92049|12|9
+Cut Off||29543|-90338|2|6
+Chackbay||29884|-90797|1|5
+#US|Maine
+Caribou||46861|-68012|137|8
+#US|Maryland
+Colesville||39076|-77002|133|15
+Clarksburg||39239|-77279|202|14
+Canton||39280|-76567|21|13
+Cambridge||38563|-76079|6|13
+California||38300|-76507|30|12
+Chesapeake Ranch Estates-Drum Point||38350|-76419|24|12
+Chesapeake Ranch Estates||38346|-76418|30|11
+Coral Hills||38870|-76921|89|10
+Chevy Chase||39003|-77071|109|10
+Cape Saint Claire||39043|-76445|26|9
+Charles Village||39323|-76613|65|8
+Cherry Hill||39255|-76634|8|8
+Cheswolde||39364|-76689|117|8
+Cheverly||38928|-76916|54|6
+Chesapeake Beach||38686|-76535|15|6
+Coldstream Homestead Montebello||39323|-76595|56|6
+Cross Country||39366|-76698|131|5
+Chestertown||39209|-76067|4|5
+#US|Massachusetts
+Cambridgeport||42358|-71104|4|13
+Charlton||42136|-71970|271|13
+Carver||41883|-70763|30|12
+Centerville||41649|-70348|14|9
+Clarendon Hills||42275|-71124|34|9
+Clinton||42417|-71683|112|7
+Cohasset||42242|-70804|6|7
+Cochituate||42321|-71364|53|7
+Coolidge Corner||42346|-71124|16|5
+#US|Michigan
+Cutlerville||42841|-85664|206|14
+Clawson||42533|-83146|202|12
+Coldwater||41940|-85001|294|11
+Cadillac||44252|-85401|398|10
+Comstock Park||43039|-85670|201|10
+Charlotte||42564|-84836|277|9
+Center Line||42485|-83028|190|8
+Carrollton||43459|-83930|179|7
+Comstock Northwest||42322|-85518|277|5
+Chelsea||42318|-84022|285|5
+#US|Minnesota
+Cloquet||46722|-92459|368|12
+Cambridge||45573|-93224|293|8
+Crookston||47774|-96608|267|8
+Corcoran||45095|-93547|295|6
+#US|Mississippi
+Corinth||34934|-88522|134|15
+Canton||32613|-90037|71|14
+Carriere||30617|-89653|48|13
+Cleveland||33744|-90725|43|12
+Columbia||31252|-89838|45|6
+#US|Missouri
+Carthage||37176|-94310|306|14
+Crestwood||38557|-90382|189|12
+Cameron||39740|-94241|315|10
+Chillicothe||39795|-93552|243|9
+Clinton||38369|-93778|245|9
+Carl Junction||37177|-94566|273|8
+Caruthersville||36193|-89656|84|6
+Charleston||36921|-89351|98|6
+#US|Montana
+Columbia Falls||48372|-114182|941|5
+#US|Nebraska
+Chalco||41184|-96150|327|11
+Crete||40628|-96961|412|7
+Chadron||42829|-103000|1030|6
+#US|Nevada
+Cold Springs||39680|-119977|1542|9
+#US|New Hampshire
+Claremont||43377|-72347|151|13
+Chester||42957|-71257|139|5
+#US|New Jersey
+Cinnaminson||39997|-74993|23|15
+Clark||40630|-74310|23|15
+Cherry Hill Mall||39936|-75009|12|14
+Collingswood||39918|-75071|9|14
+Cedar Grove||40852|-74229|91|12
+Colts Neck||40288|-74172|24|10
+Chatham||40741|-74384|71|9
+Cresskill||40941|-73959|14|9
+Columbus||40073|-74721|24|9
+Closter||40973|-73962|12|9
+Clayton||39660|-75092|39|8
+Caldwell||40840|-74277|124|8
+Crestwood Village||39948|-74361|40|8
+Carneys Point||39711|-75470|3|7
+Carlstadt||40840|-74091|55|6
+Cape May Court House||39083|-74824|4|5
+#US|New Mexico
+Chaparral||32024|-106386|1239|15
+Corrales||35238|-106607|1531|9
+#US|New York
+Corning||42143|-77055|284|11
+Canandaigua||42874|-77288|240|10
+Clifton||40620|-74077|16|10
+Concord||40608|-74084|24|9
+Congers||41151|-73945|54|8
+Croton-on-Hudson||41208|-73891|49|8
+Chestnut Ridge||41084|-74056|126|8
+Colonie||42718|-73833|95|8
+Center Moriches||40800|-72790|8|8
+Carmel Hamlet||41415|-73685|155|7
+Cedarhurst||40623|-73724|8|7
+Canton||44596|-75169|115|7
+Calverton||40906|-72743|9|7
+Centerport||40885|-73376|15|6
+Centerport||43041|-76593|128|5
+Cold Spring Harbor||40871|-73457|10|5
+Conklin||42034|-75804|265|5
+#US|North Carolina
+Clinton||34998|-78323|47|9
+Conover||35707|-81219|322|8
+Cullowhee||35314|-83177|645|6
+Carolina Beach||34035|-77894|2|6
+Cherryville||35379|-81379|298|6
+#US|Ohio
+Circleville||39601|-82946|212|14
+Copley||41099|-81645|319|14
+Clayton||39863|-84360|305|13
+Conneaut||41948|-80554|197|13
+Coshocton||40272|-81860|235|11
+Cambridge||40031|-81588|253|10
+Celina||40549|-84570|267|10
+Cheviot||39157|-84613|277|8
+Campbell||41078|-80599|314|8
+Canal Winchester||39843|-82805|233|8
+Canfield||41025|-80761|349|7
+Cortland||41330|-80725|312|7
+Champion Heights||41290|-80846|284|6
+Covedale||39121|-84606|270|6
+Columbiana||40888|-80694|353|6
+Clyde||41304|-82975|212|6
+Canal Fulton||40890|-81598|290|5
+Carlisle||39582|-84320|213|5
+Chardon||41614|-81149|396|5
+#US|Oklahoma
+Choctaw||35498|-97269|350|12
+Clinton||35516|-98967|477|10
+Coweta||35952|-95651|201|10
+Cushing||35985|-96767|285|8
+Catoosa||36189|-95746|190|7
+Collinsville||36365|-95839|195|6
+#US|Oregon
+Cedar Mill||45525|-122811|78|15
+Cornelius||45520|-123060|55|12
+Cottage Grove||43798|-123060|196|10
+Cedar Hills||45505|-122798|84|8
+Clackamas||45408|-122570|53|7
+Creswell||43918|-123025|170|5
+#US|Pennsylvania
+Colonial Park||40301|-76810|152|13
+Coatesville||39983|-75824|97|13
+Cedarbrook||40078|-75177|110|12
+Carroll Park||39971|-75237|36|12
+Carnot-Moon||40519|-80217|338|11
+Columbia||40034|-76504|92|10
+Croydon||40087|-74903|6|10
+Chestnut Hill||40077|-75207|134|10
+Canonsburg||40263|-80187|334|9
+Collingdale||39912|-75277|30|9
+Cedar Park||39950|-75227|30|9
+Carbondale||41574|-75502|331|9
+Castle Shannon||40365|-80022|313|8
+Conshohocken||40079|-75302|63|8
+Carnegie||40409|-80083|236|8
+Camp Hill||40240|-76920|135|8
+Chester Springs||40095|-75617|78|8
+Connellsville||40018|-79589|289|8
+Clifton Heights||39929|-75296|49|7
+Clairton||40292|-79882|276|7
+California||40066|-79892|242|7
+Catasauqua||40655|-75475|95|7
+Corry||41920|-79640|437|6
+Clarion||41215|-79385|462|6
+Clearfield||41027|-78439|336|6
+Crafton||40435|-80066|267|6
+Coraopolis||40518|-80167|219|6
+Carpenter||40052|-75200|104|5
+Collegeville||40186|-75452|46|5
+#US|Rhode Island
+Charlestown||41383|-71642|5|8
+Cumberland Hill||41975|-71467|66|8
+#US|South Carolina
+Cayce||33966|-81074|73|14
+Clinton||34473|-81881|206|9
+Camden||34247|-80607|57|7
+Centerville||34532|-82704|254|7
+Cheraw||34698|-79883|47|6
+Clover||35111|-81226|258|6
+Chester||34705|-81214|163|5
+Centerville||32996|-80170|24|5
+Central||34724|-82781|278|5
+#US|Tennessee
+Crossville||35949|-85027|565|11
+Collegedale||35053|-85050|239|11
+Clinton||36103|-84132|250|10
+Christiana||35710|-86399|213|10
+Chuckey||36216|-82688|438|10
+Covington||35564|-89646|102|9
+Colonial Heights||36485|-82503|438|7
+Church Hill||36522|-82713|371|7
+#US|Texas
+Canyon||34980|-101919|1080|15
+Crowley||32579|-97363|237|15
+Clute||29025|-95399|4|11
+Commerce||33247|-95900|169|9
+Cleveland||30341|-95085|48|8
+Crystal City||28677|-99828|170|7
+Cuero||29094|-97289|56|7
+Cameron Park||25965|-97477|5|7
+Cameron Park Colonia||25971|-97478|8|7
+Carthage||32157|-94337|95|7
+Crockett||31318|-95457|111|7
+Camp Swift||30191|-97292|134|6
+Canutillo||31911|-106600|1150|6
+Childress||34426|-100204|570|6
+Carrizo Springs||28522|-99861|184|6
+Center||31511|-96425|131|6
+Cameron||30853|-96977|122|5
+Center||31795|-94179|113|5
+#US|Utah
+Cedar Hills||40414|-111759|1511|10
+Canyon Rim||40707|-111822|1407|10
+#US|Virginia
+Countryside||39041|-77414|91|10
+Collinsville||36715|-79915|250|7
+Covington||37793|-79994|381|6
+Crozet||38070|-78701|219|6
+Chamberlayne||37627|-77429|50|5
+#US|Washington
+Camano||48174|-122528|17|14
+Cheney||47487|-117576|717|12
+College Place||46049|-118388|242|9
+Chehalis||46662|-122964|74|7
+Clarkston||46416|-117046|246|7
+Clarkston Heights-Vineland||46387|-117083|361|6
+Country Homes||47749|-117404|595|6
+Connell||46663|-118861|258|5
+#US|West Virginia
+Cross Lanes||38420|-81791|216|10
+Cheat Lake||39672|-79853|304|8
+Charles Town||39289|-77860|156|6
+#US|Wisconsin
+Chippewa Falls||44937|-91393|256|14
+Cedarburg||43297|-87988|239|11
+Cottage Grove||43076|-89200|269|7
+#US|Wyoming
+Cody||44526|-109057|1523|10
+#UY|Canelones
+Colonia Nicolich||-34815|-56024|16|9
+#UY|Rocha Department
+Chui||-33698|-53459|16|10
+Castillos||-34199|-53859|33|8
+#UZ|Samarqand Region
+Charxin||39694|66827|671|14
+#VC|Saint David Parish
+Chateaubelair||13291|-61240|9|1
+#VE|Falcón
+Chichiriviche||10929|-68273|4|13
+#VI|Saint John Island
+Cruz Bay||18331|-64794|6|3
+#VN|An Giang
+Chợ Mới|Cho Moi|10551|105404|8|13
+#VN|Bac Ninh
+Cao Thượng|Cao Thuong|21387|106129|15|6
+#VN|Ho Chi Minh City (HCMC)
+Côn Đảo|Con GJao|8703|106649|127|13
+Côn Sơn|Con Son|8686|106608|5|7
+#VN|Hà Tĩnh Province
+Cẩm Xuyên|Cam Xuyen|18250|106001|8|13
+#VN|Lạng Sơn Province
+Chi Lăng|Chi Lang|21574|106503|64|7
+#VN|Nghệ An Province
+Cửa Lô|Cua Lo|18817|105717|8|12
+#VN|Quảng Ninh
+Cô Tô|Co To|20973|107766|9|7
+#YE|Muhafazat Hadramaout
+CPF||15592|49136|993|6
+#YT|Chiconi
+Chiconi||-12833|45111|109|7
+#YT|Chirongui
+Chirongui||-12932|45148|13|6
+#YT|Mamoudzou
+Combani||-12800|45167|202|7
+#ZA|Eastern Cape
+Cofimvaba||-32001|27580|959|11
+Cathcart||-32298|27144|1164|9
+Cookhouse||-32743|25800|601|7
+#ZA|Free State
+Clarens||-28515|28420|1818|8
+#ZA|KwaZulu-Natal
+Craigieburn||-30197|30752|191|14
+Colenso||-28739|29826|966|8
+Cedarville||-30384|29042|1458|5
+Charlestown||-27411|29874|1659|5
+Cato Ridge||-29733|30583|759|5
+#ZA|North West
+Carousel View||-25323|28290|1061|9
+#ZA|Northern Cape
+Colesberg||-30720|25097|1369|12
+Calvinia||-31471|19776|987|8
+Carnarvon||-30968|22133|1249|6
+#ZA|Western Cape
+Claremont||-33981|18465|38|15
+Clanwilliam||-32182|18892|96|9
+Citrusdal||-32592|19015|165|9
+Constantia||-34031|18418|91|7
+Calitzdorp||-33528|21676|260|5
+#ZM|Eastern Province
+Chadiza||-14068|32439|1066|6
+#ZM|Lusaka Province
+Chinkuli||-15300|28416|1128|14
+Chilongolo||-15492|28165|1236|14
+Chalimbana||-15385|28701|1076|10
+#ZM|Muchinga
+Chama||-11213|33152|765|13
+#ZM|Northern Province
+Chilubi||-11115|29946|1179|10
+#ZW|Mashonaland East Province
+Chivhu||-19021|30892|1450|13
+#ZW|Mashonaland West
+Chakari||-18063|29892|1107|6

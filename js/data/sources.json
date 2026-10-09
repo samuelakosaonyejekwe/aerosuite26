@@ -9,19 +9,19 @@
   "unverified": "no source confirmed"
  },
  "counts": {
-  "items": 173,
+  "items": 193,
   "byGrade": {
-   "regulation": 83,
-   "primary-report": 32,
-   "handbook": 26,
-   "secondary": 32
+   "regulation": 86,
+   "primary-report": 46,
+   "handbook": 28,
+   "secondary": 33
   },
-  "unverified": 38
+  "unverified": 41
  },
  "items": [
   {
    "id": "cfr-25-562-vertical-test",
-   "suite": "s15-crash",
+   "suite": "crash",
    "analysis": "pulse",
    "inputKey": "G_pulse",
    "label": "Seat dynamic test 1 (vertical-dominant): minimum peak floor deceleration",
@@ -43,7 +43,7 @@
   },
   {
    "id": "cfr-25-562-vertical-rise",
-   "suite": "s15-crash",
+   "suite": "crash",
    "analysis": "pulse",
    "inputKey": "t_rise",
    "label": "Seat dynamic test 1: latest time of peak floor deceleration",
@@ -65,7 +65,7 @@
   },
   {
    "id": "cfr-25-562-longitudinal-test",
-   "suite": "s15-crash",
+   "suite": "crash",
    "analysis": "pulse",
    "inputKey": "",
    "label": "Seat dynamic test 2 (longitudinal): Δv 44 ft/s, 16 g within 0.09 s",
@@ -92,7 +92,7 @@
   },
   {
    "id": "cfr-25-562-lumbar",
-   "suite": "s15-crash",
+   "suite": "crash",
    "analysis": "pulse",
    "inputKey": "",
    "label": "Lumbar compressive load limit",
@@ -114,7 +114,7 @@
   },
   {
    "id": "cfr-25-562-hic",
-   "suite": "s15-crash",
+   "suite": "crash",
    "analysis": "head",
    "inputKey": "",
    "label": "Head Injury Criterion limit",
@@ -136,7 +136,7 @@
   },
   {
    "id": "cfr-25-562-femur",
-   "suite": "s15-crash",
+   "suite": "crash",
    "analysis": "pulse",
    "inputKey": "",
    "label": "Femur axial compressive load limit",
@@ -158,7 +158,7 @@
   },
   {
    "id": "cfr-25-562-strap",
-   "suite": "s15-crash",
+   "suite": "crash",
    "analysis": "pulse",
    "inputKey": "",
    "label": "Upper-torso strap tension limits",
@@ -183,7 +183,7 @@
   },
   {
    "id": "cfr-27-562-vertical-test",
-   "suite": "s15-crash",
+   "suite": "crash",
    "analysis": "pulse",
    "inputKey": "v0",
    "label": "Rotorcraft seat dynamic test 1: downward velocity change",
@@ -205,7 +205,7 @@
   },
   {
    "id": "cfr-27-562-vertical-pulse",
-   "suite": "s15-crash",
+   "suite": "crash",
    "analysis": "pulse",
    "inputKey": "",
    "label": "Rotorcraft seat dynamic test 1: peak deceleration and time",
@@ -230,7 +230,7 @@
   },
   {
    "id": "cfr-27-562-longitudinal-test",
-   "suite": "s15-crash",
+   "suite": "crash",
    "analysis": "pulse",
    "inputKey": "",
    "label": "Rotorcraft seat dynamic test 2: forward Δv 42 ft/s, 18.4 g within 0.071 s",
@@ -257,7 +257,7 @@
   },
   {
    "id": "cfr-27-562-hic",
-   "suite": "s15-crash",
+   "suite": "crash",
    "analysis": "head",
    "inputKey": "",
    "label": "Rotorcraft HIC limit and window",
@@ -282,7 +282,7 @@
   },
   {
    "id": "cfr-29-562-lumbar",
-   "suite": "s15-crash",
+   "suite": "crash",
    "analysis": "pulse",
    "inputKey": "",
    "label": "Transport rotorcraft lumbar load limit",
@@ -304,7 +304,7 @@
   },
   {
    "id": "cfr-23-562-tests",
-   "suite": "s15-crash",
+   "suite": "crash",
    "analysis": "pulse",
    "inputKey": "",
    "label": "Small-aeroplane seat dynamic tests (former Part 23)",
@@ -338,7 +338,7 @@
   },
   {
    "id": "fmvss-208-hic15",
-   "suite": "s15-crash",
+   "suite": "crash",
    "analysis": "head",
    "inputKey": "",
    "label": "Automotive HIC15 limit",
@@ -360,7 +360,7 @@
   },
   {
    "id": "cfr-25-561-g-up",
-   "suite": "s15-crash",
+   "suite": "crash",
    "analysis": "emergency",
    "inputKey": "g_up",
    "label": "Emergency-landing ultimate inertia load factor: upward",
@@ -382,7 +382,7 @@
   },
   {
    "id": "cfr-25-561-g-fwd",
-   "suite": "s15-crash",
+   "suite": "crash",
    "analysis": "emergency",
    "inputKey": "g_fwd",
    "label": "Emergency-landing ultimate inertia load factor: forward",
@@ -404,7 +404,7 @@
   },
   {
    "id": "cfr-25-561-g-side",
-   "suite": "s15-crash",
+   "suite": "crash",
    "analysis": "emergency",
    "inputKey": "g_side",
    "label": "Emergency-landing ultimate inertia load factor: sideward",
@@ -426,7 +426,7 @@
   },
   {
    "id": "cfr-25-561-g-down",
-   "suite": "s15-crash",
+   "suite": "crash",
    "analysis": "emergency",
    "inputKey": "g_down",
    "label": "Emergency-landing ultimate inertia load factor: downward",
@@ -448,7 +448,7 @@
   },
   {
    "id": "cfr-25-561-g-aft",
-   "suite": "s15-crash",
+   "suite": "crash",
    "analysis": "emergency",
    "inputKey": "g_aft",
    "label": "Emergency-landing ultimate inertia load factor: rearward",
@@ -470,7 +470,7 @@
   },
   {
    "id": "cfr-23-561-load-factors",
-   "suite": "s15-crash",
+   "suite": "crash",
    "analysis": "emergency",
    "inputKey": "",
    "label": "Emergency-landing ultimate load factors, small aeroplanes (former Part 23)",
@@ -504,7 +504,7 @@
   },
   {
    "id": "cfr-25-785-seat-fitting-factor",
-   "suite": "s15-crash",
+   "suite": "crash",
    "analysis": "emergency",
    "inputKey": "fitting",
    "label": "Seat / harness attachment factor",
@@ -526,7 +526,7 @@
   },
   {
    "id": "cfr-25-625-fitting-factor",
-   "suite": "s02-fea",
+   "suite": "fea",
    "analysis": "",
    "inputKey": "",
    "label": "General fitting factor",
@@ -548,7 +548,7 @@
   },
   {
    "id": "cfr-25-571-bird-4lb",
-   "suite": "s15-crash",
+   "suite": "crash",
    "analysis": "bird",
    "inputKey": "m_bird",
    "label": "Bird mass for discrete-source damage tolerance",
@@ -570,7 +570,7 @@
   },
   {
    "id": "cfr-25-631-bird-8lb",
-   "suite": "s15-crash",
+   "suite": "crash",
    "analysis": "bird",
    "inputKey": "m_bird",
    "label": "Bird mass for empennage",
@@ -592,7 +592,7 @@
   },
   {
    "id": "cfr-33-76-large-bird-speed",
-   "suite": "s15-crash",
+   "suite": "crash",
    "analysis": "bird",
    "inputKey": "V",
    "label": "Engine large-bird ingestion test speed",
@@ -614,7 +614,7 @@
   },
   {
    "id": "cfr-25-473-sink",
-   "suite": "s14-gear",
+   "suite": "gear",
    "analysis": "drop",
    "inputKey": "sink",
    "label": "Limit descent velocity at design landing weight",
@@ -636,7 +636,7 @@
   },
   {
    "id": "cfr-25-473-sink-mtow",
-   "suite": "s14-gear",
+   "suite": "gear",
    "analysis": "drop",
    "inputKey": "sink",
    "label": "Limit descent velocity at design take-off weight",
@@ -658,7 +658,7 @@
   },
   {
    "id": "cfr-25-473-friction-cap",
-   "suite": "s14-gear",
+   "suite": "gear",
    "analysis": "drop",
    "inputKey": "",
    "label": "Maximum tyre–ground friction coefficient for landing loads",
@@ -680,7 +680,7 @@
   },
   {
    "id": "cfr-25-473-lift",
-   "suite": "s14-gear",
+   "suite": "gear",
    "analysis": "drop",
    "inputKey": "lift_frac",
    "label": "Wing lift during landing impact (transport)",
@@ -702,7 +702,7 @@
   },
   {
    "id": "cfr-25-723-reserve-energy",
-   "suite": "s14-gear",
+   "suite": "gear",
    "analysis": "drop",
    "inputKey": "",
    "label": "Reserve-energy descent velocity",
@@ -724,7 +724,7 @@
   },
   {
    "id": "cfr-23-473-sink",
-   "suite": "s14-gear",
+   "suite": "gear",
    "analysis": "drop",
    "inputKey": "sink",
    "label": "Design descent velocity, small aeroplanes (former Part 23)",
@@ -745,7 +745,7 @@
   },
   {
    "id": "cfr-23-473-lift",
-   "suite": "s14-gear",
+   "suite": "gear",
    "analysis": "drop",
    "inputKey": "lift_frac",
    "label": "Wing lift during landing impact (small aeroplanes)",
@@ -766,7 +766,7 @@
   },
   {
    "id": "cfr-23-725-drop-height",
-   "suite": "s14-gear",
+   "suite": "gear",
    "analysis": "drop",
    "inputKey": "",
    "label": "Limit drop-test height, small aeroplanes (former Part 23)",
@@ -787,7 +787,7 @@
   },
   {
    "id": "cfr-27-725-drop-height",
-   "suite": "s14-gear",
+   "suite": "gear",
    "analysis": "skid",
    "inputKey": "sink",
    "label": "Rotorcraft limit drop-test height",
@@ -809,7 +809,7 @@
   },
   {
    "id": "cfr-27-727-reserve",
-   "suite": "s14-gear",
+   "suite": "gear",
    "analysis": "skid",
    "inputKey": "reserve",
    "label": "Rotorcraft reserve-energy drop height factor",
@@ -831,7 +831,7 @@
   },
   {
    "id": "cfr-27-473-rotor-lift",
-   "suite": "s14-gear",
+   "suite": "gear",
    "analysis": "skid",
    "inputKey": "lift_frac",
    "label": "Rotor lift during landing impact",
@@ -853,7 +853,7 @@
   },
   {
    "id": "cfr-25-109-antiskid-efficiency",
-   "suite": "s14-gear",
+   "suite": "gear",
    "analysis": "brake",
    "inputKey": "",
    "label": "Wet-runway anti-skid efficiency by system type",
@@ -879,7 +879,7 @@
   },
   {
    "id": "cfr-25-109-grooved-wet",
-   "suite": "s14-gear",
+   "suite": "gear",
    "analysis": "brake",
    "inputKey": "mu_peak",
    "label": "Wet grooved / PFC runway braking coefficient",
@@ -901,7 +901,7 @@
   },
   {
    "id": "cfr-25-121-oei-gradient",
-   "suite": "s05-performance",
+   "suite": "performance",
    "analysis": "field",
    "inputKey": "",
    "label": "Second-segment one-engine-inoperative climb gradient",
@@ -927,7 +927,7 @@
   },
   {
    "id": "cfr-25-113-screen-height",
-   "suite": "s05-performance",
+   "suite": "performance",
    "analysis": "field",
    "inputKey": "screen_m",
    "label": "Take-off screen height (transport)",
@@ -949,7 +949,7 @@
   },
   {
    "id": "cfr-25-125-landing-screen",
-   "suite": "s05-performance",
+   "suite": "performance",
    "analysis": "field",
    "inputKey": "",
    "label": "Landing screen height",
@@ -971,7 +971,7 @@
   },
   {
    "id": "cfr-25-125-vref",
-   "suite": "s05-performance",
+   "suite": "performance",
    "analysis": "field",
    "inputKey": "",
    "label": "Minimum landing reference speed",
@@ -993,7 +993,7 @@
   },
   {
    "id": "cfr-25-107-v2min",
-   "suite": "s05-performance",
+   "suite": "performance",
    "analysis": "field",
    "inputKey": "",
    "label": "Minimum take-off safety speed V2MIN",
@@ -1015,7 +1015,7 @@
   },
   {
    "id": "cfr-121-195-landing-factor",
-   "suite": "s05-performance",
+   "suite": "performance",
    "analysis": "field",
    "inputKey": "",
    "label": "Operational landing-distance factor (destination, turbine aeroplanes)",
@@ -1037,7 +1037,7 @@
   },
   {
    "id": "cfr-25-337-n-pos",
-   "suite": "s05-performance",
+   "suite": "performance",
    "analysis": "envelope",
    "inputKey": "n_pos",
    "label": "Positive limit manoeuvring load factor (transport)",
@@ -1059,7 +1059,7 @@
   },
   {
    "id": "cfr-25-337-n-neg",
-   "suite": "s05-performance",
+   "suite": "performance",
    "analysis": "envelope",
    "inputKey": "n_neg",
    "label": "Negative limit manoeuvring load factor (transport)",
@@ -1081,7 +1081,7 @@
   },
   {
    "id": "cfr-23-337-n-pos",
-   "suite": "s05-performance",
+   "suite": "performance",
    "analysis": "envelope",
    "inputKey": "n_pos",
    "label": "Positive limit manoeuvring load factor, small aeroplanes (former Part 23)",
@@ -1107,7 +1107,7 @@
   },
   {
    "id": "cfr-27-337-n",
-   "suite": "s05-performance",
+   "suite": "performance",
    "analysis": "envelope",
    "inputKey": "n_pos",
    "label": "Rotorcraft limit manoeuvring load factors",
@@ -1132,7 +1132,7 @@
   },
   {
    "id": "cfr-23-333-gust-vc",
-   "suite": "s05-performance",
+   "suite": "performance",
    "analysis": "envelope",
    "inputKey": "Ude_c",
    "label": "Derived gust velocity at VC (former Part 23; sea level to 20 000 ft)",
@@ -1153,7 +1153,7 @@
   },
   {
    "id": "cfr-23-341-pratt",
-   "suite": "s05-performance",
+   "suite": "performance",
    "analysis": "envelope",
    "inputKey": "",
    "label": "Gust alleviation factor (Pratt formula) as codified",
@@ -1174,7 +1174,7 @@
   },
   {
    "id": "cfr-25-341-uref",
-   "suite": "s03-aeroelastic",
+   "suite": "aeroelastic",
    "analysis": "gust",
    "inputKey": "U_ds",
    "label": "Reference discrete-gust velocity (transport, current rule)",
@@ -1201,7 +1201,7 @@
   },
   {
    "id": "cfr-25-341-gradient",
-   "suite": "s03-aeroelastic",
+   "suite": "aeroelastic",
    "analysis": "gust",
    "inputKey": "H_chords",
    "label": "Gust gradient distances to investigate",
@@ -1226,7 +1226,7 @@
   },
   {
    "id": "cfr-25-341-turb-scale",
-   "suite": "s03-aeroelastic",
+   "suite": "aeroelastic",
    "analysis": "gust",
    "inputKey": "L_turb",
    "label": "Scale of turbulence",
@@ -1248,7 +1248,7 @@
   },
   {
    "id": "cfr-25-341-turb-intensity",
-   "suite": "s03-aeroelastic",
+   "suite": "aeroelastic",
    "analysis": "gust",
    "inputKey": "sigma_w",
    "label": "Reference limit turbulence intensity",
@@ -1273,7 +1273,7 @@
   },
   {
    "id": "cfr-25-303-factor-of-safety",
-   "suite": "s21-composites",
+   "suite": "composites",
    "analysis": "clt",
    "inputKey": "sf",
    "label": "Factor of safety on limit load",
@@ -1320,7 +1320,7 @@
   },
   {
    "id": "cfr-25-571-scatter",
-   "suite": "s09-fatigue",
+   "suite": "fatigue",
    "analysis": "sn",
    "inputKey": "scatter",
    "label": "Safe-life scatter factor requirement",
@@ -1342,7 +1342,7 @@
   },
   {
    "id": "cfr-25-1309-b",
-   "suite": "s22-safety",
+   "suite": "safety",
    "analysis": "fta",
    "inputKey": "obj_cat",
    "label": "Qualitative probability requirements by failure-condition severity",
@@ -1368,7 +1368,7 @@
   },
   {
    "id": "cfr-25-1309-latent",
-   "suite": "s22-safety",
+   "suite": "safety",
    "analysis": "fta",
    "inputKey": "t_latent",
    "label": "Limit on latent-failure probability in a two-failure catastrophic combination",
@@ -1390,7 +1390,7 @@
   },
   {
    "id": "cfr-25-841-cabin-altitude",
-   "suite": "s11-acoustics",
+   "suite": "acoustics",
    "analysis": "cabin",
    "inputKey": "cabin_alt_m",
    "label": "Maximum cabin pressure altitude in normal operation",
@@ -1412,7 +1412,7 @@
   },
   {
    "id": "cfr-36-b36-5-stage3",
-   "suite": "s11-acoustics",
+   "suite": "acoustics",
    "analysis": "flyover",
    "inputKey": "",
    "label": "Stage 3 maximum noise levels (EPNdB) versus maximum weight",
@@ -1441,7 +1441,7 @@
   },
   {
    "id": "cfr-36-b36-3-reference-points",
-   "suite": "s11-acoustics",
+   "suite": "acoustics",
    "analysis": "flyover",
    "inputKey": "",
    "label": "Noise certification reference measurement points",
@@ -1466,7 +1466,7 @@
   },
   {
    "id": "cfr-25-appC-takeoff-icing",
-   "suite": "s13-icing",
+   "suite": "icing",
    "analysis": "accretion",
    "inputKey": "lwc",
    "label": "Take-off maximum icing condition",
@@ -1491,7 +1491,7 @@
   },
   {
    "id": "cfr-25-appC-extent",
-   "suite": "s13-icing",
+   "suite": "icing",
    "analysis": "envelope",
    "inputKey": "",
    "label": "Standard horizontal extents of Appendix C icing conditions",
@@ -1515,7 +1515,7 @@
   },
   {
    "id": "cfr-25-appO-sld-threshold",
-   "suite": "s13-icing",
+   "suite": "icing",
    "analysis": "impingement",
    "inputKey": "mvd",
    "label": "Supercooled-large-drop conditions reference diameter",
@@ -1536,7 +1536,7 @@
   },
   {
    "id": "cfr-91-151-vfr-reserve",
-   "suite": "s24-mission",
+   "suite": "mission",
    "analysis": "heli",
    "inputKey": "reserve_min",
    "label": "VFR fuel reserve",
@@ -1562,7 +1562,7 @@
   },
   {
    "id": "cfr-91-167-ifr-reserve",
-   "suite": "s24-mission",
+   "suite": "mission",
    "analysis": "heli",
    "inputKey": "reserve_min",
    "label": "IFR fuel reserve after reaching the alternate",
@@ -1587,7 +1587,7 @@
   },
   {
    "id": "rotor-vortex-noise-schlegel",
-   "suite": "s11-acoustics",
+   "suite": "acoustics",
    "analysis": "spectrum",
    "inputKey": "K_bb",
    "label": "Rotor broadband (vortex) noise overall level at 300 ft, Schlegel-King-Mull",
@@ -1619,7 +1619,7 @@
   },
   {
    "id": "rotor-vortex-noise-strouhal",
-   "suite": "s11-acoustics",
+   "suite": "acoustics",
    "analysis": "spectrum",
    "inputKey": "",
    "label": "Vortex-noise peak-frequency Strouhal number (helicopter rotor)",
@@ -1640,7 +1640,7 @@
   },
   {
    "id": "airframe-noise-fink-clean-oaspl",
-   "suite": "s11-acoustics",
+   "suite": "acoustics",
    "analysis": "spectrum",
    "inputKey": "K_af",
    "label": "Clean-airframe trailing-edge OASPL (Fink), as reproduced by Crighton",
@@ -1665,11 +1665,11 @@
    },
    "grade": "secondary",
    "retrieved": "2026-10-09",
-   "note": "DISCREPANCY. Structure (50 log V, 10 log(delta b/h^2), delta = 0.37 c Re^-0.2) matches the suite, but the constant in the opened source is 7.5 dB with U0 in knots, i.e. 107.5 dB when written with V/100 kt; the suite uses 101.3 (6.2 dB lower). Equation checked visually on the page image (text layer drops the delta symbol). The suite constant 101.3 dB is the value usually attributed to Fink FAA-RD-77-29 itself; that report (DTIC) could not be opened (DTIC under maintenance), so 101.3 is NOT verified. Crighton says eq. (20) is \"for jet aircraft\". K_af is a calibration offset."
+   "note": "DISCREPANCY. Structure (50 log V, 10 log(delta b/h^2), delta = 0.37 c Re^-0.2) matches the suite, but the constant in the opened source is 7.5 dB with U0 in knots, i.e. 107.5 dB when written with V/100 kt; the suite uses 101.3 (6.2 dB lower). Equation checked visually on the page image (text layer drops the delta symbol). The suite constant 101.3 dB is the value usually attributed to Fink FAA-RD-77-29 itself; that report (DTIC) could not be opened (DTIC under maintenance), so 101.3 is NOT verified. Crighton says eq. (20) is \"for jet aircraft\". K_af is a calibration offset. Round 3: resolved by the original report — see fink-faa-rd-77-29-clean-airframe-constant (101.5 dB for clean sailplanes; jets +6 dB = 107.5 dB)."
   },
   {
    "id": "airframe-noise-clean-vs-conventional-8db",
-   "suite": "s11-acoustics",
+   "suite": "acoustics",
    "analysis": "spectrum",
    "inputKey": "K_af",
    "label": "Level difference between aerodynamically clean and conventionally constructed airframes (Fink / ANOPP)",
@@ -1690,7 +1690,7 @@
   },
   {
    "id": "airframe-noise-peak-strouhal",
-   "suite": "s11-acoustics",
+   "suite": "acoustics",
    "analysis": "spectrum",
    "inputKey": "",
    "label": "Trailing-edge noise peak frequency fm = 0.1 U0/delta (Fink)",
@@ -1711,7 +1711,7 @@
   },
   {
    "id": "jet-convection-mach-factor",
-   "suite": "s11-acoustics",
+   "suite": "acoustics",
    "analysis": "spectrum",
    "inputKey": "",
    "label": "Eddy convection Mach number Mc = K*Mj",
@@ -1732,7 +1732,7 @@
   },
   {
    "id": "iso9613-1-absorption",
-   "suite": "s11-acoustics",
+   "suite": "acoustics",
    "analysis": "spectrum",
    "inputKey": "",
    "label": "Pure-tone atmospheric absorption coefficient (ISO 9613-1:1993)",
@@ -1760,7 +1760,7 @@
   },
   {
    "id": "a-weighting-iec61672",
-   "suite": "s11-acoustics",
+   "suite": "acoustics",
    "analysis": "spectrum",
    "inputKey": "",
    "label": "A-weighting frequency response constants",
@@ -1793,7 +1793,7 @@
   },
   {
    "id": "hydroplaning-rotating-tyre",
-   "suite": "s14-gear",
+   "suite": "gear",
    "analysis": "brake",
    "inputKey": "p_tyre",
    "label": "Dynamic hydroplaning speed, rotating tyre: Vp = 9*sqrt(p)",
@@ -1814,7 +1814,7 @@
   },
   {
    "id": "hydroplaning-spin-up-nonrotating-tyre",
-   "suite": "s14-gear",
+   "suite": "gear",
    "analysis": "brake",
    "inputKey": "p_tyre",
    "label": "Wheel spin-up (non-rotating tyre) hydroplaning speed: 7.7*sqrt(p)",
@@ -1835,7 +1835,7 @@
   },
   {
    "id": "burckhardt-friction-coefficients",
-   "suite": "s14-gear",
+   "suite": "gear",
    "analysis": "brake",
    "inputKey": "surface",
    "label": "Burckhardt tyre-road friction model coefficients (c1, c2, c3)",
@@ -1892,7 +1892,7 @@
   },
   {
    "id": "dri-spinal-model-parameters",
-   "suite": "s15-crash",
+   "suite": "crash",
    "analysis": "pulse",
    "inputKey": "",
    "label": "Dynamic Response Index spinal model: natural frequency and damping ratio (Stech & Payne)",
@@ -1919,7 +1919,7 @@
   },
   {
    "id": "dri-injury-risk-limits",
-   "suite": "s15-crash",
+   "suite": "crash",
    "analysis": "pulse",
    "inputKey": "",
    "label": "DRz (+z, eyeballs-down) limits and approximate injury risk (Brinkley criterion)",
@@ -1947,7 +1947,7 @@
   },
   {
    "id": "eiband-human-tolerance",
-   "suite": "s15-crash",
+   "suite": "crash",
    "analysis": "pulse",
    "inputKey": "",
    "label": "Eiband human tolerance survey (existence / headline finding)",
@@ -1968,7 +1968,7 @@
   },
   {
    "id": "mil-std-1290a-vertical-impact",
-   "suite": "s15-crash",
+   "suite": "crash",
    "analysis": "pulse",
    "inputKey": "v0",
    "label": "Design vertical impact velocity for military light fixed/rotary-wing aircraft",
@@ -1989,7 +1989,7 @@
   },
   {
    "id": "bird-density-porosity",
-   "suite": "s15-crash",
+   "suite": "crash",
    "analysis": "bird",
    "inputKey": "rho_bird",
    "label": "Substitute-bird density and porosity used in bird-strike modelling",
@@ -2009,7 +2009,7 @@
   },
   {
    "id": "dapca-iv-rand-cers",
-   "suite": "s26-economics",
+   "suite": "economics",
    "analysis": "lcc",
    "inputKey": "dev_a",
    "label": "RAND airframe cost-estimating relationships (basis of DAPCA IV), cumulative for 100 aircraft",
@@ -2078,7 +2078,7 @@
   },
   {
    "id": "learning-curve-airframe-rand",
-   "suite": "s26-economics",
+   "suite": "economics",
    "analysis": "lcc",
    "inputKey": "learning",
    "label": "Airframe cost-quantity (learning) slopes, 34 military aircraft, first 200 units",
@@ -2128,7 +2128,7 @@
   },
   {
    "id": "learning-curve-aerospace-nasa-ceh",
-   "suite": "s26-economics",
+   "suite": "economics",
    "analysis": "lcc",
    "inputKey": "learning",
    "label": "Typical aerospace learning-curve slope (NASA Cost Estimating Handbook table)",
@@ -2149,7 +2149,7 @@
   },
   {
    "id": "pratt-walker-gust-alleviation-factor",
-   "suite": "s05-performance",
+   "suite": "performance",
    "analysis": "envelope",
    "inputKey": "",
    "label": "Gust alleviation factor Kg = 0.88*mu_g/(5.3 + mu_g)",
@@ -2178,7 +2178,7 @@
   },
   {
    "id": "messinger-icing-model-citation",
-   "suite": "s13-icing",
+   "suite": "icing",
    "analysis": "accretion",
    "inputKey": "",
    "label": "Messinger icing energy-balance model (citation)",
@@ -2199,7 +2199,7 @@
   },
   {
    "id": "ice-density",
-   "suite": "s13-icing",
+   "suite": "icing",
    "analysis": "accretion",
    "inputKey": "rho_ice",
    "label": "Density of ice (Ih, 0 C)",
@@ -2219,7 +2219,7 @@
   },
   {
    "id": "ice-latent-heat-fusion",
-   "suite": "s13-icing",
+   "suite": "icing",
    "analysis": "accretion",
    "inputKey": "",
    "label": "Latent heat of fusion of water/ice",
@@ -2239,7 +2239,7 @@
   },
   {
    "id": "ac25-1309-1b-extremely-improbable",
-   "suite": "s22-safety",
+   "suite": "safety",
    "analysis": "fta",
    "inputKey": "obj_cat",
    "label": "Extremely improbable (catastrophic) failure condition, average probability per flight hour",
@@ -2260,7 +2260,7 @@
   },
   {
    "id": "ac25-1309-1b-extremely-remote",
-   "suite": "s22-safety",
+   "suite": "safety",
    "analysis": "fta",
    "inputKey": "obj_haz",
    "label": "Extremely remote (hazardous) failure condition upper bound",
@@ -2281,7 +2281,7 @@
   },
   {
    "id": "ac25-1309-1b-remote",
-   "suite": "s22-safety",
+   "suite": "safety",
    "analysis": "fta",
    "inputKey": "obj_maj",
    "label": "Remote (major) failure condition upper bound",
@@ -2302,7 +2302,7 @@
   },
   {
    "id": "ac25-1309-1b-probable",
-   "suite": "s22-safety",
+   "suite": "safety",
    "analysis": "fta",
    "inputKey": "obj_min",
    "label": "Probable (minor) failure condition upper bound",
@@ -2323,7 +2323,7 @@
   },
   {
    "id": "ac23-1309-1e-figure2-class-table",
-   "suite": "s22-safety",
+   "suite": "safety",
    "analysis": "fta",
    "inputKey": "obj_cat",
    "label": "Part 23 allowable quantitative probabilities by aeroplane class (minor / major / hazardous / catastrophic)",
@@ -2374,7 +2374,7 @@
   },
   {
    "id": "ac120-42b-ifsd-rates",
-   "suite": "s22-safety",
+   "suite": "safety",
    "analysis": "fta",
    "inputKey": "lam_engine",
    "label": "ETOPS operator in-flight shutdown (IFSD) rate monitoring thresholds, twin-engine, 12-month rolling",
@@ -2399,7 +2399,7 @@
   },
   {
    "id": "part25-appk-ifsd-120min",
-   "suite": "s22-safety",
+   "suite": "safety",
    "analysis": "fta",
    "inputKey": "lam_engine",
    "label": "Part 25 Appendix K world-fleet IFSD rate for type-design approval up to 120 min",
@@ -2420,7 +2420,7 @@
   },
   {
    "id": "nureg-cr-5485-ccf-screening",
-   "suite": "s22-safety",
+   "suite": "safety",
    "analysis": "fta",
    "inputKey": "beta",
    "label": "Common-cause screening factor (global common cause factor g) for redundant groups",
@@ -2458,7 +2458,7 @@
   },
   {
    "id": "mil-std-882e-severity-categories",
-   "suite": "s22-safety",
+   "suite": "safety",
    "analysis": "fmeca",
    "inputKey": "",
    "label": "Severity categories 1-4 (Catastrophic, Critical, Marginal, Negligible)",
@@ -2484,7 +2484,7 @@
   },
   {
    "id": "mil-std-882e-probability-levels",
-   "suite": "s22-safety",
+   "suite": "safety",
    "analysis": "fmeca",
    "inputKey": "",
    "label": "Example quantitative probability levels A-E (probability of occurrence in the life of an item)",
@@ -2511,7 +2511,7 @@
   },
   {
    "id": "mil-f-8785c-sp-damping",
-   "suite": "s04-flightdyn",
+   "suite": "flightdyn",
    "analysis": "long",
    "inputKey": "sp_zeta_min",
    "label": "Short-period damping ratio limits (Table IV)",
@@ -2560,7 +2560,7 @@
   },
   {
    "id": "mil-f-8785c-phugoid",
-   "suite": "s04-flightdyn",
+   "suite": "flightdyn",
    "analysis": "long",
    "inputKey": "ph_zeta_min",
    "label": "Phugoid damping, Level 1 minimum (Level 2: zeta >= 0; Level 3: T2 >= 55 s)",
@@ -2581,7 +2581,7 @@
   },
   {
    "id": "mil-f-8785c-cap",
-   "suite": "s04-flightdyn",
+   "suite": "flightdyn",
    "analysis": "long",
    "inputKey": "cap_min",
    "label": "Short-period frequency requirement omega_nsp^2/(n/alpha) boundaries",
@@ -2616,7 +2616,7 @@
   },
   {
    "id": "mil-f-8785c-dutch-roll",
-   "suite": "s04-flightdyn",
+   "suite": "flightdyn",
    "analysis": "lat",
    "inputKey": "dr_zeta_min",
    "label": "Minimum Dutch-roll frequency and damping (Table VI): min zeta_d, min zeta_d*omega_nd [rad/s], min omega_nd [rad/s]",
@@ -2677,7 +2677,7 @@
   },
   {
    "id": "mil-f-8785c-roll-mode",
-   "suite": "s04-flightdyn",
+   "suite": "flightdyn",
    "analysis": "lat",
    "inputKey": "roll_tau_max",
    "label": "Maximum roll-mode time constant (Table VII), Level 1 / Level 2 / Level 3",
@@ -2724,7 +2724,7 @@
   },
   {
    "id": "mil-f-8785c-spiral",
-   "suite": "s04-flightdyn",
+   "suite": "flightdyn",
    "analysis": "lat",
    "inputKey": "spiral_T2_min",
    "label": "Spiral stability - minimum time to double amplitude (Table VIII), Level 1 / 2 / 3",
@@ -2756,7 +2756,7 @@
   },
   {
    "id": "ac23-13a-full-scale-test-scatter",
-   "suite": "s09-fatigue",
+   "suite": "fatigue",
    "analysis": "sn",
    "inputKey": "scatter",
    "label": "Full-scale fatigue test scatter factor, aluminium safe-life structure, by number of test specimens",
@@ -2782,7 +2782,7 @@
   },
   {
    "id": "ac23-13a-analysis-scatter",
-   "suite": "s09-fatigue",
+   "suite": "fatigue",
    "analysis": "sn",
    "inputKey": "scatter",
    "label": "Scatter factor for safe-life fatigue ANALYSIS with the AC Appendix 2 S-N data (aluminium)",
@@ -2803,7 +2803,7 @@
   },
   {
    "id": "ac25-571-1d-base-scatter-factor",
-   "suite": "s09-fatigue",
+   "suite": "fatigue",
    "analysis": "spectrum",
    "inputKey": "scatter",
    "label": "Safe-life base scatter factors applicable to test results",
@@ -2827,7 +2827,7 @@
   },
   {
    "id": "ac25-571-1d-wfd-factors",
-   "suite": "s09-fatigue",
+   "suite": "fatigue",
    "analysis": "crack",
    "inputKey": "scatter",
    "label": "WFD: structural modification point = WFD(average behaviour)/2 if inspections effective, /3 if not; inspection start point /3",
@@ -2852,7 +2852,7 @@
   },
   {
    "id": "jssg-2006-initial-flaw-holes",
-   "suite": "s09-fatigue",
+   "suite": "fatigue",
    "analysis": "crack",
    "inputKey": "a0",
    "label": "Assumed initial primary flaw at holes and cutouts (slow crack growth and fail-safe primary element)",
@@ -2873,7 +2873,7 @@
   },
   {
    "id": "jssg-2006-continuing-damage",
-   "suite": "s09-fatigue",
+   "suite": "fatigue",
    "analysis": "crack",
    "inputKey": "",
    "label": "Continuing-damage / typical manufacturing quality flaw at other holes",
@@ -2894,7 +2894,7 @@
   },
   {
    "id": "jssg-2006-two-lifetimes",
-   "suite": "s09-fatigue",
+   "suite": "fatigue",
    "analysis": "crack",
    "inputKey": "scatter",
    "label": "Slow-crack-growth structure: required period of unrepaired service usage",
@@ -2915,7 +2915,7 @@
   },
   {
    "id": "mil-hdbk-1823a-pod-model",
-   "suite": "s09-fatigue",
+   "suite": "fatigue",
    "analysis": "prob",
    "inputKey": "a50",
    "label": "Probability-of-detection model: a50, a90, a90/95 definitions; POD modelled on log(a) with logit / probit links",
@@ -3489,7 +3489,7 @@
   },
   {
    "id": "faa-econ-crew-cost-narrowbody",
-   "suite": "s26-economics",
+   "suite": "economics",
    "analysis": "",
    "inputKey": "crew_usd_fh",
    "label": "Crew cost per block hour, Part 121 passenger narrowbody >=165k lb MTOW",
@@ -3510,7 +3510,7 @@
   },
   {
    "id": "faa-econ-maint-cost-narrowbody",
-   "suite": "s26-economics",
+   "suite": "economics",
    "analysis": "",
    "inputKey": "maint_usd_fh",
    "label": "Maintenance cost per block hour, Part 121 passenger narrowbody >=165k lb MTOW",
@@ -3531,7 +3531,7 @@
   },
   {
    "id": "faa-econ-total-cost-narrowbody",
-   "suite": "s26-economics",
+   "suite": "economics",
    "analysis": "opcost",
    "inputKey": "",
    "label": "Fuel, variable, fixed and total aircraft operating cost per block hour, narrowbody >=165k lb",
@@ -3561,7 +3561,7 @@
   },
   {
    "id": "faa-econ-fuel-burn-narrowbody",
-   "suite": "s26-economics",
+   "suite": "economics",
    "analysis": "",
    "inputKey": "fuel_kg_fh",
    "label": "Fuel burn per block hour, Part 121 passenger narrowbody >=165k lb MTOW",
@@ -3582,7 +3582,7 @@
   },
   {
    "id": "faa-econ-utilisation-narrowbody",
-   "suite": "s26-economics",
+   "suite": "economics",
    "analysis": "",
    "inputKey": "util_fh_yr",
    "label": "Daily utilisation, Part 121 passenger narrowbody >=165k lb MTOW",
@@ -3603,7 +3603,7 @@
   },
   {
    "id": "faa-econ-seats-loadfactor-narrowbody",
-   "suite": "s26-economics",
+   "suite": "economics",
    "analysis": "",
    "inputKey": "load_factor",
    "label": "Average seats and passenger load factor, Part 121 passenger narrowbody >=165k lb MTOW",
@@ -3629,7 +3629,7 @@
   },
   {
    "id": "faa-econ-vsl",
-   "suite": "s26-economics",
+   "suite": "economics",
    "analysis": "",
    "inputKey": "",
    "label": "Value of a statistical life (context for safety benefit valuation)",
@@ -3650,7 +3650,7 @@
   },
   {
    "id": "eia-jet-fuel-gulf-coast-annual",
-   "suite": "s26-economics",
+   "suite": "economics",
    "analysis": "",
    "inputKey": "fuel_usd_kg",
    "label": "U.S. Gulf Coast kerosene-type jet fuel spot price FOB, annual averages 2020-2025",
@@ -3678,7 +3678,7 @@
   },
   {
    "id": "eia-jet-fuel-gulf-coast-monthly-2026",
-   "suite": "s26-economics",
+   "suite": "economics",
    "analysis": "",
    "inputKey": "fuel_usd_kg",
    "label": "U.S. Gulf Coast kerosene-type jet fuel spot price FOB, monthly Jan-Sep 2026",
@@ -3709,7 +3709,7 @@
   },
   {
    "id": "bts-airline-fuel-cost-per-gallon",
-   "suite": "s26-economics",
+   "suite": "economics",
    "analysis": "",
    "inputKey": "fuel_usd_kg",
    "label": "U.S. scheduled airlines' fuel cost per gallon paid (Form 41 P-12(a)), 2025 total and 2026 YTD (Jan-Aug)",
@@ -3734,7 +3734,7 @@
   },
   {
    "id": "eurocontrol-si10-jet-fuel-2022",
-   "suite": "s26-economics",
+   "suite": "economics",
    "analysis": "",
    "inputKey": "fuel_usd_kg",
    "label": "Average jet fuel price 2022 (IATA Jet Fuel Price Monitor, as adopted by EUROCONTROL)",
@@ -3759,7 +3759,7 @@
   },
   {
    "id": "eia-electricity-price-commercial",
-   "suite": "s26-economics",
+   "suite": "economics",
    "analysis": "",
    "inputKey": "elec_usd_kWh",
    "label": "U.S. average retail electricity price, July 2026 (commercial / industrial / all sectors)",
@@ -3786,7 +3786,7 @@
   },
   {
    "id": "eu-ets-allowance-price-2025",
-   "suite": "s26-economics",
+   "suite": "economics",
    "analysis": "",
    "inputKey": "carbon_usd_t",
    "label": "EU ETS allowance price, 2025 average",
@@ -3811,7 +3811,7 @@
   },
   {
    "id": "easa-saf-reference-prices-2024",
-   "suite": "s26-economics",
+   "suite": "economics",
    "analysis": "",
    "inputKey": "saf_price_ratio",
    "label": "2024 EU average prices: conventional aviation fuel, aviation biofuels, synthetic aviation fuels",
@@ -3837,7 +3837,7 @@
   },
   {
    "id": "eurocontrol-route-charge-weight-factor",
-   "suite": "s26-economics",
+   "suite": "economics",
    "analysis": "",
    "inputKey": "nav_usd_100km",
    "label": "EUROCONTROL en-route charge formula: distance factor x weight factor x unit rate, weight factor = sqrt(MTOW/50 t), distance factor = km/100",
@@ -3857,7 +3857,7 @@
   },
   {
    "id": "panynj-jfk-landing-charge-2026",
-   "suite": "s26-economics",
+   "suite": "economics",
    "analysis": "",
    "inputKey": "landing_usd_t",
    "label": "JFK public landing area charge (non-signatory/itinerant), effective 1 Jan 2026",
@@ -3877,7 +3877,7 @@
   },
   {
    "id": "usc-26-11-corporate-tax-rate",
-   "suite": "s26-economics",
+   "suite": "economics",
    "analysis": "",
    "inputKey": "tax",
    "label": "US federal corporate income tax rate",
@@ -3898,7 +3898,7 @@
   },
   {
    "id": "irs-pub946-macrs-7yr-table",
-   "suite": "s26-economics",
+   "suite": "economics",
    "analysis": "invest",
    "inputKey": "dep_table",
    "label": "MACRS GDS 7-year property, half-year convention, annual depreciation rates",
@@ -3919,7 +3919,7 @@
   },
   {
    "id": "airbus-2018-list-price-a320neo",
-   "suite": "s26-economics",
+   "suite": "economics",
    "analysis": "",
    "inputKey": "price_usd",
    "label": "Airbus 2018 average list prices (single-aisle family)",
@@ -3945,7 +3945,7 @@
   },
   {
    "id": "intervistas-iata-price-elasticity-route",
-   "suite": "s26-economics",
+   "suite": "economics",
    "analysis": "route",
    "inputKey": "elasticity",
    "label": "Air travel fare (price) elasticity of demand by level of aggregation",
@@ -3969,7 +3969,7 @@
   },
   {
    "id": "iata-briefing9-price-elasticity",
-   "suite": "s26-economics",
+   "suite": "economics",
    "analysis": "route",
    "inputKey": "elasticity",
    "label": "Air travel price elasticities (IATA summary of the InterVISTAS study)",
@@ -3993,7 +3993,7 @@
   },
   {
    "id": "doe-fotw-battery-pack-cost-2023",
-   "suite": "s26-economics",
+   "suite": "economics",
    "analysis": "",
    "inputKey": "batt_usd_kWh",
    "label": "EV lithium-ion battery pack cost estimate (light-duty, at-scale production)",
@@ -4018,7 +4018,7 @@
   },
   {
    "id": "bnef-battery-pack-price-2025",
-   "suite": "s26-economics",
+   "suite": "economics",
    "analysis": "",
    "inputKey": "batt_usd_kWh",
    "label": "Volume-weighted average lithium-ion battery pack price, 2025 survey",
@@ -4043,7 +4043,7 @@
   },
   {
    "id": "doe-hydrogen-shot-target",
-   "suite": "s26-economics",
+   "suite": "economics",
    "analysis": "sustain",
    "inputKey": "h2_usd_kg",
    "label": "DOE Hydrogen Shot cost target for clean hydrogen (target, not a market price)",
@@ -4064,7 +4064,7 @@
   },
   {
    "id": "eia-us-grid-co2-intensity-2023",
-   "suite": "s26-economics",
+   "suite": "economics",
    "analysis": "sustain",
    "inputKey": "grid_g_kWh",
    "label": "US average CO2 emissions per kWh of utility-scale net generation, 2023",
@@ -4150,8 +4150,7 @@
     "org": "Panasonic / SANYO Energy (U.S.A.) Corporation",
     "year": 2012,
     "url": "https://e2e.ti.com/cfs-file/__key/communityserver-discussions-components-files/196/Panasonic-NCR18650B-datasheet.pdf",
-    "locator": "Specifications box",
-    "quote": "Energy density(3) Volumetric: 676 Wh/l Gravimetric: 243 Wh/kg"
+    "locator": "Specifications box"
    },
    "grade": "handbook",
    "retrieved": "2026-10-09",
@@ -4193,7 +4192,7 @@
   },
   {
    "id": "nasa-ftrc-thermal-runaway-energy",
-   "suite": "s19-electrical",
+   "suite": "electrical",
    "analysis": "ageing",
    "inputKey": "heat_ratio",
    "label": "Thermal-runaway total energy release vs stored electrical energy, 18650 cells (fractional thermal runaway calorimetry)",
@@ -4221,7 +4220,7 @@
   },
   {
    "id": "paschen-air-constants",
-   "suite": "s19-electrical",
+   "suite": "electrical",
    "analysis": "cable",
    "inputKey": "",
    "label": "Paschen/Townsend constants for air and the Paschen minimum",
@@ -4255,7 +4254,7 @@
   },
   {
    "id": "ac4313-copper-wire-ampacity",
-   "suite": "s19-electrical",
+   "suite": "electrical",
    "analysis": "network",
    "inputKey": "J_Amm2",
    "label": "Continuous-duty current of copper aircraft wire in bundles (Table 11-9) and implied current density",
@@ -4305,7 +4304,7 @@
   },
   {
    "id": "ac4313-altitude-derating",
-   "suite": "s19-electrical",
+   "suite": "electrical",
    "analysis": "cable",
    "inputKey": "J_max_Amm2",
    "label": "Free-air single-wire rating and altitude derating factor (worked example)",
@@ -4332,7 +4331,7 @@
   },
   {
    "id": "copper-resistivity-iacs",
-   "suite": "s19-electrical",
+   "suite": "electrical",
    "analysis": "",
    "inputKey": "",
    "label": "Copper resistivity at 20 C (IACS) and temperature coefficient",
@@ -4358,7 +4357,7 @@
   },
   {
    "id": "nox-p3t3-coefficient-a",
-   "suite": "s07-propulsion",
+   "suite": "propulsion",
    "analysis": "",
    "inputKey": "nox_a",
    "label": "T3-P3 NOx correlation, leading coefficient a",
@@ -4378,7 +4377,7 @@
   },
   {
    "id": "nox-p3t3-pressure-exponent",
-   "suite": "s07-propulsion",
+   "suite": "propulsion",
    "analysis": "",
    "inputKey": "nox_n",
    "label": "T3-P3 NOx correlation, pressure exponent n (P3 referenced to 101325 Pa)",
@@ -4398,7 +4397,7 @@
   },
   {
    "id": "nox-p3t3-temperature-scale",
-   "suite": "s07-propulsion",
+   "suite": "propulsion",
    "analysis": "",
    "inputKey": "nox_Ts",
    "label": "T3-P3 NOx correlation, temperature scale Ts in exp(T3/Ts)",
@@ -4418,7 +4417,7 @@
   },
   {
    "id": "nox-p3t3-coefficient-a-combustor",
-   "suite": "s07-propulsion",
+   "suite": "propulsion",
    "analysis": "combustor",
    "inputKey": "nox_a",
    "label": "T3-P3 NOx correlation, leading coefficient a",
@@ -4438,7 +4437,7 @@
   },
   {
    "id": "nox-p3t3-pressure-exponent-combustor",
-   "suite": "s07-propulsion",
+   "suite": "propulsion",
    "analysis": "combustor",
    "inputKey": "nox_n",
    "label": "T3-P3 NOx correlation, pressure exponent n (P3 referenced to 101325 Pa)",
@@ -4458,7 +4457,7 @@
   },
   {
    "id": "nox-p3t3-temperature-scale-combustor",
-   "suite": "s07-propulsion",
+   "suite": "propulsion",
    "analysis": "combustor",
    "inputKey": "nox_Ts",
    "label": "T3-P3 NOx correlation, temperature scale Ts in exp(T3/Ts)",
@@ -4478,7 +4477,7 @@
   },
   {
    "id": "boeing-fuel-flow-method-2",
-   "suite": "s07-propulsion",
+   "suite": "propulsion",
    "analysis": "combustor",
    "inputKey": "",
    "label": "Boeing Fuel Flow Method 2 (altitude/humidity correction of certification EI NOx)",
@@ -4499,7 +4498,7 @@
   },
   {
    "id": "icao-lto-cycle",
-   "suite": "s07-propulsion",
+   "suite": "propulsion",
    "analysis": "combustor",
    "inputKey": "",
    "label": "ICAO reference LTO cycle: thrust settings and times in mode",
@@ -4536,7 +4535,7 @@
   },
   {
    "id": "schumann-contrail-constants",
-   "suite": "s07-propulsion",
+   "suite": "propulsion",
    "analysis": "combustor",
    "inputKey": "",
    "label": "Schmidt-Appleman criterion constants: water emission index of kerosene, cp of air, molar-mass ratio, fuel heat of combustion",
@@ -4567,7 +4566,7 @@
   },
   {
    "id": "foca-piston-einox-lycoming-o360",
-   "suite": "s07-propulsion",
+   "suite": "propulsion",
    "analysis": "piston",
    "inputKey": "EINOx",
    "label": "Measured NOx emission index, Lycoming O-360-A3A (180 hp, carburetted, avgas 100LL), by power mode",
@@ -4600,7 +4599,7 @@
   },
   {
    "id": "edb-einox-takeoff-vs-opr",
-   "suite": "s07-propulsion",
+   "suite": "propulsion",
    "analysis": "combustor",
    "inputKey": "nox_a",
    "label": "Measured take-off EI NOx of certified turbofans versus overall pressure ratio (databank regression)",
@@ -4651,7 +4650,7 @@
   },
   {
    "id": "edb-lto-fuel-flow-reference",
-   "suite": "s07-propulsion",
+   "suite": "propulsion",
    "analysis": "cycle",
    "inputKey": "T0_N",
    "label": "Certified turbofan reference data: rated thrust, bypass ratio, pressure ratio and LTO fuel flows",
@@ -4685,12 +4684,614 @@
    "grade": "primary-report",
    "retrieved": "2026-10-09",
    "note": "The suite default engine (120 kN, BPR 5.7, OPR 32) is a plausible CFM56-5B/-7B-class engine; the databank gives real values for 888 turbofan entries so the defaults can be replaced by a pick-list. Take-off SFC implied by the databank: CFM56-7B26 1.221 kg/s ÷ 116.99 kN = 10.4 mg/(N·s); PW1127G-JM 6.6 mg/(N·s) (my arithmetic)."
+  },
+  {
+   "id": "atsb-ar-2013-107-piston-engine-rate",
+   "suite": "safety",
+   "analysis": "",
+   "inputKey": "lam_engine",
+   "label": "Piston engine failures or malfunctions per 10,000 hours flown, light aeroplanes up to 800 kg, 2009–2014",
+   "value": {
+    "Textron Lycoming": 1.27,
+    "Continental": 1.21,
+    "Rotax": 1.56,
+    "Jabiru": 3.21,
+    "per_flight_hour_Lycoming_Continental_mean": 0.000124
+   },
+   "unit": "per 10,000 h",
+   "defaultInSuite": 0.00012,
+   "source": {
+    "title": "Engine failures and malfunctions in light aeroplanes 2009–2014 (AR-2013-107)",
+    "org": "Australian Transport Safety Bureau",
+    "year": 2016,
+    "url": "https://web.archive.org/web/20220630191343if_/https://www.atsb.gov.au/media/5769864/ar-2013-107-final-report.pdf",
+    "locator": "Results, text introducing Figure 3; safety summary",
+    "quote": "",
+    "licence": "© Commonwealth of Australia 2016, Creative Commons Attribution 3.0 Australia"
+   },
+   "grade": "primary-report",
+   "retrieved": "2026-10-09",
+   "note": "Rates count reported failures AND malfunctions (322 occurrences), not only complete power losses, for single-engine piston aeroplanes up to 800 kg MTOW in Australia; hours are estimated by the report from registry data. The suite piston default was 1e-4 /FH and is now 1.2e-4 (mean of the two certified-engine makes). Read from the Internet Archive copy (atsb.gov.au refused automated requests; the archived file is truncated after about 1 MB, the passages with the rates were recovered from it; the Jabiru figure was cross-checked in the CASA 39/19 explanatory statement on legislation.gov.au). No verbatim quote stored (non-US publisher)."
+  },
+  {
+   "id": "nswc11-electric-motor-base-rate",
+   "suite": "safety",
+   "analysis": "",
+   "inputKey": "lam_engine",
+   "label": "Electric motor base failure rate (handbook prediction)",
+   "value": {
+    "DC": 2.17,
+    "DC brushless": 1.75,
+    "AC single phase": 6.9,
+    "AC polyphase": 10.0,
+    "winding_default": 40.0,
+    "brush": 3.2,
+    "brushless_plus_default_winding_per_h": 4.2e-05
+   },
+   "unit": "failures per million hours",
+   "defaultInSuite": 4e-05,
+   "source": {
+    "title": "Handbook of Reliability Prediction Procedures for Mechanical Equipment (NSWC-11)",
+    "org": "U.S. Navy, Naval Surface Warfare Center Carderock Division",
+    "year": 2011,
+    "url": "https://everyspec.com/USN/NSWC/NSWC-11_RELIABILITY_HDBK_MAY2011_55322/",
+    "locator": "Chapter 14, Table 14-3 (PDF p. 330) and Section 14.5, eq. 14-3",
+    "quote": "DC brushless 1.75"
+   },
+   "grade": "handbook",
+   "retrieved": "2026-10-09",
+   "note": "Motor-system rate = λM,B·CSF + winding + brushes + stator housing + armature shaft + bearings + gears (eq. 14-1). Brushless base 1.75 plus the default winding rate 40 per million hours gives 4.2e-5 /h before the service, temperature, voltage and altitude multiplying factors; bearings and the motor controller are extra. Winding statement: \"a winding life of 25,000 hours (failure rate λWI,B = 40.0 failures/million hours) can be expected from most manufacturers\". The suite electric-motor default was 2e-5 and is now 4e-5."
+  },
+  {
+   "id": "nswc11-pump-and-seal-base-rates",
+   "suite": "safety",
+   "analysis": "",
+   "inputKey": "lam_hyd",
+   "label": "Hydraulic pump and seal base failure rates (handbook prediction, component level)",
+   "value": {
+    "pump_fluid_driver": {
+     "reciprocating piston/plunger": 1.18,
+     "rotary piston": 1.05,
+     "vane": 0.4,
+     "gear": 0.75
+    },
+    "dynamic_seal": 22.8,
+    "static_seal": 2.4,
+    "pump_casing": 0.01
+   },
+   "unit": "failures per million hours",
+   "defaultInSuite": 0.0001,
+   "source": {
+    "title": "Handbook of Reliability Prediction Procedures for Mechanical Equipment (NSWC-11)",
+    "org": "U.S. Navy, Naval Surface Warfare Center Carderock Division",
+    "year": 2011,
+    "url": "https://everyspec.com/USN/NSWC/NSWC-11_RELIABILITY_HDBK_MAY2011_55322/",
+    "locator": "Chapter 10, Table 10-4 (PDF p. 249) and Section 10.7; Chapter 3 dynamic-seal model",
+    "quote": "Base failure rate of dynamic seal, 22.8 failures/million hours"
+   },
+   "grade": "handbook",
+   "retrieved": "2026-10-09",
+   "note": "Component base rates before multiplying factors (pressure, speed, contamination, temperature); a pump adds shaft and bearing terms. These do NOT give a hydraulic-system loss rate: the suite default 1e-4 /FH for loss of a whole system (pump, reservoir, lines, leaks) remains illustrative. As an order-of-magnitude check only, one pump (fluid driver + dynamic seal ≈ 2.4e-5 /h) plus a few further dynamic seals lands in the 5e-5 to 1e-4 /h range (my arithmetic)."
+  },
+  {
+   "id": "nasa-cr-159275-flight-control-computer-rates",
+   "suite": "safety",
+   "analysis": "",
+   "inputKey": "lam_fcc",
+   "label": "In-service failure rates of B-747 automatic-flight-control computers (one airline, 1977)",
+   "value": {
+    "pitch computer": 438.0,
+    "roll computer": 400.9,
+    "yaw computer": 202.4,
+    "autothrottle computer": 122.7,
+    "central air data computer": 328.5,
+    "inertial navigation system": 654.9,
+    "with_wiring_and_connectors": {
+     "pitch": 540.3,
+     "roll": 471.3,
+     "yaw": 218.9
+    }
+   },
+   "unit": "failures per million unit hours",
+   "defaultInSuite": 0.0002,
+   "source": {
+    "title": "B-747 Flight Control System Maintenance and Reliability Data Base for Cost Effectiveness Tradeoff Studies (NASA CR-159275)",
+    "org": "Boeing Commercial Airplane Company for NASA Langley Research Center",
+    "year": 1980,
+    "url": "https://ntrs.nasa.gov/api/citations/19820024502/downloads/19820024502.pdf",
+    "locator": "Section 4.3, Table 3 \"Component Failure Rate Summary\" (report p. 12, PDF p. 19); Table 4 for wiring-inclusive values",
+    "quote": ""
+   },
+   "grade": "primary-report",
+   "retrieved": "2026-10-09",
+   "note": "Pan Am 1977 removal/failure data for analogue-era computers; excludes wiring and connector failures (Table 4 adds them: +16 % on average). The suite default was 1e-4 /FH and is now 2e-4 (the lowest of the three axis computers). Modern digital fly-by-wire channels are expected to be better; no open modern source was found. Table read from the OCR layer of a scanned report (\"43&0\" in Table 3 is confirmed as 438.0 by Table 4). No verbatim quote stored (contractor-authored)."
+  },
+  {
+   "id": "nasa-cr-159275-actuator-rates",
+   "suite": "safety",
+   "analysis": "fmeca",
+   "inputKey": "",
+   "label": "In-service failure rates of B-747 flight-control actuators and servos (several airlines, 1970–76)",
+   "value": {
+    "inboard elevator power control unit": 1.6,
+    "outboard elevator PCU": 0.5,
+    "inboard aileron PCU": 1.2,
+    "outboard aileron PCU": 0.7,
+    "spoiler PCU": "0.3–0.4",
+    "central control actuator": 7.0,
+    "rudder servo": 1.8,
+    "inboard elevator autopilot servo": 11.7,
+    "stabilizer trim hydraulic motor": 10.2
+   },
+   "unit": "failures per million unit hours",
+   "defaultInSuite": null,
+   "source": {
+    "title": "B-747 Flight Control System Maintenance and Reliability Data Base for Cost Effectiveness Tradeoff Studies (NASA CR-159275)",
+    "org": "Boeing Commercial Airplane Company for NASA Langley Research Center",
+    "year": 1980,
+    "url": "https://ntrs.nasa.gov/api/citations/19820024502/downloads/19820024502.pdf",
+    "locator": "Section 4.3, Table 3, \"Primary mechanical controls\"",
+    "quote": ""
+   },
+   "grade": "primary-report",
+   "retrieved": "2026-10-09",
+   "note": "Useful for the FMECA row \"Flight-control actuator: jam or runaway\", which the suite currently derives from the hydraulic-system rate times a mode ratio (unsourced). All failures of the unit, not only jams. No verbatim quote stored."
+  },
+  {
+   "id": "faa-tc-16-49-engine-detector-event-rate",
+   "suite": "safety",
+   "analysis": "eventtree",
+   "inputKey": "f_init",
+   "label": "Engine fire/overheat detector events on US transport aeroplanes",
+   "value": {
+    "all_events_per_million_engine_flights": 3.6,
+    "significant_events_per_million_engine_flights": 2.7,
+    "genuine_share": 0.3,
+    "false_warning_share": 0.63,
+    "genuine_per_engine_flight": 1.1e-06
+   },
+   "unit": "per million engine flights",
+   "defaultInSuite": 1e-06,
+   "source": {
+    "title": "Research Into Fire, Smoke or Fumes Occurrences on Transport Airplanes (DOT/FAA/TC-16/49)",
+    "org": "U.S. Federal Aviation Administration, William J. Hughes Technical Center (prepared by R.G.W. Cherry & Associates)",
+    "year": 2017,
+    "url": "https://www.fire.tc.faa.gov/pdf/TC-16-49.pdf",
+    "locator": "Section 10.2–10.3, Observations 28 and 29 (report pp. 36–37)",
+    "quote": "an average rate of occurrence of approximately 3.6 per million engine flights for all events and 2.7 per million engine flights for significant events"
+   },
+   "grade": "primary-report",
+   "retrieved": "2026-10-09",
+   "note": "About 30 % of 3.6 per million engine flights are genuine ≈ 1.1e-6 per engine flight (my arithmetic); for a twin flying two-hour sectors that is about 1.1e-6 per aircraft flight hour, supporting the order of the turbine default 1e-6 /FH. \"Genuine\" covers fire, smoke or fume annunciations, not only uncontrolled fires. Read from the Internet Archive copy of the FAA PDF (the FAA server returned 503). Second quote: \"the proportion of all detector events for engines that were genuine annunciations was in the region of 30% with approximately 63% being false warnings\"."
+  },
+  {
+   "id": "faa-tc-16-49-engine-false-warning-share",
+   "suite": "safety",
+   "analysis": "eventtree",
+   "inputKey": "",
+   "label": "Share of engine detector events that are false warnings, by aeroplane class",
+   "value": {
+    "regional passenger": 0.79,
+    "narrow body passenger": 0.52,
+    "wide body passenger": 0.63,
+    "freighters": 0.61
+   },
+   "unit": "-",
+   "defaultInSuite": null,
+   "source": {
+    "title": "Research Into Fire, Smoke or Fumes Occurrences on Transport Airplanes (DOT/FAA/TC-16/49)",
+    "org": "U.S. Federal Aviation Administration, William J. Hughes Technical Center (prepared by R.G.W. Cherry & Associates)",
+    "year": 2017,
+    "url": "https://www.fire.tc.faa.gov/pdf/TC-16-49.pdf",
+    "locator": "Table 16 (report p. 38)",
+    "quote": "False Warnings 79% 52% 63% 61%"
+   },
+   "grade": "primary-report",
+   "retrieved": "2026-10-09",
+   "note": "Not an input of the event tree (which has no false-alarm branch); recorded because it bounds how much of the bottle-discharge rate is real fire. It does not give the probability of detecting a real fire (p_detect), which remains unsourced."
+  },
+  {
+   "id": "haaps-2019-engine-bottle-discharge-rate",
+   "suite": "safety",
+   "analysis": "eventtree",
+   "inputKey": "f_init",
+   "label": "Engine fire-bottle discharges per flight hour, four transport types over 20 years",
+   "value": {
+    "engine_ground": 7.1e-07,
+    "engine_low_altitude": 1.9e-07,
+    "engine_high_altitude": 9.8e-08,
+    "engine_in_flight_total": 2.9e-07,
+    "apu_all": 1.7e-06,
+    "events": {
+     "engine_ground": 131,
+     "engine_low": 34,
+     "engine_high": 18
+    },
+    "exposure": "180M+ flight hours, nearly 60M departures"
+   },
+   "unit": "1/FH",
+   "defaultInSuite": 1e-06,
+   "source": {
+    "title": "Engine/APU Halon Replacement Industry Consortium – Release Altitudes of Fire Extinguishing Agents (Ninth Triennial International Fire & Cabin Safety Research Conference)",
+    "org": "HAAPS Consortium (R. S. Wright, Boeing), hosted by the FAA Fire Safety Branch",
+    "year": 2019,
+    "url": "https://www.fire.tc.faa.gov/2019Conference/files/Engine_APU_Halon_Replacement/WrightReleaseAltitudes/WrightHalonReplaceReleaseAltitudePres.pdf",
+    "locator": "Slide 8 \"Results\" (rate per flight hour column); slide 6 for the data scope",
+    "quote": ""
+   },
+   "grade": "primary-report",
+   "retrieved": "2026-10-09",
+   "note": "Logbook-based counts including maintenance discharges and commanded discharges in non-fire scenarios, so the rate is an upper bound on real engine fires. In-flight total = low + high altitude (my sum). Consistent with the 1e-6 /FH order of the suite default and suggests about 3e-7 /FH for in-flight events on large transports. Read from the Internet Archive copy (FAA server returned 503). Copyright HAAPS Consortium: no verbatim quote stored."
+  },
+  {
+   "id": "inl-2020-battery-fails-to-operate",
+   "suite": "safety",
+   "analysis": "",
+   "inputKey": "lam_batt",
+   "label": "Station battery fails to operate — CROSS-INDUSTRY reference (nuclear plants)",
+   "value": {
+    "mean": 4.05e-07,
+    "5th": 4.79e-09,
+    "median": 2.21e-07,
+    "95th": 1.42e-06,
+    "failures": 21,
+    "hours": 52018730
+   },
+   "unit": "1/h",
+   "defaultInSuite": 2e-05,
+   "source": {
+    "title": "Industry-Average Performance for Components and Initiating Events at U.S. Commercial Nuclear Power Plants: 2020 Update (INL/EXT-21-65055)",
+    "org": "Idaho National Laboratory for the U.S. Nuclear Regulatory Commission",
+    "year": 2021,
+    "url": "https://nrcoe.inl.gov/publicdocs/AvgPerf/AvgPara2020.pdf",
+    "locator": "Table 1 \"Component UR data and results\", row BAT-FTOP (PDF p. 34); data 2006–2020",
+    "quote": ""
+   },
+   "grade": "primary-report",
+   "retrieved": "2026-10-09",
+   "note": "Cross-industry: stationary, float-charged, surveilled lead-acid station batteries — not aircraft batteries and not lithium-ion propulsion packs. It shows the suite default 2e-5 /FH is about fifty times more pessimistic than a maintained stationary battery; no open aircraft-battery rate was found, so the default stays illustrative. Battery charger (BCH-FTOP) mean 1.76e-6 /h; DC bus 7.13e-7 /h; AC bus 5.88e-7 /h in the same table. No verbatim quote stored."
+  },
+  {
+   "id": "inl-2020-generator-and-pump-rates",
+   "suite": "safety",
+   "analysis": "",
+   "inputKey": "lam_gen",
+   "label": "Standby generator and motor-driven pump failure rates — CROSS-INDUSTRY reference (nuclear plants)",
+   "value": {
+    "emergency_diesel_generator": {
+     "fails_to_start_per_demand": 0.00222,
+     "fails_to_load_and_run_early_per_h": 0.00331,
+     "fails_to_run_late_per_h": 0.00118
+    },
+    "combustion_turbine_generator_fails_to_run_per_h": 0.00469,
+    "motor_driven_pump_fails_to_run_after_1h_per_h": 8.12e-06,
+    "engine_driven_pump_fails_to_run_after_1h_per_h": 0.00326
+   },
+   "unit": "1/h (per demand where stated)",
+   "defaultInSuite": 0.0002,
+   "source": {
+    "title": "Industry-Average Performance for Components and Initiating Events at U.S. Commercial Nuclear Power Plants: 2020 Update (INL/EXT-21-65055)",
+    "org": "Idaho National Laboratory for the U.S. Nuclear Regulatory Commission",
+    "year": 2021,
+    "url": "https://nrcoe.inl.gov/publicdocs/AvgPerf/AvgPara2020.pdf",
+    "locator": "Table 1, rows EDG-FTS, EDG-FTLR, EDG-FTR, CTG-FTR, MDP-FTR>1H, EDP-FTR>1H (PDF pp. 32–33)",
+    "quote": ""
+   },
+   "grade": "primary-report",
+   "retrieved": "2026-10-09",
+   "note": "Cross-industry and only loosely comparable: these are complete standby generating sets (engine, generator, controls, auxiliaries) and plant pumps, not shaft-driven aircraft generators or hydraulic pumps. The diesel-generator run failure rate 1.2e-3 /h is six times the suite generator-channel default 2e-4 /FH; the motor-driven pump 8e-6 /h is twelve times lower than the suite hydraulic-system default. Neither is a basis for changing the aircraft defaults, which stay illustrative. No verbatim quote stored."
+  },
+  {
+   "id": "easa-cs-mmel-rectification-intervals",
+   "suite": "safety",
+   "analysis": "markov",
+   "inputKey": "mel_interval_h",
+   "label": "MMEL rectification interval categories",
+   "value": {
+    "A": "as stated in the MMEL item",
+    "B_calendar_days": 3,
+    "C_calendar_days": 10,
+    "D_calendar_days": 120,
+    "B_hours": 72
+   },
+   "unit": "calendar days",
+   "defaultInSuite": 72,
+   "source": {
+    "title": "Certification Specifications and Guidance Material for Master Minimum Equipment List (CS-MMEL)",
+    "org": "European Union Aviation Safety Agency",
+    "year": 2014,
+    "url": "https://www.easa.europa.eu/en/downloads/16781/en",
+    "locator": "CS MMEL.130 Rectification interval, (b)–(d)",
+    "quote": ""
+   },
+   "grade": "regulation",
+   "retrieved": "2026-10-09",
+   "note": "Intervals exclude the day of discovery. The suite default 72 h equals category B (3 calendar days) used as a mean time to rectify — an upper limit treated as a mean, so it is conservative. FAA MMEL Policy Letter 25 defines the same categories but could not be opened. No verbatim quote stored (non-US publisher)."
+  },
+  {
+   "id": "boeing-737-gate-dispatch-reliability-2002",
+   "suite": "safety",
+   "analysis": "markov",
+   "inputKey": "nogo_per_100dep",
+   "label": "Gate dispatch reliability stated for the 737 fleet",
+   "value": {
+    "dispatch_reliability_pct": 99.3,
+    "no_go_per_100_departures": 0.7
+   },
+   "unit": "%",
+   "defaultInSuite": 0.7,
+   "source": {
+    "title": "The Boeing 737: Banking on Life's Economical Airplane (news release, 17 June 2002)",
+    "org": "The Boeing Company",
+    "year": 2002,
+    "url": "https://boeing.mediaroom.com/2002-06-17-The-Boeing-737-Banking-on-Lifes-Economical-Airplane",
+    "locator": "Body text, statement attributed to a Boeing executive",
+    "quote": ""
+   },
+   "grade": "secondary",
+   "retrieved": "2026-10-09",
+   "note": "A manufacturer marketing statement for one type, not an audited statistic; technical dispatch reliability definitions differ between manufacturers. The suite default was 0.8 and is now 0.7 per 100 departures. No verbatim quote stored."
+  },
+  {
+   "id": "ac23-1309-1e-historical-fatal-accident-rate",
+   "suite": "safety",
+   "analysis": "fta",
+   "inputKey": "",
+   "label": "Historical fatal-accident rate used to derive the small-aeroplane probability objectives",
+   "value": {
+    "fatal_accident_rate_single_engine_under_6000lb_per_fh": 0.0001,
+    "share_from_systems": 0.1,
+    "assumed_catastrophic_failure_conditions": 10,
+    "allocation_per_condition": 1e-06
+   },
+   "unit": "1/FH",
+   "defaultInSuite": null,
+   "source": {
+    "title": "System Safety Analysis and Assessment for Part 23 Airplanes (AC 23.1309-1E)",
+    "org": "U.S. Federal Aviation Administration",
+    "year": 2011,
+    "url": "https://www.faa.gov/documentLibrary/media/Advisory_Circular/AC_23_1309-1E.pdf",
+    "locator": "Paragraph on the establishment of probability values (rationale for the Class I objective)",
+    "quote": "approximately one per ten thousand flight hours or 1 x 10-4 per flight hour for single-engine airplanes under 6,000 pounds"
+   },
+   "grade": "regulation",
+   "retrieved": "2026-10-09",
+   "note": "Explains the Class I catastrophic objective of 1e-6 per flight hour used by the suite for single-engine reciprocating aeroplanes; context for judging any aircraft-loss probability such as p_forced, which itself remains unsourced."
+  },
+  {
+   "id": "fink-faa-rd-77-29-clean-airframe-constant",
+   "suite": "acoustics",
+   "analysis": "spectrum",
+   "inputKey": "K_af",
+   "label": "Clean-airframe trailing-edge OASPL constant (Fink, original report)",
+   "value": {
+    "formula": "OASPL = 50 log(V/100 kt) + 10 log(δw·bw/h²) + 101.5 dB",
+    "constant_dB": 101.5,
+    "jet_aircraft_offset_dB": 6,
+    "conventional_low_speed_offset_dB": 8
+   },
+   "unit": "dB",
+   "defaultInSuite": 101.5,
+   "source": {
+    "title": "Airframe Noise Prediction Method (FAA-RD-77-29)",
+    "org": "U.S. Federal Aviation Administration (M. R. Fink, United Technologies Research Center)",
+    "year": 1977,
+    "url": "https://web.archive.org/web/20220425170836/https://apps.dtic.mil/sti/pdfs/ADA039664.pdf",
+    "locator": "Eq. (6) and following paragraph, PDF p. 17",
+    "quote": "Data for conventional low-speed aircraft were 8 dB higher as before, but data for jet aircraft had an average value roughly 6 dB above the line for aerodynamically clean sailplanes."
+   },
+   "grade": "primary-report",
+   "retrieved": "2026-10-09",
+   "note": "Resolves the 101.3 / 107.5 question: the original report prints 101.5 dB for aerodynamically clean sailplanes (equation read on the page image of the scanned report; the OCR layer is poor, the quoted sentence is a transcription from the image). Jet aircraft in the clean configuration lie about 6 dB higher, which is the 107.5 dB form printed in NASA RP-1258 for jet aircraft; conventional low-speed aircraft are 8 dB higher. δ and b in feet (any consistent length unit, the ratio δb/h² is dimensionless), V in knots, overhead position. The suite constant was 101.3 and is now 101.5. DTIC is offline; read from the Internet Archive copy of the DTIC PDF (ADA039664)."
+  },
+  {
+   "id": "wilbeck-water-hugoniot",
+   "suite": "crash",
+   "analysis": "bird",
+   "inputKey": "k_h",
+   "label": "Linear Hugoniot of water / bird material: shock speed = c0 + k·particle speed",
+   "value": {
+    "k": 2.0,
+    "c0_m_s": 1482.9,
+    "water_density_kg_m3": 998.23
+   },
+   "unit": "-",
+   "defaultInSuite": 2.0,
+   "source": {
+    "title": "Impact Behavior of Low Strength Projectiles (AFML-TR-77-134)",
+    "org": "U.S. Air Force Materials Laboratory (J. S. Wilbeck)",
+    "year": 1978,
+    "url": "https://web.archive.org/web/20220615184355/https://apps.dtic.mil/sti/pdfs/ADA060423.pdf",
+    "locator": "Appendix C \"Material Properties\", sections 1 (water) and 4 (birds), report pp. 112–115; eq. (48)",
+    "quote": "the linear Hugoniot is taken to be that of water"
+   },
+   "grade": "primary-report",
+   "retrieved": "2026-10-09",
+   "note": "Matches the suite defaults (k 2.0, c0 1482 m/s). OCR of the scanned report garbles the equation symbols; numbers 2.0, 1482.9 m/s (4865 ft/s) and 998.23 kg/m³ are legible in the text layer. Wilbeck attributes the fit to Heymann and states it holds to about Mach 1.2. Internet Archive copy of DTIC ADA060423."
+  },
+  {
+   "id": "wilbeck-bird-sound-speed",
+   "suite": "crash",
+   "analysis": "bird",
+   "inputKey": "c0",
+   "label": "Sound speed of water used for bird material",
+   "value": 1482.9,
+   "unit": "m/s",
+   "defaultInSuite": 1482,
+   "source": {
+    "title": "Impact Behavior of Low Strength Projectiles (AFML-TR-77-134)",
+    "org": "U.S. Air Force Materials Laboratory (J. S. Wilbeck)",
+    "year": 1978,
+    "url": "https://web.archive.org/web/20220615184355/https://apps.dtic.mil/sti/pdfs/ADA060423.pdf",
+    "locator": "Appendix C \"Material Properties\", sections 1 (water) and 4 (birds), report pp. 112–115; eq. (48)",
+    "quote": "the linear Hugoniot is taken to be that of water"
+   },
+   "grade": "primary-report",
+   "retrieved": "2026-10-09",
+   "note": "See wilbeck-water-hugoniot."
+  },
+  {
+   "id": "wilbeck-bird-density",
+   "suite": "crash",
+   "analysis": "bird",
+   "inputKey": "rho_bird",
+   "label": "Measured bird (chicken) density and porosity",
+   "value": {
+    "density_kg_m3": 950,
+    "full_density_kg_m3": 1060,
+    "porosity": 0.1
+   },
+   "unit": "kg/m³",
+   "defaultInSuite": 950,
+   "source": {
+    "title": "Impact Behavior of Low Strength Projectiles (AFML-TR-77-134)",
+    "org": "U.S. Air Force Materials Laboratory (J. S. Wilbeck)",
+    "year": 1978,
+    "url": "https://web.archive.org/web/20220615184355/https://apps.dtic.mil/sti/pdfs/ADA060423.pdf",
+    "locator": "Appendix C section 4 \"Birds\", report pp. 114–115",
+    "quote": "The density measured for several chickens of various sizes was found to be"
+   },
+   "grade": "primary-report",
+   "retrieved": "2026-10-09",
+   "note": "Matches the suite default 950 kg/m³. The report illustrates the shock/release regimes for a cylinder with L/D = 2 (Figure 3), the suite default aspect ratio."
+  },
+  {
+   "id": "csdg-vol2-energy-absorber-limit-load",
+   "suite": "crash",
+   "analysis": "pulse",
+   "inputKey": "F_ea",
+   "label": "Seat energy-absorber limit-load factor",
+   "value": 14.5,
+   "unit": "g",
+   "defaultInSuite": 12700,
+   "source": {
+    "title": "Aircraft Crash Survival Design Guide, Volume II – Aircraft Design Crash Impact Conditions and Human Tolerance (USAAVSCOM TR 89-D-22B)",
+    "org": "U.S. Army Aviation Systems Command (Simula Inc.)",
+    "year": 1989,
+    "url": "https://web.archive.org/web/20240518024207/https://apps.dtic.mil/sti/pdfs/ADA218435.pdf",
+    "locator": "Figure 25 \"Correlation between the energy absorber limit-load factor and spinal injury rate\" and preceding paragraph, PDF p. 69",
+    "quote": "yielded the estimated spinal injury rate as a function of the energy absorber limit load factor (Figure 25)"
+   },
+   "grade": "primary-report",
+   "retrieved": "2026-10-09",
+   "note": "14.5 G is the value marked on the limit-load axis of Figure 25 (read from the figure text in the OCR layer). The suite default 12 700 N equals 14.5 g on the default moving mass of 89 kg (seat + lower body 55 kg, upper body 34 kg): consistent. Volume IV (seats) could not be retrieved in full."
+  },
+  {
+   "id": "cfr-25-109-wet-runway-friction-polynomial",
+   "suite": "gear",
+   "analysis": "brake",
+   "inputKey": "mu_peak",
+   "label": "Maximum tyre-to-ground braking coefficient on a smooth wet runway versus ground speed V [kt]",
+   "value": {
+    "x": "V/100",
+    "50_psi": [
+     -0.035,
+     0.306,
+     -0.851,
+     0.883
+    ],
+    "100_psi": [
+     -0.0437,
+     0.32,
+     -0.805,
+     0.804
+    ],
+    "200_psi": [
+     -0.0331,
+     0.252,
+     -0.658,
+     0.692
+    ],
+    "300_psi": [
+     -0.0401,
+     0.263,
+     -0.611,
+     0.614
+    ],
+    "order": "coefficients of x³, x², x, 1",
+    "grooved_or_PFC": {
+     "order": "x⁵, x⁴, x³, x², x, 1",
+     "50_psi": [
+      0.147,
+      -1.05,
+      2.673,
+      -2.683,
+      0.403,
+      0.859
+     ],
+     "100_psi": [
+      0.1106,
+      -0.813,
+      2.13,
+      -2.2,
+      0.317,
+      0.807
+     ],
+     "200_psi": [
+      0.0498,
+      -0.398,
+      1.14,
+      -1.285,
+      0.14,
+      0.701
+     ],
+     "300_psi": [
+      0.0314,
+      -0.247,
+      0.703,
+      -0.779,
+      -0.00954,
+      0.614
+     ]
+    }
+   },
+   "unit": "-",
+   "defaultInSuite": 0.7,
+   "source": {
+    "title": "14 CFR § 25.109 Accelerate-stop distance (Code of Federal Regulations, annual edition 2024)",
+    "org": "U.S. Government Publishing Office (FAA rule)",
+    "year": 2024,
+    "url": "https://www.govinfo.gov/content/pkg/CFR-2024-title14-vol1/pdf/CFR-2024-title14-vol1-sec25-109.pdf",
+    "locator": "(c)(1) equation table (smooth wet runway) and (d)(2) (grooved / PFC wet runway)",
+    "quote": "The maximum tire-to-ground wet runway braking coefficient of friction is defined as:"
+   },
+   "grade": "regulation",
+   "retrieved": "2026-10-09",
+   "note": "Coefficients transcribed from the equation images embedded in the official PDF (the eCFR XML carries them only as graphics). Example (my arithmetic): 200 psi tyre, smooth wet: 0.692 at rest, 0.253 at 100 kt; 300 psi: 0.614 and 0.226. Multiply by the anti-skid efficiency (0.30 / 0.50 / 0.80). Tyre pressure is the maximum operating pressure; linear interpolation between pressures is allowed. The suite does not yet use the curve in the ground-roll model (constant peak coefficient); help text now cites it."
+  },
+  {
+   "id": "atsb-ar-2013-107-engine-failure-outcomes",
+   "suite": "safety",
+   "analysis": "fta",
+   "inputKey": "p_forced",
+   "label": "Share of reported light-aeroplane engine failures or malfunctions that ended in fatalities",
+   "value": {
+    "occurrences": 322,
+    "high_risk": 18,
+    "with_fatalities": 4,
+    "fatal_share": 0.0124,
+    "low_risk_share": 0.25
+   },
+   "unit": "-",
+   "defaultInSuite": 0.02,
+   "source": {
+    "title": "Engine failures and malfunctions in light aeroplanes 2009–2014 (AR-2013-107)",
+    "org": "Australian Transport Safety Bureau",
+    "year": 2016,
+    "url": "https://web.archive.org/web/20220630191343if_/https://www.atsb.gov.au/media/5769864/ar-2013-107-final-report.pdf",
+    "locator": "Safety analysis, risk-rating paragraph; addendum (fatal accidents corrected to four)",
+    "quote": "",
+    "licence": "© Commonwealth of Australia 2016, Creative Commons Attribution 3.0 Australia"
+   },
+   "grade": "primary-report",
+   "retrieved": "2026-10-09",
+   "note": "4/322 = 1.2 % (my arithmetic). Denominator includes partial power losses and malfunctions, so the conditional probability given a TOTAL power loss is higher; supports the order of the 0.02 filled for light single-engine aeroplanes only. Values for transports, helicopters, eVTOL and unmanned aircraft remain unsourced. No verbatim quote stored."
   }
  ],
  "unverified": [
   {
    "id": "jet-lighthill-acoustic-efficiency",
-   "suite": "s11-acoustics",
+   "suite": "acoustics",
    "analysis": "spectrum",
    "inputKey": "K_jet",
    "label": "Lighthill acoustic power coefficient K in P_a = K * rho_j A_j U_j^3 * M^5",
@@ -4707,11 +5308,11 @@
    },
    "grade": "unverified",
    "retrieved": "2026-10-09",
-   "note": "POSSIBLE DISCREPANCY. The OCR text \"loa5\" is 10^-5 (exponent glyphs garbled; not checked on the page image, and the exact normalisation of the equation above it - whether a factor 1/2 is included in the kinetic energy flux - was not legible in the text layer). Suite uses K_jet = 1e-4 on 0.5*rho*A*U^3, i.e. 5e-5 on rho*A*U^3, which is the same order but higher. The commonly quoted Lighthill value 1e-4 M^5 was not found verbatim in an opened source. Regraded to unverified by the registry editor: the only text found is a garbled OCR string and the equation normalisation was not legible."
+   "note": "POSSIBLE DISCREPANCY. The OCR text \"loa5\" is 10^-5 (exponent glyphs garbled; not checked on the page image, and the exact normalisation of the equation above it - whether a factor 1/2 is included in the kinetic energy flux - was not legible in the text layer). Suite uses K_jet = 1e-4 on 0.5*rho*A*U^3, i.e. 5e-5 on rho*A*U^3, which is the same order but higher. The commonly quoted Lighthill value 1e-4 M^5 was not found verbatim in an opened source. Regraded to unverified by the registry editor: the only text found is a garbled OCR string and the equation normalisation was not legible. Round 3: still no verifiable open source (one further search each for Cowper–Symonds and NASGRO p/q; the others were not re-attempted)."
   },
   {
    "id": "jet-flight-exponent-and-strouhal",
-   "suite": "s11-acoustics",
+   "suite": "acoustics",
    "analysis": "spectrum",
    "inputKey": "n_rel",
    "label": "Jet flight-effect relative-velocity exponent and jet peak Strouhal number",
@@ -4731,11 +5332,11 @@
    },
    "grade": "unverified",
    "retrieved": "2026-10-09",
-   "note": "Not verified. Searched the text layer of NASA RP-1258 vol. 1 for relative-velocity exponent / peak Strouhal statements without finding a quotable number for n_rel = 5 or St = 0.25. SAE ARP876 is paywalled."
+   "note": "Not verified. Searched the text layer of NASA RP-1258 vol. 1 for relative-velocity exponent / peak Strouhal statements without finding a quotable number for n_rel = 5 or St = 0.25. SAE ARP876 is paywalled. Round 3: still no verifiable open source (one further search each for Cowper–Symonds and NASGRO p/q; the others were not re-attempted)."
   },
   {
    "id": "aircraft-tyre-rolling-and-braking-friction",
-   "suite": "s05-performance",
+   "suite": "performance",
    "analysis": "field",
    "inputKey": "mu_roll",
    "label": "Typical aircraft tyre rolling friction and braking coefficients",
@@ -4759,57 +5360,8 @@
    "note": "Not verified. Opened FAA AC 25-7D (https://www.faa.gov/documentLibrary/media/Advisory_Circular/AC_25-7D.pdf): para 4.3.7.2 only states that the wet-runway maximum braking coefficients of 14 CFR 25.109(c)(1) were derived from ESDU 71026; it gives no dry rolling/braking numbers. Wikipedia Rolling_resistance gives only car-tyre values (0.010-0.015 on concrete). Better primary sources to try: 14 CFR 25.109(c)(1) (handled by the eCFR worker), ESDU 71026, MIL-HDBK/Raymer table."
   },
   {
-   "id": "crash-seat-limit-load-factor",
-   "suite": "s15-crash",
-   "analysis": "pulse",
-   "inputKey": "F_ea",
-   "label": "Seat energy-absorber limit load factor 14.5 g (Aircraft Crash Survival Design Guide)",
-   "value": null,
-   "unit": "g",
-   "defaultInSuite": {
-    "F_ea_N": 12700,
-    "G_lim": 20
-   },
-   "source": {
-    "title": "",
-    "org": "",
-    "year": null,
-    "url": "",
-    "locator": "",
-    "quote": ""
-   },
-   "grade": "unverified",
-   "retrieved": "2026-10-09",
-   "note": "Not verified. USAAVSCOM TR 89-D-22D (DTIC ADA218437) could not be opened: apps.dtic.mil served an Under Maintenance page on 2026-10-09; the FAA fire.tc.faa.gov Desjardins presentation returned HTML, not the PDF. \"14.5\" does not appear in the text layer of MIL-STD-1290A. Suite F_ea 12700 N on 89 kg (seat+torso) is 14.5 g, so the default is internally consistent with the claimed value."
-  },
-  {
-   "id": "bird-water-hugoniot-constants",
-   "suite": "s15-crash",
-   "analysis": "bird",
-   "inputKey": "c0",
-   "label": "Water linear Hugoniot us = c0 + k*up constants and bird L/D",
-   "value": null,
-   "unit": "m/s, -",
-   "defaultInSuite": {
-    "c0": 1482,
-    "k_h": 2.0,
-    "LD": 2
-   },
-   "source": {
-    "title": "",
-    "org": "",
-    "year": null,
-    "url": "",
-    "locator": "",
-    "quote": ""
-   },
-   "grade": "unverified",
-   "retrieved": "2026-10-09",
-   "note": "Not verified. Wilbeck AFML-TR-77-134 (DTIC ADA060423) could not be opened (DTIC Under Maintenance on 2026-10-09, retried twice). Open-access secondaries tried: MATEC Web Conf. 2019 01010 (HTTP 403), DRDO Def. Sci. J. and dynalook PDFs (download failed), LAJSS 2020 (opened; gives the theory but not c0, k or L/D). Values are the standard ones for water (c0 = 1482-1483 m/s, k = 2.0) but need a fetched source."
-  },
-  {
    "id": "cowper-symonds-constants",
-   "suite": "s15-crash",
+   "suite": "crash",
    "analysis": "absorber",
    "inputKey": "cs_D",
    "label": "Cowper-Symonds strain-rate constants (aluminium alloy D = 6500 1/s, q = 4; mild steel 40.4, 5)",
@@ -4829,11 +5381,11 @@
    },
    "grade": "unverified",
    "retrieved": "2026-10-09",
-   "note": "Not verified. One search plus a Southampton eprint fetch (returned HTML landing page, not the PDF); no opened document showed the numbers. Originals: Bodner & Symonds (1962) for aluminium, Cowper & Symonds (1957) for mild steel, tabulated in Jones, Structural Impact (CUP) - all paywalled."
+   "note": "Not verified. One search plus a Southampton eprint fetch (returned HTML landing page, not the PDF); no opened document showed the numbers. Originals: Bodner & Symonds (1962) for aluminium, Cowper & Symonds (1957) for mild steel, tabulated in Jones, Structural Impact (CUP) - all paywalled. Round 3: still no verifiable open source (one further search each for Cowper–Symonds and NASGRO p/q; the others were not re-attempted)."
   },
   {
    "id": "abramowicz-jones-mean-crush-force",
-   "suite": "s15-crash",
+   "suite": "crash",
    "analysis": "absorber",
    "inputKey": "eff",
    "label": "Abramowicz-Jones mean crush force constants and stroke efficiency",
@@ -4854,11 +5406,11 @@
    },
    "grade": "unverified",
    "retrieved": "2026-10-09",
-   "note": "Not verified. Tried the Iraqi (iasj) open-access paper (TLS failure), the TU Delft repository file (1-page stub) and the Frontiers article (JS-rendered, no formula text). Originals: Abramowicz & Jones, Int. J. Impact Eng. 2 (1984) 179-208 and 4 (1986) 243-270 (paywalled)."
+   "note": "Not verified. Tried the Iraqi (iasj) open-access paper (TLS failure), the TU Delft repository file (1-page stub) and the Frontiers article (JS-rendered, no formula text). Originals: Abramowicz & Jones, Int. J. Impact Eng. 2 (1984) 179-208 and 4 (1986) 243-270 (paywalled). Round 3: still no verifiable open source (one further search each for Cowper–Symonds and NASGRO p/q; the others were not re-attempted)."
   },
   {
    "id": "fatigue-exceedance-spectra-ac23-13a",
-   "suite": "s09-fatigue",
+   "suite": "fatigue",
    "analysis": "spectrum",
    "inputKey": "N0_per_fh",
    "label": "Gust and manoeuvre load exceedance spectra for small airplanes (regulatory source)",
@@ -4882,7 +5434,7 @@
   },
   {
    "id": "ice-roughness-lift-loss-brumby",
-   "suite": "s13-icing",
+   "suite": "icing",
    "analysis": "degradation",
    "inputKey": "A_cl",
    "label": "Maximum-lift loss versus roughness/ice height (Brumby correlation): suite A = 1.8, m = 1/3",
@@ -4902,11 +5454,11 @@
    },
    "grade": "unverified",
    "retrieved": "2026-10-09",
-   "note": "Coefficients NOT verified - they are a suite fit, not a published formula. Opened NASA CR-179639 (Cebeci, 1987, https://ntrs.nasa.gov/api/citations/19890002354/downloads/19890002354.pdf): its Fig. 5 reproduces Brumby's correlation of CLmax reduction against roughness height/chord as a graph only (no equation in text), and notes Bragg et al. caution about it. A search hit (Lynch, Valarezo & McGhee, NTRS 19920012448, not downloadable) reports that the Brumby correlation \"does not hold\" for initial distributed-roughness ice. Original: Brumby, DC Flight Approach No. 32 (1979). To verify A and m the figure must be digitised."
+   "note": "Coefficients NOT verified - they are a suite fit, not a published formula. Opened NASA CR-179639 (Cebeci, 1987, https://ntrs.nasa.gov/api/citations/19890002354/downloads/19890002354.pdf): its Fig. 5 reproduces Brumby's correlation of CLmax reduction against roughness height/chord as a graph only (no equation in text), and notes Bragg et al. caution about it. A search hit (Lynch, Valarezo & McGhee, NTRS 19920012448, not downloadable) reports that the Brumby correlation \"does not hold\" for initial distributed-roughness ice. Original: Brumby, DC Flight Approach No. 32 (1979). To verify A and m the figure must be digitised. Round 3: still no verifiable open source (one further search each for Cowper–Symonds and NASGRO p/q; the others were not re-attempted)."
   },
   {
    "id": "ice-adhesion-shear-strength",
-   "suite": "s13-icing",
+   "suite": "icing",
    "analysis": "rotorice",
    "inputKey": "tau_adh",
    "label": "Impact-ice adhesion shear strength on aluminium",
@@ -4923,11 +5475,11 @@
    },
    "grade": "unverified",
    "retrieved": "2026-10-09",
-   "note": "Number not verified. Opened NASA TM-107399 (Anderson & Reich, 1997, NTRS 19970009491) and Work et al. (NASA GRC, 2018, NTRS 20180006755): both discuss Scavuzzo & Chu / Loughborough & Haas but the text layers contain no quotable adhesion value; Work et al. state \"the data reported in the literature varies significantly from test to test\", and TM-107399 notes adhesion is roughly constant below -6 C and falls linearly to 0 C. Scavuzzo & Chu NASA CR-179580 was not located on NTRS search. Treat 3e5 Pa as order-of-magnitude only."
+   "note": "Number not verified. Opened NASA TM-107399 (Anderson & Reich, 1997, NTRS 19970009491) and Work et al. (NASA GRC, 2018, NTRS 20180006755): both discuss Scavuzzo & Chu / Loughborough & Haas but the text layers contain no quotable adhesion value; Work et al. state \"the data reported in the literature varies significantly from test to test\", and TM-107399 notes adhesion is roughly constant below -6 C and falls linearly to 0 C. Scavuzzo & Chu NASA CR-179580 was not located on NTRS search. Treat 3e5 Pa as order-of-magnitude only. Round 3: still no verifiable open source (one further search each for Cowper–Symonds and NASGRO p/q; the others were not re-attempted)."
   },
   {
    "id": "ac25-1309-1a-probability-terms",
-   "suite": "s22-safety",
+   "suite": "safety",
    "analysis": "fta",
    "inputKey": "obj_cat",
    "label": "AC 25.1309-1A (1988) three-band scheme: probable > 1e-5, improbable 1e-5..1e-9, extremely improbable <= 1e-9",
@@ -4948,7 +5500,7 @@
   },
   {
    "id": "easa-amc-25-1309-probability-terms",
-   "suite": "s22-safety",
+   "suite": "safety",
    "analysis": "fta",
    "inputKey": "obj_cat",
    "label": "EASA AMC 25.1309 quantitative probability terms",
@@ -4969,7 +5521,7 @@
   },
   {
    "id": "ac29-2c-ac27-1b-rotorcraft-objectives",
-   "suite": "s22-safety",
+   "suite": "safety",
    "analysis": "fta",
    "inputKey": "obj_cat",
    "label": "Rotorcraft AC 29-2C / AC 27-1B probability objectives",
@@ -4990,7 +5542,7 @@
   },
   {
    "id": "world-fleet-ifsd-statistics",
-   "suite": "s22-safety",
+   "suite": "safety",
    "analysis": "fta",
    "inputKey": "lam_engine",
    "label": "Published world-fleet IFSD statistics",
@@ -5011,7 +5563,7 @@
   },
   {
    "id": "mil-hdbk-217f-method",
-   "suite": "s22-safety",
+   "suite": "safety",
    "analysis": "fmeca",
    "inputKey": "lam_fcc",
    "label": "Electronic equipment failure-rate prediction method (part stress and parts count); no ready-made LRU rate",
@@ -5032,7 +5584,7 @@
   },
   {
    "id": "component-rate-lam-hyd",
-   "suite": "s22-safety",
+   "suite": "safety",
    "analysis": "fmeca",
    "inputKey": "lam_hyd",
    "label": "Hydraulic system loss rate",
@@ -5049,11 +5601,11 @@
    },
    "grade": "unverified",
    "retrieved": "2026-10-09",
-   "note": "No open source with this value was opened; default remains illustrative. Not forced to match."
+   "note": "No open source with this value was opened; default remains illustrative. Not forced to match. Second pass: NSWC-11 component base rates recorded (item nswc11-pump-and-seal-base-rates) and a cross-industry pump rate (inl-2020-generator-and-pump-rates); no open source gives an aircraft hydraulic-SYSTEM loss rate, so the default stays illustrative."
   },
   {
    "id": "component-rate-lam-gen",
-   "suite": "s22-safety",
+   "suite": "safety",
    "analysis": "fmeca",
    "inputKey": "lam_gen",
    "label": "Generator channel loss rate",
@@ -5070,11 +5622,11 @@
    },
    "grade": "unverified",
    "retrieved": "2026-10-09",
-   "note": "No open source with this value was opened; default remains illustrative. Not forced to match."
+   "note": "No open source with this value was opened; default remains illustrative. Not forced to match. Second pass: only a cross-industry standby-generator rate was found (inl-2020-generator-and-pump-rates); no open aircraft generator-channel rate. Default stays illustrative."
   },
   {
    "id": "component-rate-lam-batt",
-   "suite": "s22-safety",
+   "suite": "safety",
    "analysis": "fmeca",
    "inputKey": "lam_batt",
    "label": "Battery / standby source failure rate",
@@ -5091,11 +5643,11 @@
    },
    "grade": "unverified",
    "retrieved": "2026-10-09",
-   "note": "No open source with this value was opened; default remains illustrative. Not forced to match."
+   "note": "No open source with this value was opened; default remains illustrative. Not forced to match. Second pass: only a cross-industry stationary-battery rate was found (inl-2020-battery-fails-to-operate); no open aircraft or lithium-ion pack rate. Default stays illustrative."
   },
   {
    "id": "markov-lam-unit-failure-rate",
-   "suite": "s22-safety",
+   "suite": "safety",
    "analysis": "markov",
    "inputKey": "lam",
    "label": "Unit failure rate in dispatch Markov model",
@@ -5112,32 +5664,11 @@
    },
    "grade": "unverified",
    "retrieved": "2026-10-09",
-   "note": "Illustrative; no source sought beyond the component-rate attempt."
-  },
-  {
-   "id": "engine-fire-initiating-frequency",
-   "suite": "s22-safety",
-   "analysis": "eventtree",
-   "inputKey": "f_init",
-   "label": "Engine fire initiating event frequency",
-   "value": null,
-   "unit": "1/FH",
-   "defaultInSuite": 1e-06,
-   "source": {
-    "title": "",
-    "org": "",
-    "year": null,
-    "url": "",
-    "locator": "",
-    "quote": ""
-   },
-   "grade": "unverified",
-   "retrieved": "2026-10-09",
-   "note": "No official engine-fire rate statistic opened (call budget). Default remains illustrative."
+   "note": "Illustrative; no source sought beyond the component-rate attempt. Second pass: no source; follows the generator-channel placeholder."
   },
   {
    "id": "fire-detect-extinguish-probabilities",
-   "suite": "s22-safety",
+   "suite": "safety",
    "analysis": "eventtree",
    "inputKey": "p_detect",
    "label": "Fire detection / extinguishing success probabilities",
@@ -5158,53 +5689,11 @@
    },
    "grade": "unverified",
    "retrieved": "2026-10-09",
-   "note": "Not attempted beyond initial scoping; no open source known. Illustrative."
-  },
-  {
-   "id": "mel-rectification-intervals",
-   "suite": "s22-safety",
-   "analysis": "maint",
-   "inputKey": "mel_interval_h",
-   "label": "MEL repair categories B / C / D (3 / 10 / 120 calendar days)",
-   "value": null,
-   "unit": "days",
-   "defaultInSuite": 72,
-   "source": {
-    "title": "MMEL Policy Letter 25 (definitions)",
-    "org": "FAA",
-    "year": null,
-    "url": "",
-    "locator": "",
-    "quote": ""
-   },
-   "grade": "unverified",
-   "retrieved": "2026-10-09",
-   "note": "Three FAA MMEL revision-highlight PDFs were opened (BE-300, A-330, single-engine) but they do not contain the PL-25 definitions; only search snippets gave 3/10/120 days. Suite default 72 h equals category B (3 days) if confirmed."
-  },
-  {
-   "id": "technical-dispatch-reliability",
-   "suite": "s22-safety",
-   "analysis": "maint",
-   "inputKey": "nogo_per_100dep",
-   "label": "Typical technical dispatch reliability",
-   "value": null,
-   "unit": "%",
-   "defaultInSuite": 0.8,
-   "source": {
-    "title": "",
-    "org": "",
-    "year": null,
-    "url": "",
-    "locator": "",
-    "quote": ""
-   },
-   "grade": "unverified",
-   "retrieved": "2026-10-09",
-   "note": "No official statistic opened. Illustrative."
+   "note": "Not attempted beyond initial scoping; no open source known. Illustrative. Second pass: DOT/FAA/TC-16/49 gives false-warning shares and the HAAPS data give discharge rates, but neither gives the probability of detecting a real fire or of an extinguisher shot succeeding. Still unsourced."
   },
   {
    "id": "sae-arp4761",
-   "suite": "s22-safety",
+   "suite": "safety",
    "analysis": "fta",
    "inputKey": "",
    "label": "SAE ARP4761 safety assessment process",
@@ -5225,7 +5714,7 @@
   },
   {
    "id": "min-directional-stability-cnbeta",
-   "suite": "s04-flightdyn",
+   "suite": "flightdyn",
    "analysis": "lat",
    "inputKey": "",
    "label": "Typical minimum directional stability Cn_beta 0.03-0.06 per rad",
@@ -5246,7 +5735,7 @@
   },
   {
    "id": "peterson-characteristic-length-aluminium",
-   "suite": "s09-fatigue",
+   "suite": "fatigue",
    "analysis": "sn",
    "inputKey": "a_pet_mm",
    "label": "Peterson notch-sensitivity characteristic length, aluminium alloys",
@@ -5263,11 +5752,11 @@
    },
    "grade": "unverified",
    "retrieved": "2026-10-09",
-   "note": "Search snippet (SNU lecture notes citing Peterson 1974: 0.51 mm aluminium, 0.25 mm annealed/normalised steel, 0.064 mm quenched-and-tempered steel) agrees with the suite, but the page could not be fetched (DNS failure) - snippet only, so not verified."
+   "note": "Search snippet (SNU lecture notes citing Peterson 1974: 0.51 mm aluminium, 0.25 mm annealed/normalised steel, 0.064 mm quenched-and-tempered steel) agrees with the suite, but the page could not be fetched (DNS failure) - snippet only, so not verified. Round 3: still no verifiable open source (one further search each for Cowper–Symonds and NASGRO p/q; the others were not re-attempted)."
   },
   {
    "id": "nasgro-exponents-p-q",
-   "suite": "s09-fatigue",
+   "suite": "fatigue",
    "analysis": "crack",
    "inputKey": "pn",
    "label": "NASGRO equation exponents p and q",
@@ -5287,11 +5776,11 @@
    },
    "grade": "unverified",
    "retrieved": "2026-10-09",
-   "note": "Not verified. Search snippets (not opened) suggest NASGRO/AFGROW database values for 2024-T351 of p = 0.5, q = 1.0 and that q = 1 for most aluminium alloys - i.e. the suite defaults 0.25/0.25 may be low for aluminium. Treat as a flag to check, not a sourced value."
+   "note": "Not verified. Search snippets (not opened) suggest NASGRO/AFGROW database values for 2024-T351 of p = 0.5, q = 1.0 and that q = 1 for most aluminium alloys - i.e. the suite defaults 0.25/0.25 may be low for aluminium. Treat as a flag to check, not a sourced value. Round 3: still no verifiable open source (one further search each for Cowper–Symonds and NASGRO p/q; the others were not re-attempted)."
   },
   {
    "id": "walker-gamma-aluminium",
-   "suite": "s09-fatigue",
+   "suite": "fatigue",
    "analysis": "crack",
    "inputKey": "gamma",
    "label": "Walker exponent gamma ~ 0.5 for aluminium",
@@ -5308,7 +5797,7 @@
    },
    "grade": "unverified",
    "retrieved": "2026-10-09",
-   "note": "Not attempted (call budget)."
+   "note": "Not attempted (call budget). Round 3: still no verifiable open source (one further search each for Cowper–Symonds and NASGRO p/q; the others were not re-attempted)."
   },
   {
    "id": "hydrogen-lhv",
@@ -5334,7 +5823,7 @@
   },
   {
    "id": "eurocontrol-unit-rate-definition",
-   "suite": "s26-economics",
+   "suite": "economics",
    "analysis": "",
    "inputKey": "nav_usd_100km",
    "label": "En-route unit rate (value per 100 km for a 50 t aircraft)",
@@ -5355,7 +5844,7 @@
   },
   {
    "id": "omb-a94-discount-rate",
-   "suite": "s26-economics",
+   "suite": "economics",
    "analysis": "",
    "inputKey": "discount",
    "label": "Federal benefit-cost discount rate (OMB Circular A-94)",
@@ -5376,7 +5865,7 @@
   },
   {
    "id": "airline-useful-life-residual",
-   "suite": "s26-economics",
+   "suite": "economics",
    "analysis": "",
    "inputKey": "life_yr",
    "label": "Airline flight-equipment depreciation policy (useful life, residual value)",
@@ -5400,7 +5889,7 @@
   },
   {
    "id": "passenger-yield",
-   "suite": "s26-economics",
+   "suite": "economics",
    "analysis": "",
    "inputKey": "yield_usd_pkm",
    "label": "Passenger yield",
@@ -5447,7 +5936,7 @@
   },
   {
    "id": "battery-ageing-constants",
-   "suite": "s19-electrical",
+   "suite": "electrical",
    "analysis": "ageing",
    "inputKey": "Ea_J_mol",
    "label": "Ageing-model constants (Arrhenius activation energy, calendar fade, rate and DoD stress)",
@@ -5469,11 +5958,11 @@
    },
    "grade": "unverified",
    "retrieved": "2026-10-09",
-   "note": "Not verified. Two searches found only abstracts/summaries; a UCLA-hosted copy of the paper failed to download. The often-quoted Wang et al. values (Ea = 31,700 - 370.3 x C-rate J/mol, Ah-throughput exponent 0.55) were NOT seen in fetched text (one search summary mentioned 'approximately 31,500 J/mol', unopened). If those values are right, the suite's Ea = 40 kJ/mol is about 25 % higher and its linear cycle-fade (exponent 1 in cycles) differs from the sub-linear 0.55 power law. k_cal, k_rate, k_dod are generic and uncalibrated."
+   "note": "Not verified. Two searches found only abstracts/summaries; a UCLA-hosted copy of the paper failed to download. The often-quoted Wang et al. values (Ea = 31,700 - 370.3 x C-rate J/mol, Ah-throughput exponent 0.55) were NOT seen in fetched text (one search summary mentioned 'approximately 31,500 J/mol', unopened). If those values are right, the suite's Ea = 40 kJ/mol is about 25 % higher and its linear cycle-fade (exponent 1 in cycles) differs from the sub-linear 0.55 power law. k_cal, k_rate, k_dod are generic and uncalibrated. Round 3: still no verifiable open source (one further search each for Cowper–Symonds and NASGRO p/q; the others were not re-attempted)."
   },
   {
    "id": "thermal-runaway-onset-temperature",
-   "suite": "s19-electrical",
+   "suite": "electrical",
    "analysis": "ageing",
    "inputKey": "T_onset_K",
    "label": "Thermal-runaway onset temperature",
@@ -5490,11 +5979,11 @@
    },
    "grade": "unverified",
    "retrieved": "2026-10-09",
-   "note": "Not verified. The NASA FTRC presentation lists onset temperature as a measured quantity but gives no value in the extracted text; no FAA Fire Safety or Sandia report was opened. 150 C generic onset remains unverified."
+   "note": "Not verified. The NASA FTRC presentation lists onset temperature as a measured quantity but gives no value in the extracted text; no FAA Fire Safety or Sandia report was opened. 150 C generic onset remains unverified. Round 3: still no verifiable open source (one further search each for Cowper–Symonds and NASGRO p/q; the others were not re-attempted)."
   },
   {
    "id": "pem-fuel-cell-polarisation-constants",
-   "suite": "s07-propulsion",
+   "suite": "propulsion",
    "analysis": "electric",
    "inputKey": "fc_Eoc",
    "label": "PEM fuel-cell polarisation constants (Larminie-Dicks form; Ballard Mark V at 70 C)",
@@ -5521,7 +6010,7 @@
   },
   {
    "id": "turbomachinery-component-efficiencies",
-   "suite": "s07-propulsion",
+   "suite": "propulsion",
    "analysis": "cycle",
    "inputKey": "ep_c",
    "label": "Typical component efficiencies / pressure ratios by technology level",
@@ -5547,6 +6036,191 @@
    "grade": "unverified",
    "retrieved": "2026-10-09",
    "note": "Not verified: one search found only generic lecture notes on polytropic efficiency without the Mattingly technology-level table. From memory (unverified) Mattingly's level-4 (2005-2025) values are e_c 0.90, e_f 0.89, e_t 0.89 (cooled), eta_b 0.995, pi_b 0.95-0.96, which would match the suite defaults."
+  },
+  {
+   "id": "safety-lam-jam",
+   "suite": "safety",
+   "analysis": "fta",
+   "inputKey": "lam_jam",
+   "label": "Single-point control jam or disconnect rate",
+   "value": null,
+   "unit": "",
+   "defaultInSuite": 1e-10,
+   "source": {
+    "title": "",
+    "org": "",
+    "year": null,
+    "url": "",
+    "locator": "",
+    "quote": ""
+   },
+   "grade": "unverified",
+   "retrieved": "2026-10-09",
+   "note": "No open source found in the second pass (searches of FAA, NASA NTRS, ATSB, NRC/INL, NSWC material; DTIC still under maintenance). Stays labelled illustrative in the suite."
+  },
+  {
+   "id": "safety-p-forced",
+   "suite": "safety",
+   "analysis": "fta",
+   "inputKey": "p_forced",
+   "label": "P(aircraft lost | total power loss) by aircraft class",
+   "value": null,
+   "unit": "",
+   "defaultInSuite": {
+    "default": 0.2,
+    "light aeroplane": 0.02,
+    "helicopter": 0.15,
+    "eVTOL": 0.1,
+    "UAV": 0.5,
+    "electric rotary": 0.9
+   },
+   "source": {
+    "title": "",
+    "org": "",
+    "year": null,
+    "url": "",
+    "locator": "",
+    "quote": ""
+   },
+   "grade": "unverified",
+   "retrieved": "2026-10-09",
+   "note": "No open source found in the second pass (searches of FAA, NASA NTRS, ATSB, NRC/INL, NSWC material; DTIC still under maintenance). Stays labelled illustrative in the suite. Round 3: light single-engine aeroplane class now supported by ATSB outcome data (item atsb-ar-2013-107-engine-failure-outcomes); other classes still unsourced."
+  },
+  {
+   "id": "safety-p-third",
+   "suite": "safety",
+   "analysis": "fta",
+   "inputKey": "p_third",
+   "label": "P(person fatally struck | unmanned aircraft lost)",
+   "value": null,
+   "unit": "",
+   "defaultInSuite": 0.01,
+   "source": {
+    "title": "",
+    "org": "",
+    "year": null,
+    "url": "",
+    "locator": "",
+    "quote": ""
+   },
+   "grade": "unverified",
+   "retrieved": "2026-10-09",
+   "note": "No open source found in the second pass (searches of FAA, NASA NTRS, ATSB, NRC/INL, NSWC material; DTIC still under maintenance). Stays labelled illustrative in the suite."
+  },
+  {
+   "id": "safety-fmeca-mode-ratios",
+   "suite": "safety",
+   "analysis": "fmeca",
+   "inputKey": "",
+   "label": "FMECA mode ratios and effect probabilities (e.g. uncontained rotor burst 0.001 × 0.05, thermal runaway 0.01)",
+   "value": null,
+   "unit": "",
+   "defaultInSuite": null,
+   "source": {
+    "title": "",
+    "org": "",
+    "year": null,
+    "url": "",
+    "locator": "",
+    "quote": ""
+   },
+   "grade": "unverified",
+   "retrieved": "2026-10-09",
+   "note": "No open source found in the second pass (searches of FAA, NASA NTRS, ATSB, NRC/INL, NSWC material; DTIC still under maintenance). Stays labelled illustrative in the suite."
+  },
+  {
+   "id": "safety-markov-mttr",
+   "suite": "safety",
+   "analysis": "markov",
+   "inputKey": "mttr_h",
+   "label": "Mean time to repair",
+   "value": null,
+   "unit": "",
+   "defaultInSuite": 4,
+   "source": {
+    "title": "",
+    "org": "",
+    "year": null,
+    "url": "",
+    "locator": "",
+    "quote": ""
+   },
+   "grade": "unverified",
+   "retrieved": "2026-10-09",
+   "note": "No open source found in the second pass (searches of FAA, NASA NTRS, ATSB, NRC/INL, NSWC material; DTIC still under maintenance). Stays labelled illustrative in the suite."
+  },
+  {
+   "id": "safety-fire-branch-landing",
+   "suite": "safety",
+   "analysis": "eventtree",
+   "inputKey": "p_land",
+   "label": "P(safe landing with a persisting / undetected fire), P(engine shut down and isolated)",
+   "value": null,
+   "unit": "",
+   "defaultInSuite": {
+    "p_land": 0.95,
+    "p_land_undetected": 0.5,
+    "p_shutdown": 0.995
+   },
+   "source": {
+    "title": "",
+    "org": "",
+    "year": null,
+    "url": "",
+    "locator": "",
+    "quote": ""
+   },
+   "grade": "unverified",
+   "retrieved": "2026-10-09",
+   "note": "No open source found in the second pass (searches of FAA, NASA NTRS, ATSB, NRC/INL, NSWC material; DTIC still under maintenance). Stays labelled illustrative in the suite."
+  },
+  {
+   "id": "safety-f-init-piston-electric",
+   "suite": "safety",
+   "analysis": "eventtree",
+   "inputKey": "f_init",
+   "label": "Engine-fire initiating frequency for piston and electric aircraft",
+   "value": null,
+   "unit": "",
+   "defaultInSuite": {
+    "piston": 3e-06,
+    "electric": 2e-07
+   },
+   "source": {
+    "title": "",
+    "org": "",
+    "year": null,
+    "url": "",
+    "locator": "",
+    "quote": ""
+   },
+   "grade": "unverified",
+   "retrieved": "2026-10-09",
+   "note": "No open source found in the second pass (searches of FAA, NASA NTRS, ATSB, NRC/INL, NSWC material; DTIC still under maintenance). Stays labelled illustrative in the suite."
+  },
+  {
+   "id": "safety-maint-costs",
+   "suite": "safety",
+   "analysis": "maint",
+   "inputKey": "cost_planned",
+   "label": "Planned replacement and in-service failure costs",
+   "value": null,
+   "unit": "",
+   "defaultInSuite": {
+    "cost_planned": 20000,
+    "cost_failure": 150000
+   },
+   "source": {
+    "title": "",
+    "org": "",
+    "year": null,
+    "url": "",
+    "locator": "",
+    "quote": ""
+   },
+   "grade": "unverified",
+   "retrieved": "2026-10-09",
+   "note": "No open source found in the second pass (searches of FAA, NASA NTRS, ATSB, NRC/INL, NSWC material; DTIC still under maintenance). Stays labelled illustrative in the suite."
   }
  ],
  "datasets": [
@@ -5592,23 +6266,6 @@
    },
    "usedBy": [
     "s11-acoustics (certificated lateral / flyover / approach levels and limits to calibrate or sanity-check predictions)"
-   ]
-  },
-  {
-   "id": "faa-aircraft-characteristics",
-   "file": "js/data/ref/aircraft-characteristics.json",
-   "title": "FAA Aircraft Characteristics Database",
-   "org": "U.S. Federal Aviation Administration, Office of Airports",
-   "version": "October 2024 (file last modified 2025-01-03)",
-   "url": "https://www.faa.gov/airports/engineering/aircraft_char_database",
-   "licence": "Work of the United States Government (FAA); not subject to copyright protection in the United States (17 U.S.C. § 105). Acknowledge the FAA as the source.",
-   "records": 388,
-   "retrieved": "2026-10-09",
-   "bytes": 59342,
-   "usedBy": [
-    "s05-performance (approach speed, MTOW)",
-    "s14-gear (wheelbase, gear width)",
-    "configuration presets (span, length)"
    ]
   }
  ]

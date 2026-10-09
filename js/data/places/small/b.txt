@@ -1,0 +1,3854 @@
+#AE|Dubai
+Būr Sa‘īd|Bur Sa'id|25261|55330|3|11
+#AF|Logar
+Barakī|Baraki|33939|68922|1961|15
+#AG|Saint Mary Parish
+Bolands||17066|-61875|9|2
+#AI|Blowing Point
+Blowing Point Village||18176|-63094|10|1
+#AL|Dibër County
+Burrel||41610|20009|315|8
+#AL|Korçë County
+Bilisht||40628|20990|926|7
+#AM|Kotayk
+Byureghavan||40313|44597|1411|12
+#AM|Tavush
+Berd||40881|45389|949|7
+#AO|Bengo
+Bela Vista||-7812|13799|242|11
+#AO|Malanje
+Buco||-9558|16146|1041|13
+#AO|Namibe
+Bibala||-14766|13349|909|11
+#AO|Uíge
+Banza Damba||-6888|15015|913|12
+#AR|Cordoba
+Brinkmann||-30867|-62043|79|11
+Balnearia||-31013|-62665|82|7
+Berrotarán|Berrotaran|-32450|-64388|620|6
+#AR|Entre Rios
+Basavilbaso||-32372|-58879|64|11
+Bovril||-31344|-59447|68|8
+#AR|Mendoza
+Bermejo||-32867|-68780|788|13
+Bowen||-35000|-67510|451|6
+#AR|Misiones
+Bernardo de Irigoyen||-26255|-53647|613|11
+#AR|San Juan
+Barreal||-31650|-69472|1640|5
+#AR|Santiago del Estero
+Beltrán|Beltran|-27827|-64058|159|5
+#AT|Lower Austria
+Brunn am Gebirge||48107|16285|223|12
+Berndorf||47946|16110|311|9
+Bad Vöslau|Bad Voeslau|47965|16214|262|7
+Bruck an der Leitha||48024|16776|157|7
+Breitenfurt bei Wien||48133|16150|339|6
+#AT|Salzburg
+Bischofshofen||47417|13217|558|7
+#AT|Styria
+Bruck an der Mur||47406|15258|555|9
+#AT|Upper Austria
+Bad Hall||48038|14208|369|5
+#AU|Australian Capital Territory
+Bruce||-35244|149091|618|7
+Bonner||-35162|149139|630|7
+Belconnen||-35238|149066|597|7
+Braddon||-35271|149136|582|6
+#AU|New South Wales
+Bossley Park||-33862|150884|55|14
+Belmore||-33919|151089|28|13
+Bateau Bay||-33383|151467|35|12
+Bondi Beach||-33891|151279|9|12
+Bowral||-34477|150420|679|11
+Botany||-33946|151196|6|11
+Bellevue Hill||-33879|151251|72|11
+Balmain||-33855|151183|13|10
+Beverly Hills||-33948|151080|42|10
+Bondi||-33894|151264|76|10
+Bondi Junction||-33893|151247|94|10
+Beecroft||-33750|151065|149|9
+Bass Hill||-33899|150995|33|9
+Berala||-33872|151034|24|9
+Beaumont Hills||-33700|150941|58|9
+Ballina||-28864|153565|7|9
+Bradbury||-34085|150815|112|9
+Belrose||-33740|151210|154|9
+Bonnyrigg||-33894|150889|52|9
+Brighton-Le-Sands||-33960|151151|6|9
+Berkeley Vale||-33350|151433|39|8
+Bella Vista||-33741|150955|106|8
+Balgowlah||-33795|151257|63|8
+Berkeley||-34483|150850|4|8
+Beacon Hill||-33753|151259|123|7
+Bonnyrigg Heights||-33891|150870|55|7
+Blaxland||-33750|150600|120|7
+Belmont||-33027|151660|29|7
+Bathurst city centre||-33418|149576|672|7
+Bronte||-33902|151266|36|7
+Bomaderry||-34850|150611|21|6
+Byron Bay||-28650|153612|8|6
+Bligh Park||-33640|150802|22|6
+Blue Haven||-33211|151504|14|6
+Belfield||-33904|151085|24|6
+Belmont North||-33021|151668|27|6
+Blakehurst||-33992|151109|46|6
+Bulli||-34338|150913|21|6
+Barrack Heights||-34565|150857|16|6
+Bangor||-34017|151033|95|5
+Balgownie||-34395|150881|26|5
+Berowra Heights||-33612|151138|218|5
+Boambee East||-30347|153073|8|5
+#AU|Queensland
+Birkdale||-27483|153217|4|14
+Burleigh Waters||-28100|153425|6|14
+Burpengary||-27157|152958|18|14
+Bowen||-20014|148248|10|11
+Burleigh Heads||-28100|153450|17|11
+Brassall||-27598|152748|25|11
+Bray Park||-27292|152968|21|10
+Brisbane central business district||-27471|153027|17|9
+Brighton||-27296|153057|7|9
+Bardon||-27461|152979|58|9
+Boondall||-27353|153061|22|9
+Benowa||-28008|153386|6|9
+Biggera Waters||-27932|153400|3|9
+Broadbeach||-28028|153433|10|9
+Bridgeman Downs||-27355|152994|46|8
+Beenleigh||-27711|153203|17|8
+Bargara||-24815|152463|9|8
+Bentley Park||-17004|145738|19|8
+Broadbeach Waters||-28035|153425|4|8
+Boronia Heights||-27689|153020|72|8
+Bli Bli||-26617|153037|23|8
+Bongaree||-27084|153159|6|7
+Berserker||-23358|150520|13|7
+Beerwah||-26859|152961|29|7
+Bellbird Park||-27637|152887|47|7
+Bulimba||-27450|153058|17|7
+Bald Hills||-27321|153009|18|6
+Burpengary East||-27144|153000|9|6
+Bundamba||-27609|152811|26|6
+Beaudesert||-27987|152997|59|6
+Biloela||-24396|150515|193|6
+Blackwater||-23584|148879|184|6
+Bushland Beach||-19191|146677|10|6
+Banksia Beach||-27040|153144|5|6
+Bellmere||-27084|152890|37|6
+Banyo||-27382|153079|7|6
+Burdell||-19251|146699|9|6
+Brinsmead||-16899|145716|21|5
+Bundaberg North||-24849|152346|11|5
+Bellbowrie||-27559|152883|41|5
+Beaconsfield||-21091|149165|4|5
+#AU|South Australia
+Blakeview||-34676|138710|78|7
+Burton||-34733|138602|14|6
+#AU|Tasmania
+Blackmans Bay||-43003|147317|54|7
+#AU|Victoria
+Brunswick West||-37765|144944|56|15
+Blackburn||-37819|145153|104|14
+Box Hill||-37819|145125|103|14
+Beaumaris||-37985|145034|17|14
+Belmont||-38175|144343|43|14
+Balwyn||-37809|145079|58|13
+Brunswick East||-37773|144972|48|13
+Broadmeadows||-37680|144919|125|13
+Box Hill North||-37803|145127|81|12
+Bayswater||-37850|145267|108|12
+Bulleen||-37767|145083|49|11
+Blackburn South||-37840|145155|121|11
+Brookfield||-37701|144560|121|11
+Burwood East||-37850|145150|115|11
+Braybrook||-37787|144855|43|9
+Benalla||-36551|145984|173|9
+Bayswater North||-37826|145282|158|9
+Box Hill South||-37832|145121|105|8
+Blackburn North||-37809|145152|112|8
+Beaconsfield||-38050|145367|58|7
+Bonbeach||-38065|145123|8|7
+Botanic Ridge||-38144|145268|5|7
+Burnside Heights||-37727|144752|94|6
+Black Rock||-37974|145016|20|6
+Bendigo city centre||-36757|144280|231|6
+Burnside||-37749|144753|75|6
+Ballarat Central||-37562|143851|450|6
+Ballarat East||-37567|143867|423|5
+Balaclava||-37867|145000|21|5
+Bannockburn||-38049|144169|116|5
+#AU|Western Australia
+Broome||-17955|122239|12|15
+Bayswater||-31917|115918|13|14
+Balga||-31855|115840|56|14
+Butler||-31643|115704|33|13
+Bassendean||-31909|115944|19|11
+Balcatta||-31875|115828|29|11
+Banksia Grove||-31696|115805|75|9
+Beechboro||-31865|115937|25|9
+Bentley||-32002|115925|15|8
+Bull Creek||-32056|115862|27|8
+Beckenham||-32025|115960|11|7
+Beeliar||-32133|115806|47|7
+Belmont||-31943|115926|11|7
+Bicton||-32028|115783|27|6
+Bertram||-32244|115846|14|6
+Bibra Lake||-32098|115819|22|6
+Booragoon||-32039|115834|23|5
+Bedford||-31911|115889|30|5
+Bennett Springs||-31859|115945|24|5
+Bullsbrook||-31669|116000|30|5
+#AW|
+Butucu||12472|-69914|65|14
+#AZ|Baki
+Binagadi||40466|49828|44|14
+Badamdar||40340|49805|161|11
+Balakhani||40463|49919|57|11
+Bilajer||40564|50040|18|9
+#AZ|Balakan District
+Belokany||41726|46405|372|15
+#AZ|Masally
+Boradigah||38930|48709|-15|6
+#AZ|Nakhchivan
+Babak||39155|45443|826|6
+#AZ|Qabala District
+Bum||41014|47778|805|5
+#AZ|İmişli
+Bahramtepe||39745|47955|14|7
+#BA|Federation of B&H
+Bužim|Buzim|45054|16033|218|7
+Banovići|Banovici|44406|18526|335|7
+Bosansko Grahovo||44179|16364|855|6
+#BA|Srpska
+Bileća|Bileca|42876|18430|468|13
+Brod||45137|17987|85|9
+Blatnica||44487|17823|324|6
+#BB|Saint Joseph
+Bathsheba||13211|-59526|69|2
+#BE|Flanders
+Bredene||51235|2976|3|15
+Beernem||51140|3339|10|15
+Bree||51142|5597|48|14
+Brecht||51350|4638|23|14
+Berlare||51033|4000|9|14
+Buggenhout||51016|4202|9|14
+Bocholt||51173|5580|42|12
+Boechout||51160|4492|18|12
+Boortmeerbeek||50979|4574|10|12
+Belsele||51146|4089|18|10
+Berlaar||51118|4658|8|10
+Borsbeek||51197|4485|10|10
+Borgloon||50805|5344|98|10
+Bertem||50864|4629|39|9
+Begijnendijk||51019|4784|13|9
+Bierbeek||50829|4759|59|9
+Beverlo||51086|5219|39|9
+Boutersem||50841|4834|63|8
+Burcht||51204|4343|8|7
+Booischot||51052|4775|12|7
+Brakel||50801|3763|42|7
+Buizingen||50742|4253|38|6
+Baasrode||51038|4155|5|6
+Beerzel||51058|4671|27|6
+Baal||50996|4753|14|6
+Bekkevoort||50941|4969|44|6
+Bazel||51147|4301|14|6
+Beverst||50891|5475|40|5
+Beveren-Leie||50875|3340|15|5
+Bissegem||50824|3228|15|5
+#BE|Wallonia
+Bastogne||50003|5718|502|14
+Basse Lasne||50695|4492|65|14
+Beloeil||50550|3735|59|13
+Blégny|Blegny|50673|5725|218|13
+Bressoux||50640|5606|89|13
+Beyne-Heusay||50623|5665|231|12
+Bernissart||50475|3650|20|12
+Braine-le-Château|Braine-le-Chateau|50680|4274|78|10
+Bracquegnies||50471|4120|84|9
+Beauraing||50110|4956|184|8
+Bassenge||50759|5610|75|8
+Bertrix||49856|5255|438|8
+Brunehault||50505|4432|147|8
+Beaumont||50237|4239|222|7
+Beauvechain||50782|4772|86|6
+Baudour||50483|3833|50|6
+Battice||50647|5821|326|6
+Braives||50628|5148|136|6
+Boncelles||50571|5536|241|6
+Butgenbach||50427|6205|579|6
+Beaufays||50559|5639|287|5
+Bouillon||49793|5067|226|5
+Bullange||50407|6257|582|5
+#BG|Blagoevgrad
+Bansko||41836|23487|916|9
+#BG|Dobrich
+Balchik||43422|28158|191|13
+#BG|Kyustendil
+Bobov Dol||42364|22998|588|6
+#BG|Pleven
+Belene||43651|25134|28|7
+#BG|Varna
+Beloslav||43187|27704|74|8
+#BG|Vidin
+Belogradchik||43627|22684|498|6
+#BG|Vratsa
+Byala Slatina||43467|23933|125|10
+#BI|Bururi
+Bururi||-3949|29624|1857|7
+#BI|Kirundo
+Bwambarangwe||-2583|30333|1605|6
+#BJ|Borgou
+Bétérou|Beterou|9199|2259|259|13
+#BN|Temburong
+Bangar||4709|115072|9|4
+#BR|Acre
+Bujari||-9831|-67952|211|13
+#BR|Alagoas
+Branquinha||-9246|-36015|123|10
+Barra de São Miguel|Barra de Sao Miguel|-9840|-35908|6|8
+Belo Monte||-9828|-37280|19|6
+#BR|Bahia
+Boninal||-12702|-41827|939|14
+Barro Alto||-11761|-41912|701|14
+Barra do Mendes||-11810|-42059|718|14
+Boa Nova||-14362|-40207|727|14
+Baianópolis|Baianopolis|-12308|-44539|691|14
+Brejões|Brejoes|-13104|-39796|623|13
+Banzaê|Banzae|-10577|-38615|318|12
+Brotas de Macaúbas|Brotas de Macaubas|-11999|-42626|812|10
+Botuporã|Botupora|-13382|-42522|663|10
+Bom Jesus da Serra||-14374|-40505|628|10
+Brejolândia|Brejolandia|-12486|-43961|566|9
+Barro Preto||-14810|-39471|145|6
+Barra do Rocha||-14206|-39605|122|6
+#BR|Ceará
+Barroquinha||-3019|-41136|20|15
+Barro||-6717|-38867|290|12
+Baixio||-6730|-38717|278|6
+#BR|Espírito Santo
+Boa Esperança|Boa Esperanca|-18540|-40296|132|14
+Brejetuba||-20146|-41290|767|13
+Bom Jesus do Norte||-21132|-41677|87|10
+#BR|Goiás
+Buriti Alegre||-18140|-49040|802|10
+Bonfinópolis|Bonfinopolis|-16618|-48963|931|10
+Bom Jardim de Goiás|Bom Jardim de Goias|-16210|-52172|403|8
+Barro Alto||-14971|-48916|605|8
+Britânia|Britania|-15241|-51161|263|6
+#BR|Maranhão
+Buritirama||-5593|-47018|233|13
+Bom Lugar||-4372|-45034|103|12
+Bom Jardim||-7017|-46483|426|12
+Bela Vista do Maranhão|Bela Vista do Maranhao|-3741|-45251|23|12
+Brejo de Areia||-4331|-45585|156|9
+Belágua|Belagua|-3155|-43510|70|8
+Boa Vista do Gurupi||-1787|-46303|18|8
+Bernardo do Mearim||-4629|-44761|112|6
+Benedito Leite||-7223|-44558|192|5
+Bacurituba||-2706|-44738|9|5
+#BR|Mato Grosso
+Bom Jesus do Araguaia||-12174|-51508|352|8
+Barão de Melgaço|Barao de Melgaco|-16194|-55967|134|7
+Boa Esperança do Norte|Boa Esperanca do Norte|-13508|-55152|422|6
+#BR|Mato Grosso do Sul
+Brasilândia|Brasilandia|-21256|-52037|351|12
+Batayporã|Bataypora|-22295|-53271|326|11
+Bodoquena||-20539|-56715|231|9
+Bandeirantes||-19918|-54364|632|8
+#BR|Minas Gerais
+Botelhos||-21633|-46395|977|15
+Bom Jesus do Galho||-19829|-42316|508|15
+Brazópolis|Brazopolis|-22474|-45607|906|14
+Bicas||-21725|-43059|638|14
+Bom Repouso||-22471|-46145|1358|13
+Bueno Brandão|Bueno Brandao|-22441|-46351|1184|11
+Bonito de Minas||-15323|-44757|609|10
+Bela Vista de Minas||-19830|-43091|720|10
+Berilo||-16952|-42466|420|10
+Buenópolis|Buenopolis|-17873|-44180|599|9
+Belo Vale||-20408|-44024|799|9
+Baldim||-19288|-43957|653|7
+Bonfim||-20327|-44239|936|7
+Bom Jardim de Minas||-21947|-44191|1114|7
+Bandeira do Sul||-21728|-46386|944|6
+Botumirim||-16861|-43010|947|6
+Barra Longa||-20283|-43041|385|6
+Bom Jesus do Amparo||-19704|-43474|680|6
+Bonfinópolis de Minas|Bonfinopolis de Minas|-16566|-45987|648|6
+Bocaina de Minas||-22167|-44395|1194|5
+#BR|Paraná
+Balsa Nova||-25584|-49636|869|13
+Bocaiúva do Sul|Bocaiuva do Sul|-25206|-49115|981|13
+Barbosa Ferraz||-24030|-52012|362|11
+Barracão|Barracao|-26254|-53633|822|10
+Boa Vista da Aparecida||-25436|-53408|458|8
+Borrazópolis|Borrazopolis|-23941|-51587|635|8
+Bom Sucesso||-23710|-51764|575|7
+Boa Ventura de São Roque|Boa Ventura de Sao Roque|-24881|-51545|914|6
+#BR|Paraíba
+Brejo do Cruz||-6349|-37498|201|14
+Bonito de Santa Fé|Bonito de Santa Fe|-7313|-38515|595|12
+Baía da Traição|Baia da Traicao|-6688|-34936|7|9
+Barra de Santana||-7523|-35998|260|8
+Boa Vista||-7259|-36240|482|6
+Belém do Brejo do Cruz|Belem do Brejo do Cruz|-6189|-37536|184|6
+Barra de São Miguel|Barra de Sao Miguel|-7751|-36318|488|6
+Brejo dos Santos||-6377|-37825|337|6
+Boa Ventura||-7414|-38216|303|5
+#BR|Pará
+Brejo Grande do Araguaia||-5699|-48413|189|7
+#BR|Pernambuco
+Barra de Guabiraba||-8416|-35663|403|13
+Betânia|Betania|-8275|-38034|441|12
+Belém de Maria|Belem de Maria|-8626|-35830|223|11
+Brejão|Brejao|-9030|-36569|798|9
+Brejinho||-9100|-38283|319|8
+Brejinho||-7349|-37286|748|8
+#BR|Piauí
+Baixa Grande do Ribeiro||-7850|-45214|349|13
+Beneditinos||-5450|-42367|118|10
+Buriti dos Montes||-5312|-41097|506|7
+Boa Hora||-4405|-42123|99|7
+Barro Duro||-5817|-42513|202|7
+Boqueirão do Piauí|Boqueirao do Piaui|-4487|-42118|100|7
+Betânia do Piauí|Betania do Piaui|-8148|-40796|485|6
+Bonfim do Piauí|Bonfim do Piaui|-9169|-42875|421|6
+Bom Princípio do Piauí|Bom Principio do Piaui|-3192|-41644|108|6
+Bertolínia|Bertolinia|-7641|-43951|269|6
+#BR|Rio Grande do Norte
+Brejinho||-6191|-35357|151|12
+Bom Jesus||-5984|-35581|101|10
+Boa Saúde|Boa Saude|-6158|-35601|111|9
+Baía Formosa|Baia Formosa|-6369|-35008|26|9
+#BR|Rio Grande do Sul
+Balneário Pinhal|Balneario Pinhal|-30259|-50239||15
+Bom Princípio|Bom Principio|-29489|-51353|40|13
+Bom Retiro do Sul||-29609|-51943|50|12
+Barra do Ribeiro||-30291|-51301|8|12
+Bom Jesus||-28668|-50417|1063|11
+Barros Cassal||-29093|-52583|624|9
+Barão de Cotegipe|Barao de Cotegipe|-27621|-52380|678|7
+Boa Vista do Buricá|Boa Vista do Burica|-27669|-54110|289|7
+Barão|Barao|-29377|-51496|648|6
+Boqueirão do Leão|Boqueirao do Leao|-29304|-52429|510|6
+Bossoroca||-28730|-54900|246|6
+Barão do Triunfo|Barao do Triunfo|-30388|-51734|235|6
+#BR|Roraima
+Bonfim||3360|-59833|88|14
+#BR|Santa Catarina
+Benedito Novo||-26783|-49364|142|11
+Bom Retiro||-27799|-49489|890|8
+Bela Vista do Toldo||-26273|-50464|771|6
+Botuverá|Botuvera|-27199|-49075|64|5
+#BR|Sergipe
+Brejo Grande||-10429|-36466|8|8
+#BR|São Paulo
+Borborema||-21620|-49074|424|14
+Boa Esperança do Sul|Boa Esperanca do Sul|-21992|-48391|480|13
+Bernardino de Campos||-23013|-49474|698|12
+Bocaina||-22136|-48518|576|11
+Bofete||-23102|-48258|572|10
+Bananal||-22684|-44323|455|10
+Bálsamo|Balsamo|-20735|-49584|548|10
+Bilac||-21403|-50471|430|7
+Barra do Turvo||-24756|-48505|151|7
+Barbosa||-21267|-49949|397|6
+Braúna|Brauna|-21499|-50316|449|5
+Barra do Chapéu|Barra do Chapeu|-24473|-49024|785|5
+#BR|Tocantins
+Buriti do Tocantins||-5315|-48230|154|11
+Babaçulândia|Babaculandia|-7205|-47757|165|8
+#BS|Black Point
+Black Point||24100|-76383||0
+#BW|Central
+Borolong||-21104|27336|1019|9
+#BW|Kgatleng
+Bokaa||-24450|26017|962|9
+#BY|Brest
+Byelaazyorsk||52473|25178|148|11
+#BY|Grodnenskaya
+Byarozawka||53724|25497|124|12
+#BY|Homyel’ Voblasc’
+Buda-Kashalyova||52717|30568|143|9
+#BY|Minsk
+Bierazino||53839|28988|164|11
+#BY|Mogilev
+Belynichi||53995|29709|179|10
+#BY|Vitebsk
+Baran’|Baran'|54477|30309|158|10
+Braslav||55644|27057|144|9
+Beshenkovichi||55043|29457|156|7
+#BZ|Cayo District
+Benque Viejo el Carmen||17075|-89139|89|7
+#BZ|Toledo District
+Bella Vista||16509|-88532|29|6
+#CA|Alberta
+Brooks||50583|-111885|748|14
+Bridlewood||50900|-114108|1109|13
+Beddington Heights||51129|-114079|1114|11
+Blackfalds||52383|-113785|876|11
+Bowness||51083|-114169|1066|11
+Banff||51176|-115570|1388|8
+Brentwood||51098|-114133|1110|7
+Beaumont||53350|-113419|716|7
+Boyle Street||53550|-113479|665|7
+Bonnyville||54267|-110735|555|6
+Braeside||50954|-114105|1093|6
+Bearspaw||51133|-114302|1104|6
+Baturyn||53633|-113501|681|5
+Belmont||53592|-113394|650|5
+Brintnell||53621|-113408|669|5
+Bankview||51033|-114100|1081|5
+Belvedere||53593|-113439|660|5
+#CA|British Columbia
+Burquitlam||49267|-122883|127|15
+Brookswood||49067|-122667|54|13
+Burke Mountain||49294|-122756|126|12
+Brow of the Hill||49202|-122920|46|11
+Brentwood Park||49275|-122992|63|11
+Burnaby Heights||49283|-123000|74|8
+Brentwood Bay||48583|-123453|91|8
+Burnside-Gorge||48443|-123376|21|7
+Bridgeview||49208|-122860|28|5
+#CA|Manitoba
+Booth||49885|-97270|237|6
+Bridgwater Forest||49805|-97183|234|5
+#CA|New Brunswick
+Belle-Baie||47765|-65745|39|14
+Bathurst||47618|-65651|6|12
+Beausoleil||46298|-64603|33|9
+Beaubassin East||46209|-64418|12|7
+Beaurivage||46682|-64960|7|6
+Butternut Valley||45833|-65535|120|5
+#CA|Newfoundland and Labrador
+Bay Roberts||47600|-53265|9|6
+#CA|Nova Scotia
+Bridgewater||44379|-64519|6|9
+Burnside||44702|-63601|29|8
+Beaver Bank||44825|-63681|92|6
+Bible Hill||45375|-63238|28|5
+#CA|Ontario
+Briar Hill-Belgravia||43699|-79453|171|14
+Blossom Park||45349|-75627|95|14
+Bayview Woods-Steeles||43797|-79382|144|13
+Broadview North||43689|-79356|121|11
+Belle River||42293|-82712|175|10
+Blair Road||43371|-80334|288|9
+Bells Corners||45316|-75830|96|9
+Bridle Path-Sunnybrook-York Mills||43731|-79379|123|9
+Beechwood||43460|-80550|335|9
+Binbrook||43121|-79811|216|9
+Blackburn Hamlet||45437|-75565|83|8
+Blake-Jones||43676|-79337|113|8
+Bluewater||43467|-81600|249|7
+Beechwood West||43458|-80566|364|7
+Beechborough-Greenbrook||43693|-79479|126|7
+Bridgeport||43483|-80483|314|6
+Beaverbrook||45330|-75906|93|5
+Breslau||43467|-80416|308|5
+#CA|Quebec
+Beauharnois||45313|-73872|27|12
+Bécancour|Becancour|46341|-72432|9|11
+Bois-des-Filion||45667|-73749|17|8
+Boischatel||46894|-71145|106|8
+Baie-Saint-Paul||47441|-70499|7|7
+Brownsburg-Chatham||45683|-74416|157|7
+Beauceville||46218|-70779|229|6
+#CA|Saskatchewan
+Blairmore||52131|-106743|479|9
+Briarwood||52111|-106559|499|5
+#CD|Nord-Ubangi
+Bosobolo||4190|19883|442|15
+#CF|Bamingui-Bangoran
+Bamingui||7556|20177|431|6
+#CF|Lobaye
+Boda||4319|17470|507|12
+#CF|Ouham-Pendé
+Bossemtele I||5797|16518|812|11
+#CF|Sangha-Mbaéré
+Bayanga||2905|16260|370|9
+#CF|Vakaga
+Birao||10285|22788|468|8
+#CG|Cuvette
+Boundji||-1026|15359|344|10
+#CH|Aargau
+Brugg||47481|8209|354|11
+Buchs||47394|8082|385|7
+Bremgarten||47351|8342|389|7
+#CH|Basel-Landschaft
+Binningen||47540|7569|316|14
+Birsfelden||47553|7623|259|10
+Bottmingen||47523|7572|295|6
+#CH|Bern
+Belp||46891|7498|519|9
+Bolligen||46975|7497|582|6
+#CH|Geneva
+Bernex||46177|6075|451|10
+#CH|Lucerne
+Buchrain||47096|8347|458|5
+#CH|Nidwalden
+Buochs||46974|8423|441|6
+#CH|Saint Gallen
+Buchs||47167|9478|447|10
+Bad Ragaz||47006|9503|512|5
+#CH|Solothurn
+Biberist||47180|7562|449|8
+Balsthal||47316|7693|493|6
+#CH|Ticino
+Biasca||46360|8970|305|6
+#CH|Valais
+Bagnes||46083|7217|924|7
+Basse-Nendaz||46190|7312|1004|5
+#CH|Vaud
+Bussigny||46551|6556|432|7
+Blécherette|Blecherette|46539|6622|606|7
+Bex||46250|7010|421|6
+Blonay||46468|6896|629|5
+#CH|Zurich
+Bassersdorf||47443|8629|461|7
+#CI|
+Béréblo|Bereblo|5275|-7463|89|6
+#CI|Bas-Sassandra District
+Butubré I|Butubre I|5511|-6448|81|13
+Blahou||4931|-6558|119|10
+Bakayo||5533|-6044|157|9
+Bricolo||5785|-6452|185|7
+Baglo||6372|-7144|189|7
+Bagoliéoua|Bagolieoua|6168|-6533|209|6
+Baléko|Baleko|5434|-6026|164|6
+Brouagui||5651|-6824|185|6
+Bréguiagui|Breguiagui|5249|-6379|80|5
+Boua||5020|-7054|156|5
+#CI|Comoé District
+Béttié|Bettie|6076|-3408|113|11
+Brou akpaousso||6909|-4056|257|11
+Broukro||6646|-4223|203|9
+Bouoissué|Bouoissue|6963|-3232|247|8
+Bangoua||7335|-3473|157|7
+Bébou|Bebou|6362|-3413|116|7
+Bakro||5507|-3245|114|5
+#CI|Goh-Djiboua
+Bamo||5805|-5966|189|13
+Broudoukou-Kpenda||5523|-5514|135|10
+Brihi||6450|-5919|226|9
+Brozan||6399|-5503|191|7
+Booda||6361|-5688|255|7
+Bléanianda|Bleanianda|6307|-5705|274|7
+Balayo||6440|-6013|231|6
+Bagasséhoa|Bagassehoa|6191|-6363|245|6
+Bokéda|Bokeda|6362|-5712|268|6
+Billahio||6214|-6146|208|5
+#CI|Lacs District
+Bocanda||7063|-4499|115|14
+Boli||7226|-4807|194|9
+#CI|Lagunes District
+Bacon||6356|-3910|130|13
+Bacanda||5633|-4878|22|12
+Bonaouin||6565|-3761|171|11
+Bécouéfin|Becouefin|6481|-3846|185|10
+Bécédi|Becedi|5642|-4582|100|10
+Bakanou A||5594|-4635|93|9
+Boudépé|Boudepe|5984|-3987|111|8
+Biasso||6112|-3787|108|7
+Bassadzin||5937|-3738|74|6
+Banguié I|Banguie I|5902|-4201|68|6
+Bessedi Anon||5926|-3994|108|6
+Boka||5943|-4398|76|6
+Bodo||5910|-4685|66|6
+Broubrou||5725|-4824|23|5
+#CI|Montagnes
+Bagohouo||6890|-7193|227|13
+Bédigoazon|Bedigoazon|6564|-7777|244|12
+Bin-Houyé|Bin-Houye|6782|-8313|248|10
+Blaguiéhi|Blaguiehi|6958|-7665|241|10
+Blodi||6794|-7297|249|9
+Bably||7026|-7873|296|9
+Bounta||7647|-7959|584|9
+Blapleu||7639|-7737|480|7
+Béablo|Beablo|6379|-7334|213|7
+Blédi Diéya|Bledi Dieya|6586|-8067|300|7
+Biantouo||6964|-8250|267|6
+Baoubli||6806|-7399|254|6
+Béoua|Beoua|6540|-7646|225|6
+Banneu||7073|-8253|270|6
+Blotilé|Blotile|7049|-7692|286|6
+Béinleu|Beinleu|7228|-7883|329|5
+#CI|Sassandra-Marahoue
+Bazré|Bazre|6724|-5483|185|15
+Bogbam||6381|-6193|232|15
+Bèfla|Befla|7212|-6140|231|13
+Brouafla-nattis||7596|-6518|290|10
+Brizéboua|Brizeboua|7010|-6469|270|9
+Bandiay||7200|-6183|242|9
+Bohinou||7173|-6831|267|8
+Bagouri||7130|-6815|259|8
+Benhuafla||6595|-5879|235|7
+Benzra||7328|-6008|258|7
+Boguédia|Boguedia|6634|-6519|239|7
+Bégbessou|Begbessou|7067|-5597|259|6
+Bidiouan||6615|-6237|253|6
+Bouafla||7252|-5850|225|6
+Balahio||6314|-6426|202|6
+Boboua||7019|-6470|262|6
+Brouta||7250|-6185|208|5
+Bounafla||6722|-5518|205|5
+Bébouo-sibouo|Bebouo-sibouo|6820|-6238|247|5
+Banoufla||7120|-6318|289|5
+Blablata||7286|-6246|297|5
+Bounantinfla||6754|-5916|251|5
+Bonzi||6917|-5534|167|5
+#CI|Savanes District
+Boron||8694|-5969|382|8
+Bolona||10297|-6438|360|7
+Blésségue|Blessegue|10198|-6408|365|7
+Bawakaha||9499|-5410|343|5
+#CI|Vallée du Bandama District
+Botro||7852|-5311|261|13
+Brobo||7640|-4825|267|10
+Badikaha||9192|-5165|421|6
+Bodokro||7861|-5477|232|5
+#CI|Woroba
+Bouandougou||8216|-5670|342|14
+Bobosso-Tiénigbé|Bobosso-Tienigbe|8452|-5787|304|11
+Bobi||8161|-6550|316|7
+Bielou-carrefour||8541|-6201|384|6
+Béréni-Dialla|Bereni-Dialla|8004|-6861|285|5
+Babien||7953|-6871|310|5
+#CI|Yamoussoukro
+Baonfla||6833|-5498|162|9
+#CI|Zanzan District
+Bondo-Dioula||8219|-3200|328|6
+Boahia||7572|-3515|151|5
+Bandoli||8592|-2708|270|5
+#CL|Ñuble
+Bulnes||-36742|-72299|96|13
+#CM|Adamaoua
+Bélel|Belel|7050|14433|1448|7
+Bankim||6083|11491|731|6
+#CM|East
+Bétaré Oya|Betare Oya|5600|14083|768|12
+#CM|Littoral
+Bonabéri|Bonaberi|4071|9682|6|8
+#CM|North-West
+Babanki||6117|10250|1156|10
+Batibo||5836|9855|1090|9
+Belo||6175|10346|1403|9
+#CM|South-West
+Bekondo||4682|9321|382|7
+#CM|West
+Bazou||5060|10468|1206|13
+Bansoa||5448|10314|1483|8
+Bamendjou||5390|10330|1604|7
+Bana||5147|10275|1415|6
+#CN|Beijing
+Badaling||40364|115985|586|10
+#CN|Chongqing
+Bailu||31613|109674|395|15
+Baolong||30355|105920|308|15
+Baijia||30593|107904|612|14
+Baofeng||29281|105706|424|14
+Baiqiao||31282|108594|861|14
+Baojia||30077|107284|441|13
+Baishi||29684|108563|437|12
+Banxi||28734|108817|732|11
+Bashan||32112|108467|560|11
+Baiyang||29961|106082|226|9
+Baiquan||31594|108783|901|8
+Biekou||30117|105958|258|8
+Banqiao||28703|108719|558|7
+Baisha||29372|106926|656|6
+Baiyun||29313|107418|882|5
+Baitu||29380|108642|723|5
+#CN|Gansu
+Baisha||34711|106261|1479|15
+Baoziba||33058|104623|1257|13
+Bailin||33485|105012|1388|11
+Bali||34306|104369|2401|7
+Baiyang||33173|105782|1056|6
+Bola||34826|102842|3018|6
+Bajiao||35028|103697|2306|5
+Bazang||33901|104037|1684|5
+#CN|Guangdong
+Benggang||22754|113846|7|11
+Botuofeinuochunshuian||22546|113974|12|11
+Baishizhou||22537|113962|3|10
+Baishipai||22533|113907||8
+Beizhoushan||22526|113976|1|7
+Bitou||22784|113808|5|6
+Baochuang Estate||22605|113825||5
+Bao'an yuan qu||22562|113913|21|5
+#CN|Guizhou
+Bazhai||26210|108945|712|10
+#CN|Henan
+Beizheng||38060|114078|281|13
+Beitanzhuang||38513|114288|171|12
+Bailuquan||38071|114269|163|8
+#CN|Ningxia
+Baitugang||37829|106340|1167|9
+#CN|Tianjin
+Beihuaidian||39259|117564|6|9
+Biaokou||39325|117554|7|8
+Beicang||39236|117123|5|8
+Bangjun||39991|117263|31|7
+#CN|Tibet
+Burang||30296|81175|3892|5
+#CN|Xinjiang
+Bingtuan Sanshiliu Tuan||39244|88900|904|8
+Baluntaicun||42668|86324|1712|5
+#CO|Bolívar
+Barranco de Loba||8946|-74106|37|6
+#CO|Boyacá
+Belén|Belen|5989|-72913|2643|5
+#CO|Caldas Department
+Belalcázar|Belalcazar|4995|-75812|1591|10
+#CO|Chocó
+Bahía Solano|Bahia Solano|6226|-77404|6|9
+#CO|Córdoba
+Buenavista||9050|-76003|89|5
+#CO|Nariño
+Barbacoas||1672|-78140|37|8
+#CO|Santander Department
+Bolívar|Bolivar|5989|-73771|2128|10
+#CO|Valle del Cauca Department
+Bugalagrande||4211|-76157|714|12
+#CR|Puntarenas Province
+Buenos Aires||9173|-83333|383|12
+#CU|Matanzas Province
+Bolondrón|Bolondron|22763|-81448|52|7
+#CU|Mayabeque
+Batabanó|Batabano|22717|-82290|10|14
+#CV|São Vicente
+Bela Vista||16880|-24973|193|5
+#CW|
+Bandabou||12272|-69065|15|13
+#CZ|Central Bohemia
+Benátky nad Jizerou|Benatky nad Jizerou|50291|14823|225|8
+Bakov nad Jizerou||50482|14941|220|5
+#CZ|Hradec Králové Region
+Broumov||50586|16332|415|7
+#CZ|Moravian-Silesian Region
+Bruntál|Bruntal|49988|17465|409|15
+Bílovec|Bilovec|49756|18016|243|7
+Bystřice|Bystrice|49637|18720|340|5
+#CZ|South Bohemian Region
+Blatná|Blatna|49425|13882|440|7
+#CZ|South Moravian
+Bohunice||49167|16578|259|14
+Boskovice||49488|16660|381|12
+Brno-jih||49175|16623|200|8
+Bučovice|Bucovice|49149|17002|230|7
+#CZ|Vysocina
+Bystřice nad Pernštejnem|Bystrice nad Pernstejnem|49523|16261|534|9
+#CZ|Zlín
+Bystřice pod Hostýnem|Bystrice pod Hostynem|49399|17674|315|8
+Brumov-Bylnice||49092|18022|330|5
+#CZ|Ústí nad Labem Region
+Bílina|Bilina|50549|13775|214|14
+#DE|Baden-Wurttemberg
+Breisach am Rhein||48033|7583|189|14
+Bad Wurzach||47908|9897|651|14
+Brühl|Bruhl|49397|8534|100|14
+Burladingen||48291|9113|738|13
+Bad Urach||48491|9400|463|13
+Bad Dürrheim|Bad Durrheim|48021|8531|700|13
+Bopfingen||48858|10354|463|13
+Bretzfeld||49179|9438|211|12
+Besigheim||48998|9143|195|12
+Blaubeuren||48412|9784|520|12
+Birkenfeld||48867|8633|382|11
+Blumberg||47841|8533|699|11
+Bad Liebenzell||48774|8730|332|10
+Bad Wildbad||48751|8550|432|10
+Bisingen||48310|8917|552|9
+Bad Schussenried||48005|9657|569|8
+Bühlertal|Buhlertal|48686|8189|245|8
+Bad Herrenalb||48798|8436|365|8
+Bönnigheim|Boennigheim|49040|9094|224|7
+Baienfurt||47829|9652|462|7
+Boxberg||49480|9640|272|7
+Bad Wimpfen||49230|9156|208|7
+Bonndorf||47819|8341|834|7
+Bammental||49356|8779|128|6
+Bräunlingen|Braunlingen|47930|8448|694|6
+Beilstein||49041|9314|254|6
+Bietigheim||48909|8252|119|6
+Bodelshausen||48389|8977|495|6
+Billigheim||49349|9254|251|6
+Böhmenkirch|Bohmenkirch|48683|9933|693|6
+Bondorf||48521|8837|464|6
+Baltmannsweiler||48742|9449|456|6
+Benningen am Neckar||48947|9242|209|5
+Blaufelden||49298|9974|462|5
+Boll||48644|9613|416|5
+Bötzingen|Botzingen|48076|7725|192|5
+#DE|Bavaria
+Bad Wörishofen|Bad Worishofen|48007|10597|625|14
+Bad Abbach||48938|12045|355|13
+Burglengenfeld||49204|12045|368|12
+Bad Windsheim||49503|10415|314|12
+Buchloe||48037|10725|615|12
+Burgthann||49352|11312|431|12
+Burgkirchen an der Alz||48168|12733|428|11
+Bad Staffelstein||50102|11001|274|11
+Bogen||48911|12690|320|10
+Burgau||48432|10410|454|10
+Berching||49107|11441|387|9
+Bad Griesbach||48452|13193|454|8
+Burkardroth||50271|9992|316|8
+Berchtesgaden||47632|13002|574|8
+Bischofswiesen||47631|12983|633|8
+Berg||49814|12142|493|7
+Bad Endorf||47909|12298|519|7
+Bad Brückenau|Bad Bruckenau|50309|9790|315|7
+Bindlach||49982|11614|360|7
+Bad Feilnbach||47773|12010|520|7
+Baiersdorf||49658|11036|267|7
+Bad Königshofen im Grabfeld|Bad Konigshofen im Grabfeld|50301|10469|281|7
+Burgkunstadt||50141|11252|304|7
+Bergkirchen||48257|11365|509|7
+Bad Füssing|Bad Fussing|48351|13312|325|7
+Bernau am Chiemsee||47812|12376|540|7
+Burgebrach||49828|10743|270|6
+Bischberg||49911|10832|241|6
+Buttenwiesen||48600|10717|409|6
+Brannenburg||47740|12092|507|6
+Blaichach||47542|10258|731|6
+Bernhardswald||49091|12247|453|6
+Beratzhausen||49095|11810|418|6
+Bad Birnbach||48445|13091|376|6
+Bodenkirchen||48383|12383|480|5
+Babenhausen||48145|10253|557|5
+Büchenbach|Buchenbach|49268|11059|362|5
+Bischofsheim in der Rhön|Bischofsheim in der Rhoen|50402|10008|451|5
+Bruckberg||48522|11994|422|5
+#DE|Brandenburg
+Bad Freienwalde||52787|14030|14|13
+Beelitz||52238|12971|40|12
+Bad Belzig||52142|12593|88|12
+Blankenfelde||52337|13412|44|12
+Bad Liebenwerda||51518|13395|89|11
+Brieselang||52589|12995|34|10
+Beeskow||52173|14246|46|8
+Birkenwerder||52691|13278|40|7
+Bestensee||52240|13637|37|6
+Biesenthal||52766|13644|53|6
+#DE|Hamburg
+Blankenese||53557|9806|5|14
+Bergstedt||53671|10127|34|10
+Borgfelde||53555|10034|10|7
+#DE|Hesse
+Bebra||50974|9796|200|15
+Bad Camberg||50297|8269|209|14
+Bad Soden-Salmünster|Bad Soden-Salmuenster|50276|9367|153|14
+Biedenkopf||50911|8530|280|14
+Büttelborn|Buttelborn|49903|8523|95|13
+Bierstadt||50083|8286|186|13
+Borken||51045|9284|224|12
+Bischofsheim||49994|8367|86|12
+Braunfels||50515|8389|235|12
+Bad Schwalbach||50142|8070|324|11
+Birkenau||49563|8707|150|10
+Bad Orb||50228|9348|171|10
+Bad König|Bad Koenig|49743|9008|187|10
+Biblis||49692|8459|91|9
+Bad Sooden-Allendorf||51271|9975|158|9
+Bad Endbach||50750|8500|359|9
+Beerfelden||49569|8974|414|7
+Breidenbach||50887|8457|327|7
+Burghaun||50697|9725|252|7
+Biebesheim||49781|8467|92|7
+Birstein||50350|9300|319|7
+Battenberg||51014|8646|360|6
+Braunshardt||49914|8567|101|6
+Brensbach||49774|8884|187|5
+Bickenbach||49759|8618|124|5
+#DE|Lower Saxony
+Bissendorf||52233|8167|89|14
+Bad Salzdetfurth||52058|10006|110|14
+Barsinghausen||52300|9450|142|14
+Bovenden||51588|9922|142|14
+Belm||52300|8133|90|14
+Bergen||52808|9964|70|14
+Bad Fallingbostel||52866|9695|39|13
+Bohmte||52367|8317|66|13
+Barßel|Barssel|53170|7750|2|12
+Badenstedt||52358|9671|62|12
+Bad Lauterberg im Harz||51633|10470|304|12
+Bad Iburg||52155|8042|119|12
+Bockenem||52010|10132|122|11
+Bad Gandersheim||51872|10025|123|11
+Bad Nenndorf||52337|9379|86|10
+Bleckede||53287|10735|8|10
+Bad Laer||52100|8083|82|9
+Bockhorn||53395|8020|5|9
+Bad Bevensen||53079|10581|34|9
+Bad Sachsa||51595|10555|315|8
+Bersenbrück|Bersenbrueck|52550|7948|35|8
+Bunde||53184|7273|5|8
+Bösel|Bosel|53004|7954|15|8
+Bad Rothenfelde||52117|8167|100|7
+Bomlitz||52903|9661|64|7
+Bienenbüttel|Bienenbuttel|53142|10487|25|7
+Butjadingen||53547|8335|-2|7
+Bispingen||53083|9998|78|6
+Bruchhausen-Vilsen||52829|8991|17|6
+Bodenwerder||51972|9519|95|6
+Barnstorf||52710|8503|33|6
+Bardowick||53294|10388|10|6
+Broitzem||52235|10477|84|6
+Bakum||52741|8195|34|6
+Borkum||53581|6692|3|5
+Braunlage||51727|10611|563|5
+#DE|Mecklenburg-Vorpommern
+Bergen auf Rügen|Bergen auf Ruegen|54418|13433|73|13
+Bad Doberan||54107|11901|13|12
+Boizenburg||53381|10738|10|11
+Barth||54363|12725|1|9
+Bützow|Buetzow|53841|11981|2|8
+#DE|North Rhine-Westphalia
+Burbach||50751|8079|355|15
+Buchheim||50952|7021|47|13
+Bad Wünnenberg|Bad Wuennenberg|51520|8699|289|12
+Balve||51332|7864|237|12
+Berghofen||51467|7529|178|12
+Bestwig||51361|8401|297|12
+Billerbeck||51978|7293|116|12
+Bad Sassendorf||51583|8167|93|12
+Borgentreich||51569|9241|205|10
+Brechten||51576|7467|81|10
+Breckerfeld||51259|7468|388|9
+Blankenheim||50433|6650|518|9
+Borgholzhausen||52103|8302|133|9
+Bayenthal||50912|6968|51|9
+Benninghofen||51475|7518|116|9
+Barop||51482|7432|97|8
+Buchforst||50951|7006|50|7
+Beelen||51929|8111|60|6
+Bövinghausen|Boevinghausen|51517|7317|124|6
+Barntrup||51990|9116|196|5
+Buldern||51866|7367|65|5
+Bad Münstereifel|Bad Muenstereifel|50557|6764|283|5
+Belecke||51481|8332|268|5
+#DE|Rheinland-Pfalz
+Bitburg||49968|6527|327|13
+Böhl-Iggelheim|Bohl-Iggelheim|49381|8304|108|11
+Betzdorf||50791|7872|189|11
+Bobenheim-Roxheim||49588|8358|95|10
+Bad Ems||50335|7714|86|10
+Bad Breisig||50505|7289|98|9
+Budenheim||50017|8167|105|9
+Bellheim||49198|8279|117|8
+Bruchmühlbach-Miesau|Bruchmuhlbach-Miesau|49383|7433|232|8
+Bad Bergzabern||49102|8001|170|8
+Birkenfeld||49652|7167|402|7
+Bodenheim||49935|8320|86|7
+Bernkastel-Kues||49916|7077|119|7
+Bad Sobernheim||49786|7651|161|6
+Bad Marienberg||50649|7950|448|6
+Bad Hönningen|Bad Hoenningen|50517|7312|69|6
+#DE|Saarland
+Bous||49277|6801|223|8
+#DE|Saxony
+Burgstädt|Burgstaedt|50913|12806|323|12
+Brand-Erbisdorf||50866|13323|468|11
+Bannewitz||50993|13717|280|11
+Bischofswerda||51128|14180|293|11
+Brandis||51336|12610|149|10
+Breitenfeld||51404|12342|130|9
+Bad Lausick||51145|12644|175|9
+Bad Düben|Bad Dueben|51592|12585|91|9
+Borsdorf||51350|12533|125|8
+Burkhardtsdorf||50733|12917|405|7
+Böhlen|Boehlen|51201|12386|134|7
+Bernsdorf||51374|14069|148|6
+Bad Schlema||50603|12673|406|6
+Bennewitz||51361|12714|114|5
+Breitenbrunn||50476|12766|695|5
+Belgern||51483|13124|113|5
+#DE|Saxony-Anhalt
+Bad Dürrenberg|Bad Duerrenberg|51295|12066|108|12
+Ballenstedt||51719|11233|228|8
+Braunsbedra||51286|11890|118|7
+Barleben||52202|11618|46|6
+Bad Kösen|Bad Koesen|51134|11722|118|6
+Bad Lauchstädt|Bad Lauchstaedt|51387|11870|115|5
+#DE|Schleswig-Holstein
+Brunsbüttel|Brunsbuettel|53896|9105|1|14
+Bargteheide||53730|10267|44|14
+Bad Bramstedt||53918|9882|12|13
+Barsbüttel|Barsbuettel|53569|10168|33|12
+Brachenfeld-Ruthenberg||54072|10009|24|11
+Büdelsdorf|Buedelsdorf|54318|9673|13|10
+Barmstedt||53792|9770|12|10
+Bordesholm||54176|10031|28|8
+Böcklersiedlung-Bugenhagen|Boecklersiedlung-Bugenhagen|54074|9955|21|7
+Burg auf Fehmarn||54433|11200|9|6
+Büchen|Buchen|53480|10618|17|5
+Bredstedt||54619|8964|11|5
+#DE|State of Berlin
+Buch||52635|13497|57|13
+Bohnsdorf||52394|13573|37|12
+Borsigwalde||52585|13308|38|7
+Blankenburg||52593|13455|47|7
+#DE|Thuringia
+Bad Frankenhausen||51356|11100|137|10
+Bad Berka||50900|11282|273|8
+Bad Blankenburg||50682|11274|225|8
+Blankenhain||50860|11344|356|7
+Bleicherode||51440|10572|270|6
+Bad Lobenstein||50452|11639|560|6
+#DK|Capital Region
+Brøndby Strand|Brondby Strand|55618|12422|3|12
+#DK|Central Jutland
+Beder||56060|10212|46|9
+Bjerringbro||56378|9661|14|7
+Brande||55943|9128|49|7
+#DK|North Denmark
+Brønderslev|Bronderslev|57270|9941|15|13
+#DK|South Denmark
+Billund||55733|9108|58|7
+Bramming||55469|8700|15|7
+Bellinge||55335|10320|27|6
+#DK|Zealand
+Borup||55694|11634|10|5
+Borup||55495|11976|44|5
+#DM|Saint Patrick Parish
+Berekua||15233|-61317|288|3
+#DZ|Batna
+Boumagueur||35505|5553|756|8
+#DZ|Beni Abbes
+Béni Abbès|Beni Abbes|30133|-2166|471|11
+#DZ|Medea
+Bougzoul||35706|2846|640|14
+#EC|El Oro
+Balsas||-3761|-79824|662|8
+#EC|Guayas
+Balao||-2911|-79815|5|12
+#EC|Los Ríos
+Baba||-1784|-79679|9|9
+#EC|Tungurahua Province
+Baños|Banos|-1397|-78423|1805|10
+#ES|Andalusia
+Bollullos par del Condado||37341|-6540|129|14
+Brenes||37549|-5871|21|12
+Bujalance||37896|-4381|338|8
+Bornos||36817|-5744|154|8
+Benalup-Casas Viejas||36344|-5813|116|7
+Bollullos de la Mitación|Bollullos de la Mitacion|37340|-6137|87|6
+Benacazón|Benacazon|37353|-6197|120|6
+Bonares||37324|-6681|87|5
+Beas de Segura||38252|-2889|586|5
+#ES|Aragon
+Binéfar|Binefar|41851|294|285|9
+#ES|Balearic Islands
+Binissalem||39687|2844|133|8
+Bunyola||39696|2700|217|5
+#ES|Basque Country
+Bergara||43115|-2417|185|15
+Beasain||43050|-2201|236|14
+Balmaseda||43200|-3200|212|8
+Berango||43365|-2996|27|6
+#ES|Canary Islands
+Breña Alta|Brena Alta|28650|-17783|329|7
+Buenavista del Norte||28375|-16861|38|5
+#ES|Castille and León
+Bembibre||42618|-6415|648|10
+Briviesca||42550|-3323|725|7
+#ES|Castille-La Mancha
+Bolaños de Calatrava|Bolanos de Calatrava|38907|-3663|652|12
+Bargas||39941|-4020|594|8
+#ES|Catalonia
+Bigues i Riells||41683|2233|335|7
+Begues||41333|1933|412|6
+#ES|Galicia
+Betanzos||43280|-8215|2|14
+Bueu||42325|-8785|11|12
+Baiona||42117|-8850|45|12
+Burela de Cabo||43662|-7367|36|8
+Bergondo||43317|-8233|113|6
+#ES|Madrid
+Brunete||40405|-3998|654|8
+Becerril de la Sierra||40717|-3989|1085|6
+Boalo||40716|-3917|928|5
+#ES|Murcia
+Bullas||38047|-1672|654|12
+Beniaján|Beniajan|37974|-1071|52|11
+Beniel||38046|-1002|32|11
+Blanca||38179|-1375|151|6
+#ES|Navarre
+Berriozar||42831|-1666|431|8
+#ES|Valencia
+Benissa||38715|48|266|13
+Benifaió|Benifaio|39284|-426|26|12
+Benaguasil||39600|-583|103|11
+Buñol|Bunol|39417|-783|347|10
+Betxí|Betxi|39933|-200|96|6
+Benigànim|Beniganim|38950|-433|210|6
+Bigastro||38062|-898|32|6
+Benejúzar|Benejuzar|38077|-839|28|5
+#ET|South Ethiopia Regional State
+Bombe||7138|37582|1530|12
+#FJ|Western
+Ba||-17534|177674|11|15
+#FR|Auvergne-Rhône-Alpes
+Brignais||45674|4754|208|12
+Beaumont||45752|3083|443|12
+Bonneville||46080|6407|450|12
+Bellegarde-sur-Valserine||46108|5824|361|12
+Bourg-de-Péage|Bourg-de-Peage|45032|5050|159|10
+Belley||45759|5688|281|9
+Bellerive-sur-Allier||46117|3404|273|9
+Bourg-Saint-Andéol|Bourg-Saint-Andeol|44373|4644|68|8
+Bourg-Saint-Maurice||45615|6768|834|8
+Brioude||45294|3384|440|7
+Belleville||46109|4749|178|6
+Beynost||45836|4999|183|5
+Barberaz||45562|5943|283|5
+#FR|Bourgogne-Franche-Comté
+Blanzy||46700|4388|298|7
+Bethoncourt||47535|6805|361|7
+Baume-les-Dames||47353|6361|283|6
+Beaucourt||47489|6922|413|6
+Bourbon-Lancy||46622|3770|254|5
+#FR|Brittany
+Bruz||48025|-1747|43|15
+Betton||48183|-1645|53|9
+Bain-de-Bretagne||47847|-1686|100|6
+Baud||47876|-3019|79|5
+Brech||47721|-2997|49|5
+Bannalec||47932|-3698|96|5
+#FR|Centre-Val de Loire
+Beaugency||47780|1627|101|8
+Ballan-Miré|Ballan-Mire|47341|615|92|7
+Briare||47633|2744|140|6
+#FR|Corsica
+Biguglia||42627|9420|145|6
+Borgo||42555|9426|266|6
+#FR|Grand Est
+Bischwiller||48768|7854|139|12
+Behren-lès-Forbach|Behren-les-Forbach|49169|6939|319|10
+Brumath||48734|7711|148|9
+Barr||48408|7449|208|6
+Bétheny|Betheny|49285|4055|91|6
+Brunstatt||47721|7320|248|6
+Bitche||49052|7430|350|6
+Bar-sur-Aube||48233|4706|170|5
+Briey||49249|5940|256|5
+Benfeld||48371|7594|161|5
+Blénod-lès-Pont-à-Mousson|Blenod-les-Pont-a-Mousson|48885|6048|184|5
+#FR|Hauts-de-France
+Bailleul||50736|2736|34|15
+Bully-les-Mines||50444|2727|54|12
+Bruay-sur-l'Escaut||50399|3544|20|12
+Bondues||50702|3095|42|11
+Beuvry||50517|2685|24|9
+Billy-Montigny||50417|2903|28|9
+Beuvrages||50384|3494|29|8
+Barlin||50452|2620|78|8
+Bourbourg||50948|2196|4|7
+Bohain-en-Vermandois||49987|3453|139|6
+Bauvin||50517|2894|25|5
+Blendecques||50718|2286|12|5
+#FR|New Aquitaine
+Billère|Billere|43303|-397|171|15
+Bruges||44883|-612|22|13
+Biscarrosse||44395|-1167|28|11
+Buxerolles||46617|483|123|9
+Boucau||43528|-1466|34|8
+Biganos||44644|-978|11|8
+Bassens||44904|-517|20|8
+Bon-Encontre||44186|671|60|6
+Blaye||45128|-662|11|5
+Barbezieux-Saint-Hilaire||45473|-152|91|5
+Bazas||44432|-213|89|5
+Bizanos||43288|-352|190|5
+Bidart||43437|-1593|27|5
+#FR|Normandy
+Bois-Guillaume||49460|1122|160|14
+Barentin||49545|955|44|13
+Bolbec||49573|473|54|13
+Bernay||49089|599|113|12
+Bihorel||49455|1122|152|9
+#FR|Occitanie
+Beaucaire||43808|4644|22|15
+Bagnères-de-Bigorre|Bagneres-de-Bigorre|43065|149|555|9
+Bompas||42731|2933|16|8
+Bédarieux|Bedarieux|43616|3159|204|7
+Baillargues||43661|4013|31|7
+Balaruc-les-Bains||43442|3678|4|6
+Beauzelle||43667|1375|143|6
+Bouillargues||43800|4428|68|6
+Bellegarde||43754|4514|11|5
+Banyuls de la Marenda||42484|3129|20|5
+#FR|Pays de la Loire
+Blain||47476|-1764|26|8
+Basse-Goulaine||47215|-1466|15|8
+Beaupréau|Beaupreau|47202|-995|82|7
+Bouchemaine||47422|-609|26|7
+Beaufort-en-Vallée|Beaufort-en-Vallee|47440|-217|34|6
+Bouaye||47143|-1689|17|6
+Bonchamp-lès-Laval|Bonchamp-les-Laval|48074|-702|86|5
+#FR|Provence-Alpes-Côte d'Azur
+Bollène|Bollene|44281|4749|57|15
+Belle de Mai||43312|5385|30|14
+Berre-l'Étang|Berre-l'Etang|43478|5170|3|14
+Beausoleil||43743|7423|48|13
+Bouc-Bel-Air||43452|5413|253|13
+Briançon|Briancon|44900|6642|1301|12
+Baille||43288|5398|25|12
+Bon-Secours||43319|5384|38|11
+Belsunce||43298|5377|18|9
+Bandol||43142|5747|0|9
+Biot||43629|7095|72|8
+Bormes-les-Mimosas||43152|6342|148|7
+Bonneveine||43250|5383|12|5
+Bédarrides|Bedarrides|44040|4898|29|5
+#FR|Île-de-France
+Bercy||48838|2382|42|14
+Bois-d'Arcy||48800|2023|167|13
+Bures-sur-Yvette||48700|2171|62|10
+Bussy-Saint-Georges||48841|2702|112|10
+Bondoufle||48613|2378|80|10
+Beauchamp||49017|2200|69|10
+Beaumont-sur-Oise||49142|2287|49|9
+Bougival||48862|2141|87|9
+Bessancourt||49038|2209|81|8
+Beynes||48856|1873|54|8
+Breuillet||48571|2174|92|8
+Ballancourt-sur-Essonne||48525|2386|67|7
+Boussy-Saint-Antoine||48691|2531|58|7
+Buc||48776|2126|122|6
+Bois-le-Roi||48473|2705|60|6
+Bouffémont|Bouffemont|49044|2298|121|6
+#GA|Ogooué-Ivindo
+Booué|Booue|-92|11938|217|7
+#GB|England
+Bromborough||53349|-2979|12|15
+Balham||51450|-151|27|15
+Bishops Cleeve||51947|-2063|56|14
+Bourne||52767|-383|16|14
+Bickley||51401|46|75|14
+Beccles||52459|1565|12|14
+Beaconsfield||51612|-647|106|14
+Burnage||53433|-2200|51|14
+Blacon||53208|-2925|21|13
+Brownhills||52633|-1933|143|13
+Broxbourne||51747|-19|41|13
+Bolton upon Dearne||53517|-1317|31|13
+Bacup||53703|-2201|257|13
+Brackley||52033|-1150|145|13
+Broadfield||51097|-207|92|13
+Buckingham||52000|-988|89|13
+Bridgnorth||52537|-2420|74|13
+Barkingside||51581|69|29|13
+Batchworth||51634|-464|63|13
+Burnham||51535|-666|56|13
+Brixton Hill||51452|-123|33|12
+Bridport||50734|-2758|16|12
+Birstall||52667|-1117|55|12
+Berwick-Upon-Tweed||55769|-2005|8|12
+Barnham||50831|-638|4|12
+Buckhurst Hill||51624|33|82|12
+Bolsover||53228|-1292|175|12
+Blandford Forum||50861|-2162|52|12
+Belsize Park||51548|-172|67|12
+Bishopsworth||51415|-2621|52|12
+Belgrave||52650|-1117|61|12
+Barton upon Humber||53689|-444|6|11
+Belvedere||51491|151|6|11
+Beighton||53333|-1333|52|11
+Biggin Hill||51313|34|188|11
+Brentford||51486|-308|15|11
+Baldock||51988|-188|68|11
+Barnoldswick||53917|-2187|161|10
+Broadstone||50757|-1994|47|10
+Brierfield||53825|-2234|156|10
+Blackley||53518|-2214|81|10
+Boughton||53200|-983|39|10
+Belmont||51343|-200|94|10
+Barnsbury||51541|-117|32|10
+Bradwell||52574|1700|6|10
+Birchington-on-Sea||51376|1305|26|10
+Brandon||54750|-1617|87|10
+Braunton||51108|-4161|14|10
+Bulford||51189|-1760|80|10
+Bradford on Avon||51348|-2251|33|9
+Bramcote||52933|-1250|73|9
+Bingham||52950|-959|33|9
+Bewbush||51103|-223|75|9
+Belmont||51604|-310|67|9
+Broughton Astley||52528|-1218|93|9
+Burscough||53596|-2840|28|9
+Bewdley||52376|-2318|40|9
+Broadwater||50829|-376|11|8
+Brandon||52384|-1400|84|8
+Bernards Heath||51761|-334|127|8
+Brightlingsea||51812|1023|10|8
+Bircotes||53419|-1049|37|8
+Britwell||51536|-628|61|8
+Burnham-on-Crouch||51633|815|16|8
+Basford, Stoke-on-Trent||53016|-2212|166|7
+Barnard Castle||54542|-1919|164|7
+Balsall Common||52392|-1650|124|7
+Bollington||53294|-2110|143|7
+Bude||50824|-4541|10|7
+Bolton le Sands||54096|-2800|21|7
+Billingshurst||51023|-454|29|7
+Bursledon||50887|-1316|38|7
+Burton Latimer||52364|-679|74|7
+Battle||50917|484|83|7
+Brigg||53552|-492|7|7
+Benwell||54973|-1669|93|7
+Burwell||52276|327|15|6
+Blaby||52576|-1164|72|6
+Bishops Waltham||50956|-1215|35|6
+Bowdon||53376|-2365|58|6
+Boston Spa||53904|-1345|29|6
+Bennetts End||51743|-449|93|6
+Burley in Wharfedale||53910|-1758|109|6
+Burwell||53293|35|57|6
+Brundall||52624|1435|21|6
+Billinge||53498|-2708|111|6
+Benson||51621|-1110|52|6
+Borrowash||52907|-1384|52|6
+Burpham||51260|-544|35|6
+Bracebridge Heath||53196|-534|76|6
+Broseley||52613|-2483|155|6
+Barton on Sea||50740|-1675|34|5
+Bagshot||51361|-688|57|5
+Brotton||54567|-939|102|5
+Barrowford||53847|-2218|117|5
+Barnt Green||52359|-2007|196|5
+Bourne End||51576|-713|31|5
+Bovingdon||51723|-537|160|5
+Brixworth||52329|-903|125|5
+Barrow upon Soar||52752|-1146|61|5
+Budleigh Salterton||50630|-3322|22|5
+Bungay||52454|1438|14|5
+Blackrod||53592|-2580|155|5
+Bayston Hill||52676|-2762|88|5
+Bidford-on-Avon||52170|-1860|36|5
+#GB|Northern Ireland
+Ballymoney||55071|-6510|43|10
+Ballyclare||54751|-5999|74|9
+Ballynahinch||54402|-5897|74|6
+Ballycastle||55204|-6243|11|6
+#GB|Scotland
+Bo’ness|Bo'ness|56017|-3617|3|15
+Bonhill||55979|-4564|59|9
+Blairgowrie and Rattray||56592|-3340|80|9
+Buckie||57676|-2962|28|8
+Banchory||57052|-2488|60|7
+Brechin||56730|-2657|40|7
+Bannockburn||56090|-3911|41|7
+Bothwell||55803|-4068|59|6
+Burntisland||56059|-3237|7|6
+Beith||55749|-4637|93|6
+Balerno||55884|-3340|165|6
+Ballingry||56164|-3328|122|6
+Blackburn||55867|-3633|160|5
+Bridge of Allan||56154|-3946|13|5
+Bonnybridge||56002|-3889|29|5
+#GB|Wales
+Brynmawr||51800|-3183|382|15
+Bargoed||51683|-3233|231|13
+Burry Port||51684|-4247|8|8
+Brecon||51946|-3389|136|8
+Bedwas||51592|-3199|67|8
+Beddau||51554|-3358|116|8
+Brynna||51538|-3464|80|7
+Broughton||53163|-2993|27|6
+Brynamman||51800|-3867|214|6
+Blaenavon||51774|-3085|334|6
+#GE|Kvemo Kartli
+Bolnisi||41451|44538|572|8
+#GE|Samtskhe-Javakheti
+Borjomi||41847|43397|802|11
+#GM|Central River
+Bansang||13433|-14650|9|10
+Brikama Ba||13533|-14933|16|5
+#GM|North Bank
+Barra||13483|-16546|1|6
+#GM|Upper River
+Basse Santa Su||13310|-14214|15|14
+Badja Kunda||13467|-14050|19|7
+#GM|Western
+Bijilo||13418|-16730|22|8
+Banjul NDing||13373|-16657|32|7
+#GN|Boké Region
+Boffa||10167|-14033|0|10
+#GP|Guadeloupe
+Baillif||16020|-61746|12|6
+#GT|Huehuetenango
+Barillas||15804|-91316|1462|14
+#GU|Barrigada
+Barrigada Village||13469|144799|66|9
+#GW|Bafatá
+Bambadinca||12023|-14861|37|8
+#GW|Bolama
+Bolama||11577|-15476|25|11
+Bubaque||11283|-15833|26|9
+#GW|Cacheu
+Bula||12104|-15708|24|10
+#GW|Oio
+Bissorã|Bissora|12223|-15447|26|13
+Bissorã|Bissora|12040|-15428|20|12
+#GW|Quinara
+Buba||11589|-14996|20|9
+#GY|Cuyuni-Mazaruni
+Bartica||6405|-58623|1|11
+#HK|Sham Shui Po District
+Banyan Garden||22335|114148|2|7
+#HK|Southern District
+Baguio Villa||22262|114134|157|5
+#HN|Cortés Department
+Baracoa||15776|-87853|28|9
+#HN|Gracias a Dios Department
+Brus Laguna||15750|-84483|3|13
+#HR|County of Osijek-Baranja
+Beli Manastir||45770|18604|94|6
+Belišće|Belisce|45680|18406|89|5
+#HR|Zadar
+Biograd na Moru||43943|15452|17|6
+#HU|Bekes County
+Battonya||46283|21017|100|7
+#HU|Budapest
+Budatétény|Budateteny|47409|19021|92|11
+Belső-Ferencváros|Belso-Ferencvaros|47485|19065|95|10
+Bókaytelep|Bokaytelep|47438|19181|139|5
+#HU|Bács-Kiskun
+Bácsalmás|Bacsalmas|46126|19333|123|8
+#HU|Fejér
+Bicske||47484|18644|164|11
+#HU|Hajdú-Bihar
+Berettyóújfalu|Berettyoujfalu|47224|21537|95|15
+#HU|Nógrád
+Bátonyterenye|Batonyterenye|47970|19841|223|14
+Balassagyarmat||48073|19296|151|14
+#HU|Pest County
+Budakeszi||47511|18927|234|14
+Biatorbágy|Biatorbagy|47471|18819|167|9
+Bugyi||47227|19147|97|5
+#HU|Somogy County
+Barcs||45960|17459|107|12
+Balatonboglár|Balatonboglar|46775|17644|104|6
+#HU|Szabolcs-Szatmár-Bereg
+Balkány|Balkany|47771|21863|138|7
+#HU|Tolna County
+Bonyhád|Bonyhad|46299|18530|122|14
+Bátaszék|Bataszek|46194|18723|88|7
+#HU|Veszprém
+Balatonfüred|Balatonfuered|46962|17872|152|13
+Balatonalmádi|Balatonalmadi|47035|18021|109|8
+Berhida||47111|18129|130|6
+#ID|Jambi
+Bejubang Dua||-1792|103317|65|8
+#IE|Connacht
+Ballina||54117|-9167|32|11
+Ballinasloe||53328|-8219|39|7
+#IE|Leinster
+Ballyboden||53281|-6316|89|10
+Balally||53275|-6236|96|9
+Blackrock||53302|-6178|15|9
+Beaumont||53387|-6227|45|9
+Ballyfermot||53343|-6355|41|9
+Ballinteer||53274|-6254|98|9
+Baldoyle||53396|-6128|1|8
+Booterstown||53304|-6200|26|7
+Ballymun||53398|-6267|62|6
+Birr||53091|-7913|52|6
+Blessington||53170|-6532|207|6
+#IE|Munster
+Bandon||51747|-8742|28|7
+#IE|Ulster
+Buncrana||55133|-7450|20|7
+#IL|Central District
+Bet Dagan||32002|34830|36|7
+Bnei Ayish||31790|34759|77|7
+Bet El‘azari|Bet El'azari|31844|34804|44|6
+Bat H̱efer|Bat Hefer|32334|35013|76|5
+#IL|Haifa
+Basma||32529|35101|213|10
+#IL|Northern District
+Beit Jann||32965|35377|935|12
+Bu'ayna-Nujaydat||32810|35370|188|10
+Basmat Ṭab‘ūn|Basmat Tab'un|32739|35157|194|8
+Bu‘eina|Bu`eina|32806|35364|238|8
+Bīr el Maksūr|Bir el Maksur|32777|35221|255|7
+Buqei‘a|Buqei'a|32978|35334|565|6
+#IL|Southern District
+Bir Hadaj||31024|34709|288|6
+#IM|Arbory
+Ballabeg||54100|-4683|35|0
+#IM|Ballaugh
+Ballaugh||54312|-4545|30|0
+#IM|Bride
+Bride||54383|-4389|62|0
+#IM|Malew
+Ballasalla||54096|-4630|26|0
+#IN|Andaman and Nicobar
+Bamboo Flat||11700|92717|48|8
+#IN|Andhra Pradesh
+Bhānumukkala|Bhanumukkala|15312|78228|231|14
+Bandarulanka||16583|81962|2|11
+Bhuja Bhuja Nellore||14395|79940|29|11
+Balaga||18315|83893|14|9
+Bowluvada||17745|82989|55|5
+#IN|Arunachal Pradesh
+Bomdila||27265|92425|2507|8
+#IN|Assam
+Bāsugaon|Basugaon|26467|90420|59|14
+Badarpur||24869|92596|62|13
+Bijni||26496|90703|54|13
+Bihpuria||27017|93915|90|12
+Bihpuriāgaon|Bihpuriagaon|27017|93917|89|12
+Bokākhāt|Bokakhat|26640|93601|86|10
+Bhuragaon Rev. Town||26404|92239|52|10
+Bhalukdubi||26157|90613|39|10
+Badarpur Railway Town||24871|92570|18|9
+Belsor||26382|91352|40|9
+Borpukhuri||26016|92845|62|8
+Bohari||26254|91139|29|8
+Barika Chuburi||26636|92809|50|8
+Barpathār|Barpathar|26287|93888|123|8
+Bamun Sualkuchi||26168|91582|45|8
+Batarashi||24869|92335|13|7
+Bahbari Gaon||27481|95326|112|7
+Bali Koria||26439|91422|40|6
+Bangaon||26417|91333|46|6
+Barua Bari Gaon||26118|91966|55|5
+Borgolai Grant No.11||27287|95715|145|5
+#IN|Bihar
+Bariārpur|Bariarpur|25288|86576|44|15
+Bhuindhara||25852|85761|52|7
+Bhāgīrathpur|Bhagirathpur|25894|85776|54|5
+Bhardua||24920|83795|107|5
+Bāra|Bara|24806|84790|116|5
+#IN|Chandigarh
+Behlana||30678|76801|305|8
+#IN|Chhattisgarh
+Baloda||22139|82482|297|14
+Bishrampur||23190|83005|563|11
+Bhatgaon||23360|82997|551|11
+Bilha||21950|82050|251|11
+Bagicha||22977|83657|680|10
+Basna||21279|82827|277|10
+Bastar||19203|81930|557|10
+Borigumma||19047|82553|595|10
+Bhairamgarh||19006|81059|335|9
+Bhānupratāppur|Bhanupratappur|20310|81073|383|8
+Bhatgaon||21150|81700|294|8
+Bhakhāra|Bhakhara|20900|81603|307|8
+Barsur||19136|81384|382|7
+Borla||22164|81219|398|6
+Baramkela||21565|83261|238|6
+Bilaigarh||21638|82724|238|6
+Berla||21526|81478|289|5
+#IN|Dadra and Nagar Haveli and Daman and Diu
+Bhimpur||20450|72883|12|11
+#IN|Delhi
+Bānkner|Bankner|28853|77079|219|15
+Baqiabad||28733|77247|201|14
+Bakhtāwarpur|Bakhtawarpur|28823|77175|215|13
+Barwāla|Barwala|28761|77063|222|9
+Bhorgarh||28829|77095|218|9
+Bānkoli|Bankoli|28812|77141|214|5
+#IN|Goa
+Bandora||15408|73981|32|13
+Benaulim||15264|73928|19|12
+Borim||15367|74000|15|8
+Bambolim||15464|73853|70|7
+#IN|Gujarat
+Bhalpara||20914|70387|17|15
+Bilkha||21442|70601|97|14
+Bhadkodara||21604|73015|11|13
+Becharaji||23499|72045|34|13
+Balitha||20389|72913|24|12
+Bhagdawada||20433|72914|8|12
+Bodeli||22273|73716|86|12
+Bajwa||22368|73141|126|10
+Bhilad||20277|72886|35|9
+Bed||22431|69900|14|8
+Bhat||23103|72636|63|7
+Bhāgal Jagāna|Bhagal Jagana|24126|72386|194|6
+Bār|Bar|23163|73423|143|6
+Bhurivel||21226|73585|88|6
+Bharthana Kosad||21267|72871|13|6
+#IN|Haryana
+Bilāspur|Bilaspur|30305|77304|306|12
+Būriya|Buriya|30159|77358|286|11
+Bhākli|Bhakli|28417|76475|235|10
+Bārhi Mājra|Barhi Majra|30114|77305|271|9
+Badh Malak||28920|77096|217|7
+Bhuran||29353|76508|223|6
+Baghaula||28209|77308|196|5
+Bayānpur|Bayanpur|28963|77008|220|5
+#IN|Himachal Pradesh
+Bilaspur||31330|76757|496|14
+#IN|Jammu and Kashmir
+Bhulwāl|Bhulwal|32837|74819|467|14
+Bhadarwāh|Bhadarwah|32979|75717|1636|13
+Bishnāh|Bishnah|32611|74856|294|12
+Beerwah||34012|74596|1705|8
+Bīrpur|Birpur|32662|74952|439|7
+Bhore||32667|74829|281|6
+Buna Hir||34524|74203|1657|6
+Bashohli||32500|75816|528|5
+#IN|Jharkhand
+Bārālotā|Baralota|24040|84081|238|15
+Bandh Dih||23659|86017|305|13
+Bachrā|Bachra|23688|85086|452|13
+Barharwā|Barharwa|24857|87779|35|13
+Barhi||24304|85414|375|12
+Bagra||23733|86317|173|11
+Baliapur||23722|86526|157|10
+Berhait||24890|87607|63|10
+Baua Kalan||23812|86365|221|9
+Bhojudih||23640|86441|158|9
+Barajamda||22165|85427|468|9
+Bargāwān|Bargawan|23319|85390|634|9
+Barwādih|Barwadih|23848|84110|290|8
+Bandhgora||23621|86147|223|8
+Bekobār|Bekobar|24419|85589|380|7
+Borio||25034|87593|81|7
+Bongabār|Bongabar|23701|85524|394|5
+Bhim Kanari||23798|86195|218|5
+#IN|Karnataka
+Bhairāpura|Bhairapura|12220|76899|658|14
+Benkanhalli||15864|74457|748|11
+Bethamangala||13008|78328|788|10
+Bidadi||12799|77387|727|10
+Bajpe||12980|74883|84|10
+Badagabettu||13333|74800|39|9
+Bogādi|Bogadi|12303|76598|761|9
+Belvata||12355|76650|730|9
+Badāgrāma|Badagrama|13191|74747|11|8
+Bhimarayanagudi||16726|76798|433|8
+Bāshettihalli|Bashettihalli|13262|77554|897|8
+Bānāvar|Banavar|13410|76163|778|8
+Beltangadi||12980|75270|105|8
+Beltangadi||13983|75300|652|8
+Belthangady||12988|75282|106|8
+Bellūru|Belluru|12981|76733|797|8
+Badagal Ulipādi|Badagal Ulipadi|12952|74958|23|7
+Belma||12814|74905|23|6
+Bondantila||12904|74925|19|6
+Bobruwada||14653|74294|12|5
+#IN|Kerala
+Brahmakulam||10581|76069|13|14
+Bāre|Bare|12446|75042|28|13
+Bangramanjēshvara|Bangramanjeshvara|12709|74895|18|6
+#IN|Madhya Pradesh
+Bodri||23165|81433|503|14
+Bilpura||23222|79992|399|14
+Birsinghpur||24798|80973|321|14
+Barhi||23903|80815|383|14
+Buzurg||25890|78345|202|14
+Barod||23789|75812|469|14
+Badarwās|Badarwas|24975|77565|460|14
+Bilaua||26050|78275|252|13
+Barela||23097|80051|426|13
+Bhonrāsa|Bhonrasa|22993|76210|497|12
+Barghāt|Barghat|22031|79733|538|12
+Bhābhra|Bhabhra|22530|74328|369|11
+Bāgli|Bagli|22641|76349|553|11
+Betūl Bazār|Betul Bazar|21856|77929|658|11
+Bichhiā|Bichhia|22450|80702|628|10
+Bharwelī|Bharweli|21837|80227|314|10
+Barauni||25685|78375|239|10
+Baikunthpur||24728|81410|305|10
+Bamhnī|Bamhni|22482|80372|459|10
+Buxwaha||24251|79286|499|10
+Barkuhi||22190|78705|811|10
+Bora||23659|76811|439|10
+Bhilakhedi||22599|77704|295|10
+Barāgaon|Baragaon|24568|79019|344|9
+Bāg|Bag|22359|74791|238|9
+Baldeogarh||24756|79067|341|9
+Bamna||23095|74762|395|9
+Bārīgarh|Barigarh|25232|80035|181|9
+Bicholi Hapsi||22716|75939|559|9
+Barauda||23558|75249|463|9
+Bamora||24055|78089|419|8
+Bijeraghogarh||23996|80607|365|8
+Barmhān Kalān|Barmhan Kalan|23035|79021|345|8
+Borgaon||21561|78813|372|7
+Bherāghāt|Bheraghat|23132|79801|374|7
+Bijrauni||24933|77644|462|6
+Bānsātārkheda|Bansatarkheda|23792|79339|363|5
+Bhainsa||23865|78730|520|5
+#IN|Maharashtra
+Biloli||18774|77725|371|15
+Bhīmnagar|Bhimnagar|20724|78584|281|14
+Borkherī|Borkheri|20948|79015|279|13
+Bhagur||19876|73834|545|12
+Borī|Bori|20912|79005|267|12
+Balīrāmpur|Balirampur|19121|77339|386|12
+Brāhmani|Brahmani|21248|78906|335|10
+Bhuwaneshwar||18432|73123|54|9
+Birvādi|Birvadi|18102|73508|16|9
+Bhigvan||18301|74767|501|9
+Bhokra||21228|79068|322|9
+Borlai Panchaitan||18170|73004|20|7
+Banda||15812|73861|15|7
+Bela||21156|79618|257|6
+Borivali Tarf Rahur||19375|73179|29|6
+#IN|Manipur
+Bishnupur||24628|93762|809|12
+#IN|Meghalaya
+Bāghamāra|Baghamara|25190|90648|67|13
+#IN|Odisha
+Balimila||18252|82107|210|12
+Bolānīkhodān|Bolanikhodan|22113|85336|501|12
+Bālāgunda|Balagunda|22100|85367|476|12
+Belaguntha||19882|84638|78|11
+Bramhabarada||20743|86245|21|11
+Bānposh|Banposh|22248|84810|199|10
+Bandbahāl|Bandbahal|21749|83878|215|10
+Bissamcuttack||19512|83506|362|8
+Bhakarsahi||20186|86010|11|7
+Bonaigarh||21822|84952|162|7
+Barhagarh||19645|84408|143|7
+Bijepur||21189|83461|207|7
+Balipatapur||19936|85497|135|7
+Bhapur||20174|86006|12|6
+Badamba||20419|85345|82|6
+Budhapanka||20858|85242|76|6
+Bangomunda||20343|82911|244|6
+Belagachhia||20423|85852|52|6
+Bardol||21382|83594|188|5
+Badmal||20380|83286|201|5
+Badakodanda||19937|84551|80|5
+#IN|Punjab
+Bhucho Mandi||30213|75097|215|15
+Bhagta||30476|75098|219|14
+Bhamiān Kalān|Bhamian Kalan|30919|75942|246|13
+Bhattiān|Bhattian|30961|75829|239|11
+Budha Thēh|Budha Theh|31518|75301|237|11
+Bhankarpur||30606|76836|299|11
+Bhulath Gharbi||31543|75508|235|11
+Begowāl|Begowal|31612|75521|233|10
+Bilga||31050|75654|246|10
+Bāba Bakāla|Baba Bakala|31555|75264|240|9
+Baruwāli|Baruwali|30538|74654|204|9
+Boh||30381|76880|283|8
+Bhādson|Bhadson|30507|76247|268|7
+Baddowāl|Baddowal|30861|75747|246|7
+Badhni Kalān|Badhni Kalan|30681|75291|229|7
+Behjoga||31938|75815|366|6
+Bahrāmpur|Bahrampur|32131|75396|257|5
+Bungal||32314|75749|493|5
+#IN|Rajasthan
+Bijolia||25161|75323|522|14
+Banasthali||26404|75870|302|13
+Berīwāla|Beriwala|28705|72642|129|12
+Bhim||25738|74080|588|12
+Bānskhoh|Banskhoh|26831|76152|360|11
+Bagrāna|Bagrana|26885|75932|360|11
+Babai||27888|75762|430|11
+Bakāni|Bakani|24286|76237|350|10
+Bargaon||24632|73683|592|9
+Borāj|Boraj|26454|74610|511|9
+Bhūgor|Bhugor|27517|76610|267|8
+Baral||25918|74629|407|6
+Bay||27314|75296|416|6
+Bedla||24634|73695|590|6
+Bhuma||27783|74933|354|6
+Barla||26430|74727|523|5
+Budhpura||25113|75458|477|5
+#IN|Tamil Nadu
+Bālasamudram|Balasamudram|10419|77499|321|14
+Bommināyakkanpatti|Bomminayakkanpatti|11682|78055|277|12
+Būdipuram|Budipuram|10004|77446|309|11
+Belūr|Belur|11708|78414|336|9
+Bālakrishnanpatti|Balakrishnanpatti|11239|78486|171|9
+Bhavanisagar||11481|77129|267|8
+Bikkatti||11277|76626|1901|6
+#IN|Telangana
+Bhīmavaram|Bhimavaram|18030|79539|278|14
+Bandlaguda||17351|78391|525|13
+Boyāpalli|Boyapalli|16781|77991|550|9
+Bhānūr|Bhanur|17490|78177|572|9
+Bībīnagar|Bibinagar|17473|78796|448|8
+Bālāpur|Balapur|17310|78500|543|8
+Bontapalli||17662|78364|611|7
+#IN|Tripura
+Bankimnagar||23819|91431|28|12
+Briddhanagar||23845|91351|20|7
+#IN|Uttar Pradesh
+Bād|Bad|27411|77692|176|15
+Bisokhar||28852|77584|222|14
+Bānsgāon|Bansgaon|26550|83345|85|14
+Bakewar||26662|79176|151|14
+Bilariāganj|Bilariaganj|26196|83227|83|13
+Bīkāpur|Bikapur|26595|82133|105|13
+Bachhrāwān|Bachhrawan|26471|81116|120|13
+Barāgaon|Baragaon|25429|82817|89|11
+Barkhera Kalān|Barkhera Kalan|28452|79807|181|11
+Bahsūma|Bahsuma|29201|77972|236|11
+Bisenda Buzurg||25404|80619|134|11
+Bithūr|Bithur|26607|80271|123|11
+Baldev||27407|77822|179|11
+Benīganj|Beniganj|27293|80444|139|10
+Bahua||25839|80623|123|10
+Barsāna|Barsana|27648|77376|188|10
+Barāgaon|Baragaon|25476|78712|206|9
+Bīlāspur|Bilaspur|28391|77624|207|8
+Bājna|Bajna|27898|77678|191|8
+Bishunpur Urf Mahārājganj|Bishunpur Urf Maharajganj|26259|83116|87|7
+Babugarh||28724|77847|216|7
+Banbasa||28991|80076|229|7
+Bhagwantnagar||26224|80758|127|7
+Bīghāpur Khurd|Bighapur Khurd|26347|80657|125|6
+Beswān|Beswan|27638|77880|182|6
+#IN|Uttarakhand
+Birbhaddar||30071|78282|332|13
+Bāgeshwar|Bageshwar|29837|79772|882|9
+Barkot||30809|78206|1291|8
+Bhīm Tāl|Bhim Tal|29344|79563|1343|7
+Bhowali||29390|79505|1791|6
+#IN|West Bengal
+Bāli Chak|Bali Chak|22365|87553|22|13
+Barjora||23428|87290|81|12
+Begampur||22731|88258|8|10
+Bāgnān|Bagnan|22933|88139|15|8
+Bara Bazar||22567|88350|15|8
+Beliātor|Beliator|23321|87221|87|6
+Bhandārdaha|Bhandardaha|22615|88192|11|5
+#IQ|Duhok
+Begova||37237|43163|790|15
+#IQ|Nineveh
+Barţalah|Bartalah|36354|43381|288|15
+#IR|Ardabil Province
+Bīleh Savār|Bileh Savar|39380|48355|83|14
+#IR|Bushehr
+Banak||27871|52027|28|14
+Bandar-e ‘Asalūyah|Bandar-e 'Asaluyah|27474|52608||14
+Bandar-e Shīrīnū|Bandar-e Shirinu|27626|52476|12|10
+Bīdkhūn|Bidkhun|27479|52667|36|9
+Bardestān|Bardestan|27873|51961|7|7
+Bandar-e Sīraf|Bandar-e Siraf|27666|52346|9|7
+Bandar-e Rīg|Bandar-e Rig|29488|50627|3|6
+#IR|Chaharmahal and Bakhtiari
+Ben||32540|50745|2187|13
+Boldājī|Boldaji|31938|51051|2250|12
+Bābā Ḩeydar|Baba Heydar|32329|50468|2229|11
+#IR|East Azerbaijan
+Bāsmenj|Basmenj|37996|46475|1791|13
+Bāgh-e Ma‘rūf|Bagh-e Ma'ruf|38043|46107|1318|12
+Bakhshāyesh|Bakhshayesh|38133|46946|1547|6
+#IR|Fars
+Bavanat||30487|53593|2258|10
+Bahman||31193|52484|2142|8
+Beyram||27432|53514|501|7
+Beyẕā|Beyza|30009|52361|1657|7
+Bāb Anār|Bab Anar|28975|53217|1316|7
+Bālā Deh|Bala Deh|27402|53580|522|6
+#IR|Gilan Province
+Bāzār Jom‘eh-ye Shānderman|Bazar Jom'eh-ye Shanderman|37405|49119|68|6
+#IR|Hormozgan
+Bastak||27199|54367|403|10
+Bī Kāh|Bi Kah|27355|57178|170|7
+Berenţīn|Berentin|27283|57224|156|6
+#IR|Isfahan
+Bād Rūd|Bad Rud|33691|52009|989|15
+Bahārān Shahr|Baharan Shahr|32512|51542|1619|11
+Bāgh-e Bahādorān|Bagh-e Bahadoran|32377|51188|1771|10
+Barf Anbār|Barf Anbar|33003|50194|2354|5
+#IR|Kerman
+Bāghīn|Baghin|30182|56803|1715|10
+#IR|Khuzestan
+Bostān|Bostan|31719|47991|11|8
+Boneh-ye ‘Alvān|Boneh-ye 'Alvan|32112|48459|0|7
+#IR|Kohgiluyeh and Boyer-Ahmad
+Bāsht|Basht|30361|51157|807|11
+#IR|Māzandarān
+Bahnemīr|Bahnemir|36668|52762|-15|8
+Bāqer Tangeh|Baqer Tangeh|36704|52703|-22|6
+#IR|Semnan
+Basţām|Bastam|36485|55000|1414|9
+#IR|Sistan and Baluchestan
+Bampūr|Bampur|27194|60456|518|12
+Bent||26293|59518|392|6
+Bazmān|Bazman|27856|60181|964|5
+#IR|West Azerbaijan
+Bāzargān|Bazargan|39392|44388|1409|10
+Badalābād|Badalabad|38573|44925|1168|9
+#IS|West
+Borgarnes||64538|-21921|1|2
+#IT|Apulia
+Bitetto||41041|16748|139|11
+Bitritto||41043|16827|102|11
+#IT|Basilicate
+Bernalda||40413|16689|126|11
+#IT|Calabria
+Bagnara Calabra||38288|15806|50|9
+Bovalino Superiore||38169|16158|199|8
+Bovalino||38154|16172|11|8
+Belvedere Marittimo||39619|15862|150|6
+Bisignano||39507|16281|350|5
+#IT|Campania
+Baronissi||40748|14774|226|12
+Bellizzi||40620|14947|60|11
+Boscotrecase||40773|14462|86|10
+Barano d'Ischia||40715|13925|210|9
+Bracigliano||40819|14708|327|5
+#IT|Emilia-Romagna
+Budrio||44537|11534|25|9
+Bagnacavallo||44414|11978|11|9
+Bagnolo in Piano||44764|10674|32|8
+Brisighella||44222|11774|115|8
+Bondeno||44889|11415|11|8
+Bazzano||44502|11087|88|6
+Borgonovo Valtidone||45014|9443|110|6
+Bibbiano||44663|10474|121|6
+Borgo Val di Taro||44489|9769|411|5
+Boretto||44902|10551|23|5
+#IT|Friuli Venezia Giulia
+Buia||46212|13117|215|6
+Brugnera||45899|12542|16|6
+#IT|Lazio
+Bracciano||42103|12166|280|12
+Bagni di Tivoli||41950|12717|70|9
+#IT|Liguria
+Bordighera||43781|7665|5|9
+Busalla||44571|8945|358|5
+#IT|Lombardy
+Bettola-Zeloforomagno||45431|9309|106|14
+Busto Garolfo||45548|8883|180|13
+Bagnolo Mella||45428|10186|85|12
+Baranzate||45527|9117|146|11
+Biassono||45629|9271|202|11
+Botticino||45530|10311|153|10
+Bedizzole||45510|10423|170|9
+Bernareggio||45648|9405|234|9
+Besozzo||45849|8665|258|9
+Bussero||45534|9372|141|9
+Besana in Brianza||45702|9295|335|8
+Borgosatollo||45477|10240|112|8
+Broni||45064|9260|88|8
+Brembate di Sopra||45717|9579|267|8
+Bovezzo||45590|10242|203|7
+Basiglio||45359|9159|97|7
+Binasco||45331|9094|101|7
+Bonate Sopra||45682|9560|230|7
+Barlassina||45656|9129|227|7
+Bellusco||45620|9419|214|7
+Brembate||45605|9555|173|6
+Busnago||45616|9464|210|6
+Bonate Sotto||45668|9559|215|6
+Belgioioso||45159|9313|75|6
+Brignano Gera d'Adda||45543|9644|130|6
+Boltiere||45601|9578|171|6
+Bolgare||45632|9814|199|5
+Besnate||45699|8767|300|5
+Brusaporto||45671|9760|255|5
+Bottanuco||45639|9509|222|5
+Barzanò|Barzano|45733|9314|370|5
+Bregnano||45698|9059|297|5
+#IT|Molise
+Bojano||41485|14471|482|6
+#IT|Piedmont
+Borgo Vittoria||45102|7679|248|15
+Breo||44399|7819|413|15
+Borgata Paradiso||45076|7602|257|12
+Borgaro Torinese||45151|7655|254|11
+Borgo San Dalmazzo||44338|7493|636|11
+Borgosesia||45720|8275|354|11
+Borgata Lesna||45064|7621|174|10
+Borgata Monginevro||45064|7628|246|9
+Bellinzago Novarese||45569|8643|192|9
+Brandizzo||45177|7836|187|8
+Bruino||45015|7478|320|8
+Boves||44330|7547|590|7
+Beinasco||45025|7586|265|6
+Borgo Po||45050|7700|316|6
+Busca||44516|7477|500|6
+Bussoleno||45140|7144|443|5
+#IT|Sardinia
+Bosa||40299|8498|2|8
+#IT|Sicily
+Barrafranca||37379|14203|450|13
+Belmonte Mezzagno||38047|13392|356|10
+Borgetto||38047|13141|290|6
+Belvedere||37088|15213|123|6
+Balestrate||38051|13007|38|6
+#IT|Trentino-Alto Adige
+Brunico||46799|11934|838|12
+Borgo Valsugana||46051|11458|380|7
+#IT|Tuscany
+Borgo San Lorenzo||43955|11386|193|10
+Borgo a Buggiano||43875|10735|41|7
+Bibbiena||43699|11815|425|6
+Barberino di Mugello||43999|11237|270|6
+Bientina||43708|10621|10|5
+Bagno a Ripoli||43751|11323|75|5
+#IT|Veneto
+Bovolone||45261|11118|24|14
+Beccacivetta||45357|10957|35|10
+Badia Polesine||45095|11494|11|7
+Belvedere||45690|11772|69|7
+Borgoricco-San Michele delle Badesse-Sant'Eufemia||45535|11941|18|6
+Breganze||45705|11561|110|5
+#JM|Hanover
+Barbican||18450|-78101|12|10
+#JM|Saint Catherine Parish
+Bog Walk||18102|-77005|86|13
+#JM|St. Elizabeth
+Bull Savannah||17887|-77590|270|7
+Black River||18026|-77849|5|4
+#JO|Irbid
+Bayt Yāfā|Bayt Yafa|32523|35786|582|8
+#JO|Jerash
+Balīlā|Balila|32391|35938|796|5
+#JO|Tafielah
+Buşayrā|Busayra|30733|35609|1124|7
+#JP|Chiba
+Baraki||35698|139951|1|10
+#JP|Hokkaido
+Biei||43584|142460|238|10
+Biratori||42583|142133|25|5
+#JP|Saga
+Bōjo|Bojo|33320|130422|6|9
+#JP|Saitama
+Buzō|Buzo|35841|139671|11|15
+Banshō|Bansho|36000|139300|114|11
+#KE|Baringo
+Baringo||467|35967|1090|8
+#KE|Bomet County
+Bomet||-781|35342|1959|12
+#KE|Garissa County
+Bura||-1094|39942|90|6
+#KE|Kakamega County
+Butere||207|34490|1380|11
+#KE|Kericho County
+Brooke||-334|35325|2133|8
+#KE|Mandera County
+Banissa||3941|40342|935|15
+#KE|Siaya County
+Bondo||235|34281|1254|9
+#KE|Tana River County
+Bura Tana||-1193|39840|117|14
+#KE|Wajir County
+Bute||3359|39420|882|14
+#KG|Issyk-Kul
+Bokombayevskoye||42118|76993|1810|14
+Boz-Beshik||42432|77952|1651|5
+#KG|Naryn Region
+Baetovo||41267|74957|1951|11
+#KH|Kampot
+Banteay Meas Khang Kaeut||10625|104654|5|7
+#KH|Phnom Penh
+Boeng Kak Muoy||11579|104898|14|14
+#KI|Gilbert Islands
+Betio Village||1358|172921|9|13
+Bikenibeu Village||1367|173124|11|6
+#KM|Anjouan
+Barakani||-12139|44430|57|6
+#KY|
+Breakers||19296|-81198|1|11
+Brinkleys||19349|-81241|5|10
+Belford Estates||19285|-81246|2|9
+Breezy Castle||19296|-81361|3|7
+Blakes||19303|-81098|1|6
+#KY|Bodden Town
+Bodden Town||19276|-81254|6|15
+#KZ|Abai Region
+Borodulikha||50718|80930|316|6
+#KZ|Aktobe
+Bayganin||48690|55875|198|8
+Badamsha||50562|58277|419|6
+#KZ|Almaty Region
+Bakanas||44806|76275|387|7
+#KZ|Aqmola
+Bestobe||52498|73096|174|7
+Būrabay|Burabay|53084|70314|321|7
+Balkashino||52518|68752|371|6
+#KZ|East Kazakhstan
+Belousovka||50133|82525|365|10
+#KZ|Kostanay
+Borovskoy||53793|64183|175|10
+#KZ|Mangystau
+Beyneu||45317|55200|6|14
+#KZ|North Kazakhstan
+Bulayevo||54906|70442|130|10
+Bishkul||54778|69100|103|5
+#KZ|Pavlodar Region
+Bayanaul||50793|75701|474|6
+#KZ|Zhetysu Region
+Balpyk Bi||44901|78229|576|12
+#LA|Bokeo
+Ban Houayxay||20270|100418|367|13
+#LA|Bolikhamsai
+Ban Lak Xao||18194|104971|527|14
+#LA|Champasak Province
+Ban Bachiang||15253|105932|236|12
+#LA|Houaphan
+Ban Xamtai||19990|104635|328|6
+#LA|Luang Prabang Province
+Ban Muang-Nan||19498|101880|322|11
+#LA|Xiagnabouli
+Ban Siphôm|Ban Siphom|19563|100774|564|12
+#LA|Xékong
+Ban Thatèng|Ban Thateng|15433|106383|856|14
+#LB|Baalbek-Hermel Governorate
+Boudaï|Boudai|34061|36061|1073|8
+#LB|Mount Lebanon
+Baabda||33834|35544|215|9
+#LB|North Lebanon
+Batroûn|Batroun|34255|35658|13|11
+#LC|Castries
+Bisee||14024|-60974|48|13
+#LI|Balzers
+Balzers||47067|9504|476|5
+#LR|Gbarpolu County
+Bopolu||7067|-10487|179|4
+#LR|Grand Kru County
+Barclayville||4674|-8233|20|5
+#LR|Montserrado County
+Bensonville||6447|-10613|54|1
+#LT|Panevėžys
+Birzai||56200|24750|53|15
+#LU|Esch-sur-Alzette
+Belvaux||49510|5924|339|8
+Bettembourg||49519|6103|278|7
+#LU|Luxembourg
+Bonnevoie-Sud||49597|6147|289|13
+Belair||49612|6107|302|13
+Bertrange||49611|6050|287|6
+#LV|Balvi Municipality
+Balvi||57131|27266|117|6
+#LV|Bauska Municipality
+Bauska||56407|24187|27|10
+#LV|Riga
+Bolderaja||57031|24056|9|15
+Berģi|Bergi|56986|24299|14|3
+#LV|Ķekava
+Baloži|Balozi|56876|24118|17|7
+#LY|Wadi ash Shati'
+Barqin||27548|13629|367|6
+#MA|Drâa-Tafilalet
+Boumalne Dades||31380|-5988|1539|13
+Boudenib||31952|-3606|957|12
+#MA|Fes-Meknes
+Bhalil||33852|-4872|945|14
+Bou Fekrane||33761|-5487|705|14
+Bouderbala||33817|-5276|751|9
+Boulemane||33364|-4729|1712|8
+#MA|Oriental
+Bouizazarene Ihaddadene||35158|-2974|41|14
+Bni Drar||34860|-1990|453|12
+Bni Tajjit||32289|-3466|1104|9
+#MA|Souss-Massa
+Bellaa||30051|-9562|69|5
+#MA|Tanger-Tetouan-Al Hoceima
+Ben Qarrich||35511|-5420|259|7
+Bab Taza||35062|-5198|864|6
+Boureït|Boureit|34998|-4893|1237|5
+#MD|Basarabeasca
+Basarabeasca||46334|28962|33|11
+#MD|Briceni
+Briceni||48363|27078|234|10
+#MD|Donduşeni
+Briceni||48356|27703|229|14
+#MD|Transnistria
+Blijnii Hutor||46888|29647|49|7
+#ME|Berane
+Berane||42843|19873|686|11
+#MG|Alaotra Mangoro
+Bemaitso||-17067|48500|937|8
+#MG|Androy
+Beteza||-24450|45117|304|7
+#MG|Atsimo-Andrefana
+Behompy||-23250|43850|49|7
+#MG|Melaky
+Besalampy||-16750|44483|38|12
+#MK|Berovo
+Berovo||41702|22857|916|14
+#MK|Bogdanci
+Bogdanci||41204|22576|97|9
+#MK|Bosilovo
+Bosilovo||41441|22728|216|12
+#MK|Debarca
+Belčišta|Belcista|41303|20830|770|3
+#MM|Shan State
+Bawhan||19868|96832|1371|7
+#MM|Tanintharyi Region
+Bokpyin||11266|98761|5|5
+#MN|Hentiy
+Bor-Öndör|Bor-OEndoer|46267|109438|1309|9
+#MR|Brakna
+Bagodine||16240|-13722|11|11
+Bababé|Bababe|16337|-13953|12|9
+Bouhdida||16928|-13999|55|8
+#MR|Guidimaka
+Bouly||15318|-11801|60|15
+Bouanzé|Bouanze|15819|-12232|71|7
+#MR|Hodh Ech Chargi
+Basseknou||15867|-5946|277|12
+Bousteila||15575|-8086|273|8
+#MT|Balzan
+Balzan||35902|14452|46|5
+#MT|Birżebbuġa
+Birżebbuġa|Birzebbuga|35825|14527|20|13
+#MU|Flacq
+Brisée Verdière|Brisee Verdiere|-20164|57647|183|8
+Bon Accueil||-20175|57672|136|7
+#MU|Grand Port
+Beau Vallon||-20423|57704|153|7
+#MU|Pamplemousses
+Belle Vue Harel||-20066|57594|80|8
+#MU|Rivière du Rempart
+Belle Vue Maurel||-20120|57664|108|8
+#MX|Baja California
+Benito García (El Zorrillo)|Benito Garcia (El Zorrillo)|31671|-116511|129|7
+#MX|Campeche
+Bécal|Becal|20442|-90028|16|7
+#MX|Chiapas
+Brisas Barra de Suchiate||14536|-92224|4|14
+Bochil||16996|-92895|1169|12
+Benemérito de las Américas|Benemerito de las Americas|16515|-90653|131|7
+Bachajón|Bachajon|17040|-92190|915|5
+#MX|Chihuahua
+Benito Juárez|Benito Juarez|29751|-107935|1947|6
+#MX|Durango
+Bermejillo||25888|-103621|1143|9
+#MX|Guerrero
+Buenavista de Cuéllar|Buenavista de Cuellar|18459|-99408|1255|7
+Bajos del Ejido||16961|-99971|73|6
+#MX|Jalisco
+Bellavista||20434|-103637|1404|7
+#MX|Michoacán
+Buenavista Tomatlán|Buenavista Tomatlan|19211|-102588|469|10
+Buenos Aires||18024|-102286|63|10
+#MX|Morelos
+Barrio de San Miguel||18885|-98690|2320|6
+#MX|México
+Barrio de México|Barrio de Mexico|19283|-99828|2979|7
+#MX|Oaxaca
+Brisas de Zicatela||15837|-97042|22|10
+Bajos de Chila||15923|-97121|24|5
+#MX|Quintana Roo
+Bacalar||18681|-88393|17|12
+#MX|Sonora
+Bacobampo||26982|-109653|22|9
+Bahía de Kino|Bahia de Kino|28823|-111941|1|6
+Benjamín Hill|Benjamin Hill|30169|-111114|718|5
+#MX|Tabasco
+Benito Juárez|Benito Juarez|17833|-92530|29|14
+Balancán|Balancan|17809|-91537|17|13
+Bosque de Saloya||18016|-92958|8|9
+Belén|Belen|17787|-92613|31|6
+#MX|Tlaxcala
+Benito Juárez|Benito Juarez|19586|-98428|2539|6
+#MX|Veracruz
+Benito Juárez|Benito Juarez|22203|-97840|12|15
+Boca del Rio||19105|-96104|11|10
+#MX|Yucatán
+Buctzotz||21202|-88794|12|8
+#MY|Johor
+Buloh Kasap||2554|102764|20|13
+Bandar Penawar||1551|104226|22|10
+#MY|Kedah
+Bandar Laguna Merbok||5689|100496|43|13
+Bagan Samak||5090|100562|7|5
+Bukit Pinang||5933|100450|2|5
+#MY|Kuala Lumpur
+Brickfields||3130|101684|59|12
+Bukit Damansara||3150|101655|126|5
+#MY|Melaka
+Bemban||2268|102375|27|14
+#MY|Negeri Sembilan
+Bandar Baru Enstek||2751|101765|36|12
+Bandar Springhill||2601|101864|30|11
+#MY|Penang
+Batu Kawan||5258|100429|6|11
+Bandar Baru Ayer Itam||5389|100282|95|10
+#MY|Perak
+Bagan Datuk||3990|100782|8|14
+Bagan Tiang||5117|100417|3|14
+Beruas||4500|100783|19|9
+Bagan Datoh||3983|100783|4|9
+#MY|Sabah
+Bandau||6521|116753|9|9
+Bongawan||5533|115850|23|6
+#MY|Sarawak
+Balingian||2931|112541|3|9
+Binatang||2167|111633|6|8
+#MY|Selangor
+Bandar 16 Sierra||2971|101655|42|12
+Bandar Parklands||2975|101457|4|9
+Bandar Botanic||2988|101440|5|9
+Batu Tiga||3078|101547|22|5
+#MY|Terengganu
+Bandar Al-Muktafi Billah Shah||4611|103209|33|6
+#MZ|Gaza Province
+Bilene||-25273|33242|30|9
+#NA|Karas Region
+Bethanie||-26500|17160|999|10
+#NC|South Province
+Bourail||-21567|165497|9|6
+#NE|Agadez
+Bilma||18685|12916|356|5
+#NE|Diffa
+Bosso||13699|13310|290|6
+#NE|Tahoua Region
+Bouza||14423|6043|406|14
+Bagaroua||14636|4349|289|13
+#NE|Tillabéri Region
+Bani Bangou||15042|2704|244|9
+Bankilaré|Bankilare|14577|727|247|5
+#NE|Zinder Region
+Bélbéji|Belbeji|14677|7983|426|9
+#NG|Bauchi
+Bununu||9882|9681|579|6
+Boi||9561|9502|776|6
+#NG|Benue State
+Boju||7356|7893|215|13
+#NG|Borno State
+Benisheikh||11809|12492|351|10
+Bornu Yassu||12275|12569|332|6
+#NG|Delta
+Bomadi||5161|5924|11|8
+#NG|Gombe State
+Bara||10374|10729|330|12
+#NG|Jigawa State
+Birniwa||12791|10236|353|9
+Babura||12773|9015|384|7
+#NG|Kaduna State
+Burumburum||11391|8723|603|12
+#NG|Kano State
+Bebeji||11668|8262|513|11
+#NG|Katsina State
+Bakori||11556|7424|656|13
+Batsari||12756|7248|471|7
+#NG|Kebbi
+Bin Yauri||10782|4811|204|12
+Bena||11284|5935|555|8
+Bagudo||11404|4226|159|7
+#NG|Kogi State
+Bugana||7999|7584|89|10
+#NG|Nasarawa State
+Buga||8483|7326|304|10
+#NG|Niger State
+Bokani||9433|5200|169|9
+Badeggi||9056|6143|82|8
+#NG|Plateau State
+Bokkos||9299|8995|1336|13
+#NG|Rivers State
+Bori||4676|7365|18|12
+#NG|Sokoto
+Binji||13223|4909|250|7
+#NG|Taraba State
+Baissa||7231|10624|248|9
+#NI|North Caribbean Coast
+Bonanza||14030|-84597|198|6
+#NI|Rivas Department
+Belén|Belen|11503|-85889|84|5
+#NI|South Caribbean Coast
+Bocana de Paiwas||12786|-85123|146|8
+#NL|Drenthe
+Beilen||52863|6514|16|9
+Bargeres||52762|6881|19|9
+#NL|Flevoland
+Biddinghuizen||52455|5693|-3|5
+#NL|Friesland
+Burgum||53192|5990|3|10
+Bolsward||53066|5532|2|9
+Bilgaard||53216|5796|1|6
+Buitenpost||53252|6145|3|5
+#NL|Gelderland
+Bemmel||51892|5899|13|12
+Borculo||52116|6522|18|10
+Beneden-Leeuwen||51883|5515|9|7
+#NL|Groningen
+Bedum||53301|6603|1|8
+#NL|Limburg
+Beek||50941|5797|79|8
+Belfeld||51313|6115|28|6
+Bunde||50897|5732|49|6
+Baarlo||51331|6094|24|5
+#NL|North Brabant
+Boxmeer||51647|5947|15|12
+Bladel||51368|5221|33|10
+Budel||51272|5575|32|8
+Broekhoven||51548|5092|14|7
+Baarle-Nassau||51448|4929|28|7
+Berghem||51770|5568|10|7
+Boekel||51603|5675|19|5
+Bavel||51566|4831|8|5
+Beek||51529|5634|16|5
+#NL|North Holland
+Broek op Langedijk||52674|4806|2|6
+Bennebroek||52321|4599|2|5
+Blaricum||52273|5242|7|5
+#NL|Overijssel
+Bathmen||52250|6288|10|6
+#NL|South Holland
+Bloemhof||51897|4499|3|14
+Bleiswijk||52011|4532|-2|11
+Bloemendaal||52029|4694|0|10
+Bolnes||51895|4579|-1|8
+#NL|Utrecht
+Breukelen||52174|5001|2|14
+Bunnik||52067|5199|4|6
+#NO|Innlandet
+Brumunddal||60881|10939|143|11
+#NO|Nordland
+Brønnøysund|Bronnoysund|65475|12213|5|5
+#NO|Rogaland
+Bryne||58735|5648|33|12
+#NP|Gandaki Pradesh
+Bhattarai Danda||27883|83933|479|6
+#NP|Karnali Pradesh
+Besisahar||28231|84378|760|5
+#NR|Baiti District
+Baiti||-508|166929|7|1
+#NZ|Auckland
+Blockhouse Bay||-36918|174700|47|15
+Beach Haven||-36788|174680|4|11
+Browns Bay||-36719|174737|31|11
+Birkenhead||-36808|174720|76|11
+Balmoral||-36888|174740|49|10
+Birkdale||-36797|174705|54|10
+Bucklands Beach||-36858|174900|6|9
+Beachlands||-36883|175000|26|8
+Botany Downs||-36906|174918|46|6
+#NZ|Bay of Plenty
+Bethlehem||-37695|176109|36|9
+#NZ|Canterbury
+Bishopdale||-43478|172580|21|10
+Burnside||-43498|172560|28|10
+Bryndwr||-43498|172590|17|10
+Burwood||-43500|172700|6|6
+#NZ|Taranaki Region
+Bell Block||-39033|174150|34|8
+#OM|Al Batinah South
+Bayt al ‘Awābī|Bayt al `Awabi|23303|57525|493|11
+#PA|Bocas del Toro Province
+Bocas del Toro||9340|-82242|3|5
+#PA|Chiriquí Province
+Boquete||8780|-82441|1131|6
+#PE|Cajamarca Department
+Bambamarca||-6683|-78533|2747|13
+Bellavista||-5666|-78679|511|6
+#PE|Loreto
+Barranca||-4833|-76676|165|6
+#PE|Piura
+Buenos Aires||-5267|-79968|151|8
+Bernal||-5450|-80750|13|6
+#PG|Bougainville
+Buka||-5433|154671|2|0
+#PH|Autonomous Region in Muslim Mindanao
+Bugasan||7441|124259|122|8
+Balimbing||5083|119966|5|7
+Badak||6847|124721|11|7
+Bayang||7793|124192|735|6
+Butig||7724|124301|793|6
+Bayanga||7521|124252|490|5
+#PH|Bicol Region
+Bigaa||13199|123757|14|15
+Bacacay||13293|123792|5|14
+Bula||13470|123278|12|14
+Bangkirohan||13055|123747|83|9
+Balete||13019|124032|39|9
+Bulusan||12749|124121|106|7
+Bonga||13280|123759|160|7
+Baligang||13154|123643|150|6
+Buluang||13307|123343|17|6
+Basud||14065|122964|10|5
+Batobalane||14233|122750|9|5
+Bacon||13038|124041|10|5
+#PH|Cagayan Valley
+Basco||20449|121970|23|10
+Bauan||17723|121680|23|8
+Batal||16688|121601|76|7
+Burgos||17089|121703|52|7
+Bone South||16245|120996|449|7
+Ballesteros||18413|121515|7|6
+#PH|Calabarzon
+Bulihan||14278|120995|204|14
+Buco||14083|120990|16|13
+Bilog-Bilog||14114|121089|157|11
+Balete||14020|121095|16|9
+Bolo||13790|120982|21|8
+Banaybanay||13933|121115|367|8
+Bulacnin||13990|121139|313|8
+Balite Segundo||14183|120974|396|7
+Binubusan||13969|120636|13|7
+Balele||14065|121094|139|6
+Bagong Bayan II-A||14068|121319|106|6
+Bitin||14116|121222|323|6
+Bantilan||14758|121669|5|5
+#PH|Caraga
+Barobo||8535|126121|17|10
+Bacuag||9608|125639|9|5
+#PH|Central Luzon
+Baloc||15644|120885|54|11
+Bahay Pare||15032|120881|16|10
+Balucuc||14953|120815|8|9
+Bibiclat||15522|120862|33|7
+Balingcanaway||15482|120685|31|6
+Balsic||14859|120482|14|6
+Baquero Norte||15716|120554|25|5
+Balibago||15162|120595|96|5
+#PH|Central Visayas
+Buanoy||10467|123700|12|11
+Bonawon||9134|122919|24|9
+Bogo||9857|123564|36|9
+Barili||10115|123510|12|8
+Bonbon||10225|123557|43|6
+Bien Unido||10137|124378|9|5
+Bacong||9246|123296|14|5
+#PH|Cordillera
+Baculongan||16800|120833|1615|12
+Buguias||16723|120828|1463|6
+Barlig||17037|121104|1474|6
+#PH|Davao Region
+Biao||7163|125521|189|12
+Baganga||7574|126560|14|10
+Batobato||6825|126085|21|10
+Baracatan||6968|125416|443|7
+Basiawan||6534|125487|27|6
+Bato||7043|125473|99|5
+#PH|Eastern Visayas
+Bato||10328|124791|6|10
+Basey||11282|125070|7|8
+Balogo||10887|124711|0|7
+Barugo||11324|124738|6|7
+Babatngon||11424|124845|6|6
+Balangiga||11110|125388|5|6
+#PH|Ilocos
+Bugallon||15953|120216|11|12
+Bulog||15960|120402|12|11
+Bangar||16894|120424|16|11
+Bacarra||18253|120613|19|10
+Binalonan||16050|120593|43|8
+Bacag||15930|120582|32|6
+#PH|Mimaropa
+Bansud||12865|121456|15|14
+Bulalacao||12325|121344|12|12
+Balabac||7984|117049|13|10
+Boac||13446|121840|17|7
+Barahan||13012|120762|6|6
+Batarasa||8673|117628|14|6
+Bagong Sikat||12367|121062|8|5
+Bulalacao||11744|120172|6|5
+#PH|National Capital Region
+Bungad||14648|121024|32|7
+#PH|Northern Mindanao
+Barra||8510|124604|1|12
+Balingasag||8744|124777|3|10
+Binuangan||8915|124788|80|6
+Bacolod||8117|123917|36|5
+#PH|Soccsksargen
+Buayan||6116|125235|13|15
+Bialong||6981|124889|25|9
+Bagontapay||6859|124909|32|7
+Bau||7405|124650|162|7
+Baliton||5744|125236|15|6
+Banisilan||7491|124724|391|6
+Bantogon||6533|124033|42|5
+Buayan||7261|124529|98|5
+#PH|Western Visayas
+Belison||10838|121961|11|14
+Balabag||11970|121919|12|12
+Buluangan||10387|123338|7|12
+Barotac Nuevo||10894|122704|15|12
+Barotac Viejo||11042|122852|10|9
+Bolanon||10917|123473|12|8
+Bacuyangan||9637|122472|16|8
+Biao||10109|122977|142|7
+Bugang||10742|123393|211|6
+Buga||10717|122267|43|6
+Bilao||11488|122560|8|6
+Bato||10809|123373|90|6
+Busay||10538|122886|12|6
+Bulata||9860|122402|13|5
+#PH|Zamboanga Peninsula
+Buug||7729|123060|194|9
+Bunguiao||7104|122196|24|7
+Buenavista||7236|122255|49|6
+Bolong||7098|122239|6|5
+#PK|Balochistan
+Bhag||29042|67824|103|15
+Barkhan||29898|69526|1100|9
+#PK|Khyber Pakhtunkhwa
+Batwar Salarzai||34926|71514|1462|5
+#PK|Punjab
+Bhagowal||32438|74669|260|12
+Bhagwal||32821|73955|282|11
+Begowala||32438|74268|238|9
+#PK|Sindh
+Bhiria||26910|68195|50|14
+Berani||25785|68808|26|10
+Bozdar Wada||27183|68636|54|9
+Bandhi||26588|68302|39|9
+Bagarji||27754|68759|63|8
+#PL|Greater Poland
+Buk||52355|16520|85|6
+#PL|Kujawsko-Pomorskie
+Barcin||52866|17946|79|8
+Białe Błota|Biale Blota|53095|17916|70|6
+#PL|Lesser Poland
+Brzeszcze||49982|19152|252|11
+Bukowno||50265|19460|314|11
+#PL|Lower Silesia
+Brzeg Dolny||51273|16708|118|13
+Borek||51084|17010|126|12
+Biskupin||51101|17104|119|11
+Bystrzyca Kłodzka|Bystrzyca Klodzka|50302|16642|378|10
+Bolków|Bolkow|50922|16101|339|5
+Bierutów|Bierutow|51124|17546|146|5
+#PL|Lublin
+Bełżyce|Belzyce|51174|22280|212|7
+Bychawa||51016|22533|215|5
+#PL|Mazovia
+Brwinów|Brwinow|52143|20717|96|12
+Błonie|Blonie|52198|20617|88|12
+Białobrzegi|Bialobrzegi|51647|20950|114|7
+#PL|Pomerania
+Brzeźno Gdańskie|Brzezno Gdanskie|54404|18631|1|11
+Brętowo|Bretowo|54370|18571|53|7
+Bolszewo||54618|18176|33|7
+#PL|Silesia
+Blachownia||50780|18964|262|10
+Bieruń Nowy|Bierun Nowy|50073|19182|235|8
+Beskidzkie||49808|19023|381|6
+Brenna||49726|18902|395|6
+Biała Krakowska|Biala Krakowska|49824|19051|313|6
+#PL|Subcarpathia
+Brzozów|Brzozow|49695|22019|305|8
+Boguchwała|Boguchwala|49985|21945|222|6
+#PL|Warmia-Masuria
+Biskupiec||53865|20957|152|10
+Barczewo||53831|20691|129|7
+#PL|West Pomerania
+Barlinek||52995|15219|56|14
+#PL|Łódź Voivodeship
+Brzeziny||51800|19751|192|12
+#PR|Barranquitas
+Barranquitas||18187|-66306|603|3
+#PS|West Bank
+Bayt Sāḩūr|Bayt Sahur|31701|35226|609|15
+Baytūnyā|Baytunya|31897|35170|781|13
+Bayt Ūmmar|Bayt Ummar|31623|35104|942|12
+Bayt Fajjār|Bayt Fajjar|31624|35155|963|11
+Bayt Fūrīk|Bayt Furik|32177|35335|532|10
+Bayt Ūlā|Bayt Ula|31596|35030|563|9
+Baytā al Fawqā|Bayta al Fawqa|32143|35288|587|9
+Bidyā|Bidya|32115|35080|344|8
+Bayt ‘Awwā|Bayt 'Awwa|31509|34949|448|8
+Bayt Liqyā|Bayt Liqya|31870|35065|293|8
+Bal‘ā|Bal'a|32334|35112|352|7
+Bīr Zayt|Bir Zayt|31970|35194|775|6
+Biddū|Biddu|31835|35149|812|6
+Beit El||31942|35222|866|6
+Bayt Līd|Bayt Lid|32261|35132|426|6
+Birqīn|Birqin|32455|35261|259|6
+Bayt Kāḩil|Bayt Kahil|31570|35065|859|6
+Banī Zayd|Bani Zayd|32039|35103|480|5
+Bet Arye||32033|35050|314|5
+Banī Zayd ash Shārqīyah|Bani Zayd ash Sharqiyah|32049|35166|478|5
+#PT|Aveiro
+Beduido||40764|-8561|33|8
+Branca||40767|-8483|161|6
+Barro||40625|-8623|46|5
+#PT|Braga
+Brito||41458|-8361|149|5
+#PT|Coimbra
+Buarcos||40166|-8877|25|8
+Bairro do Loreto||40233|-8450|15|6
+#PT|Leiria
+Benedita||39425|-8970|193|9
+Batalha||39660|-8825|71|8
+Bombarral||39267|-9158|47|6
+#PT|Lisbon
+Baixa||38711|-9137|7|13
+Beato António|Beato Antonio|38733|-9103|7|13
+Bairro da Madre de Deus||38735|-9118|21|12
+Barcarena||38732|-9280|47|12
+Bairro Alto||38712|-9144|66|10
+Bobadela||38808|-9099|44|8
+#PT|Porto
+Bonjoia||41150|-8583|63|8
+Barrosas||41355|-8299|180|6
+Bairro Silva Braga||41175|-8627|100|6
+Bela Vista||41160|-8585|115|5
+#PT|Santarém
+Benavente||38979|-8808|13|9
+#PT|Vila Real
+Boticas||41689|-7669|500|6
+#PY|Amambay Department
+Bella Vista||-22122|-56515|186|6
+#PY|Presidente Hayes
+Benjamín Aceval|Benjamin Aceval|-24997|-57552|76|8
+#RE|Reunion
+Bras-Panon||-20997|55678|49|13
+#RO|Arges
+Bascov||44900|24817|294|9
+Buzoeşti|Buzoesti|44583|24917|219|6
+Băiculeşti|Baiculesti|45067|24700|413|6
+Bârla|Barla|44426|24777|151|6
+Bradu||44783|24900|294|5
+#RO|Bacău County
+Balcani||46633|26550|432|8
+Blăgeşti|Blagesti|46683|26650|329|7
+Bereşti-Tazlău|Beresti-Tazlau|46467|26667|345|6
+Berzunţi|Berzunti|46400|26633|344|5
+#RO|Bihor County
+Beiuş|Beius|46667|22350|187|11
+Bratca||46933|22617|381|5
+Batăr|Batar|46700|21817|100|5
+#RO|Bistrița-Năsăud County
+Beclean||47183|24183|257|11
+#RO|Botoșani County
+Bucecea||47767|26433|265|5
+Băluşeni|Baluseni|47667|26800|96|5
+#RO|Brașov County
+Bran||45517|25350|1017|5
+#RO|Buzău County
+Berca||45283|26683|147|9
+Burueneşti|Buruenesti|45317|26350|340|8
+#RO|Caraș-Severin County
+Băile Herculane|Baile Herculane|44880|22413|147|6
+#RO|Cluj County
+Baciu||46800|23517|395|8
+#RO|Constanța County
+Băneasa|Baneasa|44067|27700|110|5
+#RO|Covasna County
+Baraolt||46075|25600|478|9
+#RO|Călărași County
+Budeşti|Budesti|44235|26466|32|10
+Borcea||44333|27750|29|10
+#RO|Dâmbovița County
+Brăneşti|Branesti|45033|25417|360|9
+Băleni Sârbi|Baleni Sarbi|44817|25633|202|8
+Bucşani|Bucsani|44867|25650|204|7
+Bărbuleţu|Barbuletu|45133|25300|492|7
+Bezdead||45150|25517|534|5
+#RO|Galați County
+Brăhăşeştii de Sus|Brahasestii de Sus|46050|27350|117|8
+Barcea||45750|27467|23|6
+#RO|Giurgiu County
+Bolintin Vale||44449|25758|106|12
+Bolintin Deal||44459|25821|101|6
+Băneasa|Baneasa|44046|26064|92|6
+#RO|Gorj County
+Bumbeşti-Jiu|Bumbesti-Jiu|45167|23400|380|10
+Băleşti|Balesti|45017|23217|183|7
+#RO|Harghita County
+Bălan|Balan|46651|25808|890|7
+#RO|Ialomița County
+Borduşani|Bordusani|44483|27900|19|5
+Bucu||44605|27493|21|5
+#RO|Iași County
+Belceşti|Belcesti|47300|27083|90|11
+Bălţaţi|Baltati|47217|27150|86|5
+#RO|Ilfov
+Brăneşti|Branesti|44450|26333|53|9
+Bragadiru||44371|25978|82|8
+Baloteşti|Balotesti|44617|26117|94|7
+#RO|Maramureş
+Bârsana|Barsana|47817|24067|344|6
+#RO|Mureș County
+Band||46583|24383|358|8
+#RO|Neamț County
+Borleşti|Borlesti|46767|26483|355|9
+Bicaz||46917|26067|744|8
+Bălţăteşti|Baltatesti|47117|26300|491|7
+Borca||47183|25767|856|7
+Brusturi||47283|26383|335|6
+Bodeşti|Bodesti|47033|26417|409|5
+#RO|Prahova
+Boldeşti-Scăeni|Boldesti-Scaeni|45033|26033|211|11
+Breaza de Sus||45199|25656|571|11
+Bucov||44967|26083|142|10
+Buşteni|Busteni|45400|25533|900|10
+Bărcăneşti|Barcanesti|44883|26050|129|9
+Brazii de Sus||44867|26017|132|8
+Blejoi||45000|26017|182|8
+Brebu Mânăstirei|Brebu Manastirei|45183|25767|525|7
+Berceni||44933|26117|129|6
+Băneşti|Banesti|45100|25767|401|6
+#RO|Satu Mare County
+Bixad||47933|23400|192|7
+#RO|Suceava
+Baia||47417|26217|360|7
+Broşteni|Brosteni|47233|25700|699|7
+Bosanci||47583|26317|360|6
+#RO|Teleorman County
+Botoroaga||44148|25545|86|6
+Băbăiţa|Babaita|44167|25383|93|6
+#RO|Timiș County
+Buziaş|Buzias|45649|21604|125|8
+Biled||45886|20959|89|6
+#RO|Tulcea County
+Babadag||44900|28717|61|10
+#RO|Vaslui County
+Banca||46300|27800|182|6
+Berezeni||46376|28148|39|6
+#RO|Vâlcea County
+Băbeni|Babeni|44967|24233|205|9
+Brezoi||45338|24249|317|7
+Bălceşti|Balcesti|44617|23950|198|6
+Berbeşti|Berbesti|44983|23883|359|6
+Budeşti|Budesti|45050|24383|316|5
+#RS|Central Serbia
+Bajina Bašta|Bajina Basta|43971|19568|242|9
+Bogatić|Bogatic|44838|19481|84|7
+Badovinci||44785|19371|90|6
+Barič|Baric|44651|20259|82|5
+#RS|Vojvodina
+Bela Crkva||44898|21417|82|11
+Bačko Petrovo Selo|Backo Petrovo Selo|45707|20079|79|9
+Bački Petrovac|Backi Petrovac|45361|19592|83|7
+Beška|Beska|45131|20067|120|6
+Banatski Karlovac||45050|21018|97|6
+Bačko Gradište|Backo Gradiste|45533|20031|78|6
+Bavanište|Bavaniste|44819|20877|81|5
+#RU|Altai Krai
+Belokurikha||51997|84997|277|15
+Blagoveshchenka||52834|79875|109|12
+Beloyarsk||53446|83905|135|11
+Borovikha||53507|83838|143|7
+Bayevo||53271|80779|121|5
+#RU|Amur Oblast
+Bureya||49813|129813|133|5
+#RU|Arkhangelskaya
+Berëznik|Bereznik|62858|42702|15|6
+#RU|Bashkortostan Republic
+Buzdyak||54569|54531|202|10
+Bakaly||55179|53796|118|10
+Burayevo||55841|55408|119|9
+Bol’sheust’ikinskoye|Bol'sheust'ikinskoye|55945|58263|243|6
+Bizhbulyak||53695|54264|255|6
+#RU|Belgorod Oblast
+Borisovka||50599|36017|153|14
+Biruch||50649|38404|120|7
+#RU|Bryansk Oblast
+Belyye Berega||53209|34664|181|10
+Bol’shoye Polpino|Bol'shoye Polpino|53244|34505|176|6
+Belaya Berëzka|Belaya Berezka|52385|33482|136|6
+#RU|Buryatiya Republic
+Bichura||50590|107598|664|10
+Barguzin||53617|109632|503|6
+#RU|Chechnya
+Bachi-Yurt||43224|46194|193|15
+Benoy-Yurt||43693|45050|98|6
+Bamut||43160|45197|350|5
+#RU|Chelyabinsk
+Bazhovo||55060|61604|213|12
+Bredy||52420|60337|295|10
+Berdyaush||55162|59146|388|6
+#RU|Chukotka
+Bilibino||68055|166437|274|6
+#RU|Chuvash Republic
+Batyrevo||55068|47611|102|6
+#RU|Dagestan
+Babayurt||43600|46778|0|14
+Bavtugay||43168|46834|105|5
+#RU|Irkutsk Oblast
+Biryusinsk||55963|97824|287|10
+Belorechenskiy||52812|103524|447|8
+Bokhan||53153|103770|443|5
+#RU|Kabardino-Balkariya Republic
+Baksanenok||43690|43655|354|7
+#RU|Kaliningrad Oblast
+Bagrationovsk||54387|20644|72|7
+#RU|Kaluga Oblast
+Borovsk||55203|36491|140|12
+Belousovo||55095|36673|174|8
+#RU|Karelia
+Belomorsk||64530|34763|1|12
+#RU|Khabarovsk
+Berëzovyy|Berezovyy|51671|135675|170|6
+#RU|Khakasiya Republic
+Belyy Yar||53594|91382|270|9
+Beya||53050|90922|439|5
+#RU|Khanty-Mansia
+Berëzovo|Berezovo|63938|65042|31|7
+Barsovo||61253|73188|52|6
+#RU|Kirov Oblast
+Belaya Kholunitsa||58840|50839|155|12
+#RU|Krasnodar Krai
+Berezanskaya||45706|39593|22|7
+Besskorbnaya||44645|41311|343|6
+#RU|Krasnoyarsk Krai
+Boguchany||58383|97449|144|11
+Balakhta||55384|91619|321|8
+Bol’shaya Murta|Bol'shaya Murta|56904|93152|144|7
+#RU|Kuzbass
+Bachatskiy||54293|86129|263|15
+Borovoy||55433|86083|169|6
+#RU|Leningradskaya Oblast'
+Bugry||60071|30392|23|6
+#RU|Lipetsk Oblast
+Borinskoye||52457|39371|143|6
+#RU|Moscow Oblast
+Bobrovo||55528|37615|157|15
+Bykovo||55636|38080|136|11
+Bolshevo||55935|37830|159|10
+Bogorodskoye||56550|37883|179|9
+Bogorodskoye||56500|38183|207|9
+Beloomut||54945|39339|108|7
+Bol’shiye Dvory|Bol'shiye Dvory|55820|38645|134|6
+Belyye Stolby||55331|37854|176|6
+#RU|Nizhny Novgorod Oblast
+Bol’shoye Murashkino|Bol'shoye Murashkino|55783|44775|135|7
+Bol’shoye Kozino|Bol'shoye Kozino|56404|43714|75|7
+Buturlino||55567|44895|93|6
+Bol’shoye Boldino|Bol'shoye Boldino|55006|45313|192|5
+#RU|Novosibirsk Oblast
+Bagan||54099|77667|97|6
+Baryshevo||54956|83182|119|5
+#RU|Omsk Oblast
+Bol’sherech’ye|Bol'sherech'ye|56097|74631|82|12
+Beregovoy||55173|73220|82|8
+#RU|Orenburg Oblast
+Belyayevka||51397|56407|136|5
+#RU|Oryol oblast
+Bolkhov||53443|36005|189|12
+#RU|Penza Oblast
+Bessonovka||53310|45041|136|10
+Bashmakovo||53213|43034|199|10
+Belinskiy||52965|43416|189|9
+Bekovo||52466|43712|155|7
+#RU|Perm Krai
+Barda||56927|55592|115|8
+#RU|Rostov
+Bokovskaya||49227|41830|84|5
+#RU|Sakha
+Berdigestyakh||62098|126702|213|6
+Borogontsy||62670|131173|123|5
+#RU|Samara Oblast
+Borskoye||53025|51699|72|9
+Bogatoye||53061|51329|128|6
+Berëza|Bereza|53518|50140|125|6
+#RU|Saratov Oblast
+Bazarnyy Karabulak||52272|46417|134|10
+#RU|Stavropol Kray
+Bezopasnoye||45648|41936|82|7
+Barsukovskaya||44763|41819|277|6
+Blagodatnoye||45400|42587|212|5
+#RU|Sverdlovsk Oblast
+Bulanash||57278|61997|139|13
+Beloyarskiy||56757|61416|206|12
+Bisert’|Bisert'|56859|59053|268|11
+Baranchinskiy||58162|59699|221|11
+Baykalovo||57396|63768|89|6
+Bilimbay||56969|59815|306|6
+Bobrovskiy||56673|60981|211|5
+#RU|Tatarstan Republic
+Bolgar||54974|49031|91|9
+Bogatyye Saby||56009|50447|159|7
+Baltasi||56346|50207|104|7
+Bazarnyye Mataki||54907|49934|127|5
+#RU|Tomsk Oblast
+Belyy Yar||58443|85045|74|8
+Bakchar||57021|82072|115|7
+#RU|Tula Oblast
+Bolokhovo||54084|37829|237|10
+Borodinskiy||53999|37818|200|6
+#RU|Tver Oblast
+Bologoye-4||57900|33650|203|11
+#RU|Tyumen Oblast
+Bogandinskiy||56894|65894|67|10
+#RU|Ulyanovsk
+Bazarnyy Syzgan||53750|46759|250|6
+#RU|Vladimir Oblast
+Balakirevo||56506|38843|207|9
+#RU|Volgograd Oblast
+Bykovo||49765|45387|51|8
+#RU|Vologda Oblast
+Babayevo||59394|35937|132|12
+Belozërsk|Belozersk|60029|37808|131|11
+#RU|Yaroslavl Oblast
+Borisoglebskiy||57262|39154|111|6
+#RU|Zabaykalskiy (Transbaikal) Kray
+Baley||51582|116634|640|13
+Bada||51389|109860|783|5
+#SB|Isabel Province
+Buala||-8145|159592|5|3
+#SC|Baie Sainte Anne
+Baie Sainte Anne||-4320|55753|8|5
+#SC|Beau Vallon
+Beau Vallon||-4621|55430|76|4
+#SC|Bel Ombre
+Bel Ombre||-4617|55417|16|4
+#SE|Gävleborg
+Bollnäs|Bollnaes|61348|16395|38|14
+#SE|Jönköping
+Bankeryd||57860|14124|116|9
+#SE|Skåne
+Bunkeflostrand||55545|12924|4|13
+Bjuv||56084|12919|23|11
+Bjärred|Bjaerred|55717|13017|7|10
+Bromölla|Bromoella|56076|14470|10|8
+Båstad|Bastad|56427|12853|14|5
+#SE|Stockholm
+Bro||59517|17633|21|8
+Brevik||59350|18200|41|8
+Bergshamra||59381|18034|36|7
+#SE|Uppsala
+Bålsta|Balsta|59567|17528|14|13
+#SE|Västra Götaland
+Billdal||57567|11933|17|15
+#SG|
+Bukit Ho Swee Estate||1288|103830|9|14
+Braddell Heights Estate||1345|103865|11|10
+Bulim||1374|103718|13|8
+#SI|Municipality of Beltinci
+Beltinci||46605|16241|177|2
+#SI|Municipality of Benedikt
+Benedikt||46607|15891|273|1
+#SI|Municipality of Bistrica ob Sotli
+Bistrica ob Sotli||46058|15663|252|0
+#SI|Municipality of Bled
+Bled||46369|14117|500|5
+#SI|Municipality of Bohinj
+Bohinjska Bistrica||46272|13954|514|2
+#SI|Municipality of Borovnica
+Borovnica||45918|14364|361|2
+#SI|Municipality of Bovec
+Bovec||46338|13552|465|2
+#SI|Municipality of Braslovče
+Braslovče|Braslovce|46288|15040|300|0
+#SI|Municipality of Brezovica
+Brezovica pri Ljubljani||46023|14415|281|3
+#SI|Municipality of Brežice
+Brežice|Brezice|45907|15593|158|7
+#SI|Municipality of Renče–Vogrsko
+Bukovica||45901|13667|78|0
+#SI|Municipality of Žirovnica
+Breznica||46394|14154|541|0
+#SK|Banská Bystrica Region
+Banská Štiavnica|Banska Stiavnica|48449|18910|522|9
+#SK|Bratislava Region
+Bernolákovo|Bernolakovo|48201|17302|141|10
+Bratislava - Vajnory||48206|17208|133|5
+#SK|Trenčín Region
+Beluša|Belusa|49065|18327|256|6
+Bojnice||48785|18586|291|5
+#SK|Žilina Region
+Bytča|Bytca|49224|18559|307|11
+#SL|Eastern Province
+Blama||7875|-11345|122|8
+Barma||8350|-11331|148|8
+Boajibu||8188|-11340|150|7
+Bunumbu||8174|-10864|188|7
+Buedu||8280|-10371|391|5
+#SL|Northern Province
+Binkolo||8952|-11980|119|14
+#SL|Southern Province
+Bonthe||7526|-12505|5|10
+Baoma||7993|-11715|100|7
+Bomi||7246|-11526|45|5
+#SM|Borgo Maggiore
+Borgo Maggiore||43942|12447|481|6
+#SN|Kaffrine
+Birkelane||14129|-15744|9|7
+#SN|Sédhiou
+Bounkiling||13050|-15700|22|6
+#SN|Tambacounda
+Bakel||14902|-12459|28|13
+#SO|Bari
+Bandarbeyla||9494|50812|29|14
+Bereeda||11870|51058|10|11
+Bargaal||11286|51077|6|7
+#SO|Togdheer
+Buhodle||8231|46327|672|11
+#SR|Brokopondo District
+Brokopondo||5056|-54980|20|15
+#SS|Unity
+Bentiu||9257|29798|395|8
+#SV|Usulutan
+Berlín|Berlin|13500|-88533|975|11
+#SY|Quneitra
+Buq‘ātā|Buq'ata|33201|35779|1088|7
+#SZ|Lubombo Region
+Big Bend||-26790|31937|96|6
+#TD|Chari-Baguirmi
+Bodo||11787|15715|313|10
+#TD|Logone Occidental
+Beïnamar|Beinamar|8670|15381|450|13
+#TD|Logone Oriental
+Baïbokoum|Baibokoum|7742|15690|520|13
+Béboto|Beboto|8267|16939|437|9
+#TD|Tibesti
+Bardaï|Bardai|21355|17002|1018|4
+#TG|Centrale
+Blitta||8323|986|307|10
+#TH|Ang Thong
+Ban Thai Tan||14622|100487|11|14
+#TH|Bangkok
+Ban Khlong Bang Phrom||13758|100411|5|14
+Ban Khlong Chak Phra||13771|100447|8|10
+Bang Khun Non||13760|100473|2|10
+#TH|Bueng Kan
+Bueng Kan||18363|103652|160|10
+#TH|Chachoengsao
+Bang Khla||13721|101207|3|14
+Bang Nam Priao||13848|101054|2|9
+#TH|Chaiyaphum
+Bamnet Narong||15502|101690|213|15
+#TH|Chanthaburi
+Ban I Pat||12543|102305|16|7
+#TH|Chiang Mai
+Ban Mae Thalop||19722|99182|519|8
+Ban Mae Waen||19314|99188|430|6
+#TH|Chumphon
+Ban I Let||10382|99237|16|14
+Ban Nam Yuen||9877|98866|48|12
+#TH|Kanchanaburi
+Ban Khao Nang Sang Hua||14543|99768|60|9
+Ban Nong Pradu||14491|99707|86|8
+#TH|Krabi
+Ban Ao Nang||8046|98810|10|8
+#TH|Nakhon Si Thammarat
+Ban Na Saton||8099|100306|2|11
+Ban Sai Khao||8057|100205|5|8
+#TH|Nan
+Ban Thung Klang||19020|100935|295|8
+#TH|Narathiwat
+Ban Su-ngai Pa Di||6072|101872|29|14
+#TH|Nonthaburi
+Bang Yai||13843|100363|5|14
+#TH|Phang Nga
+Ban Phru Nai||7955|98590|26|6
+#TH|Phetchabun
+Ban I Loet||17003|101245|186|9
+#TH|Phuket
+Ban Ko Kaeo||7936|98397|42|10
+Ban Karon||7848|98299|15|7
+#TH|Prachin Buri
+Ban Dong Phra Ram||14067|101400|16|13
+Ban Noen Hom||14182|101349|18|9
+Ban Non Hom||14085|101441|9|6
+#TH|Sakon Nakhon
+Ban I Toeng||17000|103917|227|8
+#TH|Sukhothai
+Ban Dan Lan Hoi||17007|99575|87|6
+#TH|Suphan Buri
+Ban Sam Chuk||14742|100095|13|13
+#TH|Trat
+Bo Rai||12573|102537|29|14
+Ban Hat Lek||11656|102907|23|6
+#TJ|Khatlon Province
+Bokhtariyon||37882|68730|421|8
+#TJ|Sughd
+Bŭston|Buston|40523|69333|324|13
+#TL|Bobonaro
+Bobonaro||-9032|125325|833|6
+#TL|Manatuto
+Barique||-8833|126067|292|5
+#TM|
+Babadaykhan||37683|60433|168|13
+#TM|Ahal
+Babadaýhan|Babadayhan|37690|60394|175|13
+Bereket||37836|58908|176|11
+Bagtyýarlyk|Bagtyyarlyk|37412|60435|191|10
+Babaarap||38097|58108|206|10
+Bokurdak||38763|58493|84|8
+#TM|Lebap
+Birata||40482|62159|143|14
+#TN|Gabès Governorate
+Bou Chemma||33902|10060|41|12
+#TN|Jendouba Governorate
+Bou Salem||36607|8970|127|15
+#TN|Kasserine Governorate
+Borj Mejen Bel Abbès|Borj Mejen Bel Abbes|34750|8520|643|6
+#TN|Manouba
+Borj el Amri||36713|9882|50|7
+#TN|Monastir Governorate
+Bennane Bodheur||35675|10836|43|14
+Banbalah||35700|10800|20|12
+Beni Hassane||35567|10809|51|9
+Bou Hadjar||35683|10867|0|6
+#TN|Nabeul Governorate
+Bou Arkoub||36539|10551|69|12
+#TN|Sidi Bouzid Governorate
+Ben Aoun||34853|9144|462|9
+Bir el Hafey||34932|9193|438|6
+#TN|Siliana Governorate
+Bou Arada||36353|9622|246|13
+#TN|Sousse Governorate
+Bou Ficha||36300|10455|7|10
+#TN|Tataouine
+Bir Lahmar||33150|10367|253|8
+#TN|Zaghouan Governorate
+Bir M’cherga|Bir M'cherga|36518|9958|151|8
+#TR|Adana
+Bahçe|Bahce|37197|36577|628|13
+#TR|Afyonkarahisar Province
+Başmakçı|Basmakci|37897|30012|858|8
+#TR|Ankara
+Bahçelievler|Bahcelievler|39925|32825|900|11
+#TR|Artvin
+Borçka|Borcka|41358|41666|446|10
+#TR|Aydın
+Bozdoğan|Bozdogan|37671|28314|275|8
+Buharkent||37964|28743|174|8
+Bağarası|Bagarasi|37707|27549|21|6
+#TR|Batman
+Beşiri|Besiri|37916|41287|770|10
+#TR|Denizli
+Buldan||38045|28831|633|15
+Baklan||37977|29609|968|7
+#TR|Eskişehir
+Beylikova||39687|31206|768|5
+#TR|Istanbul
+Boyalık|Boyalik|41263|28631|83|12
+Büyükdere|Bueyuekdere|41160|29042|14|9
+Bolluca||41204|28766|80|8
+Bebek||41078|29043|27|5
+Beylerbeyi||41044|29046|18|5
+#TR|Karabük Province
+Bostanbükü|Bostanbuekue|41215|32688|302|6
+#TR|Karaman
+Başyayla|Basyayla|36753|32680|1327|6
+#TR|Kastamonu
+Bozkurt||41958|34011|39|6
+#TR|Kayseri
+Bünyan|Buenyan|38846|35860|1332|13
+#TR|Kocaeli
+Bahçecik|Bahcecik|40668|29915|268|9
+#TR|Konya
+Bozkır|Bozkir|37190|32247|1135|11
+#TR|Muğla
+Bitez||37044|27393|41|11
+#TR|Siirt
+Baykan||38158|41773|743|11
+#TR|Tokat Province
+Başçiftlik|Basciftlik|40547|37169|1390|7
+#TR|Van
+Başkale|Baskale|38045|44017|2297|15
+#TR|Çorum
+Bayat||40646|34261|698|6
+#TR|Şırnak
+Beytüşşebap|Beytuessebap|37563|43166|1475|8
+Başverimli|Basverimli|37203|42538|480|7
+#TZ|Kagera
+Bugene||-1591|31140|1639|11
+#TZ|Tabora
+Bukene||-4233|32883|1200|7
+#TZ|Zanzibar Urban/West
+Bububu||-6100|39217|13|6
+#UA|Cherkasy
+Bilozirya||49301|31894|99|9
+#UA|Chernihiv Oblast
+Bobrovytsia||50746|31382|121|11
+Borzna||51253|32427|133|9
+Berezna||51578|31787|132|5
+#UA|Chernivtsi
+Berehomet||48171|25330|467|8
+#UA|Crimea
+Biyuk-Onlar||45289|34135|87|10
+#UA|Dnipropetrovsk
+Bohdanivka||48502|36122|85|5
+#UA|Donetsk
+Bilozerske||48534|37063|206|15
+Bunhe||48221|38284|209|13
+Bilenke||48766|37633|90|9
+Bilytske||48406|37181|193|8
+Bylbasivka||48839|37502|72|6
+#UA|Ivano-Frankivsk
+Burshtyn||49252|24633|211|15
+Bolekhiv||49065|23860|363|10
+Bohorodchany||48808|24537|333|8
+Broshniv-Osada||48998|24194|356|5
+#UA|Kharkiv
+Bezliudivka||49868|36283|134|9
+Barvinkove||48905|37023|89|8
+Babayi||49896|36193|119|7
+Budy||49891|36021|122|7
+Borova||49380|37619|95|5
+#UA|Kherson
+Beryslav||46839|33427|45|12
+Bilozerka||46627|32444|16|10
+#UA|Khmelnytskyi
+Bilohirya||49999|26414|236|5
+#UA|Kirovohrad
+Bobrynets||48057|32166|136|11
+Blahovishchenske||48328|30236|120|6
+#UA|Kyiv City
+Bilyche Pole||50493|30439|133|8
+#UA|Kyiv Oblast
+Borodianka||50643|29923|130|14
+Baryshivka||50359|31320|97|10
+Borova||50176|30104|162|7
+#UA|Luhansk
+Bokovo-Khrustalne||48151|38780|225|11
+Bilovods'k||49208|39590|64|9
+Bilokurakyne||49533|38728|84|8
+Bile||48495|39051|68|7
+Borivske||48869|38567|52|6
+#UA|Lviv
+Busk||49965|24612|218|8
+Bryukhovychi||49905|23960|286|6
+#UA|Mykolaiv
+Bashtanka||47405|32434|77|12
+Bereznehuvate||47309|32851|18|8
+Bratske||47867|31575|86|5
+#UA|Odesa
+Bilyayivka||46484|30209|4|12
+Berezivka||47200|30909|8|10
+Bessarabske||46188|29146|95|6
+#UA|Rivne Oblast
+Berezne||51003|26746|165|13
+#UA|Sevastopol City
+Barteniyivka||44636|33548|37|6
+#UA|Sumy
+Buryn||51199|33833|155|8
+#UA|Ternopil
+Buchach||49062|25395|291|12
+Borshchiv||48803|26032|290|11
+#UA|Vinnytsia
+Bershad||48364|29515|171|12
+#UA|Zakarpattia
+Bushtyno||48047|23486|200|8
+Bilky||48314|23133|141|8
+Bedevlya||48005|23664|234|5
+#UA|Zaporizhzhia
+Bilmak||47359|36653|203|7
+Balabyne||47737|35214|35|6
+Balky||47386|34931|71|6
+#UA|Zhytomyr Oblast
+Baranivka||50297|27662|223|11
+#UG|Central Region
+Bweyogerere||358|32663|1194|11
+Byakabanda||-742|31406|1243|8
+#UG|Western Region
+Buliisa||2118|31412|632|10
+#US|Alabama
+Boaz||34201|-86166|325|10
+Bay Minette||30883|-87773|82|9
+Brook Highland||33436|-86674|182|7
+Brewton||31105|-87072|25|5
+#US|Alaska
+Bethel||60792|-161756|1|6
+#US|Arizona
+Big Park||34780|-111763|1242|7
+Bisbee||31448|-109928|1688|5
+#US|Arkansas
+Blytheville||35927|-89919|78|15
+Batesville||35770|-91641|103|11
+Beebe||35071|-91880|74|8
+Berryville||36365|-93568|379|5
+#US|California
+Bonita||32658|-117030|36|13
+Big Bear City||34261|-116845|2064|12
+Blackhawk||37821|-121908|304|9
+Bonadelle Ranchos-Madera Ranchos||36985|-119875|116|9
+Bel Air||34083|-118449|183|8
+Bermuda Dunes||33743|-116289|29|7
+Boyes Hot Springs||38314|-122482|41|7
+Ben Lomond||37089|-122086|101|6
+Big Bear Lake||34244|-116911|2058|5
+Bear Valley Springs||35159|-118628|1256|5
+Bret Harte||37602|-121005|26|5
+Buellton||34614|-120193|109|5
+#US|Colorado
+Black Forest||39013|-104701|2246|13
+Berkley||39804|-105026|1589|11
+Bailey||39406|-105473|2359|8
+Berthoud||40308|-105081|1535|6
+Brush||40259|-103624|1286|5
+#US|Connecticut
+Bethel||41371|-73414|115|10
+Branford Center||41277|-72815|16|6
+#US|Delaware
+Brookside||39667|-75727|23|14
+#US|District of Columbia
+Barracks Row||38881|-76995|15|14
+Brentwood Village||38921|-76984|45|11
+Benning Road||38890|-76938|31|10
+Bellevue||38826|-77010|12|10
+Benning||38895|-76949|14|9
+Brookland||38933|-76984|47|8
+#US|Florida
+Bellair-Meadowbrook Terrace||30179|-81743|19|13
+Bee Ridge||27284|-82481|11|10
+Beverly Hills||28917|-82458|31|8
+Bithlo||28555|-81106|19|8
+Brooksville||28556|-82390|62|8
+Beacon Square||28209|-82755|2|7
+Broadview Park||26100|-80209|5|7
+Belle Isle||28458|-81359|29|7
+Boyette||27818|-82223|25|7
+Bay Harbor Islands||25888|-80131|1|6
+#US|Georgia
+Buford||34121|-84004|361|14
+Bainbridge||30904|-84575|37|13
+Braselton||34109|-83763|277|9
+Barnesville||33055|-84156|261|7
+Bremen||33721|-85145|425|6
+Byron||32654|-83760|155|5
+#US|Idaho
+Blackfoot||43190|-112345|1371|12
+Burley||42536|-113793|1269|10
+#US|Illinois
+Beach Park||42422|-87857|213|14
+Burr Ridge||41749|-87918|214|11
+Barrington||42154|-88136|252|10
+Bethalto||38909|-90041|160|9
+Boulder Hill||41713|-88336|204|8
+Broadview||41864|-87853|192|8
+Benton||37997|-88920|144|7
+Bartonville||40650|-89652|154|6
+Braidwood||41265|-88212|176|6
+Beardstown||40018|-90424|138|6
+Berkeley||41889|-87903|198|5
+#US|Indiana
+Beech Grove||39722|-86090|245|15
+Bedford||38861|-86487|209|13
+Bluffton||40739|-85172|252|10
+Brazil||39524|-87125|199|8
+Bargersville||39521|-86168|250|7
+Batesville||39300|-85222|296|7
+Boonville||38049|-87274|129|6
+Bright||39218|-84856|281|6
+#US|Iowa
+Boone||42060|-93880|346|13
+#US|Kansas
+Bonner Springs||39060|-94884|266|8
+Basehor||39142|-94939|299|5
+#US|Kentucky
+Berea||37569|-84296|312|15
+Bardstown||37809|-85467|197|13
+Buechel||38195|-85652|152|7
+Bellevue||39106|-84479|167|6
+Buckner||38384|-85440|251|6
+#US|Louisiana
+Bayou Boeuf||29869|-90597|1|14
+Baker||30588|-91168|24|14
+Belle Chasse||29855|-89991|2|13
+Bogalusa||30791|-89849|29|12
+Broussard||30147|-91961|10|11
+Bastrop||32778|-91911|51|11
+Breaux Bridge||30274|-91899|7|8
+Bridge City||29933|-90170|1|8
+Brownsfield||30547|-91121|19|5
+#US|Maine
+Brewer||44797|-68761|15|9
+Bath||43911|-69821|19|8
+Buxton||43638|-70519|56|8
+Belfast||44426|-69006|26|7
+#US|Maryland
+Brooklyn Park||39228|-76616|34|14
+Bennsville||38609|-77012|60|12
+Bel Air||39536|-76348|118|10
+Bladensburg||38939|-76934|15|10
+Brock Hall||38850|-76761|35|10
+Brooklyn||39230|-76602|19|10
+Burtonsville||39111|-76932|149|8
+Bryans Road||38627|-77073|54|7
+Baltimore Highlands||39233|-76637|11|7
+Bowleys Quarters||39335|-76390|14|7
+Brandywine||38697|-76848|70|7
+Brunswick||39314|-77628|90|6
+Berlin||38323|-75218|11|5
+Bolton Hill||39308|-76626|44|5
+#US|Massachusetts
+Bedford||42491|-71276|42|13
+Beacon Hill||42359|-71068|28|9
+Blackstone||42018|-71541|55|9
+Bridgewater||41990|-70975|30|8
+Bemis||42369|-71204|10|7
+Beaconsfield||42337|-71141|30|7
+Brook Farm||42289|-71163|42|7
+Back of the Hill||42329|-71111|15|6
+Berkley||41846|-71083|23|6
+Bliss Corner||41612|-70938|20|5
+Bellevue||42288|-71145|40|5
+#US|Michigan
+Big Rapids||43698|-85484|284|10
+Beverly Hills||42524|-83223|222|10
+Beecher||43090|-83694|245|10
+Benton Harbor||42117|-86454|181|10
+Belmont||43076|-85609|202|9
+Brighton||42529|-83780|282|8
+Bridgeport||43359|-83882|184|7
+Buena Vista||43420|-83899|185|7
+Byron Center||42812|-85723|228|6
+Belding||43098|-85229|237|6
+Bay Harbor||45364|-85082|202|6
+#US|Minnesota
+Bemidji||47474|-94880|416|15
+Brainerd||46358|-94201|371|13
+Big Lake||45332|-93746|286|10
+Baxter||46343|-94287|368|8
+Belle Plaine||44623|-93769|261|7
+Byron||44033|-92645|383|5
+#US|Mississippi
+Brookhaven||31579|-90441|149|12
+Byram||32179|-90245|81|12
+Bay Saint Louis||30309|-89330|7|9
+Booneville||34658|-88567|158|9
+Batesville||34312|-89944|71|7
+#US|Missouri
+Bridgeton||38767|-90412|178|12
+Branson||36644|-93219|237|11
+Bellefontaine Neighbors||38740|-90226|140|11
+Bolivar||37614|-93410|322|11
+Berkeley||38755|-90331|164|9
+Boonville||38974|-92743|204|8
+Brentwood||38618|-90349|146|8
+Bonne Terre||37923|-90555|251|7
+Black Jack||38793|-90267|183|7
+Battlefield||37116|-93370|388|6
+Barnhart||38344|-90393|132|6
+Bowling Green||39342|-91195|272|5
+#US|Montana
+Belgrade||45776|-111177|1359|8
+#US|Nebraska
+Beatrice||40268|-96747|392|12
+Blair||41544|-96125|326|8
+#US|New Hampshire
+Berlin||44469|-71185|311|9
+Barrington||43223|-71047|116|8
+Bow Bog||43121|-71511|117|8
+#US|New Jersey
+Bradley Gardens||40563|-74655|24|14
+Berkeley Heights||40683|-74443|68|14
+Bellmawr||39868|-75095|18|11
+Browns Mills||39973|-74583|27|11
+Beachwood||39939|-74193|8|11
+Bound Brook||40568|-74538|14|10
+Burlington||40071|-74865|7|10
+Brookdale||40834|-74183|53|9
+Brigantine||39410|-74365|1|9
+Budd Lake||40871|-74734|291|9
+Boonton||40903|-74407|124|8
+Bogota||40876|-74030|16|8
+Bloomingdale||41002|-74327|80|8
+Bedminster||40681|-74645|51|8
+Bernardsville||40719|-74569|121|8
+Bloomingdale||40498|-74647|24|8
+Butler||41004|-74342|107|8
+Berlin||39791|-74929|50|8
+Barrington||39865|-75055|22|7
+Belmar||40178|-74022|4|6
+#US|New Mexico
+Bernalillo||35300|-106551|1540|9
+Bloomfield||36711|-107985|1663|7
+Belen||34663|-106776|1466|7
+#US|New York
+Beacon||41505|-73970|42|14
+Bergen Beach||40620|-73907|3|14
+Babylon||40696|-73326|2|12
+Bohemia||40769|-73115|20|10
+Ballston Lake||42912|-73868|81|10
+Bayport||40738|-73051|5|9
+Brockport||43214|-77939|158|8
+Baldwin Harbor||40640|-73608|3|8
+Boston||42629|-78738|287|8
+Briarcliff Manor||41146|-73824|76|8
+Baldwinsville||43159|-76333|116|8
+Big Flats Airport||42169|-76890|291|8
+Battery Park City||40711|-74016|0|7
+Bay Wood||40750|-73291|18|7
+Bayville||40911|-73562|12|7
+Belle Harbor||40576|-73848|2|7
+Bronxville||40938|-73832|28|6
+Blauvelt||41063|-73958|61|6
+Bath||42337|-77318|338|6
+Bellaire||40714|-73754|19|6
+Ballston Spa||43001|-73849|96|5
+Big Flats||42137|-76937|275|5
+#US|North Carolina
+Belmont||35243|-81037|208|11
+Black Mountain||35618|-82321|731|8
+Butner||36132|-78757|113|8
+Brevard||35233|-82734|678|8
+Boiling Spring Lakes||34030|-78067|16|6
+Bessemer City||35285|-81284|275|6
+Briar Chapel||35824|-79117|157|5
+#US|Ohio
+Bridgetown||39153|-84637|272|14
+Bexley||39969|-82938|241|14
+Brecksville||41320|-81627|271|13
+Bellefontaine||40361|-83760|379|13
+Bedford||41393|-81537|289|13
+Blue Ash||39232|-84378|258|12
+Bucyrus||40808|-82975|303|12
+Beachwood||41465|-81509|361|12
+Brooklyn||41440|-81735|233|11
+Bedford Heights||41417|-81527|317|11
+Beckett Ridge||39347|-84435|249|9
+Blacklick Estates||39905|-82864|229|9
+Bryan||41475|-84552|234|8
+Bellevue||41274|-82842|229|8
+Bellbrook||39636|-84071|237|7
+Belpre||39274|-81573|187|6
+Brookville||39837|-84411|314|6
+#US|Oklahoma
+Blanchard||35138|-97658|387|8
+Blackwell||36804|-97283|309|7
+#US|Oregon
+Baker City||44775|-117834|1051|10
+Brookings||42053|-124284|48|6
+#US|Pennsylvania
+Bloomsburg||41004|-76455|162|15
+Butler||40861|-79895|318|13
+Broomall||39982|-75357|107|11
+Berwick||41055|-76233|170|10
+Bristol||40101|-74852|6|10
+Brentwood||40371|-79975|360|10
+Bala Cynwyd||40008|-75234|93|9
+Brewerytown||39977|-75182|28|9
+Beaver Falls||40752|-80319|244|9
+Bradford||41956|-78644|442|9
+Bedminster||40426|-75179|129|8
+Bellevue||40494|-80052|299|8
+Brookhaven||39869|-75382|30|8
+Blandon||40441|-75887|116|7
+Bridesburg||40000|-75070|6|7
+Blue Grass||40066|-75027|35|6
+Blakely||41481|-75595|247|6
+Bellefonte||40913|-77778|243|6
+Bella Vista||39935|-75157|8|6
+Bell Road (historical)||39907|-75234|5|6
+Blue Bell||40152|-75266|109|6
+Bangor||40866|-75207|158|5
+Birdsboro||40265|-75804|51|5
+Bridgeville||40356|-80110|264|5
+Bryn Mawr||40304|-80087|356|5
+#US|South Carolina
+Berea||34885|-82456|317|14
+Beaufort||32432|-80670|2|13
+Bennettsville||34617|-79685|47|9
+Boiling Springs||35047|-81982|282|8
+Burton||32436|-80724|10|7
+Belvedere||33531|-81945|148|6
+Batesburg-Leesville||33910|-81537|196|5
+Boiling Springs||33135|-81431|59|5
+#US|South Dakota
+Brandon||43595|-96572|413|10
+Box Elder||44112|-103068|925|9
+Belle Fourche||44671|-103852|921|6
+#US|Tennessee
+Bloomingdale||36585|-82489|439|10
+Brownsville||35594|-89262|119|10
+Bolivar||35256|-88988|136|5
+#US|Texas
+Buda||30085|-97840|214|14
+Boerne||29795|-98732|430|14
+Beeville||28401|-97750|64|13
+Borger||35668|-101397|938|13
+Burkburnett||34098|-98571|323|11
+Bellmead||31594|-97109|133|10
+Bonham||33577|-96178|186|10
+Brownfield||33181|-102274|1009|10
+Bacliff||29507|-94992|5|9
+Bastrop||30110|-97315|112|8
+Bridge City||30021|-93846|3|8
+Bridgeport||33210|-97755|244|6
+Bee Cave||30309|-97945|280|6
+Burnet||30758|-98228|392|6
+Briar||32995|-97543|227|6
+Breckenridge||32756|-98902|367|6
+Brady||31135|-99335|511|6
+Bowie||33559|-97849|344|5
+Brookshire||29786|-95951|49|5
+#US|Utah
+Bluffdale||40490|-111939|1352|11
+#US|Vermont
+Bennington||42878|-73197|207|9
+Barre||44197|-72502|194|9
+Brattleboro||42851|-72558|67|7
+#US|Virginia
+Bull Run||38784|-77521|87|15
+Brandermill||37432|-77650|76|13
+Broadlands||39018|-77520|111|12
+Brambleton||38982|-77539|115|10
+Bristow||38723|-77536|60|9
+Buena Vista||37734|-79354|255|7
+Bedford||37334|-79523|306|7
+Belle Haven||38785|-77063|37|7
+Bellwood||37422|-77437|29|6
+Belmont||39065|-77510|90|6
+Bridgewater||38382|-78977|359|6
+Bensley||37447|-77443|17|6
+Big Stone Gap||36882|-82747|468|6
+Bluefield||37253|-81271|722|5
+#US|Washington
+Burlington||48476|-122325|11|9
+Birch Bay||48918|-122745|4|8
+Bothell East||47806|-122184|118|8
+Brier||47785|-122274|125|7
+Bangor Trident Base||47723|-122714|112|6
+Barberton||45693|-122599|75|6
+Boulevard Park||47513|-122317|119|5
+Blaine||48994|-122747|16|5
+#US|West Virginia
+Bluefield||37270|-81222|784|10
+Bridgeport||39286|-80256|311|8
+Buckhannon||38994|-80232|436|6
+Brookhaven||39612|-79905|315|5
+#US|Wisconsin
+Baraboo||43471|-89744|271|12
+Brown Deer||43163|-87965|211|12
+Burlington||42678|-88276|234|11
+Berlin||43968|-88943|246|5
+#UY|Artigas
+Bella Unión|Bella Union|-30260|-57599|53|12
+#UY|Canelones
+Barra de Carrasco||-34877|-56030|4|5
+#VC|Saint Patrick Parish
+Barrouallie||13237|-61273|19|1
+#VE|Anzoátegui
+Boca de Uchire||10132|-65422|3|11
+#VE|Falcón
+Boca de Aroa||10682|-68298|4|10
+#VE|Zulia
+Bobures||9242|-71175|3|8
+#VN|An Giang
+Ba Chúc|Ba Chuc|10494|104907|14|13
+#VN|Bac Ninh
+Bắc Lũng|Bac Lung|21267|106383|5|7
+#VN|Dak Lak
+Buôn Tur|Buon Tur|12500|108017|414|8
+#VN|Dong Nai
+Bình Long|Binh Long|11647|106606|126|15
+#VN|Hà Tĩnh Province
+Bùi Xá|Bui Xa|18390|105825|7|7
+#VN|Lao Cai
+Bát Xát|Bat Xat|22543|103890|109|7
+#VN|Phu Tho
+Bích Chu|Bich Chu|21207|105476|15|7
+#YT|Bandraboua
+Bandraboua||-12704|45122|17|8
+#YT|Bandrele
+Bandrele||-12913|45193|14|6
+#YT|Bouéni
+Bouéni|Boueni|-12902|45076|40|5
+#ZA|Eastern Cape
+Barkly East||-30968|27596|1789|12
+Bedford||-32679|26087|746|11
+Bontrug||-33398|25483|190|10
+Bizana||-30859|29854|828|10
+Bathurst||-33500|26829|268|8
+#ZA|Free State
+Boshof||-28539|25240|1254|10
+Bethulie||-30499|25975|1282|8
+#ZA|KwaZulu-Natal
+Berea||-29852|30993|92|15
+#ZA|Limpopo
+Bochum||-23286|29140|997|12
+Babirwa||-23430|28609|863|5
+#ZA|Mpumalanga
+Bolla-Tau||-24633|31131|602|13
+Buyisonto||-24790|31130|589|10
+Bosfontein||-25742|31618|365|8
+Burgersfort||-24676|30329|761|8
+#ZA|North West
+Boipelo||-27565|24185|1416|5
+#ZA|Northern Cape
+Barkly West||-28535|24522|1104|12
+#ZA|Western Cape
+Bonnievale||-33932|20099|143|11
+Botrivier||-34226|19203|97|7
+#ZW|Mashonaland West
+Banket||-17383|30400|1277|10

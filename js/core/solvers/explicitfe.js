@@ -1,6 +1,7 @@
 // Explicit nonlinear dynamics finite-element kernel in three dimensions.
-// Elements: 8-node hexahedron with one-point quadrature and Flanagan–Belytschko hourglass control; 2-node
-// co-rotational beam with axial, torsional and bi-axial bending elastic–plastic resultants (plastic hinges at
+// Elements: 8-node hexahedron with one-point quadrature and Flanagan–Belytschko hourglass control; 4-node
+// co-rotational thin shell (Belytschko–Lin–Tsay: one in-plane point, Gauss integration of plane-stress plasticity through
+// the thickness, so plate bending is carried by the stress field and not by the stabilisation); 2-node co-rotational beam with axial, torsional and bi-axial bending elastic–plastic resultants (plastic hinges at
 // the ends); 2-node nonlinear spring/damper (crush element). Lumped mass, central-difference time integration
 // with an automatic Courant time step and optional mass scaling. J2 plasticity with Johnson–Cook hardening,
 // rate and thermal terms and a Cowper–Symonds option, failure by equivalent plastic strain with erosion.
@@ -9,6 +10,10 @@
 // Pure computation on typed arrays: runs unchanged in a browser, a Web Worker and Node.
 
 const GAM = [1, 1, -1, -1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, -1, 1, -1, 1, 1, -1, 1, -1];
+// Gauss–Legendre points and weights on [−1, 1] for 1 to 5 points (through-thickness integration of the shell)
+const GQ = [[[0], [2]], [[-0.5773502691896257, 0.5773502691896257], [1, 1]], [[-0.7745966692414834, 0, 0.7745966692414834], [5 / 9, 8 / 9, 5 / 9]],
+  [[-0.8611363115940526, -0.3399810435848563, 0.3399810435848563, 0.8611363115940526], [0.3478548451374538, 0.6521451548625461, 0.6521451548625461, 0.3478548451374538]],
+  [[-0.906179845938664, -0.5384693101056831, 0, 0.5384693101056831, 0.906179845938664], [0.2369268850561891, 0.4786286704993665, 0.5688888888888889, 0.4786286704993665, 0.2369268850561891]]];
 const PERM = [0, 1, 2, 3, 4, 5, 6, 7, 1, 2, 3, 0, 5, 6, 7, 4, 2, 3, 0, 1, 6, 7, 4, 5, 3, 0, 1, 2, 7, 4, 5, 6, 4, 7, 6, 5, 0, 3, 2, 1, 5, 4, 7, 6, 1, 0, 3, 2, 6, 5, 4, 7, 2, 1, 0, 3, 7, 6, 5, 4, 3, 2, 1, 0];
 
 /** Flow stress [Pa] of material m at equivalent plastic strain ep, strain rate [1/s] and temperature [K]. */
@@ -39,18 +44,18 @@ export function hexGradient(X, Bm) {
 }
 
 /**
- * Create an explicit FE model. Build it with node/material/hex/beam/spring/mass/fix/load/plane/impactor, call
+ * Create an explicit FE model. Build it with node/material/hex/shell/beam/spring/mass/fix/load/plane/impactor, call
  * init(), then step() or run(tEnd, onStep). Options: gravity [3], cfl, hourglass (stiffness coefficient),
- * hourglassVisc, bulkLinear, bulkQuad, penalty (contact stiffness as a fraction of m/Δt²), dtMax, massScaleDt
+ * hourglassVisc, shellHourglass (stiffness coefficient of the shell stabilisation), bulkLinear, bulkQuad, penalty (contact stiffness as a fraction of m/Δt²), dtMax, massScaleDt
  * (hexahedra whose stable step is below this value receive added mass, reported in addedMass), damping
  * (mass-proportional, 1/s). The step of beams, springs and crush contacts follows from the assembled nodal masses;
  * nodal rotary inertia is raised where rotation would otherwise control it (reported in addedInertia).
  */
 export function createFE(opt = {}) {
-  const gv = opt.gravity || [0, 0, 0], cfl = opt.cfl ?? 0.9, kHG = opt.hourglass ?? 0.05, qHG = opt.hourglassVisc ?? 0.02, bq1 = opt.bulkLinear ?? 0.06, bq2 = opt.bulkQuad ?? 1.5, pf = opt.penalty ?? 0.1;
-  const bld = { xyz: [], hex: [], hexM: [], beam: [], sec: [], ref: [], spr: [], pm: [], fix: [], load: [], v0: [] };
+  const gv = opt.gravity || [0, 0, 0], cfl = opt.cfl ?? 0.9, kHG = opt.hourglass ?? 0.05, qHG = opt.hourglassVisc ?? 0.02, bq1 = opt.bulkLinear ?? 0.06, bq2 = opt.bulkQuad ?? 1.5, pf = opt.penalty ?? 0.1, rSH = opt.shellHourglass ?? 0.03;
+  const bld = { xyz: [], hex: [], hexM: [], shell: [], shM: [], shT: [], shQ: [], beam: [], sec: [], ref: [], spr: [], pm: [], fix: [], load: [], v0: [] };
   const mats = [], planes = [], imps = [];
-  const fe = { t: 0, dt: 0, nStep: 0, damping: opt.damping || 0, mats, planes, impactors: imps, addedMass: 0, addedInertia: 0, erodedHex: 0, erodedBeam: 0 };
+  const fe = { t: 0, dt: 0, nStep: 0, damping: opt.damping || 0, mats, planes, impactors: imps, addedMass: 0, addedInertia: 0, erodedHex: 0, erodedShell: 0, erodedBeam: 0 };
   const E = fe.energy = { kinetic: 0, internal: 0, plastic: 0, hourglass: 0, viscous: 0, contact: 0, friction: 0, crush: 0, external: 0, damping: 0, initial: 0, total: 0, error: 0, peak: 0 };
 
   fe.node = (x, y, z) => { bld.xyz.push(x, y, z); return bld.xyz.length / 3 - 1; };
@@ -62,6 +67,12 @@ export function createFE(opt = {}) {
     mats.push(m); return mats.length - 1;
   };
   fe.hex = (n, mat) => { bld.hex.push(...n); bld.hexM.push(mat); return bld.hexM.length - 1; };
+  /**
+   * Thin shell: four nodes in order around the element (the normal follows the right-hand rule), material, thickness and
+   * the number of Gauss points through the thickness (1–5; 2 is exact for elastic bending, 5 resolves spreading plasticity).
+   * Uses the nodal rotations. A point fails at the material's efail; the element is eroded when all its points have failed.
+   */
+  fe.shell = (n, mat, t, nq = 5) => { bld.shell.push(...n); bld.shM.push(mat); bld.shT.push(t); bld.shQ.push(Math.min(5, Math.max(1, Math.round(nq)))); return bld.shM.length - 1; };
   /**
    * Beam section: { E, G, rho, A, Iy, Iz, J, Np, Mpy, Mpz, hard, cap, thetaSoft, residual, thetaFail, epsFail }. Hinge capacity is
    * Mp·min(cap, 1 + hard·θp) up to the plastic rotation thetaSoft, then Mp·residual; the element is eroded at thetaFail.
@@ -85,7 +96,7 @@ export function createFE(opt = {}) {
   fe.init = () => {
     const nn = fe.nn = bld.xyz.length / 3, nh = fe.nh = bld.hexM.length, nb = fe.nb = bld.sec.length;
     const x = fe.x = Float64Array.from(bld.xyz), x0 = fe.x0 = Float64Array.from(bld.xyz), v = fe.v = new Float64Array(3 * nn), a = fe.a = new Float64Array(3 * nn), f = new Float64Array(3 * nn), fc = new Float64Array(3 * nn), fl = new Float64Array(3 * nn), fh = new Float64Array(3 * nn), fq = new Float64Array(3 * nn);
-    const ms = fe.mass_ = new Float64Array(nn), fixed = new Uint8Array(6 * nn), hasRot = nb > 0 || planes.some((p) => p.pts.some((c) => c.off));
+    const ms = fe.mass_ = new Float64Array(nn), fixed = new Uint8Array(6 * nn), ns = fe.ns = bld.shM.length, hasRot = nb > 0 || ns > 0 || planes.some((p) => p.pts.some((c) => c.off));
     const w = fe.w = new Float64Array(hasRot ? 3 * nn : 0), mo = new Float64Array(hasRot ? 3 * nn : 0), mc = new Float64Array(hasRot ? 3 * nn : 0), In = fe.inertia = new Float64Array(hasRot ? nn : 0), R = fe.R = new Float64Array(hasRot ? 9 * nn : 0);
     for (let i = 0; i < (hasRot ? nn : 0); i++) R[9 * i] = R[9 * i + 4] = R[9 * i + 8] = 1;
     const hx = fe.hexN = Int32Array.from(bld.hex), hm = Int32Array.from(bld.hexM), sig = fe.sig = new Float64Array(6 * nh), ep = fe.ep = new Float64Array(nh), Te = fe.temp = new Float64Array(nh).fill(293), alive = fe.hexAlive = new Uint8Array(nh).fill(1), hq = new Float64Array(12 * nh), hrho = new Float64Array(nh), hvol = fe.hexVol = new Float64Array(nh), sys = new Float64Array(nh); // sys: rate-free flow stress at the current plastic strain and temperature
@@ -102,6 +113,20 @@ export function createFE(opt = {}) {
       if (target > dt) { const s = (target / dt) ** 2; fe.addedMass += (s - 1) * rho * V; rho *= s; dt = target; }
       hrho[e] = rho; hvol[e] = V; Te[e] = m.T0; sys[e] = m.A; if (dt < dtE) dtE = dt;
       for (let I = 0; I < 8; I++) ms[hx[8 * e + I]] += (rho * V) / 8;
+    }
+    // shells: mass, rotary inertia and stable step. The rotary inertia is the larger of the physical t²/12 and A/8 per unit mass,
+    // so that the rotational modes do not control the step (the excess is reported in addedInertia).
+    const sn = fe.shellN = Int32Array.from(bld.shell), sm = Int32Array.from(bld.shM), sT = Float64Array.from(bld.shT), sQ = Int32Array.from(bld.shQ), sO = new Int32Array(ns + 1); for (let e = 0; e < ns; e++) sO[e + 1] = sO[e] + sQ[e];
+    const sSig = fe.shellSig = new Float64Array(3 * sO[ns]), sEp = fe.shellEp = new Float64Array(sO[ns]), sTe = fe.shellTemp = new Float64Array(sO[ns]), sYs = new Float64Array(sO[ns]), sDead = fe.shellPointFailed = new Uint8Array(sO[ns]), sAl = fe.shellAlive = new Uint8Array(ns).fill(1), sRes = new Float64Array(7 * ns), sA0 = fe.shellArea = new Float64Array(ns); // sRes: transverse shear resultants (2) and hourglass forces (5)
+    fe.shellPoints = sO;
+    for (let e = 0; e < ns; e++) {
+      const m = mats[sm[e]], t = sT[e], q = [0, 1, 2, 3].map((I) => 3 * sn[4 * e + I]), d = (a, b, k) => x[q[a] + k] - x[q[b] + k], side = (a, b) => Math.hypot(d(a, b, 0), d(a, b, 1), d(a, b, 2));
+      const A = 0.5 * Math.hypot(d(2, 0, 1) * d(3, 1, 2) - d(2, 0, 2) * d(3, 1, 1), d(2, 0, 2) * d(3, 1, 0) - d(2, 0, 0) * d(3, 1, 2), d(2, 0, 0) * d(3, 1, 1) - d(2, 0, 1) * d(3, 1, 0));
+      if (!(A > 0)) throw new Error('explicitfe: shell ' + e + ' has no area');
+      const dt = (cfl * A) / Math.max(side(1, 0), side(2, 1), side(3, 2), side(0, 3)) / Math.sqrt(m.E / (m.rho * (1 - m.nu * m.nu))), mn = (m.rho * t * A) / 4, al = Math.max((t * t) / 12, A / 8);
+      if (dt < dtE) dtE = dt; sA0[e] = A;
+      for (let I = 0; I < 4; I++) { ms[sn[4 * e + I]] += mn; In[sn[4 * e + I]] += mn * al; fe.addedInertia += mn * (al - (t * t) / 12); }
+      for (let p = sO[e]; p < sO[e + 1]; p++) { sTe[p] = m.T0; sYs[p] = m.A; }
     }
     // beams
     const bn = fe.beamN = Int32Array.from(bld.beam), sec = fe.sec = bld.sec, bE = new Float64Array(9 * nb), bL = fe.beamL = new Float64Array(nb), bd = new Float64Array(6 * nb), bF = fe.beamF = new Float64Array(6 * nb), bk = fe.beamKappa = new Float64Array(2 * nb), bep = fe.beamEps = new Float64Array(nb), bAl = fe.beamAlive = new Uint8Array(nb).fill(1), bEi = new Float64Array(nb), bT = fe.beamFailT = new Float64Array(nb).fill(NaN), bY = fe.beamYieldT = new Float64Array(nb).fill(NaN);
@@ -136,7 +161,7 @@ export function createFE(opt = {}) {
     if (opt.dtMax && dtE > opt.dtMax) dtE = opt.dtMax;
     if (!Number.isFinite(dtE)) dtE = opt.dtMax || 1e-4;
     fe.dt = dtE; fe.totalMass = 0; for (let i = 0; i < nn; i++) fe.totalMass += ms[i];
-    let dtPrev = dtE, dtHex = Infinity;
+    let dtPrev = dtE, dtHex = Infinity, dtShell = Infinity;
     const keRot = () => { let k = 0; for (let i = 0; i < In.length; i++) k += 0.5 * In[i] * (w[3 * i] ** 2 + w[3 * i + 1] ** 2 + w[3 * i + 2] ** 2); return k; };
     const keAll = () => { let k = 0; for (let i = 0; i < nn; i++) k += 0.5 * ms[i] * (v[3 * i] ** 2 + v[3 * i + 1] ** 2 + v[3 * i + 2] ** 2); for (const im of imps) if (Number.isFinite(im.mass)) k += 0.5 * im.mass * (im.v[0] ** 2 + im.v[1] ** 2 + im.v[2] ** 2); return k + keRot(); };
     E.initial = E.kinetic = E.peak = keAll();
@@ -213,7 +238,101 @@ export function createFE(opt = {}) {
       }
       dtHex = dtMin; E.internal += eInt; E.plastic += ePl;
     }
+    const sX = new Float64Array(4), sY = new Float64Array(4), sB1 = new Float64Array(4), sB2 = new Float64Array(4), sGm = new Float64Array(4), sV = new Float64Array(20), sI = new Int32Array(4), SH = [1, -1, 1, -1];
+    /**
+     * Shell forces. Velocity strains in the element's co-rotational frame (e3 normal to the two diagonals) at the single
+     * in-plane point: membrane d = B·v, curvature rates from the nodal rotation rates (κx = B1·θy, κy = −B2·θx,
+     * κxy = B2·θy − B1·θx) and transverse shear γxz = B1·vz + mean θy, γyz = B2·vz − mean θx. Plane-stress J2 plasticity is
+     * integrated at each thickness point; the transverse shear resultant is elastic (factor 5/6) up to the shear yield of the
+     * section. The five zero-energy modes of the one-point element carry a small elastic stabilisation.
+     */
+    function shellForces(dts) {
+      let dtMin = Infinity, eInt = 0, ePl = 0, eHg = 0;
+      for (let e = 0; e < ns; e++) {
+        if (!sAl[e]) continue;
+        const m = mats[sm[e]], t = sT[e], nq = sQ[e], e4 = 4 * e; for (let I = 0; I < 4; I++) sI[I] = 3 * sn[e4 + I];
+        const n1 = sI[0], n2 = sI[1], n3 = sI[2], n4 = sI[3], ax = x[n3] - x[n1], ay = x[n3 + 1] - x[n1 + 1], az = x[n3 + 2] - x[n1 + 2], bx = x[n4] - x[n2], by = x[n4 + 1] - x[n2 + 1], bz = x[n4 + 2] - x[n2 + 2];
+        let e3x = ay * bz - az * by, e3y = az * bx - ax * bz, e3z = ax * by - ay * bx; const n3l = Math.hypot(e3x, e3y, e3z), A = 0.5 * n3l;
+        if (!(A > 0.02 * sA0[e])) { sAl[e] = 0; fe.erodedShell++; continue; } // collapsed: erode
+        e3x /= n3l; e3y /= n3l; e3z /= n3l;
+        let e1x = x[n2] + x[n3] - x[n1] - x[n4], e1y = x[n2 + 1] + x[n3 + 1] - x[n1 + 1] - x[n4 + 1], e1z = x[n2 + 2] + x[n3 + 2] - x[n1 + 2] - x[n4 + 2]; const d3 = e1x * e3x + e1y * e3y + e1z * e3z; e1x -= d3 * e3x; e1y -= d3 * e3y; e1z -= d3 * e3z;
+        const n1l = Math.hypot(e1x, e1y, e1z); e1x /= n1l; e1y /= n1l; e1z /= n1l; const e2x = e3y * e1z - e3z * e1y, e2y = e3z * e1x - e3x * e1z, e2z = e3x * e1y - e3y * e1x;
+        for (let I = 0; I < 4; I++) {
+          const k = sI[I], px = x[k] - x[n1], py = x[k + 1] - x[n1 + 1], pz = x[k + 2] - x[n1 + 2], o = 5 * I; sX[I] = px * e1x + py * e1y + pz * e1z; sY[I] = px * e2x + py * e2y + pz * e2z;
+          sV[o] = v[k] * e1x + v[k + 1] * e1y + v[k + 2] * e1z; sV[o + 1] = v[k] * e2x + v[k + 1] * e2y + v[k + 2] * e2z; sV[o + 2] = v[k] * e3x + v[k + 1] * e3y + v[k + 2] * e3z;
+          sV[o + 3] = w[k] * e1x + w[k + 1] * e1y + w[k + 2] * e1z; sV[o + 4] = w[k] * e2x + w[k + 1] * e2y + w[k + 2] * e2z;
+        }
+        const i2A = 1 / (2 * A); sB1[0] = (sY[1] - sY[3]) * i2A; sB1[1] = (sY[2] - sY[0]) * i2A; sB1[2] = -sB1[0]; sB1[3] = -sB1[1]; sB2[0] = (sX[3] - sX[1]) * i2A; sB2[1] = (sX[0] - sX[2]) * i2A; sB2[2] = -sB2[0]; sB2[3] = -sB2[1];
+        const hx_ = sX[0] - sX[1] + sX[2] - sX[3], hy = sY[0] - sY[1] + sY[2] - sY[3];
+        let dxm = 0, dym = 0, gm = 0, kx = 0, ky = 0, kxy = 0, gxz = 0, gyz = 0, BB = 0, qmx = 0, qmy = 0, qw = 0, qbx = 0, qby = 0;
+        for (let I = 0; I < 4; I++) {
+          const o = 5 * I, b1 = sB1[I], b2 = sB2[I], vx = sV[o], vy = sV[o + 1], vz = sV[o + 2], tx = sV[o + 3], ty = sV[o + 4], g = SH[I] - hx_ * b1 - hy * b2; sGm[I] = g;
+          dxm += b1 * vx; dym += b2 * vy; gm += b2 * vx + b1 * vy; kx += b1 * ty; ky -= b2 * tx; kxy += b2 * ty - b1 * tx; gxz += b1 * vz + 0.25 * ty; gyz += b2 * vz - 0.25 * tx;
+          BB += b1 * b1 + b2 * b2; qmx += g * vx; qmy += g * vy; qw += g * vz; qbx += g * tx; qby += g * ty;
+        }
+        // through-thickness integration of the plane-stress response
+        const nu = m.nu, C1 = m.E / (1 - nu * nu), G = m.G, kp = m.E / (3 * (1 - nu)), kd = 2 * G, ht = 0.5 * t, gp = GQ[nq - 1], p0 = sO[e];
+        let Nx = 0, Ny = 0, Nxy = 0, Mx = 0, My = 0, Mxy = 0, live = 0, ysum = 0;
+        for (let p = 0; p < nq; p++) {
+          const ip = p0 + p; if (sDead[ip]) continue;
+          const z = ht * gp[0][p], wt = ht * gp[1][p], dx = dxm + z * kx, dy = dym + z * ky, gxy = gm + z * kxy, s3 = 3 * ip, ox = sSig[s3], oy = sSig[s3 + 1], oxy = sSig[s3 + 2];
+          let sx = ox + dts * C1 * (dx + nu * dy), sy = oy + dts * C1 * (dy + nu * dx), txy = oxy + dts * G * gxy;
+          const pm = 0.5 * (sx + sy), dm = 0.5 * (sx - sy), q2 = pm * pm + 3 * (dm * dm + txy * txy);
+          if (q2 > sYs[ip] * sYs[ip]) { // strain rate can only raise the flow stress above the cached rate-free value
+            const qe = Math.sqrt(q2), rate = Math.sqrt((2 / 3) * (dx * dx + dy * dy + (dx + dy) ** 2 + 0.5 * gxy * gxy)), e0 = sEp[ip], T = sTe[ip], sy0 = flowStress(m, e0, rate, T);
+            if (qe > sy0) {
+              // plane-stress radial return: the mean part p = (σx + σy)/2 and the deviatoric parts shrink by 1/(1 + λ·E/(3(1 − ν))) and
+              // 1/(1 + 2Gλ); the plastic multiplier λ follows from q(λ) = σy(εp + ⅔·λ·q(λ)), bracketed between 0 and the perfectly plastic bound
+              let lo = 0, glo = qe - sy0, hi = (qe / sy0 - 1) / Math.min(kp, kd), ghi = NaN, lam = hi, fp = 1, fd = 1, qn = qe, de = 0;
+              for (let k = 0; k < 40; k++) {
+                fp = 1 / (1 + lam * kp); fd = 1 / (1 + lam * kd); qn = Math.sqrt(pm * pm * fp * fp + 3 * (dm * dm + txy * txy) * fd * fd); de = (2 / 3) * lam * qn;
+                const g = qn - flowStress(m, e0 + de, rate, T); if (Math.abs(g) < 1e-10 * qe || (k === 0 && g > 0)) break;
+                if (g > 0) { lo = lam; glo = g; } else { hi = lam; ghi = g; }
+                lam = k % 3 === 2 ? 0.5 * (lo + hi) : lo + ((hi - lo) * glo) / (glo - ghi);
+              }
+              sx = pm * fp + dm * fd; sy = pm * fp - dm * fd; txy *= fd; sEp[ip] = e0 + de; ePl += A * wt * qn * de;
+              if (m.thermal) sTe[ip] = T + (m.beta * qn * de) / (m.rho * m.cp);
+              sYs[ip] = flowStress(m, sEp[ip], 0, sTe[ip]);
+              if (m.efail > 0 && sEp[ip] >= m.efail) { sDead[ip] = 1; sx = sy = txy = 0; }
+            }
+          }
+          sSig[s3] = sx; sSig[s3 + 1] = sy; sSig[s3 + 2] = txy;
+          eInt += dts * A * wt * (0.5 * ((ox + sx) * dx + (oy + sy) * dy) + 0.5 * (oxy + txy) * gxy);
+          if (sDead[ip]) continue;
+          live++; ysum += sYs[ip]; Nx += wt * sx; Ny += wt * sy; Nxy += wt * txy; Mx += wt * z * sx; My += wt * z * sy; Mxy += wt * z * txy;
+        }
+        if (!live) { sAl[e] = 0; fe.erodedShell++; continue; }
+        // transverse shear resultants and stabilisation forces, reduced with the failed share of the thickness
+        const r7 = 7 * e, fa = live / nq, kS = (5 / 6) * G * t * fa, oQx = sRes[r7], oQy = sRes[r7 + 1], qc = (fa * t * ysum) / (live * Math.sqrt(3));
+        let Qx = oQx + dts * kS * gxz, Qy = oQy + dts * kS * gyz; const qn = Math.hypot(Qx, Qy); if (qn > qc) { Qx *= qc / qn; Qy *= qc / qn; }
+        sRes[r7] = Qx; sRes[r7 + 1] = Qy; eInt += dts * A * 0.5 * ((oQx + Qx) * gxz + (oQy + Qy) * gyz);
+        const cm = (rSH * fa * m.E * t * A * BB) / 8, cw = (rSH * fa * (5 / 6) * G * t ** 3 * A * BB) / 12, cb = (rSH * fa * m.E * t ** 3 * A * BB) / 192;
+        const Hmx = sRes[r7 + 2] + dts * cm * qmx, Hmy = sRes[r7 + 3] + dts * cm * qmy, Hw = sRes[r7 + 4] + dts * cw * qw, Hbx = sRes[r7 + 5] + dts * cb * qbx, Hby = sRes[r7 + 6] + dts * cb * qby;
+        eHg += dts * 0.5 * ((sRes[r7 + 2] + Hmx) * qmx + (sRes[r7 + 3] + Hmy) * qmy + (sRes[r7 + 4] + Hw) * qw + (sRes[r7 + 5] + Hbx) * qbx + (sRes[r7 + 6] + Hby) * qby);
+        sRes[r7 + 2] = Hmx; sRes[r7 + 3] = Hmy; sRes[r7 + 4] = Hw; sRes[r7 + 5] = Hbx; sRes[r7 + 6] = Hby;
+        const s12 = Math.hypot(sX[1], sY[1]), s23 = Math.hypot(sX[2] - sX[1], sY[2] - sY[1]), s34 = Math.hypot(sX[3] - sX[2], sY[3] - sY[2]), s41 = Math.hypot(sX[3], sY[3]), dt = (cfl * A) / Math.max(s12, s23, s34, s41) / Math.sqrt(C1 / m.rho); if (dt < dtMin) dtMin = dt;
+        for (let I = 0; I < 4; I++) {
+          const k = sI[I], b1 = sB1[I], b2 = sB2[I], g = sGm[I];
+          const fx = A * (b1 * Nx + b2 * Nxy) + g * Hmx, fy = A * (b2 * Ny + b1 * Nxy) + g * Hmy, fz = A * (b1 * Qx + b2 * Qy) + g * Hw, mx = A * (-b2 * My - b1 * Mxy - 0.25 * Qy) + g * Hbx, my = A * (b1 * Mx + b2 * Mxy + 0.25 * Qx) + g * Hby;
+          f[k] -= fx * e1x + fy * e2x + fz * e3x; f[k + 1] -= fx * e1y + fy * e2y + fz * e3y; f[k + 2] -= fx * e1z + fy * e2z + fz * e3z;
+          mo[k] -= mx * e1x + my * e2x; mo[k + 1] -= mx * e1y + my * e2y; mo[k + 2] -= mx * e1z + my * e2z;
+        }
+      }
+      dtShell = dtMin; E.internal += eInt; E.plastic += ePl; E.hourglass += eHg;
+    }
     const dd = new Float64Array(6), Fo = new Float64Array(6), tA = new Float64Array(9), tB = new Float64Array(9);
+    const hp = new Float64Array(4); // plastic rotation increments of the two hinges: [end 1 about y, about z, end 2 about y, about z]
+    /**
+     * Radial return of one beam end onto its moment interaction surface |(My/Mpy, Mz/Mpz)| = allow, from the moments (ay, az)
+     * the end would carry without plastic rotation of its own. Stores that rotation in hp[q], hp[q + 1] and returns its
+     * work-equivalent magnitude (the plastic rotation itself in uniaxial bending).
+     */
+    function hinge(ay, az, s, ky, kz, allow, q) {
+      const ry = ay / s.Mpy, rz = az / s.Mpz, mm = Math.hypot(ry, rz);
+      if (!(mm > allow)) { hp[q] = hp[q + 1] = 0; return 0; }
+      const u = 1 - allow / mm; hp[q] = ry ? (u * ay) / (4 * ky) : 0; hp[q + 1] = rz ? (u * az) / (4 * kz) : 0;
+      return (hp[q] * ry + hp[q + 1] * rz) / mm;
+    }
     function beamForces(dts) {
       for (let e = 0; e < nb; e++) {
         if (!bAl[e]) continue;
@@ -238,17 +357,22 @@ export function createFE(opt = {}) {
         for (let k = 0; k < 6; k++) Fo[k] = bF[d6 + k];
         const EA = (s.E * s.A) / L0, GJ = (s.G * s.J) / L0, ky = (s.E * s.Iy) / L0, kz = (s.E * s.Iz) / L0;
         let Nf = Fo[0] + EA * dd[0], Tq = Fo[1] + GJ * dd[1], M1y = Fo[2] + ky * (4 * dd[2] + 2 * dd[4]), M2y = Fo[4] + ky * (2 * dd[2] + 4 * dd[4]), M1z = Fo[3] + kz * (4 * dd[3] + 2 * dd[5]), M2z = Fo[5] + kz * (2 * dd[3] + 4 * dd[5]);
-        // plastic resultants: axial squash load and a hinge at each end with axial-force interaction
-        if (s.Np < Infinity || s.Mpy < Infinity) {
+        // plastic resultants: axial squash load and a hinge at each end with axial-force interaction. A plastic rotation at one
+        // end relieves the other end through the carry-over term of the elastic element (M1 = 4k·θ1 + 2k·θ2), so the two radial
+        // returns are coupled; they are solved together by block Gauss–Seidel (contraction 1/4 per sweep).
+        if (s.Np < Infinity || s.Mpy < Infinity || s.Mpz < Infinity) {
           const NpH = s.Np;
           if (Math.abs(Nf) > NpH) { if (!(bY[e] >= 0)) bY[e] = fe.t; bep[e] += (Math.abs(Nf) - NpH) / (s.E * s.A); Nf = Math.sign(Nf) * NpH; }
-          const ax = Math.max(0.02, 1 - (Nf / NpH) ** 2);
-          for (let end = 0; end < 2; end++) {
-            const My = end ? M2y : M1y, Mz = end ? M2z : M1z, ry = My / s.Mpy, rz = Mz / s.Mpz, mm = Math.hypot(ry, rz), kp = bk[2 * e + end], allow = ax * (kp >= s.thetaSoft ? s.residual : Math.min(s.cap, 1 + s.hard * kp));
-            if (mm > allow) {
-              const sc = allow / mm; if (!(bY[e] >= 0)) bY[e] = fe.t; bk[2 * e + end] += ((mm - allow) * ((ry ? (ry * ry * s.Mpy) / (4 * ky) : 0) + (rz ? (rz * rz * s.Mpz) / (4 * kz) : 0))) / (mm * mm);
-              if (end) { M2y *= sc; M2z *= sc; } else { M1y *= sc; M1z *= sc; }
-            }
+          const ax = Math.max(0.02, 1 - (Nf / NpH) ** 2), k1 = bk[2 * e], k2 = bk[2 * e + 1], al1 = ax * (k1 >= s.thetaSoft ? s.residual : Math.min(s.cap, 1 + s.hard * k1)), al2 = ax * (k2 >= s.thetaSoft ? s.residual : Math.min(s.cap, 1 + s.hard * k2));
+          let g1 = 0, g2 = 0; hp[0] = hp[1] = hp[2] = hp[3] = 0;
+          for (let it = 0; it < 60; it++) {
+            const o0 = hp[0], o1 = hp[1], o2 = hp[2], o3 = hp[3];
+            g1 = hinge(M1y - 2 * ky * o2, M1z - 2 * kz * o3, s, ky, kz, al1, 0); g2 = hinge(M2y - 2 * ky * hp[0], M2z - 2 * kz * hp[1], s, ky, kz, al2, 2);
+            if (Math.abs(hp[0] - o0) + Math.abs(hp[1] - o1) + Math.abs(hp[2] - o2) + Math.abs(hp[3] - o3) <= 1e-14 * (Math.abs(hp[0]) + Math.abs(hp[1]) + Math.abs(hp[2]) + Math.abs(hp[3]))) break;
+          }
+          if (g1 > 0 || g2 > 0) {
+            if (!(bY[e] >= 0)) bY[e] = fe.t; bk[2 * e] += g1; bk[2 * e + 1] += g2;
+            M1y -= ky * (4 * hp[0] + 2 * hp[2]); M2y -= ky * (2 * hp[0] + 4 * hp[2]); M1z -= kz * (4 * hp[1] + 2 * hp[3]); M2z -= kz * (2 * hp[1] + 4 * hp[3]);
           }
         }
         bF[d6] = Nf; bF[d6 + 1] = Tq; bF[d6 + 2] = M1y; bF[d6 + 3] = M1z; bF[d6 + 4] = M2y; bF[d6 + 5] = M2z;
@@ -328,8 +452,8 @@ export function createFE(opt = {}) {
     fe.step = () => {
       const dts = fe.nStep ? dtPrev : 0; // the configuration x_n was reached with dtPrev and the half-step velocities v
       f.fill(0); fc.fill(0); if (nh) { fh.fill(0); fq.fill(0); } if (hasRot) { mo.fill(0); mc.fill(0); }
-      if (nh) hexForces(dts); if (nb) beamForces(dts); if (spr.length) springForces();
-      let dt = Math.min(fe.dt, dtHex); if (opt.dtMax && dt > opt.dtMax) dt = opt.dtMax; if (fe.nStep && dt > 1.05 * dtPrev) dt = 1.05 * dtPrev;
+      if (nh) hexForces(dts); if (ns) shellForces(dts); if (nb) beamForces(dts); if (spr.length) springForces();
+      let dt = Math.min(fe.dt, dtHex, dtShell); if (opt.dtMax && dt > opt.dtMax) dt = opt.dtMax; if (fe.nStep && dt > 1.05 * dtPrev) dt = 1.05 * dtPrev;
       contactForces(dt);
       const dta = fe.nStep ? 0.5 * (dt + dtPrev) : dt, al = fe.damping; let wExt = 0, wCon = 0, wDmp = 0, wHg = 0, wQ = 0, ke = 0;
       for (let i = 0; i < nn; i++) {
@@ -368,7 +492,7 @@ export function createFE(opt = {}) {
     /** Total linear momentum [3] of the nodes and free impactors. */
     fe.momentum = () => { const p = [0, 0, 0]; for (let i = 0; i < nn; i++) for (let k = 0; k < 3; k++) p[k] += ms[i] * v[3 * i + k]; for (const im of imps) if (Number.isFinite(im.mass)) for (let k = 0; k < 3; k++) p[k] += im.mass * im.v[k]; return p; };
     /** Evaluate internal nodal forces for the current state without advancing (dts = strain increment time). */
-    fe.internalForces = (dts = 0) => { f.fill(0); fh.fill(0); fq.fill(0); if (hasRot) mo.fill(0); if (nh) hexForces(dts); if (nb) beamForces(dts); if (spr.length) springForces(); for (let j = 0; j < f.length; j++) f[j] += fh[j] + fq[j]; return f; };
+    fe.internalForces = (dts = 0) => { f.fill(0); fh.fill(0); fq.fill(0); if (hasRot) mo.fill(0); if (nh) hexForces(dts); if (ns) shellForces(dts); if (nb) beamForces(dts); if (spr.length) springForces(); for (let j = 0; j < f.length; j++) f[j] += fh[j] + fq[j]; return f; };
     return fe;
   };
   return fe;
