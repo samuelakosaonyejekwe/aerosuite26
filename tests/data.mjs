@@ -2,6 +2,7 @@
 //  - the bundled airport and runway database (js/data/airports, read through js/core/airports.js);
 //  - the cloud snapshot file (data/snapshot.json) and the readers in tools/snapshot.mjs;
 //  - unit conversions shared by the app and the snapshot tool.
+// Licence and data-source compliance (registry, commercial mode, attribution) is checked by tests/licences.mjs.
 // With --browser it also opens the app in headless Chromium and checks that runways appear on the location
 // page with the OpenStreetMap servers blocked, and again with the network switched off after the first load.
 
@@ -79,7 +80,7 @@ ok(near(usdFromEur(85.07, 0.89397), 95.16, 0.005) && near(usdFromEur(1, 1), 1, 1
 const today = new Date().toISOString().slice(0, 10), old = new Date(Date.now() - 90 * 86400e3).toISOString().slice(0, 10);
 ok(fuelPrice({ usd_kg: 1.4, usd_gal: 4.26, date: today }, { brent_usd_bbl: 100, date: today }, 0.2).quoted === true, 'quoted jet fuel is preferred over the Brent estimate');
 ok(fuelPrice({ usd_kg: 1.4, usd_gal: 4.26, date: old }, { brent_usd_bbl: 100, date: today }, 0.2).quoted === false && fuelPrice(null, { brent_usd_bbl: 100, date: today }, 0.2).quoted === false && fuelPrice(null, null, 0.2) === null, 'Brent estimate is the fall-back when the quoted series is missing or old');
-ok(near(carbonPrice({ eur_t: 80, date: today, eur_per_usd: 0.9 }, { rates: { EUR: 0.8 }, date: today }).usd_t, 100, 1e-9) && near(carbonPrice({ eur_t: 81, date: today, eur_per_usd: 0.9 }, null).usd_t, 90, 1e-9) && carbonPrice({ eur_t: 80, date: old, eur_per_usd: 0.9 }, null) === null, 'carbon price uses the newest exchange rate and ignores old auctions');
+ok(/EUA/.test(carbonPrice({ eur_t: 80, date: today, eur_per_usd: 0.9 }, null).source) && near(carbonPrice({ eur_t: 80, date: today, eur_per_usd: 0.9 }, { rates: { EUR: 0.8 }, date: today }).usd_t, 100, 1e-9) && near(carbonPrice({ eur_t: 81, date: today, eur_per_usd: 0.9 }, null).usd_t, 90, 1e-9) && carbonPrice({ eur_t: 80, date: old, eur_per_usd: 0.9 }, null) === null, 'carbon price uses the newest exchange rate and ignores old auctions');
 
 // ---- snapshot readers ----------------------------------------------------------------------------
 section('Snapshot readers');
@@ -99,6 +100,7 @@ if (snap) {
   ok(JSON.stringify(Object.keys(snap.feeds)) === JSON.stringify(Object.keys(FEEDS)), 'snapshot holds exactly the feeds the tool defines');
   for (const [id, f] of Object.entries(snap.feeds)) {
     ok(typeof f.ok === 'boolean' && typeof f.source === 'string' && f.source.length > 5 && /^https:\/\//.test(f.url) && /^https:\/\//.test(f.home) && typeof f.terms === 'string', `${id}: ok flag, source name, address and terms`);
+    ok(Array.isArray(f.registry) && f.registry.length > 0 && f.registry.every((x) => typeof x === 'string') && !(f.urls || []).some((u) => /fred\.stlouisfed\.org/.test(u)), `${id}: licence-registry sources recorded; primary publisher, not FRED`);
     ok(f.ok ? f.data && Number.isFinite(f.ts) && Number.isFinite(Date.parse(f.fetched)) && !f.error : typeof f.error === 'string' && f.error.length > 0, `${id}: ${f.ok ? 'timestamp and data' : 'error text'}`);
     ok(!!CONNECTORS[id] && typeof CONNECTORS[id].key(id === 'macro' ? { country: 'WLD' } : {}) === 'string', `${id}: the app has a connector for it`);
   }
@@ -108,7 +110,11 @@ if (snap) {
   if (d('spaceweather')) ok(d('spaceweather').kp >= 0 && d('spaceweather').kp <= 9, 'space weather: Kp in range');
   if (d('macro')) ok(d('macro').country === 'World', 'macro: world aggregate');
   if (d('jetfuel')) ok(near(d('jetfuel').usd_kg, usdKgFromUsdGal(d('jetfuel').usd_gal), 1e-4) && d('jetfuel').density_kg_l === JET_DENSITY_KG_L && /Gulf Coast/.test(d('jetfuel').instrument) && d('jetfuel').history.length > 10, 'jet fuel: USD/kg is consistent with USD/gal and the stated density');
-  if (d('carbon')) ok(d('carbon').eur_t > 1 && d('carbon').eur_t < 1000 && near(d('carbon').usd_t, usdFromEur(d('carbon').eur_t, d('carbon').eur_per_usd), 0.006) && /EUA/.test(d('carbon').instrument) && /^\d{4}-\d{2}-\d{2}$/.test(d('carbon').date), 'carbon: USD/t is consistent with EUR/t and the stated exchange rate');
+  if (d('carbon')?.eur_t != null) ok(d('carbon').eur_t > 1 && d('carbon').eur_t < 1000 && near(d('carbon').usd_t, usdFromEur(d('carbon').eur_t, d('carbon').eur_per_usd), 0.006) && /EUA/.test(d('carbon').instrument) && /^\d{4}-\d{2}-\d{2}$/.test(d('carbon').date) && snap.feeds.carbon.registry.join() === 'eex-auction', 'carbon: USD/t is consistent with EUR/t and the stated exchange rate');
+  if (d('carbon') && snap.commercial) ok(d('carbon').currency === 'GBP' && d('carbon').price > 1 && d('carbon').price < 1000 && near(d('carbon').usd_t, usdFromEur(d('carbon').price, d('carbon').fx_per_usd), 0.006) && /UK Emissions Trading Scheme/.test(d('carbon').instrument) && snap.feeds.carbon.registry.join() === 'uk-ets-price' && !('eur_t' in d('carbon')), 'carbon (commercial snapshot): UK ETS determination in GBP, consistent USD value, no EEX data');
+  ok(typeof snap.commercial === 'boolean', 'snapshot records whether it was built for a commercial deployment');
+  if (d('jetfuel')) ok(d('jetfuel').via === 'EIA' && /^EIA /.test(d('jetfuel').series), 'jet fuel: read from the EIA, the primary publisher');
+  if (d('rates') && d('rates').us_fed_funds_pct != null) ok(/Federal Reserve/.test(d('rates').us_via), 'rates: US rate from the Federal Reserve Board or the New York Fed');
   if (d('rates')) ok([d('rates').us_fed_funds_pct, d('rates').ecb_deposit_pct].some((v) => Number.isFinite(v) && v > -2 && v < 30), 'rates: at least one policy rate');
   console.log(`  generated ${snap.generated}, ${Object.values(snap.feeds).filter((f) => f.ok).length}/${Object.keys(snap.feeds).length} feeds ok`);
 }

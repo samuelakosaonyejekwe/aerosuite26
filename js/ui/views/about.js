@@ -7,12 +7,13 @@ import { SUITES } from '../../core/registry.js';
 import { state } from '../../core/store.js';
 import { runJob, usingWorker } from '../../core/runner.js';
 import { CONNECTORS } from '../../core/live.js';
+import { licenceSection } from './livehub.js';
 
 export async function render(root, _p, { setCrumb }) {
   setCrumb('Install, offline & about');
   const host = h('div'); root.append(host);
   const ins = installState(), ua = navigator.userAgent, android = /android/i.test(ua), mac = /macintosh/i.test(ua) && !ins.ios, firefox = /firefox/i.test(ua), safari = /safari/i.test(ua) && !/chrome|chromium|edg|crios|fxios/i.test(ua);
-  const offHost = h('dl', { class: 'kv' }), mirHost = h('div', { class: 'stack' }), capHost = h('div', null, h('div', { class: 'row muted' }, h('i', { class: 'spin' }), 'Reading the 26 suites…'));
+  const licHost = h('div', { id: 'licences' }), offHost = h('dl', { class: 'kv' }), mirHost = h('div', { class: 'stack' }), capHost = h('div', null, h('div', { class: 'row muted' }, h('i', { class: 'spin' }), 'Reading the 26 suites…'));
 
   const steps = ins.standalone ? [h('div', { class: 'note ok' }, icon('check'), h('div', null, 'AeroSuite 26 is installed and running as an app on this device.'))]
     : ins.ios ? [h('ol', null, h('li', null, 'Open this page in ', h('b', null, 'Safari'), ' (on iOS 16.4 or later Chrome and Edge also work).'), h('li', null, 'Tap the ', h('b', null, 'Share'), ' button (the square with an upward arrow).'), h('li', null, 'Choose ', h('b', null, 'Add to Home Screen'), ', then ', h('b', null, 'Add'), '.'), h('li', null, 'Open AeroSuite 26 from the home screen. It now works in aeroplane mode.'))]
@@ -41,8 +42,11 @@ export async function render(root, _p, { setCrumb }) {
       card('Privacy, security and data sources', h('div', { class: 'stack small' },
         h('p', null, h('b', null, 'Your data stays with you. '), 'Cases, geometry, results and reports are stored only in this browser on this device. Nothing is uploaded. Imported files are parsed locally and treated as untrusted data.'),
         h('p', null, h('b', null, 'Locked down. '), 'A strict content-security policy allows scripts only from the app itself and connections only to the listed public data providers. There are no trackers, adverts, accounts or third-party scripts.'),
-        h('p', null, h('b', null, 'Live data providers: '), Object.values(CONNECTORS).map((c, i) => [i ? ' · ' : '', h('a', { href: c.home, target: '_blank', rel: 'noopener noreferrer' }, c.provider)])),
-        h('p', null, h('b', null, 'Shortcuts: '), h('span', { class: 'mono' }, 'Ctrl/⌘ K'), ' or ', h('span', { class: 'mono' }, '/'), ' search · ', h('span', { class: 'mono' }, 'Alt ←'), ' back · ', h('span', { class: 'mono' }, 'Alt →'), ' forward.')))));
+        h('p', null, h('b', null, 'Live data providers: '), Object.values(CONNECTORS).map((c, i) => [i ? ' · ' : '', h('a', { href: c.home, target: '_blank', rel: 'noopener noreferrer' }, c.provider)]), '. Terms, licences and required attributions are listed under “Data sources and licences” below.'),
+        h('p', null, h('b', null, 'Licence. '), 'AeroSuite 26 is proprietary software: Copyright © 2026 Samuel Akosa Onyejekwe. All rights reserved (', h('a', { href: 'LICENSE', target: '_blank', rel: 'noopener' }, 'LICENSE'), '). It includes third-party components under their own licences, among them the OpenCASCADE geometry kernel under the GNU LGPL 2.1 (', h('a', { href: 'THIRD_PARTY_NOTICES.md', target: '_blank', rel: 'noopener' }, 'THIRD_PARTY_NOTICES.md'), ').'),
+        h('p', null, h('b', null, 'Shortcuts: '), h('span', { class: 'mono' }, 'Ctrl/⌘ K'), ' or ', h('span', { class: 'mono' }, '/'), ' search · ', h('span', { class: 'mono' }, 'Alt ←'), ' back · ', h('span', { class: 'mono' }, 'Alt →'), ' forward.')))),
+    h('div', { class: 'gap' }), licHost);
+  licenceSection().then((el) => licHost.append(el)).catch(() => {});
 
   async function paintOffline() {
     const reg = await navigator.serviceWorker?.getRegistration().catch(() => null); let files = 0, bytes = null;

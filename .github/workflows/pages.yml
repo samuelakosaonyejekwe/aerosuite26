@@ -28,11 +28,13 @@ jobs:
           cache: npm
       - run: npm ci
       - if: ${{ inputs.run-tests }}
-        run: npm test
+        run: npm test && node tests/licences.mjs
         env:
           AERO_SLOW_MS: '30000' # shared runners are slower than a desktop; correctness checks are unaffected
       - id: pages
         uses: actions/configure-pages@v5
+      # tools/snapshot.mjs and tools/build.mjs read config.json: with "commercial": true the snapshot skips the sources a
+      # commercial deployment may not use and the build removes their hosts from the content-security policy.
       - name: Fetch the live-data snapshot (server-side, no keys)
         env:
           SNAPSHOT_PREV_URL: ${{ steps.pages.outputs.base_url }}/data/snapshot.json
@@ -41,7 +43,7 @@ jobs:
       - name: Assemble site
         run: |
           mkdir _site
-          cp -r index.html standalone.html manifest.webmanifest sw.js version.json mirrors.json _headers .nojekyll css js assets data _site/
+          cp -r index.html standalone.html manifest.webmanifest sw.js version.json mirrors.json config.json LICENSE THIRD_PARTY_NOTICES.md _headers .nojekyll css js assets data _site/
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site

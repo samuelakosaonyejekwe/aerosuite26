@@ -3,7 +3,7 @@ pages:
   stage: deploy
   script:
     - mkdir public
-    - cp -r index.html standalone.html manifest.webmanifest sw.js version.json mirrors.json css js assets data public/
+    - cp -r index.html standalone.html manifest.webmanifest sw.js version.json mirrors.json css js assets data LICENSE THIRD_PARTY_NOTICES.md config.json public/
   artifacts:
     paths: [public]
   rules:

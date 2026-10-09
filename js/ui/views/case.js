@@ -5,7 +5,7 @@ import { h, icon, clear, add, num, btn, badge, card, toast, pickFiles, downloadT
 import { state, setCase, patchCase, patchCaseMany, on, importProject, exportProject, setSetting } from '../../core/store.js';
 import { PRESETS, CASE_FIELDS, CASE_SECTIONS, derived, blankCase } from '../../core/case.js';
 import { METALS, PLIES, BATTERIES } from '../../data/materials.js';
-import { geocode, searchAirports, live, refreshSite, refreshGlobal } from '../../core/live.js';
+import { geocode, searchAirports, live, refreshSite, refreshGlobal, config, loadConfig, attributions, osmAvailable, placeSearchAvailable, CONNECTORS } from '../../core/live.js';
 import { isa } from '../../core/atmosphere.js';
 
 const OPTS = { METALS: Object.keys(METALS), PLIES: Object.keys(PLIES), BATTERIES: Object.keys(BATTERIES) };
@@ -78,7 +78,7 @@ export async function render(root, [focus], { setCrumb }) {
   let sr = null, qText = '', drawSearch = () => {}; // place/airport search on screen ({ text, airs, places, geoErr }) and the text being typed: both survive repaints
   function tabSite() {
     const s = state.case.site, results = h('div', { class: 'stack' }), fieldsHost = h('div', { class: 'stack' }), wxHost = h('div', { class: 'stack' });
-    const q = h('input', { class: 'inp', type: 'search', placeholder: 'City or place, airport name, ICAO or IATA code…', value: qText, oninput: (e) => { qText = e.target.value; }, 'aria-label': 'Search for a place', onkeydown: (e) => { if (e.key === 'Enter') search(); } });
+    const q = h('input', { class: 'inp', type: 'search', placeholder: placeSearchAvailable() ? 'City or place, airport name, ICAO or IATA code…' : 'Airport name, the town it serves, ICAO or IATA code…', value: qText, oninput: (e) => { qText = e.target.value; }, 'aria-label': 'Search for a place', onkeydown: (e) => { if (e.key === 'Enter') search(); } });
     const lat = h('input', { class: 'inp', type: 'number', step: 'any', value: s.lat ?? '', placeholder: 'Latitude', 'aria-label': 'Latitude' }), lon = h('input', { class: 'inp', type: 'number', step: 'any', value: s.lon ?? '', placeholder: 'Longitude', 'aria-label': 'Longitude' });
     const choose = async (p) => {
       patchCaseMany('site', { name: p.name + (p.admin ? `, ${p.admin}` : ''), lat: p.lat, lon: p.lon, elev_m: p.elev_m ?? s.elev_m, country: p.country || '' });
@@ -93,7 +93,8 @@ export async function render(root, [focus], { setCrumb }) {
     const draw = () => {
       clear(results); if (!sr) return;
       const a = sr.airs || [], pl = sr.places || [], list = /^[A-Za-z0-9]{3,4}$/.test(sr.text) && a.length ? [...a, ...pl] : [...pl, ...a];
-      if (sr.geoErr) results.append(h('div', { class: 'note warn' }, icon('info'), h('div', null, navigator.onLine === false ? `You are offline, so place names cannot be looked up. ${a.length ? 'Airports are found from the database stored in the app.' : 'Search by airport name or ICAO/IATA code, or enter latitude and longitude.'}` : `Place search failed: ${sr.geoErr.message || 'no reply'}${a.length ? '. Airports below come from the database stored in the app.' : ''}`)));
+      if (sr.geoErr?.policy) results.append(h('div', { class: 'note' }, icon('info'), h('div', null, `${sr.geoErr.message}.${a.length ? ' Airports below come from the database stored in the app.' : ''}`)));
+      else if (sr.geoErr) results.append(h('div', { class: 'note warn' }, icon('info'), h('div', null, navigator.onLine === false ? `You are offline, so place names cannot be looked up. ${a.length ? 'Airports are found from the database stored in the app.' : 'Search by airport name or ICAO/IATA code, or enter latitude and longitude.'}` : `Place search failed: ${sr.geoErr.message || 'no reply'}${a.length ? '. Airports below come from the database stored in the app.' : ''}`)));
       else if (sr.airs && sr.places && !list.length) results.append(h('p', { class: 'muted' }, 'No place or airport found. Try another spelling, an ICAO/IATA code, or enter coordinates.'));
       add(results, list.map((p) => h('button', { class: `btn ${p.airport ? 'hit-airport' : 'hit-place'}`, style: { justifyContent: 'flex-start' }, onclick: () => choose(p) }, icon(p.airport ? 'jet' : 'pin', 16), h('span', null, h('b', null, p.name), ` — ${p.admin}${p.airport ? ` · ${p.kind}${p.longest_m ? `, longest runway ${num(p.longest_m)} m` : ''}` : ''} · ${num(p.lat, 5)}°, ${num(p.lon, 5)}°${p.elev_m != null ? ` · ${num(p.elev_m)} m` : ''}`))));
       if (!sr.airs || !sr.places) results.append(h('div', { class: 'row muted' }, h('i', { class: 'spin' }), sr.places ? 'Searching airports…' : 'Searching places…'));
@@ -105,7 +106,7 @@ export async function render(root, [focus], { setCrumb }) {
       const cur = (sr = { text, airs: null, places: null, geoErr: null }), upd = () => { if (sr === cur) drawSearch(); };
       upd();
       searchAirports(text).catch(() => []).then((a) => { cur.airs = a; upd(); });
-      geocode(text).then((p) => { cur.places = p; }, (e) => { cur.geoErr = e; cur.places = []; }).then(upd);
+      loadConfig().then(() => geocode(text)).then((p) => { cur.places = p; }, (e) => { cur.geoErr = e; cur.places = []; }).then(upd);
     };
     const mine = () => { if (!navigator.geolocation) { toast('This device does not offer location.', 'bad'); return; } navigator.geolocation.getCurrentPosition((pos) => choose({ name: 'My location', admin: '', lat: pos.coords.latitude, lon: pos.coords.longitude, elev_m: pos.coords.altitude ?? null }), () => toast('Location permission was not granted.', 'bad'), { timeout: 15000 }); };
     const manual = () => { const a = Number(lat.value), b = Number(lon.value); if (!(Math.abs(a) <= 90) || !(Math.abs(b) <= 180) || lat.value === '' || lon.value === '') { toast('Enter a latitude between −90 and 90 and a longitude between −180 and 180.', 'bad'); return; } choose({ name: `${a.toFixed(4)}°, ${b.toFixed(4)}°`, admin: '', lat: a, lon: b, elev_m: null }); };
@@ -126,6 +127,10 @@ export async function render(root, [focus], { setCrumb }) {
           h('label', { class: 'switch' }, h('input', { type: 'checkbox', checked: state.settings.autoApplyLive, onchange: (e) => setSetting('autoApplyLive', e.target.checked) }), 'Write live values into the case automatically'))),
       h('div', { class: 'stack' }, windRose(s),
         rel == null ? h('p', { class: 'muted small' }, 'Pick a runway below to see head- and crosswind components.') : h('div', { class: 'kpis' }, h('div', { class: 'kpi' }, h('span', { class: 'l' }, 'Headwind on the into-wind runway end'), h('div', { class: 'v' }, num(best, 3), h('small', null, 'm/s'))), h('div', { class: `kpi ${Math.abs(xw) > 10 ? 'warn' : 'ok'}` }, h('span', { class: 'l' }, 'Crosswind component'), h('div', { class: 'v' }, num(Math.abs(xw), 3), h('small', null, 'm/s')))))));
+    // what the weather provider could not supply, and the attribution its licence asks for, next to the data
+    if (s.wx_note && s.lat != null) wxHost.append(h('div', { class: 'note wx-note' }, icon('info'), h('div', null, s.wx_note)));
+    const credit = h('p', { class: 'muted small attribution' }); wxHost.append(credit);
+    loadConfig().then(async () => { if (!config.attribution || s.lat == null) return; const used = { 'open-meteo': CONNECTORS.weather.reg().filter((x) => /^open-meteo/.test(x)), 'met-norway': ['met-norway'], nws: ['nws'] }[s.wx_provider] || [], a = await attributions([...used, ...CONNECTORS.climate.reg(), 'noaa-swpc']); if (a.length) add(credit, ['Data: ', ...a.map((x, i) => [i ? ' · ' : '', x.url ? h('a', { href: x.url, target: '_blank', rel: 'noopener noreferrer' }, x.text) : x.text])]); });
     if (s.winds_aloft?.length) wxHost.append(h('details', null, h('summary', { class: 'small', style: { cursor: 'pointer' } }, 'Winds and temperatures aloft'), h('div', { class: 'table-wrap', style: { marginTop: '8px' } }, h('table', { class: 'data' }, h('thead', null, h('tr', null, ['Pressure [hPa]', 'Height [m]', 'Temperature [°C]', 'ISA deviation [K]', 'Wind [m/s]', 'From [°]'].map((x) => h('th', { class: 'num' }, x)))), h('tbody', null, s.winds_aloft.map((a) => h('tr', null, [a.hPa, a.alt_m, a.T_C, a.T_C + 273.15 - isa(a.alt_m).T, a.speed_ms, a.dir_deg].map((v) => h('td', { class: 'num' }, num(v, 4))))))))));
 
     const applyRunway = (f, rw) => {
@@ -137,14 +142,15 @@ export async function render(root, [focus], { setCrumb }) {
     const loadFields = async (force, osm = false) => {
       if (s.lat == null) return; clear(fieldsHost); fieldsHost.append(h('div', { class: 'row muted' }, h('i', { class: 'spin' }), osm ? 'Asking OpenStreetMap for additional detail…' : 'Looking up aerodromes within 40 km…'));
       const r = await live('aerodromes', { lat: s.lat, lon: s.lon, ...(osm ? { osm: true } : {}) }, { force: force || osm }); clear(fieldsHost);
-      const osmBtn = btn('Add detail from OpenStreetMap', () => loadFields(true, true), { ic: 'globe', kind: 'sm ghost', title: 'Optional: asks the public OpenStreetMap servers for heliports, small strips and missing runway details near this place' });
+      const osmBtn = osmAvailable() ? btn('Add detail from OpenStreetMap', () => loadFields(true, true), { ic: 'globe', kind: 'sm ghost', title: 'Optional: asks an OpenStreetMap query server for heliports, small strips and missing runway details near this place' }) : null; // commercial deployments: only with the operator's own server
       if (!r.data) { fieldsHost.append(h('div', { class: 'note warn' }, icon('info'), h('div', null, `Aerodrome data is unavailable (${r.error}). Enter runway length, heading and surface in the fields below.`))); return; }
       if (osm && r.data.osm_error) fieldsHost.append(h('div', { class: 'note warn' }, icon('info'), h('div', null, `OpenStreetMap did not answer (${r.data.osm_error}). Showing the airport database stored in the app.`)));
-      if (!r.data.fields.length) { fieldsHost.append(h('p', { class: 'muted' }, 'No aerodrome within 40 km in the airport database stored in the app. Small private strips and most heliports are not in it: try OpenStreetMap, or enter the runway or landing-site data by hand below.'), h('div', { class: 'row' }, osmBtn)); return; }
+      if (!r.data.fields.length) { fieldsHost.append(h('p', { class: 'muted' }, `No aerodrome within 40 km in the airport database stored in the app. Small private strips and most heliports are not in it: ${osmBtn ? 'try OpenStreetMap, or ' : ''}enter the runway or landing-site data by hand below.`)); if (osmBtn) fieldsHost.append(h('div', { class: 'row' }, osmBtn)); return; }
       add(fieldsHost, r.data.fields.slice(0, 8).map((f) => h('div', { class: 'stack aerodrome', style: { gap: '4px' } }, h('div', null, h('b', null, f.name), ' ', f.icao ? badge(f.icao, 'accent') : null, f.iata ? badge(f.iata) : null, h('span', { class: 'muted small' }, ` · ${f.kind ? `${f.kind} · ` : ''}${num(f.dist_km, 3)} km away${f.ele_m != null ? ` · ${num(f.ele_m)} m` : ''}${f.closed_runways ? ` · ${f.closed_runways} closed runway${f.closed_runways > 1 ? 's' : ''} not shown` : ''}`)),
         f.runways.length ? h('div', { class: 'row' }, f.runways.slice(0, 6).map((rw) => btn(`${rw.ref || 'Runway'} · ${num(rw.len_m)} m${rw.width_m ? ` × ${num(rw.width_m)} m` : ''} · ${rw.surface}`, () => applyRunway(f, rw), { kind: 'sm runway', ic: 'check', title: runwayTip(rw) || null }))) : h('span', { class: 'muted small' }, 'No runway data for this field.'))));
-      fieldsHost.append(h('div', { class: 'row' }, osmBtn),
-        h('p', { class: 'muted small' }, `Airports and runways: OurAirports (public domain)${r.data.dataset_date ? `, data of ${r.data.dataset_date}` : ''}, stored in the app and available offline.${r.data.osm ? ' Additional detail © OpenStreetMap contributors (ODbL).' : ''} Community-maintained data: confirm declared distances in the official aeronautical publication before operational use.`));
+      if (osmBtn) fieldsHost.append(h('div', { class: 'row' }, osmBtn));
+      fieldsHost.append(
+        h('p', { class: 'muted small attribution' }, `Airports and runways: OurAirports (public domain)${r.data.dataset_date ? `, data of ${r.data.dataset_date}` : ''}, stored in the app and available offline.`, r.data.osm ? [' Additional detail ', h('a', { href: 'https://www.openstreetmap.org/copyright', target: '_blank', rel: 'noopener noreferrer' }, '© OpenStreetMap contributors'), ', available under the Open Database License.'] : null, ` Community-maintained data: confirm declared distances in the official aeronautical publication before operational use.`));
     };
     const siteField = (key, label, unit, help) => { const id = `s-${key}`; return h('div', { class: 'field' }, h('label', { for: id }, label, unit ? h('span', { class: 'u' }, `[${unit}]`) : null), h('input', { class: 'inp', id, type: 'number', step: 'any', value: state.case.site[key] ?? '', onchange: (e) => { const n = Number(e.target.value); if (Number.isFinite(n)) patchCase('site', key, n); } }), help ? h('div', { class: 'help' }, help) : null); };
     body.append(h('div', { class: 'stack' },

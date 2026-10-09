@@ -201,7 +201,7 @@
    "usedInCommercial": true, "replacement": null, "hosts": ["www.federalreserve.gov"]
   },
   {
-   "id": "nyfed-markets", "kind": "api", "name": "Federal Reserve Bank of New York — Markets Data API (EFFR)",
+   "id": "nyfed-markets", "kind": "web-data", "name": "Federal Reserve Bank of New York — Markets Data API (EFFR)",
    "usedFor": "Fall-back for the effective federal funds rate when the Board's download does not answer (snapshot job).",
    "licence": "New York Fed Terms of Use",
    "url": "https://www.newyorkfed.org/privacy/termsofuse.html",
@@ -279,6 +279,17 @@
    "obligations": ["No explicit grant was found for embedding unauthenticated search results in a commercial product; the listed permitted uses of information from the Service are research and archiving"],
    "attribution": "Repository listing: GitHub", "attributionUrl": "https://github.com",
    "usedInCommercial": false, "replacement": "In commercial mode the suite page shows a plain link that opens the search on github.com; no API request is made", "hosts": ["api.github.com"]
+  },
+  {
+   "id": "github-user-bridge", "kind": "user-service", "name": "GitHub REST API with the user's own token (solver bridge)",
+   "usedFor": "The optional solver bridge (js/core/bridge): a user who enters a personal access token can start and read solver runs in their own GitHub repository. Not a data source of the product; nothing is fetched unless the user supplies a token.",
+   "licence": "The user's own agreement with GitHub (Terms of Service, section H API Terms)",
+   "url": "https://docs.github.com/en/site-policy/github-terms/github-terms-of-service",
+   "quote": "Abuse or excessively frequent requests to GitHub via the API may result in the temporary or permanent suspension of your Account's access to the API.",
+   "retrieved": "2026-10-09", "class": "commercial-with-key",
+   "obligations": ["Each user acts under their own GitHub account and token; the token is sent only to api.github.com", "Whether a commercial product may offer this client function is governed by GitHub's terms: legal review advised"],
+   "attribution": null, "usedInCommercial": "only with the user's own token", "needsLegalDecision": true, "replacement": null,
+   "hosts": ["api.github.com"]
   },
   {
    "id": "icao-edb", "kind": "bundled-dataset", "name": "ICAO Aircraft Engine Emissions Databank, as published by EASA (issue 32)",
@@ -372,13 +383,13 @@
   {
    "id": "esbuild", "name": "esbuild", "version": "0.28.x", "licence": "MIT",
    "files": [], "licenceFile": "node_modules/esbuild/LICENSE.md", "source": "https://github.com/evanw/esbuild", "shipped": false,
-   "url": "node_modules/esbuild/LICENSE.md", "quote": "MIT", "retrieved": "2026-10-09", "class": "commercial-ok",
+   "url": "node_modules/esbuild/LICENSE.md", "quote": "MIT License", "retrieved": "2026-10-09", "class": "commercial-ok",
    "modifications": "None.", "obligations": ["Development tool only (builds standalone.html); not distributed with the site, so no notice is required in the product"]
   },
   {
    "id": "playwright-core", "name": "playwright-core", "version": "1.49.1", "licence": "Apache-2.0",
    "files": [], "licenceFile": "node_modules/playwright-core/LICENSE", "source": "https://github.com/microsoft/playwright", "shipped": false,
-   "url": "node_modules/playwright-core/LICENSE", "quote": "Apache-2.0", "retrieved": "2026-10-09", "class": "commercial-ok",
+   "url": "node_modules/playwright-core/LICENSE", "quote": "Apache License Version 2.0, January 2004", "retrieved": "2026-10-09", "class": "commercial-ok",
    "modifications": "None.", "obligations": ["Development tool only (UI tests); not distributed with the site"]
   }
  ]

@@ -1,0 +1,36 @@
+AeroSuite 26
+
+Copyright (c) 2026 Samuel Akosa Onyejekwe. All rights reserved.
+
+This software — the application code, user interface, documentation, engineering
+specification and original data compilations of AeroSuite 26 — is proprietary. It is
+not open-source software, and no licence to it is granted by making it available or
+by publishing its source files. Unless you hold a written licence agreement from the
+copyright holder, you may not copy, modify, merge, publish, distribute, sublicense,
+sell, host for others, or create derivative works of the software, in whole or in
+part. Use of a deployed copy is permitted only on the terms under which that copy
+was made available to you by the copyright holder or an authorised licensee. Rights
+that the applicable law grants and that cannot be excluded by contract are not
+affected.
+
+THIRD-PARTY COMPONENTS AND DATA
+
+The software is distributed together with third-party software components and
+datasets that are not covered by the paragraph above. Each remains under its own
+licence, as listed in THIRD_PARTY_NOTICES.md and in js/data/licences.json, and
+nothing in this file restricts the rights those licences give you in those
+components.
+
+In particular, the OpenCASCADE geometry kernel (js/vendor/occt/, occt-import-js and
+Open CASCADE Technology) is licensed under the GNU Lesser General Public License,
+version 2.1. You may replace or modify that library and use the modified version
+with this software for your own purposes, and you may reverse-engineer this software
+to the extent needed to debug such modifications, as section 6 of that licence
+provides. THIRD_PARTY_NOTICES.md explains how.
+
+NO WARRANTY
+
+To the extent permitted by law, the software is provided "as is", without warranty
+of any kind, express or implied, including fitness for a particular purpose and
+non-infringement. Nothing produced by the software is, on its own, airworthiness
+evidence.

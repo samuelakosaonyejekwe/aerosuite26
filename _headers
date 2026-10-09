@@ -17,3 +17,5 @@
 /data/snapshot.json
   Cache-Control: no-cache
   Access-Control-Allow-Origin: *
+/config.json
+  Cache-Control: no-cache

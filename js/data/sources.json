@@ -1752,8 +1752,7 @@
     "org": "sengpielaudio.com (E. Sengpiel)",
     "year": null,
     "url": "https://sengpielaudio.com/AirdampingFormula.htm",
-    "locator": "Formula block under \"ISO 9613-1:1993\"",
-    "quote": "frO = (pa / pr) · (24 + 4.04 · 10 4 · h · ((0.02 + h) / (0.391 + h)))"
+    "locator": "Formula block under \"ISO 9613-1:1993\""
    },
    "grade": "secondary",
    "retrieved": "2026-10-09",
@@ -1786,8 +1785,7 @@
     "org": "Wikipedia",
     "year": 2026,
     "url": "https://en.wikipedia.org/wiki/A-weighting",
-    "locator": "Section \"Function realisation of some common weightings\"",
-    "quote": "&\\approx 20\\log _{10}\\left(R_{A}(f)\\right)+2.00"
+    "locator": "Section \"Function realisation of some common weightings\""
    },
    "grade": "secondary",
    "retrieved": "2026-10-09",
@@ -1886,8 +1884,7 @@
     "org": "Crocetti, Costante, Fravolini, Valigi (arXiv 2211.10336; IEEE MED 2021)",
     "year": 2021,
     "url": "https://arxiv.org/pdf/2211.10336",
-    "locator": "Section II, after eq. (4)",
-    "quote": "consider, are Asphalt dry (β1 = 1.2801, β2 = 23.99, β3 ="
+    "locator": "Section II, after eq. (4)"
    },
    "grade": "secondary",
    "retrieved": "2026-10-09",
@@ -2004,8 +2001,7 @@
     "org": "Latin American Journal of Solids and Structures 17(6) e298 (Aslam et al.)",
     "year": 2020,
     "url": "https://www.scielo.br/j/lajss/a/kRfPCdLbv5s8CBZgnzpB69L/?format=pdf&lang=en",
-    "locator": "Section 1.3 Constitutive models of bird material",
-    "quote": "density of water ranges from 900 kg/m3 to 950 kg/m3. Besides, in experimental tests, ballistic gelatin is regularly used as"
+    "locator": "Section 1.3 Constitutive models of bird material"
    },
    "grade": "secondary",
    "retrieved": "2026-10-09",
@@ -2074,8 +2070,7 @@
     "org": "RAND Corporation",
     "year": 1987,
     "url": "https://www.rand.org/content/dam/rand/pubs/reports/2006/R3255.pdf",
-    "locator": "Table 15 \"Set of airframe CERs based on sample of 13 post-1960 aircraft\", report p. 45 (PDF p. 63); units from Acronyms p. xiii (PDF p. 15)",
-    "quote": "ENGR100 = .0103 EW^.777 SP^.894"
+    "locator": "Table 15 \"Set of airframe CERs based on sample of 13 post-1960 aircraft\", report p. 45 (PDF p. 63); units from Acronyms p. xiii (PDF p. 15)"
    },
    "grade": "primary-report",
    "retrieved": "2026-10-09",
@@ -2125,8 +2120,7 @@
     "org": "RAND Corporation",
     "year": 1987,
     "url": "https://www.rand.org/content/dam/rand/pubs/reports/2006/R3255.pdf",
-    "locator": "Appendix D, Table D.1 \"Cumulative total cost-quantity slopes\", report p. 88 (PDF p. 106)",
-    "quote": "Based on first 200 units; cumulative average slope = cumulative total slope divided by two."
+    "locator": "Appendix D, Table D.1 \"Cumulative total cost-quantity slopes\", report p. 88 (PDF p. 106)"
    },
    "grade": "primary-report",
    "retrieved": "2026-10-09",
@@ -2217,8 +2211,7 @@
     "org": "Wikipedia",
     "year": 2026,
     "url": "https://en.wikipedia.org/wiki/Ice?action=raw",
-    "locator": "Section \"Physical properties\"",
-    "quote": "The [[density]] of ice is 0.9167"
+    "locator": "Section \"Physical properties\""
    },
    "grade": "secondary",
    "retrieved": "2026-10-09",
@@ -2238,8 +2231,7 @@
     "org": "Wikipedia",
     "year": 2026,
     "url": "https://en.wikipedia.org/wiki/Enthalpy_of_fusion?action=raw",
-    "locator": "Lead section",
-    "quote": "333.55 kJ of energy is absorbed with no [[temperature]] change"
+    "locator": "Lead section"
    },
    "grade": "secondary",
    "retrieved": "2026-10-09",
@@ -3304,8 +3296,7 @@
     "org": "Hexcel",
     "year": null,
     "url": "https://hexcel.com/wp-content/uploads/2026/01/HexPly_8552_us_DataSheet.pdf",
-    "locator": "Mechanical properties table, columns AS4 / IM7 (PDF p. 3)",
-    "quote": "0° Tensile strength, ksi 77 Dry 310 395 120 127 158 147 251"
+    "locator": "Mechanical properties table, columns AS4 / IM7 (PDF p. 3)"
    },
    "grade": "handbook",
    "retrieved": "2026-10-09",
@@ -3352,8 +3343,7 @@
     "org": "lsdyna-online.com",
     "year": 2019,
     "url": "https://lsdyna-online.com/wp-content/uploads/2019/08/c2.pdf",
-    "locator": "row 5",
-    "quote": "5 Carbon T300 / Epoxy 5208 181 10.3 7.17 1448 1448 44.8 248 62.1 1500 1500 40 246 68"
+    "locator": "row 5"
    },
    "grade": "secondary",
    "retrieved": "2026-10-09",
@@ -3392,8 +3382,7 @@
     "org": "lsdyna-online.com",
     "year": 2019,
     "url": "https://lsdyna-online.com/wp-content/uploads/2019/08/c2.pdf",
-    "locator": "row 1",
-    "quote": "Carbon AS4 /Epoxy 3501-6 126 11 6.6 1950 1480 48 200 79"
+    "locator": "row 1"
    },
    "grade": "secondary",
    "retrieved": "2026-10-09",
@@ -3414,8 +3403,7 @@
     "org": "Petro Star Inc.",
     "year": 2023,
     "url": "https://petrostar.com/wp-content/uploads/2025/03/2023-jeta.pdf",
-    "locator": "COMBUSTION block",
-    "quote": "Net Heat of Combustion MJ/kg min 42.8 D3338"
+    "locator": "COMBUSTION block"
    },
    "grade": "secondary",
    "retrieved": "2026-10-09",
@@ -3439,8 +3427,7 @@
     "org": "Petro Star Inc.",
     "year": 2023,
     "url": "https://petrostar.com/wp-content/uploads/2025/03/2023-jeta.pdf",
-    "locator": "Density at 15C row",
-    "quote": "775 - 840 D4052"
+    "locator": "Density at 15C row"
    },
    "grade": "secondary",
    "retrieved": "2026-10-09",
@@ -3461,8 +3448,7 @@
     "org": "UK Government (implementing ICAO Annex 16 Vol IV / CORSIA)",
     "year": 2021,
     "url": "https://www.legislation.gov.uk/uksi/2021/534/article/28/data.htm",
-    "locator": "article 28(5)",
-    "quote": "3.16 (in kg CO 2 /kg fuel) for Jet-A fuel,"
+    "locator": "article 28(5)"
    },
    "grade": "regulation",
    "retrieved": "2026-10-09",
@@ -3765,8 +3751,7 @@
     "org": "EUROCONTROL",
     "year": 2024,
     "url": "https://www.eurocontrol.int/sites/default/files/2024-05/eurocontrol-standard-inputs-economic-analyses-ed-10.pdf",
-    "locator": "Table 3: Average jet fuel price in 2022 (p. 11)",
-    "quote": "The cost of fuel used in this document is based on the 2022 average jet fuel price provided by IATA,3 unless otherwise specified."
+    "locator": "Table 3: Average jet fuel price in 2022 (p. 11)"
    },
    "grade": "handbook",
    "retrieved": "2026-10-09",
@@ -3818,8 +3803,7 @@
     "org": "International Carbon Action Partnership (ICAP)",
     "year": 2026,
     "url": "https://icapcarbonaction.com/en/ets/eu-emissions-trading-system-eu-ets",
-    "locator": "Factsheet header block 'Average auction price (2025)' / 'Average secondary market price (2025)'",
-    "quote": "EUR 73.43 (USD 82.97) (average 2025 auction price)"
+    "locator": "Factsheet header block 'Average auction price (2025)' / 'Average secondary market price (2025)'"
    },
    "grade": "primary-report",
    "retrieved": "2026-10-09",
@@ -3845,8 +3829,7 @@
     "org": "EASA",
     "year": 2025,
     "url": "https://www.easa.europa.eu/en/downloads/141675/en",
-    "locator": "Table 1: 2024 average prices per RFEUA aviation fuels category; summary list (i)-(iv)",
-    "quote": "Aviation biofuels 2,085 1,4617"
+    "locator": "Table 1: 2024 average prices per RFEUA aviation fuels category; summary list (i)-(iv)"
    },
    "grade": "handbook",
    "retrieved": "2026-10-09",
@@ -3866,8 +3849,7 @@
     "org": "EUROCONTROL Central Route Charges Office",
     "year": 2026,
     "url": "https://www.eurocontrol.int/sites/default/files/2026-04/eurocontrol-customer-guide-to-charges.pdf",
-    "locator": "Section on en-route charges: 'Aircraft weight factor' and 'Distance factor'",
-    "quote": "The weight factor is determined by dividing, by fifty (50), the certificated Maximum Take-Off Weight (MTOW) of the aircraft (in metric tonnes, taken to one decimal) and subsequently taking the square root"
+    "locator": "Section on en-route charges: 'Aircraft weight factor' and 'Distance factor'"
    },
    "grade": "regulation",
    "retrieved": "2026-10-09",
@@ -3887,8 +3869,7 @@
     "org": "Port Authority of New York and New Jersey",
     "year": 2026,
     "url": "https://www.panynj.gov/content/dam/airports/pdfs/Aviation%20Public%20Notice%20Revision%20to%20Schedule%20of%20Rates%20Charges%20Effective%20January%201,%202026.pdf",
-    "locator": "JFK table, row 'Public Landing Area Charges'",
-    "quote": "Public Landing Area Charges (per one thousand pounds of maximum take-off weight) $8.16 $8.47"
+    "locator": "JFK table, row 'Public Landing Area Charges'"
    },
    "grade": "handbook",
    "retrieved": "2026-10-09",
@@ -3956,8 +3937,7 @@
     "org": "Airbus",
     "year": 2018,
     "url": "https://web.archive.org/web/20200117222546/https://www.airbus.com/newsroom/press-releases/en/2018/01/airbus-2018-price-list-press-release.html",
-    "locator": "Table 'AIRBUS AIRCRAFT | 2018 AVERAGE LIST PRICES* (USD millions)'",
-    "quote": "Airbus has increased the average list prices of its aircraft by two percent across the product line, effective from January 1 st 2018."
+    "locator": "Table 'AIRBUS AIRCRAFT | 2018 AVERAGE LIST PRICES* (USD millions)'"
    },
    "grade": "primary-report",
    "retrieved": "2026-10-09",
@@ -3981,8 +3961,7 @@
     "org": "InterVISTAS Consulting Inc. (prepared for IATA)",
     "year": 2007,
     "url": "https://www.iata.org/en/iata-repository/publications/economic-reports/estimating-air-travel-demand-elasticities---by-intervistas/",
-    "locator": "Executive Summary, 'Base Elasticities' (p. ii-iii)",
-    "quote": "produced fare elasticities in the region of -1.4, which has been used as the base elasticity at the route level."
+    "locator": "Executive Summary, 'Base Elasticities' (p. ii-iii)"
    },
    "grade": "primary-report",
    "retrieved": "2026-10-09",
@@ -4006,8 +3985,7 @@
     "org": "IATA (Mark Smyth, Brian Pearce)",
     "year": 2008,
     "url": "https://www.iata.org/en/iata-repository/publications/economic-reports/air-travel-demand/",
-    "locator": "Executive Summary",
-    "quote": "Route Level:  -1.4• National Level:  -0.8• Supra-National Level:  -0.6"
+    "locator": "Executive Summary"
    },
    "grade": "primary-report",
    "retrieved": "2026-10-09",
@@ -4057,8 +4035,7 @@
     "org": "BloombergNEF",
     "year": 2025,
     "url": "https://about.bnef.com/insights/clean-transport/lithium-ion-battery-pack-prices-fall-to-108-per-kilowatt-hour-despite-rising-metal-prices-bloombergnef/",
-    "locator": "Press release, 9 December 2025, paragraphs 1 and 4",
-    "quote": "Average LFP battery pack prices across all segments came in at $81/kWh while nickel manganese cobalt (NMC) packs were at $128/kWh."
+    "locator": "Press release, 9 December 2025, paragraphs 1 and 4"
    },
    "grade": "secondary",
    "retrieved": "2026-10-09",
@@ -4137,8 +4114,7 @@
     "org": "E-One Moli Energy Corp. (Molicel)",
     "year": 2021,
     "url": "https://www.kronium.cz/uploads/p45b-datasheet.pdf",
-    "locator": "Sect. 2.4.2 (weight), 4 Rated specifications (items 3, 4, 7, 8), 5.3 Cycle Life",
-    "quote": "4.5A C500 ≥ 80%"
+    "locator": "Sect. 2.4.2 (weight), 4 Rated specifications (items 3, 4, 7, 8), 5.3 Cycle Life"
    },
    "grade": "handbook",
    "retrieved": "2026-10-09",
@@ -4209,8 +4185,7 @@
     "org": "A123 Systems, Inc.",
     "year": 2011,
     "url": "https://piekarz.pl/pdf/49579",
-    "locator": "ANR26650M1-B Cell Specifications table",
-    "quote": "Cell Capacity (nominal/minimum, Ah) 2.5/2.4"
+    "locator": "ANR26650M1-B Cell Specifications table"
    },
    "grade": "handbook",
    "retrieved": "2026-10-09",
@@ -4272,8 +4247,7 @@
     "org": "Wikipedia",
     "year": 2026,
     "url": "https://en.wikipedia.org/wiki/Paschen%27s_law",
-    "locator": "Section 'Paschen curve' (constants, citing its ref. [6]) and 'Physical background'",
-    "quote": "= 7.5×10 −6 m·atm. This is 327 V in air at standard atmospheric pressure at a distance of 7.5 μm."
+    "locator": "Section 'Paschen curve' (constants, citing its ref. [6]) and 'Physical background'"
    },
    "grade": "secondary",
    "retrieved": "2026-10-09",
@@ -4376,8 +4350,7 @@
     "org": "Wikipedia",
     "year": 2026,
     "url": "https://en.wikipedia.org/wiki/International_Annealed_Copper_Standard",
-    "locator": "History paragraph",
-    "quote": "this being equivalent to a conductivity of exactly 58 × 10 6 S /m at 20 °C. The German modification was adopted by the International Electrotechnical Commission in 1913"
+    "locator": "History paragraph"
    },
    "grade": "secondary",
    "retrieved": "2026-10-09",
@@ -4397,8 +4370,7 @@
     "org": "Stanford University",
     "year": 2011,
     "url": "https://stacks.stanford.edu/file/druid:yf499mg3300/thesis_online_final-augmented.pdf",
-    "locator": "Chapter 5, eq. (5.4), p. 59",
-    "quote": "EINOx = 0.0986 ( PT 3 101325 )0.4 exp ( TT 3 194.4− H0 53.2 ) (5.4)"
+    "locator": "Chapter 5, eq. (5.4), p. 59"
    },
    "grade": "secondary",
    "retrieved": "2026-10-09",
@@ -4418,8 +4390,7 @@
     "org": "Stanford University",
     "year": 2011,
     "url": "https://stacks.stanford.edu/file/druid:yf499mg3300/thesis_online_final-augmented.pdf",
-    "locator": "Chapter 5, eq. (5.4), p. 59",
-    "quote": "EINOx = 0.0986 ( PT 3 101325 )0.4 exp ( TT 3 194.4− H0 53.2 ) (5.4)"
+    "locator": "Chapter 5, eq. (5.4), p. 59"
    },
    "grade": "secondary",
    "retrieved": "2026-10-09",
@@ -4439,8 +4410,7 @@
     "org": "Stanford University",
     "year": 2011,
     "url": "https://stacks.stanford.edu/file/druid:yf499mg3300/thesis_online_final-augmented.pdf",
-    "locator": "Chapter 5, eq. (5.4), p. 59",
-    "quote": "EINOx = 0.0986 ( PT 3 101325 )0.4 exp ( TT 3 194.4− H0 53.2 ) (5.4)"
+    "locator": "Chapter 5, eq. (5.4), p. 59"
    },
    "grade": "secondary",
    "retrieved": "2026-10-09",
@@ -4460,8 +4430,7 @@
     "org": "Stanford University",
     "year": 2011,
     "url": "https://stacks.stanford.edu/file/druid:yf499mg3300/thesis_online_final-augmented.pdf",
-    "locator": "Chapter 5, eq. (5.4), p. 59",
-    "quote": "EINOx = 0.0986 ( PT 3 101325 )0.4 exp ( TT 3 194.4− H0 53.2 ) (5.4)"
+    "locator": "Chapter 5, eq. (5.4), p. 59"
    },
    "grade": "secondary",
    "retrieved": "2026-10-09",
@@ -4481,8 +4450,7 @@
     "org": "Stanford University",
     "year": 2011,
     "url": "https://stacks.stanford.edu/file/druid:yf499mg3300/thesis_online_final-augmented.pdf",
-    "locator": "Chapter 5, eq. (5.4), p. 59",
-    "quote": "EINOx = 0.0986 ( PT 3 101325 )0.4 exp ( TT 3 194.4− H0 53.2 ) (5.4)"
+    "locator": "Chapter 5, eq. (5.4), p. 59"
    },
    "grade": "secondary",
    "retrieved": "2026-10-09",
@@ -4502,8 +4470,7 @@
     "org": "Stanford University",
     "year": 2011,
     "url": "https://stacks.stanford.edu/file/druid:yf499mg3300/thesis_online_final-augmented.pdf",
-    "locator": "Chapter 5, eq. (5.4), p. 59",
-    "quote": "EINOx = 0.0986 ( PT 3 101325 )0.4 exp ( TT 3 194.4− H0 53.2 ) (5.4)"
+    "locator": "Chapter 5, eq. (5.4), p. 59"
    },
    "grade": "secondary",
    "retrieved": "2026-10-09",
@@ -4561,8 +4528,7 @@
     "org": "UK Civil Aviation Authority",
     "year": 2024,
     "url": "https://www.caa.co.uk/environmental-sustainability/uk-aviation-environmental-review/uk-aer-air-quality/air-quality-international-policy-and-regulation/",
-    "locator": "Table 4.1",
-    "quote": "Taxi/ground idle 26.0 7%"
+    "locator": "Table 4.1"
    },
    "grade": "secondary",
    "retrieved": "2026-10-09",
@@ -4593,8 +4559,7 @@
     "org": "DLR Institute of Atmospheric Physics / Copernicus Publications",
     "year": 2012,
     "url": "https://gmd.copernicus.org/articles/5/543/2012/gmd-5-543-2012.pdf",
-    "locator": "Section 2 (model description), text around eq. for the mixing-line slope G",
-    "quote": "with specific heat capacity of air cp = 1004 J (kg K)−1, ratio of molecular masses of water and air MH2O/Mair = 0.622,"
+    "locator": "Section 2 (model description), text around eq. for the mixing-line slope G"
    },
    "grade": "primary-report",
    "retrieved": "2026-10-09",
@@ -4627,8 +4592,7 @@
     "org": "Swiss Federal Office of Civil Aviation (FOCA)",
     "year": 2005,
     "url": "https://www.bazl.admin.ch/dam/de/sd-web/ehcjwBxPuGxo/p002foca_lyc_o-360.pdf",
-    "locator": "Measured data table (mode, power %, time, fuel flow, EI HC, EI CO, EI NOx)",
-    "quote": "CRUISE 65 60 0.0078 12.1 818 10"
+    "locator": "Measured data table (mode, power %, time, fuel flow, EI HC, EI CO, EI NOx)"
    },
    "grade": "primary-report",
    "retrieved": "2026-10-09",
@@ -4679,8 +4643,7 @@
     "org": "ICAO / EASA",
     "year": 2026,
     "url": "https://www.easa.europa.eu/en/domains/environment/icao-aircraft-engine-emissions-databank",
-    "locator": "All 584 rows not marked \"Data Superseded\"; least-squares fit of ln(EI NOx T/O) on ln(OPR) computed for this registry from js/data/ref/engine-emissions.json",
-    "quote": "NOx EI T/O (g/kg)"
+    "locator": "All 584 rows not marked \"Data Superseded\"; least-squares fit of ln(EI NOx T/O) on ln(OPR) computed for this registry from js/data/ref/engine-emissions.json"
    },
    "grade": "primary-report",
    "retrieved": "2026-10-09",
@@ -4717,8 +4680,7 @@
     "org": "ICAO / EASA",
     "year": 2026,
     "url": "https://www.easa.europa.eu/en/domains/environment/icao-aircraft-engine-emissions-databank",
-    "locator": "Rows UID 8CM051 and 01P22PW163",
-    "quote": "Rated Thrust (kN)"
+    "locator": "Rows UID 8CM051 and 01P22PW163"
    },
    "grade": "primary-report",
    "retrieved": "2026-10-09",

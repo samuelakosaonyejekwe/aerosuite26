@@ -1,0 +1,10 @@
+{
+  "commercial": false,
+  "openMeteoApiKey": "",
+  "weatherProvider": "auto",
+  "carbonPriceUrl": "",
+  "attribution": true,
+  "overpassUrl": "",
+  "openAlexApiKey": "",
+  "accept": []
+}

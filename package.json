@@ -5,7 +5,7 @@
   "type": "module",
   "description": "Integrated 26-suite aircraft engineering simulation and decision-support platform (offline-first web app).",
   "scripts": {
-    "test": "node tests/run.mjs --quick && node tests/geometry.mjs && node tests/data.mjs",
+    "test": "node tests/run.mjs --quick && node tests/geometry.mjs && node tests/data.mjs && node tests/licences.mjs",
     "test:data": "node tests/data.mjs",
     "data:airports": "node tools/fetch-data.mjs",
     "data:snapshot": "node tools/snapshot.mjs",
